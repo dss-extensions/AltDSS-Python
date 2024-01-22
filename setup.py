@@ -7,10 +7,10 @@ with io.open('README.md', encoding='utf8') as readme_md:
     long_description = readme_md.read()
 
 # Handle the version string
-# 1. Try env var DSS_PYTHON_VERSION
+# 1. Try env var ALTDSS_PYTHON_VERSION
 # 2. Try GITHUB_REF for a Git tag
 # 3. Otherwise, just use the hardcoded version
-package_version = os.environ.get('DSS_PYTHON_VERSION')
+package_version = os.environ.get('ALTDSS_PYTHON_VERSION')
 github_ref = os.environ.get('GITHUB_REF')
 if package_version is None and github_ref is not None:
     package_version = github_ref[len("refs/tags/"):]
@@ -33,12 +33,6 @@ else:
         with open('dss/__init__.py', 'w') as f:
             f.write(init_py)
 
-if os.environ.get('DSS_PYTHON_PREPARE_BOA') == '1':
-    with open('conda/meta.yaml', 'r') as fin, open('conda/recipe.yaml', 'w') as fout:
-        fout.write(fin.read().replace('{{ load_setup_py_data().version }}', package_version))
-
-    exit()
-
 # Copy all the i18n files
 src_path = os.environ.get('SRC_DIR', '')
 mo_path_out = os.path.abspath(os.path.join(src_path, 'dss', 'messages'))
@@ -53,18 +47,17 @@ extra_args = dict(package_data={
 })
 
 setup(
-    name="dss_python",
-    description="Python bindings and tools based on the DSS C-API project, the alternative OpenDSS implementation from DSS-Extensions.org",
+    name="altdss",
+    description="Modern, detailed Python bindings and tools based on the DSS C-API project, the alternative OpenDSS implementation from DSS-Extensions.org. Tries to expose all OpenDSS objects and many details which previously required using the Text interface, or just weren't available.",
     long_description=long_description,
     long_description_content_type='text/markdown',
     author="Paulo Meira",
     author_email="pmeira@ieee.org",
     version=package_version,
     license="BSD",
-    packages=['dss', 'dss.UserModels', 'dss.altdss'],
-    ext_package="dss",
-    install_requires=["dss_python_backend==0.14.0b1", "numpy>=1.21.0", "typing_extensions>=4.5,<5"],
-    extras_require={'plot': ["matplotlib", "scipy"]}, #TODO: test which versions should work
+    packages=['altdss'],
+    ext_package="altdss",
+    install_requires=["dss_python", "numpy>=1.21.0", "typing_extensions>=4.5,<5", "scipy"],
     tests_require=["scipy", "ruff", "xmldiff", "pandas", "pytest"],
     zip_safe=False,
     classifiers=[
@@ -75,6 +68,7 @@ setup(
         'Programming Language :: Python :: 3.9',
         'Programming Language :: Python :: 3.10',
         'Programming Language :: Python :: 3.11',
+        'Programming Language :: Python :: 3.12',
         'Programming Language :: Python :: Implementation :: CPython',
         'Programming Language :: Python :: Implementation :: PyPy',
         'Development Status :: 5 - Production/Stable',

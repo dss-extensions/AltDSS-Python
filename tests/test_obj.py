@@ -16,11 +16,11 @@ if WIN32:
 else:
     import dss
 
-from dss import dss, Edit, IDSS #, YMatrixModes
-from dss.altdss import (
+from dss import dss, IDSS #, YMatrixModes
+from altdss import (
     Vsource, Transformer, LineCode, Load, Line, Capacitor, 
     Connection as Conn, RegControl, LengthUnit as Units,
-    IObj, LoadModel
+    IObj, LoadModel, Edit
 )    
 
 def create_ref_ckt13(ref):

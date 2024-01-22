@@ -12,8 +12,8 @@ Changes are expected to adjust naming of the properties. New features are also p
 
 A few examples are available in our tests:
 
-   * https://github.com/dss-extensions/dss_python/blob/master/tests/test_obj.py
-   * https://github.com/dss-extensions/dss_python/blob/master/tests/test_batch.py
+   * https://github.com/dss-extensions/altdss-python/blob/master/tests/test_obj.py
+   * https://github.com/dss-extensions/altdss-python/blob/master/tests/test_batch.py
 
 More notes and guided usage will be added here when we feel the package is ready. Currently, this document works
 as a vague reference. A detailed version with per-class docs will be generated in the future when the files are

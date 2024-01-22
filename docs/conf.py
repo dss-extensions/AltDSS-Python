@@ -18,8 +18,8 @@ sys.path.insert(0, os.path.abspath('..'))
 from dss import __version__ as ver
 # -- Project information -----------------------------------------------------
 
-project = 'dss_python'
-copyright = '2018-2023, Paulo Meira, DSS-Extensions contributors'
+project = 'altdss-python'
+copyright = '2018-2024, Paulo Meira, DSS-Extensions contributors'
 author = 'Paulo Meira'
 
 # The short X.Y version
@@ -89,8 +89,8 @@ html_theme = "guzzle_sphinx_theme" # "sphinx_rtd_theme"
 # further.  For a list of options available for each theme, see the
 # documentation.
 html_theme_options = {
-    "project_nav_name": "DSS-Python",
-    "projectlink": "http://github.com/dss-extensions/dss_python",
+    "project_nav_name": "AltDSS-Python",
+    "projectlink": "http://github.com/dss-extensions/AltDSS-Python",
     # "globaltoc_depth": 3,
 
 }
@@ -118,7 +118,7 @@ html_sidebars = {
 # -- Options for HTMLHelp output ---------------------------------------------
 
 # Output file base name for HTML help builder.
-htmlhelp_basename = 'dss_pythondoc'
+htmlhelp_basename = 'altdss-pythondoc'
 
 
 # -- Options for LaTeX output ------------------------------------------------
@@ -145,7 +145,7 @@ latex_elements = {
 # (source start file, target name, title,
 #  author, documentclass [howto, manual, or own class]).
 latex_documents = [
-    (master_doc, 'dss_python.tex', 'DSS-Python Documentation',
+    (master_doc, 'altdss-python.tex', 'AltDSS-Python Documentation',
      'Paulo Meira', 'manual'),
 ]
 
@@ -155,7 +155,7 @@ latex_documents = [
 # One entry per manual page. List of tuples
 # (source start file, name, description, authors, manual section).
 man_pages = [
-    (master_doc, 'dss_python', 'dss_python Documentation',
+    (master_doc, 'altdss-python', 'AltDSS-Python Documentation',
      [author], 1)
 ]
 
@@ -166,8 +166,8 @@ man_pages = [
 # (source start file, target name, title, author,
 #  dir menu entry, description, category)
 texinfo_documents = [
-    (master_doc, 'dss_python', 'dss_python Documentation',
-     author, 'dss_python', 'One line description of project.',
+    (master_doc, 'altdss-python', 'AltDSS-Python Documentation',
+     author, 'altdss-python', 'One line description of project.',
      'Miscellaneous'),
 ]
 

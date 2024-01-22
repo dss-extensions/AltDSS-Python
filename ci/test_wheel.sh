@@ -10,6 +10,6 @@ do
     echo Installing for CPython $pydir
     export PATH=/opt/python/${pydir}/bin/:$ORIGINAL_PATH
     python -m pip install scipy matplotlib
-    python -m pip install artifacts/dss_python-*.whl
-    python -c 'from dss import DSS; DSS.Plotting.enable(); DSS("new circuit.test123")'
+    python -m pip install artifacts/altdss*.whl
+    python -c 'import altdss'
 done

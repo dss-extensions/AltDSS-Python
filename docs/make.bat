@@ -9,7 +9,7 @@ if "%SPHINXBUILD%" == "" (
 )
 set SOURCEDIR=.
 set BUILDDIR=_build
-set SPHINXPROJ=dss_python
+set SPHINXPROJ=altdss-python
 
 if "%1" == "" goto help
 
