@@ -113,10 +113,11 @@ ENV/
 README.rst
 
 conda_wheels/
-dss/*.lib
-dss/**/*.h
-dss/**/*.hpp
-dss/messages/*
+altdss/*.lib
+altdss/**/*.h
+altdss/**/*.hpp
+altdss/messages/*
+altdss/_version.py
 
 *.CSV
 *.lib
@@ -127,3 +128,6 @@ dss/messages/*
 *.dbl
 *.sng
 *.pdb
+
+apidocs
+electricdss-tst

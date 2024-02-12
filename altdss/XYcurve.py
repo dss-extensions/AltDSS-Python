@@ -1,6 +1,6 @@
-# Copyright (c) 2021-2023 Paulo Meira
-# Copyright (c) 2021-2023 DSS-Extensions contributors
-from typing import Union, List, AnyStr, Optional
+# Copyright (c) 2021-2024 Paulo Meira
+# Copyright (c) 2021-2024 DSS-Extensions contributors
+from typing import Union, List, AnyStr, Optional, Iterator, TYPE_CHECKING
 from typing_extensions import TypedDict, Unpack
 from .types import Float64Array, Int32Array
 from . import enums
@@ -228,6 +228,10 @@ class XYcurveBatch(DSSBatch):
     _cls_idx = 5
 
 
+    if TYPE_CHECKING:
+        def __iter__(self) -> Iterator[XYcurve]:
+            yield from DSSBatch.__iter__(self)
+
     def _get_NPts(self) -> BatchInt32ArrayProxy:
         """
         Max number of points to expect in curve. This could get reset to the actual number of points defined if less than specified.
@@ -432,11 +436,20 @@ class IXYcurve(IDSSObj, XYcurveBatch):
         IDSSObj.__init__(self, iobj, XYcurve, XYcurveBatch)
         XYcurveBatch.__init__(self, self._api_util, sync_cls_idx=XYcurve._cls_idx)
 
+    if TYPE_CHECKING:
+        def __getitem__(self, name_or_idx: Union[AnyStr, int]) -> XYcurve:
+            return self.find(name_or_idx)
 
-    # We need this one for better type hinting
-    def __getitem__(self, name_or_idx: Union[AnyStr, int]) -> XYcurve:
-        return self.find(name_or_idx)
+        def batch(self, **kwargs) -> XYcurveBatch:
+            """
+            Creates a new batch handler of (existing) XYcurve objects
+            """
+            return self._batch_cls(self._api_util, **kwargs)
 
+        def __iter__(self) -> Iterator[XYcurve]:
+            yield from XYcurveBatch.__iter__(self)
+
+        
     def new(self, name: AnyStr, begin_edit=True, activate=False, **kwargs: Unpack[XYcurveProperties]) -> XYcurve:
         return self._new(name, begin_edit=begin_edit, activate=activate, props=kwargs)
 

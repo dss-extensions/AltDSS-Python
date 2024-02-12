@@ -1,10 +1,5 @@
-'''
-A compatibility layer for DSS C-API that mimics the official OpenDSS COM interface.
-
-Copyright (c) 2016-2023 Paulo Meira
-
-Copyright (c) 2018-2023 DSS-Extensions contributors
-'''
+# Copyright (c) 2016-2024 Paulo Meira
+# Copyright (c) 2018-2024 DSS-Extensions contributors
 from .common import Base
 from .types import Int32Array
 from typing import Union, AnyStr, List
@@ -17,23 +12,23 @@ class ISolution(Base):
         'MinIterations',
         'MaxIterations',
         'MaxControlIterations',
-        'Totaliterations',
+        'TotalIterations',
         'ControlIterations',
         'MostIterationsDone',
         'Number',
-        'Process_Time',
+        'ProcessTime',
         'AddType',
         'GenkW',
-        'dblHour',
+        'Hour',
         'Capkvar',
         'Seconds',
         'GenMult',
         'DefaultYearly',
         'IntervalHrs',
         'Converged',
-        'ModeID',
-        'Time_of_Step',
-        'Total_Time',
+        'Mode_str',
+        'TimeOfStep',
+        'TotalTime',
         'LoadModel',
         'EventLog',
         'Iterations',
@@ -66,7 +61,6 @@ class ISolution(Base):
 
     def Cleanup(self):
         ''''
-        
         Same as Circuit.EndOfTimeStepUpdate
         '''
         self._check_for_error(self._lib.Solution_Cleanup())
@@ -174,7 +168,7 @@ class ISolution(Base):
 
     @DefaultDaily.setter
     def DefaultDaily(self, Value: AnyStr):
-        if type(Value) is not bytes:
+        if not isinstance(Value, bytes):
             Value = Value.encode(self._api_util.codec)
 
         self._check_for_error(self._lib.Solution_Set_DefaultDaily(Value))
@@ -186,7 +180,7 @@ class ISolution(Base):
 
     @DefaultYearly.setter
     def DefaultYearly(self, Value: AnyStr):
-        if type(Value) is not bytes:
+        if not isinstance(Value, bytes):
             Value = Value.encode(self._api_util.codec)
 
         self._check_for_error(self._lib.Solution_Set_DefaultYearly(Value))
@@ -254,7 +248,7 @@ class ISolution(Base):
 
     @property
     def Iterations(self) -> int:
-        '''Number of iterations taken for last solution. (Same as Totaliterations)'''
+        '''Number of iterations taken for last solution. (Same as TotalIterations)'''
         return self._check_for_error(self._lib.Solution_Get_Iterations())
 
     @property
@@ -264,7 +258,7 @@ class ISolution(Base):
 
     @LDCurve.setter
     def LDCurve(self, Value: AnyStr):
-        if type(Value) is not bytes:
+        if not isinstance(Value, bytes):
             Value = Value.encode(self._api_util.codec)
 
         self._check_for_error(self._lib.Solution_Set_LDCurve(Value))
@@ -324,8 +318,8 @@ class ISolution(Base):
         self._check_for_error(self._lib.Solution_Set_Mode(Value))
 
     @property
-    def ModeID(self) -> str:
-        '''ID (text) of the present solution mode'''
+    def Mode_str(self) -> str:
+        '''Present solution mode as string (classic ModeID)'''
         return self._get_string(self._check_for_error(self._lib.Solution_Get_ModeID()))
 
     @property
@@ -343,7 +337,7 @@ class ISolution(Base):
         self._check_for_error(self._lib.Solution_Set_Number(Value))
 
     @property
-    def Process_Time(self) -> float:
+    def ProcessTime(self) -> float:
         '''Gets the time required to perform the latest solution (Read only)'''
         return self._check_for_error(self._lib.Solution_Get_Process_Time())
 
@@ -380,7 +374,7 @@ class ISolution(Base):
         return self._check_for_error(self._lib.Solution_Get_SystemYChanged() != 0)
 
     @property
-    def Time_of_Step(self) -> float:
+    def TimeOfStep(self) -> float:
         '''Get the solution process time + sample time for time step'''
         return self._check_for_error(self._lib.Solution_Get_Time_of_Step())
 
@@ -394,18 +388,18 @@ class ISolution(Base):
         self._check_for_error(self._lib.Solution_Set_Tolerance(Value))
 
     @property
-    def Total_Time(self) -> float:
+    def TotalTime(self) -> float:
         '''
         Gets/sets the accumulated time of the simulation
         '''
         return self._check_for_error(self._lib.Solution_Get_Total_Time())
 
-    @Total_Time.setter
-    def Total_Time(self, Value: float):
+    @TotalTime.setter
+    def TotalTime(self, Value: float):
         self._check_for_error(self._lib.Solution_Set_Total_Time(Value))
 
     @property
-    def Totaliterations(self) -> int:
+    def TotalIterations(self) -> int:
         '''Total iterations including control iterations for most recent solution.'''
         return self._check_for_error(self._lib.Solution_Get_Totaliterations())
 
@@ -419,12 +413,12 @@ class ISolution(Base):
         self._check_for_error(self._lib.Solution_Set_Year(Value))
 
     @property
-    def dblHour(self) -> float:
+    def Hour(self) -> float:
         '''Hour as a double, including fractional part'''
         return self._check_for_error(self._lib.Solution_Get_dblHour())
 
-    @dblHour.setter
-    def dblHour(self, Value: float):
+    @Hour.setter
+    def Hour(self, Value: float):
         self._check_for_error(self._lib.Solution_Set_dblHour(Value))
 
     @property

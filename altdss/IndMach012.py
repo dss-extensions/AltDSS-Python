@@ -1,6 +1,6 @@
-# Copyright (c) 2021-2023 Paulo Meira
-# Copyright (c) 2021-2023 DSS-Extensions contributors
-from typing import Union, List, AnyStr, Optional
+# Copyright (c) 2021-2024 Paulo Meira
+# Copyright (c) 2021-2024 DSS-Extensions contributors
+from typing import Union, List, AnyStr, Optional, Iterator, TYPE_CHECKING
 from typing_extensions import TypedDict, Unpack
 from .types import Float64Array, Int32Array
 from . import enums
@@ -511,6 +511,10 @@ class IndMach012Batch(DSSBatch, CircuitElementBatchMixin, PCElementBatchMixin):
        CircuitElementBatchMixin.__init__(self)
        PCElementBatchMixin.__init__(self)
 
+    if TYPE_CHECKING:
+        def __iter__(self) -> Iterator[IndMach012]:
+            yield from DSSBatch.__iter__(self)
+
     def _get_Phases(self) -> BatchInt32ArrayProxy:
         """
         Number of Phases, this Induction Machine.  
@@ -958,11 +962,20 @@ class IIndMach012(IDSSObj, IndMach012Batch):
         IDSSObj.__init__(self, iobj, IndMach012, IndMach012Batch)
         IndMach012Batch.__init__(self, self._api_util, sync_cls_idx=IndMach012._cls_idx)
 
+    if TYPE_CHECKING:
+        def __getitem__(self, name_or_idx: Union[AnyStr, int]) -> IndMach012:
+            return self.find(name_or_idx)
 
-    # We need this one for better type hinting
-    def __getitem__(self, name_or_idx: Union[AnyStr, int]) -> IndMach012:
-        return self.find(name_or_idx)
+        def batch(self, **kwargs) -> IndMach012Batch:
+            """
+            Creates a new batch handler of (existing) IndMach012 objects
+            """
+            return self._batch_cls(self._api_util, **kwargs)
 
+        def __iter__(self) -> Iterator[IndMach012]:
+            yield from IndMach012Batch.__iter__(self)
+
+        
     def new(self, name: AnyStr, begin_edit=True, activate=False, **kwargs: Unpack[IndMach012Properties]) -> IndMach012:
         return self._new(name, begin_edit=begin_edit, activate=activate, props=kwargs)
 

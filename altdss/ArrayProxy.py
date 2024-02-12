@@ -9,10 +9,13 @@ class BatchFloat64ArrayProxy:
     def to_array(self):
         return self._batch._get_batch_float_prop(self._idx)
 
+    def to_list(self):
+        return self._batch._get_batch_float_prop(self._idx)
+
     def __call__(self):
         return self.to_array()
 
-    def __len__(self):
+    def __len__(self) -> int:
         return len(self._batch)
 
     def __mul__(self, other):
@@ -30,10 +33,18 @@ class BatchFloat64ArrayProxy:
     def __sub__(self, other):
         return self.to_array() - other
 
+    def __iter__(self):
+        return self.to_array().__iter__()
+
     def __array__(self):
         return self.to_array()
 
-    def __iadd__(self, other):
+    def __iadd__(self, other, flags=0):
+        '''
+        Inplace modification of the array. When possible, it runs the operation in the engine.
+
+        Use `iadd` instead of the `+=` operator in order to specify SetterFlags.
+        '''
         batch = self._batch
         ptr_cnt = batch._get_ptr_cnt()
         if np.isscalar(other):
@@ -42,7 +53,7 @@ class BatchFloat64ArrayProxy:
                 self._idx,
                 self._lib.BatchOperation_Increment,
                 other,
-                0
+                flags
             )
             return self
 
@@ -55,15 +66,25 @@ class BatchFloat64ArrayProxy:
             *ptr_cnt,
             self._idx,
             data_ptr,
-            0
+            flags
         )
         batch._check_for_error()
         return self
 
-    def __isub__(self, other):
-        return self.__iadd__(-other)
+    def __isub__(self, other, flags=0):
+        '''
+        Inplace modification of the array. When possible, it runs the operation in the engine.
 
-    def __imul__(self, other):
+        Use `isub` instead of the `-=` operator in order to specify SetterFlags.
+        '''
+        return self.__iadd__(-other, flags)
+
+    def __imul__(self, other, flags=0):
+        '''
+        Inplace modification of the array. When possible, it runs the operation in the engine.
+
+        Use `imul` instead of the `*=` operator in order to specify SetterFlags.
+        '''
         batch = self._batch
         ptr_cnt = batch._get_ptr_cnt()
         if np.isscalar(other):
@@ -72,7 +93,7 @@ class BatchFloat64ArrayProxy:
                 self._idx,
                 self._lib.BatchOperation_Multiply,
                 other,
-                0
+                flags
             )
             return self
 
@@ -85,12 +106,17 @@ class BatchFloat64ArrayProxy:
             *ptr_cnt,
             self._idx,
             data_ptr,
-            0
+            flags
         )
         batch._check_for_error()
         return self
 
-    def __idiv__(self, other):
+    def __idiv__(self, other, flags=0):
+        '''
+        Inplace modification of the array. When possible, it runs the operation in the engine.
+
+        Use `idiv` instead of the `/=` operator in order to specify SetterFlags.
+        '''
         batch = self._batch
         ptr_cnt = batch._get_ptr_cnt()
         if np.isscalar(other):
@@ -99,7 +125,7 @@ class BatchFloat64ArrayProxy:
                 self._idx,
                 self._lib.BatchOperation_Multiply,
                 1 / other,
-                0
+                flags
             )
             return self
 
@@ -112,10 +138,15 @@ class BatchFloat64ArrayProxy:
             *ptr_cnt,
             self._idx,
             data_ptr,
-            0
+            flags
         )
         batch._check_for_error()
         return self
+
+    idiv = __idiv__
+    imul = __imul__
+    iadd = __iadd__
+    isub = __isub__
 
 
 class BatchInt32ArrayProxy:
@@ -127,10 +158,13 @@ class BatchInt32ArrayProxy:
     def to_array(self):
         return self._batch._get_batch_int32_prop(self._idx)
 
+    def to_list(self):
+        return self._batch._get_batch_int32_prop_as_list(self._idx)
+
     def __call__(self):
         return self.to_array()
 
-    def __len__(self):
+    def __len__(self) -> int:
         return len(self._batch)
 
     def __mul__(self, other):
@@ -148,10 +182,18 @@ class BatchInt32ArrayProxy:
     def __sub__(self, other):
         return self.to_array() - other
 
+    def __iter__(self):
+        return self.to_array().__iter__()
+
     def __array__(self):
         return self.to_array()
 
-    def __iadd__(self, other):
+    def __iadd__(self, other, flags=0):
+        '''
+        Inplace modification of the array. When possible, it runs the operation in the engine.
+
+        Use `iadd` instead of the `+=` operator in order to specify SetterFlags.
+        '''
         batch = self._batch
         ptr_cnt = batch._get_ptr_cnt()
         if np.isscalar(other):
@@ -160,7 +202,7 @@ class BatchInt32ArrayProxy:
                 self._idx,
                 self._lib.BatchOperation_Increment,
                 other,
-                0
+                flags
             )
             return self
 
@@ -173,15 +215,25 @@ class BatchInt32ArrayProxy:
             *ptr_cnt,
             self._idx,
             data_ptr,
-            0
+            flags
         )
         batch._check_for_error()
         return self
 
-    def __isub__(self, other):
-        return self.__iadd__(-other)
+    def __isub__(self, other, flags=0):
+        '''
+        Inplace modification of the array. When possible, it runs the operation in the engine.
 
-    def __imul__(self, other):
+        Use `isub` instead of the `-=` operator in order to specify SetterFlags.
+        '''
+        return self.__iadd__(-other, flags)
+
+    def __imul__(self, other, flags=0):
+        '''
+        Inplace modification of the array. When possible, it runs the operation in the engine.
+
+        Use `imul` instead of the `*=` operator in order to specify SetterFlags.
+        '''
         batch = self._batch
         ptr_cnt = batch._get_ptr_cnt()
         if np.isscalar(other):
@@ -190,7 +242,7 @@ class BatchInt32ArrayProxy:
                 self._idx,
                 self._lib.BatchOperation_Multiply,
                 other,
-                0
+                flags
             )
             return self
 
@@ -203,12 +255,17 @@ class BatchInt32ArrayProxy:
             *ptr_cnt,
             self._idx,
             data_ptr,
-            0
+            flags
         )
         batch._check_for_error()
         return self
 
-    def __idiv__(self, other):
+    def __idiv__(self, other, flags=0):
+        '''
+        Inplace modification of the array. When possible, it runs the operation in the engine.
+
+        Use `idiv` instead of the `/=` operator in order to specify SetterFlags.
+        '''
         batch = self._batch
         ptr_cnt = batch._get_ptr_cnt()
         if np.isscalar(other):
@@ -217,7 +274,7 @@ class BatchInt32ArrayProxy:
                 self._idx,
                 self._lib.BatchOperation_Multiply,
                 1 / other,
-                0
+                flags
             )
             return self
 
@@ -230,10 +287,15 @@ class BatchInt32ArrayProxy:
             *ptr_cnt,
             self._idx,
             data_ptr,
-            0
+            flags
         )
         batch._check_for_error()
         return self
+
+    idiv = __idiv__
+    imul = __imul__
+    iadd = __iadd__
+    isub = __isub__
 
 
 __all__ = ('BatchFloat64ArrayProxy', 'BatchInt32ArrayProxy')

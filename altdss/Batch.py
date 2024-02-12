@@ -1,5 +1,5 @@
 import numpy as np
-from typing import Union, List, AnyStr, Optional
+from typing import Union, List, AnyStr, Optional, Iterator
 from dss.enums import DSSJSONFlags
 from .enums import SetterFlags
 from .common import Base, LIST_LIKE, InvalidatedObject
@@ -66,7 +66,7 @@ class BatchCommon:
     def __eq__(self, other):
         return self is other
 
-    def __len__(self):
+    def __len__(self) -> int:
         if self._sync_cls_idx:
             return self._lib.Obj_GetCount(self._api_util.ctx, self._sync_cls_idx)
 
@@ -325,8 +325,14 @@ class DSSBatch(Base, BatchCommon):
     def _get_batch_float_prop(self, index):
         return self._get_float64_array(self._lib.Batch_GetFloat64, *self._get_ptr_cnt(), index)
 
+    def _get_batch_float_prop_as_list(self, index):
+        return self._api_util.get_float64_array2(self._lib.Batch_GetFloat64, *self._get_ptr_cnt(), index)
+
     def _get_batch_int32_prop(self, index):
         return self._get_int32_array(self._lib.Batch_GetInt32, *self._get_ptr_cnt(), index)
+
+    def _get_batch_int32_prop_as_list(self, index):
+        return self._api_util.get_int32_array2(self._lib.Batch_GetInt32, *self._get_ptr_cnt(), index)
 
     def _get_batch_str_prop(self, index):
         return self._get_string_array(self._lib.Batch_GetString, *self._get_ptr_cnt(), index)
@@ -394,7 +400,7 @@ class DSSBatch(Base, BatchCommon):
         single_array = False
 
         # Empty arrays or None
-        if not len(value) or value is None:
+        if value is None or not len(value):
             value_ptr, value_count = self._ffi.NULL, 0
             single_array = True
         
@@ -412,7 +418,10 @@ class DSSBatch(Base, BatchCommon):
             # Apply one array for each object
             value_2d = value
             for x, value in zip(self._unpack(), value_2d):
-                if not len(value) or value is None:
+                # if np.isscalar(value) and np.isnan(value):
+                #     continue
+
+                if value is None or not len(value):
                     value_ptr, value_count = self._ffi.NULL, 0
                 else:
                     value, value_ptr, value_count = self._prepare_float64_array(value)
@@ -436,7 +445,7 @@ class DSSBatch(Base, BatchCommon):
         single_array = False
 
         # Empty arrays or None
-        if not len(value) or value is None:
+        if value is None or not len(value):            
             value_ptr, value_count = self._ffi.NULL, 0
             single_array = True
         
@@ -453,7 +462,7 @@ class DSSBatch(Base, BatchCommon):
             # Apply one array for each object
             value_2d = value
             for x, value in zip(self._unpack(), value_2d):
-                if not len(value) or value is None:
+                if value is None or not len(value):
                     value_ptr, value_count = self._ffi.NULL, 0
                 else:
                     value, value_ptr, value_count = self._prepare_int32_array(value)
@@ -604,7 +613,7 @@ class NonUniformBatch(Base, BatchCommon):
         self._func(self._ptr, self._cnt, self._parent_ptr)
         return (self._ptr[0], self._cnt[0])
 
-    def __iter__(self):
+    def __iter__(self) -> Iterator[DSSObj]:
         ptr, cnt = self._get_ptr_cnt()
         if self._obj_cls is None:
             for idx in range(cnt):

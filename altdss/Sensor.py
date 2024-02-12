@@ -1,6 +1,6 @@
-# Copyright (c) 2021-2023 Paulo Meira
-# Copyright (c) 2021-2023 DSS-Extensions contributors
-from typing import Union, List, AnyStr, Optional
+# Copyright (c) 2021-2024 Paulo Meira
+# Copyright (c) 2021-2024 DSS-Extensions contributors
+from typing import Union, List, AnyStr, Optional, Iterator, TYPE_CHECKING
 from typing_extensions import TypedDict, Unpack
 from .types import Float64Array, Int32Array
 from . import enums
@@ -290,6 +290,10 @@ class SensorBatch(DSSBatch, CircuitElementBatchMixin):
        DSSBatch.__init__(self, api_util, **kwargs)
        CircuitElementBatchMixin.__init__(self)
 
+    if TYPE_CHECKING:
+        def __iter__(self) -> Iterator[Sensor]:
+            yield from DSSBatch.__iter__(self)
+
     def _get_Element_str(self) -> List[str]:
         """
         Name (Full Object name) of element to which the Sensor is connected.
@@ -553,11 +557,20 @@ class ISensor(IDSSObj, SensorBatch):
         IDSSObj.__init__(self, iobj, Sensor, SensorBatch)
         SensorBatch.__init__(self, self._api_util, sync_cls_idx=Sensor._cls_idx)
 
+    if TYPE_CHECKING:
+        def __getitem__(self, name_or_idx: Union[AnyStr, int]) -> Sensor:
+            return self.find(name_or_idx)
 
-    # We need this one for better type hinting
-    def __getitem__(self, name_or_idx: Union[AnyStr, int]) -> Sensor:
-        return self.find(name_or_idx)
+        def batch(self, **kwargs) -> SensorBatch:
+            """
+            Creates a new batch handler of (existing) Sensor objects
+            """
+            return self._batch_cls(self._api_util, **kwargs)
 
+        def __iter__(self) -> Iterator[Sensor]:
+            yield from SensorBatch.__iter__(self)
+
+        
     def new(self, name: AnyStr, begin_edit=True, activate=False, **kwargs: Unpack[SensorProperties]) -> Sensor:
         return self._new(name, begin_edit=begin_edit, activate=activate, props=kwargs)
 

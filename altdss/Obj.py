@@ -1,5 +1,5 @@
-# Copyright (c) 2021-2023 Paulo Meira
-# Copyright (c) 2021-2023 DSS-Extensions contributors
+# Copyright (c) 2021-2024 Paulo Meira
+# Copyright (c) 2021-2024 DSS-Extensions contributors
 from .DSSObj import DSSObj
 from .common import Base
 

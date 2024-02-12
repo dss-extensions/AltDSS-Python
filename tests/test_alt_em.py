@@ -6,15 +6,14 @@ except ImportError:
 
 import numpy as np
 np.set_printoptions(linewidth=999)
-from dss import DSS
-altdss = DSS.AltDSS
+from altdss import altdss
 
 altdss(f'''
     redirect "{BASE_DIR}/Version8/Distrib/IEEETestCases/13Bus/IEEE13Nodeckt.dss"
     new energymeter.m element=Transformer.Sub
     solve
 ''')
-m = altdss.EnergyMeter[1]
+m = altdss.EnergyMeter[0]
 print('-' * 40)
 print(m.ZonePCEs)
 print(m.Loads)
@@ -36,20 +35,20 @@ altdss(f'''
     redirect "{BASE_DIR}/Version8/Distrib/IEEETestCases/LVTestCaseNorthAmerican/Master.dss"
     redirect "{BASE_DIR}/Version8/Distrib/IEEETestCases/LVTestCaseNorthAmerican/network_protectors.dss"
 ''')
-# new energymeter.m element={altdss.PDElement[1].FullName()}
+# new energymeter.m element={altdss.PDElement[0].FullName()}
 # TypeError: 'PDElementBatch' object is not subscriptable
 
 if len(altdss.EnergyMeter) == 0:
-    print('Adding EM to >>>', altdss.PDElement.to_list()[1].FullName())
+    print('Adding EM to >>>', altdss.PDElement.to_list()[0].FullName())
     altdss(f'''    
-        new energymeter.m1 element={altdss.PDElement.to_list()[1].FullName()}
+        new energymeter.m1 element={altdss.PDElement.to_list()[0].FullName()}
     ''')
 
 altdss(f'''    
     solve
     RelCalc
 ''')
-m = altdss.EnergyMeter[1]
+m = altdss.EnergyMeter[0]
 #TODO: add error message in one of these to point that no relcalc was done beforehand
 print(m.NumSections())
 for section in m.Sections():

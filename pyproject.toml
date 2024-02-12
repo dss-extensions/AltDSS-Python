@@ -1,0 +1,72 @@
+[build-system]
+requires = [
+    "hatchling",
+    "versioningit",
+]
+build-backend = "hatchling.build"
+
+[tool.hatch.version]
+source = "versioningit"
+
+[tool.versioningit]
+
+[tool.versioningit.write]
+file = "altdss/_version.py"
+
+[tool.hatch.build]
+artifacts = ["altdss/_version.py"]
+
+[project]
+name = "altdss"
+dynamic = ["version"]
+dependencies = [
+    "dss_python>=0.15.0,<0.16.0",
+    "numpy>=1.21.0",
+    "typing_extensions>=4.5,<5",
+    "scipy",
+    "pandas",
+]
+requires-python = ">=3.7"
+authors = [
+  {name = "Paulo Meira", email = "pmeira@ieee.org"},
+  {name = "Dheepak Krishnamurthy", email = "me@kdheepak.com"},
+]
+maintainers = [
+    {name = "Paulo Meira", email = "pmeira@ieee.org"},
+]
+description = "Modern, detailed Python bindings and tools based on the DSS C-API project, the alternative OpenDSS implementation from DSS-Extensions.org. Tries to expose all OpenDSS objects and many details which previously required using the Text interface, or just weren't available."
+readme = "README.md"
+license = {file = "LICENSE"}
+keywords = ["opendss", "altdss", "electric power systems", "opendssdirect", "powerflow", "short-circuit", ]
+classifiers = [
+    'Intended Audience :: Science/Research',
+    'Intended Audience :: Education',
+    'Programming Language :: Python :: 3.7',
+    'Programming Language :: Python :: 3.8',
+    'Programming Language :: Python :: 3.9',
+    'Programming Language :: Python :: 3.10',
+    'Programming Language :: Python :: 3.11',
+    'Programming Language :: Python :: 3.12',
+    'Programming Language :: Python :: Implementation :: CPython',
+    'Programming Language :: Python :: Implementation :: PyPy',
+    'Development Status :: 4 - Beta',
+    'Topic :: Scientific/Engineering',
+    'License :: OSI Approved :: BSD License'
+]
+
+[project.urls]
+Homepage = "https://github.com/dss-extensions/AltDSS-Python"
+Documentation = "https://dss-extensions.org/AltDSS-Python"
+Repository = "https://github.com/dss-extensions/AltDSS-Python.git"
+"Bug Tracker" = "https://github.com/dss-extensions/AltDSS-Python/issues"
+Changelog = "https://github.com/dss-extensions/AltDSS-Python/blob/main/docs/changelog.md"
+
+[project.optional-dependencies]
+test = [
+  "ruff", 
+  "xmldiff", 
+  "pytest",
+]
+all = [
+  "dss_python[all]>=0.15.0,<0.16.0",  
+]

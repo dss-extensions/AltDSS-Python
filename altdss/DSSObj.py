@@ -4,6 +4,7 @@ from .enums import SetterFlags
 from .common import Base, LIST_LIKE, InvalidatedObject
 from .types import Float64Array, Int32Array
 from typing import Union, List, AnyStr, Optional
+import pandas as pd
 
 class DSSObj(Base):
     # _properties_by_idx = {
@@ -320,6 +321,9 @@ class IDSSObj(Base):
         Aux. function used by the descendant classes (which provide typing info) to create the batches.
         '''
         if df is not None:
+            # This doesn't work with NA data currently. Way too much variation on how
+            # the data could be typed. It will be replaced when an alternative, native
+            # C++ or Rust version is implemented.
             columns = list(df.columns)
             if names is None:
                 if 'name' in df.columns:
@@ -390,15 +394,18 @@ class IDSSObj(Base):
         return IDSSObj.new(self, name, begin_edit, activate)
         
 
-    def find(self, name_or_idx):
+    def find(self, name_or_idx: Union[AnyStr, int]) -> DSSObj:
+        """
+        Returns an object from the collection by name or index; the index must be zero-based.
+        """
         lib = self._lib
 
         if isinstance(name_or_idx, int):
-            ptr = lib.Obj_GetHandleByIdx(self._api_util.ctx, self.cls_idx, name_or_idx)
+            ptr = lib.Obj_GetHandleByIdx(self._api_util.ctx, self.cls_idx, name_or_idx + 1)
             if ptr == self._api_util.ffi.NULL:
                 raise ValueError('Could not find object by index "{}".'.format(name_or_idx))
         else:
-            if type(name_or_idx) is not bytes:
+            if not isinstance(name_or_idx, bytes):
                 name_or_idx = name_or_idx.encode(self._api_util.codec)
 
             ptr = lib.Obj_GetHandleByName(self._api_util.ctx, self.cls_idx, name_or_idx)
@@ -407,7 +414,7 @@ class IDSSObj(Base):
 
         return self._obj_cls(self._api_util, ptr)
 
-    def __len__(self):
+    def __len__(self) -> int:
         return self._lib.Obj_GetCount(self._api_util.ctx, self.cls_idx)
 
     def __iter__(self):
@@ -420,7 +427,7 @@ class IDSSObj(Base):
 
     def __contains__(self, name: str) -> bool:
         lib = self._lib
-        if type(name) is not bytes:
+        if not isinstance(name, bytes):
             name = name.encode(self._api_util.codec)
 
         return (lib.Obj_GetHandleByName(self._api_util.ctx, self.cls_idx, name) != self._api_util.ffi.NULL)

@@ -1,6 +1,6 @@
-# Copyright (c) 2021-2023 Paulo Meira
-# Copyright (c) 2021-2023 DSS-Extensions contributors
-from typing import Union, List, AnyStr, Optional
+# Copyright (c) 2021-2024 Paulo Meira
+# Copyright (c) 2021-2024 DSS-Extensions contributors
+from typing import Union, List, AnyStr, Optional, Iterator, TYPE_CHECKING
 from typing_extensions import TypedDict, Unpack
 from .types import Float64Array, Int32Array
 from . import enums
@@ -88,6 +88,10 @@ class TCC_CurveBatch(DSSBatch):
     _cls_idx = 7
 
 
+    if TYPE_CHECKING:
+        def __iter__(self) -> Iterator[TCC_Curve]:
+            yield from DSSBatch.__iter__(self)
+
     def _get_NPts(self) -> BatchInt32ArrayProxy:
         """
         Number of points to expect in time-current arrays.
@@ -162,11 +166,20 @@ class ITCC_Curve(IDSSObj, TCC_CurveBatch):
         IDSSObj.__init__(self, iobj, TCC_Curve, TCC_CurveBatch)
         TCC_CurveBatch.__init__(self, self._api_util, sync_cls_idx=TCC_Curve._cls_idx)
 
+    if TYPE_CHECKING:
+        def __getitem__(self, name_or_idx: Union[AnyStr, int]) -> TCC_Curve:
+            return self.find(name_or_idx)
 
-    # We need this one for better type hinting
-    def __getitem__(self, name_or_idx: Union[AnyStr, int]) -> TCC_Curve:
-        return self.find(name_or_idx)
+        def batch(self, **kwargs) -> TCC_CurveBatch:
+            """
+            Creates a new batch handler of (existing) TCC_Curve objects
+            """
+            return self._batch_cls(self._api_util, **kwargs)
 
+        def __iter__(self) -> Iterator[TCC_Curve]:
+            yield from TCC_CurveBatch.__iter__(self)
+
+        
     def new(self, name: AnyStr, begin_edit=True, activate=False, **kwargs: Unpack[TCC_CurveProperties]) -> TCC_Curve:
         return self._new(name, begin_edit=begin_edit, activate=activate, props=kwargs)
 

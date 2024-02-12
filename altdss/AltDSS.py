@@ -1,13 +1,15 @@
-from typing import Union, List, AnyStr, Optional
-from typing_extensions import Self
+from __future__ import annotations
+from typing import Union, List, AnyStr, Optional, TYPE_CHECKING
 import numpy as np
 
-# These are currently reused directly from DSS-Python; this may change later
-from dss.IDSSEvents import IDSSEvents
-from dss.IError import IError
-from dss.IReduceCkt import IReduceCkt
-from dss.ITopology import ITopology
-from dss.IYMatrix import IYMatrix
+from weakref import WeakKeyDictionary
+
+# These were copied directly from DSS-Python; they may change later
+# from .DSSEvents import IDSSEvents
+from .Error import IError
+from .ReduceCkt import IReduceCkt
+from .Topology import ITopology
+from .YMatrix import IYMatrix
 
 from .common import CffiApiUtil
 from dss.enums import DSSJSONFlags
@@ -23,13 +25,25 @@ from .Solution import ISolution
 from .ZIP import IZIP
 from .types import Float64Array, ComplexArray
 
-class IAltDSS(IObj):
+if TYPE_CHECKING:
+    try:
+        from dss import IDSS as DSSPython
+    except:
+        DSSPython = None
+
+    try:
+        from opendssdirect.OpenDSSDirect import OpenDSSDirect
+    except:
+        OpenDSSDirect = None
+
+
+class AltDSS(IObj):
     __slots__ = [
         'Bus',
         'ControlQueue',
         'Element',
         'Error',
-        'Events',
+        # 'Events',
         # 'Parallel',
         'PCElement',
         'PDElement',
@@ -41,13 +55,13 @@ class IAltDSS(IObj):
         'ZIP',
         '_ptr',
     ]
-    _ctx_to_altdss = {}
+    _ctx_to_dss = WeakKeyDictionary()
    
     Bus: IBuses
     ControlQueue: IControlQueue
     Element: CircuitElementBatch
     Error: IError
-    Events: IDSSEvents
+    # Events: IDSSEvents
     # Parallel: IParallel
     PCElement: PCElementBatch
     PDElement: PDElementBatch
@@ -58,25 +72,40 @@ class IAltDSS(IObj):
     YMatrix: IYMatrix
     ZIP: IZIP
 
+    @classmethod
+    def _get_instance(cls: AltDSS, api_util: CffiApiUtil = None, ctx=None) -> AltDSS:
+        '''
+        If there is an existing AltDSS instance for a context, return it.
+        Otherwise, try to wrap the context into a new AltDSS API instance.
+        '''
+        if api_util is None:
+            # If none exists, something is probably wrong elsewhere,
+            # so let's allow the IndexError to propagate
+            api_util = CffiApiUtil._ctx_to_util[ctx]
 
-    @staticmethod
-    def get_from_context(api_util) -> Self:
-        existing = IAltDSS._ctx_to_altdss.get(api_util.ctx)
-        if existing is not None:
-            return existing
-        
-        return IAltDSS(api_util)
+        dss = cls._ctx_to_dss.get(api_util.ctx)
+        if dss is None:
+            dss = cls(api_util)
+
+        return dss
+
 
     def __init__(self, api_util):
+        '''
+        Creates a new AltDSS instance for the DSS context specified in `api_util`.
+
+        Not intended for typical usage. For creating new separate DSS instances, refer
+        to the `AltDSS.NewContext` method.
+        '''
         IObj.__init__(self, api_util)
-        IAltDSS._ctx_to_altdss[api_util.ctx] = self
+        AltDSS._ctx_to_dss[api_util.ctx] = self
         self._ptr = api_util.ctx
 
         self.Bus = IBuses(self._api_util)
         self.ControlQueue = IControlQueue(self._api_util)
         self.Element = CircuitElementBatch(None, self)
         self.Error = IError(self._api_util)
-        self.Events = IDSSEvents(self._api_util)
+        # self.Events = IDSSEvents(self._api_util)
         # self.Parallel = IParallel(self._api_util)
         self.PCElement = PCElementBatch(None, self)
         self.PDElement = PDElementBatch(None, self)
@@ -89,13 +118,19 @@ class IAltDSS(IObj):
 
 
     def DisableElement(self, name: AnyStr):
-        if type(name) is not bytes:
+        '''
+        Disable a circuit element by name (removes from circuit but leave in database).
+        '''
+        if not isinstance(name, bytes):
             name = name.encode(self._api_util.codec)
 
         self._check_for_error(self._lib.Circuit_Disable(name))
 
     def EnableElement(self, name: AnyStr):
-        if type(name) is not bytes:
+        '''
+        Enable a circuit element by name
+        '''
+        if not isinstance(name, bytes):
             name = name.encode(self._api_util.codec)
 
         self._check_for_error(self._lib.Circuit_Enable(name))
@@ -120,45 +155,63 @@ class IAltDSS(IObj):
         return self._get_float64_gr_array()
 
     def BusDistances(self) -> Float64Array:
-        '''Returns distance from each bus to parent EnergyMeter. Corresponds to sequence in AllBusNames.'''
+        '''
+        Returns distance from each bus to parent EnergyMeter. Corresponds to sequence in AllBusNames.
+        '''
         self._check_for_error(self._lib.Circuit_Get_AllBusDistances_GR())
         return self._get_float64_gr_array()
 
     def BusNames(self) -> List[str]:
-        '''Array of strings containing names of all buses in circuit (see AllNodeNames).'''
+        '''
+        Array of strings containing names of all buses in circuit (see AllNodeNames).
+        '''
         return self._check_for_error(self._get_string_array(self._lib.Circuit_Get_AllBusNames))
 
     def BusVmag(self) -> Float64Array:
-        '''Array of magnitudes (doubles) of voltages at all buses'''
+        '''
+        Array of magnitudes (doubles) of voltages at all buses
+        '''
         self._check_for_error(self._lib.Circuit_Get_AllBusVmag_GR())
         return self._get_float64_gr_array()
 
     def BusVmagPu(self) -> Float64Array:
-        '''Double Array of all bus voltages (each node) magnitudes in Per unit'''
+        '''
+        Double Array of all bus voltages (each node) magnitudes in Per unit
+        '''
         self._check_for_error(self._lib.Circuit_Get_AllBusVmagPu_GR())
         return self._get_float64_gr_array()
 
     def BusVolts(self) -> ComplexArray:
-        '''Complex array of all bus, node voltages from most recent solution'''
+        '''
+        Complex array of all bus, node voltages from most recent solution
+        '''
         self._check_for_error(self._lib.Circuit_Get_AllBusVolts_GR())
         return self._get_fcomplex128_gr_array()
 
     def NodeDistances(self) -> Float64Array:
-        '''Returns an array of distances from parent EnergyMeter for each Node. Corresponds to AllBusVMag sequence.'''
+        '''
+        Returns an array of distances from parent EnergyMeter for each Node. Corresponds to AllBusVMag sequence.
+        '''
         self._check_for_error(self._lib.Circuit_Get_AllNodeDistances_GR())
         return self._get_float64_gr_array()
 
     def NodeNames(self) -> List[str]:
-        '''Array of strings containing full name of each node in system in same order as returned by AllBusVolts, etc.'''
+        '''
+        Array of strings containing full name of each node in system in same order as returned by AllBusVolts, etc.
+        '''
         return self._check_for_error(self._get_string_array(self._lib.Circuit_Get_AllNodeNames))
 
     def LineLosses(self) -> complex:
-        '''Complex total line losses in the circuit'''
+        '''
+        Complex total line losses in the circuit
+        '''
         self._check_for_error(self._lib.Circuit_Get_LineLosses_GR())
         return self._get_fcomplex128_gr_simple()
 
     def Losses(self) -> complex:
-        '''Total losses in active circuit, complex number (two-element array of double).'''
+        '''
+        Total losses in active circuit, complex number (two-element array of double).
+        '''
         self._check_for_error(self._lib.Circuit_Get_Losses_GR())
         return self._get_fcomplex128_gr_simple()
 
@@ -188,18 +241,18 @@ class IAltDSS(IObj):
         self._check_for_error(self._lib.Circuit_Get_SubstationLosses_GR())
         return self._get_fcomplex128_gr_simple()
 
-    def SystemY(self, dense_matrix=False) -> ComplexArray:
+    def SystemY(self, dense=False) -> ComplexArray:
         '''
         Get the system Y complex matrix.
-        Requires either a previous solution or explicitly building the marix.
+        Requires either a previous solution or explicitly building the matrix.
 
         In AltDSS, defaults to the sparse matrix data.
         
-        Use `dense_matrix=True` to force a dense matrix. Beware the
+        Use `dense=True` to force a dense matrix. Beware the
         memory requirements. The recommendation is to only use dense
         matrices for small systems.
         '''
-        if dense_matrix:
+        if dense:
             self._check_for_error(self._lib.Circuit_Get_SystemY_GR())
             return self._get_fcomplex128_gr_array()
 
@@ -255,15 +308,43 @@ class IAltDSS(IObj):
         return self._get_fcomplex128_gr_array()
 
     def Capacity(self, Start: float, Increment: float) -> float:
+        '''
+        Compute the maximum load the active circuit can serve in the PRESENT YEAR.
+        
+        This method uses the EnergyMeter objects with the registers set with the 
+        `SET UEREGS= (...)` command for the AutoAdd functions. 
+
+        Returns the metered kW (load + losses - generation) and per unit load multiplier 
+        for the loading level at which something in the system reports an overload or 
+        undervoltage. If no violations, then it returns the metered kW for peak load 
+        for the year (1.0 multiplier). 
+        
+        Aborts and returns 0 if no EnergyMeters.
+
+        Original COM help: https://opendss.epri.com/Capacity1.html
+        '''
         return self._check_for_error(self._lib.Circuit_Capacity(Start, Increment))
 
     def TakeSample(self):
+        '''
+        Force all Meters and Monitors to take a sample.
+        '''
         self._check_for_error(self._lib.Circuit_Sample())
 
     def SaveSample(self):
+        '''
+        Force all meters and monitors to save their current buffers.
+        '''
         self._check_for_error(self._lib.Circuit_SaveSample())
 
     def UpdateStorage(self):
+        '''
+        Force an update to all storage classes. 
+
+        Typically done after a solution. Done automatically in intrinsic solution modes.
+
+        Original COM help: https://opendss.epri.com/UpdateStorage.html
+        '''
         self._check_for_error(self._lib.Circuit_UpdateStorage()) #TODO: move to the dedicated class/API
 
     def Clear(self):
@@ -279,14 +360,12 @@ class IAltDSS(IObj):
 
         The `options` parameter contains bit-flags to toggle specific features.
         See `Obj_ToJSON` (C-API) for more, or `DSSObj.to_json` in Python.
-
-        (API Extension)
         '''
-        return self._get_string(self.CheckForError(self._lib.Circuit_ToJSON(options)))
+        return self._get_string(self._check_for_error(self._lib.Circuit_ToJSON(options)))
 
-    def NewContext(self) -> Self:
+    def NewContext(self) -> AltDSS:
         '''
-        Creates a new AltDSS engine context.
+        Creates a new DSS engine context, wrapped by the AltDSS classes.
         
         An AltDSS Context encapsulates most of the global state of the original OpenDSS engine,
         allowing the user to create multiple instances in the same process. By creating contexts
@@ -311,7 +390,7 @@ class IAltDSS(IObj):
         if value is None:
             return self._get_string(self._check_for_error(self._lib.Text_Get_Command()))
 
-        if type(value) is not bytes:
+        if not isinstance(value, bytes):
             value = value.encode(self._api_util.codec)
 
         self._check_for_error(self._lib.Text_Set_Command(value))
@@ -320,19 +399,27 @@ class IAltDSS(IObj):
     def Commands(self, Value: Union[AnyStr, List[AnyStr]]):
         '''
         Runs a list of strings or a large string as commands directly in the DSS engine.
-        Intermediate results from the classic Text.Result are ignored.
+        Intermediate results from the classic `Text.Result` are ignored.
 
         Value can be a list of strings, or a single large string (usually faster, but varies).
-
-        (API Extension)
         '''
         if isinstance(Value, str) or isinstance(Value, bytes):
-            if type(Value) is not bytes:
+            if not isinstance(Value, bytes):
                 Value = Value.encode(self._api_util.codec)
             
             self._check_for_error(self._lib.Text_CommandBlock(Value))
         else:
             self._check_for_error(self._set_string_array(self._lib.Text_CommandArray, Value))
+
+    @property
+    def TextResult(self) -> str:
+        """Result string for the last DSS command (classic `Text.Result`)."""
+        return self._get_string(self._check_for_error(self._lib.Text_Get_Result()))
+    
+
+    def Version(self) -> str:
+        from . import __version__
+        return self._get_string(self._check_for_error(self._lib.DSS_Get_Version())) + f'\nAltDSS-Python version: {__version__}'
 
 
     def __call__(self, cmds: Union[AnyStr, List[AnyStr]]):
@@ -340,21 +427,43 @@ class IAltDSS(IObj):
         Pass either a single string (with either one or multiples commands, separated by new lines),
         or a list of strings.
 
-        Examples:
+        Shortcut to `AltDSS.Commands()`.
 
+        Examples:
+        ``` 
             # single command
-            DSS("new Circuit.test") 
+            dss("new Circuit.test") 
 
             # list of commands
-            DSS(["new Circuit.test", "new Line.line1 bus1=a bus2=b"])
+            dss(["new Circuit.test", "new Line.line1 bus1=a bus2=b"])
 
             # block of commands in a big string
-            DSS("""
+            dss("""
                 clear
                 new Circuit.test
                 new Line.line1 bus1=a bus2=b
                 new Load.load1 bus1=a bus2=b
             """)
+        ```
         '''
         self.Commands(cmds)
 
+
+    def to_dss_python(self) -> DSSPython:
+        """
+        Returns an instance of DSS-Python for the active DSS Context.
+
+        A compatible DSS-Python (`pip install dss-python`) is required.
+        """
+        from dss import IDSS as DSSPython
+        return DSSPython._get_instance(ctx=self._api_util.ctx, api_util=self._api_util)
+
+
+    def to_opendssdirect(self) -> OpenDSSDirect:
+        """
+        Returns an instance of OpenDSSDirect.py for the active DSS Context.
+
+        A compatible OpenDSSDirect.py (`pip install OpenDSSDirect.py`) is required.
+        """
+        from opendssdirect.OpenDSSDirect import OpenDSSDirect
+        return OpenDSSDirect._get_instance(ctx=self._api_util.ctx, api_util=self._api_util)

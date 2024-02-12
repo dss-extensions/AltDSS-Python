@@ -7,16 +7,14 @@ except ImportError:
 import numpy
 numpy.set_printoptions(linewidth=999)
 import numpy.testing as nptest
-from dss import DSS
-from dss.altdss.CircuitElement import CircuitElementMixin
-from dss.altdss.PDElement import PDElementMixin
-from dss.altdss.PCElement import PCElementMixin
-from dss.altdss.LoadShape import LoadShapeObjMixin
-from dss.altdss.Monitor import MonitorObjMixin
-from dss.altdss.Transformer import TransformerObjMixin
-from dss.altdss.EnergyMeter import EnergyMeterObjMixin
-
-altdss = DSS.AltDSS
+from altdss import altdss, AltDSS
+from altdss.CircuitElement import CircuitElementMixin
+from altdss.PDElement import PDElementMixin
+from altdss.PCElement import PCElementMixin
+from altdss.LoadShape import LoadShapeObjMixin
+from altdss.Monitor import MonitorObjMixin
+from altdss.Transformer import TransformerObjMixin
+from altdss.EnergyMeter import EnergyMeterObjMixin
 
 altdss(f'redirect "{BASE_DIR}/Version8/Distrib/IEEETestCases/13Bus/IEEE13Nodeckt.dss"')
 
@@ -43,13 +41,14 @@ altdss(f'redirect "{BASE_DIR}/Version8/Distrib/IEEETestCases/LVTestCase/Master.d
 
 errors = []
 
-for cname in DSS.Classes:
+dss = altdss.to_dss_python()
+for cname in dss.Classes:
     cls = getattr(altdss, cname)
     if not len(cls):
         continue
 
     print('=' * 40)
-    c = cls[1]
+    c = cls[0]
     for k in dir(c):
         if k.lower() in c._cls_prop_idx:
             print(f'{c.FullName()}.{k}={getattr(c, k)}')
@@ -207,6 +206,6 @@ print('=' * 40)
 print('=' * 40)
 
 
-# m1 = altdss.EnergyMeter[1]
+# m1 = altdss.EnergyMeter[0]
 # print(m1, m1.NumEndElements())
 # print(m1, m1.CalcCurrent)

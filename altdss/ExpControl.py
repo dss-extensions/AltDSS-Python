@@ -1,6 +1,6 @@
-# Copyright (c) 2021-2023 Paulo Meira
-# Copyright (c) 2021-2023 DSS-Extensions contributors
-from typing import Union, List, AnyStr, Optional
+# Copyright (c) 2021-2024 Paulo Meira
+# Copyright (c) 2021-2024 DSS-Extensions contributors
+from typing import Union, List, AnyStr, Optional, Iterator, TYPE_CHECKING
 from typing_extensions import TypedDict, Unpack
 from .types import Float64Array, Int32Array
 from . import enums
@@ -310,6 +310,10 @@ class ExpControlBatch(DSSBatch, CircuitElementBatchMixin):
        DSSBatch.__init__(self, api_util, **kwargs)
        CircuitElementBatchMixin.__init__(self)
 
+    if TYPE_CHECKING:
+        def __iter__(self) -> Iterator[ExpControl]:
+            yield from DSSBatch.__iter__(self)
+
     def _get_PVSystemList(self) -> List[List[str]]:
         """
         Array list of PVSystems to be controlled.
@@ -590,11 +594,20 @@ class IExpControl(IDSSObj, ExpControlBatch):
         IDSSObj.__init__(self, iobj, ExpControl, ExpControlBatch)
         ExpControlBatch.__init__(self, self._api_util, sync_cls_idx=ExpControl._cls_idx)
 
+    if TYPE_CHECKING:
+        def __getitem__(self, name_or_idx: Union[AnyStr, int]) -> ExpControl:
+            return self.find(name_or_idx)
 
-    # We need this one for better type hinting
-    def __getitem__(self, name_or_idx: Union[AnyStr, int]) -> ExpControl:
-        return self.find(name_or_idx)
+        def batch(self, **kwargs) -> ExpControlBatch:
+            """
+            Creates a new batch handler of (existing) ExpControl objects
+            """
+            return self._batch_cls(self._api_util, **kwargs)
 
+        def __iter__(self) -> Iterator[ExpControl]:
+            yield from ExpControlBatch.__iter__(self)
+
+        
     def new(self, name: AnyStr, begin_edit=True, activate=False, **kwargs: Unpack[ExpControlProperties]) -> ExpControl:
         return self._new(name, begin_edit=begin_edit, activate=activate, props=kwargs)
 

@@ -1,6 +1,6 @@
-# Copyright (c) 2021-2023 Paulo Meira
-# Copyright (c) 2021-2023 DSS-Extensions contributors
-from typing import Union, List, AnyStr, Optional
+# Copyright (c) 2021-2024 Paulo Meira
+# Copyright (c) 2021-2024 DSS-Extensions contributors
+from typing import Union, List, AnyStr, Optional, Iterator, TYPE_CHECKING
 from typing_extensions import TypedDict, Unpack
 from .types import Float64Array, Int32Array
 from . import enums
@@ -1013,7 +1013,7 @@ class Storage(DSSObj, CircuitElementMixin, PCElementMixin, ElementHasRegistersMi
 
     DynamicEq = property(_get_DynamicEq, _set_DynamicEq) # type: DynamicExp
 
-    def _get_DynOut(self) -> str:
+    def _get_DynOut(self) -> List[str]:
         """
         The name of the variables within the Dynamic equation that will be used to govern the Storage dynamics. This Storage model requires 1 output from the dynamic equation:
 
@@ -1023,12 +1023,14 @@ class Storage(DSSObj, CircuitElementMixin, PCElementMixin, ElementHasRegistersMi
 
         DSS property name: `DynOut`, DSS property index: 58.
         """
-        return self._get_prop_string(58)
+        return self._get_string_array(self._lib.Obj_GetStringArray, self._ptr, 58)
 
-    def _set_DynOut(self, value: AnyStr, flags: enums.SetterFlags = 0):
-        self._set_string_o(58, value, flags)
+    def _set_DynOut(self, value: List[AnyStr], flags: enums.SetterFlags = 0):
+        value, value_ptr, value_count = self._prepare_string_array(value)
+        self._lib.Obj_SetStringArray(self._ptr, 58, value_ptr, value_count, flags)
+        self._check_for_error()
 
-    DynOut = property(_get_DynOut, _set_DynOut) # type: str
+    DynOut = property(_get_DynOut, _set_DynOut) # type: List[str]
 
     def _get_ControlMode(self) -> enums.InverterControlMode:
         """
@@ -1214,7 +1216,7 @@ class StorageProperties(TypedDict):
     SafeVoltage: float
     SafeMode: bool
     DynamicEq: Union[AnyStr, DynamicExp]
-    DynOut: AnyStr
+    DynOut: List[AnyStr]
     ControlMode: Union[AnyStr, int, enums.InverterControlMode]
     AmpLimit: float
     AmpLimitGain: float
@@ -1232,6 +1234,10 @@ class StorageBatch(DSSBatch, CircuitElementBatchMixin, PCElementBatchMixin):
        DSSBatch.__init__(self, api_util, **kwargs)
        CircuitElementBatchMixin.__init__(self)
        PCElementBatchMixin.__init__(self)
+
+    if TYPE_CHECKING:
+        def __iter__(self) -> Iterator[Storage]:
+            yield from DSSBatch.__iter__(self)
 
     def _get_Phases(self) -> BatchInt32ArrayProxy:
         """
@@ -2134,7 +2140,7 @@ class StorageBatch(DSSBatch, CircuitElementBatchMixin, PCElementBatchMixin):
 
     DynamicEq = property(_get_DynamicEq, _set_DynamicEq) # type: List[DynamicExp]
 
-    def _get_DynOut(self) -> List[str]:
+    def _get_DynOut(self) -> List[List[str]]:
         """
         The name of the variables within the Dynamic equation that will be used to govern the Storage dynamics. This Storage model requires 1 output from the dynamic equation:
 
@@ -2144,12 +2150,16 @@ class StorageBatch(DSSBatch, CircuitElementBatchMixin, PCElementBatchMixin):
 
         DSS property name: `DynOut`, DSS property index: 58.
         """
-        return self._get_batch_str_prop(58)
+        return self._get_string_ll(58)
 
-    def _set_DynOut(self, value: Union[AnyStr, List[AnyStr]], flags: enums.SetterFlags = 0):
-        self._set_batch_string(58, value, flags)
+    def _set_DynOut(self, value: List[AnyStr], flags: enums.SetterFlags = 0):
+        value, value_ptr, value_count = self._prepare_string_array(value)
+        for x in self._unpack():
+            self._lib.Obj_SetStringArray(x, 58, value_ptr, value_count, flags)
 
-    DynOut = property(_get_DynOut, _set_DynOut) # type: List[str]
+        self._check_for_error()
+
+    DynOut = property(_get_DynOut, _set_DynOut) # type: List[List[str]]
 
     def _get_ControlMode(self) -> BatchInt32ArrayProxy:
         """
@@ -2333,7 +2343,7 @@ class StorageBatchProperties(TypedDict):
     SafeVoltage: Union[float, Float64Array]
     SafeMode: bool
     DynamicEq: Union[AnyStr, DynamicExp, List[AnyStr], List[DynamicExp]]
-    DynOut: Union[AnyStr, List[AnyStr]]
+    DynOut: List[AnyStr]
     ControlMode: Union[AnyStr, int, enums.InverterControlMode, List[AnyStr], List[int], List[enums.InverterControlMode], Int32Array]
     AmpLimit: Union[float, Float64Array]
     AmpLimitGain: Union[float, Float64Array]
@@ -2349,11 +2359,20 @@ class IStorage(IDSSObj, StorageBatch):
         IDSSObj.__init__(self, iobj, Storage, StorageBatch)
         StorageBatch.__init__(self, self._api_util, sync_cls_idx=Storage._cls_idx)
 
+    if TYPE_CHECKING:
+        def __getitem__(self, name_or_idx: Union[AnyStr, int]) -> Storage:
+            return self.find(name_or_idx)
 
-    # We need this one for better type hinting
-    def __getitem__(self, name_or_idx: Union[AnyStr, int]) -> Storage:
-        return self.find(name_or_idx)
+        def batch(self, **kwargs) -> StorageBatch:
+            """
+            Creates a new batch handler of (existing) Storage objects
+            """
+            return self._batch_cls(self._api_util, **kwargs)
 
+        def __iter__(self) -> Iterator[Storage]:
+            yield from StorageBatch.__iter__(self)
+
+        
     def new(self, name: AnyStr, begin_edit=True, activate=False, **kwargs: Unpack[StorageProperties]) -> Storage:
         return self._new(name, begin_edit=begin_edit, activate=activate, props=kwargs)
 

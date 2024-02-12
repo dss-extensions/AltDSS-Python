@@ -1,6 +1,6 @@
-# Copyright (c) 2023 Paulo Meira
-# Copyright (c) 2023 DSS-Extensions contributors
-from typing import Union, List, AnyStr, Optional
+# Copyright (c) 2023-2024 Paulo Meira
+# Copyright (c) 2023-2024 DSS-Extensions contributors
+from typing import Union, Iterator
 from dss.enums import DSSJSONFlags
 from .types import Float64Array, Int32Array, ComplexArray
 from .common import Base, InvalidatedBus
@@ -87,12 +87,12 @@ class Bus:
     @property
     def NumCustomers(self) -> int:
         '''Total numbers of customers served downline from this bus'''
-        return self._lib.Alt_Bus_Get_N_Customers(self._ptr)
+        return self._lib.Alt_Bus_Get_NumCustomers(self._ptr)
 
     @property
     def NumInterrupts(self) -> float:
         '''Number of interruptions on this bus per year'''
-        return self._lib.Alt_Bus_Get_N_interrupts(self._ptr)
+        return self._lib.Alt_Bus_Get_NumInterrupts(self._ptr)
 
     @property
     def Name(self) -> str:
@@ -259,14 +259,14 @@ class BusBatch(Base):
         return self._get_float64_array(
             self._lib.Alt_BusBatch_GetFloat64FromFunc, 
             *self._get_ptr_cnt(),
-            self._ffi.addressof(self._api_util.lib_unpatched, fname)
+            self._api_util.ffi.addressof(self._api_util.lib_unpatched, fname)
         )
 
     def _busbatch_int32(self, fname: str):
         return self._get_int32_array(
             self._lib.Alt_BusBatch_GetInt32FromFunc, 
             *self._get_ptr_cnt(),
-            self._ffi.addressof(self._api_util.lib_unpatched, fname)
+            self._api_util.ffi.addressof(self._api_util.lib_unpatched, fname)
         )
 
     def X(self) -> Float64Array:
@@ -299,11 +299,11 @@ class BusBatch(Base):
 
     def NumCustomers(self) -> Int32Array:
         '''For each bus in the batch: total numbers of customers served downline from the bus'''
-        return self._busbatch_int32('Alt_Bus_Get_N_Customers')
+        return self._busbatch_int32('Alt_Bus_Get_NumCustomers')
 
     def NumInterrupts(self) -> Float64Array:
         '''For each bus in the batch: number of interruptions on the bus per year'''
-        return self._busbatch_float64('Alt_Bus_Get_N_interrupts')
+        return self._busbatch_float64('Alt_Bus_Get_NumInterrupts')
 
     def NumNodes(self) -> Int32Array:
         '''For each bus in the batch: number of nodes in the bus.'''
@@ -337,11 +337,11 @@ class BusBatch(Base):
     def __call__(self, index: Union[int, str]) -> Bus:
         return self.__getitem__(index)
 
-    def __len__(self):
+    def __len__(self) -> int:
         '''Total number of buses in the circuit.'''
         return self._lib.Circuit_Get_NumBuses()
     
-    def __iter__(self):
+    def __iter__(self) -> Iterator[Bus]:
         ptrList, cnt = self._get_ptr_cnt()
         for n in range(cnt):
             yield Bus(self._api_util, ptrList[n])
@@ -370,12 +370,12 @@ class IBuses(BusBatch):
             # bus index is zero based (externally), pass it directly
             return Bus(self._api_util, self._lib.Alt_Bus_GetByIndex(index))
         else:
-            if type(index) is not bytes:
+            if not isinstance(index, bytes):
                 index = index.encode(self._api_util.codec)
 
             return Bus(self._api_util, self._lib.Alt_Bus_GetByName(index))
 
-    def __len__(self):
+    def __len__(self) -> int:
         '''Total number of buses in the circuit.'''
         return self._lib.Circuit_Get_NumBuses()
     

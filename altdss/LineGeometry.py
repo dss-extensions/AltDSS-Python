@@ -1,6 +1,6 @@
-# Copyright (c) 2021-2023 Paulo Meira
-# Copyright (c) 2021-2023 DSS-Extensions contributors
-from typing import Union, List, AnyStr, Optional
+# Copyright (c) 2021-2024 Paulo Meira
+# Copyright (c) 2021-2024 DSS-Extensions contributors
+from typing import Union, List, AnyStr, Optional, Iterator, TYPE_CHECKING
 from typing_extensions import TypedDict, Unpack
 from .types import Float64Array, Int32Array
 from . import enums
@@ -325,6 +325,10 @@ class LineGeometryBatch(DSSBatch):
     _cls_idx = 13
 
 
+    if TYPE_CHECKING:
+        def __iter__(self) -> Iterator[LineGeometry]:
+            yield from DSSBatch.__iter__(self)
+
     def _get_NConds(self) -> BatchInt32ArrayProxy:
         """
         Number of conductors in this geometry. Default is 3. Triggers memory allocations. Define first!
@@ -619,11 +623,20 @@ class ILineGeometry(IDSSObj, LineGeometryBatch):
         IDSSObj.__init__(self, iobj, LineGeometry, LineGeometryBatch)
         LineGeometryBatch.__init__(self, self._api_util, sync_cls_idx=LineGeometry._cls_idx)
 
+    if TYPE_CHECKING:
+        def __getitem__(self, name_or_idx: Union[AnyStr, int]) -> LineGeometry:
+            return self.find(name_or_idx)
 
-    # We need this one for better type hinting
-    def __getitem__(self, name_or_idx: Union[AnyStr, int]) -> LineGeometry:
-        return self.find(name_or_idx)
+        def batch(self, **kwargs) -> LineGeometryBatch:
+            """
+            Creates a new batch handler of (existing) LineGeometry objects
+            """
+            return self._batch_cls(self._api_util, **kwargs)
 
+        def __iter__(self) -> Iterator[LineGeometry]:
+            yield from LineGeometryBatch.__iter__(self)
+
+        
     def new(self, name: AnyStr, begin_edit=True, activate=False, **kwargs: Unpack[LineGeometryProperties]) -> LineGeometry:
         return self._new(name, begin_edit=begin_edit, activate=activate, props=kwargs)
 

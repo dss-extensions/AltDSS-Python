@@ -1,3 +1,4 @@
+from typing import Iterator
 from .types import Float64Array, Int32Array
 from .PCElement import PCElementBatch
 from .CircuitElement import CircuitElementBatch
@@ -83,10 +84,10 @@ class MeterSections:
 
     __getitem__ = __call__
 
-    def __len__(self):
+    def __len__(self) -> int:
         return self._meter.NumSections()
 
-    def __iter__(self):
+    def __iter__(self) -> Iterator[MeterSection]:
         for idx in range(1, self._meter.NumSections() + 1):
             yield self[idx]
 

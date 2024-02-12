@@ -1,6 +1,6 @@
-# Copyright (c) 2021-2023 Paulo Meira
-# Copyright (c) 2021-2023 DSS-Extensions contributors
-from typing import Union, List, AnyStr, Optional
+# Copyright (c) 2021-2024 Paulo Meira
+# Copyright (c) 2021-2024 DSS-Extensions contributors
+from typing import Union, List, AnyStr, Optional, Iterator, TYPE_CHECKING
 from typing_extensions import TypedDict, Unpack
 from .types import Float64Array, Int32Array
 from . import enums
@@ -749,7 +749,7 @@ class Generator(DSSObj, CircuitElementMixin, PCElementMixin, ElementHasRegisters
 
     DynamicEq = property(_get_DynamicEq, _set_DynamicEq) # type: DynamicExp
 
-    def _get_DynOut(self) -> str:
+    def _get_DynOut(self) -> List[str]:
         """
         The name of the variables within the Dynamic equation that will be used to govern the generator dynamics.This generator model requires 2 outputs from the dynamic equation: 
 
@@ -760,12 +760,14 @@ class Generator(DSSObj, CircuitElementMixin, PCElementMixin, ElementHasRegisters
 
         DSS property name: `DynOut`, DSS property index: 44.
         """
-        return self._get_prop_string(44)
+        return self._get_string_array(self._lib.Obj_GetStringArray, self._ptr, 44)
 
-    def _set_DynOut(self, value: AnyStr, flags: enums.SetterFlags = 0):
-        self._set_string_o(44, value, flags)
+    def _set_DynOut(self, value: List[AnyStr], flags: enums.SetterFlags = 0):
+        value, value_ptr, value_count = self._prepare_string_array(value)
+        self._lib.Obj_SetStringArray(self._ptr, 44, value_ptr, value_count, flags)
+        self._check_for_error()
 
-    DynOut = property(_get_DynOut, _set_DynOut) # type: str
+    DynOut = property(_get_DynOut, _set_DynOut) # type: List[str]
 
     def _get_Spectrum_str(self) -> str:
         """
@@ -877,7 +879,7 @@ class GeneratorProperties(TypedDict):
     pctReserve: float
     Refuel: bool
     DynamicEq: Union[AnyStr, DynamicExp]
-    DynOut: AnyStr
+    DynOut: List[AnyStr]
     Spectrum: Union[AnyStr, SpectrumObj]
     BaseFreq: float
     Enabled: bool
@@ -892,6 +894,10 @@ class GeneratorBatch(DSSBatch, CircuitElementBatchMixin, PCElementBatchMixin):
        DSSBatch.__init__(self, api_util, **kwargs)
        CircuitElementBatchMixin.__init__(self)
        PCElementBatchMixin.__init__(self)
+
+    if TYPE_CHECKING:
+        def __iter__(self) -> Iterator[Generator]:
+            yield from DSSBatch.__iter__(self)
 
     def _get_Phases(self) -> BatchInt32ArrayProxy:
         """
@@ -1559,7 +1565,7 @@ class GeneratorBatch(DSSBatch, CircuitElementBatchMixin, PCElementBatchMixin):
 
     DynamicEq = property(_get_DynamicEq, _set_DynamicEq) # type: List[DynamicExp]
 
-    def _get_DynOut(self) -> List[str]:
+    def _get_DynOut(self) -> List[List[str]]:
         """
         The name of the variables within the Dynamic equation that will be used to govern the generator dynamics.This generator model requires 2 outputs from the dynamic equation: 
 
@@ -1570,12 +1576,16 @@ class GeneratorBatch(DSSBatch, CircuitElementBatchMixin, PCElementBatchMixin):
 
         DSS property name: `DynOut`, DSS property index: 44.
         """
-        return self._get_batch_str_prop(44)
+        return self._get_string_ll(44)
 
-    def _set_DynOut(self, value: Union[AnyStr, List[AnyStr]], flags: enums.SetterFlags = 0):
-        self._set_batch_string(44, value, flags)
+    def _set_DynOut(self, value: List[AnyStr], flags: enums.SetterFlags = 0):
+        value, value_ptr, value_count = self._prepare_string_array(value)
+        for x in self._unpack():
+            self._lib.Obj_SetStringArray(x, 44, value_ptr, value_count, flags)
 
-    DynOut = property(_get_DynOut, _set_DynOut) # type: List[str]
+        self._check_for_error()
+
+    DynOut = property(_get_DynOut, _set_DynOut) # type: List[List[str]]
 
     def _get_Spectrum_str(self) -> List[str]:
         """
@@ -1684,7 +1694,7 @@ class GeneratorBatchProperties(TypedDict):
     pctReserve: Union[float, Float64Array]
     Refuel: bool
     DynamicEq: Union[AnyStr, DynamicExp, List[AnyStr], List[DynamicExp]]
-    DynOut: Union[AnyStr, List[AnyStr]]
+    DynOut: List[AnyStr]
     Spectrum: Union[AnyStr, SpectrumObj, List[AnyStr], List[SpectrumObj]]
     BaseFreq: Union[float, Float64Array]
     Enabled: bool
@@ -1697,11 +1707,20 @@ class IGenerator(IDSSObj, GeneratorBatch):
         IDSSObj.__init__(self, iobj, Generator, GeneratorBatch)
         GeneratorBatch.__init__(self, self._api_util, sync_cls_idx=Generator._cls_idx)
 
+    if TYPE_CHECKING:
+        def __getitem__(self, name_or_idx: Union[AnyStr, int]) -> Generator:
+            return self.find(name_or_idx)
 
-    # We need this one for better type hinting
-    def __getitem__(self, name_or_idx: Union[AnyStr, int]) -> Generator:
-        return self.find(name_or_idx)
+        def batch(self, **kwargs) -> GeneratorBatch:
+            """
+            Creates a new batch handler of (existing) Generator objects
+            """
+            return self._batch_cls(self._api_util, **kwargs)
 
+        def __iter__(self) -> Iterator[Generator]:
+            yield from GeneratorBatch.__iter__(self)
+
+        
     def new(self, name: AnyStr, begin_edit=True, activate=False, **kwargs: Unpack[GeneratorProperties]) -> Generator:
         return self._new(name, begin_edit=begin_edit, activate=activate, props=kwargs)
 

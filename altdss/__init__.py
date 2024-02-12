@@ -8,7 +8,7 @@ One recent change, as planned, was to adjust the spelling of many properties; `n
 `kv` became `kV`, and so on. This is still open to suggestions, since we also considered forcing 
 camelCase instead of PascalCase. There is no common naming convention in the OpenDSS properties
 across different components and we could not reach a great solution yet changing only the capitalization. 
-Note that a plain snake_case convention, forcing all lower-case characters, does not benefit us since it
+Note that a plain `snake_case` convention, forcing all lower-case characters, does not benefit us since it
 obfuscates important information, besides deviating too much from the OpenDSS property names in the 
 input data.
 
@@ -19,5 +19,12 @@ develop a mechanism to ensure the dimensions match.
 
 from .enums import *
 from .Obj import *
-from .common import Edit
-from .AltDSS import IAltDSS
+from .common import Edit, DSSException
+from .AltDSS import AltDSS
+from dss import prime_api_util
+try:
+    from ._version import __version__
+except:
+    __version__ = '0.0dev'
+
+altdss = AltDSS(prime_api_util)

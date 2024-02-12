@@ -1,10 +1,5 @@
-'''
-A compatibility layer for DSS C-API that mimics the official OpenDSS COM interface.
-
-Copyright (c) 2016-2022 Paulo Meira
-
-Copyright (c) 2018-2022 DSS-Extensions contributors
-'''
+# Copyright (c) 2016-2024 Paulo Meira
+# Copyright (c) 2018-2024 DSS-Extensions contributors
 from .common import Base
 from .types import Float64Array, Int32Array
 from typing import AnyStr
@@ -38,7 +33,7 @@ class ISettings(Base):
     @property
     def AllowDuplicates(self) -> bool:
         '''
-        {True | False*} Designates whether to allow duplicate names of objects
+        Designates whether to allow duplicate names of objects
         
         **NOTE**: for DSS-Extensions, we are considering removing this option in a future 
         release since it has performance impacts even when not used.
@@ -56,7 +51,7 @@ class ISettings(Base):
 
     @AutoBusList.setter
     def AutoBusList(self, Value: AnyStr):
-        if type(Value) is not bytes:
+        if not isinstance(Value, bytes):
             Value = Value.encode(self._api_util.codec)
 
         self._check_for_error(self._lib.Settings_Set_AutoBusList(Value))
@@ -142,7 +137,7 @@ class ISettings(Base):
 
     @PriceCurve.setter
     def PriceCurve(self, Value: AnyStr):
-        if type(Value) is not bytes:
+        if not isinstance(Value, bytes):
             Value = Value.encode(self._api_util.codec)
 
         self._check_for_error(self._lib.Settings_Set_PriceCurve(Value))
@@ -344,7 +339,7 @@ class ISettings(Base):
 
     @DataPath.setter
     def DataPath(self, Value: AnyStr):
-        if type(Value) is not bytes:
+        if not isinstance(Value, bytes):
             Value = Value.encode(self._api_util.codec)
 
         self._check_for_error(self._lib.DSS_Set_DataPath(Value))
@@ -357,3 +352,68 @@ class ISettings(Base):
     def SetPropertyNameStyle(self, value: DSSPropertyNameStyle):
         '''Switch the property names according'''
         self._check_for_error(self._lib.Settings_SetPropertyNameStyle(value))
+
+    @property
+    def AllowChangeDir(self) -> bool:
+        '''
+        If disabled, the engine will not change the active working directory during execution. E.g. a "compile"
+        command will not "chdir" to the file path.
+        
+        If you have issues with long paths, enabling this might help in some scenarios.
+        
+        Defaults to True (allow changes, backwards compatible) in the 0.10.x versions of DSS C-API. 
+        This might change to False in future versions.
+        
+        This can also be set through the environment variable DSS_CAPI_ALLOW_CHANGE_DIR. Set it to 0 to
+        disallow changing the active working directory.
+        
+        **(API Extension)**
+        '''
+        return self._check_for_error(self._lib.DSS_Get_AllowChangeDir()) != 0
+
+    @AllowChangeDir.setter
+    def AllowChangeDir(self, Value: bool):
+        self._check_for_error(self._lib.DSS_Set_AllowChangeDir(Value))
+
+    @property
+    def AllowDOScmd(self) -> bool:
+        '''
+        If enabled, the `DOScmd` command is allowed. Otherwise, an error is reported if the user tries to use it.
+
+        Defaults to False/0 (disabled state). Users should consider DOScmd deprecated on DSS-Extensions.
+
+        This can also be set through the environment variable DSS_CAPI_ALLOW_DOSCMD. Setting it to 1 enables
+        the command.
+
+        **(API Extension)**
+        '''
+        return self._check_for_error(self._lib.DSS_Get_AllowDOScmd()) != 0
+
+    @AllowDOScmd.setter
+    def AllowDOScmd(self, Value: bool):
+        self._check_for_error(self._lib.DSS_Set_AllowDOScmd(Value))
+
+    @property
+    def COMErrorResults(self) -> bool:
+        '''
+        If enabled, in case of errors or empty arrays, the API returns arrays with values compatible with the 
+        official OpenDSS COM interface. 
+
+        For example, consider the function `Loads_Get_ZIPV`. If there is no active circuit or active load element:
+
+        - In the disabled state (COMErrorResults=False), the function will return "[]", an array with 0 elements.
+        - In the enabled state (COMErrorResults=True), the function will return "[0.0]" instead. This should
+        be compatible with the return value of the official COM interface.
+
+        Defaults to True/1 (enabled state) in the v0.12.x series. This will change to false in future series.
+
+        This can also be set through the environment variable `DSS_CAPI_COM_DEFAULTS`. Setting it to 0 disables
+        the legacy/COM behavior. The value can be toggled through the API at any time.
+
+        **(API Extension)**
+        '''
+        return self._check_for_error(self._lib.DSS_Get_COMErrorResults()) != 0
+
+    @COMErrorResults.setter
+    def COMErrorResults(self, Value: bool):
+        self._check_for_error(self._lib.DSS_Set_COMErrorResults(Value))

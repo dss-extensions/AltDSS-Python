@@ -1,28 +1,31 @@
-import os, io
+import io, json
 try:
     from ._settings import BASE_DIR, WIN32
 except ImportError:
     from _settings import BASE_DIR, WIN32
-# import numpy as np
+import numpy as np
 import pandas as pd
 if WIN32:
     # When running pytest, the faulthandler seems too eager to grab FPC's exceptions, even when handled
     import faulthandler
     faulthandler.disable()
-    import dss
+    import altdss
     faulthandler.enable()
 else:
-    import dss
+    import altdss
 
-from dss import dss, Edit, IDSS, set_case_insensitive_attributes
+from dss import set_case_insensitive_attributes, IDSS
+from altdss import Edit, AltDSS, altdss, SetterFlags
 
-from dss.altdss import (
+from altdss import (
     Vsource, Transformer, LineCode, Load, Line, Capacitor,
     Connection as Conn, RegControl, LengthUnit as Units,
-    LoadModel
+    LoadModel, DSSException
 )
+from dss_python_backend.enums import SparseSolverOptions
+import pytest as pt
 
-loads_cols = 'name,bus1,phases,conn,model,kV,kW,kvar'.split(',')
+loads_cols = 'name,Bus1,Phases,Conn,Model,kV,kW,kvar'.split(',')
 loads_data = (
     ('671', '671.1.2.3', 3, Conn.delta, LoadModel.ConstantPQ, 4.16, 1155, 660),
     ('634a', '634.1', 1, Conn.wye, LoadModel.ConstantPQ, 0.277, 160, 110),
@@ -41,7 +44,7 @@ loads_data = (
     ('670c', '670.3', 1, Conn.wye, LoadModel.ConstantPQ, 2.4, 117, 68),
 )
 
-lines_cols = 'name,phases,bus1,bus2,linecode,length,units'.split(',')
+lines_cols = 'name,Phases,Bus1,Bus2,LineCode,Length,Units'.split(',')
 lines_data = (
     ('650632', 3, 'RG60.1.2.3', '632.1.2.3', 'mtx601', 2000, Units.ft),
     ('632670', 3, '632.1.2.3', '670.1.2.3', 'mtx601', 667, Units.ft),
@@ -56,7 +59,7 @@ lines_data = (
     ('684652', 1, '684.1', '652.1', 'mtx607', 800, Units.ft),
 )
 
-loads_data_csv = '''name,bus1,phases,conn,model,kV,kW,kvar
+loads_data_csv = '''name,Bus1,Phases,Conn,Model,kV,kW,kvar
 671,671.1.2.3,3,delta,1,4.16,1155,660
 634a,634.1,1,wye,1,0.277,160,110
 634b,634.2,1,wye,1,0.277,120,90
@@ -74,7 +77,7 @@ loads_data_csv = '''name,bus1,phases,conn,model,kV,kW,kvar
 670c,670.3,1,wye,1,2.4,117,68
 ''' 
 
-lines_data_csv = '''name,phases,bus1,bus2,linecode,length,units
+lines_data_csv = '''name,Phases,Bus1,Bus2,LineCode,Length,Units
 650632,3,RG60.1.2.3,632.1.2.3,mtx601,2000,ft
 632670,3,632.1.2.3,670.1.2.3,mtx601,667,ft
 670671,3,670.1.2.3,671.1.2.3,mtx601,1333,ft
@@ -95,23 +98,22 @@ def teardown_function():
     set_case_insensitive_attributes(False, False)
 
 def create_ref_ckt13(ref):
-    ref.Text.Command = f'redirect "{BASE_DIR}/Version8/Distrib/IEEETestCases/13Bus/IEEE13Nodeckt.dss"'
+    ref(f'redirect "{BASE_DIR}/Version8/Distrib/IEEETestCases/13Bus/IEEE13Nodeckt.dss"')
 
-def create_ckt13_batch_attr(dss: IDSS):
+def create_ckt13_batch_attr(dss: AltDSS):
     dss.ClearAll()
-    dss.NewCircuit('IEEE13Nodeckt')
-    dss.AdvancedTypes = True
+    dss('new circuit.IEEE13Nodeckt')
+    dss.Settings.AdvancedTypes = True
 
     # Get some local names for cleaner syntax
-    Obj = dss.Obj
-    LineCode = Obj.LineCode
-    Line = Obj.Line
-    Load = Obj.Load
-    Transformer = Obj.Transformer
-    Capacitor = Obj.Capacitor
-    RegControl = Obj.RegControl
+    LineCode = dss.LineCode
+    Line = dss.Line
+    Load = dss.Load
+    Transformer = dss.Transformer
+    Capacitor = dss.Capacitor
+    RegControl = dss.RegControl
 
-    src: Vsource = Obj.Vsource[1]
+    src: Vsource = dss.Vsource[0]
     with Edit(src):
         src.basekv = 115
         src.pu = 1.0001
@@ -187,26 +189,25 @@ def create_ckt13_batch_attr(dss: IDSS):
     # Switch
     Line.new('671692', phases=3, bus1='671', bus2='692', Switch=True, r1=1e-4, r0=1e-4, x1=0.0, x0=0.0, C1=0.0, C0=0.0)
 
-    dss.Text.Command = 'Set VoltageBases=[115, 4.16, .48]'
-    dss.Text.Command = 'CalcV'
-    dss.ActiveCircuit.Solution.Solve()
+    dss.Settings.VoltageBases = [115, 4.16, .48]
+    dss('CalcV')
+    dss.Solution.Solve()
 
 
-def create_ckt13_batch_new(dss: IDSS):
+def create_ckt13_batch_new(dss: AltDSS):
     dss.ClearAll()
-    dss.NewCircuit('IEEE13Nodeckt')
-    dss.AdvancedTypes = True
+    dss('new circuit.IEEE13Nodeckt')
+    dss.Settings.AdvancedTypes = True
 
     # Get some local names for cleaner syntax
-    Obj = dss.Obj
-    LineCode = Obj.LineCode
-    Line = Obj.Line
-    Load = Obj.Load
-    Transformer = Obj.Transformer
-    Capacitor = Obj.Capacitor
-    RegControl = Obj.RegControl
+    LineCode = dss.LineCode
+    Line = dss.Line
+    Load = dss.Load
+    Transformer = dss.Transformer
+    Capacitor = dss.Capacitor
+    RegControl = dss.RegControl
 
-    src: Vsource = Obj.Vsource[1]
+    src: Vsource = dss.Vsource[0]
     with Edit(src):
         src.basekv = 115
         src.pu = 1.0001
@@ -264,26 +265,25 @@ def create_ckt13_batch_new(dss: IDSS):
     # Switch
     Line.new('671692', phases=3, bus1='671', bus2='692', Switch=True, r1=1e-4, r0=1e-4, x1=0.0, x0=0.0, C1=0.0, C0=0.0)
 
-    dss.Text.Command = 'Set VoltageBases=[115, 4.16, .48]'
-    dss.Text.Command = 'CalcV'
-    dss.ActiveCircuit.Solution.Solve()
+    dss.Settings.VoltageBases = [115, 4.16, .48]
+    dss('CalcV')
+    dss.Solution.Solve()
 
 
-def create_ckt13_batch_df(dss: IDSS):
+def create_ckt13_batch_df(dss: AltDSS):
     dss.ClearAll()
-    dss.NewCircuit('IEEE13Nodeckt')
-    dss.AdvancedTypes = True
+    dss('new circuit.IEEE13Nodeckt')
+    dss.Settings.AdvancedTypes = True
 
     # Get some local names for cleaner syntax
-    Obj = dss.Obj
-    LineCode = Obj.LineCode
-    Line = Obj.Line
-    Load = Obj.Load
-    Transformer = Obj.Transformer
-    Capacitor = Obj.Capacitor
-    RegControl = Obj.RegControl
+    LineCode = dss.LineCode
+    Line = dss.Line
+    Load = dss.Load
+    Transformer = dss.Transformer
+    Capacitor = dss.Capacitor
+    RegControl = dss.RegControl
 
-    src: Vsource = Obj.Vsource[1]
+    src: Vsource = dss.Vsource[0]
     with Edit(src):
         src.basekv = 115
         src.pu = 1.0001
@@ -346,28 +346,26 @@ def create_ckt13_batch_df(dss: IDSS):
     # Switch
     Line.new('671692', phases=3, bus1='671', bus2='692', Switch=True, r1=1e-4, r0=1e-4, x1=0.0, x0=0.0, C1=0.0, C0=0.0)
 
-    dss.Text.Command = 'Set VoltageBases=[115, 4.16, .48]'
-    dss.Text.Command = 'CalcV'
-    dss.ActiveCircuit.Solution.Solve()
+    dss.Settings.VoltageBases = [115, 4.16, .48]
+    dss('CalcV')
+    dss.Solution.Solve()
 
-# def create_from_dump(dss: IDSS):
+# def create_from_dump(dss: AltDSS):
 #     # Try exporting as dataframes from JSON and reading back.
 #     # NOT RECOMMENDED, but may work in most common scenarios.
 
 #     dss.ClearAll()
-#     Obj = dss.Obj
-
-#     ref: IDSS = dss.NewContext()
+#     ref: IDSS = dss.NewContext().to_dss_python()
 #     create_ref_ckt13(ref)
 
-#     dss.NewCircuit('IEEE13Nodeckt')
+#     dss('new circuit.IEEE13Nodeckt')
 
 #     # Vsource is special since the circuit always creates the first one
-#     src: Vsource = Obj.Vsource[1]
+#     src: Vsource = dss.Vsource[0]
 #     _ = ref.ActiveCircuit.Vsources.First
 #     ref_vsource = json.loads(ref.ActiveCircuit.ActiveDSSElement.ToJSON())
-#     del ref_vsource['DSSClass']
-#     del ref_vsource['name']
+#     # del ref_vsource['DSSClass']
+#     del ref_vsource['Name']
 #     with Edit(src):
 #         #NOTE: this wouldn't handle properties like %..., etc.
 #         for prop_name, prop_value in ref_vsource.items():
@@ -375,9 +373,7 @@ def create_ckt13_batch_df(dss: IDSS):
 
 #     for clsname in ref.Classes:
 #         ref.SetActiveClass(clsname)
-#         # This will dump every single property. Not the best idea in general for
-#         # reimporting, but we should test it anyway.
-#         df = pd.read_json(ref.ActiveClass.ToJSON(DSSJSONFlags.Full))
+#         df = pd.read_json(ref.ActiveClass.ToJSON(), dtype_backend='pyarrow')
 
 #         if clsname == 'Vsource':
 #             if len(df) == 1:
@@ -389,8 +385,10 @@ def create_ckt13_batch_df(dss: IDSS):
 #             continue
 
 #         # Handle some column issues
-#         del df['DSSClass']
-#         del df['like']
+#         for col in ['DSSClass', 'Like']:
+#             if col in df.columns:
+#                 del df[col]
+
 #         for col in df.columns:
 #             c = df[col]
 #             if col.lower().endswith('file') or c.isna().all():
@@ -407,75 +405,215 @@ def create_ckt13_batch_df(dss: IDSS):
 
 #         print(clsname)
 
-#         ObjCls = getattr(Obj, clsname)
+#         ObjCls = getattr(dss, clsname)
 #         print(df.T)
 #         print(df.dtypes)
 #         ObjCls.batch_new(df=df)
        
-#         dss.ActiveCircuit.Settings.VoltageBases = ref.ActiveCircuit.Settings.VoltageBases
-#         dss.Text.Command = 'CalcV'
-#         dss.ActiveCircuit.Solution.Solve()
+#         dss.Settings.VoltageBases = ref.ActiveCircuit.Settings.VoltageBases
+#         dss('CalcV')
+#         dss.Solution.Solve()
+
+def test_loads_no_yprim():
+    from dss import dss as dss_prime
+
+    classic = dss_prime.NewContext()
+    alt = altdss.NewContext()
+    alt2 = altdss.NewContext()
+
+    # Use classic API to set kW
+    create_ref_ckt13(classic)
+    # classic.YMatrix.SolverOptions = SparseSolverOptions.AlwaysResetYPrimInvalid
+    # classic.ActiveCircuit.Solution.Solve()
+    for load in classic.ActiveCircuit.Loads:
+        load.kW *= 1.1
+
+    classic.ActiveCircuit.Solution.Solve()
+
+    # Use proxy with AvoidFullRecalc to skip Yprim updates
+    # like in the classic API
+    create_ref_ckt13(alt)
+    # alt.YMatrix.SolverOptions = SparseSolverOptions.AlwaysResetYPrimInvalid
+    # alt.Solution.Solve()
+
+    alt.Load.kW.imul(1.1, SetterFlags.AvoidFullRecalc)
+
+    alt.Solution.Solve()
+    np.testing.assert_array_equal(
+        classic.ActiveCircuit.SystemY.view(dtype=complex).ravel(), 
+        alt.SystemY(dense=True).ravel()
+    )
+    np.testing.assert_array_equal(classic.ActiveCircuit.AllBusVmag, alt.BusVmag())
+
+    # Use set_kW with AvoidFullRecalc to skip Yprim updates
+    # like in the classic API
+    create_ref_ckt13(alt2)
+    # alt2.YMatrix.SolverOptions = SparseSolverOptions.AlwaysResetYPrimInvalid
+    # alt2.Solution.Solve()
+
+    for load in alt2.Load:
+        load._set_kW(load.kW * 1.1, SetterFlags.AvoidFullRecalc)
+
+    alt2.Solution.Solve()
+    np.testing.assert_array_equal(
+        classic.ActiveCircuit.SystemY.view(dtype=complex).ravel(), 
+        alt2.SystemY(dense=True).ravel()
+    )
+    np.testing.assert_array_equal(classic.ActiveCircuit.AllBusVmag, alt2.BusVmag())
+
+
+def test_loads_float_na():
+    alt1 = altdss.NewContext()
+    alt2 = altdss.NewContext()
+    create_ref_ckt13(alt1)
+    create_ref_ckt13(alt2)
+
+    # Generate some test data -- half the loads are multiplied by 1.1
+    mults = np.asarray([1.1] * len(alt1.Load))
+    mults[0:len(alt1.Load) // 2] = np.NaN
+    kWs = alt1.Load.kW * mults
+
+    for kW, load in zip(kWs, alt1.Load):
+        if not np.isnan(kW):
+            load.kW = kW
+
+    alt2.Load._set_kW(kWs, SetterFlags.SkipNA)
+
+    for l1, l2 in zip(alt1.Load, alt2.Load):
+        assert l1.kW == l2.kW
+
+    alt1.Solution.Solve()
+    alt2.Solution.Solve()
+    np.testing.assert_array_equal(alt1.BusVolts(), alt2.BusVolts())
+
+
+def test_loads_int_na():
+    NA = 0x7fffffff
+    alt1 = altdss.NewContext()
+    alt2 = altdss.NewContext()
+    create_ref_ckt13(alt1)
+    create_ref_ckt13(alt2)
+
+    # Generate some test data -- increasing class numbers, alternating NA
+    load_classes = np.array(range(len(alt1.Load)), dtype=np.int32)
+    
+    load_classes[::2] = NA
+
+    for load_cls, load in zip(load_classes, alt1.Load):
+        if load_cls != NA:
+            load.Class = load_cls
+
+    alt2.Load._set_Class(load_classes, SetterFlags.SkipNA)
+
+    for l1, l2 in zip(alt1.Load, alt2.Load):
+        assert l1.Class == l2.Class
+
+    np.testing.assert_array_equal(l1.Class, l2.Class)
+
+
+def test_loads_str_na():
+    alt1 = altdss.NewContext()
+    alt2 = altdss.NewContext()
+    create_ref_ckt13(alt1)
+    create_ref_ckt13(alt2)
+
+    # Generate some test data -- "default" for half the loads, None for the rest
+    daily_shapes = ['default'] * len(alt1.Load)
+    for i in range(len(daily_shapes)):
+        if i % 2 != 0:
+            daily_shapes[i] = None
+
+    for daily, load in zip(daily_shapes, alt1.Load):
+        if daily is not None:
+            load.Daily = daily
+
+    alt2.Load._set_Daily(daily_shapes, SetterFlags.SkipNA)
+
+    for l1, l2 in zip(alt1.Load, alt2.Load):
+        assert l1.Daily_str == l2.Daily_str
+
+    assert l1.Daily_str == l2.Daily_str
+
+
+def test_loadshape_array_implicit_size():
+    alt = altdss
+
+    alt.Clear()
+    ls = alt.LoadShape.new('test_shape')
+    with pt.raises(DSSException):
+        ls.PMult = [1.0, 2.0, 3.0]
+
+    ls._set_PMult([1.0, 2.0, 3.0], SetterFlags.ImplicitSizes)
+    assert tuple(ls.PMult) == (1.0, 2.0, 3.0)
+
+    ls.end_edit()
+
+
+    # TODO: maybe add a new flag to allow resizing too, if the user needs to do it?
+    # ls._set_PMult([10.0, 20.0, 30.0, 40.0, 50.0], SetterFlags.ImplicitSizes)
+    # assert tuple(ls.PMult) == (10.0, 20.0, 30.0, 40.0, 50.0)
 
 
 def _test_create_ckt13_batch(which):
     if which == 1:
-        create_ckt13_batch_attr(dss)
+        create_ckt13_batch_attr(altdss)
     elif which == 2:
-        create_ckt13_batch_new(dss)
+        create_ckt13_batch_new(altdss)
     elif which == 3:
-        create_ckt13_batch_df(dss)
+        create_ckt13_batch_df(altdss)
     # else:
-    #     create_from_dump(dss)
+    #     create_from_dump(altdss)
 
-    ref: IDSS = dss.NewContext()
+    ref: AltDSS = altdss.NewContext()
     create_ref_ckt13(ref)
 
-    assert dss.ActiveCircuit.Lines.AllNames == ref.ActiveCircuit.Lines.AllNames
-    assert dss.ActiveCircuit.Loads.AllNames == ref.ActiveCircuit.Loads.AllNames
-    assert [l.Phases for l in dss.ActiveCircuit.Lines] == [l.Phases for l in ref.ActiveCircuit.Lines]
-    assert [l.Length for l in dss.ActiveCircuit.Lines] == [l.Length for l in ref.ActiveCircuit.Lines]
-    assert [l.Phases for l in dss.ActiveCircuit.Loads] == [l.Phases for l in ref.ActiveCircuit.Loads]
-    assert [l.kW for l in dss.ActiveCircuit.Loads] == [l.kW for l in ref.ActiveCircuit.Loads]
-    assert [l.kvar for l in dss.ActiveCircuit.Loads] == [l.kvar for l in ref.ActiveCircuit.Loads]
-    assert dss.ActiveCircuit.Transformers.AllNames == ref.ActiveCircuit.Transformers.AllNames
-    assert dss.ActiveCircuit.AllElementNames == ref.ActiveCircuit.AllElementNames
+    assert altdss.Line.Name == ref.Line.Name
+    assert altdss.Load.Name == ref.Load.Name
+    assert [l.Phases for l in altdss.Line] == [l.Phases for l in ref.Line]
+    assert [l.Length for l in altdss.Line] == [l.Length for l in ref.Line]
+    assert [l.Phases for l in altdss.Load] == [l.Phases for l in ref.Load]
+    assert [l.kW for l in altdss.Load] == [l.kW for l in ref.Load]
+    assert [l.kvar for l in altdss.Load] == [l.kvar for l in ref.Load]
+    assert altdss.Transformer.Name == ref.Transformer.Name
+    assert altdss.Element.FullName() == ref.Element.FullName()
 
     # Check some batch properties
-    line_batch = dss.Obj.Line.batch()
-    assert [l.LineCode for l in ref.ActiveCircuit.Lines] == line_batch.linecode_str
+    line_batch = altdss.Line # .batch()
+    assert [l.LineCode_str for l in ref.Line] == line_batch.linecode_str
 
-    load_batch = dss.Obj.Load.batch()
-    assert load_batch.conn_str == ['delta' if l.IsDelta else 'wye' for l in ref.ActiveCircuit.Loads]
-    assert list(load_batch.conn.to_array()) == [Conn.delta if l.IsDelta else Conn.wye for l in ref.ActiveCircuit.Loads]
+    load_batch = altdss.Load # .batch()
+    assert load_batch.conn_str == ref.Load.Conn_str
+    assert load_batch.conn.to_list() == ref.Load.conn.to_list()
     
     # Should be the same result, except for some parsing detail
-    assert max(abs(ref.ActiveCircuit.AllBusVolts - dss.ActiveCircuit.AllBusVolts)) < 1e-12, 'Voltages before changing loads differ'
+    assert max(abs(ref.BusVolts() - altdss.BusVolts())) < 1e-12, 'Voltages before changing loads differ'
 
-    all_loads = dss.Obj.Load.batch()
+    all_loads = altdss.Load #.batch()
 
-    with Edit(all_loads):
-        all_loads.kW += 45
+    all_loads.kW += 45
 
-    dss.ActiveCircuit.Solution.Solve()
+    altdss.Solution.Solve()
 
 
-    # for load in ref.ActiveCircuit.Loads:
+    # for load in ref.Load:
     #     load.kW += 45
     # # Need to force-rebuild the matrices here
-    # ref.ActiveCircuit.Solution.BuildYMatrix(YMatrixModes.WholeMatrix, False)
+    # ref.Solution.BuildYMatrix(YMatrixModes.WholeMatrix, False)
     cmds = []
-    for l in ref.ActiveCircuit.Loads:
+    for l in ref.Load:
         cmds.append(f'load.{l.Name}.kW={l.kW + 45}')
 
     for cmd in cmds:
-        ref.Text.Command = cmd
+        ref(cmd)
 
-    ref.ActiveCircuit.Solution.Solve()
+    ref.Solution.Solve()
 
-    assert ref.ActiveCircuit.Solution.Converged
+    
+
+    assert ref.Solution.Converged
 
     # Should also be the same result now
-    assert max(abs(ref.ActiveCircuit.AllBusVolts - dss.ActiveCircuit.AllBusVolts)) < 1e-12, 'Voltages after changing loads differ'
+    assert max(abs(ref.BusVolts() - altdss.BusVolts())) < 1e-12, 'Voltages after changing loads differ'
 
 def test_create_ckt13_batch_attr():
     _test_create_ckt13_batch(1)
@@ -491,4 +629,4 @@ def test_create_ckt13_batch_df():
 
 if __name__ == '__main__':
     # Adjust for manually running a test-case
-    test_create_ckt13_batch_df()
+    test_loads_no_yprim()
