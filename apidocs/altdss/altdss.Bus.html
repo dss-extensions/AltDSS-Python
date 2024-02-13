@@ -1,0 +1,1257 @@
+
+<!DOCTYPE html>
+
+
+<html lang="en" data-content_root="../../" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.19: https://docutils.sourceforge.io/" />
+
+    <title>altdss.Bus &#8212; AltDSS-Python 0.1.0 documentation</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "light";
+  </script>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../../_static/styles/theme.css?digest=8d27b9dea8ad943066ae" rel="stylesheet" />
+<link href="../../_static/styles/bootstrap.css?digest=8d27b9dea8ad943066ae" rel="stylesheet" />
+<link href="../../_static/styles/pydata-sphinx-theme.css?digest=8d27b9dea8ad943066ae" rel="stylesheet" />
+
+  
+  <link href="../../_static/vendor/fontawesome/6.5.1/css/all.min.css?digest=8d27b9dea8ad943066ae" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.5.1/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.5.1/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.5.1/webfonts/fa-regular-400.woff2" />
+
+    <link rel="stylesheet" type="text/css" href="../../_static/pygments.css?v=362ab14a" />
+    <link rel="stylesheet" type="text/css" href="../../_static/styles/sphinx-book-theme.css?v=384b581d" />
+    <link rel="stylesheet" type="text/css" href="../../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/design-style.1e8bd061cd6da7fc9cf755528e8ffc24.min.css?v=0a3b3ea7" />
+  
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../../_static/scripts/bootstrap.js?digest=8d27b9dea8ad943066ae" />
+<link rel="preload" as="script" href="../../_static/scripts/pydata-sphinx-theme.js?digest=8d27b9dea8ad943066ae" />
+  <script src="../../_static/vendor/fontawesome/6.5.1/js/all.min.js?digest=8d27b9dea8ad943066ae"></script>
+
+    <script src="../../_static/documentation_options.js?v=a1637f0b"></script>
+    <script src="../../_static/doctools.js?v=888ff710"></script>
+    <script src="../../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../../_static/scripts/sphinx-book-theme.js?v=efea14e4"></script>
+    <script src="../../_static/design-tabs.js?v=36754332"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'apidocs/altdss/altdss.Bus';</script>
+    <link rel="icon" href="../../_static/dssx.png"/>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="altdss.CNData" href="altdss.CNData.html" />
+    <link rel="prev" title="altdss.Batch" href="altdss.Batch.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <a id="pst-skip-link" class="skip-link" href="#main-content">Skip to main content</a>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>
+    Back to top
+  </button>
+
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__primary"
+          id="__primary"/>
+  <label class="overlay overlay-primary" for="__primary"></label>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__secondary"
+          id="__secondary"/>
+  <label class="overlay overlay-secondary" for="__secondary"></label>
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container">
+<form class="bd-search d-flex align-items-center"
+      action="../../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         id="search-input"
+         placeholder="Search..."
+         aria-label="Search..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+  </div>
+  
+    <header class="bd-header navbar navbar-expand-lg bd-navbar">
+    </header>
+  
+
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      
+      
+      <div class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+    
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+
+  
+
+<a class="navbar-brand logo" href="../../index.html">
+  
+  
+  
+  
+  
+    
+    
+      
+    
+    
+    <img src="../../_static/altdss-python.svg" class="logo__image only-light" alt="AltDSS-Python 0.1.0 documentation - Home"/>
+    <script>document.write(`<img src="../../_static/altdss-python-dark.svg" class="logo__image only-dark" alt="AltDSS-Python 0.1.0 documentation - Home"/>`);</script>
+  
+  
+</a></div>
+        <div class="sidebar-primary-item">
+
+ <script>
+ document.write(`
+   <button class="btn navbar-btn search-button-field search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+    <span class="search-button__default-text">Search</span>
+    <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+   </button>
+ `);
+ </script></div>
+        <div class="sidebar-primary-item"><nav class="bd-links bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
+        <p aria-level="2" class="caption" role="heading"><span class="caption-text">General</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../../index.html">AltDSS-Python</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../Architecture.html">Architecture details</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../examples/GettingStarted.html">Getting Started</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../changelog.html">Changelog</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">API Reference</span></p>
+<ul class="current nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../../enumerations.html">General enums</a></li>
+<li class="toctree-l1 current active has-children"><a class="reference internal" href="../index.html">altdss package</a><input checked="" class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-1"><i class="fa-solid fa-chevron-down"></i></label><ul class="current">
+<li class="toctree-l2 current active has-children"><a class="reference internal" href="altdss.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">altdss</span></code></a><input checked="" class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-2"><i class="fa-solid fa-chevron-down"></i></label><ul class="current">
+<li class="toctree-l3"><a class="reference internal" href="altdss.AltDSS.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">altdss.AltDSS</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="altdss.ArrayProxy.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">altdss.ArrayProxy</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="altdss.AutoTrans.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">altdss.AutoTrans</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="altdss.Batch.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">altdss.Batch</span></code></a></li>
+<li class="toctree-l3 current active"><a class="current reference internal" href="#"><code class="xref py py-mod docutils literal notranslate"><span class="pre">altdss.Bus</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="altdss.CNData.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">altdss.CNData</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="altdss.CapControl.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">altdss.CapControl</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="altdss.Capacitor.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">altdss.Capacitor</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="altdss.CircuitElement.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">altdss.CircuitElement</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="altdss.ControlQueue.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">altdss.ControlQueue</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="altdss.DSSObj.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">altdss.DSSObj</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="altdss.DynamicExp.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">altdss.DynamicExp</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="altdss.ESPVLControl.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">altdss.ESPVLControl</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="altdss.EnergyMeter.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">altdss.EnergyMeter</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="altdss.EnergyMeterExtras.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">altdss.EnergyMeterExtras</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="altdss.Error.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">altdss.Error</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="altdss.ExpControl.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">altdss.ExpControl</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="altdss.Fault.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">altdss.Fault</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="altdss.Fuse.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">altdss.Fuse</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="altdss.GICLine.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">altdss.GICLine</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="altdss.GICTransformer.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">altdss.GICTransformer</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="altdss.GICsource.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">altdss.GICsource</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="altdss.GenDispatcher.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">altdss.GenDispatcher</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="altdss.Generator.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">altdss.Generator</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="altdss.GrowthShape.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">altdss.GrowthShape</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="altdss.IndMach012.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">altdss.IndMach012</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="altdss.InvControl.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">altdss.InvControl</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="altdss.Isource.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">altdss.Isource</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="altdss.Line.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">altdss.Line</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="altdss.LineCode.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">altdss.LineCode</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="altdss.LineGeometry.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">altdss.LineGeometry</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="altdss.LineSpacing.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">altdss.LineSpacing</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="altdss.Load.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">altdss.Load</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="altdss.LoadShape.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">altdss.LoadShape</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="altdss.LoadShapeExtras.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">altdss.LoadShapeExtras</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="altdss.Monitor.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">altdss.Monitor</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="altdss.MonitorExtras.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">altdss.MonitorExtras</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="altdss.Obj.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">altdss.Obj</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="altdss.PCElement.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">altdss.PCElement</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="altdss.PDElement.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">altdss.PDElement</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="altdss.PVSystem.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">altdss.PVSystem</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="altdss.PriceShape.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">altdss.PriceShape</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="altdss.Reactor.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">altdss.Reactor</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="altdss.Recloser.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">altdss.Recloser</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="altdss.ReduceCkt.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">altdss.ReduceCkt</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="altdss.RegControl.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">altdss.RegControl</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="altdss.Relay.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">altdss.Relay</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="altdss.Sensor.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">altdss.Sensor</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="altdss.Settings.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">altdss.Settings</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="altdss.Solution.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">altdss.Solution</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="altdss.Spectrum.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">altdss.Spectrum</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="altdss.Storage.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">altdss.Storage</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="altdss.StorageController.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">altdss.StorageController</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="altdss.SwtControl.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">altdss.SwtControl</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="altdss.TCC_Curve.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">altdss.TCC_Curve</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="altdss.TSData.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">altdss.TSData</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="altdss.TShape.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">altdss.TShape</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="altdss.Topology.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">altdss.Topology</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="altdss.Transformer.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">altdss.Transformer</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="altdss.TransformerExtras.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">altdss.TransformerExtras</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="altdss.UPFC.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">altdss.UPFC</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="altdss.UPFCControl.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">altdss.UPFCControl</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="altdss.VCCS.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">altdss.VCCS</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="altdss.VSConverter.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">altdss.VSConverter</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="altdss.Vsource.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">altdss.Vsource</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="altdss.WireData.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">altdss.WireData</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="altdss.XYcurve.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">altdss.XYcurve</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="altdss.XfmrCode.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">altdss.XfmrCode</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="altdss.YMatrix.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">altdss.YMatrix</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="altdss.ZIP.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">altdss.ZIP</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="altdss.common.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">altdss.common</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="altdss.enums.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">altdss.enums</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="altdss.types.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">altdss.types</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">External links</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference external" href="https://github.com/dss-extensions/dss_python">GitHub repository</a></li>
+<li class="toctree-l1"><a class="reference external" href="https://pypi.python.org/pypi/OpenDSSDirect.py/">Package on PyPI</a></li>
+<li class="toctree-l1"><a class="reference external" href="https://github.com/dss-extensions/electricdss-tst">Test/example circuits</a></li>
+
+<li class="toctree-l1"><a class="reference external" href="https://dss-extensions.org/OpenDSSDirect.py">OpenDSSDirect.py</a></li>
+<li class="toctree-l1"><a class="reference external" href="https://dss-extensions.org/dss_python/">DSS-Python</a></li>
+<li class="toctree-l1"><a class="reference external" href="https://github.com/orgs/dss-extensions/discussions">DSS-Extensions Discussions</a></li>
+<li class="toctree-l1"><a class="reference external" href="https://sourceforge.net/p/electricdss/discussion/">OpenDSS forum</a></li>
+<li class="toctree-l1"><a class="reference external" href="https://opendss.epri.com/opendss_documentation.html">OpenDSS documentation</a></li>
+</ul>
+
+    </div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+  
+  <div id="rtd-footer-container"></div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main">
+        
+        
+
+<div class="sbt-scroll-pixel-helper"></div>
+
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item"><label class="sidebar-toggle primary-toggle btn btn-sm" for="__primary" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <span class="fa-solid fa-bars"></span>
+</label></div>
+      
+    </div>
+  
+  
+    <div class="header-article-items__end">
+      
+        <div class="header-article-item">
+
+<div class="article-header-buttons">
+
+
+
+
+
+<div class="dropdown dropdown-download-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Download this page">
+    <i class="fas fa-download"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="../../_sources/apidocs/altdss/altdss.Bus.md" target="_blank"
+   class="btn btn-sm btn-download-source-button dropdown-item"
+   title="Download source file"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="btn__text-container">.md</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li>
+<button onclick="window.print()"
+  class="btn btn-sm btn-download-pdf-button dropdown-item"
+  title="Print to PDF"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="btn__text-container">.pdf</span>
+</button>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+<button onclick="toggleFullScreen()"
+  class="btn btn-sm btn-fullscreen-button"
+  title="Fullscreen mode"
+  data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm navbar-btn theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="theme-switch nav-link" data-mode="light"><i class="fa-solid fa-sun fa-lg"></i></span>
+    <span class="theme-switch nav-link" data-mode="dark"><i class="fa-solid fa-moon fa-lg"></i></span>
+    <span class="theme-switch nav-link" data-mode="auto"><i class="fa-solid fa-circle-half-stroke fa-lg"></i></span>
+  </button>
+`);
+</script>
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm navbar-btn search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass fa-lg"></i>
+  </button>
+`);
+</script>
+<label class="sidebar-toggle secondary-toggle btn btn-sm" for="__secondary"title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</label>
+</div></div>
+      
+    </div>
+  
+</div>
+</div>
+              
+              
+
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1>altdss.Bus</h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
+            
+            <div>
+                <h2> Contents </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#module-contents">Module Contents</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#classes">Classes</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#api">API</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#altdss.Bus.Bus"><code class="docutils literal notranslate"><span class="pre">Bus</span></code></a><ul class="nav section-nav flex-column">
+<li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#altdss.Bus.Bus.ComplexSeqVoltages"><code class="docutils literal notranslate"><span class="pre">Bus.ComplexSeqVoltages</span></code></a></li>
+<li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#altdss.Bus.Bus.CoordDefined"><code class="docutils literal notranslate"><span class="pre">Bus.CoordDefined</span></code></a></li>
+<li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#altdss.Bus.Bus.CustDuration"><code class="docutils literal notranslate"><span class="pre">Bus.CustDuration</span></code></a></li>
+<li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#altdss.Bus.Bus.CustInterrupts"><code class="docutils literal notranslate"><span class="pre">Bus.CustInterrupts</span></code></a></li>
+<li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#altdss.Bus.Bus.Distance"><code class="docutils literal notranslate"><span class="pre">Bus.Distance</span></code></a></li>
+<li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#altdss.Bus.Bus.GetUniqueNodeNumber"><code class="docutils literal notranslate"><span class="pre">Bus.GetUniqueNodeNumber()</span></code></a></li>
+<li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#altdss.Bus.Bus.IntDuration"><code class="docutils literal notranslate"><span class="pre">Bus.IntDuration</span></code></a></li>
+<li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#altdss.Bus.Bus.Isc"><code class="docutils literal notranslate"><span class="pre">Bus.Isc</span></code></a></li>
+<li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#altdss.Bus.Bus.Lambda"><code class="docutils literal notranslate"><span class="pre">Bus.Lambda</span></code></a></li>
+<li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#altdss.Bus.Bus.Lines"><code class="docutils literal notranslate"><span class="pre">Bus.Lines()</span></code></a></li>
+<li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#altdss.Bus.Bus.Loads"><code class="docutils literal notranslate"><span class="pre">Bus.Loads()</span></code></a></li>
+<li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#altdss.Bus.Bus.Name"><code class="docutils literal notranslate"><span class="pre">Bus.Name</span></code></a></li>
+<li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#altdss.Bus.Bus.Nodes"><code class="docutils literal notranslate"><span class="pre">Bus.Nodes</span></code></a></li>
+<li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#altdss.Bus.Bus.NumCustomers"><code class="docutils literal notranslate"><span class="pre">Bus.NumCustomers</span></code></a></li>
+<li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#altdss.Bus.Bus.NumInterrupts"><code class="docutils literal notranslate"><span class="pre">Bus.NumInterrupts</span></code></a></li>
+<li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#altdss.Bus.Bus.NumNodes"><code class="docutils literal notranslate"><span class="pre">Bus.NumNodes</span></code></a></li>
+<li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#altdss.Bus.Bus.PCElements"><code class="docutils literal notranslate"><span class="pre">Bus.PCElements()</span></code></a></li>
+<li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#altdss.Bus.Bus.PDElements"><code class="docutils literal notranslate"><span class="pre">Bus.PDElements()</span></code></a></li>
+<li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#altdss.Bus.Bus.SectionID"><code class="docutils literal notranslate"><span class="pre">Bus.SectionID</span></code></a></li>
+<li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#altdss.Bus.Bus.SeqVoltages"><code class="docutils literal notranslate"><span class="pre">Bus.SeqVoltages</span></code></a></li>
+<li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#altdss.Bus.Bus.TotalKilometers"><code class="docutils literal notranslate"><span class="pre">Bus.TotalKilometers</span></code></a></li>
+<li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#altdss.Bus.Bus.TotalMiles"><code class="docutils literal notranslate"><span class="pre">Bus.TotalMiles</span></code></a></li>
+<li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#altdss.Bus.Bus.VLL"><code class="docutils literal notranslate"><span class="pre">Bus.VLL</span></code></a></li>
+<li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#altdss.Bus.Bus.VMagAngle"><code class="docutils literal notranslate"><span class="pre">Bus.VMagAngle</span></code></a></li>
+<li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#altdss.Bus.Bus.Voc"><code class="docutils literal notranslate"><span class="pre">Bus.Voc</span></code></a></li>
+<li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#altdss.Bus.Bus.Voltages"><code class="docutils literal notranslate"><span class="pre">Bus.Voltages</span></code></a></li>
+<li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#altdss.Bus.Bus.X"><code class="docutils literal notranslate"><span class="pre">Bus.X</span></code></a></li>
+<li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#altdss.Bus.Bus.Y"><code class="docutils literal notranslate"><span class="pre">Bus.Y</span></code></a></li>
+<li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#altdss.Bus.Bus.YscMatrix"><code class="docutils literal notranslate"><span class="pre">Bus.YscMatrix</span></code></a></li>
+<li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#altdss.Bus.Bus.Zsc0"><code class="docutils literal notranslate"><span class="pre">Bus.Zsc0</span></code></a></li>
+<li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#altdss.Bus.Bus.Zsc012Matrix"><code class="docutils literal notranslate"><span class="pre">Bus.Zsc012Matrix</span></code></a></li>
+<li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#altdss.Bus.Bus.Zsc1"><code class="docutils literal notranslate"><span class="pre">Bus.Zsc1</span></code></a></li>
+<li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#altdss.Bus.Bus.ZscMatrix"><code class="docutils literal notranslate"><span class="pre">Bus.ZscMatrix</span></code></a></li>
+<li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#altdss.Bus.Bus.ZscRefresh"><code class="docutils literal notranslate"><span class="pre">Bus.ZscRefresh()</span></code></a></li>
+<li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#altdss.Bus.Bus.__init__"><code class="docutils literal notranslate"><span class="pre">Bus.__init__()</span></code></a></li>
+<li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#altdss.Bus.Bus.__repr__"><code class="docutils literal notranslate"><span class="pre">Bus.__repr__()</span></code></a></li>
+<li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#altdss.Bus.Bus.kVBase"><code class="docutils literal notranslate"><span class="pre">Bus.kVBase</span></code></a></li>
+<li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#altdss.Bus.Bus.puVLL"><code class="docutils literal notranslate"><span class="pre">Bus.puVLL</span></code></a></li>
+<li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#altdss.Bus.Bus.puVmagAngle"><code class="docutils literal notranslate"><span class="pre">Bus.puVmagAngle</span></code></a></li>
+<li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#altdss.Bus.Bus.puVoltages"><code class="docutils literal notranslate"><span class="pre">Bus.puVoltages</span></code></a></li>
+<li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#altdss.Bus.Bus.to_json"><code class="docutils literal notranslate"><span class="pre">Bus.to_json()</span></code></a></li>
+</ul>
+</li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#altdss.Bus.BusBatch"><code class="docutils literal notranslate"><span class="pre">BusBatch</span></code></a><ul class="nav section-nav flex-column">
+<li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#altdss.Bus.BusBatch.CustDuration"><code class="docutils literal notranslate"><span class="pre">BusBatch.CustDuration()</span></code></a></li>
+<li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#altdss.Bus.BusBatch.CustInterrupts"><code class="docutils literal notranslate"><span class="pre">BusBatch.CustInterrupts()</span></code></a></li>
+<li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#altdss.Bus.BusBatch.Distance"><code class="docutils literal notranslate"><span class="pre">BusBatch.Distance()</span></code></a></li>
+<li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#altdss.Bus.BusBatch.IntDuration"><code class="docutils literal notranslate"><span class="pre">BusBatch.IntDuration()</span></code></a></li>
+<li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#altdss.Bus.BusBatch.Lambda"><code class="docutils literal notranslate"><span class="pre">BusBatch.Lambda()</span></code></a></li>
+<li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#altdss.Bus.BusBatch.NumCustomers"><code class="docutils literal notranslate"><span class="pre">BusBatch.NumCustomers()</span></code></a></li>
+<li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#altdss.Bus.BusBatch.NumInterrupts"><code class="docutils literal notranslate"><span class="pre">BusBatch.NumInterrupts()</span></code></a></li>
+<li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#altdss.Bus.BusBatch.NumNodes"><code class="docutils literal notranslate"><span class="pre">BusBatch.NumNodes()</span></code></a></li>
+<li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#altdss.Bus.BusBatch.SectionID"><code class="docutils literal notranslate"><span class="pre">BusBatch.SectionID()</span></code></a></li>
+<li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#altdss.Bus.BusBatch.TotalKilometers"><code class="docutils literal notranslate"><span class="pre">BusBatch.TotalKilometers()</span></code></a></li>
+<li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#altdss.Bus.BusBatch.TotalMiles"><code class="docutils literal notranslate"><span class="pre">BusBatch.TotalMiles()</span></code></a></li>
+<li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#altdss.Bus.BusBatch.X"><code class="docutils literal notranslate"><span class="pre">BusBatch.X()</span></code></a></li>
+<li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#altdss.Bus.BusBatch.Y"><code class="docutils literal notranslate"><span class="pre">BusBatch.Y()</span></code></a></li>
+<li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#altdss.Bus.BusBatch.ZscRefresh"><code class="docutils literal notranslate"><span class="pre">BusBatch.ZscRefresh()</span></code></a></li>
+<li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#altdss.Bus.BusBatch.__call__"><code class="docutils literal notranslate"><span class="pre">BusBatch.__call__()</span></code></a></li>
+<li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#altdss.Bus.BusBatch.__getitem__"><code class="docutils literal notranslate"><span class="pre">BusBatch.__getitem__()</span></code></a></li>
+<li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#altdss.Bus.BusBatch.__init__"><code class="docutils literal notranslate"><span class="pre">BusBatch.__init__()</span></code></a></li>
+<li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#altdss.Bus.BusBatch.__iter__"><code class="docutils literal notranslate"><span class="pre">BusBatch.__iter__()</span></code></a></li>
+<li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#altdss.Bus.BusBatch.__len__"><code class="docutils literal notranslate"><span class="pre">BusBatch.__len__()</span></code></a></li>
+<li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#altdss.Bus.BusBatch.kVBase"><code class="docutils literal notranslate"><span class="pre">BusBatch.kVBase()</span></code></a></li>
+<li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#altdss.Bus.BusBatch.to_json"><code class="docutils literal notranslate"><span class="pre">BusBatch.to_json()</span></code></a></li>
+</ul>
+</li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#altdss.Bus.IBuses"><code class="docutils literal notranslate"><span class="pre">IBuses</span></code></a><ul class="nav section-nav flex-column">
+<li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#altdss.Bus.IBuses.CustDuration"><code class="docutils literal notranslate"><span class="pre">IBuses.CustDuration()</span></code></a></li>
+<li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#altdss.Bus.IBuses.CustInterrupts"><code class="docutils literal notranslate"><span class="pre">IBuses.CustInterrupts()</span></code></a></li>
+<li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#altdss.Bus.IBuses.Distance"><code class="docutils literal notranslate"><span class="pre">IBuses.Distance()</span></code></a></li>
+<li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#altdss.Bus.IBuses.IntDuration"><code class="docutils literal notranslate"><span class="pre">IBuses.IntDuration()</span></code></a></li>
+<li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#altdss.Bus.IBuses.Lambda"><code class="docutils literal notranslate"><span class="pre">IBuses.Lambda()</span></code></a></li>
+<li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#altdss.Bus.IBuses.NumCustomers"><code class="docutils literal notranslate"><span class="pre">IBuses.NumCustomers()</span></code></a></li>
+<li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#altdss.Bus.IBuses.NumInterrupts"><code class="docutils literal notranslate"><span class="pre">IBuses.NumInterrupts()</span></code></a></li>
+<li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#altdss.Bus.IBuses.NumNodes"><code class="docutils literal notranslate"><span class="pre">IBuses.NumNodes()</span></code></a></li>
+<li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#altdss.Bus.IBuses.SectionID"><code class="docutils literal notranslate"><span class="pre">IBuses.SectionID()</span></code></a></li>
+<li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#altdss.Bus.IBuses.TotalKilometers"><code class="docutils literal notranslate"><span class="pre">IBuses.TotalKilometers()</span></code></a></li>
+<li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#altdss.Bus.IBuses.TotalMiles"><code class="docutils literal notranslate"><span class="pre">IBuses.TotalMiles()</span></code></a></li>
+<li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#altdss.Bus.IBuses.X"><code class="docutils literal notranslate"><span class="pre">IBuses.X()</span></code></a></li>
+<li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#altdss.Bus.IBuses.Y"><code class="docutils literal notranslate"><span class="pre">IBuses.Y()</span></code></a></li>
+<li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#altdss.Bus.IBuses.ZscRefresh"><code class="docutils literal notranslate"><span class="pre">IBuses.ZscRefresh()</span></code></a></li>
+<li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#altdss.Bus.IBuses.__call__"><code class="docutils literal notranslate"><span class="pre">IBuses.__call__()</span></code></a></li>
+<li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#altdss.Bus.IBuses.__getitem__"><code class="docutils literal notranslate"><span class="pre">IBuses.__getitem__()</span></code></a></li>
+<li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#altdss.Bus.IBuses.__init__"><code class="docutils literal notranslate"><span class="pre">IBuses.__init__()</span></code></a></li>
+<li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#altdss.Bus.IBuses.__iter__"><code class="docutils literal notranslate"><span class="pre">IBuses.__iter__()</span></code></a></li>
+<li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#altdss.Bus.IBuses.__len__"><code class="docutils literal notranslate"><span class="pre">IBuses.__len__()</span></code></a></li>
+<li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#altdss.Bus.IBuses.find"><code class="docutils literal notranslate"><span class="pre">IBuses.find()</span></code></a></li>
+<li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#altdss.Bus.IBuses.kVBase"><code class="docutils literal notranslate"><span class="pre">IBuses.kVBase()</span></code></a></li>
+<li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#altdss.Bus.IBuses.to_json"><code class="docutils literal notranslate"><span class="pre">IBuses.to_json()</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+            </nav>
+        </div>
+    </div>
+</div>
+
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article">
+                  
+  <section class="tex2jax_ignore mathjax_ignore" id="module-altdss.Bus">
+<span id="altdss-bus"></span><h1><a class="reference internal" href="#module-altdss.Bus" title="altdss.Bus"><code class="xref py py-mod docutils literal notranslate"><span class="pre">altdss.Bus</span></code></a><a class="headerlink" href="#module-altdss.Bus" title="Link to this heading">#</a></h1>
+<section id="module-contents">
+<h2>Module Contents<a class="headerlink" href="#module-contents" title="Link to this heading">#</a></h2>
+<section id="classes">
+<h3>Classes<a class="headerlink" href="#classes" title="Link to this heading">#</a></h3>
+<table class="autosummary longtable table table-left">
+<tbody>
+<tr class="row-odd"><td><p><a class="reference internal" href="#altdss.Bus.Bus" title="altdss.Bus.Bus"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Bus</span></code></a></p></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#altdss.Bus.BusBatch" title="altdss.Bus.BusBatch"><code class="xref py py-obj docutils literal notranslate"><span class="pre">BusBatch</span></code></a></p></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="#altdss.Bus.IBuses" title="altdss.Bus.IBuses"><code class="xref py py-obj docutils literal notranslate"><span class="pre">IBuses</span></code></a></p></td>
+<td><p>This is the general bus container, encapsulating operations on <strong>all</strong> buses.
+Use it to find, iterate and operate on individual buses, or extract data from
+all buses.</p></td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="api">
+<h3>API<a class="headerlink" href="#api" title="Link to this heading">#</a></h3>
+<dl class="py class">
+<dt class="sig sig-object py" id="altdss.Bus.Bus">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">altdss.Bus.</span></span><span class="sig-name descname"><span class="pre">Bus</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">api_util</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">ptr</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#altdss.Bus.Bus" title="Link to this definition">#</a></dt>
+<dd><dl class="py property">
+<dt class="sig sig-object py" id="altdss.Bus.Bus.ComplexSeqVoltages">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">ComplexSeqVoltages</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">altdss.types.ComplexArray</span></em><a class="headerlink" href="#altdss.Bus.Bus.ComplexSeqVoltages" title="Link to this definition">#</a></dt>
+<dd><p>Array of complex numbers, sequence voltages (0, 1, 2) at this bus.</p>
+</dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="altdss.Bus.Bus.CoordDefined">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">CoordDefined</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">bool</span></em><a class="headerlink" href="#altdss.Bus.Bus.CoordDefined" title="Link to this definition">#</a></dt>
+<dd><p>Indicates whether a coordinate has been defined for this bus.</p>
+</dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="altdss.Bus.Bus.CustDuration">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">CustDuration</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">float</span></em><a class="headerlink" href="#altdss.Bus.Bus.CustDuration" title="Link to this definition">#</a></dt>
+<dd><p>Accumulated customer outage durations.</p>
+</dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="altdss.Bus.Bus.CustInterrupts">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">CustInterrupts</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">float</span></em><a class="headerlink" href="#altdss.Bus.Bus.CustInterrupts" title="Link to this definition">#</a></dt>
+<dd><p>Annual number of customer-interruptions from this bus.</p>
+</dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="altdss.Bus.Bus.Distance">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">Distance</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">float</span></em><a class="headerlink" href="#altdss.Bus.Bus.Distance" title="Link to this definition">#</a></dt>
+<dd><p>Distance from energymeter (if non-zero)</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="altdss.Bus.Bus.GetUniqueNodeNumber">
+<span class="sig-name descname"><span class="pre">GetUniqueNodeNumber</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">startNumber</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">int</span></span></span><a class="headerlink" href="#altdss.Bus.Bus.GetUniqueNodeNumber" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="altdss.Bus.Bus.IntDuration">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">IntDuration</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">float</span></em><a class="headerlink" href="#altdss.Bus.Bus.IntDuration" title="Link to this definition">#</a></dt>
+<dd><p>Average interruption duration, hr.</p>
+</dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="altdss.Bus.Bus.Isc">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">Isc</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">altdss.types.ComplexArray</span></em><a class="headerlink" href="#altdss.Bus.Bus.Isc" title="Link to this definition">#</a></dt>
+<dd><p>Short circuit currents at bus; Complex Array.</p>
+</dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="altdss.Bus.Bus.Lambda">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">Lambda</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">float</span></em><a class="headerlink" href="#altdss.Bus.Bus.Lambda" title="Link to this definition">#</a></dt>
+<dd><p>Accumulated failure rate downstream from this bus; faults per year</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="altdss.Bus.Bus.Lines">
+<span class="sig-name descname"><span class="pre">Lines</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference internal" href="altdss.Line.html#altdss.Line.LineBatch" title="altdss.Line.LineBatch"><span class="pre">altdss.Line.LineBatch</span></a></span></span><a class="headerlink" href="#altdss.Bus.Bus.Lines" title="Link to this definition">#</a></dt>
+<dd><p>Batch of line objects connected to this bus.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="altdss.Bus.Bus.Loads">
+<span class="sig-name descname"><span class="pre">Loads</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference internal" href="altdss.Load.html#altdss.Load.LoadBatch" title="altdss.Load.LoadBatch"><span class="pre">altdss.Load.LoadBatch</span></a></span></span><a class="headerlink" href="#altdss.Bus.Bus.Loads" title="Link to this definition">#</a></dt>
+<dd><p>Batch of load objects connected to this bus.</p>
+</dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="altdss.Bus.Bus.Name">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">Name</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">str</span></em><a class="headerlink" href="#altdss.Bus.Bus.Name" title="Link to this definition">#</a></dt>
+<dd><p>Name of Bus</p>
+</dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="altdss.Bus.Bus.Nodes">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">Nodes</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">altdss.types.Int32Array</span></em><a class="headerlink" href="#altdss.Bus.Bus.Nodes" title="Link to this definition">#</a></dt>
+<dd><p>Integer Array of Node Numbers defined at the bus in same order as the voltages.</p>
+</dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="altdss.Bus.Bus.NumCustomers">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">NumCustomers</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">int</span></em><a class="headerlink" href="#altdss.Bus.Bus.NumCustomers" title="Link to this definition">#</a></dt>
+<dd><p>Total numbers of customers served downline from this bus</p>
+</dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="altdss.Bus.Bus.NumInterrupts">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">NumInterrupts</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">float</span></em><a class="headerlink" href="#altdss.Bus.Bus.NumInterrupts" title="Link to this definition">#</a></dt>
+<dd><p>Number of interruptions on this bus per year</p>
+</dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="altdss.Bus.Bus.NumNodes">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">NumNodes</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">int</span></em><a class="headerlink" href="#altdss.Bus.Bus.NumNodes" title="Link to this definition">#</a></dt>
+<dd><p>Number of Nodes this bus.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="altdss.Bus.Bus.PCElements">
+<span class="sig-name descname"><span class="pre">PCElements</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference internal" href="altdss.PCElement.html#altdss.PCElement.PCElementBatch" title="altdss.PCElement.PCElementBatch"><span class="pre">altdss.PCElement.PCElementBatch</span></a></span></span><a class="headerlink" href="#altdss.Bus.Bus.PCElements" title="Link to this definition">#</a></dt>
+<dd><p>Batch of all PC elements connected to this bus.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="altdss.Bus.Bus.PDElements">
+<span class="sig-name descname"><span class="pre">PDElements</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference internal" href="altdss.PDElement.html#altdss.PDElement.PDElementBatch" title="altdss.PDElement.PDElementBatch"><span class="pre">altdss.PDElement.PDElementBatch</span></a></span></span><a class="headerlink" href="#altdss.Bus.Bus.PDElements" title="Link to this definition">#</a></dt>
+<dd><p>Batch of all PD elements connected to this bus.</p>
+</dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="altdss.Bus.Bus.SectionID">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">SectionID</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">int</span></em><a class="headerlink" href="#altdss.Bus.Bus.SectionID" title="Link to this definition">#</a></dt>
+<dd><p>Integer ID of the feeder section in which this bus is located.</p>
+</dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="altdss.Bus.Bus.SeqVoltages">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">SeqVoltages</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">altdss.types.Float64Array</span></em><a class="headerlink" href="#altdss.Bus.Bus.SeqVoltages" title="Link to this definition">#</a></dt>
+<dd><p>Array of sequence voltages at this bus. Magnitudes only.</p>
+</dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="altdss.Bus.Bus.TotalKilometers">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">TotalKilometers</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">float</span></em><a class="headerlink" href="#altdss.Bus.Bus.TotalKilometers" title="Link to this definition">#</a></dt>
+<dd><p>Total length of line downline from this bus, in kilometers.</p>
+</dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="altdss.Bus.Bus.TotalMiles">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">TotalMiles</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">float</span></em><a class="headerlink" href="#altdss.Bus.Bus.TotalMiles" title="Link to this definition">#</a></dt>
+<dd><p>Total length of line downline from this bus, in miles. For recloser siting algorithm.</p>
+</dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="altdss.Bus.Bus.VLL">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">VLL</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">altdss.types.ComplexArray</span></em><a class="headerlink" href="#altdss.Bus.Bus.VLL" title="Link to this definition">#</a></dt>
+<dd><p>For 2- and 3-phase buses, returns array of complex numbers represetin L-L voltages in volts. Returns -1.0 for 1-phase bus. If more than 3 phases, returns only first 3.</p>
+</dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="altdss.Bus.Bus.VMagAngle">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">VMagAngle</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">altdss.types.Float64Array</span></em><a class="headerlink" href="#altdss.Bus.Bus.VMagAngle" title="Link to this definition">#</a></dt>
+<dd><p>Array of doubles containing voltages in Magnitude (VLN), angle (degrees)</p>
+</dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="altdss.Bus.Bus.Voc">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">Voc</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">altdss.types.ComplexArray</span></em><a class="headerlink" href="#altdss.Bus.Bus.Voc" title="Link to this definition">#</a></dt>
+<dd><p>Open circuit voltage; Complex array.</p>
+</dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="altdss.Bus.Bus.Voltages">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">Voltages</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">altdss.types.ComplexArray</span></em><a class="headerlink" href="#altdss.Bus.Bus.Voltages" title="Link to this definition">#</a></dt>
+<dd><p>Complex array of voltages at this bus.</p>
+</dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="altdss.Bus.Bus.X">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">X</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">float</span></em><a class="headerlink" href="#altdss.Bus.Bus.X" title="Link to this definition">#</a></dt>
+<dd><p>X Coordinate for bus</p>
+</dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="altdss.Bus.Bus.Y">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">Y</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">float</span></em><a class="headerlink" href="#altdss.Bus.Bus.Y" title="Link to this definition">#</a></dt>
+<dd><p>Y coordinate for bus</p>
+</dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="altdss.Bus.Bus.YscMatrix">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">YscMatrix</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">altdss.types.ComplexArray</span></em><a class="headerlink" href="#altdss.Bus.Bus.YscMatrix" title="Link to this definition">#</a></dt>
+<dd><p>Complex array of Ysc matrix at bus. Column by column.</p>
+</dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="altdss.Bus.Bus.Zsc0">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">Zsc0</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">complex</span></em><a class="headerlink" href="#altdss.Bus.Bus.Zsc0" title="Link to this definition">#</a></dt>
+<dd><p>Complex Zero-Sequence short circuit impedance at bus.</p>
+</dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="altdss.Bus.Bus.Zsc012Matrix">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">Zsc012Matrix</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">altdss.types.ComplexArray</span></em><a class="headerlink" href="#altdss.Bus.Bus.Zsc012Matrix" title="Link to this definition">#</a></dt>
+<dd><p>Array of doubles (complex) containing the complete 012 Zsc matrix.
+Only available after Zsc is computed, either through the “ZscRefresh” command, or running a “FaultStudy” solution.
+Only available for buses with 3 nodes.</p>
+</dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="altdss.Bus.Bus.Zsc1">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">Zsc1</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">complex</span></em><a class="headerlink" href="#altdss.Bus.Bus.Zsc1" title="Link to this definition">#</a></dt>
+<dd><p>Complex Positive-Sequence short circuit impedance at bus.</p>
+</dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="altdss.Bus.Bus.ZscMatrix">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">ZscMatrix</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">altdss.types.ComplexArray</span></em><a class="headerlink" href="#altdss.Bus.Bus.ZscMatrix" title="Link to this definition">#</a></dt>
+<dd><p>Complex array of Zsc matrix at bus. Column by column.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="altdss.Bus.Bus.ZscRefresh">
+<span class="sig-name descname"><span class="pre">ZscRefresh</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">bool</span></span></span><a class="headerlink" href="#altdss.Bus.Bus.ZscRefresh" title="Link to this definition">#</a></dt>
+<dd><p>Refreshes the Zsc matrix for this bus.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="altdss.Bus.Bus.__init__">
+<span class="sig-name descname"><span class="pre">__init__</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">api_util</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">ptr</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#altdss.Bus.Bus.__init__" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="altdss.Bus.Bus.__repr__">
+<span class="sig-name descname"><span class="pre">__repr__</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#altdss.Bus.Bus.__repr__" title="Link to this definition">#</a></dt>
+<dd><p>Return repr(self).</p>
+</dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="altdss.Bus.Bus.kVBase">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">kVBase</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">float</span></em><a class="headerlink" href="#altdss.Bus.Bus.kVBase" title="Link to this definition">#</a></dt>
+<dd><p>Base voltage at bus in kV</p>
+</dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="altdss.Bus.Bus.puVLL">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">puVLL</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">altdss.types.ComplexArray</span></em><a class="headerlink" href="#altdss.Bus.Bus.puVLL" title="Link to this definition">#</a></dt>
+<dd><p>Returns Complex array of pu L-L voltages for 2- and 3-phase buses. Returns -1.0 for 1-phase bus. If more than 3 phases, returns only 3 phases.</p>
+</dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="altdss.Bus.Bus.puVmagAngle">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">puVmagAngle</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">altdss.types.Float64Array</span></em><a class="headerlink" href="#altdss.Bus.Bus.puVmagAngle" title="Link to this definition">#</a></dt>
+<dd><p>Array of doubles containing voltage magnitude, angle (degrees) pairs in per unit</p>
+</dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="altdss.Bus.Bus.puVoltages">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">puVoltages</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">altdss.types.ComplexArray</span></em><a class="headerlink" href="#altdss.Bus.Bus.puVoltages" title="Link to this definition">#</a></dt>
+<dd><p>Complex Array of pu voltages at the bus.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="altdss.Bus.Bus.to_json">
+<span class="sig-name descname"><span class="pre">to_json</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">options</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Union</span><span class="p"><span class="pre">[</span></span><span class="pre">int</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">dss.enums.DSSJSONFlags</span><span class="p"><span class="pre">]</span></span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">0</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#altdss.Bus.Bus.to_json" title="Link to this definition">#</a></dt>
+<dd><p>Returns the data of this bus as a JSON-encoded string.</p>
+<p>Currently, only the basic data is included (name, coordinates, base voltage).</p>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="altdss.Bus.BusBatch">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">altdss.Bus.</span></span><span class="sig-name descname"><span class="pre">BusBatch</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">api_util</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">prefer_lists</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#altdss.Bus.BusBatch" title="Link to this definition">#</a></dt>
+<dd><p>Bases: <code class="xref py py-obj docutils literal notranslate"><span class="pre">altdss.common.Base</span></code></p>
+<dl class="py method">
+<dt class="sig sig-object py" id="altdss.Bus.BusBatch.CustDuration">
+<span class="sig-name descname"><span class="pre">CustDuration</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">altdss.types.Float64Array</span></span></span><a class="headerlink" href="#altdss.Bus.BusBatch.CustDuration" title="Link to this definition">#</a></dt>
+<dd><p>For each bus in the batch: accumulated customer outage durations for the bus.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="altdss.Bus.BusBatch.CustInterrupts">
+<span class="sig-name descname"><span class="pre">CustInterrupts</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">altdss.types.Float64Array</span></span></span><a class="headerlink" href="#altdss.Bus.BusBatch.CustInterrupts" title="Link to this definition">#</a></dt>
+<dd><p>For each bus in the batch: annual number of customer-interruptions from the bus.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="altdss.Bus.BusBatch.Distance">
+<span class="sig-name descname"><span class="pre">Distance</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">altdss.types.Float64Array</span></span></span><a class="headerlink" href="#altdss.Bus.BusBatch.Distance" title="Link to this definition">#</a></dt>
+<dd><p>For each bus in the batch: distance from energymeter (if non-zero)</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="altdss.Bus.BusBatch.IntDuration">
+<span class="sig-name descname"><span class="pre">IntDuration</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">altdss.types.Float64Array</span></span></span><a class="headerlink" href="#altdss.Bus.BusBatch.IntDuration" title="Link to this definition">#</a></dt>
+<dd><p>For each bus in the batch: average interruption duration, hours.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="altdss.Bus.BusBatch.Lambda">
+<span class="sig-name descname"><span class="pre">Lambda</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">altdss.types.Float64Array</span></span></span><a class="headerlink" href="#altdss.Bus.BusBatch.Lambda" title="Link to this definition">#</a></dt>
+<dd><p>For each bus in the batch: accumulated failure rate downstream from the bus; faults per year</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="altdss.Bus.BusBatch.NumCustomers">
+<span class="sig-name descname"><span class="pre">NumCustomers</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">altdss.types.Int32Array</span></span></span><a class="headerlink" href="#altdss.Bus.BusBatch.NumCustomers" title="Link to this definition">#</a></dt>
+<dd><p>For each bus in the batch: total numbers of customers served downline from the bus</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="altdss.Bus.BusBatch.NumInterrupts">
+<span class="sig-name descname"><span class="pre">NumInterrupts</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">altdss.types.Float64Array</span></span></span><a class="headerlink" href="#altdss.Bus.BusBatch.NumInterrupts" title="Link to this definition">#</a></dt>
+<dd><p>For each bus in the batch: number of interruptions on the bus per year</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="altdss.Bus.BusBatch.NumNodes">
+<span class="sig-name descname"><span class="pre">NumNodes</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">altdss.types.Int32Array</span></span></span><a class="headerlink" href="#altdss.Bus.BusBatch.NumNodes" title="Link to this definition">#</a></dt>
+<dd><p>For each bus in the batch: number of nodes in the bus.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="altdss.Bus.BusBatch.SectionID">
+<span class="sig-name descname"><span class="pre">SectionID</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">altdss.types.Int32Array</span></span></span><a class="headerlink" href="#altdss.Bus.BusBatch.SectionID" title="Link to this definition">#</a></dt>
+<dd><p>For each bus in the batch: integer ID of the feeder section in which the bus is located.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="altdss.Bus.BusBatch.TotalKilometers">
+<span class="sig-name descname"><span class="pre">TotalKilometers</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">altdss.types.Float64Array</span></span></span><a class="headerlink" href="#altdss.Bus.BusBatch.TotalKilometers" title="Link to this definition">#</a></dt>
+<dd><p>For each bus in the batch: total length of line downline from the bus, in kilometers.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="altdss.Bus.BusBatch.TotalMiles">
+<span class="sig-name descname"><span class="pre">TotalMiles</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">altdss.types.Float64Array</span></span></span><a class="headerlink" href="#altdss.Bus.BusBatch.TotalMiles" title="Link to this definition">#</a></dt>
+<dd><p>For each bus in the batch: total length of line downline from the bus, in miles. For recloser siting algorithm.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="altdss.Bus.BusBatch.X">
+<span class="sig-name descname"><span class="pre">X</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">altdss.types.Float64Array</span></span></span><a class="headerlink" href="#altdss.Bus.BusBatch.X" title="Link to this definition">#</a></dt>
+<dd><p>For each bus in the batch: get x coordinate</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="altdss.Bus.BusBatch.Y">
+<span class="sig-name descname"><span class="pre">Y</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">altdss.types.Float64Array</span></span></span><a class="headerlink" href="#altdss.Bus.BusBatch.Y" title="Link to this definition">#</a></dt>
+<dd><p>For each bus in the batch: get y coordinate</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="altdss.Bus.BusBatch.ZscRefresh">
+<span class="sig-name descname"><span class="pre">ZscRefresh</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">bool</span></span></span><a class="headerlink" href="#altdss.Bus.BusBatch.ZscRefresh" title="Link to this definition">#</a></dt>
+<dd><p>Refreshes the Zsc matrix for all buses in the batch</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="altdss.Bus.BusBatch.__call__">
+<span class="sig-name descname"><span class="pre">__call__</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">index</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Union</span><span class="p"><span class="pre">[</span></span><span class="pre">int</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">str</span><span class="p"><span class="pre">]</span></span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference internal" href="#altdss.Bus.Bus" title="altdss.Bus.Bus"><span class="pre">altdss.Bus.Bus</span></a></span></span><a class="headerlink" href="#altdss.Bus.BusBatch.__call__" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="altdss.Bus.BusBatch.__getitem__">
+<span class="sig-name descname"><span class="pre">__getitem__</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">index</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference internal" href="#altdss.Bus.Bus" title="altdss.Bus.Bus"><span class="pre">altdss.Bus.Bus</span></a></span></span><a class="headerlink" href="#altdss.Bus.BusBatch.__getitem__" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="altdss.Bus.BusBatch.__init__">
+<span class="sig-name descname"><span class="pre">__init__</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">api_util</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">prefer_lists</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#altdss.Bus.BusBatch.__init__" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="altdss.Bus.BusBatch.__iter__">
+<span class="sig-name descname"><span class="pre">__iter__</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">Iterator</span><span class="p"><span class="pre">[</span></span><a class="reference internal" href="#altdss.Bus.Bus" title="altdss.Bus.Bus"><span class="pre">altdss.Bus.Bus</span></a><span class="p"><span class="pre">]</span></span></span></span><a class="headerlink" href="#altdss.Bus.BusBatch.__iter__" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="altdss.Bus.BusBatch.__len__">
+<span class="sig-name descname"><span class="pre">__len__</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">int</span></span></span><a class="headerlink" href="#altdss.Bus.BusBatch.__len__" title="Link to this definition">#</a></dt>
+<dd><p>Total number of buses in the circuit.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="altdss.Bus.BusBatch.kVBase">
+<span class="sig-name descname"><span class="pre">kVBase</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">altdss.types.Float64Array</span></span></span><a class="headerlink" href="#altdss.Bus.BusBatch.kVBase" title="Link to this definition">#</a></dt>
+<dd><p>For each bus in the batch: base voltage in kV</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="altdss.Bus.BusBatch.to_json">
+<span class="sig-name descname"><span class="pre">to_json</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">options</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Union</span><span class="p"><span class="pre">[</span></span><span class="pre">int</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">dss.enums.DSSJSONFlags</span><span class="p"><span class="pre">]</span></span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">0</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#altdss.Bus.BusBatch.to_json" title="Link to this definition">#</a></dt>
+<dd><p>Returns the data of the buses in this batch as a JSON-encoded string.</p>
+<p>Currently, only the basic data is included (name, coordinates, base voltage).</p>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="altdss.Bus.IBuses">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">altdss.Bus.</span></span><span class="sig-name descname"><span class="pre">IBuses</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">api_util</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">prefer_lists</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#altdss.Bus.IBuses" title="Link to this definition">#</a></dt>
+<dd><p>Bases: <a class="reference internal" href="#altdss.Bus.BusBatch" title="altdss.Bus.BusBatch"><code class="xref py py-obj docutils literal notranslate"><span class="pre">altdss.Bus.BusBatch</span></code></a></p>
+<p>This is the general bus container, encapsulating operations on <strong>all</strong> buses.
+Use it to find, iterate and operate on individual buses, or extract data from
+all buses.</p>
+<dl class="py method">
+<dt class="sig sig-object py" id="altdss.Bus.IBuses.CustDuration">
+<span class="sig-name descname"><span class="pre">CustDuration</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">altdss.types.Float64Array</span></span></span><a class="headerlink" href="#altdss.Bus.IBuses.CustDuration" title="Link to this definition">#</a></dt>
+<dd><p>For each bus in the batch: accumulated customer outage durations for the bus.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="altdss.Bus.IBuses.CustInterrupts">
+<span class="sig-name descname"><span class="pre">CustInterrupts</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">altdss.types.Float64Array</span></span></span><a class="headerlink" href="#altdss.Bus.IBuses.CustInterrupts" title="Link to this definition">#</a></dt>
+<dd><p>For each bus in the batch: annual number of customer-interruptions from the bus.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="altdss.Bus.IBuses.Distance">
+<span class="sig-name descname"><span class="pre">Distance</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">altdss.types.Float64Array</span></span></span><a class="headerlink" href="#altdss.Bus.IBuses.Distance" title="Link to this definition">#</a></dt>
+<dd><p>For each bus in the batch: distance from energymeter (if non-zero)</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="altdss.Bus.IBuses.IntDuration">
+<span class="sig-name descname"><span class="pre">IntDuration</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">altdss.types.Float64Array</span></span></span><a class="headerlink" href="#altdss.Bus.IBuses.IntDuration" title="Link to this definition">#</a></dt>
+<dd><p>For each bus in the batch: average interruption duration, hours.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="altdss.Bus.IBuses.Lambda">
+<span class="sig-name descname"><span class="pre">Lambda</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">altdss.types.Float64Array</span></span></span><a class="headerlink" href="#altdss.Bus.IBuses.Lambda" title="Link to this definition">#</a></dt>
+<dd><p>For each bus in the batch: accumulated failure rate downstream from the bus; faults per year</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="altdss.Bus.IBuses.NumCustomers">
+<span class="sig-name descname"><span class="pre">NumCustomers</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">altdss.types.Int32Array</span></span></span><a class="headerlink" href="#altdss.Bus.IBuses.NumCustomers" title="Link to this definition">#</a></dt>
+<dd><p>For each bus in the batch: total numbers of customers served downline from the bus</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="altdss.Bus.IBuses.NumInterrupts">
+<span class="sig-name descname"><span class="pre">NumInterrupts</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">altdss.types.Float64Array</span></span></span><a class="headerlink" href="#altdss.Bus.IBuses.NumInterrupts" title="Link to this definition">#</a></dt>
+<dd><p>For each bus in the batch: number of interruptions on the bus per year</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="altdss.Bus.IBuses.NumNodes">
+<span class="sig-name descname"><span class="pre">NumNodes</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">altdss.types.Int32Array</span></span></span><a class="headerlink" href="#altdss.Bus.IBuses.NumNodes" title="Link to this definition">#</a></dt>
+<dd><p>For each bus in the batch: number of nodes in the bus.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="altdss.Bus.IBuses.SectionID">
+<span class="sig-name descname"><span class="pre">SectionID</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">altdss.types.Int32Array</span></span></span><a class="headerlink" href="#altdss.Bus.IBuses.SectionID" title="Link to this definition">#</a></dt>
+<dd><p>For each bus in the batch: integer ID of the feeder section in which the bus is located.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="altdss.Bus.IBuses.TotalKilometers">
+<span class="sig-name descname"><span class="pre">TotalKilometers</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">altdss.types.Float64Array</span></span></span><a class="headerlink" href="#altdss.Bus.IBuses.TotalKilometers" title="Link to this definition">#</a></dt>
+<dd><p>For each bus in the batch: total length of line downline from the bus, in kilometers.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="altdss.Bus.IBuses.TotalMiles">
+<span class="sig-name descname"><span class="pre">TotalMiles</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">altdss.types.Float64Array</span></span></span><a class="headerlink" href="#altdss.Bus.IBuses.TotalMiles" title="Link to this definition">#</a></dt>
+<dd><p>For each bus in the batch: total length of line downline from the bus, in miles. For recloser siting algorithm.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="altdss.Bus.IBuses.X">
+<span class="sig-name descname"><span class="pre">X</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">altdss.types.Float64Array</span></span></span><a class="headerlink" href="#altdss.Bus.IBuses.X" title="Link to this definition">#</a></dt>
+<dd><p>For each bus in the batch: get x coordinate</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="altdss.Bus.IBuses.Y">
+<span class="sig-name descname"><span class="pre">Y</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">altdss.types.Float64Array</span></span></span><a class="headerlink" href="#altdss.Bus.IBuses.Y" title="Link to this definition">#</a></dt>
+<dd><p>For each bus in the batch: get y coordinate</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="altdss.Bus.IBuses.ZscRefresh">
+<span class="sig-name descname"><span class="pre">ZscRefresh</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">bool</span></span></span><a class="headerlink" href="#altdss.Bus.IBuses.ZscRefresh" title="Link to this definition">#</a></dt>
+<dd><p>Refreshes the Zsc matrix for all buses in the batch</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="altdss.Bus.IBuses.__call__">
+<span class="sig-name descname"><span class="pre">__call__</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">index</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Union</span><span class="p"><span class="pre">[</span></span><span class="pre">int</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">str</span><span class="p"><span class="pre">]</span></span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference internal" href="#altdss.Bus.Bus" title="altdss.Bus.Bus"><span class="pre">altdss.Bus.Bus</span></a></span></span><a class="headerlink" href="#altdss.Bus.IBuses.__call__" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="altdss.Bus.IBuses.__getitem__">
+<span class="sig-name descname"><span class="pre">__getitem__</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">index</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Union</span><span class="p"><span class="pre">[</span></span><span class="pre">int</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">str</span><span class="p"><span class="pre">]</span></span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference internal" href="#altdss.Bus.Bus" title="altdss.Bus.Bus"><span class="pre">altdss.Bus.Bus</span></a></span></span><a class="headerlink" href="#altdss.Bus.IBuses.__getitem__" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="altdss.Bus.IBuses.__init__">
+<span class="sig-name descname"><span class="pre">__init__</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">api_util</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">prefer_lists</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#altdss.Bus.IBuses.__init__" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="altdss.Bus.IBuses.__iter__">
+<span class="sig-name descname"><span class="pre">__iter__</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">Iterator</span><span class="p"><span class="pre">[</span></span><a class="reference internal" href="#altdss.Bus.Bus" title="altdss.Bus.Bus"><span class="pre">altdss.Bus.Bus</span></a><span class="p"><span class="pre">]</span></span></span></span><a class="headerlink" href="#altdss.Bus.IBuses.__iter__" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="altdss.Bus.IBuses.__len__">
+<span class="sig-name descname"><span class="pre">__len__</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">int</span></span></span><a class="headerlink" href="#altdss.Bus.IBuses.__len__" title="Link to this definition">#</a></dt>
+<dd><p>Total number of buses in the circuit.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="altdss.Bus.IBuses.find">
+<span class="sig-name descname"><span class="pre">find</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">index_or_name</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Union</span><span class="p"><span class="pre">[</span></span><span class="pre">int</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">str</span><span class="p"><span class="pre">]</span></span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference internal" href="#altdss.Bus.Bus" title="altdss.Bus.Bus"><span class="pre">altdss.Bus.Bus</span></a></span></span><a class="headerlink" href="#altdss.Bus.IBuses.find" title="Link to this definition">#</a></dt>
+<dd><p>Returns a bus object for the selected index or name.</p>
+<p>Also available as <code class="docutils literal notranslate"><span class="pre">Buses[index]</span></code>.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="altdss.Bus.IBuses.kVBase">
+<span class="sig-name descname"><span class="pre">kVBase</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">altdss.types.Float64Array</span></span></span><a class="headerlink" href="#altdss.Bus.IBuses.kVBase" title="Link to this definition">#</a></dt>
+<dd><p>For each bus in the batch: base voltage in kV</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="altdss.Bus.IBuses.to_json">
+<span class="sig-name descname"><span class="pre">to_json</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">options</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Union</span><span class="p"><span class="pre">[</span></span><span class="pre">int</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">dss.enums.DSSJSONFlags</span><span class="p"><span class="pre">]</span></span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">0</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#altdss.Bus.IBuses.to_json" title="Link to this definition">#</a></dt>
+<dd><p>Returns the data of the buses in this batch as a JSON-encoded string.</p>
+<p>Currently, only the basic data is included (name, coordinates, base voltage).</p>
+</dd></dl>
+
+</dd></dl>
+
+</section>
+</section>
+</section>
+
+
+                </article>
+              
+
+              
+              
+              
+              
+                <footer class="prev-next-footer">
+                  
+<div class="prev-next-area">
+    <a class="left-prev"
+       href="altdss.Batch.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title"><code class="xref py py-mod docutils literal notranslate"><span class="pre">altdss.Batch</span></code></p>
+      </div>
+    </a>
+    <a class="right-next"
+       href="altdss.CNData.html"
+       title="next page">
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title"><code class="xref py py-mod docutils literal notranslate"><span class="pre">altdss.CNData</span></code></p>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
+    </a>
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#module-contents">Module Contents</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#classes">Classes</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#api">API</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#altdss.Bus.Bus"><code class="docutils literal notranslate"><span class="pre">Bus</span></code></a><ul class="nav section-nav flex-column">
+<li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#altdss.Bus.Bus.ComplexSeqVoltages"><code class="docutils literal notranslate"><span class="pre">Bus.ComplexSeqVoltages</span></code></a></li>
+<li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#altdss.Bus.Bus.CoordDefined"><code class="docutils literal notranslate"><span class="pre">Bus.CoordDefined</span></code></a></li>
+<li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#altdss.Bus.Bus.CustDuration"><code class="docutils literal notranslate"><span class="pre">Bus.CustDuration</span></code></a></li>
+<li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#altdss.Bus.Bus.CustInterrupts"><code class="docutils literal notranslate"><span class="pre">Bus.CustInterrupts</span></code></a></li>
+<li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#altdss.Bus.Bus.Distance"><code class="docutils literal notranslate"><span class="pre">Bus.Distance</span></code></a></li>
+<li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#altdss.Bus.Bus.GetUniqueNodeNumber"><code class="docutils literal notranslate"><span class="pre">Bus.GetUniqueNodeNumber()</span></code></a></li>
+<li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#altdss.Bus.Bus.IntDuration"><code class="docutils literal notranslate"><span class="pre">Bus.IntDuration</span></code></a></li>
+<li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#altdss.Bus.Bus.Isc"><code class="docutils literal notranslate"><span class="pre">Bus.Isc</span></code></a></li>
+<li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#altdss.Bus.Bus.Lambda"><code class="docutils literal notranslate"><span class="pre">Bus.Lambda</span></code></a></li>
+<li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#altdss.Bus.Bus.Lines"><code class="docutils literal notranslate"><span class="pre">Bus.Lines()</span></code></a></li>
+<li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#altdss.Bus.Bus.Loads"><code class="docutils literal notranslate"><span class="pre">Bus.Loads()</span></code></a></li>
+<li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#altdss.Bus.Bus.Name"><code class="docutils literal notranslate"><span class="pre">Bus.Name</span></code></a></li>
+<li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#altdss.Bus.Bus.Nodes"><code class="docutils literal notranslate"><span class="pre">Bus.Nodes</span></code></a></li>
+<li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#altdss.Bus.Bus.NumCustomers"><code class="docutils literal notranslate"><span class="pre">Bus.NumCustomers</span></code></a></li>
+<li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#altdss.Bus.Bus.NumInterrupts"><code class="docutils literal notranslate"><span class="pre">Bus.NumInterrupts</span></code></a></li>
+<li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#altdss.Bus.Bus.NumNodes"><code class="docutils literal notranslate"><span class="pre">Bus.NumNodes</span></code></a></li>
+<li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#altdss.Bus.Bus.PCElements"><code class="docutils literal notranslate"><span class="pre">Bus.PCElements()</span></code></a></li>
+<li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#altdss.Bus.Bus.PDElements"><code class="docutils literal notranslate"><span class="pre">Bus.PDElements()</span></code></a></li>
+<li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#altdss.Bus.Bus.SectionID"><code class="docutils literal notranslate"><span class="pre">Bus.SectionID</span></code></a></li>
+<li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#altdss.Bus.Bus.SeqVoltages"><code class="docutils literal notranslate"><span class="pre">Bus.SeqVoltages</span></code></a></li>
+<li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#altdss.Bus.Bus.TotalKilometers"><code class="docutils literal notranslate"><span class="pre">Bus.TotalKilometers</span></code></a></li>
+<li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#altdss.Bus.Bus.TotalMiles"><code class="docutils literal notranslate"><span class="pre">Bus.TotalMiles</span></code></a></li>
+<li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#altdss.Bus.Bus.VLL"><code class="docutils literal notranslate"><span class="pre">Bus.VLL</span></code></a></li>
+<li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#altdss.Bus.Bus.VMagAngle"><code class="docutils literal notranslate"><span class="pre">Bus.VMagAngle</span></code></a></li>
+<li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#altdss.Bus.Bus.Voc"><code class="docutils literal notranslate"><span class="pre">Bus.Voc</span></code></a></li>
+<li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#altdss.Bus.Bus.Voltages"><code class="docutils literal notranslate"><span class="pre">Bus.Voltages</span></code></a></li>
+<li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#altdss.Bus.Bus.X"><code class="docutils literal notranslate"><span class="pre">Bus.X</span></code></a></li>
+<li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#altdss.Bus.Bus.Y"><code class="docutils literal notranslate"><span class="pre">Bus.Y</span></code></a></li>
+<li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#altdss.Bus.Bus.YscMatrix"><code class="docutils literal notranslate"><span class="pre">Bus.YscMatrix</span></code></a></li>
+<li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#altdss.Bus.Bus.Zsc0"><code class="docutils literal notranslate"><span class="pre">Bus.Zsc0</span></code></a></li>
+<li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#altdss.Bus.Bus.Zsc012Matrix"><code class="docutils literal notranslate"><span class="pre">Bus.Zsc012Matrix</span></code></a></li>
+<li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#altdss.Bus.Bus.Zsc1"><code class="docutils literal notranslate"><span class="pre">Bus.Zsc1</span></code></a></li>
+<li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#altdss.Bus.Bus.ZscMatrix"><code class="docutils literal notranslate"><span class="pre">Bus.ZscMatrix</span></code></a></li>
+<li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#altdss.Bus.Bus.ZscRefresh"><code class="docutils literal notranslate"><span class="pre">Bus.ZscRefresh()</span></code></a></li>
+<li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#altdss.Bus.Bus.__init__"><code class="docutils literal notranslate"><span class="pre">Bus.__init__()</span></code></a></li>
+<li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#altdss.Bus.Bus.__repr__"><code class="docutils literal notranslate"><span class="pre">Bus.__repr__()</span></code></a></li>
+<li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#altdss.Bus.Bus.kVBase"><code class="docutils literal notranslate"><span class="pre">Bus.kVBase</span></code></a></li>
+<li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#altdss.Bus.Bus.puVLL"><code class="docutils literal notranslate"><span class="pre">Bus.puVLL</span></code></a></li>
+<li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#altdss.Bus.Bus.puVmagAngle"><code class="docutils literal notranslate"><span class="pre">Bus.puVmagAngle</span></code></a></li>
+<li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#altdss.Bus.Bus.puVoltages"><code class="docutils literal notranslate"><span class="pre">Bus.puVoltages</span></code></a></li>
+<li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#altdss.Bus.Bus.to_json"><code class="docutils literal notranslate"><span class="pre">Bus.to_json()</span></code></a></li>
+</ul>
+</li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#altdss.Bus.BusBatch"><code class="docutils literal notranslate"><span class="pre">BusBatch</span></code></a><ul class="nav section-nav flex-column">
+<li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#altdss.Bus.BusBatch.CustDuration"><code class="docutils literal notranslate"><span class="pre">BusBatch.CustDuration()</span></code></a></li>
+<li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#altdss.Bus.BusBatch.CustInterrupts"><code class="docutils literal notranslate"><span class="pre">BusBatch.CustInterrupts()</span></code></a></li>
+<li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#altdss.Bus.BusBatch.Distance"><code class="docutils literal notranslate"><span class="pre">BusBatch.Distance()</span></code></a></li>
+<li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#altdss.Bus.BusBatch.IntDuration"><code class="docutils literal notranslate"><span class="pre">BusBatch.IntDuration()</span></code></a></li>
+<li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#altdss.Bus.BusBatch.Lambda"><code class="docutils literal notranslate"><span class="pre">BusBatch.Lambda()</span></code></a></li>
+<li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#altdss.Bus.BusBatch.NumCustomers"><code class="docutils literal notranslate"><span class="pre">BusBatch.NumCustomers()</span></code></a></li>
+<li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#altdss.Bus.BusBatch.NumInterrupts"><code class="docutils literal notranslate"><span class="pre">BusBatch.NumInterrupts()</span></code></a></li>
+<li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#altdss.Bus.BusBatch.NumNodes"><code class="docutils literal notranslate"><span class="pre">BusBatch.NumNodes()</span></code></a></li>
+<li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#altdss.Bus.BusBatch.SectionID"><code class="docutils literal notranslate"><span class="pre">BusBatch.SectionID()</span></code></a></li>
+<li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#altdss.Bus.BusBatch.TotalKilometers"><code class="docutils literal notranslate"><span class="pre">BusBatch.TotalKilometers()</span></code></a></li>
+<li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#altdss.Bus.BusBatch.TotalMiles"><code class="docutils literal notranslate"><span class="pre">BusBatch.TotalMiles()</span></code></a></li>
+<li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#altdss.Bus.BusBatch.X"><code class="docutils literal notranslate"><span class="pre">BusBatch.X()</span></code></a></li>
+<li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#altdss.Bus.BusBatch.Y"><code class="docutils literal notranslate"><span class="pre">BusBatch.Y()</span></code></a></li>
+<li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#altdss.Bus.BusBatch.ZscRefresh"><code class="docutils literal notranslate"><span class="pre">BusBatch.ZscRefresh()</span></code></a></li>
+<li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#altdss.Bus.BusBatch.__call__"><code class="docutils literal notranslate"><span class="pre">BusBatch.__call__()</span></code></a></li>
+<li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#altdss.Bus.BusBatch.__getitem__"><code class="docutils literal notranslate"><span class="pre">BusBatch.__getitem__()</span></code></a></li>
+<li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#altdss.Bus.BusBatch.__init__"><code class="docutils literal notranslate"><span class="pre">BusBatch.__init__()</span></code></a></li>
+<li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#altdss.Bus.BusBatch.__iter__"><code class="docutils literal notranslate"><span class="pre">BusBatch.__iter__()</span></code></a></li>
+<li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#altdss.Bus.BusBatch.__len__"><code class="docutils literal notranslate"><span class="pre">BusBatch.__len__()</span></code></a></li>
+<li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#altdss.Bus.BusBatch.kVBase"><code class="docutils literal notranslate"><span class="pre">BusBatch.kVBase()</span></code></a></li>
+<li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#altdss.Bus.BusBatch.to_json"><code class="docutils literal notranslate"><span class="pre">BusBatch.to_json()</span></code></a></li>
+</ul>
+</li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#altdss.Bus.IBuses"><code class="docutils literal notranslate"><span class="pre">IBuses</span></code></a><ul class="nav section-nav flex-column">
+<li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#altdss.Bus.IBuses.CustDuration"><code class="docutils literal notranslate"><span class="pre">IBuses.CustDuration()</span></code></a></li>
+<li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#altdss.Bus.IBuses.CustInterrupts"><code class="docutils literal notranslate"><span class="pre">IBuses.CustInterrupts()</span></code></a></li>
+<li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#altdss.Bus.IBuses.Distance"><code class="docutils literal notranslate"><span class="pre">IBuses.Distance()</span></code></a></li>
+<li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#altdss.Bus.IBuses.IntDuration"><code class="docutils literal notranslate"><span class="pre">IBuses.IntDuration()</span></code></a></li>
+<li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#altdss.Bus.IBuses.Lambda"><code class="docutils literal notranslate"><span class="pre">IBuses.Lambda()</span></code></a></li>
+<li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#altdss.Bus.IBuses.NumCustomers"><code class="docutils literal notranslate"><span class="pre">IBuses.NumCustomers()</span></code></a></li>
+<li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#altdss.Bus.IBuses.NumInterrupts"><code class="docutils literal notranslate"><span class="pre">IBuses.NumInterrupts()</span></code></a></li>
+<li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#altdss.Bus.IBuses.NumNodes"><code class="docutils literal notranslate"><span class="pre">IBuses.NumNodes()</span></code></a></li>
+<li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#altdss.Bus.IBuses.SectionID"><code class="docutils literal notranslate"><span class="pre">IBuses.SectionID()</span></code></a></li>
+<li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#altdss.Bus.IBuses.TotalKilometers"><code class="docutils literal notranslate"><span class="pre">IBuses.TotalKilometers()</span></code></a></li>
+<li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#altdss.Bus.IBuses.TotalMiles"><code class="docutils literal notranslate"><span class="pre">IBuses.TotalMiles()</span></code></a></li>
+<li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#altdss.Bus.IBuses.X"><code class="docutils literal notranslate"><span class="pre">IBuses.X()</span></code></a></li>
+<li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#altdss.Bus.IBuses.Y"><code class="docutils literal notranslate"><span class="pre">IBuses.Y()</span></code></a></li>
+<li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#altdss.Bus.IBuses.ZscRefresh"><code class="docutils literal notranslate"><span class="pre">IBuses.ZscRefresh()</span></code></a></li>
+<li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#altdss.Bus.IBuses.__call__"><code class="docutils literal notranslate"><span class="pre">IBuses.__call__()</span></code></a></li>
+<li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#altdss.Bus.IBuses.__getitem__"><code class="docutils literal notranslate"><span class="pre">IBuses.__getitem__()</span></code></a></li>
+<li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#altdss.Bus.IBuses.__init__"><code class="docutils literal notranslate"><span class="pre">IBuses.__init__()</span></code></a></li>
+<li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#altdss.Bus.IBuses.__iter__"><code class="docutils literal notranslate"><span class="pre">IBuses.__iter__()</span></code></a></li>
+<li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#altdss.Bus.IBuses.__len__"><code class="docutils literal notranslate"><span class="pre">IBuses.__len__()</span></code></a></li>
+<li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#altdss.Bus.IBuses.find"><code class="docutils literal notranslate"><span class="pre">IBuses.find()</span></code></a></li>
+<li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#altdss.Bus.IBuses.kVBase"><code class="docutils literal notranslate"><span class="pre">IBuses.kVBase()</span></code></a></li>
+<li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#altdss.Bus.IBuses.to_json"><code class="docutils literal notranslate"><span class="pre">IBuses.to_json()</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+  </nav></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+<div class="bd-footer-content__inner container">
+  
+  <div class="footer-item">
+    
+
+  <p class="copyright">
+    
+      © Copyright 2018-2024 Paulo Meira, Dheepak Krishnamurthy, DSS-Extensions contributors.
+      <br/>
+    
+  </p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+</div>
+          </footer>
+        
+
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="../../_static/scripts/bootstrap.js?digest=8d27b9dea8ad943066ae"></script>
+<script src="../../_static/scripts/pydata-sphinx-theme.js?digest=8d27b9dea8ad943066ae"></script>
+
+  <footer class="bd-footer">
+  </footer>
+  </body>
+</html>

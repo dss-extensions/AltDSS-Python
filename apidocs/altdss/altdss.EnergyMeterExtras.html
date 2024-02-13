@@ -1,0 +1,908 @@
+
+<!DOCTYPE html>
+
+
+<html lang="en" data-content_root="../../" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.19: https://docutils.sourceforge.io/" />
+
+    <title>altdss.EnergyMeterExtras &#8212; AltDSS-Python 0.1.0 documentation</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "light";
+  </script>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../../_static/styles/theme.css?digest=8d27b9dea8ad943066ae" rel="stylesheet" />
+<link href="../../_static/styles/bootstrap.css?digest=8d27b9dea8ad943066ae" rel="stylesheet" />
+<link href="../../_static/styles/pydata-sphinx-theme.css?digest=8d27b9dea8ad943066ae" rel="stylesheet" />
+
+  
+  <link href="../../_static/vendor/fontawesome/6.5.1/css/all.min.css?digest=8d27b9dea8ad943066ae" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.5.1/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.5.1/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.5.1/webfonts/fa-regular-400.woff2" />
+
+    <link rel="stylesheet" type="text/css" href="../../_static/pygments.css?v=362ab14a" />
+    <link rel="stylesheet" type="text/css" href="../../_static/styles/sphinx-book-theme.css?v=384b581d" />
+    <link rel="stylesheet" type="text/css" href="../../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/design-style.1e8bd061cd6da7fc9cf755528e8ffc24.min.css?v=0a3b3ea7" />
+  
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../../_static/scripts/bootstrap.js?digest=8d27b9dea8ad943066ae" />
+<link rel="preload" as="script" href="../../_static/scripts/pydata-sphinx-theme.js?digest=8d27b9dea8ad943066ae" />
+  <script src="../../_static/vendor/fontawesome/6.5.1/js/all.min.js?digest=8d27b9dea8ad943066ae"></script>
+
+    <script src="../../_static/documentation_options.js?v=a1637f0b"></script>
+    <script src="../../_static/doctools.js?v=888ff710"></script>
+    <script src="../../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../../_static/scripts/sphinx-book-theme.js?v=efea14e4"></script>
+    <script src="../../_static/design-tabs.js?v=36754332"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'apidocs/altdss/altdss.EnergyMeterExtras';</script>
+    <link rel="icon" href="../../_static/dssx.png"/>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="altdss.Error" href="altdss.Error.html" />
+    <link rel="prev" title="altdss.EnergyMeter" href="altdss.EnergyMeter.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <a id="pst-skip-link" class="skip-link" href="#main-content">Skip to main content</a>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>
+    Back to top
+  </button>
+
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__primary"
+          id="__primary"/>
+  <label class="overlay overlay-primary" for="__primary"></label>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__secondary"
+          id="__secondary"/>
+  <label class="overlay overlay-secondary" for="__secondary"></label>
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container">
+<form class="bd-search d-flex align-items-center"
+      action="../../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         id="search-input"
+         placeholder="Search..."
+         aria-label="Search..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+  </div>
+  
+    <header class="bd-header navbar navbar-expand-lg bd-navbar">
+    </header>
+  
+
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      
+      
+      <div class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+    
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+
+  
+
+<a class="navbar-brand logo" href="../../index.html">
+  
+  
+  
+  
+  
+    
+    
+      
+    
+    
+    <img src="../../_static/altdss-python.svg" class="logo__image only-light" alt="AltDSS-Python 0.1.0 documentation - Home"/>
+    <script>document.write(`<img src="../../_static/altdss-python-dark.svg" class="logo__image only-dark" alt="AltDSS-Python 0.1.0 documentation - Home"/>`);</script>
+  
+  
+</a></div>
+        <div class="sidebar-primary-item">
+
+ <script>
+ document.write(`
+   <button class="btn navbar-btn search-button-field search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+    <span class="search-button__default-text">Search</span>
+    <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+   </button>
+ `);
+ </script></div>
+        <div class="sidebar-primary-item"><nav class="bd-links bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
+        <p aria-level="2" class="caption" role="heading"><span class="caption-text">General</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../../index.html">AltDSS-Python</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../Architecture.html">Architecture details</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../examples/GettingStarted.html">Getting Started</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../changelog.html">Changelog</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">API Reference</span></p>
+<ul class="current nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../../enumerations.html">General enums</a></li>
+<li class="toctree-l1 current active has-children"><a class="reference internal" href="../index.html">altdss package</a><input checked="" class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-1"><i class="fa-solid fa-chevron-down"></i></label><ul class="current">
+<li class="toctree-l2 current active has-children"><a class="reference internal" href="altdss.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">altdss</span></code></a><input checked="" class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-2"><i class="fa-solid fa-chevron-down"></i></label><ul class="current">
+<li class="toctree-l3"><a class="reference internal" href="altdss.AltDSS.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">altdss.AltDSS</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="altdss.ArrayProxy.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">altdss.ArrayProxy</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="altdss.AutoTrans.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">altdss.AutoTrans</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="altdss.Batch.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">altdss.Batch</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="altdss.Bus.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">altdss.Bus</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="altdss.CNData.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">altdss.CNData</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="altdss.CapControl.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">altdss.CapControl</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="altdss.Capacitor.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">altdss.Capacitor</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="altdss.CircuitElement.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">altdss.CircuitElement</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="altdss.ControlQueue.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">altdss.ControlQueue</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="altdss.DSSObj.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">altdss.DSSObj</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="altdss.DynamicExp.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">altdss.DynamicExp</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="altdss.ESPVLControl.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">altdss.ESPVLControl</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="altdss.EnergyMeter.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">altdss.EnergyMeter</span></code></a></li>
+<li class="toctree-l3 current active"><a class="current reference internal" href="#"><code class="xref py py-mod docutils literal notranslate"><span class="pre">altdss.EnergyMeterExtras</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="altdss.Error.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">altdss.Error</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="altdss.ExpControl.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">altdss.ExpControl</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="altdss.Fault.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">altdss.Fault</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="altdss.Fuse.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">altdss.Fuse</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="altdss.GICLine.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">altdss.GICLine</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="altdss.GICTransformer.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">altdss.GICTransformer</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="altdss.GICsource.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">altdss.GICsource</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="altdss.GenDispatcher.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">altdss.GenDispatcher</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="altdss.Generator.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">altdss.Generator</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="altdss.GrowthShape.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">altdss.GrowthShape</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="altdss.IndMach012.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">altdss.IndMach012</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="altdss.InvControl.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">altdss.InvControl</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="altdss.Isource.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">altdss.Isource</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="altdss.Line.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">altdss.Line</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="altdss.LineCode.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">altdss.LineCode</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="altdss.LineGeometry.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">altdss.LineGeometry</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="altdss.LineSpacing.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">altdss.LineSpacing</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="altdss.Load.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">altdss.Load</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="altdss.LoadShape.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">altdss.LoadShape</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="altdss.LoadShapeExtras.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">altdss.LoadShapeExtras</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="altdss.Monitor.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">altdss.Monitor</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="altdss.MonitorExtras.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">altdss.MonitorExtras</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="altdss.Obj.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">altdss.Obj</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="altdss.PCElement.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">altdss.PCElement</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="altdss.PDElement.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">altdss.PDElement</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="altdss.PVSystem.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">altdss.PVSystem</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="altdss.PriceShape.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">altdss.PriceShape</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="altdss.Reactor.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">altdss.Reactor</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="altdss.Recloser.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">altdss.Recloser</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="altdss.ReduceCkt.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">altdss.ReduceCkt</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="altdss.RegControl.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">altdss.RegControl</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="altdss.Relay.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">altdss.Relay</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="altdss.Sensor.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">altdss.Sensor</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="altdss.Settings.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">altdss.Settings</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="altdss.Solution.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">altdss.Solution</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="altdss.Spectrum.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">altdss.Spectrum</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="altdss.Storage.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">altdss.Storage</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="altdss.StorageController.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">altdss.StorageController</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="altdss.SwtControl.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">altdss.SwtControl</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="altdss.TCC_Curve.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">altdss.TCC_Curve</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="altdss.TSData.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">altdss.TSData</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="altdss.TShape.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">altdss.TShape</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="altdss.Topology.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">altdss.Topology</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="altdss.Transformer.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">altdss.Transformer</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="altdss.TransformerExtras.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">altdss.TransformerExtras</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="altdss.UPFC.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">altdss.UPFC</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="altdss.UPFCControl.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">altdss.UPFCControl</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="altdss.VCCS.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">altdss.VCCS</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="altdss.VSConverter.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">altdss.VSConverter</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="altdss.Vsource.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">altdss.Vsource</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="altdss.WireData.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">altdss.WireData</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="altdss.XYcurve.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">altdss.XYcurve</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="altdss.XfmrCode.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">altdss.XfmrCode</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="altdss.YMatrix.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">altdss.YMatrix</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="altdss.ZIP.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">altdss.ZIP</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="altdss.common.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">altdss.common</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="altdss.enums.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">altdss.enums</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="altdss.types.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">altdss.types</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">External links</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference external" href="https://github.com/dss-extensions/dss_python">GitHub repository</a></li>
+<li class="toctree-l1"><a class="reference external" href="https://pypi.python.org/pypi/OpenDSSDirect.py/">Package on PyPI</a></li>
+<li class="toctree-l1"><a class="reference external" href="https://github.com/dss-extensions/electricdss-tst">Test/example circuits</a></li>
+
+<li class="toctree-l1"><a class="reference external" href="https://dss-extensions.org/OpenDSSDirect.py">OpenDSSDirect.py</a></li>
+<li class="toctree-l1"><a class="reference external" href="https://dss-extensions.org/dss_python/">DSS-Python</a></li>
+<li class="toctree-l1"><a class="reference external" href="https://github.com/orgs/dss-extensions/discussions">DSS-Extensions Discussions</a></li>
+<li class="toctree-l1"><a class="reference external" href="https://sourceforge.net/p/electricdss/discussion/">OpenDSS forum</a></li>
+<li class="toctree-l1"><a class="reference external" href="https://opendss.epri.com/opendss_documentation.html">OpenDSS documentation</a></li>
+</ul>
+
+    </div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+  
+  <div id="rtd-footer-container"></div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main">
+        
+        
+
+<div class="sbt-scroll-pixel-helper"></div>
+
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item"><label class="sidebar-toggle primary-toggle btn btn-sm" for="__primary" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <span class="fa-solid fa-bars"></span>
+</label></div>
+      
+    </div>
+  
+  
+    <div class="header-article-items__end">
+      
+        <div class="header-article-item">
+
+<div class="article-header-buttons">
+
+
+
+
+
+<div class="dropdown dropdown-download-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Download this page">
+    <i class="fas fa-download"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="../../_sources/apidocs/altdss/altdss.EnergyMeterExtras.md" target="_blank"
+   class="btn btn-sm btn-download-source-button dropdown-item"
+   title="Download source file"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="btn__text-container">.md</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li>
+<button onclick="window.print()"
+  class="btn btn-sm btn-download-pdf-button dropdown-item"
+  title="Print to PDF"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="btn__text-container">.pdf</span>
+</button>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+<button onclick="toggleFullScreen()"
+  class="btn btn-sm btn-fullscreen-button"
+  title="Fullscreen mode"
+  data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm navbar-btn theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="theme-switch nav-link" data-mode="light"><i class="fa-solid fa-sun fa-lg"></i></span>
+    <span class="theme-switch nav-link" data-mode="dark"><i class="fa-solid fa-moon fa-lg"></i></span>
+    <span class="theme-switch nav-link" data-mode="auto"><i class="fa-solid fa-circle-half-stroke fa-lg"></i></span>
+  </button>
+`);
+</script>
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm navbar-btn search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass fa-lg"></i>
+  </button>
+`);
+</script>
+<label class="sidebar-toggle secondary-toggle btn btn-sm" for="__secondary"title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</label>
+</div></div>
+      
+    </div>
+  
+</div>
+</div>
+              
+              
+
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1>altdss.EnergyMeterExtras</h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
+            
+            <div>
+                <h2> Contents </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#module-contents">Module Contents</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#classes">Classes</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#api">API</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#altdss.EnergyMeterExtras.EnergyMeterBatchMixin"><code class="docutils literal notranslate"><span class="pre">EnergyMeterBatchMixin</span></code></a><ul class="nav section-nav flex-column">
+<li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#altdss.EnergyMeterExtras.EnergyMeterBatchMixin.DoReliabilityCalc"><code class="docutils literal notranslate"><span class="pre">EnergyMeterBatchMixin.DoReliabilityCalc()</span></code></a></li>
+<li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#altdss.EnergyMeterExtras.EnergyMeterBatchMixin.NumEndElements"><code class="docutils literal notranslate"><span class="pre">EnergyMeterBatchMixin.NumEndElements()</span></code></a></li>
+<li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#altdss.EnergyMeterExtras.EnergyMeterBatchMixin.NumSections"><code class="docutils literal notranslate"><span class="pre">EnergyMeterBatchMixin.NumSections()</span></code></a></li>
+<li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#altdss.EnergyMeterExtras.EnergyMeterBatchMixin.TotalCustomers"><code class="docutils literal notranslate"><span class="pre">EnergyMeterBatchMixin.TotalCustomers()</span></code></a></li>
+</ul>
+</li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#altdss.EnergyMeterExtras.EnergyMeterObjMixin"><code class="docutils literal notranslate"><span class="pre">EnergyMeterObjMixin</span></code></a><ul class="nav section-nav flex-column">
+<li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#altdss.EnergyMeterExtras.EnergyMeterObjMixin.AllocFactors"><code class="docutils literal notranslate"><span class="pre">EnergyMeterObjMixin.AllocFactors</span></code></a></li>
+<li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#altdss.EnergyMeterExtras.EnergyMeterObjMixin.Branches"><code class="docutils literal notranslate"><span class="pre">EnergyMeterObjMixin.Branches</span></code></a></li>
+<li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#altdss.EnergyMeterExtras.EnergyMeterObjMixin.CalcCurrent"><code class="docutils literal notranslate"><span class="pre">EnergyMeterObjMixin.CalcCurrent</span></code></a></li>
+<li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#altdss.EnergyMeterExtras.EnergyMeterObjMixin.DoReliabilityCalc"><code class="docutils literal notranslate"><span class="pre">EnergyMeterObjMixin.DoReliabilityCalc()</span></code></a></li>
+<li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#altdss.EnergyMeterExtras.EnergyMeterObjMixin.EndElements"><code class="docutils literal notranslate"><span class="pre">EnergyMeterObjMixin.EndElements</span></code></a></li>
+<li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#altdss.EnergyMeterExtras.EnergyMeterObjMixin.Loads"><code class="docutils literal notranslate"><span class="pre">EnergyMeterObjMixin.Loads</span></code></a></li>
+<li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#altdss.EnergyMeterExtras.EnergyMeterObjMixin.NumEndElements"><code class="docutils literal notranslate"><span class="pre">EnergyMeterObjMixin.NumEndElements()</span></code></a></li>
+<li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#altdss.EnergyMeterExtras.EnergyMeterObjMixin.NumSections"><code class="docutils literal notranslate"><span class="pre">EnergyMeterObjMixin.NumSections()</span></code></a></li>
+<li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#altdss.EnergyMeterExtras.EnergyMeterObjMixin.Section"><code class="docutils literal notranslate"><span class="pre">EnergyMeterObjMixin.Section()</span></code></a></li>
+<li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#altdss.EnergyMeterExtras.EnergyMeterObjMixin.Sections"><code class="docutils literal notranslate"><span class="pre">EnergyMeterObjMixin.Sections()</span></code></a></li>
+<li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#altdss.EnergyMeterExtras.EnergyMeterObjMixin.Sequence"><code class="docutils literal notranslate"><span class="pre">EnergyMeterObjMixin.Sequence</span></code></a></li>
+<li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#altdss.EnergyMeterExtras.EnergyMeterObjMixin.TotalCustomers"><code class="docutils literal notranslate"><span class="pre">EnergyMeterObjMixin.TotalCustomers()</span></code></a></li>
+<li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#altdss.EnergyMeterExtras.EnergyMeterObjMixin.ZonePCEs"><code class="docutils literal notranslate"><span class="pre">EnergyMeterObjMixin.ZonePCEs</span></code></a></li>
+<li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#altdss.EnergyMeterExtras.EnergyMeterObjMixin.__init__"><code class="docutils literal notranslate"><span class="pre">EnergyMeterObjMixin.__init__()</span></code></a></li>
+</ul>
+</li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#altdss.EnergyMeterExtras.IEnergyMeterMixin"><code class="docutils literal notranslate"><span class="pre">IEnergyMeterMixin</span></code></a><ul class="nav section-nav flex-column">
+<li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#altdss.EnergyMeterExtras.IEnergyMeterMixin.CloseDIFiles"><code class="docutils literal notranslate"><span class="pre">IEnergyMeterMixin.CloseDIFiles()</span></code></a></li>
+<li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#altdss.EnergyMeterExtras.IEnergyMeterMixin.DIFilesAreOpen"><code class="docutils literal notranslate"><span class="pre">IEnergyMeterMixin.DIFilesAreOpen()</span></code></a></li>
+<li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#altdss.EnergyMeterExtras.IEnergyMeterMixin.OpenDIFiles"><code class="docutils literal notranslate"><span class="pre">IEnergyMeterMixin.OpenDIFiles()</span></code></a></li>
+<li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#altdss.EnergyMeterExtras.IEnergyMeterMixin.Totals"><code class="docutils literal notranslate"><span class="pre">IEnergyMeterMixin.Totals()</span></code></a></li>
+</ul>
+</li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#altdss.EnergyMeterExtras.MeterSection"><code class="docutils literal notranslate"><span class="pre">MeterSection</span></code></a><ul class="nav section-nav flex-column">
+<li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#altdss.EnergyMeterExtras.MeterSection.AvgRepairTime"><code class="docutils literal notranslate"><span class="pre">MeterSection.AvgRepairTime()</span></code></a></li>
+<li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#altdss.EnergyMeterExtras.MeterSection.FaultRateXRepairHours"><code class="docutils literal notranslate"><span class="pre">MeterSection.FaultRateXRepairHours()</span></code></a></li>
+<li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#altdss.EnergyMeterExtras.MeterSection.Index"><code class="docutils literal notranslate"><span class="pre">MeterSection.Index()</span></code></a></li>
+<li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#altdss.EnergyMeterExtras.MeterSection.NumBranches"><code class="docutils literal notranslate"><span class="pre">MeterSection.NumBranches()</span></code></a></li>
+<li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#altdss.EnergyMeterExtras.MeterSection.NumCustomers"><code class="docutils literal notranslate"><span class="pre">MeterSection.NumCustomers()</span></code></a></li>
+<li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#altdss.EnergyMeterExtras.MeterSection.OCPDeviceType"><code class="docutils literal notranslate"><span class="pre">MeterSection.OCPDeviceType()</span></code></a></li>
+<li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#altdss.EnergyMeterExtras.MeterSection.SequenceIndex"><code class="docutils literal notranslate"><span class="pre">MeterSection.SequenceIndex()</span></code></a></li>
+<li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#altdss.EnergyMeterExtras.MeterSection.SumBranchFaultRates"><code class="docutils literal notranslate"><span class="pre">MeterSection.SumBranchFaultRates()</span></code></a></li>
+<li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#altdss.EnergyMeterExtras.MeterSection.TotalCustomers"><code class="docutils literal notranslate"><span class="pre">MeterSection.TotalCustomers()</span></code></a></li>
+<li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#altdss.EnergyMeterExtras.MeterSection.__init__"><code class="docutils literal notranslate"><span class="pre">MeterSection.__init__()</span></code></a></li>
+<li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#altdss.EnergyMeterExtras.MeterSection.as_dict"><code class="docutils literal notranslate"><span class="pre">MeterSection.as_dict()</span></code></a></li>
+</ul>
+</li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#altdss.EnergyMeterExtras.MeterSections"><code class="docutils literal notranslate"><span class="pre">MeterSections</span></code></a><ul class="nav section-nav flex-column">
+<li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#altdss.EnergyMeterExtras.MeterSections.__call__"><code class="docutils literal notranslate"><span class="pre">MeterSections.__call__()</span></code></a></li>
+<li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#altdss.EnergyMeterExtras.MeterSections.__getitem__"><code class="docutils literal notranslate"><span class="pre">MeterSections.__getitem__</span></code></a></li>
+<li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#altdss.EnergyMeterExtras.MeterSections.__init__"><code class="docutils literal notranslate"><span class="pre">MeterSections.__init__()</span></code></a></li>
+<li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#altdss.EnergyMeterExtras.MeterSections.__iter__"><code class="docutils literal notranslate"><span class="pre">MeterSections.__iter__()</span></code></a></li>
+<li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#altdss.EnergyMeterExtras.MeterSections.__len__"><code class="docutils literal notranslate"><span class="pre">MeterSections.__len__()</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+            </nav>
+        </div>
+    </div>
+</div>
+
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article">
+                  
+  <section class="tex2jax_ignore mathjax_ignore" id="module-altdss.EnergyMeterExtras">
+<span id="altdss-energymeterextras"></span><h1><a class="reference internal" href="#module-altdss.EnergyMeterExtras" title="altdss.EnergyMeterExtras"><code class="xref py py-mod docutils literal notranslate"><span class="pre">altdss.EnergyMeterExtras</span></code></a><a class="headerlink" href="#module-altdss.EnergyMeterExtras" title="Link to this heading">#</a></h1>
+<section id="module-contents">
+<h2>Module Contents<a class="headerlink" href="#module-contents" title="Link to this heading">#</a></h2>
+<section id="classes">
+<h3>Classes<a class="headerlink" href="#classes" title="Link to this heading">#</a></h3>
+<table class="autosummary longtable table table-left">
+<tbody>
+<tr class="row-odd"><td><p><a class="reference internal" href="#altdss.EnergyMeterExtras.EnergyMeterBatchMixin" title="altdss.EnergyMeterExtras.EnergyMeterBatchMixin"><code class="xref py py-obj docutils literal notranslate"><span class="pre">EnergyMeterBatchMixin</span></code></a></p></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#altdss.EnergyMeterExtras.EnergyMeterObjMixin" title="altdss.EnergyMeterExtras.EnergyMeterObjMixin"><code class="xref py py-obj docutils literal notranslate"><span class="pre">EnergyMeterObjMixin</span></code></a></p></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="#altdss.EnergyMeterExtras.IEnergyMeterMixin" title="altdss.EnergyMeterExtras.IEnergyMeterMixin"><code class="xref py py-obj docutils literal notranslate"><span class="pre">IEnergyMeterMixin</span></code></a></p></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#altdss.EnergyMeterExtras.MeterSection" title="altdss.EnergyMeterExtras.MeterSection"><code class="xref py py-obj docutils literal notranslate"><span class="pre">MeterSection</span></code></a></p></td>
+<td><p>Encapsulates meter section functions</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="#altdss.EnergyMeterExtras.MeterSections" title="altdss.EnergyMeterExtras.MeterSections"><code class="xref py py-obj docutils literal notranslate"><span class="pre">MeterSections</span></code></a></p></td>
+<td><p>Encapsulates meter sections to provide iteration and indexing.</p></td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="api">
+<h3>API<a class="headerlink" href="#api" title="Link to this heading">#</a></h3>
+<dl class="py class">
+<dt class="sig sig-object py" id="altdss.EnergyMeterExtras.EnergyMeterBatchMixin">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">altdss.EnergyMeterExtras.</span></span><span class="sig-name descname"><span class="pre">EnergyMeterBatchMixin</span></span><a class="headerlink" href="#altdss.EnergyMeterExtras.EnergyMeterBatchMixin" title="Link to this definition">#</a></dt>
+<dd><dl class="py method">
+<dt class="sig sig-object py" id="altdss.EnergyMeterExtras.EnergyMeterBatchMixin.DoReliabilityCalc">
+<span class="sig-name descname"><span class="pre">DoReliabilityCalc</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">assumeRestoration</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span><a class="headerlink" href="#altdss.EnergyMeterExtras.EnergyMeterBatchMixin.DoReliabilityCalc" title="Link to this definition">#</a></dt>
+<dd><p>Calculate reliability indices for each meter</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="altdss.EnergyMeterExtras.EnergyMeterBatchMixin.NumEndElements">
+<span class="sig-name descname"><span class="pre">NumEndElements</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">altdss.types.Int32Array</span></span></span><a class="headerlink" href="#altdss.EnergyMeterExtras.EnergyMeterBatchMixin.NumEndElements" title="Link to this definition">#</a></dt>
+<dd><p>Number of zone end elements in the active meter zone.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="altdss.EnergyMeterExtras.EnergyMeterBatchMixin.NumSections">
+<span class="sig-name descname"><span class="pre">NumSections</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">altdss.types.Int32Array</span></span></span><a class="headerlink" href="#altdss.EnergyMeterExtras.EnergyMeterBatchMixin.NumSections" title="Link to this definition">#</a></dt>
+<dd><p>Number of feeder sections in the zone of each meter</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="altdss.EnergyMeterExtras.EnergyMeterBatchMixin.TotalCustomers">
+<span class="sig-name descname"><span class="pre">TotalCustomers</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">altdss.types.Int32Array</span></span></span><a class="headerlink" href="#altdss.EnergyMeterExtras.EnergyMeterBatchMixin.TotalCustomers" title="Link to this definition">#</a></dt>
+<dd><p>Total Number of customers in this zone (downline from the EnergyMeter)</p>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="altdss.EnergyMeterExtras.EnergyMeterObjMixin">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">altdss.EnergyMeterExtras.</span></span><span class="sig-name descname"><span class="pre">EnergyMeterObjMixin</span></span><a class="headerlink" href="#altdss.EnergyMeterExtras.EnergyMeterObjMixin" title="Link to this definition">#</a></dt>
+<dd><dl class="py property">
+<dt class="sig sig-object py" id="altdss.EnergyMeterExtras.EnergyMeterObjMixin.AllocFactors">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">AllocFactors</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">altdss.types.Float64Array</span></em><a class="headerlink" href="#altdss.EnergyMeterExtras.EnergyMeterObjMixin.AllocFactors" title="Link to this definition">#</a></dt>
+<dd><p>Set the phase allocation factors for this meter.</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="altdss.EnergyMeterExtras.EnergyMeterObjMixin.Branches">
+<span class="sig-name descname"><span class="pre">Branches</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><a class="reference internal" href="altdss.PDElement.html#altdss.PDElement.PDElementBatch" title="altdss.PDElement.PDElementBatch"><span class="pre">altdss.PDElement.PDElementBatch</span></a></em><a class="headerlink" href="#altdss.EnergyMeterExtras.EnergyMeterObjMixin.Branches" title="Link to this definition">#</a></dt>
+<dd><p>None</p>
+<p>Accessor for all loads in the meter zone (internal LoadList).</p>
+</dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="altdss.EnergyMeterExtras.EnergyMeterObjMixin.CalcCurrent">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">CalcCurrent</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">altdss.types.Float64Array</span></em><a class="headerlink" href="#altdss.EnergyMeterExtras.EnergyMeterObjMixin.CalcCurrent" title="Link to this definition">#</a></dt>
+<dd><p>Set/get the magnitude of the real part of the Calculated Current (normally determined by solution)
+for the meter to force some behavior on Load Allocation</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="altdss.EnergyMeterExtras.EnergyMeterObjMixin.DoReliabilityCalc">
+<span class="sig-name descname"><span class="pre">DoReliabilityCalc</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">assumeRestoration</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span><a class="headerlink" href="#altdss.EnergyMeterExtras.EnergyMeterObjMixin.DoReliabilityCalc" title="Link to this definition">#</a></dt>
+<dd><p>Calculate reliability indices</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="altdss.EnergyMeterExtras.EnergyMeterObjMixin.EndElements">
+<span class="sig-name descname"><span class="pre">EndElements</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><a class="reference internal" href="altdss.CircuitElement.html#altdss.CircuitElement.CircuitElementBatch" title="altdss.CircuitElement.CircuitElementBatch"><span class="pre">altdss.CircuitElement.CircuitElementBatch</span></a></em><a class="headerlink" href="#altdss.EnergyMeterExtras.EnergyMeterObjMixin.EndElements" title="Link to this definition">#</a></dt>
+<dd><p>None</p>
+<p>Accessor for all branches in the meter zone.</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="altdss.EnergyMeterExtras.EnergyMeterObjMixin.Loads">
+<span class="sig-name descname"><span class="pre">Loads</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><a class="reference internal" href="altdss.Load.html#altdss.Load.LoadBatch" title="altdss.Load.LoadBatch"><span class="pre">altdss.Load.LoadBatch</span></a></em><a class="headerlink" href="#altdss.EnergyMeterExtras.EnergyMeterObjMixin.Loads" title="Link to this definition">#</a></dt>
+<dd><p>None</p>
+<p>Accessor for all branches in the meter zone (internal SequenceList), in lexical order</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="altdss.EnergyMeterExtras.EnergyMeterObjMixin.NumEndElements">
+<span class="sig-name descname"><span class="pre">NumEndElements</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">int</span></span></span><a class="headerlink" href="#altdss.EnergyMeterExtras.EnergyMeterObjMixin.NumEndElements" title="Link to this definition">#</a></dt>
+<dd><p>Number of zone end elements in the active meter zone.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="altdss.EnergyMeterExtras.EnergyMeterObjMixin.NumSections">
+<span class="sig-name descname"><span class="pre">NumSections</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">int</span></span></span><a class="headerlink" href="#altdss.EnergyMeterExtras.EnergyMeterObjMixin.NumSections" title="Link to this definition">#</a></dt>
+<dd><p>Number of feeder sections in this meter’s zone</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="altdss.EnergyMeterExtras.EnergyMeterObjMixin.Section">
+<span class="sig-name descname"><span class="pre">Section</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">idx</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference internal" href="#altdss.EnergyMeterExtras.MeterSection" title="altdss.EnergyMeterExtras.MeterSection"><span class="pre">altdss.EnergyMeterExtras.MeterSection</span></a></span></span><a class="headerlink" href="#altdss.EnergyMeterExtras.EnergyMeterObjMixin.Section" title="Link to this definition">#</a></dt>
+<dd><p>Returns a wrapper for a single meter section</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="altdss.EnergyMeterExtras.EnergyMeterObjMixin.Sections">
+<span class="sig-name descname"><span class="pre">Sections</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference internal" href="#altdss.EnergyMeterExtras.MeterSections" title="altdss.EnergyMeterExtras.MeterSections"><span class="pre">altdss.EnergyMeterExtras.MeterSections</span></a></span></span><a class="headerlink" href="#altdss.EnergyMeterExtras.EnergyMeterObjMixin.Sections" title="Link to this definition">#</a></dt>
+<dd><p>Returns a wrapper for meter sections</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="altdss.EnergyMeterExtras.EnergyMeterObjMixin.Sequence">
+<span class="sig-name descname"><span class="pre">Sequence</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><a class="reference internal" href="altdss.CircuitElement.html#altdss.CircuitElement.CircuitElementBatch" title="altdss.CircuitElement.CircuitElementBatch"><span class="pre">altdss.CircuitElement.CircuitElementBatch</span></a></em><a class="headerlink" href="#altdss.EnergyMeterExtras.EnergyMeterObjMixin.Sequence" title="Link to this definition">#</a></dt>
+<dd><p>None</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="altdss.EnergyMeterExtras.EnergyMeterObjMixin.TotalCustomers">
+<span class="sig-name descname"><span class="pre">TotalCustomers</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">int</span></span></span><a class="headerlink" href="#altdss.EnergyMeterExtras.EnergyMeterObjMixin.TotalCustomers" title="Link to this definition">#</a></dt>
+<dd><p>Total Number of customers in this zone (downline from the EnergyMeter)</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="altdss.EnergyMeterExtras.EnergyMeterObjMixin.ZonePCEs">
+<span class="sig-name descname"><span class="pre">ZonePCEs</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><a class="reference internal" href="altdss.PCElement.html#altdss.PCElement.PCElementBatch" title="altdss.PCElement.PCElementBatch"><span class="pre">altdss.PCElement.PCElementBatch</span></a></em><a class="headerlink" href="#altdss.EnergyMeterExtras.EnergyMeterObjMixin.ZonePCEs" title="Link to this definition">#</a></dt>
+<dd><p>None</p>
+<p>Accessor for all zone end elements for this meter.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="altdss.EnergyMeterExtras.EnergyMeterObjMixin.__init__">
+<span class="sig-name descname"><span class="pre">__init__</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#altdss.EnergyMeterExtras.EnergyMeterObjMixin.__init__" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="altdss.EnergyMeterExtras.IEnergyMeterMixin">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">altdss.EnergyMeterExtras.</span></span><span class="sig-name descname"><span class="pre">IEnergyMeterMixin</span></span><a class="headerlink" href="#altdss.EnergyMeterExtras.IEnergyMeterMixin" title="Link to this definition">#</a></dt>
+<dd><dl class="py method">
+<dt class="sig sig-object py" id="altdss.EnergyMeterExtras.IEnergyMeterMixin.CloseDIFiles">
+<span class="sig-name descname"><span class="pre">CloseDIFiles</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#altdss.EnergyMeterExtras.IEnergyMeterMixin.CloseDIFiles" title="Link to this definition">#</a></dt>
+<dd><p>Close all Demand Interval files.
+Users are required to close the DI files at the end of a run,
+either using this function or the <code class="docutils literal notranslate"><span class="pre">CloseDI</span></code> DSS command.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="altdss.EnergyMeterExtras.IEnergyMeterMixin.DIFilesAreOpen">
+<span class="sig-name descname"><span class="pre">DIFilesAreOpen</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">bool</span></span></span><a class="headerlink" href="#altdss.EnergyMeterExtras.IEnergyMeterMixin.DIFilesAreOpen" title="Link to this definition">#</a></dt>
+<dd><p>Indicates if Demand Interval (DI) files have been properly opened.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="altdss.EnergyMeterExtras.IEnergyMeterMixin.OpenDIFiles">
+<span class="sig-name descname"><span class="pre">OpenDIFiles</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#altdss.EnergyMeterExtras.IEnergyMeterMixin.OpenDIFiles" title="Link to this definition">#</a></dt>
+<dd><p>Open Demand Interval (DI) files</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="altdss.EnergyMeterExtras.IEnergyMeterMixin.Totals">
+<span class="sig-name descname"><span class="pre">Totals</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">altdss.types.Float64Array</span></span></span><a class="headerlink" href="#altdss.EnergyMeterExtras.IEnergyMeterMixin.Totals" title="Link to this definition">#</a></dt>
+<dd><p>Returns the totals of all registers of all meters</p>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="altdss.EnergyMeterExtras.MeterSection">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">altdss.EnergyMeterExtras.</span></span><span class="sig-name descname"><span class="pre">MeterSection</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">meter</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">idx</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#altdss.EnergyMeterExtras.MeterSection" title="Link to this definition">#</a></dt>
+<dd><p>Encapsulates meter section functions</p>
+<dl class="py method">
+<dt class="sig sig-object py" id="altdss.EnergyMeterExtras.MeterSection.AvgRepairTime">
+<span class="sig-name descname"><span class="pre">AvgRepairTime</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">float</span></span></span><a class="headerlink" href="#altdss.EnergyMeterExtras.MeterSection.AvgRepairTime" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="altdss.EnergyMeterExtras.MeterSection.FaultRateXRepairHours">
+<span class="sig-name descname"><span class="pre">FaultRateXRepairHours</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">float</span></span></span><a class="headerlink" href="#altdss.EnergyMeterExtras.MeterSection.FaultRateXRepairHours" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="altdss.EnergyMeterExtras.MeterSection.Index">
+<span class="sig-name descname"><span class="pre">Index</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">int</span></span></span><a class="headerlink" href="#altdss.EnergyMeterExtras.MeterSection.Index" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="altdss.EnergyMeterExtras.MeterSection.NumBranches">
+<span class="sig-name descname"><span class="pre">NumBranches</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">int</span></span></span><a class="headerlink" href="#altdss.EnergyMeterExtras.MeterSection.NumBranches" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="altdss.EnergyMeterExtras.MeterSection.NumCustomers">
+<span class="sig-name descname"><span class="pre">NumCustomers</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">int</span></span></span><a class="headerlink" href="#altdss.EnergyMeterExtras.MeterSection.NumCustomers" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="altdss.EnergyMeterExtras.MeterSection.OCPDeviceType">
+<span class="sig-name descname"><span class="pre">OCPDeviceType</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">dss.enums.OCPDevType</span></span></span><a class="headerlink" href="#altdss.EnergyMeterExtras.MeterSection.OCPDeviceType" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="altdss.EnergyMeterExtras.MeterSection.SequenceIndex">
+<span class="sig-name descname"><span class="pre">SequenceIndex</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">int</span></span></span><a class="headerlink" href="#altdss.EnergyMeterExtras.MeterSection.SequenceIndex" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="altdss.EnergyMeterExtras.MeterSection.SumBranchFaultRates">
+<span class="sig-name descname"><span class="pre">SumBranchFaultRates</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">float</span></span></span><a class="headerlink" href="#altdss.EnergyMeterExtras.MeterSection.SumBranchFaultRates" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="altdss.EnergyMeterExtras.MeterSection.TotalCustomers">
+<span class="sig-name descname"><span class="pre">TotalCustomers</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">int</span></span></span><a class="headerlink" href="#altdss.EnergyMeterExtras.MeterSection.TotalCustomers" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="altdss.EnergyMeterExtras.MeterSection.__init__">
+<span class="sig-name descname"><span class="pre">__init__</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">meter</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">idx</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#altdss.EnergyMeterExtras.MeterSection.__init__" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="altdss.EnergyMeterExtras.MeterSection.as_dict">
+<span class="sig-name descname"><span class="pre">as_dict</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#altdss.EnergyMeterExtras.MeterSection.as_dict" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="altdss.EnergyMeterExtras.MeterSections">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">altdss.EnergyMeterExtras.</span></span><span class="sig-name descname"><span class="pre">MeterSections</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">meter</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#altdss.EnergyMeterExtras.MeterSections" title="Link to this definition">#</a></dt>
+<dd><p>Encapsulates meter sections to provide iteration and indexing.</p>
+<dl class="py method">
+<dt class="sig sig-object py" id="altdss.EnergyMeterExtras.MeterSections.__call__">
+<span class="sig-name descname"><span class="pre">__call__</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">idx</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference internal" href="#altdss.EnergyMeterExtras.MeterSection" title="altdss.EnergyMeterExtras.MeterSection"><span class="pre">altdss.EnergyMeterExtras.MeterSection</span></a></span></span><a class="headerlink" href="#altdss.EnergyMeterExtras.MeterSections.__call__" title="Link to this definition">#</a></dt>
+<dd><p>Returns a meter section by index</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="altdss.EnergyMeterExtras.MeterSections.__getitem__">
+<span class="sig-name descname"><span class="pre">__getitem__</span></span><a class="headerlink" href="#altdss.EnergyMeterExtras.MeterSections.__getitem__" title="Link to this definition">#</a></dt>
+<dd><p>None</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="altdss.EnergyMeterExtras.MeterSections.__init__">
+<span class="sig-name descname"><span class="pre">__init__</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">meter</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#altdss.EnergyMeterExtras.MeterSections.__init__" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="altdss.EnergyMeterExtras.MeterSections.__iter__">
+<span class="sig-name descname"><span class="pre">__iter__</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">Iterator</span><span class="p"><span class="pre">[</span></span><a class="reference internal" href="#altdss.EnergyMeterExtras.MeterSection" title="altdss.EnergyMeterExtras.MeterSection"><span class="pre">altdss.EnergyMeterExtras.MeterSection</span></a><span class="p"><span class="pre">]</span></span></span></span><a class="headerlink" href="#altdss.EnergyMeterExtras.MeterSections.__iter__" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="altdss.EnergyMeterExtras.MeterSections.__len__">
+<span class="sig-name descname"><span class="pre">__len__</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">int</span></span></span><a class="headerlink" href="#altdss.EnergyMeterExtras.MeterSections.__len__" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+</section>
+</section>
+</section>
+
+
+                </article>
+              
+
+              
+              
+              
+              
+                <footer class="prev-next-footer">
+                  
+<div class="prev-next-area">
+    <a class="left-prev"
+       href="altdss.EnergyMeter.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title"><code class="xref py py-mod docutils literal notranslate"><span class="pre">altdss.EnergyMeter</span></code></p>
+      </div>
+    </a>
+    <a class="right-next"
+       href="altdss.Error.html"
+       title="next page">
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title"><code class="xref py py-mod docutils literal notranslate"><span class="pre">altdss.Error</span></code></p>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
+    </a>
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#module-contents">Module Contents</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#classes">Classes</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#api">API</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#altdss.EnergyMeterExtras.EnergyMeterBatchMixin"><code class="docutils literal notranslate"><span class="pre">EnergyMeterBatchMixin</span></code></a><ul class="nav section-nav flex-column">
+<li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#altdss.EnergyMeterExtras.EnergyMeterBatchMixin.DoReliabilityCalc"><code class="docutils literal notranslate"><span class="pre">EnergyMeterBatchMixin.DoReliabilityCalc()</span></code></a></li>
+<li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#altdss.EnergyMeterExtras.EnergyMeterBatchMixin.NumEndElements"><code class="docutils literal notranslate"><span class="pre">EnergyMeterBatchMixin.NumEndElements()</span></code></a></li>
+<li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#altdss.EnergyMeterExtras.EnergyMeterBatchMixin.NumSections"><code class="docutils literal notranslate"><span class="pre">EnergyMeterBatchMixin.NumSections()</span></code></a></li>
+<li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#altdss.EnergyMeterExtras.EnergyMeterBatchMixin.TotalCustomers"><code class="docutils literal notranslate"><span class="pre">EnergyMeterBatchMixin.TotalCustomers()</span></code></a></li>
+</ul>
+</li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#altdss.EnergyMeterExtras.EnergyMeterObjMixin"><code class="docutils literal notranslate"><span class="pre">EnergyMeterObjMixin</span></code></a><ul class="nav section-nav flex-column">
+<li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#altdss.EnergyMeterExtras.EnergyMeterObjMixin.AllocFactors"><code class="docutils literal notranslate"><span class="pre">EnergyMeterObjMixin.AllocFactors</span></code></a></li>
+<li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#altdss.EnergyMeterExtras.EnergyMeterObjMixin.Branches"><code class="docutils literal notranslate"><span class="pre">EnergyMeterObjMixin.Branches</span></code></a></li>
+<li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#altdss.EnergyMeterExtras.EnergyMeterObjMixin.CalcCurrent"><code class="docutils literal notranslate"><span class="pre">EnergyMeterObjMixin.CalcCurrent</span></code></a></li>
+<li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#altdss.EnergyMeterExtras.EnergyMeterObjMixin.DoReliabilityCalc"><code class="docutils literal notranslate"><span class="pre">EnergyMeterObjMixin.DoReliabilityCalc()</span></code></a></li>
+<li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#altdss.EnergyMeterExtras.EnergyMeterObjMixin.EndElements"><code class="docutils literal notranslate"><span class="pre">EnergyMeterObjMixin.EndElements</span></code></a></li>
+<li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#altdss.EnergyMeterExtras.EnergyMeterObjMixin.Loads"><code class="docutils literal notranslate"><span class="pre">EnergyMeterObjMixin.Loads</span></code></a></li>
+<li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#altdss.EnergyMeterExtras.EnergyMeterObjMixin.NumEndElements"><code class="docutils literal notranslate"><span class="pre">EnergyMeterObjMixin.NumEndElements()</span></code></a></li>
+<li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#altdss.EnergyMeterExtras.EnergyMeterObjMixin.NumSections"><code class="docutils literal notranslate"><span class="pre">EnergyMeterObjMixin.NumSections()</span></code></a></li>
+<li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#altdss.EnergyMeterExtras.EnergyMeterObjMixin.Section"><code class="docutils literal notranslate"><span class="pre">EnergyMeterObjMixin.Section()</span></code></a></li>
+<li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#altdss.EnergyMeterExtras.EnergyMeterObjMixin.Sections"><code class="docutils literal notranslate"><span class="pre">EnergyMeterObjMixin.Sections()</span></code></a></li>
+<li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#altdss.EnergyMeterExtras.EnergyMeterObjMixin.Sequence"><code class="docutils literal notranslate"><span class="pre">EnergyMeterObjMixin.Sequence</span></code></a></li>
+<li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#altdss.EnergyMeterExtras.EnergyMeterObjMixin.TotalCustomers"><code class="docutils literal notranslate"><span class="pre">EnergyMeterObjMixin.TotalCustomers()</span></code></a></li>
+<li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#altdss.EnergyMeterExtras.EnergyMeterObjMixin.ZonePCEs"><code class="docutils literal notranslate"><span class="pre">EnergyMeterObjMixin.ZonePCEs</span></code></a></li>
+<li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#altdss.EnergyMeterExtras.EnergyMeterObjMixin.__init__"><code class="docutils literal notranslate"><span class="pre">EnergyMeterObjMixin.__init__()</span></code></a></li>
+</ul>
+</li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#altdss.EnergyMeterExtras.IEnergyMeterMixin"><code class="docutils literal notranslate"><span class="pre">IEnergyMeterMixin</span></code></a><ul class="nav section-nav flex-column">
+<li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#altdss.EnergyMeterExtras.IEnergyMeterMixin.CloseDIFiles"><code class="docutils literal notranslate"><span class="pre">IEnergyMeterMixin.CloseDIFiles()</span></code></a></li>
+<li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#altdss.EnergyMeterExtras.IEnergyMeterMixin.DIFilesAreOpen"><code class="docutils literal notranslate"><span class="pre">IEnergyMeterMixin.DIFilesAreOpen()</span></code></a></li>
+<li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#altdss.EnergyMeterExtras.IEnergyMeterMixin.OpenDIFiles"><code class="docutils literal notranslate"><span class="pre">IEnergyMeterMixin.OpenDIFiles()</span></code></a></li>
+<li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#altdss.EnergyMeterExtras.IEnergyMeterMixin.Totals"><code class="docutils literal notranslate"><span class="pre">IEnergyMeterMixin.Totals()</span></code></a></li>
+</ul>
+</li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#altdss.EnergyMeterExtras.MeterSection"><code class="docutils literal notranslate"><span class="pre">MeterSection</span></code></a><ul class="nav section-nav flex-column">
+<li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#altdss.EnergyMeterExtras.MeterSection.AvgRepairTime"><code class="docutils literal notranslate"><span class="pre">MeterSection.AvgRepairTime()</span></code></a></li>
+<li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#altdss.EnergyMeterExtras.MeterSection.FaultRateXRepairHours"><code class="docutils literal notranslate"><span class="pre">MeterSection.FaultRateXRepairHours()</span></code></a></li>
+<li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#altdss.EnergyMeterExtras.MeterSection.Index"><code class="docutils literal notranslate"><span class="pre">MeterSection.Index()</span></code></a></li>
+<li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#altdss.EnergyMeterExtras.MeterSection.NumBranches"><code class="docutils literal notranslate"><span class="pre">MeterSection.NumBranches()</span></code></a></li>
+<li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#altdss.EnergyMeterExtras.MeterSection.NumCustomers"><code class="docutils literal notranslate"><span class="pre">MeterSection.NumCustomers()</span></code></a></li>
+<li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#altdss.EnergyMeterExtras.MeterSection.OCPDeviceType"><code class="docutils literal notranslate"><span class="pre">MeterSection.OCPDeviceType()</span></code></a></li>
+<li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#altdss.EnergyMeterExtras.MeterSection.SequenceIndex"><code class="docutils literal notranslate"><span class="pre">MeterSection.SequenceIndex()</span></code></a></li>
+<li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#altdss.EnergyMeterExtras.MeterSection.SumBranchFaultRates"><code class="docutils literal notranslate"><span class="pre">MeterSection.SumBranchFaultRates()</span></code></a></li>
+<li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#altdss.EnergyMeterExtras.MeterSection.TotalCustomers"><code class="docutils literal notranslate"><span class="pre">MeterSection.TotalCustomers()</span></code></a></li>
+<li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#altdss.EnergyMeterExtras.MeterSection.__init__"><code class="docutils literal notranslate"><span class="pre">MeterSection.__init__()</span></code></a></li>
+<li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#altdss.EnergyMeterExtras.MeterSection.as_dict"><code class="docutils literal notranslate"><span class="pre">MeterSection.as_dict()</span></code></a></li>
+</ul>
+</li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#altdss.EnergyMeterExtras.MeterSections"><code class="docutils literal notranslate"><span class="pre">MeterSections</span></code></a><ul class="nav section-nav flex-column">
+<li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#altdss.EnergyMeterExtras.MeterSections.__call__"><code class="docutils literal notranslate"><span class="pre">MeterSections.__call__()</span></code></a></li>
+<li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#altdss.EnergyMeterExtras.MeterSections.__getitem__"><code class="docutils literal notranslate"><span class="pre">MeterSections.__getitem__</span></code></a></li>
+<li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#altdss.EnergyMeterExtras.MeterSections.__init__"><code class="docutils literal notranslate"><span class="pre">MeterSections.__init__()</span></code></a></li>
+<li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#altdss.EnergyMeterExtras.MeterSections.__iter__"><code class="docutils literal notranslate"><span class="pre">MeterSections.__iter__()</span></code></a></li>
+<li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#altdss.EnergyMeterExtras.MeterSections.__len__"><code class="docutils literal notranslate"><span class="pre">MeterSections.__len__()</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+  </nav></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+<div class="bd-footer-content__inner container">
+  
+  <div class="footer-item">
+    
+
+  <p class="copyright">
+    
+      © Copyright 2018-2024 Paulo Meira, Dheepak Krishnamurthy, DSS-Extensions contributors.
+      <br/>
+    
+  </p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+</div>
+          </footer>
+        
+
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="../../_static/scripts/bootstrap.js?digest=8d27b9dea8ad943066ae"></script>
+<script src="../../_static/scripts/pydata-sphinx-theme.js?digest=8d27b9dea8ad943066ae"></script>
+
+  <footer class="bd-footer">
+  </footer>
+  </body>
+</html>

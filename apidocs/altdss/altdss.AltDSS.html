@@ -1,0 +1,1415 @@
+
+<!DOCTYPE html>
+
+
+<html lang="en" data-content_root="../../" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.19: https://docutils.sourceforge.io/" />
+
+    <title>altdss.AltDSS &#8212; AltDSS-Python 0.1.0 documentation</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "light";
+  </script>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../../_static/styles/theme.css?digest=8d27b9dea8ad943066ae" rel="stylesheet" />
+<link href="../../_static/styles/bootstrap.css?digest=8d27b9dea8ad943066ae" rel="stylesheet" />
+<link href="../../_static/styles/pydata-sphinx-theme.css?digest=8d27b9dea8ad943066ae" rel="stylesheet" />
+
+  
+  <link href="../../_static/vendor/fontawesome/6.5.1/css/all.min.css?digest=8d27b9dea8ad943066ae" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.5.1/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.5.1/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.5.1/webfonts/fa-regular-400.woff2" />
+
+    <link rel="stylesheet" type="text/css" href="../../_static/pygments.css?v=362ab14a" />
+    <link rel="stylesheet" type="text/css" href="../../_static/styles/sphinx-book-theme.css?v=384b581d" />
+    <link rel="stylesheet" type="text/css" href="../../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/design-style.1e8bd061cd6da7fc9cf755528e8ffc24.min.css?v=0a3b3ea7" />
+  
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../../_static/scripts/bootstrap.js?digest=8d27b9dea8ad943066ae" />
+<link rel="preload" as="script" href="../../_static/scripts/pydata-sphinx-theme.js?digest=8d27b9dea8ad943066ae" />
+  <script src="../../_static/vendor/fontawesome/6.5.1/js/all.min.js?digest=8d27b9dea8ad943066ae"></script>
+
+    <script src="../../_static/documentation_options.js?v=a1637f0b"></script>
+    <script src="../../_static/doctools.js?v=888ff710"></script>
+    <script src="../../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../../_static/scripts/sphinx-book-theme.js?v=efea14e4"></script>
+    <script src="../../_static/design-tabs.js?v=36754332"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'apidocs/altdss/altdss.AltDSS';</script>
+    <link rel="icon" href="../../_static/dssx.png"/>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="altdss.ArrayProxy" href="altdss.ArrayProxy.html" />
+    <link rel="prev" title="altdss" href="altdss.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <a id="pst-skip-link" class="skip-link" href="#main-content">Skip to main content</a>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>
+    Back to top
+  </button>
+
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__primary"
+          id="__primary"/>
+  <label class="overlay overlay-primary" for="__primary"></label>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__secondary"
+          id="__secondary"/>
+  <label class="overlay overlay-secondary" for="__secondary"></label>
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container">
+<form class="bd-search d-flex align-items-center"
+      action="../../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         id="search-input"
+         placeholder="Search..."
+         aria-label="Search..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+  </div>
+  
+    <header class="bd-header navbar navbar-expand-lg bd-navbar">
+    </header>
+  
+
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      
+      
+      <div class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+    
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+
+  
+
+<a class="navbar-brand logo" href="../../index.html">
+  
+  
+  
+  
+  
+    
+    
+      
+    
+    
+    <img src="../../_static/altdss-python.svg" class="logo__image only-light" alt="AltDSS-Python 0.1.0 documentation - Home"/>
+    <script>document.write(`<img src="../../_static/altdss-python-dark.svg" class="logo__image only-dark" alt="AltDSS-Python 0.1.0 documentation - Home"/>`);</script>
+  
+  
+</a></div>
+        <div class="sidebar-primary-item">
+
+ <script>
+ document.write(`
+   <button class="btn navbar-btn search-button-field search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+    <span class="search-button__default-text">Search</span>
+    <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+   </button>
+ `);
+ </script></div>
+        <div class="sidebar-primary-item"><nav class="bd-links bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
+        <p aria-level="2" class="caption" role="heading"><span class="caption-text">General</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../../index.html">AltDSS-Python</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../Architecture.html">Architecture details</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../examples/GettingStarted.html">Getting Started</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../changelog.html">Changelog</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">API Reference</span></p>
+<ul class="current nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../../enumerations.html">General enums</a></li>
+<li class="toctree-l1 current active has-children"><a class="reference internal" href="../index.html">altdss package</a><input checked="" class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-1"><i class="fa-solid fa-chevron-down"></i></label><ul class="current">
+<li class="toctree-l2 current active has-children"><a class="reference internal" href="altdss.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">altdss</span></code></a><input checked="" class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-2"><i class="fa-solid fa-chevron-down"></i></label><ul class="current">
+<li class="toctree-l3 current active"><a class="current reference internal" href="#"><code class="xref py py-mod docutils literal notranslate"><span class="pre">altdss.AltDSS</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="altdss.ArrayProxy.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">altdss.ArrayProxy</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="altdss.AutoTrans.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">altdss.AutoTrans</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="altdss.Batch.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">altdss.Batch</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="altdss.Bus.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">altdss.Bus</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="altdss.CNData.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">altdss.CNData</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="altdss.CapControl.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">altdss.CapControl</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="altdss.Capacitor.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">altdss.Capacitor</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="altdss.CircuitElement.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">altdss.CircuitElement</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="altdss.ControlQueue.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">altdss.ControlQueue</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="altdss.DSSObj.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">altdss.DSSObj</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="altdss.DynamicExp.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">altdss.DynamicExp</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="altdss.ESPVLControl.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">altdss.ESPVLControl</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="altdss.EnergyMeter.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">altdss.EnergyMeter</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="altdss.EnergyMeterExtras.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">altdss.EnergyMeterExtras</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="altdss.Error.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">altdss.Error</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="altdss.ExpControl.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">altdss.ExpControl</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="altdss.Fault.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">altdss.Fault</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="altdss.Fuse.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">altdss.Fuse</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="altdss.GICLine.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">altdss.GICLine</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="altdss.GICTransformer.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">altdss.GICTransformer</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="altdss.GICsource.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">altdss.GICsource</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="altdss.GenDispatcher.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">altdss.GenDispatcher</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="altdss.Generator.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">altdss.Generator</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="altdss.GrowthShape.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">altdss.GrowthShape</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="altdss.IndMach012.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">altdss.IndMach012</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="altdss.InvControl.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">altdss.InvControl</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="altdss.Isource.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">altdss.Isource</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="altdss.Line.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">altdss.Line</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="altdss.LineCode.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">altdss.LineCode</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="altdss.LineGeometry.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">altdss.LineGeometry</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="altdss.LineSpacing.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">altdss.LineSpacing</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="altdss.Load.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">altdss.Load</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="altdss.LoadShape.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">altdss.LoadShape</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="altdss.LoadShapeExtras.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">altdss.LoadShapeExtras</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="altdss.Monitor.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">altdss.Monitor</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="altdss.MonitorExtras.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">altdss.MonitorExtras</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="altdss.Obj.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">altdss.Obj</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="altdss.PCElement.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">altdss.PCElement</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="altdss.PDElement.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">altdss.PDElement</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="altdss.PVSystem.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">altdss.PVSystem</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="altdss.PriceShape.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">altdss.PriceShape</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="altdss.Reactor.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">altdss.Reactor</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="altdss.Recloser.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">altdss.Recloser</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="altdss.ReduceCkt.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">altdss.ReduceCkt</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="altdss.RegControl.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">altdss.RegControl</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="altdss.Relay.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">altdss.Relay</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="altdss.Sensor.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">altdss.Sensor</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="altdss.Settings.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">altdss.Settings</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="altdss.Solution.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">altdss.Solution</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="altdss.Spectrum.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">altdss.Spectrum</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="altdss.Storage.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">altdss.Storage</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="altdss.StorageController.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">altdss.StorageController</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="altdss.SwtControl.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">altdss.SwtControl</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="altdss.TCC_Curve.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">altdss.TCC_Curve</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="altdss.TSData.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">altdss.TSData</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="altdss.TShape.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">altdss.TShape</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="altdss.Topology.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">altdss.Topology</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="altdss.Transformer.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">altdss.Transformer</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="altdss.TransformerExtras.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">altdss.TransformerExtras</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="altdss.UPFC.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">altdss.UPFC</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="altdss.UPFCControl.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">altdss.UPFCControl</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="altdss.VCCS.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">altdss.VCCS</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="altdss.VSConverter.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">altdss.VSConverter</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="altdss.Vsource.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">altdss.Vsource</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="altdss.WireData.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">altdss.WireData</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="altdss.XYcurve.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">altdss.XYcurve</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="altdss.XfmrCode.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">altdss.XfmrCode</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="altdss.YMatrix.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">altdss.YMatrix</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="altdss.ZIP.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">altdss.ZIP</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="altdss.common.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">altdss.common</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="altdss.enums.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">altdss.enums</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="altdss.types.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">altdss.types</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">External links</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference external" href="https://github.com/dss-extensions/dss_python">GitHub repository</a></li>
+<li class="toctree-l1"><a class="reference external" href="https://pypi.python.org/pypi/OpenDSSDirect.py/">Package on PyPI</a></li>
+<li class="toctree-l1"><a class="reference external" href="https://github.com/dss-extensions/electricdss-tst">Test/example circuits</a></li>
+
+<li class="toctree-l1"><a class="reference external" href="https://dss-extensions.org/OpenDSSDirect.py">OpenDSSDirect.py</a></li>
+<li class="toctree-l1"><a class="reference external" href="https://dss-extensions.org/dss_python/">DSS-Python</a></li>
+<li class="toctree-l1"><a class="reference external" href="https://github.com/orgs/dss-extensions/discussions">DSS-Extensions Discussions</a></li>
+<li class="toctree-l1"><a class="reference external" href="https://sourceforge.net/p/electricdss/discussion/">OpenDSS forum</a></li>
+<li class="toctree-l1"><a class="reference external" href="https://opendss.epri.com/opendss_documentation.html">OpenDSS documentation</a></li>
+</ul>
+
+    </div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+  
+  <div id="rtd-footer-container"></div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main">
+        
+        
+
+<div class="sbt-scroll-pixel-helper"></div>
+
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item"><label class="sidebar-toggle primary-toggle btn btn-sm" for="__primary" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <span class="fa-solid fa-bars"></span>
+</label></div>
+      
+    </div>
+  
+  
+    <div class="header-article-items__end">
+      
+        <div class="header-article-item">
+
+<div class="article-header-buttons">
+
+
+
+
+
+<div class="dropdown dropdown-download-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Download this page">
+    <i class="fas fa-download"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="../../_sources/apidocs/altdss/altdss.AltDSS.md" target="_blank"
+   class="btn btn-sm btn-download-source-button dropdown-item"
+   title="Download source file"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="btn__text-container">.md</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li>
+<button onclick="window.print()"
+  class="btn btn-sm btn-download-pdf-button dropdown-item"
+  title="Print to PDF"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="btn__text-container">.pdf</span>
+</button>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+<button onclick="toggleFullScreen()"
+  class="btn btn-sm btn-fullscreen-button"
+  title="Fullscreen mode"
+  data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm navbar-btn theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="theme-switch nav-link" data-mode="light"><i class="fa-solid fa-sun fa-lg"></i></span>
+    <span class="theme-switch nav-link" data-mode="dark"><i class="fa-solid fa-moon fa-lg"></i></span>
+    <span class="theme-switch nav-link" data-mode="auto"><i class="fa-solid fa-circle-half-stroke fa-lg"></i></span>
+  </button>
+`);
+</script>
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm navbar-btn search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass fa-lg"></i>
+  </button>
+`);
+</script>
+<label class="sidebar-toggle secondary-toggle btn btn-sm" for="__secondary"title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</label>
+</div></div>
+      
+    </div>
+  
+</div>
+</div>
+              
+              
+
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1>altdss.AltDSS</h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
+            
+            <div>
+                <h2> Contents </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#module-contents">Module Contents</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#classes">Classes</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#api">API</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#altdss.AltDSS.AltDSS"><code class="docutils literal notranslate"><span class="pre">AltDSS</span></code></a><ul class="nav section-nav flex-column">
+<li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#altdss.AltDSS.AltDSS.AutoTrans"><code class="docutils literal notranslate"><span class="pre">AltDSS.AutoTrans</span></code></a></li>
+<li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#altdss.AltDSS.AltDSS.Bus"><code class="docutils literal notranslate"><span class="pre">AltDSS.Bus</span></code></a></li>
+<li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#altdss.AltDSS.AltDSS.BusDistances"><code class="docutils literal notranslate"><span class="pre">AltDSS.BusDistances()</span></code></a></li>
+<li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#altdss.AltDSS.AltDSS.BusNames"><code class="docutils literal notranslate"><span class="pre">AltDSS.BusNames()</span></code></a></li>
+<li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#altdss.AltDSS.AltDSS.BusVmag"><code class="docutils literal notranslate"><span class="pre">AltDSS.BusVmag()</span></code></a></li>
+<li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#altdss.AltDSS.AltDSS.BusVmagPu"><code class="docutils literal notranslate"><span class="pre">AltDSS.BusVmagPu()</span></code></a></li>
+<li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#altdss.AltDSS.AltDSS.BusVolts"><code class="docutils literal notranslate"><span class="pre">AltDSS.BusVolts()</span></code></a></li>
+<li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#altdss.AltDSS.AltDSS.CNData"><code class="docutils literal notranslate"><span class="pre">AltDSS.CNData</span></code></a></li>
+<li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#altdss.AltDSS.AltDSS.CapControl"><code class="docutils literal notranslate"><span class="pre">AltDSS.CapControl</span></code></a></li>
+<li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#altdss.AltDSS.AltDSS.Capacitor"><code class="docutils literal notranslate"><span class="pre">AltDSS.Capacitor</span></code></a></li>
+<li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#altdss.AltDSS.AltDSS.Capacity"><code class="docutils literal notranslate"><span class="pre">AltDSS.Capacity()</span></code></a></li>
+<li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#altdss.AltDSS.AltDSS.Clear"><code class="docutils literal notranslate"><span class="pre">AltDSS.Clear()</span></code></a></li>
+<li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#altdss.AltDSS.AltDSS.ClearAll"><code class="docutils literal notranslate"><span class="pre">AltDSS.ClearAll()</span></code></a></li>
+<li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#altdss.AltDSS.AltDSS.Command"><code class="docutils literal notranslate"><span class="pre">AltDSS.Command()</span></code></a></li>
+<li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#altdss.AltDSS.AltDSS.Commands"><code class="docutils literal notranslate"><span class="pre">AltDSS.Commands()</span></code></a></li>
+<li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#altdss.AltDSS.AltDSS.ControlQueue"><code class="docutils literal notranslate"><span class="pre">AltDSS.ControlQueue</span></code></a></li>
+<li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#altdss.AltDSS.AltDSS.DisableElement"><code class="docutils literal notranslate"><span class="pre">AltDSS.DisableElement()</span></code></a></li>
+<li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#altdss.AltDSS.AltDSS.DynamicExp"><code class="docutils literal notranslate"><span class="pre">AltDSS.DynamicExp</span></code></a></li>
+<li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#altdss.AltDSS.AltDSS.ESPVLControl"><code class="docutils literal notranslate"><span class="pre">AltDSS.ESPVLControl</span></code></a></li>
+<li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#altdss.AltDSS.AltDSS.Element"><code class="docutils literal notranslate"><span class="pre">AltDSS.Element</span></code></a></li>
+<li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#altdss.AltDSS.AltDSS.EnableElement"><code class="docutils literal notranslate"><span class="pre">AltDSS.EnableElement()</span></code></a></li>
+<li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#altdss.AltDSS.AltDSS.EnergyMeter"><code class="docutils literal notranslate"><span class="pre">AltDSS.EnergyMeter</span></code></a></li>
+<li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#altdss.AltDSS.AltDSS.Error"><code class="docutils literal notranslate"><span class="pre">AltDSS.Error</span></code></a></li>
+<li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#altdss.AltDSS.AltDSS.ExpControl"><code class="docutils literal notranslate"><span class="pre">AltDSS.ExpControl</span></code></a></li>
+<li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#altdss.AltDSS.AltDSS.Fault"><code class="docutils literal notranslate"><span class="pre">AltDSS.Fault</span></code></a></li>
+<li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#altdss.AltDSS.AltDSS.Fuse"><code class="docutils literal notranslate"><span class="pre">AltDSS.Fuse</span></code></a></li>
+<li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#altdss.AltDSS.AltDSS.GICLine"><code class="docutils literal notranslate"><span class="pre">AltDSS.GICLine</span></code></a></li>
+<li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#altdss.AltDSS.AltDSS.GICTransformer"><code class="docutils literal notranslate"><span class="pre">AltDSS.GICTransformer</span></code></a></li>
+<li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#altdss.AltDSS.AltDSS.GICsource"><code class="docutils literal notranslate"><span class="pre">AltDSS.GICsource</span></code></a></li>
+<li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#altdss.AltDSS.AltDSS.GenDispatcher"><code class="docutils literal notranslate"><span class="pre">AltDSS.GenDispatcher</span></code></a></li>
+<li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#altdss.AltDSS.AltDSS.Generator"><code class="docutils literal notranslate"><span class="pre">AltDSS.Generator</span></code></a></li>
+<li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#altdss.AltDSS.AltDSS.GrowthShape"><code class="docutils literal notranslate"><span class="pre">AltDSS.GrowthShape</span></code></a></li>
+<li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#altdss.AltDSS.AltDSS.IndMach012"><code class="docutils literal notranslate"><span class="pre">AltDSS.IndMach012</span></code></a></li>
+<li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#altdss.AltDSS.AltDSS.InvControl"><code class="docutils literal notranslate"><span class="pre">AltDSS.InvControl</span></code></a></li>
+<li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#altdss.AltDSS.AltDSS.Isource"><code class="docutils literal notranslate"><span class="pre">AltDSS.Isource</span></code></a></li>
+<li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#altdss.AltDSS.AltDSS.Line"><code class="docutils literal notranslate"><span class="pre">AltDSS.Line</span></code></a></li>
+<li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#altdss.AltDSS.AltDSS.LineCode"><code class="docutils literal notranslate"><span class="pre">AltDSS.LineCode</span></code></a></li>
+<li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#altdss.AltDSS.AltDSS.LineGeometry"><code class="docutils literal notranslate"><span class="pre">AltDSS.LineGeometry</span></code></a></li>
+<li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#altdss.AltDSS.AltDSS.LineLosses"><code class="docutils literal notranslate"><span class="pre">AltDSS.LineLosses()</span></code></a></li>
+<li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#altdss.AltDSS.AltDSS.LineSpacing"><code class="docutils literal notranslate"><span class="pre">AltDSS.LineSpacing</span></code></a></li>
+<li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#altdss.AltDSS.AltDSS.Load"><code class="docutils literal notranslate"><span class="pre">AltDSS.Load</span></code></a></li>
+<li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#altdss.AltDSS.AltDSS.LoadShape"><code class="docutils literal notranslate"><span class="pre">AltDSS.LoadShape</span></code></a></li>
+<li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#altdss.AltDSS.AltDSS.Losses"><code class="docutils literal notranslate"><span class="pre">AltDSS.Losses()</span></code></a></li>
+<li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#altdss.AltDSS.AltDSS.Monitor"><code class="docutils literal notranslate"><span class="pre">AltDSS.Monitor</span></code></a></li>
+<li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#altdss.AltDSS.AltDSS.Name"><code class="docutils literal notranslate"><span class="pre">AltDSS.Name</span></code></a></li>
+<li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#altdss.AltDSS.AltDSS.NewContext"><code class="docutils literal notranslate"><span class="pre">AltDSS.NewContext()</span></code></a></li>
+<li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#altdss.AltDSS.AltDSS.NodeDistances"><code class="docutils literal notranslate"><span class="pre">AltDSS.NodeDistances()</span></code></a></li>
+<li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#altdss.AltDSS.AltDSS.NodeDistancesByPhase"><code class="docutils literal notranslate"><span class="pre">AltDSS.NodeDistancesByPhase()</span></code></a></li>
+<li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#altdss.AltDSS.AltDSS.NodeNames"><code class="docutils literal notranslate"><span class="pre">AltDSS.NodeNames()</span></code></a></li>
+<li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#altdss.AltDSS.AltDSS.NodeNamesByPhase"><code class="docutils literal notranslate"><span class="pre">AltDSS.NodeNamesByPhase()</span></code></a></li>
+<li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#altdss.AltDSS.AltDSS.NodeVmagByPhase"><code class="docutils literal notranslate"><span class="pre">AltDSS.NodeVmagByPhase()</span></code></a></li>
+<li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#altdss.AltDSS.AltDSS.NodeVmagPUByPhase"><code class="docutils literal notranslate"><span class="pre">AltDSS.NodeVmagPUByPhase()</span></code></a></li>
+<li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#altdss.AltDSS.AltDSS.NumBuses"><code class="docutils literal notranslate"><span class="pre">AltDSS.NumBuses</span></code></a></li>
+<li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#altdss.AltDSS.AltDSS.NumCircuitElements"><code class="docutils literal notranslate"><span class="pre">AltDSS.NumCircuitElements</span></code></a></li>
+<li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#altdss.AltDSS.AltDSS.NumNodes"><code class="docutils literal notranslate"><span class="pre">AltDSS.NumNodes</span></code></a></li>
+<li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#altdss.AltDSS.AltDSS.PCElement"><code class="docutils literal notranslate"><span class="pre">AltDSS.PCElement</span></code></a></li>
+<li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#altdss.AltDSS.AltDSS.PDElement"><code class="docutils literal notranslate"><span class="pre">AltDSS.PDElement</span></code></a></li>
+<li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#altdss.AltDSS.AltDSS.PVSystem"><code class="docutils literal notranslate"><span class="pre">AltDSS.PVSystem</span></code></a></li>
+<li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#altdss.AltDSS.AltDSS.PriceShape"><code class="docutils literal notranslate"><span class="pre">AltDSS.PriceShape</span></code></a></li>
+<li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#altdss.AltDSS.AltDSS.Reactor"><code class="docutils literal notranslate"><span class="pre">AltDSS.Reactor</span></code></a></li>
+<li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#altdss.AltDSS.AltDSS.Recloser"><code class="docutils literal notranslate"><span class="pre">AltDSS.Recloser</span></code></a></li>
+<li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#altdss.AltDSS.AltDSS.ReduceCircuit"><code class="docutils literal notranslate"><span class="pre">AltDSS.ReduceCircuit</span></code></a></li>
+<li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#altdss.AltDSS.AltDSS.RegControl"><code class="docutils literal notranslate"><span class="pre">AltDSS.RegControl</span></code></a></li>
+<li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#altdss.AltDSS.AltDSS.Relay"><code class="docutils literal notranslate"><span class="pre">AltDSS.Relay</span></code></a></li>
+<li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#altdss.AltDSS.AltDSS.SaveSample"><code class="docutils literal notranslate"><span class="pre">AltDSS.SaveSample()</span></code></a></li>
+<li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#altdss.AltDSS.AltDSS.Sensor"><code class="docutils literal notranslate"><span class="pre">AltDSS.Sensor</span></code></a></li>
+<li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#altdss.AltDSS.AltDSS.Settings"><code class="docutils literal notranslate"><span class="pre">AltDSS.Settings</span></code></a></li>
+<li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#altdss.AltDSS.AltDSS.Solution"><code class="docutils literal notranslate"><span class="pre">AltDSS.Solution</span></code></a></li>
+<li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#altdss.AltDSS.AltDSS.Spectrum"><code class="docutils literal notranslate"><span class="pre">AltDSS.Spectrum</span></code></a></li>
+<li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#altdss.AltDSS.AltDSS.Storage"><code class="docutils literal notranslate"><span class="pre">AltDSS.Storage</span></code></a></li>
+<li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#altdss.AltDSS.AltDSS.StorageController"><code class="docutils literal notranslate"><span class="pre">AltDSS.StorageController</span></code></a></li>
+<li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#altdss.AltDSS.AltDSS.SubstationLosses"><code class="docutils literal notranslate"><span class="pre">AltDSS.SubstationLosses</span></code></a></li>
+<li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#altdss.AltDSS.AltDSS.SwtControl"><code class="docutils literal notranslate"><span class="pre">AltDSS.SwtControl</span></code></a></li>
+<li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#altdss.AltDSS.AltDSS.SystemY"><code class="docutils literal notranslate"><span class="pre">AltDSS.SystemY()</span></code></a></li>
+<li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#altdss.AltDSS.AltDSS.TCC_Curve"><code class="docutils literal notranslate"><span class="pre">AltDSS.TCC_Curve</span></code></a></li>
+<li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#altdss.AltDSS.AltDSS.TSData"><code class="docutils literal notranslate"><span class="pre">AltDSS.TSData</span></code></a></li>
+<li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#altdss.AltDSS.AltDSS.TShape"><code class="docutils literal notranslate"><span class="pre">AltDSS.TShape</span></code></a></li>
+<li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#altdss.AltDSS.AltDSS.TakeSample"><code class="docutils literal notranslate"><span class="pre">AltDSS.TakeSample()</span></code></a></li>
+<li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#altdss.AltDSS.AltDSS.TextResult"><code class="docutils literal notranslate"><span class="pre">AltDSS.TextResult</span></code></a></li>
+<li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#altdss.AltDSS.AltDSS.Topology"><code class="docutils literal notranslate"><span class="pre">AltDSS.Topology</span></code></a></li>
+<li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#altdss.AltDSS.AltDSS.TotalPower"><code class="docutils literal notranslate"><span class="pre">AltDSS.TotalPower()</span></code></a></li>
+<li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#altdss.AltDSS.AltDSS.Transformer"><code class="docutils literal notranslate"><span class="pre">AltDSS.Transformer</span></code></a></li>
+<li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#altdss.AltDSS.AltDSS.UPFC"><code class="docutils literal notranslate"><span class="pre">AltDSS.UPFC</span></code></a></li>
+<li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#altdss.AltDSS.AltDSS.UPFCControl"><code class="docutils literal notranslate"><span class="pre">AltDSS.UPFCControl</span></code></a></li>
+<li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#altdss.AltDSS.AltDSS.UpdateStorage"><code class="docutils literal notranslate"><span class="pre">AltDSS.UpdateStorage()</span></code></a></li>
+<li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#altdss.AltDSS.AltDSS.VCCS"><code class="docutils literal notranslate"><span class="pre">AltDSS.VCCS</span></code></a></li>
+<li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#altdss.AltDSS.AltDSS.VSConverter"><code class="docutils literal notranslate"><span class="pre">AltDSS.VSConverter</span></code></a></li>
+<li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#altdss.AltDSS.AltDSS.Version"><code class="docutils literal notranslate"><span class="pre">AltDSS.Version()</span></code></a></li>
+<li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#altdss.AltDSS.AltDSS.Vsource"><code class="docutils literal notranslate"><span class="pre">AltDSS.Vsource</span></code></a></li>
+<li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#altdss.AltDSS.AltDSS.WireData"><code class="docutils literal notranslate"><span class="pre">AltDSS.WireData</span></code></a></li>
+<li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#altdss.AltDSS.AltDSS.XYcurve"><code class="docutils literal notranslate"><span class="pre">AltDSS.XYcurve</span></code></a></li>
+<li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#altdss.AltDSS.AltDSS.XfmrCode"><code class="docutils literal notranslate"><span class="pre">AltDSS.XfmrCode</span></code></a></li>
+<li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#altdss.AltDSS.AltDSS.YCurrents"><code class="docutils literal notranslate"><span class="pre">AltDSS.YCurrents()</span></code></a></li>
+<li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#altdss.AltDSS.AltDSS.YMatrix"><code class="docutils literal notranslate"><span class="pre">AltDSS.YMatrix</span></code></a></li>
+<li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#altdss.AltDSS.AltDSS.YNodeOrder"><code class="docutils literal notranslate"><span class="pre">AltDSS.YNodeOrder()</span></code></a></li>
+<li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#altdss.AltDSS.AltDSS.YNodeVarray"><code class="docutils literal notranslate"><span class="pre">AltDSS.YNodeVarray()</span></code></a></li>
+<li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#altdss.AltDSS.AltDSS.ZIP"><code class="docutils literal notranslate"><span class="pre">AltDSS.ZIP</span></code></a></li>
+<li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#altdss.AltDSS.AltDSS.__call__"><code class="docutils literal notranslate"><span class="pre">AltDSS.__call__()</span></code></a></li>
+<li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#altdss.AltDSS.AltDSS.__init__"><code class="docutils literal notranslate"><span class="pre">AltDSS.__init__()</span></code></a></li>
+<li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#altdss.AltDSS.AltDSS.to_dss_python"><code class="docutils literal notranslate"><span class="pre">AltDSS.to_dss_python()</span></code></a></li>
+<li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#altdss.AltDSS.AltDSS.to_json"><code class="docutils literal notranslate"><span class="pre">AltDSS.to_json()</span></code></a></li>
+<li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#altdss.AltDSS.AltDSS.to_opendssdirect"><code class="docutils literal notranslate"><span class="pre">AltDSS.to_opendssdirect()</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+            </nav>
+        </div>
+    </div>
+</div>
+
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article">
+                  
+  <section class="tex2jax_ignore mathjax_ignore" id="module-altdss.AltDSS">
+<span id="altdss-altdss"></span><h1><a class="reference internal" href="#module-altdss.AltDSS" title="altdss.AltDSS"><code class="xref py py-mod docutils literal notranslate"><span class="pre">altdss.AltDSS</span></code></a><a class="headerlink" href="#module-altdss.AltDSS" title="Link to this heading">#</a></h1>
+<section id="module-contents">
+<h2>Module Contents<a class="headerlink" href="#module-contents" title="Link to this heading">#</a></h2>
+<section id="classes">
+<h3>Classes<a class="headerlink" href="#classes" title="Link to this heading">#</a></h3>
+<table class="autosummary longtable table table-left">
+<tbody>
+<tr class="row-odd"><td><p><a class="reference internal" href="#altdss.AltDSS.AltDSS" title="altdss.AltDSS.AltDSS"><code class="xref py py-obj docutils literal notranslate"><span class="pre">AltDSS</span></code></a></p></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="api">
+<h3>API<a class="headerlink" href="#api" title="Link to this heading">#</a></h3>
+<dl class="py class">
+<dt class="sig sig-object py" id="altdss.AltDSS.AltDSS">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">altdss.AltDSS.</span></span><span class="sig-name descname"><span class="pre">AltDSS</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">api_util</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#altdss.AltDSS.AltDSS" title="Link to this definition">#</a></dt>
+<dd><p>Bases: <a class="reference internal" href="altdss.Obj.html#altdss.Obj.IObj" title="altdss.Obj.IObj"><code class="xref py py-obj docutils literal notranslate"><span class="pre">altdss.Obj.IObj</span></code></a></p>
+<dl class="py attribute">
+<dt class="sig sig-object py" id="altdss.AltDSS.AltDSS.AutoTrans">
+<span class="sig-name descname"><span class="pre">AutoTrans</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><a class="reference internal" href="altdss.AutoTrans.html#altdss.AutoTrans.IAutoTrans" title="altdss.AutoTrans.IAutoTrans"><span class="pre">altdss.AutoTrans.IAutoTrans</span></a></em><a class="headerlink" href="#altdss.AltDSS.AltDSS.AutoTrans" title="Link to this definition">#</a></dt>
+<dd><p>None</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="altdss.AltDSS.AltDSS.Bus">
+<span class="sig-name descname"><span class="pre">Bus</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><a class="reference internal" href="altdss.Bus.html#altdss.Bus.IBuses" title="altdss.Bus.IBuses"><span class="pre">altdss.Bus.IBuses</span></a></em><a class="headerlink" href="#altdss.AltDSS.AltDSS.Bus" title="Link to this definition">#</a></dt>
+<dd><p>None</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="altdss.AltDSS.AltDSS.BusDistances">
+<span class="sig-name descname"><span class="pre">BusDistances</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">altdss.types.Float64Array</span></span></span><a class="headerlink" href="#altdss.AltDSS.AltDSS.BusDistances" title="Link to this definition">#</a></dt>
+<dd><p>Returns distance from each bus to parent EnergyMeter. Corresponds to sequence in AllBusNames.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="altdss.AltDSS.AltDSS.BusNames">
+<span class="sig-name descname"><span class="pre">BusNames</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">List</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">]</span></span></span></span><a class="headerlink" href="#altdss.AltDSS.AltDSS.BusNames" title="Link to this definition">#</a></dt>
+<dd><p>Array of strings containing names of all buses in circuit (see AllNodeNames).</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="altdss.AltDSS.AltDSS.BusVmag">
+<span class="sig-name descname"><span class="pre">BusVmag</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">altdss.types.Float64Array</span></span></span><a class="headerlink" href="#altdss.AltDSS.AltDSS.BusVmag" title="Link to this definition">#</a></dt>
+<dd><p>Array of magnitudes (doubles) of voltages at all buses</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="altdss.AltDSS.AltDSS.BusVmagPu">
+<span class="sig-name descname"><span class="pre">BusVmagPu</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">altdss.types.Float64Array</span></span></span><a class="headerlink" href="#altdss.AltDSS.AltDSS.BusVmagPu" title="Link to this definition">#</a></dt>
+<dd><p>Double Array of all bus voltages (each node) magnitudes in Per unit</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="altdss.AltDSS.AltDSS.BusVolts">
+<span class="sig-name descname"><span class="pre">BusVolts</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">altdss.types.ComplexArray</span></span></span><a class="headerlink" href="#altdss.AltDSS.AltDSS.BusVolts" title="Link to this definition">#</a></dt>
+<dd><p>Complex array of all bus, node voltages from most recent solution</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="altdss.AltDSS.AltDSS.CNData">
+<span class="sig-name descname"><span class="pre">CNData</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><a class="reference internal" href="altdss.CNData.html#altdss.CNData.ICNData" title="altdss.CNData.ICNData"><span class="pre">altdss.CNData.ICNData</span></a></em><a class="headerlink" href="#altdss.AltDSS.AltDSS.CNData" title="Link to this definition">#</a></dt>
+<dd><p>None</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="altdss.AltDSS.AltDSS.CapControl">
+<span class="sig-name descname"><span class="pre">CapControl</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><a class="reference internal" href="altdss.CapControl.html#altdss.CapControl.ICapControl" title="altdss.CapControl.ICapControl"><span class="pre">altdss.CapControl.ICapControl</span></a></em><a class="headerlink" href="#altdss.AltDSS.AltDSS.CapControl" title="Link to this definition">#</a></dt>
+<dd><p>None</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="altdss.AltDSS.AltDSS.Capacitor">
+<span class="sig-name descname"><span class="pre">Capacitor</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><a class="reference internal" href="altdss.Capacitor.html#altdss.Capacitor.ICapacitor" title="altdss.Capacitor.ICapacitor"><span class="pre">altdss.Capacitor.ICapacitor</span></a></em><a class="headerlink" href="#altdss.AltDSS.AltDSS.Capacitor" title="Link to this definition">#</a></dt>
+<dd><p>None</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="altdss.AltDSS.AltDSS.Capacity">
+<span class="sig-name descname"><span class="pre">Capacity</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">Start</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">float</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">Increment</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">float</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">float</span></span></span><a class="headerlink" href="#altdss.AltDSS.AltDSS.Capacity" title="Link to this definition">#</a></dt>
+<dd><p>Compute the maximum load the active circuit can serve in the PRESENT YEAR.</p>
+<p>This method uses the EnergyMeter objects with the registers set with the
+<code class="docutils literal notranslate"><span class="pre">SET</span> <span class="pre">UEREGS=</span> <span class="pre">(...)</span></code> command for the AutoAdd functions.</p>
+<p>Returns the metered kW (load + losses - generation) and per unit load multiplier
+for the loading level at which something in the system reports an overload or
+undervoltage. If no violations, then it returns the metered kW for peak load
+for the year (1.0 multiplier).</p>
+<p>Aborts and returns 0 if no EnergyMeters.</p>
+<p>Original COM help: <a class="reference external" href="https://opendss.epri.com/Capacity1.html">https://opendss.epri.com/Capacity1.html</a></p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="altdss.AltDSS.AltDSS.Clear">
+<span class="sig-name descname"><span class="pre">Clear</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#altdss.AltDSS.AltDSS.Clear" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="altdss.AltDSS.AltDSS.ClearAll">
+<span class="sig-name descname"><span class="pre">ClearAll</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#altdss.AltDSS.AltDSS.ClearAll" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="altdss.AltDSS.AltDSS.Command">
+<span class="sig-name descname"><span class="pre">Command</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">value</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Optional</span><span class="p"><span class="pre">[</span></span><span class="pre">AnyStr</span><span class="p"><span class="pre">]</span></span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">Optional</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">]</span></span></span></span><a class="headerlink" href="#altdss.AltDSS.AltDSS.Command" title="Link to this definition">#</a></dt>
+<dd><p>Input command <strong>string</strong> for the DSS engine.</p>
+<p>If no command is provided, the latest command string is returned.</p>
+<p>Prefer using the <code class="docutils literal notranslate"><span class="pre">Commands</span></code> function or the call operator from this class.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="altdss.AltDSS.AltDSS.Commands">
+<span class="sig-name descname"><span class="pre">Commands</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">Value</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Union</span><span class="p"><span class="pre">[</span></span><span class="pre">AnyStr</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">List</span><span class="p"><span class="pre">[</span></span><span class="pre">AnyStr</span><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">]</span></span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#altdss.AltDSS.AltDSS.Commands" title="Link to this definition">#</a></dt>
+<dd><p>Runs a list of strings or a large string as commands directly in the DSS engine.
+Intermediate results from the classic <code class="docutils literal notranslate"><span class="pre">Text.Result</span></code> are ignored.</p>
+<p>Value can be a list of strings, or a single large string (usually faster, but varies).</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="altdss.AltDSS.AltDSS.ControlQueue">
+<span class="sig-name descname"><span class="pre">ControlQueue</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><a class="reference internal" href="altdss.ControlQueue.html#altdss.ControlQueue.IControlQueue" title="altdss.ControlQueue.IControlQueue"><span class="pre">altdss.ControlQueue.IControlQueue</span></a></em><a class="headerlink" href="#altdss.AltDSS.AltDSS.ControlQueue" title="Link to this definition">#</a></dt>
+<dd><p>None</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="altdss.AltDSS.AltDSS.DisableElement">
+<span class="sig-name descname"><span class="pre">DisableElement</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">name</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">AnyStr</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#altdss.AltDSS.AltDSS.DisableElement" title="Link to this definition">#</a></dt>
+<dd><p>Disable a circuit element by name (removes from circuit but leave in database).</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="altdss.AltDSS.AltDSS.DynamicExp">
+<span class="sig-name descname"><span class="pre">DynamicExp</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><a class="reference internal" href="altdss.DynamicExp.html#altdss.DynamicExp.IDynamicExp" title="altdss.DynamicExp.IDynamicExp"><span class="pre">altdss.DynamicExp.IDynamicExp</span></a></em><a class="headerlink" href="#altdss.AltDSS.AltDSS.DynamicExp" title="Link to this definition">#</a></dt>
+<dd><p>None</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="altdss.AltDSS.AltDSS.ESPVLControl">
+<span class="sig-name descname"><span class="pre">ESPVLControl</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><a class="reference internal" href="altdss.ESPVLControl.html#altdss.ESPVLControl.IESPVLControl" title="altdss.ESPVLControl.IESPVLControl"><span class="pre">altdss.ESPVLControl.IESPVLControl</span></a></em><a class="headerlink" href="#altdss.AltDSS.AltDSS.ESPVLControl" title="Link to this definition">#</a></dt>
+<dd><p>None</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="altdss.AltDSS.AltDSS.Element">
+<span class="sig-name descname"><span class="pre">Element</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><a class="reference internal" href="altdss.CircuitElement.html#altdss.CircuitElement.CircuitElementBatch" title="altdss.CircuitElement.CircuitElementBatch"><span class="pre">altdss.CircuitElement.CircuitElementBatch</span></a></em><a class="headerlink" href="#altdss.AltDSS.AltDSS.Element" title="Link to this definition">#</a></dt>
+<dd><p>None</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="altdss.AltDSS.AltDSS.EnableElement">
+<span class="sig-name descname"><span class="pre">EnableElement</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">name</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">AnyStr</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#altdss.AltDSS.AltDSS.EnableElement" title="Link to this definition">#</a></dt>
+<dd><p>Enable a circuit element by name</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="altdss.AltDSS.AltDSS.EnergyMeter">
+<span class="sig-name descname"><span class="pre">EnergyMeter</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><a class="reference internal" href="altdss.EnergyMeter.html#altdss.EnergyMeter.IEnergyMeter" title="altdss.EnergyMeter.IEnergyMeter"><span class="pre">altdss.EnergyMeter.IEnergyMeter</span></a></em><a class="headerlink" href="#altdss.AltDSS.AltDSS.EnergyMeter" title="Link to this definition">#</a></dt>
+<dd><p>None</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="altdss.AltDSS.AltDSS.Error">
+<span class="sig-name descname"><span class="pre">Error</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><a class="reference internal" href="altdss.Error.html#altdss.Error.IError" title="altdss.Error.IError"><span class="pre">altdss.Error.IError</span></a></em><a class="headerlink" href="#altdss.AltDSS.AltDSS.Error" title="Link to this definition">#</a></dt>
+<dd><p>None</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="altdss.AltDSS.AltDSS.ExpControl">
+<span class="sig-name descname"><span class="pre">ExpControl</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><a class="reference internal" href="altdss.ExpControl.html#altdss.ExpControl.IExpControl" title="altdss.ExpControl.IExpControl"><span class="pre">altdss.ExpControl.IExpControl</span></a></em><a class="headerlink" href="#altdss.AltDSS.AltDSS.ExpControl" title="Link to this definition">#</a></dt>
+<dd><p>None</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="altdss.AltDSS.AltDSS.Fault">
+<span class="sig-name descname"><span class="pre">Fault</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><a class="reference internal" href="altdss.Fault.html#altdss.Fault.IFault" title="altdss.Fault.IFault"><span class="pre">altdss.Fault.IFault</span></a></em><a class="headerlink" href="#altdss.AltDSS.AltDSS.Fault" title="Link to this definition">#</a></dt>
+<dd><p>None</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="altdss.AltDSS.AltDSS.Fuse">
+<span class="sig-name descname"><span class="pre">Fuse</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><a class="reference internal" href="altdss.Fuse.html#altdss.Fuse.IFuse" title="altdss.Fuse.IFuse"><span class="pre">altdss.Fuse.IFuse</span></a></em><a class="headerlink" href="#altdss.AltDSS.AltDSS.Fuse" title="Link to this definition">#</a></dt>
+<dd><p>None</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="altdss.AltDSS.AltDSS.GICLine">
+<span class="sig-name descname"><span class="pre">GICLine</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><a class="reference internal" href="altdss.GICLine.html#altdss.GICLine.IGICLine" title="altdss.GICLine.IGICLine"><span class="pre">altdss.GICLine.IGICLine</span></a></em><a class="headerlink" href="#altdss.AltDSS.AltDSS.GICLine" title="Link to this definition">#</a></dt>
+<dd><p>None</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="altdss.AltDSS.AltDSS.GICTransformer">
+<span class="sig-name descname"><span class="pre">GICTransformer</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><a class="reference internal" href="altdss.GICTransformer.html#altdss.GICTransformer.IGICTransformer" title="altdss.GICTransformer.IGICTransformer"><span class="pre">altdss.GICTransformer.IGICTransformer</span></a></em><a class="headerlink" href="#altdss.AltDSS.AltDSS.GICTransformer" title="Link to this definition">#</a></dt>
+<dd><p>None</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="altdss.AltDSS.AltDSS.GICsource">
+<span class="sig-name descname"><span class="pre">GICsource</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><a class="reference internal" href="altdss.GICsource.html#altdss.GICsource.IGICsource" title="altdss.GICsource.IGICsource"><span class="pre">altdss.GICsource.IGICsource</span></a></em><a class="headerlink" href="#altdss.AltDSS.AltDSS.GICsource" title="Link to this definition">#</a></dt>
+<dd><p>None</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="altdss.AltDSS.AltDSS.GenDispatcher">
+<span class="sig-name descname"><span class="pre">GenDispatcher</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><a class="reference internal" href="altdss.GenDispatcher.html#altdss.GenDispatcher.IGenDispatcher" title="altdss.GenDispatcher.IGenDispatcher"><span class="pre">altdss.GenDispatcher.IGenDispatcher</span></a></em><a class="headerlink" href="#altdss.AltDSS.AltDSS.GenDispatcher" title="Link to this definition">#</a></dt>
+<dd><p>None</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="altdss.AltDSS.AltDSS.Generator">
+<span class="sig-name descname"><span class="pre">Generator</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><a class="reference internal" href="altdss.Generator.html#altdss.Generator.IGenerator" title="altdss.Generator.IGenerator"><span class="pre">altdss.Generator.IGenerator</span></a></em><a class="headerlink" href="#altdss.AltDSS.AltDSS.Generator" title="Link to this definition">#</a></dt>
+<dd><p>None</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="altdss.AltDSS.AltDSS.GrowthShape">
+<span class="sig-name descname"><span class="pre">GrowthShape</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><a class="reference internal" href="altdss.GrowthShape.html#altdss.GrowthShape.IGrowthShape" title="altdss.GrowthShape.IGrowthShape"><span class="pre">altdss.GrowthShape.IGrowthShape</span></a></em><a class="headerlink" href="#altdss.AltDSS.AltDSS.GrowthShape" title="Link to this definition">#</a></dt>
+<dd><p>None</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="altdss.AltDSS.AltDSS.IndMach012">
+<span class="sig-name descname"><span class="pre">IndMach012</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><a class="reference internal" href="altdss.IndMach012.html#altdss.IndMach012.IIndMach012" title="altdss.IndMach012.IIndMach012"><span class="pre">altdss.IndMach012.IIndMach012</span></a></em><a class="headerlink" href="#altdss.AltDSS.AltDSS.IndMach012" title="Link to this definition">#</a></dt>
+<dd><p>None</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="altdss.AltDSS.AltDSS.InvControl">
+<span class="sig-name descname"><span class="pre">InvControl</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><a class="reference internal" href="altdss.InvControl.html#altdss.InvControl.IInvControl" title="altdss.InvControl.IInvControl"><span class="pre">altdss.InvControl.IInvControl</span></a></em><a class="headerlink" href="#altdss.AltDSS.AltDSS.InvControl" title="Link to this definition">#</a></dt>
+<dd><p>None</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="altdss.AltDSS.AltDSS.Isource">
+<span class="sig-name descname"><span class="pre">Isource</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><a class="reference internal" href="altdss.Isource.html#altdss.Isource.IIsource" title="altdss.Isource.IIsource"><span class="pre">altdss.Isource.IIsource</span></a></em><a class="headerlink" href="#altdss.AltDSS.AltDSS.Isource" title="Link to this definition">#</a></dt>
+<dd><p>None</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="altdss.AltDSS.AltDSS.Line">
+<span class="sig-name descname"><span class="pre">Line</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><a class="reference internal" href="altdss.Line.html#altdss.Line.ILine" title="altdss.Line.ILine"><span class="pre">altdss.Line.ILine</span></a></em><a class="headerlink" href="#altdss.AltDSS.AltDSS.Line" title="Link to this definition">#</a></dt>
+<dd><p>None</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="altdss.AltDSS.AltDSS.LineCode">
+<span class="sig-name descname"><span class="pre">LineCode</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><a class="reference internal" href="altdss.LineCode.html#altdss.LineCode.ILineCode" title="altdss.LineCode.ILineCode"><span class="pre">altdss.LineCode.ILineCode</span></a></em><a class="headerlink" href="#altdss.AltDSS.AltDSS.LineCode" title="Link to this definition">#</a></dt>
+<dd><p>None</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="altdss.AltDSS.AltDSS.LineGeometry">
+<span class="sig-name descname"><span class="pre">LineGeometry</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><a class="reference internal" href="altdss.LineGeometry.html#altdss.LineGeometry.ILineGeometry" title="altdss.LineGeometry.ILineGeometry"><span class="pre">altdss.LineGeometry.ILineGeometry</span></a></em><a class="headerlink" href="#altdss.AltDSS.AltDSS.LineGeometry" title="Link to this definition">#</a></dt>
+<dd><p>None</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="altdss.AltDSS.AltDSS.LineLosses">
+<span class="sig-name descname"><span class="pre">LineLosses</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">complex</span></span></span><a class="headerlink" href="#altdss.AltDSS.AltDSS.LineLosses" title="Link to this definition">#</a></dt>
+<dd><p>Complex total line losses in the circuit</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="altdss.AltDSS.AltDSS.LineSpacing">
+<span class="sig-name descname"><span class="pre">LineSpacing</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><a class="reference internal" href="altdss.LineSpacing.html#altdss.LineSpacing.ILineSpacing" title="altdss.LineSpacing.ILineSpacing"><span class="pre">altdss.LineSpacing.ILineSpacing</span></a></em><a class="headerlink" href="#altdss.AltDSS.AltDSS.LineSpacing" title="Link to this definition">#</a></dt>
+<dd><p>None</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="altdss.AltDSS.AltDSS.Load">
+<span class="sig-name descname"><span class="pre">Load</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><a class="reference internal" href="altdss.Load.html#altdss.Load.ILoad" title="altdss.Load.ILoad"><span class="pre">altdss.Load.ILoad</span></a></em><a class="headerlink" href="#altdss.AltDSS.AltDSS.Load" title="Link to this definition">#</a></dt>
+<dd><p>None</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="altdss.AltDSS.AltDSS.LoadShape">
+<span class="sig-name descname"><span class="pre">LoadShape</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><a class="reference internal" href="altdss.LoadShape.html#altdss.LoadShape.ILoadShape" title="altdss.LoadShape.ILoadShape"><span class="pre">altdss.LoadShape.ILoadShape</span></a></em><a class="headerlink" href="#altdss.AltDSS.AltDSS.LoadShape" title="Link to this definition">#</a></dt>
+<dd><p>None</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="altdss.AltDSS.AltDSS.Losses">
+<span class="sig-name descname"><span class="pre">Losses</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">complex</span></span></span><a class="headerlink" href="#altdss.AltDSS.AltDSS.Losses" title="Link to this definition">#</a></dt>
+<dd><p>Total losses in active circuit, complex number (two-element array of double).</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="altdss.AltDSS.AltDSS.Monitor">
+<span class="sig-name descname"><span class="pre">Monitor</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><a class="reference internal" href="altdss.Monitor.html#altdss.Monitor.IMonitor" title="altdss.Monitor.IMonitor"><span class="pre">altdss.Monitor.IMonitor</span></a></em><a class="headerlink" href="#altdss.AltDSS.AltDSS.Monitor" title="Link to this definition">#</a></dt>
+<dd><p>None</p>
+</dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="altdss.AltDSS.AltDSS.Name">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">Name</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">str</span></em><a class="headerlink" href="#altdss.AltDSS.AltDSS.Name" title="Link to this definition">#</a></dt>
+<dd><p>Name of the active circuit.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="altdss.AltDSS.AltDSS.NewContext">
+<span class="sig-name descname"><span class="pre">NewContext</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference internal" href="#altdss.AltDSS.AltDSS" title="altdss.AltDSS.AltDSS"><span class="pre">altdss.AltDSS.AltDSS</span></a></span></span><a class="headerlink" href="#altdss.AltDSS.AltDSS.NewContext" title="Link to this definition">#</a></dt>
+<dd><p>Creates a new DSS engine context, wrapped by the AltDSS classes.</p>
+<p>An AltDSS Context encapsulates most of the global state of the original OpenDSS engine,
+allowing the user to create multiple instances in the same process. By creating contexts
+manually, the management of threads and potential issues should be handled by the user.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="altdss.AltDSS.AltDSS.NodeDistances">
+<span class="sig-name descname"><span class="pre">NodeDistances</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">altdss.types.Float64Array</span></span></span><a class="headerlink" href="#altdss.AltDSS.AltDSS.NodeDistances" title="Link to this definition">#</a></dt>
+<dd><p>Returns an array of distances from parent EnergyMeter for each Node. Corresponds to AllBusVMag sequence.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="altdss.AltDSS.AltDSS.NodeDistancesByPhase">
+<span class="sig-name descname"><span class="pre">NodeDistancesByPhase</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">Phase</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">altdss.types.Float64Array</span></span></span><a class="headerlink" href="#altdss.AltDSS.AltDSS.NodeDistancesByPhase" title="Link to this definition">#</a></dt>
+<dd><p>Returns an array of doubles representing the distances to parent EnergyMeter. Sequence of array corresponds to other node ByPhase properties.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="altdss.AltDSS.AltDSS.NodeNames">
+<span class="sig-name descname"><span class="pre">NodeNames</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">List</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">]</span></span></span></span><a class="headerlink" href="#altdss.AltDSS.AltDSS.NodeNames" title="Link to this definition">#</a></dt>
+<dd><p>Array of strings containing full name of each node in system in same order as returned by AllBusVolts, etc.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="altdss.AltDSS.AltDSS.NodeNamesByPhase">
+<span class="sig-name descname"><span class="pre">NodeNamesByPhase</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">Phase</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">List</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">]</span></span></span></span><a class="headerlink" href="#altdss.AltDSS.AltDSS.NodeNamesByPhase" title="Link to this definition">#</a></dt>
+<dd><p>Return array of strings of the node names for the By Phase criteria. Sequence corresponds to other ByPhase properties.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="altdss.AltDSS.AltDSS.NodeVmagByPhase">
+<span class="sig-name descname"><span class="pre">NodeVmagByPhase</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">Phase</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">altdss.types.Float64Array</span></span></span><a class="headerlink" href="#altdss.AltDSS.AltDSS.NodeVmagByPhase" title="Link to this definition">#</a></dt>
+<dd><p>Returns Array of doubles represent voltage magnitudes for nodes on the specified phase.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="altdss.AltDSS.AltDSS.NodeVmagPUByPhase">
+<span class="sig-name descname"><span class="pre">NodeVmagPUByPhase</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">Phase</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">altdss.types.Float64Array</span></span></span><a class="headerlink" href="#altdss.AltDSS.AltDSS.NodeVmagPUByPhase" title="Link to this definition">#</a></dt>
+<dd><p>Returns array of per unit voltage magnitudes for each node by phase</p>
+</dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="altdss.AltDSS.AltDSS.NumBuses">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">NumBuses</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">int</span></em><a class="headerlink" href="#altdss.AltDSS.AltDSS.NumBuses" title="Link to this definition">#</a></dt>
+<dd><p>Total number of Buses in the circuit.</p>
+</dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="altdss.AltDSS.AltDSS.NumCircuitElements">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">NumCircuitElements</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">int</span></em><a class="headerlink" href="#altdss.AltDSS.AltDSS.NumCircuitElements" title="Link to this definition">#</a></dt>
+<dd><p>Number of CircuitElements in the circuit.</p>
+</dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="altdss.AltDSS.AltDSS.NumNodes">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">NumNodes</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">int</span></em><a class="headerlink" href="#altdss.AltDSS.AltDSS.NumNodes" title="Link to this definition">#</a></dt>
+<dd><p>Total number of nodes in the circuit.</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="altdss.AltDSS.AltDSS.PCElement">
+<span class="sig-name descname"><span class="pre">PCElement</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><a class="reference internal" href="altdss.PCElement.html#altdss.PCElement.PCElementBatch" title="altdss.PCElement.PCElementBatch"><span class="pre">altdss.PCElement.PCElementBatch</span></a></em><a class="headerlink" href="#altdss.AltDSS.AltDSS.PCElement" title="Link to this definition">#</a></dt>
+<dd><p>None</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="altdss.AltDSS.AltDSS.PDElement">
+<span class="sig-name descname"><span class="pre">PDElement</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><a class="reference internal" href="altdss.PDElement.html#altdss.PDElement.PDElementBatch" title="altdss.PDElement.PDElementBatch"><span class="pre">altdss.PDElement.PDElementBatch</span></a></em><a class="headerlink" href="#altdss.AltDSS.AltDSS.PDElement" title="Link to this definition">#</a></dt>
+<dd><p>None</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="altdss.AltDSS.AltDSS.PVSystem">
+<span class="sig-name descname"><span class="pre">PVSystem</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><a class="reference internal" href="altdss.PVSystem.html#altdss.PVSystem.IPVSystem" title="altdss.PVSystem.IPVSystem"><span class="pre">altdss.PVSystem.IPVSystem</span></a></em><a class="headerlink" href="#altdss.AltDSS.AltDSS.PVSystem" title="Link to this definition">#</a></dt>
+<dd><p>None</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="altdss.AltDSS.AltDSS.PriceShape">
+<span class="sig-name descname"><span class="pre">PriceShape</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><a class="reference internal" href="altdss.PriceShape.html#altdss.PriceShape.IPriceShape" title="altdss.PriceShape.IPriceShape"><span class="pre">altdss.PriceShape.IPriceShape</span></a></em><a class="headerlink" href="#altdss.AltDSS.AltDSS.PriceShape" title="Link to this definition">#</a></dt>
+<dd><p>None</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="altdss.AltDSS.AltDSS.Reactor">
+<span class="sig-name descname"><span class="pre">Reactor</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><a class="reference internal" href="altdss.Reactor.html#altdss.Reactor.IReactor" title="altdss.Reactor.IReactor"><span class="pre">altdss.Reactor.IReactor</span></a></em><a class="headerlink" href="#altdss.AltDSS.AltDSS.Reactor" title="Link to this definition">#</a></dt>
+<dd><p>None</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="altdss.AltDSS.AltDSS.Recloser">
+<span class="sig-name descname"><span class="pre">Recloser</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><a class="reference internal" href="altdss.Recloser.html#altdss.Recloser.IRecloser" title="altdss.Recloser.IRecloser"><span class="pre">altdss.Recloser.IRecloser</span></a></em><a class="headerlink" href="#altdss.AltDSS.AltDSS.Recloser" title="Link to this definition">#</a></dt>
+<dd><p>None</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="altdss.AltDSS.AltDSS.ReduceCircuit">
+<span class="sig-name descname"><span class="pre">ReduceCircuit</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><a class="reference internal" href="altdss.ReduceCkt.html#altdss.ReduceCkt.IReduceCkt" title="altdss.ReduceCkt.IReduceCkt"><span class="pre">altdss.ReduceCkt.IReduceCkt</span></a></em><a class="headerlink" href="#altdss.AltDSS.AltDSS.ReduceCircuit" title="Link to this definition">#</a></dt>
+<dd><p>None</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="altdss.AltDSS.AltDSS.RegControl">
+<span class="sig-name descname"><span class="pre">RegControl</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><a class="reference internal" href="altdss.RegControl.html#altdss.RegControl.IRegControl" title="altdss.RegControl.IRegControl"><span class="pre">altdss.RegControl.IRegControl</span></a></em><a class="headerlink" href="#altdss.AltDSS.AltDSS.RegControl" title="Link to this definition">#</a></dt>
+<dd><p>None</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="altdss.AltDSS.AltDSS.Relay">
+<span class="sig-name descname"><span class="pre">Relay</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><a class="reference internal" href="altdss.Relay.html#altdss.Relay.IRelay" title="altdss.Relay.IRelay"><span class="pre">altdss.Relay.IRelay</span></a></em><a class="headerlink" href="#altdss.AltDSS.AltDSS.Relay" title="Link to this definition">#</a></dt>
+<dd><p>None</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="altdss.AltDSS.AltDSS.SaveSample">
+<span class="sig-name descname"><span class="pre">SaveSample</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#altdss.AltDSS.AltDSS.SaveSample" title="Link to this definition">#</a></dt>
+<dd><p>Force all meters and monitors to save their current buffers.</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="altdss.AltDSS.AltDSS.Sensor">
+<span class="sig-name descname"><span class="pre">Sensor</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><a class="reference internal" href="altdss.Sensor.html#altdss.Sensor.ISensor" title="altdss.Sensor.ISensor"><span class="pre">altdss.Sensor.ISensor</span></a></em><a class="headerlink" href="#altdss.AltDSS.AltDSS.Sensor" title="Link to this definition">#</a></dt>
+<dd><p>None</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="altdss.AltDSS.AltDSS.Settings">
+<span class="sig-name descname"><span class="pre">Settings</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><a class="reference internal" href="altdss.Settings.html#altdss.Settings.ISettings" title="altdss.Settings.ISettings"><span class="pre">altdss.Settings.ISettings</span></a></em><a class="headerlink" href="#altdss.AltDSS.AltDSS.Settings" title="Link to this definition">#</a></dt>
+<dd><p>None</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="altdss.AltDSS.AltDSS.Solution">
+<span class="sig-name descname"><span class="pre">Solution</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><a class="reference internal" href="altdss.Solution.html#altdss.Solution.ISolution" title="altdss.Solution.ISolution"><span class="pre">altdss.Solution.ISolution</span></a></em><a class="headerlink" href="#altdss.AltDSS.AltDSS.Solution" title="Link to this definition">#</a></dt>
+<dd><p>None</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="altdss.AltDSS.AltDSS.Spectrum">
+<span class="sig-name descname"><span class="pre">Spectrum</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><a class="reference internal" href="altdss.Spectrum.html#altdss.Spectrum.ISpectrum" title="altdss.Spectrum.ISpectrum"><span class="pre">altdss.Spectrum.ISpectrum</span></a></em><a class="headerlink" href="#altdss.AltDSS.AltDSS.Spectrum" title="Link to this definition">#</a></dt>
+<dd><p>None</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="altdss.AltDSS.AltDSS.Storage">
+<span class="sig-name descname"><span class="pre">Storage</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><a class="reference internal" href="altdss.Storage.html#altdss.Storage.IStorage" title="altdss.Storage.IStorage"><span class="pre">altdss.Storage.IStorage</span></a></em><a class="headerlink" href="#altdss.AltDSS.AltDSS.Storage" title="Link to this definition">#</a></dt>
+<dd><p>None</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="altdss.AltDSS.AltDSS.StorageController">
+<span class="sig-name descname"><span class="pre">StorageController</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><a class="reference internal" href="altdss.StorageController.html#altdss.StorageController.IStorageController" title="altdss.StorageController.IStorageController"><span class="pre">altdss.StorageController.IStorageController</span></a></em><a class="headerlink" href="#altdss.AltDSS.AltDSS.StorageController" title="Link to this definition">#</a></dt>
+<dd><p>None</p>
+</dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="altdss.AltDSS.AltDSS.SubstationLosses">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">SubstationLosses</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">complex</span></em><a class="headerlink" href="#altdss.AltDSS.AltDSS.SubstationLosses" title="Link to this definition">#</a></dt>
+<dd><p>Complex losses in all transformers designated to substations.</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="altdss.AltDSS.AltDSS.SwtControl">
+<span class="sig-name descname"><span class="pre">SwtControl</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><a class="reference internal" href="altdss.SwtControl.html#altdss.SwtControl.ISwtControl" title="altdss.SwtControl.ISwtControl"><span class="pre">altdss.SwtControl.ISwtControl</span></a></em><a class="headerlink" href="#altdss.AltDSS.AltDSS.SwtControl" title="Link to this definition">#</a></dt>
+<dd><p>None</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="altdss.AltDSS.AltDSS.SystemY">
+<span class="sig-name descname"><span class="pre">SystemY</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">dense</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">altdss.types.ComplexArray</span></span></span><a class="headerlink" href="#altdss.AltDSS.AltDSS.SystemY" title="Link to this definition">#</a></dt>
+<dd><p>Get the system Y complex matrix.
+Requires either a previous solution or explicitly building the matrix.</p>
+<p>In AltDSS, defaults to the sparse matrix data.</p>
+<p>Use <code class="docutils literal notranslate"><span class="pre">dense=True</span></code> to force a dense matrix. Beware the
+memory requirements. The recommendation is to only use dense
+matrices for small systems.</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="altdss.AltDSS.AltDSS.TCC_Curve">
+<span class="sig-name descname"><span class="pre">TCC_Curve</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><a class="reference internal" href="altdss.TCC_Curve.html#altdss.TCC_Curve.ITCC_Curve" title="altdss.TCC_Curve.ITCC_Curve"><span class="pre">altdss.TCC_Curve.ITCC_Curve</span></a></em><a class="headerlink" href="#altdss.AltDSS.AltDSS.TCC_Curve" title="Link to this definition">#</a></dt>
+<dd><p>None</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="altdss.AltDSS.AltDSS.TSData">
+<span class="sig-name descname"><span class="pre">TSData</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><a class="reference internal" href="altdss.TSData.html#altdss.TSData.ITSData" title="altdss.TSData.ITSData"><span class="pre">altdss.TSData.ITSData</span></a></em><a class="headerlink" href="#altdss.AltDSS.AltDSS.TSData" title="Link to this definition">#</a></dt>
+<dd><p>None</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="altdss.AltDSS.AltDSS.TShape">
+<span class="sig-name descname"><span class="pre">TShape</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><a class="reference internal" href="altdss.TShape.html#altdss.TShape.ITShape" title="altdss.TShape.ITShape"><span class="pre">altdss.TShape.ITShape</span></a></em><a class="headerlink" href="#altdss.AltDSS.AltDSS.TShape" title="Link to this definition">#</a></dt>
+<dd><p>None</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="altdss.AltDSS.AltDSS.TakeSample">
+<span class="sig-name descname"><span class="pre">TakeSample</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#altdss.AltDSS.AltDSS.TakeSample" title="Link to this definition">#</a></dt>
+<dd><p>Force all Meters and Monitors to take a sample.</p>
+</dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="altdss.AltDSS.AltDSS.TextResult">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">TextResult</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">str</span></em><a class="headerlink" href="#altdss.AltDSS.AltDSS.TextResult" title="Link to this definition">#</a></dt>
+<dd><p>Result string for the last DSS command (classic <code class="docutils literal notranslate"><span class="pre">Text.Result</span></code>).</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="altdss.AltDSS.AltDSS.Topology">
+<span class="sig-name descname"><span class="pre">Topology</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><a class="reference internal" href="altdss.Topology.html#altdss.Topology.ITopology" title="altdss.Topology.ITopology"><span class="pre">altdss.Topology.ITopology</span></a></em><a class="headerlink" href="#altdss.AltDSS.AltDSS.Topology" title="Link to this definition">#</a></dt>
+<dd><p>None</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="altdss.AltDSS.AltDSS.TotalPower">
+<span class="sig-name descname"><span class="pre">TotalPower</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">complex</span></span></span><a class="headerlink" href="#altdss.AltDSS.AltDSS.TotalPower" title="Link to this definition">#</a></dt>
+<dd><p>Total power (complex), kVA delivered to the circuit</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="altdss.AltDSS.AltDSS.Transformer">
+<span class="sig-name descname"><span class="pre">Transformer</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><a class="reference internal" href="altdss.Transformer.html#altdss.Transformer.ITransformer" title="altdss.Transformer.ITransformer"><span class="pre">altdss.Transformer.ITransformer</span></a></em><a class="headerlink" href="#altdss.AltDSS.AltDSS.Transformer" title="Link to this definition">#</a></dt>
+<dd><p>None</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="altdss.AltDSS.AltDSS.UPFC">
+<span class="sig-name descname"><span class="pre">UPFC</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><a class="reference internal" href="altdss.UPFC.html#altdss.UPFC.IUPFC" title="altdss.UPFC.IUPFC"><span class="pre">altdss.UPFC.IUPFC</span></a></em><a class="headerlink" href="#altdss.AltDSS.AltDSS.UPFC" title="Link to this definition">#</a></dt>
+<dd><p>None</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="altdss.AltDSS.AltDSS.UPFCControl">
+<span class="sig-name descname"><span class="pre">UPFCControl</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><a class="reference internal" href="altdss.UPFCControl.html#altdss.UPFCControl.IUPFCControl" title="altdss.UPFCControl.IUPFCControl"><span class="pre">altdss.UPFCControl.IUPFCControl</span></a></em><a class="headerlink" href="#altdss.AltDSS.AltDSS.UPFCControl" title="Link to this definition">#</a></dt>
+<dd><p>None</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="altdss.AltDSS.AltDSS.UpdateStorage">
+<span class="sig-name descname"><span class="pre">UpdateStorage</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#altdss.AltDSS.AltDSS.UpdateStorage" title="Link to this definition">#</a></dt>
+<dd><p>Force an update to all storage classes.</p>
+<p>Typically done after a solution. Done automatically in intrinsic solution modes.</p>
+<p>Original COM help: <a class="reference external" href="https://opendss.epri.com/UpdateStorage.html">https://opendss.epri.com/UpdateStorage.html</a></p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="altdss.AltDSS.AltDSS.VCCS">
+<span class="sig-name descname"><span class="pre">VCCS</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><a class="reference internal" href="altdss.VCCS.html#altdss.VCCS.IVCCS" title="altdss.VCCS.IVCCS"><span class="pre">altdss.VCCS.IVCCS</span></a></em><a class="headerlink" href="#altdss.AltDSS.AltDSS.VCCS" title="Link to this definition">#</a></dt>
+<dd><p>None</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="altdss.AltDSS.AltDSS.VSConverter">
+<span class="sig-name descname"><span class="pre">VSConverter</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><a class="reference internal" href="altdss.VSConverter.html#altdss.VSConverter.IVSConverter" title="altdss.VSConverter.IVSConverter"><span class="pre">altdss.VSConverter.IVSConverter</span></a></em><a class="headerlink" href="#altdss.AltDSS.AltDSS.VSConverter" title="Link to this definition">#</a></dt>
+<dd><p>None</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="altdss.AltDSS.AltDSS.Version">
+<span class="sig-name descname"><span class="pre">Version</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">str</span></span></span><a class="headerlink" href="#altdss.AltDSS.AltDSS.Version" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="altdss.AltDSS.AltDSS.Vsource">
+<span class="sig-name descname"><span class="pre">Vsource</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><a class="reference internal" href="altdss.Vsource.html#altdss.Vsource.IVsource" title="altdss.Vsource.IVsource"><span class="pre">altdss.Vsource.IVsource</span></a></em><a class="headerlink" href="#altdss.AltDSS.AltDSS.Vsource" title="Link to this definition">#</a></dt>
+<dd><p>None</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="altdss.AltDSS.AltDSS.WireData">
+<span class="sig-name descname"><span class="pre">WireData</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><a class="reference internal" href="altdss.WireData.html#altdss.WireData.IWireData" title="altdss.WireData.IWireData"><span class="pre">altdss.WireData.IWireData</span></a></em><a class="headerlink" href="#altdss.AltDSS.AltDSS.WireData" title="Link to this definition">#</a></dt>
+<dd><p>None</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="altdss.AltDSS.AltDSS.XYcurve">
+<span class="sig-name descname"><span class="pre">XYcurve</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><a class="reference internal" href="altdss.XYcurve.html#altdss.XYcurve.IXYcurve" title="altdss.XYcurve.IXYcurve"><span class="pre">altdss.XYcurve.IXYcurve</span></a></em><a class="headerlink" href="#altdss.AltDSS.AltDSS.XYcurve" title="Link to this definition">#</a></dt>
+<dd><p>None</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="altdss.AltDSS.AltDSS.XfmrCode">
+<span class="sig-name descname"><span class="pre">XfmrCode</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><a class="reference internal" href="altdss.XfmrCode.html#altdss.XfmrCode.IXfmrCode" title="altdss.XfmrCode.IXfmrCode"><span class="pre">altdss.XfmrCode.IXfmrCode</span></a></em><a class="headerlink" href="#altdss.AltDSS.AltDSS.XfmrCode" title="Link to this definition">#</a></dt>
+<dd><p>None</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="altdss.AltDSS.AltDSS.YCurrents">
+<span class="sig-name descname"><span class="pre">YCurrents</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">altdss.types.ComplexArray</span></span></span><a class="headerlink" href="#altdss.AltDSS.AltDSS.YCurrents" title="Link to this definition">#</a></dt>
+<dd><p>Array of doubles containing complex injection currents for the present solution. It is the “I” vector of I=YV</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="altdss.AltDSS.AltDSS.YMatrix">
+<span class="sig-name descname"><span class="pre">YMatrix</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><a class="reference internal" href="altdss.YMatrix.html#altdss.YMatrix.IYMatrix" title="altdss.YMatrix.IYMatrix"><span class="pre">altdss.YMatrix.IYMatrix</span></a></em><a class="headerlink" href="#altdss.AltDSS.AltDSS.YMatrix" title="Link to this definition">#</a></dt>
+<dd><p>None</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="altdss.AltDSS.AltDSS.YNodeOrder">
+<span class="sig-name descname"><span class="pre">YNodeOrder</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">List</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">]</span></span></span></span><a class="headerlink" href="#altdss.AltDSS.AltDSS.YNodeOrder" title="Link to this definition">#</a></dt>
+<dd><p>Array of strings containing the names of the nodes in the same order as the Y matrix</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="altdss.AltDSS.AltDSS.YNodeVarray">
+<span class="sig-name descname"><span class="pre">YNodeVarray</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">altdss.types.ComplexArray</span></span></span><a class="headerlink" href="#altdss.AltDSS.AltDSS.YNodeVarray" title="Link to this definition">#</a></dt>
+<dd><p>Complex array of actual node voltages in same order as SystemY matrix.</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="altdss.AltDSS.AltDSS.ZIP">
+<span class="sig-name descname"><span class="pre">ZIP</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><a class="reference internal" href="altdss.ZIP.html#altdss.ZIP.IZIP" title="altdss.ZIP.IZIP"><span class="pre">altdss.ZIP.IZIP</span></a></em><a class="headerlink" href="#altdss.AltDSS.AltDSS.ZIP" title="Link to this definition">#</a></dt>
+<dd><p>None</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="altdss.AltDSS.AltDSS.__call__">
+<span class="sig-name descname"><span class="pre">__call__</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">cmds</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Union</span><span class="p"><span class="pre">[</span></span><span class="pre">AnyStr</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">List</span><span class="p"><span class="pre">[</span></span><span class="pre">AnyStr</span><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">]</span></span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#altdss.AltDSS.AltDSS.__call__" title="Link to this definition">#</a></dt>
+<dd><p>Pass either a single string (with either one or multiples commands, separated by new lines),
+or a list of strings.</p>
+<p>Shortcut to <code class="docutils literal notranslate"><span class="pre">AltDSS.Commands()</span></code>.</p>
+<p>Examples:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>    <span class="c1"># single command</span>
+    <span class="n">dss</span><span class="p">(</span><span class="s2">&quot;new Circuit.test&quot;</span><span class="p">)</span> 
+
+    <span class="c1"># list of commands</span>
+    <span class="n">dss</span><span class="p">([</span><span class="s2">&quot;new Circuit.test&quot;</span><span class="p">,</span> <span class="s2">&quot;new Line.line1 bus1=a bus2=b&quot;</span><span class="p">])</span>
+
+    <span class="c1"># block of commands in a big string</span>
+    <span class="n">dss</span><span class="p">(</span><span class="s2">&quot;&quot;&quot;</span>
+<span class="s2">        clear</span>
+<span class="s2">        new Circuit.test</span>
+<span class="s2">        new Line.line1 bus1=a bus2=b</span>
+<span class="s2">        new Load.load1 bus1=a bus2=b</span>
+<span class="s2">    &quot;&quot;&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="altdss.AltDSS.AltDSS.__init__">
+<span class="sig-name descname"><span class="pre">__init__</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">api_util</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#altdss.AltDSS.AltDSS.__init__" title="Link to this definition">#</a></dt>
+<dd><p>Creates a new AltDSS instance for the DSS context specified in <code class="docutils literal notranslate"><span class="pre">api_util</span></code>.</p>
+<p>Not intended for typical usage. For creating new separate DSS instances, refer
+to the <code class="docutils literal notranslate"><span class="pre">AltDSS.NewContext</span></code> method.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="altdss.AltDSS.AltDSS.to_dss_python">
+<span class="sig-name descname"><span class="pre">to_dss_python</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">dss.IDSS</span></span></span><a class="headerlink" href="#altdss.AltDSS.AltDSS.to_dss_python" title="Link to this definition">#</a></dt>
+<dd><p>Returns an instance of DSS-Python for the active DSS Context.</p>
+<p>A compatible DSS-Python (<code class="docutils literal notranslate"><span class="pre">pip</span> <span class="pre">install</span> <span class="pre">dss-python</span></code>) is required.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="altdss.AltDSS.AltDSS.to_json">
+<span class="sig-name descname"><span class="pre">to_json</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">options</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">dss.enums.DSSJSONFlags</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">0</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">str</span></span></span><a class="headerlink" href="#altdss.AltDSS.AltDSS.to_json" title="Link to this definition">#</a></dt>
+<dd><p>Returns data for all objects and basic circuit properties as a JSON-encoded string.
+The JSON data is organized using</p>
+<p>The <code class="docutils literal notranslate"><span class="pre">options</span></code> parameter contains bit-flags to toggle specific features.
+See <code class="docutils literal notranslate"><span class="pre">Obj_ToJSON</span></code> (C-API) for more, or <code class="docutils literal notranslate"><span class="pre">DSSObj.to_json</span></code> in Python.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="altdss.AltDSS.AltDSS.to_opendssdirect">
+<span class="sig-name descname"><span class="pre">to_opendssdirect</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">opendssdirect.OpenDSSDirect.OpenDSSDirect</span></span></span><a class="headerlink" href="#altdss.AltDSS.AltDSS.to_opendssdirect" title="Link to this definition">#</a></dt>
+<dd><p>Returns an instance of OpenDSSDirect.py for the active DSS Context.</p>
+<p>A compatible OpenDSSDirect.py (<code class="docutils literal notranslate"><span class="pre">pip</span> <span class="pre">install</span> <span class="pre">OpenDSSDirect.py</span></code>) is required.</p>
+</dd></dl>
+
+</dd></dl>
+
+</section>
+</section>
+</section>
+
+
+                </article>
+              
+
+              
+              
+              
+              
+                <footer class="prev-next-footer">
+                  
+<div class="prev-next-area">
+    <a class="left-prev"
+       href="altdss.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title"><code class="xref py py-mod docutils literal notranslate"><span class="pre">altdss</span></code></p>
+      </div>
+    </a>
+    <a class="right-next"
+       href="altdss.ArrayProxy.html"
+       title="next page">
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title"><code class="xref py py-mod docutils literal notranslate"><span class="pre">altdss.ArrayProxy</span></code></p>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
+    </a>
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#module-contents">Module Contents</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#classes">Classes</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#api">API</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#altdss.AltDSS.AltDSS"><code class="docutils literal notranslate"><span class="pre">AltDSS</span></code></a><ul class="nav section-nav flex-column">
+<li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#altdss.AltDSS.AltDSS.AutoTrans"><code class="docutils literal notranslate"><span class="pre">AltDSS.AutoTrans</span></code></a></li>
+<li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#altdss.AltDSS.AltDSS.Bus"><code class="docutils literal notranslate"><span class="pre">AltDSS.Bus</span></code></a></li>
+<li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#altdss.AltDSS.AltDSS.BusDistances"><code class="docutils literal notranslate"><span class="pre">AltDSS.BusDistances()</span></code></a></li>
+<li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#altdss.AltDSS.AltDSS.BusNames"><code class="docutils literal notranslate"><span class="pre">AltDSS.BusNames()</span></code></a></li>
+<li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#altdss.AltDSS.AltDSS.BusVmag"><code class="docutils literal notranslate"><span class="pre">AltDSS.BusVmag()</span></code></a></li>
+<li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#altdss.AltDSS.AltDSS.BusVmagPu"><code class="docutils literal notranslate"><span class="pre">AltDSS.BusVmagPu()</span></code></a></li>
+<li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#altdss.AltDSS.AltDSS.BusVolts"><code class="docutils literal notranslate"><span class="pre">AltDSS.BusVolts()</span></code></a></li>
+<li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#altdss.AltDSS.AltDSS.CNData"><code class="docutils literal notranslate"><span class="pre">AltDSS.CNData</span></code></a></li>
+<li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#altdss.AltDSS.AltDSS.CapControl"><code class="docutils literal notranslate"><span class="pre">AltDSS.CapControl</span></code></a></li>
+<li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#altdss.AltDSS.AltDSS.Capacitor"><code class="docutils literal notranslate"><span class="pre">AltDSS.Capacitor</span></code></a></li>
+<li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#altdss.AltDSS.AltDSS.Capacity"><code class="docutils literal notranslate"><span class="pre">AltDSS.Capacity()</span></code></a></li>
+<li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#altdss.AltDSS.AltDSS.Clear"><code class="docutils literal notranslate"><span class="pre">AltDSS.Clear()</span></code></a></li>
+<li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#altdss.AltDSS.AltDSS.ClearAll"><code class="docutils literal notranslate"><span class="pre">AltDSS.ClearAll()</span></code></a></li>
+<li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#altdss.AltDSS.AltDSS.Command"><code class="docutils literal notranslate"><span class="pre">AltDSS.Command()</span></code></a></li>
+<li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#altdss.AltDSS.AltDSS.Commands"><code class="docutils literal notranslate"><span class="pre">AltDSS.Commands()</span></code></a></li>
+<li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#altdss.AltDSS.AltDSS.ControlQueue"><code class="docutils literal notranslate"><span class="pre">AltDSS.ControlQueue</span></code></a></li>
+<li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#altdss.AltDSS.AltDSS.DisableElement"><code class="docutils literal notranslate"><span class="pre">AltDSS.DisableElement()</span></code></a></li>
+<li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#altdss.AltDSS.AltDSS.DynamicExp"><code class="docutils literal notranslate"><span class="pre">AltDSS.DynamicExp</span></code></a></li>
+<li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#altdss.AltDSS.AltDSS.ESPVLControl"><code class="docutils literal notranslate"><span class="pre">AltDSS.ESPVLControl</span></code></a></li>
+<li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#altdss.AltDSS.AltDSS.Element"><code class="docutils literal notranslate"><span class="pre">AltDSS.Element</span></code></a></li>
+<li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#altdss.AltDSS.AltDSS.EnableElement"><code class="docutils literal notranslate"><span class="pre">AltDSS.EnableElement()</span></code></a></li>
+<li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#altdss.AltDSS.AltDSS.EnergyMeter"><code class="docutils literal notranslate"><span class="pre">AltDSS.EnergyMeter</span></code></a></li>
+<li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#altdss.AltDSS.AltDSS.Error"><code class="docutils literal notranslate"><span class="pre">AltDSS.Error</span></code></a></li>
+<li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#altdss.AltDSS.AltDSS.ExpControl"><code class="docutils literal notranslate"><span class="pre">AltDSS.ExpControl</span></code></a></li>
+<li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#altdss.AltDSS.AltDSS.Fault"><code class="docutils literal notranslate"><span class="pre">AltDSS.Fault</span></code></a></li>
+<li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#altdss.AltDSS.AltDSS.Fuse"><code class="docutils literal notranslate"><span class="pre">AltDSS.Fuse</span></code></a></li>
+<li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#altdss.AltDSS.AltDSS.GICLine"><code class="docutils literal notranslate"><span class="pre">AltDSS.GICLine</span></code></a></li>
+<li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#altdss.AltDSS.AltDSS.GICTransformer"><code class="docutils literal notranslate"><span class="pre">AltDSS.GICTransformer</span></code></a></li>
+<li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#altdss.AltDSS.AltDSS.GICsource"><code class="docutils literal notranslate"><span class="pre">AltDSS.GICsource</span></code></a></li>
+<li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#altdss.AltDSS.AltDSS.GenDispatcher"><code class="docutils literal notranslate"><span class="pre">AltDSS.GenDispatcher</span></code></a></li>
+<li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#altdss.AltDSS.AltDSS.Generator"><code class="docutils literal notranslate"><span class="pre">AltDSS.Generator</span></code></a></li>
+<li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#altdss.AltDSS.AltDSS.GrowthShape"><code class="docutils literal notranslate"><span class="pre">AltDSS.GrowthShape</span></code></a></li>
+<li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#altdss.AltDSS.AltDSS.IndMach012"><code class="docutils literal notranslate"><span class="pre">AltDSS.IndMach012</span></code></a></li>
+<li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#altdss.AltDSS.AltDSS.InvControl"><code class="docutils literal notranslate"><span class="pre">AltDSS.InvControl</span></code></a></li>
+<li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#altdss.AltDSS.AltDSS.Isource"><code class="docutils literal notranslate"><span class="pre">AltDSS.Isource</span></code></a></li>
+<li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#altdss.AltDSS.AltDSS.Line"><code class="docutils literal notranslate"><span class="pre">AltDSS.Line</span></code></a></li>
+<li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#altdss.AltDSS.AltDSS.LineCode"><code class="docutils literal notranslate"><span class="pre">AltDSS.LineCode</span></code></a></li>
+<li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#altdss.AltDSS.AltDSS.LineGeometry"><code class="docutils literal notranslate"><span class="pre">AltDSS.LineGeometry</span></code></a></li>
+<li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#altdss.AltDSS.AltDSS.LineLosses"><code class="docutils literal notranslate"><span class="pre">AltDSS.LineLosses()</span></code></a></li>
+<li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#altdss.AltDSS.AltDSS.LineSpacing"><code class="docutils literal notranslate"><span class="pre">AltDSS.LineSpacing</span></code></a></li>
+<li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#altdss.AltDSS.AltDSS.Load"><code class="docutils literal notranslate"><span class="pre">AltDSS.Load</span></code></a></li>
+<li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#altdss.AltDSS.AltDSS.LoadShape"><code class="docutils literal notranslate"><span class="pre">AltDSS.LoadShape</span></code></a></li>
+<li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#altdss.AltDSS.AltDSS.Losses"><code class="docutils literal notranslate"><span class="pre">AltDSS.Losses()</span></code></a></li>
+<li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#altdss.AltDSS.AltDSS.Monitor"><code class="docutils literal notranslate"><span class="pre">AltDSS.Monitor</span></code></a></li>
+<li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#altdss.AltDSS.AltDSS.Name"><code class="docutils literal notranslate"><span class="pre">AltDSS.Name</span></code></a></li>
+<li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#altdss.AltDSS.AltDSS.NewContext"><code class="docutils literal notranslate"><span class="pre">AltDSS.NewContext()</span></code></a></li>
+<li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#altdss.AltDSS.AltDSS.NodeDistances"><code class="docutils literal notranslate"><span class="pre">AltDSS.NodeDistances()</span></code></a></li>
+<li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#altdss.AltDSS.AltDSS.NodeDistancesByPhase"><code class="docutils literal notranslate"><span class="pre">AltDSS.NodeDistancesByPhase()</span></code></a></li>
+<li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#altdss.AltDSS.AltDSS.NodeNames"><code class="docutils literal notranslate"><span class="pre">AltDSS.NodeNames()</span></code></a></li>
+<li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#altdss.AltDSS.AltDSS.NodeNamesByPhase"><code class="docutils literal notranslate"><span class="pre">AltDSS.NodeNamesByPhase()</span></code></a></li>
+<li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#altdss.AltDSS.AltDSS.NodeVmagByPhase"><code class="docutils literal notranslate"><span class="pre">AltDSS.NodeVmagByPhase()</span></code></a></li>
+<li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#altdss.AltDSS.AltDSS.NodeVmagPUByPhase"><code class="docutils literal notranslate"><span class="pre">AltDSS.NodeVmagPUByPhase()</span></code></a></li>
+<li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#altdss.AltDSS.AltDSS.NumBuses"><code class="docutils literal notranslate"><span class="pre">AltDSS.NumBuses</span></code></a></li>
+<li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#altdss.AltDSS.AltDSS.NumCircuitElements"><code class="docutils literal notranslate"><span class="pre">AltDSS.NumCircuitElements</span></code></a></li>
+<li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#altdss.AltDSS.AltDSS.NumNodes"><code class="docutils literal notranslate"><span class="pre">AltDSS.NumNodes</span></code></a></li>
+<li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#altdss.AltDSS.AltDSS.PCElement"><code class="docutils literal notranslate"><span class="pre">AltDSS.PCElement</span></code></a></li>
+<li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#altdss.AltDSS.AltDSS.PDElement"><code class="docutils literal notranslate"><span class="pre">AltDSS.PDElement</span></code></a></li>
+<li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#altdss.AltDSS.AltDSS.PVSystem"><code class="docutils literal notranslate"><span class="pre">AltDSS.PVSystem</span></code></a></li>
+<li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#altdss.AltDSS.AltDSS.PriceShape"><code class="docutils literal notranslate"><span class="pre">AltDSS.PriceShape</span></code></a></li>
+<li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#altdss.AltDSS.AltDSS.Reactor"><code class="docutils literal notranslate"><span class="pre">AltDSS.Reactor</span></code></a></li>
+<li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#altdss.AltDSS.AltDSS.Recloser"><code class="docutils literal notranslate"><span class="pre">AltDSS.Recloser</span></code></a></li>
+<li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#altdss.AltDSS.AltDSS.ReduceCircuit"><code class="docutils literal notranslate"><span class="pre">AltDSS.ReduceCircuit</span></code></a></li>
+<li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#altdss.AltDSS.AltDSS.RegControl"><code class="docutils literal notranslate"><span class="pre">AltDSS.RegControl</span></code></a></li>
+<li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#altdss.AltDSS.AltDSS.Relay"><code class="docutils literal notranslate"><span class="pre">AltDSS.Relay</span></code></a></li>
+<li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#altdss.AltDSS.AltDSS.SaveSample"><code class="docutils literal notranslate"><span class="pre">AltDSS.SaveSample()</span></code></a></li>
+<li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#altdss.AltDSS.AltDSS.Sensor"><code class="docutils literal notranslate"><span class="pre">AltDSS.Sensor</span></code></a></li>
+<li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#altdss.AltDSS.AltDSS.Settings"><code class="docutils literal notranslate"><span class="pre">AltDSS.Settings</span></code></a></li>
+<li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#altdss.AltDSS.AltDSS.Solution"><code class="docutils literal notranslate"><span class="pre">AltDSS.Solution</span></code></a></li>
+<li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#altdss.AltDSS.AltDSS.Spectrum"><code class="docutils literal notranslate"><span class="pre">AltDSS.Spectrum</span></code></a></li>
+<li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#altdss.AltDSS.AltDSS.Storage"><code class="docutils literal notranslate"><span class="pre">AltDSS.Storage</span></code></a></li>
+<li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#altdss.AltDSS.AltDSS.StorageController"><code class="docutils literal notranslate"><span class="pre">AltDSS.StorageController</span></code></a></li>
+<li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#altdss.AltDSS.AltDSS.SubstationLosses"><code class="docutils literal notranslate"><span class="pre">AltDSS.SubstationLosses</span></code></a></li>
+<li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#altdss.AltDSS.AltDSS.SwtControl"><code class="docutils literal notranslate"><span class="pre">AltDSS.SwtControl</span></code></a></li>
+<li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#altdss.AltDSS.AltDSS.SystemY"><code class="docutils literal notranslate"><span class="pre">AltDSS.SystemY()</span></code></a></li>
+<li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#altdss.AltDSS.AltDSS.TCC_Curve"><code class="docutils literal notranslate"><span class="pre">AltDSS.TCC_Curve</span></code></a></li>
+<li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#altdss.AltDSS.AltDSS.TSData"><code class="docutils literal notranslate"><span class="pre">AltDSS.TSData</span></code></a></li>
+<li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#altdss.AltDSS.AltDSS.TShape"><code class="docutils literal notranslate"><span class="pre">AltDSS.TShape</span></code></a></li>
+<li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#altdss.AltDSS.AltDSS.TakeSample"><code class="docutils literal notranslate"><span class="pre">AltDSS.TakeSample()</span></code></a></li>
+<li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#altdss.AltDSS.AltDSS.TextResult"><code class="docutils literal notranslate"><span class="pre">AltDSS.TextResult</span></code></a></li>
+<li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#altdss.AltDSS.AltDSS.Topology"><code class="docutils literal notranslate"><span class="pre">AltDSS.Topology</span></code></a></li>
+<li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#altdss.AltDSS.AltDSS.TotalPower"><code class="docutils literal notranslate"><span class="pre">AltDSS.TotalPower()</span></code></a></li>
+<li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#altdss.AltDSS.AltDSS.Transformer"><code class="docutils literal notranslate"><span class="pre">AltDSS.Transformer</span></code></a></li>
+<li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#altdss.AltDSS.AltDSS.UPFC"><code class="docutils literal notranslate"><span class="pre">AltDSS.UPFC</span></code></a></li>
+<li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#altdss.AltDSS.AltDSS.UPFCControl"><code class="docutils literal notranslate"><span class="pre">AltDSS.UPFCControl</span></code></a></li>
+<li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#altdss.AltDSS.AltDSS.UpdateStorage"><code class="docutils literal notranslate"><span class="pre">AltDSS.UpdateStorage()</span></code></a></li>
+<li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#altdss.AltDSS.AltDSS.VCCS"><code class="docutils literal notranslate"><span class="pre">AltDSS.VCCS</span></code></a></li>
+<li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#altdss.AltDSS.AltDSS.VSConverter"><code class="docutils literal notranslate"><span class="pre">AltDSS.VSConverter</span></code></a></li>
+<li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#altdss.AltDSS.AltDSS.Version"><code class="docutils literal notranslate"><span class="pre">AltDSS.Version()</span></code></a></li>
+<li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#altdss.AltDSS.AltDSS.Vsource"><code class="docutils literal notranslate"><span class="pre">AltDSS.Vsource</span></code></a></li>
+<li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#altdss.AltDSS.AltDSS.WireData"><code class="docutils literal notranslate"><span class="pre">AltDSS.WireData</span></code></a></li>
+<li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#altdss.AltDSS.AltDSS.XYcurve"><code class="docutils literal notranslate"><span class="pre">AltDSS.XYcurve</span></code></a></li>
+<li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#altdss.AltDSS.AltDSS.XfmrCode"><code class="docutils literal notranslate"><span class="pre">AltDSS.XfmrCode</span></code></a></li>
+<li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#altdss.AltDSS.AltDSS.YCurrents"><code class="docutils literal notranslate"><span class="pre">AltDSS.YCurrents()</span></code></a></li>
+<li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#altdss.AltDSS.AltDSS.YMatrix"><code class="docutils literal notranslate"><span class="pre">AltDSS.YMatrix</span></code></a></li>
+<li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#altdss.AltDSS.AltDSS.YNodeOrder"><code class="docutils literal notranslate"><span class="pre">AltDSS.YNodeOrder()</span></code></a></li>
+<li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#altdss.AltDSS.AltDSS.YNodeVarray"><code class="docutils literal notranslate"><span class="pre">AltDSS.YNodeVarray()</span></code></a></li>
+<li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#altdss.AltDSS.AltDSS.ZIP"><code class="docutils literal notranslate"><span class="pre">AltDSS.ZIP</span></code></a></li>
+<li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#altdss.AltDSS.AltDSS.__call__"><code class="docutils literal notranslate"><span class="pre">AltDSS.__call__()</span></code></a></li>
+<li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#altdss.AltDSS.AltDSS.__init__"><code class="docutils literal notranslate"><span class="pre">AltDSS.__init__()</span></code></a></li>
+<li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#altdss.AltDSS.AltDSS.to_dss_python"><code class="docutils literal notranslate"><span class="pre">AltDSS.to_dss_python()</span></code></a></li>
+<li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#altdss.AltDSS.AltDSS.to_json"><code class="docutils literal notranslate"><span class="pre">AltDSS.to_json()</span></code></a></li>
+<li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#altdss.AltDSS.AltDSS.to_opendssdirect"><code class="docutils literal notranslate"><span class="pre">AltDSS.to_opendssdirect()</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+  </nav></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+<div class="bd-footer-content__inner container">
+  
+  <div class="footer-item">
+    
+
+  <p class="copyright">
+    
+      © Copyright 2018-2024 Paulo Meira, Dheepak Krishnamurthy, DSS-Extensions contributors.
+      <br/>
+    
+  </p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+</div>
+          </footer>
+        
+
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="../../_static/scripts/bootstrap.js?digest=8d27b9dea8ad943066ae"></script>
+<script src="../../_static/scripts/pydata-sphinx-theme.js?digest=8d27b9dea8ad943066ae"></script>
+
+  <footer class="bd-footer">
+  </footer>
+  </body>
+</html>

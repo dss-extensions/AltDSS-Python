@@ -1,0 +1,868 @@
+
+<!DOCTYPE html>
+
+
+<html lang="en" data-content_root="../../" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.19: https://docutils.sourceforge.io/" />
+
+    <title>altdss.Settings &#8212; AltDSS-Python 0.1.0 documentation</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "light";
+  </script>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../../_static/styles/theme.css?digest=8d27b9dea8ad943066ae" rel="stylesheet" />
+<link href="../../_static/styles/bootstrap.css?digest=8d27b9dea8ad943066ae" rel="stylesheet" />
+<link href="../../_static/styles/pydata-sphinx-theme.css?digest=8d27b9dea8ad943066ae" rel="stylesheet" />
+
+  
+  <link href="../../_static/vendor/fontawesome/6.5.1/css/all.min.css?digest=8d27b9dea8ad943066ae" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.5.1/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.5.1/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.5.1/webfonts/fa-regular-400.woff2" />
+
+    <link rel="stylesheet" type="text/css" href="../../_static/pygments.css?v=362ab14a" />
+    <link rel="stylesheet" type="text/css" href="../../_static/styles/sphinx-book-theme.css?v=384b581d" />
+    <link rel="stylesheet" type="text/css" href="../../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/design-style.1e8bd061cd6da7fc9cf755528e8ffc24.min.css?v=0a3b3ea7" />
+  
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../../_static/scripts/bootstrap.js?digest=8d27b9dea8ad943066ae" />
+<link rel="preload" as="script" href="../../_static/scripts/pydata-sphinx-theme.js?digest=8d27b9dea8ad943066ae" />
+  <script src="../../_static/vendor/fontawesome/6.5.1/js/all.min.js?digest=8d27b9dea8ad943066ae"></script>
+
+    <script src="../../_static/documentation_options.js?v=a1637f0b"></script>
+    <script src="../../_static/doctools.js?v=888ff710"></script>
+    <script src="../../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../../_static/scripts/sphinx-book-theme.js?v=efea14e4"></script>
+    <script src="../../_static/design-tabs.js?v=36754332"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'apidocs/altdss/altdss.Settings';</script>
+    <link rel="icon" href="../../_static/dssx.png"/>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="altdss.Solution" href="altdss.Solution.html" />
+    <link rel="prev" title="altdss.Sensor" href="altdss.Sensor.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <a id="pst-skip-link" class="skip-link" href="#main-content">Skip to main content</a>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>
+    Back to top
+  </button>
+
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__primary"
+          id="__primary"/>
+  <label class="overlay overlay-primary" for="__primary"></label>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__secondary"
+          id="__secondary"/>
+  <label class="overlay overlay-secondary" for="__secondary"></label>
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container">
+<form class="bd-search d-flex align-items-center"
+      action="../../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         id="search-input"
+         placeholder="Search..."
+         aria-label="Search..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+  </div>
+  
+    <header class="bd-header navbar navbar-expand-lg bd-navbar">
+    </header>
+  
+
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      
+      
+      <div class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+    
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+
+  
+
+<a class="navbar-brand logo" href="../../index.html">
+  
+  
+  
+  
+  
+    
+    
+      
+    
+    
+    <img src="../../_static/altdss-python.svg" class="logo__image only-light" alt="AltDSS-Python 0.1.0 documentation - Home"/>
+    <script>document.write(`<img src="../../_static/altdss-python-dark.svg" class="logo__image only-dark" alt="AltDSS-Python 0.1.0 documentation - Home"/>`);</script>
+  
+  
+</a></div>
+        <div class="sidebar-primary-item">
+
+ <script>
+ document.write(`
+   <button class="btn navbar-btn search-button-field search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+    <span class="search-button__default-text">Search</span>
+    <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+   </button>
+ `);
+ </script></div>
+        <div class="sidebar-primary-item"><nav class="bd-links bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
+        <p aria-level="2" class="caption" role="heading"><span class="caption-text">General</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../../index.html">AltDSS-Python</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../Architecture.html">Architecture details</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../examples/GettingStarted.html">Getting Started</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../changelog.html">Changelog</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">API Reference</span></p>
+<ul class="current nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../../enumerations.html">General enums</a></li>
+<li class="toctree-l1 current active has-children"><a class="reference internal" href="../index.html">altdss package</a><input checked="" class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-1"><i class="fa-solid fa-chevron-down"></i></label><ul class="current">
+<li class="toctree-l2 current active has-children"><a class="reference internal" href="altdss.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">altdss</span></code></a><input checked="" class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-2"><i class="fa-solid fa-chevron-down"></i></label><ul class="current">
+<li class="toctree-l3"><a class="reference internal" href="altdss.AltDSS.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">altdss.AltDSS</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="altdss.ArrayProxy.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">altdss.ArrayProxy</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="altdss.AutoTrans.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">altdss.AutoTrans</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="altdss.Batch.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">altdss.Batch</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="altdss.Bus.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">altdss.Bus</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="altdss.CNData.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">altdss.CNData</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="altdss.CapControl.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">altdss.CapControl</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="altdss.Capacitor.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">altdss.Capacitor</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="altdss.CircuitElement.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">altdss.CircuitElement</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="altdss.ControlQueue.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">altdss.ControlQueue</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="altdss.DSSObj.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">altdss.DSSObj</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="altdss.DynamicExp.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">altdss.DynamicExp</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="altdss.ESPVLControl.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">altdss.ESPVLControl</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="altdss.EnergyMeter.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">altdss.EnergyMeter</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="altdss.EnergyMeterExtras.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">altdss.EnergyMeterExtras</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="altdss.Error.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">altdss.Error</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="altdss.ExpControl.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">altdss.ExpControl</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="altdss.Fault.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">altdss.Fault</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="altdss.Fuse.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">altdss.Fuse</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="altdss.GICLine.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">altdss.GICLine</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="altdss.GICTransformer.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">altdss.GICTransformer</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="altdss.GICsource.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">altdss.GICsource</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="altdss.GenDispatcher.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">altdss.GenDispatcher</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="altdss.Generator.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">altdss.Generator</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="altdss.GrowthShape.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">altdss.GrowthShape</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="altdss.IndMach012.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">altdss.IndMach012</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="altdss.InvControl.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">altdss.InvControl</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="altdss.Isource.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">altdss.Isource</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="altdss.Line.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">altdss.Line</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="altdss.LineCode.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">altdss.LineCode</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="altdss.LineGeometry.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">altdss.LineGeometry</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="altdss.LineSpacing.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">altdss.LineSpacing</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="altdss.Load.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">altdss.Load</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="altdss.LoadShape.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">altdss.LoadShape</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="altdss.LoadShapeExtras.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">altdss.LoadShapeExtras</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="altdss.Monitor.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">altdss.Monitor</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="altdss.MonitorExtras.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">altdss.MonitorExtras</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="altdss.Obj.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">altdss.Obj</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="altdss.PCElement.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">altdss.PCElement</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="altdss.PDElement.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">altdss.PDElement</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="altdss.PVSystem.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">altdss.PVSystem</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="altdss.PriceShape.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">altdss.PriceShape</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="altdss.Reactor.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">altdss.Reactor</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="altdss.Recloser.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">altdss.Recloser</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="altdss.ReduceCkt.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">altdss.ReduceCkt</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="altdss.RegControl.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">altdss.RegControl</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="altdss.Relay.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">altdss.Relay</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="altdss.Sensor.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">altdss.Sensor</span></code></a></li>
+<li class="toctree-l3 current active"><a class="current reference internal" href="#"><code class="xref py py-mod docutils literal notranslate"><span class="pre">altdss.Settings</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="altdss.Solution.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">altdss.Solution</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="altdss.Spectrum.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">altdss.Spectrum</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="altdss.Storage.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">altdss.Storage</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="altdss.StorageController.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">altdss.StorageController</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="altdss.SwtControl.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">altdss.SwtControl</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="altdss.TCC_Curve.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">altdss.TCC_Curve</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="altdss.TSData.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">altdss.TSData</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="altdss.TShape.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">altdss.TShape</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="altdss.Topology.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">altdss.Topology</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="altdss.Transformer.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">altdss.Transformer</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="altdss.TransformerExtras.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">altdss.TransformerExtras</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="altdss.UPFC.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">altdss.UPFC</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="altdss.UPFCControl.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">altdss.UPFCControl</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="altdss.VCCS.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">altdss.VCCS</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="altdss.VSConverter.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">altdss.VSConverter</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="altdss.Vsource.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">altdss.Vsource</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="altdss.WireData.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">altdss.WireData</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="altdss.XYcurve.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">altdss.XYcurve</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="altdss.XfmrCode.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">altdss.XfmrCode</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="altdss.YMatrix.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">altdss.YMatrix</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="altdss.ZIP.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">altdss.ZIP</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="altdss.common.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">altdss.common</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="altdss.enums.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">altdss.enums</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="altdss.types.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">altdss.types</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">External links</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference external" href="https://github.com/dss-extensions/dss_python">GitHub repository</a></li>
+<li class="toctree-l1"><a class="reference external" href="https://pypi.python.org/pypi/OpenDSSDirect.py/">Package on PyPI</a></li>
+<li class="toctree-l1"><a class="reference external" href="https://github.com/dss-extensions/electricdss-tst">Test/example circuits</a></li>
+
+<li class="toctree-l1"><a class="reference external" href="https://dss-extensions.org/OpenDSSDirect.py">OpenDSSDirect.py</a></li>
+<li class="toctree-l1"><a class="reference external" href="https://dss-extensions.org/dss_python/">DSS-Python</a></li>
+<li class="toctree-l1"><a class="reference external" href="https://github.com/orgs/dss-extensions/discussions">DSS-Extensions Discussions</a></li>
+<li class="toctree-l1"><a class="reference external" href="https://sourceforge.net/p/electricdss/discussion/">OpenDSS forum</a></li>
+<li class="toctree-l1"><a class="reference external" href="https://opendss.epri.com/opendss_documentation.html">OpenDSS documentation</a></li>
+</ul>
+
+    </div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+  
+  <div id="rtd-footer-container"></div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main">
+        
+        
+
+<div class="sbt-scroll-pixel-helper"></div>
+
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item"><label class="sidebar-toggle primary-toggle btn btn-sm" for="__primary" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <span class="fa-solid fa-bars"></span>
+</label></div>
+      
+    </div>
+  
+  
+    <div class="header-article-items__end">
+      
+        <div class="header-article-item">
+
+<div class="article-header-buttons">
+
+
+
+
+
+<div class="dropdown dropdown-download-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Download this page">
+    <i class="fas fa-download"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="../../_sources/apidocs/altdss/altdss.Settings.md" target="_blank"
+   class="btn btn-sm btn-download-source-button dropdown-item"
+   title="Download source file"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="btn__text-container">.md</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li>
+<button onclick="window.print()"
+  class="btn btn-sm btn-download-pdf-button dropdown-item"
+  title="Print to PDF"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="btn__text-container">.pdf</span>
+</button>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+<button onclick="toggleFullScreen()"
+  class="btn btn-sm btn-fullscreen-button"
+  title="Fullscreen mode"
+  data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm navbar-btn theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="theme-switch nav-link" data-mode="light"><i class="fa-solid fa-sun fa-lg"></i></span>
+    <span class="theme-switch nav-link" data-mode="dark"><i class="fa-solid fa-moon fa-lg"></i></span>
+    <span class="theme-switch nav-link" data-mode="auto"><i class="fa-solid fa-circle-half-stroke fa-lg"></i></span>
+  </button>
+`);
+</script>
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm navbar-btn search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass fa-lg"></i>
+  </button>
+`);
+</script>
+<label class="sidebar-toggle secondary-toggle btn btn-sm" for="__secondary"title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</label>
+</div></div>
+      
+    </div>
+  
+</div>
+</div>
+              
+              
+
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1>altdss.Settings</h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
+            
+            <div>
+                <h2> Contents </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#module-contents">Module Contents</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#classes">Classes</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#api">API</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#altdss.Settings.ISettings"><code class="docutils literal notranslate"><span class="pre">ISettings</span></code></a><ul class="nav section-nav flex-column">
+<li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#altdss.Settings.ISettings.AdvancedTypes"><code class="docutils literal notranslate"><span class="pre">ISettings.AdvancedTypes</span></code></a></li>
+<li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#altdss.Settings.ISettings.AllocationFactors"><code class="docutils literal notranslate"><span class="pre">ISettings.AllocationFactors</span></code></a></li>
+<li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#altdss.Settings.ISettings.AllowChangeDir"><code class="docutils literal notranslate"><span class="pre">ISettings.AllowChangeDir</span></code></a></li>
+<li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#altdss.Settings.ISettings.AllowDOScmd"><code class="docutils literal notranslate"><span class="pre">ISettings.AllowDOScmd</span></code></a></li>
+<li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#altdss.Settings.ISettings.AllowDuplicates"><code class="docutils literal notranslate"><span class="pre">ISettings.AllowDuplicates</span></code></a></li>
+<li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#altdss.Settings.ISettings.AllowEditor"><code class="docutils literal notranslate"><span class="pre">ISettings.AllowEditor</span></code></a></li>
+<li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#altdss.Settings.ISettings.AllowForms"><code class="docutils literal notranslate"><span class="pre">ISettings.AllowForms</span></code></a></li>
+<li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#altdss.Settings.ISettings.AutoBusList"><code class="docutils literal notranslate"><span class="pre">ISettings.AutoBusList</span></code></a></li>
+<li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#altdss.Settings.ISettings.COMErrorResults"><code class="docutils literal notranslate"><span class="pre">ISettings.COMErrorResults</span></code></a></li>
+<li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#altdss.Settings.ISettings.CktModel"><code class="docutils literal notranslate"><span class="pre">ISettings.CktModel</span></code></a></li>
+<li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#altdss.Settings.ISettings.CompatFlags"><code class="docutils literal notranslate"><span class="pre">ISettings.CompatFlags</span></code></a></li>
+<li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#altdss.Settings.ISettings.ControlTrace"><code class="docutils literal notranslate"><span class="pre">ISettings.ControlTrace</span></code></a></li>
+<li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#altdss.Settings.ISettings.DataPath"><code class="docutils literal notranslate"><span class="pre">ISettings.DataPath</span></code></a></li>
+<li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#altdss.Settings.ISettings.DefaultEditor"><code class="docutils literal notranslate"><span class="pre">ISettings.DefaultEditor</span></code></a></li>
+<li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#altdss.Settings.ISettings.EmergVmaxpu"><code class="docutils literal notranslate"><span class="pre">ISettings.EmergVmaxpu</span></code></a></li>
+<li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#altdss.Settings.ISettings.EmergVminpu"><code class="docutils literal notranslate"><span class="pre">ISettings.EmergVminpu</span></code></a></li>
+<li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#altdss.Settings.ISettings.IterateDisabled"><code class="docutils literal notranslate"><span class="pre">ISettings.IterateDisabled</span></code></a></li>
+<li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#altdss.Settings.ISettings.LoadsTerminalCheck"><code class="docutils literal notranslate"><span class="pre">ISettings.LoadsTerminalCheck</span></code></a></li>
+<li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#altdss.Settings.ISettings.LossRegs"><code class="docutils literal notranslate"><span class="pre">ISettings.LossRegs</span></code></a></li>
+<li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#altdss.Settings.ISettings.LossWeight"><code class="docutils literal notranslate"><span class="pre">ISettings.LossWeight</span></code></a></li>
+<li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#altdss.Settings.ISettings.NormVmaxpu"><code class="docutils literal notranslate"><span class="pre">ISettings.NormVmaxpu</span></code></a></li>
+<li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#altdss.Settings.ISettings.NormVminpu"><code class="docutils literal notranslate"><span class="pre">ISettings.NormVminpu</span></code></a></li>
+<li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#altdss.Settings.ISettings.PriceCurve"><code class="docutils literal notranslate"><span class="pre">ISettings.PriceCurve</span></code></a></li>
+<li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#altdss.Settings.ISettings.PriceSignal"><code class="docutils literal notranslate"><span class="pre">ISettings.PriceSignal</span></code></a></li>
+<li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#altdss.Settings.ISettings.SetPropertyNameStyle"><code class="docutils literal notranslate"><span class="pre">ISettings.SetPropertyNameStyle()</span></code></a></li>
+<li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#altdss.Settings.ISettings.Trapezoidal"><code class="docutils literal notranslate"><span class="pre">ISettings.Trapezoidal</span></code></a></li>
+<li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#altdss.Settings.ISettings.UEregs"><code class="docutils literal notranslate"><span class="pre">ISettings.UEregs</span></code></a></li>
+<li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#altdss.Settings.ISettings.UEweight"><code class="docutils literal notranslate"><span class="pre">ISettings.UEweight</span></code></a></li>
+<li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#altdss.Settings.ISettings.VoltageBases"><code class="docutils literal notranslate"><span class="pre">ISettings.VoltageBases</span></code></a></li>
+<li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#altdss.Settings.ISettings.ZoneLock"><code class="docutils literal notranslate"><span class="pre">ISettings.ZoneLock</span></code></a></li>
+<li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#altdss.Settings.ISettings.__init__"><code class="docutils literal notranslate"><span class="pre">ISettings.__init__()</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+            </nav>
+        </div>
+    </div>
+</div>
+
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article">
+                  
+  <section class="tex2jax_ignore mathjax_ignore" id="module-altdss.Settings">
+<span id="altdss-settings"></span><h1><a class="reference internal" href="#module-altdss.Settings" title="altdss.Settings"><code class="xref py py-mod docutils literal notranslate"><span class="pre">altdss.Settings</span></code></a><a class="headerlink" href="#module-altdss.Settings" title="Link to this heading">#</a></h1>
+<section id="module-contents">
+<h2>Module Contents<a class="headerlink" href="#module-contents" title="Link to this heading">#</a></h2>
+<section id="classes">
+<h3>Classes<a class="headerlink" href="#classes" title="Link to this heading">#</a></h3>
+<table class="autosummary longtable table table-left">
+<tbody>
+<tr class="row-odd"><td><p><a class="reference internal" href="#altdss.Settings.ISettings" title="altdss.Settings.ISettings"><code class="xref py py-obj docutils literal notranslate"><span class="pre">ISettings</span></code></a></p></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="api">
+<h3>API<a class="headerlink" href="#api" title="Link to this heading">#</a></h3>
+<dl class="py class">
+<dt class="sig sig-object py" id="altdss.Settings.ISettings">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">altdss.Settings.</span></span><span class="sig-name descname"><span class="pre">ISettings</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">api_util</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">prefer_lists</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#altdss.Settings.ISettings" title="Link to this definition">#</a></dt>
+<dd><p>Bases: <code class="xref py py-obj docutils literal notranslate"><span class="pre">altdss.common.Base</span></code></p>
+<dl class="py property">
+<dt class="sig sig-object py" id="altdss.Settings.ISettings.AdvancedTypes">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">AdvancedTypes</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">bool</span></em><a class="headerlink" href="#altdss.Settings.ISettings.AdvancedTypes" title="Link to this definition">#</a></dt>
+<dd><p>When enabled, there are <strong>two side-effects</strong>:</p>
+<ul class="simple">
+<li><p><strong>Per DSS Context:</strong> Complex arrays and complex numbers can be returned and consumed by the Python API.</p></li>
+<li><p><strong>Global effect:</strong> The low-level API provides matrix dimensions when available (<code class="docutils literal notranslate"><span class="pre">EnableArrayDimensions</span></code> is enabled).</p></li>
+</ul>
+<p>As a result, for example, <code class="docutils literal notranslate"><span class="pre">DSS.ActiveCircuit.ActiveCktElement.Yprim</span></code> is returned as a complex matrix instead
+of a plain array.</p>
+<p>When disabled, the legacy plain arrays are used and complex numbers cannot be consumed by the Python API.</p>
+<p><em>Defaults to <strong>False</strong> for backwards compatibility.</em></p>
+<p>(API Extension)</p>
+</dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="altdss.Settings.ISettings.AllocationFactors">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">AllocationFactors</span></span><a class="headerlink" href="#altdss.Settings.ISettings.AllocationFactors" title="Link to this definition">#</a></dt>
+<dd><p>(write-only) Sets all load allocation factors for all loads defined by XFKVA property to this value.</p>
+</dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="altdss.Settings.ISettings.AllowChangeDir">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">AllowChangeDir</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">bool</span></em><a class="headerlink" href="#altdss.Settings.ISettings.AllowChangeDir" title="Link to this definition">#</a></dt>
+<dd><p>If disabled, the engine will not change the active working directory during execution. E.g. a “compile”
+command will not “chdir” to the file path.</p>
+<p>If you have issues with long paths, enabling this might help in some scenarios.</p>
+<p>Defaults to True (allow changes, backwards compatible) in the 0.10.x versions of DSS C-API.
+This might change to False in future versions.</p>
+<p>This can also be set through the environment variable DSS_CAPI_ALLOW_CHANGE_DIR. Set it to 0 to
+disallow changing the active working directory.</p>
+<p><strong>(API Extension)</strong></p>
+</dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="altdss.Settings.ISettings.AllowDOScmd">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">AllowDOScmd</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">bool</span></em><a class="headerlink" href="#altdss.Settings.ISettings.AllowDOScmd" title="Link to this definition">#</a></dt>
+<dd><p>If enabled, the <code class="docutils literal notranslate"><span class="pre">DOScmd</span></code> command is allowed. Otherwise, an error is reported if the user tries to use it.</p>
+<p>Defaults to False/0 (disabled state). Users should consider DOScmd deprecated on DSS-Extensions.</p>
+<p>This can also be set through the environment variable DSS_CAPI_ALLOW_DOSCMD. Setting it to 1 enables
+the command.</p>
+<p><strong>(API Extension)</strong></p>
+</dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="altdss.Settings.ISettings.AllowDuplicates">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">AllowDuplicates</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">bool</span></em><a class="headerlink" href="#altdss.Settings.ISettings.AllowDuplicates" title="Link to this definition">#</a></dt>
+<dd><p>Designates whether to allow duplicate names of objects</p>
+<p><strong>NOTE</strong>: for DSS-Extensions, we are considering removing this option in a future
+release since it has performance impacts even when not used.</p>
+</dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="altdss.Settings.ISettings.AllowEditor">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">AllowEditor</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">bool</span></em><a class="headerlink" href="#altdss.Settings.ISettings.AllowEditor" title="Link to this definition">#</a></dt>
+<dd><p>Gets/sets whether running the external editor for “Show” is allowed</p>
+<p>AllowEditor controls whether the external editor is used in commands like “Show”.
+If you set to 0 (false), the editor is not executed. Note that other side effects,
+such as the creation of files, are not affected.</p>
+<p>(API Extension)</p>
+</dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="altdss.Settings.ISettings.AllowForms">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">AllowForms</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">bool</span></em><a class="headerlink" href="#altdss.Settings.ISettings.AllowForms" title="Link to this definition">#</a></dt>
+<dd><p>Gets/sets whether text output is allowed</p>
+</dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="altdss.Settings.ISettings.AutoBusList">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">AutoBusList</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">str</span></em><a class="headerlink" href="#altdss.Settings.ISettings.AutoBusList" title="Link to this definition">#</a></dt>
+<dd><p>List of Buses or (File=xxxx) syntax for the AutoAdd solution mode.</p>
+</dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="altdss.Settings.ISettings.COMErrorResults">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">COMErrorResults</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">bool</span></em><a class="headerlink" href="#altdss.Settings.ISettings.COMErrorResults" title="Link to this definition">#</a></dt>
+<dd><p>If enabled, in case of errors or empty arrays, the API returns arrays with values compatible with the
+official OpenDSS COM interface.</p>
+<p>For example, consider the function <code class="docutils literal notranslate"><span class="pre">Loads_Get_ZIPV</span></code>. If there is no active circuit or active load element:</p>
+<ul class="simple">
+<li><p>In the disabled state (COMErrorResults=False), the function will return “[]”, an array with 0 elements.</p></li>
+<li><p>In the enabled state (COMErrorResults=True), the function will return “[0.0]” instead. This should
+be compatible with the return value of the official COM interface.</p></li>
+</ul>
+<p>Defaults to True/1 (enabled state) in the v0.12.x series. This will change to false in future series.</p>
+<p>This can also be set through the environment variable <code class="docutils literal notranslate"><span class="pre">DSS_CAPI_COM_DEFAULTS</span></code>. Setting it to 0 disables
+the legacy/COM behavior. The value can be toggled through the API at any time.</p>
+<p><strong>(API Extension)</strong></p>
+</dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="altdss.Settings.ISettings.CktModel">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">CktModel</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">int</span></em><a class="headerlink" href="#altdss.Settings.ISettings.CktModel" title="Link to this definition">#</a></dt>
+<dd><p>{dssMultiphase (0) * | dssPositiveSeq (1) } Indicate if the circuit model is positive sequence.</p>
+</dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="altdss.Settings.ISettings.CompatFlags">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">CompatFlags</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">int</span></em><a class="headerlink" href="#altdss.Settings.ISettings.CompatFlags" title="Link to this definition">#</a></dt>
+<dd><p>Controls some compatibility flags introduced to toggle some behavior from the official OpenDSS.</p>
+<p><strong>THESE FLAGS ARE GLOBAL, affecting all DSS engines in the process.</strong></p>
+<p>The current bit flags are:</p>
+<ul class="simple">
+<li><p>0x1 (bit 0): If enabled, don’t check for NaNs in the inner solution loop. This can lead to various errors.
+This flag is useful for legacy applications that don’t handle OpenDSS API errors properly. Through the
+development of DSS-Extensions, we noticed this is actually a quite common issue.</p></li>
+<li><p>0x2 (bit 1): Toggle worse precision for certain aspects of the engine. For example, the sequence-to-phase
+(<code class="docutils literal notranslate"><span class="pre">As2p</span></code>) and sequence-to-phase (<code class="docutils literal notranslate"><span class="pre">Ap2s</span></code>) transform matrices. On DSS C-API, we fill the matrix explicitly
+using higher precision, while numerical inversion of an initially worse precision matrix is used in the
+official OpenDSS. We will introduce better precision for other aspects of the engine in the future,
+so this flag can be used to toggle the old/bad values where feasible.</p></li>
+<li><p>0x4 (bit 2): Toggle some InvControl behavior introduced in OpenDSS 9.6.1.1. It could be a regression
+but needs further investigation, so we added this flag in the time being.</p></li>
+</ul>
+<p>These flags may change for each version of DSS C-API, but the same value will not be reused. That is,
+when we remove a compatibility flag, it will have no effect but will also not affect anything else
+besides raising an error if the user tries to toggle a flag that was available in a previous version.</p>
+<p>We expect to keep a very limited number of flags. Since the flags are more transient than the other
+options/flags, it was preferred to add this generic function instead of a separate function per
+flag.</p>
+<p>Related enumeration: DSSCompatFlags</p>
+<p>(API Extension)</p>
+</dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="altdss.Settings.ISettings.ControlTrace">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">ControlTrace</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">bool</span></em><a class="headerlink" href="#altdss.Settings.ISettings.ControlTrace" title="Link to this definition">#</a></dt>
+<dd><p>{True | False*} Denotes whether to trace the control actions to a file.</p>
+</dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="altdss.Settings.ISettings.DataPath">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">DataPath</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">str</span></em><a class="headerlink" href="#altdss.Settings.ISettings.DataPath" title="Link to this definition">#</a></dt>
+<dd><p>DSS Data File Path.  Default path for reports, etc. from DSS</p>
+</dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="altdss.Settings.ISettings.DefaultEditor">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">DefaultEditor</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">str</span></em><a class="headerlink" href="#altdss.Settings.ISettings.DefaultEditor" title="Link to this definition">#</a></dt>
+<dd><p>Returns the path name for the default text editor.</p>
+</dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="altdss.Settings.ISettings.EmergVmaxpu">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">EmergVmaxpu</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">float</span></em><a class="headerlink" href="#altdss.Settings.ISettings.EmergVmaxpu" title="Link to this definition">#</a></dt>
+<dd><p>Per Unit maximum voltage for Emergency conditions.</p>
+</dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="altdss.Settings.ISettings.EmergVminpu">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">EmergVminpu</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">float</span></em><a class="headerlink" href="#altdss.Settings.ISettings.EmergVminpu" title="Link to this definition">#</a></dt>
+<dd><p>Per Unit minimum voltage for Emergency conditions.</p>
+</dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="altdss.Settings.ISettings.IterateDisabled">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">IterateDisabled</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">int</span></em><a class="headerlink" href="#altdss.Settings.ISettings.IterateDisabled" title="Link to this definition">#</a></dt>
+<dd><p>Controls whether <code class="docutils literal notranslate"><span class="pre">First</span></code>/<code class="docutils literal notranslate"><span class="pre">Next</span></code> iteration includes or skips disabled circuit elements.
+The default behavior from OpenDSS is to skip those. The user can still activate the element by name or index.</p>
+<p>The default value for IterateDisabled is 0, keeping the original behavior.
+Set it to 1 (or <code class="docutils literal notranslate"><span class="pre">True</span></code>) to include disabled elements.
+Other numeric values are reserved for other potential behaviors.</p>
+<p>(API Extension)</p>
+</dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="altdss.Settings.ISettings.LoadsTerminalCheck">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">LoadsTerminalCheck</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">bool</span></em><a class="headerlink" href="#altdss.Settings.ISettings.LoadsTerminalCheck" title="Link to this definition">#</a></dt>
+<dd><p>Controls whether the terminals are checked when updating the currents in Load component. Defaults to True.
+If the loads are guaranteed to have their terminals closed throughout the simulation, this can be set to False to save some time.</p>
+<p>(API Extension)</p>
+</dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="altdss.Settings.ISettings.LossRegs">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">LossRegs</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">altdss.types.Int32Array</span></em><a class="headerlink" href="#altdss.Settings.ISettings.LossRegs" title="Link to this definition">#</a></dt>
+<dd><p>Integer array defining which energy meter registers to use for computing losses</p>
+</dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="altdss.Settings.ISettings.LossWeight">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">LossWeight</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">float</span></em><a class="headerlink" href="#altdss.Settings.ISettings.LossWeight" title="Link to this definition">#</a></dt>
+<dd><p>Weighting factor applied to Loss register values.</p>
+</dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="altdss.Settings.ISettings.NormVmaxpu">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">NormVmaxpu</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">float</span></em><a class="headerlink" href="#altdss.Settings.ISettings.NormVmaxpu" title="Link to this definition">#</a></dt>
+<dd><p>Per Unit maximum voltage for Normal conditions.</p>
+</dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="altdss.Settings.ISettings.NormVminpu">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">NormVminpu</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">float</span></em><a class="headerlink" href="#altdss.Settings.ISettings.NormVminpu" title="Link to this definition">#</a></dt>
+<dd><p>Per Unit minimum voltage for Normal conditions.</p>
+</dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="altdss.Settings.ISettings.PriceCurve">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">PriceCurve</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">str</span></em><a class="headerlink" href="#altdss.Settings.ISettings.PriceCurve" title="Link to this definition">#</a></dt>
+<dd><p>Name of LoadShape object that serves as the source of price signal data for yearly simulations, etc.</p>
+</dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="altdss.Settings.ISettings.PriceSignal">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">PriceSignal</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">float</span></em><a class="headerlink" href="#altdss.Settings.ISettings.PriceSignal" title="Link to this definition">#</a></dt>
+<dd><p>Price Signal for the Circuit</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="altdss.Settings.ISettings.SetPropertyNameStyle">
+<span class="sig-name descname"><span class="pre">SetPropertyNameStyle</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">value</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">dss.enums.DSSPropertyNameStyle</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#altdss.Settings.ISettings.SetPropertyNameStyle" title="Link to this definition">#</a></dt>
+<dd><p>Switch the property names according</p>
+</dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="altdss.Settings.ISettings.Trapezoidal">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">Trapezoidal</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">bool</span></em><a class="headerlink" href="#altdss.Settings.ISettings.Trapezoidal" title="Link to this definition">#</a></dt>
+<dd><p>Gets value of trapezoidal integration flag in energy meters. Defaults to <code class="docutils literal notranslate"><span class="pre">False</span></code>.</p>
+</dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="altdss.Settings.ISettings.UEregs">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">UEregs</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">altdss.types.Int32Array</span></em><a class="headerlink" href="#altdss.Settings.ISettings.UEregs" title="Link to this definition">#</a></dt>
+<dd><p>Array of Integers defining energy meter registers to use for computing UE</p>
+</dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="altdss.Settings.ISettings.UEweight">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">UEweight</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">float</span></em><a class="headerlink" href="#altdss.Settings.ISettings.UEweight" title="Link to this definition">#</a></dt>
+<dd><p>Weighting factor applied to UE register values.</p>
+</dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="altdss.Settings.ISettings.VoltageBases">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">VoltageBases</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">altdss.types.Float64Array</span></em><a class="headerlink" href="#altdss.Settings.ISettings.VoltageBases" title="Link to this definition">#</a></dt>
+<dd><p>Array of doubles defining the legal voltage bases in kV L-L</p>
+</dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="altdss.Settings.ISettings.ZoneLock">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">ZoneLock</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">bool</span></em><a class="headerlink" href="#altdss.Settings.ISettings.ZoneLock" title="Link to this definition">#</a></dt>
+<dd><p>{True | False*}  Locks Zones on energy meters to prevent rebuilding if a circuit change occurs.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="altdss.Settings.ISettings.__init__">
+<span class="sig-name descname"><span class="pre">__init__</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">api_util</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">prefer_lists</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#altdss.Settings.ISettings.__init__" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+</section>
+</section>
+</section>
+
+
+                </article>
+              
+
+              
+              
+              
+              
+                <footer class="prev-next-footer">
+                  
+<div class="prev-next-area">
+    <a class="left-prev"
+       href="altdss.Sensor.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title"><code class="xref py py-mod docutils literal notranslate"><span class="pre">altdss.Sensor</span></code></p>
+      </div>
+    </a>
+    <a class="right-next"
+       href="altdss.Solution.html"
+       title="next page">
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title"><code class="xref py py-mod docutils literal notranslate"><span class="pre">altdss.Solution</span></code></p>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
+    </a>
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#module-contents">Module Contents</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#classes">Classes</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#api">API</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#altdss.Settings.ISettings"><code class="docutils literal notranslate"><span class="pre">ISettings</span></code></a><ul class="nav section-nav flex-column">
+<li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#altdss.Settings.ISettings.AdvancedTypes"><code class="docutils literal notranslate"><span class="pre">ISettings.AdvancedTypes</span></code></a></li>
+<li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#altdss.Settings.ISettings.AllocationFactors"><code class="docutils literal notranslate"><span class="pre">ISettings.AllocationFactors</span></code></a></li>
+<li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#altdss.Settings.ISettings.AllowChangeDir"><code class="docutils literal notranslate"><span class="pre">ISettings.AllowChangeDir</span></code></a></li>
+<li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#altdss.Settings.ISettings.AllowDOScmd"><code class="docutils literal notranslate"><span class="pre">ISettings.AllowDOScmd</span></code></a></li>
+<li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#altdss.Settings.ISettings.AllowDuplicates"><code class="docutils literal notranslate"><span class="pre">ISettings.AllowDuplicates</span></code></a></li>
+<li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#altdss.Settings.ISettings.AllowEditor"><code class="docutils literal notranslate"><span class="pre">ISettings.AllowEditor</span></code></a></li>
+<li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#altdss.Settings.ISettings.AllowForms"><code class="docutils literal notranslate"><span class="pre">ISettings.AllowForms</span></code></a></li>
+<li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#altdss.Settings.ISettings.AutoBusList"><code class="docutils literal notranslate"><span class="pre">ISettings.AutoBusList</span></code></a></li>
+<li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#altdss.Settings.ISettings.COMErrorResults"><code class="docutils literal notranslate"><span class="pre">ISettings.COMErrorResults</span></code></a></li>
+<li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#altdss.Settings.ISettings.CktModel"><code class="docutils literal notranslate"><span class="pre">ISettings.CktModel</span></code></a></li>
+<li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#altdss.Settings.ISettings.CompatFlags"><code class="docutils literal notranslate"><span class="pre">ISettings.CompatFlags</span></code></a></li>
+<li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#altdss.Settings.ISettings.ControlTrace"><code class="docutils literal notranslate"><span class="pre">ISettings.ControlTrace</span></code></a></li>
+<li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#altdss.Settings.ISettings.DataPath"><code class="docutils literal notranslate"><span class="pre">ISettings.DataPath</span></code></a></li>
+<li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#altdss.Settings.ISettings.DefaultEditor"><code class="docutils literal notranslate"><span class="pre">ISettings.DefaultEditor</span></code></a></li>
+<li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#altdss.Settings.ISettings.EmergVmaxpu"><code class="docutils literal notranslate"><span class="pre">ISettings.EmergVmaxpu</span></code></a></li>
+<li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#altdss.Settings.ISettings.EmergVminpu"><code class="docutils literal notranslate"><span class="pre">ISettings.EmergVminpu</span></code></a></li>
+<li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#altdss.Settings.ISettings.IterateDisabled"><code class="docutils literal notranslate"><span class="pre">ISettings.IterateDisabled</span></code></a></li>
+<li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#altdss.Settings.ISettings.LoadsTerminalCheck"><code class="docutils literal notranslate"><span class="pre">ISettings.LoadsTerminalCheck</span></code></a></li>
+<li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#altdss.Settings.ISettings.LossRegs"><code class="docutils literal notranslate"><span class="pre">ISettings.LossRegs</span></code></a></li>
+<li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#altdss.Settings.ISettings.LossWeight"><code class="docutils literal notranslate"><span class="pre">ISettings.LossWeight</span></code></a></li>
+<li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#altdss.Settings.ISettings.NormVmaxpu"><code class="docutils literal notranslate"><span class="pre">ISettings.NormVmaxpu</span></code></a></li>
+<li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#altdss.Settings.ISettings.NormVminpu"><code class="docutils literal notranslate"><span class="pre">ISettings.NormVminpu</span></code></a></li>
+<li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#altdss.Settings.ISettings.PriceCurve"><code class="docutils literal notranslate"><span class="pre">ISettings.PriceCurve</span></code></a></li>
+<li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#altdss.Settings.ISettings.PriceSignal"><code class="docutils literal notranslate"><span class="pre">ISettings.PriceSignal</span></code></a></li>
+<li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#altdss.Settings.ISettings.SetPropertyNameStyle"><code class="docutils literal notranslate"><span class="pre">ISettings.SetPropertyNameStyle()</span></code></a></li>
+<li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#altdss.Settings.ISettings.Trapezoidal"><code class="docutils literal notranslate"><span class="pre">ISettings.Trapezoidal</span></code></a></li>
+<li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#altdss.Settings.ISettings.UEregs"><code class="docutils literal notranslate"><span class="pre">ISettings.UEregs</span></code></a></li>
+<li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#altdss.Settings.ISettings.UEweight"><code class="docutils literal notranslate"><span class="pre">ISettings.UEweight</span></code></a></li>
+<li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#altdss.Settings.ISettings.VoltageBases"><code class="docutils literal notranslate"><span class="pre">ISettings.VoltageBases</span></code></a></li>
+<li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#altdss.Settings.ISettings.ZoneLock"><code class="docutils literal notranslate"><span class="pre">ISettings.ZoneLock</span></code></a></li>
+<li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#altdss.Settings.ISettings.__init__"><code class="docutils literal notranslate"><span class="pre">ISettings.__init__()</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+  </nav></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+<div class="bd-footer-content__inner container">
+  
+  <div class="footer-item">
+    
+
+  <p class="copyright">
+    
+      © Copyright 2018-2024 Paulo Meira, Dheepak Krishnamurthy, DSS-Extensions contributors.
+      <br/>
+    
+  </p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+</div>
+          </footer>
+        
+
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="../../_static/scripts/bootstrap.js?digest=8d27b9dea8ad943066ae"></script>
+<script src="../../_static/scripts/pydata-sphinx-theme.js?digest=8d27b9dea8ad943066ae"></script>
+
+  <footer class="bd-footer">
+  </footer>
+  </body>
+</html>

@@ -1,0 +1,1327 @@
+
+<!DOCTYPE html>
+
+
+<html lang="en" data-content_root="../../" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.19: https://docutils.sourceforge.io/" />
+
+    <title>altdss.CircuitElement &#8212; AltDSS-Python 0.1.0 documentation</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "light";
+  </script>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../../_static/styles/theme.css?digest=8d27b9dea8ad943066ae" rel="stylesheet" />
+<link href="../../_static/styles/bootstrap.css?digest=8d27b9dea8ad943066ae" rel="stylesheet" />
+<link href="../../_static/styles/pydata-sphinx-theme.css?digest=8d27b9dea8ad943066ae" rel="stylesheet" />
+
+  
+  <link href="../../_static/vendor/fontawesome/6.5.1/css/all.min.css?digest=8d27b9dea8ad943066ae" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.5.1/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.5.1/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.5.1/webfonts/fa-regular-400.woff2" />
+
+    <link rel="stylesheet" type="text/css" href="../../_static/pygments.css?v=362ab14a" />
+    <link rel="stylesheet" type="text/css" href="../../_static/styles/sphinx-book-theme.css?v=384b581d" />
+    <link rel="stylesheet" type="text/css" href="../../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/design-style.1e8bd061cd6da7fc9cf755528e8ffc24.min.css?v=0a3b3ea7" />
+  
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../../_static/scripts/bootstrap.js?digest=8d27b9dea8ad943066ae" />
+<link rel="preload" as="script" href="../../_static/scripts/pydata-sphinx-theme.js?digest=8d27b9dea8ad943066ae" />
+  <script src="../../_static/vendor/fontawesome/6.5.1/js/all.min.js?digest=8d27b9dea8ad943066ae"></script>
+
+    <script src="../../_static/documentation_options.js?v=a1637f0b"></script>
+    <script src="../../_static/doctools.js?v=888ff710"></script>
+    <script src="../../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../../_static/scripts/sphinx-book-theme.js?v=efea14e4"></script>
+    <script src="../../_static/design-tabs.js?v=36754332"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'apidocs/altdss/altdss.CircuitElement';</script>
+    <link rel="icon" href="../../_static/dssx.png"/>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="altdss.ControlQueue" href="altdss.ControlQueue.html" />
+    <link rel="prev" title="altdss.Capacitor" href="altdss.Capacitor.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <a id="pst-skip-link" class="skip-link" href="#main-content">Skip to main content</a>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>
+    Back to top
+  </button>
+
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__primary"
+          id="__primary"/>
+  <label class="overlay overlay-primary" for="__primary"></label>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__secondary"
+          id="__secondary"/>
+  <label class="overlay overlay-secondary" for="__secondary"></label>
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container">
+<form class="bd-search d-flex align-items-center"
+      action="../../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         id="search-input"
+         placeholder="Search..."
+         aria-label="Search..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+  </div>
+  
+    <header class="bd-header navbar navbar-expand-lg bd-navbar">
+    </header>
+  
+
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      
+      
+      <div class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+    
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+
+  
+
+<a class="navbar-brand logo" href="../../index.html">
+  
+  
+  
+  
+  
+    
+    
+      
+    
+    
+    <img src="../../_static/altdss-python.svg" class="logo__image only-light" alt="AltDSS-Python 0.1.0 documentation - Home"/>
+    <script>document.write(`<img src="../../_static/altdss-python-dark.svg" class="logo__image only-dark" alt="AltDSS-Python 0.1.0 documentation - Home"/>`);</script>
+  
+  
+</a></div>
+        <div class="sidebar-primary-item">
+
+ <script>
+ document.write(`
+   <button class="btn navbar-btn search-button-field search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+    <span class="search-button__default-text">Search</span>
+    <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+   </button>
+ `);
+ </script></div>
+        <div class="sidebar-primary-item"><nav class="bd-links bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
+        <p aria-level="2" class="caption" role="heading"><span class="caption-text">General</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../../index.html">AltDSS-Python</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../Architecture.html">Architecture details</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../examples/GettingStarted.html">Getting Started</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../changelog.html">Changelog</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">API Reference</span></p>
+<ul class="current nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../../enumerations.html">General enums</a></li>
+<li class="toctree-l1 current active has-children"><a class="reference internal" href="../index.html">altdss package</a><input checked="" class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-1"><i class="fa-solid fa-chevron-down"></i></label><ul class="current">
+<li class="toctree-l2 current active has-children"><a class="reference internal" href="altdss.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">altdss</span></code></a><input checked="" class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-2"><i class="fa-solid fa-chevron-down"></i></label><ul class="current">
+<li class="toctree-l3"><a class="reference internal" href="altdss.AltDSS.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">altdss.AltDSS</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="altdss.ArrayProxy.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">altdss.ArrayProxy</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="altdss.AutoTrans.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">altdss.AutoTrans</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="altdss.Batch.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">altdss.Batch</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="altdss.Bus.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">altdss.Bus</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="altdss.CNData.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">altdss.CNData</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="altdss.CapControl.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">altdss.CapControl</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="altdss.Capacitor.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">altdss.Capacitor</span></code></a></li>
+<li class="toctree-l3 current active"><a class="current reference internal" href="#"><code class="xref py py-mod docutils literal notranslate"><span class="pre">altdss.CircuitElement</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="altdss.ControlQueue.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">altdss.ControlQueue</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="altdss.DSSObj.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">altdss.DSSObj</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="altdss.DynamicExp.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">altdss.DynamicExp</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="altdss.ESPVLControl.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">altdss.ESPVLControl</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="altdss.EnergyMeter.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">altdss.EnergyMeter</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="altdss.EnergyMeterExtras.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">altdss.EnergyMeterExtras</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="altdss.Error.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">altdss.Error</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="altdss.ExpControl.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">altdss.ExpControl</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="altdss.Fault.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">altdss.Fault</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="altdss.Fuse.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">altdss.Fuse</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="altdss.GICLine.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">altdss.GICLine</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="altdss.GICTransformer.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">altdss.GICTransformer</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="altdss.GICsource.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">altdss.GICsource</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="altdss.GenDispatcher.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">altdss.GenDispatcher</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="altdss.Generator.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">altdss.Generator</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="altdss.GrowthShape.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">altdss.GrowthShape</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="altdss.IndMach012.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">altdss.IndMach012</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="altdss.InvControl.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">altdss.InvControl</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="altdss.Isource.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">altdss.Isource</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="altdss.Line.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">altdss.Line</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="altdss.LineCode.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">altdss.LineCode</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="altdss.LineGeometry.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">altdss.LineGeometry</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="altdss.LineSpacing.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">altdss.LineSpacing</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="altdss.Load.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">altdss.Load</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="altdss.LoadShape.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">altdss.LoadShape</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="altdss.LoadShapeExtras.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">altdss.LoadShapeExtras</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="altdss.Monitor.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">altdss.Monitor</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="altdss.MonitorExtras.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">altdss.MonitorExtras</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="altdss.Obj.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">altdss.Obj</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="altdss.PCElement.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">altdss.PCElement</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="altdss.PDElement.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">altdss.PDElement</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="altdss.PVSystem.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">altdss.PVSystem</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="altdss.PriceShape.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">altdss.PriceShape</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="altdss.Reactor.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">altdss.Reactor</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="altdss.Recloser.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">altdss.Recloser</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="altdss.ReduceCkt.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">altdss.ReduceCkt</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="altdss.RegControl.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">altdss.RegControl</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="altdss.Relay.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">altdss.Relay</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="altdss.Sensor.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">altdss.Sensor</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="altdss.Settings.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">altdss.Settings</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="altdss.Solution.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">altdss.Solution</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="altdss.Spectrum.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">altdss.Spectrum</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="altdss.Storage.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">altdss.Storage</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="altdss.StorageController.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">altdss.StorageController</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="altdss.SwtControl.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">altdss.SwtControl</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="altdss.TCC_Curve.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">altdss.TCC_Curve</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="altdss.TSData.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">altdss.TSData</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="altdss.TShape.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">altdss.TShape</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="altdss.Topology.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">altdss.Topology</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="altdss.Transformer.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">altdss.Transformer</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="altdss.TransformerExtras.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">altdss.TransformerExtras</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="altdss.UPFC.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">altdss.UPFC</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="altdss.UPFCControl.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">altdss.UPFCControl</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="altdss.VCCS.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">altdss.VCCS</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="altdss.VSConverter.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">altdss.VSConverter</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="altdss.Vsource.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">altdss.Vsource</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="altdss.WireData.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">altdss.WireData</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="altdss.XYcurve.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">altdss.XYcurve</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="altdss.XfmrCode.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">altdss.XfmrCode</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="altdss.YMatrix.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">altdss.YMatrix</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="altdss.ZIP.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">altdss.ZIP</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="altdss.common.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">altdss.common</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="altdss.enums.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">altdss.enums</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="altdss.types.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">altdss.types</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">External links</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference external" href="https://github.com/dss-extensions/dss_python">GitHub repository</a></li>
+<li class="toctree-l1"><a class="reference external" href="https://pypi.python.org/pypi/OpenDSSDirect.py/">Package on PyPI</a></li>
+<li class="toctree-l1"><a class="reference external" href="https://github.com/dss-extensions/electricdss-tst">Test/example circuits</a></li>
+
+<li class="toctree-l1"><a class="reference external" href="https://dss-extensions.org/OpenDSSDirect.py">OpenDSSDirect.py</a></li>
+<li class="toctree-l1"><a class="reference external" href="https://dss-extensions.org/dss_python/">DSS-Python</a></li>
+<li class="toctree-l1"><a class="reference external" href="https://github.com/orgs/dss-extensions/discussions">DSS-Extensions Discussions</a></li>
+<li class="toctree-l1"><a class="reference external" href="https://sourceforge.net/p/electricdss/discussion/">OpenDSS forum</a></li>
+<li class="toctree-l1"><a class="reference external" href="https://opendss.epri.com/opendss_documentation.html">OpenDSS documentation</a></li>
+</ul>
+
+    </div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+  
+  <div id="rtd-footer-container"></div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main">
+        
+        
+
+<div class="sbt-scroll-pixel-helper"></div>
+
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item"><label class="sidebar-toggle primary-toggle btn btn-sm" for="__primary" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <span class="fa-solid fa-bars"></span>
+</label></div>
+      
+    </div>
+  
+  
+    <div class="header-article-items__end">
+      
+        <div class="header-article-item">
+
+<div class="article-header-buttons">
+
+
+
+
+
+<div class="dropdown dropdown-download-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Download this page">
+    <i class="fas fa-download"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="../../_sources/apidocs/altdss/altdss.CircuitElement.md" target="_blank"
+   class="btn btn-sm btn-download-source-button dropdown-item"
+   title="Download source file"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="btn__text-container">.md</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li>
+<button onclick="window.print()"
+  class="btn btn-sm btn-download-pdf-button dropdown-item"
+  title="Print to PDF"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="btn__text-container">.pdf</span>
+</button>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+<button onclick="toggleFullScreen()"
+  class="btn btn-sm btn-fullscreen-button"
+  title="Fullscreen mode"
+  data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm navbar-btn theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="theme-switch nav-link" data-mode="light"><i class="fa-solid fa-sun fa-lg"></i></span>
+    <span class="theme-switch nav-link" data-mode="dark"><i class="fa-solid fa-moon fa-lg"></i></span>
+    <span class="theme-switch nav-link" data-mode="auto"><i class="fa-solid fa-circle-half-stroke fa-lg"></i></span>
+  </button>
+`);
+</script>
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm navbar-btn search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass fa-lg"></i>
+  </button>
+`);
+</script>
+<label class="sidebar-toggle secondary-toggle btn btn-sm" for="__secondary"title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</label>
+</div></div>
+      
+    </div>
+  
+</div>
+</div>
+              
+              
+
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1>altdss.CircuitElement</h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
+            
+            <div>
+                <h2> Contents </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#module-contents">Module Contents</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#classes">Classes</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#api">API</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#altdss.CircuitElement.CircuitElementBatch"><code class="docutils literal notranslate"><span class="pre">CircuitElementBatch</span></code></a><ul class="nav section-nav flex-column">
+<li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#altdss.CircuitElement.CircuitElementBatch.ComplexSeqCurrents"><code class="docutils literal notranslate"><span class="pre">CircuitElementBatch.ComplexSeqCurrents()</span></code></a></li>
+<li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#altdss.CircuitElement.CircuitElementBatch.ComplexSeqVoltages"><code class="docutils literal notranslate"><span class="pre">CircuitElementBatch.ComplexSeqVoltages()</span></code></a></li>
+<li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#altdss.CircuitElement.CircuitElementBatch.Currents"><code class="docutils literal notranslate"><span class="pre">CircuitElementBatch.Currents()</span></code></a></li>
+<li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#altdss.CircuitElement.CircuitElementBatch.CurrentsMagAng"><code class="docutils literal notranslate"><span class="pre">CircuitElementBatch.CurrentsMagAng()</span></code></a></li>
+<li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#altdss.CircuitElement.CircuitElementBatch.FullName"><code class="docutils literal notranslate"><span class="pre">CircuitElementBatch.FullName()</span></code></a></li>
+<li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#altdss.CircuitElement.CircuitElementBatch.GUID"><code class="docutils literal notranslate"><span class="pre">CircuitElementBatch.GUID()</span></code></a></li>
+<li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#altdss.CircuitElement.CircuitElementBatch.Handle"><code class="docutils literal notranslate"><span class="pre">CircuitElementBatch.Handle()</span></code></a></li>
+<li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#altdss.CircuitElement.CircuitElementBatch.HasOCPDevice"><code class="docutils literal notranslate"><span class="pre">CircuitElementBatch.HasOCPDevice()</span></code></a></li>
+<li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#altdss.CircuitElement.CircuitElementBatch.HasSwitchControl"><code class="docutils literal notranslate"><span class="pre">CircuitElementBatch.HasSwitchControl()</span></code></a></li>
+<li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#altdss.CircuitElement.CircuitElementBatch.HasVoltControl"><code class="docutils literal notranslate"><span class="pre">CircuitElementBatch.HasVoltControl()</span></code></a></li>
+<li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#altdss.CircuitElement.CircuitElementBatch.IsIsolated"><code class="docutils literal notranslate"><span class="pre">CircuitElementBatch.IsIsolated()</span></code></a></li>
+<li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#altdss.CircuitElement.CircuitElementBatch.Losses"><code class="docutils literal notranslate"><span class="pre">CircuitElementBatch.Losses()</span></code></a></li>
+<li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#altdss.CircuitElement.CircuitElementBatch.MaxCurrent"><code class="docutils literal notranslate"><span class="pre">CircuitElementBatch.MaxCurrent()</span></code></a></li>
+<li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#altdss.CircuitElement.CircuitElementBatch.Name"><code class="docutils literal notranslate"><span class="pre">CircuitElementBatch.Name</span></code></a></li>
+<li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#altdss.CircuitElement.CircuitElementBatch.NumConductors"><code class="docutils literal notranslate"><span class="pre">CircuitElementBatch.NumConductors()</span></code></a></li>
+<li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#altdss.CircuitElement.CircuitElementBatch.NumControllers"><code class="docutils literal notranslate"><span class="pre">CircuitElementBatch.NumControllers()</span></code></a></li>
+<li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#altdss.CircuitElement.CircuitElementBatch.NumPhases"><code class="docutils literal notranslate"><span class="pre">CircuitElementBatch.NumPhases()</span></code></a></li>
+<li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#altdss.CircuitElement.CircuitElementBatch.NumTerminals"><code class="docutils literal notranslate"><span class="pre">CircuitElementBatch.NumTerminals()</span></code></a></li>
+<li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#altdss.CircuitElement.CircuitElementBatch.OCPDevice"><code class="docutils literal notranslate"><span class="pre">CircuitElementBatch.OCPDevice()</span></code></a></li>
+<li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#altdss.CircuitElement.CircuitElementBatch.OCPDeviceIndex"><code class="docutils literal notranslate"><span class="pre">CircuitElementBatch.OCPDeviceIndex()</span></code></a></li>
+<li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#altdss.CircuitElement.CircuitElementBatch.OCPDeviceType"><code class="docutils literal notranslate"><span class="pre">CircuitElementBatch.OCPDeviceType()</span></code></a></li>
+<li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#altdss.CircuitElement.CircuitElementBatch.PhaseLosses"><code class="docutils literal notranslate"><span class="pre">CircuitElementBatch.PhaseLosses()</span></code></a></li>
+<li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#altdss.CircuitElement.CircuitElementBatch.Powers"><code class="docutils literal notranslate"><span class="pre">CircuitElementBatch.Powers()</span></code></a></li>
+<li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#altdss.CircuitElement.CircuitElementBatch.SeqCurrents"><code class="docutils literal notranslate"><span class="pre">CircuitElementBatch.SeqCurrents()</span></code></a></li>
+<li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#altdss.CircuitElement.CircuitElementBatch.SeqPowers"><code class="docutils literal notranslate"><span class="pre">CircuitElementBatch.SeqPowers()</span></code></a></li>
+<li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#altdss.CircuitElement.CircuitElementBatch.SeqVoltages"><code class="docutils literal notranslate"><span class="pre">CircuitElementBatch.SeqVoltages()</span></code></a></li>
+<li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#altdss.CircuitElement.CircuitElementBatch.TotalPowers"><code class="docutils literal notranslate"><span class="pre">CircuitElementBatch.TotalPowers()</span></code></a></li>
+<li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#altdss.CircuitElement.CircuitElementBatch.Voltages"><code class="docutils literal notranslate"><span class="pre">CircuitElementBatch.Voltages()</span></code></a></li>
+<li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#altdss.CircuitElement.CircuitElementBatch.VoltagesMagAng"><code class="docutils literal notranslate"><span class="pre">CircuitElementBatch.VoltagesMagAng()</span></code></a></li>
+<li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#altdss.CircuitElement.CircuitElementBatch.__call__"><code class="docutils literal notranslate"><span class="pre">CircuitElementBatch.__call__()</span></code></a></li>
+<li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#altdss.CircuitElement.CircuitElementBatch.__init__"><code class="docutils literal notranslate"><span class="pre">CircuitElementBatch.__init__()</span></code></a></li>
+<li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#altdss.CircuitElement.CircuitElementBatch.__iter__"><code class="docutils literal notranslate"><span class="pre">CircuitElementBatch.__iter__()</span></code></a></li>
+<li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#altdss.CircuitElement.CircuitElementBatch.__len__"><code class="docutils literal notranslate"><span class="pre">CircuitElementBatch.__len__()</span></code></a></li>
+<li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#altdss.CircuitElement.CircuitElementBatch.to_json"><code class="docutils literal notranslate"><span class="pre">CircuitElementBatch.to_json()</span></code></a></li>
+<li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#altdss.CircuitElement.CircuitElementBatch.to_list"><code class="docutils literal notranslate"><span class="pre">CircuitElementBatch.to_list()</span></code></a></li>
+</ul>
+</li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#altdss.CircuitElement.CircuitElementBatchMixin"><code class="docutils literal notranslate"><span class="pre">CircuitElementBatchMixin</span></code></a><ul class="nav section-nav flex-column">
+<li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#altdss.CircuitElement.CircuitElementBatchMixin.ComplexSeqCurrents"><code class="docutils literal notranslate"><span class="pre">CircuitElementBatchMixin.ComplexSeqCurrents()</span></code></a></li>
+<li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#altdss.CircuitElement.CircuitElementBatchMixin.ComplexSeqVoltages"><code class="docutils literal notranslate"><span class="pre">CircuitElementBatchMixin.ComplexSeqVoltages()</span></code></a></li>
+<li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#altdss.CircuitElement.CircuitElementBatchMixin.Currents"><code class="docutils literal notranslate"><span class="pre">CircuitElementBatchMixin.Currents()</span></code></a></li>
+<li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#altdss.CircuitElement.CircuitElementBatchMixin.CurrentsMagAng"><code class="docutils literal notranslate"><span class="pre">CircuitElementBatchMixin.CurrentsMagAng()</span></code></a></li>
+<li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#altdss.CircuitElement.CircuitElementBatchMixin.GUID"><code class="docutils literal notranslate"><span class="pre">CircuitElementBatchMixin.GUID()</span></code></a></li>
+<li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#altdss.CircuitElement.CircuitElementBatchMixin.Handle"><code class="docutils literal notranslate"><span class="pre">CircuitElementBatchMixin.Handle()</span></code></a></li>
+<li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#altdss.CircuitElement.CircuitElementBatchMixin.HasOCPDevice"><code class="docutils literal notranslate"><span class="pre">CircuitElementBatchMixin.HasOCPDevice()</span></code></a></li>
+<li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#altdss.CircuitElement.CircuitElementBatchMixin.HasSwitchControl"><code class="docutils literal notranslate"><span class="pre">CircuitElementBatchMixin.HasSwitchControl()</span></code></a></li>
+<li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#altdss.CircuitElement.CircuitElementBatchMixin.HasVoltControl"><code class="docutils literal notranslate"><span class="pre">CircuitElementBatchMixin.HasVoltControl()</span></code></a></li>
+<li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#altdss.CircuitElement.CircuitElementBatchMixin.IsIsolated"><code class="docutils literal notranslate"><span class="pre">CircuitElementBatchMixin.IsIsolated()</span></code></a></li>
+<li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#altdss.CircuitElement.CircuitElementBatchMixin.Losses"><code class="docutils literal notranslate"><span class="pre">CircuitElementBatchMixin.Losses()</span></code></a></li>
+<li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#altdss.CircuitElement.CircuitElementBatchMixin.MaxCurrent"><code class="docutils literal notranslate"><span class="pre">CircuitElementBatchMixin.MaxCurrent()</span></code></a></li>
+<li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#altdss.CircuitElement.CircuitElementBatchMixin.NumConductors"><code class="docutils literal notranslate"><span class="pre">CircuitElementBatchMixin.NumConductors()</span></code></a></li>
+<li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#altdss.CircuitElement.CircuitElementBatchMixin.NumControllers"><code class="docutils literal notranslate"><span class="pre">CircuitElementBatchMixin.NumControllers()</span></code></a></li>
+<li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#altdss.CircuitElement.CircuitElementBatchMixin.NumPhases"><code class="docutils literal notranslate"><span class="pre">CircuitElementBatchMixin.NumPhases()</span></code></a></li>
+<li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#altdss.CircuitElement.CircuitElementBatchMixin.NumTerminals"><code class="docutils literal notranslate"><span class="pre">CircuitElementBatchMixin.NumTerminals()</span></code></a></li>
+<li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#altdss.CircuitElement.CircuitElementBatchMixin.OCPDevice"><code class="docutils literal notranslate"><span class="pre">CircuitElementBatchMixin.OCPDevice()</span></code></a></li>
+<li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#altdss.CircuitElement.CircuitElementBatchMixin.OCPDeviceIndex"><code class="docutils literal notranslate"><span class="pre">CircuitElementBatchMixin.OCPDeviceIndex()</span></code></a></li>
+<li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#altdss.CircuitElement.CircuitElementBatchMixin.OCPDeviceType"><code class="docutils literal notranslate"><span class="pre">CircuitElementBatchMixin.OCPDeviceType()</span></code></a></li>
+<li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#altdss.CircuitElement.CircuitElementBatchMixin.PhaseLosses"><code class="docutils literal notranslate"><span class="pre">CircuitElementBatchMixin.PhaseLosses()</span></code></a></li>
+<li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#altdss.CircuitElement.CircuitElementBatchMixin.Powers"><code class="docutils literal notranslate"><span class="pre">CircuitElementBatchMixin.Powers()</span></code></a></li>
+<li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#altdss.CircuitElement.CircuitElementBatchMixin.SeqCurrents"><code class="docutils literal notranslate"><span class="pre">CircuitElementBatchMixin.SeqCurrents()</span></code></a></li>
+<li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#altdss.CircuitElement.CircuitElementBatchMixin.SeqPowers"><code class="docutils literal notranslate"><span class="pre">CircuitElementBatchMixin.SeqPowers()</span></code></a></li>
+<li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#altdss.CircuitElement.CircuitElementBatchMixin.SeqVoltages"><code class="docutils literal notranslate"><span class="pre">CircuitElementBatchMixin.SeqVoltages()</span></code></a></li>
+<li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#altdss.CircuitElement.CircuitElementBatchMixin.TotalPowers"><code class="docutils literal notranslate"><span class="pre">CircuitElementBatchMixin.TotalPowers()</span></code></a></li>
+<li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#altdss.CircuitElement.CircuitElementBatchMixin.Voltages"><code class="docutils literal notranslate"><span class="pre">CircuitElementBatchMixin.Voltages()</span></code></a></li>
+<li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#altdss.CircuitElement.CircuitElementBatchMixin.VoltagesMagAng"><code class="docutils literal notranslate"><span class="pre">CircuitElementBatchMixin.VoltagesMagAng()</span></code></a></li>
+</ul>
+</li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#altdss.CircuitElement.CircuitElementMixin"><code class="docutils literal notranslate"><span class="pre">CircuitElementMixin</span></code></a><ul class="nav section-nav flex-column">
+<li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#altdss.CircuitElement.CircuitElementMixin.Close"><code class="docutils literal notranslate"><span class="pre">CircuitElementMixin.Close()</span></code></a></li>
+<li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#altdss.CircuitElement.CircuitElementMixin.ComplexSeqCurrents"><code class="docutils literal notranslate"><span class="pre">CircuitElementMixin.ComplexSeqCurrents()</span></code></a></li>
+<li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#altdss.CircuitElement.CircuitElementMixin.ComplexSeqVoltages"><code class="docutils literal notranslate"><span class="pre">CircuitElementMixin.ComplexSeqVoltages()</span></code></a></li>
+<li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#altdss.CircuitElement.CircuitElementMixin.Currents"><code class="docutils literal notranslate"><span class="pre">CircuitElementMixin.Currents()</span></code></a></li>
+<li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#altdss.CircuitElement.CircuitElementMixin.DisplayName"><code class="docutils literal notranslate"><span class="pre">CircuitElementMixin.DisplayName</span></code></a></li>
+<li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#altdss.CircuitElement.CircuitElementMixin.GUID"><code class="docutils literal notranslate"><span class="pre">CircuitElementMixin.GUID()</span></code></a></li>
+<li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#altdss.CircuitElement.CircuitElementMixin.Handle"><code class="docutils literal notranslate"><span class="pre">CircuitElementMixin.Handle()</span></code></a></li>
+<li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#altdss.CircuitElement.CircuitElementMixin.HasOCPDevice"><code class="docutils literal notranslate"><span class="pre">CircuitElementMixin.HasOCPDevice()</span></code></a></li>
+<li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#altdss.CircuitElement.CircuitElementMixin.HasSwitchControl"><code class="docutils literal notranslate"><span class="pre">CircuitElementMixin.HasSwitchControl()</span></code></a></li>
+<li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#altdss.CircuitElement.CircuitElementMixin.HasVoltControl"><code class="docutils literal notranslate"><span class="pre">CircuitElementMixin.HasVoltControl()</span></code></a></li>
+<li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#altdss.CircuitElement.CircuitElementMixin.IsIsolated"><code class="docutils literal notranslate"><span class="pre">CircuitElementMixin.IsIsolated()</span></code></a></li>
+<li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#altdss.CircuitElement.CircuitElementMixin.IsOpen"><code class="docutils literal notranslate"><span class="pre">CircuitElementMixin.IsOpen()</span></code></a></li>
+<li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#altdss.CircuitElement.CircuitElementMixin.Losses"><code class="docutils literal notranslate"><span class="pre">CircuitElementMixin.Losses()</span></code></a></li>
+<li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#altdss.CircuitElement.CircuitElementMixin.MaxCurrent"><code class="docutils literal notranslate"><span class="pre">CircuitElementMixin.MaxCurrent()</span></code></a></li>
+<li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#altdss.CircuitElement.CircuitElementMixin.NodeOrder"><code class="docutils literal notranslate"><span class="pre">CircuitElementMixin.NodeOrder()</span></code></a></li>
+<li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#altdss.CircuitElement.CircuitElementMixin.NodeRef"><code class="docutils literal notranslate"><span class="pre">CircuitElementMixin.NodeRef()</span></code></a></li>
+<li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#altdss.CircuitElement.CircuitElementMixin.NumConductors"><code class="docutils literal notranslate"><span class="pre">CircuitElementMixin.NumConductors()</span></code></a></li>
+<li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#altdss.CircuitElement.CircuitElementMixin.NumControllers"><code class="docutils literal notranslate"><span class="pre">CircuitElementMixin.NumControllers()</span></code></a></li>
+<li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#altdss.CircuitElement.CircuitElementMixin.NumPhases"><code class="docutils literal notranslate"><span class="pre">CircuitElementMixin.NumPhases()</span></code></a></li>
+<li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#altdss.CircuitElement.CircuitElementMixin.NumTerminals"><code class="docutils literal notranslate"><span class="pre">CircuitElementMixin.NumTerminals()</span></code></a></li>
+<li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#altdss.CircuitElement.CircuitElementMixin.OCPDevice"><code class="docutils literal notranslate"><span class="pre">CircuitElementMixin.OCPDevice()</span></code></a></li>
+<li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#altdss.CircuitElement.CircuitElementMixin.OCPDeviceIndex"><code class="docutils literal notranslate"><span class="pre">CircuitElementMixin.OCPDeviceIndex()</span></code></a></li>
+<li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#altdss.CircuitElement.CircuitElementMixin.OCPDeviceType"><code class="docutils literal notranslate"><span class="pre">CircuitElementMixin.OCPDeviceType()</span></code></a></li>
+<li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#altdss.CircuitElement.CircuitElementMixin.Open"><code class="docutils literal notranslate"><span class="pre">CircuitElementMixin.Open()</span></code></a></li>
+<li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#altdss.CircuitElement.CircuitElementMixin.PhaseLosses"><code class="docutils literal notranslate"><span class="pre">CircuitElementMixin.PhaseLosses()</span></code></a></li>
+<li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#altdss.CircuitElement.CircuitElementMixin.Powers"><code class="docutils literal notranslate"><span class="pre">CircuitElementMixin.Powers()</span></code></a></li>
+<li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#altdss.CircuitElement.CircuitElementMixin.Residuals"><code class="docutils literal notranslate"><span class="pre">CircuitElementMixin.Residuals()</span></code></a></li>
+<li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#altdss.CircuitElement.CircuitElementMixin.SeqCurrents"><code class="docutils literal notranslate"><span class="pre">CircuitElementMixin.SeqCurrents()</span></code></a></li>
+<li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#altdss.CircuitElement.CircuitElementMixin.SeqPowers"><code class="docutils literal notranslate"><span class="pre">CircuitElementMixin.SeqPowers()</span></code></a></li>
+<li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#altdss.CircuitElement.CircuitElementMixin.SeqVoltages"><code class="docutils literal notranslate"><span class="pre">CircuitElementMixin.SeqVoltages()</span></code></a></li>
+<li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#altdss.CircuitElement.CircuitElementMixin.TotalPowers"><code class="docutils literal notranslate"><span class="pre">CircuitElementMixin.TotalPowers()</span></code></a></li>
+<li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#altdss.CircuitElement.CircuitElementMixin.Voltages"><code class="docutils literal notranslate"><span class="pre">CircuitElementMixin.Voltages()</span></code></a></li>
+<li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#altdss.CircuitElement.CircuitElementMixin.VoltagesMagAng"><code class="docutils literal notranslate"><span class="pre">CircuitElementMixin.VoltagesMagAng()</span></code></a></li>
+<li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#altdss.CircuitElement.CircuitElementMixin.YPrim"><code class="docutils literal notranslate"><span class="pre">CircuitElementMixin.YPrim()</span></code></a></li>
+<li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#altdss.CircuitElement.CircuitElementMixin.__init__"><code class="docutils literal notranslate"><span class="pre">CircuitElementMixin.__init__()</span></code></a></li>
+</ul>
+</li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#altdss.CircuitElement.ElementHasRegistersMixin"><code class="docutils literal notranslate"><span class="pre">ElementHasRegistersMixin</span></code></a><ul class="nav section-nav flex-column">
+<li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#altdss.CircuitElement.ElementHasRegistersMixin.RegisterNames"><code class="docutils literal notranslate"><span class="pre">ElementHasRegistersMixin.RegisterNames()</span></code></a></li>
+<li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#altdss.CircuitElement.ElementHasRegistersMixin.RegisterValues"><code class="docutils literal notranslate"><span class="pre">ElementHasRegistersMixin.RegisterValues()</span></code></a></li>
+<li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#altdss.CircuitElement.ElementHasRegistersMixin.RegistersDict"><code class="docutils literal notranslate"><span class="pre">ElementHasRegistersMixin.RegistersDict()</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+            </nav>
+        </div>
+    </div>
+</div>
+
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article">
+                  
+  <section class="tex2jax_ignore mathjax_ignore" id="module-altdss.CircuitElement">
+<span id="altdss-circuitelement"></span><h1><a class="reference internal" href="#module-altdss.CircuitElement" title="altdss.CircuitElement"><code class="xref py py-mod docutils literal notranslate"><span class="pre">altdss.CircuitElement</span></code></a><a class="headerlink" href="#module-altdss.CircuitElement" title="Link to this heading">#</a></h1>
+<section id="module-contents">
+<h2>Module Contents<a class="headerlink" href="#module-contents" title="Link to this heading">#</a></h2>
+<section id="classes">
+<h3>Classes<a class="headerlink" href="#classes" title="Link to this heading">#</a></h3>
+<table class="autosummary longtable table table-left">
+<tbody>
+<tr class="row-odd"><td><p><a class="reference internal" href="#altdss.CircuitElement.CircuitElementBatch" title="altdss.CircuitElement.CircuitElementBatch"><code class="xref py py-obj docutils literal notranslate"><span class="pre">CircuitElementBatch</span></code></a></p></td>
+<td><p>Non-uniform batch of circuit elements. Can contain distinct types, while providing
+common functions</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#altdss.CircuitElement.CircuitElementBatchMixin" title="altdss.CircuitElement.CircuitElementBatchMixin"><code class="xref py py-obj docutils literal notranslate"><span class="pre">CircuitElementBatchMixin</span></code></a></p></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="#altdss.CircuitElement.CircuitElementMixin" title="altdss.CircuitElement.CircuitElementMixin"><code class="xref py py-obj docutils literal notranslate"><span class="pre">CircuitElementMixin</span></code></a></p></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#altdss.CircuitElement.ElementHasRegistersMixin" title="altdss.CircuitElement.ElementHasRegistersMixin"><code class="xref py py-obj docutils literal notranslate"><span class="pre">ElementHasRegistersMixin</span></code></a></p></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="api">
+<h3>API<a class="headerlink" href="#api" title="Link to this heading">#</a></h3>
+<dl class="py class">
+<dt class="sig sig-object py" id="altdss.CircuitElement.CircuitElementBatch">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">altdss.CircuitElement.</span></span><span class="sig-name descname"><span class="pre">CircuitElementBatch</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">func</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">parent</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">sync_cls_idx</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">ExtraClassIDs.CktElements</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#altdss.CircuitElement.CircuitElementBatch" title="Link to this definition">#</a></dt>
+<dd><p>Bases: <a class="reference internal" href="altdss.Batch.html#altdss.Batch.NonUniformBatch" title="altdss.Batch.NonUniformBatch"><code class="xref py py-obj docutils literal notranslate"><span class="pre">altdss.Batch.NonUniformBatch</span></code></a>, <a class="reference internal" href="#altdss.CircuitElement.CircuitElementBatchMixin" title="altdss.CircuitElement.CircuitElementBatchMixin"><code class="xref py py-obj docutils literal notranslate"><span class="pre">altdss.CircuitElement.CircuitElementBatchMixin</span></code></a></p>
+<p>Non-uniform batch of circuit elements. Can contain distinct types, while providing
+common functions</p>
+<dl class="py method">
+<dt class="sig sig-object py" id="altdss.CircuitElement.CircuitElementBatch.ComplexSeqCurrents">
+<span class="sig-name descname"><span class="pre">ComplexSeqCurrents</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">altdss.types.ComplexArray</span></span></span><a class="headerlink" href="#altdss.CircuitElement.CircuitElementBatch.ComplexSeqCurrents" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="altdss.CircuitElement.CircuitElementBatch.ComplexSeqVoltages">
+<span class="sig-name descname"><span class="pre">ComplexSeqVoltages</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">altdss.types.ComplexArray</span></span></span><a class="headerlink" href="#altdss.CircuitElement.CircuitElementBatch.ComplexSeqVoltages" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="altdss.CircuitElement.CircuitElementBatch.Currents">
+<span class="sig-name descname"><span class="pre">Currents</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">altdss.types.ComplexArray</span></span></span><a class="headerlink" href="#altdss.CircuitElement.CircuitElementBatch.Currents" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="altdss.CircuitElement.CircuitElementBatch.CurrentsMagAng">
+<span class="sig-name descname"><span class="pre">CurrentsMagAng</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">altdss.types.Float64Array</span></span></span><a class="headerlink" href="#altdss.CircuitElement.CircuitElementBatch.CurrentsMagAng" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="altdss.CircuitElement.CircuitElementBatch.FullName">
+<span class="sig-name descname"><span class="pre">FullName</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">List</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">]</span></span></span></span><a class="headerlink" href="#altdss.CircuitElement.CircuitElementBatch.FullName" title="Link to this definition">#</a></dt>
+<dd><p>Returns the full name (including object type) for all objects in this batch</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="altdss.CircuitElement.CircuitElementBatch.GUID">
+<span class="sig-name descname"><span class="pre">GUID</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">str</span></span></span><a class="headerlink" href="#altdss.CircuitElement.CircuitElementBatch.GUID" title="Link to this definition">#</a></dt>
+<dd><p>GUID/UUID for each object. Currently used only in the CIM-related methods.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="altdss.CircuitElement.CircuitElementBatch.Handle">
+<span class="sig-name descname"><span class="pre">Handle</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">altdss.types.Int32Array</span></span></span><a class="headerlink" href="#altdss.CircuitElement.CircuitElementBatch.Handle" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="altdss.CircuitElement.CircuitElementBatch.HasOCPDevice">
+<span class="sig-name descname"><span class="pre">HasOCPDevice</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">bool</span></span></span><a class="headerlink" href="#altdss.CircuitElement.CircuitElementBatch.HasOCPDevice" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="altdss.CircuitElement.CircuitElementBatch.HasSwitchControl">
+<span class="sig-name descname"><span class="pre">HasSwitchControl</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">bool</span></span></span><a class="headerlink" href="#altdss.CircuitElement.CircuitElementBatch.HasSwitchControl" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="altdss.CircuitElement.CircuitElementBatch.HasVoltControl">
+<span class="sig-name descname"><span class="pre">HasVoltControl</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">bool</span></span></span><a class="headerlink" href="#altdss.CircuitElement.CircuitElementBatch.HasVoltControl" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="altdss.CircuitElement.CircuitElementBatch.IsIsolated">
+<span class="sig-name descname"><span class="pre">IsIsolated</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">altdss.types.BoolArray</span></span></span><a class="headerlink" href="#altdss.CircuitElement.CircuitElementBatch.IsIsolated" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="altdss.CircuitElement.CircuitElementBatch.Losses">
+<span class="sig-name descname"><span class="pre">Losses</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">altdss.types.ComplexArray</span></span></span><a class="headerlink" href="#altdss.CircuitElement.CircuitElementBatch.Losses" title="Link to this definition">#</a></dt>
+<dd><p>Total losses for each element, complex VA (watts, vars)</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="altdss.CircuitElement.CircuitElementBatch.MaxCurrent">
+<span class="sig-name descname"><span class="pre">MaxCurrent</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">terminal</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">float</span></span></span><a class="headerlink" href="#altdss.CircuitElement.CircuitElementBatch.MaxCurrent" title="Link to this definition">#</a></dt>
+<dd><p>Returns the maximum current (magnitude) at the specificed terminal for all elements in this batch.
+Use -1 as terminal to get the value across all terminals.</p>
+</dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="altdss.CircuitElement.CircuitElementBatch.Name">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">Name</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">List</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">]</span></span></em><a class="headerlink" href="#altdss.CircuitElement.CircuitElementBatch.Name" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="altdss.CircuitElement.CircuitElementBatch.NumConductors">
+<span class="sig-name descname"><span class="pre">NumConductors</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">altdss.types.Int32Array</span></span></span><a class="headerlink" href="#altdss.CircuitElement.CircuitElementBatch.NumConductors" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="altdss.CircuitElement.CircuitElementBatch.NumControllers">
+<span class="sig-name descname"><span class="pre">NumControllers</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">altdss.types.Int32Array</span></span></span><a class="headerlink" href="#altdss.CircuitElement.CircuitElementBatch.NumControllers" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="altdss.CircuitElement.CircuitElementBatch.NumPhases">
+<span class="sig-name descname"><span class="pre">NumPhases</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">altdss.types.Int32Array</span></span></span><a class="headerlink" href="#altdss.CircuitElement.CircuitElementBatch.NumPhases" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="altdss.CircuitElement.CircuitElementBatch.NumTerminals">
+<span class="sig-name descname"><span class="pre">NumTerminals</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">altdss.types.Int32Array</span></span></span><a class="headerlink" href="#altdss.CircuitElement.CircuitElementBatch.NumTerminals" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="altdss.CircuitElement.CircuitElementBatch.OCPDevice">
+<span class="sig-name descname"><span class="pre">OCPDevice</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">List</span><span class="p"><span class="pre">[</span></span><span class="pre">Union</span><span class="p"><span class="pre">[</span></span><a class="reference internal" href="altdss.DSSObj.html#altdss.DSSObj.DSSObj" title="altdss.DSSObj.DSSObj"><span class="pre">altdss.DSSObj.DSSObj</span></a><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">None</span><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">]</span></span></span></span><a class="headerlink" href="#altdss.CircuitElement.CircuitElementBatch.OCPDevice" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="altdss.CircuitElement.CircuitElementBatch.OCPDeviceIndex">
+<span class="sig-name descname"><span class="pre">OCPDeviceIndex</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">altdss.types.Int32Array</span></span></span><a class="headerlink" href="#altdss.CircuitElement.CircuitElementBatch.OCPDeviceIndex" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="altdss.CircuitElement.CircuitElementBatch.OCPDeviceType">
+<span class="sig-name descname"><span class="pre">OCPDeviceType</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">dss.enums.OCPDevType</span></span></span><a class="headerlink" href="#altdss.CircuitElement.CircuitElementBatch.OCPDeviceType" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="altdss.CircuitElement.CircuitElementBatch.PhaseLosses">
+<span class="sig-name descname"><span class="pre">PhaseLosses</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">altdss.types.ComplexArray</span></span></span><a class="headerlink" href="#altdss.CircuitElement.CircuitElementBatch.PhaseLosses" title="Link to this definition">#</a></dt>
+<dd><p>Complex array of losses (kVA) by phase, for each element</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="altdss.CircuitElement.CircuitElementBatch.Powers">
+<span class="sig-name descname"><span class="pre">Powers</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">altdss.types.ComplexArray</span></span></span><a class="headerlink" href="#altdss.CircuitElement.CircuitElementBatch.Powers" title="Link to this definition">#</a></dt>
+<dd><p>Complex array of powers (kVA) into each conductor of each terminal, of each element in the batch.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="altdss.CircuitElement.CircuitElementBatch.SeqCurrents">
+<span class="sig-name descname"><span class="pre">SeqCurrents</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">altdss.types.Float64Array</span></span></span><a class="headerlink" href="#altdss.CircuitElement.CircuitElementBatch.SeqCurrents" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="altdss.CircuitElement.CircuitElementBatch.SeqPowers">
+<span class="sig-name descname"><span class="pre">SeqPowers</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">altdss.types.ComplexArray</span></span></span><a class="headerlink" href="#altdss.CircuitElement.CircuitElementBatch.SeqPowers" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="altdss.CircuitElement.CircuitElementBatch.SeqVoltages">
+<span class="sig-name descname"><span class="pre">SeqVoltages</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">altdss.types.Float64Array</span></span></span><a class="headerlink" href="#altdss.CircuitElement.CircuitElementBatch.SeqVoltages" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="altdss.CircuitElement.CircuitElementBatch.TotalPowers">
+<span class="sig-name descname"><span class="pre">TotalPowers</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">altdss.types.ComplexArray</span></span></span><a class="headerlink" href="#altdss.CircuitElement.CircuitElementBatch.TotalPowers" title="Link to this definition">#</a></dt>
+<dd><p>Returns an array with the total powers (complex, kVA) at all terminals of the circuit elements in this batch.</p>
+<p>The resulting array is equivalent to concatenating the TotalPowers for each element.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="altdss.CircuitElement.CircuitElementBatch.Voltages">
+<span class="sig-name descname"><span class="pre">Voltages</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">altdss.types.ComplexArray</span></span></span><a class="headerlink" href="#altdss.CircuitElement.CircuitElementBatch.Voltages" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="altdss.CircuitElement.CircuitElementBatch.VoltagesMagAng">
+<span class="sig-name descname"><span class="pre">VoltagesMagAng</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">altdss.types.Float64Array</span></span></span><a class="headerlink" href="#altdss.CircuitElement.CircuitElementBatch.VoltagesMagAng" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="altdss.CircuitElement.CircuitElementBatch.__call__">
+<span class="sig-name descname"><span class="pre">__call__</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#altdss.CircuitElement.CircuitElementBatch.__call__" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="altdss.CircuitElement.CircuitElementBatch.__init__">
+<span class="sig-name descname"><span class="pre">__init__</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">func</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">parent</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">sync_cls_idx</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">ExtraClassIDs.CktElements</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#altdss.CircuitElement.CircuitElementBatch.__init__" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="altdss.CircuitElement.CircuitElementBatch.__iter__">
+<span class="sig-name descname"><span class="pre">__iter__</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">Iterator</span><span class="p"><span class="pre">[</span></span><a class="reference internal" href="altdss.DSSObj.html#altdss.DSSObj.DSSObj" title="altdss.DSSObj.DSSObj"><span class="pre">altdss.DSSObj.DSSObj</span></a><span class="p"><span class="pre">]</span></span></span></span><a class="headerlink" href="#altdss.CircuitElement.CircuitElementBatch.__iter__" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="altdss.CircuitElement.CircuitElementBatch.__len__">
+<span class="sig-name descname"><span class="pre">__len__</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">int</span></span></span><a class="headerlink" href="#altdss.CircuitElement.CircuitElementBatch.__len__" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="altdss.CircuitElement.CircuitElementBatch.to_json">
+<span class="sig-name descname"><span class="pre">to_json</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">options</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Union</span><span class="p"><span class="pre">[</span></span><span class="pre">int</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">dss.enums.DSSJSONFlags</span><span class="p"><span class="pre">]</span></span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">0</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#altdss.CircuitElement.CircuitElementBatch.to_json" title="Link to this definition">#</a></dt>
+<dd><p>Returns the data (as a list) of the elements in a batch as a JSON-encoded string.</p>
+<p>The <code class="docutils literal notranslate"><span class="pre">options</span></code> parameter contains bit-flags to toggle specific features.
+See <code class="docutils literal notranslate"><span class="pre">Obj_ToJSON</span></code> (C-API) for more, or <code class="docutils literal notranslate"><span class="pre">DSSObj.to_json</span></code> in Python.</p>
+<p>Additionally, the <code class="docutils literal notranslate"><span class="pre">ExcludeDisabled</span></code> flag can be used to excluded disabled elements from the output.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="altdss.CircuitElement.CircuitElementBatch.to_list">
+<span class="sig-name descname"><span class="pre">to_list</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#altdss.CircuitElement.CircuitElementBatch.to_list" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="altdss.CircuitElement.CircuitElementBatchMixin">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">altdss.CircuitElement.</span></span><span class="sig-name descname"><span class="pre">CircuitElementBatchMixin</span></span><a class="headerlink" href="#altdss.CircuitElement.CircuitElementBatchMixin" title="Link to this definition">#</a></dt>
+<dd><dl class="py method">
+<dt class="sig sig-object py" id="altdss.CircuitElement.CircuitElementBatchMixin.ComplexSeqCurrents">
+<span class="sig-name descname"><span class="pre">ComplexSeqCurrents</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">altdss.types.ComplexArray</span></span></span><a class="headerlink" href="#altdss.CircuitElement.CircuitElementBatchMixin.ComplexSeqCurrents" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="altdss.CircuitElement.CircuitElementBatchMixin.ComplexSeqVoltages">
+<span class="sig-name descname"><span class="pre">ComplexSeqVoltages</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">altdss.types.ComplexArray</span></span></span><a class="headerlink" href="#altdss.CircuitElement.CircuitElementBatchMixin.ComplexSeqVoltages" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="altdss.CircuitElement.CircuitElementBatchMixin.Currents">
+<span class="sig-name descname"><span class="pre">Currents</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">altdss.types.ComplexArray</span></span></span><a class="headerlink" href="#altdss.CircuitElement.CircuitElementBatchMixin.Currents" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="altdss.CircuitElement.CircuitElementBatchMixin.CurrentsMagAng">
+<span class="sig-name descname"><span class="pre">CurrentsMagAng</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">altdss.types.Float64Array</span></span></span><a class="headerlink" href="#altdss.CircuitElement.CircuitElementBatchMixin.CurrentsMagAng" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="altdss.CircuitElement.CircuitElementBatchMixin.GUID">
+<span class="sig-name descname"><span class="pre">GUID</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">str</span></span></span><a class="headerlink" href="#altdss.CircuitElement.CircuitElementBatchMixin.GUID" title="Link to this definition">#</a></dt>
+<dd><p>GUID/UUID for each object. Currently used only in the CIM-related methods.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="altdss.CircuitElement.CircuitElementBatchMixin.Handle">
+<span class="sig-name descname"><span class="pre">Handle</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">altdss.types.Int32Array</span></span></span><a class="headerlink" href="#altdss.CircuitElement.CircuitElementBatchMixin.Handle" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="altdss.CircuitElement.CircuitElementBatchMixin.HasOCPDevice">
+<span class="sig-name descname"><span class="pre">HasOCPDevice</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">bool</span></span></span><a class="headerlink" href="#altdss.CircuitElement.CircuitElementBatchMixin.HasOCPDevice" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="altdss.CircuitElement.CircuitElementBatchMixin.HasSwitchControl">
+<span class="sig-name descname"><span class="pre">HasSwitchControl</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">bool</span></span></span><a class="headerlink" href="#altdss.CircuitElement.CircuitElementBatchMixin.HasSwitchControl" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="altdss.CircuitElement.CircuitElementBatchMixin.HasVoltControl">
+<span class="sig-name descname"><span class="pre">HasVoltControl</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">bool</span></span></span><a class="headerlink" href="#altdss.CircuitElement.CircuitElementBatchMixin.HasVoltControl" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="altdss.CircuitElement.CircuitElementBatchMixin.IsIsolated">
+<span class="sig-name descname"><span class="pre">IsIsolated</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">altdss.types.BoolArray</span></span></span><a class="headerlink" href="#altdss.CircuitElement.CircuitElementBatchMixin.IsIsolated" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="altdss.CircuitElement.CircuitElementBatchMixin.Losses">
+<span class="sig-name descname"><span class="pre">Losses</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">altdss.types.ComplexArray</span></span></span><a class="headerlink" href="#altdss.CircuitElement.CircuitElementBatchMixin.Losses" title="Link to this definition">#</a></dt>
+<dd><p>Total losses for each element, complex VA (watts, vars)</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="altdss.CircuitElement.CircuitElementBatchMixin.MaxCurrent">
+<span class="sig-name descname"><span class="pre">MaxCurrent</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">terminal</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">float</span></span></span><a class="headerlink" href="#altdss.CircuitElement.CircuitElementBatchMixin.MaxCurrent" title="Link to this definition">#</a></dt>
+<dd><p>Returns the maximum current (magnitude) at the specificed terminal for all elements in this batch.
+Use -1 as terminal to get the value across all terminals.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="altdss.CircuitElement.CircuitElementBatchMixin.NumConductors">
+<span class="sig-name descname"><span class="pre">NumConductors</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">altdss.types.Int32Array</span></span></span><a class="headerlink" href="#altdss.CircuitElement.CircuitElementBatchMixin.NumConductors" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="altdss.CircuitElement.CircuitElementBatchMixin.NumControllers">
+<span class="sig-name descname"><span class="pre">NumControllers</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">altdss.types.Int32Array</span></span></span><a class="headerlink" href="#altdss.CircuitElement.CircuitElementBatchMixin.NumControllers" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="altdss.CircuitElement.CircuitElementBatchMixin.NumPhases">
+<span class="sig-name descname"><span class="pre">NumPhases</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">altdss.types.Int32Array</span></span></span><a class="headerlink" href="#altdss.CircuitElement.CircuitElementBatchMixin.NumPhases" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="altdss.CircuitElement.CircuitElementBatchMixin.NumTerminals">
+<span class="sig-name descname"><span class="pre">NumTerminals</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">altdss.types.Int32Array</span></span></span><a class="headerlink" href="#altdss.CircuitElement.CircuitElementBatchMixin.NumTerminals" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="altdss.CircuitElement.CircuitElementBatchMixin.OCPDevice">
+<span class="sig-name descname"><span class="pre">OCPDevice</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">List</span><span class="p"><span class="pre">[</span></span><span class="pre">Union</span><span class="p"><span class="pre">[</span></span><a class="reference internal" href="altdss.DSSObj.html#altdss.DSSObj.DSSObj" title="altdss.DSSObj.DSSObj"><span class="pre">altdss.DSSObj.DSSObj</span></a><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">None</span><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">]</span></span></span></span><a class="headerlink" href="#altdss.CircuitElement.CircuitElementBatchMixin.OCPDevice" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="altdss.CircuitElement.CircuitElementBatchMixin.OCPDeviceIndex">
+<span class="sig-name descname"><span class="pre">OCPDeviceIndex</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">altdss.types.Int32Array</span></span></span><a class="headerlink" href="#altdss.CircuitElement.CircuitElementBatchMixin.OCPDeviceIndex" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="altdss.CircuitElement.CircuitElementBatchMixin.OCPDeviceType">
+<span class="sig-name descname"><span class="pre">OCPDeviceType</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">dss.enums.OCPDevType</span></span></span><a class="headerlink" href="#altdss.CircuitElement.CircuitElementBatchMixin.OCPDeviceType" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="altdss.CircuitElement.CircuitElementBatchMixin.PhaseLosses">
+<span class="sig-name descname"><span class="pre">PhaseLosses</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">altdss.types.ComplexArray</span></span></span><a class="headerlink" href="#altdss.CircuitElement.CircuitElementBatchMixin.PhaseLosses" title="Link to this definition">#</a></dt>
+<dd><p>Complex array of losses (kVA) by phase, for each element</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="altdss.CircuitElement.CircuitElementBatchMixin.Powers">
+<span class="sig-name descname"><span class="pre">Powers</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">altdss.types.ComplexArray</span></span></span><a class="headerlink" href="#altdss.CircuitElement.CircuitElementBatchMixin.Powers" title="Link to this definition">#</a></dt>
+<dd><p>Complex array of powers (kVA) into each conductor of each terminal, of each element in the batch.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="altdss.CircuitElement.CircuitElementBatchMixin.SeqCurrents">
+<span class="sig-name descname"><span class="pre">SeqCurrents</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">altdss.types.Float64Array</span></span></span><a class="headerlink" href="#altdss.CircuitElement.CircuitElementBatchMixin.SeqCurrents" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="altdss.CircuitElement.CircuitElementBatchMixin.SeqPowers">
+<span class="sig-name descname"><span class="pre">SeqPowers</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">altdss.types.ComplexArray</span></span></span><a class="headerlink" href="#altdss.CircuitElement.CircuitElementBatchMixin.SeqPowers" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="altdss.CircuitElement.CircuitElementBatchMixin.SeqVoltages">
+<span class="sig-name descname"><span class="pre">SeqVoltages</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">altdss.types.Float64Array</span></span></span><a class="headerlink" href="#altdss.CircuitElement.CircuitElementBatchMixin.SeqVoltages" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="altdss.CircuitElement.CircuitElementBatchMixin.TotalPowers">
+<span class="sig-name descname"><span class="pre">TotalPowers</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">altdss.types.ComplexArray</span></span></span><a class="headerlink" href="#altdss.CircuitElement.CircuitElementBatchMixin.TotalPowers" title="Link to this definition">#</a></dt>
+<dd><p>Returns an array with the total powers (complex, kVA) at all terminals of the circuit elements in this batch.</p>
+<p>The resulting array is equivalent to concatenating the TotalPowers for each element.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="altdss.CircuitElement.CircuitElementBatchMixin.Voltages">
+<span class="sig-name descname"><span class="pre">Voltages</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">altdss.types.ComplexArray</span></span></span><a class="headerlink" href="#altdss.CircuitElement.CircuitElementBatchMixin.Voltages" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="altdss.CircuitElement.CircuitElementBatchMixin.VoltagesMagAng">
+<span class="sig-name descname"><span class="pre">VoltagesMagAng</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">altdss.types.Float64Array</span></span></span><a class="headerlink" href="#altdss.CircuitElement.CircuitElementBatchMixin.VoltagesMagAng" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="altdss.CircuitElement.CircuitElementMixin">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">altdss.CircuitElement.</span></span><span class="sig-name descname"><span class="pre">CircuitElementMixin</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">args</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#altdss.CircuitElement.CircuitElementMixin" title="Link to this definition">#</a></dt>
+<dd><dl class="py method">
+<dt class="sig sig-object py" id="altdss.CircuitElement.CircuitElementMixin.Close">
+<span class="sig-name descname"><span class="pre">Close</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">terminal</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">phase</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span><a class="headerlink" href="#altdss.CircuitElement.CircuitElementMixin.Close" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="altdss.CircuitElement.CircuitElementMixin.ComplexSeqCurrents">
+<span class="sig-name descname"><span class="pre">ComplexSeqCurrents</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">altdss.types.ComplexArray</span></span></span><a class="headerlink" href="#altdss.CircuitElement.CircuitElementMixin.ComplexSeqCurrents" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="altdss.CircuitElement.CircuitElementMixin.ComplexSeqVoltages">
+<span class="sig-name descname"><span class="pre">ComplexSeqVoltages</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">altdss.types.ComplexArray</span></span></span><a class="headerlink" href="#altdss.CircuitElement.CircuitElementMixin.ComplexSeqVoltages" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="altdss.CircuitElement.CircuitElementMixin.Currents">
+<span class="sig-name descname"><span class="pre">Currents</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">altdss.types.ComplexArray</span></span></span><a class="headerlink" href="#altdss.CircuitElement.CircuitElementMixin.Currents" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="altdss.CircuitElement.CircuitElementMixin.DisplayName">
+<span class="sig-name descname"><span class="pre">DisplayName</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">str</span></em><a class="headerlink" href="#altdss.CircuitElement.CircuitElementMixin.DisplayName" title="Link to this definition">#</a></dt>
+<dd><p>None</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="altdss.CircuitElement.CircuitElementMixin.GUID">
+<span class="sig-name descname"><span class="pre">GUID</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">str</span></span></span><a class="headerlink" href="#altdss.CircuitElement.CircuitElementMixin.GUID" title="Link to this definition">#</a></dt>
+<dd><p>Object’s GUID/UUID. Currently used only in the CIM-related methods.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="altdss.CircuitElement.CircuitElementMixin.Handle">
+<span class="sig-name descname"><span class="pre">Handle</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">int</span></span></span><a class="headerlink" href="#altdss.CircuitElement.CircuitElementMixin.Handle" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="altdss.CircuitElement.CircuitElementMixin.HasOCPDevice">
+<span class="sig-name descname"><span class="pre">HasOCPDevice</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">bool</span></span></span><a class="headerlink" href="#altdss.CircuitElement.CircuitElementMixin.HasOCPDevice" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="altdss.CircuitElement.CircuitElementMixin.HasSwitchControl">
+<span class="sig-name descname"><span class="pre">HasSwitchControl</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">bool</span></span></span><a class="headerlink" href="#altdss.CircuitElement.CircuitElementMixin.HasSwitchControl" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="altdss.CircuitElement.CircuitElementMixin.HasVoltControl">
+<span class="sig-name descname"><span class="pre">HasVoltControl</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">bool</span></span></span><a class="headerlink" href="#altdss.CircuitElement.CircuitElementMixin.HasVoltControl" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="altdss.CircuitElement.CircuitElementMixin.IsIsolated">
+<span class="sig-name descname"><span class="pre">IsIsolated</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">bool</span></span></span><a class="headerlink" href="#altdss.CircuitElement.CircuitElementMixin.IsIsolated" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="altdss.CircuitElement.CircuitElementMixin.IsOpen">
+<span class="sig-name descname"><span class="pre">IsOpen</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">terminal</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">phase</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">bool</span></span></span><a class="headerlink" href="#altdss.CircuitElement.CircuitElementMixin.IsOpen" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="altdss.CircuitElement.CircuitElementMixin.Losses">
+<span class="sig-name descname"><span class="pre">Losses</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">complex</span></span></span><a class="headerlink" href="#altdss.CircuitElement.CircuitElementMixin.Losses" title="Link to this definition">#</a></dt>
+<dd><p>Total (complex) losses in the element, in VA (watts, vars)</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="altdss.CircuitElement.CircuitElementMixin.MaxCurrent">
+<span class="sig-name descname"><span class="pre">MaxCurrent</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">terminal</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">float</span></span></span><a class="headerlink" href="#altdss.CircuitElement.CircuitElementMixin.MaxCurrent" title="Link to this definition">#</a></dt>
+<dd><p>Returns the maximum current (magnitude) at the specificed terminal.
+Use -1 as terminal to get the value across all terminals.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="altdss.CircuitElement.CircuitElementMixin.NodeOrder">
+<span class="sig-name descname"><span class="pre">NodeOrder</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">altdss.types.Int32Array</span></span></span><a class="headerlink" href="#altdss.CircuitElement.CircuitElementMixin.NodeOrder" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="altdss.CircuitElement.CircuitElementMixin.NodeRef">
+<span class="sig-name descname"><span class="pre">NodeRef</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">altdss.types.Int32Array</span></span></span><a class="headerlink" href="#altdss.CircuitElement.CircuitElementMixin.NodeRef" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="altdss.CircuitElement.CircuitElementMixin.NumConductors">
+<span class="sig-name descname"><span class="pre">NumConductors</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">int</span></span></span><a class="headerlink" href="#altdss.CircuitElement.CircuitElementMixin.NumConductors" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="altdss.CircuitElement.CircuitElementMixin.NumControllers">
+<span class="sig-name descname"><span class="pre">NumControllers</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">int</span></span></span><a class="headerlink" href="#altdss.CircuitElement.CircuitElementMixin.NumControllers" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="altdss.CircuitElement.CircuitElementMixin.NumPhases">
+<span class="sig-name descname"><span class="pre">NumPhases</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">int</span></span></span><a class="headerlink" href="#altdss.CircuitElement.CircuitElementMixin.NumPhases" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="altdss.CircuitElement.CircuitElementMixin.NumTerminals">
+<span class="sig-name descname"><span class="pre">NumTerminals</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">int</span></span></span><a class="headerlink" href="#altdss.CircuitElement.CircuitElementMixin.NumTerminals" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="altdss.CircuitElement.CircuitElementMixin.OCPDevice">
+<span class="sig-name descname"><span class="pre">OCPDevice</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">Union</span><span class="p"><span class="pre">[</span></span><a class="reference internal" href="altdss.DSSObj.html#altdss.DSSObj.DSSObj" title="altdss.DSSObj.DSSObj"><span class="pre">altdss.DSSObj.DSSObj</span></a><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">None</span><span class="p"><span class="pre">]</span></span></span></span><a class="headerlink" href="#altdss.CircuitElement.CircuitElementMixin.OCPDevice" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="altdss.CircuitElement.CircuitElementMixin.OCPDeviceIndex">
+<span class="sig-name descname"><span class="pre">OCPDeviceIndex</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">int</span></span></span><a class="headerlink" href="#altdss.CircuitElement.CircuitElementMixin.OCPDeviceIndex" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="altdss.CircuitElement.CircuitElementMixin.OCPDeviceType">
+<span class="sig-name descname"><span class="pre">OCPDeviceType</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">dss.enums.OCPDevType</span></span></span><a class="headerlink" href="#altdss.CircuitElement.CircuitElementMixin.OCPDeviceType" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="altdss.CircuitElement.CircuitElementMixin.Open">
+<span class="sig-name descname"><span class="pre">Open</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">terminal</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">phase</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span><a class="headerlink" href="#altdss.CircuitElement.CircuitElementMixin.Open" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="altdss.CircuitElement.CircuitElementMixin.PhaseLosses">
+<span class="sig-name descname"><span class="pre">PhaseLosses</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">altdss.types.ComplexArray</span></span></span><a class="headerlink" href="#altdss.CircuitElement.CircuitElementMixin.PhaseLosses" title="Link to this definition">#</a></dt>
+<dd><p>Complex array of losses (kVA) by phase</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="altdss.CircuitElement.CircuitElementMixin.Powers">
+<span class="sig-name descname"><span class="pre">Powers</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">altdss.types.ComplexArray</span></span></span><a class="headerlink" href="#altdss.CircuitElement.CircuitElementMixin.Powers" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="altdss.CircuitElement.CircuitElementMixin.Residuals">
+<span class="sig-name descname"><span class="pre">Residuals</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">altdss.types.Float64Array</span></span></span><a class="headerlink" href="#altdss.CircuitElement.CircuitElementMixin.Residuals" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="altdss.CircuitElement.CircuitElementMixin.SeqCurrents">
+<span class="sig-name descname"><span class="pre">SeqCurrents</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">altdss.types.Float64Array</span></span></span><a class="headerlink" href="#altdss.CircuitElement.CircuitElementMixin.SeqCurrents" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="altdss.CircuitElement.CircuitElementMixin.SeqPowers">
+<span class="sig-name descname"><span class="pre">SeqPowers</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">altdss.types.ComplexArray</span></span></span><a class="headerlink" href="#altdss.CircuitElement.CircuitElementMixin.SeqPowers" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="altdss.CircuitElement.CircuitElementMixin.SeqVoltages">
+<span class="sig-name descname"><span class="pre">SeqVoltages</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">altdss.types.Float64Array</span></span></span><a class="headerlink" href="#altdss.CircuitElement.CircuitElementMixin.SeqVoltages" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="altdss.CircuitElement.CircuitElementMixin.TotalPowers">
+<span class="sig-name descname"><span class="pre">TotalPowers</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">altdss.types.ComplexArray</span></span></span><a class="headerlink" href="#altdss.CircuitElement.CircuitElementMixin.TotalPowers" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="altdss.CircuitElement.CircuitElementMixin.Voltages">
+<span class="sig-name descname"><span class="pre">Voltages</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">altdss.types.ComplexArray</span></span></span><a class="headerlink" href="#altdss.CircuitElement.CircuitElementMixin.Voltages" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="altdss.CircuitElement.CircuitElementMixin.VoltagesMagAng">
+<span class="sig-name descname"><span class="pre">VoltagesMagAng</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">altdss.types.Float64Array</span></span></span><a class="headerlink" href="#altdss.CircuitElement.CircuitElementMixin.VoltagesMagAng" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="altdss.CircuitElement.CircuitElementMixin.YPrim">
+<span class="sig-name descname"><span class="pre">YPrim</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">altdss.types.ComplexArray</span></span></span><a class="headerlink" href="#altdss.CircuitElement.CircuitElementMixin.YPrim" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="altdss.CircuitElement.CircuitElementMixin.__init__">
+<span class="sig-name descname"><span class="pre">__init__</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">args</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#altdss.CircuitElement.CircuitElementMixin.__init__" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="altdss.CircuitElement.ElementHasRegistersMixin">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">altdss.CircuitElement.</span></span><span class="sig-name descname"><span class="pre">ElementHasRegistersMixin</span></span><a class="headerlink" href="#altdss.CircuitElement.ElementHasRegistersMixin" title="Link to this definition">#</a></dt>
+<dd><dl class="py method">
+<dt class="sig sig-object py" id="altdss.CircuitElement.ElementHasRegistersMixin.RegisterNames">
+<span class="sig-name descname"><span class="pre">RegisterNames</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">List</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">]</span></span></span></span><a class="headerlink" href="#altdss.CircuitElement.ElementHasRegistersMixin.RegisterNames" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="altdss.CircuitElement.ElementHasRegistersMixin.RegisterValues">
+<span class="sig-name descname"><span class="pre">RegisterValues</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">altdss.types.Float64Array</span></span></span><a class="headerlink" href="#altdss.CircuitElement.ElementHasRegistersMixin.RegisterValues" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="altdss.CircuitElement.ElementHasRegistersMixin.RegistersDict">
+<span class="sig-name descname"><span class="pre">RegistersDict</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">Dict</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">float</span><span class="p"><span class="pre">]</span></span></span></span><a class="headerlink" href="#altdss.CircuitElement.ElementHasRegistersMixin.RegistersDict" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+</section>
+</section>
+</section>
+
+
+                </article>
+              
+
+              
+              
+              
+              
+                <footer class="prev-next-footer">
+                  
+<div class="prev-next-area">
+    <a class="left-prev"
+       href="altdss.Capacitor.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title"><code class="xref py py-mod docutils literal notranslate"><span class="pre">altdss.Capacitor</span></code></p>
+      </div>
+    </a>
+    <a class="right-next"
+       href="altdss.ControlQueue.html"
+       title="next page">
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title"><code class="xref py py-mod docutils literal notranslate"><span class="pre">altdss.ControlQueue</span></code></p>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
+    </a>
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#module-contents">Module Contents</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#classes">Classes</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#api">API</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#altdss.CircuitElement.CircuitElementBatch"><code class="docutils literal notranslate"><span class="pre">CircuitElementBatch</span></code></a><ul class="nav section-nav flex-column">
+<li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#altdss.CircuitElement.CircuitElementBatch.ComplexSeqCurrents"><code class="docutils literal notranslate"><span class="pre">CircuitElementBatch.ComplexSeqCurrents()</span></code></a></li>
+<li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#altdss.CircuitElement.CircuitElementBatch.ComplexSeqVoltages"><code class="docutils literal notranslate"><span class="pre">CircuitElementBatch.ComplexSeqVoltages()</span></code></a></li>
+<li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#altdss.CircuitElement.CircuitElementBatch.Currents"><code class="docutils literal notranslate"><span class="pre">CircuitElementBatch.Currents()</span></code></a></li>
+<li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#altdss.CircuitElement.CircuitElementBatch.CurrentsMagAng"><code class="docutils literal notranslate"><span class="pre">CircuitElementBatch.CurrentsMagAng()</span></code></a></li>
+<li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#altdss.CircuitElement.CircuitElementBatch.FullName"><code class="docutils literal notranslate"><span class="pre">CircuitElementBatch.FullName()</span></code></a></li>
+<li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#altdss.CircuitElement.CircuitElementBatch.GUID"><code class="docutils literal notranslate"><span class="pre">CircuitElementBatch.GUID()</span></code></a></li>
+<li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#altdss.CircuitElement.CircuitElementBatch.Handle"><code class="docutils literal notranslate"><span class="pre">CircuitElementBatch.Handle()</span></code></a></li>
+<li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#altdss.CircuitElement.CircuitElementBatch.HasOCPDevice"><code class="docutils literal notranslate"><span class="pre">CircuitElementBatch.HasOCPDevice()</span></code></a></li>
+<li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#altdss.CircuitElement.CircuitElementBatch.HasSwitchControl"><code class="docutils literal notranslate"><span class="pre">CircuitElementBatch.HasSwitchControl()</span></code></a></li>
+<li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#altdss.CircuitElement.CircuitElementBatch.HasVoltControl"><code class="docutils literal notranslate"><span class="pre">CircuitElementBatch.HasVoltControl()</span></code></a></li>
+<li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#altdss.CircuitElement.CircuitElementBatch.IsIsolated"><code class="docutils literal notranslate"><span class="pre">CircuitElementBatch.IsIsolated()</span></code></a></li>
+<li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#altdss.CircuitElement.CircuitElementBatch.Losses"><code class="docutils literal notranslate"><span class="pre">CircuitElementBatch.Losses()</span></code></a></li>
+<li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#altdss.CircuitElement.CircuitElementBatch.MaxCurrent"><code class="docutils literal notranslate"><span class="pre">CircuitElementBatch.MaxCurrent()</span></code></a></li>
+<li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#altdss.CircuitElement.CircuitElementBatch.Name"><code class="docutils literal notranslate"><span class="pre">CircuitElementBatch.Name</span></code></a></li>
+<li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#altdss.CircuitElement.CircuitElementBatch.NumConductors"><code class="docutils literal notranslate"><span class="pre">CircuitElementBatch.NumConductors()</span></code></a></li>
+<li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#altdss.CircuitElement.CircuitElementBatch.NumControllers"><code class="docutils literal notranslate"><span class="pre">CircuitElementBatch.NumControllers()</span></code></a></li>
+<li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#altdss.CircuitElement.CircuitElementBatch.NumPhases"><code class="docutils literal notranslate"><span class="pre">CircuitElementBatch.NumPhases()</span></code></a></li>
+<li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#altdss.CircuitElement.CircuitElementBatch.NumTerminals"><code class="docutils literal notranslate"><span class="pre">CircuitElementBatch.NumTerminals()</span></code></a></li>
+<li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#altdss.CircuitElement.CircuitElementBatch.OCPDevice"><code class="docutils literal notranslate"><span class="pre">CircuitElementBatch.OCPDevice()</span></code></a></li>
+<li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#altdss.CircuitElement.CircuitElementBatch.OCPDeviceIndex"><code class="docutils literal notranslate"><span class="pre">CircuitElementBatch.OCPDeviceIndex()</span></code></a></li>
+<li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#altdss.CircuitElement.CircuitElementBatch.OCPDeviceType"><code class="docutils literal notranslate"><span class="pre">CircuitElementBatch.OCPDeviceType()</span></code></a></li>
+<li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#altdss.CircuitElement.CircuitElementBatch.PhaseLosses"><code class="docutils literal notranslate"><span class="pre">CircuitElementBatch.PhaseLosses()</span></code></a></li>
+<li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#altdss.CircuitElement.CircuitElementBatch.Powers"><code class="docutils literal notranslate"><span class="pre">CircuitElementBatch.Powers()</span></code></a></li>
+<li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#altdss.CircuitElement.CircuitElementBatch.SeqCurrents"><code class="docutils literal notranslate"><span class="pre">CircuitElementBatch.SeqCurrents()</span></code></a></li>
+<li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#altdss.CircuitElement.CircuitElementBatch.SeqPowers"><code class="docutils literal notranslate"><span class="pre">CircuitElementBatch.SeqPowers()</span></code></a></li>
+<li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#altdss.CircuitElement.CircuitElementBatch.SeqVoltages"><code class="docutils literal notranslate"><span class="pre">CircuitElementBatch.SeqVoltages()</span></code></a></li>
+<li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#altdss.CircuitElement.CircuitElementBatch.TotalPowers"><code class="docutils literal notranslate"><span class="pre">CircuitElementBatch.TotalPowers()</span></code></a></li>
+<li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#altdss.CircuitElement.CircuitElementBatch.Voltages"><code class="docutils literal notranslate"><span class="pre">CircuitElementBatch.Voltages()</span></code></a></li>
+<li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#altdss.CircuitElement.CircuitElementBatch.VoltagesMagAng"><code class="docutils literal notranslate"><span class="pre">CircuitElementBatch.VoltagesMagAng()</span></code></a></li>
+<li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#altdss.CircuitElement.CircuitElementBatch.__call__"><code class="docutils literal notranslate"><span class="pre">CircuitElementBatch.__call__()</span></code></a></li>
+<li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#altdss.CircuitElement.CircuitElementBatch.__init__"><code class="docutils literal notranslate"><span class="pre">CircuitElementBatch.__init__()</span></code></a></li>
+<li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#altdss.CircuitElement.CircuitElementBatch.__iter__"><code class="docutils literal notranslate"><span class="pre">CircuitElementBatch.__iter__()</span></code></a></li>
+<li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#altdss.CircuitElement.CircuitElementBatch.__len__"><code class="docutils literal notranslate"><span class="pre">CircuitElementBatch.__len__()</span></code></a></li>
+<li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#altdss.CircuitElement.CircuitElementBatch.to_json"><code class="docutils literal notranslate"><span class="pre">CircuitElementBatch.to_json()</span></code></a></li>
+<li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#altdss.CircuitElement.CircuitElementBatch.to_list"><code class="docutils literal notranslate"><span class="pre">CircuitElementBatch.to_list()</span></code></a></li>
+</ul>
+</li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#altdss.CircuitElement.CircuitElementBatchMixin"><code class="docutils literal notranslate"><span class="pre">CircuitElementBatchMixin</span></code></a><ul class="nav section-nav flex-column">
+<li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#altdss.CircuitElement.CircuitElementBatchMixin.ComplexSeqCurrents"><code class="docutils literal notranslate"><span class="pre">CircuitElementBatchMixin.ComplexSeqCurrents()</span></code></a></li>
+<li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#altdss.CircuitElement.CircuitElementBatchMixin.ComplexSeqVoltages"><code class="docutils literal notranslate"><span class="pre">CircuitElementBatchMixin.ComplexSeqVoltages()</span></code></a></li>
+<li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#altdss.CircuitElement.CircuitElementBatchMixin.Currents"><code class="docutils literal notranslate"><span class="pre">CircuitElementBatchMixin.Currents()</span></code></a></li>
+<li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#altdss.CircuitElement.CircuitElementBatchMixin.CurrentsMagAng"><code class="docutils literal notranslate"><span class="pre">CircuitElementBatchMixin.CurrentsMagAng()</span></code></a></li>
+<li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#altdss.CircuitElement.CircuitElementBatchMixin.GUID"><code class="docutils literal notranslate"><span class="pre">CircuitElementBatchMixin.GUID()</span></code></a></li>
+<li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#altdss.CircuitElement.CircuitElementBatchMixin.Handle"><code class="docutils literal notranslate"><span class="pre">CircuitElementBatchMixin.Handle()</span></code></a></li>
+<li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#altdss.CircuitElement.CircuitElementBatchMixin.HasOCPDevice"><code class="docutils literal notranslate"><span class="pre">CircuitElementBatchMixin.HasOCPDevice()</span></code></a></li>
+<li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#altdss.CircuitElement.CircuitElementBatchMixin.HasSwitchControl"><code class="docutils literal notranslate"><span class="pre">CircuitElementBatchMixin.HasSwitchControl()</span></code></a></li>
+<li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#altdss.CircuitElement.CircuitElementBatchMixin.HasVoltControl"><code class="docutils literal notranslate"><span class="pre">CircuitElementBatchMixin.HasVoltControl()</span></code></a></li>
+<li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#altdss.CircuitElement.CircuitElementBatchMixin.IsIsolated"><code class="docutils literal notranslate"><span class="pre">CircuitElementBatchMixin.IsIsolated()</span></code></a></li>
+<li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#altdss.CircuitElement.CircuitElementBatchMixin.Losses"><code class="docutils literal notranslate"><span class="pre">CircuitElementBatchMixin.Losses()</span></code></a></li>
+<li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#altdss.CircuitElement.CircuitElementBatchMixin.MaxCurrent"><code class="docutils literal notranslate"><span class="pre">CircuitElementBatchMixin.MaxCurrent()</span></code></a></li>
+<li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#altdss.CircuitElement.CircuitElementBatchMixin.NumConductors"><code class="docutils literal notranslate"><span class="pre">CircuitElementBatchMixin.NumConductors()</span></code></a></li>
+<li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#altdss.CircuitElement.CircuitElementBatchMixin.NumControllers"><code class="docutils literal notranslate"><span class="pre">CircuitElementBatchMixin.NumControllers()</span></code></a></li>
+<li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#altdss.CircuitElement.CircuitElementBatchMixin.NumPhases"><code class="docutils literal notranslate"><span class="pre">CircuitElementBatchMixin.NumPhases()</span></code></a></li>
+<li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#altdss.CircuitElement.CircuitElementBatchMixin.NumTerminals"><code class="docutils literal notranslate"><span class="pre">CircuitElementBatchMixin.NumTerminals()</span></code></a></li>
+<li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#altdss.CircuitElement.CircuitElementBatchMixin.OCPDevice"><code class="docutils literal notranslate"><span class="pre">CircuitElementBatchMixin.OCPDevice()</span></code></a></li>
+<li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#altdss.CircuitElement.CircuitElementBatchMixin.OCPDeviceIndex"><code class="docutils literal notranslate"><span class="pre">CircuitElementBatchMixin.OCPDeviceIndex()</span></code></a></li>
+<li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#altdss.CircuitElement.CircuitElementBatchMixin.OCPDeviceType"><code class="docutils literal notranslate"><span class="pre">CircuitElementBatchMixin.OCPDeviceType()</span></code></a></li>
+<li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#altdss.CircuitElement.CircuitElementBatchMixin.PhaseLosses"><code class="docutils literal notranslate"><span class="pre">CircuitElementBatchMixin.PhaseLosses()</span></code></a></li>
+<li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#altdss.CircuitElement.CircuitElementBatchMixin.Powers"><code class="docutils literal notranslate"><span class="pre">CircuitElementBatchMixin.Powers()</span></code></a></li>
+<li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#altdss.CircuitElement.CircuitElementBatchMixin.SeqCurrents"><code class="docutils literal notranslate"><span class="pre">CircuitElementBatchMixin.SeqCurrents()</span></code></a></li>
+<li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#altdss.CircuitElement.CircuitElementBatchMixin.SeqPowers"><code class="docutils literal notranslate"><span class="pre">CircuitElementBatchMixin.SeqPowers()</span></code></a></li>
+<li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#altdss.CircuitElement.CircuitElementBatchMixin.SeqVoltages"><code class="docutils literal notranslate"><span class="pre">CircuitElementBatchMixin.SeqVoltages()</span></code></a></li>
+<li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#altdss.CircuitElement.CircuitElementBatchMixin.TotalPowers"><code class="docutils literal notranslate"><span class="pre">CircuitElementBatchMixin.TotalPowers()</span></code></a></li>
+<li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#altdss.CircuitElement.CircuitElementBatchMixin.Voltages"><code class="docutils literal notranslate"><span class="pre">CircuitElementBatchMixin.Voltages()</span></code></a></li>
+<li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#altdss.CircuitElement.CircuitElementBatchMixin.VoltagesMagAng"><code class="docutils literal notranslate"><span class="pre">CircuitElementBatchMixin.VoltagesMagAng()</span></code></a></li>
+</ul>
+</li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#altdss.CircuitElement.CircuitElementMixin"><code class="docutils literal notranslate"><span class="pre">CircuitElementMixin</span></code></a><ul class="nav section-nav flex-column">
+<li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#altdss.CircuitElement.CircuitElementMixin.Close"><code class="docutils literal notranslate"><span class="pre">CircuitElementMixin.Close()</span></code></a></li>
+<li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#altdss.CircuitElement.CircuitElementMixin.ComplexSeqCurrents"><code class="docutils literal notranslate"><span class="pre">CircuitElementMixin.ComplexSeqCurrents()</span></code></a></li>
+<li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#altdss.CircuitElement.CircuitElementMixin.ComplexSeqVoltages"><code class="docutils literal notranslate"><span class="pre">CircuitElementMixin.ComplexSeqVoltages()</span></code></a></li>
+<li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#altdss.CircuitElement.CircuitElementMixin.Currents"><code class="docutils literal notranslate"><span class="pre">CircuitElementMixin.Currents()</span></code></a></li>
+<li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#altdss.CircuitElement.CircuitElementMixin.DisplayName"><code class="docutils literal notranslate"><span class="pre">CircuitElementMixin.DisplayName</span></code></a></li>
+<li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#altdss.CircuitElement.CircuitElementMixin.GUID"><code class="docutils literal notranslate"><span class="pre">CircuitElementMixin.GUID()</span></code></a></li>
+<li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#altdss.CircuitElement.CircuitElementMixin.Handle"><code class="docutils literal notranslate"><span class="pre">CircuitElementMixin.Handle()</span></code></a></li>
+<li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#altdss.CircuitElement.CircuitElementMixin.HasOCPDevice"><code class="docutils literal notranslate"><span class="pre">CircuitElementMixin.HasOCPDevice()</span></code></a></li>
+<li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#altdss.CircuitElement.CircuitElementMixin.HasSwitchControl"><code class="docutils literal notranslate"><span class="pre">CircuitElementMixin.HasSwitchControl()</span></code></a></li>
+<li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#altdss.CircuitElement.CircuitElementMixin.HasVoltControl"><code class="docutils literal notranslate"><span class="pre">CircuitElementMixin.HasVoltControl()</span></code></a></li>
+<li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#altdss.CircuitElement.CircuitElementMixin.IsIsolated"><code class="docutils literal notranslate"><span class="pre">CircuitElementMixin.IsIsolated()</span></code></a></li>
+<li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#altdss.CircuitElement.CircuitElementMixin.IsOpen"><code class="docutils literal notranslate"><span class="pre">CircuitElementMixin.IsOpen()</span></code></a></li>
+<li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#altdss.CircuitElement.CircuitElementMixin.Losses"><code class="docutils literal notranslate"><span class="pre">CircuitElementMixin.Losses()</span></code></a></li>
+<li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#altdss.CircuitElement.CircuitElementMixin.MaxCurrent"><code class="docutils literal notranslate"><span class="pre">CircuitElementMixin.MaxCurrent()</span></code></a></li>
+<li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#altdss.CircuitElement.CircuitElementMixin.NodeOrder"><code class="docutils literal notranslate"><span class="pre">CircuitElementMixin.NodeOrder()</span></code></a></li>
+<li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#altdss.CircuitElement.CircuitElementMixin.NodeRef"><code class="docutils literal notranslate"><span class="pre">CircuitElementMixin.NodeRef()</span></code></a></li>
+<li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#altdss.CircuitElement.CircuitElementMixin.NumConductors"><code class="docutils literal notranslate"><span class="pre">CircuitElementMixin.NumConductors()</span></code></a></li>
+<li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#altdss.CircuitElement.CircuitElementMixin.NumControllers"><code class="docutils literal notranslate"><span class="pre">CircuitElementMixin.NumControllers()</span></code></a></li>
+<li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#altdss.CircuitElement.CircuitElementMixin.NumPhases"><code class="docutils literal notranslate"><span class="pre">CircuitElementMixin.NumPhases()</span></code></a></li>
+<li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#altdss.CircuitElement.CircuitElementMixin.NumTerminals"><code class="docutils literal notranslate"><span class="pre">CircuitElementMixin.NumTerminals()</span></code></a></li>
+<li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#altdss.CircuitElement.CircuitElementMixin.OCPDevice"><code class="docutils literal notranslate"><span class="pre">CircuitElementMixin.OCPDevice()</span></code></a></li>
+<li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#altdss.CircuitElement.CircuitElementMixin.OCPDeviceIndex"><code class="docutils literal notranslate"><span class="pre">CircuitElementMixin.OCPDeviceIndex()</span></code></a></li>
+<li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#altdss.CircuitElement.CircuitElementMixin.OCPDeviceType"><code class="docutils literal notranslate"><span class="pre">CircuitElementMixin.OCPDeviceType()</span></code></a></li>
+<li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#altdss.CircuitElement.CircuitElementMixin.Open"><code class="docutils literal notranslate"><span class="pre">CircuitElementMixin.Open()</span></code></a></li>
+<li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#altdss.CircuitElement.CircuitElementMixin.PhaseLosses"><code class="docutils literal notranslate"><span class="pre">CircuitElementMixin.PhaseLosses()</span></code></a></li>
+<li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#altdss.CircuitElement.CircuitElementMixin.Powers"><code class="docutils literal notranslate"><span class="pre">CircuitElementMixin.Powers()</span></code></a></li>
+<li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#altdss.CircuitElement.CircuitElementMixin.Residuals"><code class="docutils literal notranslate"><span class="pre">CircuitElementMixin.Residuals()</span></code></a></li>
+<li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#altdss.CircuitElement.CircuitElementMixin.SeqCurrents"><code class="docutils literal notranslate"><span class="pre">CircuitElementMixin.SeqCurrents()</span></code></a></li>
+<li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#altdss.CircuitElement.CircuitElementMixin.SeqPowers"><code class="docutils literal notranslate"><span class="pre">CircuitElementMixin.SeqPowers()</span></code></a></li>
+<li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#altdss.CircuitElement.CircuitElementMixin.SeqVoltages"><code class="docutils literal notranslate"><span class="pre">CircuitElementMixin.SeqVoltages()</span></code></a></li>
+<li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#altdss.CircuitElement.CircuitElementMixin.TotalPowers"><code class="docutils literal notranslate"><span class="pre">CircuitElementMixin.TotalPowers()</span></code></a></li>
+<li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#altdss.CircuitElement.CircuitElementMixin.Voltages"><code class="docutils literal notranslate"><span class="pre">CircuitElementMixin.Voltages()</span></code></a></li>
+<li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#altdss.CircuitElement.CircuitElementMixin.VoltagesMagAng"><code class="docutils literal notranslate"><span class="pre">CircuitElementMixin.VoltagesMagAng()</span></code></a></li>
+<li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#altdss.CircuitElement.CircuitElementMixin.YPrim"><code class="docutils literal notranslate"><span class="pre">CircuitElementMixin.YPrim()</span></code></a></li>
+<li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#altdss.CircuitElement.CircuitElementMixin.__init__"><code class="docutils literal notranslate"><span class="pre">CircuitElementMixin.__init__()</span></code></a></li>
+</ul>
+</li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#altdss.CircuitElement.ElementHasRegistersMixin"><code class="docutils literal notranslate"><span class="pre">ElementHasRegistersMixin</span></code></a><ul class="nav section-nav flex-column">
+<li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#altdss.CircuitElement.ElementHasRegistersMixin.RegisterNames"><code class="docutils literal notranslate"><span class="pre">ElementHasRegistersMixin.RegisterNames()</span></code></a></li>
+<li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#altdss.CircuitElement.ElementHasRegistersMixin.RegisterValues"><code class="docutils literal notranslate"><span class="pre">ElementHasRegistersMixin.RegisterValues()</span></code></a></li>
+<li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#altdss.CircuitElement.ElementHasRegistersMixin.RegistersDict"><code class="docutils literal notranslate"><span class="pre">ElementHasRegistersMixin.RegistersDict()</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+  </nav></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+<div class="bd-footer-content__inner container">
+  
+  <div class="footer-item">
+    
+
+  <p class="copyright">
+    
+      © Copyright 2018-2024 Paulo Meira, Dheepak Krishnamurthy, DSS-Extensions contributors.
+      <br/>
+    
+  </p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+</div>
+          </footer>
+        
+
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="../../_static/scripts/bootstrap.js?digest=8d27b9dea8ad943066ae"></script>
+<script src="../../_static/scripts/pydata-sphinx-theme.js?digest=8d27b9dea8ad943066ae"></script>
+
+  <footer class="bd-footer">
+  </footer>
+  </body>
+</html>
