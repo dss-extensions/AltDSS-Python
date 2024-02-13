@@ -51,7 +51,7 @@ Bases: {py:obj}`altdss.DSSObj.IDSSObj`, {py:obj}`altdss.Load.LoadBatch`
 :canonical: altdss.Load.ILoad.AllocationFactor
 :type: altdss.ArrayProxy.BatchFloat64ArrayProxy
 :value: >
-   None
+   'property(...)'
 
 ```{autodoc2-docstring} altdss.Load.ILoad.AllocationFactor
 ```
@@ -62,7 +62,7 @@ Bases: {py:obj}`altdss.DSSObj.IDSSObj`, {py:obj}`altdss.Load.LoadBatch`
 :canonical: altdss.Load.ILoad.BaseFreq
 :type: altdss.ArrayProxy.BatchFloat64ArrayProxy
 :value: >
-   None
+   'property(...)'
 
 ```{autodoc2-docstring} altdss.Load.ILoad.BaseFreq
 ```
@@ -73,7 +73,7 @@ Bases: {py:obj}`altdss.DSSObj.IDSSObj`, {py:obj}`altdss.Load.LoadBatch`
 :canonical: altdss.Load.ILoad.Bus1
 :type: typing.List[str]
 :value: >
-   None
+   'property(...)'
 
 ```{autodoc2-docstring} altdss.Load.ILoad.Bus1
 ```
@@ -84,7 +84,7 @@ Bases: {py:obj}`altdss.DSSObj.IDSSObj`, {py:obj}`altdss.Load.LoadBatch`
 :canonical: altdss.Load.ILoad.CFactor
 :type: altdss.ArrayProxy.BatchFloat64ArrayProxy
 :value: >
-   None
+   'property(...)'
 
 ```{autodoc2-docstring} altdss.Load.ILoad.CFactor
 ```
@@ -95,7 +95,7 @@ Bases: {py:obj}`altdss.DSSObj.IDSSObj`, {py:obj}`altdss.Load.LoadBatch`
 :canonical: altdss.Load.ILoad.CVRCurve
 :type: typing.List[altdss.LoadShape.LoadShape]
 :value: >
-   None
+   'property(...)'
 
 ```{autodoc2-docstring} altdss.Load.ILoad.CVRCurve
 ```
@@ -106,7 +106,7 @@ Bases: {py:obj}`altdss.DSSObj.IDSSObj`, {py:obj}`altdss.Load.LoadBatch`
 :canonical: altdss.Load.ILoad.CVRCurve_str
 :type: typing.List[str]
 :value: >
-   None
+   'property(...)'
 
 ```{autodoc2-docstring} altdss.Load.ILoad.CVRCurve_str
 ```
@@ -117,7 +117,7 @@ Bases: {py:obj}`altdss.DSSObj.IDSSObj`, {py:obj}`altdss.Load.LoadBatch`
 :canonical: altdss.Load.ILoad.CVRVars
 :type: altdss.ArrayProxy.BatchFloat64ArrayProxy
 :value: >
-   None
+   'property(...)'
 
 ```{autodoc2-docstring} altdss.Load.ILoad.CVRVars
 ```
@@ -128,7 +128,7 @@ Bases: {py:obj}`altdss.DSSObj.IDSSObj`, {py:obj}`altdss.Load.LoadBatch`
 :canonical: altdss.Load.ILoad.CVRWatts
 :type: altdss.ArrayProxy.BatchFloat64ArrayProxy
 :value: >
-   None
+   'property(...)'
 
 ```{autodoc2-docstring} altdss.Load.ILoad.CVRWatts
 ```
@@ -139,7 +139,7 @@ Bases: {py:obj}`altdss.DSSObj.IDSSObj`, {py:obj}`altdss.Load.LoadBatch`
 :canonical: altdss.Load.ILoad.Class
 :type: altdss.ArrayProxy.BatchInt32ArrayProxy
 :value: >
-   None
+   'property(...)'
 
 ```{autodoc2-docstring} altdss.Load.ILoad.Class
 ```
@@ -166,7 +166,7 @@ Bases: {py:obj}`altdss.DSSObj.IDSSObj`, {py:obj}`altdss.Load.LoadBatch`
 :canonical: altdss.Load.ILoad.Conn
 :type: altdss.ArrayProxy.BatchInt32ArrayProxy
 :value: >
-   None
+   'property(...)'
 
 ```{autodoc2-docstring} altdss.Load.ILoad.Conn
 ```
@@ -177,7 +177,7 @@ Bases: {py:obj}`altdss.DSSObj.IDSSObj`, {py:obj}`altdss.Load.LoadBatch`
 :canonical: altdss.Load.ILoad.Conn_str
 :type: typing.List[str]
 :value: >
-   None
+   'property(...)'
 
 ```{autodoc2-docstring} altdss.Load.ILoad.Conn_str
 ```
@@ -204,7 +204,7 @@ Bases: {py:obj}`altdss.DSSObj.IDSSObj`, {py:obj}`altdss.Load.LoadBatch`
 :canonical: altdss.Load.ILoad.Daily
 :type: typing.List[altdss.LoadShape.LoadShape]
 :value: >
-   None
+   'property(...)'
 
 ```{autodoc2-docstring} altdss.Load.ILoad.Daily
 ```
@@ -215,7 +215,7 @@ Bases: {py:obj}`altdss.DSSObj.IDSSObj`, {py:obj}`altdss.Load.LoadBatch`
 :canonical: altdss.Load.ILoad.Daily_str
 :type: typing.List[str]
 :value: >
-   None
+   'property(...)'
 
 ```{autodoc2-docstring} altdss.Load.ILoad.Daily_str
 ```
@@ -226,7 +226,7 @@ Bases: {py:obj}`altdss.DSSObj.IDSSObj`, {py:obj}`altdss.Load.LoadBatch`
 :canonical: altdss.Load.ILoad.Duty
 :type: typing.List[altdss.LoadShape.LoadShape]
 :value: >
-   None
+   'property(...)'
 
 ```{autodoc2-docstring} altdss.Load.ILoad.Duty
 ```
@@ -237,7 +237,7 @@ Bases: {py:obj}`altdss.DSSObj.IDSSObj`, {py:obj}`altdss.Load.LoadBatch`
 :canonical: altdss.Load.ILoad.Duty_str
 :type: typing.List[str]
 :value: >
-   None
+   'property(...)'
 
 ```{autodoc2-docstring} altdss.Load.ILoad.Duty_str
 ```
@@ -248,7 +248,7 @@ Bases: {py:obj}`altdss.DSSObj.IDSSObj`, {py:obj}`altdss.Load.LoadBatch`
 :canonical: altdss.Load.ILoad.Enabled
 :type: typing.List[bool]
 :value: >
-   None
+   'property(...)'
 
 ```{autodoc2-docstring} altdss.Load.ILoad.Enabled
 ```
@@ -291,7 +291,7 @@ Bases: {py:obj}`altdss.DSSObj.IDSSObj`, {py:obj}`altdss.Load.LoadBatch`
 :canonical: altdss.Load.ILoad.Growth
 :type: typing.List[altdss.GrowthShape.GrowthShape]
 :value: >
-   None
+   'property(...)'
 
 ```{autodoc2-docstring} altdss.Load.ILoad.Growth
 ```
@@ -302,7 +302,7 @@ Bases: {py:obj}`altdss.DSSObj.IDSSObj`, {py:obj}`altdss.Load.LoadBatch`
 :canonical: altdss.Load.ILoad.Growth_str
 :type: typing.List[str]
 :value: >
-   None
+   'property(...)'
 
 ```{autodoc2-docstring} altdss.Load.ILoad.Growth_str
 ```
@@ -377,7 +377,7 @@ Bases: {py:obj}`altdss.DSSObj.IDSSObj`, {py:obj}`altdss.Load.LoadBatch`
 :canonical: altdss.Load.ILoad.Model
 :type: altdss.ArrayProxy.BatchInt32ArrayProxy
 :value: >
-   None
+   'property(...)'
 
 ```{autodoc2-docstring} altdss.Load.ILoad.Model
 ```
@@ -413,7 +413,7 @@ Bases: {py:obj}`altdss.DSSObj.IDSSObj`, {py:obj}`altdss.Load.LoadBatch`
 :canonical: altdss.Load.ILoad.NumCust
 :type: altdss.ArrayProxy.BatchInt32ArrayProxy
 :value: >
-   None
+   'property(...)'
 
 ```{autodoc2-docstring} altdss.Load.ILoad.NumCust
 ```
@@ -464,7 +464,7 @@ Bases: {py:obj}`altdss.DSSObj.IDSSObj`, {py:obj}`altdss.Load.LoadBatch`
 :canonical: altdss.Load.ILoad.PF
 :type: altdss.ArrayProxy.BatchFloat64ArrayProxy
 :value: >
-   None
+   'property(...)'
 
 ```{autodoc2-docstring} altdss.Load.ILoad.PF
 ```
@@ -483,7 +483,7 @@ Bases: {py:obj}`altdss.DSSObj.IDSSObj`, {py:obj}`altdss.Load.LoadBatch`
 :canonical: altdss.Load.ILoad.Phases
 :type: altdss.ArrayProxy.BatchInt32ArrayProxy
 :value: >
-   None
+   'property(...)'
 
 ```{autodoc2-docstring} altdss.Load.ILoad.Phases
 ```
@@ -502,7 +502,7 @@ Bases: {py:obj}`altdss.DSSObj.IDSSObj`, {py:obj}`altdss.Load.LoadBatch`
 :canonical: altdss.Load.ILoad.RNeut
 :type: altdss.ArrayProxy.BatchFloat64ArrayProxy
 :value: >
-   None
+   'property(...)'
 
 ```{autodoc2-docstring} altdss.Load.ILoad.RNeut
 ```
@@ -513,7 +513,7 @@ Bases: {py:obj}`altdss.DSSObj.IDSSObj`, {py:obj}`altdss.Load.LoadBatch`
 :canonical: altdss.Load.ILoad.RelWeight
 :type: altdss.ArrayProxy.BatchFloat64ArrayProxy
 :value: >
-   None
+   'property(...)'
 
 ```{autodoc2-docstring} altdss.Load.ILoad.RelWeight
 ```
@@ -548,7 +548,7 @@ Bases: {py:obj}`altdss.DSSObj.IDSSObj`, {py:obj}`altdss.Load.LoadBatch`
 :canonical: altdss.Load.ILoad.Spectrum
 :type: typing.List[altdss.Spectrum.Spectrum]
 :value: >
-   None
+   'property(...)'
 
 ```{autodoc2-docstring} altdss.Load.ILoad.Spectrum
 ```
@@ -559,7 +559,7 @@ Bases: {py:obj}`altdss.DSSObj.IDSSObj`, {py:obj}`altdss.Load.LoadBatch`
 :canonical: altdss.Load.ILoad.Spectrum_str
 :type: typing.List[str]
 :value: >
-   None
+   'property(...)'
 
 ```{autodoc2-docstring} altdss.Load.ILoad.Spectrum_str
 ```
@@ -570,7 +570,7 @@ Bases: {py:obj}`altdss.DSSObj.IDSSObj`, {py:obj}`altdss.Load.LoadBatch`
 :canonical: altdss.Load.ILoad.Status
 :type: altdss.ArrayProxy.BatchInt32ArrayProxy
 :value: >
-   None
+   'property(...)'
 
 ```{autodoc2-docstring} altdss.Load.ILoad.Status
 ```
@@ -581,7 +581,7 @@ Bases: {py:obj}`altdss.DSSObj.IDSSObj`, {py:obj}`altdss.Load.LoadBatch`
 :canonical: altdss.Load.ILoad.Status_str
 :type: typing.List[str]
 :value: >
-   None
+   'property(...)'
 
 ```{autodoc2-docstring} altdss.Load.ILoad.Status_str
 ```
@@ -600,7 +600,7 @@ Bases: {py:obj}`altdss.DSSObj.IDSSObj`, {py:obj}`altdss.Load.LoadBatch`
 :canonical: altdss.Load.ILoad.VLowpu
 :type: altdss.ArrayProxy.BatchFloat64ArrayProxy
 :value: >
-   None
+   'property(...)'
 
 ```{autodoc2-docstring} altdss.Load.ILoad.VLowpu
 ```
@@ -611,7 +611,7 @@ Bases: {py:obj}`altdss.DSSObj.IDSSObj`, {py:obj}`altdss.Load.LoadBatch`
 :canonical: altdss.Load.ILoad.VMaxpu
 :type: altdss.ArrayProxy.BatchFloat64ArrayProxy
 :value: >
-   None
+   'property(...)'
 
 ```{autodoc2-docstring} altdss.Load.ILoad.VMaxpu
 ```
@@ -622,7 +622,7 @@ Bases: {py:obj}`altdss.DSSObj.IDSSObj`, {py:obj}`altdss.Load.LoadBatch`
 :canonical: altdss.Load.ILoad.VMinEmerg
 :type: altdss.ArrayProxy.BatchFloat64ArrayProxy
 :value: >
-   None
+   'property(...)'
 
 ```{autodoc2-docstring} altdss.Load.ILoad.VMinEmerg
 ```
@@ -633,7 +633,7 @@ Bases: {py:obj}`altdss.DSSObj.IDSSObj`, {py:obj}`altdss.Load.LoadBatch`
 :canonical: altdss.Load.ILoad.VMinNorm
 :type: altdss.ArrayProxy.BatchFloat64ArrayProxy
 :value: >
-   None
+   'property(...)'
 
 ```{autodoc2-docstring} altdss.Load.ILoad.VMinNorm
 ```
@@ -644,7 +644,7 @@ Bases: {py:obj}`altdss.DSSObj.IDSSObj`, {py:obj}`altdss.Load.LoadBatch`
 :canonical: altdss.Load.ILoad.VMinpu
 :type: altdss.ArrayProxy.BatchFloat64ArrayProxy
 :value: >
-   None
+   'property(...)'
 
 ```{autodoc2-docstring} altdss.Load.ILoad.VMinpu
 ```
@@ -671,7 +671,7 @@ Bases: {py:obj}`altdss.DSSObj.IDSSObj`, {py:obj}`altdss.Load.LoadBatch`
 :canonical: altdss.Load.ILoad.XNeut
 :type: altdss.ArrayProxy.BatchFloat64ArrayProxy
 :value: >
-   None
+   'property(...)'
 
 ```{autodoc2-docstring} altdss.Load.ILoad.XNeut
 ```
@@ -682,7 +682,7 @@ Bases: {py:obj}`altdss.DSSObj.IDSSObj`, {py:obj}`altdss.Load.LoadBatch`
 :canonical: altdss.Load.ILoad.XRHarm
 :type: altdss.ArrayProxy.BatchFloat64ArrayProxy
 :value: >
-   None
+   'property(...)'
 
 ```{autodoc2-docstring} altdss.Load.ILoad.XRHarm
 ```
@@ -693,7 +693,7 @@ Bases: {py:obj}`altdss.DSSObj.IDSSObj`, {py:obj}`altdss.Load.LoadBatch`
 :canonical: altdss.Load.ILoad.XfkVA
 :type: altdss.ArrayProxy.BatchFloat64ArrayProxy
 :value: >
-   None
+   'property(...)'
 
 ```{autodoc2-docstring} altdss.Load.ILoad.XfkVA
 ```
@@ -704,7 +704,7 @@ Bases: {py:obj}`altdss.DSSObj.IDSSObj`, {py:obj}`altdss.Load.LoadBatch`
 :canonical: altdss.Load.ILoad.Yearly
 :type: typing.List[altdss.LoadShape.LoadShape]
 :value: >
-   None
+   'property(...)'
 
 ```{autodoc2-docstring} altdss.Load.ILoad.Yearly
 ```
@@ -715,7 +715,7 @@ Bases: {py:obj}`altdss.DSSObj.IDSSObj`, {py:obj}`altdss.Load.LoadBatch`
 :canonical: altdss.Load.ILoad.Yearly_str
 :type: typing.List[str]
 :value: >
-   None
+   'property(...)'
 
 ```{autodoc2-docstring} altdss.Load.ILoad.Yearly_str
 ```
@@ -726,7 +726,7 @@ Bases: {py:obj}`altdss.DSSObj.IDSSObj`, {py:obj}`altdss.Load.LoadBatch`
 :canonical: altdss.Load.ILoad.ZIPV
 :type: typing.List[altdss.types.Float64Array]
 :value: >
-   None
+   'property(...)'
 
 ```{autodoc2-docstring} altdss.Load.ILoad.ZIPV
 ```
@@ -825,7 +825,7 @@ Bases: {py:obj}`altdss.DSSObj.IDSSObj`, {py:obj}`altdss.Load.LoadBatch`
 :canonical: altdss.Load.ILoad.kV
 :type: altdss.ArrayProxy.BatchFloat64ArrayProxy
 :value: >
-   None
+   'property(...)'
 
 ```{autodoc2-docstring} altdss.Load.ILoad.kV
 ```
@@ -836,7 +836,7 @@ Bases: {py:obj}`altdss.DSSObj.IDSSObj`, {py:obj}`altdss.Load.LoadBatch`
 :canonical: altdss.Load.ILoad.kVA
 :type: altdss.ArrayProxy.BatchFloat64ArrayProxy
 :value: >
-   None
+   'property(...)'
 
 ```{autodoc2-docstring} altdss.Load.ILoad.kVA
 ```
@@ -847,7 +847,7 @@ Bases: {py:obj}`altdss.DSSObj.IDSSObj`, {py:obj}`altdss.Load.LoadBatch`
 :canonical: altdss.Load.ILoad.kW
 :type: altdss.ArrayProxy.BatchFloat64ArrayProxy
 :value: >
-   None
+   'property(...)'
 
 ```{autodoc2-docstring} altdss.Load.ILoad.kW
 ```
@@ -858,7 +858,7 @@ Bases: {py:obj}`altdss.DSSObj.IDSSObj`, {py:obj}`altdss.Load.LoadBatch`
 :canonical: altdss.Load.ILoad.kWh
 :type: altdss.ArrayProxy.BatchFloat64ArrayProxy
 :value: >
-   None
+   'property(...)'
 
 ```{autodoc2-docstring} altdss.Load.ILoad.kWh
 ```
@@ -869,7 +869,7 @@ Bases: {py:obj}`altdss.DSSObj.IDSSObj`, {py:obj}`altdss.Load.LoadBatch`
 :canonical: altdss.Load.ILoad.kWhDays
 :type: altdss.ArrayProxy.BatchFloat64ArrayProxy
 :value: >
-   None
+   'property(...)'
 
 ```{autodoc2-docstring} altdss.Load.ILoad.kWhDays
 ```
@@ -880,7 +880,7 @@ Bases: {py:obj}`altdss.DSSObj.IDSSObj`, {py:obj}`altdss.Load.LoadBatch`
 :canonical: altdss.Load.ILoad.kvar
 :type: altdss.ArrayProxy.BatchFloat64ArrayProxy
 :value: >
-   None
+   'property(...)'
 
 ```{autodoc2-docstring} altdss.Load.ILoad.kvar
 ```
@@ -899,7 +899,7 @@ Bases: {py:obj}`altdss.DSSObj.IDSSObj`, {py:obj}`altdss.Load.LoadBatch`
 :canonical: altdss.Load.ILoad.pctMean
 :type: altdss.ArrayProxy.BatchFloat64ArrayProxy
 :value: >
-   None
+   'property(...)'
 
 ```{autodoc2-docstring} altdss.Load.ILoad.pctMean
 ```
@@ -910,7 +910,7 @@ Bases: {py:obj}`altdss.DSSObj.IDSSObj`, {py:obj}`altdss.Load.LoadBatch`
 :canonical: altdss.Load.ILoad.pctSeriesRL
 :type: altdss.ArrayProxy.BatchFloat64ArrayProxy
 :value: >
-   None
+   'property(...)'
 
 ```{autodoc2-docstring} altdss.Load.ILoad.pctSeriesRL
 ```
@@ -921,7 +921,7 @@ Bases: {py:obj}`altdss.DSSObj.IDSSObj`, {py:obj}`altdss.Load.LoadBatch`
 :canonical: altdss.Load.ILoad.pctStdDev
 :type: altdss.ArrayProxy.BatchFloat64ArrayProxy
 :value: >
-   None
+   'property(...)'
 
 ```{autodoc2-docstring} altdss.Load.ILoad.pctStdDev
 ```
@@ -932,7 +932,7 @@ Bases: {py:obj}`altdss.DSSObj.IDSSObj`, {py:obj}`altdss.Load.LoadBatch`
 :canonical: altdss.Load.ILoad.puXHarm
 :type: altdss.ArrayProxy.BatchFloat64ArrayProxy
 :value: >
-   None
+   'property(...)'
 
 ```{autodoc2-docstring} altdss.Load.ILoad.puXHarm
 ```
@@ -969,7 +969,7 @@ Bases: {py:obj}`altdss.DSSObj.DSSObj`, {py:obj}`altdss.CircuitElement.CircuitEle
 :canonical: altdss.Load.Load.AllocationFactor
 :type: float
 :value: >
-   None
+   'property(...)'
 
 ```{autodoc2-docstring} altdss.Load.Load.AllocationFactor
 ```
@@ -980,7 +980,7 @@ Bases: {py:obj}`altdss.DSSObj.DSSObj`, {py:obj}`altdss.CircuitElement.CircuitEle
 :canonical: altdss.Load.Load.BaseFreq
 :type: float
 :value: >
-   None
+   'property(...)'
 
 ```{autodoc2-docstring} altdss.Load.Load.BaseFreq
 ```
@@ -991,7 +991,7 @@ Bases: {py:obj}`altdss.DSSObj.DSSObj`, {py:obj}`altdss.CircuitElement.CircuitEle
 :canonical: altdss.Load.Load.Bus1
 :type: str
 :value: >
-   None
+   'property(...)'
 
 ```{autodoc2-docstring} altdss.Load.Load.Bus1
 ```
@@ -1002,7 +1002,7 @@ Bases: {py:obj}`altdss.DSSObj.DSSObj`, {py:obj}`altdss.CircuitElement.CircuitEle
 :canonical: altdss.Load.Load.CFactor
 :type: float
 :value: >
-   None
+   'property(...)'
 
 ```{autodoc2-docstring} altdss.Load.Load.CFactor
 ```
@@ -1013,7 +1013,7 @@ Bases: {py:obj}`altdss.DSSObj.DSSObj`, {py:obj}`altdss.CircuitElement.CircuitEle
 :canonical: altdss.Load.Load.CVRCurve
 :type: altdss.LoadShape.LoadShape
 :value: >
-   None
+   'property(...)'
 
 ```{autodoc2-docstring} altdss.Load.Load.CVRCurve
 ```
@@ -1024,7 +1024,7 @@ Bases: {py:obj}`altdss.DSSObj.DSSObj`, {py:obj}`altdss.CircuitElement.CircuitEle
 :canonical: altdss.Load.Load.CVRCurve_str
 :type: str
 :value: >
-   None
+   'property(...)'
 
 ```{autodoc2-docstring} altdss.Load.Load.CVRCurve_str
 ```
@@ -1035,7 +1035,7 @@ Bases: {py:obj}`altdss.DSSObj.DSSObj`, {py:obj}`altdss.CircuitElement.CircuitEle
 :canonical: altdss.Load.Load.CVRVars
 :type: float
 :value: >
-   None
+   'property(...)'
 
 ```{autodoc2-docstring} altdss.Load.Load.CVRVars
 ```
@@ -1046,7 +1046,7 @@ Bases: {py:obj}`altdss.DSSObj.DSSObj`, {py:obj}`altdss.CircuitElement.CircuitEle
 :canonical: altdss.Load.Load.CVRWatts
 :type: float
 :value: >
-   None
+   'property(...)'
 
 ```{autodoc2-docstring} altdss.Load.Load.CVRWatts
 ```
@@ -1057,7 +1057,7 @@ Bases: {py:obj}`altdss.DSSObj.DSSObj`, {py:obj}`altdss.CircuitElement.CircuitEle
 :canonical: altdss.Load.Load.Class
 :type: int
 :value: >
-   None
+   'property(...)'
 
 ```{autodoc2-docstring} altdss.Load.Load.Class
 ```
@@ -1092,7 +1092,7 @@ Bases: {py:obj}`altdss.DSSObj.DSSObj`, {py:obj}`altdss.CircuitElement.CircuitEle
 :canonical: altdss.Load.Load.Conn
 :type: altdss.enums.Connection
 :value: >
-   None
+   'property(...)'
 
 ```{autodoc2-docstring} altdss.Load.Load.Conn
 ```
@@ -1103,7 +1103,7 @@ Bases: {py:obj}`altdss.DSSObj.DSSObj`, {py:obj}`altdss.CircuitElement.CircuitEle
 :canonical: altdss.Load.Load.Conn_str
 :type: str
 :value: >
-   None
+   'property(...)'
 
 ```{autodoc2-docstring} altdss.Load.Load.Conn_str
 ```
@@ -1122,7 +1122,7 @@ Bases: {py:obj}`altdss.DSSObj.DSSObj`, {py:obj}`altdss.CircuitElement.CircuitEle
 :canonical: altdss.Load.Load.Daily
 :type: altdss.LoadShape.LoadShape
 :value: >
-   None
+   'property(...)'
 
 ```{autodoc2-docstring} altdss.Load.Load.Daily
 ```
@@ -1133,7 +1133,7 @@ Bases: {py:obj}`altdss.DSSObj.DSSObj`, {py:obj}`altdss.CircuitElement.CircuitEle
 :canonical: altdss.Load.Load.Daily_str
 :type: str
 :value: >
-   None
+   'property(...)'
 
 ```{autodoc2-docstring} altdss.Load.Load.Daily_str
 ```
@@ -1144,7 +1144,7 @@ Bases: {py:obj}`altdss.DSSObj.DSSObj`, {py:obj}`altdss.CircuitElement.CircuitEle
 :canonical: altdss.Load.Load.DisplayName
 :type: str
 :value: >
-   None
+   'property(...)'
 
 ```{autodoc2-docstring} altdss.Load.Load.DisplayName
 ```
@@ -1155,7 +1155,7 @@ Bases: {py:obj}`altdss.DSSObj.DSSObj`, {py:obj}`altdss.CircuitElement.CircuitEle
 :canonical: altdss.Load.Load.Duty
 :type: altdss.LoadShape.LoadShape
 :value: >
-   None
+   'property(...)'
 
 ```{autodoc2-docstring} altdss.Load.Load.Duty
 ```
@@ -1166,7 +1166,7 @@ Bases: {py:obj}`altdss.DSSObj.DSSObj`, {py:obj}`altdss.CircuitElement.CircuitEle
 :canonical: altdss.Load.Load.Duty_str
 :type: str
 :value: >
-   None
+   'property(...)'
 
 ```{autodoc2-docstring} altdss.Load.Load.Duty_str
 ```
@@ -1177,7 +1177,7 @@ Bases: {py:obj}`altdss.DSSObj.DSSObj`, {py:obj}`altdss.CircuitElement.CircuitEle
 :canonical: altdss.Load.Load.Enabled
 :type: bool
 :value: >
-   None
+   'property(...)'
 
 ```{autodoc2-docstring} altdss.Load.Load.Enabled
 ```
@@ -1228,7 +1228,7 @@ Bases: {py:obj}`altdss.DSSObj.DSSObj`, {py:obj}`altdss.CircuitElement.CircuitEle
 :canonical: altdss.Load.Load.Growth
 :type: altdss.GrowthShape.GrowthShape
 :value: >
-   None
+   'property(...)'
 
 ```{autodoc2-docstring} altdss.Load.Load.Growth
 ```
@@ -1239,7 +1239,7 @@ Bases: {py:obj}`altdss.DSSObj.DSSObj`, {py:obj}`altdss.CircuitElement.CircuitEle
 :canonical: altdss.Load.Load.Growth_str
 :type: str
 :value: >
-   None
+   'property(...)'
 
 ```{autodoc2-docstring} altdss.Load.Load.Growth_str
 ```
@@ -1322,7 +1322,7 @@ Bases: {py:obj}`altdss.DSSObj.DSSObj`, {py:obj}`altdss.CircuitElement.CircuitEle
 :canonical: altdss.Load.Load.Model
 :type: altdss.enums.LoadModel
 :value: >
-   None
+   'property(...)'
 
 ```{autodoc2-docstring} altdss.Load.Load.Model
 ```
@@ -1374,7 +1374,7 @@ Bases: {py:obj}`altdss.DSSObj.DSSObj`, {py:obj}`altdss.CircuitElement.CircuitEle
 :canonical: altdss.Load.Load.NumCust
 :type: int
 :value: >
-   None
+   'property(...)'
 
 ```{autodoc2-docstring} altdss.Load.Load.NumCust
 ```
@@ -1433,7 +1433,7 @@ Bases: {py:obj}`altdss.DSSObj.DSSObj`, {py:obj}`altdss.CircuitElement.CircuitEle
 :canonical: altdss.Load.Load.PF
 :type: float
 :value: >
-   None
+   'property(...)'
 
 ```{autodoc2-docstring} altdss.Load.Load.PF
 ```
@@ -1452,7 +1452,7 @@ Bases: {py:obj}`altdss.DSSObj.DSSObj`, {py:obj}`altdss.CircuitElement.CircuitEle
 :canonical: altdss.Load.Load.Phases
 :type: int
 :value: >
-   None
+   'property(...)'
 
 ```{autodoc2-docstring} altdss.Load.Load.Phases
 ```
@@ -1471,7 +1471,7 @@ Bases: {py:obj}`altdss.DSSObj.DSSObj`, {py:obj}`altdss.CircuitElement.CircuitEle
 :canonical: altdss.Load.Load.RNeut
 :type: float
 :value: >
-   None
+   'property(...)'
 
 ```{autodoc2-docstring} altdss.Load.Load.RNeut
 ```
@@ -1482,7 +1482,7 @@ Bases: {py:obj}`altdss.DSSObj.DSSObj`, {py:obj}`altdss.CircuitElement.CircuitEle
 :canonical: altdss.Load.Load.RelWeight
 :type: float
 :value: >
-   None
+   'property(...)'
 
 ```{autodoc2-docstring} altdss.Load.Load.RelWeight
 ```
@@ -1533,7 +1533,7 @@ Bases: {py:obj}`altdss.DSSObj.DSSObj`, {py:obj}`altdss.CircuitElement.CircuitEle
 :canonical: altdss.Load.Load.Spectrum
 :type: altdss.Spectrum.Spectrum
 :value: >
-   None
+   'property(...)'
 
 ```{autodoc2-docstring} altdss.Load.Load.Spectrum
 ```
@@ -1544,7 +1544,7 @@ Bases: {py:obj}`altdss.DSSObj.DSSObj`, {py:obj}`altdss.CircuitElement.CircuitEle
 :canonical: altdss.Load.Load.Spectrum_str
 :type: str
 :value: >
-   None
+   'property(...)'
 
 ```{autodoc2-docstring} altdss.Load.Load.Spectrum_str
 ```
@@ -1555,7 +1555,7 @@ Bases: {py:obj}`altdss.DSSObj.DSSObj`, {py:obj}`altdss.CircuitElement.CircuitEle
 :canonical: altdss.Load.Load.Status
 :type: altdss.enums.LoadStatus
 :value: >
-   None
+   'property(...)'
 
 ```{autodoc2-docstring} altdss.Load.Load.Status
 ```
@@ -1566,7 +1566,7 @@ Bases: {py:obj}`altdss.DSSObj.DSSObj`, {py:obj}`altdss.CircuitElement.CircuitEle
 :canonical: altdss.Load.Load.Status_str
 :type: str
 :value: >
-   None
+   'property(...)'
 
 ```{autodoc2-docstring} altdss.Load.Load.Status_str
 ```
@@ -1585,7 +1585,7 @@ Bases: {py:obj}`altdss.DSSObj.DSSObj`, {py:obj}`altdss.CircuitElement.CircuitEle
 :canonical: altdss.Load.Load.VLowpu
 :type: float
 :value: >
-   None
+   'property(...)'
 
 ```{autodoc2-docstring} altdss.Load.Load.VLowpu
 ```
@@ -1596,7 +1596,7 @@ Bases: {py:obj}`altdss.DSSObj.DSSObj`, {py:obj}`altdss.CircuitElement.CircuitEle
 :canonical: altdss.Load.Load.VMaxpu
 :type: float
 :value: >
-   None
+   'property(...)'
 
 ```{autodoc2-docstring} altdss.Load.Load.VMaxpu
 ```
@@ -1607,7 +1607,7 @@ Bases: {py:obj}`altdss.DSSObj.DSSObj`, {py:obj}`altdss.CircuitElement.CircuitEle
 :canonical: altdss.Load.Load.VMinEmerg
 :type: float
 :value: >
-   None
+   'property(...)'
 
 ```{autodoc2-docstring} altdss.Load.Load.VMinEmerg
 ```
@@ -1618,7 +1618,7 @@ Bases: {py:obj}`altdss.DSSObj.DSSObj`, {py:obj}`altdss.CircuitElement.CircuitEle
 :canonical: altdss.Load.Load.VMinNorm
 :type: float
 :value: >
-   None
+   'property(...)'
 
 ```{autodoc2-docstring} altdss.Load.Load.VMinNorm
 ```
@@ -1629,7 +1629,7 @@ Bases: {py:obj}`altdss.DSSObj.DSSObj`, {py:obj}`altdss.CircuitElement.CircuitEle
 :canonical: altdss.Load.Load.VMinpu
 :type: float
 :value: >
-   None
+   'property(...)'
 
 ```{autodoc2-docstring} altdss.Load.Load.VMinpu
 ```
@@ -1680,7 +1680,7 @@ Bases: {py:obj}`altdss.DSSObj.DSSObj`, {py:obj}`altdss.CircuitElement.CircuitEle
 :canonical: altdss.Load.Load.XNeut
 :type: float
 :value: >
-   None
+   'property(...)'
 
 ```{autodoc2-docstring} altdss.Load.Load.XNeut
 ```
@@ -1691,7 +1691,7 @@ Bases: {py:obj}`altdss.DSSObj.DSSObj`, {py:obj}`altdss.CircuitElement.CircuitEle
 :canonical: altdss.Load.Load.XRHarm
 :type: float
 :value: >
-   None
+   'property(...)'
 
 ```{autodoc2-docstring} altdss.Load.Load.XRHarm
 ```
@@ -1702,7 +1702,7 @@ Bases: {py:obj}`altdss.DSSObj.DSSObj`, {py:obj}`altdss.CircuitElement.CircuitEle
 :canonical: altdss.Load.Load.XfkVA
 :type: float
 :value: >
-   None
+   'property(...)'
 
 ```{autodoc2-docstring} altdss.Load.Load.XfkVA
 ```
@@ -1721,7 +1721,7 @@ Bases: {py:obj}`altdss.DSSObj.DSSObj`, {py:obj}`altdss.CircuitElement.CircuitEle
 :canonical: altdss.Load.Load.Yearly
 :type: altdss.LoadShape.LoadShape
 :value: >
-   None
+   'property(...)'
 
 ```{autodoc2-docstring} altdss.Load.Load.Yearly
 ```
@@ -1732,7 +1732,7 @@ Bases: {py:obj}`altdss.DSSObj.DSSObj`, {py:obj}`altdss.CircuitElement.CircuitEle
 :canonical: altdss.Load.Load.Yearly_str
 :type: str
 :value: >
-   None
+   'property(...)'
 
 ```{autodoc2-docstring} altdss.Load.Load.Yearly_str
 ```
@@ -1743,7 +1743,7 @@ Bases: {py:obj}`altdss.DSSObj.DSSObj`, {py:obj}`altdss.CircuitElement.CircuitEle
 :canonical: altdss.Load.Load.ZIPV
 :type: altdss.types.Float64Array
 :value: >
-   None
+   'property(...)'
 
 ```{autodoc2-docstring} altdss.Load.Load.ZIPV
 ```
@@ -1802,7 +1802,7 @@ Bases: {py:obj}`altdss.DSSObj.DSSObj`, {py:obj}`altdss.CircuitElement.CircuitEle
 :canonical: altdss.Load.Load.kV
 :type: float
 :value: >
-   None
+   'property(...)'
 
 ```{autodoc2-docstring} altdss.Load.Load.kV
 ```
@@ -1813,7 +1813,7 @@ Bases: {py:obj}`altdss.DSSObj.DSSObj`, {py:obj}`altdss.CircuitElement.CircuitEle
 :canonical: altdss.Load.Load.kVA
 :type: float
 :value: >
-   None
+   'property(...)'
 
 ```{autodoc2-docstring} altdss.Load.Load.kVA
 ```
@@ -1824,7 +1824,7 @@ Bases: {py:obj}`altdss.DSSObj.DSSObj`, {py:obj}`altdss.CircuitElement.CircuitEle
 :canonical: altdss.Load.Load.kW
 :type: float
 :value: >
-   None
+   'property(...)'
 
 ```{autodoc2-docstring} altdss.Load.Load.kW
 ```
@@ -1835,7 +1835,7 @@ Bases: {py:obj}`altdss.DSSObj.DSSObj`, {py:obj}`altdss.CircuitElement.CircuitEle
 :canonical: altdss.Load.Load.kWh
 :type: float
 :value: >
-   None
+   'property(...)'
 
 ```{autodoc2-docstring} altdss.Load.Load.kWh
 ```
@@ -1846,7 +1846,7 @@ Bases: {py:obj}`altdss.DSSObj.DSSObj`, {py:obj}`altdss.CircuitElement.CircuitEle
 :canonical: altdss.Load.Load.kWhDays
 :type: float
 :value: >
-   None
+   'property(...)'
 
 ```{autodoc2-docstring} altdss.Load.Load.kWhDays
 ```
@@ -1857,7 +1857,7 @@ Bases: {py:obj}`altdss.DSSObj.DSSObj`, {py:obj}`altdss.CircuitElement.CircuitEle
 :canonical: altdss.Load.Load.kvar
 :type: float
 :value: >
-   None
+   'property(...)'
 
 ```{autodoc2-docstring} altdss.Load.Load.kvar
 ```
@@ -1868,7 +1868,7 @@ Bases: {py:obj}`altdss.DSSObj.DSSObj`, {py:obj}`altdss.CircuitElement.CircuitEle
 :canonical: altdss.Load.Load.pctMean
 :type: float
 :value: >
-   None
+   'property(...)'
 
 ```{autodoc2-docstring} altdss.Load.Load.pctMean
 ```
@@ -1879,7 +1879,7 @@ Bases: {py:obj}`altdss.DSSObj.DSSObj`, {py:obj}`altdss.CircuitElement.CircuitEle
 :canonical: altdss.Load.Load.pctSeriesRL
 :type: float
 :value: >
-   None
+   'property(...)'
 
 ```{autodoc2-docstring} altdss.Load.Load.pctSeriesRL
 ```
@@ -1890,7 +1890,7 @@ Bases: {py:obj}`altdss.DSSObj.DSSObj`, {py:obj}`altdss.CircuitElement.CircuitEle
 :canonical: altdss.Load.Load.pctStdDev
 :type: float
 :value: >
-   None
+   'property(...)'
 
 ```{autodoc2-docstring} altdss.Load.Load.pctStdDev
 ```
@@ -1901,7 +1901,7 @@ Bases: {py:obj}`altdss.DSSObj.DSSObj`, {py:obj}`altdss.CircuitElement.CircuitEle
 :canonical: altdss.Load.Load.puXHarm
 :type: float
 :value: >
-   None
+   'property(...)'
 
 ```{autodoc2-docstring} altdss.Load.Load.puXHarm
 ```
@@ -1930,7 +1930,7 @@ Bases: {py:obj}`altdss.Batch.DSSBatch`, {py:obj}`altdss.CircuitElement.CircuitEl
 :canonical: altdss.Load.LoadBatch.AllocationFactor
 :type: altdss.ArrayProxy.BatchFloat64ArrayProxy
 :value: >
-   None
+   'property(...)'
 
 ```{autodoc2-docstring} altdss.Load.LoadBatch.AllocationFactor
 ```
@@ -1941,7 +1941,7 @@ Bases: {py:obj}`altdss.Batch.DSSBatch`, {py:obj}`altdss.CircuitElement.CircuitEl
 :canonical: altdss.Load.LoadBatch.BaseFreq
 :type: altdss.ArrayProxy.BatchFloat64ArrayProxy
 :value: >
-   None
+   'property(...)'
 
 ```{autodoc2-docstring} altdss.Load.LoadBatch.BaseFreq
 ```
@@ -1952,7 +1952,7 @@ Bases: {py:obj}`altdss.Batch.DSSBatch`, {py:obj}`altdss.CircuitElement.CircuitEl
 :canonical: altdss.Load.LoadBatch.Bus1
 :type: typing.List[str]
 :value: >
-   None
+   'property(...)'
 
 ```{autodoc2-docstring} altdss.Load.LoadBatch.Bus1
 ```
@@ -1963,7 +1963,7 @@ Bases: {py:obj}`altdss.Batch.DSSBatch`, {py:obj}`altdss.CircuitElement.CircuitEl
 :canonical: altdss.Load.LoadBatch.CFactor
 :type: altdss.ArrayProxy.BatchFloat64ArrayProxy
 :value: >
-   None
+   'property(...)'
 
 ```{autodoc2-docstring} altdss.Load.LoadBatch.CFactor
 ```
@@ -1974,7 +1974,7 @@ Bases: {py:obj}`altdss.Batch.DSSBatch`, {py:obj}`altdss.CircuitElement.CircuitEl
 :canonical: altdss.Load.LoadBatch.CVRCurve
 :type: typing.List[altdss.LoadShape.LoadShape]
 :value: >
-   None
+   'property(...)'
 
 ```{autodoc2-docstring} altdss.Load.LoadBatch.CVRCurve
 ```
@@ -1985,7 +1985,7 @@ Bases: {py:obj}`altdss.Batch.DSSBatch`, {py:obj}`altdss.CircuitElement.CircuitEl
 :canonical: altdss.Load.LoadBatch.CVRCurve_str
 :type: typing.List[str]
 :value: >
-   None
+   'property(...)'
 
 ```{autodoc2-docstring} altdss.Load.LoadBatch.CVRCurve_str
 ```
@@ -1996,7 +1996,7 @@ Bases: {py:obj}`altdss.Batch.DSSBatch`, {py:obj}`altdss.CircuitElement.CircuitEl
 :canonical: altdss.Load.LoadBatch.CVRVars
 :type: altdss.ArrayProxy.BatchFloat64ArrayProxy
 :value: >
-   None
+   'property(...)'
 
 ```{autodoc2-docstring} altdss.Load.LoadBatch.CVRVars
 ```
@@ -2007,7 +2007,7 @@ Bases: {py:obj}`altdss.Batch.DSSBatch`, {py:obj}`altdss.CircuitElement.CircuitEl
 :canonical: altdss.Load.LoadBatch.CVRWatts
 :type: altdss.ArrayProxy.BatchFloat64ArrayProxy
 :value: >
-   None
+   'property(...)'
 
 ```{autodoc2-docstring} altdss.Load.LoadBatch.CVRWatts
 ```
@@ -2018,7 +2018,7 @@ Bases: {py:obj}`altdss.Batch.DSSBatch`, {py:obj}`altdss.CircuitElement.CircuitEl
 :canonical: altdss.Load.LoadBatch.Class
 :type: altdss.ArrayProxy.BatchInt32ArrayProxy
 :value: >
-   None
+   'property(...)'
 
 ```{autodoc2-docstring} altdss.Load.LoadBatch.Class
 ```
@@ -2045,7 +2045,7 @@ Bases: {py:obj}`altdss.Batch.DSSBatch`, {py:obj}`altdss.CircuitElement.CircuitEl
 :canonical: altdss.Load.LoadBatch.Conn
 :type: altdss.ArrayProxy.BatchInt32ArrayProxy
 :value: >
-   None
+   'property(...)'
 
 ```{autodoc2-docstring} altdss.Load.LoadBatch.Conn
 ```
@@ -2056,7 +2056,7 @@ Bases: {py:obj}`altdss.Batch.DSSBatch`, {py:obj}`altdss.CircuitElement.CircuitEl
 :canonical: altdss.Load.LoadBatch.Conn_str
 :type: typing.List[str]
 :value: >
-   None
+   'property(...)'
 
 ```{autodoc2-docstring} altdss.Load.LoadBatch.Conn_str
 ```
@@ -2083,7 +2083,7 @@ Bases: {py:obj}`altdss.Batch.DSSBatch`, {py:obj}`altdss.CircuitElement.CircuitEl
 :canonical: altdss.Load.LoadBatch.Daily
 :type: typing.List[altdss.LoadShape.LoadShape]
 :value: >
-   None
+   'property(...)'
 
 ```{autodoc2-docstring} altdss.Load.LoadBatch.Daily
 ```
@@ -2094,7 +2094,7 @@ Bases: {py:obj}`altdss.Batch.DSSBatch`, {py:obj}`altdss.CircuitElement.CircuitEl
 :canonical: altdss.Load.LoadBatch.Daily_str
 :type: typing.List[str]
 :value: >
-   None
+   'property(...)'
 
 ```{autodoc2-docstring} altdss.Load.LoadBatch.Daily_str
 ```
@@ -2105,7 +2105,7 @@ Bases: {py:obj}`altdss.Batch.DSSBatch`, {py:obj}`altdss.CircuitElement.CircuitEl
 :canonical: altdss.Load.LoadBatch.Duty
 :type: typing.List[altdss.LoadShape.LoadShape]
 :value: >
-   None
+   'property(...)'
 
 ```{autodoc2-docstring} altdss.Load.LoadBatch.Duty
 ```
@@ -2116,7 +2116,7 @@ Bases: {py:obj}`altdss.Batch.DSSBatch`, {py:obj}`altdss.CircuitElement.CircuitEl
 :canonical: altdss.Load.LoadBatch.Duty_str
 :type: typing.List[str]
 :value: >
-   None
+   'property(...)'
 
 ```{autodoc2-docstring} altdss.Load.LoadBatch.Duty_str
 ```
@@ -2127,7 +2127,7 @@ Bases: {py:obj}`altdss.Batch.DSSBatch`, {py:obj}`altdss.CircuitElement.CircuitEl
 :canonical: altdss.Load.LoadBatch.Enabled
 :type: typing.List[bool]
 :value: >
-   None
+   'property(...)'
 
 ```{autodoc2-docstring} altdss.Load.LoadBatch.Enabled
 ```
@@ -2170,7 +2170,7 @@ Bases: {py:obj}`altdss.Batch.DSSBatch`, {py:obj}`altdss.CircuitElement.CircuitEl
 :canonical: altdss.Load.LoadBatch.Growth
 :type: typing.List[altdss.GrowthShape.GrowthShape]
 :value: >
-   None
+   'property(...)'
 
 ```{autodoc2-docstring} altdss.Load.LoadBatch.Growth
 ```
@@ -2181,7 +2181,7 @@ Bases: {py:obj}`altdss.Batch.DSSBatch`, {py:obj}`altdss.CircuitElement.CircuitEl
 :canonical: altdss.Load.LoadBatch.Growth_str
 :type: typing.List[str]
 :value: >
-   None
+   'property(...)'
 
 ```{autodoc2-docstring} altdss.Load.LoadBatch.Growth_str
 ```
@@ -2256,7 +2256,7 @@ Bases: {py:obj}`altdss.Batch.DSSBatch`, {py:obj}`altdss.CircuitElement.CircuitEl
 :canonical: altdss.Load.LoadBatch.Model
 :type: altdss.ArrayProxy.BatchInt32ArrayProxy
 :value: >
-   None
+   'property(...)'
 
 ```{autodoc2-docstring} altdss.Load.LoadBatch.Model
 ```
@@ -2292,7 +2292,7 @@ Bases: {py:obj}`altdss.Batch.DSSBatch`, {py:obj}`altdss.CircuitElement.CircuitEl
 :canonical: altdss.Load.LoadBatch.NumCust
 :type: altdss.ArrayProxy.BatchInt32ArrayProxy
 :value: >
-   None
+   'property(...)'
 
 ```{autodoc2-docstring} altdss.Load.LoadBatch.NumCust
 ```
@@ -2343,7 +2343,7 @@ Bases: {py:obj}`altdss.Batch.DSSBatch`, {py:obj}`altdss.CircuitElement.CircuitEl
 :canonical: altdss.Load.LoadBatch.PF
 :type: altdss.ArrayProxy.BatchFloat64ArrayProxy
 :value: >
-   None
+   'property(...)'
 
 ```{autodoc2-docstring} altdss.Load.LoadBatch.PF
 ```
@@ -2362,7 +2362,7 @@ Bases: {py:obj}`altdss.Batch.DSSBatch`, {py:obj}`altdss.CircuitElement.CircuitEl
 :canonical: altdss.Load.LoadBatch.Phases
 :type: altdss.ArrayProxy.BatchInt32ArrayProxy
 :value: >
-   None
+   'property(...)'
 
 ```{autodoc2-docstring} altdss.Load.LoadBatch.Phases
 ```
@@ -2381,7 +2381,7 @@ Bases: {py:obj}`altdss.Batch.DSSBatch`, {py:obj}`altdss.CircuitElement.CircuitEl
 :canonical: altdss.Load.LoadBatch.RNeut
 :type: altdss.ArrayProxy.BatchFloat64ArrayProxy
 :value: >
-   None
+   'property(...)'
 
 ```{autodoc2-docstring} altdss.Load.LoadBatch.RNeut
 ```
@@ -2392,7 +2392,7 @@ Bases: {py:obj}`altdss.Batch.DSSBatch`, {py:obj}`altdss.CircuitElement.CircuitEl
 :canonical: altdss.Load.LoadBatch.RelWeight
 :type: altdss.ArrayProxy.BatchFloat64ArrayProxy
 :value: >
-   None
+   'property(...)'
 
 ```{autodoc2-docstring} altdss.Load.LoadBatch.RelWeight
 ```
@@ -2427,7 +2427,7 @@ Bases: {py:obj}`altdss.Batch.DSSBatch`, {py:obj}`altdss.CircuitElement.CircuitEl
 :canonical: altdss.Load.LoadBatch.Spectrum
 :type: typing.List[altdss.Spectrum.Spectrum]
 :value: >
-   None
+   'property(...)'
 
 ```{autodoc2-docstring} altdss.Load.LoadBatch.Spectrum
 ```
@@ -2438,7 +2438,7 @@ Bases: {py:obj}`altdss.Batch.DSSBatch`, {py:obj}`altdss.CircuitElement.CircuitEl
 :canonical: altdss.Load.LoadBatch.Spectrum_str
 :type: typing.List[str]
 :value: >
-   None
+   'property(...)'
 
 ```{autodoc2-docstring} altdss.Load.LoadBatch.Spectrum_str
 ```
@@ -2449,7 +2449,7 @@ Bases: {py:obj}`altdss.Batch.DSSBatch`, {py:obj}`altdss.CircuitElement.CircuitEl
 :canonical: altdss.Load.LoadBatch.Status
 :type: altdss.ArrayProxy.BatchInt32ArrayProxy
 :value: >
-   None
+   'property(...)'
 
 ```{autodoc2-docstring} altdss.Load.LoadBatch.Status
 ```
@@ -2460,7 +2460,7 @@ Bases: {py:obj}`altdss.Batch.DSSBatch`, {py:obj}`altdss.CircuitElement.CircuitEl
 :canonical: altdss.Load.LoadBatch.Status_str
 :type: typing.List[str]
 :value: >
-   None
+   'property(...)'
 
 ```{autodoc2-docstring} altdss.Load.LoadBatch.Status_str
 ```
@@ -2479,7 +2479,7 @@ Bases: {py:obj}`altdss.Batch.DSSBatch`, {py:obj}`altdss.CircuitElement.CircuitEl
 :canonical: altdss.Load.LoadBatch.VLowpu
 :type: altdss.ArrayProxy.BatchFloat64ArrayProxy
 :value: >
-   None
+   'property(...)'
 
 ```{autodoc2-docstring} altdss.Load.LoadBatch.VLowpu
 ```
@@ -2490,7 +2490,7 @@ Bases: {py:obj}`altdss.Batch.DSSBatch`, {py:obj}`altdss.CircuitElement.CircuitEl
 :canonical: altdss.Load.LoadBatch.VMaxpu
 :type: altdss.ArrayProxy.BatchFloat64ArrayProxy
 :value: >
-   None
+   'property(...)'
 
 ```{autodoc2-docstring} altdss.Load.LoadBatch.VMaxpu
 ```
@@ -2501,7 +2501,7 @@ Bases: {py:obj}`altdss.Batch.DSSBatch`, {py:obj}`altdss.CircuitElement.CircuitEl
 :canonical: altdss.Load.LoadBatch.VMinEmerg
 :type: altdss.ArrayProxy.BatchFloat64ArrayProxy
 :value: >
-   None
+   'property(...)'
 
 ```{autodoc2-docstring} altdss.Load.LoadBatch.VMinEmerg
 ```
@@ -2512,7 +2512,7 @@ Bases: {py:obj}`altdss.Batch.DSSBatch`, {py:obj}`altdss.CircuitElement.CircuitEl
 :canonical: altdss.Load.LoadBatch.VMinNorm
 :type: altdss.ArrayProxy.BatchFloat64ArrayProxy
 :value: >
-   None
+   'property(...)'
 
 ```{autodoc2-docstring} altdss.Load.LoadBatch.VMinNorm
 ```
@@ -2523,7 +2523,7 @@ Bases: {py:obj}`altdss.Batch.DSSBatch`, {py:obj}`altdss.CircuitElement.CircuitEl
 :canonical: altdss.Load.LoadBatch.VMinpu
 :type: altdss.ArrayProxy.BatchFloat64ArrayProxy
 :value: >
-   None
+   'property(...)'
 
 ```{autodoc2-docstring} altdss.Load.LoadBatch.VMinpu
 ```
@@ -2550,7 +2550,7 @@ Bases: {py:obj}`altdss.Batch.DSSBatch`, {py:obj}`altdss.CircuitElement.CircuitEl
 :canonical: altdss.Load.LoadBatch.XNeut
 :type: altdss.ArrayProxy.BatchFloat64ArrayProxy
 :value: >
-   None
+   'property(...)'
 
 ```{autodoc2-docstring} altdss.Load.LoadBatch.XNeut
 ```
@@ -2561,7 +2561,7 @@ Bases: {py:obj}`altdss.Batch.DSSBatch`, {py:obj}`altdss.CircuitElement.CircuitEl
 :canonical: altdss.Load.LoadBatch.XRHarm
 :type: altdss.ArrayProxy.BatchFloat64ArrayProxy
 :value: >
-   None
+   'property(...)'
 
 ```{autodoc2-docstring} altdss.Load.LoadBatch.XRHarm
 ```
@@ -2572,7 +2572,7 @@ Bases: {py:obj}`altdss.Batch.DSSBatch`, {py:obj}`altdss.CircuitElement.CircuitEl
 :canonical: altdss.Load.LoadBatch.XfkVA
 :type: altdss.ArrayProxy.BatchFloat64ArrayProxy
 :value: >
-   None
+   'property(...)'
 
 ```{autodoc2-docstring} altdss.Load.LoadBatch.XfkVA
 ```
@@ -2583,7 +2583,7 @@ Bases: {py:obj}`altdss.Batch.DSSBatch`, {py:obj}`altdss.CircuitElement.CircuitEl
 :canonical: altdss.Load.LoadBatch.Yearly
 :type: typing.List[altdss.LoadShape.LoadShape]
 :value: >
-   None
+   'property(...)'
 
 ```{autodoc2-docstring} altdss.Load.LoadBatch.Yearly
 ```
@@ -2594,7 +2594,7 @@ Bases: {py:obj}`altdss.Batch.DSSBatch`, {py:obj}`altdss.CircuitElement.CircuitEl
 :canonical: altdss.Load.LoadBatch.Yearly_str
 :type: typing.List[str]
 :value: >
-   None
+   'property(...)'
 
 ```{autodoc2-docstring} altdss.Load.LoadBatch.Yearly_str
 ```
@@ -2605,7 +2605,7 @@ Bases: {py:obj}`altdss.Batch.DSSBatch`, {py:obj}`altdss.CircuitElement.CircuitEl
 :canonical: altdss.Load.LoadBatch.ZIPV
 :type: typing.List[altdss.types.Float64Array]
 :value: >
-   None
+   'property(...)'
 
 ```{autodoc2-docstring} altdss.Load.LoadBatch.ZIPV
 ```
@@ -2672,7 +2672,7 @@ Bases: {py:obj}`altdss.Batch.DSSBatch`, {py:obj}`altdss.CircuitElement.CircuitEl
 :canonical: altdss.Load.LoadBatch.kV
 :type: altdss.ArrayProxy.BatchFloat64ArrayProxy
 :value: >
-   None
+   'property(...)'
 
 ```{autodoc2-docstring} altdss.Load.LoadBatch.kV
 ```
@@ -2683,7 +2683,7 @@ Bases: {py:obj}`altdss.Batch.DSSBatch`, {py:obj}`altdss.CircuitElement.CircuitEl
 :canonical: altdss.Load.LoadBatch.kVA
 :type: altdss.ArrayProxy.BatchFloat64ArrayProxy
 :value: >
-   None
+   'property(...)'
 
 ```{autodoc2-docstring} altdss.Load.LoadBatch.kVA
 ```
@@ -2694,7 +2694,7 @@ Bases: {py:obj}`altdss.Batch.DSSBatch`, {py:obj}`altdss.CircuitElement.CircuitEl
 :canonical: altdss.Load.LoadBatch.kW
 :type: altdss.ArrayProxy.BatchFloat64ArrayProxy
 :value: >
-   None
+   'property(...)'
 
 ```{autodoc2-docstring} altdss.Load.LoadBatch.kW
 ```
@@ -2705,7 +2705,7 @@ Bases: {py:obj}`altdss.Batch.DSSBatch`, {py:obj}`altdss.CircuitElement.CircuitEl
 :canonical: altdss.Load.LoadBatch.kWh
 :type: altdss.ArrayProxy.BatchFloat64ArrayProxy
 :value: >
-   None
+   'property(...)'
 
 ```{autodoc2-docstring} altdss.Load.LoadBatch.kWh
 ```
@@ -2716,7 +2716,7 @@ Bases: {py:obj}`altdss.Batch.DSSBatch`, {py:obj}`altdss.CircuitElement.CircuitEl
 :canonical: altdss.Load.LoadBatch.kWhDays
 :type: altdss.ArrayProxy.BatchFloat64ArrayProxy
 :value: >
-   None
+   'property(...)'
 
 ```{autodoc2-docstring} altdss.Load.LoadBatch.kWhDays
 ```
@@ -2727,7 +2727,7 @@ Bases: {py:obj}`altdss.Batch.DSSBatch`, {py:obj}`altdss.CircuitElement.CircuitEl
 :canonical: altdss.Load.LoadBatch.kvar
 :type: altdss.ArrayProxy.BatchFloat64ArrayProxy
 :value: >
-   None
+   'property(...)'
 
 ```{autodoc2-docstring} altdss.Load.LoadBatch.kvar
 ```
@@ -2738,7 +2738,7 @@ Bases: {py:obj}`altdss.Batch.DSSBatch`, {py:obj}`altdss.CircuitElement.CircuitEl
 :canonical: altdss.Load.LoadBatch.pctMean
 :type: altdss.ArrayProxy.BatchFloat64ArrayProxy
 :value: >
-   None
+   'property(...)'
 
 ```{autodoc2-docstring} altdss.Load.LoadBatch.pctMean
 ```
@@ -2749,7 +2749,7 @@ Bases: {py:obj}`altdss.Batch.DSSBatch`, {py:obj}`altdss.CircuitElement.CircuitEl
 :canonical: altdss.Load.LoadBatch.pctSeriesRL
 :type: altdss.ArrayProxy.BatchFloat64ArrayProxy
 :value: >
-   None
+   'property(...)'
 
 ```{autodoc2-docstring} altdss.Load.LoadBatch.pctSeriesRL
 ```
@@ -2760,7 +2760,7 @@ Bases: {py:obj}`altdss.Batch.DSSBatch`, {py:obj}`altdss.CircuitElement.CircuitEl
 :canonical: altdss.Load.LoadBatch.pctStdDev
 :type: altdss.ArrayProxy.BatchFloat64ArrayProxy
 :value: >
-   None
+   'property(...)'
 
 ```{autodoc2-docstring} altdss.Load.LoadBatch.pctStdDev
 ```
@@ -2771,7 +2771,7 @@ Bases: {py:obj}`altdss.Batch.DSSBatch`, {py:obj}`altdss.CircuitElement.CircuitEl
 :canonical: altdss.Load.LoadBatch.puXHarm
 :type: altdss.ArrayProxy.BatchFloat64ArrayProxy
 :value: >
-   None
+   'property(...)'
 
 ```{autodoc2-docstring} altdss.Load.LoadBatch.puXHarm
 ```

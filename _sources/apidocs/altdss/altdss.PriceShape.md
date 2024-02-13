@@ -59,7 +59,7 @@ Bases: {py:obj}`altdss.DSSObj.IDSSObj`, {py:obj}`altdss.PriceShape.PriceShapeBat
 :canonical: altdss.PriceShape.IPriceShape.CSVFile
 :type: typing.List[str]
 :value: >
-   None
+   'property(...)'
 
 ```{autodoc2-docstring} altdss.PriceShape.IPriceShape.CSVFile
 ```
@@ -70,7 +70,7 @@ Bases: {py:obj}`altdss.DSSObj.IDSSObj`, {py:obj}`altdss.PriceShape.PriceShapeBat
 :canonical: altdss.PriceShape.IPriceShape.DblFile
 :type: typing.List[str]
 :value: >
-   None
+   'property(...)'
 
 ```{autodoc2-docstring} altdss.PriceShape.IPriceShape.DblFile
 ```
@@ -97,7 +97,7 @@ Bases: {py:obj}`altdss.DSSObj.IDSSObj`, {py:obj}`altdss.PriceShape.PriceShapeBat
 :canonical: altdss.PriceShape.IPriceShape.Hour
 :type: typing.List[altdss.types.Float64Array]
 :value: >
-   None
+   'property(...)'
 
 ```{autodoc2-docstring} altdss.PriceShape.IPriceShape.Hour
 ```
@@ -108,7 +108,7 @@ Bases: {py:obj}`altdss.DSSObj.IDSSObj`, {py:obj}`altdss.PriceShape.PriceShapeBat
 :canonical: altdss.PriceShape.IPriceShape.Interval
 :type: altdss.ArrayProxy.BatchFloat64ArrayProxy
 :value: >
-   None
+   'property(...)'
 
 ```{autodoc2-docstring} altdss.PriceShape.IPriceShape.Interval
 ```
@@ -127,7 +127,7 @@ Bases: {py:obj}`altdss.DSSObj.IDSSObj`, {py:obj}`altdss.PriceShape.PriceShapeBat
 :canonical: altdss.PriceShape.IPriceShape.MInterval
 :type: altdss.ArrayProxy.BatchFloat64ArrayProxy
 :value: >
-   None
+   'property(...)'
 
 ```{autodoc2-docstring} altdss.PriceShape.IPriceShape.MInterval
 ```
@@ -138,7 +138,7 @@ Bases: {py:obj}`altdss.DSSObj.IDSSObj`, {py:obj}`altdss.PriceShape.PriceShapeBat
 :canonical: altdss.PriceShape.IPriceShape.Mean
 :type: altdss.ArrayProxy.BatchFloat64ArrayProxy
 :value: >
-   None
+   'property(...)'
 
 ```{autodoc2-docstring} altdss.PriceShape.IPriceShape.Mean
 ```
@@ -149,7 +149,7 @@ Bases: {py:obj}`altdss.DSSObj.IDSSObj`, {py:obj}`altdss.PriceShape.PriceShapeBat
 :canonical: altdss.PriceShape.IPriceShape.NPts
 :type: altdss.ArrayProxy.BatchInt32ArrayProxy
 :value: >
-   None
+   'property(...)'
 
 ```{autodoc2-docstring} altdss.PriceShape.IPriceShape.NPts
 ```
@@ -169,7 +169,7 @@ Bases: {py:obj}`altdss.DSSObj.IDSSObj`, {py:obj}`altdss.PriceShape.PriceShapeBat
 :canonical: altdss.PriceShape.IPriceShape.Price
 :type: typing.List[altdss.types.Float64Array]
 :value: >
-   None
+   'property(...)'
 
 ```{autodoc2-docstring} altdss.PriceShape.IPriceShape.Price
 ```
@@ -180,7 +180,7 @@ Bases: {py:obj}`altdss.DSSObj.IDSSObj`, {py:obj}`altdss.PriceShape.PriceShapeBat
 :canonical: altdss.PriceShape.IPriceShape.SInterval
 :type: altdss.ArrayProxy.BatchFloat64ArrayProxy
 :value: >
-   None
+   'property(...)'
 
 ```{autodoc2-docstring} altdss.PriceShape.IPriceShape.SInterval
 ```
@@ -191,7 +191,7 @@ Bases: {py:obj}`altdss.DSSObj.IDSSObj`, {py:obj}`altdss.PriceShape.PriceShapeBat
 :canonical: altdss.PriceShape.IPriceShape.SngFile
 :type: typing.List[str]
 :value: >
-   None
+   'property(...)'
 
 ```{autodoc2-docstring} altdss.PriceShape.IPriceShape.SngFile
 ```
@@ -210,7 +210,7 @@ Bases: {py:obj}`altdss.DSSObj.IDSSObj`, {py:obj}`altdss.PriceShape.PriceShapeBat
 :canonical: altdss.PriceShape.IPriceShape.StdDev
 :type: altdss.ArrayProxy.BatchFloat64ArrayProxy
 :value: >
-   None
+   'property(...)'
 
 ```{autodoc2-docstring} altdss.PriceShape.IPriceShape.StdDev
 ```
@@ -351,7 +351,7 @@ Bases: {py:obj}`altdss.DSSObj.DSSObj`
 :canonical: altdss.PriceShape.PriceShape.CSVFile
 :type: str
 :value: >
-   None
+   'property(...)'
 
 ```{autodoc2-docstring} altdss.PriceShape.PriceShape.CSVFile
 ```
@@ -362,7 +362,7 @@ Bases: {py:obj}`altdss.DSSObj.DSSObj`
 :canonical: altdss.PriceShape.PriceShape.DblFile
 :type: str
 :value: >
-   None
+   'property(...)'
 
 ```{autodoc2-docstring} altdss.PriceShape.PriceShape.DblFile
 ```
@@ -389,7 +389,7 @@ Bases: {py:obj}`altdss.DSSObj.DSSObj`
 :canonical: altdss.PriceShape.PriceShape.Hour
 :type: altdss.types.Float64Array
 :value: >
-   None
+   'property(...)'
 
 ```{autodoc2-docstring} altdss.PriceShape.PriceShape.Hour
 ```
@@ -400,7 +400,7 @@ Bases: {py:obj}`altdss.DSSObj.DSSObj`
 :canonical: altdss.PriceShape.PriceShape.Interval
 :type: float
 :value: >
-   None
+   'property(...)'
 
 ```{autodoc2-docstring} altdss.PriceShape.PriceShape.Interval
 ```
@@ -419,7 +419,7 @@ Bases: {py:obj}`altdss.DSSObj.DSSObj`
 :canonical: altdss.PriceShape.PriceShape.MInterval
 :type: float
 :value: >
-   None
+   'property(...)'
 
 ```{autodoc2-docstring} altdss.PriceShape.PriceShape.MInterval
 ```
@@ -430,7 +430,7 @@ Bases: {py:obj}`altdss.DSSObj.DSSObj`
 :canonical: altdss.PriceShape.PriceShape.Mean
 :type: float
 :value: >
-   None
+   'property(...)'
 
 ```{autodoc2-docstring} altdss.PriceShape.PriceShape.Mean
 ```
@@ -441,7 +441,7 @@ Bases: {py:obj}`altdss.DSSObj.DSSObj`
 :canonical: altdss.PriceShape.PriceShape.NPts
 :type: int
 :value: >
-   None
+   'property(...)'
 
 ```{autodoc2-docstring} altdss.PriceShape.PriceShape.NPts
 ```
@@ -461,7 +461,7 @@ Bases: {py:obj}`altdss.DSSObj.DSSObj`
 :canonical: altdss.PriceShape.PriceShape.Price
 :type: altdss.types.Float64Array
 :value: >
-   None
+   'property(...)'
 
 ```{autodoc2-docstring} altdss.PriceShape.PriceShape.Price
 ```
@@ -472,7 +472,7 @@ Bases: {py:obj}`altdss.DSSObj.DSSObj`
 :canonical: altdss.PriceShape.PriceShape.SInterval
 :type: float
 :value: >
-   None
+   'property(...)'
 
 ```{autodoc2-docstring} altdss.PriceShape.PriceShape.SInterval
 ```
@@ -483,7 +483,7 @@ Bases: {py:obj}`altdss.DSSObj.DSSObj`
 :canonical: altdss.PriceShape.PriceShape.SngFile
 :type: str
 :value: >
-   None
+   'property(...)'
 
 ```{autodoc2-docstring} altdss.PriceShape.PriceShape.SngFile
 ```
@@ -502,7 +502,7 @@ Bases: {py:obj}`altdss.DSSObj.DSSObj`
 :canonical: altdss.PriceShape.PriceShape.StdDev
 :type: float
 :value: >
-   None
+   'property(...)'
 
 ```{autodoc2-docstring} altdss.PriceShape.PriceShape.StdDev
 ```
@@ -587,7 +587,7 @@ Bases: {py:obj}`altdss.Batch.DSSBatch`
 :canonical: altdss.PriceShape.PriceShapeBatch.CSVFile
 :type: typing.List[str]
 :value: >
-   None
+   'property(...)'
 
 ```{autodoc2-docstring} altdss.PriceShape.PriceShapeBatch.CSVFile
 ```
@@ -598,7 +598,7 @@ Bases: {py:obj}`altdss.Batch.DSSBatch`
 :canonical: altdss.PriceShape.PriceShapeBatch.DblFile
 :type: typing.List[str]
 :value: >
-   None
+   'property(...)'
 
 ```{autodoc2-docstring} altdss.PriceShape.PriceShapeBatch.DblFile
 ```
@@ -625,7 +625,7 @@ Bases: {py:obj}`altdss.Batch.DSSBatch`
 :canonical: altdss.PriceShape.PriceShapeBatch.Hour
 :type: typing.List[altdss.types.Float64Array]
 :value: >
-   None
+   'property(...)'
 
 ```{autodoc2-docstring} altdss.PriceShape.PriceShapeBatch.Hour
 ```
@@ -636,7 +636,7 @@ Bases: {py:obj}`altdss.Batch.DSSBatch`
 :canonical: altdss.PriceShape.PriceShapeBatch.Interval
 :type: altdss.ArrayProxy.BatchFloat64ArrayProxy
 :value: >
-   None
+   'property(...)'
 
 ```{autodoc2-docstring} altdss.PriceShape.PriceShapeBatch.Interval
 ```
@@ -655,7 +655,7 @@ Bases: {py:obj}`altdss.Batch.DSSBatch`
 :canonical: altdss.PriceShape.PriceShapeBatch.MInterval
 :type: altdss.ArrayProxy.BatchFloat64ArrayProxy
 :value: >
-   None
+   'property(...)'
 
 ```{autodoc2-docstring} altdss.PriceShape.PriceShapeBatch.MInterval
 ```
@@ -666,7 +666,7 @@ Bases: {py:obj}`altdss.Batch.DSSBatch`
 :canonical: altdss.PriceShape.PriceShapeBatch.Mean
 :type: altdss.ArrayProxy.BatchFloat64ArrayProxy
 :value: >
-   None
+   'property(...)'
 
 ```{autodoc2-docstring} altdss.PriceShape.PriceShapeBatch.Mean
 ```
@@ -677,7 +677,7 @@ Bases: {py:obj}`altdss.Batch.DSSBatch`
 :canonical: altdss.PriceShape.PriceShapeBatch.NPts
 :type: altdss.ArrayProxy.BatchInt32ArrayProxy
 :value: >
-   None
+   'property(...)'
 
 ```{autodoc2-docstring} altdss.PriceShape.PriceShapeBatch.NPts
 ```
@@ -697,7 +697,7 @@ Bases: {py:obj}`altdss.Batch.DSSBatch`
 :canonical: altdss.PriceShape.PriceShapeBatch.Price
 :type: typing.List[altdss.types.Float64Array]
 :value: >
-   None
+   'property(...)'
 
 ```{autodoc2-docstring} altdss.PriceShape.PriceShapeBatch.Price
 ```
@@ -708,7 +708,7 @@ Bases: {py:obj}`altdss.Batch.DSSBatch`
 :canonical: altdss.PriceShape.PriceShapeBatch.SInterval
 :type: altdss.ArrayProxy.BatchFloat64ArrayProxy
 :value: >
-   None
+   'property(...)'
 
 ```{autodoc2-docstring} altdss.PriceShape.PriceShapeBatch.SInterval
 ```
@@ -719,7 +719,7 @@ Bases: {py:obj}`altdss.Batch.DSSBatch`
 :canonical: altdss.PriceShape.PriceShapeBatch.SngFile
 :type: typing.List[str]
 :value: >
-   None
+   'property(...)'
 
 ```{autodoc2-docstring} altdss.PriceShape.PriceShapeBatch.SngFile
 ```
@@ -738,7 +738,7 @@ Bases: {py:obj}`altdss.Batch.DSSBatch`
 :canonical: altdss.PriceShape.PriceShapeBatch.StdDev
 :type: altdss.ArrayProxy.BatchFloat64ArrayProxy
 :value: >
-   None
+   'property(...)'
 
 ```{autodoc2-docstring} altdss.PriceShape.PriceShapeBatch.StdDev
 ```

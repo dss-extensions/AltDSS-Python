@@ -51,7 +51,7 @@ Bases: {py:obj}`altdss.DSSObj.DSSObj`, {py:obj}`altdss.CircuitElement.CircuitEle
 :canonical: altdss.GICsource.GICsource.Angle
 :type: float
 :value: >
-   None
+   'property(...)'
 
 ```{autodoc2-docstring} altdss.GICsource.GICsource.Angle
 ```
@@ -62,7 +62,7 @@ Bases: {py:obj}`altdss.DSSObj.DSSObj`, {py:obj}`altdss.CircuitElement.CircuitEle
 :canonical: altdss.GICsource.GICsource.BaseFreq
 :type: float
 :value: >
-   None
+   'property(...)'
 
 ```{autodoc2-docstring} altdss.GICsource.GICsource.BaseFreq
 ```
@@ -105,7 +105,7 @@ Bases: {py:obj}`altdss.DSSObj.DSSObj`, {py:obj}`altdss.CircuitElement.CircuitEle
 :canonical: altdss.GICsource.GICsource.DisplayName
 :type: str
 :value: >
-   None
+   'property(...)'
 
 ```{autodoc2-docstring} altdss.GICsource.GICsource.DisplayName
 ```
@@ -116,7 +116,7 @@ Bases: {py:obj}`altdss.DSSObj.DSSObj`, {py:obj}`altdss.CircuitElement.CircuitEle
 :canonical: altdss.GICsource.GICsource.EE
 :type: float
 :value: >
-   None
+   'property(...)'
 
 ```{autodoc2-docstring} altdss.GICsource.GICsource.EE
 ```
@@ -127,7 +127,7 @@ Bases: {py:obj}`altdss.DSSObj.DSSObj`, {py:obj}`altdss.CircuitElement.CircuitEle
 :canonical: altdss.GICsource.GICsource.EN
 :type: float
 :value: >
-   None
+   'property(...)'
 
 ```{autodoc2-docstring} altdss.GICsource.GICsource.EN
 ```
@@ -138,7 +138,7 @@ Bases: {py:obj}`altdss.DSSObj.DSSObj`, {py:obj}`altdss.CircuitElement.CircuitEle
 :canonical: altdss.GICsource.GICsource.Enabled
 :type: bool
 :value: >
-   None
+   'property(...)'
 
 ```{autodoc2-docstring} altdss.GICsource.GICsource.Enabled
 ```
@@ -165,7 +165,7 @@ Bases: {py:obj}`altdss.DSSObj.DSSObj`, {py:obj}`altdss.CircuitElement.CircuitEle
 :canonical: altdss.GICsource.GICsource.Frequency
 :type: float
 :value: >
-   None
+   'property(...)'
 
 ```{autodoc2-docstring} altdss.GICsource.GICsource.Frequency
 ```
@@ -248,7 +248,7 @@ Bases: {py:obj}`altdss.DSSObj.DSSObj`, {py:obj}`altdss.CircuitElement.CircuitEle
 :canonical: altdss.GICsource.GICsource.Lat1
 :type: float
 :value: >
-   None
+   'property(...)'
 
 ```{autodoc2-docstring} altdss.GICsource.GICsource.Lat1
 ```
@@ -259,7 +259,7 @@ Bases: {py:obj}`altdss.DSSObj.DSSObj`, {py:obj}`altdss.CircuitElement.CircuitEle
 :canonical: altdss.GICsource.GICsource.Lat2
 :type: float
 :value: >
-   None
+   'property(...)'
 
 ```{autodoc2-docstring} altdss.GICsource.GICsource.Lat2
 ```
@@ -278,7 +278,7 @@ Bases: {py:obj}`altdss.DSSObj.DSSObj`, {py:obj}`altdss.CircuitElement.CircuitEle
 :canonical: altdss.GICsource.GICsource.Lon1
 :type: float
 :value: >
-   None
+   'property(...)'
 
 ```{autodoc2-docstring} altdss.GICsource.GICsource.Lon1
 ```
@@ -289,7 +289,7 @@ Bases: {py:obj}`altdss.DSSObj.DSSObj`, {py:obj}`altdss.CircuitElement.CircuitEle
 :canonical: altdss.GICsource.GICsource.Lon2
 :type: float
 :value: >
-   None
+   'property(...)'
 
 ```{autodoc2-docstring} altdss.GICsource.GICsource.Lon2
 ```
@@ -413,7 +413,7 @@ Bases: {py:obj}`altdss.DSSObj.DSSObj`, {py:obj}`altdss.CircuitElement.CircuitEle
 :canonical: altdss.GICsource.GICsource.Phases
 :type: int
 :value: >
-   None
+   'property(...)'
 
 ```{autodoc2-docstring} altdss.GICsource.GICsource.Phases
 ```
@@ -472,7 +472,7 @@ Bases: {py:obj}`altdss.DSSObj.DSSObj`, {py:obj}`altdss.CircuitElement.CircuitEle
 :canonical: altdss.GICsource.GICsource.Spectrum
 :type: altdss.Spectrum.Spectrum
 :value: >
-   None
+   'property(...)'
 
 ```{autodoc2-docstring} altdss.GICsource.GICsource.Spectrum
 ```
@@ -483,7 +483,7 @@ Bases: {py:obj}`altdss.DSSObj.DSSObj`, {py:obj}`altdss.CircuitElement.CircuitEle
 :canonical: altdss.GICsource.GICsource.Spectrum_str
 :type: str
 :value: >
-   None
+   'property(...)'
 
 ```{autodoc2-docstring} altdss.GICsource.GICsource.Spectrum_str
 ```
@@ -542,7 +542,7 @@ Bases: {py:obj}`altdss.DSSObj.DSSObj`, {py:obj}`altdss.CircuitElement.CircuitEle
 :canonical: altdss.GICsource.GICsource.Volts
 :type: float
 :value: >
-   None
+   'property(...)'
 
 ```{autodoc2-docstring} altdss.GICsource.GICsource.Volts
 ```
@@ -627,7 +627,7 @@ Bases: {py:obj}`altdss.Batch.DSSBatch`, {py:obj}`altdss.CircuitElement.CircuitEl
 :canonical: altdss.GICsource.GICsourceBatch.Angle
 :type: altdss.ArrayProxy.BatchFloat64ArrayProxy
 :value: >
-   None
+   'property(...)'
 
 ```{autodoc2-docstring} altdss.GICsource.GICsourceBatch.Angle
 ```
@@ -638,7 +638,7 @@ Bases: {py:obj}`altdss.Batch.DSSBatch`, {py:obj}`altdss.CircuitElement.CircuitEl
 :canonical: altdss.GICsource.GICsourceBatch.BaseFreq
 :type: altdss.ArrayProxy.BatchFloat64ArrayProxy
 :value: >
-   None
+   'property(...)'
 
 ```{autodoc2-docstring} altdss.GICsource.GICsourceBatch.BaseFreq
 ```
@@ -681,7 +681,7 @@ Bases: {py:obj}`altdss.Batch.DSSBatch`, {py:obj}`altdss.CircuitElement.CircuitEl
 :canonical: altdss.GICsource.GICsourceBatch.EE
 :type: altdss.ArrayProxy.BatchFloat64ArrayProxy
 :value: >
-   None
+   'property(...)'
 
 ```{autodoc2-docstring} altdss.GICsource.GICsourceBatch.EE
 ```
@@ -692,7 +692,7 @@ Bases: {py:obj}`altdss.Batch.DSSBatch`, {py:obj}`altdss.CircuitElement.CircuitEl
 :canonical: altdss.GICsource.GICsourceBatch.EN
 :type: altdss.ArrayProxy.BatchFloat64ArrayProxy
 :value: >
-   None
+   'property(...)'
 
 ```{autodoc2-docstring} altdss.GICsource.GICsourceBatch.EN
 ```
@@ -703,7 +703,7 @@ Bases: {py:obj}`altdss.Batch.DSSBatch`, {py:obj}`altdss.CircuitElement.CircuitEl
 :canonical: altdss.GICsource.GICsourceBatch.Enabled
 :type: typing.List[bool]
 :value: >
-   None
+   'property(...)'
 
 ```{autodoc2-docstring} altdss.GICsource.GICsourceBatch.Enabled
 ```
@@ -730,7 +730,7 @@ Bases: {py:obj}`altdss.Batch.DSSBatch`, {py:obj}`altdss.CircuitElement.CircuitEl
 :canonical: altdss.GICsource.GICsourceBatch.Frequency
 :type: altdss.ArrayProxy.BatchFloat64ArrayProxy
 :value: >
-   None
+   'property(...)'
 
 ```{autodoc2-docstring} altdss.GICsource.GICsourceBatch.Frequency
 ```
@@ -797,7 +797,7 @@ Bases: {py:obj}`altdss.Batch.DSSBatch`, {py:obj}`altdss.CircuitElement.CircuitEl
 :canonical: altdss.GICsource.GICsourceBatch.Lat1
 :type: altdss.ArrayProxy.BatchFloat64ArrayProxy
 :value: >
-   None
+   'property(...)'
 
 ```{autodoc2-docstring} altdss.GICsource.GICsourceBatch.Lat1
 ```
@@ -808,7 +808,7 @@ Bases: {py:obj}`altdss.Batch.DSSBatch`, {py:obj}`altdss.CircuitElement.CircuitEl
 :canonical: altdss.GICsource.GICsourceBatch.Lat2
 :type: altdss.ArrayProxy.BatchFloat64ArrayProxy
 :value: >
-   None
+   'property(...)'
 
 ```{autodoc2-docstring} altdss.GICsource.GICsourceBatch.Lat2
 ```
@@ -827,7 +827,7 @@ Bases: {py:obj}`altdss.Batch.DSSBatch`, {py:obj}`altdss.CircuitElement.CircuitEl
 :canonical: altdss.GICsource.GICsourceBatch.Lon1
 :type: altdss.ArrayProxy.BatchFloat64ArrayProxy
 :value: >
-   None
+   'property(...)'
 
 ```{autodoc2-docstring} altdss.GICsource.GICsourceBatch.Lon1
 ```
@@ -838,7 +838,7 @@ Bases: {py:obj}`altdss.Batch.DSSBatch`, {py:obj}`altdss.CircuitElement.CircuitEl
 :canonical: altdss.GICsource.GICsourceBatch.Lon2
 :type: altdss.ArrayProxy.BatchFloat64ArrayProxy
 :value: >
-   None
+   'property(...)'
 
 ```{autodoc2-docstring} altdss.GICsource.GICsourceBatch.Lon2
 ```
@@ -938,7 +938,7 @@ Bases: {py:obj}`altdss.Batch.DSSBatch`, {py:obj}`altdss.CircuitElement.CircuitEl
 :canonical: altdss.GICsource.GICsourceBatch.Phases
 :type: altdss.ArrayProxy.BatchInt32ArrayProxy
 :value: >
-   None
+   'property(...)'
 
 ```{autodoc2-docstring} altdss.GICsource.GICsourceBatch.Phases
 ```
@@ -981,7 +981,7 @@ Bases: {py:obj}`altdss.Batch.DSSBatch`, {py:obj}`altdss.CircuitElement.CircuitEl
 :canonical: altdss.GICsource.GICsourceBatch.Spectrum
 :type: typing.List[altdss.Spectrum.Spectrum]
 :value: >
-   None
+   'property(...)'
 
 ```{autodoc2-docstring} altdss.GICsource.GICsourceBatch.Spectrum
 ```
@@ -992,7 +992,7 @@ Bases: {py:obj}`altdss.Batch.DSSBatch`, {py:obj}`altdss.CircuitElement.CircuitEl
 :canonical: altdss.GICsource.GICsourceBatch.Spectrum_str
 :type: typing.List[str]
 :value: >
-   None
+   'property(...)'
 
 ```{autodoc2-docstring} altdss.GICsource.GICsourceBatch.Spectrum_str
 ```
@@ -1027,7 +1027,7 @@ Bases: {py:obj}`altdss.Batch.DSSBatch`, {py:obj}`altdss.CircuitElement.CircuitEl
 :canonical: altdss.GICsource.GICsourceBatch.Volts
 :type: altdss.ArrayProxy.BatchFloat64ArrayProxy
 :value: >
-   None
+   'property(...)'
 
 ```{autodoc2-docstring} altdss.GICsource.GICsourceBatch.Volts
 ```
@@ -2056,7 +2056,7 @@ Bases: {py:obj}`altdss.DSSObj.IDSSObj`, {py:obj}`altdss.GICsource.GICsourceBatch
 :canonical: altdss.GICsource.IGICsource.Angle
 :type: altdss.ArrayProxy.BatchFloat64ArrayProxy
 :value: >
-   None
+   'property(...)'
 
 ```{autodoc2-docstring} altdss.GICsource.IGICsource.Angle
 ```
@@ -2067,7 +2067,7 @@ Bases: {py:obj}`altdss.DSSObj.IDSSObj`, {py:obj}`altdss.GICsource.GICsourceBatch
 :canonical: altdss.GICsource.IGICsource.BaseFreq
 :type: altdss.ArrayProxy.BatchFloat64ArrayProxy
 :value: >
-   None
+   'property(...)'
 
 ```{autodoc2-docstring} altdss.GICsource.IGICsource.BaseFreq
 ```
@@ -2110,7 +2110,7 @@ Bases: {py:obj}`altdss.DSSObj.IDSSObj`, {py:obj}`altdss.GICsource.GICsourceBatch
 :canonical: altdss.GICsource.IGICsource.EE
 :type: altdss.ArrayProxy.BatchFloat64ArrayProxy
 :value: >
-   None
+   'property(...)'
 
 ```{autodoc2-docstring} altdss.GICsource.IGICsource.EE
 ```
@@ -2121,7 +2121,7 @@ Bases: {py:obj}`altdss.DSSObj.IDSSObj`, {py:obj}`altdss.GICsource.GICsourceBatch
 :canonical: altdss.GICsource.IGICsource.EN
 :type: altdss.ArrayProxy.BatchFloat64ArrayProxy
 :value: >
-   None
+   'property(...)'
 
 ```{autodoc2-docstring} altdss.GICsource.IGICsource.EN
 ```
@@ -2132,7 +2132,7 @@ Bases: {py:obj}`altdss.DSSObj.IDSSObj`, {py:obj}`altdss.GICsource.GICsourceBatch
 :canonical: altdss.GICsource.IGICsource.Enabled
 :type: typing.List[bool]
 :value: >
-   None
+   'property(...)'
 
 ```{autodoc2-docstring} altdss.GICsource.IGICsource.Enabled
 ```
@@ -2159,7 +2159,7 @@ Bases: {py:obj}`altdss.DSSObj.IDSSObj`, {py:obj}`altdss.GICsource.GICsourceBatch
 :canonical: altdss.GICsource.IGICsource.Frequency
 :type: altdss.ArrayProxy.BatchFloat64ArrayProxy
 :value: >
-   None
+   'property(...)'
 
 ```{autodoc2-docstring} altdss.GICsource.IGICsource.Frequency
 ```
@@ -2226,7 +2226,7 @@ Bases: {py:obj}`altdss.DSSObj.IDSSObj`, {py:obj}`altdss.GICsource.GICsourceBatch
 :canonical: altdss.GICsource.IGICsource.Lat1
 :type: altdss.ArrayProxy.BatchFloat64ArrayProxy
 :value: >
-   None
+   'property(...)'
 
 ```{autodoc2-docstring} altdss.GICsource.IGICsource.Lat1
 ```
@@ -2237,7 +2237,7 @@ Bases: {py:obj}`altdss.DSSObj.IDSSObj`, {py:obj}`altdss.GICsource.GICsourceBatch
 :canonical: altdss.GICsource.IGICsource.Lat2
 :type: altdss.ArrayProxy.BatchFloat64ArrayProxy
 :value: >
-   None
+   'property(...)'
 
 ```{autodoc2-docstring} altdss.GICsource.IGICsource.Lat2
 ```
@@ -2256,7 +2256,7 @@ Bases: {py:obj}`altdss.DSSObj.IDSSObj`, {py:obj}`altdss.GICsource.GICsourceBatch
 :canonical: altdss.GICsource.IGICsource.Lon1
 :type: altdss.ArrayProxy.BatchFloat64ArrayProxy
 :value: >
-   None
+   'property(...)'
 
 ```{autodoc2-docstring} altdss.GICsource.IGICsource.Lon1
 ```
@@ -2267,7 +2267,7 @@ Bases: {py:obj}`altdss.DSSObj.IDSSObj`, {py:obj}`altdss.GICsource.GICsourceBatch
 :canonical: altdss.GICsource.IGICsource.Lon2
 :type: altdss.ArrayProxy.BatchFloat64ArrayProxy
 :value: >
-   None
+   'property(...)'
 
 ```{autodoc2-docstring} altdss.GICsource.IGICsource.Lon2
 ```
@@ -2367,7 +2367,7 @@ Bases: {py:obj}`altdss.DSSObj.IDSSObj`, {py:obj}`altdss.GICsource.GICsourceBatch
 :canonical: altdss.GICsource.IGICsource.Phases
 :type: altdss.ArrayProxy.BatchInt32ArrayProxy
 :value: >
-   None
+   'property(...)'
 
 ```{autodoc2-docstring} altdss.GICsource.IGICsource.Phases
 ```
@@ -2410,7 +2410,7 @@ Bases: {py:obj}`altdss.DSSObj.IDSSObj`, {py:obj}`altdss.GICsource.GICsourceBatch
 :canonical: altdss.GICsource.IGICsource.Spectrum
 :type: typing.List[altdss.Spectrum.Spectrum]
 :value: >
-   None
+   'property(...)'
 
 ```{autodoc2-docstring} altdss.GICsource.IGICsource.Spectrum
 ```
@@ -2421,7 +2421,7 @@ Bases: {py:obj}`altdss.DSSObj.IDSSObj`, {py:obj}`altdss.GICsource.GICsourceBatch
 :canonical: altdss.GICsource.IGICsource.Spectrum_str
 :type: typing.List[str]
 :value: >
-   None
+   'property(...)'
 
 ```{autodoc2-docstring} altdss.GICsource.IGICsource.Spectrum_str
 ```
@@ -2456,7 +2456,7 @@ Bases: {py:obj}`altdss.DSSObj.IDSSObj`, {py:obj}`altdss.GICsource.GICsourceBatch
 :canonical: altdss.GICsource.IGICsource.Volts
 :type: altdss.ArrayProxy.BatchFloat64ArrayProxy
 :value: >
-   None
+   'property(...)'
 
 ```{autodoc2-docstring} altdss.GICsource.IGICsource.Volts
 ```

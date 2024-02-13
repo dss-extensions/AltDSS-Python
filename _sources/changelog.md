@@ -3,6 +3,28 @@
 Remember that changes in our alternative OpenDSS engine, currently known as AltDSS/DSS C-API, are always
 relevant. See [DSS C-API's repository](https://github.com/dss-extensions/dss_capi/) for more information.
 
+## 0.1.2
+
+- Fix `SetterFlags`: import from backend instead of defining a new enum here.
+- Batch:
+    - Implement `__slots__` to constrain the attributes and avoid accidental names.
+    - `EnergyMeter.Loads`: make it a function to avoid issues with uninitialized meters (such as new meters).
+    - Minor quality of life changes, such as returning zero instead of error for some empty batches.
+
+-Known issue: reading `pctEmerg` or `pctNorm` for uninitialized PDElements (missing solution for the circuit) will crash. This is already fixed in the engine and will be included in the next backend update.
+
+
+## 0.1.1
+
+- Batch: fix setter for single object
+- Line: adjust Conductors to allow any conductor data object (WireData, CNData, TSData).
+- LineGeometry: rename "Wire" to "Conductors", follow the changes in Line.
+- Depend on DSS-Python 0.15.2 for the updated backend.
+- Add tests to ensure the following issues don't happen again:
+    - Bus: Fix typo in `puVMagAngle` (rename it from `puVmagAngle`), and `Voc`.
+    - Meters: Fix typo in call to `DoReliabilityCalc`
+    - Circuit: Fix typo in `NumCircuitElements`
+    - PCE: Found a function not implemented in the engine. Fixed there.
 
 ## 0.1.0
 

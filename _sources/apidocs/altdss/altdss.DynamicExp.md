@@ -51,7 +51,7 @@ Bases: {py:obj}`altdss.DSSObj.DSSObj`
 :canonical: altdss.DynamicExp.DynamicExp.Domain
 :type: altdss.enums.DynamicExpDomain
 :value: >
-   None
+   'property(...)'
 
 ```{autodoc2-docstring} altdss.DynamicExp.DynamicExp.Domain
 ```
@@ -62,7 +62,7 @@ Bases: {py:obj}`altdss.DSSObj.DSSObj`
 :canonical: altdss.DynamicExp.DynamicExp.Domain_str
 :type: str
 :value: >
-   None
+   'property(...)'
 
 ```{autodoc2-docstring} altdss.DynamicExp.DynamicExp.Domain_str
 ```
@@ -73,7 +73,7 @@ Bases: {py:obj}`altdss.DSSObj.DSSObj`
 :canonical: altdss.DynamicExp.DynamicExp.Expression
 :type: str
 :value: >
-   None
+   'property(...)'
 
 ```{autodoc2-docstring} altdss.DynamicExp.DynamicExp.Expression
 ```
@@ -100,7 +100,7 @@ Bases: {py:obj}`altdss.DSSObj.DSSObj`
 :canonical: altdss.DynamicExp.DynamicExp.NVariables
 :type: int
 :value: >
-   None
+   'property(...)'
 
 ```{autodoc2-docstring} altdss.DynamicExp.DynamicExp.NVariables
 ```
@@ -120,7 +120,7 @@ Bases: {py:obj}`altdss.DSSObj.DSSObj`
 :canonical: altdss.DynamicExp.DynamicExp.Var
 :type: str
 :value: >
-   None
+   'property(...)'
 
 ```{autodoc2-docstring} altdss.DynamicExp.DynamicExp.Var
 ```
@@ -131,7 +131,7 @@ Bases: {py:obj}`altdss.DSSObj.DSSObj`
 :canonical: altdss.DynamicExp.DynamicExp.VarIdx
 :type: int
 :value: >
-   None
+   'property(...)'
 
 ```{autodoc2-docstring} altdss.DynamicExp.DynamicExp.VarIdx
 ```
@@ -142,7 +142,7 @@ Bases: {py:obj}`altdss.DSSObj.DSSObj`
 :canonical: altdss.DynamicExp.DynamicExp.VarNames
 :type: typing.List[str]
 :value: >
-   None
+   'property(...)'
 
 ```{autodoc2-docstring} altdss.DynamicExp.DynamicExp.VarNames
 ```
@@ -219,7 +219,7 @@ Bases: {py:obj}`altdss.Batch.DSSBatch`
 :canonical: altdss.DynamicExp.DynamicExpBatch.Domain
 :type: altdss.ArrayProxy.BatchInt32ArrayProxy
 :value: >
-   None
+   'property(...)'
 
 ```{autodoc2-docstring} altdss.DynamicExp.DynamicExpBatch.Domain
 ```
@@ -230,7 +230,7 @@ Bases: {py:obj}`altdss.Batch.DSSBatch`
 :canonical: altdss.DynamicExp.DynamicExpBatch.Domain_str
 :type: typing.List[str]
 :value: >
-   None
+   'property(...)'
 
 ```{autodoc2-docstring} altdss.DynamicExp.DynamicExpBatch.Domain_str
 ```
@@ -241,7 +241,7 @@ Bases: {py:obj}`altdss.Batch.DSSBatch`
 :canonical: altdss.DynamicExp.DynamicExpBatch.Expression
 :type: typing.List[str]
 :value: >
-   None
+   'property(...)'
 
 ```{autodoc2-docstring} altdss.DynamicExp.DynamicExpBatch.Expression
 ```
@@ -268,7 +268,7 @@ Bases: {py:obj}`altdss.Batch.DSSBatch`
 :canonical: altdss.DynamicExp.DynamicExpBatch.NVariables
 :type: altdss.ArrayProxy.BatchInt32ArrayProxy
 :value: >
-   None
+   'property(...)'
 
 ```{autodoc2-docstring} altdss.DynamicExp.DynamicExpBatch.NVariables
 ```
@@ -288,7 +288,7 @@ Bases: {py:obj}`altdss.Batch.DSSBatch`
 :canonical: altdss.DynamicExp.DynamicExpBatch.Var
 :type: typing.List[str]
 :value: >
-   None
+   'property(...)'
 
 ```{autodoc2-docstring} altdss.DynamicExp.DynamicExpBatch.Var
 ```
@@ -299,7 +299,7 @@ Bases: {py:obj}`altdss.Batch.DSSBatch`
 :canonical: altdss.DynamicExp.DynamicExpBatch.VarIdx
 :type: altdss.ArrayProxy.BatchInt32ArrayProxy
 :value: >
-   None
+   'property(...)'
 
 ```{autodoc2-docstring} altdss.DynamicExp.DynamicExpBatch.VarIdx
 ```
@@ -310,7 +310,7 @@ Bases: {py:obj}`altdss.Batch.DSSBatch`
 :canonical: altdss.DynamicExp.DynamicExpBatch.VarNames
 :type: typing.List[typing.List[str]]
 :value: >
-   None
+   'property(...)'
 
 ```{autodoc2-docstring} altdss.DynamicExp.DynamicExpBatch.VarNames
 ```
@@ -1185,7 +1185,7 @@ Bases: {py:obj}`altdss.DSSObj.IDSSObj`, {py:obj}`altdss.DynamicExp.DynamicExpBat
 :canonical: altdss.DynamicExp.IDynamicExp.Domain
 :type: altdss.ArrayProxy.BatchInt32ArrayProxy
 :value: >
-   None
+   'property(...)'
 
 ```{autodoc2-docstring} altdss.DynamicExp.IDynamicExp.Domain
 ```
@@ -1196,7 +1196,7 @@ Bases: {py:obj}`altdss.DSSObj.IDSSObj`, {py:obj}`altdss.DynamicExp.DynamicExpBat
 :canonical: altdss.DynamicExp.IDynamicExp.Domain_str
 :type: typing.List[str]
 :value: >
-   None
+   'property(...)'
 
 ```{autodoc2-docstring} altdss.DynamicExp.IDynamicExp.Domain_str
 ```
@@ -1207,7 +1207,7 @@ Bases: {py:obj}`altdss.DSSObj.IDSSObj`, {py:obj}`altdss.DynamicExp.DynamicExpBat
 :canonical: altdss.DynamicExp.IDynamicExp.Expression
 :type: typing.List[str]
 :value: >
-   None
+   'property(...)'
 
 ```{autodoc2-docstring} altdss.DynamicExp.IDynamicExp.Expression
 ```
@@ -1234,7 +1234,7 @@ Bases: {py:obj}`altdss.DSSObj.IDSSObj`, {py:obj}`altdss.DynamicExp.DynamicExpBat
 :canonical: altdss.DynamicExp.IDynamicExp.NVariables
 :type: altdss.ArrayProxy.BatchInt32ArrayProxy
 :value: >
-   None
+   'property(...)'
 
 ```{autodoc2-docstring} altdss.DynamicExp.IDynamicExp.NVariables
 ```
@@ -1254,7 +1254,7 @@ Bases: {py:obj}`altdss.DSSObj.IDSSObj`, {py:obj}`altdss.DynamicExp.DynamicExpBat
 :canonical: altdss.DynamicExp.IDynamicExp.Var
 :type: typing.List[str]
 :value: >
-   None
+   'property(...)'
 
 ```{autodoc2-docstring} altdss.DynamicExp.IDynamicExp.Var
 ```
@@ -1265,7 +1265,7 @@ Bases: {py:obj}`altdss.DSSObj.IDSSObj`, {py:obj}`altdss.DynamicExp.DynamicExpBat
 :canonical: altdss.DynamicExp.IDynamicExp.VarIdx
 :type: altdss.ArrayProxy.BatchInt32ArrayProxy
 :value: >
-   None
+   'property(...)'
 
 ```{autodoc2-docstring} altdss.DynamicExp.IDynamicExp.VarIdx
 ```
@@ -1276,7 +1276,7 @@ Bases: {py:obj}`altdss.DSSObj.IDSSObj`, {py:obj}`altdss.DynamicExp.DynamicExpBat
 :canonical: altdss.DynamicExp.IDynamicExp.VarNames
 :type: typing.List[typing.List[str]]
 :value: >
-   None
+   'property(...)'
 
 ```{autodoc2-docstring} altdss.DynamicExp.IDynamicExp.VarNames
 ```

@@ -343,6 +343,22 @@ Bases: {py:obj}`enum.IntEnum`
 
 ````
 
+````{py:method} __copy__()
+:canonical: altdss.enums.AutoAddDeviceType.__copy__
+
+```{autodoc2-docstring} altdss.enums.AutoAddDeviceType.__copy__
+```
+
+````
+
+````{py:method} __deepcopy__(memo)
+:canonical: altdss.enums.AutoAddDeviceType.__deepcopy__
+
+```{autodoc2-docstring} altdss.enums.AutoAddDeviceType.__deepcopy__
+```
+
+````
+
 ````{py:method} __delattr__()
 :canonical: altdss.enums.AutoAddDeviceType.__delattr__
 
@@ -711,6 +727,15 @@ Bases: {py:obj}`enum.IntEnum`
 
 ````
 
+````{py:method} __signature__()
+:canonical: altdss.enums.AutoAddDeviceType.__signature__
+:classmethod:
+
+```{autodoc2-docstring} altdss.enums.AutoAddDeviceType.__signature__
+```
+
+````
+
 ````{py:method} __sizeof__()
 :canonical: altdss.enums.AutoAddDeviceType.__sizeof__
 
@@ -815,6 +840,14 @@ Bases: {py:obj}`enum.IntEnum`
 
 ````
 
+````{py:method} is_integer()
+:canonical: altdss.enums.AutoAddDeviceType.is_integer
+
+```{autodoc2-docstring} altdss.enums.AutoAddDeviceType.is_integer
+```
+
+````
+
 ````{py:method} name()
 :canonical: altdss.enums.AutoAddDeviceType.name
 
@@ -901,6 +934,22 @@ Bases: {py:obj}`enum.IntEnum`
 :canonical: altdss.enums.AutoTransConnection.__ceil__
 
 ```{autodoc2-docstring} altdss.enums.AutoTransConnection.__ceil__
+```
+
+````
+
+````{py:method} __copy__()
+:canonical: altdss.enums.AutoTransConnection.__copy__
+
+```{autodoc2-docstring} altdss.enums.AutoTransConnection.__copy__
+```
+
+````
+
+````{py:method} __deepcopy__(memo)
+:canonical: altdss.enums.AutoTransConnection.__deepcopy__
+
+```{autodoc2-docstring} altdss.enums.AutoTransConnection.__deepcopy__
 ```
 
 ````
@@ -1273,6 +1322,15 @@ Bases: {py:obj}`enum.IntEnum`
 
 ````
 
+````{py:method} __signature__()
+:canonical: altdss.enums.AutoTransConnection.__signature__
+:classmethod:
+
+```{autodoc2-docstring} altdss.enums.AutoTransConnection.__signature__
+```
+
+````
+
 ````{py:method} __sizeof__()
 :canonical: altdss.enums.AutoTransConnection.__sizeof__
 
@@ -1383,6 +1441,14 @@ Bases: {py:obj}`enum.IntEnum`
 :canonical: altdss.enums.AutoTransConnection.imag
 
 ```{autodoc2-docstring} altdss.enums.AutoTransConnection.imag
+```
+
+````
+
+````{py:method} is_integer()
+:canonical: altdss.enums.AutoTransConnection.is_integer
+
+```{autodoc2-docstring} altdss.enums.AutoTransConnection.is_integer
 ```
 
 ````
@@ -1573,6 +1639,22 @@ Bases: {py:obj}`enum.IntEnum`
 :canonical: altdss.enums.CapControlType.__ceil__
 
 ```{autodoc2-docstring} altdss.enums.CapControlType.__ceil__
+```
+
+````
+
+````{py:method} __copy__()
+:canonical: altdss.enums.CapControlType.__copy__
+
+```{autodoc2-docstring} altdss.enums.CapControlType.__copy__
+```
+
+````
+
+````{py:method} __deepcopy__(memo)
+:canonical: altdss.enums.CapControlType.__deepcopy__
+
+```{autodoc2-docstring} altdss.enums.CapControlType.__deepcopy__
 ```
 
 ````
@@ -1945,6 +2027,15 @@ Bases: {py:obj}`enum.IntEnum`
 
 ````
 
+````{py:method} __signature__()
+:canonical: altdss.enums.CapControlType.__signature__
+:classmethod:
+
+```{autodoc2-docstring} altdss.enums.CapControlType.__signature__
+```
+
+````
+
 ````{py:method} __sizeof__()
 :canonical: altdss.enums.CapControlType.__sizeof__
 
@@ -2045,6 +2136,14 @@ Bases: {py:obj}`enum.IntEnum`
 :canonical: altdss.enums.CapControlType.imag
 
 ```{autodoc2-docstring} altdss.enums.CapControlType.imag
+```
+
+````
+
+````{py:method} is_integer()
+:canonical: altdss.enums.CapControlType.is_integer
+
+```{autodoc2-docstring} altdss.enums.CapControlType.is_integer
 ```
 
 ````
@@ -2165,6 +2264,22 @@ Bases: {py:obj}`enum.IntEnum`
 :canonical: altdss.enums.CircuitModel.__ceil__
 
 ```{autodoc2-docstring} altdss.enums.CircuitModel.__ceil__
+```
+
+````
+
+````{py:method} __copy__()
+:canonical: altdss.enums.CircuitModel.__copy__
+
+```{autodoc2-docstring} altdss.enums.CircuitModel.__copy__
+```
+
+````
+
+````{py:method} __deepcopy__(memo)
+:canonical: altdss.enums.CircuitModel.__deepcopy__
+
+```{autodoc2-docstring} altdss.enums.CircuitModel.__deepcopy__
 ```
 
 ````
@@ -2537,6 +2652,15 @@ Bases: {py:obj}`enum.IntEnum`
 
 ````
 
+````{py:method} __signature__()
+:canonical: altdss.enums.CircuitModel.__signature__
+:classmethod:
+
+```{autodoc2-docstring} altdss.enums.CircuitModel.__signature__
+```
+
+````
+
 ````{py:method} __sizeof__()
 :canonical: altdss.enums.CircuitModel.__sizeof__
 
@@ -2641,6 +2765,14 @@ Bases: {py:obj}`enum.IntEnum`
 
 ````
 
+````{py:method} is_integer()
+:canonical: altdss.enums.CircuitModel.is_integer
+
+```{autodoc2-docstring} altdss.enums.CircuitModel.is_integer
+```
+
+````
+
 ````{py:method} name()
 :canonical: altdss.enums.CircuitModel.name
 
@@ -2727,6 +2859,22 @@ Bases: {py:obj}`enum.IntEnum`
 :canonical: altdss.enums.Connection.__ceil__
 
 ```{autodoc2-docstring} altdss.enums.Connection.__ceil__
+```
+
+````
+
+````{py:method} __copy__()
+:canonical: altdss.enums.Connection.__copy__
+
+```{autodoc2-docstring} altdss.enums.Connection.__copy__
+```
+
+````
+
+````{py:method} __deepcopy__(memo)
+:canonical: altdss.enums.Connection.__deepcopy__
+
+```{autodoc2-docstring} altdss.enums.Connection.__deepcopy__
 ```
 
 ````
@@ -3099,6 +3247,15 @@ Bases: {py:obj}`enum.IntEnum`
 
 ````
 
+````{py:method} __signature__()
+:canonical: altdss.enums.Connection.__signature__
+:classmethod:
+
+```{autodoc2-docstring} altdss.enums.Connection.__signature__
+```
+
+````
+
 ````{py:method} __sizeof__()
 :canonical: altdss.enums.Connection.__sizeof__
 
@@ -3209,6 +3366,14 @@ Bases: {py:obj}`enum.IntEnum`
 :canonical: altdss.enums.Connection.imag
 
 ```{autodoc2-docstring} altdss.enums.Connection.imag
+```
+
+````
+
+````{py:method} is_integer()
+:canonical: altdss.enums.Connection.is_integer
+
+```{autodoc2-docstring} altdss.enums.Connection.is_integer
 ```
 
 ````
@@ -3389,6 +3554,22 @@ Bases: {py:obj}`enum.IntEnum`
 :canonical: altdss.enums.ControlMode.__ceil__
 
 ```{autodoc2-docstring} altdss.enums.ControlMode.__ceil__
+```
+
+````
+
+````{py:method} __copy__()
+:canonical: altdss.enums.ControlMode.__copy__
+
+```{autodoc2-docstring} altdss.enums.ControlMode.__copy__
+```
+
+````
+
+````{py:method} __deepcopy__(memo)
+:canonical: altdss.enums.ControlMode.__deepcopy__
+
+```{autodoc2-docstring} altdss.enums.ControlMode.__deepcopy__
 ```
 
 ````
@@ -3761,6 +3942,15 @@ Bases: {py:obj}`enum.IntEnum`
 
 ````
 
+````{py:method} __signature__()
+:canonical: altdss.enums.ControlMode.__signature__
+:classmethod:
+
+```{autodoc2-docstring} altdss.enums.ControlMode.__signature__
+```
+
+````
+
 ````{py:method} __sizeof__()
 :canonical: altdss.enums.ControlMode.__sizeof__
 
@@ -3865,6 +4055,14 @@ Bases: {py:obj}`enum.IntEnum`
 
 ````
 
+````{py:method} is_integer()
+:canonical: altdss.enums.ControlMode.is_integer
+
+```{autodoc2-docstring} altdss.enums.ControlMode.is_integer
+```
+
+````
+
 ````{py:method} name()
 :canonical: altdss.enums.ControlMode.name
 
@@ -3951,6 +4149,22 @@ Bases: {py:obj}`enum.IntEnum`
 :canonical: altdss.enums.CoreType.__ceil__
 
 ```{autodoc2-docstring} altdss.enums.CoreType.__ceil__
+```
+
+````
+
+````{py:method} __copy__()
+:canonical: altdss.enums.CoreType.__copy__
+
+```{autodoc2-docstring} altdss.enums.CoreType.__copy__
+```
+
+````
+
+````{py:method} __deepcopy__(memo)
+:canonical: altdss.enums.CoreType.__deepcopy__
+
+```{autodoc2-docstring} altdss.enums.CoreType.__deepcopy__
 ```
 
 ````
@@ -4323,6 +4537,15 @@ Bases: {py:obj}`enum.IntEnum`
 
 ````
 
+````{py:method} __signature__()
+:canonical: altdss.enums.CoreType.__signature__
+:classmethod:
+
+```{autodoc2-docstring} altdss.enums.CoreType.__signature__
+```
+
+````
+
 ````{py:method} __sizeof__()
 :canonical: altdss.enums.CoreType.__sizeof__
 
@@ -4457,6 +4680,14 @@ Bases: {py:obj}`enum.IntEnum`
 
 ````
 
+````{py:method} is_integer()
+:canonical: altdss.enums.CoreType.is_integer
+
+```{autodoc2-docstring} altdss.enums.CoreType.is_integer
+```
+
+````
+
 ````{py:method} name()
 :canonical: altdss.enums.CoreType.name
 
@@ -4583,6 +4814,22 @@ Bases: {py:obj}`enum.IntEnum`
 :canonical: altdss.enums.DynamicExpDomain.__ceil__
 
 ```{autodoc2-docstring} altdss.enums.DynamicExpDomain.__ceil__
+```
+
+````
+
+````{py:method} __copy__()
+:canonical: altdss.enums.DynamicExpDomain.__copy__
+
+```{autodoc2-docstring} altdss.enums.DynamicExpDomain.__copy__
+```
+
+````
+
+````{py:method} __deepcopy__(memo)
+:canonical: altdss.enums.DynamicExpDomain.__deepcopy__
+
+```{autodoc2-docstring} altdss.enums.DynamicExpDomain.__deepcopy__
 ```
 
 ````
@@ -4955,6 +5202,15 @@ Bases: {py:obj}`enum.IntEnum`
 
 ````
 
+````{py:method} __signature__()
+:canonical: altdss.enums.DynamicExpDomain.__signature__
+:classmethod:
+
+```{autodoc2-docstring} altdss.enums.DynamicExpDomain.__signature__
+```
+
+````
+
 ````{py:method} __sizeof__()
 :canonical: altdss.enums.DynamicExpDomain.__sizeof__
 
@@ -5069,6 +5325,14 @@ Bases: {py:obj}`enum.IntEnum`
 
 ````
 
+````{py:method} is_integer()
+:canonical: altdss.enums.DynamicExpDomain.is_integer
+
+```{autodoc2-docstring} altdss.enums.DynamicExpDomain.is_integer
+```
+
+````
+
 ````{py:method} name()
 :canonical: altdss.enums.DynamicExpDomain.name
 
@@ -5175,6 +5439,22 @@ Bases: {py:obj}`enum.IntEnum`
 :canonical: altdss.enums.ESPVLControlType.__ceil__
 
 ```{autodoc2-docstring} altdss.enums.ESPVLControlType.__ceil__
+```
+
+````
+
+````{py:method} __copy__()
+:canonical: altdss.enums.ESPVLControlType.__copy__
+
+```{autodoc2-docstring} altdss.enums.ESPVLControlType.__copy__
+```
+
+````
+
+````{py:method} __deepcopy__(memo)
+:canonical: altdss.enums.ESPVLControlType.__deepcopy__
+
+```{autodoc2-docstring} altdss.enums.ESPVLControlType.__deepcopy__
 ```
 
 ````
@@ -5547,6 +5827,15 @@ Bases: {py:obj}`enum.IntEnum`
 
 ````
 
+````{py:method} __signature__()
+:canonical: altdss.enums.ESPVLControlType.__signature__
+:classmethod:
+
+```{autodoc2-docstring} altdss.enums.ESPVLControlType.__signature__
+```
+
+````
+
 ````{py:method} __sizeof__()
 :canonical: altdss.enums.ESPVLControlType.__sizeof__
 
@@ -5647,6 +5936,14 @@ Bases: {py:obj}`enum.IntEnum`
 :canonical: altdss.enums.ESPVLControlType.imag
 
 ```{autodoc2-docstring} altdss.enums.ESPVLControlType.imag
+```
+
+````
+
+````{py:method} is_integer()
+:canonical: altdss.enums.ESPVLControlType.is_integer
+
+```{autodoc2-docstring} altdss.enums.ESPVLControlType.is_integer
 ```
 
 ````
@@ -5767,6 +6064,22 @@ Bases: {py:obj}`enum.IntEnum`
 :canonical: altdss.enums.EarthModel.__ceil__
 
 ```{autodoc2-docstring} altdss.enums.EarthModel.__ceil__
+```
+
+````
+
+````{py:method} __copy__()
+:canonical: altdss.enums.EarthModel.__copy__
+
+```{autodoc2-docstring} altdss.enums.EarthModel.__copy__
+```
+
+````
+
+````{py:method} __deepcopy__(memo)
+:canonical: altdss.enums.EarthModel.__deepcopy__
+
+```{autodoc2-docstring} altdss.enums.EarthModel.__deepcopy__
 ```
 
 ````
@@ -6139,6 +6452,15 @@ Bases: {py:obj}`enum.IntEnum`
 
 ````
 
+````{py:method} __signature__()
+:canonical: altdss.enums.EarthModel.__signature__
+:classmethod:
+
+```{autodoc2-docstring} altdss.enums.EarthModel.__signature__
+```
+
+````
+
 ````{py:method} __sizeof__()
 :canonical: altdss.enums.EarthModel.__sizeof__
 
@@ -6239,6 +6561,14 @@ Bases: {py:obj}`enum.IntEnum`
 :canonical: altdss.enums.EarthModel.imag
 
 ```{autodoc2-docstring} altdss.enums.EarthModel.imag
+```
+
+````
+
+````{py:method} is_integer()
+:canonical: altdss.enums.EarthModel.is_integer
+
+```{autodoc2-docstring} altdss.enums.EarthModel.is_integer
 ```
 
 ````
@@ -6389,6 +6719,22 @@ Bases: {py:obj}`enum.IntEnum`
 :canonical: altdss.enums.EnergyMeterAction.__ceil__
 
 ```{autodoc2-docstring} altdss.enums.EnergyMeterAction.__ceil__
+```
+
+````
+
+````{py:method} __copy__()
+:canonical: altdss.enums.EnergyMeterAction.__copy__
+
+```{autodoc2-docstring} altdss.enums.EnergyMeterAction.__copy__
+```
+
+````
+
+````{py:method} __deepcopy__(memo)
+:canonical: altdss.enums.EnergyMeterAction.__deepcopy__
+
+```{autodoc2-docstring} altdss.enums.EnergyMeterAction.__deepcopy__
 ```
 
 ````
@@ -6761,6 +7107,15 @@ Bases: {py:obj}`enum.IntEnum`
 
 ````
 
+````{py:method} __signature__()
+:canonical: altdss.enums.EnergyMeterAction.__signature__
+:classmethod:
+
+```{autodoc2-docstring} altdss.enums.EnergyMeterAction.__signature__
+```
+
+````
+
 ````{py:method} __sizeof__()
 :canonical: altdss.enums.EnergyMeterAction.__sizeof__
 
@@ -6861,6 +7216,14 @@ Bases: {py:obj}`enum.IntEnum`
 :canonical: altdss.enums.EnergyMeterAction.imag
 
 ```{autodoc2-docstring} altdss.enums.EnergyMeterAction.imag
+```
+
+````
+
+````{py:method} is_integer()
+:canonical: altdss.enums.EnergyMeterAction.is_integer
+
+```{autodoc2-docstring} altdss.enums.EnergyMeterAction.is_integer
 ```
 
 ````
@@ -6991,6 +7354,22 @@ Bases: {py:obj}`enum.IntEnum`
 :canonical: altdss.enums.ExtraClassIDs.__ceil__
 
 ```{autodoc2-docstring} altdss.enums.ExtraClassIDs.__ceil__
+```
+
+````
+
+````{py:method} __copy__()
+:canonical: altdss.enums.ExtraClassIDs.__copy__
+
+```{autodoc2-docstring} altdss.enums.ExtraClassIDs.__copy__
+```
+
+````
+
+````{py:method} __deepcopy__(memo)
+:canonical: altdss.enums.ExtraClassIDs.__deepcopy__
+
+```{autodoc2-docstring} altdss.enums.ExtraClassIDs.__deepcopy__
 ```
 
 ````
@@ -7363,6 +7742,15 @@ Bases: {py:obj}`enum.IntEnum`
 
 ````
 
+````{py:method} __signature__()
+:canonical: altdss.enums.ExtraClassIDs.__signature__
+:classmethod:
+
+```{autodoc2-docstring} altdss.enums.ExtraClassIDs.__signature__
+```
+
+````
+
 ````{py:method} __sizeof__()
 :canonical: altdss.enums.ExtraClassIDs.__sizeof__
 
@@ -7467,6 +7855,14 @@ Bases: {py:obj}`enum.IntEnum`
 
 ````
 
+````{py:method} is_integer()
+:canonical: altdss.enums.ExtraClassIDs.is_integer
+
+```{autodoc2-docstring} altdss.enums.ExtraClassIDs.is_integer
+```
+
+````
+
 ````{py:method} name()
 :canonical: altdss.enums.ExtraClassIDs.name
 
@@ -7553,6 +7949,22 @@ Bases: {py:obj}`enum.IntEnum`
 :canonical: altdss.enums.FuseAction.__ceil__
 
 ```{autodoc2-docstring} altdss.enums.FuseAction.__ceil__
+```
+
+````
+
+````{py:method} __copy__()
+:canonical: altdss.enums.FuseAction.__copy__
+
+```{autodoc2-docstring} altdss.enums.FuseAction.__copy__
+```
+
+````
+
+````{py:method} __deepcopy__(memo)
+:canonical: altdss.enums.FuseAction.__deepcopy__
+
+```{autodoc2-docstring} altdss.enums.FuseAction.__deepcopy__
 ```
 
 ````
@@ -7925,6 +8337,15 @@ Bases: {py:obj}`enum.IntEnum`
 
 ````
 
+````{py:method} __signature__()
+:canonical: altdss.enums.FuseAction.__signature__
+:classmethod:
+
+```{autodoc2-docstring} altdss.enums.FuseAction.__signature__
+```
+
+````
+
 ````{py:method} __sizeof__()
 :canonical: altdss.enums.FuseAction.__sizeof__
 
@@ -8039,6 +8460,14 @@ Bases: {py:obj}`enum.IntEnum`
 
 ````
 
+````{py:method} is_integer()
+:canonical: altdss.enums.FuseAction.is_integer
+
+```{autodoc2-docstring} altdss.enums.FuseAction.is_integer
+```
+
+````
+
 ````{py:method} name()
 :canonical: altdss.enums.FuseAction.name
 
@@ -8135,6 +8564,22 @@ Bases: {py:obj}`enum.IntEnum`
 :canonical: altdss.enums.FuseState.__ceil__
 
 ```{autodoc2-docstring} altdss.enums.FuseState.__ceil__
+```
+
+````
+
+````{py:method} __copy__()
+:canonical: altdss.enums.FuseState.__copy__
+
+```{autodoc2-docstring} altdss.enums.FuseState.__copy__
+```
+
+````
+
+````{py:method} __deepcopy__(memo)
+:canonical: altdss.enums.FuseState.__deepcopy__
+
+```{autodoc2-docstring} altdss.enums.FuseState.__deepcopy__
 ```
 
 ````
@@ -8507,6 +8952,15 @@ Bases: {py:obj}`enum.IntEnum`
 
 ````
 
+````{py:method} __signature__()
+:canonical: altdss.enums.FuseState.__signature__
+:classmethod:
+
+```{autodoc2-docstring} altdss.enums.FuseState.__signature__
+```
+
+````
+
 ````{py:method} __sizeof__()
 :canonical: altdss.enums.FuseState.__sizeof__
 
@@ -8617,6 +9071,14 @@ Bases: {py:obj}`enum.IntEnum`
 :canonical: altdss.enums.FuseState.imag
 
 ```{autodoc2-docstring} altdss.enums.FuseState.imag
+```
+
+````
+
+````{py:method} is_integer()
+:canonical: altdss.enums.FuseState.is_integer
+
+```{autodoc2-docstring} altdss.enums.FuseState.is_integer
 ```
 
 ````
@@ -8747,6 +9209,22 @@ Bases: {py:obj}`enum.IntEnum`
 :canonical: altdss.enums.GICTransformerType.__ceil__
 
 ```{autodoc2-docstring} altdss.enums.GICTransformerType.__ceil__
+```
+
+````
+
+````{py:method} __copy__()
+:canonical: altdss.enums.GICTransformerType.__copy__
+
+```{autodoc2-docstring} altdss.enums.GICTransformerType.__copy__
+```
+
+````
+
+````{py:method} __deepcopy__(memo)
+:canonical: altdss.enums.GICTransformerType.__deepcopy__
+
+```{autodoc2-docstring} altdss.enums.GICTransformerType.__deepcopy__
 ```
 
 ````
@@ -9119,6 +9597,15 @@ Bases: {py:obj}`enum.IntEnum`
 
 ````
 
+````{py:method} __signature__()
+:canonical: altdss.enums.GICTransformerType.__signature__
+:classmethod:
+
+```{autodoc2-docstring} altdss.enums.GICTransformerType.__signature__
+```
+
+````
+
 ````{py:method} __sizeof__()
 :canonical: altdss.enums.GICTransformerType.__sizeof__
 
@@ -9219,6 +9706,14 @@ Bases: {py:obj}`enum.IntEnum`
 :canonical: altdss.enums.GICTransformerType.imag
 
 ```{autodoc2-docstring} altdss.enums.GICTransformerType.imag
+```
+
+````
+
+````{py:method} is_integer()
+:canonical: altdss.enums.GICTransformerType.is_integer
+
+```{autodoc2-docstring} altdss.enums.GICTransformerType.is_integer
 ```
 
 ````
@@ -9339,6 +9834,22 @@ Bases: {py:obj}`enum.IntEnum`
 :canonical: altdss.enums.GeneratorDispatchMode.__ceil__
 
 ```{autodoc2-docstring} altdss.enums.GeneratorDispatchMode.__ceil__
+```
+
+````
+
+````{py:method} __copy__()
+:canonical: altdss.enums.GeneratorDispatchMode.__copy__
+
+```{autodoc2-docstring} altdss.enums.GeneratorDispatchMode.__copy__
+```
+
+````
+
+````{py:method} __deepcopy__(memo)
+:canonical: altdss.enums.GeneratorDispatchMode.__deepcopy__
+
+```{autodoc2-docstring} altdss.enums.GeneratorDispatchMode.__deepcopy__
 ```
 
 ````
@@ -9711,6 +10222,15 @@ Bases: {py:obj}`enum.IntEnum`
 
 ````
 
+````{py:method} __signature__()
+:canonical: altdss.enums.GeneratorDispatchMode.__signature__
+:classmethod:
+
+```{autodoc2-docstring} altdss.enums.GeneratorDispatchMode.__signature__
+```
+
+````
+
 ````{py:method} __sizeof__()
 :canonical: altdss.enums.GeneratorDispatchMode.__sizeof__
 
@@ -9811,6 +10331,14 @@ Bases: {py:obj}`enum.IntEnum`
 :canonical: altdss.enums.GeneratorDispatchMode.imag
 
 ```{autodoc2-docstring} altdss.enums.GeneratorDispatchMode.imag
+```
+
+````
+
+````{py:method} is_integer()
+:canonical: altdss.enums.GeneratorDispatchMode.is_integer
+
+```{autodoc2-docstring} altdss.enums.GeneratorDispatchMode.is_integer
 ```
 
 ````
@@ -9971,6 +10499,22 @@ Bases: {py:obj}`enum.IntEnum`
 :canonical: altdss.enums.GeneratorModel.__ceil__
 
 ```{autodoc2-docstring} altdss.enums.GeneratorModel.__ceil__
+```
+
+````
+
+````{py:method} __copy__()
+:canonical: altdss.enums.GeneratorModel.__copy__
+
+```{autodoc2-docstring} altdss.enums.GeneratorModel.__copy__
+```
+
+````
+
+````{py:method} __deepcopy__(memo)
+:canonical: altdss.enums.GeneratorModel.__deepcopy__
+
+```{autodoc2-docstring} altdss.enums.GeneratorModel.__deepcopy__
 ```
 
 ````
@@ -10343,6 +10887,15 @@ Bases: {py:obj}`enum.IntEnum`
 
 ````
 
+````{py:method} __signature__()
+:canonical: altdss.enums.GeneratorModel.__signature__
+:classmethod:
+
+```{autodoc2-docstring} altdss.enums.GeneratorModel.__signature__
+```
+
+````
+
 ````{py:method} __sizeof__()
 :canonical: altdss.enums.GeneratorModel.__sizeof__
 
@@ -10443,6 +10996,14 @@ Bases: {py:obj}`enum.IntEnum`
 :canonical: altdss.enums.GeneratorModel.imag
 
 ```{autodoc2-docstring} altdss.enums.GeneratorModel.imag
+```
+
+````
+
+````{py:method} is_integer()
+:canonical: altdss.enums.GeneratorModel.is_integer
+
+```{autodoc2-docstring} altdss.enums.GeneratorModel.is_integer
 ```
 
 ````
@@ -10553,6 +11114,22 @@ Bases: {py:obj}`enum.IntEnum`
 :canonical: altdss.enums.GeneratorStatus.__ceil__
 
 ```{autodoc2-docstring} altdss.enums.GeneratorStatus.__ceil__
+```
+
+````
+
+````{py:method} __copy__()
+:canonical: altdss.enums.GeneratorStatus.__copy__
+
+```{autodoc2-docstring} altdss.enums.GeneratorStatus.__copy__
+```
+
+````
+
+````{py:method} __deepcopy__(memo)
+:canonical: altdss.enums.GeneratorStatus.__deepcopy__
+
+```{autodoc2-docstring} altdss.enums.GeneratorStatus.__deepcopy__
 ```
 
 ````
@@ -10925,6 +11502,15 @@ Bases: {py:obj}`enum.IntEnum`
 
 ````
 
+````{py:method} __signature__()
+:canonical: altdss.enums.GeneratorStatus.__signature__
+:classmethod:
+
+```{autodoc2-docstring} altdss.enums.GeneratorStatus.__signature__
+```
+
+````
+
 ````{py:method} __sizeof__()
 :canonical: altdss.enums.GeneratorStatus.__sizeof__
 
@@ -11025,6 +11611,14 @@ Bases: {py:obj}`enum.IntEnum`
 :canonical: altdss.enums.GeneratorStatus.imag
 
 ```{autodoc2-docstring} altdss.enums.GeneratorStatus.imag
+```
+
+````
+
+````{py:method} is_integer()
+:canonical: altdss.enums.GeneratorStatus.is_integer
+
+```{autodoc2-docstring} altdss.enums.GeneratorStatus.is_integer
 ```
 
 ````
@@ -11135,6 +11729,22 @@ Bases: {py:obj}`enum.IntEnum`
 :canonical: altdss.enums.IndMach012SlipOption.__ceil__
 
 ```{autodoc2-docstring} altdss.enums.IndMach012SlipOption.__ceil__
+```
+
+````
+
+````{py:method} __copy__()
+:canonical: altdss.enums.IndMach012SlipOption.__copy__
+
+```{autodoc2-docstring} altdss.enums.IndMach012SlipOption.__copy__
+```
+
+````
+
+````{py:method} __deepcopy__(memo)
+:canonical: altdss.enums.IndMach012SlipOption.__deepcopy__
+
+```{autodoc2-docstring} altdss.enums.IndMach012SlipOption.__deepcopy__
 ```
 
 ````
@@ -11507,6 +12117,15 @@ Bases: {py:obj}`enum.IntEnum`
 
 ````
 
+````{py:method} __signature__()
+:canonical: altdss.enums.IndMach012SlipOption.__signature__
+:classmethod:
+
+```{autodoc2-docstring} altdss.enums.IndMach012SlipOption.__signature__
+```
+
+````
+
 ````{py:method} __sizeof__()
 :canonical: altdss.enums.IndMach012SlipOption.__sizeof__
 
@@ -11607,6 +12226,14 @@ Bases: {py:obj}`enum.IntEnum`
 :canonical: altdss.enums.IndMach012SlipOption.imag
 
 ```{autodoc2-docstring} altdss.enums.IndMach012SlipOption.imag
+```
+
+````
+
+````{py:method} is_integer()
+:canonical: altdss.enums.IndMach012SlipOption.is_integer
+
+```{autodoc2-docstring} altdss.enums.IndMach012SlipOption.is_integer
 ```
 
 ````
@@ -11717,6 +12344,22 @@ Bases: {py:obj}`enum.IntEnum`
 :canonical: altdss.enums.InvControlCombiMode.__ceil__
 
 ```{autodoc2-docstring} altdss.enums.InvControlCombiMode.__ceil__
+```
+
+````
+
+````{py:method} __copy__()
+:canonical: altdss.enums.InvControlCombiMode.__copy__
+
+```{autodoc2-docstring} altdss.enums.InvControlCombiMode.__copy__
+```
+
+````
+
+````{py:method} __deepcopy__(memo)
+:canonical: altdss.enums.InvControlCombiMode.__deepcopy__
+
+```{autodoc2-docstring} altdss.enums.InvControlCombiMode.__deepcopy__
 ```
 
 ````
@@ -12089,6 +12732,15 @@ Bases: {py:obj}`enum.IntEnum`
 
 ````
 
+````{py:method} __signature__()
+:canonical: altdss.enums.InvControlCombiMode.__signature__
+:classmethod:
+
+```{autodoc2-docstring} altdss.enums.InvControlCombiMode.__signature__
+```
+
+````
+
 ````{py:method} __sizeof__()
 :canonical: altdss.enums.InvControlCombiMode.__sizeof__
 
@@ -12189,6 +12841,14 @@ Bases: {py:obj}`enum.IntEnum`
 :canonical: altdss.enums.InvControlCombiMode.imag
 
 ```{autodoc2-docstring} altdss.enums.InvControlCombiMode.imag
+```
+
+````
+
+````{py:method} is_integer()
+:canonical: altdss.enums.InvControlCombiMode.is_integer
+
+```{autodoc2-docstring} altdss.enums.InvControlCombiMode.is_integer
 ```
 
 ````
@@ -12349,6 +13009,22 @@ Bases: {py:obj}`enum.IntEnum`
 :canonical: altdss.enums.InvControlControlMode.__ceil__
 
 ```{autodoc2-docstring} altdss.enums.InvControlControlMode.__ceil__
+```
+
+````
+
+````{py:method} __copy__()
+:canonical: altdss.enums.InvControlControlMode.__copy__
+
+```{autodoc2-docstring} altdss.enums.InvControlControlMode.__copy__
+```
+
+````
+
+````{py:method} __deepcopy__(memo)
+:canonical: altdss.enums.InvControlControlMode.__deepcopy__
+
+```{autodoc2-docstring} altdss.enums.InvControlControlMode.__deepcopy__
 ```
 
 ````
@@ -12721,6 +13397,15 @@ Bases: {py:obj}`enum.IntEnum`
 
 ````
 
+````{py:method} __signature__()
+:canonical: altdss.enums.InvControlControlMode.__signature__
+:classmethod:
+
+```{autodoc2-docstring} altdss.enums.InvControlControlMode.__signature__
+```
+
+````
+
 ````{py:method} __sizeof__()
 :canonical: altdss.enums.InvControlControlMode.__sizeof__
 
@@ -12821,6 +13506,14 @@ Bases: {py:obj}`enum.IntEnum`
 :canonical: altdss.enums.InvControlControlMode.imag
 
 ```{autodoc2-docstring} altdss.enums.InvControlControlMode.imag
+```
+
+````
+
+````{py:method} is_integer()
+:canonical: altdss.enums.InvControlControlMode.is_integer
+
+```{autodoc2-docstring} altdss.enums.InvControlControlMode.is_integer
 ```
 
 ````
@@ -12931,6 +13624,22 @@ Bases: {py:obj}`enum.IntEnum`
 :canonical: altdss.enums.InvControlControlModel.__ceil__
 
 ```{autodoc2-docstring} altdss.enums.InvControlControlModel.__ceil__
+```
+
+````
+
+````{py:method} __copy__()
+:canonical: altdss.enums.InvControlControlModel.__copy__
+
+```{autodoc2-docstring} altdss.enums.InvControlControlModel.__copy__
+```
+
+````
+
+````{py:method} __deepcopy__(memo)
+:canonical: altdss.enums.InvControlControlModel.__deepcopy__
+
+```{autodoc2-docstring} altdss.enums.InvControlControlModel.__deepcopy__
 ```
 
 ````
@@ -13303,6 +14012,15 @@ Bases: {py:obj}`enum.IntEnum`
 
 ````
 
+````{py:method} __signature__()
+:canonical: altdss.enums.InvControlControlModel.__signature__
+:classmethod:
+
+```{autodoc2-docstring} altdss.enums.InvControlControlModel.__signature__
+```
+
+````
+
 ````{py:method} __sizeof__()
 :canonical: altdss.enums.InvControlControlModel.__sizeof__
 
@@ -13403,6 +14121,14 @@ Bases: {py:obj}`enum.IntEnum`
 :canonical: altdss.enums.InvControlControlModel.imag
 
 ```{autodoc2-docstring} altdss.enums.InvControlControlModel.imag
+```
+
+````
+
+````{py:method} is_integer()
+:canonical: altdss.enums.InvControlControlModel.is_integer
+
+```{autodoc2-docstring} altdss.enums.InvControlControlModel.is_integer
 ```
 
 ````
@@ -13523,6 +14249,22 @@ Bases: {py:obj}`enum.IntEnum`
 :canonical: altdss.enums.InvControlRateOfChangeMode.__ceil__
 
 ```{autodoc2-docstring} altdss.enums.InvControlRateOfChangeMode.__ceil__
+```
+
+````
+
+````{py:method} __copy__()
+:canonical: altdss.enums.InvControlRateOfChangeMode.__copy__
+
+```{autodoc2-docstring} altdss.enums.InvControlRateOfChangeMode.__copy__
+```
+
+````
+
+````{py:method} __deepcopy__(memo)
+:canonical: altdss.enums.InvControlRateOfChangeMode.__deepcopy__
+
+```{autodoc2-docstring} altdss.enums.InvControlRateOfChangeMode.__deepcopy__
 ```
 
 ````
@@ -13895,6 +14637,15 @@ Bases: {py:obj}`enum.IntEnum`
 
 ````
 
+````{py:method} __signature__()
+:canonical: altdss.enums.InvControlRateOfChangeMode.__signature__
+:classmethod:
+
+```{autodoc2-docstring} altdss.enums.InvControlRateOfChangeMode.__signature__
+```
+
+````
+
 ````{py:method} __sizeof__()
 :canonical: altdss.enums.InvControlRateOfChangeMode.__sizeof__
 
@@ -13995,6 +14746,14 @@ Bases: {py:obj}`enum.IntEnum`
 :canonical: altdss.enums.InvControlRateOfChangeMode.imag
 
 ```{autodoc2-docstring} altdss.enums.InvControlRateOfChangeMode.imag
+```
+
+````
+
+````{py:method} is_integer()
+:canonical: altdss.enums.InvControlRateOfChangeMode.is_integer
+
+```{autodoc2-docstring} altdss.enums.InvControlRateOfChangeMode.is_integer
 ```
 
 ````
@@ -14105,6 +14864,22 @@ Bases: {py:obj}`enum.IntEnum`
 :canonical: altdss.enums.InvControlReactivePowerReference.__ceil__
 
 ```{autodoc2-docstring} altdss.enums.InvControlReactivePowerReference.__ceil__
+```
+
+````
+
+````{py:method} __copy__()
+:canonical: altdss.enums.InvControlReactivePowerReference.__copy__
+
+```{autodoc2-docstring} altdss.enums.InvControlReactivePowerReference.__copy__
+```
+
+````
+
+````{py:method} __deepcopy__(memo)
+:canonical: altdss.enums.InvControlReactivePowerReference.__deepcopy__
+
+```{autodoc2-docstring} altdss.enums.InvControlReactivePowerReference.__deepcopy__
 ```
 
 ````
@@ -14477,6 +15252,15 @@ Bases: {py:obj}`enum.IntEnum`
 
 ````
 
+````{py:method} __signature__()
+:canonical: altdss.enums.InvControlReactivePowerReference.__signature__
+:classmethod:
+
+```{autodoc2-docstring} altdss.enums.InvControlReactivePowerReference.__signature__
+```
+
+````
+
 ````{py:method} __sizeof__()
 :canonical: altdss.enums.InvControlReactivePowerReference.__sizeof__
 
@@ -14577,6 +15361,14 @@ Bases: {py:obj}`enum.IntEnum`
 :canonical: altdss.enums.InvControlReactivePowerReference.imag
 
 ```{autodoc2-docstring} altdss.enums.InvControlReactivePowerReference.imag
+```
+
+````
+
+````{py:method} is_integer()
+:canonical: altdss.enums.InvControlReactivePowerReference.is_integer
+
+```{autodoc2-docstring} altdss.enums.InvControlReactivePowerReference.is_integer
 ```
 
 ````
@@ -14707,6 +15499,22 @@ Bases: {py:obj}`enum.IntEnum`
 :canonical: altdss.enums.InvControlVoltWattYAxis.__ceil__
 
 ```{autodoc2-docstring} altdss.enums.InvControlVoltWattYAxis.__ceil__
+```
+
+````
+
+````{py:method} __copy__()
+:canonical: altdss.enums.InvControlVoltWattYAxis.__copy__
+
+```{autodoc2-docstring} altdss.enums.InvControlVoltWattYAxis.__copy__
+```
+
+````
+
+````{py:method} __deepcopy__(memo)
+:canonical: altdss.enums.InvControlVoltWattYAxis.__deepcopy__
+
+```{autodoc2-docstring} altdss.enums.InvControlVoltWattYAxis.__deepcopy__
 ```
 
 ````
@@ -15079,6 +15887,15 @@ Bases: {py:obj}`enum.IntEnum`
 
 ````
 
+````{py:method} __signature__()
+:canonical: altdss.enums.InvControlVoltWattYAxis.__signature__
+:classmethod:
+
+```{autodoc2-docstring} altdss.enums.InvControlVoltWattYAxis.__signature__
+```
+
+````
+
 ````{py:method} __sizeof__()
 :canonical: altdss.enums.InvControlVoltWattYAxis.__sizeof__
 
@@ -15179,6 +15996,14 @@ Bases: {py:obj}`enum.IntEnum`
 :canonical: altdss.enums.InvControlVoltWattYAxis.imag
 
 ```{autodoc2-docstring} altdss.enums.InvControlVoltWattYAxis.imag
+```
+
+````
+
+````{py:method} is_integer()
+:canonical: altdss.enums.InvControlVoltWattYAxis.is_integer
+
+```{autodoc2-docstring} altdss.enums.InvControlVoltWattYAxis.is_integer
 ```
 
 ````
@@ -15299,6 +16124,22 @@ Bases: {py:obj}`enum.IntEnum`
 :canonical: altdss.enums.InvControlVoltageCurveXRef.__ceil__
 
 ```{autodoc2-docstring} altdss.enums.InvControlVoltageCurveXRef.__ceil__
+```
+
+````
+
+````{py:method} __copy__()
+:canonical: altdss.enums.InvControlVoltageCurveXRef.__copy__
+
+```{autodoc2-docstring} altdss.enums.InvControlVoltageCurveXRef.__copy__
+```
+
+````
+
+````{py:method} __deepcopy__(memo)
+:canonical: altdss.enums.InvControlVoltageCurveXRef.__deepcopy__
+
+```{autodoc2-docstring} altdss.enums.InvControlVoltageCurveXRef.__deepcopy__
 ```
 
 ````
@@ -15671,6 +16512,15 @@ Bases: {py:obj}`enum.IntEnum`
 
 ````
 
+````{py:method} __signature__()
+:canonical: altdss.enums.InvControlVoltageCurveXRef.__signature__
+:classmethod:
+
+```{autodoc2-docstring} altdss.enums.InvControlVoltageCurveXRef.__signature__
+```
+
+````
+
 ````{py:method} __sizeof__()
 :canonical: altdss.enums.InvControlVoltageCurveXRef.__sizeof__
 
@@ -15771,6 +16621,14 @@ Bases: {py:obj}`enum.IntEnum`
 :canonical: altdss.enums.InvControlVoltageCurveXRef.imag
 
 ```{autodoc2-docstring} altdss.enums.InvControlVoltageCurveXRef.imag
+```
+
+````
+
+````{py:method} is_integer()
+:canonical: altdss.enums.InvControlVoltageCurveXRef.is_integer
+
+```{autodoc2-docstring} altdss.enums.InvControlVoltageCurveXRef.is_integer
 ```
 
 ````
@@ -15881,6 +16739,22 @@ Bases: {py:obj}`enum.IntEnum`
 :canonical: altdss.enums.InverterControlMode.__ceil__
 
 ```{autodoc2-docstring} altdss.enums.InverterControlMode.__ceil__
+```
+
+````
+
+````{py:method} __copy__()
+:canonical: altdss.enums.InverterControlMode.__copy__
+
+```{autodoc2-docstring} altdss.enums.InverterControlMode.__copy__
+```
+
+````
+
+````{py:method} __deepcopy__(memo)
+:canonical: altdss.enums.InverterControlMode.__deepcopy__
+
+```{autodoc2-docstring} altdss.enums.InverterControlMode.__deepcopy__
 ```
 
 ````
@@ -16253,6 +17127,15 @@ Bases: {py:obj}`enum.IntEnum`
 
 ````
 
+````{py:method} __signature__()
+:canonical: altdss.enums.InverterControlMode.__signature__
+:classmethod:
+
+```{autodoc2-docstring} altdss.enums.InverterControlMode.__signature__
+```
+
+````
+
 ````{py:method} __sizeof__()
 :canonical: altdss.enums.InverterControlMode.__sizeof__
 
@@ -16357,6 +17240,14 @@ Bases: {py:obj}`enum.IntEnum`
 
 ````
 
+````{py:method} is_integer()
+:canonical: altdss.enums.InverterControlMode.is_integer
+
+```{autodoc2-docstring} altdss.enums.InverterControlMode.is_integer
+```
+
+````
+
 ````{py:method} name()
 :canonical: altdss.enums.InverterControlMode.name
 
@@ -16443,6 +17334,22 @@ Bases: {py:obj}`enum.IntEnum`
 :canonical: altdss.enums.LengthUnit.__ceil__
 
 ```{autodoc2-docstring} altdss.enums.LengthUnit.__ceil__
+```
+
+````
+
+````{py:method} __copy__()
+:canonical: altdss.enums.LengthUnit.__copy__
+
+```{autodoc2-docstring} altdss.enums.LengthUnit.__copy__
+```
+
+````
+
+````{py:method} __deepcopy__(memo)
+:canonical: altdss.enums.LengthUnit.__deepcopy__
+
+```{autodoc2-docstring} altdss.enums.LengthUnit.__deepcopy__
 ```
 
 ````
@@ -16815,6 +17722,15 @@ Bases: {py:obj}`enum.IntEnum`
 
 ````
 
+````{py:method} __signature__()
+:canonical: altdss.enums.LengthUnit.__signature__
+:classmethod:
+
+```{autodoc2-docstring} altdss.enums.LengthUnit.__signature__
+```
+
+````
+
 ````{py:method} __sizeof__()
 :canonical: altdss.enums.LengthUnit.__sizeof__
 
@@ -16945,6 +17861,14 @@ Bases: {py:obj}`enum.IntEnum`
    6
 
 ```{autodoc2-docstring} altdss.enums.LengthUnit.inch
+```
+
+````
+
+````{py:method} is_integer()
+:canonical: altdss.enums.LengthUnit.is_integer
+
+```{autodoc2-docstring} altdss.enums.LengthUnit.is_integer
 ```
 
 ````
@@ -17115,6 +18039,22 @@ Bases: {py:obj}`enum.IntEnum`
 :canonical: altdss.enums.LineType.__ceil__
 
 ```{autodoc2-docstring} altdss.enums.LineType.__ceil__
+```
+
+````
+
+````{py:method} __copy__()
+:canonical: altdss.enums.LineType.__copy__
+
+```{autodoc2-docstring} altdss.enums.LineType.__copy__
+```
+
+````
+
+````{py:method} __deepcopy__(memo)
+:canonical: altdss.enums.LineType.__deepcopy__
+
+```{autodoc2-docstring} altdss.enums.LineType.__deepcopy__
 ```
 
 ````
@@ -17487,6 +18427,15 @@ Bases: {py:obj}`enum.IntEnum`
 
 ````
 
+````{py:method} __signature__()
+:canonical: altdss.enums.LineType.__signature__
+:classmethod:
+
+```{autodoc2-docstring} altdss.enums.LineType.__signature__
+```
+
+````
+
 ````{py:method} __sizeof__()
 :canonical: altdss.enums.LineType.__sizeof__
 
@@ -17597,6 +18546,14 @@ Bases: {py:obj}`enum.IntEnum`
 :canonical: altdss.enums.LineType.imag
 
 ```{autodoc2-docstring} altdss.enums.LineType.imag
+```
+
+````
+
+````{py:method} is_integer()
+:canonical: altdss.enums.LineType.is_integer
+
+```{autodoc2-docstring} altdss.enums.LineType.is_integer
 ```
 
 ````
@@ -17877,6 +18834,22 @@ Bases: {py:obj}`enum.IntEnum`
 :canonical: altdss.enums.LoadModel.__ceil__
 
 ```{autodoc2-docstring} altdss.enums.LoadModel.__ceil__
+```
+
+````
+
+````{py:method} __copy__()
+:canonical: altdss.enums.LoadModel.__copy__
+
+```{autodoc2-docstring} altdss.enums.LoadModel.__copy__
+```
+
+````
+
+````{py:method} __deepcopy__(memo)
+:canonical: altdss.enums.LoadModel.__deepcopy__
+
+```{autodoc2-docstring} altdss.enums.LoadModel.__deepcopy__
 ```
 
 ````
@@ -18249,6 +19222,15 @@ Bases: {py:obj}`enum.IntEnum`
 
 ````
 
+````{py:method} __signature__()
+:canonical: altdss.enums.LoadModel.__signature__
+:classmethod:
+
+```{autodoc2-docstring} altdss.enums.LoadModel.__signature__
+```
+
+````
+
 ````{py:method} __sizeof__()
 :canonical: altdss.enums.LoadModel.__sizeof__
 
@@ -18349,6 +19331,14 @@ Bases: {py:obj}`enum.IntEnum`
 :canonical: altdss.enums.LoadModel.imag
 
 ```{autodoc2-docstring} altdss.enums.LoadModel.imag
+```
+
+````
+
+````{py:method} is_integer()
+:canonical: altdss.enums.LoadModel.is_integer
+
+```{autodoc2-docstring} altdss.enums.LoadModel.is_integer
 ```
 
 ````
@@ -18469,6 +19459,22 @@ Bases: {py:obj}`enum.IntEnum`
 :canonical: altdss.enums.LoadShapeAction.__ceil__
 
 ```{autodoc2-docstring} altdss.enums.LoadShapeAction.__ceil__
+```
+
+````
+
+````{py:method} __copy__()
+:canonical: altdss.enums.LoadShapeAction.__copy__
+
+```{autodoc2-docstring} altdss.enums.LoadShapeAction.__copy__
+```
+
+````
+
+````{py:method} __deepcopy__(memo)
+:canonical: altdss.enums.LoadShapeAction.__deepcopy__
+
+```{autodoc2-docstring} altdss.enums.LoadShapeAction.__deepcopy__
 ```
 
 ````
@@ -18841,6 +19847,15 @@ Bases: {py:obj}`enum.IntEnum`
 
 ````
 
+````{py:method} __signature__()
+:canonical: altdss.enums.LoadShapeAction.__signature__
+:classmethod:
+
+```{autodoc2-docstring} altdss.enums.LoadShapeAction.__signature__
+```
+
+````
+
 ````{py:method} __sizeof__()
 :canonical: altdss.enums.LoadShapeAction.__sizeof__
 
@@ -18941,6 +19956,14 @@ Bases: {py:obj}`enum.IntEnum`
 :canonical: altdss.enums.LoadShapeAction.imag
 
 ```{autodoc2-docstring} altdss.enums.LoadShapeAction.imag
+```
+
+````
+
+````{py:method} is_integer()
+:canonical: altdss.enums.LoadShapeAction.is_integer
+
+```{autodoc2-docstring} altdss.enums.LoadShapeAction.is_integer
 ```
 
 ````
@@ -19061,6 +20084,22 @@ Bases: {py:obj}`enum.IntEnum`
 :canonical: altdss.enums.LoadShapeClass.__ceil__
 
 ```{autodoc2-docstring} altdss.enums.LoadShapeClass.__ceil__
+```
+
+````
+
+````{py:method} __copy__()
+:canonical: altdss.enums.LoadShapeClass.__copy__
+
+```{autodoc2-docstring} altdss.enums.LoadShapeClass.__copy__
+```
+
+````
+
+````{py:method} __deepcopy__(memo)
+:canonical: altdss.enums.LoadShapeClass.__deepcopy__
+
+```{autodoc2-docstring} altdss.enums.LoadShapeClass.__deepcopy__
 ```
 
 ````
@@ -19433,6 +20472,15 @@ Bases: {py:obj}`enum.IntEnum`
 
 ````
 
+````{py:method} __signature__()
+:canonical: altdss.enums.LoadShapeClass.__signature__
+:classmethod:
+
+```{autodoc2-docstring} altdss.enums.LoadShapeClass.__signature__
+```
+
+````
+
 ````{py:method} __sizeof__()
 :canonical: altdss.enums.LoadShapeClass.__sizeof__
 
@@ -19533,6 +20581,14 @@ Bases: {py:obj}`enum.IntEnum`
 :canonical: altdss.enums.LoadShapeClass.imag
 
 ```{autodoc2-docstring} altdss.enums.LoadShapeClass.imag
+```
+
+````
+
+````{py:method} is_integer()
+:canonical: altdss.enums.LoadShapeClass.is_integer
+
+```{autodoc2-docstring} altdss.enums.LoadShapeClass.is_integer
 ```
 
 ````
@@ -19653,6 +20709,22 @@ Bases: {py:obj}`enum.IntEnum`
 :canonical: altdss.enums.LoadShapeInterpolation.__ceil__
 
 ```{autodoc2-docstring} altdss.enums.LoadShapeInterpolation.__ceil__
+```
+
+````
+
+````{py:method} __copy__()
+:canonical: altdss.enums.LoadShapeInterpolation.__copy__
+
+```{autodoc2-docstring} altdss.enums.LoadShapeInterpolation.__copy__
+```
+
+````
+
+````{py:method} __deepcopy__(memo)
+:canonical: altdss.enums.LoadShapeInterpolation.__deepcopy__
+
+```{autodoc2-docstring} altdss.enums.LoadShapeInterpolation.__deepcopy__
 ```
 
 ````
@@ -20025,6 +21097,15 @@ Bases: {py:obj}`enum.IntEnum`
 
 ````
 
+````{py:method} __signature__()
+:canonical: altdss.enums.LoadShapeInterpolation.__signature__
+:classmethod:
+
+```{autodoc2-docstring} altdss.enums.LoadShapeInterpolation.__signature__
+```
+
+````
+
 ````{py:method} __sizeof__()
 :canonical: altdss.enums.LoadShapeInterpolation.__sizeof__
 
@@ -20125,6 +21206,14 @@ Bases: {py:obj}`enum.IntEnum`
 :canonical: altdss.enums.LoadShapeInterpolation.imag
 
 ```{autodoc2-docstring} altdss.enums.LoadShapeInterpolation.imag
+```
+
+````
+
+````{py:method} is_integer()
+:canonical: altdss.enums.LoadShapeInterpolation.is_integer
+
+```{autodoc2-docstring} altdss.enums.LoadShapeInterpolation.is_integer
 ```
 
 ````
@@ -20235,6 +21324,22 @@ Bases: {py:obj}`enum.IntEnum`
 :canonical: altdss.enums.LoadSolutionModel.__ceil__
 
 ```{autodoc2-docstring} altdss.enums.LoadSolutionModel.__ceil__
+```
+
+````
+
+````{py:method} __copy__()
+:canonical: altdss.enums.LoadSolutionModel.__copy__
+
+```{autodoc2-docstring} altdss.enums.LoadSolutionModel.__copy__
+```
+
+````
+
+````{py:method} __deepcopy__(memo)
+:canonical: altdss.enums.LoadSolutionModel.__deepcopy__
+
+```{autodoc2-docstring} altdss.enums.LoadSolutionModel.__deepcopy__
 ```
 
 ````
@@ -20607,6 +21712,15 @@ Bases: {py:obj}`enum.IntEnum`
 
 ````
 
+````{py:method} __signature__()
+:canonical: altdss.enums.LoadSolutionModel.__signature__
+:classmethod:
+
+```{autodoc2-docstring} altdss.enums.LoadSolutionModel.__signature__
+```
+
+````
+
 ````{py:method} __sizeof__()
 :canonical: altdss.enums.LoadSolutionModel.__sizeof__
 
@@ -20707,6 +21821,14 @@ Bases: {py:obj}`enum.IntEnum`
 :canonical: altdss.enums.LoadSolutionModel.imag
 
 ```{autodoc2-docstring} altdss.enums.LoadSolutionModel.imag
+```
+
+````
+
+````{py:method} is_integer()
+:canonical: altdss.enums.LoadSolutionModel.is_integer
+
+```{autodoc2-docstring} altdss.enums.LoadSolutionModel.is_integer
 ```
 
 ````
@@ -20827,6 +21949,22 @@ Bases: {py:obj}`enum.IntEnum`
 :canonical: altdss.enums.LoadStatus.__ceil__
 
 ```{autodoc2-docstring} altdss.enums.LoadStatus.__ceil__
+```
+
+````
+
+````{py:method} __copy__()
+:canonical: altdss.enums.LoadStatus.__copy__
+
+```{autodoc2-docstring} altdss.enums.LoadStatus.__copy__
+```
+
+````
+
+````{py:method} __deepcopy__(memo)
+:canonical: altdss.enums.LoadStatus.__deepcopy__
+
+```{autodoc2-docstring} altdss.enums.LoadStatus.__deepcopy__
 ```
 
 ````
@@ -21199,6 +22337,15 @@ Bases: {py:obj}`enum.IntEnum`
 
 ````
 
+````{py:method} __signature__()
+:canonical: altdss.enums.LoadStatus.__signature__
+:classmethod:
+
+```{autodoc2-docstring} altdss.enums.LoadStatus.__signature__
+```
+
+````
+
 ````{py:method} __sizeof__()
 :canonical: altdss.enums.LoadStatus.__sizeof__
 
@@ -21299,6 +22446,14 @@ Bases: {py:obj}`enum.IntEnum`
 :canonical: altdss.enums.LoadStatus.imag
 
 ```{autodoc2-docstring} altdss.enums.LoadStatus.imag
+```
+
+````
+
+````{py:method} is_integer()
+:canonical: altdss.enums.LoadStatus.is_integer
+
+```{autodoc2-docstring} altdss.enums.LoadStatus.is_integer
 ```
 
 ````
@@ -21439,6 +22594,22 @@ Bases: {py:obj}`enum.IntEnum`
 :canonical: altdss.enums.MonitorAction.__ceil__
 
 ```{autodoc2-docstring} altdss.enums.MonitorAction.__ceil__
+```
+
+````
+
+````{py:method} __copy__()
+:canonical: altdss.enums.MonitorAction.__copy__
+
+```{autodoc2-docstring} altdss.enums.MonitorAction.__copy__
+```
+
+````
+
+````{py:method} __deepcopy__(memo)
+:canonical: altdss.enums.MonitorAction.__deepcopy__
+
+```{autodoc2-docstring} altdss.enums.MonitorAction.__deepcopy__
 ```
 
 ````
@@ -21811,6 +22982,15 @@ Bases: {py:obj}`enum.IntEnum`
 
 ````
 
+````{py:method} __signature__()
+:canonical: altdss.enums.MonitorAction.__signature__
+:classmethod:
+
+```{autodoc2-docstring} altdss.enums.MonitorAction.__signature__
+```
+
+````
+
 ````{py:method} __sizeof__()
 :canonical: altdss.enums.MonitorAction.__sizeof__
 
@@ -21915,6 +23095,14 @@ Bases: {py:obj}`enum.IntEnum`
 
 ````
 
+````{py:method} is_integer()
+:canonical: altdss.enums.MonitorAction.is_integer
+
+```{autodoc2-docstring} altdss.enums.MonitorAction.is_integer
+```
+
+````
+
 ````{py:method} name()
 :canonical: altdss.enums.MonitorAction.name
 
@@ -22001,6 +23189,22 @@ Bases: {py:obj}`enum.IntEnum`
 :canonical: altdss.enums.MonitoredPhase.__ceil__
 
 ```{autodoc2-docstring} altdss.enums.MonitoredPhase.__ceil__
+```
+
+````
+
+````{py:method} __copy__()
+:canonical: altdss.enums.MonitoredPhase.__copy__
+
+```{autodoc2-docstring} altdss.enums.MonitoredPhase.__copy__
+```
+
+````
+
+````{py:method} __deepcopy__(memo)
+:canonical: altdss.enums.MonitoredPhase.__deepcopy__
+
+```{autodoc2-docstring} altdss.enums.MonitoredPhase.__deepcopy__
 ```
 
 ````
@@ -22373,6 +23577,15 @@ Bases: {py:obj}`enum.IntEnum`
 
 ````
 
+````{py:method} __signature__()
+:canonical: altdss.enums.MonitoredPhase.__signature__
+:classmethod:
+
+```{autodoc2-docstring} altdss.enums.MonitoredPhase.__signature__
+```
+
+````
+
 ````{py:method} __sizeof__()
 :canonical: altdss.enums.MonitoredPhase.__sizeof__
 
@@ -22483,6 +23696,14 @@ Bases: {py:obj}`enum.IntEnum`
 :canonical: altdss.enums.MonitoredPhase.imag
 
 ```{autodoc2-docstring} altdss.enums.MonitoredPhase.imag
+```
+
+````
+
+````{py:method} is_integer()
+:canonical: altdss.enums.MonitoredPhase.is_integer
+
+```{autodoc2-docstring} altdss.enums.MonitoredPhase.is_integer
 ```
 
 ````
@@ -22623,6 +23844,22 @@ Bases: {py:obj}`enum.IntEnum`
 :canonical: altdss.enums.PVSystemModel.__ceil__
 
 ```{autodoc2-docstring} altdss.enums.PVSystemModel.__ceil__
+```
+
+````
+
+````{py:method} __copy__()
+:canonical: altdss.enums.PVSystemModel.__copy__
+
+```{autodoc2-docstring} altdss.enums.PVSystemModel.__copy__
+```
+
+````
+
+````{py:method} __deepcopy__(memo)
+:canonical: altdss.enums.PVSystemModel.__deepcopy__
+
+```{autodoc2-docstring} altdss.enums.PVSystemModel.__deepcopy__
 ```
 
 ````
@@ -22995,6 +24232,15 @@ Bases: {py:obj}`enum.IntEnum`
 
 ````
 
+````{py:method} __signature__()
+:canonical: altdss.enums.PVSystemModel.__signature__
+:classmethod:
+
+```{autodoc2-docstring} altdss.enums.PVSystemModel.__signature__
+```
+
+````
+
 ````{py:method} __sizeof__()
 :canonical: altdss.enums.PVSystemModel.__sizeof__
 
@@ -23095,6 +24341,14 @@ Bases: {py:obj}`enum.IntEnum`
 :canonical: altdss.enums.PVSystemModel.imag
 
 ```{autodoc2-docstring} altdss.enums.PVSystemModel.imag
+```
+
+````
+
+````{py:method} is_integer()
+:canonical: altdss.enums.PVSystemModel.is_integer
+
+```{autodoc2-docstring} altdss.enums.PVSystemModel.is_integer
 ```
 
 ````
@@ -23225,6 +24479,22 @@ Bases: {py:obj}`enum.IntEnum`
 :canonical: altdss.enums.PhaseSequence.__ceil__
 
 ```{autodoc2-docstring} altdss.enums.PhaseSequence.__ceil__
+```
+
+````
+
+````{py:method} __copy__()
+:canonical: altdss.enums.PhaseSequence.__copy__
+
+```{autodoc2-docstring} altdss.enums.PhaseSequence.__copy__
+```
+
+````
+
+````{py:method} __deepcopy__(memo)
+:canonical: altdss.enums.PhaseSequence.__deepcopy__
+
+```{autodoc2-docstring} altdss.enums.PhaseSequence.__deepcopy__
 ```
 
 ````
@@ -23597,6 +24867,15 @@ Bases: {py:obj}`enum.IntEnum`
 
 ````
 
+````{py:method} __signature__()
+:canonical: altdss.enums.PhaseSequence.__signature__
+:classmethod:
+
+```{autodoc2-docstring} altdss.enums.PhaseSequence.__signature__
+```
+
+````
+
 ````{py:method} __sizeof__()
 :canonical: altdss.enums.PhaseSequence.__sizeof__
 
@@ -23697,6 +24976,14 @@ Bases: {py:obj}`enum.IntEnum`
 :canonical: altdss.enums.PhaseSequence.imag
 
 ```{autodoc2-docstring} altdss.enums.PhaseSequence.imag
+```
+
+````
+
+````{py:method} is_integer()
+:canonical: altdss.enums.PhaseSequence.is_integer
+
+```{autodoc2-docstring} altdss.enums.PhaseSequence.is_integer
 ```
 
 ````
@@ -23847,6 +25134,22 @@ Bases: {py:obj}`enum.IntEnum`
 :canonical: altdss.enums.PlotProfilePhases.__ceil__
 
 ```{autodoc2-docstring} altdss.enums.PlotProfilePhases.__ceil__
+```
+
+````
+
+````{py:method} __copy__()
+:canonical: altdss.enums.PlotProfilePhases.__copy__
+
+```{autodoc2-docstring} altdss.enums.PlotProfilePhases.__copy__
+```
+
+````
+
+````{py:method} __deepcopy__(memo)
+:canonical: altdss.enums.PlotProfilePhases.__deepcopy__
+
+```{autodoc2-docstring} altdss.enums.PlotProfilePhases.__deepcopy__
 ```
 
 ````
@@ -24219,6 +25522,15 @@ Bases: {py:obj}`enum.IntEnum`
 
 ````
 
+````{py:method} __signature__()
+:canonical: altdss.enums.PlotProfilePhases.__signature__
+:classmethod:
+
+```{autodoc2-docstring} altdss.enums.PlotProfilePhases.__signature__
+```
+
+````
+
 ````{py:method} __sizeof__()
 :canonical: altdss.enums.PlotProfilePhases.__sizeof__
 
@@ -24319,6 +25631,14 @@ Bases: {py:obj}`enum.IntEnum`
 :canonical: altdss.enums.PlotProfilePhases.imag
 
 ```{autodoc2-docstring} altdss.enums.PlotProfilePhases.imag
+```
+
+````
+
+````{py:method} is_integer()
+:canonical: altdss.enums.PlotProfilePhases.is_integer
+
+```{autodoc2-docstring} altdss.enums.PlotProfilePhases.is_integer
 ```
 
 ````
@@ -24429,6 +25749,22 @@ Bases: {py:obj}`enum.IntEnum`
 :canonical: altdss.enums.PriceShapeAction.__ceil__
 
 ```{autodoc2-docstring} altdss.enums.PriceShapeAction.__ceil__
+```
+
+````
+
+````{py:method} __copy__()
+:canonical: altdss.enums.PriceShapeAction.__copy__
+
+```{autodoc2-docstring} altdss.enums.PriceShapeAction.__copy__
+```
+
+````
+
+````{py:method} __deepcopy__(memo)
+:canonical: altdss.enums.PriceShapeAction.__deepcopy__
+
+```{autodoc2-docstring} altdss.enums.PriceShapeAction.__deepcopy__
 ```
 
 ````
@@ -24801,6 +26137,15 @@ Bases: {py:obj}`enum.IntEnum`
 
 ````
 
+````{py:method} __signature__()
+:canonical: altdss.enums.PriceShapeAction.__signature__
+:classmethod:
+
+```{autodoc2-docstring} altdss.enums.PriceShapeAction.__signature__
+```
+
+````
+
 ````{py:method} __sizeof__()
 :canonical: altdss.enums.PriceShapeAction.__sizeof__
 
@@ -24901,6 +26246,14 @@ Bases: {py:obj}`enum.IntEnum`
 :canonical: altdss.enums.PriceShapeAction.imag
 
 ```{autodoc2-docstring} altdss.enums.PriceShapeAction.imag
+```
+
+````
+
+````{py:method} is_integer()
+:canonical: altdss.enums.PriceShapeAction.is_integer
+
+```{autodoc2-docstring} altdss.enums.PriceShapeAction.is_integer
 ```
 
 ````
@@ -25021,6 +26374,22 @@ Bases: {py:obj}`enum.IntEnum`
 :canonical: altdss.enums.RandomType.__ceil__
 
 ```{autodoc2-docstring} altdss.enums.RandomType.__ceil__
+```
+
+````
+
+````{py:method} __copy__()
+:canonical: altdss.enums.RandomType.__copy__
+
+```{autodoc2-docstring} altdss.enums.RandomType.__copy__
+```
+
+````
+
+````{py:method} __deepcopy__(memo)
+:canonical: altdss.enums.RandomType.__deepcopy__
+
+```{autodoc2-docstring} altdss.enums.RandomType.__deepcopy__
 ```
 
 ````
@@ -25393,6 +26762,15 @@ Bases: {py:obj}`enum.IntEnum`
 
 ````
 
+````{py:method} __signature__()
+:canonical: altdss.enums.RandomType.__signature__
+:classmethod:
+
+```{autodoc2-docstring} altdss.enums.RandomType.__signature__
+```
+
+````
+
 ````{py:method} __sizeof__()
 :canonical: altdss.enums.RandomType.__sizeof__
 
@@ -25497,6 +26875,14 @@ Bases: {py:obj}`enum.IntEnum`
 
 ````
 
+````{py:method} is_integer()
+:canonical: altdss.enums.RandomType.is_integer
+
+```{autodoc2-docstring} altdss.enums.RandomType.is_integer
+```
+
+````
+
 ````{py:method} name()
 :canonical: altdss.enums.RandomType.name
 
@@ -25593,6 +26979,22 @@ Bases: {py:obj}`enum.IntEnum`
 :canonical: altdss.enums.RecloserAction.__ceil__
 
 ```{autodoc2-docstring} altdss.enums.RecloserAction.__ceil__
+```
+
+````
+
+````{py:method} __copy__()
+:canonical: altdss.enums.RecloserAction.__copy__
+
+```{autodoc2-docstring} altdss.enums.RecloserAction.__copy__
+```
+
+````
+
+````{py:method} __deepcopy__(memo)
+:canonical: altdss.enums.RecloserAction.__deepcopy__
+
+```{autodoc2-docstring} altdss.enums.RecloserAction.__deepcopy__
 ```
 
 ````
@@ -25965,6 +27367,15 @@ Bases: {py:obj}`enum.IntEnum`
 
 ````
 
+````{py:method} __signature__()
+:canonical: altdss.enums.RecloserAction.__signature__
+:classmethod:
+
+```{autodoc2-docstring} altdss.enums.RecloserAction.__signature__
+```
+
+````
+
 ````{py:method} __sizeof__()
 :canonical: altdss.enums.RecloserAction.__sizeof__
 
@@ -26079,6 +27490,14 @@ Bases: {py:obj}`enum.IntEnum`
 
 ````
 
+````{py:method} is_integer()
+:canonical: altdss.enums.RecloserAction.is_integer
+
+```{autodoc2-docstring} altdss.enums.RecloserAction.is_integer
+```
+
+````
+
 ````{py:method} name()
 :canonical: altdss.enums.RecloserAction.name
 
@@ -26185,6 +27604,22 @@ Bases: {py:obj}`enum.IntEnum`
 :canonical: altdss.enums.RecloserState.__ceil__
 
 ```{autodoc2-docstring} altdss.enums.RecloserState.__ceil__
+```
+
+````
+
+````{py:method} __copy__()
+:canonical: altdss.enums.RecloserState.__copy__
+
+```{autodoc2-docstring} altdss.enums.RecloserState.__copy__
+```
+
+````
+
+````{py:method} __deepcopy__(memo)
+:canonical: altdss.enums.RecloserState.__deepcopy__
+
+```{autodoc2-docstring} altdss.enums.RecloserState.__deepcopy__
 ```
 
 ````
@@ -26557,6 +27992,15 @@ Bases: {py:obj}`enum.IntEnum`
 
 ````
 
+````{py:method} __signature__()
+:canonical: altdss.enums.RecloserState.__signature__
+:classmethod:
+
+```{autodoc2-docstring} altdss.enums.RecloserState.__signature__
+```
+
+````
+
 ````{py:method} __sizeof__()
 :canonical: altdss.enums.RecloserState.__sizeof__
 
@@ -26667,6 +28111,14 @@ Bases: {py:obj}`enum.IntEnum`
 :canonical: altdss.enums.RecloserState.imag
 
 ```{autodoc2-docstring} altdss.enums.RecloserState.imag
+```
+
+````
+
+````{py:method} is_integer()
+:canonical: altdss.enums.RecloserState.is_integer
+
+```{autodoc2-docstring} altdss.enums.RecloserState.is_integer
 ```
 
 ````
@@ -26847,6 +28299,22 @@ Bases: {py:obj}`enum.IntEnum`
 :canonical: altdss.enums.ReductionStrategy.__ceil__
 
 ```{autodoc2-docstring} altdss.enums.ReductionStrategy.__ceil__
+```
+
+````
+
+````{py:method} __copy__()
+:canonical: altdss.enums.ReductionStrategy.__copy__
+
+```{autodoc2-docstring} altdss.enums.ReductionStrategy.__copy__
+```
+
+````
+
+````{py:method} __deepcopy__(memo)
+:canonical: altdss.enums.ReductionStrategy.__deepcopy__
+
+```{autodoc2-docstring} altdss.enums.ReductionStrategy.__deepcopy__
 ```
 
 ````
@@ -27219,6 +28687,15 @@ Bases: {py:obj}`enum.IntEnum`
 
 ````
 
+````{py:method} __signature__()
+:canonical: altdss.enums.ReductionStrategy.__signature__
+:classmethod:
+
+```{autodoc2-docstring} altdss.enums.ReductionStrategy.__signature__
+```
+
+````
+
 ````{py:method} __sizeof__()
 :canonical: altdss.enums.ReductionStrategy.__sizeof__
 
@@ -27323,6 +28800,14 @@ Bases: {py:obj}`enum.IntEnum`
 
 ````
 
+````{py:method} is_integer()
+:canonical: altdss.enums.ReductionStrategy.is_integer
+
+```{autodoc2-docstring} altdss.enums.ReductionStrategy.is_integer
+```
+
+````
+
 ````{py:method} name()
 :canonical: altdss.enums.ReductionStrategy.name
 
@@ -27409,6 +28894,22 @@ Bases: {py:obj}`enum.IntEnum`
 :canonical: altdss.enums.RegControlPhaseSelection.__ceil__
 
 ```{autodoc2-docstring} altdss.enums.RegControlPhaseSelection.__ceil__
+```
+
+````
+
+````{py:method} __copy__()
+:canonical: altdss.enums.RegControlPhaseSelection.__copy__
+
+```{autodoc2-docstring} altdss.enums.RegControlPhaseSelection.__copy__
+```
+
+````
+
+````{py:method} __deepcopy__(memo)
+:canonical: altdss.enums.RegControlPhaseSelection.__deepcopy__
+
+```{autodoc2-docstring} altdss.enums.RegControlPhaseSelection.__deepcopy__
 ```
 
 ````
@@ -27781,6 +29282,15 @@ Bases: {py:obj}`enum.IntEnum`
 
 ````
 
+````{py:method} __signature__()
+:canonical: altdss.enums.RegControlPhaseSelection.__signature__
+:classmethod:
+
+```{autodoc2-docstring} altdss.enums.RegControlPhaseSelection.__signature__
+```
+
+````
+
 ````{py:method} __sizeof__()
 :canonical: altdss.enums.RegControlPhaseSelection.__sizeof__
 
@@ -27881,6 +29391,14 @@ Bases: {py:obj}`enum.IntEnum`
 :canonical: altdss.enums.RegControlPhaseSelection.imag
 
 ```{autodoc2-docstring} altdss.enums.RegControlPhaseSelection.imag
+```
+
+````
+
+````{py:method} is_integer()
+:canonical: altdss.enums.RegControlPhaseSelection.is_integer
+
+```{autodoc2-docstring} altdss.enums.RegControlPhaseSelection.is_integer
 ```
 
 ````
@@ -27991,6 +29509,22 @@ Bases: {py:obj}`enum.IntEnum`
 :canonical: altdss.enums.RelayAction.__ceil__
 
 ```{autodoc2-docstring} altdss.enums.RelayAction.__ceil__
+```
+
+````
+
+````{py:method} __copy__()
+:canonical: altdss.enums.RelayAction.__copy__
+
+```{autodoc2-docstring} altdss.enums.RelayAction.__copy__
+```
+
+````
+
+````{py:method} __deepcopy__(memo)
+:canonical: altdss.enums.RelayAction.__deepcopy__
+
+```{autodoc2-docstring} altdss.enums.RelayAction.__deepcopy__
 ```
 
 ````
@@ -28363,6 +29897,15 @@ Bases: {py:obj}`enum.IntEnum`
 
 ````
 
+````{py:method} __signature__()
+:canonical: altdss.enums.RelayAction.__signature__
+:classmethod:
+
+```{autodoc2-docstring} altdss.enums.RelayAction.__signature__
+```
+
+````
+
 ````{py:method} __sizeof__()
 :canonical: altdss.enums.RelayAction.__sizeof__
 
@@ -28477,6 +30020,14 @@ Bases: {py:obj}`enum.IntEnum`
 
 ````
 
+````{py:method} is_integer()
+:canonical: altdss.enums.RelayAction.is_integer
+
+```{autodoc2-docstring} altdss.enums.RelayAction.is_integer
+```
+
+````
+
 ````{py:method} name()
 :canonical: altdss.enums.RelayAction.name
 
@@ -28583,6 +30134,22 @@ Bases: {py:obj}`enum.IntEnum`
 :canonical: altdss.enums.RelayState.__ceil__
 
 ```{autodoc2-docstring} altdss.enums.RelayState.__ceil__
+```
+
+````
+
+````{py:method} __copy__()
+:canonical: altdss.enums.RelayState.__copy__
+
+```{autodoc2-docstring} altdss.enums.RelayState.__copy__
+```
+
+````
+
+````{py:method} __deepcopy__(memo)
+:canonical: altdss.enums.RelayState.__deepcopy__
+
+```{autodoc2-docstring} altdss.enums.RelayState.__deepcopy__
 ```
 
 ````
@@ -28955,6 +30522,15 @@ Bases: {py:obj}`enum.IntEnum`
 
 ````
 
+````{py:method} __signature__()
+:canonical: altdss.enums.RelayState.__signature__
+:classmethod:
+
+```{autodoc2-docstring} altdss.enums.RelayState.__signature__
+```
+
+````
+
 ````{py:method} __sizeof__()
 :canonical: altdss.enums.RelayState.__sizeof__
 
@@ -29065,6 +30641,14 @@ Bases: {py:obj}`enum.IntEnum`
 :canonical: altdss.enums.RelayState.imag
 
 ```{autodoc2-docstring} altdss.enums.RelayState.imag
+```
+
+````
+
+````{py:method} is_integer()
+:canonical: altdss.enums.RelayState.is_integer
+
+```{autodoc2-docstring} altdss.enums.RelayState.is_integer
 ```
 
 ````
@@ -29245,6 +30829,22 @@ Bases: {py:obj}`enum.IntEnum`
 :canonical: altdss.enums.RelayType.__ceil__
 
 ```{autodoc2-docstring} altdss.enums.RelayType.__ceil__
+```
+
+````
+
+````{py:method} __copy__()
+:canonical: altdss.enums.RelayType.__copy__
+
+```{autodoc2-docstring} altdss.enums.RelayType.__copy__
+```
+
+````
+
+````{py:method} __deepcopy__(memo)
+:canonical: altdss.enums.RelayType.__deepcopy__
+
+```{autodoc2-docstring} altdss.enums.RelayType.__deepcopy__
 ```
 
 ````
@@ -29617,6 +31217,15 @@ Bases: {py:obj}`enum.IntEnum`
 
 ````
 
+````{py:method} __signature__()
+:canonical: altdss.enums.RelayType.__signature__
+:classmethod:
+
+```{autodoc2-docstring} altdss.enums.RelayType.__signature__
+```
+
+````
+
 ````{py:method} __sizeof__()
 :canonical: altdss.enums.RelayType.__sizeof__
 
@@ -29717,6 +31326,14 @@ Bases: {py:obj}`enum.IntEnum`
 :canonical: altdss.enums.RelayType.imag
 
 ```{autodoc2-docstring} altdss.enums.RelayType.imag
+```
+
+````
+
+````{py:method} is_integer()
+:canonical: altdss.enums.RelayType.is_integer
+
+```{autodoc2-docstring} altdss.enums.RelayType.is_integer
 ```
 
 ````
@@ -29847,6 +31464,22 @@ Bases: {py:obj}`enum.IntEnum`
 :canonical: altdss.enums.ScanType.__ceil__
 
 ```{autodoc2-docstring} altdss.enums.ScanType.__ceil__
+```
+
+````
+
+````{py:method} __copy__()
+:canonical: altdss.enums.ScanType.__copy__
+
+```{autodoc2-docstring} altdss.enums.ScanType.__copy__
+```
+
+````
+
+````{py:method} __deepcopy__(memo)
+:canonical: altdss.enums.ScanType.__deepcopy__
+
+```{autodoc2-docstring} altdss.enums.ScanType.__deepcopy__
 ```
 
 ````
@@ -30219,6 +31852,15 @@ Bases: {py:obj}`enum.IntEnum`
 
 ````
 
+````{py:method} __signature__()
+:canonical: altdss.enums.ScanType.__signature__
+:classmethod:
+
+```{autodoc2-docstring} altdss.enums.ScanType.__signature__
+```
+
+````
+
 ````{py:method} __sizeof__()
 :canonical: altdss.enums.ScanType.__sizeof__
 
@@ -30319,6 +31961,14 @@ Bases: {py:obj}`enum.IntEnum`
 :canonical: altdss.enums.ScanType.imag
 
 ```{autodoc2-docstring} altdss.enums.ScanType.imag
+```
+
+````
+
+````{py:method} is_integer()
+:canonical: altdss.enums.ScanType.is_integer
+
+```{autodoc2-docstring} altdss.enums.ScanType.is_integer
 ```
 
 ````
@@ -30449,6 +32099,22 @@ Bases: {py:obj}`enum.IntEnum`
 :canonical: altdss.enums.SequenceType.__ceil__
 
 ```{autodoc2-docstring} altdss.enums.SequenceType.__ceil__
+```
+
+````
+
+````{py:method} __copy__()
+:canonical: altdss.enums.SequenceType.__copy__
+
+```{autodoc2-docstring} altdss.enums.SequenceType.__copy__
+```
+
+````
+
+````{py:method} __deepcopy__(memo)
+:canonical: altdss.enums.SequenceType.__deepcopy__
+
+```{autodoc2-docstring} altdss.enums.SequenceType.__deepcopy__
 ```
 
 ````
@@ -30821,6 +32487,15 @@ Bases: {py:obj}`enum.IntEnum`
 
 ````
 
+````{py:method} __signature__()
+:canonical: altdss.enums.SequenceType.__signature__
+:classmethod:
+
+```{autodoc2-docstring} altdss.enums.SequenceType.__signature__
+```
+
+````
+
 ````{py:method} __sizeof__()
 :canonical: altdss.enums.SequenceType.__sizeof__
 
@@ -30921,6 +32596,14 @@ Bases: {py:obj}`enum.IntEnum`
 :canonical: altdss.enums.SequenceType.imag
 
 ```{autodoc2-docstring} altdss.enums.SequenceType.imag
+```
+
+````
+
+````{py:method} is_integer()
+:canonical: altdss.enums.SequenceType.is_integer
+
+```{autodoc2-docstring} altdss.enums.SequenceType.is_integer
 ```
 
 ````
@@ -31031,6 +32714,22 @@ Bases: {py:obj}`enum.IntEnum`
 :canonical: altdss.enums.SolutionAlgorithm.__ceil__
 
 ```{autodoc2-docstring} altdss.enums.SolutionAlgorithm.__ceil__
+```
+
+````
+
+````{py:method} __copy__()
+:canonical: altdss.enums.SolutionAlgorithm.__copy__
+
+```{autodoc2-docstring} altdss.enums.SolutionAlgorithm.__copy__
+```
+
+````
+
+````{py:method} __deepcopy__(memo)
+:canonical: altdss.enums.SolutionAlgorithm.__deepcopy__
+
+```{autodoc2-docstring} altdss.enums.SolutionAlgorithm.__deepcopy__
 ```
 
 ````
@@ -31403,6 +33102,15 @@ Bases: {py:obj}`enum.IntEnum`
 
 ````
 
+````{py:method} __signature__()
+:canonical: altdss.enums.SolutionAlgorithm.__signature__
+:classmethod:
+
+```{autodoc2-docstring} altdss.enums.SolutionAlgorithm.__signature__
+```
+
+````
+
 ````{py:method} __sizeof__()
 :canonical: altdss.enums.SolutionAlgorithm.__sizeof__
 
@@ -31503,6 +33211,14 @@ Bases: {py:obj}`enum.IntEnum`
 :canonical: altdss.enums.SolutionAlgorithm.imag
 
 ```{autodoc2-docstring} altdss.enums.SolutionAlgorithm.imag
+```
+
+````
+
+````{py:method} is_integer()
+:canonical: altdss.enums.SolutionAlgorithm.is_integer
+
+```{autodoc2-docstring} altdss.enums.SolutionAlgorithm.is_integer
 ```
 
 ````
@@ -31853,6 +33569,22 @@ Bases: {py:obj}`enum.IntEnum`
 :canonical: altdss.enums.SolutionMode.__ceil__
 
 ```{autodoc2-docstring} altdss.enums.SolutionMode.__ceil__
+```
+
+````
+
+````{py:method} __copy__()
+:canonical: altdss.enums.SolutionMode.__copy__
+
+```{autodoc2-docstring} altdss.enums.SolutionMode.__copy__
+```
+
+````
+
+````{py:method} __deepcopy__(memo)
+:canonical: altdss.enums.SolutionMode.__deepcopy__
+
+```{autodoc2-docstring} altdss.enums.SolutionMode.__deepcopy__
 ```
 
 ````
@@ -32225,6 +33957,15 @@ Bases: {py:obj}`enum.IntEnum`
 
 ````
 
+````{py:method} __signature__()
+:canonical: altdss.enums.SolutionMode.__signature__
+:classmethod:
+
+```{autodoc2-docstring} altdss.enums.SolutionMode.__signature__
+```
+
+````
+
 ````{py:method} __sizeof__()
 :canonical: altdss.enums.SolutionMode.__sizeof__
 
@@ -32325,6 +34066,14 @@ Bases: {py:obj}`enum.IntEnum`
 :canonical: altdss.enums.SolutionMode.imag
 
 ```{autodoc2-docstring} altdss.enums.SolutionMode.imag
+```
+
+````
+
+````{py:method} is_integer()
+:canonical: altdss.enums.SolutionMode.is_integer
+
+```{autodoc2-docstring} altdss.enums.SolutionMode.is_integer
 ```
 
 ````
@@ -32455,6 +34204,22 @@ Bases: {py:obj}`enum.IntEnum`
 :canonical: altdss.enums.StorageControllerChargeMode.__ceil__
 
 ```{autodoc2-docstring} altdss.enums.StorageControllerChargeMode.__ceil__
+```
+
+````
+
+````{py:method} __copy__()
+:canonical: altdss.enums.StorageControllerChargeMode.__copy__
+
+```{autodoc2-docstring} altdss.enums.StorageControllerChargeMode.__copy__
+```
+
+````
+
+````{py:method} __deepcopy__(memo)
+:canonical: altdss.enums.StorageControllerChargeMode.__deepcopy__
+
+```{autodoc2-docstring} altdss.enums.StorageControllerChargeMode.__deepcopy__
 ```
 
 ````
@@ -32827,6 +34592,15 @@ Bases: {py:obj}`enum.IntEnum`
 
 ````
 
+````{py:method} __signature__()
+:canonical: altdss.enums.StorageControllerChargeMode.__signature__
+:classmethod:
+
+```{autodoc2-docstring} altdss.enums.StorageControllerChargeMode.__signature__
+```
+
+````
+
 ````{py:method} __sizeof__()
 :canonical: altdss.enums.StorageControllerChargeMode.__sizeof__
 
@@ -32927,6 +34701,14 @@ Bases: {py:obj}`enum.IntEnum`
 :canonical: altdss.enums.StorageControllerChargeMode.imag
 
 ```{autodoc2-docstring} altdss.enums.StorageControllerChargeMode.imag
+```
+
+````
+
+````{py:method} is_integer()
+:canonical: altdss.enums.StorageControllerChargeMode.is_integer
+
+```{autodoc2-docstring} altdss.enums.StorageControllerChargeMode.is_integer
 ```
 
 ````
@@ -33087,6 +34869,22 @@ Bases: {py:obj}`enum.IntEnum`
 :canonical: altdss.enums.StorageControllerDischargeMode.__ceil__
 
 ```{autodoc2-docstring} altdss.enums.StorageControllerDischargeMode.__ceil__
+```
+
+````
+
+````{py:method} __copy__()
+:canonical: altdss.enums.StorageControllerDischargeMode.__copy__
+
+```{autodoc2-docstring} altdss.enums.StorageControllerDischargeMode.__copy__
+```
+
+````
+
+````{py:method} __deepcopy__(memo)
+:canonical: altdss.enums.StorageControllerDischargeMode.__deepcopy__
+
+```{autodoc2-docstring} altdss.enums.StorageControllerDischargeMode.__deepcopy__
 ```
 
 ````
@@ -33459,6 +35257,15 @@ Bases: {py:obj}`enum.IntEnum`
 
 ````
 
+````{py:method} __signature__()
+:canonical: altdss.enums.StorageControllerDischargeMode.__signature__
+:classmethod:
+
+```{autodoc2-docstring} altdss.enums.StorageControllerDischargeMode.__signature__
+```
+
+````
+
 ````{py:method} __sizeof__()
 :canonical: altdss.enums.StorageControllerDischargeMode.__sizeof__
 
@@ -33559,6 +35366,14 @@ Bases: {py:obj}`enum.IntEnum`
 :canonical: altdss.enums.StorageControllerDischargeMode.imag
 
 ```{autodoc2-docstring} altdss.enums.StorageControllerDischargeMode.imag
+```
+
+````
+
+````{py:method} is_integer()
+:canonical: altdss.enums.StorageControllerDischargeMode.is_integer
+
+```{autodoc2-docstring} altdss.enums.StorageControllerDischargeMode.is_integer
 ```
 
 ````
@@ -33699,6 +35514,22 @@ Bases: {py:obj}`enum.IntEnum`
 :canonical: altdss.enums.StorageDispatchMode.__ceil__
 
 ```{autodoc2-docstring} altdss.enums.StorageDispatchMode.__ceil__
+```
+
+````
+
+````{py:method} __copy__()
+:canonical: altdss.enums.StorageDispatchMode.__copy__
+
+```{autodoc2-docstring} altdss.enums.StorageDispatchMode.__copy__
+```
+
+````
+
+````{py:method} __deepcopy__(memo)
+:canonical: altdss.enums.StorageDispatchMode.__deepcopy__
+
+```{autodoc2-docstring} altdss.enums.StorageDispatchMode.__deepcopy__
 ```
 
 ````
@@ -34071,6 +35902,15 @@ Bases: {py:obj}`enum.IntEnum`
 
 ````
 
+````{py:method} __signature__()
+:canonical: altdss.enums.StorageDispatchMode.__signature__
+:classmethod:
+
+```{autodoc2-docstring} altdss.enums.StorageDispatchMode.__signature__
+```
+
+````
+
 ````{py:method} __sizeof__()
 :canonical: altdss.enums.StorageDispatchMode.__sizeof__
 
@@ -34171,6 +36011,14 @@ Bases: {py:obj}`enum.IntEnum`
 :canonical: altdss.enums.StorageDispatchMode.imag
 
 ```{autodoc2-docstring} altdss.enums.StorageDispatchMode.imag
+```
+
+````
+
+````{py:method} is_integer()
+:canonical: altdss.enums.StorageDispatchMode.is_integer
+
+```{autodoc2-docstring} altdss.enums.StorageDispatchMode.is_integer
 ```
 
 ````
@@ -34291,6 +36139,22 @@ Bases: {py:obj}`enum.IntEnum`
 :canonical: altdss.enums.StorageState.__ceil__
 
 ```{autodoc2-docstring} altdss.enums.StorageState.__ceil__
+```
+
+````
+
+````{py:method} __copy__()
+:canonical: altdss.enums.StorageState.__copy__
+
+```{autodoc2-docstring} altdss.enums.StorageState.__copy__
+```
+
+````
+
+````{py:method} __deepcopy__(memo)
+:canonical: altdss.enums.StorageState.__deepcopy__
+
+```{autodoc2-docstring} altdss.enums.StorageState.__deepcopy__
 ```
 
 ````
@@ -34663,6 +36527,15 @@ Bases: {py:obj}`enum.IntEnum`
 
 ````
 
+````{py:method} __signature__()
+:canonical: altdss.enums.StorageState.__signature__
+:classmethod:
+
+```{autodoc2-docstring} altdss.enums.StorageState.__signature__
+```
+
+````
+
 ````{py:method} __sizeof__()
 :canonical: altdss.enums.StorageState.__sizeof__
 
@@ -34767,6 +36640,14 @@ Bases: {py:obj}`enum.IntEnum`
 
 ````
 
+````{py:method} is_integer()
+:canonical: altdss.enums.StorageState.is_integer
+
+```{autodoc2-docstring} altdss.enums.StorageState.is_integer
+```
+
+````
+
 ````{py:method} name()
 :canonical: altdss.enums.StorageState.name
 
@@ -34853,6 +36734,22 @@ Bases: {py:obj}`enum.IntEnum`
 :canonical: altdss.enums.SwtControlAction.__ceil__
 
 ```{autodoc2-docstring} altdss.enums.SwtControlAction.__ceil__
+```
+
+````
+
+````{py:method} __copy__()
+:canonical: altdss.enums.SwtControlAction.__copy__
+
+```{autodoc2-docstring} altdss.enums.SwtControlAction.__copy__
+```
+
+````
+
+````{py:method} __deepcopy__(memo)
+:canonical: altdss.enums.SwtControlAction.__deepcopy__
+
+```{autodoc2-docstring} altdss.enums.SwtControlAction.__deepcopy__
 ```
 
 ````
@@ -35225,6 +37122,15 @@ Bases: {py:obj}`enum.IntEnum`
 
 ````
 
+````{py:method} __signature__()
+:canonical: altdss.enums.SwtControlAction.__signature__
+:classmethod:
+
+```{autodoc2-docstring} altdss.enums.SwtControlAction.__signature__
+```
+
+````
+
 ````{py:method} __sizeof__()
 :canonical: altdss.enums.SwtControlAction.__sizeof__
 
@@ -35339,6 +37245,14 @@ Bases: {py:obj}`enum.IntEnum`
 
 ````
 
+````{py:method} is_integer()
+:canonical: altdss.enums.SwtControlAction.is_integer
+
+```{autodoc2-docstring} altdss.enums.SwtControlAction.is_integer
+```
+
+````
+
 ````{py:method} name()
 :canonical: altdss.enums.SwtControlAction.name
 
@@ -35435,6 +37349,22 @@ Bases: {py:obj}`enum.IntEnum`
 :canonical: altdss.enums.SwtControlState.__ceil__
 
 ```{autodoc2-docstring} altdss.enums.SwtControlState.__ceil__
+```
+
+````
+
+````{py:method} __copy__()
+:canonical: altdss.enums.SwtControlState.__copy__
+
+```{autodoc2-docstring} altdss.enums.SwtControlState.__copy__
+```
+
+````
+
+````{py:method} __deepcopy__(memo)
+:canonical: altdss.enums.SwtControlState.__deepcopy__
+
+```{autodoc2-docstring} altdss.enums.SwtControlState.__deepcopy__
 ```
 
 ````
@@ -35807,6 +37737,15 @@ Bases: {py:obj}`enum.IntEnum`
 
 ````
 
+````{py:method} __signature__()
+:canonical: altdss.enums.SwtControlState.__signature__
+:classmethod:
+
+```{autodoc2-docstring} altdss.enums.SwtControlState.__signature__
+```
+
+````
+
 ````{py:method} __sizeof__()
 :canonical: altdss.enums.SwtControlState.__sizeof__
 
@@ -35917,6 +37856,14 @@ Bases: {py:obj}`enum.IntEnum`
 :canonical: altdss.enums.SwtControlState.imag
 
 ```{autodoc2-docstring} altdss.enums.SwtControlState.imag
+```
+
+````
+
+````{py:method} is_integer()
+:canonical: altdss.enums.SwtControlState.is_integer
+
+```{autodoc2-docstring} altdss.enums.SwtControlState.is_integer
 ```
 
 ````
@@ -36037,6 +37984,22 @@ Bases: {py:obj}`enum.IntEnum`
 :canonical: altdss.enums.TShapeAction.__ceil__
 
 ```{autodoc2-docstring} altdss.enums.TShapeAction.__ceil__
+```
+
+````
+
+````{py:method} __copy__()
+:canonical: altdss.enums.TShapeAction.__copy__
+
+```{autodoc2-docstring} altdss.enums.TShapeAction.__copy__
+```
+
+````
+
+````{py:method} __deepcopy__(memo)
+:canonical: altdss.enums.TShapeAction.__deepcopy__
+
+```{autodoc2-docstring} altdss.enums.TShapeAction.__deepcopy__
 ```
 
 ````
@@ -36409,6 +38372,15 @@ Bases: {py:obj}`enum.IntEnum`
 
 ````
 
+````{py:method} __signature__()
+:canonical: altdss.enums.TShapeAction.__signature__
+:classmethod:
+
+```{autodoc2-docstring} altdss.enums.TShapeAction.__signature__
+```
+
+````
+
 ````{py:method} __sizeof__()
 :canonical: altdss.enums.TShapeAction.__sizeof__
 
@@ -36509,6 +38481,14 @@ Bases: {py:obj}`enum.IntEnum`
 :canonical: altdss.enums.TShapeAction.imag
 
 ```{autodoc2-docstring} altdss.enums.TShapeAction.imag
+```
+
+````
+
+````{py:method} is_integer()
+:canonical: altdss.enums.TShapeAction.is_integer
+
+```{autodoc2-docstring} altdss.enums.TShapeAction.is_integer
 ```
 
 ````
@@ -36659,6 +38639,22 @@ Bases: {py:obj}`enum.IntEnum`
 :canonical: altdss.enums.UPFCMode.__ceil__
 
 ```{autodoc2-docstring} altdss.enums.UPFCMode.__ceil__
+```
+
+````
+
+````{py:method} __copy__()
+:canonical: altdss.enums.UPFCMode.__copy__
+
+```{autodoc2-docstring} altdss.enums.UPFCMode.__copy__
+```
+
+````
+
+````{py:method} __deepcopy__(memo)
+:canonical: altdss.enums.UPFCMode.__deepcopy__
+
+```{autodoc2-docstring} altdss.enums.UPFCMode.__deepcopy__
 ```
 
 ````
@@ -37031,6 +39027,15 @@ Bases: {py:obj}`enum.IntEnum`
 
 ````
 
+````{py:method} __signature__()
+:canonical: altdss.enums.UPFCMode.__signature__
+:classmethod:
+
+```{autodoc2-docstring} altdss.enums.UPFCMode.__signature__
+```
+
+````
+
 ````{py:method} __sizeof__()
 :canonical: altdss.enums.UPFCMode.__sizeof__
 
@@ -37131,6 +39136,14 @@ Bases: {py:obj}`enum.IntEnum`
 :canonical: altdss.enums.UPFCMode.imag
 
 ```{autodoc2-docstring} altdss.enums.UPFCMode.imag
+```
+
+````
+
+````{py:method} is_integer()
+:canonical: altdss.enums.UPFCMode.is_integer
+
+```{autodoc2-docstring} altdss.enums.UPFCMode.is_integer
 ```
 
 ````
@@ -37271,6 +39284,22 @@ Bases: {py:obj}`enum.IntEnum`
 :canonical: altdss.enums.VSConverterControlMode.__ceil__
 
 ```{autodoc2-docstring} altdss.enums.VSConverterControlMode.__ceil__
+```
+
+````
+
+````{py:method} __copy__()
+:canonical: altdss.enums.VSConverterControlMode.__copy__
+
+```{autodoc2-docstring} altdss.enums.VSConverterControlMode.__copy__
+```
+
+````
+
+````{py:method} __deepcopy__(memo)
+:canonical: altdss.enums.VSConverterControlMode.__deepcopy__
+
+```{autodoc2-docstring} altdss.enums.VSConverterControlMode.__deepcopy__
 ```
 
 ````
@@ -37643,6 +39672,15 @@ Bases: {py:obj}`enum.IntEnum`
 
 ````
 
+````{py:method} __signature__()
+:canonical: altdss.enums.VSConverterControlMode.__signature__
+:classmethod:
+
+```{autodoc2-docstring} altdss.enums.VSConverterControlMode.__signature__
+```
+
+````
+
 ````{py:method} __sizeof__()
 :canonical: altdss.enums.VSConverterControlMode.__sizeof__
 
@@ -37743,6 +39781,14 @@ Bases: {py:obj}`enum.IntEnum`
 :canonical: altdss.enums.VSConverterControlMode.imag
 
 ```{autodoc2-docstring} altdss.enums.VSConverterControlMode.imag
+```
+
+````
+
+````{py:method} is_integer()
+:canonical: altdss.enums.VSConverterControlMode.is_integer
+
+```{autodoc2-docstring} altdss.enums.VSConverterControlMode.is_integer
 ```
 
 ````
@@ -37853,6 +39899,22 @@ Bases: {py:obj}`enum.IntEnum`
 :canonical: altdss.enums.VSourceModel.__ceil__
 
 ```{autodoc2-docstring} altdss.enums.VSourceModel.__ceil__
+```
+
+````
+
+````{py:method} __copy__()
+:canonical: altdss.enums.VSourceModel.__copy__
+
+```{autodoc2-docstring} altdss.enums.VSourceModel.__copy__
+```
+
+````
+
+````{py:method} __deepcopy__(memo)
+:canonical: altdss.enums.VSourceModel.__deepcopy__
+
+```{autodoc2-docstring} altdss.enums.VSourceModel.__deepcopy__
 ```
 
 ````
@@ -38225,6 +40287,15 @@ Bases: {py:obj}`enum.IntEnum`
 
 ````
 
+````{py:method} __signature__()
+:canonical: altdss.enums.VSourceModel.__signature__
+:classmethod:
+
+```{autodoc2-docstring} altdss.enums.VSourceModel.__signature__
+```
+
+````
+
 ````{py:method} __sizeof__()
 :canonical: altdss.enums.VSourceModel.__sizeof__
 
@@ -38325,6 +40396,14 @@ Bases: {py:obj}`enum.IntEnum`
 :canonical: altdss.enums.VSourceModel.imag
 
 ```{autodoc2-docstring} altdss.enums.VSourceModel.imag
+```
+
+````
+
+````{py:method} is_integer()
+:canonical: altdss.enums.VSourceModel.is_integer
+
+```{autodoc2-docstring} altdss.enums.VSourceModel.is_integer
 ```
 
 ````
@@ -38445,6 +40524,22 @@ Bases: {py:obj}`enum.IntEnum`
 :canonical: altdss.enums.VisualizeQuantity.__ceil__
 
 ```{autodoc2-docstring} altdss.enums.VisualizeQuantity.__ceil__
+```
+
+````
+
+````{py:method} __copy__()
+:canonical: altdss.enums.VisualizeQuantity.__copy__
+
+```{autodoc2-docstring} altdss.enums.VisualizeQuantity.__copy__
+```
+
+````
+
+````{py:method} __deepcopy__(memo)
+:canonical: altdss.enums.VisualizeQuantity.__deepcopy__
+
+```{autodoc2-docstring} altdss.enums.VisualizeQuantity.__deepcopy__
 ```
 
 ````
@@ -38817,6 +40912,15 @@ Bases: {py:obj}`enum.IntEnum`
 
 ````
 
+````{py:method} __signature__()
+:canonical: altdss.enums.VisualizeQuantity.__signature__
+:classmethod:
+
+```{autodoc2-docstring} altdss.enums.VisualizeQuantity.__signature__
+```
+
+````
+
 ````{py:method} __sizeof__()
 :canonical: altdss.enums.VisualizeQuantity.__sizeof__
 
@@ -38917,6 +41021,14 @@ Bases: {py:obj}`enum.IntEnum`
 :canonical: altdss.enums.VisualizeQuantity.imag
 
 ```{autodoc2-docstring} altdss.enums.VisualizeQuantity.imag
+```
+
+````
+
+````{py:method} is_integer()
+:canonical: altdss.enums.VisualizeQuantity.is_integer
+
+```{autodoc2-docstring} altdss.enums.VisualizeQuantity.is_integer
 ```
 
 ````

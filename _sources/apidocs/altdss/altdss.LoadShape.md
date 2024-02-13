@@ -59,7 +59,7 @@ Bases: {py:obj}`altdss.DSSObj.IDSSObj`, {py:obj}`altdss.LoadShape.LoadShapeBatch
 :canonical: altdss.LoadShape.ILoadShape.CSVFile
 :type: typing.List[str]
 :value: >
-   None
+   'property(...)'
 
 ```{autodoc2-docstring} altdss.LoadShape.ILoadShape.CSVFile
 ```
@@ -70,7 +70,7 @@ Bases: {py:obj}`altdss.DSSObj.IDSSObj`, {py:obj}`altdss.LoadShape.LoadShapeBatch
 :canonical: altdss.LoadShape.ILoadShape.DblFile
 :type: typing.List[str]
 :value: >
-   None
+   'property(...)'
 
 ```{autodoc2-docstring} altdss.LoadShape.ILoadShape.DblFile
 ```
@@ -97,7 +97,7 @@ Bases: {py:obj}`altdss.DSSObj.IDSSObj`, {py:obj}`altdss.LoadShape.LoadShapeBatch
 :canonical: altdss.LoadShape.ILoadShape.Hour
 :type: typing.List[altdss.types.Float64Array]
 :value: >
-   None
+   'property(...)'
 
 ```{autodoc2-docstring} altdss.LoadShape.ILoadShape.Hour
 ```
@@ -108,7 +108,7 @@ Bases: {py:obj}`altdss.DSSObj.IDSSObj`, {py:obj}`altdss.LoadShape.LoadShapeBatch
 :canonical: altdss.LoadShape.ILoadShape.Interpolation
 :type: altdss.ArrayProxy.BatchInt32ArrayProxy
 :value: >
-   None
+   'property(...)'
 
 ```{autodoc2-docstring} altdss.LoadShape.ILoadShape.Interpolation
 ```
@@ -119,7 +119,7 @@ Bases: {py:obj}`altdss.DSSObj.IDSSObj`, {py:obj}`altdss.LoadShape.LoadShapeBatch
 :canonical: altdss.LoadShape.ILoadShape.Interpolation_str
 :type: typing.List[str]
 :value: >
-   None
+   'property(...)'
 
 ```{autodoc2-docstring} altdss.LoadShape.ILoadShape.Interpolation_str
 ```
@@ -130,7 +130,7 @@ Bases: {py:obj}`altdss.DSSObj.IDSSObj`, {py:obj}`altdss.LoadShape.LoadShapeBatch
 :canonical: altdss.LoadShape.ILoadShape.Interval
 :type: altdss.ArrayProxy.BatchFloat64ArrayProxy
 :value: >
-   None
+   'property(...)'
 
 ```{autodoc2-docstring} altdss.LoadShape.ILoadShape.Interval
 ```
@@ -149,7 +149,7 @@ Bases: {py:obj}`altdss.DSSObj.IDSSObj`, {py:obj}`altdss.LoadShape.LoadShapeBatch
 :canonical: altdss.LoadShape.ILoadShape.MInterval
 :type: altdss.ArrayProxy.BatchFloat64ArrayProxy
 :value: >
-   None
+   'property(...)'
 
 ```{autodoc2-docstring} altdss.LoadShape.ILoadShape.MInterval
 ```
@@ -160,7 +160,7 @@ Bases: {py:obj}`altdss.DSSObj.IDSSObj`, {py:obj}`altdss.LoadShape.LoadShapeBatch
 :canonical: altdss.LoadShape.ILoadShape.Mean
 :type: altdss.ArrayProxy.BatchFloat64ArrayProxy
 :value: >
-   None
+   'property(...)'
 
 ```{autodoc2-docstring} altdss.LoadShape.ILoadShape.Mean
 ```
@@ -171,7 +171,7 @@ Bases: {py:obj}`altdss.DSSObj.IDSSObj`, {py:obj}`altdss.LoadShape.LoadShapeBatch
 :canonical: altdss.LoadShape.ILoadShape.MemoryMapping
 :type: typing.List[bool]
 :value: >
-   None
+   'property(...)'
 
 ```{autodoc2-docstring} altdss.LoadShape.ILoadShape.MemoryMapping
 ```
@@ -182,7 +182,7 @@ Bases: {py:obj}`altdss.DSSObj.IDSSObj`, {py:obj}`altdss.LoadShape.LoadShapeBatch
 :canonical: altdss.LoadShape.ILoadShape.NPts
 :type: altdss.ArrayProxy.BatchInt32ArrayProxy
 :value: >
-   None
+   'property(...)'
 
 ```{autodoc2-docstring} altdss.LoadShape.ILoadShape.NPts
 ```
@@ -210,7 +210,7 @@ Bases: {py:obj}`altdss.DSSObj.IDSSObj`, {py:obj}`altdss.LoadShape.LoadShapeBatch
 :canonical: altdss.LoadShape.ILoadShape.PBase
 :type: altdss.ArrayProxy.BatchFloat64ArrayProxy
 :value: >
-   None
+   'property(...)'
 
 ```{autodoc2-docstring} altdss.LoadShape.ILoadShape.PBase
 ```
@@ -221,7 +221,7 @@ Bases: {py:obj}`altdss.DSSObj.IDSSObj`, {py:obj}`altdss.LoadShape.LoadShapeBatch
 :canonical: altdss.LoadShape.ILoadShape.PMax
 :type: altdss.ArrayProxy.BatchFloat64ArrayProxy
 :value: >
-   None
+   'property(...)'
 
 ```{autodoc2-docstring} altdss.LoadShape.ILoadShape.PMax
 ```
@@ -232,7 +232,7 @@ Bases: {py:obj}`altdss.DSSObj.IDSSObj`, {py:obj}`altdss.LoadShape.LoadShapeBatch
 :canonical: altdss.LoadShape.ILoadShape.PMult
 :type: typing.List[altdss.types.Float64Array]
 :value: >
-   None
+   'property(...)'
 
 ```{autodoc2-docstring} altdss.LoadShape.ILoadShape.PMult
 ```
@@ -243,7 +243,7 @@ Bases: {py:obj}`altdss.DSSObj.IDSSObj`, {py:obj}`altdss.LoadShape.LoadShapeBatch
 :canonical: altdss.LoadShape.ILoadShape.PQCSVFile
 :type: typing.List[str]
 :value: >
-   None
+   'property(...)'
 
 ```{autodoc2-docstring} altdss.LoadShape.ILoadShape.PQCSVFile
 ```
@@ -254,7 +254,7 @@ Bases: {py:obj}`altdss.DSSObj.IDSSObj`, {py:obj}`altdss.LoadShape.LoadShapeBatch
 :canonical: altdss.LoadShape.ILoadShape.QBase
 :type: altdss.ArrayProxy.BatchFloat64ArrayProxy
 :value: >
-   None
+   'property(...)'
 
 ```{autodoc2-docstring} altdss.LoadShape.ILoadShape.QBase
 ```
@@ -265,7 +265,7 @@ Bases: {py:obj}`altdss.DSSObj.IDSSObj`, {py:obj}`altdss.LoadShape.LoadShapeBatch
 :canonical: altdss.LoadShape.ILoadShape.QMax
 :type: altdss.ArrayProxy.BatchFloat64ArrayProxy
 :value: >
-   None
+   'property(...)'
 
 ```{autodoc2-docstring} altdss.LoadShape.ILoadShape.QMax
 ```
@@ -276,7 +276,7 @@ Bases: {py:obj}`altdss.DSSObj.IDSSObj`, {py:obj}`altdss.LoadShape.LoadShapeBatch
 :canonical: altdss.LoadShape.ILoadShape.QMult
 :type: typing.List[altdss.types.Float64Array]
 :value: >
-   None
+   'property(...)'
 
 ```{autodoc2-docstring} altdss.LoadShape.ILoadShape.QMult
 ```
@@ -287,7 +287,7 @@ Bases: {py:obj}`altdss.DSSObj.IDSSObj`, {py:obj}`altdss.LoadShape.LoadShapeBatch
 :canonical: altdss.LoadShape.ILoadShape.SInterval
 :type: altdss.ArrayProxy.BatchFloat64ArrayProxy
 :value: >
-   None
+   'property(...)'
 
 ```{autodoc2-docstring} altdss.LoadShape.ILoadShape.SInterval
 ```
@@ -298,7 +298,7 @@ Bases: {py:obj}`altdss.DSSObj.IDSSObj`, {py:obj}`altdss.LoadShape.LoadShapeBatch
 :canonical: altdss.LoadShape.ILoadShape.SngFile
 :type: typing.List[str]
 :value: >
-   None
+   'property(...)'
 
 ```{autodoc2-docstring} altdss.LoadShape.ILoadShape.SngFile
 ```
@@ -317,7 +317,7 @@ Bases: {py:obj}`altdss.DSSObj.IDSSObj`, {py:obj}`altdss.LoadShape.LoadShapeBatch
 :canonical: altdss.LoadShape.ILoadShape.StdDev
 :type: altdss.ArrayProxy.BatchFloat64ArrayProxy
 :value: >
-   None
+   'property(...)'
 
 ```{autodoc2-docstring} altdss.LoadShape.ILoadShape.StdDev
 ```
@@ -328,7 +328,7 @@ Bases: {py:obj}`altdss.DSSObj.IDSSObj`, {py:obj}`altdss.LoadShape.LoadShapeBatch
 :canonical: altdss.LoadShape.ILoadShape.UseActual
 :type: typing.List[bool]
 :value: >
-   None
+   'property(...)'
 
 ```{autodoc2-docstring} altdss.LoadShape.ILoadShape.UseActual
 ```
@@ -485,7 +485,7 @@ Bases: {py:obj}`altdss.DSSObj.DSSObj`, {py:obj}`altdss.LoadShapeExtras.LoadShape
 :canonical: altdss.LoadShape.LoadShape.CSVFile
 :type: str
 :value: >
-   None
+   'property(...)'
 
 ```{autodoc2-docstring} altdss.LoadShape.LoadShape.CSVFile
 ```
@@ -496,7 +496,7 @@ Bases: {py:obj}`altdss.DSSObj.DSSObj`, {py:obj}`altdss.LoadShapeExtras.LoadShape
 :canonical: altdss.LoadShape.LoadShape.DblFile
 :type: str
 :value: >
-   None
+   'property(...)'
 
 ```{autodoc2-docstring} altdss.LoadShape.LoadShape.DblFile
 ```
@@ -523,7 +523,7 @@ Bases: {py:obj}`altdss.DSSObj.DSSObj`, {py:obj}`altdss.LoadShapeExtras.LoadShape
 :canonical: altdss.LoadShape.LoadShape.Hour
 :type: altdss.types.Float64Array
 :value: >
-   None
+   'property(...)'
 
 ```{autodoc2-docstring} altdss.LoadShape.LoadShape.Hour
 ```
@@ -534,7 +534,7 @@ Bases: {py:obj}`altdss.DSSObj.DSSObj`, {py:obj}`altdss.LoadShapeExtras.LoadShape
 :canonical: altdss.LoadShape.LoadShape.Interpolation
 :type: altdss.enums.LoadShapeInterpolation
 :value: >
-   None
+   'property(...)'
 
 ```{autodoc2-docstring} altdss.LoadShape.LoadShape.Interpolation
 ```
@@ -545,7 +545,7 @@ Bases: {py:obj}`altdss.DSSObj.DSSObj`, {py:obj}`altdss.LoadShapeExtras.LoadShape
 :canonical: altdss.LoadShape.LoadShape.Interpolation_str
 :type: str
 :value: >
-   None
+   'property(...)'
 
 ```{autodoc2-docstring} altdss.LoadShape.LoadShape.Interpolation_str
 ```
@@ -556,7 +556,7 @@ Bases: {py:obj}`altdss.DSSObj.DSSObj`, {py:obj}`altdss.LoadShapeExtras.LoadShape
 :canonical: altdss.LoadShape.LoadShape.Interval
 :type: float
 :value: >
-   None
+   'property(...)'
 
 ```{autodoc2-docstring} altdss.LoadShape.LoadShape.Interval
 ```
@@ -575,7 +575,7 @@ Bases: {py:obj}`altdss.DSSObj.DSSObj`, {py:obj}`altdss.LoadShapeExtras.LoadShape
 :canonical: altdss.LoadShape.LoadShape.MInterval
 :type: float
 :value: >
-   None
+   'property(...)'
 
 ```{autodoc2-docstring} altdss.LoadShape.LoadShape.MInterval
 ```
@@ -586,7 +586,7 @@ Bases: {py:obj}`altdss.DSSObj.DSSObj`, {py:obj}`altdss.LoadShapeExtras.LoadShape
 :canonical: altdss.LoadShape.LoadShape.Mean
 :type: float
 :value: >
-   None
+   'property(...)'
 
 ```{autodoc2-docstring} altdss.LoadShape.LoadShape.Mean
 ```
@@ -597,7 +597,7 @@ Bases: {py:obj}`altdss.DSSObj.DSSObj`, {py:obj}`altdss.LoadShapeExtras.LoadShape
 :canonical: altdss.LoadShape.LoadShape.MemoryMapping
 :type: bool
 :value: >
-   None
+   'property(...)'
 
 ```{autodoc2-docstring} altdss.LoadShape.LoadShape.MemoryMapping
 ```
@@ -608,7 +608,7 @@ Bases: {py:obj}`altdss.DSSObj.DSSObj`, {py:obj}`altdss.LoadShapeExtras.LoadShape
 :canonical: altdss.LoadShape.LoadShape.NPts
 :type: int
 :value: >
-   None
+   'property(...)'
 
 ```{autodoc2-docstring} altdss.LoadShape.LoadShape.NPts
 ```
@@ -636,7 +636,7 @@ Bases: {py:obj}`altdss.DSSObj.DSSObj`, {py:obj}`altdss.LoadShapeExtras.LoadShape
 :canonical: altdss.LoadShape.LoadShape.PBase
 :type: float
 :value: >
-   None
+   'property(...)'
 
 ```{autodoc2-docstring} altdss.LoadShape.LoadShape.PBase
 ```
@@ -647,7 +647,7 @@ Bases: {py:obj}`altdss.DSSObj.DSSObj`, {py:obj}`altdss.LoadShapeExtras.LoadShape
 :canonical: altdss.LoadShape.LoadShape.PMax
 :type: float
 :value: >
-   None
+   'property(...)'
 
 ```{autodoc2-docstring} altdss.LoadShape.LoadShape.PMax
 ```
@@ -658,7 +658,7 @@ Bases: {py:obj}`altdss.DSSObj.DSSObj`, {py:obj}`altdss.LoadShapeExtras.LoadShape
 :canonical: altdss.LoadShape.LoadShape.PMult
 :type: altdss.types.Float64Array
 :value: >
-   None
+   'property(...)'
 
 ```{autodoc2-docstring} altdss.LoadShape.LoadShape.PMult
 ```
@@ -669,7 +669,7 @@ Bases: {py:obj}`altdss.DSSObj.DSSObj`, {py:obj}`altdss.LoadShapeExtras.LoadShape
 :canonical: altdss.LoadShape.LoadShape.PQCSVFile
 :type: str
 :value: >
-   None
+   'property(...)'
 
 ```{autodoc2-docstring} altdss.LoadShape.LoadShape.PQCSVFile
 ```
@@ -680,7 +680,7 @@ Bases: {py:obj}`altdss.DSSObj.DSSObj`, {py:obj}`altdss.LoadShapeExtras.LoadShape
 :canonical: altdss.LoadShape.LoadShape.QBase
 :type: float
 :value: >
-   None
+   'property(...)'
 
 ```{autodoc2-docstring} altdss.LoadShape.LoadShape.QBase
 ```
@@ -691,7 +691,7 @@ Bases: {py:obj}`altdss.DSSObj.DSSObj`, {py:obj}`altdss.LoadShapeExtras.LoadShape
 :canonical: altdss.LoadShape.LoadShape.QMax
 :type: float
 :value: >
-   None
+   'property(...)'
 
 ```{autodoc2-docstring} altdss.LoadShape.LoadShape.QMax
 ```
@@ -702,7 +702,7 @@ Bases: {py:obj}`altdss.DSSObj.DSSObj`, {py:obj}`altdss.LoadShapeExtras.LoadShape
 :canonical: altdss.LoadShape.LoadShape.QMult
 :type: altdss.types.Float64Array
 :value: >
-   None
+   'property(...)'
 
 ```{autodoc2-docstring} altdss.LoadShape.LoadShape.QMult
 ```
@@ -713,7 +713,7 @@ Bases: {py:obj}`altdss.DSSObj.DSSObj`, {py:obj}`altdss.LoadShapeExtras.LoadShape
 :canonical: altdss.LoadShape.LoadShape.SInterval
 :type: float
 :value: >
-   None
+   'property(...)'
 
 ```{autodoc2-docstring} altdss.LoadShape.LoadShape.SInterval
 ```
@@ -724,7 +724,7 @@ Bases: {py:obj}`altdss.DSSObj.DSSObj`, {py:obj}`altdss.LoadShapeExtras.LoadShape
 :canonical: altdss.LoadShape.LoadShape.SngFile
 :type: str
 :value: >
-   None
+   'property(...)'
 
 ```{autodoc2-docstring} altdss.LoadShape.LoadShape.SngFile
 ```
@@ -743,7 +743,7 @@ Bases: {py:obj}`altdss.DSSObj.DSSObj`, {py:obj}`altdss.LoadShapeExtras.LoadShape
 :canonical: altdss.LoadShape.LoadShape.StdDev
 :type: float
 :value: >
-   None
+   'property(...)'
 
 ```{autodoc2-docstring} altdss.LoadShape.LoadShape.StdDev
 ```
@@ -754,7 +754,7 @@ Bases: {py:obj}`altdss.DSSObj.DSSObj`, {py:obj}`altdss.LoadShapeExtras.LoadShape
 :canonical: altdss.LoadShape.LoadShape.UseActual
 :type: bool
 :value: >
-   None
+   'property(...)'
 
 ```{autodoc2-docstring} altdss.LoadShape.LoadShape.UseActual
 ```
@@ -855,7 +855,7 @@ Bases: {py:obj}`altdss.Batch.DSSBatch`, {py:obj}`altdss.LoadShapeExtras.LoadShap
 :canonical: altdss.LoadShape.LoadShapeBatch.CSVFile
 :type: typing.List[str]
 :value: >
-   None
+   'property(...)'
 
 ```{autodoc2-docstring} altdss.LoadShape.LoadShapeBatch.CSVFile
 ```
@@ -866,7 +866,7 @@ Bases: {py:obj}`altdss.Batch.DSSBatch`, {py:obj}`altdss.LoadShapeExtras.LoadShap
 :canonical: altdss.LoadShape.LoadShapeBatch.DblFile
 :type: typing.List[str]
 :value: >
-   None
+   'property(...)'
 
 ```{autodoc2-docstring} altdss.LoadShape.LoadShapeBatch.DblFile
 ```
@@ -893,7 +893,7 @@ Bases: {py:obj}`altdss.Batch.DSSBatch`, {py:obj}`altdss.LoadShapeExtras.LoadShap
 :canonical: altdss.LoadShape.LoadShapeBatch.Hour
 :type: typing.List[altdss.types.Float64Array]
 :value: >
-   None
+   'property(...)'
 
 ```{autodoc2-docstring} altdss.LoadShape.LoadShapeBatch.Hour
 ```
@@ -904,7 +904,7 @@ Bases: {py:obj}`altdss.Batch.DSSBatch`, {py:obj}`altdss.LoadShapeExtras.LoadShap
 :canonical: altdss.LoadShape.LoadShapeBatch.Interpolation
 :type: altdss.ArrayProxy.BatchInt32ArrayProxy
 :value: >
-   None
+   'property(...)'
 
 ```{autodoc2-docstring} altdss.LoadShape.LoadShapeBatch.Interpolation
 ```
@@ -915,7 +915,7 @@ Bases: {py:obj}`altdss.Batch.DSSBatch`, {py:obj}`altdss.LoadShapeExtras.LoadShap
 :canonical: altdss.LoadShape.LoadShapeBatch.Interpolation_str
 :type: typing.List[str]
 :value: >
-   None
+   'property(...)'
 
 ```{autodoc2-docstring} altdss.LoadShape.LoadShapeBatch.Interpolation_str
 ```
@@ -926,7 +926,7 @@ Bases: {py:obj}`altdss.Batch.DSSBatch`, {py:obj}`altdss.LoadShapeExtras.LoadShap
 :canonical: altdss.LoadShape.LoadShapeBatch.Interval
 :type: altdss.ArrayProxy.BatchFloat64ArrayProxy
 :value: >
-   None
+   'property(...)'
 
 ```{autodoc2-docstring} altdss.LoadShape.LoadShapeBatch.Interval
 ```
@@ -945,7 +945,7 @@ Bases: {py:obj}`altdss.Batch.DSSBatch`, {py:obj}`altdss.LoadShapeExtras.LoadShap
 :canonical: altdss.LoadShape.LoadShapeBatch.MInterval
 :type: altdss.ArrayProxy.BatchFloat64ArrayProxy
 :value: >
-   None
+   'property(...)'
 
 ```{autodoc2-docstring} altdss.LoadShape.LoadShapeBatch.MInterval
 ```
@@ -956,7 +956,7 @@ Bases: {py:obj}`altdss.Batch.DSSBatch`, {py:obj}`altdss.LoadShapeExtras.LoadShap
 :canonical: altdss.LoadShape.LoadShapeBatch.Mean
 :type: altdss.ArrayProxy.BatchFloat64ArrayProxy
 :value: >
-   None
+   'property(...)'
 
 ```{autodoc2-docstring} altdss.LoadShape.LoadShapeBatch.Mean
 ```
@@ -967,7 +967,7 @@ Bases: {py:obj}`altdss.Batch.DSSBatch`, {py:obj}`altdss.LoadShapeExtras.LoadShap
 :canonical: altdss.LoadShape.LoadShapeBatch.MemoryMapping
 :type: typing.List[bool]
 :value: >
-   None
+   'property(...)'
 
 ```{autodoc2-docstring} altdss.LoadShape.LoadShapeBatch.MemoryMapping
 ```
@@ -978,7 +978,7 @@ Bases: {py:obj}`altdss.Batch.DSSBatch`, {py:obj}`altdss.LoadShapeExtras.LoadShap
 :canonical: altdss.LoadShape.LoadShapeBatch.NPts
 :type: altdss.ArrayProxy.BatchInt32ArrayProxy
 :value: >
-   None
+   'property(...)'
 
 ```{autodoc2-docstring} altdss.LoadShape.LoadShapeBatch.NPts
 ```
@@ -1006,7 +1006,7 @@ Bases: {py:obj}`altdss.Batch.DSSBatch`, {py:obj}`altdss.LoadShapeExtras.LoadShap
 :canonical: altdss.LoadShape.LoadShapeBatch.PBase
 :type: altdss.ArrayProxy.BatchFloat64ArrayProxy
 :value: >
-   None
+   'property(...)'
 
 ```{autodoc2-docstring} altdss.LoadShape.LoadShapeBatch.PBase
 ```
@@ -1017,7 +1017,7 @@ Bases: {py:obj}`altdss.Batch.DSSBatch`, {py:obj}`altdss.LoadShapeExtras.LoadShap
 :canonical: altdss.LoadShape.LoadShapeBatch.PMax
 :type: altdss.ArrayProxy.BatchFloat64ArrayProxy
 :value: >
-   None
+   'property(...)'
 
 ```{autodoc2-docstring} altdss.LoadShape.LoadShapeBatch.PMax
 ```
@@ -1028,7 +1028,7 @@ Bases: {py:obj}`altdss.Batch.DSSBatch`, {py:obj}`altdss.LoadShapeExtras.LoadShap
 :canonical: altdss.LoadShape.LoadShapeBatch.PMult
 :type: typing.List[altdss.types.Float64Array]
 :value: >
-   None
+   'property(...)'
 
 ```{autodoc2-docstring} altdss.LoadShape.LoadShapeBatch.PMult
 ```
@@ -1039,7 +1039,7 @@ Bases: {py:obj}`altdss.Batch.DSSBatch`, {py:obj}`altdss.LoadShapeExtras.LoadShap
 :canonical: altdss.LoadShape.LoadShapeBatch.PQCSVFile
 :type: typing.List[str]
 :value: >
-   None
+   'property(...)'
 
 ```{autodoc2-docstring} altdss.LoadShape.LoadShapeBatch.PQCSVFile
 ```
@@ -1050,7 +1050,7 @@ Bases: {py:obj}`altdss.Batch.DSSBatch`, {py:obj}`altdss.LoadShapeExtras.LoadShap
 :canonical: altdss.LoadShape.LoadShapeBatch.QBase
 :type: altdss.ArrayProxy.BatchFloat64ArrayProxy
 :value: >
-   None
+   'property(...)'
 
 ```{autodoc2-docstring} altdss.LoadShape.LoadShapeBatch.QBase
 ```
@@ -1061,7 +1061,7 @@ Bases: {py:obj}`altdss.Batch.DSSBatch`, {py:obj}`altdss.LoadShapeExtras.LoadShap
 :canonical: altdss.LoadShape.LoadShapeBatch.QMax
 :type: altdss.ArrayProxy.BatchFloat64ArrayProxy
 :value: >
-   None
+   'property(...)'
 
 ```{autodoc2-docstring} altdss.LoadShape.LoadShapeBatch.QMax
 ```
@@ -1072,7 +1072,7 @@ Bases: {py:obj}`altdss.Batch.DSSBatch`, {py:obj}`altdss.LoadShapeExtras.LoadShap
 :canonical: altdss.LoadShape.LoadShapeBatch.QMult
 :type: typing.List[altdss.types.Float64Array]
 :value: >
-   None
+   'property(...)'
 
 ```{autodoc2-docstring} altdss.LoadShape.LoadShapeBatch.QMult
 ```
@@ -1083,7 +1083,7 @@ Bases: {py:obj}`altdss.Batch.DSSBatch`, {py:obj}`altdss.LoadShapeExtras.LoadShap
 :canonical: altdss.LoadShape.LoadShapeBatch.SInterval
 :type: altdss.ArrayProxy.BatchFloat64ArrayProxy
 :value: >
-   None
+   'property(...)'
 
 ```{autodoc2-docstring} altdss.LoadShape.LoadShapeBatch.SInterval
 ```
@@ -1094,7 +1094,7 @@ Bases: {py:obj}`altdss.Batch.DSSBatch`, {py:obj}`altdss.LoadShapeExtras.LoadShap
 :canonical: altdss.LoadShape.LoadShapeBatch.SngFile
 :type: typing.List[str]
 :value: >
-   None
+   'property(...)'
 
 ```{autodoc2-docstring} altdss.LoadShape.LoadShapeBatch.SngFile
 ```
@@ -1113,7 +1113,7 @@ Bases: {py:obj}`altdss.Batch.DSSBatch`, {py:obj}`altdss.LoadShapeExtras.LoadShap
 :canonical: altdss.LoadShape.LoadShapeBatch.StdDev
 :type: altdss.ArrayProxy.BatchFloat64ArrayProxy
 :value: >
-   None
+   'property(...)'
 
 ```{autodoc2-docstring} altdss.LoadShape.LoadShapeBatch.StdDev
 ```
@@ -1124,7 +1124,7 @@ Bases: {py:obj}`altdss.Batch.DSSBatch`, {py:obj}`altdss.LoadShapeExtras.LoadShap
 :canonical: altdss.LoadShape.LoadShapeBatch.UseActual
 :type: typing.List[bool]
 :value: >
-   None
+   'property(...)'
 
 ```{autodoc2-docstring} altdss.LoadShape.LoadShapeBatch.UseActual
 ```

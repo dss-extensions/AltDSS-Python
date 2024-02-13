@@ -45,7 +45,7 @@
 ```{autodoc2-docstring} altdss.EnergyMeterExtras.EnergyMeterBatchMixin
 ```
 
-````{py:method} DoReliabilityCalc(assumeRestoration) -> None
+````{py:method} DoReliabilityCalc(assumeRestoration: bool) -> None
 :canonical: altdss.EnergyMeterExtras.EnergyMeterBatchMixin.DoReliabilityCalc
 
 ```{autodoc2-docstring} altdss.EnergyMeterExtras.EnergyMeterBatchMixin.DoReliabilityCalc
@@ -114,7 +114,7 @@
 
 ````
 
-````{py:method} DoReliabilityCalc(assumeRestoration) -> None
+````{py:method} DoReliabilityCalc(assumeRestoration: bool) -> None
 :canonical: altdss.EnergyMeterExtras.EnergyMeterObjMixin.DoReliabilityCalc
 
 ```{autodoc2-docstring} altdss.EnergyMeterExtras.EnergyMeterObjMixin.DoReliabilityCalc
@@ -133,11 +133,8 @@
 
 ````
 
-````{py:attribute} Loads
+````{py:method} Loads() -> altdss.Load.LoadBatch
 :canonical: altdss.EnergyMeterExtras.EnergyMeterObjMixin.Loads
-:type: altdss.Load.LoadBatch
-:value: >
-   None
 
 ```{autodoc2-docstring} altdss.EnergyMeterExtras.EnergyMeterObjMixin.Loads
 ```

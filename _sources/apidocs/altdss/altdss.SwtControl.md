@@ -51,7 +51,7 @@ Bases: {py:obj}`altdss.DSSObj.IDSSObj`, {py:obj}`altdss.SwtControl.SwtControlBat
 :canonical: altdss.SwtControl.ISwtControl.BaseFreq
 :type: altdss.ArrayProxy.BatchFloat64ArrayProxy
 :value: >
-   None
+   'property(...)'
 
 ```{autodoc2-docstring} altdss.SwtControl.ISwtControl.BaseFreq
 ```
@@ -94,7 +94,7 @@ Bases: {py:obj}`altdss.DSSObj.IDSSObj`, {py:obj}`altdss.SwtControl.SwtControlBat
 :canonical: altdss.SwtControl.ISwtControl.Delay
 :type: altdss.ArrayProxy.BatchFloat64ArrayProxy
 :value: >
-   None
+   'property(...)'
 
 ```{autodoc2-docstring} altdss.SwtControl.ISwtControl.Delay
 ```
@@ -105,7 +105,7 @@ Bases: {py:obj}`altdss.DSSObj.IDSSObj`, {py:obj}`altdss.SwtControl.SwtControlBat
 :canonical: altdss.SwtControl.ISwtControl.Enabled
 :type: typing.List[bool]
 :value: >
-   None
+   'property(...)'
 
 ```{autodoc2-docstring} altdss.SwtControl.ISwtControl.Enabled
 ```
@@ -180,7 +180,7 @@ Bases: {py:obj}`altdss.DSSObj.IDSSObj`, {py:obj}`altdss.SwtControl.SwtControlBat
 :canonical: altdss.SwtControl.ISwtControl.Lock
 :type: typing.List[bool]
 :value: >
-   None
+   'property(...)'
 
 ```{autodoc2-docstring} altdss.SwtControl.ISwtControl.Lock
 ```
@@ -216,7 +216,7 @@ Bases: {py:obj}`altdss.DSSObj.IDSSObj`, {py:obj}`altdss.SwtControl.SwtControlBat
 :canonical: altdss.SwtControl.ISwtControl.Normal
 :type: altdss.ArrayProxy.BatchInt32ArrayProxy
 :value: >
-   None
+   'property(...)'
 
 ```{autodoc2-docstring} altdss.SwtControl.ISwtControl.Normal
 ```
@@ -227,7 +227,7 @@ Bases: {py:obj}`altdss.DSSObj.IDSSObj`, {py:obj}`altdss.SwtControl.SwtControlBat
 :canonical: altdss.SwtControl.ISwtControl.Normal_str
 :type: typing.List[str]
 :value: >
-   None
+   'property(...)'
 
 ```{autodoc2-docstring} altdss.SwtControl.ISwtControl.Normal_str
 ```
@@ -342,7 +342,7 @@ Bases: {py:obj}`altdss.DSSObj.IDSSObj`, {py:obj}`altdss.SwtControl.SwtControlBat
 :canonical: altdss.SwtControl.ISwtControl.State
 :type: altdss.ArrayProxy.BatchInt32ArrayProxy
 :value: >
-   None
+   'property(...)'
 
 ```{autodoc2-docstring} altdss.SwtControl.ISwtControl.State
 ```
@@ -353,7 +353,7 @@ Bases: {py:obj}`altdss.DSSObj.IDSSObj`, {py:obj}`altdss.SwtControl.SwtControlBat
 :canonical: altdss.SwtControl.ISwtControl.State_str
 :type: typing.List[str]
 :value: >
-   None
+   'property(...)'
 
 ```{autodoc2-docstring} altdss.SwtControl.ISwtControl.State_str
 ```
@@ -364,7 +364,7 @@ Bases: {py:obj}`altdss.DSSObj.IDSSObj`, {py:obj}`altdss.SwtControl.SwtControlBat
 :canonical: altdss.SwtControl.ISwtControl.SwitchedObj
 :type: typing.List[altdss.DSSObj.DSSObj]
 :value: >
-   None
+   'property(...)'
 
 ```{autodoc2-docstring} altdss.SwtControl.ISwtControl.SwitchedObj
 ```
@@ -375,7 +375,7 @@ Bases: {py:obj}`altdss.DSSObj.IDSSObj`, {py:obj}`altdss.SwtControl.SwtControlBat
 :canonical: altdss.SwtControl.ISwtControl.SwitchedObj_str
 :type: typing.List[str]
 :value: >
-   None
+   'property(...)'
 
 ```{autodoc2-docstring} altdss.SwtControl.ISwtControl.SwitchedObj_str
 ```
@@ -386,7 +386,7 @@ Bases: {py:obj}`altdss.DSSObj.IDSSObj`, {py:obj}`altdss.SwtControl.SwtControlBat
 :canonical: altdss.SwtControl.ISwtControl.SwitchedTerm
 :type: altdss.ArrayProxy.BatchInt32ArrayProxy
 :value: >
-   None
+   'property(...)'
 
 ```{autodoc2-docstring} altdss.SwtControl.ISwtControl.SwitchedTerm
 ```
@@ -543,7 +543,7 @@ Bases: {py:obj}`altdss.DSSObj.DSSObj`, {py:obj}`altdss.CircuitElement.CircuitEle
 :canonical: altdss.SwtControl.SwtControl.BaseFreq
 :type: float
 :value: >
-   None
+   'property(...)'
 
 ```{autodoc2-docstring} altdss.SwtControl.SwtControl.BaseFreq
 ```
@@ -586,7 +586,7 @@ Bases: {py:obj}`altdss.DSSObj.DSSObj`, {py:obj}`altdss.CircuitElement.CircuitEle
 :canonical: altdss.SwtControl.SwtControl.Delay
 :type: float
 :value: >
-   None
+   'property(...)'
 
 ```{autodoc2-docstring} altdss.SwtControl.SwtControl.Delay
 ```
@@ -597,7 +597,7 @@ Bases: {py:obj}`altdss.DSSObj.DSSObj`, {py:obj}`altdss.CircuitElement.CircuitEle
 :canonical: altdss.SwtControl.SwtControl.DisplayName
 :type: str
 :value: >
-   None
+   'property(...)'
 
 ```{autodoc2-docstring} altdss.SwtControl.SwtControl.DisplayName
 ```
@@ -608,7 +608,7 @@ Bases: {py:obj}`altdss.DSSObj.DSSObj`, {py:obj}`altdss.CircuitElement.CircuitEle
 :canonical: altdss.SwtControl.SwtControl.Enabled
 :type: bool
 :value: >
-   None
+   'property(...)'
 
 ```{autodoc2-docstring} altdss.SwtControl.SwtControl.Enabled
 ```
@@ -691,7 +691,7 @@ Bases: {py:obj}`altdss.DSSObj.DSSObj`, {py:obj}`altdss.CircuitElement.CircuitEle
 :canonical: altdss.SwtControl.SwtControl.Lock
 :type: bool
 :value: >
-   None
+   'property(...)'
 
 ```{autodoc2-docstring} altdss.SwtControl.SwtControl.Lock
 ```
@@ -743,7 +743,7 @@ Bases: {py:obj}`altdss.DSSObj.DSSObj`, {py:obj}`altdss.CircuitElement.CircuitEle
 :canonical: altdss.SwtControl.SwtControl.Normal
 :type: altdss.enums.SwtControlState
 :value: >
-   None
+   'property(...)'
 
 ```{autodoc2-docstring} altdss.SwtControl.SwtControl.Normal
 ```
@@ -754,7 +754,7 @@ Bases: {py:obj}`altdss.DSSObj.DSSObj`, {py:obj}`altdss.CircuitElement.CircuitEle
 :canonical: altdss.SwtControl.SwtControl.Normal_str
 :type: str
 :value: >
-   None
+   'property(...)'
 
 ```{autodoc2-docstring} altdss.SwtControl.SwtControl.Normal_str
 ```
@@ -885,7 +885,7 @@ Bases: {py:obj}`altdss.DSSObj.DSSObj`, {py:obj}`altdss.CircuitElement.CircuitEle
 :canonical: altdss.SwtControl.SwtControl.State
 :type: altdss.enums.SwtControlState
 :value: >
-   None
+   'property(...)'
 
 ```{autodoc2-docstring} altdss.SwtControl.SwtControl.State
 ```
@@ -896,7 +896,7 @@ Bases: {py:obj}`altdss.DSSObj.DSSObj`, {py:obj}`altdss.CircuitElement.CircuitEle
 :canonical: altdss.SwtControl.SwtControl.State_str
 :type: str
 :value: >
-   None
+   'property(...)'
 
 ```{autodoc2-docstring} altdss.SwtControl.SwtControl.State_str
 ```
@@ -907,7 +907,7 @@ Bases: {py:obj}`altdss.DSSObj.DSSObj`, {py:obj}`altdss.CircuitElement.CircuitEle
 :canonical: altdss.SwtControl.SwtControl.SwitchedObj
 :type: altdss.DSSObj.DSSObj
 :value: >
-   None
+   'property(...)'
 
 ```{autodoc2-docstring} altdss.SwtControl.SwtControl.SwitchedObj
 ```
@@ -918,7 +918,7 @@ Bases: {py:obj}`altdss.DSSObj.DSSObj`, {py:obj}`altdss.CircuitElement.CircuitEle
 :canonical: altdss.SwtControl.SwtControl.SwitchedObj_str
 :type: str
 :value: >
-   None
+   'property(...)'
 
 ```{autodoc2-docstring} altdss.SwtControl.SwtControl.SwitchedObj_str
 ```
@@ -929,7 +929,7 @@ Bases: {py:obj}`altdss.DSSObj.DSSObj`, {py:obj}`altdss.CircuitElement.CircuitEle
 :canonical: altdss.SwtControl.SwtControl.SwitchedTerm
 :type: int
 :value: >
-   None
+   'property(...)'
 
 ```{autodoc2-docstring} altdss.SwtControl.SwtControl.SwitchedTerm
 ```
@@ -1038,7 +1038,7 @@ Bases: {py:obj}`altdss.Batch.DSSBatch`, {py:obj}`altdss.CircuitElement.CircuitEl
 :canonical: altdss.SwtControl.SwtControlBatch.BaseFreq
 :type: altdss.ArrayProxy.BatchFloat64ArrayProxy
 :value: >
-   None
+   'property(...)'
 
 ```{autodoc2-docstring} altdss.SwtControl.SwtControlBatch.BaseFreq
 ```
@@ -1081,7 +1081,7 @@ Bases: {py:obj}`altdss.Batch.DSSBatch`, {py:obj}`altdss.CircuitElement.CircuitEl
 :canonical: altdss.SwtControl.SwtControlBatch.Delay
 :type: altdss.ArrayProxy.BatchFloat64ArrayProxy
 :value: >
-   None
+   'property(...)'
 
 ```{autodoc2-docstring} altdss.SwtControl.SwtControlBatch.Delay
 ```
@@ -1092,7 +1092,7 @@ Bases: {py:obj}`altdss.Batch.DSSBatch`, {py:obj}`altdss.CircuitElement.CircuitEl
 :canonical: altdss.SwtControl.SwtControlBatch.Enabled
 :type: typing.List[bool]
 :value: >
-   None
+   'property(...)'
 
 ```{autodoc2-docstring} altdss.SwtControl.SwtControlBatch.Enabled
 ```
@@ -1167,7 +1167,7 @@ Bases: {py:obj}`altdss.Batch.DSSBatch`, {py:obj}`altdss.CircuitElement.CircuitEl
 :canonical: altdss.SwtControl.SwtControlBatch.Lock
 :type: typing.List[bool]
 :value: >
-   None
+   'property(...)'
 
 ```{autodoc2-docstring} altdss.SwtControl.SwtControlBatch.Lock
 ```
@@ -1203,7 +1203,7 @@ Bases: {py:obj}`altdss.Batch.DSSBatch`, {py:obj}`altdss.CircuitElement.CircuitEl
 :canonical: altdss.SwtControl.SwtControlBatch.Normal
 :type: altdss.ArrayProxy.BatchInt32ArrayProxy
 :value: >
-   None
+   'property(...)'
 
 ```{autodoc2-docstring} altdss.SwtControl.SwtControlBatch.Normal
 ```
@@ -1214,7 +1214,7 @@ Bases: {py:obj}`altdss.Batch.DSSBatch`, {py:obj}`altdss.CircuitElement.CircuitEl
 :canonical: altdss.SwtControl.SwtControlBatch.Normal_str
 :type: typing.List[str]
 :value: >
-   None
+   'property(...)'
 
 ```{autodoc2-docstring} altdss.SwtControl.SwtControlBatch.Normal_str
 ```
@@ -1329,7 +1329,7 @@ Bases: {py:obj}`altdss.Batch.DSSBatch`, {py:obj}`altdss.CircuitElement.CircuitEl
 :canonical: altdss.SwtControl.SwtControlBatch.State
 :type: altdss.ArrayProxy.BatchInt32ArrayProxy
 :value: >
-   None
+   'property(...)'
 
 ```{autodoc2-docstring} altdss.SwtControl.SwtControlBatch.State
 ```
@@ -1340,7 +1340,7 @@ Bases: {py:obj}`altdss.Batch.DSSBatch`, {py:obj}`altdss.CircuitElement.CircuitEl
 :canonical: altdss.SwtControl.SwtControlBatch.State_str
 :type: typing.List[str]
 :value: >
-   None
+   'property(...)'
 
 ```{autodoc2-docstring} altdss.SwtControl.SwtControlBatch.State_str
 ```
@@ -1351,7 +1351,7 @@ Bases: {py:obj}`altdss.Batch.DSSBatch`, {py:obj}`altdss.CircuitElement.CircuitEl
 :canonical: altdss.SwtControl.SwtControlBatch.SwitchedObj
 :type: typing.List[altdss.DSSObj.DSSObj]
 :value: >
-   None
+   'property(...)'
 
 ```{autodoc2-docstring} altdss.SwtControl.SwtControlBatch.SwitchedObj
 ```
@@ -1362,7 +1362,7 @@ Bases: {py:obj}`altdss.Batch.DSSBatch`, {py:obj}`altdss.CircuitElement.CircuitEl
 :canonical: altdss.SwtControl.SwtControlBatch.SwitchedObj_str
 :type: typing.List[str]
 :value: >
-   None
+   'property(...)'
 
 ```{autodoc2-docstring} altdss.SwtControl.SwtControlBatch.SwitchedObj_str
 ```
@@ -1373,7 +1373,7 @@ Bases: {py:obj}`altdss.Batch.DSSBatch`, {py:obj}`altdss.CircuitElement.CircuitEl
 :canonical: altdss.SwtControl.SwtControlBatch.SwitchedTerm
 :type: altdss.ArrayProxy.BatchInt32ArrayProxy
 :value: >
-   None
+   'property(...)'
 
 ```{autodoc2-docstring} altdss.SwtControl.SwtControlBatch.SwitchedTerm
 ```

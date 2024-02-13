@@ -592,7 +592,7 @@ Bases: {py:obj}`altdss.Batch.NonUniformBatch`, {py:obj}`altdss.CircuitElement.Ci
 :canonical: altdss.CircuitElement.CircuitElementMixin.DisplayName
 :type: str
 :value: >
-   None
+   'property(...)'
 
 ```{autodoc2-docstring} altdss.CircuitElement.CircuitElementMixin.DisplayName
 ```

@@ -63,7 +63,7 @@ Bases: {py:obj}`altdss.DSSObj.IDSSObj`, {py:obj}`altdss.UPFC.UPFCBatch`
 :canonical: altdss.UPFC.IUPFC.BaseFreq
 :type: altdss.ArrayProxy.BatchFloat64ArrayProxy
 :value: >
-   None
+   'property(...)'
 
 ```{autodoc2-docstring} altdss.UPFC.IUPFC.BaseFreq
 ```
@@ -74,7 +74,7 @@ Bases: {py:obj}`altdss.DSSObj.IDSSObj`, {py:obj}`altdss.UPFC.UPFCBatch`
 :canonical: altdss.UPFC.IUPFC.Bus1
 :type: typing.List[str]
 :value: >
-   None
+   'property(...)'
 
 ```{autodoc2-docstring} altdss.UPFC.IUPFC.Bus1
 ```
@@ -85,7 +85,7 @@ Bases: {py:obj}`altdss.DSSObj.IDSSObj`, {py:obj}`altdss.UPFC.UPFCBatch`
 :canonical: altdss.UPFC.IUPFC.Bus2
 :type: typing.List[str]
 :value: >
-   None
+   'property(...)'
 
 ```{autodoc2-docstring} altdss.UPFC.IUPFC.Bus2
 ```
@@ -96,7 +96,7 @@ Bases: {py:obj}`altdss.DSSObj.IDSSObj`, {py:obj}`altdss.UPFC.UPFCBatch`
 :canonical: altdss.UPFC.IUPFC.CLimit
 :type: altdss.ArrayProxy.BatchFloat64ArrayProxy
 :value: >
-   None
+   'property(...)'
 
 ```{autodoc2-docstring} altdss.UPFC.IUPFC.CLimit
 ```
@@ -139,7 +139,7 @@ Bases: {py:obj}`altdss.DSSObj.IDSSObj`, {py:obj}`altdss.UPFC.UPFCBatch`
 :canonical: altdss.UPFC.IUPFC.Element
 :type: typing.List[altdss.UPFC.PDElement]
 :value: >
-   None
+   'property(...)'
 
 ```{autodoc2-docstring} altdss.UPFC.IUPFC.Element
 ```
@@ -150,7 +150,7 @@ Bases: {py:obj}`altdss.DSSObj.IDSSObj`, {py:obj}`altdss.UPFC.UPFCBatch`
 :canonical: altdss.UPFC.IUPFC.Element_str
 :type: typing.List[str]
 :value: >
-   None
+   'property(...)'
 
 ```{autodoc2-docstring} altdss.UPFC.IUPFC.Element_str
 ```
@@ -161,7 +161,7 @@ Bases: {py:obj}`altdss.DSSObj.IDSSObj`, {py:obj}`altdss.UPFC.UPFCBatch`
 :canonical: altdss.UPFC.IUPFC.Enabled
 :type: typing.List[bool]
 :value: >
-   None
+   'property(...)'
 
 ```{autodoc2-docstring} altdss.UPFC.IUPFC.Enabled
 ```
@@ -188,7 +188,7 @@ Bases: {py:obj}`altdss.DSSObj.IDSSObj`, {py:obj}`altdss.UPFC.UPFCBatch`
 :canonical: altdss.UPFC.IUPFC.Frequency
 :type: altdss.ArrayProxy.BatchFloat64ArrayProxy
 :value: >
-   None
+   'property(...)'
 
 ```{autodoc2-docstring} altdss.UPFC.IUPFC.Frequency
 ```
@@ -263,7 +263,7 @@ Bases: {py:obj}`altdss.DSSObj.IDSSObj`, {py:obj}`altdss.UPFC.UPFCBatch`
 :canonical: altdss.UPFC.IUPFC.LossCurve
 :type: typing.List[altdss.XYcurve.XYcurve]
 :value: >
-   None
+   'property(...)'
 
 ```{autodoc2-docstring} altdss.UPFC.IUPFC.LossCurve
 ```
@@ -274,7 +274,7 @@ Bases: {py:obj}`altdss.DSSObj.IDSSObj`, {py:obj}`altdss.UPFC.UPFCBatch`
 :canonical: altdss.UPFC.IUPFC.LossCurve_str
 :type: typing.List[str]
 :value: >
-   None
+   'property(...)'
 
 ```{autodoc2-docstring} altdss.UPFC.IUPFC.LossCurve_str
 ```
@@ -301,7 +301,7 @@ Bases: {py:obj}`altdss.DSSObj.IDSSObj`, {py:obj}`altdss.UPFC.UPFCBatch`
 :canonical: altdss.UPFC.IUPFC.Mode
 :type: altdss.ArrayProxy.BatchInt32ArrayProxy
 :value: >
-   None
+   'property(...)'
 
 ```{autodoc2-docstring} altdss.UPFC.IUPFC.Mode
 ```
@@ -377,7 +377,7 @@ Bases: {py:obj}`altdss.DSSObj.IDSSObj`, {py:obj}`altdss.UPFC.UPFCBatch`
 :canonical: altdss.UPFC.IUPFC.PF
 :type: altdss.ArrayProxy.BatchFloat64ArrayProxy
 :value: >
-   None
+   'property(...)'
 
 ```{autodoc2-docstring} altdss.UPFC.IUPFC.PF
 ```
@@ -396,7 +396,7 @@ Bases: {py:obj}`altdss.DSSObj.IDSSObj`, {py:obj}`altdss.UPFC.UPFCBatch`
 :canonical: altdss.UPFC.IUPFC.Phases
 :type: altdss.ArrayProxy.BatchInt32ArrayProxy
 :value: >
-   None
+   'property(...)'
 
 ```{autodoc2-docstring} altdss.UPFC.IUPFC.Phases
 ```
@@ -415,7 +415,7 @@ Bases: {py:obj}`altdss.DSSObj.IDSSObj`, {py:obj}`altdss.UPFC.UPFCBatch`
 :canonical: altdss.UPFC.IUPFC.RefkV
 :type: altdss.ArrayProxy.BatchFloat64ArrayProxy
 :value: >
-   None
+   'property(...)'
 
 ```{autodoc2-docstring} altdss.UPFC.IUPFC.RefkV
 ```
@@ -450,7 +450,7 @@ Bases: {py:obj}`altdss.DSSObj.IDSSObj`, {py:obj}`altdss.UPFC.UPFCBatch`
 :canonical: altdss.UPFC.IUPFC.Spectrum
 :type: typing.List[altdss.Spectrum.Spectrum]
 :value: >
-   None
+   'property(...)'
 
 ```{autodoc2-docstring} altdss.UPFC.IUPFC.Spectrum
 ```
@@ -461,7 +461,7 @@ Bases: {py:obj}`altdss.DSSObj.IDSSObj`, {py:obj}`altdss.UPFC.UPFCBatch`
 :canonical: altdss.UPFC.IUPFC.Spectrum_str
 :type: typing.List[str]
 :value: >
-   None
+   'property(...)'
 
 ```{autodoc2-docstring} altdss.UPFC.IUPFC.Spectrum_str
 ```
@@ -472,7 +472,7 @@ Bases: {py:obj}`altdss.DSSObj.IDSSObj`, {py:obj}`altdss.UPFC.UPFCBatch`
 :canonical: altdss.UPFC.IUPFC.Tol1
 :type: altdss.ArrayProxy.BatchFloat64ArrayProxy
 :value: >
-   None
+   'property(...)'
 
 ```{autodoc2-docstring} altdss.UPFC.IUPFC.Tol1
 ```
@@ -491,7 +491,7 @@ Bases: {py:obj}`altdss.DSSObj.IDSSObj`, {py:obj}`altdss.UPFC.UPFCBatch`
 :canonical: altdss.UPFC.IUPFC.VHLimit
 :type: altdss.ArrayProxy.BatchFloat64ArrayProxy
 :value: >
-   None
+   'property(...)'
 
 ```{autodoc2-docstring} altdss.UPFC.IUPFC.VHLimit
 ```
@@ -502,7 +502,7 @@ Bases: {py:obj}`altdss.DSSObj.IDSSObj`, {py:obj}`altdss.UPFC.UPFCBatch`
 :canonical: altdss.UPFC.IUPFC.VLLimit
 :type: altdss.ArrayProxy.BatchFloat64ArrayProxy
 :value: >
-   None
+   'property(...)'
 
 ```{autodoc2-docstring} altdss.UPFC.IUPFC.VLLimit
 ```
@@ -529,7 +529,7 @@ Bases: {py:obj}`altdss.DSSObj.IDSSObj`, {py:obj}`altdss.UPFC.UPFCBatch`
 :canonical: altdss.UPFC.IUPFC.VpqMax
 :type: altdss.ArrayProxy.BatchFloat64ArrayProxy
 :value: >
-   None
+   'property(...)'
 
 ```{autodoc2-docstring} altdss.UPFC.IUPFC.VpqMax
 ```
@@ -540,7 +540,7 @@ Bases: {py:obj}`altdss.DSSObj.IDSSObj`, {py:obj}`altdss.UPFC.UPFCBatch`
 :canonical: altdss.UPFC.IUPFC.Xs
 :type: altdss.ArrayProxy.BatchFloat64ArrayProxy
 :value: >
-   None
+   'property(...)'
 
 ```{autodoc2-docstring} altdss.UPFC.IUPFC.Xs
 ```
@@ -639,7 +639,7 @@ Bases: {py:obj}`altdss.DSSObj.IDSSObj`, {py:obj}`altdss.UPFC.UPFCBatch`
 :canonical: altdss.UPFC.IUPFC.kvarLimit
 :type: altdss.ArrayProxy.BatchFloat64ArrayProxy
 :value: >
-   None
+   'property(...)'
 
 ```{autodoc2-docstring} altdss.UPFC.IUPFC.kvarLimit
 ```
@@ -658,7 +658,7 @@ Bases: {py:obj}`altdss.DSSObj.IDSSObj`, {py:obj}`altdss.UPFC.UPFCBatch`
 :canonical: altdss.UPFC.IUPFC.refkV2
 :type: altdss.ArrayProxy.BatchFloat64ArrayProxy
 :value: >
-   None
+   'property(...)'
 
 ```{autodoc2-docstring} altdss.UPFC.IUPFC.refkV2
 ```
@@ -705,7 +705,7 @@ Bases: {py:obj}`altdss.DSSObj.DSSObj`, {py:obj}`altdss.CircuitElement.CircuitEle
 :canonical: altdss.UPFC.UPFC.BaseFreq
 :type: float
 :value: >
-   None
+   'property(...)'
 
 ```{autodoc2-docstring} altdss.UPFC.UPFC.BaseFreq
 ```
@@ -716,7 +716,7 @@ Bases: {py:obj}`altdss.DSSObj.DSSObj`, {py:obj}`altdss.CircuitElement.CircuitEle
 :canonical: altdss.UPFC.UPFC.Bus1
 :type: str
 :value: >
-   None
+   'property(...)'
 
 ```{autodoc2-docstring} altdss.UPFC.UPFC.Bus1
 ```
@@ -727,7 +727,7 @@ Bases: {py:obj}`altdss.DSSObj.DSSObj`, {py:obj}`altdss.CircuitElement.CircuitEle
 :canonical: altdss.UPFC.UPFC.Bus2
 :type: str
 :value: >
-   None
+   'property(...)'
 
 ```{autodoc2-docstring} altdss.UPFC.UPFC.Bus2
 ```
@@ -738,7 +738,7 @@ Bases: {py:obj}`altdss.DSSObj.DSSObj`, {py:obj}`altdss.CircuitElement.CircuitEle
 :canonical: altdss.UPFC.UPFC.CLimit
 :type: float
 :value: >
-   None
+   'property(...)'
 
 ```{autodoc2-docstring} altdss.UPFC.UPFC.CLimit
 ```
@@ -781,7 +781,7 @@ Bases: {py:obj}`altdss.DSSObj.DSSObj`, {py:obj}`altdss.CircuitElement.CircuitEle
 :canonical: altdss.UPFC.UPFC.DisplayName
 :type: str
 :value: >
-   None
+   'property(...)'
 
 ```{autodoc2-docstring} altdss.UPFC.UPFC.DisplayName
 ```
@@ -792,7 +792,7 @@ Bases: {py:obj}`altdss.DSSObj.DSSObj`, {py:obj}`altdss.CircuitElement.CircuitEle
 :canonical: altdss.UPFC.UPFC.Element
 :type: altdss.UPFC.PDElement
 :value: >
-   None
+   'property(...)'
 
 ```{autodoc2-docstring} altdss.UPFC.UPFC.Element
 ```
@@ -803,7 +803,7 @@ Bases: {py:obj}`altdss.DSSObj.DSSObj`, {py:obj}`altdss.CircuitElement.CircuitEle
 :canonical: altdss.UPFC.UPFC.Element_str
 :type: str
 :value: >
-   None
+   'property(...)'
 
 ```{autodoc2-docstring} altdss.UPFC.UPFC.Element_str
 ```
@@ -814,7 +814,7 @@ Bases: {py:obj}`altdss.DSSObj.DSSObj`, {py:obj}`altdss.CircuitElement.CircuitEle
 :canonical: altdss.UPFC.UPFC.Enabled
 :type: bool
 :value: >
-   None
+   'property(...)'
 
 ```{autodoc2-docstring} altdss.UPFC.UPFC.Enabled
 ```
@@ -841,7 +841,7 @@ Bases: {py:obj}`altdss.DSSObj.DSSObj`, {py:obj}`altdss.CircuitElement.CircuitEle
 :canonical: altdss.UPFC.UPFC.Frequency
 :type: float
 :value: >
-   None
+   'property(...)'
 
 ```{autodoc2-docstring} altdss.UPFC.UPFC.Frequency
 ```
@@ -932,7 +932,7 @@ Bases: {py:obj}`altdss.DSSObj.DSSObj`, {py:obj}`altdss.CircuitElement.CircuitEle
 :canonical: altdss.UPFC.UPFC.LossCurve
 :type: altdss.XYcurve.XYcurve
 :value: >
-   None
+   'property(...)'
 
 ```{autodoc2-docstring} altdss.UPFC.UPFC.LossCurve
 ```
@@ -943,7 +943,7 @@ Bases: {py:obj}`altdss.DSSObj.DSSObj`, {py:obj}`altdss.CircuitElement.CircuitEle
 :canonical: altdss.UPFC.UPFC.LossCurve_str
 :type: str
 :value: >
-   None
+   'property(...)'
 
 ```{autodoc2-docstring} altdss.UPFC.UPFC.LossCurve_str
 ```
@@ -970,7 +970,7 @@ Bases: {py:obj}`altdss.DSSObj.DSSObj`, {py:obj}`altdss.CircuitElement.CircuitEle
 :canonical: altdss.UPFC.UPFC.Mode
 :type: altdss.enums.UPFCMode
 :value: >
-   None
+   'property(...)'
 
 ```{autodoc2-docstring} altdss.UPFC.UPFC.Mode
 ```
@@ -1070,7 +1070,7 @@ Bases: {py:obj}`altdss.DSSObj.DSSObj`, {py:obj}`altdss.CircuitElement.CircuitEle
 :canonical: altdss.UPFC.UPFC.PF
 :type: float
 :value: >
-   None
+   'property(...)'
 
 ```{autodoc2-docstring} altdss.UPFC.UPFC.PF
 ```
@@ -1089,7 +1089,7 @@ Bases: {py:obj}`altdss.DSSObj.DSSObj`, {py:obj}`altdss.CircuitElement.CircuitEle
 :canonical: altdss.UPFC.UPFC.Phases
 :type: int
 :value: >
-   None
+   'property(...)'
 
 ```{autodoc2-docstring} altdss.UPFC.UPFC.Phases
 ```
@@ -1108,7 +1108,7 @@ Bases: {py:obj}`altdss.DSSObj.DSSObj`, {py:obj}`altdss.CircuitElement.CircuitEle
 :canonical: altdss.UPFC.UPFC.RefkV
 :type: float
 :value: >
-   None
+   'property(...)'
 
 ```{autodoc2-docstring} altdss.UPFC.UPFC.RefkV
 ```
@@ -1159,7 +1159,7 @@ Bases: {py:obj}`altdss.DSSObj.DSSObj`, {py:obj}`altdss.CircuitElement.CircuitEle
 :canonical: altdss.UPFC.UPFC.Spectrum
 :type: altdss.Spectrum.Spectrum
 :value: >
-   None
+   'property(...)'
 
 ```{autodoc2-docstring} altdss.UPFC.UPFC.Spectrum
 ```
@@ -1170,7 +1170,7 @@ Bases: {py:obj}`altdss.DSSObj.DSSObj`, {py:obj}`altdss.CircuitElement.CircuitEle
 :canonical: altdss.UPFC.UPFC.Spectrum_str
 :type: str
 :value: >
-   None
+   'property(...)'
 
 ```{autodoc2-docstring} altdss.UPFC.UPFC.Spectrum_str
 ```
@@ -1181,7 +1181,7 @@ Bases: {py:obj}`altdss.DSSObj.DSSObj`, {py:obj}`altdss.CircuitElement.CircuitEle
 :canonical: altdss.UPFC.UPFC.Tol1
 :type: float
 :value: >
-   None
+   'property(...)'
 
 ```{autodoc2-docstring} altdss.UPFC.UPFC.Tol1
 ```
@@ -1200,7 +1200,7 @@ Bases: {py:obj}`altdss.DSSObj.DSSObj`, {py:obj}`altdss.CircuitElement.CircuitEle
 :canonical: altdss.UPFC.UPFC.VHLimit
 :type: float
 :value: >
-   None
+   'property(...)'
 
 ```{autodoc2-docstring} altdss.UPFC.UPFC.VHLimit
 ```
@@ -1211,7 +1211,7 @@ Bases: {py:obj}`altdss.DSSObj.DSSObj`, {py:obj}`altdss.CircuitElement.CircuitEle
 :canonical: altdss.UPFC.UPFC.VLLimit
 :type: float
 :value: >
-   None
+   'property(...)'
 
 ```{autodoc2-docstring} altdss.UPFC.UPFC.VLLimit
 ```
@@ -1262,7 +1262,7 @@ Bases: {py:obj}`altdss.DSSObj.DSSObj`, {py:obj}`altdss.CircuitElement.CircuitEle
 :canonical: altdss.UPFC.UPFC.VpqMax
 :type: float
 :value: >
-   None
+   'property(...)'
 
 ```{autodoc2-docstring} altdss.UPFC.UPFC.VpqMax
 ```
@@ -1273,7 +1273,7 @@ Bases: {py:obj}`altdss.DSSObj.DSSObj`, {py:obj}`altdss.CircuitElement.CircuitEle
 :canonical: altdss.UPFC.UPFC.Xs
 :type: float
 :value: >
-   None
+   'property(...)'
 
 ```{autodoc2-docstring} altdss.UPFC.UPFC.Xs
 ```
@@ -1340,7 +1340,7 @@ Bases: {py:obj}`altdss.DSSObj.DSSObj`, {py:obj}`altdss.CircuitElement.CircuitEle
 :canonical: altdss.UPFC.UPFC.kvarLimit
 :type: float
 :value: >
-   None
+   'property(...)'
 
 ```{autodoc2-docstring} altdss.UPFC.UPFC.kvarLimit
 ```
@@ -1351,7 +1351,7 @@ Bases: {py:obj}`altdss.DSSObj.DSSObj`, {py:obj}`altdss.CircuitElement.CircuitEle
 :canonical: altdss.UPFC.UPFC.refkV2
 :type: float
 :value: >
-   None
+   'property(...)'
 
 ```{autodoc2-docstring} altdss.UPFC.UPFC.refkV2
 ```
@@ -1380,7 +1380,7 @@ Bases: {py:obj}`altdss.Batch.DSSBatch`, {py:obj}`altdss.CircuitElement.CircuitEl
 :canonical: altdss.UPFC.UPFCBatch.BaseFreq
 :type: altdss.ArrayProxy.BatchFloat64ArrayProxy
 :value: >
-   None
+   'property(...)'
 
 ```{autodoc2-docstring} altdss.UPFC.UPFCBatch.BaseFreq
 ```
@@ -1391,7 +1391,7 @@ Bases: {py:obj}`altdss.Batch.DSSBatch`, {py:obj}`altdss.CircuitElement.CircuitEl
 :canonical: altdss.UPFC.UPFCBatch.Bus1
 :type: typing.List[str]
 :value: >
-   None
+   'property(...)'
 
 ```{autodoc2-docstring} altdss.UPFC.UPFCBatch.Bus1
 ```
@@ -1402,7 +1402,7 @@ Bases: {py:obj}`altdss.Batch.DSSBatch`, {py:obj}`altdss.CircuitElement.CircuitEl
 :canonical: altdss.UPFC.UPFCBatch.Bus2
 :type: typing.List[str]
 :value: >
-   None
+   'property(...)'
 
 ```{autodoc2-docstring} altdss.UPFC.UPFCBatch.Bus2
 ```
@@ -1413,7 +1413,7 @@ Bases: {py:obj}`altdss.Batch.DSSBatch`, {py:obj}`altdss.CircuitElement.CircuitEl
 :canonical: altdss.UPFC.UPFCBatch.CLimit
 :type: altdss.ArrayProxy.BatchFloat64ArrayProxy
 :value: >
-   None
+   'property(...)'
 
 ```{autodoc2-docstring} altdss.UPFC.UPFCBatch.CLimit
 ```
@@ -1456,7 +1456,7 @@ Bases: {py:obj}`altdss.Batch.DSSBatch`, {py:obj}`altdss.CircuitElement.CircuitEl
 :canonical: altdss.UPFC.UPFCBatch.Element
 :type: typing.List[altdss.UPFC.PDElement]
 :value: >
-   None
+   'property(...)'
 
 ```{autodoc2-docstring} altdss.UPFC.UPFCBatch.Element
 ```
@@ -1467,7 +1467,7 @@ Bases: {py:obj}`altdss.Batch.DSSBatch`, {py:obj}`altdss.CircuitElement.CircuitEl
 :canonical: altdss.UPFC.UPFCBatch.Element_str
 :type: typing.List[str]
 :value: >
-   None
+   'property(...)'
 
 ```{autodoc2-docstring} altdss.UPFC.UPFCBatch.Element_str
 ```
@@ -1478,7 +1478,7 @@ Bases: {py:obj}`altdss.Batch.DSSBatch`, {py:obj}`altdss.CircuitElement.CircuitEl
 :canonical: altdss.UPFC.UPFCBatch.Enabled
 :type: typing.List[bool]
 :value: >
-   None
+   'property(...)'
 
 ```{autodoc2-docstring} altdss.UPFC.UPFCBatch.Enabled
 ```
@@ -1505,7 +1505,7 @@ Bases: {py:obj}`altdss.Batch.DSSBatch`, {py:obj}`altdss.CircuitElement.CircuitEl
 :canonical: altdss.UPFC.UPFCBatch.Frequency
 :type: altdss.ArrayProxy.BatchFloat64ArrayProxy
 :value: >
-   None
+   'property(...)'
 
 ```{autodoc2-docstring} altdss.UPFC.UPFCBatch.Frequency
 ```
@@ -1580,7 +1580,7 @@ Bases: {py:obj}`altdss.Batch.DSSBatch`, {py:obj}`altdss.CircuitElement.CircuitEl
 :canonical: altdss.UPFC.UPFCBatch.LossCurve
 :type: typing.List[altdss.XYcurve.XYcurve]
 :value: >
-   None
+   'property(...)'
 
 ```{autodoc2-docstring} altdss.UPFC.UPFCBatch.LossCurve
 ```
@@ -1591,7 +1591,7 @@ Bases: {py:obj}`altdss.Batch.DSSBatch`, {py:obj}`altdss.CircuitElement.CircuitEl
 :canonical: altdss.UPFC.UPFCBatch.LossCurve_str
 :type: typing.List[str]
 :value: >
-   None
+   'property(...)'
 
 ```{autodoc2-docstring} altdss.UPFC.UPFCBatch.LossCurve_str
 ```
@@ -1618,7 +1618,7 @@ Bases: {py:obj}`altdss.Batch.DSSBatch`, {py:obj}`altdss.CircuitElement.CircuitEl
 :canonical: altdss.UPFC.UPFCBatch.Mode
 :type: altdss.ArrayProxy.BatchInt32ArrayProxy
 :value: >
-   None
+   'property(...)'
 
 ```{autodoc2-docstring} altdss.UPFC.UPFCBatch.Mode
 ```
@@ -1694,7 +1694,7 @@ Bases: {py:obj}`altdss.Batch.DSSBatch`, {py:obj}`altdss.CircuitElement.CircuitEl
 :canonical: altdss.UPFC.UPFCBatch.PF
 :type: altdss.ArrayProxy.BatchFloat64ArrayProxy
 :value: >
-   None
+   'property(...)'
 
 ```{autodoc2-docstring} altdss.UPFC.UPFCBatch.PF
 ```
@@ -1713,7 +1713,7 @@ Bases: {py:obj}`altdss.Batch.DSSBatch`, {py:obj}`altdss.CircuitElement.CircuitEl
 :canonical: altdss.UPFC.UPFCBatch.Phases
 :type: altdss.ArrayProxy.BatchInt32ArrayProxy
 :value: >
-   None
+   'property(...)'
 
 ```{autodoc2-docstring} altdss.UPFC.UPFCBatch.Phases
 ```
@@ -1732,7 +1732,7 @@ Bases: {py:obj}`altdss.Batch.DSSBatch`, {py:obj}`altdss.CircuitElement.CircuitEl
 :canonical: altdss.UPFC.UPFCBatch.RefkV
 :type: altdss.ArrayProxy.BatchFloat64ArrayProxy
 :value: >
-   None
+   'property(...)'
 
 ```{autodoc2-docstring} altdss.UPFC.UPFCBatch.RefkV
 ```
@@ -1767,7 +1767,7 @@ Bases: {py:obj}`altdss.Batch.DSSBatch`, {py:obj}`altdss.CircuitElement.CircuitEl
 :canonical: altdss.UPFC.UPFCBatch.Spectrum
 :type: typing.List[altdss.Spectrum.Spectrum]
 :value: >
-   None
+   'property(...)'
 
 ```{autodoc2-docstring} altdss.UPFC.UPFCBatch.Spectrum
 ```
@@ -1778,7 +1778,7 @@ Bases: {py:obj}`altdss.Batch.DSSBatch`, {py:obj}`altdss.CircuitElement.CircuitEl
 :canonical: altdss.UPFC.UPFCBatch.Spectrum_str
 :type: typing.List[str]
 :value: >
-   None
+   'property(...)'
 
 ```{autodoc2-docstring} altdss.UPFC.UPFCBatch.Spectrum_str
 ```
@@ -1789,7 +1789,7 @@ Bases: {py:obj}`altdss.Batch.DSSBatch`, {py:obj}`altdss.CircuitElement.CircuitEl
 :canonical: altdss.UPFC.UPFCBatch.Tol1
 :type: altdss.ArrayProxy.BatchFloat64ArrayProxy
 :value: >
-   None
+   'property(...)'
 
 ```{autodoc2-docstring} altdss.UPFC.UPFCBatch.Tol1
 ```
@@ -1808,7 +1808,7 @@ Bases: {py:obj}`altdss.Batch.DSSBatch`, {py:obj}`altdss.CircuitElement.CircuitEl
 :canonical: altdss.UPFC.UPFCBatch.VHLimit
 :type: altdss.ArrayProxy.BatchFloat64ArrayProxy
 :value: >
-   None
+   'property(...)'
 
 ```{autodoc2-docstring} altdss.UPFC.UPFCBatch.VHLimit
 ```
@@ -1819,7 +1819,7 @@ Bases: {py:obj}`altdss.Batch.DSSBatch`, {py:obj}`altdss.CircuitElement.CircuitEl
 :canonical: altdss.UPFC.UPFCBatch.VLLimit
 :type: altdss.ArrayProxy.BatchFloat64ArrayProxy
 :value: >
-   None
+   'property(...)'
 
 ```{autodoc2-docstring} altdss.UPFC.UPFCBatch.VLLimit
 ```
@@ -1846,7 +1846,7 @@ Bases: {py:obj}`altdss.Batch.DSSBatch`, {py:obj}`altdss.CircuitElement.CircuitEl
 :canonical: altdss.UPFC.UPFCBatch.VpqMax
 :type: altdss.ArrayProxy.BatchFloat64ArrayProxy
 :value: >
-   None
+   'property(...)'
 
 ```{autodoc2-docstring} altdss.UPFC.UPFCBatch.VpqMax
 ```
@@ -1857,7 +1857,7 @@ Bases: {py:obj}`altdss.Batch.DSSBatch`, {py:obj}`altdss.CircuitElement.CircuitEl
 :canonical: altdss.UPFC.UPFCBatch.Xs
 :type: altdss.ArrayProxy.BatchFloat64ArrayProxy
 :value: >
-   None
+   'property(...)'
 
 ```{autodoc2-docstring} altdss.UPFC.UPFCBatch.Xs
 ```
@@ -1924,7 +1924,7 @@ Bases: {py:obj}`altdss.Batch.DSSBatch`, {py:obj}`altdss.CircuitElement.CircuitEl
 :canonical: altdss.UPFC.UPFCBatch.kvarLimit
 :type: altdss.ArrayProxy.BatchFloat64ArrayProxy
 :value: >
-   None
+   'property(...)'
 
 ```{autodoc2-docstring} altdss.UPFC.UPFCBatch.kvarLimit
 ```
@@ -1935,7 +1935,7 @@ Bases: {py:obj}`altdss.Batch.DSSBatch`, {py:obj}`altdss.CircuitElement.CircuitEl
 :canonical: altdss.UPFC.UPFCBatch.refkV2
 :type: altdss.ArrayProxy.BatchFloat64ArrayProxy
 :value: >
-   None
+   'property(...)'
 
 ```{autodoc2-docstring} altdss.UPFC.UPFCBatch.refkV2
 ```

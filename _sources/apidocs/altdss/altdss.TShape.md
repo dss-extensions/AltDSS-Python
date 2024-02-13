@@ -59,7 +59,7 @@ Bases: {py:obj}`altdss.DSSObj.IDSSObj`, {py:obj}`altdss.TShape.TShapeBatch`
 :canonical: altdss.TShape.ITShape.CSVFile
 :type: typing.List[str]
 :value: >
-   None
+   'property(...)'
 
 ```{autodoc2-docstring} altdss.TShape.ITShape.CSVFile
 ```
@@ -70,7 +70,7 @@ Bases: {py:obj}`altdss.DSSObj.IDSSObj`, {py:obj}`altdss.TShape.TShapeBatch`
 :canonical: altdss.TShape.ITShape.DblFile
 :type: typing.List[str]
 :value: >
-   None
+   'property(...)'
 
 ```{autodoc2-docstring} altdss.TShape.ITShape.DblFile
 ```
@@ -97,7 +97,7 @@ Bases: {py:obj}`altdss.DSSObj.IDSSObj`, {py:obj}`altdss.TShape.TShapeBatch`
 :canonical: altdss.TShape.ITShape.Hour
 :type: typing.List[altdss.types.Float64Array]
 :value: >
-   None
+   'property(...)'
 
 ```{autodoc2-docstring} altdss.TShape.ITShape.Hour
 ```
@@ -108,7 +108,7 @@ Bases: {py:obj}`altdss.DSSObj.IDSSObj`, {py:obj}`altdss.TShape.TShapeBatch`
 :canonical: altdss.TShape.ITShape.Interval
 :type: altdss.ArrayProxy.BatchFloat64ArrayProxy
 :value: >
-   None
+   'property(...)'
 
 ```{autodoc2-docstring} altdss.TShape.ITShape.Interval
 ```
@@ -127,7 +127,7 @@ Bases: {py:obj}`altdss.DSSObj.IDSSObj`, {py:obj}`altdss.TShape.TShapeBatch`
 :canonical: altdss.TShape.ITShape.MInterval
 :type: altdss.ArrayProxy.BatchFloat64ArrayProxy
 :value: >
-   None
+   'property(...)'
 
 ```{autodoc2-docstring} altdss.TShape.ITShape.MInterval
 ```
@@ -138,7 +138,7 @@ Bases: {py:obj}`altdss.DSSObj.IDSSObj`, {py:obj}`altdss.TShape.TShapeBatch`
 :canonical: altdss.TShape.ITShape.Mean
 :type: altdss.ArrayProxy.BatchFloat64ArrayProxy
 :value: >
-   None
+   'property(...)'
 
 ```{autodoc2-docstring} altdss.TShape.ITShape.Mean
 ```
@@ -149,7 +149,7 @@ Bases: {py:obj}`altdss.DSSObj.IDSSObj`, {py:obj}`altdss.TShape.TShapeBatch`
 :canonical: altdss.TShape.ITShape.NPts
 :type: altdss.ArrayProxy.BatchInt32ArrayProxy
 :value: >
-   None
+   'property(...)'
 
 ```{autodoc2-docstring} altdss.TShape.ITShape.NPts
 ```
@@ -169,7 +169,7 @@ Bases: {py:obj}`altdss.DSSObj.IDSSObj`, {py:obj}`altdss.TShape.TShapeBatch`
 :canonical: altdss.TShape.ITShape.SInterval
 :type: altdss.ArrayProxy.BatchFloat64ArrayProxy
 :value: >
-   None
+   'property(...)'
 
 ```{autodoc2-docstring} altdss.TShape.ITShape.SInterval
 ```
@@ -180,7 +180,7 @@ Bases: {py:obj}`altdss.DSSObj.IDSSObj`, {py:obj}`altdss.TShape.TShapeBatch`
 :canonical: altdss.TShape.ITShape.SngFile
 :type: typing.List[str]
 :value: >
-   None
+   'property(...)'
 
 ```{autodoc2-docstring} altdss.TShape.ITShape.SngFile
 ```
@@ -199,7 +199,7 @@ Bases: {py:obj}`altdss.DSSObj.IDSSObj`, {py:obj}`altdss.TShape.TShapeBatch`
 :canonical: altdss.TShape.ITShape.StdDev
 :type: altdss.ArrayProxy.BatchFloat64ArrayProxy
 :value: >
-   None
+   'property(...)'
 
 ```{autodoc2-docstring} altdss.TShape.ITShape.StdDev
 ```
@@ -210,7 +210,7 @@ Bases: {py:obj}`altdss.DSSObj.IDSSObj`, {py:obj}`altdss.TShape.TShapeBatch`
 :canonical: altdss.TShape.ITShape.Temp
 :type: typing.List[altdss.types.Float64Array]
 :value: >
-   None
+   'property(...)'
 
 ```{autodoc2-docstring} altdss.TShape.ITShape.Temp
 ```
@@ -351,7 +351,7 @@ Bases: {py:obj}`altdss.DSSObj.DSSObj`
 :canonical: altdss.TShape.TShape.CSVFile
 :type: str
 :value: >
-   None
+   'property(...)'
 
 ```{autodoc2-docstring} altdss.TShape.TShape.CSVFile
 ```
@@ -362,7 +362,7 @@ Bases: {py:obj}`altdss.DSSObj.DSSObj`
 :canonical: altdss.TShape.TShape.DblFile
 :type: str
 :value: >
-   None
+   'property(...)'
 
 ```{autodoc2-docstring} altdss.TShape.TShape.DblFile
 ```
@@ -389,7 +389,7 @@ Bases: {py:obj}`altdss.DSSObj.DSSObj`
 :canonical: altdss.TShape.TShape.Hour
 :type: altdss.types.Float64Array
 :value: >
-   None
+   'property(...)'
 
 ```{autodoc2-docstring} altdss.TShape.TShape.Hour
 ```
@@ -400,7 +400,7 @@ Bases: {py:obj}`altdss.DSSObj.DSSObj`
 :canonical: altdss.TShape.TShape.Interval
 :type: float
 :value: >
-   None
+   'property(...)'
 
 ```{autodoc2-docstring} altdss.TShape.TShape.Interval
 ```
@@ -419,7 +419,7 @@ Bases: {py:obj}`altdss.DSSObj.DSSObj`
 :canonical: altdss.TShape.TShape.MInterval
 :type: float
 :value: >
-   None
+   'property(...)'
 
 ```{autodoc2-docstring} altdss.TShape.TShape.MInterval
 ```
@@ -430,7 +430,7 @@ Bases: {py:obj}`altdss.DSSObj.DSSObj`
 :canonical: altdss.TShape.TShape.Mean
 :type: float
 :value: >
-   None
+   'property(...)'
 
 ```{autodoc2-docstring} altdss.TShape.TShape.Mean
 ```
@@ -441,7 +441,7 @@ Bases: {py:obj}`altdss.DSSObj.DSSObj`
 :canonical: altdss.TShape.TShape.NPts
 :type: int
 :value: >
-   None
+   'property(...)'
 
 ```{autodoc2-docstring} altdss.TShape.TShape.NPts
 ```
@@ -461,7 +461,7 @@ Bases: {py:obj}`altdss.DSSObj.DSSObj`
 :canonical: altdss.TShape.TShape.SInterval
 :type: float
 :value: >
-   None
+   'property(...)'
 
 ```{autodoc2-docstring} altdss.TShape.TShape.SInterval
 ```
@@ -472,7 +472,7 @@ Bases: {py:obj}`altdss.DSSObj.DSSObj`
 :canonical: altdss.TShape.TShape.SngFile
 :type: str
 :value: >
-   None
+   'property(...)'
 
 ```{autodoc2-docstring} altdss.TShape.TShape.SngFile
 ```
@@ -491,7 +491,7 @@ Bases: {py:obj}`altdss.DSSObj.DSSObj`
 :canonical: altdss.TShape.TShape.StdDev
 :type: float
 :value: >
-   None
+   'property(...)'
 
 ```{autodoc2-docstring} altdss.TShape.TShape.StdDev
 ```
@@ -502,7 +502,7 @@ Bases: {py:obj}`altdss.DSSObj.DSSObj`
 :canonical: altdss.TShape.TShape.Temp
 :type: altdss.types.Float64Array
 :value: >
-   None
+   'property(...)'
 
 ```{autodoc2-docstring} altdss.TShape.TShape.Temp
 ```
@@ -587,7 +587,7 @@ Bases: {py:obj}`altdss.Batch.DSSBatch`
 :canonical: altdss.TShape.TShapeBatch.CSVFile
 :type: typing.List[str]
 :value: >
-   None
+   'property(...)'
 
 ```{autodoc2-docstring} altdss.TShape.TShapeBatch.CSVFile
 ```
@@ -598,7 +598,7 @@ Bases: {py:obj}`altdss.Batch.DSSBatch`
 :canonical: altdss.TShape.TShapeBatch.DblFile
 :type: typing.List[str]
 :value: >
-   None
+   'property(...)'
 
 ```{autodoc2-docstring} altdss.TShape.TShapeBatch.DblFile
 ```
@@ -625,7 +625,7 @@ Bases: {py:obj}`altdss.Batch.DSSBatch`
 :canonical: altdss.TShape.TShapeBatch.Hour
 :type: typing.List[altdss.types.Float64Array]
 :value: >
-   None
+   'property(...)'
 
 ```{autodoc2-docstring} altdss.TShape.TShapeBatch.Hour
 ```
@@ -636,7 +636,7 @@ Bases: {py:obj}`altdss.Batch.DSSBatch`
 :canonical: altdss.TShape.TShapeBatch.Interval
 :type: altdss.ArrayProxy.BatchFloat64ArrayProxy
 :value: >
-   None
+   'property(...)'
 
 ```{autodoc2-docstring} altdss.TShape.TShapeBatch.Interval
 ```
@@ -655,7 +655,7 @@ Bases: {py:obj}`altdss.Batch.DSSBatch`
 :canonical: altdss.TShape.TShapeBatch.MInterval
 :type: altdss.ArrayProxy.BatchFloat64ArrayProxy
 :value: >
-   None
+   'property(...)'
 
 ```{autodoc2-docstring} altdss.TShape.TShapeBatch.MInterval
 ```
@@ -666,7 +666,7 @@ Bases: {py:obj}`altdss.Batch.DSSBatch`
 :canonical: altdss.TShape.TShapeBatch.Mean
 :type: altdss.ArrayProxy.BatchFloat64ArrayProxy
 :value: >
-   None
+   'property(...)'
 
 ```{autodoc2-docstring} altdss.TShape.TShapeBatch.Mean
 ```
@@ -677,7 +677,7 @@ Bases: {py:obj}`altdss.Batch.DSSBatch`
 :canonical: altdss.TShape.TShapeBatch.NPts
 :type: altdss.ArrayProxy.BatchInt32ArrayProxy
 :value: >
-   None
+   'property(...)'
 
 ```{autodoc2-docstring} altdss.TShape.TShapeBatch.NPts
 ```
@@ -697,7 +697,7 @@ Bases: {py:obj}`altdss.Batch.DSSBatch`
 :canonical: altdss.TShape.TShapeBatch.SInterval
 :type: altdss.ArrayProxy.BatchFloat64ArrayProxy
 :value: >
-   None
+   'property(...)'
 
 ```{autodoc2-docstring} altdss.TShape.TShapeBatch.SInterval
 ```
@@ -708,7 +708,7 @@ Bases: {py:obj}`altdss.Batch.DSSBatch`
 :canonical: altdss.TShape.TShapeBatch.SngFile
 :type: typing.List[str]
 :value: >
-   None
+   'property(...)'
 
 ```{autodoc2-docstring} altdss.TShape.TShapeBatch.SngFile
 ```
@@ -727,7 +727,7 @@ Bases: {py:obj}`altdss.Batch.DSSBatch`
 :canonical: altdss.TShape.TShapeBatch.StdDev
 :type: altdss.ArrayProxy.BatchFloat64ArrayProxy
 :value: >
-   None
+   'property(...)'
 
 ```{autodoc2-docstring} altdss.TShape.TShapeBatch.StdDev
 ```
@@ -738,7 +738,7 @@ Bases: {py:obj}`altdss.Batch.DSSBatch`
 :canonical: altdss.TShape.TShapeBatch.Temp
 :type: typing.List[altdss.types.Float64Array]
 :value: >
-   None
+   'property(...)'
 
 ```{autodoc2-docstring} altdss.TShape.TShapeBatch.Temp
 ```

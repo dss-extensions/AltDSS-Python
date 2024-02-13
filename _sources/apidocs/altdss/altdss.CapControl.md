@@ -51,7 +51,7 @@ Bases: {py:obj}`altdss.DSSObj.DSSObj`, {py:obj}`altdss.CircuitElement.CircuitEle
 :canonical: altdss.CapControl.CapControl.BaseFreq
 :type: float
 :value: >
-   None
+   'property(...)'
 
 ```{autodoc2-docstring} altdss.CapControl.CapControl.BaseFreq
 ```
@@ -62,7 +62,7 @@ Bases: {py:obj}`altdss.DSSObj.DSSObj`, {py:obj}`altdss.CircuitElement.CircuitEle
 :canonical: altdss.CapControl.CapControl.CTPhase
 :type: altdss.enums.MonitoredPhase
 :value: >
-   None
+   'property(...)'
 
 ```{autodoc2-docstring} altdss.CapControl.CapControl.CTPhase
 ```
@@ -73,7 +73,7 @@ Bases: {py:obj}`altdss.DSSObj.DSSObj`, {py:obj}`altdss.CircuitElement.CircuitEle
 :canonical: altdss.CapControl.CapControl.CTPhase_str
 :type: str
 :value: >
-   None
+   'property(...)'
 
 ```{autodoc2-docstring} altdss.CapControl.CapControl.CTPhase_str
 ```
@@ -84,7 +84,7 @@ Bases: {py:obj}`altdss.DSSObj.DSSObj`, {py:obj}`altdss.CircuitElement.CircuitEle
 :canonical: altdss.CapControl.CapControl.CTRatio
 :type: float
 :value: >
-   None
+   'property(...)'
 
 ```{autodoc2-docstring} altdss.CapControl.CapControl.CTRatio
 ```
@@ -95,7 +95,7 @@ Bases: {py:obj}`altdss.DSSObj.DSSObj`, {py:obj}`altdss.CircuitElement.CircuitEle
 :canonical: altdss.CapControl.CapControl.Capacitor
 :type: altdss.Capacitor.Capacitor
 :value: >
-   None
+   'property(...)'
 
 ```{autodoc2-docstring} altdss.CapControl.CapControl.Capacitor
 ```
@@ -106,7 +106,7 @@ Bases: {py:obj}`altdss.DSSObj.DSSObj`, {py:obj}`altdss.CircuitElement.CircuitEle
 :canonical: altdss.CapControl.CapControl.Capacitor_str
 :type: str
 :value: >
-   None
+   'property(...)'
 
 ```{autodoc2-docstring} altdss.CapControl.CapControl.Capacitor_str
 ```
@@ -141,7 +141,7 @@ Bases: {py:obj}`altdss.DSSObj.DSSObj`, {py:obj}`altdss.CircuitElement.CircuitEle
 :canonical: altdss.CapControl.CapControl.ControlSignal
 :type: altdss.LoadShape.LoadShape
 :value: >
-   None
+   'property(...)'
 
 ```{autodoc2-docstring} altdss.CapControl.CapControl.ControlSignal
 ```
@@ -152,7 +152,7 @@ Bases: {py:obj}`altdss.DSSObj.DSSObj`, {py:obj}`altdss.CircuitElement.CircuitEle
 :canonical: altdss.CapControl.CapControl.ControlSignal_str
 :type: str
 :value: >
-   None
+   'property(...)'
 
 ```{autodoc2-docstring} altdss.CapControl.CapControl.ControlSignal_str
 ```
@@ -171,7 +171,7 @@ Bases: {py:obj}`altdss.DSSObj.DSSObj`, {py:obj}`altdss.CircuitElement.CircuitEle
 :canonical: altdss.CapControl.CapControl.DeadTime
 :type: float
 :value: >
-   None
+   'property(...)'
 
 ```{autodoc2-docstring} altdss.CapControl.CapControl.DeadTime
 ```
@@ -182,7 +182,7 @@ Bases: {py:obj}`altdss.DSSObj.DSSObj`, {py:obj}`altdss.CircuitElement.CircuitEle
 :canonical: altdss.CapControl.CapControl.Delay
 :type: float
 :value: >
-   None
+   'property(...)'
 
 ```{autodoc2-docstring} altdss.CapControl.CapControl.Delay
 ```
@@ -193,7 +193,7 @@ Bases: {py:obj}`altdss.DSSObj.DSSObj`, {py:obj}`altdss.CircuitElement.CircuitEle
 :canonical: altdss.CapControl.CapControl.DelayOff
 :type: float
 :value: >
-   None
+   'property(...)'
 
 ```{autodoc2-docstring} altdss.CapControl.CapControl.DelayOff
 ```
@@ -204,7 +204,7 @@ Bases: {py:obj}`altdss.DSSObj.DSSObj`, {py:obj}`altdss.CircuitElement.CircuitEle
 :canonical: altdss.CapControl.CapControl.DisplayName
 :type: str
 :value: >
-   None
+   'property(...)'
 
 ```{autodoc2-docstring} altdss.CapControl.CapControl.DisplayName
 ```
@@ -215,7 +215,7 @@ Bases: {py:obj}`altdss.DSSObj.DSSObj`, {py:obj}`altdss.CircuitElement.CircuitEle
 :canonical: altdss.CapControl.CapControl.Element
 :type: altdss.DSSObj.DSSObj
 :value: >
-   None
+   'property(...)'
 
 ```{autodoc2-docstring} altdss.CapControl.CapControl.Element
 ```
@@ -226,7 +226,7 @@ Bases: {py:obj}`altdss.DSSObj.DSSObj`, {py:obj}`altdss.CircuitElement.CircuitEle
 :canonical: altdss.CapControl.CapControl.Element_str
 :type: str
 :value: >
-   None
+   'property(...)'
 
 ```{autodoc2-docstring} altdss.CapControl.CapControl.Element_str
 ```
@@ -237,7 +237,7 @@ Bases: {py:obj}`altdss.DSSObj.DSSObj`, {py:obj}`altdss.CircuitElement.CircuitEle
 :canonical: altdss.CapControl.CapControl.Enabled
 :type: bool
 :value: >
-   None
+   'property(...)'
 
 ```{autodoc2-docstring} altdss.CapControl.CapControl.Enabled
 ```
@@ -248,7 +248,7 @@ Bases: {py:obj}`altdss.DSSObj.DSSObj`, {py:obj}`altdss.CircuitElement.CircuitEle
 :canonical: altdss.CapControl.CapControl.EventLog
 :type: bool
 :value: >
-   None
+   'property(...)'
 
 ```{autodoc2-docstring} altdss.CapControl.CapControl.EventLog
 ```
@@ -428,7 +428,7 @@ Bases: {py:obj}`altdss.DSSObj.DSSObj`, {py:obj}`altdss.CircuitElement.CircuitEle
 :canonical: altdss.CapControl.CapControl.OffSetting
 :type: float
 :value: >
-   None
+   'property(...)'
 
 ```{autodoc2-docstring} altdss.CapControl.CapControl.OffSetting
 ```
@@ -439,7 +439,7 @@ Bases: {py:obj}`altdss.DSSObj.DSSObj`, {py:obj}`altdss.CircuitElement.CircuitEle
 :canonical: altdss.CapControl.CapControl.OnSetting
 :type: float
 :value: >
-   None
+   'property(...)'
 
 ```{autodoc2-docstring} altdss.CapControl.CapControl.OnSetting
 ```
@@ -458,7 +458,7 @@ Bases: {py:obj}`altdss.DSSObj.DSSObj`, {py:obj}`altdss.CircuitElement.CircuitEle
 :canonical: altdss.CapControl.CapControl.PTPhase
 :type: altdss.enums.MonitoredPhase
 :value: >
-   None
+   'property(...)'
 
 ```{autodoc2-docstring} altdss.CapControl.CapControl.PTPhase
 ```
@@ -469,7 +469,7 @@ Bases: {py:obj}`altdss.DSSObj.DSSObj`, {py:obj}`altdss.CircuitElement.CircuitEle
 :canonical: altdss.CapControl.CapControl.PTPhase_str
 :type: str
 :value: >
-   None
+   'property(...)'
 
 ```{autodoc2-docstring} altdss.CapControl.CapControl.PTPhase_str
 ```
@@ -480,7 +480,7 @@ Bases: {py:obj}`altdss.DSSObj.DSSObj`, {py:obj}`altdss.CircuitElement.CircuitEle
 :canonical: altdss.CapControl.CapControl.PTRatio
 :type: float
 :value: >
-   None
+   'property(...)'
 
 ```{autodoc2-docstring} altdss.CapControl.CapControl.PTRatio
 ```
@@ -547,7 +547,7 @@ Bases: {py:obj}`altdss.DSSObj.DSSObj`, {py:obj}`altdss.CircuitElement.CircuitEle
 :canonical: altdss.CapControl.CapControl.Terminal
 :type: int
 :value: >
-   None
+   'property(...)'
 
 ```{autodoc2-docstring} altdss.CapControl.CapControl.Terminal
 ```
@@ -566,7 +566,7 @@ Bases: {py:obj}`altdss.DSSObj.DSSObj`, {py:obj}`altdss.CircuitElement.CircuitEle
 :canonical: altdss.CapControl.CapControl.Type
 :type: altdss.enums.CapControlType
 :value: >
-   None
+   'property(...)'
 
 ```{autodoc2-docstring} altdss.CapControl.CapControl.Type
 ```
@@ -577,7 +577,7 @@ Bases: {py:obj}`altdss.DSSObj.DSSObj`, {py:obj}`altdss.CircuitElement.CircuitEle
 :canonical: altdss.CapControl.CapControl.Type_str
 :type: str
 :value: >
-   None
+   'property(...)'
 
 ```{autodoc2-docstring} altdss.CapControl.CapControl.Type_str
 ```
@@ -588,7 +588,7 @@ Bases: {py:obj}`altdss.DSSObj.DSSObj`, {py:obj}`altdss.CircuitElement.CircuitEle
 :canonical: altdss.CapControl.CapControl.UserData
 :type: str
 :value: >
-   None
+   'property(...)'
 
 ```{autodoc2-docstring} altdss.CapControl.CapControl.UserData
 ```
@@ -599,7 +599,7 @@ Bases: {py:obj}`altdss.DSSObj.DSSObj`, {py:obj}`altdss.CircuitElement.CircuitEle
 :canonical: altdss.CapControl.CapControl.UserModel
 :type: str
 :value: >
-   None
+   'property(...)'
 
 ```{autodoc2-docstring} altdss.CapControl.CapControl.UserModel
 ```
@@ -610,7 +610,7 @@ Bases: {py:obj}`altdss.DSSObj.DSSObj`, {py:obj}`altdss.CircuitElement.CircuitEle
 :canonical: altdss.CapControl.CapControl.VBus
 :type: str
 :value: >
-   None
+   'property(...)'
 
 ```{autodoc2-docstring} altdss.CapControl.CapControl.VBus
 ```
@@ -621,7 +621,7 @@ Bases: {py:obj}`altdss.DSSObj.DSSObj`, {py:obj}`altdss.CircuitElement.CircuitEle
 :canonical: altdss.CapControl.CapControl.VMax
 :type: float
 :value: >
-   None
+   'property(...)'
 
 ```{autodoc2-docstring} altdss.CapControl.CapControl.VMax
 ```
@@ -632,7 +632,7 @@ Bases: {py:obj}`altdss.DSSObj.DSSObj`, {py:obj}`altdss.CircuitElement.CircuitEle
 :canonical: altdss.CapControl.CapControl.VMin
 :type: float
 :value: >
-   None
+   'property(...)'
 
 ```{autodoc2-docstring} altdss.CapControl.CapControl.VMin
 ```
@@ -643,7 +643,7 @@ Bases: {py:obj}`altdss.DSSObj.DSSObj`, {py:obj}`altdss.CircuitElement.CircuitEle
 :canonical: altdss.CapControl.CapControl.VoltOverride
 :type: bool
 :value: >
-   None
+   'property(...)'
 
 ```{autodoc2-docstring} altdss.CapControl.CapControl.VoltOverride
 ```
@@ -726,7 +726,7 @@ Bases: {py:obj}`altdss.DSSObj.DSSObj`, {py:obj}`altdss.CircuitElement.CircuitEle
 :canonical: altdss.CapControl.CapControl.pctMinkvar
 :type: float
 :value: >
-   None
+   'property(...)'
 
 ```{autodoc2-docstring} altdss.CapControl.CapControl.pctMinkvar
 ```
@@ -755,7 +755,7 @@ Bases: {py:obj}`altdss.Batch.DSSBatch`, {py:obj}`altdss.CircuitElement.CircuitEl
 :canonical: altdss.CapControl.CapControlBatch.BaseFreq
 :type: altdss.ArrayProxy.BatchFloat64ArrayProxy
 :value: >
-   None
+   'property(...)'
 
 ```{autodoc2-docstring} altdss.CapControl.CapControlBatch.BaseFreq
 ```
@@ -766,7 +766,7 @@ Bases: {py:obj}`altdss.Batch.DSSBatch`, {py:obj}`altdss.CircuitElement.CircuitEl
 :canonical: altdss.CapControl.CapControlBatch.CTPhase
 :type: altdss.ArrayProxy.BatchInt32ArrayProxy
 :value: >
-   None
+   'property(...)'
 
 ```{autodoc2-docstring} altdss.CapControl.CapControlBatch.CTPhase
 ```
@@ -777,7 +777,7 @@ Bases: {py:obj}`altdss.Batch.DSSBatch`, {py:obj}`altdss.CircuitElement.CircuitEl
 :canonical: altdss.CapControl.CapControlBatch.CTPhase_str
 :type: typing.List[str]
 :value: >
-   None
+   'property(...)'
 
 ```{autodoc2-docstring} altdss.CapControl.CapControlBatch.CTPhase_str
 ```
@@ -788,7 +788,7 @@ Bases: {py:obj}`altdss.Batch.DSSBatch`, {py:obj}`altdss.CircuitElement.CircuitEl
 :canonical: altdss.CapControl.CapControlBatch.CTRatio
 :type: altdss.ArrayProxy.BatchFloat64ArrayProxy
 :value: >
-   None
+   'property(...)'
 
 ```{autodoc2-docstring} altdss.CapControl.CapControlBatch.CTRatio
 ```
@@ -799,7 +799,7 @@ Bases: {py:obj}`altdss.Batch.DSSBatch`, {py:obj}`altdss.CircuitElement.CircuitEl
 :canonical: altdss.CapControl.CapControlBatch.Capacitor
 :type: typing.List[altdss.Capacitor.Capacitor]
 :value: >
-   None
+   'property(...)'
 
 ```{autodoc2-docstring} altdss.CapControl.CapControlBatch.Capacitor
 ```
@@ -810,7 +810,7 @@ Bases: {py:obj}`altdss.Batch.DSSBatch`, {py:obj}`altdss.CircuitElement.CircuitEl
 :canonical: altdss.CapControl.CapControlBatch.Capacitor_str
 :type: typing.List[str]
 :value: >
-   None
+   'property(...)'
 
 ```{autodoc2-docstring} altdss.CapControl.CapControlBatch.Capacitor_str
 ```
@@ -837,7 +837,7 @@ Bases: {py:obj}`altdss.Batch.DSSBatch`, {py:obj}`altdss.CircuitElement.CircuitEl
 :canonical: altdss.CapControl.CapControlBatch.ControlSignal
 :type: typing.List[altdss.LoadShape.LoadShape]
 :value: >
-   None
+   'property(...)'
 
 ```{autodoc2-docstring} altdss.CapControl.CapControlBatch.ControlSignal
 ```
@@ -848,7 +848,7 @@ Bases: {py:obj}`altdss.Batch.DSSBatch`, {py:obj}`altdss.CircuitElement.CircuitEl
 :canonical: altdss.CapControl.CapControlBatch.ControlSignal_str
 :type: typing.List[str]
 :value: >
-   None
+   'property(...)'
 
 ```{autodoc2-docstring} altdss.CapControl.CapControlBatch.ControlSignal_str
 ```
@@ -875,7 +875,7 @@ Bases: {py:obj}`altdss.Batch.DSSBatch`, {py:obj}`altdss.CircuitElement.CircuitEl
 :canonical: altdss.CapControl.CapControlBatch.DeadTime
 :type: altdss.ArrayProxy.BatchFloat64ArrayProxy
 :value: >
-   None
+   'property(...)'
 
 ```{autodoc2-docstring} altdss.CapControl.CapControlBatch.DeadTime
 ```
@@ -886,7 +886,7 @@ Bases: {py:obj}`altdss.Batch.DSSBatch`, {py:obj}`altdss.CircuitElement.CircuitEl
 :canonical: altdss.CapControl.CapControlBatch.Delay
 :type: altdss.ArrayProxy.BatchFloat64ArrayProxy
 :value: >
-   None
+   'property(...)'
 
 ```{autodoc2-docstring} altdss.CapControl.CapControlBatch.Delay
 ```
@@ -897,7 +897,7 @@ Bases: {py:obj}`altdss.Batch.DSSBatch`, {py:obj}`altdss.CircuitElement.CircuitEl
 :canonical: altdss.CapControl.CapControlBatch.DelayOff
 :type: altdss.ArrayProxy.BatchFloat64ArrayProxy
 :value: >
-   None
+   'property(...)'
 
 ```{autodoc2-docstring} altdss.CapControl.CapControlBatch.DelayOff
 ```
@@ -908,7 +908,7 @@ Bases: {py:obj}`altdss.Batch.DSSBatch`, {py:obj}`altdss.CircuitElement.CircuitEl
 :canonical: altdss.CapControl.CapControlBatch.Element
 :type: typing.List[altdss.DSSObj.DSSObj]
 :value: >
-   None
+   'property(...)'
 
 ```{autodoc2-docstring} altdss.CapControl.CapControlBatch.Element
 ```
@@ -919,7 +919,7 @@ Bases: {py:obj}`altdss.Batch.DSSBatch`, {py:obj}`altdss.CircuitElement.CircuitEl
 :canonical: altdss.CapControl.CapControlBatch.Element_str
 :type: typing.List[str]
 :value: >
-   None
+   'property(...)'
 
 ```{autodoc2-docstring} altdss.CapControl.CapControlBatch.Element_str
 ```
@@ -930,7 +930,7 @@ Bases: {py:obj}`altdss.Batch.DSSBatch`, {py:obj}`altdss.CircuitElement.CircuitEl
 :canonical: altdss.CapControl.CapControlBatch.Enabled
 :type: typing.List[bool]
 :value: >
-   None
+   'property(...)'
 
 ```{autodoc2-docstring} altdss.CapControl.CapControlBatch.Enabled
 ```
@@ -941,7 +941,7 @@ Bases: {py:obj}`altdss.Batch.DSSBatch`, {py:obj}`altdss.CircuitElement.CircuitEl
 :canonical: altdss.CapControl.CapControlBatch.EventLog
 :type: typing.List[bool]
 :value: >
-   None
+   'property(...)'
 
 ```{autodoc2-docstring} altdss.CapControl.CapControlBatch.EventLog
 ```
@@ -1097,7 +1097,7 @@ Bases: {py:obj}`altdss.Batch.DSSBatch`, {py:obj}`altdss.CircuitElement.CircuitEl
 :canonical: altdss.CapControl.CapControlBatch.OffSetting
 :type: altdss.ArrayProxy.BatchFloat64ArrayProxy
 :value: >
-   None
+   'property(...)'
 
 ```{autodoc2-docstring} altdss.CapControl.CapControlBatch.OffSetting
 ```
@@ -1108,7 +1108,7 @@ Bases: {py:obj}`altdss.Batch.DSSBatch`, {py:obj}`altdss.CircuitElement.CircuitEl
 :canonical: altdss.CapControl.CapControlBatch.OnSetting
 :type: altdss.ArrayProxy.BatchFloat64ArrayProxy
 :value: >
-   None
+   'property(...)'
 
 ```{autodoc2-docstring} altdss.CapControl.CapControlBatch.OnSetting
 ```
@@ -1119,7 +1119,7 @@ Bases: {py:obj}`altdss.Batch.DSSBatch`, {py:obj}`altdss.CircuitElement.CircuitEl
 :canonical: altdss.CapControl.CapControlBatch.PTPhase
 :type: altdss.ArrayProxy.BatchInt32ArrayProxy
 :value: >
-   None
+   'property(...)'
 
 ```{autodoc2-docstring} altdss.CapControl.CapControlBatch.PTPhase
 ```
@@ -1130,7 +1130,7 @@ Bases: {py:obj}`altdss.Batch.DSSBatch`, {py:obj}`altdss.CircuitElement.CircuitEl
 :canonical: altdss.CapControl.CapControlBatch.PTPhase_str
 :type: typing.List[str]
 :value: >
-   None
+   'property(...)'
 
 ```{autodoc2-docstring} altdss.CapControl.CapControlBatch.PTPhase_str
 ```
@@ -1141,7 +1141,7 @@ Bases: {py:obj}`altdss.Batch.DSSBatch`, {py:obj}`altdss.CircuitElement.CircuitEl
 :canonical: altdss.CapControl.CapControlBatch.PTRatio
 :type: altdss.ArrayProxy.BatchFloat64ArrayProxy
 :value: >
-   None
+   'property(...)'
 
 ```{autodoc2-docstring} altdss.CapControl.CapControlBatch.PTRatio
 ```
@@ -1200,7 +1200,7 @@ Bases: {py:obj}`altdss.Batch.DSSBatch`, {py:obj}`altdss.CircuitElement.CircuitEl
 :canonical: altdss.CapControl.CapControlBatch.Terminal
 :type: altdss.ArrayProxy.BatchInt32ArrayProxy
 :value: >
-   None
+   'property(...)'
 
 ```{autodoc2-docstring} altdss.CapControl.CapControlBatch.Terminal
 ```
@@ -1219,7 +1219,7 @@ Bases: {py:obj}`altdss.Batch.DSSBatch`, {py:obj}`altdss.CircuitElement.CircuitEl
 :canonical: altdss.CapControl.CapControlBatch.Type
 :type: altdss.ArrayProxy.BatchInt32ArrayProxy
 :value: >
-   None
+   'property(...)'
 
 ```{autodoc2-docstring} altdss.CapControl.CapControlBatch.Type
 ```
@@ -1230,7 +1230,7 @@ Bases: {py:obj}`altdss.Batch.DSSBatch`, {py:obj}`altdss.CircuitElement.CircuitEl
 :canonical: altdss.CapControl.CapControlBatch.Type_str
 :type: typing.List[str]
 :value: >
-   None
+   'property(...)'
 
 ```{autodoc2-docstring} altdss.CapControl.CapControlBatch.Type_str
 ```
@@ -1241,7 +1241,7 @@ Bases: {py:obj}`altdss.Batch.DSSBatch`, {py:obj}`altdss.CircuitElement.CircuitEl
 :canonical: altdss.CapControl.CapControlBatch.UserData
 :type: typing.List[str]
 :value: >
-   None
+   'property(...)'
 
 ```{autodoc2-docstring} altdss.CapControl.CapControlBatch.UserData
 ```
@@ -1252,7 +1252,7 @@ Bases: {py:obj}`altdss.Batch.DSSBatch`, {py:obj}`altdss.CircuitElement.CircuitEl
 :canonical: altdss.CapControl.CapControlBatch.UserModel
 :type: typing.List[str]
 :value: >
-   None
+   'property(...)'
 
 ```{autodoc2-docstring} altdss.CapControl.CapControlBatch.UserModel
 ```
@@ -1263,7 +1263,7 @@ Bases: {py:obj}`altdss.Batch.DSSBatch`, {py:obj}`altdss.CircuitElement.CircuitEl
 :canonical: altdss.CapControl.CapControlBatch.VBus
 :type: typing.List[str]
 :value: >
-   None
+   'property(...)'
 
 ```{autodoc2-docstring} altdss.CapControl.CapControlBatch.VBus
 ```
@@ -1274,7 +1274,7 @@ Bases: {py:obj}`altdss.Batch.DSSBatch`, {py:obj}`altdss.CircuitElement.CircuitEl
 :canonical: altdss.CapControl.CapControlBatch.VMax
 :type: altdss.ArrayProxy.BatchFloat64ArrayProxy
 :value: >
-   None
+   'property(...)'
 
 ```{autodoc2-docstring} altdss.CapControl.CapControlBatch.VMax
 ```
@@ -1285,7 +1285,7 @@ Bases: {py:obj}`altdss.Batch.DSSBatch`, {py:obj}`altdss.CircuitElement.CircuitEl
 :canonical: altdss.CapControl.CapControlBatch.VMin
 :type: altdss.ArrayProxy.BatchFloat64ArrayProxy
 :value: >
-   None
+   'property(...)'
 
 ```{autodoc2-docstring} altdss.CapControl.CapControlBatch.VMin
 ```
@@ -1296,7 +1296,7 @@ Bases: {py:obj}`altdss.Batch.DSSBatch`, {py:obj}`altdss.CircuitElement.CircuitEl
 :canonical: altdss.CapControl.CapControlBatch.VoltOverride
 :type: typing.List[bool]
 :value: >
-   None
+   'property(...)'
 
 ```{autodoc2-docstring} altdss.CapControl.CapControlBatch.VoltOverride
 ```
@@ -1379,7 +1379,7 @@ Bases: {py:obj}`altdss.Batch.DSSBatch`, {py:obj}`altdss.CircuitElement.CircuitEl
 :canonical: altdss.CapControl.CapControlBatch.pctMinkvar
 :type: altdss.ArrayProxy.BatchFloat64ArrayProxy
 :value: >
-   None
+   'property(...)'
 
 ```{autodoc2-docstring} altdss.CapControl.CapControlBatch.pctMinkvar
 ```
@@ -2616,7 +2616,7 @@ Bases: {py:obj}`altdss.DSSObj.IDSSObj`, {py:obj}`altdss.CapControl.CapControlBat
 :canonical: altdss.CapControl.ICapControl.BaseFreq
 :type: altdss.ArrayProxy.BatchFloat64ArrayProxy
 :value: >
-   None
+   'property(...)'
 
 ```{autodoc2-docstring} altdss.CapControl.ICapControl.BaseFreq
 ```
@@ -2627,7 +2627,7 @@ Bases: {py:obj}`altdss.DSSObj.IDSSObj`, {py:obj}`altdss.CapControl.CapControlBat
 :canonical: altdss.CapControl.ICapControl.CTPhase
 :type: altdss.ArrayProxy.BatchInt32ArrayProxy
 :value: >
-   None
+   'property(...)'
 
 ```{autodoc2-docstring} altdss.CapControl.ICapControl.CTPhase
 ```
@@ -2638,7 +2638,7 @@ Bases: {py:obj}`altdss.DSSObj.IDSSObj`, {py:obj}`altdss.CapControl.CapControlBat
 :canonical: altdss.CapControl.ICapControl.CTPhase_str
 :type: typing.List[str]
 :value: >
-   None
+   'property(...)'
 
 ```{autodoc2-docstring} altdss.CapControl.ICapControl.CTPhase_str
 ```
@@ -2649,7 +2649,7 @@ Bases: {py:obj}`altdss.DSSObj.IDSSObj`, {py:obj}`altdss.CapControl.CapControlBat
 :canonical: altdss.CapControl.ICapControl.CTRatio
 :type: altdss.ArrayProxy.BatchFloat64ArrayProxy
 :value: >
-   None
+   'property(...)'
 
 ```{autodoc2-docstring} altdss.CapControl.ICapControl.CTRatio
 ```
@@ -2660,7 +2660,7 @@ Bases: {py:obj}`altdss.DSSObj.IDSSObj`, {py:obj}`altdss.CapControl.CapControlBat
 :canonical: altdss.CapControl.ICapControl.Capacitor
 :type: typing.List[altdss.Capacitor.Capacitor]
 :value: >
-   None
+   'property(...)'
 
 ```{autodoc2-docstring} altdss.CapControl.ICapControl.Capacitor
 ```
@@ -2671,7 +2671,7 @@ Bases: {py:obj}`altdss.DSSObj.IDSSObj`, {py:obj}`altdss.CapControl.CapControlBat
 :canonical: altdss.CapControl.ICapControl.Capacitor_str
 :type: typing.List[str]
 :value: >
-   None
+   'property(...)'
 
 ```{autodoc2-docstring} altdss.CapControl.ICapControl.Capacitor_str
 ```
@@ -2698,7 +2698,7 @@ Bases: {py:obj}`altdss.DSSObj.IDSSObj`, {py:obj}`altdss.CapControl.CapControlBat
 :canonical: altdss.CapControl.ICapControl.ControlSignal
 :type: typing.List[altdss.LoadShape.LoadShape]
 :value: >
-   None
+   'property(...)'
 
 ```{autodoc2-docstring} altdss.CapControl.ICapControl.ControlSignal
 ```
@@ -2709,7 +2709,7 @@ Bases: {py:obj}`altdss.DSSObj.IDSSObj`, {py:obj}`altdss.CapControl.CapControlBat
 :canonical: altdss.CapControl.ICapControl.ControlSignal_str
 :type: typing.List[str]
 :value: >
-   None
+   'property(...)'
 
 ```{autodoc2-docstring} altdss.CapControl.ICapControl.ControlSignal_str
 ```
@@ -2736,7 +2736,7 @@ Bases: {py:obj}`altdss.DSSObj.IDSSObj`, {py:obj}`altdss.CapControl.CapControlBat
 :canonical: altdss.CapControl.ICapControl.DeadTime
 :type: altdss.ArrayProxy.BatchFloat64ArrayProxy
 :value: >
-   None
+   'property(...)'
 
 ```{autodoc2-docstring} altdss.CapControl.ICapControl.DeadTime
 ```
@@ -2747,7 +2747,7 @@ Bases: {py:obj}`altdss.DSSObj.IDSSObj`, {py:obj}`altdss.CapControl.CapControlBat
 :canonical: altdss.CapControl.ICapControl.Delay
 :type: altdss.ArrayProxy.BatchFloat64ArrayProxy
 :value: >
-   None
+   'property(...)'
 
 ```{autodoc2-docstring} altdss.CapControl.ICapControl.Delay
 ```
@@ -2758,7 +2758,7 @@ Bases: {py:obj}`altdss.DSSObj.IDSSObj`, {py:obj}`altdss.CapControl.CapControlBat
 :canonical: altdss.CapControl.ICapControl.DelayOff
 :type: altdss.ArrayProxy.BatchFloat64ArrayProxy
 :value: >
-   None
+   'property(...)'
 
 ```{autodoc2-docstring} altdss.CapControl.ICapControl.DelayOff
 ```
@@ -2769,7 +2769,7 @@ Bases: {py:obj}`altdss.DSSObj.IDSSObj`, {py:obj}`altdss.CapControl.CapControlBat
 :canonical: altdss.CapControl.ICapControl.Element
 :type: typing.List[altdss.DSSObj.DSSObj]
 :value: >
-   None
+   'property(...)'
 
 ```{autodoc2-docstring} altdss.CapControl.ICapControl.Element
 ```
@@ -2780,7 +2780,7 @@ Bases: {py:obj}`altdss.DSSObj.IDSSObj`, {py:obj}`altdss.CapControl.CapControlBat
 :canonical: altdss.CapControl.ICapControl.Element_str
 :type: typing.List[str]
 :value: >
-   None
+   'property(...)'
 
 ```{autodoc2-docstring} altdss.CapControl.ICapControl.Element_str
 ```
@@ -2791,7 +2791,7 @@ Bases: {py:obj}`altdss.DSSObj.IDSSObj`, {py:obj}`altdss.CapControl.CapControlBat
 :canonical: altdss.CapControl.ICapControl.Enabled
 :type: typing.List[bool]
 :value: >
-   None
+   'property(...)'
 
 ```{autodoc2-docstring} altdss.CapControl.ICapControl.Enabled
 ```
@@ -2802,7 +2802,7 @@ Bases: {py:obj}`altdss.DSSObj.IDSSObj`, {py:obj}`altdss.CapControl.CapControlBat
 :canonical: altdss.CapControl.ICapControl.EventLog
 :type: typing.List[bool]
 :value: >
-   None
+   'property(...)'
 
 ```{autodoc2-docstring} altdss.CapControl.ICapControl.EventLog
 ```
@@ -2958,7 +2958,7 @@ Bases: {py:obj}`altdss.DSSObj.IDSSObj`, {py:obj}`altdss.CapControl.CapControlBat
 :canonical: altdss.CapControl.ICapControl.OffSetting
 :type: altdss.ArrayProxy.BatchFloat64ArrayProxy
 :value: >
-   None
+   'property(...)'
 
 ```{autodoc2-docstring} altdss.CapControl.ICapControl.OffSetting
 ```
@@ -2969,7 +2969,7 @@ Bases: {py:obj}`altdss.DSSObj.IDSSObj`, {py:obj}`altdss.CapControl.CapControlBat
 :canonical: altdss.CapControl.ICapControl.OnSetting
 :type: altdss.ArrayProxy.BatchFloat64ArrayProxy
 :value: >
-   None
+   'property(...)'
 
 ```{autodoc2-docstring} altdss.CapControl.ICapControl.OnSetting
 ```
@@ -2980,7 +2980,7 @@ Bases: {py:obj}`altdss.DSSObj.IDSSObj`, {py:obj}`altdss.CapControl.CapControlBat
 :canonical: altdss.CapControl.ICapControl.PTPhase
 :type: altdss.ArrayProxy.BatchInt32ArrayProxy
 :value: >
-   None
+   'property(...)'
 
 ```{autodoc2-docstring} altdss.CapControl.ICapControl.PTPhase
 ```
@@ -2991,7 +2991,7 @@ Bases: {py:obj}`altdss.DSSObj.IDSSObj`, {py:obj}`altdss.CapControl.CapControlBat
 :canonical: altdss.CapControl.ICapControl.PTPhase_str
 :type: typing.List[str]
 :value: >
-   None
+   'property(...)'
 
 ```{autodoc2-docstring} altdss.CapControl.ICapControl.PTPhase_str
 ```
@@ -3002,7 +3002,7 @@ Bases: {py:obj}`altdss.DSSObj.IDSSObj`, {py:obj}`altdss.CapControl.CapControlBat
 :canonical: altdss.CapControl.ICapControl.PTRatio
 :type: altdss.ArrayProxy.BatchFloat64ArrayProxy
 :value: >
-   None
+   'property(...)'
 
 ```{autodoc2-docstring} altdss.CapControl.ICapControl.PTRatio
 ```
@@ -3061,7 +3061,7 @@ Bases: {py:obj}`altdss.DSSObj.IDSSObj`, {py:obj}`altdss.CapControl.CapControlBat
 :canonical: altdss.CapControl.ICapControl.Terminal
 :type: altdss.ArrayProxy.BatchInt32ArrayProxy
 :value: >
-   None
+   'property(...)'
 
 ```{autodoc2-docstring} altdss.CapControl.ICapControl.Terminal
 ```
@@ -3080,7 +3080,7 @@ Bases: {py:obj}`altdss.DSSObj.IDSSObj`, {py:obj}`altdss.CapControl.CapControlBat
 :canonical: altdss.CapControl.ICapControl.Type
 :type: altdss.ArrayProxy.BatchInt32ArrayProxy
 :value: >
-   None
+   'property(...)'
 
 ```{autodoc2-docstring} altdss.CapControl.ICapControl.Type
 ```
@@ -3091,7 +3091,7 @@ Bases: {py:obj}`altdss.DSSObj.IDSSObj`, {py:obj}`altdss.CapControl.CapControlBat
 :canonical: altdss.CapControl.ICapControl.Type_str
 :type: typing.List[str]
 :value: >
-   None
+   'property(...)'
 
 ```{autodoc2-docstring} altdss.CapControl.ICapControl.Type_str
 ```
@@ -3102,7 +3102,7 @@ Bases: {py:obj}`altdss.DSSObj.IDSSObj`, {py:obj}`altdss.CapControl.CapControlBat
 :canonical: altdss.CapControl.ICapControl.UserData
 :type: typing.List[str]
 :value: >
-   None
+   'property(...)'
 
 ```{autodoc2-docstring} altdss.CapControl.ICapControl.UserData
 ```
@@ -3113,7 +3113,7 @@ Bases: {py:obj}`altdss.DSSObj.IDSSObj`, {py:obj}`altdss.CapControl.CapControlBat
 :canonical: altdss.CapControl.ICapControl.UserModel
 :type: typing.List[str]
 :value: >
-   None
+   'property(...)'
 
 ```{autodoc2-docstring} altdss.CapControl.ICapControl.UserModel
 ```
@@ -3124,7 +3124,7 @@ Bases: {py:obj}`altdss.DSSObj.IDSSObj`, {py:obj}`altdss.CapControl.CapControlBat
 :canonical: altdss.CapControl.ICapControl.VBus
 :type: typing.List[str]
 :value: >
-   None
+   'property(...)'
 
 ```{autodoc2-docstring} altdss.CapControl.ICapControl.VBus
 ```
@@ -3135,7 +3135,7 @@ Bases: {py:obj}`altdss.DSSObj.IDSSObj`, {py:obj}`altdss.CapControl.CapControlBat
 :canonical: altdss.CapControl.ICapControl.VMax
 :type: altdss.ArrayProxy.BatchFloat64ArrayProxy
 :value: >
-   None
+   'property(...)'
 
 ```{autodoc2-docstring} altdss.CapControl.ICapControl.VMax
 ```
@@ -3146,7 +3146,7 @@ Bases: {py:obj}`altdss.DSSObj.IDSSObj`, {py:obj}`altdss.CapControl.CapControlBat
 :canonical: altdss.CapControl.ICapControl.VMin
 :type: altdss.ArrayProxy.BatchFloat64ArrayProxy
 :value: >
-   None
+   'property(...)'
 
 ```{autodoc2-docstring} altdss.CapControl.ICapControl.VMin
 ```
@@ -3157,7 +3157,7 @@ Bases: {py:obj}`altdss.DSSObj.IDSSObj`, {py:obj}`altdss.CapControl.CapControlBat
 :canonical: altdss.CapControl.ICapControl.VoltOverride
 :type: typing.List[bool]
 :value: >
-   None
+   'property(...)'
 
 ```{autodoc2-docstring} altdss.CapControl.ICapControl.VoltOverride
 ```
@@ -3280,7 +3280,7 @@ Bases: {py:obj}`altdss.DSSObj.IDSSObj`, {py:obj}`altdss.CapControl.CapControlBat
 :canonical: altdss.CapControl.ICapControl.pctMinkvar
 :type: altdss.ArrayProxy.BatchFloat64ArrayProxy
 :value: >
-   None
+   'property(...)'
 
 ```{autodoc2-docstring} altdss.CapControl.ICapControl.pctMinkvar
 ```

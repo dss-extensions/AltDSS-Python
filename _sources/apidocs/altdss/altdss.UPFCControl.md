@@ -51,7 +51,7 @@ Bases: {py:obj}`altdss.DSSObj.IDSSObj`, {py:obj}`altdss.UPFCControl.UPFCControlB
 :canonical: altdss.UPFCControl.IUPFCControl.BaseFreq
 :type: altdss.ArrayProxy.BatchFloat64ArrayProxy
 :value: >
-   None
+   'property(...)'
 
 ```{autodoc2-docstring} altdss.UPFCControl.IUPFCControl.BaseFreq
 ```
@@ -94,7 +94,7 @@ Bases: {py:obj}`altdss.DSSObj.IDSSObj`, {py:obj}`altdss.UPFCControl.UPFCControlB
 :canonical: altdss.UPFCControl.IUPFCControl.Enabled
 :type: typing.List[bool]
 :value: >
-   None
+   'property(...)'
 
 ```{autodoc2-docstring} altdss.UPFCControl.IUPFCControl.Enabled
 ```
@@ -298,7 +298,7 @@ Bases: {py:obj}`altdss.DSSObj.IDSSObj`, {py:obj}`altdss.UPFCControl.UPFCControlB
 :canonical: altdss.UPFCControl.IUPFCControl.UPFCList
 :type: typing.List[typing.List[str]]
 :value: >
-   None
+   'property(...)'
 
 ```{autodoc2-docstring} altdss.UPFCControl.IUPFCControl.UPFCList
 ```
@@ -447,7 +447,7 @@ Bases: {py:obj}`altdss.DSSObj.DSSObj`, {py:obj}`altdss.CircuitElement.CircuitEle
 :canonical: altdss.UPFCControl.UPFCControl.BaseFreq
 :type: float
 :value: >
-   None
+   'property(...)'
 
 ```{autodoc2-docstring} altdss.UPFCControl.UPFCControl.BaseFreq
 ```
@@ -490,7 +490,7 @@ Bases: {py:obj}`altdss.DSSObj.DSSObj`, {py:obj}`altdss.CircuitElement.CircuitEle
 :canonical: altdss.UPFCControl.UPFCControl.DisplayName
 :type: str
 :value: >
-   None
+   'property(...)'
 
 ```{autodoc2-docstring} altdss.UPFCControl.UPFCControl.DisplayName
 ```
@@ -501,7 +501,7 @@ Bases: {py:obj}`altdss.DSSObj.DSSObj`, {py:obj}`altdss.CircuitElement.CircuitEle
 :canonical: altdss.UPFCControl.UPFCControl.Enabled
 :type: bool
 :value: >
-   None
+   'property(...)'
 
 ```{autodoc2-docstring} altdss.UPFCControl.UPFCControl.Enabled
 ```
@@ -745,7 +745,7 @@ Bases: {py:obj}`altdss.DSSObj.DSSObj`, {py:obj}`altdss.CircuitElement.CircuitEle
 :canonical: altdss.UPFCControl.UPFCControl.UPFCList
 :type: typing.List[str]
 :value: >
-   None
+   'property(...)'
 
 ```{autodoc2-docstring} altdss.UPFCControl.UPFCControl.UPFCList
 ```
@@ -846,7 +846,7 @@ Bases: {py:obj}`altdss.Batch.DSSBatch`, {py:obj}`altdss.CircuitElement.CircuitEl
 :canonical: altdss.UPFCControl.UPFCControlBatch.BaseFreq
 :type: altdss.ArrayProxy.BatchFloat64ArrayProxy
 :value: >
-   None
+   'property(...)'
 
 ```{autodoc2-docstring} altdss.UPFCControl.UPFCControlBatch.BaseFreq
 ```
@@ -889,7 +889,7 @@ Bases: {py:obj}`altdss.Batch.DSSBatch`, {py:obj}`altdss.CircuitElement.CircuitEl
 :canonical: altdss.UPFCControl.UPFCControlBatch.Enabled
 :type: typing.List[bool]
 :value: >
-   None
+   'property(...)'
 
 ```{autodoc2-docstring} altdss.UPFCControl.UPFCControlBatch.Enabled
 ```
@@ -1093,7 +1093,7 @@ Bases: {py:obj}`altdss.Batch.DSSBatch`, {py:obj}`altdss.CircuitElement.CircuitEl
 :canonical: altdss.UPFCControl.UPFCControlBatch.UPFCList
 :type: typing.List[typing.List[str]]
 :value: >
-   None
+   'property(...)'
 
 ```{autodoc2-docstring} altdss.UPFCControl.UPFCControlBatch.UPFCList
 ```

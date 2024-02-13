@@ -51,7 +51,7 @@ Bases: {py:obj}`altdss.DSSObj.DSSObj`, {py:obj}`altdss.CircuitElement.CircuitEle
 :canonical: altdss.ExpControl.ExpControl.BaseFreq
 :type: float
 :value: >
-   None
+   'property(...)'
 
 ```{autodoc2-docstring} altdss.ExpControl.ExpControl.BaseFreq
 ```
@@ -94,7 +94,7 @@ Bases: {py:obj}`altdss.DSSObj.DSSObj`, {py:obj}`altdss.CircuitElement.CircuitEle
 :canonical: altdss.ExpControl.ExpControl.DERList
 :type: typing.List[str]
 :value: >
-   None
+   'property(...)'
 
 ```{autodoc2-docstring} altdss.ExpControl.ExpControl.DERList
 ```
@@ -105,7 +105,7 @@ Bases: {py:obj}`altdss.DSSObj.DSSObj`, {py:obj}`altdss.CircuitElement.CircuitEle
 :canonical: altdss.ExpControl.ExpControl.DeltaQ_Factor
 :type: float
 :value: >
-   None
+   'property(...)'
 
 ```{autodoc2-docstring} altdss.ExpControl.ExpControl.DeltaQ_Factor
 ```
@@ -116,7 +116,7 @@ Bases: {py:obj}`altdss.DSSObj.DSSObj`, {py:obj}`altdss.CircuitElement.CircuitEle
 :canonical: altdss.ExpControl.ExpControl.DisplayName
 :type: str
 :value: >
-   None
+   'property(...)'
 
 ```{autodoc2-docstring} altdss.ExpControl.ExpControl.DisplayName
 ```
@@ -127,7 +127,7 @@ Bases: {py:obj}`altdss.DSSObj.DSSObj`, {py:obj}`altdss.CircuitElement.CircuitEle
 :canonical: altdss.ExpControl.ExpControl.Enabled
 :type: bool
 :value: >
-   None
+   'property(...)'
 
 ```{autodoc2-docstring} altdss.ExpControl.ExpControl.Enabled
 ```
@@ -138,7 +138,7 @@ Bases: {py:obj}`altdss.DSSObj.DSSObj`, {py:obj}`altdss.CircuitElement.CircuitEle
 :canonical: altdss.ExpControl.ExpControl.EventLog
 :type: bool
 :value: >
-   None
+   'property(...)'
 
 ```{autodoc2-docstring} altdss.ExpControl.ExpControl.EventLog
 ```
@@ -326,7 +326,7 @@ Bases: {py:obj}`altdss.DSSObj.DSSObj`, {py:obj}`altdss.CircuitElement.CircuitEle
 :canonical: altdss.ExpControl.ExpControl.PVSystemList
 :type: typing.List[str]
 :value: >
-   None
+   'property(...)'
 
 ```{autodoc2-docstring} altdss.ExpControl.ExpControl.PVSystemList
 ```
@@ -353,7 +353,7 @@ Bases: {py:obj}`altdss.DSSObj.DSSObj`, {py:obj}`altdss.CircuitElement.CircuitEle
 :canonical: altdss.ExpControl.ExpControl.PreferQ
 :type: bool
 :value: >
-   None
+   'property(...)'
 
 ```{autodoc2-docstring} altdss.ExpControl.ExpControl.PreferQ
 ```
@@ -364,7 +364,7 @@ Bases: {py:obj}`altdss.DSSObj.DSSObj`, {py:obj}`altdss.CircuitElement.CircuitEle
 :canonical: altdss.ExpControl.ExpControl.QBias
 :type: float
 :value: >
-   None
+   'property(...)'
 
 ```{autodoc2-docstring} altdss.ExpControl.ExpControl.QBias
 ```
@@ -375,7 +375,7 @@ Bases: {py:obj}`altdss.DSSObj.DSSObj`, {py:obj}`altdss.CircuitElement.CircuitEle
 :canonical: altdss.ExpControl.ExpControl.QMaxLag
 :type: float
 :value: >
-   None
+   'property(...)'
 
 ```{autodoc2-docstring} altdss.ExpControl.ExpControl.QMaxLag
 ```
@@ -386,7 +386,7 @@ Bases: {py:obj}`altdss.DSSObj.DSSObj`, {py:obj}`altdss.CircuitElement.CircuitEle
 :canonical: altdss.ExpControl.ExpControl.QMaxLead
 :type: float
 :value: >
-   None
+   'property(...)'
 
 ```{autodoc2-docstring} altdss.ExpControl.ExpControl.QMaxLead
 ```
@@ -429,7 +429,7 @@ Bases: {py:obj}`altdss.DSSObj.DSSObj`, {py:obj}`altdss.CircuitElement.CircuitEle
 :canonical: altdss.ExpControl.ExpControl.Slope
 :type: float
 :value: >
-   None
+   'property(...)'
 
 ```{autodoc2-docstring} altdss.ExpControl.ExpControl.Slope
 ```
@@ -440,7 +440,7 @@ Bases: {py:obj}`altdss.DSSObj.DSSObj`, {py:obj}`altdss.CircuitElement.CircuitEle
 :canonical: altdss.ExpControl.ExpControl.TResponse
 :type: float
 :value: >
-   None
+   'property(...)'
 
 ```{autodoc2-docstring} altdss.ExpControl.ExpControl.TResponse
 ```
@@ -459,7 +459,7 @@ Bases: {py:obj}`altdss.DSSObj.DSSObj`, {py:obj}`altdss.CircuitElement.CircuitEle
 :canonical: altdss.ExpControl.ExpControl.VReg
 :type: float
 :value: >
-   None
+   'property(...)'
 
 ```{autodoc2-docstring} altdss.ExpControl.ExpControl.VReg
 ```
@@ -470,7 +470,7 @@ Bases: {py:obj}`altdss.DSSObj.DSSObj`, {py:obj}`altdss.CircuitElement.CircuitEle
 :canonical: altdss.ExpControl.ExpControl.VRegMax
 :type: float
 :value: >
-   None
+   'property(...)'
 
 ```{autodoc2-docstring} altdss.ExpControl.ExpControl.VRegMax
 ```
@@ -481,7 +481,7 @@ Bases: {py:obj}`altdss.DSSObj.DSSObj`, {py:obj}`altdss.CircuitElement.CircuitEle
 :canonical: altdss.ExpControl.ExpControl.VRegMin
 :type: float
 :value: >
-   None
+   'property(...)'
 
 ```{autodoc2-docstring} altdss.ExpControl.ExpControl.VRegMin
 ```
@@ -492,7 +492,7 @@ Bases: {py:obj}`altdss.DSSObj.DSSObj`, {py:obj}`altdss.CircuitElement.CircuitEle
 :canonical: altdss.ExpControl.ExpControl.VRegTau
 :type: float
 :value: >
-   None
+   'property(...)'
 
 ```{autodoc2-docstring} altdss.ExpControl.ExpControl.VRegTau
 ```
@@ -593,7 +593,7 @@ Bases: {py:obj}`altdss.Batch.DSSBatch`, {py:obj}`altdss.CircuitElement.CircuitEl
 :canonical: altdss.ExpControl.ExpControlBatch.BaseFreq
 :type: altdss.ArrayProxy.BatchFloat64ArrayProxy
 :value: >
-   None
+   'property(...)'
 
 ```{autodoc2-docstring} altdss.ExpControl.ExpControlBatch.BaseFreq
 ```
@@ -636,7 +636,7 @@ Bases: {py:obj}`altdss.Batch.DSSBatch`, {py:obj}`altdss.CircuitElement.CircuitEl
 :canonical: altdss.ExpControl.ExpControlBatch.DERList
 :type: typing.List[typing.List[str]]
 :value: >
-   None
+   'property(...)'
 
 ```{autodoc2-docstring} altdss.ExpControl.ExpControlBatch.DERList
 ```
@@ -647,7 +647,7 @@ Bases: {py:obj}`altdss.Batch.DSSBatch`, {py:obj}`altdss.CircuitElement.CircuitEl
 :canonical: altdss.ExpControl.ExpControlBatch.DeltaQ_Factor
 :type: altdss.ArrayProxy.BatchFloat64ArrayProxy
 :value: >
-   None
+   'property(...)'
 
 ```{autodoc2-docstring} altdss.ExpControl.ExpControlBatch.DeltaQ_Factor
 ```
@@ -658,7 +658,7 @@ Bases: {py:obj}`altdss.Batch.DSSBatch`, {py:obj}`altdss.CircuitElement.CircuitEl
 :canonical: altdss.ExpControl.ExpControlBatch.Enabled
 :type: typing.List[bool]
 :value: >
-   None
+   'property(...)'
 
 ```{autodoc2-docstring} altdss.ExpControl.ExpControlBatch.Enabled
 ```
@@ -669,7 +669,7 @@ Bases: {py:obj}`altdss.Batch.DSSBatch`, {py:obj}`altdss.CircuitElement.CircuitEl
 :canonical: altdss.ExpControl.ExpControlBatch.EventLog
 :type: typing.List[bool]
 :value: >
-   None
+   'property(...)'
 
 ```{autodoc2-docstring} altdss.ExpControl.ExpControlBatch.EventLog
 ```
@@ -825,7 +825,7 @@ Bases: {py:obj}`altdss.Batch.DSSBatch`, {py:obj}`altdss.CircuitElement.CircuitEl
 :canonical: altdss.ExpControl.ExpControlBatch.PVSystemList
 :type: typing.List[typing.List[str]]
 :value: >
-   None
+   'property(...)'
 
 ```{autodoc2-docstring} altdss.ExpControl.ExpControlBatch.PVSystemList
 ```
@@ -852,7 +852,7 @@ Bases: {py:obj}`altdss.Batch.DSSBatch`, {py:obj}`altdss.CircuitElement.CircuitEl
 :canonical: altdss.ExpControl.ExpControlBatch.PreferQ
 :type: typing.List[bool]
 :value: >
-   None
+   'property(...)'
 
 ```{autodoc2-docstring} altdss.ExpControl.ExpControlBatch.PreferQ
 ```
@@ -863,7 +863,7 @@ Bases: {py:obj}`altdss.Batch.DSSBatch`, {py:obj}`altdss.CircuitElement.CircuitEl
 :canonical: altdss.ExpControl.ExpControlBatch.QBias
 :type: altdss.ArrayProxy.BatchFloat64ArrayProxy
 :value: >
-   None
+   'property(...)'
 
 ```{autodoc2-docstring} altdss.ExpControl.ExpControlBatch.QBias
 ```
@@ -874,7 +874,7 @@ Bases: {py:obj}`altdss.Batch.DSSBatch`, {py:obj}`altdss.CircuitElement.CircuitEl
 :canonical: altdss.ExpControl.ExpControlBatch.QMaxLag
 :type: altdss.ArrayProxy.BatchFloat64ArrayProxy
 :value: >
-   None
+   'property(...)'
 
 ```{autodoc2-docstring} altdss.ExpControl.ExpControlBatch.QMaxLag
 ```
@@ -885,7 +885,7 @@ Bases: {py:obj}`altdss.Batch.DSSBatch`, {py:obj}`altdss.CircuitElement.CircuitEl
 :canonical: altdss.ExpControl.ExpControlBatch.QMaxLead
 :type: altdss.ArrayProxy.BatchFloat64ArrayProxy
 :value: >
-   None
+   'property(...)'
 
 ```{autodoc2-docstring} altdss.ExpControl.ExpControlBatch.QMaxLead
 ```
@@ -920,7 +920,7 @@ Bases: {py:obj}`altdss.Batch.DSSBatch`, {py:obj}`altdss.CircuitElement.CircuitEl
 :canonical: altdss.ExpControl.ExpControlBatch.Slope
 :type: altdss.ArrayProxy.BatchFloat64ArrayProxy
 :value: >
-   None
+   'property(...)'
 
 ```{autodoc2-docstring} altdss.ExpControl.ExpControlBatch.Slope
 ```
@@ -931,7 +931,7 @@ Bases: {py:obj}`altdss.Batch.DSSBatch`, {py:obj}`altdss.CircuitElement.CircuitEl
 :canonical: altdss.ExpControl.ExpControlBatch.TResponse
 :type: altdss.ArrayProxy.BatchFloat64ArrayProxy
 :value: >
-   None
+   'property(...)'
 
 ```{autodoc2-docstring} altdss.ExpControl.ExpControlBatch.TResponse
 ```
@@ -950,7 +950,7 @@ Bases: {py:obj}`altdss.Batch.DSSBatch`, {py:obj}`altdss.CircuitElement.CircuitEl
 :canonical: altdss.ExpControl.ExpControlBatch.VReg
 :type: altdss.ArrayProxy.BatchFloat64ArrayProxy
 :value: >
-   None
+   'property(...)'
 
 ```{autodoc2-docstring} altdss.ExpControl.ExpControlBatch.VReg
 ```
@@ -961,7 +961,7 @@ Bases: {py:obj}`altdss.Batch.DSSBatch`, {py:obj}`altdss.CircuitElement.CircuitEl
 :canonical: altdss.ExpControl.ExpControlBatch.VRegMax
 :type: altdss.ArrayProxy.BatchFloat64ArrayProxy
 :value: >
-   None
+   'property(...)'
 
 ```{autodoc2-docstring} altdss.ExpControl.ExpControlBatch.VRegMax
 ```
@@ -972,7 +972,7 @@ Bases: {py:obj}`altdss.Batch.DSSBatch`, {py:obj}`altdss.CircuitElement.CircuitEl
 :canonical: altdss.ExpControl.ExpControlBatch.VRegMin
 :type: altdss.ArrayProxy.BatchFloat64ArrayProxy
 :value: >
-   None
+   'property(...)'
 
 ```{autodoc2-docstring} altdss.ExpControl.ExpControlBatch.VRegMin
 ```
@@ -983,7 +983,7 @@ Bases: {py:obj}`altdss.Batch.DSSBatch`, {py:obj}`altdss.CircuitElement.CircuitEl
 :canonical: altdss.ExpControl.ExpControlBatch.VRegTau
 :type: altdss.ArrayProxy.BatchFloat64ArrayProxy
 :value: >
-   None
+   'property(...)'
 
 ```{autodoc2-docstring} altdss.ExpControl.ExpControlBatch.VRegTau
 ```
@@ -2094,7 +2094,7 @@ Bases: {py:obj}`altdss.DSSObj.IDSSObj`, {py:obj}`altdss.ExpControl.ExpControlBat
 :canonical: altdss.ExpControl.IExpControl.BaseFreq
 :type: altdss.ArrayProxy.BatchFloat64ArrayProxy
 :value: >
-   None
+   'property(...)'
 
 ```{autodoc2-docstring} altdss.ExpControl.IExpControl.BaseFreq
 ```
@@ -2137,7 +2137,7 @@ Bases: {py:obj}`altdss.DSSObj.IDSSObj`, {py:obj}`altdss.ExpControl.ExpControlBat
 :canonical: altdss.ExpControl.IExpControl.DERList
 :type: typing.List[typing.List[str]]
 :value: >
-   None
+   'property(...)'
 
 ```{autodoc2-docstring} altdss.ExpControl.IExpControl.DERList
 ```
@@ -2148,7 +2148,7 @@ Bases: {py:obj}`altdss.DSSObj.IDSSObj`, {py:obj}`altdss.ExpControl.ExpControlBat
 :canonical: altdss.ExpControl.IExpControl.DeltaQ_Factor
 :type: altdss.ArrayProxy.BatchFloat64ArrayProxy
 :value: >
-   None
+   'property(...)'
 
 ```{autodoc2-docstring} altdss.ExpControl.IExpControl.DeltaQ_Factor
 ```
@@ -2159,7 +2159,7 @@ Bases: {py:obj}`altdss.DSSObj.IDSSObj`, {py:obj}`altdss.ExpControl.ExpControlBat
 :canonical: altdss.ExpControl.IExpControl.Enabled
 :type: typing.List[bool]
 :value: >
-   None
+   'property(...)'
 
 ```{autodoc2-docstring} altdss.ExpControl.IExpControl.Enabled
 ```
@@ -2170,7 +2170,7 @@ Bases: {py:obj}`altdss.DSSObj.IDSSObj`, {py:obj}`altdss.ExpControl.ExpControlBat
 :canonical: altdss.ExpControl.IExpControl.EventLog
 :type: typing.List[bool]
 :value: >
-   None
+   'property(...)'
 
 ```{autodoc2-docstring} altdss.ExpControl.IExpControl.EventLog
 ```
@@ -2326,7 +2326,7 @@ Bases: {py:obj}`altdss.DSSObj.IDSSObj`, {py:obj}`altdss.ExpControl.ExpControlBat
 :canonical: altdss.ExpControl.IExpControl.PVSystemList
 :type: typing.List[typing.List[str]]
 :value: >
-   None
+   'property(...)'
 
 ```{autodoc2-docstring} altdss.ExpControl.IExpControl.PVSystemList
 ```
@@ -2353,7 +2353,7 @@ Bases: {py:obj}`altdss.DSSObj.IDSSObj`, {py:obj}`altdss.ExpControl.ExpControlBat
 :canonical: altdss.ExpControl.IExpControl.PreferQ
 :type: typing.List[bool]
 :value: >
-   None
+   'property(...)'
 
 ```{autodoc2-docstring} altdss.ExpControl.IExpControl.PreferQ
 ```
@@ -2364,7 +2364,7 @@ Bases: {py:obj}`altdss.DSSObj.IDSSObj`, {py:obj}`altdss.ExpControl.ExpControlBat
 :canonical: altdss.ExpControl.IExpControl.QBias
 :type: altdss.ArrayProxy.BatchFloat64ArrayProxy
 :value: >
-   None
+   'property(...)'
 
 ```{autodoc2-docstring} altdss.ExpControl.IExpControl.QBias
 ```
@@ -2375,7 +2375,7 @@ Bases: {py:obj}`altdss.DSSObj.IDSSObj`, {py:obj}`altdss.ExpControl.ExpControlBat
 :canonical: altdss.ExpControl.IExpControl.QMaxLag
 :type: altdss.ArrayProxy.BatchFloat64ArrayProxy
 :value: >
-   None
+   'property(...)'
 
 ```{autodoc2-docstring} altdss.ExpControl.IExpControl.QMaxLag
 ```
@@ -2386,7 +2386,7 @@ Bases: {py:obj}`altdss.DSSObj.IDSSObj`, {py:obj}`altdss.ExpControl.ExpControlBat
 :canonical: altdss.ExpControl.IExpControl.QMaxLead
 :type: altdss.ArrayProxy.BatchFloat64ArrayProxy
 :value: >
-   None
+   'property(...)'
 
 ```{autodoc2-docstring} altdss.ExpControl.IExpControl.QMaxLead
 ```
@@ -2421,7 +2421,7 @@ Bases: {py:obj}`altdss.DSSObj.IDSSObj`, {py:obj}`altdss.ExpControl.ExpControlBat
 :canonical: altdss.ExpControl.IExpControl.Slope
 :type: altdss.ArrayProxy.BatchFloat64ArrayProxy
 :value: >
-   None
+   'property(...)'
 
 ```{autodoc2-docstring} altdss.ExpControl.IExpControl.Slope
 ```
@@ -2432,7 +2432,7 @@ Bases: {py:obj}`altdss.DSSObj.IDSSObj`, {py:obj}`altdss.ExpControl.ExpControlBat
 :canonical: altdss.ExpControl.IExpControl.TResponse
 :type: altdss.ArrayProxy.BatchFloat64ArrayProxy
 :value: >
-   None
+   'property(...)'
 
 ```{autodoc2-docstring} altdss.ExpControl.IExpControl.TResponse
 ```
@@ -2451,7 +2451,7 @@ Bases: {py:obj}`altdss.DSSObj.IDSSObj`, {py:obj}`altdss.ExpControl.ExpControlBat
 :canonical: altdss.ExpControl.IExpControl.VReg
 :type: altdss.ArrayProxy.BatchFloat64ArrayProxy
 :value: >
-   None
+   'property(...)'
 
 ```{autodoc2-docstring} altdss.ExpControl.IExpControl.VReg
 ```
@@ -2462,7 +2462,7 @@ Bases: {py:obj}`altdss.DSSObj.IDSSObj`, {py:obj}`altdss.ExpControl.ExpControlBat
 :canonical: altdss.ExpControl.IExpControl.VRegMax
 :type: altdss.ArrayProxy.BatchFloat64ArrayProxy
 :value: >
-   None
+   'property(...)'
 
 ```{autodoc2-docstring} altdss.ExpControl.IExpControl.VRegMax
 ```
@@ -2473,7 +2473,7 @@ Bases: {py:obj}`altdss.DSSObj.IDSSObj`, {py:obj}`altdss.ExpControl.ExpControlBat
 :canonical: altdss.ExpControl.IExpControl.VRegMin
 :type: altdss.ArrayProxy.BatchFloat64ArrayProxy
 :value: >
-   None
+   'property(...)'
 
 ```{autodoc2-docstring} altdss.ExpControl.IExpControl.VRegMin
 ```
@@ -2484,7 +2484,7 @@ Bases: {py:obj}`altdss.DSSObj.IDSSObj`, {py:obj}`altdss.ExpControl.ExpControlBat
 :canonical: altdss.ExpControl.IExpControl.VRegTau
 :type: altdss.ArrayProxy.BatchFloat64ArrayProxy
 :value: >
-   None
+   'property(...)'
 
 ```{autodoc2-docstring} altdss.ExpControl.IExpControl.VRegTau
 ```

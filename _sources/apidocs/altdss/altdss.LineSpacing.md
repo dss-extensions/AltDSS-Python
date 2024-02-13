@@ -59,7 +59,7 @@ Bases: {py:obj}`altdss.DSSObj.IDSSObj`, {py:obj}`altdss.LineSpacing.LineSpacingB
 :canonical: altdss.LineSpacing.ILineSpacing.H
 :type: typing.List[altdss.types.Float64Array]
 :value: >
-   None
+   'property(...)'
 
 ```{autodoc2-docstring} altdss.LineSpacing.ILineSpacing.H
 ```
@@ -78,7 +78,7 @@ Bases: {py:obj}`altdss.DSSObj.IDSSObj`, {py:obj}`altdss.LineSpacing.LineSpacingB
 :canonical: altdss.LineSpacing.ILineSpacing.NConds
 :type: altdss.ArrayProxy.BatchInt32ArrayProxy
 :value: >
-   None
+   'property(...)'
 
 ```{autodoc2-docstring} altdss.LineSpacing.ILineSpacing.NConds
 ```
@@ -89,7 +89,7 @@ Bases: {py:obj}`altdss.DSSObj.IDSSObj`, {py:obj}`altdss.LineSpacing.LineSpacingB
 :canonical: altdss.LineSpacing.ILineSpacing.NPhases
 :type: altdss.ArrayProxy.BatchInt32ArrayProxy
 :value: >
-   None
+   'property(...)'
 
 ```{autodoc2-docstring} altdss.LineSpacing.ILineSpacing.NPhases
 ```
@@ -109,7 +109,7 @@ Bases: {py:obj}`altdss.DSSObj.IDSSObj`, {py:obj}`altdss.LineSpacing.LineSpacingB
 :canonical: altdss.LineSpacing.ILineSpacing.Units
 :type: altdss.ArrayProxy.BatchInt32ArrayProxy
 :value: >
-   None
+   'property(...)'
 
 ```{autodoc2-docstring} altdss.LineSpacing.ILineSpacing.Units
 ```
@@ -120,7 +120,7 @@ Bases: {py:obj}`altdss.DSSObj.IDSSObj`, {py:obj}`altdss.LineSpacing.LineSpacingB
 :canonical: altdss.LineSpacing.ILineSpacing.Units_str
 :type: typing.List[str]
 :value: >
-   None
+   'property(...)'
 
 ```{autodoc2-docstring} altdss.LineSpacing.ILineSpacing.Units_str
 ```
@@ -131,7 +131,7 @@ Bases: {py:obj}`altdss.DSSObj.IDSSObj`, {py:obj}`altdss.LineSpacing.LineSpacingB
 :canonical: altdss.LineSpacing.ILineSpacing.X
 :type: typing.List[altdss.types.Float64Array]
 :value: >
-   None
+   'property(...)'
 
 ```{autodoc2-docstring} altdss.LineSpacing.ILineSpacing.X
 ```
@@ -272,7 +272,7 @@ Bases: {py:obj}`altdss.DSSObj.DSSObj`
 :canonical: altdss.LineSpacing.LineSpacing.H
 :type: altdss.types.Float64Array
 :value: >
-   None
+   'property(...)'
 
 ```{autodoc2-docstring} altdss.LineSpacing.LineSpacing.H
 ```
@@ -291,7 +291,7 @@ Bases: {py:obj}`altdss.DSSObj.DSSObj`
 :canonical: altdss.LineSpacing.LineSpacing.NConds
 :type: int
 :value: >
-   None
+   'property(...)'
 
 ```{autodoc2-docstring} altdss.LineSpacing.LineSpacing.NConds
 ```
@@ -302,7 +302,7 @@ Bases: {py:obj}`altdss.DSSObj.DSSObj`
 :canonical: altdss.LineSpacing.LineSpacing.NPhases
 :type: int
 :value: >
-   None
+   'property(...)'
 
 ```{autodoc2-docstring} altdss.LineSpacing.LineSpacing.NPhases
 ```
@@ -322,7 +322,7 @@ Bases: {py:obj}`altdss.DSSObj.DSSObj`
 :canonical: altdss.LineSpacing.LineSpacing.Units
 :type: altdss.enums.LengthUnit
 :value: >
-   None
+   'property(...)'
 
 ```{autodoc2-docstring} altdss.LineSpacing.LineSpacing.Units
 ```
@@ -333,7 +333,7 @@ Bases: {py:obj}`altdss.DSSObj.DSSObj`
 :canonical: altdss.LineSpacing.LineSpacing.Units_str
 :type: str
 :value: >
-   None
+   'property(...)'
 
 ```{autodoc2-docstring} altdss.LineSpacing.LineSpacing.Units_str
 ```
@@ -344,7 +344,7 @@ Bases: {py:obj}`altdss.DSSObj.DSSObj`
 :canonical: altdss.LineSpacing.LineSpacing.X
 :type: altdss.types.Float64Array
 :value: >
-   None
+   'property(...)'
 
 ```{autodoc2-docstring} altdss.LineSpacing.LineSpacing.X
 ```
@@ -429,7 +429,7 @@ Bases: {py:obj}`altdss.Batch.DSSBatch`
 :canonical: altdss.LineSpacing.LineSpacingBatch.H
 :type: typing.List[altdss.types.Float64Array]
 :value: >
-   None
+   'property(...)'
 
 ```{autodoc2-docstring} altdss.LineSpacing.LineSpacingBatch.H
 ```
@@ -448,7 +448,7 @@ Bases: {py:obj}`altdss.Batch.DSSBatch`
 :canonical: altdss.LineSpacing.LineSpacingBatch.NConds
 :type: altdss.ArrayProxy.BatchInt32ArrayProxy
 :value: >
-   None
+   'property(...)'
 
 ```{autodoc2-docstring} altdss.LineSpacing.LineSpacingBatch.NConds
 ```
@@ -459,7 +459,7 @@ Bases: {py:obj}`altdss.Batch.DSSBatch`
 :canonical: altdss.LineSpacing.LineSpacingBatch.NPhases
 :type: altdss.ArrayProxy.BatchInt32ArrayProxy
 :value: >
-   None
+   'property(...)'
 
 ```{autodoc2-docstring} altdss.LineSpacing.LineSpacingBatch.NPhases
 ```
@@ -479,7 +479,7 @@ Bases: {py:obj}`altdss.Batch.DSSBatch`
 :canonical: altdss.LineSpacing.LineSpacingBatch.Units
 :type: altdss.ArrayProxy.BatchInt32ArrayProxy
 :value: >
-   None
+   'property(...)'
 
 ```{autodoc2-docstring} altdss.LineSpacing.LineSpacingBatch.Units
 ```
@@ -490,7 +490,7 @@ Bases: {py:obj}`altdss.Batch.DSSBatch`
 :canonical: altdss.LineSpacing.LineSpacingBatch.Units_str
 :type: typing.List[str]
 :value: >
-   None
+   'property(...)'
 
 ```{autodoc2-docstring} altdss.LineSpacing.LineSpacingBatch.Units_str
 ```
@@ -501,7 +501,7 @@ Bases: {py:obj}`altdss.Batch.DSSBatch`
 :canonical: altdss.LineSpacing.LineSpacingBatch.X
 :type: typing.List[altdss.types.Float64Array]
 :value: >
-   None
+   'property(...)'
 
 ```{autodoc2-docstring} altdss.LineSpacing.LineSpacingBatch.X
 ```

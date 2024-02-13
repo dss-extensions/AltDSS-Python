@@ -51,7 +51,7 @@ Bases: {py:obj}`altdss.DSSObj.IDSSObj`, {py:obj}`altdss.PVSystem.PVSystemBatch`
 :canonical: altdss.PVSystem.IPVSystem.AmpLimit
 :type: altdss.ArrayProxy.BatchFloat64ArrayProxy
 :value: >
-   None
+   'property(...)'
 
 ```{autodoc2-docstring} altdss.PVSystem.IPVSystem.AmpLimit
 ```
@@ -62,7 +62,7 @@ Bases: {py:obj}`altdss.DSSObj.IDSSObj`, {py:obj}`altdss.PVSystem.PVSystemBatch`
 :canonical: altdss.PVSystem.IPVSystem.AmpLimitGain
 :type: altdss.ArrayProxy.BatchFloat64ArrayProxy
 :value: >
-   None
+   'property(...)'
 
 ```{autodoc2-docstring} altdss.PVSystem.IPVSystem.AmpLimitGain
 ```
@@ -73,7 +73,7 @@ Bases: {py:obj}`altdss.DSSObj.IDSSObj`, {py:obj}`altdss.PVSystem.PVSystemBatch`
 :canonical: altdss.PVSystem.IPVSystem.Balanced
 :type: typing.List[bool]
 :value: >
-   None
+   'property(...)'
 
 ```{autodoc2-docstring} altdss.PVSystem.IPVSystem.Balanced
 ```
@@ -84,7 +84,7 @@ Bases: {py:obj}`altdss.DSSObj.IDSSObj`, {py:obj}`altdss.PVSystem.PVSystemBatch`
 :canonical: altdss.PVSystem.IPVSystem.BaseFreq
 :type: altdss.ArrayProxy.BatchFloat64ArrayProxy
 :value: >
-   None
+   'property(...)'
 
 ```{autodoc2-docstring} altdss.PVSystem.IPVSystem.BaseFreq
 ```
@@ -95,7 +95,7 @@ Bases: {py:obj}`altdss.DSSObj.IDSSObj`, {py:obj}`altdss.PVSystem.PVSystemBatch`
 :canonical: altdss.PVSystem.IPVSystem.Bus1
 :type: typing.List[str]
 :value: >
-   None
+   'property(...)'
 
 ```{autodoc2-docstring} altdss.PVSystem.IPVSystem.Bus1
 ```
@@ -106,7 +106,7 @@ Bases: {py:obj}`altdss.DSSObj.IDSSObj`, {py:obj}`altdss.PVSystem.PVSystemBatch`
 :canonical: altdss.PVSystem.IPVSystem.Class
 :type: altdss.ArrayProxy.BatchInt32ArrayProxy
 :value: >
-   None
+   'property(...)'
 
 ```{autodoc2-docstring} altdss.PVSystem.IPVSystem.Class
 ```
@@ -133,7 +133,7 @@ Bases: {py:obj}`altdss.DSSObj.IDSSObj`, {py:obj}`altdss.PVSystem.PVSystemBatch`
 :canonical: altdss.PVSystem.IPVSystem.Conn
 :type: altdss.ArrayProxy.BatchInt32ArrayProxy
 :value: >
-   None
+   'property(...)'
 
 ```{autodoc2-docstring} altdss.PVSystem.IPVSystem.Conn
 ```
@@ -144,7 +144,7 @@ Bases: {py:obj}`altdss.DSSObj.IDSSObj`, {py:obj}`altdss.PVSystem.PVSystemBatch`
 :canonical: altdss.PVSystem.IPVSystem.Conn_str
 :type: typing.List[str]
 :value: >
-   None
+   'property(...)'
 
 ```{autodoc2-docstring} altdss.PVSystem.IPVSystem.Conn_str
 ```
@@ -155,7 +155,7 @@ Bases: {py:obj}`altdss.DSSObj.IDSSObj`, {py:obj}`altdss.PVSystem.PVSystemBatch`
 :canonical: altdss.PVSystem.IPVSystem.ControlMode
 :type: altdss.ArrayProxy.BatchInt32ArrayProxy
 :value: >
-   None
+   'property(...)'
 
 ```{autodoc2-docstring} altdss.PVSystem.IPVSystem.ControlMode
 ```
@@ -166,7 +166,7 @@ Bases: {py:obj}`altdss.DSSObj.IDSSObj`, {py:obj}`altdss.PVSystem.PVSystemBatch`
 :canonical: altdss.PVSystem.IPVSystem.ControlMode_str
 :type: typing.List[str]
 :value: >
-   None
+   'property(...)'
 
 ```{autodoc2-docstring} altdss.PVSystem.IPVSystem.ControlMode_str
 ```
@@ -193,7 +193,7 @@ Bases: {py:obj}`altdss.DSSObj.IDSSObj`, {py:obj}`altdss.PVSystem.PVSystemBatch`
 :canonical: altdss.PVSystem.IPVSystem.Daily
 :type: typing.List[altdss.LoadShape.LoadShape]
 :value: >
-   None
+   'property(...)'
 
 ```{autodoc2-docstring} altdss.PVSystem.IPVSystem.Daily
 ```
@@ -204,7 +204,7 @@ Bases: {py:obj}`altdss.DSSObj.IDSSObj`, {py:obj}`altdss.PVSystem.PVSystemBatch`
 :canonical: altdss.PVSystem.IPVSystem.Daily_str
 :type: typing.List[str]
 :value: >
-   None
+   'property(...)'
 
 ```{autodoc2-docstring} altdss.PVSystem.IPVSystem.Daily_str
 ```
@@ -215,7 +215,7 @@ Bases: {py:obj}`altdss.DSSObj.IDSSObj`, {py:obj}`altdss.PVSystem.PVSystemBatch`
 :canonical: altdss.PVSystem.IPVSystem.DebugTrace
 :type: typing.List[bool]
 :value: >
-   None
+   'property(...)'
 
 ```{autodoc2-docstring} altdss.PVSystem.IPVSystem.DebugTrace
 ```
@@ -226,7 +226,7 @@ Bases: {py:obj}`altdss.DSSObj.IDSSObj`, {py:obj}`altdss.PVSystem.PVSystemBatch`
 :canonical: altdss.PVSystem.IPVSystem.Duty
 :type: typing.List[altdss.LoadShape.LoadShape]
 :value: >
-   None
+   'property(...)'
 
 ```{autodoc2-docstring} altdss.PVSystem.IPVSystem.Duty
 ```
@@ -237,7 +237,7 @@ Bases: {py:obj}`altdss.DSSObj.IDSSObj`, {py:obj}`altdss.PVSystem.PVSystemBatch`
 :canonical: altdss.PVSystem.IPVSystem.DutyStart
 :type: altdss.ArrayProxy.BatchFloat64ArrayProxy
 :value: >
-   None
+   'property(...)'
 
 ```{autodoc2-docstring} altdss.PVSystem.IPVSystem.DutyStart
 ```
@@ -248,7 +248,7 @@ Bases: {py:obj}`altdss.DSSObj.IDSSObj`, {py:obj}`altdss.PVSystem.PVSystemBatch`
 :canonical: altdss.PVSystem.IPVSystem.Duty_str
 :type: typing.List[str]
 :value: >
-   None
+   'property(...)'
 
 ```{autodoc2-docstring} altdss.PVSystem.IPVSystem.Duty_str
 ```
@@ -259,7 +259,7 @@ Bases: {py:obj}`altdss.DSSObj.IDSSObj`, {py:obj}`altdss.PVSystem.PVSystemBatch`
 :canonical: altdss.PVSystem.IPVSystem.DynOut
 :type: typing.List[typing.List[str]]
 :value: >
-   None
+   'property(...)'
 
 ```{autodoc2-docstring} altdss.PVSystem.IPVSystem.DynOut
 ```
@@ -270,7 +270,7 @@ Bases: {py:obj}`altdss.DSSObj.IDSSObj`, {py:obj}`altdss.PVSystem.PVSystemBatch`
 :canonical: altdss.PVSystem.IPVSystem.DynamicEq
 :type: typing.List[altdss.DynamicExp.DynamicExp]
 :value: >
-   None
+   'property(...)'
 
 ```{autodoc2-docstring} altdss.PVSystem.IPVSystem.DynamicEq
 ```
@@ -281,7 +281,7 @@ Bases: {py:obj}`altdss.DSSObj.IDSSObj`, {py:obj}`altdss.PVSystem.PVSystemBatch`
 :canonical: altdss.PVSystem.IPVSystem.DynamicEq_str
 :type: typing.List[str]
 :value: >
-   None
+   'property(...)'
 
 ```{autodoc2-docstring} altdss.PVSystem.IPVSystem.DynamicEq_str
 ```
@@ -292,7 +292,7 @@ Bases: {py:obj}`altdss.DSSObj.IDSSObj`, {py:obj}`altdss.PVSystem.PVSystemBatch`
 :canonical: altdss.PVSystem.IPVSystem.EffCurve
 :type: typing.List[altdss.XYcurve.XYcurve]
 :value: >
-   None
+   'property(...)'
 
 ```{autodoc2-docstring} altdss.PVSystem.IPVSystem.EffCurve
 ```
@@ -303,7 +303,7 @@ Bases: {py:obj}`altdss.DSSObj.IDSSObj`, {py:obj}`altdss.PVSystem.PVSystemBatch`
 :canonical: altdss.PVSystem.IPVSystem.EffCurve_str
 :type: typing.List[str]
 :value: >
-   None
+   'property(...)'
 
 ```{autodoc2-docstring} altdss.PVSystem.IPVSystem.EffCurve_str
 ```
@@ -314,7 +314,7 @@ Bases: {py:obj}`altdss.DSSObj.IDSSObj`, {py:obj}`altdss.PVSystem.PVSystemBatch`
 :canonical: altdss.PVSystem.IPVSystem.Enabled
 :type: typing.List[bool]
 :value: >
-   None
+   'property(...)'
 
 ```{autodoc2-docstring} altdss.PVSystem.IPVSystem.Enabled
 ```
@@ -389,7 +389,7 @@ Bases: {py:obj}`altdss.DSSObj.IDSSObj`, {py:obj}`altdss.PVSystem.PVSystemBatch`
 :canonical: altdss.PVSystem.IPVSystem.Irradiance
 :type: altdss.ArrayProxy.BatchFloat64ArrayProxy
 :value: >
-   None
+   'property(...)'
 
 ```{autodoc2-docstring} altdss.PVSystem.IPVSystem.Irradiance
 ```
@@ -408,7 +408,7 @@ Bases: {py:obj}`altdss.DSSObj.IDSSObj`, {py:obj}`altdss.PVSystem.PVSystemBatch`
 :canonical: altdss.PVSystem.IPVSystem.Kp
 :type: altdss.ArrayProxy.BatchFloat64ArrayProxy
 :value: >
-   None
+   'property(...)'
 
 ```{autodoc2-docstring} altdss.PVSystem.IPVSystem.Kp
 ```
@@ -427,7 +427,7 @@ Bases: {py:obj}`altdss.DSSObj.IDSSObj`, {py:obj}`altdss.PVSystem.PVSystemBatch`
 :canonical: altdss.PVSystem.IPVSystem.LimitCurrent
 :type: typing.List[bool]
 :value: >
-   None
+   'property(...)'
 
 ```{autodoc2-docstring} altdss.PVSystem.IPVSystem.LimitCurrent
 ```
@@ -454,7 +454,7 @@ Bases: {py:obj}`altdss.DSSObj.IDSSObj`, {py:obj}`altdss.PVSystem.PVSystemBatch`
 :canonical: altdss.PVSystem.IPVSystem.Model
 :type: altdss.ArrayProxy.BatchInt32ArrayProxy
 :value: >
-   None
+   'property(...)'
 
 ```{autodoc2-docstring} altdss.PVSystem.IPVSystem.Model
 ```
@@ -530,7 +530,7 @@ Bases: {py:obj}`altdss.DSSObj.IDSSObj`, {py:obj}`altdss.PVSystem.PVSystemBatch`
 :canonical: altdss.PVSystem.IPVSystem.PF
 :type: altdss.ArrayProxy.BatchFloat64ArrayProxy
 :value: >
-   None
+   'property(...)'
 
 ```{autodoc2-docstring} altdss.PVSystem.IPVSystem.PF
 ```
@@ -541,7 +541,7 @@ Bases: {py:obj}`altdss.DSSObj.IDSSObj`, {py:obj}`altdss.PVSystem.PVSystemBatch`
 :canonical: altdss.PVSystem.IPVSystem.PFPriority
 :type: typing.List[bool]
 :value: >
-   None
+   'property(...)'
 
 ```{autodoc2-docstring} altdss.PVSystem.IPVSystem.PFPriority
 ```
@@ -552,7 +552,7 @@ Bases: {py:obj}`altdss.DSSObj.IDSSObj`, {py:obj}`altdss.PVSystem.PVSystemBatch`
 :canonical: altdss.PVSystem.IPVSystem.PITol
 :type: altdss.ArrayProxy.BatchFloat64ArrayProxy
 :value: >
-   None
+   'property(...)'
 
 ```{autodoc2-docstring} altdss.PVSystem.IPVSystem.PITol
 ```
@@ -563,7 +563,7 @@ Bases: {py:obj}`altdss.DSSObj.IDSSObj`, {py:obj}`altdss.PVSystem.PVSystemBatch`
 :canonical: altdss.PVSystem.IPVSystem.PTCurve
 :type: typing.List[altdss.XYcurve.XYcurve]
 :value: >
-   None
+   'property(...)'
 
 ```{autodoc2-docstring} altdss.PVSystem.IPVSystem.PTCurve
 ```
@@ -574,7 +574,7 @@ Bases: {py:obj}`altdss.DSSObj.IDSSObj`, {py:obj}`altdss.PVSystem.PVSystemBatch`
 :canonical: altdss.PVSystem.IPVSystem.PTCurve_str
 :type: typing.List[str]
 :value: >
-   None
+   'property(...)'
 
 ```{autodoc2-docstring} altdss.PVSystem.IPVSystem.PTCurve_str
 ```
@@ -593,7 +593,7 @@ Bases: {py:obj}`altdss.DSSObj.IDSSObj`, {py:obj}`altdss.PVSystem.PVSystemBatch`
 :canonical: altdss.PVSystem.IPVSystem.Phases
 :type: altdss.ArrayProxy.BatchInt32ArrayProxy
 :value: >
-   None
+   'property(...)'
 
 ```{autodoc2-docstring} altdss.PVSystem.IPVSystem.Phases
 ```
@@ -604,7 +604,7 @@ Bases: {py:obj}`altdss.DSSObj.IDSSObj`, {py:obj}`altdss.PVSystem.PVSystemBatch`
 :canonical: altdss.PVSystem.IPVSystem.Pmpp
 :type: altdss.ArrayProxy.BatchFloat64ArrayProxy
 :value: >
-   None
+   'property(...)'
 
 ```{autodoc2-docstring} altdss.PVSystem.IPVSystem.Pmpp
 ```
@@ -623,7 +623,7 @@ Bases: {py:obj}`altdss.DSSObj.IDSSObj`, {py:obj}`altdss.PVSystem.PVSystemBatch`
 :canonical: altdss.PVSystem.IPVSystem.SafeMode
 :type: typing.List[bool]
 :value: >
-   None
+   'property(...)'
 
 ```{autodoc2-docstring} altdss.PVSystem.IPVSystem.SafeMode
 ```
@@ -634,7 +634,7 @@ Bases: {py:obj}`altdss.DSSObj.IDSSObj`, {py:obj}`altdss.PVSystem.PVSystemBatch`
 :canonical: altdss.PVSystem.IPVSystem.SafeVoltage
 :type: altdss.ArrayProxy.BatchFloat64ArrayProxy
 :value: >
-   None
+   'property(...)'
 
 ```{autodoc2-docstring} altdss.PVSystem.IPVSystem.SafeVoltage
 ```
@@ -669,7 +669,7 @@ Bases: {py:obj}`altdss.DSSObj.IDSSObj`, {py:obj}`altdss.PVSystem.PVSystemBatch`
 :canonical: altdss.PVSystem.IPVSystem.Spectrum
 :type: typing.List[altdss.Spectrum.Spectrum]
 :value: >
-   None
+   'property(...)'
 
 ```{autodoc2-docstring} altdss.PVSystem.IPVSystem.Spectrum
 ```
@@ -680,7 +680,7 @@ Bases: {py:obj}`altdss.DSSObj.IDSSObj`, {py:obj}`altdss.PVSystem.PVSystemBatch`
 :canonical: altdss.PVSystem.IPVSystem.Spectrum_str
 :type: typing.List[str]
 :value: >
-   None
+   'property(...)'
 
 ```{autodoc2-docstring} altdss.PVSystem.IPVSystem.Spectrum_str
 ```
@@ -691,7 +691,7 @@ Bases: {py:obj}`altdss.DSSObj.IDSSObj`, {py:obj}`altdss.PVSystem.PVSystemBatch`
 :canonical: altdss.PVSystem.IPVSystem.TDaily
 :type: typing.List[altdss.TShape.TShape]
 :value: >
-   None
+   'property(...)'
 
 ```{autodoc2-docstring} altdss.PVSystem.IPVSystem.TDaily
 ```
@@ -702,7 +702,7 @@ Bases: {py:obj}`altdss.DSSObj.IDSSObj`, {py:obj}`altdss.PVSystem.PVSystemBatch`
 :canonical: altdss.PVSystem.IPVSystem.TDaily_str
 :type: typing.List[str]
 :value: >
-   None
+   'property(...)'
 
 ```{autodoc2-docstring} altdss.PVSystem.IPVSystem.TDaily_str
 ```
@@ -713,7 +713,7 @@ Bases: {py:obj}`altdss.DSSObj.IDSSObj`, {py:obj}`altdss.PVSystem.PVSystemBatch`
 :canonical: altdss.PVSystem.IPVSystem.TDuty
 :type: typing.List[altdss.TShape.TShape]
 :value: >
-   None
+   'property(...)'
 
 ```{autodoc2-docstring} altdss.PVSystem.IPVSystem.TDuty
 ```
@@ -724,7 +724,7 @@ Bases: {py:obj}`altdss.DSSObj.IDSSObj`, {py:obj}`altdss.PVSystem.PVSystemBatch`
 :canonical: altdss.PVSystem.IPVSystem.TDuty_str
 :type: typing.List[str]
 :value: >
-   None
+   'property(...)'
 
 ```{autodoc2-docstring} altdss.PVSystem.IPVSystem.TDuty_str
 ```
@@ -735,7 +735,7 @@ Bases: {py:obj}`altdss.DSSObj.IDSSObj`, {py:obj}`altdss.PVSystem.PVSystemBatch`
 :canonical: altdss.PVSystem.IPVSystem.TYearly
 :type: typing.List[altdss.TShape.TShape]
 :value: >
-   None
+   'property(...)'
 
 ```{autodoc2-docstring} altdss.PVSystem.IPVSystem.TYearly
 ```
@@ -746,7 +746,7 @@ Bases: {py:obj}`altdss.DSSObj.IDSSObj`, {py:obj}`altdss.PVSystem.PVSystemBatch`
 :canonical: altdss.PVSystem.IPVSystem.TYearly_str
 :type: typing.List[str]
 :value: >
-   None
+   'property(...)'
 
 ```{autodoc2-docstring} altdss.PVSystem.IPVSystem.TYearly_str
 ```
@@ -757,7 +757,7 @@ Bases: {py:obj}`altdss.DSSObj.IDSSObj`, {py:obj}`altdss.PVSystem.PVSystemBatch`
 :canonical: altdss.PVSystem.IPVSystem.Temperature
 :type: altdss.ArrayProxy.BatchFloat64ArrayProxy
 :value: >
-   None
+   'property(...)'
 
 ```{autodoc2-docstring} altdss.PVSystem.IPVSystem.Temperature
 ```
@@ -776,7 +776,7 @@ Bases: {py:obj}`altdss.DSSObj.IDSSObj`, {py:obj}`altdss.PVSystem.PVSystemBatch`
 :canonical: altdss.PVSystem.IPVSystem.UserData
 :type: typing.List[str]
 :value: >
-   None
+   'property(...)'
 
 ```{autodoc2-docstring} altdss.PVSystem.IPVSystem.UserData
 ```
@@ -787,7 +787,7 @@ Bases: {py:obj}`altdss.DSSObj.IDSSObj`, {py:obj}`altdss.PVSystem.PVSystemBatch`
 :canonical: altdss.PVSystem.IPVSystem.UserModel
 :type: typing.List[str]
 :value: >
-   None
+   'property(...)'
 
 ```{autodoc2-docstring} altdss.PVSystem.IPVSystem.UserModel
 ```
@@ -798,7 +798,7 @@ Bases: {py:obj}`altdss.DSSObj.IDSSObj`, {py:obj}`altdss.PVSystem.PVSystemBatch`
 :canonical: altdss.PVSystem.IPVSystem.VMaxpu
 :type: altdss.ArrayProxy.BatchFloat64ArrayProxy
 :value: >
-   None
+   'property(...)'
 
 ```{autodoc2-docstring} altdss.PVSystem.IPVSystem.VMaxpu
 ```
@@ -809,7 +809,7 @@ Bases: {py:obj}`altdss.DSSObj.IDSSObj`, {py:obj}`altdss.PVSystem.PVSystemBatch`
 :canonical: altdss.PVSystem.IPVSystem.VMinpu
 :type: altdss.ArrayProxy.BatchFloat64ArrayProxy
 :value: >
-   None
+   'property(...)'
 
 ```{autodoc2-docstring} altdss.PVSystem.IPVSystem.VMinpu
 ```
@@ -820,7 +820,7 @@ Bases: {py:obj}`altdss.DSSObj.IDSSObj`, {py:obj}`altdss.PVSystem.PVSystemBatch`
 :canonical: altdss.PVSystem.IPVSystem.VarFollowInverter
 :type: typing.List[bool]
 :value: >
-   None
+   'property(...)'
 
 ```{autodoc2-docstring} altdss.PVSystem.IPVSystem.VarFollowInverter
 ```
@@ -847,7 +847,7 @@ Bases: {py:obj}`altdss.DSSObj.IDSSObj`, {py:obj}`altdss.PVSystem.PVSystemBatch`
 :canonical: altdss.PVSystem.IPVSystem.WattPriority
 :type: typing.List[bool]
 :value: >
-   None
+   'property(...)'
 
 ```{autodoc2-docstring} altdss.PVSystem.IPVSystem.WattPriority
 ```
@@ -858,7 +858,7 @@ Bases: {py:obj}`altdss.DSSObj.IDSSObj`, {py:obj}`altdss.PVSystem.PVSystemBatch`
 :canonical: altdss.PVSystem.IPVSystem.Yearly
 :type: typing.List[altdss.LoadShape.LoadShape]
 :value: >
-   None
+   'property(...)'
 
 ```{autodoc2-docstring} altdss.PVSystem.IPVSystem.Yearly
 ```
@@ -869,7 +869,7 @@ Bases: {py:obj}`altdss.DSSObj.IDSSObj`, {py:obj}`altdss.PVSystem.PVSystemBatch`
 :canonical: altdss.PVSystem.IPVSystem.Yearly_str
 :type: typing.List[str]
 :value: >
-   None
+   'property(...)'
 
 ```{autodoc2-docstring} altdss.PVSystem.IPVSystem.Yearly_str
 ```
@@ -968,7 +968,7 @@ Bases: {py:obj}`altdss.DSSObj.IDSSObj`, {py:obj}`altdss.PVSystem.PVSystemBatch`
 :canonical: altdss.PVSystem.IPVSystem.kV
 :type: altdss.ArrayProxy.BatchFloat64ArrayProxy
 :value: >
-   None
+   'property(...)'
 
 ```{autodoc2-docstring} altdss.PVSystem.IPVSystem.kV
 ```
@@ -979,7 +979,7 @@ Bases: {py:obj}`altdss.DSSObj.IDSSObj`, {py:obj}`altdss.PVSystem.PVSystemBatch`
 :canonical: altdss.PVSystem.IPVSystem.kVA
 :type: altdss.ArrayProxy.BatchFloat64ArrayProxy
 :value: >
-   None
+   'property(...)'
 
 ```{autodoc2-docstring} altdss.PVSystem.IPVSystem.kVA
 ```
@@ -990,7 +990,7 @@ Bases: {py:obj}`altdss.DSSObj.IDSSObj`, {py:obj}`altdss.PVSystem.PVSystemBatch`
 :canonical: altdss.PVSystem.IPVSystem.kVDC
 :type: altdss.ArrayProxy.BatchFloat64ArrayProxy
 :value: >
-   None
+   'property(...)'
 
 ```{autodoc2-docstring} altdss.PVSystem.IPVSystem.kVDC
 ```
@@ -1001,7 +1001,7 @@ Bases: {py:obj}`altdss.DSSObj.IDSSObj`, {py:obj}`altdss.PVSystem.PVSystemBatch`
 :canonical: altdss.PVSystem.IPVSystem.kvar
 :type: altdss.ArrayProxy.BatchFloat64ArrayProxy
 :value: >
-   None
+   'property(...)'
 
 ```{autodoc2-docstring} altdss.PVSystem.IPVSystem.kvar
 ```
@@ -1012,7 +1012,7 @@ Bases: {py:obj}`altdss.DSSObj.IDSSObj`, {py:obj}`altdss.PVSystem.PVSystemBatch`
 :canonical: altdss.PVSystem.IPVSystem.kvarMax
 :type: altdss.ArrayProxy.BatchFloat64ArrayProxy
 :value: >
-   None
+   'property(...)'
 
 ```{autodoc2-docstring} altdss.PVSystem.IPVSystem.kvarMax
 ```
@@ -1023,7 +1023,7 @@ Bases: {py:obj}`altdss.DSSObj.IDSSObj`, {py:obj}`altdss.PVSystem.PVSystemBatch`
 :canonical: altdss.PVSystem.IPVSystem.kvarMaxAbs
 :type: altdss.ArrayProxy.BatchFloat64ArrayProxy
 :value: >
-   None
+   'property(...)'
 
 ```{autodoc2-docstring} altdss.PVSystem.IPVSystem.kvarMaxAbs
 ```
@@ -1042,7 +1042,7 @@ Bases: {py:obj}`altdss.DSSObj.IDSSObj`, {py:obj}`altdss.PVSystem.PVSystemBatch`
 :canonical: altdss.PVSystem.IPVSystem.pctCutIn
 :type: altdss.ArrayProxy.BatchFloat64ArrayProxy
 :value: >
-   None
+   'property(...)'
 
 ```{autodoc2-docstring} altdss.PVSystem.IPVSystem.pctCutIn
 ```
@@ -1053,7 +1053,7 @@ Bases: {py:obj}`altdss.DSSObj.IDSSObj`, {py:obj}`altdss.PVSystem.PVSystemBatch`
 :canonical: altdss.PVSystem.IPVSystem.pctCutOut
 :type: altdss.ArrayProxy.BatchFloat64ArrayProxy
 :value: >
-   None
+   'property(...)'
 
 ```{autodoc2-docstring} altdss.PVSystem.IPVSystem.pctCutOut
 ```
@@ -1064,7 +1064,7 @@ Bases: {py:obj}`altdss.DSSObj.IDSSObj`, {py:obj}`altdss.PVSystem.PVSystemBatch`
 :canonical: altdss.PVSystem.IPVSystem.pctPMinNoVars
 :type: altdss.ArrayProxy.BatchFloat64ArrayProxy
 :value: >
-   None
+   'property(...)'
 
 ```{autodoc2-docstring} altdss.PVSystem.IPVSystem.pctPMinNoVars
 ```
@@ -1075,7 +1075,7 @@ Bases: {py:obj}`altdss.DSSObj.IDSSObj`, {py:obj}`altdss.PVSystem.PVSystemBatch`
 :canonical: altdss.PVSystem.IPVSystem.pctPMinkvarMax
 :type: altdss.ArrayProxy.BatchFloat64ArrayProxy
 :value: >
-   None
+   'property(...)'
 
 ```{autodoc2-docstring} altdss.PVSystem.IPVSystem.pctPMinkvarMax
 ```
@@ -1086,7 +1086,7 @@ Bases: {py:obj}`altdss.DSSObj.IDSSObj`, {py:obj}`altdss.PVSystem.PVSystemBatch`
 :canonical: altdss.PVSystem.IPVSystem.pctPmpp
 :type: altdss.ArrayProxy.BatchFloat64ArrayProxy
 :value: >
-   None
+   'property(...)'
 
 ```{autodoc2-docstring} altdss.PVSystem.IPVSystem.pctPmpp
 ```
@@ -1097,7 +1097,7 @@ Bases: {py:obj}`altdss.DSSObj.IDSSObj`, {py:obj}`altdss.PVSystem.PVSystemBatch`
 :canonical: altdss.PVSystem.IPVSystem.pctR
 :type: altdss.ArrayProxy.BatchFloat64ArrayProxy
 :value: >
-   None
+   'property(...)'
 
 ```{autodoc2-docstring} altdss.PVSystem.IPVSystem.pctR
 ```
@@ -1108,7 +1108,7 @@ Bases: {py:obj}`altdss.DSSObj.IDSSObj`, {py:obj}`altdss.PVSystem.PVSystemBatch`
 :canonical: altdss.PVSystem.IPVSystem.pctX
 :type: altdss.ArrayProxy.BatchFloat64ArrayProxy
 :value: >
-   None
+   'property(...)'
 
 ```{autodoc2-docstring} altdss.PVSystem.IPVSystem.pctX
 ```
@@ -1145,7 +1145,7 @@ Bases: {py:obj}`altdss.DSSObj.DSSObj`, {py:obj}`altdss.CircuitElement.CircuitEle
 :canonical: altdss.PVSystem.PVSystem.AmpLimit
 :type: float
 :value: >
-   None
+   'property(...)'
 
 ```{autodoc2-docstring} altdss.PVSystem.PVSystem.AmpLimit
 ```
@@ -1156,7 +1156,7 @@ Bases: {py:obj}`altdss.DSSObj.DSSObj`, {py:obj}`altdss.CircuitElement.CircuitEle
 :canonical: altdss.PVSystem.PVSystem.AmpLimitGain
 :type: float
 :value: >
-   None
+   'property(...)'
 
 ```{autodoc2-docstring} altdss.PVSystem.PVSystem.AmpLimitGain
 ```
@@ -1167,7 +1167,7 @@ Bases: {py:obj}`altdss.DSSObj.DSSObj`, {py:obj}`altdss.CircuitElement.CircuitEle
 :canonical: altdss.PVSystem.PVSystem.Balanced
 :type: bool
 :value: >
-   None
+   'property(...)'
 
 ```{autodoc2-docstring} altdss.PVSystem.PVSystem.Balanced
 ```
@@ -1178,7 +1178,7 @@ Bases: {py:obj}`altdss.DSSObj.DSSObj`, {py:obj}`altdss.CircuitElement.CircuitEle
 :canonical: altdss.PVSystem.PVSystem.BaseFreq
 :type: float
 :value: >
-   None
+   'property(...)'
 
 ```{autodoc2-docstring} altdss.PVSystem.PVSystem.BaseFreq
 ```
@@ -1189,7 +1189,7 @@ Bases: {py:obj}`altdss.DSSObj.DSSObj`, {py:obj}`altdss.CircuitElement.CircuitEle
 :canonical: altdss.PVSystem.PVSystem.Bus1
 :type: str
 :value: >
-   None
+   'property(...)'
 
 ```{autodoc2-docstring} altdss.PVSystem.PVSystem.Bus1
 ```
@@ -1200,7 +1200,7 @@ Bases: {py:obj}`altdss.DSSObj.DSSObj`, {py:obj}`altdss.CircuitElement.CircuitEle
 :canonical: altdss.PVSystem.PVSystem.Class
 :type: int
 :value: >
-   None
+   'property(...)'
 
 ```{autodoc2-docstring} altdss.PVSystem.PVSystem.Class
 ```
@@ -1235,7 +1235,7 @@ Bases: {py:obj}`altdss.DSSObj.DSSObj`, {py:obj}`altdss.CircuitElement.CircuitEle
 :canonical: altdss.PVSystem.PVSystem.Conn
 :type: altdss.enums.Connection
 :value: >
-   None
+   'property(...)'
 
 ```{autodoc2-docstring} altdss.PVSystem.PVSystem.Conn
 ```
@@ -1246,7 +1246,7 @@ Bases: {py:obj}`altdss.DSSObj.DSSObj`, {py:obj}`altdss.CircuitElement.CircuitEle
 :canonical: altdss.PVSystem.PVSystem.Conn_str
 :type: str
 :value: >
-   None
+   'property(...)'
 
 ```{autodoc2-docstring} altdss.PVSystem.PVSystem.Conn_str
 ```
@@ -1257,7 +1257,7 @@ Bases: {py:obj}`altdss.DSSObj.DSSObj`, {py:obj}`altdss.CircuitElement.CircuitEle
 :canonical: altdss.PVSystem.PVSystem.ControlMode
 :type: altdss.enums.InverterControlMode
 :value: >
-   None
+   'property(...)'
 
 ```{autodoc2-docstring} altdss.PVSystem.PVSystem.ControlMode
 ```
@@ -1268,7 +1268,7 @@ Bases: {py:obj}`altdss.DSSObj.DSSObj`, {py:obj}`altdss.CircuitElement.CircuitEle
 :canonical: altdss.PVSystem.PVSystem.ControlMode_str
 :type: str
 :value: >
-   None
+   'property(...)'
 
 ```{autodoc2-docstring} altdss.PVSystem.PVSystem.ControlMode_str
 ```
@@ -1287,7 +1287,7 @@ Bases: {py:obj}`altdss.DSSObj.DSSObj`, {py:obj}`altdss.CircuitElement.CircuitEle
 :canonical: altdss.PVSystem.PVSystem.Daily
 :type: altdss.LoadShape.LoadShape
 :value: >
-   None
+   'property(...)'
 
 ```{autodoc2-docstring} altdss.PVSystem.PVSystem.Daily
 ```
@@ -1298,7 +1298,7 @@ Bases: {py:obj}`altdss.DSSObj.DSSObj`, {py:obj}`altdss.CircuitElement.CircuitEle
 :canonical: altdss.PVSystem.PVSystem.Daily_str
 :type: str
 :value: >
-   None
+   'property(...)'
 
 ```{autodoc2-docstring} altdss.PVSystem.PVSystem.Daily_str
 ```
@@ -1309,7 +1309,7 @@ Bases: {py:obj}`altdss.DSSObj.DSSObj`, {py:obj}`altdss.CircuitElement.CircuitEle
 :canonical: altdss.PVSystem.PVSystem.DebugTrace
 :type: bool
 :value: >
-   None
+   'property(...)'
 
 ```{autodoc2-docstring} altdss.PVSystem.PVSystem.DebugTrace
 ```
@@ -1320,7 +1320,7 @@ Bases: {py:obj}`altdss.DSSObj.DSSObj`, {py:obj}`altdss.CircuitElement.CircuitEle
 :canonical: altdss.PVSystem.PVSystem.DisplayName
 :type: str
 :value: >
-   None
+   'property(...)'
 
 ```{autodoc2-docstring} altdss.PVSystem.PVSystem.DisplayName
 ```
@@ -1331,7 +1331,7 @@ Bases: {py:obj}`altdss.DSSObj.DSSObj`, {py:obj}`altdss.CircuitElement.CircuitEle
 :canonical: altdss.PVSystem.PVSystem.Duty
 :type: altdss.LoadShape.LoadShape
 :value: >
-   None
+   'property(...)'
 
 ```{autodoc2-docstring} altdss.PVSystem.PVSystem.Duty
 ```
@@ -1342,7 +1342,7 @@ Bases: {py:obj}`altdss.DSSObj.DSSObj`, {py:obj}`altdss.CircuitElement.CircuitEle
 :canonical: altdss.PVSystem.PVSystem.DutyStart
 :type: float
 :value: >
-   None
+   'property(...)'
 
 ```{autodoc2-docstring} altdss.PVSystem.PVSystem.DutyStart
 ```
@@ -1353,7 +1353,7 @@ Bases: {py:obj}`altdss.DSSObj.DSSObj`, {py:obj}`altdss.CircuitElement.CircuitEle
 :canonical: altdss.PVSystem.PVSystem.Duty_str
 :type: str
 :value: >
-   None
+   'property(...)'
 
 ```{autodoc2-docstring} altdss.PVSystem.PVSystem.Duty_str
 ```
@@ -1364,7 +1364,7 @@ Bases: {py:obj}`altdss.DSSObj.DSSObj`, {py:obj}`altdss.CircuitElement.CircuitEle
 :canonical: altdss.PVSystem.PVSystem.DynOut
 :type: typing.List[str]
 :value: >
-   None
+   'property(...)'
 
 ```{autodoc2-docstring} altdss.PVSystem.PVSystem.DynOut
 ```
@@ -1375,7 +1375,7 @@ Bases: {py:obj}`altdss.DSSObj.DSSObj`, {py:obj}`altdss.CircuitElement.CircuitEle
 :canonical: altdss.PVSystem.PVSystem.DynamicEq
 :type: altdss.DynamicExp.DynamicExp
 :value: >
-   None
+   'property(...)'
 
 ```{autodoc2-docstring} altdss.PVSystem.PVSystem.DynamicEq
 ```
@@ -1386,7 +1386,7 @@ Bases: {py:obj}`altdss.DSSObj.DSSObj`, {py:obj}`altdss.CircuitElement.CircuitEle
 :canonical: altdss.PVSystem.PVSystem.DynamicEq_str
 :type: str
 :value: >
-   None
+   'property(...)'
 
 ```{autodoc2-docstring} altdss.PVSystem.PVSystem.DynamicEq_str
 ```
@@ -1397,7 +1397,7 @@ Bases: {py:obj}`altdss.DSSObj.DSSObj`, {py:obj}`altdss.CircuitElement.CircuitEle
 :canonical: altdss.PVSystem.PVSystem.EffCurve
 :type: altdss.XYcurve.XYcurve
 :value: >
-   None
+   'property(...)'
 
 ```{autodoc2-docstring} altdss.PVSystem.PVSystem.EffCurve
 ```
@@ -1408,7 +1408,7 @@ Bases: {py:obj}`altdss.DSSObj.DSSObj`, {py:obj}`altdss.CircuitElement.CircuitEle
 :canonical: altdss.PVSystem.PVSystem.EffCurve_str
 :type: str
 :value: >
-   None
+   'property(...)'
 
 ```{autodoc2-docstring} altdss.PVSystem.PVSystem.EffCurve_str
 ```
@@ -1419,7 +1419,7 @@ Bases: {py:obj}`altdss.DSSObj.DSSObj`, {py:obj}`altdss.CircuitElement.CircuitEle
 :canonical: altdss.PVSystem.PVSystem.Enabled
 :type: bool
 :value: >
-   None
+   'property(...)'
 
 ```{autodoc2-docstring} altdss.PVSystem.PVSystem.Enabled
 ```
@@ -1502,7 +1502,7 @@ Bases: {py:obj}`altdss.DSSObj.DSSObj`, {py:obj}`altdss.CircuitElement.CircuitEle
 :canonical: altdss.PVSystem.PVSystem.Irradiance
 :type: float
 :value: >
-   None
+   'property(...)'
 
 ```{autodoc2-docstring} altdss.PVSystem.PVSystem.Irradiance
 ```
@@ -1529,7 +1529,7 @@ Bases: {py:obj}`altdss.DSSObj.DSSObj`, {py:obj}`altdss.CircuitElement.CircuitEle
 :canonical: altdss.PVSystem.PVSystem.Kp
 :type: float
 :value: >
-   None
+   'property(...)'
 
 ```{autodoc2-docstring} altdss.PVSystem.PVSystem.Kp
 ```
@@ -1548,7 +1548,7 @@ Bases: {py:obj}`altdss.DSSObj.DSSObj`, {py:obj}`altdss.CircuitElement.CircuitEle
 :canonical: altdss.PVSystem.PVSystem.LimitCurrent
 :type: bool
 :value: >
-   None
+   'property(...)'
 
 ```{autodoc2-docstring} altdss.PVSystem.PVSystem.LimitCurrent
 ```
@@ -1575,7 +1575,7 @@ Bases: {py:obj}`altdss.DSSObj.DSSObj`, {py:obj}`altdss.CircuitElement.CircuitEle
 :canonical: altdss.PVSystem.PVSystem.Model
 :type: altdss.enums.PVSystemModel
 :value: >
-   None
+   'property(...)'
 
 ```{autodoc2-docstring} altdss.PVSystem.PVSystem.Model
 ```
@@ -1675,7 +1675,7 @@ Bases: {py:obj}`altdss.DSSObj.DSSObj`, {py:obj}`altdss.CircuitElement.CircuitEle
 :canonical: altdss.PVSystem.PVSystem.PF
 :type: float
 :value: >
-   None
+   'property(...)'
 
 ```{autodoc2-docstring} altdss.PVSystem.PVSystem.PF
 ```
@@ -1686,7 +1686,7 @@ Bases: {py:obj}`altdss.DSSObj.DSSObj`, {py:obj}`altdss.CircuitElement.CircuitEle
 :canonical: altdss.PVSystem.PVSystem.PFPriority
 :type: bool
 :value: >
-   None
+   'property(...)'
 
 ```{autodoc2-docstring} altdss.PVSystem.PVSystem.PFPriority
 ```
@@ -1697,7 +1697,7 @@ Bases: {py:obj}`altdss.DSSObj.DSSObj`, {py:obj}`altdss.CircuitElement.CircuitEle
 :canonical: altdss.PVSystem.PVSystem.PITol
 :type: float
 :value: >
-   None
+   'property(...)'
 
 ```{autodoc2-docstring} altdss.PVSystem.PVSystem.PITol
 ```
@@ -1708,7 +1708,7 @@ Bases: {py:obj}`altdss.DSSObj.DSSObj`, {py:obj}`altdss.CircuitElement.CircuitEle
 :canonical: altdss.PVSystem.PVSystem.PTCurve
 :type: altdss.XYcurve.XYcurve
 :value: >
-   None
+   'property(...)'
 
 ```{autodoc2-docstring} altdss.PVSystem.PVSystem.PTCurve
 ```
@@ -1719,7 +1719,7 @@ Bases: {py:obj}`altdss.DSSObj.DSSObj`, {py:obj}`altdss.CircuitElement.CircuitEle
 :canonical: altdss.PVSystem.PVSystem.PTCurve_str
 :type: str
 :value: >
-   None
+   'property(...)'
 
 ```{autodoc2-docstring} altdss.PVSystem.PVSystem.PTCurve_str
 ```
@@ -1738,7 +1738,7 @@ Bases: {py:obj}`altdss.DSSObj.DSSObj`, {py:obj}`altdss.CircuitElement.CircuitEle
 :canonical: altdss.PVSystem.PVSystem.Phases
 :type: int
 :value: >
-   None
+   'property(...)'
 
 ```{autodoc2-docstring} altdss.PVSystem.PVSystem.Phases
 ```
@@ -1749,7 +1749,7 @@ Bases: {py:obj}`altdss.DSSObj.DSSObj`, {py:obj}`altdss.CircuitElement.CircuitEle
 :canonical: altdss.PVSystem.PVSystem.Pmpp
 :type: float
 :value: >
-   None
+   'property(...)'
 
 ```{autodoc2-docstring} altdss.PVSystem.PVSystem.Pmpp
 ```
@@ -1800,7 +1800,7 @@ Bases: {py:obj}`altdss.DSSObj.DSSObj`, {py:obj}`altdss.CircuitElement.CircuitEle
 :canonical: altdss.PVSystem.PVSystem.SafeMode
 :type: bool
 :value: >
-   None
+   'property(...)'
 
 ```{autodoc2-docstring} altdss.PVSystem.PVSystem.SafeMode
 ```
@@ -1811,7 +1811,7 @@ Bases: {py:obj}`altdss.DSSObj.DSSObj`, {py:obj}`altdss.CircuitElement.CircuitEle
 :canonical: altdss.PVSystem.PVSystem.SafeVoltage
 :type: float
 :value: >
-   None
+   'property(...)'
 
 ```{autodoc2-docstring} altdss.PVSystem.PVSystem.SafeVoltage
 ```
@@ -1854,7 +1854,7 @@ Bases: {py:obj}`altdss.DSSObj.DSSObj`, {py:obj}`altdss.CircuitElement.CircuitEle
 :canonical: altdss.PVSystem.PVSystem.Spectrum
 :type: altdss.Spectrum.Spectrum
 :value: >
-   None
+   'property(...)'
 
 ```{autodoc2-docstring} altdss.PVSystem.PVSystem.Spectrum
 ```
@@ -1865,7 +1865,7 @@ Bases: {py:obj}`altdss.DSSObj.DSSObj`, {py:obj}`altdss.CircuitElement.CircuitEle
 :canonical: altdss.PVSystem.PVSystem.Spectrum_str
 :type: str
 :value: >
-   None
+   'property(...)'
 
 ```{autodoc2-docstring} altdss.PVSystem.PVSystem.Spectrum_str
 ```
@@ -1876,7 +1876,7 @@ Bases: {py:obj}`altdss.DSSObj.DSSObj`, {py:obj}`altdss.CircuitElement.CircuitEle
 :canonical: altdss.PVSystem.PVSystem.TDaily
 :type: altdss.TShape.TShape
 :value: >
-   None
+   'property(...)'
 
 ```{autodoc2-docstring} altdss.PVSystem.PVSystem.TDaily
 ```
@@ -1887,7 +1887,7 @@ Bases: {py:obj}`altdss.DSSObj.DSSObj`, {py:obj}`altdss.CircuitElement.CircuitEle
 :canonical: altdss.PVSystem.PVSystem.TDaily_str
 :type: str
 :value: >
-   None
+   'property(...)'
 
 ```{autodoc2-docstring} altdss.PVSystem.PVSystem.TDaily_str
 ```
@@ -1898,7 +1898,7 @@ Bases: {py:obj}`altdss.DSSObj.DSSObj`, {py:obj}`altdss.CircuitElement.CircuitEle
 :canonical: altdss.PVSystem.PVSystem.TDuty
 :type: altdss.TShape.TShape
 :value: >
-   None
+   'property(...)'
 
 ```{autodoc2-docstring} altdss.PVSystem.PVSystem.TDuty
 ```
@@ -1909,7 +1909,7 @@ Bases: {py:obj}`altdss.DSSObj.DSSObj`, {py:obj}`altdss.CircuitElement.CircuitEle
 :canonical: altdss.PVSystem.PVSystem.TDuty_str
 :type: str
 :value: >
-   None
+   'property(...)'
 
 ```{autodoc2-docstring} altdss.PVSystem.PVSystem.TDuty_str
 ```
@@ -1920,7 +1920,7 @@ Bases: {py:obj}`altdss.DSSObj.DSSObj`, {py:obj}`altdss.CircuitElement.CircuitEle
 :canonical: altdss.PVSystem.PVSystem.TYearly
 :type: altdss.TShape.TShape
 :value: >
-   None
+   'property(...)'
 
 ```{autodoc2-docstring} altdss.PVSystem.PVSystem.TYearly
 ```
@@ -1931,7 +1931,7 @@ Bases: {py:obj}`altdss.DSSObj.DSSObj`, {py:obj}`altdss.CircuitElement.CircuitEle
 :canonical: altdss.PVSystem.PVSystem.TYearly_str
 :type: str
 :value: >
-   None
+   'property(...)'
 
 ```{autodoc2-docstring} altdss.PVSystem.PVSystem.TYearly_str
 ```
@@ -1942,7 +1942,7 @@ Bases: {py:obj}`altdss.DSSObj.DSSObj`, {py:obj}`altdss.CircuitElement.CircuitEle
 :canonical: altdss.PVSystem.PVSystem.Temperature
 :type: float
 :value: >
-   None
+   'property(...)'
 
 ```{autodoc2-docstring} altdss.PVSystem.PVSystem.Temperature
 ```
@@ -1961,7 +1961,7 @@ Bases: {py:obj}`altdss.DSSObj.DSSObj`, {py:obj}`altdss.CircuitElement.CircuitEle
 :canonical: altdss.PVSystem.PVSystem.UserData
 :type: str
 :value: >
-   None
+   'property(...)'
 
 ```{autodoc2-docstring} altdss.PVSystem.PVSystem.UserData
 ```
@@ -1972,7 +1972,7 @@ Bases: {py:obj}`altdss.DSSObj.DSSObj`, {py:obj}`altdss.CircuitElement.CircuitEle
 :canonical: altdss.PVSystem.PVSystem.UserModel
 :type: str
 :value: >
-   None
+   'property(...)'
 
 ```{autodoc2-docstring} altdss.PVSystem.PVSystem.UserModel
 ```
@@ -1983,7 +1983,7 @@ Bases: {py:obj}`altdss.DSSObj.DSSObj`, {py:obj}`altdss.CircuitElement.CircuitEle
 :canonical: altdss.PVSystem.PVSystem.VMaxpu
 :type: float
 :value: >
-   None
+   'property(...)'
 
 ```{autodoc2-docstring} altdss.PVSystem.PVSystem.VMaxpu
 ```
@@ -1994,7 +1994,7 @@ Bases: {py:obj}`altdss.DSSObj.DSSObj`, {py:obj}`altdss.CircuitElement.CircuitEle
 :canonical: altdss.PVSystem.PVSystem.VMinpu
 :type: float
 :value: >
-   None
+   'property(...)'
 
 ```{autodoc2-docstring} altdss.PVSystem.PVSystem.VMinpu
 ```
@@ -2005,7 +2005,7 @@ Bases: {py:obj}`altdss.DSSObj.DSSObj`, {py:obj}`altdss.CircuitElement.CircuitEle
 :canonical: altdss.PVSystem.PVSystem.VarFollowInverter
 :type: bool
 :value: >
-   None
+   'property(...)'
 
 ```{autodoc2-docstring} altdss.PVSystem.PVSystem.VarFollowInverter
 ```
@@ -2056,7 +2056,7 @@ Bases: {py:obj}`altdss.DSSObj.DSSObj`, {py:obj}`altdss.CircuitElement.CircuitEle
 :canonical: altdss.PVSystem.PVSystem.WattPriority
 :type: bool
 :value: >
-   None
+   'property(...)'
 
 ```{autodoc2-docstring} altdss.PVSystem.PVSystem.WattPriority
 ```
@@ -2075,7 +2075,7 @@ Bases: {py:obj}`altdss.DSSObj.DSSObj`, {py:obj}`altdss.CircuitElement.CircuitEle
 :canonical: altdss.PVSystem.PVSystem.Yearly
 :type: altdss.LoadShape.LoadShape
 :value: >
-   None
+   'property(...)'
 
 ```{autodoc2-docstring} altdss.PVSystem.PVSystem.Yearly
 ```
@@ -2086,7 +2086,7 @@ Bases: {py:obj}`altdss.DSSObj.DSSObj`, {py:obj}`altdss.CircuitElement.CircuitEle
 :canonical: altdss.PVSystem.PVSystem.Yearly_str
 :type: str
 :value: >
-   None
+   'property(...)'
 
 ```{autodoc2-docstring} altdss.PVSystem.PVSystem.Yearly_str
 ```
@@ -2145,7 +2145,7 @@ Bases: {py:obj}`altdss.DSSObj.DSSObj`, {py:obj}`altdss.CircuitElement.CircuitEle
 :canonical: altdss.PVSystem.PVSystem.kV
 :type: float
 :value: >
-   None
+   'property(...)'
 
 ```{autodoc2-docstring} altdss.PVSystem.PVSystem.kV
 ```
@@ -2156,7 +2156,7 @@ Bases: {py:obj}`altdss.DSSObj.DSSObj`, {py:obj}`altdss.CircuitElement.CircuitEle
 :canonical: altdss.PVSystem.PVSystem.kVA
 :type: float
 :value: >
-   None
+   'property(...)'
 
 ```{autodoc2-docstring} altdss.PVSystem.PVSystem.kVA
 ```
@@ -2167,7 +2167,7 @@ Bases: {py:obj}`altdss.DSSObj.DSSObj`, {py:obj}`altdss.CircuitElement.CircuitEle
 :canonical: altdss.PVSystem.PVSystem.kVDC
 :type: float
 :value: >
-   None
+   'property(...)'
 
 ```{autodoc2-docstring} altdss.PVSystem.PVSystem.kVDC
 ```
@@ -2178,7 +2178,7 @@ Bases: {py:obj}`altdss.DSSObj.DSSObj`, {py:obj}`altdss.CircuitElement.CircuitEle
 :canonical: altdss.PVSystem.PVSystem.kvar
 :type: float
 :value: >
-   None
+   'property(...)'
 
 ```{autodoc2-docstring} altdss.PVSystem.PVSystem.kvar
 ```
@@ -2189,7 +2189,7 @@ Bases: {py:obj}`altdss.DSSObj.DSSObj`, {py:obj}`altdss.CircuitElement.CircuitEle
 :canonical: altdss.PVSystem.PVSystem.kvarMax
 :type: float
 :value: >
-   None
+   'property(...)'
 
 ```{autodoc2-docstring} altdss.PVSystem.PVSystem.kvarMax
 ```
@@ -2200,7 +2200,7 @@ Bases: {py:obj}`altdss.DSSObj.DSSObj`, {py:obj}`altdss.CircuitElement.CircuitEle
 :canonical: altdss.PVSystem.PVSystem.kvarMaxAbs
 :type: float
 :value: >
-   None
+   'property(...)'
 
 ```{autodoc2-docstring} altdss.PVSystem.PVSystem.kvarMaxAbs
 ```
@@ -2211,7 +2211,7 @@ Bases: {py:obj}`altdss.DSSObj.DSSObj`, {py:obj}`altdss.CircuitElement.CircuitEle
 :canonical: altdss.PVSystem.PVSystem.pctCutIn
 :type: float
 :value: >
-   None
+   'property(...)'
 
 ```{autodoc2-docstring} altdss.PVSystem.PVSystem.pctCutIn
 ```
@@ -2222,7 +2222,7 @@ Bases: {py:obj}`altdss.DSSObj.DSSObj`, {py:obj}`altdss.CircuitElement.CircuitEle
 :canonical: altdss.PVSystem.PVSystem.pctCutOut
 :type: float
 :value: >
-   None
+   'property(...)'
 
 ```{autodoc2-docstring} altdss.PVSystem.PVSystem.pctCutOut
 ```
@@ -2233,7 +2233,7 @@ Bases: {py:obj}`altdss.DSSObj.DSSObj`, {py:obj}`altdss.CircuitElement.CircuitEle
 :canonical: altdss.PVSystem.PVSystem.pctPMinNoVars
 :type: float
 :value: >
-   None
+   'property(...)'
 
 ```{autodoc2-docstring} altdss.PVSystem.PVSystem.pctPMinNoVars
 ```
@@ -2244,7 +2244,7 @@ Bases: {py:obj}`altdss.DSSObj.DSSObj`, {py:obj}`altdss.CircuitElement.CircuitEle
 :canonical: altdss.PVSystem.PVSystem.pctPMinkvarMax
 :type: float
 :value: >
-   None
+   'property(...)'
 
 ```{autodoc2-docstring} altdss.PVSystem.PVSystem.pctPMinkvarMax
 ```
@@ -2255,7 +2255,7 @@ Bases: {py:obj}`altdss.DSSObj.DSSObj`, {py:obj}`altdss.CircuitElement.CircuitEle
 :canonical: altdss.PVSystem.PVSystem.pctPmpp
 :type: float
 :value: >
-   None
+   'property(...)'
 
 ```{autodoc2-docstring} altdss.PVSystem.PVSystem.pctPmpp
 ```
@@ -2266,7 +2266,7 @@ Bases: {py:obj}`altdss.DSSObj.DSSObj`, {py:obj}`altdss.CircuitElement.CircuitEle
 :canonical: altdss.PVSystem.PVSystem.pctR
 :type: float
 :value: >
-   None
+   'property(...)'
 
 ```{autodoc2-docstring} altdss.PVSystem.PVSystem.pctR
 ```
@@ -2277,7 +2277,7 @@ Bases: {py:obj}`altdss.DSSObj.DSSObj`, {py:obj}`altdss.CircuitElement.CircuitEle
 :canonical: altdss.PVSystem.PVSystem.pctX
 :type: float
 :value: >
-   None
+   'property(...)'
 
 ```{autodoc2-docstring} altdss.PVSystem.PVSystem.pctX
 ```
@@ -2306,7 +2306,7 @@ Bases: {py:obj}`altdss.Batch.DSSBatch`, {py:obj}`altdss.CircuitElement.CircuitEl
 :canonical: altdss.PVSystem.PVSystemBatch.AmpLimit
 :type: altdss.ArrayProxy.BatchFloat64ArrayProxy
 :value: >
-   None
+   'property(...)'
 
 ```{autodoc2-docstring} altdss.PVSystem.PVSystemBatch.AmpLimit
 ```
@@ -2317,7 +2317,7 @@ Bases: {py:obj}`altdss.Batch.DSSBatch`, {py:obj}`altdss.CircuitElement.CircuitEl
 :canonical: altdss.PVSystem.PVSystemBatch.AmpLimitGain
 :type: altdss.ArrayProxy.BatchFloat64ArrayProxy
 :value: >
-   None
+   'property(...)'
 
 ```{autodoc2-docstring} altdss.PVSystem.PVSystemBatch.AmpLimitGain
 ```
@@ -2328,7 +2328,7 @@ Bases: {py:obj}`altdss.Batch.DSSBatch`, {py:obj}`altdss.CircuitElement.CircuitEl
 :canonical: altdss.PVSystem.PVSystemBatch.Balanced
 :type: typing.List[bool]
 :value: >
-   None
+   'property(...)'
 
 ```{autodoc2-docstring} altdss.PVSystem.PVSystemBatch.Balanced
 ```
@@ -2339,7 +2339,7 @@ Bases: {py:obj}`altdss.Batch.DSSBatch`, {py:obj}`altdss.CircuitElement.CircuitEl
 :canonical: altdss.PVSystem.PVSystemBatch.BaseFreq
 :type: altdss.ArrayProxy.BatchFloat64ArrayProxy
 :value: >
-   None
+   'property(...)'
 
 ```{autodoc2-docstring} altdss.PVSystem.PVSystemBatch.BaseFreq
 ```
@@ -2350,7 +2350,7 @@ Bases: {py:obj}`altdss.Batch.DSSBatch`, {py:obj}`altdss.CircuitElement.CircuitEl
 :canonical: altdss.PVSystem.PVSystemBatch.Bus1
 :type: typing.List[str]
 :value: >
-   None
+   'property(...)'
 
 ```{autodoc2-docstring} altdss.PVSystem.PVSystemBatch.Bus1
 ```
@@ -2361,7 +2361,7 @@ Bases: {py:obj}`altdss.Batch.DSSBatch`, {py:obj}`altdss.CircuitElement.CircuitEl
 :canonical: altdss.PVSystem.PVSystemBatch.Class
 :type: altdss.ArrayProxy.BatchInt32ArrayProxy
 :value: >
-   None
+   'property(...)'
 
 ```{autodoc2-docstring} altdss.PVSystem.PVSystemBatch.Class
 ```
@@ -2388,7 +2388,7 @@ Bases: {py:obj}`altdss.Batch.DSSBatch`, {py:obj}`altdss.CircuitElement.CircuitEl
 :canonical: altdss.PVSystem.PVSystemBatch.Conn
 :type: altdss.ArrayProxy.BatchInt32ArrayProxy
 :value: >
-   None
+   'property(...)'
 
 ```{autodoc2-docstring} altdss.PVSystem.PVSystemBatch.Conn
 ```
@@ -2399,7 +2399,7 @@ Bases: {py:obj}`altdss.Batch.DSSBatch`, {py:obj}`altdss.CircuitElement.CircuitEl
 :canonical: altdss.PVSystem.PVSystemBatch.Conn_str
 :type: typing.List[str]
 :value: >
-   None
+   'property(...)'
 
 ```{autodoc2-docstring} altdss.PVSystem.PVSystemBatch.Conn_str
 ```
@@ -2410,7 +2410,7 @@ Bases: {py:obj}`altdss.Batch.DSSBatch`, {py:obj}`altdss.CircuitElement.CircuitEl
 :canonical: altdss.PVSystem.PVSystemBatch.ControlMode
 :type: altdss.ArrayProxy.BatchInt32ArrayProxy
 :value: >
-   None
+   'property(...)'
 
 ```{autodoc2-docstring} altdss.PVSystem.PVSystemBatch.ControlMode
 ```
@@ -2421,7 +2421,7 @@ Bases: {py:obj}`altdss.Batch.DSSBatch`, {py:obj}`altdss.CircuitElement.CircuitEl
 :canonical: altdss.PVSystem.PVSystemBatch.ControlMode_str
 :type: typing.List[str]
 :value: >
-   None
+   'property(...)'
 
 ```{autodoc2-docstring} altdss.PVSystem.PVSystemBatch.ControlMode_str
 ```
@@ -2448,7 +2448,7 @@ Bases: {py:obj}`altdss.Batch.DSSBatch`, {py:obj}`altdss.CircuitElement.CircuitEl
 :canonical: altdss.PVSystem.PVSystemBatch.Daily
 :type: typing.List[altdss.LoadShape.LoadShape]
 :value: >
-   None
+   'property(...)'
 
 ```{autodoc2-docstring} altdss.PVSystem.PVSystemBatch.Daily
 ```
@@ -2459,7 +2459,7 @@ Bases: {py:obj}`altdss.Batch.DSSBatch`, {py:obj}`altdss.CircuitElement.CircuitEl
 :canonical: altdss.PVSystem.PVSystemBatch.Daily_str
 :type: typing.List[str]
 :value: >
-   None
+   'property(...)'
 
 ```{autodoc2-docstring} altdss.PVSystem.PVSystemBatch.Daily_str
 ```
@@ -2470,7 +2470,7 @@ Bases: {py:obj}`altdss.Batch.DSSBatch`, {py:obj}`altdss.CircuitElement.CircuitEl
 :canonical: altdss.PVSystem.PVSystemBatch.DebugTrace
 :type: typing.List[bool]
 :value: >
-   None
+   'property(...)'
 
 ```{autodoc2-docstring} altdss.PVSystem.PVSystemBatch.DebugTrace
 ```
@@ -2481,7 +2481,7 @@ Bases: {py:obj}`altdss.Batch.DSSBatch`, {py:obj}`altdss.CircuitElement.CircuitEl
 :canonical: altdss.PVSystem.PVSystemBatch.Duty
 :type: typing.List[altdss.LoadShape.LoadShape]
 :value: >
-   None
+   'property(...)'
 
 ```{autodoc2-docstring} altdss.PVSystem.PVSystemBatch.Duty
 ```
@@ -2492,7 +2492,7 @@ Bases: {py:obj}`altdss.Batch.DSSBatch`, {py:obj}`altdss.CircuitElement.CircuitEl
 :canonical: altdss.PVSystem.PVSystemBatch.DutyStart
 :type: altdss.ArrayProxy.BatchFloat64ArrayProxy
 :value: >
-   None
+   'property(...)'
 
 ```{autodoc2-docstring} altdss.PVSystem.PVSystemBatch.DutyStart
 ```
@@ -2503,7 +2503,7 @@ Bases: {py:obj}`altdss.Batch.DSSBatch`, {py:obj}`altdss.CircuitElement.CircuitEl
 :canonical: altdss.PVSystem.PVSystemBatch.Duty_str
 :type: typing.List[str]
 :value: >
-   None
+   'property(...)'
 
 ```{autodoc2-docstring} altdss.PVSystem.PVSystemBatch.Duty_str
 ```
@@ -2514,7 +2514,7 @@ Bases: {py:obj}`altdss.Batch.DSSBatch`, {py:obj}`altdss.CircuitElement.CircuitEl
 :canonical: altdss.PVSystem.PVSystemBatch.DynOut
 :type: typing.List[typing.List[str]]
 :value: >
-   None
+   'property(...)'
 
 ```{autodoc2-docstring} altdss.PVSystem.PVSystemBatch.DynOut
 ```
@@ -2525,7 +2525,7 @@ Bases: {py:obj}`altdss.Batch.DSSBatch`, {py:obj}`altdss.CircuitElement.CircuitEl
 :canonical: altdss.PVSystem.PVSystemBatch.DynamicEq
 :type: typing.List[altdss.DynamicExp.DynamicExp]
 :value: >
-   None
+   'property(...)'
 
 ```{autodoc2-docstring} altdss.PVSystem.PVSystemBatch.DynamicEq
 ```
@@ -2536,7 +2536,7 @@ Bases: {py:obj}`altdss.Batch.DSSBatch`, {py:obj}`altdss.CircuitElement.CircuitEl
 :canonical: altdss.PVSystem.PVSystemBatch.DynamicEq_str
 :type: typing.List[str]
 :value: >
-   None
+   'property(...)'
 
 ```{autodoc2-docstring} altdss.PVSystem.PVSystemBatch.DynamicEq_str
 ```
@@ -2547,7 +2547,7 @@ Bases: {py:obj}`altdss.Batch.DSSBatch`, {py:obj}`altdss.CircuitElement.CircuitEl
 :canonical: altdss.PVSystem.PVSystemBatch.EffCurve
 :type: typing.List[altdss.XYcurve.XYcurve]
 :value: >
-   None
+   'property(...)'
 
 ```{autodoc2-docstring} altdss.PVSystem.PVSystemBatch.EffCurve
 ```
@@ -2558,7 +2558,7 @@ Bases: {py:obj}`altdss.Batch.DSSBatch`, {py:obj}`altdss.CircuitElement.CircuitEl
 :canonical: altdss.PVSystem.PVSystemBatch.EffCurve_str
 :type: typing.List[str]
 :value: >
-   None
+   'property(...)'
 
 ```{autodoc2-docstring} altdss.PVSystem.PVSystemBatch.EffCurve_str
 ```
@@ -2569,7 +2569,7 @@ Bases: {py:obj}`altdss.Batch.DSSBatch`, {py:obj}`altdss.CircuitElement.CircuitEl
 :canonical: altdss.PVSystem.PVSystemBatch.Enabled
 :type: typing.List[bool]
 :value: >
-   None
+   'property(...)'
 
 ```{autodoc2-docstring} altdss.PVSystem.PVSystemBatch.Enabled
 ```
@@ -2644,7 +2644,7 @@ Bases: {py:obj}`altdss.Batch.DSSBatch`, {py:obj}`altdss.CircuitElement.CircuitEl
 :canonical: altdss.PVSystem.PVSystemBatch.Irradiance
 :type: altdss.ArrayProxy.BatchFloat64ArrayProxy
 :value: >
-   None
+   'property(...)'
 
 ```{autodoc2-docstring} altdss.PVSystem.PVSystemBatch.Irradiance
 ```
@@ -2663,7 +2663,7 @@ Bases: {py:obj}`altdss.Batch.DSSBatch`, {py:obj}`altdss.CircuitElement.CircuitEl
 :canonical: altdss.PVSystem.PVSystemBatch.Kp
 :type: altdss.ArrayProxy.BatchFloat64ArrayProxy
 :value: >
-   None
+   'property(...)'
 
 ```{autodoc2-docstring} altdss.PVSystem.PVSystemBatch.Kp
 ```
@@ -2682,7 +2682,7 @@ Bases: {py:obj}`altdss.Batch.DSSBatch`, {py:obj}`altdss.CircuitElement.CircuitEl
 :canonical: altdss.PVSystem.PVSystemBatch.LimitCurrent
 :type: typing.List[bool]
 :value: >
-   None
+   'property(...)'
 
 ```{autodoc2-docstring} altdss.PVSystem.PVSystemBatch.LimitCurrent
 ```
@@ -2709,7 +2709,7 @@ Bases: {py:obj}`altdss.Batch.DSSBatch`, {py:obj}`altdss.CircuitElement.CircuitEl
 :canonical: altdss.PVSystem.PVSystemBatch.Model
 :type: altdss.ArrayProxy.BatchInt32ArrayProxy
 :value: >
-   None
+   'property(...)'
 
 ```{autodoc2-docstring} altdss.PVSystem.PVSystemBatch.Model
 ```
@@ -2785,7 +2785,7 @@ Bases: {py:obj}`altdss.Batch.DSSBatch`, {py:obj}`altdss.CircuitElement.CircuitEl
 :canonical: altdss.PVSystem.PVSystemBatch.PF
 :type: altdss.ArrayProxy.BatchFloat64ArrayProxy
 :value: >
-   None
+   'property(...)'
 
 ```{autodoc2-docstring} altdss.PVSystem.PVSystemBatch.PF
 ```
@@ -2796,7 +2796,7 @@ Bases: {py:obj}`altdss.Batch.DSSBatch`, {py:obj}`altdss.CircuitElement.CircuitEl
 :canonical: altdss.PVSystem.PVSystemBatch.PFPriority
 :type: typing.List[bool]
 :value: >
-   None
+   'property(...)'
 
 ```{autodoc2-docstring} altdss.PVSystem.PVSystemBatch.PFPriority
 ```
@@ -2807,7 +2807,7 @@ Bases: {py:obj}`altdss.Batch.DSSBatch`, {py:obj}`altdss.CircuitElement.CircuitEl
 :canonical: altdss.PVSystem.PVSystemBatch.PITol
 :type: altdss.ArrayProxy.BatchFloat64ArrayProxy
 :value: >
-   None
+   'property(...)'
 
 ```{autodoc2-docstring} altdss.PVSystem.PVSystemBatch.PITol
 ```
@@ -2818,7 +2818,7 @@ Bases: {py:obj}`altdss.Batch.DSSBatch`, {py:obj}`altdss.CircuitElement.CircuitEl
 :canonical: altdss.PVSystem.PVSystemBatch.PTCurve
 :type: typing.List[altdss.XYcurve.XYcurve]
 :value: >
-   None
+   'property(...)'
 
 ```{autodoc2-docstring} altdss.PVSystem.PVSystemBatch.PTCurve
 ```
@@ -2829,7 +2829,7 @@ Bases: {py:obj}`altdss.Batch.DSSBatch`, {py:obj}`altdss.CircuitElement.CircuitEl
 :canonical: altdss.PVSystem.PVSystemBatch.PTCurve_str
 :type: typing.List[str]
 :value: >
-   None
+   'property(...)'
 
 ```{autodoc2-docstring} altdss.PVSystem.PVSystemBatch.PTCurve_str
 ```
@@ -2848,7 +2848,7 @@ Bases: {py:obj}`altdss.Batch.DSSBatch`, {py:obj}`altdss.CircuitElement.CircuitEl
 :canonical: altdss.PVSystem.PVSystemBatch.Phases
 :type: altdss.ArrayProxy.BatchInt32ArrayProxy
 :value: >
-   None
+   'property(...)'
 
 ```{autodoc2-docstring} altdss.PVSystem.PVSystemBatch.Phases
 ```
@@ -2859,7 +2859,7 @@ Bases: {py:obj}`altdss.Batch.DSSBatch`, {py:obj}`altdss.CircuitElement.CircuitEl
 :canonical: altdss.PVSystem.PVSystemBatch.Pmpp
 :type: altdss.ArrayProxy.BatchFloat64ArrayProxy
 :value: >
-   None
+   'property(...)'
 
 ```{autodoc2-docstring} altdss.PVSystem.PVSystemBatch.Pmpp
 ```
@@ -2878,7 +2878,7 @@ Bases: {py:obj}`altdss.Batch.DSSBatch`, {py:obj}`altdss.CircuitElement.CircuitEl
 :canonical: altdss.PVSystem.PVSystemBatch.SafeMode
 :type: typing.List[bool]
 :value: >
-   None
+   'property(...)'
 
 ```{autodoc2-docstring} altdss.PVSystem.PVSystemBatch.SafeMode
 ```
@@ -2889,7 +2889,7 @@ Bases: {py:obj}`altdss.Batch.DSSBatch`, {py:obj}`altdss.CircuitElement.CircuitEl
 :canonical: altdss.PVSystem.PVSystemBatch.SafeVoltage
 :type: altdss.ArrayProxy.BatchFloat64ArrayProxy
 :value: >
-   None
+   'property(...)'
 
 ```{autodoc2-docstring} altdss.PVSystem.PVSystemBatch.SafeVoltage
 ```
@@ -2924,7 +2924,7 @@ Bases: {py:obj}`altdss.Batch.DSSBatch`, {py:obj}`altdss.CircuitElement.CircuitEl
 :canonical: altdss.PVSystem.PVSystemBatch.Spectrum
 :type: typing.List[altdss.Spectrum.Spectrum]
 :value: >
-   None
+   'property(...)'
 
 ```{autodoc2-docstring} altdss.PVSystem.PVSystemBatch.Spectrum
 ```
@@ -2935,7 +2935,7 @@ Bases: {py:obj}`altdss.Batch.DSSBatch`, {py:obj}`altdss.CircuitElement.CircuitEl
 :canonical: altdss.PVSystem.PVSystemBatch.Spectrum_str
 :type: typing.List[str]
 :value: >
-   None
+   'property(...)'
 
 ```{autodoc2-docstring} altdss.PVSystem.PVSystemBatch.Spectrum_str
 ```
@@ -2946,7 +2946,7 @@ Bases: {py:obj}`altdss.Batch.DSSBatch`, {py:obj}`altdss.CircuitElement.CircuitEl
 :canonical: altdss.PVSystem.PVSystemBatch.TDaily
 :type: typing.List[altdss.TShape.TShape]
 :value: >
-   None
+   'property(...)'
 
 ```{autodoc2-docstring} altdss.PVSystem.PVSystemBatch.TDaily
 ```
@@ -2957,7 +2957,7 @@ Bases: {py:obj}`altdss.Batch.DSSBatch`, {py:obj}`altdss.CircuitElement.CircuitEl
 :canonical: altdss.PVSystem.PVSystemBatch.TDaily_str
 :type: typing.List[str]
 :value: >
-   None
+   'property(...)'
 
 ```{autodoc2-docstring} altdss.PVSystem.PVSystemBatch.TDaily_str
 ```
@@ -2968,7 +2968,7 @@ Bases: {py:obj}`altdss.Batch.DSSBatch`, {py:obj}`altdss.CircuitElement.CircuitEl
 :canonical: altdss.PVSystem.PVSystemBatch.TDuty
 :type: typing.List[altdss.TShape.TShape]
 :value: >
-   None
+   'property(...)'
 
 ```{autodoc2-docstring} altdss.PVSystem.PVSystemBatch.TDuty
 ```
@@ -2979,7 +2979,7 @@ Bases: {py:obj}`altdss.Batch.DSSBatch`, {py:obj}`altdss.CircuitElement.CircuitEl
 :canonical: altdss.PVSystem.PVSystemBatch.TDuty_str
 :type: typing.List[str]
 :value: >
-   None
+   'property(...)'
 
 ```{autodoc2-docstring} altdss.PVSystem.PVSystemBatch.TDuty_str
 ```
@@ -2990,7 +2990,7 @@ Bases: {py:obj}`altdss.Batch.DSSBatch`, {py:obj}`altdss.CircuitElement.CircuitEl
 :canonical: altdss.PVSystem.PVSystemBatch.TYearly
 :type: typing.List[altdss.TShape.TShape]
 :value: >
-   None
+   'property(...)'
 
 ```{autodoc2-docstring} altdss.PVSystem.PVSystemBatch.TYearly
 ```
@@ -3001,7 +3001,7 @@ Bases: {py:obj}`altdss.Batch.DSSBatch`, {py:obj}`altdss.CircuitElement.CircuitEl
 :canonical: altdss.PVSystem.PVSystemBatch.TYearly_str
 :type: typing.List[str]
 :value: >
-   None
+   'property(...)'
 
 ```{autodoc2-docstring} altdss.PVSystem.PVSystemBatch.TYearly_str
 ```
@@ -3012,7 +3012,7 @@ Bases: {py:obj}`altdss.Batch.DSSBatch`, {py:obj}`altdss.CircuitElement.CircuitEl
 :canonical: altdss.PVSystem.PVSystemBatch.Temperature
 :type: altdss.ArrayProxy.BatchFloat64ArrayProxy
 :value: >
-   None
+   'property(...)'
 
 ```{autodoc2-docstring} altdss.PVSystem.PVSystemBatch.Temperature
 ```
@@ -3031,7 +3031,7 @@ Bases: {py:obj}`altdss.Batch.DSSBatch`, {py:obj}`altdss.CircuitElement.CircuitEl
 :canonical: altdss.PVSystem.PVSystemBatch.UserData
 :type: typing.List[str]
 :value: >
-   None
+   'property(...)'
 
 ```{autodoc2-docstring} altdss.PVSystem.PVSystemBatch.UserData
 ```
@@ -3042,7 +3042,7 @@ Bases: {py:obj}`altdss.Batch.DSSBatch`, {py:obj}`altdss.CircuitElement.CircuitEl
 :canonical: altdss.PVSystem.PVSystemBatch.UserModel
 :type: typing.List[str]
 :value: >
-   None
+   'property(...)'
 
 ```{autodoc2-docstring} altdss.PVSystem.PVSystemBatch.UserModel
 ```
@@ -3053,7 +3053,7 @@ Bases: {py:obj}`altdss.Batch.DSSBatch`, {py:obj}`altdss.CircuitElement.CircuitEl
 :canonical: altdss.PVSystem.PVSystemBatch.VMaxpu
 :type: altdss.ArrayProxy.BatchFloat64ArrayProxy
 :value: >
-   None
+   'property(...)'
 
 ```{autodoc2-docstring} altdss.PVSystem.PVSystemBatch.VMaxpu
 ```
@@ -3064,7 +3064,7 @@ Bases: {py:obj}`altdss.Batch.DSSBatch`, {py:obj}`altdss.CircuitElement.CircuitEl
 :canonical: altdss.PVSystem.PVSystemBatch.VMinpu
 :type: altdss.ArrayProxy.BatchFloat64ArrayProxy
 :value: >
-   None
+   'property(...)'
 
 ```{autodoc2-docstring} altdss.PVSystem.PVSystemBatch.VMinpu
 ```
@@ -3075,7 +3075,7 @@ Bases: {py:obj}`altdss.Batch.DSSBatch`, {py:obj}`altdss.CircuitElement.CircuitEl
 :canonical: altdss.PVSystem.PVSystemBatch.VarFollowInverter
 :type: typing.List[bool]
 :value: >
-   None
+   'property(...)'
 
 ```{autodoc2-docstring} altdss.PVSystem.PVSystemBatch.VarFollowInverter
 ```
@@ -3102,7 +3102,7 @@ Bases: {py:obj}`altdss.Batch.DSSBatch`, {py:obj}`altdss.CircuitElement.CircuitEl
 :canonical: altdss.PVSystem.PVSystemBatch.WattPriority
 :type: typing.List[bool]
 :value: >
-   None
+   'property(...)'
 
 ```{autodoc2-docstring} altdss.PVSystem.PVSystemBatch.WattPriority
 ```
@@ -3113,7 +3113,7 @@ Bases: {py:obj}`altdss.Batch.DSSBatch`, {py:obj}`altdss.CircuitElement.CircuitEl
 :canonical: altdss.PVSystem.PVSystemBatch.Yearly
 :type: typing.List[altdss.LoadShape.LoadShape]
 :value: >
-   None
+   'property(...)'
 
 ```{autodoc2-docstring} altdss.PVSystem.PVSystemBatch.Yearly
 ```
@@ -3124,7 +3124,7 @@ Bases: {py:obj}`altdss.Batch.DSSBatch`, {py:obj}`altdss.CircuitElement.CircuitEl
 :canonical: altdss.PVSystem.PVSystemBatch.Yearly_str
 :type: typing.List[str]
 :value: >
-   None
+   'property(...)'
 
 ```{autodoc2-docstring} altdss.PVSystem.PVSystemBatch.Yearly_str
 ```
@@ -3191,7 +3191,7 @@ Bases: {py:obj}`altdss.Batch.DSSBatch`, {py:obj}`altdss.CircuitElement.CircuitEl
 :canonical: altdss.PVSystem.PVSystemBatch.kV
 :type: altdss.ArrayProxy.BatchFloat64ArrayProxy
 :value: >
-   None
+   'property(...)'
 
 ```{autodoc2-docstring} altdss.PVSystem.PVSystemBatch.kV
 ```
@@ -3202,7 +3202,7 @@ Bases: {py:obj}`altdss.Batch.DSSBatch`, {py:obj}`altdss.CircuitElement.CircuitEl
 :canonical: altdss.PVSystem.PVSystemBatch.kVA
 :type: altdss.ArrayProxy.BatchFloat64ArrayProxy
 :value: >
-   None
+   'property(...)'
 
 ```{autodoc2-docstring} altdss.PVSystem.PVSystemBatch.kVA
 ```
@@ -3213,7 +3213,7 @@ Bases: {py:obj}`altdss.Batch.DSSBatch`, {py:obj}`altdss.CircuitElement.CircuitEl
 :canonical: altdss.PVSystem.PVSystemBatch.kVDC
 :type: altdss.ArrayProxy.BatchFloat64ArrayProxy
 :value: >
-   None
+   'property(...)'
 
 ```{autodoc2-docstring} altdss.PVSystem.PVSystemBatch.kVDC
 ```
@@ -3224,7 +3224,7 @@ Bases: {py:obj}`altdss.Batch.DSSBatch`, {py:obj}`altdss.CircuitElement.CircuitEl
 :canonical: altdss.PVSystem.PVSystemBatch.kvar
 :type: altdss.ArrayProxy.BatchFloat64ArrayProxy
 :value: >
-   None
+   'property(...)'
 
 ```{autodoc2-docstring} altdss.PVSystem.PVSystemBatch.kvar
 ```
@@ -3235,7 +3235,7 @@ Bases: {py:obj}`altdss.Batch.DSSBatch`, {py:obj}`altdss.CircuitElement.CircuitEl
 :canonical: altdss.PVSystem.PVSystemBatch.kvarMax
 :type: altdss.ArrayProxy.BatchFloat64ArrayProxy
 :value: >
-   None
+   'property(...)'
 
 ```{autodoc2-docstring} altdss.PVSystem.PVSystemBatch.kvarMax
 ```
@@ -3246,7 +3246,7 @@ Bases: {py:obj}`altdss.Batch.DSSBatch`, {py:obj}`altdss.CircuitElement.CircuitEl
 :canonical: altdss.PVSystem.PVSystemBatch.kvarMaxAbs
 :type: altdss.ArrayProxy.BatchFloat64ArrayProxy
 :value: >
-   None
+   'property(...)'
 
 ```{autodoc2-docstring} altdss.PVSystem.PVSystemBatch.kvarMaxAbs
 ```
@@ -3257,7 +3257,7 @@ Bases: {py:obj}`altdss.Batch.DSSBatch`, {py:obj}`altdss.CircuitElement.CircuitEl
 :canonical: altdss.PVSystem.PVSystemBatch.pctCutIn
 :type: altdss.ArrayProxy.BatchFloat64ArrayProxy
 :value: >
-   None
+   'property(...)'
 
 ```{autodoc2-docstring} altdss.PVSystem.PVSystemBatch.pctCutIn
 ```
@@ -3268,7 +3268,7 @@ Bases: {py:obj}`altdss.Batch.DSSBatch`, {py:obj}`altdss.CircuitElement.CircuitEl
 :canonical: altdss.PVSystem.PVSystemBatch.pctCutOut
 :type: altdss.ArrayProxy.BatchFloat64ArrayProxy
 :value: >
-   None
+   'property(...)'
 
 ```{autodoc2-docstring} altdss.PVSystem.PVSystemBatch.pctCutOut
 ```
@@ -3279,7 +3279,7 @@ Bases: {py:obj}`altdss.Batch.DSSBatch`, {py:obj}`altdss.CircuitElement.CircuitEl
 :canonical: altdss.PVSystem.PVSystemBatch.pctPMinNoVars
 :type: altdss.ArrayProxy.BatchFloat64ArrayProxy
 :value: >
-   None
+   'property(...)'
 
 ```{autodoc2-docstring} altdss.PVSystem.PVSystemBatch.pctPMinNoVars
 ```
@@ -3290,7 +3290,7 @@ Bases: {py:obj}`altdss.Batch.DSSBatch`, {py:obj}`altdss.CircuitElement.CircuitEl
 :canonical: altdss.PVSystem.PVSystemBatch.pctPMinkvarMax
 :type: altdss.ArrayProxy.BatchFloat64ArrayProxy
 :value: >
-   None
+   'property(...)'
 
 ```{autodoc2-docstring} altdss.PVSystem.PVSystemBatch.pctPMinkvarMax
 ```
@@ -3301,7 +3301,7 @@ Bases: {py:obj}`altdss.Batch.DSSBatch`, {py:obj}`altdss.CircuitElement.CircuitEl
 :canonical: altdss.PVSystem.PVSystemBatch.pctPmpp
 :type: altdss.ArrayProxy.BatchFloat64ArrayProxy
 :value: >
-   None
+   'property(...)'
 
 ```{autodoc2-docstring} altdss.PVSystem.PVSystemBatch.pctPmpp
 ```
@@ -3312,7 +3312,7 @@ Bases: {py:obj}`altdss.Batch.DSSBatch`, {py:obj}`altdss.CircuitElement.CircuitEl
 :canonical: altdss.PVSystem.PVSystemBatch.pctR
 :type: altdss.ArrayProxy.BatchFloat64ArrayProxy
 :value: >
-   None
+   'property(...)'
 
 ```{autodoc2-docstring} altdss.PVSystem.PVSystemBatch.pctR
 ```
@@ -3323,7 +3323,7 @@ Bases: {py:obj}`altdss.Batch.DSSBatch`, {py:obj}`altdss.CircuitElement.CircuitEl
 :canonical: altdss.PVSystem.PVSystemBatch.pctX
 :type: altdss.ArrayProxy.BatchFloat64ArrayProxy
 :value: >
-   None
+   'property(...)'
 
 ```{autodoc2-docstring} altdss.PVSystem.PVSystemBatch.pctX
 ```

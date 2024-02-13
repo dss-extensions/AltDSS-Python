@@ -6,9 +6,9 @@
 
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.19: https://docutils.sourceforge.io/" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
-    <title>AltDSS-Python &#8212; AltDSS-Python 0.1.0 documentation</title>
+    <title>AltDSS-Python &#8212; AltDSS-Python 0.1.2 documentation</title>
   
   
   
@@ -28,7 +28,7 @@
 <link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.5.1/webfonts/fa-brands-400.woff2" />
 <link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.5.1/webfonts/fa-regular-400.woff2" />
 
-    <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=362ab14a" />
+    <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=a746c00c" />
     <link rel="stylesheet" type="text/css" href="_static/styles/sphinx-book-theme.css?v=384b581d" />
     <link rel="stylesheet" type="text/css" href="_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
     <link rel="stylesheet" type="text/css" href="_static/design-style.1e8bd061cd6da7fc9cf755528e8ffc24.min.css?v=0a3b3ea7" />
@@ -38,7 +38,7 @@
 <link rel="preload" as="script" href="_static/scripts/pydata-sphinx-theme.js?digest=8d27b9dea8ad943066ae" />
   <script src="_static/vendor/fontawesome/6.5.1/js/all.min.js?digest=8d27b9dea8ad943066ae"></script>
 
-    <script src="_static/documentation_options.js?v=a1637f0b"></script>
+    <script src="_static/documentation_options.js?v=0deb7d70"></script>
     <script src="_static/doctools.js?v=888ff710"></script>
     <script src="_static/sphinx_highlight.js?v=dc90522c"></script>
     <script src="_static/scripts/sphinx-book-theme.js?v=efea14e4"></script>
@@ -140,8 +140,8 @@
       
     
     
-    <img src="_static/altdss-python.svg" class="logo__image only-light" alt="AltDSS-Python 0.1.0 documentation - Home"/>
-    <script>document.write(`<img src="_static/altdss-python-dark.svg" class="logo__image only-dark" alt="AltDSS-Python 0.1.0 documentation - Home"/>`);</script>
+    <img src="_static/altdss-python.svg" class="logo__image only-light" alt="AltDSS-Python 0.1.2 documentation - Home"/>
+    <script>document.write(`<img src="_static/altdss-python-dark.svg" class="logo__image only-dark" alt="AltDSS-Python 0.1.2 documentation - Home"/>`);</script>
   
   
 </a></div>
@@ -250,12 +250,12 @@
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">External links</span></p>
 <ul class="nav bd-sidenav">
-<li class="toctree-l1"><a class="reference external" href="https://github.com/dss-extensions/dss_python">GitHub repository</a></li>
-<li class="toctree-l1"><a class="reference external" href="https://pypi.python.org/pypi/OpenDSSDirect.py/">Package on PyPI</a></li>
+<li class="toctree-l1"><a class="reference external" href="https://github.com/dss-extensions/AltDSS-Python">GitHub repository</a></li>
+<li class="toctree-l1"><a class="reference external" href="https://pypi.python.org/pypi/altdss/">Package on PyPI</a></li>
 <li class="toctree-l1"><a class="reference external" href="https://github.com/dss-extensions/electricdss-tst">Test/example circuits</a></li>
 
 <li class="toctree-l1"><a class="reference external" href="https://dss-extensions.org/OpenDSSDirect.py">OpenDSSDirect.py</a></li>
-<li class="toctree-l1"><a class="reference external" href="https://dss-extensions.org/dss_python/">DSS-Python</a></li>
+<li class="toctree-l1"><a class="reference external" href="https://dss-extensions.org/DSS-Python/">DSS-Python</a></li>
 <li class="toctree-l1"><a class="reference external" href="https://github.com/orgs/dss-extensions/discussions">DSS-Extensions Discussions</a></li>
 <li class="toctree-l1"><a class="reference external" href="https://sourceforge.net/p/electricdss/discussion/">OpenDSS forum</a></li>
 <li class="toctree-l1"><a class="reference external" href="https://opendss.epri.com/opendss_documentation.html">OpenDSS documentation</a></li>
@@ -438,12 +438,12 @@ document.write(`
 <div class="mermaid">
             flowchart TD
     C[&quot;AltDSS engine/DSS C-API\n(libdss_capi)&quot;] --&gt; P[&quot;DSS-Python: Backend&quot;]
-    P --- DSSPY[&quot;&lt;a href='https://dss-extensions.org/dss_python/'&gt;DSS-Python\n(dss package)&lt;/a&gt;&quot;]
+    P --- DSSPY[&quot;&lt;a href='https://dss-extensions.org/DSS-Python/'&gt;DSS-Python\n(dss package)&lt;/a&gt;&quot;]
     P --- ODDPY[&quot;&lt;a href='https://dss-extensions.org/opendssdirect.py'&gt;OpenDSSDirect.py\n(opendssdirect package)&lt;/a&gt;&quot;]
     P --- ALTDSSPY[&quot;AltDSS-Python\n(altdss package)&quot;]
         </div></center>
-<p>AltDSS-Python is one of three Python projects under DSS-Extensions. See <a class="reference external" href="https://dss-extensions.org/python_apis.html">DSS-Extensions — OpenDSS: Overview of Python APIs</a> for a brief comparison between these and the official COM API. Both OpenDSSDirect.py and DSS-Python expose the classic OpenDSS API (closer to the COM implementation), including most of its limitations. AltDSS-Python, on the other hand, exposes all OpenDSS objects, batch operations, and a more intuitive API. If required, users can mix all three packages in the same project to access some of their unique features, or just to avoid changing legacy/stable code.</p>
-<p>Since the base code is share, other features from <a class="reference external" href="https://dss-extensions.org/dss_python/examples/Plotting.html">DSS-Python such as plotting</a> can be used here. Other examples from DSS-Python or OpenDSSDirect.py can be adapted quite easily too.</p>
+<p>AltDSS-Python is one of three Python projects under DSS-Extensions. See <a class="reference external" href="https://dss-extensions.org/python_apis.html">DSS-Extensions — OpenDSS: Overview of Python APIs</a> for a brief comparison between these and the official COM API. Both OpenDSSDirect.py and DSS-Python expose the classic OpenDSS API (closer to the COM implementation). AltDSS-Python, on the other hand, exposes all OpenDSS objects, batch operations, and a more intuitive API. If required, users can mix all three packages in the same project to access some of their unique features, or just to avoid changing legacy/stable code.</p>
+<p>Since the base code is shared, other features from <a class="reference external" href="https://dss-extensions.org/DSS-Python/examples/Plotting.html">DSS-Python such as plotting</a> can be used here. Other examples from DSS-Python or OpenDSSDirect.py can be adapted quite easily too.</p>
 <section id="what-is-altdss">
 <h2>What is AltDSS?<a class="headerlink" href="#what-is-altdss" title="Link to this heading">#</a></h2>
 <p>To avoid confusion between the official OpenDSS provided by EPRI and the alternative, unofficial implementation provided by the DSS-Extensions group of projects, our implementation of the OpenDSS engine, exposed as a software library (e.g. DLL or shared object), will be slowly renamed to AltDSS engine. The classic parts of our DSS C-API is still in place and will remain for usage in DSS-Python and OpenDSSDirect.py.</p>
@@ -481,7 +481,7 @@ document.write(`
 <section id="why-a-new-package">
 <h2>Why a new package?<a class="headerlink" href="#why-a-new-package" title="Link to this heading">#</a></h2>
 <p>Besides the naming issue, although both DSS-Python and OpenDSSDirect.py acquired features since 2018, when DSS-Extensions was born, adding a lot of the features from AltDSS would break compatibility in a major way. Initially, more Pythonic and extra features were expected to land on OpenDSSDirect.py. Looking into the list of publications and public repositories using both packages suggests that breaking the API to introduce features is not advisable.</p>
-<p>Moreover, many users still see OpenDSSDirect.py and think that it uses OpenDSSDirect.DLL. That is not the case, and even when it was (before August 2018), the Linux and macOS builds of OpenDSS were not supported by EPRI, the original OpenDSS developer. Effectively, OpenDSSDirect.py (OpenDSSDirect.jl is in a similar situation) never used an official binary on non-Windows platforms, since there is not as of February 2024.</p>
+<p>Moreover, many users still see OpenDSSDirect.py and think that it uses OpenDSSDirect.DLL. That is not the case, and even when it was (before August 2018), the Linux and macOS builds of OpenDSS were not supported by EPRI, the original OpenDSS developer. Effectively, OpenDSSDirect.py (OpenDSSDirect.jl is in a similar situation) never used an official binary on non-Windows platforms, since there is not any as of February 2024.</p>
 <p>That said, we hope both new and experienced OpenDSS users find it easy to adopt it.</p>
 </section>
 <section id="documentation">

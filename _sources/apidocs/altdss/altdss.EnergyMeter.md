@@ -76,7 +76,7 @@ Bases: {py:obj}`altdss.DSSObj.DSSObj`, {py:obj}`altdss.CircuitElement.CircuitEle
 :canonical: altdss.EnergyMeter.EnergyMeter.BaseFreq
 :type: float
 :value: >
-   None
+   'property(...)'
 
 ```{autodoc2-docstring} altdss.EnergyMeter.EnergyMeter.BaseFreq
 ```
@@ -98,7 +98,7 @@ Bases: {py:obj}`altdss.DSSObj.DSSObj`, {py:obj}`altdss.CircuitElement.CircuitEle
 :canonical: altdss.EnergyMeter.EnergyMeter.CAIDI
 :type: float
 :value: >
-   None
+   'property(...)'
 
 ```{autodoc2-docstring} altdss.EnergyMeter.EnergyMeter.CAIDI
 ```
@@ -158,7 +158,7 @@ Bases: {py:obj}`altdss.DSSObj.DSSObj`, {py:obj}`altdss.CircuitElement.CircuitEle
 :canonical: altdss.EnergyMeter.EnergyMeter.CustInterrupts
 :type: float
 :value: >
-   None
+   'property(...)'
 
 ```{autodoc2-docstring} altdss.EnergyMeter.EnergyMeter.CustInterrupts
 ```
@@ -169,14 +169,14 @@ Bases: {py:obj}`altdss.DSSObj.DSSObj`, {py:obj}`altdss.CircuitElement.CircuitEle
 :canonical: altdss.EnergyMeter.EnergyMeter.DisplayName
 :type: str
 :value: >
-   None
+   'property(...)'
 
 ```{autodoc2-docstring} altdss.EnergyMeter.EnergyMeter.DisplayName
 ```
 
 ````
 
-````{py:method} DoReliabilityCalc(assumeRestoration) -> None
+````{py:method} DoReliabilityCalc(assumeRestoration: bool) -> None
 :canonical: altdss.EnergyMeter.EnergyMeter.DoReliabilityCalc
 
 ```{autodoc2-docstring} altdss.EnergyMeter.EnergyMeter.DoReliabilityCalc
@@ -188,7 +188,7 @@ Bases: {py:obj}`altdss.DSSObj.DSSObj`, {py:obj}`altdss.CircuitElement.CircuitEle
 :canonical: altdss.EnergyMeter.EnergyMeter.Element
 :type: altdss.DSSObj.DSSObj
 :value: >
-   None
+   'property(...)'
 
 ```{autodoc2-docstring} altdss.EnergyMeter.EnergyMeter.Element
 ```
@@ -199,7 +199,7 @@ Bases: {py:obj}`altdss.DSSObj.DSSObj`, {py:obj}`altdss.CircuitElement.CircuitEle
 :canonical: altdss.EnergyMeter.EnergyMeter.Element_str
 :type: str
 :value: >
-   None
+   'property(...)'
 
 ```{autodoc2-docstring} altdss.EnergyMeter.EnergyMeter.Element_str
 ```
@@ -210,7 +210,7 @@ Bases: {py:obj}`altdss.DSSObj.DSSObj`, {py:obj}`altdss.CircuitElement.CircuitEle
 :canonical: altdss.EnergyMeter.EnergyMeter.Enabled
 :type: bool
 :value: >
-   None
+   'property(...)'
 
 ```{autodoc2-docstring} altdss.EnergyMeter.EnergyMeter.Enabled
 ```
@@ -280,7 +280,7 @@ Bases: {py:obj}`altdss.DSSObj.DSSObj`, {py:obj}`altdss.CircuitElement.CircuitEle
 :canonical: altdss.EnergyMeter.EnergyMeter.Int_Duration
 :type: float
 :value: >
-   None
+   'property(...)'
 
 ```{autodoc2-docstring} altdss.EnergyMeter.EnergyMeter.Int_Duration
 ```
@@ -291,7 +291,7 @@ Bases: {py:obj}`altdss.DSSObj.DSSObj`, {py:obj}`altdss.CircuitElement.CircuitEle
 :canonical: altdss.EnergyMeter.EnergyMeter.Int_Rate
 :type: float
 :value: >
-   None
+   'property(...)'
 
 ```{autodoc2-docstring} altdss.EnergyMeter.EnergyMeter.Int_Rate
 ```
@@ -326,18 +326,15 @@ Bases: {py:obj}`altdss.DSSObj.DSSObj`, {py:obj}`altdss.CircuitElement.CircuitEle
 :canonical: altdss.EnergyMeter.EnergyMeter.LineLosses
 :type: bool
 :value: >
-   None
+   'property(...)'
 
 ```{autodoc2-docstring} altdss.EnergyMeter.EnergyMeter.LineLosses
 ```
 
 ````
 
-````{py:attribute} Loads
+````{py:method} Loads() -> altdss.Load.LoadBatch
 :canonical: altdss.EnergyMeter.EnergyMeter.Loads
-:type: altdss.Load.LoadBatch
-:value: >
-   None
 
 ```{autodoc2-docstring} altdss.EnergyMeter.EnergyMeter.Loads
 ```
@@ -348,7 +345,7 @@ Bases: {py:obj}`altdss.DSSObj.DSSObj`, {py:obj}`altdss.CircuitElement.CircuitEle
 :canonical: altdss.EnergyMeter.EnergyMeter.LocalOnly
 :type: bool
 :value: >
-   None
+   'property(...)'
 
 ```{autodoc2-docstring} altdss.EnergyMeter.EnergyMeter.LocalOnly
 ```
@@ -359,7 +356,7 @@ Bases: {py:obj}`altdss.DSSObj.DSSObj`, {py:obj}`altdss.CircuitElement.CircuitEle
 :canonical: altdss.EnergyMeter.EnergyMeter.Losses
 :type: bool
 :value: >
-   None
+   'property(...)'
 
 ```{autodoc2-docstring} altdss.EnergyMeter.EnergyMeter.Losses
 ```
@@ -370,7 +367,7 @@ Bases: {py:obj}`altdss.DSSObj.DSSObj`, {py:obj}`altdss.CircuitElement.CircuitEle
 :canonical: altdss.EnergyMeter.EnergyMeter.Mask
 :type: altdss.types.Float64Array
 :value: >
-   None
+   'property(...)'
 
 ```{autodoc2-docstring} altdss.EnergyMeter.EnergyMeter.Mask
 ```
@@ -494,7 +491,7 @@ Bases: {py:obj}`altdss.DSSObj.DSSObj`, {py:obj}`altdss.CircuitElement.CircuitEle
 :canonical: altdss.EnergyMeter.EnergyMeter.Option
 :type: typing.List[str]
 :value: >
-   None
+   'property(...)'
 
 ```{autodoc2-docstring} altdss.EnergyMeter.EnergyMeter.Option
 ```
@@ -505,7 +502,7 @@ Bases: {py:obj}`altdss.DSSObj.DSSObj`, {py:obj}`altdss.CircuitElement.CircuitEle
 :canonical: altdss.EnergyMeter.EnergyMeter.PeakCurrent
 :type: altdss.types.Float64Array
 :value: >
-   None
+   'property(...)'
 
 ```{autodoc2-docstring} altdss.EnergyMeter.EnergyMeter.PeakCurrent
 ```
@@ -524,7 +521,7 @@ Bases: {py:obj}`altdss.DSSObj.DSSObj`, {py:obj}`altdss.CircuitElement.CircuitEle
 :canonical: altdss.EnergyMeter.EnergyMeter.PhaseVoltageReport
 :type: bool
 :value: >
-   None
+   'property(...)'
 
 ```{autodoc2-docstring} altdss.EnergyMeter.EnergyMeter.PhaseVoltageReport
 ```
@@ -583,7 +580,7 @@ Bases: {py:obj}`altdss.DSSObj.DSSObj`, {py:obj}`altdss.CircuitElement.CircuitEle
 :canonical: altdss.EnergyMeter.EnergyMeter.SAIDI
 :type: float
 :value: >
-   None
+   'property(...)'
 
 ```{autodoc2-docstring} altdss.EnergyMeter.EnergyMeter.SAIDI
 ```
@@ -594,7 +591,7 @@ Bases: {py:obj}`altdss.DSSObj.DSSObj`, {py:obj}`altdss.CircuitElement.CircuitEle
 :canonical: altdss.EnergyMeter.EnergyMeter.SAIFI
 :type: float
 :value: >
-   None
+   'property(...)'
 
 ```{autodoc2-docstring} altdss.EnergyMeter.EnergyMeter.SAIFI
 ```
@@ -605,7 +602,7 @@ Bases: {py:obj}`altdss.DSSObj.DSSObj`, {py:obj}`altdss.CircuitElement.CircuitEle
 :canonical: altdss.EnergyMeter.EnergyMeter.SAIFIkW
 :type: float
 :value: >
-   None
+   'property(...)'
 
 ```{autodoc2-docstring} altdss.EnergyMeter.EnergyMeter.SAIFIkW
 ```
@@ -648,7 +645,7 @@ Bases: {py:obj}`altdss.DSSObj.DSSObj`, {py:obj}`altdss.CircuitElement.CircuitEle
 :canonical: altdss.EnergyMeter.EnergyMeter.SeqLosses
 :type: bool
 :value: >
-   None
+   'property(...)'
 
 ```{autodoc2-docstring} altdss.EnergyMeter.EnergyMeter.SeqLosses
 ```
@@ -694,7 +691,7 @@ Bases: {py:obj}`altdss.DSSObj.DSSObj`, {py:obj}`altdss.CircuitElement.CircuitEle
 :canonical: altdss.EnergyMeter.EnergyMeter.Terminal
 :type: int
 :value: >
-   None
+   'property(...)'
 
 ```{autodoc2-docstring} altdss.EnergyMeter.EnergyMeter.Terminal
 ```
@@ -705,7 +702,7 @@ Bases: {py:obj}`altdss.DSSObj.DSSObj`, {py:obj}`altdss.CircuitElement.CircuitEle
 :canonical: altdss.EnergyMeter.EnergyMeter.ThreePhaseLosses
 :type: bool
 :value: >
-   None
+   'property(...)'
 
 ```{autodoc2-docstring} altdss.EnergyMeter.EnergyMeter.ThreePhaseLosses
 ```
@@ -732,7 +729,7 @@ Bases: {py:obj}`altdss.DSSObj.DSSObj`, {py:obj}`altdss.CircuitElement.CircuitEle
 :canonical: altdss.EnergyMeter.EnergyMeter.VBaseLosses
 :type: bool
 :value: >
-   None
+   'property(...)'
 
 ```{autodoc2-docstring} altdss.EnergyMeter.EnergyMeter.VBaseLosses
 ```
@@ -759,7 +756,7 @@ Bases: {py:obj}`altdss.DSSObj.DSSObj`, {py:obj}`altdss.CircuitElement.CircuitEle
 :canonical: altdss.EnergyMeter.EnergyMeter.XfmrLosses
 :type: bool
 :value: >
-   None
+   'property(...)'
 
 ```{autodoc2-docstring} altdss.EnergyMeter.EnergyMeter.XfmrLosses
 ```
@@ -786,7 +783,7 @@ Bases: {py:obj}`altdss.DSSObj.DSSObj`, {py:obj}`altdss.CircuitElement.CircuitEle
 :canonical: altdss.EnergyMeter.EnergyMeter.ZoneList
 :type: typing.List[str]
 :value: >
-   None
+   'property(...)'
 
 ```{autodoc2-docstring} altdss.EnergyMeter.EnergyMeter.ZoneList
 ```
@@ -856,7 +853,7 @@ Bases: {py:obj}`altdss.DSSObj.DSSObj`, {py:obj}`altdss.CircuitElement.CircuitEle
 :canonical: altdss.EnergyMeter.EnergyMeter.kVAEmerg
 :type: float
 :value: >
-   None
+   'property(...)'
 
 ```{autodoc2-docstring} altdss.EnergyMeter.EnergyMeter.kVAEmerg
 ```
@@ -867,7 +864,7 @@ Bases: {py:obj}`altdss.DSSObj.DSSObj`, {py:obj}`altdss.CircuitElement.CircuitEle
 :canonical: altdss.EnergyMeter.EnergyMeter.kVANormal
 :type: float
 :value: >
-   None
+   'property(...)'
 
 ```{autodoc2-docstring} altdss.EnergyMeter.EnergyMeter.kVANormal
 ```
@@ -912,7 +909,7 @@ Bases: {py:obj}`altdss.Batch.DSSBatch`, {py:obj}`altdss.CircuitElement.CircuitEl
 :canonical: altdss.EnergyMeter.EnergyMeterBatch.BaseFreq
 :type: altdss.ArrayProxy.BatchFloat64ArrayProxy
 :value: >
-   None
+   'property(...)'
 
 ```{autodoc2-docstring} altdss.EnergyMeter.EnergyMeterBatch.BaseFreq
 ```
@@ -923,7 +920,7 @@ Bases: {py:obj}`altdss.Batch.DSSBatch`, {py:obj}`altdss.CircuitElement.CircuitEl
 :canonical: altdss.EnergyMeter.EnergyMeterBatch.CAIDI
 :type: altdss.ArrayProxy.BatchFloat64ArrayProxy
 :value: >
-   None
+   'property(...)'
 
 ```{autodoc2-docstring} altdss.EnergyMeter.EnergyMeterBatch.CAIDI
 ```
@@ -974,14 +971,14 @@ Bases: {py:obj}`altdss.Batch.DSSBatch`, {py:obj}`altdss.CircuitElement.CircuitEl
 :canonical: altdss.EnergyMeter.EnergyMeterBatch.CustInterrupts
 :type: altdss.ArrayProxy.BatchFloat64ArrayProxy
 :value: >
-   None
+   'property(...)'
 
 ```{autodoc2-docstring} altdss.EnergyMeter.EnergyMeterBatch.CustInterrupts
 ```
 
 ````
 
-````{py:method} DoReliabilityCalc(assumeRestoration) -> None
+````{py:method} DoReliabilityCalc(assumeRestoration: bool) -> None
 :canonical: altdss.EnergyMeter.EnergyMeterBatch.DoReliabilityCalc
 
 ```{autodoc2-docstring} altdss.EnergyMeter.EnergyMeterBatch.DoReliabilityCalc
@@ -993,7 +990,7 @@ Bases: {py:obj}`altdss.Batch.DSSBatch`, {py:obj}`altdss.CircuitElement.CircuitEl
 :canonical: altdss.EnergyMeter.EnergyMeterBatch.Element
 :type: typing.List[altdss.DSSObj.DSSObj]
 :value: >
-   None
+   'property(...)'
 
 ```{autodoc2-docstring} altdss.EnergyMeter.EnergyMeterBatch.Element
 ```
@@ -1004,7 +1001,7 @@ Bases: {py:obj}`altdss.Batch.DSSBatch`, {py:obj}`altdss.CircuitElement.CircuitEl
 :canonical: altdss.EnergyMeter.EnergyMeterBatch.Element_str
 :type: typing.List[str]
 :value: >
-   None
+   'property(...)'
 
 ```{autodoc2-docstring} altdss.EnergyMeter.EnergyMeterBatch.Element_str
 ```
@@ -1015,7 +1012,7 @@ Bases: {py:obj}`altdss.Batch.DSSBatch`, {py:obj}`altdss.CircuitElement.CircuitEl
 :canonical: altdss.EnergyMeter.EnergyMeterBatch.Enabled
 :type: typing.List[bool]
 :value: >
-   None
+   'property(...)'
 
 ```{autodoc2-docstring} altdss.EnergyMeter.EnergyMeterBatch.Enabled
 ```
@@ -1074,7 +1071,7 @@ Bases: {py:obj}`altdss.Batch.DSSBatch`, {py:obj}`altdss.CircuitElement.CircuitEl
 :canonical: altdss.EnergyMeter.EnergyMeterBatch.Int_Duration
 :type: altdss.ArrayProxy.BatchFloat64ArrayProxy
 :value: >
-   None
+   'property(...)'
 
 ```{autodoc2-docstring} altdss.EnergyMeter.EnergyMeterBatch.Int_Duration
 ```
@@ -1085,7 +1082,7 @@ Bases: {py:obj}`altdss.Batch.DSSBatch`, {py:obj}`altdss.CircuitElement.CircuitEl
 :canonical: altdss.EnergyMeter.EnergyMeterBatch.Int_Rate
 :type: altdss.ArrayProxy.BatchFloat64ArrayProxy
 :value: >
-   None
+   'property(...)'
 
 ```{autodoc2-docstring} altdss.EnergyMeter.EnergyMeterBatch.Int_Rate
 ```
@@ -1112,7 +1109,7 @@ Bases: {py:obj}`altdss.Batch.DSSBatch`, {py:obj}`altdss.CircuitElement.CircuitEl
 :canonical: altdss.EnergyMeter.EnergyMeterBatch.LineLosses
 :type: typing.List[bool]
 :value: >
-   None
+   'property(...)'
 
 ```{autodoc2-docstring} altdss.EnergyMeter.EnergyMeterBatch.LineLosses
 ```
@@ -1123,7 +1120,7 @@ Bases: {py:obj}`altdss.Batch.DSSBatch`, {py:obj}`altdss.CircuitElement.CircuitEl
 :canonical: altdss.EnergyMeter.EnergyMeterBatch.LocalOnly
 :type: typing.List[bool]
 :value: >
-   None
+   'property(...)'
 
 ```{autodoc2-docstring} altdss.EnergyMeter.EnergyMeterBatch.LocalOnly
 ```
@@ -1134,7 +1131,7 @@ Bases: {py:obj}`altdss.Batch.DSSBatch`, {py:obj}`altdss.CircuitElement.CircuitEl
 :canonical: altdss.EnergyMeter.EnergyMeterBatch.Losses
 :type: typing.List[bool]
 :value: >
-   None
+   'property(...)'
 
 ```{autodoc2-docstring} altdss.EnergyMeter.EnergyMeterBatch.Losses
 ```
@@ -1145,7 +1142,7 @@ Bases: {py:obj}`altdss.Batch.DSSBatch`, {py:obj}`altdss.CircuitElement.CircuitEl
 :canonical: altdss.EnergyMeter.EnergyMeterBatch.Mask
 :type: typing.List[altdss.types.Float64Array]
 :value: >
-   None
+   'property(...)'
 
 ```{autodoc2-docstring} altdss.EnergyMeter.EnergyMeterBatch.Mask
 ```
@@ -1245,7 +1242,7 @@ Bases: {py:obj}`altdss.Batch.DSSBatch`, {py:obj}`altdss.CircuitElement.CircuitEl
 :canonical: altdss.EnergyMeter.EnergyMeterBatch.Option
 :type: typing.List[typing.List[str]]
 :value: >
-   None
+   'property(...)'
 
 ```{autodoc2-docstring} altdss.EnergyMeter.EnergyMeterBatch.Option
 ```
@@ -1256,7 +1253,7 @@ Bases: {py:obj}`altdss.Batch.DSSBatch`, {py:obj}`altdss.CircuitElement.CircuitEl
 :canonical: altdss.EnergyMeter.EnergyMeterBatch.PeakCurrent
 :type: typing.List[altdss.types.Float64Array]
 :value: >
-   None
+   'property(...)'
 
 ```{autodoc2-docstring} altdss.EnergyMeter.EnergyMeterBatch.PeakCurrent
 ```
@@ -1275,7 +1272,7 @@ Bases: {py:obj}`altdss.Batch.DSSBatch`, {py:obj}`altdss.CircuitElement.CircuitEl
 :canonical: altdss.EnergyMeter.EnergyMeterBatch.PhaseVoltageReport
 :type: typing.List[bool]
 :value: >
-   None
+   'property(...)'
 
 ```{autodoc2-docstring} altdss.EnergyMeter.EnergyMeterBatch.PhaseVoltageReport
 ```
@@ -1302,7 +1299,7 @@ Bases: {py:obj}`altdss.Batch.DSSBatch`, {py:obj}`altdss.CircuitElement.CircuitEl
 :canonical: altdss.EnergyMeter.EnergyMeterBatch.SAIDI
 :type: altdss.ArrayProxy.BatchFloat64ArrayProxy
 :value: >
-   None
+   'property(...)'
 
 ```{autodoc2-docstring} altdss.EnergyMeter.EnergyMeterBatch.SAIDI
 ```
@@ -1313,7 +1310,7 @@ Bases: {py:obj}`altdss.Batch.DSSBatch`, {py:obj}`altdss.CircuitElement.CircuitEl
 :canonical: altdss.EnergyMeter.EnergyMeterBatch.SAIFI
 :type: altdss.ArrayProxy.BatchFloat64ArrayProxy
 :value: >
-   None
+   'property(...)'
 
 ```{autodoc2-docstring} altdss.EnergyMeter.EnergyMeterBatch.SAIFI
 ```
@@ -1324,7 +1321,7 @@ Bases: {py:obj}`altdss.Batch.DSSBatch`, {py:obj}`altdss.CircuitElement.CircuitEl
 :canonical: altdss.EnergyMeter.EnergyMeterBatch.SAIFIkW
 :type: altdss.ArrayProxy.BatchFloat64ArrayProxy
 :value: >
-   None
+   'property(...)'
 
 ```{autodoc2-docstring} altdss.EnergyMeter.EnergyMeterBatch.SAIFIkW
 ```
@@ -1351,7 +1348,7 @@ Bases: {py:obj}`altdss.Batch.DSSBatch`, {py:obj}`altdss.CircuitElement.CircuitEl
 :canonical: altdss.EnergyMeter.EnergyMeterBatch.SeqLosses
 :type: typing.List[bool]
 :value: >
-   None
+   'property(...)'
 
 ```{autodoc2-docstring} altdss.EnergyMeter.EnergyMeterBatch.SeqLosses
 ```
@@ -1386,7 +1383,7 @@ Bases: {py:obj}`altdss.Batch.DSSBatch`, {py:obj}`altdss.CircuitElement.CircuitEl
 :canonical: altdss.EnergyMeter.EnergyMeterBatch.Terminal
 :type: altdss.ArrayProxy.BatchInt32ArrayProxy
 :value: >
-   None
+   'property(...)'
 
 ```{autodoc2-docstring} altdss.EnergyMeter.EnergyMeterBatch.Terminal
 ```
@@ -1397,7 +1394,7 @@ Bases: {py:obj}`altdss.Batch.DSSBatch`, {py:obj}`altdss.CircuitElement.CircuitEl
 :canonical: altdss.EnergyMeter.EnergyMeterBatch.ThreePhaseLosses
 :type: typing.List[bool]
 :value: >
-   None
+   'property(...)'
 
 ```{autodoc2-docstring} altdss.EnergyMeter.EnergyMeterBatch.ThreePhaseLosses
 ```
@@ -1424,7 +1421,7 @@ Bases: {py:obj}`altdss.Batch.DSSBatch`, {py:obj}`altdss.CircuitElement.CircuitEl
 :canonical: altdss.EnergyMeter.EnergyMeterBatch.VBaseLosses
 :type: typing.List[bool]
 :value: >
-   None
+   'property(...)'
 
 ```{autodoc2-docstring} altdss.EnergyMeter.EnergyMeterBatch.VBaseLosses
 ```
@@ -1451,7 +1448,7 @@ Bases: {py:obj}`altdss.Batch.DSSBatch`, {py:obj}`altdss.CircuitElement.CircuitEl
 :canonical: altdss.EnergyMeter.EnergyMeterBatch.XfmrLosses
 :type: typing.List[bool]
 :value: >
-   None
+   'property(...)'
 
 ```{autodoc2-docstring} altdss.EnergyMeter.EnergyMeterBatch.XfmrLosses
 ```
@@ -1470,7 +1467,7 @@ Bases: {py:obj}`altdss.Batch.DSSBatch`, {py:obj}`altdss.CircuitElement.CircuitEl
 :canonical: altdss.EnergyMeter.EnergyMeterBatch.ZoneList
 :type: typing.List[typing.List[str]]
 :value: >
-   None
+   'property(...)'
 
 ```{autodoc2-docstring} altdss.EnergyMeter.EnergyMeterBatch.ZoneList
 ```
@@ -1537,7 +1534,7 @@ Bases: {py:obj}`altdss.Batch.DSSBatch`, {py:obj}`altdss.CircuitElement.CircuitEl
 :canonical: altdss.EnergyMeter.EnergyMeterBatch.kVAEmerg
 :type: altdss.ArrayProxy.BatchFloat64ArrayProxy
 :value: >
-   None
+   'property(...)'
 
 ```{autodoc2-docstring} altdss.EnergyMeter.EnergyMeterBatch.kVAEmerg
 ```
@@ -1548,7 +1545,7 @@ Bases: {py:obj}`altdss.Batch.DSSBatch`, {py:obj}`altdss.CircuitElement.CircuitEl
 :canonical: altdss.EnergyMeter.EnergyMeterBatch.kVANormal
 :type: altdss.ArrayProxy.BatchFloat64ArrayProxy
 :value: >
-   None
+   'property(...)'
 
 ```{autodoc2-docstring} altdss.EnergyMeter.EnergyMeterBatch.kVANormal
 ```
@@ -2823,7 +2820,7 @@ Bases: {py:obj}`altdss.DSSObj.IDSSObj`, {py:obj}`altdss.EnergyMeter.EnergyMeterB
 :canonical: altdss.EnergyMeter.IEnergyMeter.BaseFreq
 :type: altdss.ArrayProxy.BatchFloat64ArrayProxy
 :value: >
-   None
+   'property(...)'
 
 ```{autodoc2-docstring} altdss.EnergyMeter.IEnergyMeter.BaseFreq
 ```
@@ -2834,7 +2831,7 @@ Bases: {py:obj}`altdss.DSSObj.IDSSObj`, {py:obj}`altdss.EnergyMeter.EnergyMeterB
 :canonical: altdss.EnergyMeter.IEnergyMeter.CAIDI
 :type: altdss.ArrayProxy.BatchFloat64ArrayProxy
 :value: >
-   None
+   'property(...)'
 
 ```{autodoc2-docstring} altdss.EnergyMeter.IEnergyMeter.CAIDI
 ```
@@ -2893,7 +2890,7 @@ Bases: {py:obj}`altdss.DSSObj.IDSSObj`, {py:obj}`altdss.EnergyMeter.EnergyMeterB
 :canonical: altdss.EnergyMeter.IEnergyMeter.CustInterrupts
 :type: altdss.ArrayProxy.BatchFloat64ArrayProxy
 :value: >
-   None
+   'property(...)'
 
 ```{autodoc2-docstring} altdss.EnergyMeter.IEnergyMeter.CustInterrupts
 ```
@@ -2908,7 +2905,7 @@ Bases: {py:obj}`altdss.DSSObj.IDSSObj`, {py:obj}`altdss.EnergyMeter.EnergyMeterB
 
 ````
 
-````{py:method} DoReliabilityCalc(assumeRestoration) -> None
+````{py:method} DoReliabilityCalc(assumeRestoration: bool) -> None
 :canonical: altdss.EnergyMeter.IEnergyMeter.DoReliabilityCalc
 
 ```{autodoc2-docstring} altdss.EnergyMeter.IEnergyMeter.DoReliabilityCalc
@@ -2920,7 +2917,7 @@ Bases: {py:obj}`altdss.DSSObj.IDSSObj`, {py:obj}`altdss.EnergyMeter.EnergyMeterB
 :canonical: altdss.EnergyMeter.IEnergyMeter.Element
 :type: typing.List[altdss.DSSObj.DSSObj]
 :value: >
-   None
+   'property(...)'
 
 ```{autodoc2-docstring} altdss.EnergyMeter.IEnergyMeter.Element
 ```
@@ -2931,7 +2928,7 @@ Bases: {py:obj}`altdss.DSSObj.IDSSObj`, {py:obj}`altdss.EnergyMeter.EnergyMeterB
 :canonical: altdss.EnergyMeter.IEnergyMeter.Element_str
 :type: typing.List[str]
 :value: >
-   None
+   'property(...)'
 
 ```{autodoc2-docstring} altdss.EnergyMeter.IEnergyMeter.Element_str
 ```
@@ -2942,7 +2939,7 @@ Bases: {py:obj}`altdss.DSSObj.IDSSObj`, {py:obj}`altdss.EnergyMeter.EnergyMeterB
 :canonical: altdss.EnergyMeter.IEnergyMeter.Enabled
 :type: typing.List[bool]
 :value: >
-   None
+   'property(...)'
 
 ```{autodoc2-docstring} altdss.EnergyMeter.IEnergyMeter.Enabled
 ```
@@ -3001,7 +2998,7 @@ Bases: {py:obj}`altdss.DSSObj.IDSSObj`, {py:obj}`altdss.EnergyMeter.EnergyMeterB
 :canonical: altdss.EnergyMeter.IEnergyMeter.Int_Duration
 :type: altdss.ArrayProxy.BatchFloat64ArrayProxy
 :value: >
-   None
+   'property(...)'
 
 ```{autodoc2-docstring} altdss.EnergyMeter.IEnergyMeter.Int_Duration
 ```
@@ -3012,7 +3009,7 @@ Bases: {py:obj}`altdss.DSSObj.IDSSObj`, {py:obj}`altdss.EnergyMeter.EnergyMeterB
 :canonical: altdss.EnergyMeter.IEnergyMeter.Int_Rate
 :type: altdss.ArrayProxy.BatchFloat64ArrayProxy
 :value: >
-   None
+   'property(...)'
 
 ```{autodoc2-docstring} altdss.EnergyMeter.IEnergyMeter.Int_Rate
 ```
@@ -3039,7 +3036,7 @@ Bases: {py:obj}`altdss.DSSObj.IDSSObj`, {py:obj}`altdss.EnergyMeter.EnergyMeterB
 :canonical: altdss.EnergyMeter.IEnergyMeter.LineLosses
 :type: typing.List[bool]
 :value: >
-   None
+   'property(...)'
 
 ```{autodoc2-docstring} altdss.EnergyMeter.IEnergyMeter.LineLosses
 ```
@@ -3050,7 +3047,7 @@ Bases: {py:obj}`altdss.DSSObj.IDSSObj`, {py:obj}`altdss.EnergyMeter.EnergyMeterB
 :canonical: altdss.EnergyMeter.IEnergyMeter.LocalOnly
 :type: typing.List[bool]
 :value: >
-   None
+   'property(...)'
 
 ```{autodoc2-docstring} altdss.EnergyMeter.IEnergyMeter.LocalOnly
 ```
@@ -3061,7 +3058,7 @@ Bases: {py:obj}`altdss.DSSObj.IDSSObj`, {py:obj}`altdss.EnergyMeter.EnergyMeterB
 :canonical: altdss.EnergyMeter.IEnergyMeter.Losses
 :type: typing.List[bool]
 :value: >
-   None
+   'property(...)'
 
 ```{autodoc2-docstring} altdss.EnergyMeter.IEnergyMeter.Losses
 ```
@@ -3072,7 +3069,7 @@ Bases: {py:obj}`altdss.DSSObj.IDSSObj`, {py:obj}`altdss.EnergyMeter.EnergyMeterB
 :canonical: altdss.EnergyMeter.IEnergyMeter.Mask
 :type: typing.List[altdss.types.Float64Array]
 :value: >
-   None
+   'property(...)'
 
 ```{autodoc2-docstring} altdss.EnergyMeter.IEnergyMeter.Mask
 ```
@@ -3180,7 +3177,7 @@ Bases: {py:obj}`altdss.DSSObj.IDSSObj`, {py:obj}`altdss.EnergyMeter.EnergyMeterB
 :canonical: altdss.EnergyMeter.IEnergyMeter.Option
 :type: typing.List[typing.List[str]]
 :value: >
-   None
+   'property(...)'
 
 ```{autodoc2-docstring} altdss.EnergyMeter.IEnergyMeter.Option
 ```
@@ -3191,7 +3188,7 @@ Bases: {py:obj}`altdss.DSSObj.IDSSObj`, {py:obj}`altdss.EnergyMeter.EnergyMeterB
 :canonical: altdss.EnergyMeter.IEnergyMeter.PeakCurrent
 :type: typing.List[altdss.types.Float64Array]
 :value: >
-   None
+   'property(...)'
 
 ```{autodoc2-docstring} altdss.EnergyMeter.IEnergyMeter.PeakCurrent
 ```
@@ -3210,7 +3207,7 @@ Bases: {py:obj}`altdss.DSSObj.IDSSObj`, {py:obj}`altdss.EnergyMeter.EnergyMeterB
 :canonical: altdss.EnergyMeter.IEnergyMeter.PhaseVoltageReport
 :type: typing.List[bool]
 :value: >
-   None
+   'property(...)'
 
 ```{autodoc2-docstring} altdss.EnergyMeter.IEnergyMeter.PhaseVoltageReport
 ```
@@ -3237,7 +3234,7 @@ Bases: {py:obj}`altdss.DSSObj.IDSSObj`, {py:obj}`altdss.EnergyMeter.EnergyMeterB
 :canonical: altdss.EnergyMeter.IEnergyMeter.SAIDI
 :type: altdss.ArrayProxy.BatchFloat64ArrayProxy
 :value: >
-   None
+   'property(...)'
 
 ```{autodoc2-docstring} altdss.EnergyMeter.IEnergyMeter.SAIDI
 ```
@@ -3248,7 +3245,7 @@ Bases: {py:obj}`altdss.DSSObj.IDSSObj`, {py:obj}`altdss.EnergyMeter.EnergyMeterB
 :canonical: altdss.EnergyMeter.IEnergyMeter.SAIFI
 :type: altdss.ArrayProxy.BatchFloat64ArrayProxy
 :value: >
-   None
+   'property(...)'
 
 ```{autodoc2-docstring} altdss.EnergyMeter.IEnergyMeter.SAIFI
 ```
@@ -3259,7 +3256,7 @@ Bases: {py:obj}`altdss.DSSObj.IDSSObj`, {py:obj}`altdss.EnergyMeter.EnergyMeterB
 :canonical: altdss.EnergyMeter.IEnergyMeter.SAIFIkW
 :type: altdss.ArrayProxy.BatchFloat64ArrayProxy
 :value: >
-   None
+   'property(...)'
 
 ```{autodoc2-docstring} altdss.EnergyMeter.IEnergyMeter.SAIFIkW
 ```
@@ -3286,7 +3283,7 @@ Bases: {py:obj}`altdss.DSSObj.IDSSObj`, {py:obj}`altdss.EnergyMeter.EnergyMeterB
 :canonical: altdss.EnergyMeter.IEnergyMeter.SeqLosses
 :type: typing.List[bool]
 :value: >
-   None
+   'property(...)'
 
 ```{autodoc2-docstring} altdss.EnergyMeter.IEnergyMeter.SeqLosses
 ```
@@ -3321,7 +3318,7 @@ Bases: {py:obj}`altdss.DSSObj.IDSSObj`, {py:obj}`altdss.EnergyMeter.EnergyMeterB
 :canonical: altdss.EnergyMeter.IEnergyMeter.Terminal
 :type: altdss.ArrayProxy.BatchInt32ArrayProxy
 :value: >
-   None
+   'property(...)'
 
 ```{autodoc2-docstring} altdss.EnergyMeter.IEnergyMeter.Terminal
 ```
@@ -3332,7 +3329,7 @@ Bases: {py:obj}`altdss.DSSObj.IDSSObj`, {py:obj}`altdss.EnergyMeter.EnergyMeterB
 :canonical: altdss.EnergyMeter.IEnergyMeter.ThreePhaseLosses
 :type: typing.List[bool]
 :value: >
-   None
+   'property(...)'
 
 ```{autodoc2-docstring} altdss.EnergyMeter.IEnergyMeter.ThreePhaseLosses
 ```
@@ -3367,7 +3364,7 @@ Bases: {py:obj}`altdss.DSSObj.IDSSObj`, {py:obj}`altdss.EnergyMeter.EnergyMeterB
 :canonical: altdss.EnergyMeter.IEnergyMeter.VBaseLosses
 :type: typing.List[bool]
 :value: >
-   None
+   'property(...)'
 
 ```{autodoc2-docstring} altdss.EnergyMeter.IEnergyMeter.VBaseLosses
 ```
@@ -3394,7 +3391,7 @@ Bases: {py:obj}`altdss.DSSObj.IDSSObj`, {py:obj}`altdss.EnergyMeter.EnergyMeterB
 :canonical: altdss.EnergyMeter.IEnergyMeter.XfmrLosses
 :type: typing.List[bool]
 :value: >
-   None
+   'property(...)'
 
 ```{autodoc2-docstring} altdss.EnergyMeter.IEnergyMeter.XfmrLosses
 ```
@@ -3413,7 +3410,7 @@ Bases: {py:obj}`altdss.DSSObj.IDSSObj`, {py:obj}`altdss.EnergyMeter.EnergyMeterB
 :canonical: altdss.EnergyMeter.IEnergyMeter.ZoneList
 :type: typing.List[typing.List[str]]
 :value: >
-   None
+   'property(...)'
 
 ```{autodoc2-docstring} altdss.EnergyMeter.IEnergyMeter.ZoneList
 ```
@@ -3512,7 +3509,7 @@ Bases: {py:obj}`altdss.DSSObj.IDSSObj`, {py:obj}`altdss.EnergyMeter.EnergyMeterB
 :canonical: altdss.EnergyMeter.IEnergyMeter.kVAEmerg
 :type: altdss.ArrayProxy.BatchFloat64ArrayProxy
 :value: >
-   None
+   'property(...)'
 
 ```{autodoc2-docstring} altdss.EnergyMeter.IEnergyMeter.kVAEmerg
 ```
@@ -3523,7 +3520,7 @@ Bases: {py:obj}`altdss.DSSObj.IDSSObj`, {py:obj}`altdss.EnergyMeter.EnergyMeterB
 :canonical: altdss.EnergyMeter.IEnergyMeter.kVANormal
 :type: altdss.ArrayProxy.BatchFloat64ArrayProxy
 :value: >
-   None
+   'property(...)'
 
 ```{autodoc2-docstring} altdss.EnergyMeter.IEnergyMeter.kVANormal
 ```

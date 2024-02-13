@@ -51,7 +51,7 @@ Bases: {py:obj}`altdss.DSSObj.IDSSObj`, {py:obj}`altdss.Spectrum.SpectrumBatch`
 :canonical: altdss.Spectrum.ISpectrum.Angle
 :type: typing.List[altdss.types.Float64Array]
 :value: >
-   None
+   'property(...)'
 
 ```{autodoc2-docstring} altdss.Spectrum.ISpectrum.Angle
 ```
@@ -62,7 +62,7 @@ Bases: {py:obj}`altdss.DSSObj.IDSSObj`, {py:obj}`altdss.Spectrum.SpectrumBatch`
 :canonical: altdss.Spectrum.ISpectrum.CSVFile
 :type: typing.List[str]
 :value: >
-   None
+   'property(...)'
 
 ```{autodoc2-docstring} altdss.Spectrum.ISpectrum.CSVFile
 ```
@@ -81,7 +81,7 @@ Bases: {py:obj}`altdss.DSSObj.IDSSObj`, {py:obj}`altdss.Spectrum.SpectrumBatch`
 :canonical: altdss.Spectrum.ISpectrum.Harmonic
 :type: typing.List[altdss.types.Float64Array]
 :value: >
-   None
+   'property(...)'
 
 ```{autodoc2-docstring} altdss.Spectrum.ISpectrum.Harmonic
 ```
@@ -109,7 +109,7 @@ Bases: {py:obj}`altdss.DSSObj.IDSSObj`, {py:obj}`altdss.Spectrum.SpectrumBatch`
 :canonical: altdss.Spectrum.ISpectrum.NumHarm
 :type: altdss.ArrayProxy.BatchInt32ArrayProxy
 :value: >
-   None
+   'property(...)'
 
 ```{autodoc2-docstring} altdss.Spectrum.ISpectrum.NumHarm
 ```
@@ -216,7 +216,7 @@ Bases: {py:obj}`altdss.DSSObj.IDSSObj`, {py:obj}`altdss.Spectrum.SpectrumBatch`
 :canonical: altdss.Spectrum.ISpectrum.pctMag
 :type: typing.List[altdss.types.Float64Array]
 :value: >
-   None
+   'property(...)'
 
 ```{autodoc2-docstring} altdss.Spectrum.ISpectrum.pctMag
 ```
@@ -253,7 +253,7 @@ Bases: {py:obj}`altdss.DSSObj.DSSObj`
 :canonical: altdss.Spectrum.Spectrum.Angle
 :type: altdss.types.Float64Array
 :value: >
-   None
+   'property(...)'
 
 ```{autodoc2-docstring} altdss.Spectrum.Spectrum.Angle
 ```
@@ -264,7 +264,7 @@ Bases: {py:obj}`altdss.DSSObj.DSSObj`
 :canonical: altdss.Spectrum.Spectrum.CSVFile
 :type: str
 :value: >
-   None
+   'property(...)'
 
 ```{autodoc2-docstring} altdss.Spectrum.Spectrum.CSVFile
 ```
@@ -283,7 +283,7 @@ Bases: {py:obj}`altdss.DSSObj.DSSObj`
 :canonical: altdss.Spectrum.Spectrum.Harmonic
 :type: altdss.types.Float64Array
 :value: >
-   None
+   'property(...)'
 
 ```{autodoc2-docstring} altdss.Spectrum.Spectrum.Harmonic
 ```
@@ -311,7 +311,7 @@ Bases: {py:obj}`altdss.DSSObj.DSSObj`
 :canonical: altdss.Spectrum.Spectrum.NumHarm
 :type: int
 :value: >
-   None
+   'property(...)'
 
 ```{autodoc2-docstring} altdss.Spectrum.Spectrum.NumHarm
 ```
@@ -370,7 +370,7 @@ Bases: {py:obj}`altdss.DSSObj.DSSObj`
 :canonical: altdss.Spectrum.Spectrum.pctMag
 :type: altdss.types.Float64Array
 :value: >
-   None
+   'property(...)'
 
 ```{autodoc2-docstring} altdss.Spectrum.Spectrum.pctMag
 ```
@@ -399,7 +399,7 @@ Bases: {py:obj}`altdss.Batch.DSSBatch`
 :canonical: altdss.Spectrum.SpectrumBatch.Angle
 :type: typing.List[altdss.types.Float64Array]
 :value: >
-   None
+   'property(...)'
 
 ```{autodoc2-docstring} altdss.Spectrum.SpectrumBatch.Angle
 ```
@@ -410,7 +410,7 @@ Bases: {py:obj}`altdss.Batch.DSSBatch`
 :canonical: altdss.Spectrum.SpectrumBatch.CSVFile
 :type: typing.List[str]
 :value: >
-   None
+   'property(...)'
 
 ```{autodoc2-docstring} altdss.Spectrum.SpectrumBatch.CSVFile
 ```
@@ -429,7 +429,7 @@ Bases: {py:obj}`altdss.Batch.DSSBatch`
 :canonical: altdss.Spectrum.SpectrumBatch.Harmonic
 :type: typing.List[altdss.types.Float64Array]
 :value: >
-   None
+   'property(...)'
 
 ```{autodoc2-docstring} altdss.Spectrum.SpectrumBatch.Harmonic
 ```
@@ -457,7 +457,7 @@ Bases: {py:obj}`altdss.Batch.DSSBatch`
 :canonical: altdss.Spectrum.SpectrumBatch.NumHarm
 :type: altdss.ArrayProxy.BatchInt32ArrayProxy
 :value: >
-   None
+   'property(...)'
 
 ```{autodoc2-docstring} altdss.Spectrum.SpectrumBatch.NumHarm
 ```
@@ -524,7 +524,7 @@ Bases: {py:obj}`altdss.Batch.DSSBatch`
 :canonical: altdss.Spectrum.SpectrumBatch.pctMag
 :type: typing.List[altdss.types.Float64Array]
 :value: >
-   None
+   'property(...)'
 
 ```{autodoc2-docstring} altdss.Spectrum.SpectrumBatch.pctMag
 ```

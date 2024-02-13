@@ -6,9 +6,9 @@
 
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.19: https://docutils.sourceforge.io/" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
-    <title>AltDSS-Python changelog &#8212; AltDSS-Python 0.1.0 documentation</title>
+    <title>AltDSS-Python changelog &#8212; AltDSS-Python 0.1.2 documentation</title>
   
   
   
@@ -28,7 +28,7 @@
 <link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.5.1/webfonts/fa-brands-400.woff2" />
 <link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.5.1/webfonts/fa-regular-400.woff2" />
 
-    <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=362ab14a" />
+    <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=a746c00c" />
     <link rel="stylesheet" type="text/css" href="_static/styles/sphinx-book-theme.css?v=384b581d" />
     <link rel="stylesheet" type="text/css" href="_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
     <link rel="stylesheet" type="text/css" href="_static/design-style.1e8bd061cd6da7fc9cf755528e8ffc24.min.css?v=0a3b3ea7" />
@@ -38,7 +38,7 @@
 <link rel="preload" as="script" href="_static/scripts/pydata-sphinx-theme.js?digest=8d27b9dea8ad943066ae" />
   <script src="_static/vendor/fontawesome/6.5.1/js/all.min.js?digest=8d27b9dea8ad943066ae"></script>
 
-    <script src="_static/documentation_options.js?v=a1637f0b"></script>
+    <script src="_static/documentation_options.js?v=0deb7d70"></script>
     <script src="_static/doctools.js?v=888ff710"></script>
     <script src="_static/sphinx_highlight.js?v=dc90522c"></script>
     <script src="_static/scripts/sphinx-book-theme.js?v=efea14e4"></script>
@@ -137,8 +137,8 @@
       
     
     
-    <img src="_static/altdss-python.svg" class="logo__image only-light" alt="AltDSS-Python 0.1.0 documentation - Home"/>
-    <script>document.write(`<img src="_static/altdss-python-dark.svg" class="logo__image only-dark" alt="AltDSS-Python 0.1.0 documentation - Home"/>`);</script>
+    <img src="_static/altdss-python.svg" class="logo__image only-light" alt="AltDSS-Python 0.1.2 documentation - Home"/>
+    <script>document.write(`<img src="_static/altdss-python-dark.svg" class="logo__image only-dark" alt="AltDSS-Python 0.1.2 documentation - Home"/>`);</script>
   
   
 </a></div>
@@ -247,12 +247,12 @@
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">External links</span></p>
 <ul class="nav bd-sidenav">
-<li class="toctree-l1"><a class="reference external" href="https://github.com/dss-extensions/dss_python">GitHub repository</a></li>
-<li class="toctree-l1"><a class="reference external" href="https://pypi.python.org/pypi/OpenDSSDirect.py/">Package on PyPI</a></li>
+<li class="toctree-l1"><a class="reference external" href="https://github.com/dss-extensions/AltDSS-Python">GitHub repository</a></li>
+<li class="toctree-l1"><a class="reference external" href="https://pypi.python.org/pypi/altdss/">Package on PyPI</a></li>
 <li class="toctree-l1"><a class="reference external" href="https://github.com/dss-extensions/electricdss-tst">Test/example circuits</a></li>
 
 <li class="toctree-l1"><a class="reference external" href="https://dss-extensions.org/OpenDSSDirect.py">OpenDSSDirect.py</a></li>
-<li class="toctree-l1"><a class="reference external" href="https://dss-extensions.org/dss_python/">DSS-Python</a></li>
+<li class="toctree-l1"><a class="reference external" href="https://dss-extensions.org/DSS-Python/">DSS-Python</a></li>
 <li class="toctree-l1"><a class="reference external" href="https://github.com/orgs/dss-extensions/discussions">DSS-Extensions Discussions</a></li>
 <li class="toctree-l1"><a class="reference external" href="https://sourceforge.net/p/electricdss/discussion/">OpenDSS forum</a></li>
 <li class="toctree-l1"><a class="reference external" href="https://opendss.epri.com/opendss_documentation.html">OpenDSS documentation</a></li>
@@ -404,8 +404,10 @@ document.write(`
             </div>
             <nav aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id1">0.1.0</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id2">0.0.1</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id1">0.1.2</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id2">0.1.1</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id3">0.1.0</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id4">0.0.1</a></li>
 </ul>
             </nav>
         </div>
@@ -422,7 +424,38 @@ document.write(`
 <p>Remember that changes in our alternative OpenDSS engine, currently known as AltDSS/DSS C-API, are always
 relevant. See <a class="reference external" href="https://github.com/dss-extensions/dss_capi/">DSS C-API’s repository</a> for more information.</p>
 <section id="id1">
-<h2>0.1.0<a class="headerlink" href="#id1" title="Link to this heading">#</a></h2>
+<h2>0.1.2<a class="headerlink" href="#id1" title="Link to this heading">#</a></h2>
+<ul class="simple">
+<li><p>Fix <code class="docutils literal notranslate"><span class="pre">SetterFlags</span></code>: import from backend instead of defining a new enum here.</p></li>
+<li><p>Batch:</p>
+<ul>
+<li><p>Implement <code class="docutils literal notranslate"><span class="pre">__slots__</span></code> to constrain the attributes and avoid accidental names.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">EnergyMeter.Loads</span></code>: make it a function to avoid issues with uninitialized meters (such as new meters).</p></li>
+<li><p>Minor quality of life changes, such as returning zero instead of error for some empty batches.</p></li>
+</ul>
+</li>
+</ul>
+<p>-Known issue: reading <code class="docutils literal notranslate"><span class="pre">pctEmerg</span></code> or <code class="docutils literal notranslate"><span class="pre">pctNorm</span></code> for uninitialized PDElements (missing solution for the circuit) will crash. This is already fixed in the engine and will be included in the next backend update.</p>
+</section>
+<section id="id2">
+<h2>0.1.1<a class="headerlink" href="#id2" title="Link to this heading">#</a></h2>
+<ul class="simple">
+<li><p>Batch: fix setter for single object</p></li>
+<li><p>Line: adjust Conductors to allow any conductor data object (WireData, CNData, TSData).</p></li>
+<li><p>LineGeometry: rename “Wire” to “Conductors”, follow the changes in Line.</p></li>
+<li><p>Depend on DSS-Python 0.15.2 for the updated backend.</p></li>
+<li><p>Add tests to ensure the following issues don’t happen again:</p>
+<ul>
+<li><p>Bus: Fix typo in <code class="docutils literal notranslate"><span class="pre">puVMagAngle</span></code> (rename it from <code class="docutils literal notranslate"><span class="pre">puVmagAngle</span></code>), and <code class="docutils literal notranslate"><span class="pre">Voc</span></code>.</p></li>
+<li><p>Meters: Fix typo in call to <code class="docutils literal notranslate"><span class="pre">DoReliabilityCalc</span></code></p></li>
+<li><p>Circuit: Fix typo in <code class="docutils literal notranslate"><span class="pre">NumCircuitElements</span></code></p></li>
+<li><p>PCE: Found a function not implemented in the engine. Fixed there.</p></li>
+</ul>
+</li>
+</ul>
+</section>
+<section id="id3">
+<h2>0.1.0<a class="headerlink" href="#id3" title="Link to this heading">#</a></h2>
 <p>First version. Still depends on DSS-Python for the backend, but otherwise can be used for a lot of common operations by itself.</p>
 <p>Highlights compared to the previous Obj API on DSS-Python:</p>
 <ul class="simple">
@@ -435,8 +468,8 @@ relevant. See <a class="reference external" href="https://github.com/dss-extensi
 <li><p>Object lifetime: implement synchronization of circuit state and pointers, invalidating dead pointer instead of crashing</p></li>
 </ul>
 </section>
-<section id="id2">
-<h2>0.0.1<a class="headerlink" href="#id2" title="Link to this heading">#</a></h2>
+<section id="id4">
+<h2>0.0.1<a class="headerlink" href="#id4" title="Link to this heading">#</a></h2>
 <p>Published to PyPI to reserve the name.</p>
 </section>
 </section>
@@ -486,8 +519,10 @@ relevant. See <a class="reference external" href="https://github.com/dss-extensi
   </div>
   <nav class="bd-toc-nav page-toc">
     <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id1">0.1.0</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id2">0.0.1</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id1">0.1.2</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id2">0.1.1</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id3">0.1.0</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id4">0.0.1</a></li>
 </ul>
   </nav></div>
 

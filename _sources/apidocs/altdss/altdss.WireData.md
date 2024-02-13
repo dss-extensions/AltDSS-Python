@@ -51,7 +51,7 @@ Bases: {py:obj}`altdss.DSSObj.IDSSObj`, {py:obj}`altdss.WireData.WireDataBatch`
 :canonical: altdss.WireData.IWireData.CapRadius
 :type: altdss.ArrayProxy.BatchFloat64ArrayProxy
 :value: >
-   None
+   'property(...)'
 
 ```{autodoc2-docstring} altdss.WireData.IWireData.CapRadius
 ```
@@ -62,7 +62,7 @@ Bases: {py:obj}`altdss.DSSObj.IDSSObj`, {py:obj}`altdss.WireData.WireDataBatch`
 :canonical: altdss.WireData.IWireData.Diam
 :type: altdss.ArrayProxy.BatchFloat64ArrayProxy
 :value: >
-   None
+   'property(...)'
 
 ```{autodoc2-docstring} altdss.WireData.IWireData.Diam
 ```
@@ -73,7 +73,7 @@ Bases: {py:obj}`altdss.DSSObj.IDSSObj`, {py:obj}`altdss.WireData.WireDataBatch`
 :canonical: altdss.WireData.IWireData.EmergAmps
 :type: altdss.ArrayProxy.BatchFloat64ArrayProxy
 :value: >
-   None
+   'property(...)'
 
 ```{autodoc2-docstring} altdss.WireData.IWireData.EmergAmps
 ```
@@ -92,7 +92,7 @@ Bases: {py:obj}`altdss.DSSObj.IDSSObj`, {py:obj}`altdss.WireData.WireDataBatch`
 :canonical: altdss.WireData.IWireData.GMRAC
 :type: altdss.ArrayProxy.BatchFloat64ArrayProxy
 :value: >
-   None
+   'property(...)'
 
 ```{autodoc2-docstring} altdss.WireData.IWireData.GMRAC
 ```
@@ -103,7 +103,7 @@ Bases: {py:obj}`altdss.DSSObj.IDSSObj`, {py:obj}`altdss.WireData.WireDataBatch`
 :canonical: altdss.WireData.IWireData.GMRUnits
 :type: altdss.ArrayProxy.BatchInt32ArrayProxy
 :value: >
-   None
+   'property(...)'
 
 ```{autodoc2-docstring} altdss.WireData.IWireData.GMRUnits
 ```
@@ -114,7 +114,7 @@ Bases: {py:obj}`altdss.DSSObj.IDSSObj`, {py:obj}`altdss.WireData.WireDataBatch`
 :canonical: altdss.WireData.IWireData.GMRUnits_str
 :type: typing.List[str]
 :value: >
-   None
+   'property(...)'
 
 ```{autodoc2-docstring} altdss.WireData.IWireData.GMRUnits_str
 ```
@@ -142,7 +142,7 @@ Bases: {py:obj}`altdss.DSSObj.IDSSObj`, {py:obj}`altdss.WireData.WireDataBatch`
 :canonical: altdss.WireData.IWireData.NormAmps
 :type: altdss.ArrayProxy.BatchFloat64ArrayProxy
 :value: >
-   None
+   'property(...)'
 
 ```{autodoc2-docstring} altdss.WireData.IWireData.NormAmps
 ```
@@ -153,7 +153,7 @@ Bases: {py:obj}`altdss.DSSObj.IDSSObj`, {py:obj}`altdss.WireData.WireDataBatch`
 :canonical: altdss.WireData.IWireData.RAC
 :type: altdss.ArrayProxy.BatchFloat64ArrayProxy
 :value: >
-   None
+   'property(...)'
 
 ```{autodoc2-docstring} altdss.WireData.IWireData.RAC
 ```
@@ -164,7 +164,7 @@ Bases: {py:obj}`altdss.DSSObj.IDSSObj`, {py:obj}`altdss.WireData.WireDataBatch`
 :canonical: altdss.WireData.IWireData.RDC
 :type: altdss.ArrayProxy.BatchFloat64ArrayProxy
 :value: >
-   None
+   'property(...)'
 
 ```{autodoc2-docstring} altdss.WireData.IWireData.RDC
 ```
@@ -175,7 +175,7 @@ Bases: {py:obj}`altdss.DSSObj.IDSSObj`, {py:obj}`altdss.WireData.WireDataBatch`
 :canonical: altdss.WireData.IWireData.RUnits
 :type: altdss.ArrayProxy.BatchInt32ArrayProxy
 :value: >
-   None
+   'property(...)'
 
 ```{autodoc2-docstring} altdss.WireData.IWireData.RUnits
 ```
@@ -186,7 +186,7 @@ Bases: {py:obj}`altdss.DSSObj.IDSSObj`, {py:obj}`altdss.WireData.WireDataBatch`
 :canonical: altdss.WireData.IWireData.RUnits_str
 :type: typing.List[str]
 :value: >
-   None
+   'property(...)'
 
 ```{autodoc2-docstring} altdss.WireData.IWireData.RUnits_str
 ```
@@ -197,7 +197,7 @@ Bases: {py:obj}`altdss.DSSObj.IDSSObj`, {py:obj}`altdss.WireData.WireDataBatch`
 :canonical: altdss.WireData.IWireData.RadUnits
 :type: altdss.ArrayProxy.BatchInt32ArrayProxy
 :value: >
-   None
+   'property(...)'
 
 ```{autodoc2-docstring} altdss.WireData.IWireData.RadUnits
 ```
@@ -208,7 +208,7 @@ Bases: {py:obj}`altdss.DSSObj.IDSSObj`, {py:obj}`altdss.WireData.WireDataBatch`
 :canonical: altdss.WireData.IWireData.RadUnits_str
 :type: typing.List[str]
 :value: >
-   None
+   'property(...)'
 
 ```{autodoc2-docstring} altdss.WireData.IWireData.RadUnits_str
 ```
@@ -219,7 +219,7 @@ Bases: {py:obj}`altdss.DSSObj.IDSSObj`, {py:obj}`altdss.WireData.WireDataBatch`
 :canonical: altdss.WireData.IWireData.Radius
 :type: altdss.ArrayProxy.BatchFloat64ArrayProxy
 :value: >
-   None
+   'property(...)'
 
 ```{autodoc2-docstring} altdss.WireData.IWireData.Radius
 ```
@@ -230,7 +230,7 @@ Bases: {py:obj}`altdss.DSSObj.IDSSObj`, {py:obj}`altdss.WireData.WireDataBatch`
 :canonical: altdss.WireData.IWireData.Ratings
 :type: typing.List[altdss.types.Float64Array]
 :value: >
-   None
+   'property(...)'
 
 ```{autodoc2-docstring} altdss.WireData.IWireData.Ratings
 ```
@@ -241,7 +241,7 @@ Bases: {py:obj}`altdss.DSSObj.IDSSObj`, {py:obj}`altdss.WireData.WireDataBatch`
 :canonical: altdss.WireData.IWireData.Seasons
 :type: altdss.ArrayProxy.BatchInt32ArrayProxy
 :value: >
-   None
+   'property(...)'
 
 ```{autodoc2-docstring} altdss.WireData.IWireData.Seasons
 ```
@@ -374,7 +374,7 @@ Bases: {py:obj}`altdss.DSSObj.DSSObj`
 :canonical: altdss.WireData.WireData.CapRadius
 :type: float
 :value: >
-   None
+   'property(...)'
 
 ```{autodoc2-docstring} altdss.WireData.WireData.CapRadius
 ```
@@ -385,7 +385,7 @@ Bases: {py:obj}`altdss.DSSObj.DSSObj`
 :canonical: altdss.WireData.WireData.Diam
 :type: float
 :value: >
-   None
+   'property(...)'
 
 ```{autodoc2-docstring} altdss.WireData.WireData.Diam
 ```
@@ -396,7 +396,7 @@ Bases: {py:obj}`altdss.DSSObj.DSSObj`
 :canonical: altdss.WireData.WireData.EmergAmps
 :type: float
 :value: >
-   None
+   'property(...)'
 
 ```{autodoc2-docstring} altdss.WireData.WireData.EmergAmps
 ```
@@ -415,7 +415,7 @@ Bases: {py:obj}`altdss.DSSObj.DSSObj`
 :canonical: altdss.WireData.WireData.GMRAC
 :type: float
 :value: >
-   None
+   'property(...)'
 
 ```{autodoc2-docstring} altdss.WireData.WireData.GMRAC
 ```
@@ -426,7 +426,7 @@ Bases: {py:obj}`altdss.DSSObj.DSSObj`
 :canonical: altdss.WireData.WireData.GMRUnits
 :type: altdss.enums.LengthUnit
 :value: >
-   None
+   'property(...)'
 
 ```{autodoc2-docstring} altdss.WireData.WireData.GMRUnits
 ```
@@ -437,7 +437,7 @@ Bases: {py:obj}`altdss.DSSObj.DSSObj`
 :canonical: altdss.WireData.WireData.GMRUnits_str
 :type: str
 :value: >
-   None
+   'property(...)'
 
 ```{autodoc2-docstring} altdss.WireData.WireData.GMRUnits_str
 ```
@@ -465,7 +465,7 @@ Bases: {py:obj}`altdss.DSSObj.DSSObj`
 :canonical: altdss.WireData.WireData.NormAmps
 :type: float
 :value: >
-   None
+   'property(...)'
 
 ```{autodoc2-docstring} altdss.WireData.WireData.NormAmps
 ```
@@ -476,7 +476,7 @@ Bases: {py:obj}`altdss.DSSObj.DSSObj`
 :canonical: altdss.WireData.WireData.RAC
 :type: float
 :value: >
-   None
+   'property(...)'
 
 ```{autodoc2-docstring} altdss.WireData.WireData.RAC
 ```
@@ -487,7 +487,7 @@ Bases: {py:obj}`altdss.DSSObj.DSSObj`
 :canonical: altdss.WireData.WireData.RDC
 :type: float
 :value: >
-   None
+   'property(...)'
 
 ```{autodoc2-docstring} altdss.WireData.WireData.RDC
 ```
@@ -498,7 +498,7 @@ Bases: {py:obj}`altdss.DSSObj.DSSObj`
 :canonical: altdss.WireData.WireData.RUnits
 :type: altdss.enums.LengthUnit
 :value: >
-   None
+   'property(...)'
 
 ```{autodoc2-docstring} altdss.WireData.WireData.RUnits
 ```
@@ -509,7 +509,7 @@ Bases: {py:obj}`altdss.DSSObj.DSSObj`
 :canonical: altdss.WireData.WireData.RUnits_str
 :type: str
 :value: >
-   None
+   'property(...)'
 
 ```{autodoc2-docstring} altdss.WireData.WireData.RUnits_str
 ```
@@ -520,7 +520,7 @@ Bases: {py:obj}`altdss.DSSObj.DSSObj`
 :canonical: altdss.WireData.WireData.RadUnits
 :type: altdss.enums.LengthUnit
 :value: >
-   None
+   'property(...)'
 
 ```{autodoc2-docstring} altdss.WireData.WireData.RadUnits
 ```
@@ -531,7 +531,7 @@ Bases: {py:obj}`altdss.DSSObj.DSSObj`
 :canonical: altdss.WireData.WireData.RadUnits_str
 :type: str
 :value: >
-   None
+   'property(...)'
 
 ```{autodoc2-docstring} altdss.WireData.WireData.RadUnits_str
 ```
@@ -542,7 +542,7 @@ Bases: {py:obj}`altdss.DSSObj.DSSObj`
 :canonical: altdss.WireData.WireData.Radius
 :type: float
 :value: >
-   None
+   'property(...)'
 
 ```{autodoc2-docstring} altdss.WireData.WireData.Radius
 ```
@@ -553,7 +553,7 @@ Bases: {py:obj}`altdss.DSSObj.DSSObj`
 :canonical: altdss.WireData.WireData.Ratings
 :type: altdss.types.Float64Array
 :value: >
-   None
+   'property(...)'
 
 ```{autodoc2-docstring} altdss.WireData.WireData.Ratings
 ```
@@ -564,7 +564,7 @@ Bases: {py:obj}`altdss.DSSObj.DSSObj`
 :canonical: altdss.WireData.WireData.Seasons
 :type: int
 :value: >
-   None
+   'property(...)'
 
 ```{autodoc2-docstring} altdss.WireData.WireData.Seasons
 ```
@@ -641,7 +641,7 @@ Bases: {py:obj}`altdss.Batch.DSSBatch`
 :canonical: altdss.WireData.WireDataBatch.CapRadius
 :type: altdss.ArrayProxy.BatchFloat64ArrayProxy
 :value: >
-   None
+   'property(...)'
 
 ```{autodoc2-docstring} altdss.WireData.WireDataBatch.CapRadius
 ```
@@ -652,7 +652,7 @@ Bases: {py:obj}`altdss.Batch.DSSBatch`
 :canonical: altdss.WireData.WireDataBatch.Diam
 :type: altdss.ArrayProxy.BatchFloat64ArrayProxy
 :value: >
-   None
+   'property(...)'
 
 ```{autodoc2-docstring} altdss.WireData.WireDataBatch.Diam
 ```
@@ -663,7 +663,7 @@ Bases: {py:obj}`altdss.Batch.DSSBatch`
 :canonical: altdss.WireData.WireDataBatch.EmergAmps
 :type: altdss.ArrayProxy.BatchFloat64ArrayProxy
 :value: >
-   None
+   'property(...)'
 
 ```{autodoc2-docstring} altdss.WireData.WireDataBatch.EmergAmps
 ```
@@ -682,7 +682,7 @@ Bases: {py:obj}`altdss.Batch.DSSBatch`
 :canonical: altdss.WireData.WireDataBatch.GMRAC
 :type: altdss.ArrayProxy.BatchFloat64ArrayProxy
 :value: >
-   None
+   'property(...)'
 
 ```{autodoc2-docstring} altdss.WireData.WireDataBatch.GMRAC
 ```
@@ -693,7 +693,7 @@ Bases: {py:obj}`altdss.Batch.DSSBatch`
 :canonical: altdss.WireData.WireDataBatch.GMRUnits
 :type: altdss.ArrayProxy.BatchInt32ArrayProxy
 :value: >
-   None
+   'property(...)'
 
 ```{autodoc2-docstring} altdss.WireData.WireDataBatch.GMRUnits
 ```
@@ -704,7 +704,7 @@ Bases: {py:obj}`altdss.Batch.DSSBatch`
 :canonical: altdss.WireData.WireDataBatch.GMRUnits_str
 :type: typing.List[str]
 :value: >
-   None
+   'property(...)'
 
 ```{autodoc2-docstring} altdss.WireData.WireDataBatch.GMRUnits_str
 ```
@@ -732,7 +732,7 @@ Bases: {py:obj}`altdss.Batch.DSSBatch`
 :canonical: altdss.WireData.WireDataBatch.NormAmps
 :type: altdss.ArrayProxy.BatchFloat64ArrayProxy
 :value: >
-   None
+   'property(...)'
 
 ```{autodoc2-docstring} altdss.WireData.WireDataBatch.NormAmps
 ```
@@ -743,7 +743,7 @@ Bases: {py:obj}`altdss.Batch.DSSBatch`
 :canonical: altdss.WireData.WireDataBatch.RAC
 :type: altdss.ArrayProxy.BatchFloat64ArrayProxy
 :value: >
-   None
+   'property(...)'
 
 ```{autodoc2-docstring} altdss.WireData.WireDataBatch.RAC
 ```
@@ -754,7 +754,7 @@ Bases: {py:obj}`altdss.Batch.DSSBatch`
 :canonical: altdss.WireData.WireDataBatch.RDC
 :type: altdss.ArrayProxy.BatchFloat64ArrayProxy
 :value: >
-   None
+   'property(...)'
 
 ```{autodoc2-docstring} altdss.WireData.WireDataBatch.RDC
 ```
@@ -765,7 +765,7 @@ Bases: {py:obj}`altdss.Batch.DSSBatch`
 :canonical: altdss.WireData.WireDataBatch.RUnits
 :type: altdss.ArrayProxy.BatchInt32ArrayProxy
 :value: >
-   None
+   'property(...)'
 
 ```{autodoc2-docstring} altdss.WireData.WireDataBatch.RUnits
 ```
@@ -776,7 +776,7 @@ Bases: {py:obj}`altdss.Batch.DSSBatch`
 :canonical: altdss.WireData.WireDataBatch.RUnits_str
 :type: typing.List[str]
 :value: >
-   None
+   'property(...)'
 
 ```{autodoc2-docstring} altdss.WireData.WireDataBatch.RUnits_str
 ```
@@ -787,7 +787,7 @@ Bases: {py:obj}`altdss.Batch.DSSBatch`
 :canonical: altdss.WireData.WireDataBatch.RadUnits
 :type: altdss.ArrayProxy.BatchInt32ArrayProxy
 :value: >
-   None
+   'property(...)'
 
 ```{autodoc2-docstring} altdss.WireData.WireDataBatch.RadUnits
 ```
@@ -798,7 +798,7 @@ Bases: {py:obj}`altdss.Batch.DSSBatch`
 :canonical: altdss.WireData.WireDataBatch.RadUnits_str
 :type: typing.List[str]
 :value: >
-   None
+   'property(...)'
 
 ```{autodoc2-docstring} altdss.WireData.WireDataBatch.RadUnits_str
 ```
@@ -809,7 +809,7 @@ Bases: {py:obj}`altdss.Batch.DSSBatch`
 :canonical: altdss.WireData.WireDataBatch.Radius
 :type: altdss.ArrayProxy.BatchFloat64ArrayProxy
 :value: >
-   None
+   'property(...)'
 
 ```{autodoc2-docstring} altdss.WireData.WireDataBatch.Radius
 ```
@@ -820,7 +820,7 @@ Bases: {py:obj}`altdss.Batch.DSSBatch`
 :canonical: altdss.WireData.WireDataBatch.Ratings
 :type: typing.List[altdss.types.Float64Array]
 :value: >
-   None
+   'property(...)'
 
 ```{autodoc2-docstring} altdss.WireData.WireDataBatch.Ratings
 ```
@@ -831,7 +831,7 @@ Bases: {py:obj}`altdss.Batch.DSSBatch`
 :canonical: altdss.WireData.WireDataBatch.Seasons
 :type: altdss.ArrayProxy.BatchInt32ArrayProxy
 :value: >
-   None
+   'property(...)'
 
 ```{autodoc2-docstring} altdss.WireData.WireDataBatch.Seasons
 ```

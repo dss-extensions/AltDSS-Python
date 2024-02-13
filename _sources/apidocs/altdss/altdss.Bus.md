@@ -371,11 +371,11 @@
 
 ````
 
-````{py:property} puVmagAngle
-:canonical: altdss.Bus.Bus.puVmagAngle
+````{py:property} puVMagAngle
+:canonical: altdss.Bus.Bus.puVMagAngle
 :type: altdss.types.Float64Array
 
-```{autodoc2-docstring} altdss.Bus.Bus.puVmagAngle
+```{autodoc2-docstring} altdss.Bus.Bus.puVMagAngle
 ```
 
 ````

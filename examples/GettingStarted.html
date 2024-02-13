@@ -6,9 +6,9 @@
 
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.19: https://docutils.sourceforge.io/" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
-    <title>Getting Started &#8212; AltDSS-Python 0.1.0 documentation</title>
+    <title>Getting Started &#8212; AltDSS-Python 0.1.2 documentation</title>
   
   
   
@@ -28,7 +28,7 @@
 <link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.5.1/webfonts/fa-brands-400.woff2" />
 <link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.5.1/webfonts/fa-regular-400.woff2" />
 
-    <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=362ab14a" />
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=a746c00c" />
     <link rel="stylesheet" type="text/css" href="../_static/styles/sphinx-book-theme.css?v=384b581d" />
     <link rel="stylesheet" type="text/css" href="../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
     <link rel="stylesheet" type="text/css" href="../_static/design-style.1e8bd061cd6da7fc9cf755528e8ffc24.min.css?v=0a3b3ea7" />
@@ -38,7 +38,7 @@
 <link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=8d27b9dea8ad943066ae" />
   <script src="../_static/vendor/fontawesome/6.5.1/js/all.min.js?digest=8d27b9dea8ad943066ae"></script>
 
-    <script src="../_static/documentation_options.js?v=a1637f0b"></script>
+    <script src="../_static/documentation_options.js?v=0deb7d70"></script>
     <script src="../_static/doctools.js?v=888ff710"></script>
     <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
     <script src="../_static/scripts/sphinx-book-theme.js?v=efea14e4"></script>
@@ -137,8 +137,8 @@
       
     
     
-    <img src="../_static/altdss-python.svg" class="logo__image only-light" alt="AltDSS-Python 0.1.0 documentation - Home"/>
-    <script>document.write(`<img src="../_static/altdss-python-dark.svg" class="logo__image only-dark" alt="AltDSS-Python 0.1.0 documentation - Home"/>`);</script>
+    <img src="../_static/altdss-python.svg" class="logo__image only-light" alt="AltDSS-Python 0.1.2 documentation - Home"/>
+    <script>document.write(`<img src="../_static/altdss-python-dark.svg" class="logo__image only-dark" alt="AltDSS-Python 0.1.2 documentation - Home"/>`);</script>
   
   
 </a></div>
@@ -247,12 +247,12 @@
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">External links</span></p>
 <ul class="nav bd-sidenav">
-<li class="toctree-l1"><a class="reference external" href="https://github.com/dss-extensions/dss_python">GitHub repository</a></li>
-<li class="toctree-l1"><a class="reference external" href="https://pypi.python.org/pypi/OpenDSSDirect.py/">Package on PyPI</a></li>
+<li class="toctree-l1"><a class="reference external" href="https://github.com/dss-extensions/AltDSS-Python">GitHub repository</a></li>
+<li class="toctree-l1"><a class="reference external" href="https://pypi.python.org/pypi/altdss/">Package on PyPI</a></li>
 <li class="toctree-l1"><a class="reference external" href="https://github.com/dss-extensions/electricdss-tst">Test/example circuits</a></li>
 
 <li class="toctree-l1"><a class="reference external" href="https://dss-extensions.org/OpenDSSDirect.py">OpenDSSDirect.py</a></li>
-<li class="toctree-l1"><a class="reference external" href="https://dss-extensions.org/dss_python/">DSS-Python</a></li>
+<li class="toctree-l1"><a class="reference external" href="https://dss-extensions.org/DSS-Python/">DSS-Python</a></li>
 <li class="toctree-l1"><a class="reference external" href="https://github.com/orgs/dss-extensions/discussions">DSS-Extensions Discussions</a></li>
 <li class="toctree-l1"><a class="reference external" href="https://sourceforge.net/p/electricdss/discussion/">OpenDSS forum</a></li>
 <li class="toctree-l1"><a class="reference external" href="https://opendss.epri.com/opendss_documentation.html">OpenDSS documentation</a></li>
@@ -408,6 +408,7 @@ document.write(`
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#buses-in-python">Buses in Python</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#dss-objects-in-python">DSS Objects in Python</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#batches">Batches</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#creating-objects">Creating objects</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#automatic-invalidation">Automatic invalidation</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#to-be-continued">TO BE CONTINUED!</a></li>
 </ul>
@@ -426,7 +427,7 @@ document.write(`
 <p>This document provides an overview of some of the AltDSS-Python’s features, especially for new users. It is exposed as the <code class="docutils literal notranslate"><span class="pre">altdss</span></code> package.</p>
 <p><strong>Notebook requirements</strong></p>
 <p>This is a Jupyter notebook. Running it as-is will try to download the required files.</p>
-<p>You can open and then run this notebook on Google Colab for a quick overview if you don’t want to set up a local environment: <strong><a class="reference external" href="https://colab.research.google.com/github/dss-extensions/dss_python/blob/master/docs/examples/GettingStarted.ipynb">Open in Colab</a></strong>.</p>
+<p>You can open and then run this notebook on Google Colab for a quick overview if you don’t want to set up a local environment: <strong><a class="reference external" href="https://colab.research.google.com/github/dss-extensions/AltDSS-Python/blob/master/docs/examples/GettingStarted.ipynb">Open in Colab</a></strong>.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># When running via Colab, install the package first</span>
@@ -525,8 +526,8 @@ jupyter lab
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>DSS C-API Library version 0.14.0 revision 04941400a091677da98b033a3b682480f2584693 based on OpenDSS SVN 3723 [FPC 3.2.2] (64-bit build) MVMULT INCREMENTAL_Y CONTEXT_API PM 20240209141429; License Status: Open 
-DSS-Python version: 0.15.0
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>DSS C-API Library version 0.14.1 revision 8b3da5b576f4dedd16d2bfb88bfb911c0aca3783 based on OpenDSS SVN 3723 [FPC 3.2.2] (64-bit build) MVMULT INCREMENTAL_Y CONTEXT_API PM 20240217013457; License Status: Open 
+DSS-Python version: 0.15.2
 </pre></div>
 </div>
 </div>
@@ -539,9 +540,9 @@ DSS-Python version: 0.15.0
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>DSS C-API Library version 0.14.0 revision 04941400a091677da98b033a3b682480f2584693 based on OpenDSS SVN 3723 [FPC 3.2.2] (64-bit build) MVMULT INCREMENTAL_Y CONTEXT_API PM 20240209141429; License Status: Open 
-DSS-Python version: 0.15.0
-OpenDSSDirect.py version: 0.9.0
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>DSS C-API Library version 0.14.1 revision 8b3da5b576f4dedd16d2bfb88bfb911c0aca3783 based on OpenDSS SVN 3723 [FPC 3.2.2] (64-bit build) MVMULT INCREMENTAL_Y CONTEXT_API PM 20240217013457; License Status: Open 
+DSS-Python version: 0.15.2
+OpenDSSDirect.py version: 0.9.1
 </pre></div>
 </div>
 </div>
@@ -753,7 +754,7 @@ Sensor 0
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;altdss.Load.ILoad at 0x7f7b5820cf30&gt;
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;altdss.Load.ILoad at 0x7fd99c10a270&gt;
 </pre></div>
 </div>
 </div>
@@ -1021,7 +1022,7 @@ Sensor 0
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;altdss.ArrayProxy.BatchFloat64ArrayProxy at 0x7f7b57fdcf10&gt;
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;altdss.ArrayProxy.BatchFloat64ArrayProxy at 0x7fd99bf1ce60&gt;
 </pre></div>
 </div>
 </div>
@@ -1070,7 +1071,7 @@ Sensor 0
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>102 µs ± 647 ns per loop (mean ± std. dev. of 7 runs, 10,000 loops each)
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>103 µs ± 266 ns per loop (mean ± std. dev. of 7 runs, 10,000 loops each)
 </pre></div>
 </div>
 </div>
@@ -1085,12 +1086,12 @@ Sensor 0
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>621 µs ± 2.88 µs per loop (mean ± std. dev. of 7 runs, 1,000 loops each)
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>579 µs ± 11.5 µs per loop (mean ± std. dev. of 7 runs, 1,000 loops each)
 </pre></div>
 </div>
 </div>
 </div>
-<p>We can filter the objects based on <strong>integer</strong> and <strong>boolean</strong> properties:</p>
+<p>We can filter the objects based on <strong>integer</strong> and <strong>boolean</strong> properties, besides regular expressions.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">loads_2ph</span> <span class="o">=</span> <span class="n">altdss</span><span class="o">.</span><span class="n">Load</span><span class="o">.</span><span class="n">batch</span><span class="p">(</span><span class="n">Phases</span><span class="o">=</span><span class="mi">2</span><span class="p">)</span>
@@ -1105,10 +1106,23 @@ Sensor 0
 </div>
 </div>
 </div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">l2010x</span> <span class="o">=</span> <span class="n">altdss</span><span class="o">.</span><span class="n">Load</span><span class="o">.</span><span class="n">batch</span><span class="p">(</span><span class="n">re</span><span class="o">=</span><span class="s1">&#39;^2010.*$&#39;</span><span class="p">)</span>
+<span class="n">l2010x</span><span class="o">.</span><span class="n">to_list</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&lt;Load.20107636a0&gt;, &lt;Load.20107693b0&gt;]
+</pre></div>
+</div>
+</div>
+</div>
 <p>Let’s set the loadshape to these 2-phase loads:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">loads_2ph</span><span class="o">.</span><span class="n">Daily_str</span> <span class="o">=</span> <span class="s1">&#39;default&#39;</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">loads_2ph</span><span class="o">.</span><span class="n">Daily</span> <span class="o">=</span> <span class="s1">&#39;default&#39;</span>
 </pre></div>
 </div>
 </div>
@@ -1162,6 +1176,36 @@ Sensor 0
 </div>
 </div>
 </section>
+<section id="creating-objects">
+<h2>Creating objects<a class="headerlink" href="#creating-objects" title="Link to this heading">#</a></h2>
+<p>We can also create a new loadshape and assign the object directly, either to objects or batches:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">loadshape</span> <span class="o">=</span> <span class="n">altdss</span><span class="o">.</span><span class="n">LoadShape</span><span class="o">.</span><span class="n">new</span><span class="p">(</span><span class="s1">&#39;sample_shape&#39;</span><span class="p">)</span>
+<span class="n">loadshape</span><span class="o">.</span><span class="n">NPts</span> <span class="o">=</span> <span class="mi">5</span>
+<span class="n">loadshape</span><span class="o">.</span><span class="n">PMult</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">5</span><span class="p">]</span>
+<span class="n">loadshape</span><span class="o">.</span><span class="n">end_edit</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">l2010x</span><span class="o">.</span><span class="n">Daily</span> <span class="o">=</span> <span class="n">loadshape</span>
+<span class="n">l2010x</span><span class="o">.</span><span class="n">Daily_str</span> <span class="c1"># checking</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&#39;sample_shape&#39;, &#39;sample_shape&#39;]
+</pre></div>
+</div>
+</div>
+</div>
+<p>We’ll probalby tweak this <code class="docutils literal notranslate"><span class="pre">end_edit()</span></code> idiom in later versions.</p>
+<p>We are also considering making <code class="docutils literal notranslate"><span class="pre">NPts</span></code> and most of the other size properties not required when creating/manipulating data from Python (i.e. this doesn’t affect DSS scripts), as it will follow the formats derived from the upcoming AltDSS Schema.</p>
+<p>The <code class="docutils literal notranslate"><span class="pre">new</span></code> methods also accept the DSS properties as keyword arguments. <a class="reference external" href="https://github.com/dss-extensions/AltDSS-Python/tree/main/tests">Check the <code class="docutils literal notranslate"><span class="pre">tests</span></code> folder in the repository</a> for more examples.</p>
+</section>
 <section id="automatic-invalidation">
 <h2>Automatic invalidation<a class="headerlink" href="#automatic-invalidation" title="Link to this heading">#</a></h2>
 <p>The <code class="docutils literal notranslate"><span class="pre">bus0</span></code> we got before was for another circuit. If we try to use it, it is marked with <code class="docutils literal notranslate"><span class="pre">InvalidatedDSSBus</span></code>.</p>
@@ -1174,16 +1218,16 @@ Sensor 0
 <div class="cell_output docutils container">
 <div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
 <span class="ne">TypeError</span><span class="g g-Whitespace">                                 </span>Traceback (most recent call last)
-<span class="n">Cell</span> <span class="n">In</span><span class="p">[</span><span class="mi">47</span><span class="p">],</span> <span class="n">line</span> <span class="mi">1</span>
+<span class="n">Cell</span> <span class="n">In</span><span class="p">[</span><span class="mi">50</span><span class="p">],</span> <span class="n">line</span> <span class="mi">1</span>
 <span class="ne">----&gt; </span><span class="mi">1</span> <span class="n">bus0</span><span class="o">.</span><span class="n">Name</span>
 
-<span class="nn">File /opt/python/lib/python3.11/site-packages/altdss/Bus.py:100,</span> in <span class="ni">Bus.Name</span><span class="nt">(self)</span>
+<span class="nn">File /opt/python/lib/python3.12/site-packages/altdss/Bus.py:100,</span> in <span class="ni">Bus.Name</span><span class="nt">(self)</span>
 <span class="g g-Whitespace">     </span><span class="mi">97</span> <span class="nd">@property</span>
 <span class="g g-Whitespace">     </span><span class="mi">98</span> <span class="k">def</span> <span class="nf">Name</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">str</span><span class="p">:</span>
 <span class="g g-Whitespace">     </span><span class="mi">99</span><span class="w">     </span><span class="sd">&#39;&#39;&#39;Name of Bus&#39;&#39;&#39;</span>
 <span class="ne">--&gt; </span><span class="mi">100</span>     <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_get_string</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_lib</span><span class="o">.</span><span class="n">Alt_Bus_Get_Name</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_ptr</span><span class="p">))</span>
 
-<span class="nn">File /opt/python/lib/python3.11/site-packages/dss/_cffi_api_util.py:82,</span> in <span class="ni">CtxLib._error_checked</span><span class="nt">(self, _errorPtr, f, *args)</span>
+<span class="nn">File /opt/python/lib/python3.12/site-packages/dss/_cffi_api_util.py:82,</span> in <span class="ni">CtxLib._error_checked</span><span class="nt">(self, _errorPtr, f, *args)</span>
 <span class="g g-Whitespace">     </span><span class="mi">81</span> <span class="k">def</span> <span class="nf">_error_checked</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">_errorPtr</span><span class="p">,</span> <span class="n">f</span><span class="p">,</span> <span class="o">*</span><span class="n">args</span><span class="p">):</span>
 <span class="ne">---&gt; </span><span class="mi">82</span>     <span class="n">result</span> <span class="o">=</span> <span class="n">f</span><span class="p">(</span><span class="o">*</span><span class="n">args</span><span class="p">)</span>
 <span class="g g-Whitespace">     </span><span class="mi">83</span>     <span class="k">if</span> <span class="n">_errorPtr</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="ow">and</span> <span class="n">Base</span><span class="o">.</span><span class="n">_use_exceptions</span><span class="p">:</span>
@@ -1204,10 +1248,10 @@ Sensor 0
 <div class="cell_output docutils container">
 <div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
 <span class="ne">TypeError</span><span class="g g-Whitespace">                                 </span>Traceback (most recent call last)
-<span class="n">Cell</span> <span class="n">In</span><span class="p">[</span><span class="mi">48</span><span class="p">],</span> <span class="n">line</span> <span class="mi">1</span>
+<span class="n">Cell</span> <span class="n">In</span><span class="p">[</span><span class="mi">51</span><span class="p">],</span> <span class="n">line</span> <span class="mi">1</span>
 <span class="ne">----&gt; </span><span class="mi">1</span> <span class="n">l</span><span class="o">.</span><span class="n">kW</span>
 
-<span class="nn">File /opt/python/lib/python3.11/site-packages/altdss/Load.py:127,</span> in <span class="ni">Load._get_kW</span><span class="nt">(self)</span>
+<span class="nn">File /opt/python/lib/python3.12/site-packages/altdss/Load.py:127,</span> in <span class="ni">Load._get_kW</span><span class="nt">(self)</span>
 <span class="g g-Whitespace">    </span><span class="mi">114</span> <span class="k">def</span> <span class="nf">_get_kW</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">float</span><span class="p">:</span>
 <span class="g g-Whitespace">    </span><span class="mi">115</span><span class="w">     </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="g g-Whitespace">    </span><span class="mi">116</span><span class="sd">     Total base kW for the load.  Normally, you would enter the maximum kW for the load for the first year and allow it to be adjusted by the load shapes, growth shapes, and global load multiplier.</span>
@@ -1282,6 +1326,7 @@ Sensor 0
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#buses-in-python">Buses in Python</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#dss-objects-in-python">DSS Objects in Python</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#batches">Batches</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#creating-objects">Creating objects</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#automatic-invalidation">Automatic invalidation</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#to-be-continued">TO BE CONTINUED!</a></li>
 </ul>

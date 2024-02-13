@@ -51,7 +51,7 @@ Bases: {py:obj}`altdss.DSSObj.IDSSObj`, {py:obj}`altdss.Recloser.RecloserBatch`
 :canonical: altdss.Recloser.IRecloser.BaseFreq
 :type: altdss.ArrayProxy.BatchFloat64ArrayProxy
 :value: >
-   None
+   'property(...)'
 
 ```{autodoc2-docstring} altdss.Recloser.IRecloser.BaseFreq
 ```
@@ -94,7 +94,7 @@ Bases: {py:obj}`altdss.DSSObj.IDSSObj`, {py:obj}`altdss.Recloser.RecloserBatch`
 :canonical: altdss.Recloser.IRecloser.Delay
 :type: altdss.ArrayProxy.BatchFloat64ArrayProxy
 :value: >
-   None
+   'property(...)'
 
 ```{autodoc2-docstring} altdss.Recloser.IRecloser.Delay
 ```
@@ -105,7 +105,7 @@ Bases: {py:obj}`altdss.DSSObj.IDSSObj`, {py:obj}`altdss.Recloser.RecloserBatch`
 :canonical: altdss.Recloser.IRecloser.Enabled
 :type: typing.List[bool]
 :value: >
-   None
+   'property(...)'
 
 ```{autodoc2-docstring} altdss.Recloser.IRecloser.Enabled
 ```
@@ -132,7 +132,7 @@ Bases: {py:obj}`altdss.DSSObj.IDSSObj`, {py:obj}`altdss.Recloser.RecloserBatch`
 :canonical: altdss.Recloser.IRecloser.GroundDelayed
 :type: typing.List[altdss.TCC_Curve.TCC_Curve]
 :value: >
-   None
+   'property(...)'
 
 ```{autodoc2-docstring} altdss.Recloser.IRecloser.GroundDelayed
 ```
@@ -143,7 +143,7 @@ Bases: {py:obj}`altdss.DSSObj.IDSSObj`, {py:obj}`altdss.Recloser.RecloserBatch`
 :canonical: altdss.Recloser.IRecloser.GroundDelayed_str
 :type: typing.List[str]
 :value: >
-   None
+   'property(...)'
 
 ```{autodoc2-docstring} altdss.Recloser.IRecloser.GroundDelayed_str
 ```
@@ -154,7 +154,7 @@ Bases: {py:obj}`altdss.DSSObj.IDSSObj`, {py:obj}`altdss.Recloser.RecloserBatch`
 :canonical: altdss.Recloser.IRecloser.GroundFast
 :type: typing.List[altdss.TCC_Curve.TCC_Curve]
 :value: >
-   None
+   'property(...)'
 
 ```{autodoc2-docstring} altdss.Recloser.IRecloser.GroundFast
 ```
@@ -165,7 +165,7 @@ Bases: {py:obj}`altdss.DSSObj.IDSSObj`, {py:obj}`altdss.Recloser.RecloserBatch`
 :canonical: altdss.Recloser.IRecloser.GroundFast_str
 :type: typing.List[str]
 :value: >
-   None
+   'property(...)'
 
 ```{autodoc2-docstring} altdss.Recloser.IRecloser.GroundFast_str
 ```
@@ -176,7 +176,7 @@ Bases: {py:obj}`altdss.DSSObj.IDSSObj`, {py:obj}`altdss.Recloser.RecloserBatch`
 :canonical: altdss.Recloser.IRecloser.GroundInst
 :type: altdss.ArrayProxy.BatchFloat64ArrayProxy
 :value: >
-   None
+   'property(...)'
 
 ```{autodoc2-docstring} altdss.Recloser.IRecloser.GroundInst
 ```
@@ -187,7 +187,7 @@ Bases: {py:obj}`altdss.DSSObj.IDSSObj`, {py:obj}`altdss.Recloser.RecloserBatch`
 :canonical: altdss.Recloser.IRecloser.GroundTrip
 :type: altdss.ArrayProxy.BatchFloat64ArrayProxy
 :value: >
-   None
+   'property(...)'
 
 ```{autodoc2-docstring} altdss.Recloser.IRecloser.GroundTrip
 ```
@@ -262,7 +262,7 @@ Bases: {py:obj}`altdss.DSSObj.IDSSObj`, {py:obj}`altdss.Recloser.RecloserBatch`
 :canonical: altdss.Recloser.IRecloser.MonitoredObj
 :type: typing.List[altdss.DSSObj.DSSObj]
 :value: >
-   None
+   'property(...)'
 
 ```{autodoc2-docstring} altdss.Recloser.IRecloser.MonitoredObj
 ```
@@ -273,7 +273,7 @@ Bases: {py:obj}`altdss.DSSObj.IDSSObj`, {py:obj}`altdss.Recloser.RecloserBatch`
 :canonical: altdss.Recloser.IRecloser.MonitoredObj_str
 :type: typing.List[str]
 :value: >
-   None
+   'property(...)'
 
 ```{autodoc2-docstring} altdss.Recloser.IRecloser.MonitoredObj_str
 ```
@@ -284,7 +284,7 @@ Bases: {py:obj}`altdss.DSSObj.IDSSObj`, {py:obj}`altdss.Recloser.RecloserBatch`
 :canonical: altdss.Recloser.IRecloser.MonitoredTerm
 :type: altdss.ArrayProxy.BatchInt32ArrayProxy
 :value: >
-   None
+   'property(...)'
 
 ```{autodoc2-docstring} altdss.Recloser.IRecloser.MonitoredTerm
 ```
@@ -304,7 +304,7 @@ Bases: {py:obj}`altdss.DSSObj.IDSSObj`, {py:obj}`altdss.Recloser.RecloserBatch`
 :canonical: altdss.Recloser.IRecloser.Normal
 :type: altdss.ArrayProxy.BatchInt32ArrayProxy
 :value: >
-   None
+   'property(...)'
 
 ```{autodoc2-docstring} altdss.Recloser.IRecloser.Normal
 ```
@@ -315,7 +315,7 @@ Bases: {py:obj}`altdss.DSSObj.IDSSObj`, {py:obj}`altdss.Recloser.RecloserBatch`
 :canonical: altdss.Recloser.IRecloser.Normal_str
 :type: typing.List[str]
 :value: >
-   None
+   'property(...)'
 
 ```{autodoc2-docstring} altdss.Recloser.IRecloser.Normal_str
 ```
@@ -342,7 +342,7 @@ Bases: {py:obj}`altdss.DSSObj.IDSSObj`, {py:obj}`altdss.Recloser.RecloserBatch`
 :canonical: altdss.Recloser.IRecloser.NumFast
 :type: altdss.ArrayProxy.BatchInt32ArrayProxy
 :value: >
-   None
+   'property(...)'
 
 ```{autodoc2-docstring} altdss.Recloser.IRecloser.NumFast
 ```
@@ -393,7 +393,7 @@ Bases: {py:obj}`altdss.DSSObj.IDSSObj`, {py:obj}`altdss.Recloser.RecloserBatch`
 :canonical: altdss.Recloser.IRecloser.PhaseDelayed
 :type: typing.List[altdss.TCC_Curve.TCC_Curve]
 :value: >
-   None
+   'property(...)'
 
 ```{autodoc2-docstring} altdss.Recloser.IRecloser.PhaseDelayed
 ```
@@ -404,7 +404,7 @@ Bases: {py:obj}`altdss.DSSObj.IDSSObj`, {py:obj}`altdss.Recloser.RecloserBatch`
 :canonical: altdss.Recloser.IRecloser.PhaseDelayed_str
 :type: typing.List[str]
 :value: >
-   None
+   'property(...)'
 
 ```{autodoc2-docstring} altdss.Recloser.IRecloser.PhaseDelayed_str
 ```
@@ -415,7 +415,7 @@ Bases: {py:obj}`altdss.DSSObj.IDSSObj`, {py:obj}`altdss.Recloser.RecloserBatch`
 :canonical: altdss.Recloser.IRecloser.PhaseFast
 :type: typing.List[altdss.TCC_Curve.TCC_Curve]
 :value: >
-   None
+   'property(...)'
 
 ```{autodoc2-docstring} altdss.Recloser.IRecloser.PhaseFast
 ```
@@ -426,7 +426,7 @@ Bases: {py:obj}`altdss.DSSObj.IDSSObj`, {py:obj}`altdss.Recloser.RecloserBatch`
 :canonical: altdss.Recloser.IRecloser.PhaseFast_str
 :type: typing.List[str]
 :value: >
-   None
+   'property(...)'
 
 ```{autodoc2-docstring} altdss.Recloser.IRecloser.PhaseFast_str
 ```
@@ -437,7 +437,7 @@ Bases: {py:obj}`altdss.DSSObj.IDSSObj`, {py:obj}`altdss.Recloser.RecloserBatch`
 :canonical: altdss.Recloser.IRecloser.PhaseInst
 :type: altdss.ArrayProxy.BatchFloat64ArrayProxy
 :value: >
-   None
+   'property(...)'
 
 ```{autodoc2-docstring} altdss.Recloser.IRecloser.PhaseInst
 ```
@@ -456,7 +456,7 @@ Bases: {py:obj}`altdss.DSSObj.IDSSObj`, {py:obj}`altdss.Recloser.RecloserBatch`
 :canonical: altdss.Recloser.IRecloser.PhaseTrip
 :type: altdss.ArrayProxy.BatchFloat64ArrayProxy
 :value: >
-   None
+   'property(...)'
 
 ```{autodoc2-docstring} altdss.Recloser.IRecloser.PhaseTrip
 ```
@@ -475,7 +475,7 @@ Bases: {py:obj}`altdss.DSSObj.IDSSObj`, {py:obj}`altdss.Recloser.RecloserBatch`
 :canonical: altdss.Recloser.IRecloser.RecloseIntervals
 :type: typing.List[altdss.types.Float64Array]
 :value: >
-   None
+   'property(...)'
 
 ```{autodoc2-docstring} altdss.Recloser.IRecloser.RecloseIntervals
 ```
@@ -486,7 +486,7 @@ Bases: {py:obj}`altdss.DSSObj.IDSSObj`, {py:obj}`altdss.Recloser.RecloserBatch`
 :canonical: altdss.Recloser.IRecloser.Reset
 :type: altdss.ArrayProxy.BatchFloat64ArrayProxy
 :value: >
-   None
+   'property(...)'
 
 ```{autodoc2-docstring} altdss.Recloser.IRecloser.Reset
 ```
@@ -521,7 +521,7 @@ Bases: {py:obj}`altdss.DSSObj.IDSSObj`, {py:obj}`altdss.Recloser.RecloserBatch`
 :canonical: altdss.Recloser.IRecloser.Shots
 :type: altdss.ArrayProxy.BatchInt32ArrayProxy
 :value: >
-   None
+   'property(...)'
 
 ```{autodoc2-docstring} altdss.Recloser.IRecloser.Shots
 ```
@@ -532,7 +532,7 @@ Bases: {py:obj}`altdss.DSSObj.IDSSObj`, {py:obj}`altdss.Recloser.RecloserBatch`
 :canonical: altdss.Recloser.IRecloser.State
 :type: altdss.ArrayProxy.BatchInt32ArrayProxy
 :value: >
-   None
+   'property(...)'
 
 ```{autodoc2-docstring} altdss.Recloser.IRecloser.State
 ```
@@ -543,7 +543,7 @@ Bases: {py:obj}`altdss.DSSObj.IDSSObj`, {py:obj}`altdss.Recloser.RecloserBatch`
 :canonical: altdss.Recloser.IRecloser.State_str
 :type: typing.List[str]
 :value: >
-   None
+   'property(...)'
 
 ```{autodoc2-docstring} altdss.Recloser.IRecloser.State_str
 ```
@@ -554,7 +554,7 @@ Bases: {py:obj}`altdss.DSSObj.IDSSObj`, {py:obj}`altdss.Recloser.RecloserBatch`
 :canonical: altdss.Recloser.IRecloser.SwitchedObj
 :type: typing.List[altdss.DSSObj.DSSObj]
 :value: >
-   None
+   'property(...)'
 
 ```{autodoc2-docstring} altdss.Recloser.IRecloser.SwitchedObj
 ```
@@ -565,7 +565,7 @@ Bases: {py:obj}`altdss.DSSObj.IDSSObj`, {py:obj}`altdss.Recloser.RecloserBatch`
 :canonical: altdss.Recloser.IRecloser.SwitchedObj_str
 :type: typing.List[str]
 :value: >
-   None
+   'property(...)'
 
 ```{autodoc2-docstring} altdss.Recloser.IRecloser.SwitchedObj_str
 ```
@@ -576,7 +576,7 @@ Bases: {py:obj}`altdss.DSSObj.IDSSObj`, {py:obj}`altdss.Recloser.RecloserBatch`
 :canonical: altdss.Recloser.IRecloser.SwitchedTerm
 :type: altdss.ArrayProxy.BatchInt32ArrayProxy
 :value: >
-   None
+   'property(...)'
 
 ```{autodoc2-docstring} altdss.Recloser.IRecloser.SwitchedTerm
 ```
@@ -587,7 +587,7 @@ Bases: {py:obj}`altdss.DSSObj.IDSSObj`, {py:obj}`altdss.Recloser.RecloserBatch`
 :canonical: altdss.Recloser.IRecloser.TDGrDelayed
 :type: altdss.ArrayProxy.BatchFloat64ArrayProxy
 :value: >
-   None
+   'property(...)'
 
 ```{autodoc2-docstring} altdss.Recloser.IRecloser.TDGrDelayed
 ```
@@ -598,7 +598,7 @@ Bases: {py:obj}`altdss.DSSObj.IDSSObj`, {py:obj}`altdss.Recloser.RecloserBatch`
 :canonical: altdss.Recloser.IRecloser.TDGrFast
 :type: altdss.ArrayProxy.BatchFloat64ArrayProxy
 :value: >
-   None
+   'property(...)'
 
 ```{autodoc2-docstring} altdss.Recloser.IRecloser.TDGrFast
 ```
@@ -609,7 +609,7 @@ Bases: {py:obj}`altdss.DSSObj.IDSSObj`, {py:obj}`altdss.Recloser.RecloserBatch`
 :canonical: altdss.Recloser.IRecloser.TDPhDelayed
 :type: altdss.ArrayProxy.BatchFloat64ArrayProxy
 :value: >
-   None
+   'property(...)'
 
 ```{autodoc2-docstring} altdss.Recloser.IRecloser.TDPhDelayed
 ```
@@ -620,7 +620,7 @@ Bases: {py:obj}`altdss.DSSObj.IDSSObj`, {py:obj}`altdss.Recloser.RecloserBatch`
 :canonical: altdss.Recloser.IRecloser.TDPhFast
 :type: altdss.ArrayProxy.BatchFloat64ArrayProxy
 :value: >
-   None
+   'property(...)'
 
 ```{autodoc2-docstring} altdss.Recloser.IRecloser.TDPhFast
 ```
@@ -777,7 +777,7 @@ Bases: {py:obj}`altdss.DSSObj.DSSObj`, {py:obj}`altdss.CircuitElement.CircuitEle
 :canonical: altdss.Recloser.Recloser.BaseFreq
 :type: float
 :value: >
-   None
+   'property(...)'
 
 ```{autodoc2-docstring} altdss.Recloser.Recloser.BaseFreq
 ```
@@ -820,7 +820,7 @@ Bases: {py:obj}`altdss.DSSObj.DSSObj`, {py:obj}`altdss.CircuitElement.CircuitEle
 :canonical: altdss.Recloser.Recloser.Delay
 :type: float
 :value: >
-   None
+   'property(...)'
 
 ```{autodoc2-docstring} altdss.Recloser.Recloser.Delay
 ```
@@ -831,7 +831,7 @@ Bases: {py:obj}`altdss.DSSObj.DSSObj`, {py:obj}`altdss.CircuitElement.CircuitEle
 :canonical: altdss.Recloser.Recloser.DisplayName
 :type: str
 :value: >
-   None
+   'property(...)'
 
 ```{autodoc2-docstring} altdss.Recloser.Recloser.DisplayName
 ```
@@ -842,7 +842,7 @@ Bases: {py:obj}`altdss.DSSObj.DSSObj`, {py:obj}`altdss.CircuitElement.CircuitEle
 :canonical: altdss.Recloser.Recloser.Enabled
 :type: bool
 :value: >
-   None
+   'property(...)'
 
 ```{autodoc2-docstring} altdss.Recloser.Recloser.Enabled
 ```
@@ -869,7 +869,7 @@ Bases: {py:obj}`altdss.DSSObj.DSSObj`, {py:obj}`altdss.CircuitElement.CircuitEle
 :canonical: altdss.Recloser.Recloser.GroundDelayed
 :type: altdss.TCC_Curve.TCC_Curve
 :value: >
-   None
+   'property(...)'
 
 ```{autodoc2-docstring} altdss.Recloser.Recloser.GroundDelayed
 ```
@@ -880,7 +880,7 @@ Bases: {py:obj}`altdss.DSSObj.DSSObj`, {py:obj}`altdss.CircuitElement.CircuitEle
 :canonical: altdss.Recloser.Recloser.GroundDelayed_str
 :type: str
 :value: >
-   None
+   'property(...)'
 
 ```{autodoc2-docstring} altdss.Recloser.Recloser.GroundDelayed_str
 ```
@@ -891,7 +891,7 @@ Bases: {py:obj}`altdss.DSSObj.DSSObj`, {py:obj}`altdss.CircuitElement.CircuitEle
 :canonical: altdss.Recloser.Recloser.GroundFast
 :type: altdss.TCC_Curve.TCC_Curve
 :value: >
-   None
+   'property(...)'
 
 ```{autodoc2-docstring} altdss.Recloser.Recloser.GroundFast
 ```
@@ -902,7 +902,7 @@ Bases: {py:obj}`altdss.DSSObj.DSSObj`, {py:obj}`altdss.CircuitElement.CircuitEle
 :canonical: altdss.Recloser.Recloser.GroundFast_str
 :type: str
 :value: >
-   None
+   'property(...)'
 
 ```{autodoc2-docstring} altdss.Recloser.Recloser.GroundFast_str
 ```
@@ -913,7 +913,7 @@ Bases: {py:obj}`altdss.DSSObj.DSSObj`, {py:obj}`altdss.CircuitElement.CircuitEle
 :canonical: altdss.Recloser.Recloser.GroundInst
 :type: float
 :value: >
-   None
+   'property(...)'
 
 ```{autodoc2-docstring} altdss.Recloser.Recloser.GroundInst
 ```
@@ -924,7 +924,7 @@ Bases: {py:obj}`altdss.DSSObj.DSSObj`, {py:obj}`altdss.CircuitElement.CircuitEle
 :canonical: altdss.Recloser.Recloser.GroundTrip
 :type: float
 :value: >
-   None
+   'property(...)'
 
 ```{autodoc2-docstring} altdss.Recloser.Recloser.GroundTrip
 ```
@@ -1007,7 +1007,7 @@ Bases: {py:obj}`altdss.DSSObj.DSSObj`, {py:obj}`altdss.CircuitElement.CircuitEle
 :canonical: altdss.Recloser.Recloser.MonitoredObj
 :type: altdss.DSSObj.DSSObj
 :value: >
-   None
+   'property(...)'
 
 ```{autodoc2-docstring} altdss.Recloser.Recloser.MonitoredObj
 ```
@@ -1018,7 +1018,7 @@ Bases: {py:obj}`altdss.DSSObj.DSSObj`, {py:obj}`altdss.CircuitElement.CircuitEle
 :canonical: altdss.Recloser.Recloser.MonitoredObj_str
 :type: str
 :value: >
-   None
+   'property(...)'
 
 ```{autodoc2-docstring} altdss.Recloser.Recloser.MonitoredObj_str
 ```
@@ -1029,7 +1029,7 @@ Bases: {py:obj}`altdss.DSSObj.DSSObj`, {py:obj}`altdss.CircuitElement.CircuitEle
 :canonical: altdss.Recloser.Recloser.MonitoredTerm
 :type: int
 :value: >
-   None
+   'property(...)'
 
 ```{autodoc2-docstring} altdss.Recloser.Recloser.MonitoredTerm
 ```
@@ -1065,7 +1065,7 @@ Bases: {py:obj}`altdss.DSSObj.DSSObj`, {py:obj}`altdss.CircuitElement.CircuitEle
 :canonical: altdss.Recloser.Recloser.Normal
 :type: altdss.enums.RecloserState
 :value: >
-   None
+   'property(...)'
 
 ```{autodoc2-docstring} altdss.Recloser.Recloser.Normal
 ```
@@ -1076,7 +1076,7 @@ Bases: {py:obj}`altdss.DSSObj.DSSObj`, {py:obj}`altdss.CircuitElement.CircuitEle
 :canonical: altdss.Recloser.Recloser.Normal_str
 :type: str
 :value: >
-   None
+   'property(...)'
 
 ```{autodoc2-docstring} altdss.Recloser.Recloser.Normal_str
 ```
@@ -1103,7 +1103,7 @@ Bases: {py:obj}`altdss.DSSObj.DSSObj`, {py:obj}`altdss.CircuitElement.CircuitEle
 :canonical: altdss.Recloser.Recloser.NumFast
 :type: int
 :value: >
-   None
+   'property(...)'
 
 ```{autodoc2-docstring} altdss.Recloser.Recloser.NumFast
 ```
@@ -1162,7 +1162,7 @@ Bases: {py:obj}`altdss.DSSObj.DSSObj`, {py:obj}`altdss.CircuitElement.CircuitEle
 :canonical: altdss.Recloser.Recloser.PhaseDelayed
 :type: altdss.TCC_Curve.TCC_Curve
 :value: >
-   None
+   'property(...)'
 
 ```{autodoc2-docstring} altdss.Recloser.Recloser.PhaseDelayed
 ```
@@ -1173,7 +1173,7 @@ Bases: {py:obj}`altdss.DSSObj.DSSObj`, {py:obj}`altdss.CircuitElement.CircuitEle
 :canonical: altdss.Recloser.Recloser.PhaseDelayed_str
 :type: str
 :value: >
-   None
+   'property(...)'
 
 ```{autodoc2-docstring} altdss.Recloser.Recloser.PhaseDelayed_str
 ```
@@ -1184,7 +1184,7 @@ Bases: {py:obj}`altdss.DSSObj.DSSObj`, {py:obj}`altdss.CircuitElement.CircuitEle
 :canonical: altdss.Recloser.Recloser.PhaseFast
 :type: altdss.TCC_Curve.TCC_Curve
 :value: >
-   None
+   'property(...)'
 
 ```{autodoc2-docstring} altdss.Recloser.Recloser.PhaseFast
 ```
@@ -1195,7 +1195,7 @@ Bases: {py:obj}`altdss.DSSObj.DSSObj`, {py:obj}`altdss.CircuitElement.CircuitEle
 :canonical: altdss.Recloser.Recloser.PhaseFast_str
 :type: str
 :value: >
-   None
+   'property(...)'
 
 ```{autodoc2-docstring} altdss.Recloser.Recloser.PhaseFast_str
 ```
@@ -1206,7 +1206,7 @@ Bases: {py:obj}`altdss.DSSObj.DSSObj`, {py:obj}`altdss.CircuitElement.CircuitEle
 :canonical: altdss.Recloser.Recloser.PhaseInst
 :type: float
 :value: >
-   None
+   'property(...)'
 
 ```{autodoc2-docstring} altdss.Recloser.Recloser.PhaseInst
 ```
@@ -1225,7 +1225,7 @@ Bases: {py:obj}`altdss.DSSObj.DSSObj`, {py:obj}`altdss.CircuitElement.CircuitEle
 :canonical: altdss.Recloser.Recloser.PhaseTrip
 :type: float
 :value: >
-   None
+   'property(...)'
 
 ```{autodoc2-docstring} altdss.Recloser.Recloser.PhaseTrip
 ```
@@ -1244,7 +1244,7 @@ Bases: {py:obj}`altdss.DSSObj.DSSObj`, {py:obj}`altdss.CircuitElement.CircuitEle
 :canonical: altdss.Recloser.Recloser.RecloseIntervals
 :type: altdss.types.Float64Array
 :value: >
-   None
+   'property(...)'
 
 ```{autodoc2-docstring} altdss.Recloser.Recloser.RecloseIntervals
 ```
@@ -1255,7 +1255,7 @@ Bases: {py:obj}`altdss.DSSObj.DSSObj`, {py:obj}`altdss.CircuitElement.CircuitEle
 :canonical: altdss.Recloser.Recloser.Reset
 :type: float
 :value: >
-   None
+   'property(...)'
 
 ```{autodoc2-docstring} altdss.Recloser.Recloser.Reset
 ```
@@ -1298,7 +1298,7 @@ Bases: {py:obj}`altdss.DSSObj.DSSObj`, {py:obj}`altdss.CircuitElement.CircuitEle
 :canonical: altdss.Recloser.Recloser.Shots
 :type: int
 :value: >
-   None
+   'property(...)'
 
 ```{autodoc2-docstring} altdss.Recloser.Recloser.Shots
 ```
@@ -1309,7 +1309,7 @@ Bases: {py:obj}`altdss.DSSObj.DSSObj`, {py:obj}`altdss.CircuitElement.CircuitEle
 :canonical: altdss.Recloser.Recloser.State
 :type: altdss.enums.RecloserState
 :value: >
-   None
+   'property(...)'
 
 ```{autodoc2-docstring} altdss.Recloser.Recloser.State
 ```
@@ -1320,7 +1320,7 @@ Bases: {py:obj}`altdss.DSSObj.DSSObj`, {py:obj}`altdss.CircuitElement.CircuitEle
 :canonical: altdss.Recloser.Recloser.State_str
 :type: str
 :value: >
-   None
+   'property(...)'
 
 ```{autodoc2-docstring} altdss.Recloser.Recloser.State_str
 ```
@@ -1331,7 +1331,7 @@ Bases: {py:obj}`altdss.DSSObj.DSSObj`, {py:obj}`altdss.CircuitElement.CircuitEle
 :canonical: altdss.Recloser.Recloser.SwitchedObj
 :type: altdss.DSSObj.DSSObj
 :value: >
-   None
+   'property(...)'
 
 ```{autodoc2-docstring} altdss.Recloser.Recloser.SwitchedObj
 ```
@@ -1342,7 +1342,7 @@ Bases: {py:obj}`altdss.DSSObj.DSSObj`, {py:obj}`altdss.CircuitElement.CircuitEle
 :canonical: altdss.Recloser.Recloser.SwitchedObj_str
 :type: str
 :value: >
-   None
+   'property(...)'
 
 ```{autodoc2-docstring} altdss.Recloser.Recloser.SwitchedObj_str
 ```
@@ -1353,7 +1353,7 @@ Bases: {py:obj}`altdss.DSSObj.DSSObj`, {py:obj}`altdss.CircuitElement.CircuitEle
 :canonical: altdss.Recloser.Recloser.SwitchedTerm
 :type: int
 :value: >
-   None
+   'property(...)'
 
 ```{autodoc2-docstring} altdss.Recloser.Recloser.SwitchedTerm
 ```
@@ -1364,7 +1364,7 @@ Bases: {py:obj}`altdss.DSSObj.DSSObj`, {py:obj}`altdss.CircuitElement.CircuitEle
 :canonical: altdss.Recloser.Recloser.TDGrDelayed
 :type: float
 :value: >
-   None
+   'property(...)'
 
 ```{autodoc2-docstring} altdss.Recloser.Recloser.TDGrDelayed
 ```
@@ -1375,7 +1375,7 @@ Bases: {py:obj}`altdss.DSSObj.DSSObj`, {py:obj}`altdss.CircuitElement.CircuitEle
 :canonical: altdss.Recloser.Recloser.TDGrFast
 :type: float
 :value: >
-   None
+   'property(...)'
 
 ```{autodoc2-docstring} altdss.Recloser.Recloser.TDGrFast
 ```
@@ -1386,7 +1386,7 @@ Bases: {py:obj}`altdss.DSSObj.DSSObj`, {py:obj}`altdss.CircuitElement.CircuitEle
 :canonical: altdss.Recloser.Recloser.TDPhDelayed
 :type: float
 :value: >
-   None
+   'property(...)'
 
 ```{autodoc2-docstring} altdss.Recloser.Recloser.TDPhDelayed
 ```
@@ -1397,7 +1397,7 @@ Bases: {py:obj}`altdss.DSSObj.DSSObj`, {py:obj}`altdss.CircuitElement.CircuitEle
 :canonical: altdss.Recloser.Recloser.TDPhFast
 :type: float
 :value: >
-   None
+   'property(...)'
 
 ```{autodoc2-docstring} altdss.Recloser.Recloser.TDPhFast
 ```
@@ -1506,7 +1506,7 @@ Bases: {py:obj}`altdss.Batch.DSSBatch`, {py:obj}`altdss.CircuitElement.CircuitEl
 :canonical: altdss.Recloser.RecloserBatch.BaseFreq
 :type: altdss.ArrayProxy.BatchFloat64ArrayProxy
 :value: >
-   None
+   'property(...)'
 
 ```{autodoc2-docstring} altdss.Recloser.RecloserBatch.BaseFreq
 ```
@@ -1549,7 +1549,7 @@ Bases: {py:obj}`altdss.Batch.DSSBatch`, {py:obj}`altdss.CircuitElement.CircuitEl
 :canonical: altdss.Recloser.RecloserBatch.Delay
 :type: altdss.ArrayProxy.BatchFloat64ArrayProxy
 :value: >
-   None
+   'property(...)'
 
 ```{autodoc2-docstring} altdss.Recloser.RecloserBatch.Delay
 ```
@@ -1560,7 +1560,7 @@ Bases: {py:obj}`altdss.Batch.DSSBatch`, {py:obj}`altdss.CircuitElement.CircuitEl
 :canonical: altdss.Recloser.RecloserBatch.Enabled
 :type: typing.List[bool]
 :value: >
-   None
+   'property(...)'
 
 ```{autodoc2-docstring} altdss.Recloser.RecloserBatch.Enabled
 ```
@@ -1587,7 +1587,7 @@ Bases: {py:obj}`altdss.Batch.DSSBatch`, {py:obj}`altdss.CircuitElement.CircuitEl
 :canonical: altdss.Recloser.RecloserBatch.GroundDelayed
 :type: typing.List[altdss.TCC_Curve.TCC_Curve]
 :value: >
-   None
+   'property(...)'
 
 ```{autodoc2-docstring} altdss.Recloser.RecloserBatch.GroundDelayed
 ```
@@ -1598,7 +1598,7 @@ Bases: {py:obj}`altdss.Batch.DSSBatch`, {py:obj}`altdss.CircuitElement.CircuitEl
 :canonical: altdss.Recloser.RecloserBatch.GroundDelayed_str
 :type: typing.List[str]
 :value: >
-   None
+   'property(...)'
 
 ```{autodoc2-docstring} altdss.Recloser.RecloserBatch.GroundDelayed_str
 ```
@@ -1609,7 +1609,7 @@ Bases: {py:obj}`altdss.Batch.DSSBatch`, {py:obj}`altdss.CircuitElement.CircuitEl
 :canonical: altdss.Recloser.RecloserBatch.GroundFast
 :type: typing.List[altdss.TCC_Curve.TCC_Curve]
 :value: >
-   None
+   'property(...)'
 
 ```{autodoc2-docstring} altdss.Recloser.RecloserBatch.GroundFast
 ```
@@ -1620,7 +1620,7 @@ Bases: {py:obj}`altdss.Batch.DSSBatch`, {py:obj}`altdss.CircuitElement.CircuitEl
 :canonical: altdss.Recloser.RecloserBatch.GroundFast_str
 :type: typing.List[str]
 :value: >
-   None
+   'property(...)'
 
 ```{autodoc2-docstring} altdss.Recloser.RecloserBatch.GroundFast_str
 ```
@@ -1631,7 +1631,7 @@ Bases: {py:obj}`altdss.Batch.DSSBatch`, {py:obj}`altdss.CircuitElement.CircuitEl
 :canonical: altdss.Recloser.RecloserBatch.GroundInst
 :type: altdss.ArrayProxy.BatchFloat64ArrayProxy
 :value: >
-   None
+   'property(...)'
 
 ```{autodoc2-docstring} altdss.Recloser.RecloserBatch.GroundInst
 ```
@@ -1642,7 +1642,7 @@ Bases: {py:obj}`altdss.Batch.DSSBatch`, {py:obj}`altdss.CircuitElement.CircuitEl
 :canonical: altdss.Recloser.RecloserBatch.GroundTrip
 :type: altdss.ArrayProxy.BatchFloat64ArrayProxy
 :value: >
-   None
+   'property(...)'
 
 ```{autodoc2-docstring} altdss.Recloser.RecloserBatch.GroundTrip
 ```
@@ -1717,7 +1717,7 @@ Bases: {py:obj}`altdss.Batch.DSSBatch`, {py:obj}`altdss.CircuitElement.CircuitEl
 :canonical: altdss.Recloser.RecloserBatch.MonitoredObj
 :type: typing.List[altdss.DSSObj.DSSObj]
 :value: >
-   None
+   'property(...)'
 
 ```{autodoc2-docstring} altdss.Recloser.RecloserBatch.MonitoredObj
 ```
@@ -1728,7 +1728,7 @@ Bases: {py:obj}`altdss.Batch.DSSBatch`, {py:obj}`altdss.CircuitElement.CircuitEl
 :canonical: altdss.Recloser.RecloserBatch.MonitoredObj_str
 :type: typing.List[str]
 :value: >
-   None
+   'property(...)'
 
 ```{autodoc2-docstring} altdss.Recloser.RecloserBatch.MonitoredObj_str
 ```
@@ -1739,7 +1739,7 @@ Bases: {py:obj}`altdss.Batch.DSSBatch`, {py:obj}`altdss.CircuitElement.CircuitEl
 :canonical: altdss.Recloser.RecloserBatch.MonitoredTerm
 :type: altdss.ArrayProxy.BatchInt32ArrayProxy
 :value: >
-   None
+   'property(...)'
 
 ```{autodoc2-docstring} altdss.Recloser.RecloserBatch.MonitoredTerm
 ```
@@ -1759,7 +1759,7 @@ Bases: {py:obj}`altdss.Batch.DSSBatch`, {py:obj}`altdss.CircuitElement.CircuitEl
 :canonical: altdss.Recloser.RecloserBatch.Normal
 :type: altdss.ArrayProxy.BatchInt32ArrayProxy
 :value: >
-   None
+   'property(...)'
 
 ```{autodoc2-docstring} altdss.Recloser.RecloserBatch.Normal
 ```
@@ -1770,7 +1770,7 @@ Bases: {py:obj}`altdss.Batch.DSSBatch`, {py:obj}`altdss.CircuitElement.CircuitEl
 :canonical: altdss.Recloser.RecloserBatch.Normal_str
 :type: typing.List[str]
 :value: >
-   None
+   'property(...)'
 
 ```{autodoc2-docstring} altdss.Recloser.RecloserBatch.Normal_str
 ```
@@ -1797,7 +1797,7 @@ Bases: {py:obj}`altdss.Batch.DSSBatch`, {py:obj}`altdss.CircuitElement.CircuitEl
 :canonical: altdss.Recloser.RecloserBatch.NumFast
 :type: altdss.ArrayProxy.BatchInt32ArrayProxy
 :value: >
-   None
+   'property(...)'
 
 ```{autodoc2-docstring} altdss.Recloser.RecloserBatch.NumFast
 ```
@@ -1848,7 +1848,7 @@ Bases: {py:obj}`altdss.Batch.DSSBatch`, {py:obj}`altdss.CircuitElement.CircuitEl
 :canonical: altdss.Recloser.RecloserBatch.PhaseDelayed
 :type: typing.List[altdss.TCC_Curve.TCC_Curve]
 :value: >
-   None
+   'property(...)'
 
 ```{autodoc2-docstring} altdss.Recloser.RecloserBatch.PhaseDelayed
 ```
@@ -1859,7 +1859,7 @@ Bases: {py:obj}`altdss.Batch.DSSBatch`, {py:obj}`altdss.CircuitElement.CircuitEl
 :canonical: altdss.Recloser.RecloserBatch.PhaseDelayed_str
 :type: typing.List[str]
 :value: >
-   None
+   'property(...)'
 
 ```{autodoc2-docstring} altdss.Recloser.RecloserBatch.PhaseDelayed_str
 ```
@@ -1870,7 +1870,7 @@ Bases: {py:obj}`altdss.Batch.DSSBatch`, {py:obj}`altdss.CircuitElement.CircuitEl
 :canonical: altdss.Recloser.RecloserBatch.PhaseFast
 :type: typing.List[altdss.TCC_Curve.TCC_Curve]
 :value: >
-   None
+   'property(...)'
 
 ```{autodoc2-docstring} altdss.Recloser.RecloserBatch.PhaseFast
 ```
@@ -1881,7 +1881,7 @@ Bases: {py:obj}`altdss.Batch.DSSBatch`, {py:obj}`altdss.CircuitElement.CircuitEl
 :canonical: altdss.Recloser.RecloserBatch.PhaseFast_str
 :type: typing.List[str]
 :value: >
-   None
+   'property(...)'
 
 ```{autodoc2-docstring} altdss.Recloser.RecloserBatch.PhaseFast_str
 ```
@@ -1892,7 +1892,7 @@ Bases: {py:obj}`altdss.Batch.DSSBatch`, {py:obj}`altdss.CircuitElement.CircuitEl
 :canonical: altdss.Recloser.RecloserBatch.PhaseInst
 :type: altdss.ArrayProxy.BatchFloat64ArrayProxy
 :value: >
-   None
+   'property(...)'
 
 ```{autodoc2-docstring} altdss.Recloser.RecloserBatch.PhaseInst
 ```
@@ -1911,7 +1911,7 @@ Bases: {py:obj}`altdss.Batch.DSSBatch`, {py:obj}`altdss.CircuitElement.CircuitEl
 :canonical: altdss.Recloser.RecloserBatch.PhaseTrip
 :type: altdss.ArrayProxy.BatchFloat64ArrayProxy
 :value: >
-   None
+   'property(...)'
 
 ```{autodoc2-docstring} altdss.Recloser.RecloserBatch.PhaseTrip
 ```
@@ -1930,7 +1930,7 @@ Bases: {py:obj}`altdss.Batch.DSSBatch`, {py:obj}`altdss.CircuitElement.CircuitEl
 :canonical: altdss.Recloser.RecloserBatch.RecloseIntervals
 :type: typing.List[altdss.types.Float64Array]
 :value: >
-   None
+   'property(...)'
 
 ```{autodoc2-docstring} altdss.Recloser.RecloserBatch.RecloseIntervals
 ```
@@ -1941,7 +1941,7 @@ Bases: {py:obj}`altdss.Batch.DSSBatch`, {py:obj}`altdss.CircuitElement.CircuitEl
 :canonical: altdss.Recloser.RecloserBatch.Reset
 :type: altdss.ArrayProxy.BatchFloat64ArrayProxy
 :value: >
-   None
+   'property(...)'
 
 ```{autodoc2-docstring} altdss.Recloser.RecloserBatch.Reset
 ```
@@ -1976,7 +1976,7 @@ Bases: {py:obj}`altdss.Batch.DSSBatch`, {py:obj}`altdss.CircuitElement.CircuitEl
 :canonical: altdss.Recloser.RecloserBatch.Shots
 :type: altdss.ArrayProxy.BatchInt32ArrayProxy
 :value: >
-   None
+   'property(...)'
 
 ```{autodoc2-docstring} altdss.Recloser.RecloserBatch.Shots
 ```
@@ -1987,7 +1987,7 @@ Bases: {py:obj}`altdss.Batch.DSSBatch`, {py:obj}`altdss.CircuitElement.CircuitEl
 :canonical: altdss.Recloser.RecloserBatch.State
 :type: altdss.ArrayProxy.BatchInt32ArrayProxy
 :value: >
-   None
+   'property(...)'
 
 ```{autodoc2-docstring} altdss.Recloser.RecloserBatch.State
 ```
@@ -1998,7 +1998,7 @@ Bases: {py:obj}`altdss.Batch.DSSBatch`, {py:obj}`altdss.CircuitElement.CircuitEl
 :canonical: altdss.Recloser.RecloserBatch.State_str
 :type: typing.List[str]
 :value: >
-   None
+   'property(...)'
 
 ```{autodoc2-docstring} altdss.Recloser.RecloserBatch.State_str
 ```
@@ -2009,7 +2009,7 @@ Bases: {py:obj}`altdss.Batch.DSSBatch`, {py:obj}`altdss.CircuitElement.CircuitEl
 :canonical: altdss.Recloser.RecloserBatch.SwitchedObj
 :type: typing.List[altdss.DSSObj.DSSObj]
 :value: >
-   None
+   'property(...)'
 
 ```{autodoc2-docstring} altdss.Recloser.RecloserBatch.SwitchedObj
 ```
@@ -2020,7 +2020,7 @@ Bases: {py:obj}`altdss.Batch.DSSBatch`, {py:obj}`altdss.CircuitElement.CircuitEl
 :canonical: altdss.Recloser.RecloserBatch.SwitchedObj_str
 :type: typing.List[str]
 :value: >
-   None
+   'property(...)'
 
 ```{autodoc2-docstring} altdss.Recloser.RecloserBatch.SwitchedObj_str
 ```
@@ -2031,7 +2031,7 @@ Bases: {py:obj}`altdss.Batch.DSSBatch`, {py:obj}`altdss.CircuitElement.CircuitEl
 :canonical: altdss.Recloser.RecloserBatch.SwitchedTerm
 :type: altdss.ArrayProxy.BatchInt32ArrayProxy
 :value: >
-   None
+   'property(...)'
 
 ```{autodoc2-docstring} altdss.Recloser.RecloserBatch.SwitchedTerm
 ```
@@ -2042,7 +2042,7 @@ Bases: {py:obj}`altdss.Batch.DSSBatch`, {py:obj}`altdss.CircuitElement.CircuitEl
 :canonical: altdss.Recloser.RecloserBatch.TDGrDelayed
 :type: altdss.ArrayProxy.BatchFloat64ArrayProxy
 :value: >
-   None
+   'property(...)'
 
 ```{autodoc2-docstring} altdss.Recloser.RecloserBatch.TDGrDelayed
 ```
@@ -2053,7 +2053,7 @@ Bases: {py:obj}`altdss.Batch.DSSBatch`, {py:obj}`altdss.CircuitElement.CircuitEl
 :canonical: altdss.Recloser.RecloserBatch.TDGrFast
 :type: altdss.ArrayProxy.BatchFloat64ArrayProxy
 :value: >
-   None
+   'property(...)'
 
 ```{autodoc2-docstring} altdss.Recloser.RecloserBatch.TDGrFast
 ```
@@ -2064,7 +2064,7 @@ Bases: {py:obj}`altdss.Batch.DSSBatch`, {py:obj}`altdss.CircuitElement.CircuitEl
 :canonical: altdss.Recloser.RecloserBatch.TDPhDelayed
 :type: altdss.ArrayProxy.BatchFloat64ArrayProxy
 :value: >
-   None
+   'property(...)'
 
 ```{autodoc2-docstring} altdss.Recloser.RecloserBatch.TDPhDelayed
 ```
@@ -2075,7 +2075,7 @@ Bases: {py:obj}`altdss.Batch.DSSBatch`, {py:obj}`altdss.CircuitElement.CircuitEl
 :canonical: altdss.Recloser.RecloserBatch.TDPhFast
 :type: altdss.ArrayProxy.BatchFloat64ArrayProxy
 :value: >
-   None
+   'property(...)'
 
 ```{autodoc2-docstring} altdss.Recloser.RecloserBatch.TDPhFast
 ```

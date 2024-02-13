@@ -59,7 +59,7 @@ Bases: {py:obj}`altdss.DSSObj.DSSObj`, {py:obj}`altdss.CircuitElement.CircuitEle
 :canonical: altdss.Capacitor.Capacitor.BaseFreq
 :type: float
 :value: >
-   None
+   'property(...)'
 
 ```{autodoc2-docstring} altdss.Capacitor.Capacitor.BaseFreq
 ```
@@ -70,7 +70,7 @@ Bases: {py:obj}`altdss.DSSObj.DSSObj`, {py:obj}`altdss.CircuitElement.CircuitEle
 :canonical: altdss.Capacitor.Capacitor.Bus1
 :type: str
 :value: >
-   None
+   'property(...)'
 
 ```{autodoc2-docstring} altdss.Capacitor.Capacitor.Bus1
 ```
@@ -81,7 +81,7 @@ Bases: {py:obj}`altdss.DSSObj.DSSObj`, {py:obj}`altdss.CircuitElement.CircuitEle
 :canonical: altdss.Capacitor.Capacitor.Bus2
 :type: str
 :value: >
-   None
+   'property(...)'
 
 ```{autodoc2-docstring} altdss.Capacitor.Capacitor.Bus2
 ```
@@ -92,7 +92,7 @@ Bases: {py:obj}`altdss.DSSObj.DSSObj`, {py:obj}`altdss.CircuitElement.CircuitEle
 :canonical: altdss.Capacitor.Capacitor.CMatrix
 :type: altdss.types.Float64Array
 :value: >
-   None
+   'property(...)'
 
 ```{autodoc2-docstring} altdss.Capacitor.Capacitor.CMatrix
 ```
@@ -127,7 +127,7 @@ Bases: {py:obj}`altdss.DSSObj.DSSObj`, {py:obj}`altdss.CircuitElement.CircuitEle
 :canonical: altdss.Capacitor.Capacitor.Conn
 :type: altdss.enums.Connection
 :value: >
-   None
+   'property(...)'
 
 ```{autodoc2-docstring} altdss.Capacitor.Capacitor.Conn
 ```
@@ -138,7 +138,7 @@ Bases: {py:obj}`altdss.DSSObj.DSSObj`, {py:obj}`altdss.CircuitElement.CircuitEle
 :canonical: altdss.Capacitor.Capacitor.Conn_str
 :type: str
 :value: >
-   None
+   'property(...)'
 
 ```{autodoc2-docstring} altdss.Capacitor.Capacitor.Conn_str
 ```
@@ -149,7 +149,7 @@ Bases: {py:obj}`altdss.DSSObj.DSSObj`, {py:obj}`altdss.CircuitElement.CircuitEle
 :canonical: altdss.Capacitor.Capacitor.Cuf
 :type: altdss.types.Float64Array
 :value: >
-   None
+   'property(...)'
 
 ```{autodoc2-docstring} altdss.Capacitor.Capacitor.Cuf
 ```
@@ -168,7 +168,7 @@ Bases: {py:obj}`altdss.DSSObj.DSSObj`, {py:obj}`altdss.CircuitElement.CircuitEle
 :canonical: altdss.Capacitor.Capacitor.DisplayName
 :type: str
 :value: >
-   None
+   'property(...)'
 
 ```{autodoc2-docstring} altdss.Capacitor.Capacitor.DisplayName
 ```
@@ -179,7 +179,7 @@ Bases: {py:obj}`altdss.DSSObj.DSSObj`, {py:obj}`altdss.CircuitElement.CircuitEle
 :canonical: altdss.Capacitor.Capacitor.EmergAmps
 :type: float
 :value: >
-   None
+   'property(...)'
 
 ```{autodoc2-docstring} altdss.Capacitor.Capacitor.EmergAmps
 ```
@@ -190,7 +190,7 @@ Bases: {py:obj}`altdss.DSSObj.DSSObj`, {py:obj}`altdss.CircuitElement.CircuitEle
 :canonical: altdss.Capacitor.Capacitor.Enabled
 :type: bool
 :value: >
-   None
+   'property(...)'
 
 ```{autodoc2-docstring} altdss.Capacitor.Capacitor.Enabled
 ```
@@ -217,7 +217,7 @@ Bases: {py:obj}`altdss.DSSObj.DSSObj`, {py:obj}`altdss.CircuitElement.CircuitEle
 :canonical: altdss.Capacitor.Capacitor.FaultRate
 :type: float
 :value: >
-   None
+   'property(...)'
 
 ```{autodoc2-docstring} altdss.Capacitor.Capacitor.FaultRate
 ```
@@ -260,7 +260,7 @@ Bases: {py:obj}`altdss.DSSObj.DSSObj`, {py:obj}`altdss.CircuitElement.CircuitEle
 :canonical: altdss.Capacitor.Capacitor.Harm
 :type: altdss.types.Float64Array
 :value: >
-   None
+   'property(...)'
 
 ```{autodoc2-docstring} altdss.Capacitor.Capacitor.Harm
 ```
@@ -376,7 +376,7 @@ Bases: {py:obj}`altdss.DSSObj.DSSObj`, {py:obj}`altdss.CircuitElement.CircuitEle
 :canonical: altdss.Capacitor.Capacitor.NormAmps
 :type: float
 :value: >
-   None
+   'property(...)'
 
 ```{autodoc2-docstring} altdss.Capacitor.Capacitor.NormAmps
 ```
@@ -419,7 +419,7 @@ Bases: {py:obj}`altdss.DSSObj.DSSObj`, {py:obj}`altdss.CircuitElement.CircuitEle
 :canonical: altdss.Capacitor.Capacitor.NumSteps
 :type: int
 :value: >
-   None
+   'property(...)'
 
 ```{autodoc2-docstring} altdss.Capacitor.Capacitor.NumSteps
 ```
@@ -486,7 +486,7 @@ Bases: {py:obj}`altdss.DSSObj.DSSObj`, {py:obj}`altdss.CircuitElement.CircuitEle
 :canonical: altdss.Capacitor.Capacitor.Phases
 :type: int
 :value: >
-   None
+   'property(...)'
 
 ```{autodoc2-docstring} altdss.Capacitor.Capacitor.Phases
 ```
@@ -505,7 +505,7 @@ Bases: {py:obj}`altdss.DSSObj.DSSObj`, {py:obj}`altdss.CircuitElement.CircuitEle
 :canonical: altdss.Capacitor.Capacitor.R
 :type: altdss.types.Float64Array
 :value: >
-   None
+   'property(...)'
 
 ```{autodoc2-docstring} altdss.Capacitor.Capacitor.R
 ```
@@ -516,7 +516,7 @@ Bases: {py:obj}`altdss.DSSObj.DSSObj`, {py:obj}`altdss.CircuitElement.CircuitEle
 :canonical: altdss.Capacitor.Capacitor.Repair
 :type: float
 :value: >
-   None
+   'property(...)'
 
 ```{autodoc2-docstring} altdss.Capacitor.Capacitor.Repair
 ```
@@ -567,7 +567,7 @@ Bases: {py:obj}`altdss.DSSObj.DSSObj`, {py:obj}`altdss.CircuitElement.CircuitEle
 :canonical: altdss.Capacitor.Capacitor.States
 :type: altdss.types.Int32Array
 :value: >
-   None
+   'property(...)'
 
 ```{autodoc2-docstring} altdss.Capacitor.Capacitor.States
 ```
@@ -618,7 +618,7 @@ Bases: {py:obj}`altdss.DSSObj.DSSObj`, {py:obj}`altdss.CircuitElement.CircuitEle
 :canonical: altdss.Capacitor.Capacitor.XL
 :type: altdss.types.Float64Array
 :value: >
-   None
+   'property(...)'
 
 ```{autodoc2-docstring} altdss.Capacitor.Capacitor.XL
 ```
@@ -685,7 +685,7 @@ Bases: {py:obj}`altdss.DSSObj.DSSObj`, {py:obj}`altdss.CircuitElement.CircuitEle
 :canonical: altdss.Capacitor.Capacitor.kV
 :type: float
 :value: >
-   None
+   'property(...)'
 
 ```{autodoc2-docstring} altdss.Capacitor.Capacitor.kV
 ```
@@ -696,7 +696,7 @@ Bases: {py:obj}`altdss.DSSObj.DSSObj`, {py:obj}`altdss.CircuitElement.CircuitEle
 :canonical: altdss.Capacitor.Capacitor.kvar
 :type: altdss.types.Float64Array
 :value: >
-   None
+   'property(...)'
 
 ```{autodoc2-docstring} altdss.Capacitor.Capacitor.kvar
 ```
@@ -723,7 +723,7 @@ Bases: {py:obj}`altdss.DSSObj.DSSObj`, {py:obj}`altdss.CircuitElement.CircuitEle
 :canonical: altdss.Capacitor.Capacitor.pctPerm
 :type: float
 :value: >
-   None
+   'property(...)'
 
 ```{autodoc2-docstring} altdss.Capacitor.Capacitor.pctPerm
 ```
@@ -760,7 +760,7 @@ Bases: {py:obj}`altdss.Batch.DSSBatch`, {py:obj}`altdss.CircuitElement.CircuitEl
 :canonical: altdss.Capacitor.CapacitorBatch.BaseFreq
 :type: altdss.ArrayProxy.BatchFloat64ArrayProxy
 :value: >
-   None
+   'property(...)'
 
 ```{autodoc2-docstring} altdss.Capacitor.CapacitorBatch.BaseFreq
 ```
@@ -771,7 +771,7 @@ Bases: {py:obj}`altdss.Batch.DSSBatch`, {py:obj}`altdss.CircuitElement.CircuitEl
 :canonical: altdss.Capacitor.CapacitorBatch.Bus1
 :type: typing.List[str]
 :value: >
-   None
+   'property(...)'
 
 ```{autodoc2-docstring} altdss.Capacitor.CapacitorBatch.Bus1
 ```
@@ -782,7 +782,7 @@ Bases: {py:obj}`altdss.Batch.DSSBatch`, {py:obj}`altdss.CircuitElement.CircuitEl
 :canonical: altdss.Capacitor.CapacitorBatch.Bus2
 :type: typing.List[str]
 :value: >
-   None
+   'property(...)'
 
 ```{autodoc2-docstring} altdss.Capacitor.CapacitorBatch.Bus2
 ```
@@ -793,7 +793,7 @@ Bases: {py:obj}`altdss.Batch.DSSBatch`, {py:obj}`altdss.CircuitElement.CircuitEl
 :canonical: altdss.Capacitor.CapacitorBatch.CMatrix
 :type: typing.List[altdss.types.Float64Array]
 :value: >
-   None
+   'property(...)'
 
 ```{autodoc2-docstring} altdss.Capacitor.CapacitorBatch.CMatrix
 ```
@@ -820,7 +820,7 @@ Bases: {py:obj}`altdss.Batch.DSSBatch`, {py:obj}`altdss.CircuitElement.CircuitEl
 :canonical: altdss.Capacitor.CapacitorBatch.Conn
 :type: altdss.ArrayProxy.BatchInt32ArrayProxy
 :value: >
-   None
+   'property(...)'
 
 ```{autodoc2-docstring} altdss.Capacitor.CapacitorBatch.Conn
 ```
@@ -831,7 +831,7 @@ Bases: {py:obj}`altdss.Batch.DSSBatch`, {py:obj}`altdss.CircuitElement.CircuitEl
 :canonical: altdss.Capacitor.CapacitorBatch.Conn_str
 :type: typing.List[str]
 :value: >
-   None
+   'property(...)'
 
 ```{autodoc2-docstring} altdss.Capacitor.CapacitorBatch.Conn_str
 ```
@@ -842,7 +842,7 @@ Bases: {py:obj}`altdss.Batch.DSSBatch`, {py:obj}`altdss.CircuitElement.CircuitEl
 :canonical: altdss.Capacitor.CapacitorBatch.Cuf
 :type: typing.List[altdss.types.Float64Array]
 :value: >
-   None
+   'property(...)'
 
 ```{autodoc2-docstring} altdss.Capacitor.CapacitorBatch.Cuf
 ```
@@ -869,7 +869,7 @@ Bases: {py:obj}`altdss.Batch.DSSBatch`, {py:obj}`altdss.CircuitElement.CircuitEl
 :canonical: altdss.Capacitor.CapacitorBatch.EmergAmps
 :type: altdss.ArrayProxy.BatchFloat64ArrayProxy
 :value: >
-   None
+   'property(...)'
 
 ```{autodoc2-docstring} altdss.Capacitor.CapacitorBatch.EmergAmps
 ```
@@ -880,7 +880,7 @@ Bases: {py:obj}`altdss.Batch.DSSBatch`, {py:obj}`altdss.CircuitElement.CircuitEl
 :canonical: altdss.Capacitor.CapacitorBatch.Enabled
 :type: typing.List[bool]
 :value: >
-   None
+   'property(...)'
 
 ```{autodoc2-docstring} altdss.Capacitor.CapacitorBatch.Enabled
 ```
@@ -907,7 +907,7 @@ Bases: {py:obj}`altdss.Batch.DSSBatch`, {py:obj}`altdss.CircuitElement.CircuitEl
 :canonical: altdss.Capacitor.CapacitorBatch.FaultRate
 :type: altdss.ArrayProxy.BatchFloat64ArrayProxy
 :value: >
-   None
+   'property(...)'
 
 ```{autodoc2-docstring} altdss.Capacitor.CapacitorBatch.FaultRate
 ```
@@ -950,7 +950,7 @@ Bases: {py:obj}`altdss.Batch.DSSBatch`, {py:obj}`altdss.CircuitElement.CircuitEl
 :canonical: altdss.Capacitor.CapacitorBatch.Harm
 :type: typing.List[altdss.types.Float64Array]
 :value: >
-   None
+   'property(...)'
 
 ```{autodoc2-docstring} altdss.Capacitor.CapacitorBatch.Harm
 ```
@@ -1042,7 +1042,7 @@ Bases: {py:obj}`altdss.Batch.DSSBatch`, {py:obj}`altdss.CircuitElement.CircuitEl
 :canonical: altdss.Capacitor.CapacitorBatch.NormAmps
 :type: altdss.ArrayProxy.BatchFloat64ArrayProxy
 :value: >
-   None
+   'property(...)'
 
 ```{autodoc2-docstring} altdss.Capacitor.CapacitorBatch.NormAmps
 ```
@@ -1085,7 +1085,7 @@ Bases: {py:obj}`altdss.Batch.DSSBatch`, {py:obj}`altdss.CircuitElement.CircuitEl
 :canonical: altdss.Capacitor.CapacitorBatch.NumSteps
 :type: altdss.ArrayProxy.BatchInt32ArrayProxy
 :value: >
-   None
+   'property(...)'
 
 ```{autodoc2-docstring} altdss.Capacitor.CapacitorBatch.NumSteps
 ```
@@ -1144,7 +1144,7 @@ Bases: {py:obj}`altdss.Batch.DSSBatch`, {py:obj}`altdss.CircuitElement.CircuitEl
 :canonical: altdss.Capacitor.CapacitorBatch.Phases
 :type: altdss.ArrayProxy.BatchInt32ArrayProxy
 :value: >
-   None
+   'property(...)'
 
 ```{autodoc2-docstring} altdss.Capacitor.CapacitorBatch.Phases
 ```
@@ -1163,7 +1163,7 @@ Bases: {py:obj}`altdss.Batch.DSSBatch`, {py:obj}`altdss.CircuitElement.CircuitEl
 :canonical: altdss.Capacitor.CapacitorBatch.R
 :type: typing.List[altdss.types.Float64Array]
 :value: >
-   None
+   'property(...)'
 
 ```{autodoc2-docstring} altdss.Capacitor.CapacitorBatch.R
 ```
@@ -1174,7 +1174,7 @@ Bases: {py:obj}`altdss.Batch.DSSBatch`, {py:obj}`altdss.CircuitElement.CircuitEl
 :canonical: altdss.Capacitor.CapacitorBatch.Repair
 :type: altdss.ArrayProxy.BatchFloat64ArrayProxy
 :value: >
-   None
+   'property(...)'
 
 ```{autodoc2-docstring} altdss.Capacitor.CapacitorBatch.Repair
 ```
@@ -1217,7 +1217,7 @@ Bases: {py:obj}`altdss.Batch.DSSBatch`, {py:obj}`altdss.CircuitElement.CircuitEl
 :canonical: altdss.Capacitor.CapacitorBatch.States
 :type: typing.List[altdss.types.Int32Array]
 :value: >
-   None
+   'property(...)'
 
 ```{autodoc2-docstring} altdss.Capacitor.CapacitorBatch.States
 ```
@@ -1268,7 +1268,7 @@ Bases: {py:obj}`altdss.Batch.DSSBatch`, {py:obj}`altdss.CircuitElement.CircuitEl
 :canonical: altdss.Capacitor.CapacitorBatch.XL
 :type: typing.List[altdss.types.Float64Array]
 :value: >
-   None
+   'property(...)'
 
 ```{autodoc2-docstring} altdss.Capacitor.CapacitorBatch.XL
 ```
@@ -1335,7 +1335,7 @@ Bases: {py:obj}`altdss.Batch.DSSBatch`, {py:obj}`altdss.CircuitElement.CircuitEl
 :canonical: altdss.Capacitor.CapacitorBatch.kV
 :type: altdss.ArrayProxy.BatchFloat64ArrayProxy
 :value: >
-   None
+   'property(...)'
 
 ```{autodoc2-docstring} altdss.Capacitor.CapacitorBatch.kV
 ```
@@ -1346,7 +1346,7 @@ Bases: {py:obj}`altdss.Batch.DSSBatch`, {py:obj}`altdss.CircuitElement.CircuitEl
 :canonical: altdss.Capacitor.CapacitorBatch.kvar
 :type: typing.List[altdss.types.Float64Array]
 :value: >
-   None
+   'property(...)'
 
 ```{autodoc2-docstring} altdss.Capacitor.CapacitorBatch.kvar
 ```
@@ -1357,7 +1357,7 @@ Bases: {py:obj}`altdss.Batch.DSSBatch`, {py:obj}`altdss.CircuitElement.CircuitEl
 :canonical: altdss.Capacitor.CapacitorBatch.pctPerm
 :type: altdss.ArrayProxy.BatchFloat64ArrayProxy
 :value: >
-   None
+   'property(...)'
 
 ```{autodoc2-docstring} altdss.Capacitor.CapacitorBatch.pctPerm
 ```
@@ -2492,7 +2492,7 @@ Bases: {py:obj}`altdss.DSSObj.IDSSObj`, {py:obj}`altdss.Capacitor.CapacitorBatch
 :canonical: altdss.Capacitor.ICapacitor.BaseFreq
 :type: altdss.ArrayProxy.BatchFloat64ArrayProxy
 :value: >
-   None
+   'property(...)'
 
 ```{autodoc2-docstring} altdss.Capacitor.ICapacitor.BaseFreq
 ```
@@ -2503,7 +2503,7 @@ Bases: {py:obj}`altdss.DSSObj.IDSSObj`, {py:obj}`altdss.Capacitor.CapacitorBatch
 :canonical: altdss.Capacitor.ICapacitor.Bus1
 :type: typing.List[str]
 :value: >
-   None
+   'property(...)'
 
 ```{autodoc2-docstring} altdss.Capacitor.ICapacitor.Bus1
 ```
@@ -2514,7 +2514,7 @@ Bases: {py:obj}`altdss.DSSObj.IDSSObj`, {py:obj}`altdss.Capacitor.CapacitorBatch
 :canonical: altdss.Capacitor.ICapacitor.Bus2
 :type: typing.List[str]
 :value: >
-   None
+   'property(...)'
 
 ```{autodoc2-docstring} altdss.Capacitor.ICapacitor.Bus2
 ```
@@ -2525,7 +2525,7 @@ Bases: {py:obj}`altdss.DSSObj.IDSSObj`, {py:obj}`altdss.Capacitor.CapacitorBatch
 :canonical: altdss.Capacitor.ICapacitor.CMatrix
 :type: typing.List[altdss.types.Float64Array]
 :value: >
-   None
+   'property(...)'
 
 ```{autodoc2-docstring} altdss.Capacitor.ICapacitor.CMatrix
 ```
@@ -2552,7 +2552,7 @@ Bases: {py:obj}`altdss.DSSObj.IDSSObj`, {py:obj}`altdss.Capacitor.CapacitorBatch
 :canonical: altdss.Capacitor.ICapacitor.Conn
 :type: altdss.ArrayProxy.BatchInt32ArrayProxy
 :value: >
-   None
+   'property(...)'
 
 ```{autodoc2-docstring} altdss.Capacitor.ICapacitor.Conn
 ```
@@ -2563,7 +2563,7 @@ Bases: {py:obj}`altdss.DSSObj.IDSSObj`, {py:obj}`altdss.Capacitor.CapacitorBatch
 :canonical: altdss.Capacitor.ICapacitor.Conn_str
 :type: typing.List[str]
 :value: >
-   None
+   'property(...)'
 
 ```{autodoc2-docstring} altdss.Capacitor.ICapacitor.Conn_str
 ```
@@ -2574,7 +2574,7 @@ Bases: {py:obj}`altdss.DSSObj.IDSSObj`, {py:obj}`altdss.Capacitor.CapacitorBatch
 :canonical: altdss.Capacitor.ICapacitor.Cuf
 :type: typing.List[altdss.types.Float64Array]
 :value: >
-   None
+   'property(...)'
 
 ```{autodoc2-docstring} altdss.Capacitor.ICapacitor.Cuf
 ```
@@ -2601,7 +2601,7 @@ Bases: {py:obj}`altdss.DSSObj.IDSSObj`, {py:obj}`altdss.Capacitor.CapacitorBatch
 :canonical: altdss.Capacitor.ICapacitor.EmergAmps
 :type: altdss.ArrayProxy.BatchFloat64ArrayProxy
 :value: >
-   None
+   'property(...)'
 
 ```{autodoc2-docstring} altdss.Capacitor.ICapacitor.EmergAmps
 ```
@@ -2612,7 +2612,7 @@ Bases: {py:obj}`altdss.DSSObj.IDSSObj`, {py:obj}`altdss.Capacitor.CapacitorBatch
 :canonical: altdss.Capacitor.ICapacitor.Enabled
 :type: typing.List[bool]
 :value: >
-   None
+   'property(...)'
 
 ```{autodoc2-docstring} altdss.Capacitor.ICapacitor.Enabled
 ```
@@ -2639,7 +2639,7 @@ Bases: {py:obj}`altdss.DSSObj.IDSSObj`, {py:obj}`altdss.Capacitor.CapacitorBatch
 :canonical: altdss.Capacitor.ICapacitor.FaultRate
 :type: altdss.ArrayProxy.BatchFloat64ArrayProxy
 :value: >
-   None
+   'property(...)'
 
 ```{autodoc2-docstring} altdss.Capacitor.ICapacitor.FaultRate
 ```
@@ -2682,7 +2682,7 @@ Bases: {py:obj}`altdss.DSSObj.IDSSObj`, {py:obj}`altdss.Capacitor.CapacitorBatch
 :canonical: altdss.Capacitor.ICapacitor.Harm
 :type: typing.List[altdss.types.Float64Array]
 :value: >
-   None
+   'property(...)'
 
 ```{autodoc2-docstring} altdss.Capacitor.ICapacitor.Harm
 ```
@@ -2774,7 +2774,7 @@ Bases: {py:obj}`altdss.DSSObj.IDSSObj`, {py:obj}`altdss.Capacitor.CapacitorBatch
 :canonical: altdss.Capacitor.ICapacitor.NormAmps
 :type: altdss.ArrayProxy.BatchFloat64ArrayProxy
 :value: >
-   None
+   'property(...)'
 
 ```{autodoc2-docstring} altdss.Capacitor.ICapacitor.NormAmps
 ```
@@ -2817,7 +2817,7 @@ Bases: {py:obj}`altdss.DSSObj.IDSSObj`, {py:obj}`altdss.Capacitor.CapacitorBatch
 :canonical: altdss.Capacitor.ICapacitor.NumSteps
 :type: altdss.ArrayProxy.BatchInt32ArrayProxy
 :value: >
-   None
+   'property(...)'
 
 ```{autodoc2-docstring} altdss.Capacitor.ICapacitor.NumSteps
 ```
@@ -2876,7 +2876,7 @@ Bases: {py:obj}`altdss.DSSObj.IDSSObj`, {py:obj}`altdss.Capacitor.CapacitorBatch
 :canonical: altdss.Capacitor.ICapacitor.Phases
 :type: altdss.ArrayProxy.BatchInt32ArrayProxy
 :value: >
-   None
+   'property(...)'
 
 ```{autodoc2-docstring} altdss.Capacitor.ICapacitor.Phases
 ```
@@ -2895,7 +2895,7 @@ Bases: {py:obj}`altdss.DSSObj.IDSSObj`, {py:obj}`altdss.Capacitor.CapacitorBatch
 :canonical: altdss.Capacitor.ICapacitor.R
 :type: typing.List[altdss.types.Float64Array]
 :value: >
-   None
+   'property(...)'
 
 ```{autodoc2-docstring} altdss.Capacitor.ICapacitor.R
 ```
@@ -2906,7 +2906,7 @@ Bases: {py:obj}`altdss.DSSObj.IDSSObj`, {py:obj}`altdss.Capacitor.CapacitorBatch
 :canonical: altdss.Capacitor.ICapacitor.Repair
 :type: altdss.ArrayProxy.BatchFloat64ArrayProxy
 :value: >
-   None
+   'property(...)'
 
 ```{autodoc2-docstring} altdss.Capacitor.ICapacitor.Repair
 ```
@@ -2949,7 +2949,7 @@ Bases: {py:obj}`altdss.DSSObj.IDSSObj`, {py:obj}`altdss.Capacitor.CapacitorBatch
 :canonical: altdss.Capacitor.ICapacitor.States
 :type: typing.List[altdss.types.Int32Array]
 :value: >
-   None
+   'property(...)'
 
 ```{autodoc2-docstring} altdss.Capacitor.ICapacitor.States
 ```
@@ -3000,7 +3000,7 @@ Bases: {py:obj}`altdss.DSSObj.IDSSObj`, {py:obj}`altdss.Capacitor.CapacitorBatch
 :canonical: altdss.Capacitor.ICapacitor.XL
 :type: typing.List[altdss.types.Float64Array]
 :value: >
-   None
+   'property(...)'
 
 ```{autodoc2-docstring} altdss.Capacitor.ICapacitor.XL
 ```
@@ -3099,7 +3099,7 @@ Bases: {py:obj}`altdss.DSSObj.IDSSObj`, {py:obj}`altdss.Capacitor.CapacitorBatch
 :canonical: altdss.Capacitor.ICapacitor.kV
 :type: altdss.ArrayProxy.BatchFloat64ArrayProxy
 :value: >
-   None
+   'property(...)'
 
 ```{autodoc2-docstring} altdss.Capacitor.ICapacitor.kV
 ```
@@ -3110,7 +3110,7 @@ Bases: {py:obj}`altdss.DSSObj.IDSSObj`, {py:obj}`altdss.Capacitor.CapacitorBatch
 :canonical: altdss.Capacitor.ICapacitor.kvar
 :type: typing.List[altdss.types.Float64Array]
 :value: >
-   None
+   'property(...)'
 
 ```{autodoc2-docstring} altdss.Capacitor.ICapacitor.kvar
 ```
@@ -3129,7 +3129,7 @@ Bases: {py:obj}`altdss.DSSObj.IDSSObj`, {py:obj}`altdss.Capacitor.CapacitorBatch
 :canonical: altdss.Capacitor.ICapacitor.pctPerm
 :type: altdss.ArrayProxy.BatchFloat64ArrayProxy
 :value: >
-   None
+   'property(...)'
 
 ```{autodoc2-docstring} altdss.Capacitor.ICapacitor.pctPerm
 ```

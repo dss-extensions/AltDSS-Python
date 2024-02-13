@@ -51,7 +51,7 @@ Bases: {py:obj}`altdss.DSSObj.IDSSObj`, {py:obj}`altdss.LineCode.LineCodeBatch`
 :canonical: altdss.LineCode.ILineCode.B0
 :type: altdss.ArrayProxy.BatchFloat64ArrayProxy
 :value: >
-   None
+   'property(...)'
 
 ```{autodoc2-docstring} altdss.LineCode.ILineCode.B0
 ```
@@ -62,7 +62,7 @@ Bases: {py:obj}`altdss.DSSObj.IDSSObj`, {py:obj}`altdss.LineCode.LineCodeBatch`
 :canonical: altdss.LineCode.ILineCode.B1
 :type: altdss.ArrayProxy.BatchFloat64ArrayProxy
 :value: >
-   None
+   'property(...)'
 
 ```{autodoc2-docstring} altdss.LineCode.ILineCode.B1
 ```
@@ -73,7 +73,7 @@ Bases: {py:obj}`altdss.DSSObj.IDSSObj`, {py:obj}`altdss.LineCode.LineCodeBatch`
 :canonical: altdss.LineCode.ILineCode.BaseFreq
 :type: altdss.ArrayProxy.BatchFloat64ArrayProxy
 :value: >
-   None
+   'property(...)'
 
 ```{autodoc2-docstring} altdss.LineCode.ILineCode.BaseFreq
 ```
@@ -84,7 +84,7 @@ Bases: {py:obj}`altdss.DSSObj.IDSSObj`, {py:obj}`altdss.LineCode.LineCodeBatch`
 :canonical: altdss.LineCode.ILineCode.C0
 :type: altdss.ArrayProxy.BatchFloat64ArrayProxy
 :value: >
-   None
+   'property(...)'
 
 ```{autodoc2-docstring} altdss.LineCode.ILineCode.C0
 ```
@@ -95,7 +95,7 @@ Bases: {py:obj}`altdss.DSSObj.IDSSObj`, {py:obj}`altdss.LineCode.LineCodeBatch`
 :canonical: altdss.LineCode.ILineCode.C1
 :type: altdss.ArrayProxy.BatchFloat64ArrayProxy
 :value: >
-   None
+   'property(...)'
 
 ```{autodoc2-docstring} altdss.LineCode.ILineCode.C1
 ```
@@ -106,7 +106,7 @@ Bases: {py:obj}`altdss.DSSObj.IDSSObj`, {py:obj}`altdss.LineCode.LineCodeBatch`
 :canonical: altdss.LineCode.ILineCode.CMatrix
 :type: typing.List[altdss.types.Float64Array]
 :value: >
-   None
+   'property(...)'
 
 ```{autodoc2-docstring} altdss.LineCode.ILineCode.CMatrix
 ```
@@ -117,7 +117,7 @@ Bases: {py:obj}`altdss.DSSObj.IDSSObj`, {py:obj}`altdss.LineCode.LineCodeBatch`
 :canonical: altdss.LineCode.ILineCode.EmergAmps
 :type: altdss.ArrayProxy.BatchFloat64ArrayProxy
 :value: >
-   None
+   'property(...)'
 
 ```{autodoc2-docstring} altdss.LineCode.ILineCode.EmergAmps
 ```
@@ -128,7 +128,7 @@ Bases: {py:obj}`altdss.DSSObj.IDSSObj`, {py:obj}`altdss.LineCode.LineCodeBatch`
 :canonical: altdss.LineCode.ILineCode.FaultRate
 :type: altdss.ArrayProxy.BatchFloat64ArrayProxy
 :value: >
-   None
+   'property(...)'
 
 ```{autodoc2-docstring} altdss.LineCode.ILineCode.FaultRate
 ```
@@ -163,7 +163,7 @@ Bases: {py:obj}`altdss.DSSObj.IDSSObj`, {py:obj}`altdss.LineCode.LineCodeBatch`
 :canonical: altdss.LineCode.ILineCode.LineType
 :type: altdss.ArrayProxy.BatchInt32ArrayProxy
 :value: >
-   None
+   'property(...)'
 
 ```{autodoc2-docstring} altdss.LineCode.ILineCode.LineType
 ```
@@ -174,7 +174,7 @@ Bases: {py:obj}`altdss.DSSObj.IDSSObj`, {py:obj}`altdss.LineCode.LineCodeBatch`
 :canonical: altdss.LineCode.ILineCode.LineType_str
 :type: typing.List[str]
 :value: >
-   None
+   'property(...)'
 
 ```{autodoc2-docstring} altdss.LineCode.ILineCode.LineType_str
 ```
@@ -185,7 +185,7 @@ Bases: {py:obj}`altdss.DSSObj.IDSSObj`, {py:obj}`altdss.LineCode.LineCodeBatch`
 :canonical: altdss.LineCode.ILineCode.NPhases
 :type: altdss.ArrayProxy.BatchInt32ArrayProxy
 :value: >
-   None
+   'property(...)'
 
 ```{autodoc2-docstring} altdss.LineCode.ILineCode.NPhases
 ```
@@ -205,7 +205,7 @@ Bases: {py:obj}`altdss.DSSObj.IDSSObj`, {py:obj}`altdss.LineCode.LineCodeBatch`
 :canonical: altdss.LineCode.ILineCode.Neutral
 :type: altdss.ArrayProxy.BatchInt32ArrayProxy
 :value: >
-   None
+   'property(...)'
 
 ```{autodoc2-docstring} altdss.LineCode.ILineCode.Neutral
 ```
@@ -216,7 +216,7 @@ Bases: {py:obj}`altdss.DSSObj.IDSSObj`, {py:obj}`altdss.LineCode.LineCodeBatch`
 :canonical: altdss.LineCode.ILineCode.NormAmps
 :type: altdss.ArrayProxy.BatchFloat64ArrayProxy
 :value: >
-   None
+   'property(...)'
 
 ```{autodoc2-docstring} altdss.LineCode.ILineCode.NormAmps
 ```
@@ -227,7 +227,7 @@ Bases: {py:obj}`altdss.DSSObj.IDSSObj`, {py:obj}`altdss.LineCode.LineCodeBatch`
 :canonical: altdss.LineCode.ILineCode.PctPerm
 :type: altdss.ArrayProxy.BatchFloat64ArrayProxy
 :value: >
-   None
+   'property(...)'
 
 ```{autodoc2-docstring} altdss.LineCode.ILineCode.PctPerm
 ```
@@ -238,7 +238,7 @@ Bases: {py:obj}`altdss.DSSObj.IDSSObj`, {py:obj}`altdss.LineCode.LineCodeBatch`
 :canonical: altdss.LineCode.ILineCode.R0
 :type: altdss.ArrayProxy.BatchFloat64ArrayProxy
 :value: >
-   None
+   'property(...)'
 
 ```{autodoc2-docstring} altdss.LineCode.ILineCode.R0
 ```
@@ -249,7 +249,7 @@ Bases: {py:obj}`altdss.DSSObj.IDSSObj`, {py:obj}`altdss.LineCode.LineCodeBatch`
 :canonical: altdss.LineCode.ILineCode.R1
 :type: altdss.ArrayProxy.BatchFloat64ArrayProxy
 :value: >
-   None
+   'property(...)'
 
 ```{autodoc2-docstring} altdss.LineCode.ILineCode.R1
 ```
@@ -260,7 +260,7 @@ Bases: {py:obj}`altdss.DSSObj.IDSSObj`, {py:obj}`altdss.LineCode.LineCodeBatch`
 :canonical: altdss.LineCode.ILineCode.RMatrix
 :type: typing.List[altdss.types.Float64Array]
 :value: >
-   None
+   'property(...)'
 
 ```{autodoc2-docstring} altdss.LineCode.ILineCode.RMatrix
 ```
@@ -271,7 +271,7 @@ Bases: {py:obj}`altdss.DSSObj.IDSSObj`, {py:obj}`altdss.LineCode.LineCodeBatch`
 :canonical: altdss.LineCode.ILineCode.Ratings
 :type: typing.List[altdss.types.Float64Array]
 :value: >
-   None
+   'property(...)'
 
 ```{autodoc2-docstring} altdss.LineCode.ILineCode.Ratings
 ```
@@ -282,7 +282,7 @@ Bases: {py:obj}`altdss.DSSObj.IDSSObj`, {py:obj}`altdss.LineCode.LineCodeBatch`
 :canonical: altdss.LineCode.ILineCode.Repair
 :type: altdss.ArrayProxy.BatchFloat64ArrayProxy
 :value: >
-   None
+   'property(...)'
 
 ```{autodoc2-docstring} altdss.LineCode.ILineCode.Repair
 ```
@@ -293,7 +293,7 @@ Bases: {py:obj}`altdss.DSSObj.IDSSObj`, {py:obj}`altdss.LineCode.LineCodeBatch`
 :canonical: altdss.LineCode.ILineCode.Rg
 :type: altdss.ArrayProxy.BatchFloat64ArrayProxy
 :value: >
-   None
+   'property(...)'
 
 ```{autodoc2-docstring} altdss.LineCode.ILineCode.Rg
 ```
@@ -304,7 +304,7 @@ Bases: {py:obj}`altdss.DSSObj.IDSSObj`, {py:obj}`altdss.LineCode.LineCodeBatch`
 :canonical: altdss.LineCode.ILineCode.Seasons
 :type: altdss.ArrayProxy.BatchInt32ArrayProxy
 :value: >
-   None
+   'property(...)'
 
 ```{autodoc2-docstring} altdss.LineCode.ILineCode.Seasons
 ```
@@ -315,7 +315,7 @@ Bases: {py:obj}`altdss.DSSObj.IDSSObj`, {py:obj}`altdss.LineCode.LineCodeBatch`
 :canonical: altdss.LineCode.ILineCode.Units
 :type: altdss.ArrayProxy.BatchInt32ArrayProxy
 :value: >
-   None
+   'property(...)'
 
 ```{autodoc2-docstring} altdss.LineCode.ILineCode.Units
 ```
@@ -326,7 +326,7 @@ Bases: {py:obj}`altdss.DSSObj.IDSSObj`, {py:obj}`altdss.LineCode.LineCodeBatch`
 :canonical: altdss.LineCode.ILineCode.Units_str
 :type: typing.List[str]
 :value: >
-   None
+   'property(...)'
 
 ```{autodoc2-docstring} altdss.LineCode.ILineCode.Units_str
 ```
@@ -337,7 +337,7 @@ Bases: {py:obj}`altdss.DSSObj.IDSSObj`, {py:obj}`altdss.LineCode.LineCodeBatch`
 :canonical: altdss.LineCode.ILineCode.X0
 :type: altdss.ArrayProxy.BatchFloat64ArrayProxy
 :value: >
-   None
+   'property(...)'
 
 ```{autodoc2-docstring} altdss.LineCode.ILineCode.X0
 ```
@@ -348,7 +348,7 @@ Bases: {py:obj}`altdss.DSSObj.IDSSObj`, {py:obj}`altdss.LineCode.LineCodeBatch`
 :canonical: altdss.LineCode.ILineCode.X1
 :type: altdss.ArrayProxy.BatchFloat64ArrayProxy
 :value: >
-   None
+   'property(...)'
 
 ```{autodoc2-docstring} altdss.LineCode.ILineCode.X1
 ```
@@ -359,7 +359,7 @@ Bases: {py:obj}`altdss.DSSObj.IDSSObj`, {py:obj}`altdss.LineCode.LineCodeBatch`
 :canonical: altdss.LineCode.ILineCode.XMatrix
 :type: typing.List[altdss.types.Float64Array]
 :value: >
-   None
+   'property(...)'
 
 ```{autodoc2-docstring} altdss.LineCode.ILineCode.XMatrix
 ```
@@ -370,7 +370,7 @@ Bases: {py:obj}`altdss.DSSObj.IDSSObj`, {py:obj}`altdss.LineCode.LineCodeBatch`
 :canonical: altdss.LineCode.ILineCode.Xg
 :type: altdss.ArrayProxy.BatchFloat64ArrayProxy
 :value: >
-   None
+   'property(...)'
 
 ```{autodoc2-docstring} altdss.LineCode.ILineCode.Xg
 ```
@@ -477,7 +477,7 @@ Bases: {py:obj}`altdss.DSSObj.IDSSObj`, {py:obj}`altdss.LineCode.LineCodeBatch`
 :canonical: altdss.LineCode.ILineCode.rho
 :type: altdss.ArrayProxy.BatchFloat64ArrayProxy
 :value: >
-   None
+   'property(...)'
 
 ```{autodoc2-docstring} altdss.LineCode.ILineCode.rho
 ```
@@ -514,7 +514,7 @@ Bases: {py:obj}`altdss.DSSObj.DSSObj`
 :canonical: altdss.LineCode.LineCode.B0
 :type: float
 :value: >
-   None
+   'property(...)'
 
 ```{autodoc2-docstring} altdss.LineCode.LineCode.B0
 ```
@@ -525,7 +525,7 @@ Bases: {py:obj}`altdss.DSSObj.DSSObj`
 :canonical: altdss.LineCode.LineCode.B1
 :type: float
 :value: >
-   None
+   'property(...)'
 
 ```{autodoc2-docstring} altdss.LineCode.LineCode.B1
 ```
@@ -536,7 +536,7 @@ Bases: {py:obj}`altdss.DSSObj.DSSObj`
 :canonical: altdss.LineCode.LineCode.BaseFreq
 :type: float
 :value: >
-   None
+   'property(...)'
 
 ```{autodoc2-docstring} altdss.LineCode.LineCode.BaseFreq
 ```
@@ -547,7 +547,7 @@ Bases: {py:obj}`altdss.DSSObj.DSSObj`
 :canonical: altdss.LineCode.LineCode.C0
 :type: float
 :value: >
-   None
+   'property(...)'
 
 ```{autodoc2-docstring} altdss.LineCode.LineCode.C0
 ```
@@ -558,7 +558,7 @@ Bases: {py:obj}`altdss.DSSObj.DSSObj`
 :canonical: altdss.LineCode.LineCode.C1
 :type: float
 :value: >
-   None
+   'property(...)'
 
 ```{autodoc2-docstring} altdss.LineCode.LineCode.C1
 ```
@@ -569,7 +569,7 @@ Bases: {py:obj}`altdss.DSSObj.DSSObj`
 :canonical: altdss.LineCode.LineCode.CMatrix
 :type: altdss.types.Float64Array
 :value: >
-   None
+   'property(...)'
 
 ```{autodoc2-docstring} altdss.LineCode.LineCode.CMatrix
 ```
@@ -580,7 +580,7 @@ Bases: {py:obj}`altdss.DSSObj.DSSObj`
 :canonical: altdss.LineCode.LineCode.EmergAmps
 :type: float
 :value: >
-   None
+   'property(...)'
 
 ```{autodoc2-docstring} altdss.LineCode.LineCode.EmergAmps
 ```
@@ -591,7 +591,7 @@ Bases: {py:obj}`altdss.DSSObj.DSSObj`
 :canonical: altdss.LineCode.LineCode.FaultRate
 :type: float
 :value: >
-   None
+   'property(...)'
 
 ```{autodoc2-docstring} altdss.LineCode.LineCode.FaultRate
 ```
@@ -626,7 +626,7 @@ Bases: {py:obj}`altdss.DSSObj.DSSObj`
 :canonical: altdss.LineCode.LineCode.LineType
 :type: altdss.enums.LineType
 :value: >
-   None
+   'property(...)'
 
 ```{autodoc2-docstring} altdss.LineCode.LineCode.LineType
 ```
@@ -637,7 +637,7 @@ Bases: {py:obj}`altdss.DSSObj.DSSObj`
 :canonical: altdss.LineCode.LineCode.LineType_str
 :type: str
 :value: >
-   None
+   'property(...)'
 
 ```{autodoc2-docstring} altdss.LineCode.LineCode.LineType_str
 ```
@@ -648,7 +648,7 @@ Bases: {py:obj}`altdss.DSSObj.DSSObj`
 :canonical: altdss.LineCode.LineCode.NPhases
 :type: int
 :value: >
-   None
+   'property(...)'
 
 ```{autodoc2-docstring} altdss.LineCode.LineCode.NPhases
 ```
@@ -668,7 +668,7 @@ Bases: {py:obj}`altdss.DSSObj.DSSObj`
 :canonical: altdss.LineCode.LineCode.Neutral
 :type: int
 :value: >
-   None
+   'property(...)'
 
 ```{autodoc2-docstring} altdss.LineCode.LineCode.Neutral
 ```
@@ -679,7 +679,7 @@ Bases: {py:obj}`altdss.DSSObj.DSSObj`
 :canonical: altdss.LineCode.LineCode.NormAmps
 :type: float
 :value: >
-   None
+   'property(...)'
 
 ```{autodoc2-docstring} altdss.LineCode.LineCode.NormAmps
 ```
@@ -690,7 +690,7 @@ Bases: {py:obj}`altdss.DSSObj.DSSObj`
 :canonical: altdss.LineCode.LineCode.PctPerm
 :type: float
 :value: >
-   None
+   'property(...)'
 
 ```{autodoc2-docstring} altdss.LineCode.LineCode.PctPerm
 ```
@@ -701,7 +701,7 @@ Bases: {py:obj}`altdss.DSSObj.DSSObj`
 :canonical: altdss.LineCode.LineCode.R0
 :type: float
 :value: >
-   None
+   'property(...)'
 
 ```{autodoc2-docstring} altdss.LineCode.LineCode.R0
 ```
@@ -712,7 +712,7 @@ Bases: {py:obj}`altdss.DSSObj.DSSObj`
 :canonical: altdss.LineCode.LineCode.R1
 :type: float
 :value: >
-   None
+   'property(...)'
 
 ```{autodoc2-docstring} altdss.LineCode.LineCode.R1
 ```
@@ -723,7 +723,7 @@ Bases: {py:obj}`altdss.DSSObj.DSSObj`
 :canonical: altdss.LineCode.LineCode.RMatrix
 :type: altdss.types.Float64Array
 :value: >
-   None
+   'property(...)'
 
 ```{autodoc2-docstring} altdss.LineCode.LineCode.RMatrix
 ```
@@ -734,7 +734,7 @@ Bases: {py:obj}`altdss.DSSObj.DSSObj`
 :canonical: altdss.LineCode.LineCode.Ratings
 :type: altdss.types.Float64Array
 :value: >
-   None
+   'property(...)'
 
 ```{autodoc2-docstring} altdss.LineCode.LineCode.Ratings
 ```
@@ -745,7 +745,7 @@ Bases: {py:obj}`altdss.DSSObj.DSSObj`
 :canonical: altdss.LineCode.LineCode.Repair
 :type: float
 :value: >
-   None
+   'property(...)'
 
 ```{autodoc2-docstring} altdss.LineCode.LineCode.Repair
 ```
@@ -756,7 +756,7 @@ Bases: {py:obj}`altdss.DSSObj.DSSObj`
 :canonical: altdss.LineCode.LineCode.Rg
 :type: float
 :value: >
-   None
+   'property(...)'
 
 ```{autodoc2-docstring} altdss.LineCode.LineCode.Rg
 ```
@@ -767,7 +767,7 @@ Bases: {py:obj}`altdss.DSSObj.DSSObj`
 :canonical: altdss.LineCode.LineCode.Seasons
 :type: int
 :value: >
-   None
+   'property(...)'
 
 ```{autodoc2-docstring} altdss.LineCode.LineCode.Seasons
 ```
@@ -778,7 +778,7 @@ Bases: {py:obj}`altdss.DSSObj.DSSObj`
 :canonical: altdss.LineCode.LineCode.Units
 :type: altdss.enums.LengthUnit
 :value: >
-   None
+   'property(...)'
 
 ```{autodoc2-docstring} altdss.LineCode.LineCode.Units
 ```
@@ -789,7 +789,7 @@ Bases: {py:obj}`altdss.DSSObj.DSSObj`
 :canonical: altdss.LineCode.LineCode.Units_str
 :type: str
 :value: >
-   None
+   'property(...)'
 
 ```{autodoc2-docstring} altdss.LineCode.LineCode.Units_str
 ```
@@ -800,7 +800,7 @@ Bases: {py:obj}`altdss.DSSObj.DSSObj`
 :canonical: altdss.LineCode.LineCode.X0
 :type: float
 :value: >
-   None
+   'property(...)'
 
 ```{autodoc2-docstring} altdss.LineCode.LineCode.X0
 ```
@@ -811,7 +811,7 @@ Bases: {py:obj}`altdss.DSSObj.DSSObj`
 :canonical: altdss.LineCode.LineCode.X1
 :type: float
 :value: >
-   None
+   'property(...)'
 
 ```{autodoc2-docstring} altdss.LineCode.LineCode.X1
 ```
@@ -822,7 +822,7 @@ Bases: {py:obj}`altdss.DSSObj.DSSObj`
 :canonical: altdss.LineCode.LineCode.XMatrix
 :type: altdss.types.Float64Array
 :value: >
-   None
+   'property(...)'
 
 ```{autodoc2-docstring} altdss.LineCode.LineCode.XMatrix
 ```
@@ -833,7 +833,7 @@ Bases: {py:obj}`altdss.DSSObj.DSSObj`
 :canonical: altdss.LineCode.LineCode.Xg
 :type: float
 :value: >
-   None
+   'property(...)'
 
 ```{autodoc2-docstring} altdss.LineCode.LineCode.Xg
 ```
@@ -892,7 +892,7 @@ Bases: {py:obj}`altdss.DSSObj.DSSObj`
 :canonical: altdss.LineCode.LineCode.rho
 :type: float
 :value: >
-   None
+   'property(...)'
 
 ```{autodoc2-docstring} altdss.LineCode.LineCode.rho
 ```
@@ -921,7 +921,7 @@ Bases: {py:obj}`altdss.Batch.DSSBatch`
 :canonical: altdss.LineCode.LineCodeBatch.B0
 :type: altdss.ArrayProxy.BatchFloat64ArrayProxy
 :value: >
-   None
+   'property(...)'
 
 ```{autodoc2-docstring} altdss.LineCode.LineCodeBatch.B0
 ```
@@ -932,7 +932,7 @@ Bases: {py:obj}`altdss.Batch.DSSBatch`
 :canonical: altdss.LineCode.LineCodeBatch.B1
 :type: altdss.ArrayProxy.BatchFloat64ArrayProxy
 :value: >
-   None
+   'property(...)'
 
 ```{autodoc2-docstring} altdss.LineCode.LineCodeBatch.B1
 ```
@@ -943,7 +943,7 @@ Bases: {py:obj}`altdss.Batch.DSSBatch`
 :canonical: altdss.LineCode.LineCodeBatch.BaseFreq
 :type: altdss.ArrayProxy.BatchFloat64ArrayProxy
 :value: >
-   None
+   'property(...)'
 
 ```{autodoc2-docstring} altdss.LineCode.LineCodeBatch.BaseFreq
 ```
@@ -954,7 +954,7 @@ Bases: {py:obj}`altdss.Batch.DSSBatch`
 :canonical: altdss.LineCode.LineCodeBatch.C0
 :type: altdss.ArrayProxy.BatchFloat64ArrayProxy
 :value: >
-   None
+   'property(...)'
 
 ```{autodoc2-docstring} altdss.LineCode.LineCodeBatch.C0
 ```
@@ -965,7 +965,7 @@ Bases: {py:obj}`altdss.Batch.DSSBatch`
 :canonical: altdss.LineCode.LineCodeBatch.C1
 :type: altdss.ArrayProxy.BatchFloat64ArrayProxy
 :value: >
-   None
+   'property(...)'
 
 ```{autodoc2-docstring} altdss.LineCode.LineCodeBatch.C1
 ```
@@ -976,7 +976,7 @@ Bases: {py:obj}`altdss.Batch.DSSBatch`
 :canonical: altdss.LineCode.LineCodeBatch.CMatrix
 :type: typing.List[altdss.types.Float64Array]
 :value: >
-   None
+   'property(...)'
 
 ```{autodoc2-docstring} altdss.LineCode.LineCodeBatch.CMatrix
 ```
@@ -987,7 +987,7 @@ Bases: {py:obj}`altdss.Batch.DSSBatch`
 :canonical: altdss.LineCode.LineCodeBatch.EmergAmps
 :type: altdss.ArrayProxy.BatchFloat64ArrayProxy
 :value: >
-   None
+   'property(...)'
 
 ```{autodoc2-docstring} altdss.LineCode.LineCodeBatch.EmergAmps
 ```
@@ -998,7 +998,7 @@ Bases: {py:obj}`altdss.Batch.DSSBatch`
 :canonical: altdss.LineCode.LineCodeBatch.FaultRate
 :type: altdss.ArrayProxy.BatchFloat64ArrayProxy
 :value: >
-   None
+   'property(...)'
 
 ```{autodoc2-docstring} altdss.LineCode.LineCodeBatch.FaultRate
 ```
@@ -1033,7 +1033,7 @@ Bases: {py:obj}`altdss.Batch.DSSBatch`
 :canonical: altdss.LineCode.LineCodeBatch.LineType
 :type: altdss.ArrayProxy.BatchInt32ArrayProxy
 :value: >
-   None
+   'property(...)'
 
 ```{autodoc2-docstring} altdss.LineCode.LineCodeBatch.LineType
 ```
@@ -1044,7 +1044,7 @@ Bases: {py:obj}`altdss.Batch.DSSBatch`
 :canonical: altdss.LineCode.LineCodeBatch.LineType_str
 :type: typing.List[str]
 :value: >
-   None
+   'property(...)'
 
 ```{autodoc2-docstring} altdss.LineCode.LineCodeBatch.LineType_str
 ```
@@ -1055,7 +1055,7 @@ Bases: {py:obj}`altdss.Batch.DSSBatch`
 :canonical: altdss.LineCode.LineCodeBatch.NPhases
 :type: altdss.ArrayProxy.BatchInt32ArrayProxy
 :value: >
-   None
+   'property(...)'
 
 ```{autodoc2-docstring} altdss.LineCode.LineCodeBatch.NPhases
 ```
@@ -1075,7 +1075,7 @@ Bases: {py:obj}`altdss.Batch.DSSBatch`
 :canonical: altdss.LineCode.LineCodeBatch.Neutral
 :type: altdss.ArrayProxy.BatchInt32ArrayProxy
 :value: >
-   None
+   'property(...)'
 
 ```{autodoc2-docstring} altdss.LineCode.LineCodeBatch.Neutral
 ```
@@ -1086,7 +1086,7 @@ Bases: {py:obj}`altdss.Batch.DSSBatch`
 :canonical: altdss.LineCode.LineCodeBatch.NormAmps
 :type: altdss.ArrayProxy.BatchFloat64ArrayProxy
 :value: >
-   None
+   'property(...)'
 
 ```{autodoc2-docstring} altdss.LineCode.LineCodeBatch.NormAmps
 ```
@@ -1097,7 +1097,7 @@ Bases: {py:obj}`altdss.Batch.DSSBatch`
 :canonical: altdss.LineCode.LineCodeBatch.PctPerm
 :type: altdss.ArrayProxy.BatchFloat64ArrayProxy
 :value: >
-   None
+   'property(...)'
 
 ```{autodoc2-docstring} altdss.LineCode.LineCodeBatch.PctPerm
 ```
@@ -1108,7 +1108,7 @@ Bases: {py:obj}`altdss.Batch.DSSBatch`
 :canonical: altdss.LineCode.LineCodeBatch.R0
 :type: altdss.ArrayProxy.BatchFloat64ArrayProxy
 :value: >
-   None
+   'property(...)'
 
 ```{autodoc2-docstring} altdss.LineCode.LineCodeBatch.R0
 ```
@@ -1119,7 +1119,7 @@ Bases: {py:obj}`altdss.Batch.DSSBatch`
 :canonical: altdss.LineCode.LineCodeBatch.R1
 :type: altdss.ArrayProxy.BatchFloat64ArrayProxy
 :value: >
-   None
+   'property(...)'
 
 ```{autodoc2-docstring} altdss.LineCode.LineCodeBatch.R1
 ```
@@ -1130,7 +1130,7 @@ Bases: {py:obj}`altdss.Batch.DSSBatch`
 :canonical: altdss.LineCode.LineCodeBatch.RMatrix
 :type: typing.List[altdss.types.Float64Array]
 :value: >
-   None
+   'property(...)'
 
 ```{autodoc2-docstring} altdss.LineCode.LineCodeBatch.RMatrix
 ```
@@ -1141,7 +1141,7 @@ Bases: {py:obj}`altdss.Batch.DSSBatch`
 :canonical: altdss.LineCode.LineCodeBatch.Ratings
 :type: typing.List[altdss.types.Float64Array]
 :value: >
-   None
+   'property(...)'
 
 ```{autodoc2-docstring} altdss.LineCode.LineCodeBatch.Ratings
 ```
@@ -1152,7 +1152,7 @@ Bases: {py:obj}`altdss.Batch.DSSBatch`
 :canonical: altdss.LineCode.LineCodeBatch.Repair
 :type: altdss.ArrayProxy.BatchFloat64ArrayProxy
 :value: >
-   None
+   'property(...)'
 
 ```{autodoc2-docstring} altdss.LineCode.LineCodeBatch.Repair
 ```
@@ -1163,7 +1163,7 @@ Bases: {py:obj}`altdss.Batch.DSSBatch`
 :canonical: altdss.LineCode.LineCodeBatch.Rg
 :type: altdss.ArrayProxy.BatchFloat64ArrayProxy
 :value: >
-   None
+   'property(...)'
 
 ```{autodoc2-docstring} altdss.LineCode.LineCodeBatch.Rg
 ```
@@ -1174,7 +1174,7 @@ Bases: {py:obj}`altdss.Batch.DSSBatch`
 :canonical: altdss.LineCode.LineCodeBatch.Seasons
 :type: altdss.ArrayProxy.BatchInt32ArrayProxy
 :value: >
-   None
+   'property(...)'
 
 ```{autodoc2-docstring} altdss.LineCode.LineCodeBatch.Seasons
 ```
@@ -1185,7 +1185,7 @@ Bases: {py:obj}`altdss.Batch.DSSBatch`
 :canonical: altdss.LineCode.LineCodeBatch.Units
 :type: altdss.ArrayProxy.BatchInt32ArrayProxy
 :value: >
-   None
+   'property(...)'
 
 ```{autodoc2-docstring} altdss.LineCode.LineCodeBatch.Units
 ```
@@ -1196,7 +1196,7 @@ Bases: {py:obj}`altdss.Batch.DSSBatch`
 :canonical: altdss.LineCode.LineCodeBatch.Units_str
 :type: typing.List[str]
 :value: >
-   None
+   'property(...)'
 
 ```{autodoc2-docstring} altdss.LineCode.LineCodeBatch.Units_str
 ```
@@ -1207,7 +1207,7 @@ Bases: {py:obj}`altdss.Batch.DSSBatch`
 :canonical: altdss.LineCode.LineCodeBatch.X0
 :type: altdss.ArrayProxy.BatchFloat64ArrayProxy
 :value: >
-   None
+   'property(...)'
 
 ```{autodoc2-docstring} altdss.LineCode.LineCodeBatch.X0
 ```
@@ -1218,7 +1218,7 @@ Bases: {py:obj}`altdss.Batch.DSSBatch`
 :canonical: altdss.LineCode.LineCodeBatch.X1
 :type: altdss.ArrayProxy.BatchFloat64ArrayProxy
 :value: >
-   None
+   'property(...)'
 
 ```{autodoc2-docstring} altdss.LineCode.LineCodeBatch.X1
 ```
@@ -1229,7 +1229,7 @@ Bases: {py:obj}`altdss.Batch.DSSBatch`
 :canonical: altdss.LineCode.LineCodeBatch.XMatrix
 :type: typing.List[altdss.types.Float64Array]
 :value: >
-   None
+   'property(...)'
 
 ```{autodoc2-docstring} altdss.LineCode.LineCodeBatch.XMatrix
 ```
@@ -1240,7 +1240,7 @@ Bases: {py:obj}`altdss.Batch.DSSBatch`
 :canonical: altdss.LineCode.LineCodeBatch.Xg
 :type: altdss.ArrayProxy.BatchFloat64ArrayProxy
 :value: >
-   None
+   'property(...)'
 
 ```{autodoc2-docstring} altdss.LineCode.LineCodeBatch.Xg
 ```
@@ -1307,7 +1307,7 @@ Bases: {py:obj}`altdss.Batch.DSSBatch`
 :canonical: altdss.LineCode.LineCodeBatch.rho
 :type: altdss.ArrayProxy.BatchFloat64ArrayProxy
 :value: >
-   None
+   'property(...)'
 
 ```{autodoc2-docstring} altdss.LineCode.LineCodeBatch.rho
 ```

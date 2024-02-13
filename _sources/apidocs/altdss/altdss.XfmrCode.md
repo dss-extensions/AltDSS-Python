@@ -51,7 +51,7 @@ Bases: {py:obj}`altdss.DSSObj.IDSSObj`, {py:obj}`altdss.XfmrCode.XfmrCodeBatch`
 :canonical: altdss.XfmrCode.IXfmrCode.Conns
 :type: typing.List[altdss.types.Int32Array]
 :value: >
-   None
+   'property(...)'
 
 ```{autodoc2-docstring} altdss.XfmrCode.IXfmrCode.Conns
 ```
@@ -62,7 +62,7 @@ Bases: {py:obj}`altdss.DSSObj.IDSSObj`, {py:obj}`altdss.XfmrCode.XfmrCodeBatch`
 :canonical: altdss.XfmrCode.IXfmrCode.Conns_str
 :type: typing.List[typing.List[str]]
 :value: >
-   None
+   'property(...)'
 
 ```{autodoc2-docstring} altdss.XfmrCode.IXfmrCode.Conns_str
 ```
@@ -73,7 +73,7 @@ Bases: {py:obj}`altdss.DSSObj.IDSSObj`, {py:obj}`altdss.XfmrCode.XfmrCodeBatch`
 :canonical: altdss.XfmrCode.IXfmrCode.EmergHkVA
 :type: altdss.ArrayProxy.BatchFloat64ArrayProxy
 :value: >
-   None
+   'property(...)'
 
 ```{autodoc2-docstring} altdss.XfmrCode.IXfmrCode.EmergHkVA
 ```
@@ -84,7 +84,7 @@ Bases: {py:obj}`altdss.DSSObj.IDSSObj`, {py:obj}`altdss.XfmrCode.XfmrCodeBatch`
 :canonical: altdss.XfmrCode.IXfmrCode.FLRise
 :type: altdss.ArrayProxy.BatchFloat64ArrayProxy
 :value: >
-   None
+   'property(...)'
 
 ```{autodoc2-docstring} altdss.XfmrCode.IXfmrCode.FLRise
 ```
@@ -103,7 +103,7 @@ Bases: {py:obj}`altdss.DSSObj.IDSSObj`, {py:obj}`altdss.XfmrCode.XfmrCodeBatch`
 :canonical: altdss.XfmrCode.IXfmrCode.HSRise
 :type: altdss.ArrayProxy.BatchFloat64ArrayProxy
 :value: >
-   None
+   'property(...)'
 
 ```{autodoc2-docstring} altdss.XfmrCode.IXfmrCode.HSRise
 ```
@@ -122,7 +122,7 @@ Bases: {py:obj}`altdss.DSSObj.IDSSObj`, {py:obj}`altdss.XfmrCode.XfmrCodeBatch`
 :canonical: altdss.XfmrCode.IXfmrCode.MaxTap
 :type: typing.List[altdss.types.Float64Array]
 :value: >
-   None
+   'property(...)'
 
 ```{autodoc2-docstring} altdss.XfmrCode.IXfmrCode.MaxTap
 ```
@@ -133,7 +133,7 @@ Bases: {py:obj}`altdss.DSSObj.IDSSObj`, {py:obj}`altdss.XfmrCode.XfmrCodeBatch`
 :canonical: altdss.XfmrCode.IXfmrCode.MinTap
 :type: typing.List[altdss.types.Float64Array]
 :value: >
-   None
+   'property(...)'
 
 ```{autodoc2-docstring} altdss.XfmrCode.IXfmrCode.MinTap
 ```
@@ -153,7 +153,7 @@ Bases: {py:obj}`altdss.DSSObj.IDSSObj`, {py:obj}`altdss.XfmrCode.XfmrCodeBatch`
 :canonical: altdss.XfmrCode.IXfmrCode.NormHkVA
 :type: altdss.ArrayProxy.BatchFloat64ArrayProxy
 :value: >
-   None
+   'property(...)'
 
 ```{autodoc2-docstring} altdss.XfmrCode.IXfmrCode.NormHkVA
 ```
@@ -164,7 +164,7 @@ Bases: {py:obj}`altdss.DSSObj.IDSSObj`, {py:obj}`altdss.XfmrCode.XfmrCodeBatch`
 :canonical: altdss.XfmrCode.IXfmrCode.NumTaps
 :type: typing.List[altdss.types.Int32Array]
 :value: >
-   None
+   'property(...)'
 
 ```{autodoc2-docstring} altdss.XfmrCode.IXfmrCode.NumTaps
 ```
@@ -175,7 +175,7 @@ Bases: {py:obj}`altdss.DSSObj.IDSSObj`, {py:obj}`altdss.XfmrCode.XfmrCodeBatch`
 :canonical: altdss.XfmrCode.IXfmrCode.Phases
 :type: altdss.ArrayProxy.BatchInt32ArrayProxy
 :value: >
-   None
+   'property(...)'
 
 ```{autodoc2-docstring} altdss.XfmrCode.IXfmrCode.Phases
 ```
@@ -186,7 +186,7 @@ Bases: {py:obj}`altdss.DSSObj.IDSSObj`, {py:obj}`altdss.XfmrCode.XfmrCodeBatch`
 :canonical: altdss.XfmrCode.IXfmrCode.RDCOhms
 :type: typing.List[altdss.types.Float64Array]
 :value: >
-   None
+   'property(...)'
 
 ```{autodoc2-docstring} altdss.XfmrCode.IXfmrCode.RDCOhms
 ```
@@ -197,7 +197,7 @@ Bases: {py:obj}`altdss.DSSObj.IDSSObj`, {py:obj}`altdss.XfmrCode.XfmrCodeBatch`
 :canonical: altdss.XfmrCode.IXfmrCode.RNeut
 :type: typing.List[altdss.types.Float64Array]
 :value: >
-   None
+   'property(...)'
 
 ```{autodoc2-docstring} altdss.XfmrCode.IXfmrCode.RNeut
 ```
@@ -208,7 +208,7 @@ Bases: {py:obj}`altdss.DSSObj.IDSSObj`, {py:obj}`altdss.XfmrCode.XfmrCodeBatch`
 :canonical: altdss.XfmrCode.IXfmrCode.Ratings
 :type: typing.List[altdss.types.Float64Array]
 :value: >
-   None
+   'property(...)'
 
 ```{autodoc2-docstring} altdss.XfmrCode.IXfmrCode.Ratings
 ```
@@ -219,7 +219,7 @@ Bases: {py:obj}`altdss.DSSObj.IDSSObj`, {py:obj}`altdss.XfmrCode.XfmrCodeBatch`
 :canonical: altdss.XfmrCode.IXfmrCode.Seasons
 :type: altdss.ArrayProxy.BatchInt32ArrayProxy
 :value: >
-   None
+   'property(...)'
 
 ```{autodoc2-docstring} altdss.XfmrCode.IXfmrCode.Seasons
 ```
@@ -230,7 +230,7 @@ Bases: {py:obj}`altdss.DSSObj.IDSSObj`, {py:obj}`altdss.XfmrCode.XfmrCodeBatch`
 :canonical: altdss.XfmrCode.IXfmrCode.Taps
 :type: typing.List[altdss.types.Float64Array]
 :value: >
-   None
+   'property(...)'
 
 ```{autodoc2-docstring} altdss.XfmrCode.IXfmrCode.Taps
 ```
@@ -241,7 +241,7 @@ Bases: {py:obj}`altdss.DSSObj.IDSSObj`, {py:obj}`altdss.XfmrCode.XfmrCodeBatch`
 :canonical: altdss.XfmrCode.IXfmrCode.Thermal
 :type: altdss.ArrayProxy.BatchFloat64ArrayProxy
 :value: >
-   None
+   'property(...)'
 
 ```{autodoc2-docstring} altdss.XfmrCode.IXfmrCode.Thermal
 ```
@@ -252,7 +252,7 @@ Bases: {py:obj}`altdss.DSSObj.IDSSObj`, {py:obj}`altdss.XfmrCode.XfmrCodeBatch`
 :canonical: altdss.XfmrCode.IXfmrCode.Windings
 :type: altdss.ArrayProxy.BatchInt32ArrayProxy
 :value: >
-   None
+   'property(...)'
 
 ```{autodoc2-docstring} altdss.XfmrCode.IXfmrCode.Windings
 ```
@@ -263,7 +263,7 @@ Bases: {py:obj}`altdss.DSSObj.IDSSObj`, {py:obj}`altdss.XfmrCode.XfmrCodeBatch`
 :canonical: altdss.XfmrCode.IXfmrCode.X12
 :type: altdss.ArrayProxy.BatchFloat64ArrayProxy
 :value: >
-   None
+   'property(...)'
 
 ```{autodoc2-docstring} altdss.XfmrCode.IXfmrCode.X12
 ```
@@ -274,7 +274,7 @@ Bases: {py:obj}`altdss.DSSObj.IDSSObj`, {py:obj}`altdss.XfmrCode.XfmrCodeBatch`
 :canonical: altdss.XfmrCode.IXfmrCode.X13
 :type: altdss.ArrayProxy.BatchFloat64ArrayProxy
 :value: >
-   None
+   'property(...)'
 
 ```{autodoc2-docstring} altdss.XfmrCode.IXfmrCode.X13
 ```
@@ -285,7 +285,7 @@ Bases: {py:obj}`altdss.DSSObj.IDSSObj`, {py:obj}`altdss.XfmrCode.XfmrCodeBatch`
 :canonical: altdss.XfmrCode.IXfmrCode.X23
 :type: altdss.ArrayProxy.BatchFloat64ArrayProxy
 :value: >
-   None
+   'property(...)'
 
 ```{autodoc2-docstring} altdss.XfmrCode.IXfmrCode.X23
 ```
@@ -296,7 +296,7 @@ Bases: {py:obj}`altdss.DSSObj.IDSSObj`, {py:obj}`altdss.XfmrCode.XfmrCodeBatch`
 :canonical: altdss.XfmrCode.IXfmrCode.XHL
 :type: altdss.ArrayProxy.BatchFloat64ArrayProxy
 :value: >
-   None
+   'property(...)'
 
 ```{autodoc2-docstring} altdss.XfmrCode.IXfmrCode.XHL
 ```
@@ -307,7 +307,7 @@ Bases: {py:obj}`altdss.DSSObj.IDSSObj`, {py:obj}`altdss.XfmrCode.XfmrCodeBatch`
 :canonical: altdss.XfmrCode.IXfmrCode.XHT
 :type: altdss.ArrayProxy.BatchFloat64ArrayProxy
 :value: >
-   None
+   'property(...)'
 
 ```{autodoc2-docstring} altdss.XfmrCode.IXfmrCode.XHT
 ```
@@ -318,7 +318,7 @@ Bases: {py:obj}`altdss.DSSObj.IDSSObj`, {py:obj}`altdss.XfmrCode.XfmrCodeBatch`
 :canonical: altdss.XfmrCode.IXfmrCode.XLT
 :type: altdss.ArrayProxy.BatchFloat64ArrayProxy
 :value: >
-   None
+   'property(...)'
 
 ```{autodoc2-docstring} altdss.XfmrCode.IXfmrCode.XLT
 ```
@@ -329,7 +329,7 @@ Bases: {py:obj}`altdss.DSSObj.IDSSObj`, {py:obj}`altdss.XfmrCode.XfmrCodeBatch`
 :canonical: altdss.XfmrCode.IXfmrCode.XNeut
 :type: typing.List[altdss.types.Float64Array]
 :value: >
-   None
+   'property(...)'
 
 ```{autodoc2-docstring} altdss.XfmrCode.IXfmrCode.XNeut
 ```
@@ -340,7 +340,7 @@ Bases: {py:obj}`altdss.DSSObj.IDSSObj`, {py:obj}`altdss.XfmrCode.XfmrCodeBatch`
 :canonical: altdss.XfmrCode.IXfmrCode.XSCArray
 :type: typing.List[altdss.types.Float64Array]
 :value: >
-   None
+   'property(...)'
 
 ```{autodoc2-docstring} altdss.XfmrCode.IXfmrCode.XSCArray
 ```
@@ -439,7 +439,7 @@ Bases: {py:obj}`altdss.DSSObj.IDSSObj`, {py:obj}`altdss.XfmrCode.XfmrCodeBatch`
 :canonical: altdss.XfmrCode.IXfmrCode.kVAs
 :type: typing.List[altdss.types.Float64Array]
 :value: >
-   None
+   'property(...)'
 
 ```{autodoc2-docstring} altdss.XfmrCode.IXfmrCode.kVAs
 ```
@@ -450,7 +450,7 @@ Bases: {py:obj}`altdss.DSSObj.IDSSObj`, {py:obj}`altdss.XfmrCode.XfmrCodeBatch`
 :canonical: altdss.XfmrCode.IXfmrCode.kVs
 :type: typing.List[altdss.types.Float64Array]
 :value: >
-   None
+   'property(...)'
 
 ```{autodoc2-docstring} altdss.XfmrCode.IXfmrCode.kVs
 ```
@@ -461,7 +461,7 @@ Bases: {py:obj}`altdss.DSSObj.IDSSObj`, {py:obj}`altdss.XfmrCode.XfmrCodeBatch`
 :canonical: altdss.XfmrCode.IXfmrCode.m
 :type: altdss.ArrayProxy.BatchFloat64ArrayProxy
 :value: >
-   None
+   'property(...)'
 
 ```{autodoc2-docstring} altdss.XfmrCode.IXfmrCode.m
 ```
@@ -472,7 +472,7 @@ Bases: {py:obj}`altdss.DSSObj.IDSSObj`, {py:obj}`altdss.XfmrCode.XfmrCodeBatch`
 :canonical: altdss.XfmrCode.IXfmrCode.n
 :type: altdss.ArrayProxy.BatchFloat64ArrayProxy
 :value: >
-   None
+   'property(...)'
 
 ```{autodoc2-docstring} altdss.XfmrCode.IXfmrCode.n
 ```
@@ -491,7 +491,7 @@ Bases: {py:obj}`altdss.DSSObj.IDSSObj`, {py:obj}`altdss.XfmrCode.XfmrCodeBatch`
 :canonical: altdss.XfmrCode.IXfmrCode.pctIMag
 :type: altdss.ArrayProxy.BatchFloat64ArrayProxy
 :value: >
-   None
+   'property(...)'
 
 ```{autodoc2-docstring} altdss.XfmrCode.IXfmrCode.pctIMag
 ```
@@ -502,7 +502,7 @@ Bases: {py:obj}`altdss.DSSObj.IDSSObj`, {py:obj}`altdss.XfmrCode.XfmrCodeBatch`
 :canonical: altdss.XfmrCode.IXfmrCode.pctLoadLoss
 :type: altdss.ArrayProxy.BatchFloat64ArrayProxy
 :value: >
-   None
+   'property(...)'
 
 ```{autodoc2-docstring} altdss.XfmrCode.IXfmrCode.pctLoadLoss
 ```
@@ -513,7 +513,7 @@ Bases: {py:obj}`altdss.DSSObj.IDSSObj`, {py:obj}`altdss.XfmrCode.XfmrCodeBatch`
 :canonical: altdss.XfmrCode.IXfmrCode.pctNoLoadLoss
 :type: altdss.ArrayProxy.BatchFloat64ArrayProxy
 :value: >
-   None
+   'property(...)'
 
 ```{autodoc2-docstring} altdss.XfmrCode.IXfmrCode.pctNoLoadLoss
 ```
@@ -524,7 +524,7 @@ Bases: {py:obj}`altdss.DSSObj.IDSSObj`, {py:obj}`altdss.XfmrCode.XfmrCodeBatch`
 :canonical: altdss.XfmrCode.IXfmrCode.pctR
 :type: typing.List[altdss.types.Float64Array]
 :value: >
-   None
+   'property(...)'
 
 ```{autodoc2-docstring} altdss.XfmrCode.IXfmrCode.pctR
 ```
@@ -535,7 +535,7 @@ Bases: {py:obj}`altdss.DSSObj.IDSSObj`, {py:obj}`altdss.XfmrCode.XfmrCodeBatch`
 :canonical: altdss.XfmrCode.IXfmrCode.pctRs
 :type: typing.List[altdss.types.Float64Array]
 :value: >
-   None
+   'property(...)'
 
 ```{autodoc2-docstring} altdss.XfmrCode.IXfmrCode.pctRs
 ```
@@ -546,7 +546,7 @@ Bases: {py:obj}`altdss.DSSObj.IDSSObj`, {py:obj}`altdss.XfmrCode.XfmrCodeBatch`
 :canonical: altdss.XfmrCode.IXfmrCode.ppm_Antifloat
 :type: altdss.ArrayProxy.BatchFloat64ArrayProxy
 :value: >
-   None
+   'property(...)'
 
 ```{autodoc2-docstring} altdss.XfmrCode.IXfmrCode.ppm_Antifloat
 ```
@@ -583,7 +583,7 @@ Bases: {py:obj}`altdss.DSSObj.DSSObj`
 :canonical: altdss.XfmrCode.XfmrCode.Conns
 :type: altdss.enums.Connection
 :value: >
-   None
+   'property(...)'
 
 ```{autodoc2-docstring} altdss.XfmrCode.XfmrCode.Conns
 ```
@@ -594,7 +594,7 @@ Bases: {py:obj}`altdss.DSSObj.DSSObj`
 :canonical: altdss.XfmrCode.XfmrCode.Conns_str
 :type: typing.List[str]
 :value: >
-   None
+   'property(...)'
 
 ```{autodoc2-docstring} altdss.XfmrCode.XfmrCode.Conns_str
 ```
@@ -605,7 +605,7 @@ Bases: {py:obj}`altdss.DSSObj.DSSObj`
 :canonical: altdss.XfmrCode.XfmrCode.EmergHkVA
 :type: float
 :value: >
-   None
+   'property(...)'
 
 ```{autodoc2-docstring} altdss.XfmrCode.XfmrCode.EmergHkVA
 ```
@@ -616,7 +616,7 @@ Bases: {py:obj}`altdss.DSSObj.DSSObj`
 :canonical: altdss.XfmrCode.XfmrCode.FLRise
 :type: float
 :value: >
-   None
+   'property(...)'
 
 ```{autodoc2-docstring} altdss.XfmrCode.XfmrCode.FLRise
 ```
@@ -635,7 +635,7 @@ Bases: {py:obj}`altdss.DSSObj.DSSObj`
 :canonical: altdss.XfmrCode.XfmrCode.HSRise
 :type: float
 :value: >
-   None
+   'property(...)'
 
 ```{autodoc2-docstring} altdss.XfmrCode.XfmrCode.HSRise
 ```
@@ -654,7 +654,7 @@ Bases: {py:obj}`altdss.DSSObj.DSSObj`
 :canonical: altdss.XfmrCode.XfmrCode.MaxTap
 :type: altdss.types.Float64Array
 :value: >
-   None
+   'property(...)'
 
 ```{autodoc2-docstring} altdss.XfmrCode.XfmrCode.MaxTap
 ```
@@ -665,7 +665,7 @@ Bases: {py:obj}`altdss.DSSObj.DSSObj`
 :canonical: altdss.XfmrCode.XfmrCode.MinTap
 :type: altdss.types.Float64Array
 :value: >
-   None
+   'property(...)'
 
 ```{autodoc2-docstring} altdss.XfmrCode.XfmrCode.MinTap
 ```
@@ -685,7 +685,7 @@ Bases: {py:obj}`altdss.DSSObj.DSSObj`
 :canonical: altdss.XfmrCode.XfmrCode.NormHkVA
 :type: float
 :value: >
-   None
+   'property(...)'
 
 ```{autodoc2-docstring} altdss.XfmrCode.XfmrCode.NormHkVA
 ```
@@ -696,7 +696,7 @@ Bases: {py:obj}`altdss.DSSObj.DSSObj`
 :canonical: altdss.XfmrCode.XfmrCode.NumTaps
 :type: altdss.types.Int32Array
 :value: >
-   None
+   'property(...)'
 
 ```{autodoc2-docstring} altdss.XfmrCode.XfmrCode.NumTaps
 ```
@@ -707,7 +707,7 @@ Bases: {py:obj}`altdss.DSSObj.DSSObj`
 :canonical: altdss.XfmrCode.XfmrCode.Phases
 :type: int
 :value: >
-   None
+   'property(...)'
 
 ```{autodoc2-docstring} altdss.XfmrCode.XfmrCode.Phases
 ```
@@ -718,7 +718,7 @@ Bases: {py:obj}`altdss.DSSObj.DSSObj`
 :canonical: altdss.XfmrCode.XfmrCode.RDCOhms
 :type: altdss.types.Float64Array
 :value: >
-   None
+   'property(...)'
 
 ```{autodoc2-docstring} altdss.XfmrCode.XfmrCode.RDCOhms
 ```
@@ -729,7 +729,7 @@ Bases: {py:obj}`altdss.DSSObj.DSSObj`
 :canonical: altdss.XfmrCode.XfmrCode.RNeut
 :type: altdss.types.Float64Array
 :value: >
-   None
+   'property(...)'
 
 ```{autodoc2-docstring} altdss.XfmrCode.XfmrCode.RNeut
 ```
@@ -740,7 +740,7 @@ Bases: {py:obj}`altdss.DSSObj.DSSObj`
 :canonical: altdss.XfmrCode.XfmrCode.Ratings
 :type: altdss.types.Float64Array
 :value: >
-   None
+   'property(...)'
 
 ```{autodoc2-docstring} altdss.XfmrCode.XfmrCode.Ratings
 ```
@@ -751,7 +751,7 @@ Bases: {py:obj}`altdss.DSSObj.DSSObj`
 :canonical: altdss.XfmrCode.XfmrCode.Seasons
 :type: int
 :value: >
-   None
+   'property(...)'
 
 ```{autodoc2-docstring} altdss.XfmrCode.XfmrCode.Seasons
 ```
@@ -762,7 +762,7 @@ Bases: {py:obj}`altdss.DSSObj.DSSObj`
 :canonical: altdss.XfmrCode.XfmrCode.Taps
 :type: altdss.types.Float64Array
 :value: >
-   None
+   'property(...)'
 
 ```{autodoc2-docstring} altdss.XfmrCode.XfmrCode.Taps
 ```
@@ -773,7 +773,7 @@ Bases: {py:obj}`altdss.DSSObj.DSSObj`
 :canonical: altdss.XfmrCode.XfmrCode.Thermal
 :type: float
 :value: >
-   None
+   'property(...)'
 
 ```{autodoc2-docstring} altdss.XfmrCode.XfmrCode.Thermal
 ```
@@ -784,7 +784,7 @@ Bases: {py:obj}`altdss.DSSObj.DSSObj`
 :canonical: altdss.XfmrCode.XfmrCode.Windings
 :type: int
 :value: >
-   None
+   'property(...)'
 
 ```{autodoc2-docstring} altdss.XfmrCode.XfmrCode.Windings
 ```
@@ -795,7 +795,7 @@ Bases: {py:obj}`altdss.DSSObj.DSSObj`
 :canonical: altdss.XfmrCode.XfmrCode.X12
 :type: float
 :value: >
-   None
+   'property(...)'
 
 ```{autodoc2-docstring} altdss.XfmrCode.XfmrCode.X12
 ```
@@ -806,7 +806,7 @@ Bases: {py:obj}`altdss.DSSObj.DSSObj`
 :canonical: altdss.XfmrCode.XfmrCode.X13
 :type: float
 :value: >
-   None
+   'property(...)'
 
 ```{autodoc2-docstring} altdss.XfmrCode.XfmrCode.X13
 ```
@@ -817,7 +817,7 @@ Bases: {py:obj}`altdss.DSSObj.DSSObj`
 :canonical: altdss.XfmrCode.XfmrCode.X23
 :type: float
 :value: >
-   None
+   'property(...)'
 
 ```{autodoc2-docstring} altdss.XfmrCode.XfmrCode.X23
 ```
@@ -828,7 +828,7 @@ Bases: {py:obj}`altdss.DSSObj.DSSObj`
 :canonical: altdss.XfmrCode.XfmrCode.XHL
 :type: float
 :value: >
-   None
+   'property(...)'
 
 ```{autodoc2-docstring} altdss.XfmrCode.XfmrCode.XHL
 ```
@@ -839,7 +839,7 @@ Bases: {py:obj}`altdss.DSSObj.DSSObj`
 :canonical: altdss.XfmrCode.XfmrCode.XHT
 :type: float
 :value: >
-   None
+   'property(...)'
 
 ```{autodoc2-docstring} altdss.XfmrCode.XfmrCode.XHT
 ```
@@ -850,7 +850,7 @@ Bases: {py:obj}`altdss.DSSObj.DSSObj`
 :canonical: altdss.XfmrCode.XfmrCode.XLT
 :type: float
 :value: >
-   None
+   'property(...)'
 
 ```{autodoc2-docstring} altdss.XfmrCode.XfmrCode.XLT
 ```
@@ -861,7 +861,7 @@ Bases: {py:obj}`altdss.DSSObj.DSSObj`
 :canonical: altdss.XfmrCode.XfmrCode.XNeut
 :type: altdss.types.Float64Array
 :value: >
-   None
+   'property(...)'
 
 ```{autodoc2-docstring} altdss.XfmrCode.XfmrCode.XNeut
 ```
@@ -872,7 +872,7 @@ Bases: {py:obj}`altdss.DSSObj.DSSObj`
 :canonical: altdss.XfmrCode.XfmrCode.XSCArray
 :type: altdss.types.Float64Array
 :value: >
-   None
+   'property(...)'
 
 ```{autodoc2-docstring} altdss.XfmrCode.XfmrCode.XSCArray
 ```
@@ -931,7 +931,7 @@ Bases: {py:obj}`altdss.DSSObj.DSSObj`
 :canonical: altdss.XfmrCode.XfmrCode.kVAs
 :type: altdss.types.Float64Array
 :value: >
-   None
+   'property(...)'
 
 ```{autodoc2-docstring} altdss.XfmrCode.XfmrCode.kVAs
 ```
@@ -942,7 +942,7 @@ Bases: {py:obj}`altdss.DSSObj.DSSObj`
 :canonical: altdss.XfmrCode.XfmrCode.kVs
 :type: altdss.types.Float64Array
 :value: >
-   None
+   'property(...)'
 
 ```{autodoc2-docstring} altdss.XfmrCode.XfmrCode.kVs
 ```
@@ -953,7 +953,7 @@ Bases: {py:obj}`altdss.DSSObj.DSSObj`
 :canonical: altdss.XfmrCode.XfmrCode.m
 :type: float
 :value: >
-   None
+   'property(...)'
 
 ```{autodoc2-docstring} altdss.XfmrCode.XfmrCode.m
 ```
@@ -964,7 +964,7 @@ Bases: {py:obj}`altdss.DSSObj.DSSObj`
 :canonical: altdss.XfmrCode.XfmrCode.n
 :type: float
 :value: >
-   None
+   'property(...)'
 
 ```{autodoc2-docstring} altdss.XfmrCode.XfmrCode.n
 ```
@@ -975,7 +975,7 @@ Bases: {py:obj}`altdss.DSSObj.DSSObj`
 :canonical: altdss.XfmrCode.XfmrCode.pctIMag
 :type: float
 :value: >
-   None
+   'property(...)'
 
 ```{autodoc2-docstring} altdss.XfmrCode.XfmrCode.pctIMag
 ```
@@ -986,7 +986,7 @@ Bases: {py:obj}`altdss.DSSObj.DSSObj`
 :canonical: altdss.XfmrCode.XfmrCode.pctLoadLoss
 :type: float
 :value: >
-   None
+   'property(...)'
 
 ```{autodoc2-docstring} altdss.XfmrCode.XfmrCode.pctLoadLoss
 ```
@@ -997,7 +997,7 @@ Bases: {py:obj}`altdss.DSSObj.DSSObj`
 :canonical: altdss.XfmrCode.XfmrCode.pctNoLoadLoss
 :type: float
 :value: >
-   None
+   'property(...)'
 
 ```{autodoc2-docstring} altdss.XfmrCode.XfmrCode.pctNoLoadLoss
 ```
@@ -1008,7 +1008,7 @@ Bases: {py:obj}`altdss.DSSObj.DSSObj`
 :canonical: altdss.XfmrCode.XfmrCode.pctR
 :type: altdss.types.Float64Array
 :value: >
-   None
+   'property(...)'
 
 ```{autodoc2-docstring} altdss.XfmrCode.XfmrCode.pctR
 ```
@@ -1019,7 +1019,7 @@ Bases: {py:obj}`altdss.DSSObj.DSSObj`
 :canonical: altdss.XfmrCode.XfmrCode.pctRs
 :type: altdss.types.Float64Array
 :value: >
-   None
+   'property(...)'
 
 ```{autodoc2-docstring} altdss.XfmrCode.XfmrCode.pctRs
 ```
@@ -1030,7 +1030,7 @@ Bases: {py:obj}`altdss.DSSObj.DSSObj`
 :canonical: altdss.XfmrCode.XfmrCode.ppm_Antifloat
 :type: float
 :value: >
-   None
+   'property(...)'
 
 ```{autodoc2-docstring} altdss.XfmrCode.XfmrCode.ppm_Antifloat
 ```
@@ -1059,7 +1059,7 @@ Bases: {py:obj}`altdss.Batch.DSSBatch`
 :canonical: altdss.XfmrCode.XfmrCodeBatch.Conns
 :type: typing.List[altdss.types.Int32Array]
 :value: >
-   None
+   'property(...)'
 
 ```{autodoc2-docstring} altdss.XfmrCode.XfmrCodeBatch.Conns
 ```
@@ -1070,7 +1070,7 @@ Bases: {py:obj}`altdss.Batch.DSSBatch`
 :canonical: altdss.XfmrCode.XfmrCodeBatch.Conns_str
 :type: typing.List[typing.List[str]]
 :value: >
-   None
+   'property(...)'
 
 ```{autodoc2-docstring} altdss.XfmrCode.XfmrCodeBatch.Conns_str
 ```
@@ -1081,7 +1081,7 @@ Bases: {py:obj}`altdss.Batch.DSSBatch`
 :canonical: altdss.XfmrCode.XfmrCodeBatch.EmergHkVA
 :type: altdss.ArrayProxy.BatchFloat64ArrayProxy
 :value: >
-   None
+   'property(...)'
 
 ```{autodoc2-docstring} altdss.XfmrCode.XfmrCodeBatch.EmergHkVA
 ```
@@ -1092,7 +1092,7 @@ Bases: {py:obj}`altdss.Batch.DSSBatch`
 :canonical: altdss.XfmrCode.XfmrCodeBatch.FLRise
 :type: altdss.ArrayProxy.BatchFloat64ArrayProxy
 :value: >
-   None
+   'property(...)'
 
 ```{autodoc2-docstring} altdss.XfmrCode.XfmrCodeBatch.FLRise
 ```
@@ -1111,7 +1111,7 @@ Bases: {py:obj}`altdss.Batch.DSSBatch`
 :canonical: altdss.XfmrCode.XfmrCodeBatch.HSRise
 :type: altdss.ArrayProxy.BatchFloat64ArrayProxy
 :value: >
-   None
+   'property(...)'
 
 ```{autodoc2-docstring} altdss.XfmrCode.XfmrCodeBatch.HSRise
 ```
@@ -1130,7 +1130,7 @@ Bases: {py:obj}`altdss.Batch.DSSBatch`
 :canonical: altdss.XfmrCode.XfmrCodeBatch.MaxTap
 :type: typing.List[altdss.types.Float64Array]
 :value: >
-   None
+   'property(...)'
 
 ```{autodoc2-docstring} altdss.XfmrCode.XfmrCodeBatch.MaxTap
 ```
@@ -1141,7 +1141,7 @@ Bases: {py:obj}`altdss.Batch.DSSBatch`
 :canonical: altdss.XfmrCode.XfmrCodeBatch.MinTap
 :type: typing.List[altdss.types.Float64Array]
 :value: >
-   None
+   'property(...)'
 
 ```{autodoc2-docstring} altdss.XfmrCode.XfmrCodeBatch.MinTap
 ```
@@ -1161,7 +1161,7 @@ Bases: {py:obj}`altdss.Batch.DSSBatch`
 :canonical: altdss.XfmrCode.XfmrCodeBatch.NormHkVA
 :type: altdss.ArrayProxy.BatchFloat64ArrayProxy
 :value: >
-   None
+   'property(...)'
 
 ```{autodoc2-docstring} altdss.XfmrCode.XfmrCodeBatch.NormHkVA
 ```
@@ -1172,7 +1172,7 @@ Bases: {py:obj}`altdss.Batch.DSSBatch`
 :canonical: altdss.XfmrCode.XfmrCodeBatch.NumTaps
 :type: typing.List[altdss.types.Int32Array]
 :value: >
-   None
+   'property(...)'
 
 ```{autodoc2-docstring} altdss.XfmrCode.XfmrCodeBatch.NumTaps
 ```
@@ -1183,7 +1183,7 @@ Bases: {py:obj}`altdss.Batch.DSSBatch`
 :canonical: altdss.XfmrCode.XfmrCodeBatch.Phases
 :type: altdss.ArrayProxy.BatchInt32ArrayProxy
 :value: >
-   None
+   'property(...)'
 
 ```{autodoc2-docstring} altdss.XfmrCode.XfmrCodeBatch.Phases
 ```
@@ -1194,7 +1194,7 @@ Bases: {py:obj}`altdss.Batch.DSSBatch`
 :canonical: altdss.XfmrCode.XfmrCodeBatch.RDCOhms
 :type: typing.List[altdss.types.Float64Array]
 :value: >
-   None
+   'property(...)'
 
 ```{autodoc2-docstring} altdss.XfmrCode.XfmrCodeBatch.RDCOhms
 ```
@@ -1205,7 +1205,7 @@ Bases: {py:obj}`altdss.Batch.DSSBatch`
 :canonical: altdss.XfmrCode.XfmrCodeBatch.RNeut
 :type: typing.List[altdss.types.Float64Array]
 :value: >
-   None
+   'property(...)'
 
 ```{autodoc2-docstring} altdss.XfmrCode.XfmrCodeBatch.RNeut
 ```
@@ -1216,7 +1216,7 @@ Bases: {py:obj}`altdss.Batch.DSSBatch`
 :canonical: altdss.XfmrCode.XfmrCodeBatch.Ratings
 :type: typing.List[altdss.types.Float64Array]
 :value: >
-   None
+   'property(...)'
 
 ```{autodoc2-docstring} altdss.XfmrCode.XfmrCodeBatch.Ratings
 ```
@@ -1227,7 +1227,7 @@ Bases: {py:obj}`altdss.Batch.DSSBatch`
 :canonical: altdss.XfmrCode.XfmrCodeBatch.Seasons
 :type: altdss.ArrayProxy.BatchInt32ArrayProxy
 :value: >
-   None
+   'property(...)'
 
 ```{autodoc2-docstring} altdss.XfmrCode.XfmrCodeBatch.Seasons
 ```
@@ -1238,7 +1238,7 @@ Bases: {py:obj}`altdss.Batch.DSSBatch`
 :canonical: altdss.XfmrCode.XfmrCodeBatch.Taps
 :type: typing.List[altdss.types.Float64Array]
 :value: >
-   None
+   'property(...)'
 
 ```{autodoc2-docstring} altdss.XfmrCode.XfmrCodeBatch.Taps
 ```
@@ -1249,7 +1249,7 @@ Bases: {py:obj}`altdss.Batch.DSSBatch`
 :canonical: altdss.XfmrCode.XfmrCodeBatch.Thermal
 :type: altdss.ArrayProxy.BatchFloat64ArrayProxy
 :value: >
-   None
+   'property(...)'
 
 ```{autodoc2-docstring} altdss.XfmrCode.XfmrCodeBatch.Thermal
 ```
@@ -1260,7 +1260,7 @@ Bases: {py:obj}`altdss.Batch.DSSBatch`
 :canonical: altdss.XfmrCode.XfmrCodeBatch.Windings
 :type: altdss.ArrayProxy.BatchInt32ArrayProxy
 :value: >
-   None
+   'property(...)'
 
 ```{autodoc2-docstring} altdss.XfmrCode.XfmrCodeBatch.Windings
 ```
@@ -1271,7 +1271,7 @@ Bases: {py:obj}`altdss.Batch.DSSBatch`
 :canonical: altdss.XfmrCode.XfmrCodeBatch.X12
 :type: altdss.ArrayProxy.BatchFloat64ArrayProxy
 :value: >
-   None
+   'property(...)'
 
 ```{autodoc2-docstring} altdss.XfmrCode.XfmrCodeBatch.X12
 ```
@@ -1282,7 +1282,7 @@ Bases: {py:obj}`altdss.Batch.DSSBatch`
 :canonical: altdss.XfmrCode.XfmrCodeBatch.X13
 :type: altdss.ArrayProxy.BatchFloat64ArrayProxy
 :value: >
-   None
+   'property(...)'
 
 ```{autodoc2-docstring} altdss.XfmrCode.XfmrCodeBatch.X13
 ```
@@ -1293,7 +1293,7 @@ Bases: {py:obj}`altdss.Batch.DSSBatch`
 :canonical: altdss.XfmrCode.XfmrCodeBatch.X23
 :type: altdss.ArrayProxy.BatchFloat64ArrayProxy
 :value: >
-   None
+   'property(...)'
 
 ```{autodoc2-docstring} altdss.XfmrCode.XfmrCodeBatch.X23
 ```
@@ -1304,7 +1304,7 @@ Bases: {py:obj}`altdss.Batch.DSSBatch`
 :canonical: altdss.XfmrCode.XfmrCodeBatch.XHL
 :type: altdss.ArrayProxy.BatchFloat64ArrayProxy
 :value: >
-   None
+   'property(...)'
 
 ```{autodoc2-docstring} altdss.XfmrCode.XfmrCodeBatch.XHL
 ```
@@ -1315,7 +1315,7 @@ Bases: {py:obj}`altdss.Batch.DSSBatch`
 :canonical: altdss.XfmrCode.XfmrCodeBatch.XHT
 :type: altdss.ArrayProxy.BatchFloat64ArrayProxy
 :value: >
-   None
+   'property(...)'
 
 ```{autodoc2-docstring} altdss.XfmrCode.XfmrCodeBatch.XHT
 ```
@@ -1326,7 +1326,7 @@ Bases: {py:obj}`altdss.Batch.DSSBatch`
 :canonical: altdss.XfmrCode.XfmrCodeBatch.XLT
 :type: altdss.ArrayProxy.BatchFloat64ArrayProxy
 :value: >
-   None
+   'property(...)'
 
 ```{autodoc2-docstring} altdss.XfmrCode.XfmrCodeBatch.XLT
 ```
@@ -1337,7 +1337,7 @@ Bases: {py:obj}`altdss.Batch.DSSBatch`
 :canonical: altdss.XfmrCode.XfmrCodeBatch.XNeut
 :type: typing.List[altdss.types.Float64Array]
 :value: >
-   None
+   'property(...)'
 
 ```{autodoc2-docstring} altdss.XfmrCode.XfmrCodeBatch.XNeut
 ```
@@ -1348,7 +1348,7 @@ Bases: {py:obj}`altdss.Batch.DSSBatch`
 :canonical: altdss.XfmrCode.XfmrCodeBatch.XSCArray
 :type: typing.List[altdss.types.Float64Array]
 :value: >
-   None
+   'property(...)'
 
 ```{autodoc2-docstring} altdss.XfmrCode.XfmrCodeBatch.XSCArray
 ```
@@ -1415,7 +1415,7 @@ Bases: {py:obj}`altdss.Batch.DSSBatch`
 :canonical: altdss.XfmrCode.XfmrCodeBatch.kVAs
 :type: typing.List[altdss.types.Float64Array]
 :value: >
-   None
+   'property(...)'
 
 ```{autodoc2-docstring} altdss.XfmrCode.XfmrCodeBatch.kVAs
 ```
@@ -1426,7 +1426,7 @@ Bases: {py:obj}`altdss.Batch.DSSBatch`
 :canonical: altdss.XfmrCode.XfmrCodeBatch.kVs
 :type: typing.List[altdss.types.Float64Array]
 :value: >
-   None
+   'property(...)'
 
 ```{autodoc2-docstring} altdss.XfmrCode.XfmrCodeBatch.kVs
 ```
@@ -1437,7 +1437,7 @@ Bases: {py:obj}`altdss.Batch.DSSBatch`
 :canonical: altdss.XfmrCode.XfmrCodeBatch.m
 :type: altdss.ArrayProxy.BatchFloat64ArrayProxy
 :value: >
-   None
+   'property(...)'
 
 ```{autodoc2-docstring} altdss.XfmrCode.XfmrCodeBatch.m
 ```
@@ -1448,7 +1448,7 @@ Bases: {py:obj}`altdss.Batch.DSSBatch`
 :canonical: altdss.XfmrCode.XfmrCodeBatch.n
 :type: altdss.ArrayProxy.BatchFloat64ArrayProxy
 :value: >
-   None
+   'property(...)'
 
 ```{autodoc2-docstring} altdss.XfmrCode.XfmrCodeBatch.n
 ```
@@ -1459,7 +1459,7 @@ Bases: {py:obj}`altdss.Batch.DSSBatch`
 :canonical: altdss.XfmrCode.XfmrCodeBatch.pctIMag
 :type: altdss.ArrayProxy.BatchFloat64ArrayProxy
 :value: >
-   None
+   'property(...)'
 
 ```{autodoc2-docstring} altdss.XfmrCode.XfmrCodeBatch.pctIMag
 ```
@@ -1470,7 +1470,7 @@ Bases: {py:obj}`altdss.Batch.DSSBatch`
 :canonical: altdss.XfmrCode.XfmrCodeBatch.pctLoadLoss
 :type: altdss.ArrayProxy.BatchFloat64ArrayProxy
 :value: >
-   None
+   'property(...)'
 
 ```{autodoc2-docstring} altdss.XfmrCode.XfmrCodeBatch.pctLoadLoss
 ```
@@ -1481,7 +1481,7 @@ Bases: {py:obj}`altdss.Batch.DSSBatch`
 :canonical: altdss.XfmrCode.XfmrCodeBatch.pctNoLoadLoss
 :type: altdss.ArrayProxy.BatchFloat64ArrayProxy
 :value: >
-   None
+   'property(...)'
 
 ```{autodoc2-docstring} altdss.XfmrCode.XfmrCodeBatch.pctNoLoadLoss
 ```
@@ -1492,7 +1492,7 @@ Bases: {py:obj}`altdss.Batch.DSSBatch`
 :canonical: altdss.XfmrCode.XfmrCodeBatch.pctR
 :type: typing.List[altdss.types.Float64Array]
 :value: >
-   None
+   'property(...)'
 
 ```{autodoc2-docstring} altdss.XfmrCode.XfmrCodeBatch.pctR
 ```
@@ -1503,7 +1503,7 @@ Bases: {py:obj}`altdss.Batch.DSSBatch`
 :canonical: altdss.XfmrCode.XfmrCodeBatch.pctRs
 :type: typing.List[altdss.types.Float64Array]
 :value: >
-   None
+   'property(...)'
 
 ```{autodoc2-docstring} altdss.XfmrCode.XfmrCodeBatch.pctRs
 ```
@@ -1514,7 +1514,7 @@ Bases: {py:obj}`altdss.Batch.DSSBatch`
 :canonical: altdss.XfmrCode.XfmrCodeBatch.ppm_Antifloat
 :type: altdss.ArrayProxy.BatchFloat64ArrayProxy
 :value: >
-   None
+   'property(...)'
 
 ```{autodoc2-docstring} altdss.XfmrCode.XfmrCodeBatch.ppm_Antifloat
 ```

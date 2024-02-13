@@ -82,7 +82,7 @@
 ````{py:data} InvalidatedBus
 :canonical: altdss.common.InvalidatedBus
 :value: >
-   None
+   'InvalidatedDSSBus(...)'
 
 ```{autodoc2-docstring} altdss.common.InvalidatedBus
 ```
@@ -108,7 +108,7 @@
 ````{py:data} InvalidatedObject
 :canonical: altdss.common.InvalidatedObject
 :value: >
-   None
+   'InvalidatedDSSObject(...)'
 
 ```{autodoc2-docstring} altdss.common.InvalidatedObject
 ```

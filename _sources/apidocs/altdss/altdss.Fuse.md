@@ -59,7 +59,7 @@ Bases: {py:obj}`altdss.DSSObj.DSSObj`, {py:obj}`altdss.CircuitElement.CircuitEle
 :canonical: altdss.Fuse.Fuse.BaseFreq
 :type: float
 :value: >
-   None
+   'property(...)'
 
 ```{autodoc2-docstring} altdss.Fuse.Fuse.BaseFreq
 ```
@@ -102,7 +102,7 @@ Bases: {py:obj}`altdss.DSSObj.DSSObj`, {py:obj}`altdss.CircuitElement.CircuitEle
 :canonical: altdss.Fuse.Fuse.Delay
 :type: float
 :value: >
-   None
+   'property(...)'
 
 ```{autodoc2-docstring} altdss.Fuse.Fuse.Delay
 ```
@@ -113,7 +113,7 @@ Bases: {py:obj}`altdss.DSSObj.DSSObj`, {py:obj}`altdss.CircuitElement.CircuitEle
 :canonical: altdss.Fuse.Fuse.DisplayName
 :type: str
 :value: >
-   None
+   'property(...)'
 
 ```{autodoc2-docstring} altdss.Fuse.Fuse.DisplayName
 ```
@@ -124,7 +124,7 @@ Bases: {py:obj}`altdss.DSSObj.DSSObj`, {py:obj}`altdss.CircuitElement.CircuitEle
 :canonical: altdss.Fuse.Fuse.Enabled
 :type: bool
 :value: >
-   None
+   'property(...)'
 
 ```{autodoc2-docstring} altdss.Fuse.Fuse.Enabled
 ```
@@ -143,7 +143,7 @@ Bases: {py:obj}`altdss.DSSObj.DSSObj`, {py:obj}`altdss.CircuitElement.CircuitEle
 :canonical: altdss.Fuse.Fuse.FuseCurve
 :type: altdss.TCC_Curve.TCC_Curve
 :value: >
-   None
+   'property(...)'
 
 ```{autodoc2-docstring} altdss.Fuse.Fuse.FuseCurve
 ```
@@ -154,7 +154,7 @@ Bases: {py:obj}`altdss.DSSObj.DSSObj`, {py:obj}`altdss.CircuitElement.CircuitEle
 :canonical: altdss.Fuse.Fuse.FuseCurve_str
 :type: str
 :value: >
-   None
+   'property(...)'
 
 ```{autodoc2-docstring} altdss.Fuse.Fuse.FuseCurve_str
 ```
@@ -245,7 +245,7 @@ Bases: {py:obj}`altdss.DSSObj.DSSObj`, {py:obj}`altdss.CircuitElement.CircuitEle
 :canonical: altdss.Fuse.Fuse.MonitoredObj
 :type: altdss.DSSObj.DSSObj
 :value: >
-   None
+   'property(...)'
 
 ```{autodoc2-docstring} altdss.Fuse.Fuse.MonitoredObj
 ```
@@ -256,7 +256,7 @@ Bases: {py:obj}`altdss.DSSObj.DSSObj`, {py:obj}`altdss.CircuitElement.CircuitEle
 :canonical: altdss.Fuse.Fuse.MonitoredObj_str
 :type: str
 :value: >
-   None
+   'property(...)'
 
 ```{autodoc2-docstring} altdss.Fuse.Fuse.MonitoredObj_str
 ```
@@ -267,7 +267,7 @@ Bases: {py:obj}`altdss.DSSObj.DSSObj`, {py:obj}`altdss.CircuitElement.CircuitEle
 :canonical: altdss.Fuse.Fuse.MonitoredTerm
 :type: int
 :value: >
-   None
+   'property(...)'
 
 ```{autodoc2-docstring} altdss.Fuse.Fuse.MonitoredTerm
 ```
@@ -303,7 +303,7 @@ Bases: {py:obj}`altdss.DSSObj.DSSObj`, {py:obj}`altdss.CircuitElement.CircuitEle
 :canonical: altdss.Fuse.Fuse.Normal
 :type: altdss.enums.FuseState
 :value: >
-   None
+   'property(...)'
 
 ```{autodoc2-docstring} altdss.Fuse.Fuse.Normal
 ```
@@ -314,7 +314,7 @@ Bases: {py:obj}`altdss.DSSObj.DSSObj`, {py:obj}`altdss.CircuitElement.CircuitEle
 :canonical: altdss.Fuse.Fuse.Normal_str
 :type: typing.List[str]
 :value: >
-   None
+   'property(...)'
 
 ```{autodoc2-docstring} altdss.Fuse.Fuse.Normal_str
 ```
@@ -405,7 +405,7 @@ Bases: {py:obj}`altdss.DSSObj.DSSObj`, {py:obj}`altdss.CircuitElement.CircuitEle
 :canonical: altdss.Fuse.Fuse.RatedCurrent
 :type: float
 :value: >
-   None
+   'property(...)'
 
 ```{autodoc2-docstring} altdss.Fuse.Fuse.RatedCurrent
 ```
@@ -448,7 +448,7 @@ Bases: {py:obj}`altdss.DSSObj.DSSObj`, {py:obj}`altdss.CircuitElement.CircuitEle
 :canonical: altdss.Fuse.Fuse.State
 :type: altdss.enums.FuseState
 :value: >
-   None
+   'property(...)'
 
 ```{autodoc2-docstring} altdss.Fuse.Fuse.State
 ```
@@ -459,7 +459,7 @@ Bases: {py:obj}`altdss.DSSObj.DSSObj`, {py:obj}`altdss.CircuitElement.CircuitEle
 :canonical: altdss.Fuse.Fuse.State_str
 :type: typing.List[str]
 :value: >
-   None
+   'property(...)'
 
 ```{autodoc2-docstring} altdss.Fuse.Fuse.State_str
 ```
@@ -470,7 +470,7 @@ Bases: {py:obj}`altdss.DSSObj.DSSObj`, {py:obj}`altdss.CircuitElement.CircuitEle
 :canonical: altdss.Fuse.Fuse.SwitchedObj
 :type: altdss.DSSObj.DSSObj
 :value: >
-   None
+   'property(...)'
 
 ```{autodoc2-docstring} altdss.Fuse.Fuse.SwitchedObj
 ```
@@ -481,7 +481,7 @@ Bases: {py:obj}`altdss.DSSObj.DSSObj`, {py:obj}`altdss.CircuitElement.CircuitEle
 :canonical: altdss.Fuse.Fuse.SwitchedObj_str
 :type: str
 :value: >
-   None
+   'property(...)'
 
 ```{autodoc2-docstring} altdss.Fuse.Fuse.SwitchedObj_str
 ```
@@ -492,7 +492,7 @@ Bases: {py:obj}`altdss.DSSObj.DSSObj`, {py:obj}`altdss.CircuitElement.CircuitEle
 :canonical: altdss.Fuse.Fuse.SwitchedTerm
 :type: int
 :value: >
-   None
+   'property(...)'
 
 ```{autodoc2-docstring} altdss.Fuse.Fuse.SwitchedTerm
 ```
@@ -625,7 +625,7 @@ Bases: {py:obj}`altdss.Batch.DSSBatch`, {py:obj}`altdss.CircuitElement.CircuitEl
 :canonical: altdss.Fuse.FuseBatch.BaseFreq
 :type: altdss.ArrayProxy.BatchFloat64ArrayProxy
 :value: >
-   None
+   'property(...)'
 
 ```{autodoc2-docstring} altdss.Fuse.FuseBatch.BaseFreq
 ```
@@ -668,7 +668,7 @@ Bases: {py:obj}`altdss.Batch.DSSBatch`, {py:obj}`altdss.CircuitElement.CircuitEl
 :canonical: altdss.Fuse.FuseBatch.Delay
 :type: altdss.ArrayProxy.BatchFloat64ArrayProxy
 :value: >
-   None
+   'property(...)'
 
 ```{autodoc2-docstring} altdss.Fuse.FuseBatch.Delay
 ```
@@ -679,7 +679,7 @@ Bases: {py:obj}`altdss.Batch.DSSBatch`, {py:obj}`altdss.CircuitElement.CircuitEl
 :canonical: altdss.Fuse.FuseBatch.Enabled
 :type: typing.List[bool]
 :value: >
-   None
+   'property(...)'
 
 ```{autodoc2-docstring} altdss.Fuse.FuseBatch.Enabled
 ```
@@ -698,7 +698,7 @@ Bases: {py:obj}`altdss.Batch.DSSBatch`, {py:obj}`altdss.CircuitElement.CircuitEl
 :canonical: altdss.Fuse.FuseBatch.FuseCurve
 :type: typing.List[altdss.TCC_Curve.TCC_Curve]
 :value: >
-   None
+   'property(...)'
 
 ```{autodoc2-docstring} altdss.Fuse.FuseBatch.FuseCurve
 ```
@@ -709,7 +709,7 @@ Bases: {py:obj}`altdss.Batch.DSSBatch`, {py:obj}`altdss.CircuitElement.CircuitEl
 :canonical: altdss.Fuse.FuseBatch.FuseCurve_str
 :type: typing.List[str]
 :value: >
-   None
+   'property(...)'
 
 ```{autodoc2-docstring} altdss.Fuse.FuseBatch.FuseCurve_str
 ```
@@ -792,7 +792,7 @@ Bases: {py:obj}`altdss.Batch.DSSBatch`, {py:obj}`altdss.CircuitElement.CircuitEl
 :canonical: altdss.Fuse.FuseBatch.MonitoredObj
 :type: typing.List[altdss.DSSObj.DSSObj]
 :value: >
-   None
+   'property(...)'
 
 ```{autodoc2-docstring} altdss.Fuse.FuseBatch.MonitoredObj
 ```
@@ -803,7 +803,7 @@ Bases: {py:obj}`altdss.Batch.DSSBatch`, {py:obj}`altdss.CircuitElement.CircuitEl
 :canonical: altdss.Fuse.FuseBatch.MonitoredObj_str
 :type: typing.List[str]
 :value: >
-   None
+   'property(...)'
 
 ```{autodoc2-docstring} altdss.Fuse.FuseBatch.MonitoredObj_str
 ```
@@ -814,7 +814,7 @@ Bases: {py:obj}`altdss.Batch.DSSBatch`, {py:obj}`altdss.CircuitElement.CircuitEl
 :canonical: altdss.Fuse.FuseBatch.MonitoredTerm
 :type: altdss.ArrayProxy.BatchInt32ArrayProxy
 :value: >
-   None
+   'property(...)'
 
 ```{autodoc2-docstring} altdss.Fuse.FuseBatch.MonitoredTerm
 ```
@@ -834,7 +834,7 @@ Bases: {py:obj}`altdss.Batch.DSSBatch`, {py:obj}`altdss.CircuitElement.CircuitEl
 :canonical: altdss.Fuse.FuseBatch.Normal
 :type: typing.List[altdss.types.Int32Array]
 :value: >
-   None
+   'property(...)'
 
 ```{autodoc2-docstring} altdss.Fuse.FuseBatch.Normal
 ```
@@ -845,7 +845,7 @@ Bases: {py:obj}`altdss.Batch.DSSBatch`, {py:obj}`altdss.CircuitElement.CircuitEl
 :canonical: altdss.Fuse.FuseBatch.Normal_str
 :type: typing.List[typing.List[str]]
 :value: >
-   None
+   'property(...)'
 
 ```{autodoc2-docstring} altdss.Fuse.FuseBatch.Normal_str
 ```
@@ -928,7 +928,7 @@ Bases: {py:obj}`altdss.Batch.DSSBatch`, {py:obj}`altdss.CircuitElement.CircuitEl
 :canonical: altdss.Fuse.FuseBatch.RatedCurrent
 :type: altdss.ArrayProxy.BatchFloat64ArrayProxy
 :value: >
-   None
+   'property(...)'
 
 ```{autodoc2-docstring} altdss.Fuse.FuseBatch.RatedCurrent
 ```
@@ -963,7 +963,7 @@ Bases: {py:obj}`altdss.Batch.DSSBatch`, {py:obj}`altdss.CircuitElement.CircuitEl
 :canonical: altdss.Fuse.FuseBatch.State
 :type: typing.List[altdss.types.Int32Array]
 :value: >
-   None
+   'property(...)'
 
 ```{autodoc2-docstring} altdss.Fuse.FuseBatch.State
 ```
@@ -974,7 +974,7 @@ Bases: {py:obj}`altdss.Batch.DSSBatch`, {py:obj}`altdss.CircuitElement.CircuitEl
 :canonical: altdss.Fuse.FuseBatch.State_str
 :type: typing.List[typing.List[str]]
 :value: >
-   None
+   'property(...)'
 
 ```{autodoc2-docstring} altdss.Fuse.FuseBatch.State_str
 ```
@@ -985,7 +985,7 @@ Bases: {py:obj}`altdss.Batch.DSSBatch`, {py:obj}`altdss.CircuitElement.CircuitEl
 :canonical: altdss.Fuse.FuseBatch.SwitchedObj
 :type: typing.List[altdss.DSSObj.DSSObj]
 :value: >
-   None
+   'property(...)'
 
 ```{autodoc2-docstring} altdss.Fuse.FuseBatch.SwitchedObj
 ```
@@ -996,7 +996,7 @@ Bases: {py:obj}`altdss.Batch.DSSBatch`, {py:obj}`altdss.CircuitElement.CircuitEl
 :canonical: altdss.Fuse.FuseBatch.SwitchedObj_str
 :type: typing.List[str]
 :value: >
-   None
+   'property(...)'
 
 ```{autodoc2-docstring} altdss.Fuse.FuseBatch.SwitchedObj_str
 ```
@@ -1007,7 +1007,7 @@ Bases: {py:obj}`altdss.Batch.DSSBatch`, {py:obj}`altdss.CircuitElement.CircuitEl
 :canonical: altdss.Fuse.FuseBatch.SwitchedTerm
 :type: altdss.ArrayProxy.BatchInt32ArrayProxy
 :value: >
-   None
+   'property(...)'
 
 ```{autodoc2-docstring} altdss.Fuse.FuseBatch.SwitchedTerm
 ```
@@ -2062,7 +2062,7 @@ Bases: {py:obj}`altdss.DSSObj.IDSSObj`, {py:obj}`altdss.Fuse.FuseBatch`
 :canonical: altdss.Fuse.IFuse.BaseFreq
 :type: altdss.ArrayProxy.BatchFloat64ArrayProxy
 :value: >
-   None
+   'property(...)'
 
 ```{autodoc2-docstring} altdss.Fuse.IFuse.BaseFreq
 ```
@@ -2105,7 +2105,7 @@ Bases: {py:obj}`altdss.DSSObj.IDSSObj`, {py:obj}`altdss.Fuse.FuseBatch`
 :canonical: altdss.Fuse.IFuse.Delay
 :type: altdss.ArrayProxy.BatchFloat64ArrayProxy
 :value: >
-   None
+   'property(...)'
 
 ```{autodoc2-docstring} altdss.Fuse.IFuse.Delay
 ```
@@ -2116,7 +2116,7 @@ Bases: {py:obj}`altdss.DSSObj.IDSSObj`, {py:obj}`altdss.Fuse.FuseBatch`
 :canonical: altdss.Fuse.IFuse.Enabled
 :type: typing.List[bool]
 :value: >
-   None
+   'property(...)'
 
 ```{autodoc2-docstring} altdss.Fuse.IFuse.Enabled
 ```
@@ -2135,7 +2135,7 @@ Bases: {py:obj}`altdss.DSSObj.IDSSObj`, {py:obj}`altdss.Fuse.FuseBatch`
 :canonical: altdss.Fuse.IFuse.FuseCurve
 :type: typing.List[altdss.TCC_Curve.TCC_Curve]
 :value: >
-   None
+   'property(...)'
 
 ```{autodoc2-docstring} altdss.Fuse.IFuse.FuseCurve
 ```
@@ -2146,7 +2146,7 @@ Bases: {py:obj}`altdss.DSSObj.IDSSObj`, {py:obj}`altdss.Fuse.FuseBatch`
 :canonical: altdss.Fuse.IFuse.FuseCurve_str
 :type: typing.List[str]
 :value: >
-   None
+   'property(...)'
 
 ```{autodoc2-docstring} altdss.Fuse.IFuse.FuseCurve_str
 ```
@@ -2229,7 +2229,7 @@ Bases: {py:obj}`altdss.DSSObj.IDSSObj`, {py:obj}`altdss.Fuse.FuseBatch`
 :canonical: altdss.Fuse.IFuse.MonitoredObj
 :type: typing.List[altdss.DSSObj.DSSObj]
 :value: >
-   None
+   'property(...)'
 
 ```{autodoc2-docstring} altdss.Fuse.IFuse.MonitoredObj
 ```
@@ -2240,7 +2240,7 @@ Bases: {py:obj}`altdss.DSSObj.IDSSObj`, {py:obj}`altdss.Fuse.FuseBatch`
 :canonical: altdss.Fuse.IFuse.MonitoredObj_str
 :type: typing.List[str]
 :value: >
-   None
+   'property(...)'
 
 ```{autodoc2-docstring} altdss.Fuse.IFuse.MonitoredObj_str
 ```
@@ -2251,7 +2251,7 @@ Bases: {py:obj}`altdss.DSSObj.IDSSObj`, {py:obj}`altdss.Fuse.FuseBatch`
 :canonical: altdss.Fuse.IFuse.MonitoredTerm
 :type: altdss.ArrayProxy.BatchInt32ArrayProxy
 :value: >
-   None
+   'property(...)'
 
 ```{autodoc2-docstring} altdss.Fuse.IFuse.MonitoredTerm
 ```
@@ -2271,7 +2271,7 @@ Bases: {py:obj}`altdss.DSSObj.IDSSObj`, {py:obj}`altdss.Fuse.FuseBatch`
 :canonical: altdss.Fuse.IFuse.Normal
 :type: typing.List[altdss.types.Int32Array]
 :value: >
-   None
+   'property(...)'
 
 ```{autodoc2-docstring} altdss.Fuse.IFuse.Normal
 ```
@@ -2282,7 +2282,7 @@ Bases: {py:obj}`altdss.DSSObj.IDSSObj`, {py:obj}`altdss.Fuse.FuseBatch`
 :canonical: altdss.Fuse.IFuse.Normal_str
 :type: typing.List[typing.List[str]]
 :value: >
-   None
+   'property(...)'
 
 ```{autodoc2-docstring} altdss.Fuse.IFuse.Normal_str
 ```
@@ -2365,7 +2365,7 @@ Bases: {py:obj}`altdss.DSSObj.IDSSObj`, {py:obj}`altdss.Fuse.FuseBatch`
 :canonical: altdss.Fuse.IFuse.RatedCurrent
 :type: altdss.ArrayProxy.BatchFloat64ArrayProxy
 :value: >
-   None
+   'property(...)'
 
 ```{autodoc2-docstring} altdss.Fuse.IFuse.RatedCurrent
 ```
@@ -2400,7 +2400,7 @@ Bases: {py:obj}`altdss.DSSObj.IDSSObj`, {py:obj}`altdss.Fuse.FuseBatch`
 :canonical: altdss.Fuse.IFuse.State
 :type: typing.List[altdss.types.Int32Array]
 :value: >
-   None
+   'property(...)'
 
 ```{autodoc2-docstring} altdss.Fuse.IFuse.State
 ```
@@ -2411,7 +2411,7 @@ Bases: {py:obj}`altdss.DSSObj.IDSSObj`, {py:obj}`altdss.Fuse.FuseBatch`
 :canonical: altdss.Fuse.IFuse.State_str
 :type: typing.List[typing.List[str]]
 :value: >
-   None
+   'property(...)'
 
 ```{autodoc2-docstring} altdss.Fuse.IFuse.State_str
 ```
@@ -2422,7 +2422,7 @@ Bases: {py:obj}`altdss.DSSObj.IDSSObj`, {py:obj}`altdss.Fuse.FuseBatch`
 :canonical: altdss.Fuse.IFuse.SwitchedObj
 :type: typing.List[altdss.DSSObj.DSSObj]
 :value: >
-   None
+   'property(...)'
 
 ```{autodoc2-docstring} altdss.Fuse.IFuse.SwitchedObj
 ```
@@ -2433,7 +2433,7 @@ Bases: {py:obj}`altdss.DSSObj.IDSSObj`, {py:obj}`altdss.Fuse.FuseBatch`
 :canonical: altdss.Fuse.IFuse.SwitchedObj_str
 :type: typing.List[str]
 :value: >
-   None
+   'property(...)'
 
 ```{autodoc2-docstring} altdss.Fuse.IFuse.SwitchedObj_str
 ```
@@ -2444,7 +2444,7 @@ Bases: {py:obj}`altdss.DSSObj.IDSSObj`, {py:obj}`altdss.Fuse.FuseBatch`
 :canonical: altdss.Fuse.IFuse.SwitchedTerm
 :type: altdss.ArrayProxy.BatchInt32ArrayProxy
 :value: >
-   None
+   'property(...)'
 
 ```{autodoc2-docstring} altdss.Fuse.IFuse.SwitchedTerm
 ```

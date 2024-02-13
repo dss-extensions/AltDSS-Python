@@ -59,7 +59,7 @@ Bases: {py:obj}`altdss.DSSObj.DSSObj`, {py:obj}`altdss.CircuitElement.CircuitEle
 :canonical: altdss.GICTransformer.GICTransformer.BaseFreq
 :type: float
 :value: >
-   None
+   'property(...)'
 
 ```{autodoc2-docstring} altdss.GICTransformer.GICTransformer.BaseFreq
 ```
@@ -70,7 +70,7 @@ Bases: {py:obj}`altdss.DSSObj.DSSObj`, {py:obj}`altdss.CircuitElement.CircuitEle
 :canonical: altdss.GICTransformer.GICTransformer.BusH
 :type: str
 :value: >
-   None
+   'property(...)'
 
 ```{autodoc2-docstring} altdss.GICTransformer.GICTransformer.BusH
 ```
@@ -81,7 +81,7 @@ Bases: {py:obj}`altdss.DSSObj.DSSObj`, {py:obj}`altdss.CircuitElement.CircuitEle
 :canonical: altdss.GICTransformer.GICTransformer.BusNH
 :type: str
 :value: >
-   None
+   'property(...)'
 
 ```{autodoc2-docstring} altdss.GICTransformer.GICTransformer.BusNH
 ```
@@ -92,7 +92,7 @@ Bases: {py:obj}`altdss.DSSObj.DSSObj`, {py:obj}`altdss.CircuitElement.CircuitEle
 :canonical: altdss.GICTransformer.GICTransformer.BusNX
 :type: str
 :value: >
-   None
+   'property(...)'
 
 ```{autodoc2-docstring} altdss.GICTransformer.GICTransformer.BusNX
 ```
@@ -103,7 +103,7 @@ Bases: {py:obj}`altdss.DSSObj.DSSObj`, {py:obj}`altdss.CircuitElement.CircuitEle
 :canonical: altdss.GICTransformer.GICTransformer.BusX
 :type: str
 :value: >
-   None
+   'property(...)'
 
 ```{autodoc2-docstring} altdss.GICTransformer.GICTransformer.BusX
 ```
@@ -146,7 +146,7 @@ Bases: {py:obj}`altdss.DSSObj.DSSObj`, {py:obj}`altdss.CircuitElement.CircuitEle
 :canonical: altdss.GICTransformer.GICTransformer.DisplayName
 :type: str
 :value: >
-   None
+   'property(...)'
 
 ```{autodoc2-docstring} altdss.GICTransformer.GICTransformer.DisplayName
 ```
@@ -157,7 +157,7 @@ Bases: {py:obj}`altdss.DSSObj.DSSObj`, {py:obj}`altdss.CircuitElement.CircuitEle
 :canonical: altdss.GICTransformer.GICTransformer.EmergAmps
 :type: float
 :value: >
-   None
+   'property(...)'
 
 ```{autodoc2-docstring} altdss.GICTransformer.GICTransformer.EmergAmps
 ```
@@ -168,7 +168,7 @@ Bases: {py:obj}`altdss.DSSObj.DSSObj`, {py:obj}`altdss.CircuitElement.CircuitEle
 :canonical: altdss.GICTransformer.GICTransformer.Enabled
 :type: bool
 :value: >
-   None
+   'property(...)'
 
 ```{autodoc2-docstring} altdss.GICTransformer.GICTransformer.Enabled
 ```
@@ -195,7 +195,7 @@ Bases: {py:obj}`altdss.DSSObj.DSSObj`, {py:obj}`altdss.CircuitElement.CircuitEle
 :canonical: altdss.GICTransformer.GICTransformer.FaultRate
 :type: float
 :value: >
-   None
+   'property(...)'
 
 ```{autodoc2-docstring} altdss.GICTransformer.GICTransformer.FaultRate
 ```
@@ -286,7 +286,7 @@ Bases: {py:obj}`altdss.DSSObj.DSSObj`, {py:obj}`altdss.CircuitElement.CircuitEle
 :canonical: altdss.GICTransformer.GICTransformer.K
 :type: float
 :value: >
-   None
+   'property(...)'
 
 ```{autodoc2-docstring} altdss.GICTransformer.GICTransformer.K
 ```
@@ -321,7 +321,7 @@ Bases: {py:obj}`altdss.DSSObj.DSSObj`, {py:obj}`altdss.CircuitElement.CircuitEle
 :canonical: altdss.GICTransformer.GICTransformer.MVA
 :type: float
 :value: >
-   None
+   'property(...)'
 
 ```{autodoc2-docstring} altdss.GICTransformer.GICTransformer.MVA
 ```
@@ -365,7 +365,7 @@ Bases: {py:obj}`altdss.DSSObj.DSSObj`, {py:obj}`altdss.CircuitElement.CircuitEle
 :canonical: altdss.GICTransformer.GICTransformer.NormAmps
 :type: float
 :value: >
-   None
+   'property(...)'
 
 ```{autodoc2-docstring} altdss.GICTransformer.GICTransformer.NormAmps
 ```
@@ -464,7 +464,7 @@ Bases: {py:obj}`altdss.DSSObj.DSSObj`, {py:obj}`altdss.CircuitElement.CircuitEle
 :canonical: altdss.GICTransformer.GICTransformer.Phases
 :type: int
 :value: >
-   None
+   'property(...)'
 
 ```{autodoc2-docstring} altdss.GICTransformer.GICTransformer.Phases
 ```
@@ -483,7 +483,7 @@ Bases: {py:obj}`altdss.DSSObj.DSSObj`, {py:obj}`altdss.CircuitElement.CircuitEle
 :canonical: altdss.GICTransformer.GICTransformer.R1
 :type: float
 :value: >
-   None
+   'property(...)'
 
 ```{autodoc2-docstring} altdss.GICTransformer.GICTransformer.R1
 ```
@@ -494,7 +494,7 @@ Bases: {py:obj}`altdss.DSSObj.DSSObj`, {py:obj}`altdss.CircuitElement.CircuitEle
 :canonical: altdss.GICTransformer.GICTransformer.R2
 :type: float
 :value: >
-   None
+   'property(...)'
 
 ```{autodoc2-docstring} altdss.GICTransformer.GICTransformer.R2
 ```
@@ -505,7 +505,7 @@ Bases: {py:obj}`altdss.DSSObj.DSSObj`, {py:obj}`altdss.CircuitElement.CircuitEle
 :canonical: altdss.GICTransformer.GICTransformer.Repair
 :type: float
 :value: >
-   None
+   'property(...)'
 
 ```{autodoc2-docstring} altdss.GICTransformer.GICTransformer.Repair
 ```
@@ -580,7 +580,7 @@ Bases: {py:obj}`altdss.DSSObj.DSSObj`, {py:obj}`altdss.CircuitElement.CircuitEle
 :canonical: altdss.GICTransformer.GICTransformer.Type
 :type: altdss.enums.GICTransformerType
 :value: >
-   None
+   'property(...)'
 
 ```{autodoc2-docstring} altdss.GICTransformer.GICTransformer.Type
 ```
@@ -591,7 +591,7 @@ Bases: {py:obj}`altdss.DSSObj.DSSObj`, {py:obj}`altdss.CircuitElement.CircuitEle
 :canonical: altdss.GICTransformer.GICTransformer.Type_str
 :type: str
 :value: >
-   None
+   'property(...)'
 
 ```{autodoc2-docstring} altdss.GICTransformer.GICTransformer.Type_str
 ```
@@ -602,7 +602,7 @@ Bases: {py:obj}`altdss.DSSObj.DSSObj`, {py:obj}`altdss.CircuitElement.CircuitEle
 :canonical: altdss.GICTransformer.GICTransformer.VarCurve
 :type: altdss.XYcurve.XYcurve
 :value: >
-   None
+   'property(...)'
 
 ```{autodoc2-docstring} altdss.GICTransformer.GICTransformer.VarCurve
 ```
@@ -613,7 +613,7 @@ Bases: {py:obj}`altdss.DSSObj.DSSObj`, {py:obj}`altdss.CircuitElement.CircuitEle
 :canonical: altdss.GICTransformer.GICTransformer.VarCurve_str
 :type: str
 :value: >
-   None
+   'property(...)'
 
 ```{autodoc2-docstring} altdss.GICTransformer.GICTransformer.VarCurve_str
 ```
@@ -696,7 +696,7 @@ Bases: {py:obj}`altdss.DSSObj.DSSObj`, {py:obj}`altdss.CircuitElement.CircuitEle
 :canonical: altdss.GICTransformer.GICTransformer.kVLL1
 :type: float
 :value: >
-   None
+   'property(...)'
 
 ```{autodoc2-docstring} altdss.GICTransformer.GICTransformer.kVLL1
 ```
@@ -707,7 +707,7 @@ Bases: {py:obj}`altdss.DSSObj.DSSObj`, {py:obj}`altdss.CircuitElement.CircuitEle
 :canonical: altdss.GICTransformer.GICTransformer.kVLL2
 :type: float
 :value: >
-   None
+   'property(...)'
 
 ```{autodoc2-docstring} altdss.GICTransformer.GICTransformer.kVLL2
 ```
@@ -734,7 +734,7 @@ Bases: {py:obj}`altdss.DSSObj.DSSObj`, {py:obj}`altdss.CircuitElement.CircuitEle
 :canonical: altdss.GICTransformer.GICTransformer.pctPerm
 :type: float
 :value: >
-   None
+   'property(...)'
 
 ```{autodoc2-docstring} altdss.GICTransformer.GICTransformer.pctPerm
 ```
@@ -745,7 +745,7 @@ Bases: {py:obj}`altdss.DSSObj.DSSObj`, {py:obj}`altdss.CircuitElement.CircuitEle
 :canonical: altdss.GICTransformer.GICTransformer.pctR1
 :type: float
 :value: >
-   None
+   'property(...)'
 
 ```{autodoc2-docstring} altdss.GICTransformer.GICTransformer.pctR1
 ```
@@ -756,7 +756,7 @@ Bases: {py:obj}`altdss.DSSObj.DSSObj`, {py:obj}`altdss.CircuitElement.CircuitEle
 :canonical: altdss.GICTransformer.GICTransformer.pctR2
 :type: float
 :value: >
-   None
+   'property(...)'
 
 ```{autodoc2-docstring} altdss.GICTransformer.GICTransformer.pctR2
 ```
@@ -793,7 +793,7 @@ Bases: {py:obj}`altdss.Batch.DSSBatch`, {py:obj}`altdss.CircuitElement.CircuitEl
 :canonical: altdss.GICTransformer.GICTransformerBatch.BaseFreq
 :type: altdss.ArrayProxy.BatchFloat64ArrayProxy
 :value: >
-   None
+   'property(...)'
 
 ```{autodoc2-docstring} altdss.GICTransformer.GICTransformerBatch.BaseFreq
 ```
@@ -804,7 +804,7 @@ Bases: {py:obj}`altdss.Batch.DSSBatch`, {py:obj}`altdss.CircuitElement.CircuitEl
 :canonical: altdss.GICTransformer.GICTransformerBatch.BusH
 :type: typing.List[str]
 :value: >
-   None
+   'property(...)'
 
 ```{autodoc2-docstring} altdss.GICTransformer.GICTransformerBatch.BusH
 ```
@@ -815,7 +815,7 @@ Bases: {py:obj}`altdss.Batch.DSSBatch`, {py:obj}`altdss.CircuitElement.CircuitEl
 :canonical: altdss.GICTransformer.GICTransformerBatch.BusNH
 :type: typing.List[str]
 :value: >
-   None
+   'property(...)'
 
 ```{autodoc2-docstring} altdss.GICTransformer.GICTransformerBatch.BusNH
 ```
@@ -826,7 +826,7 @@ Bases: {py:obj}`altdss.Batch.DSSBatch`, {py:obj}`altdss.CircuitElement.CircuitEl
 :canonical: altdss.GICTransformer.GICTransformerBatch.BusNX
 :type: typing.List[str]
 :value: >
-   None
+   'property(...)'
 
 ```{autodoc2-docstring} altdss.GICTransformer.GICTransformerBatch.BusNX
 ```
@@ -837,7 +837,7 @@ Bases: {py:obj}`altdss.Batch.DSSBatch`, {py:obj}`altdss.CircuitElement.CircuitEl
 :canonical: altdss.GICTransformer.GICTransformerBatch.BusX
 :type: typing.List[str]
 :value: >
-   None
+   'property(...)'
 
 ```{autodoc2-docstring} altdss.GICTransformer.GICTransformerBatch.BusX
 ```
@@ -880,7 +880,7 @@ Bases: {py:obj}`altdss.Batch.DSSBatch`, {py:obj}`altdss.CircuitElement.CircuitEl
 :canonical: altdss.GICTransformer.GICTransformerBatch.EmergAmps
 :type: altdss.ArrayProxy.BatchFloat64ArrayProxy
 :value: >
-   None
+   'property(...)'
 
 ```{autodoc2-docstring} altdss.GICTransformer.GICTransformerBatch.EmergAmps
 ```
@@ -891,7 +891,7 @@ Bases: {py:obj}`altdss.Batch.DSSBatch`, {py:obj}`altdss.CircuitElement.CircuitEl
 :canonical: altdss.GICTransformer.GICTransformerBatch.Enabled
 :type: typing.List[bool]
 :value: >
-   None
+   'property(...)'
 
 ```{autodoc2-docstring} altdss.GICTransformer.GICTransformerBatch.Enabled
 ```
@@ -918,7 +918,7 @@ Bases: {py:obj}`altdss.Batch.DSSBatch`, {py:obj}`altdss.CircuitElement.CircuitEl
 :canonical: altdss.GICTransformer.GICTransformerBatch.FaultRate
 :type: altdss.ArrayProxy.BatchFloat64ArrayProxy
 :value: >
-   None
+   'property(...)'
 
 ```{autodoc2-docstring} altdss.GICTransformer.GICTransformerBatch.FaultRate
 ```
@@ -1001,7 +1001,7 @@ Bases: {py:obj}`altdss.Batch.DSSBatch`, {py:obj}`altdss.CircuitElement.CircuitEl
 :canonical: altdss.GICTransformer.GICTransformerBatch.K
 :type: altdss.ArrayProxy.BatchFloat64ArrayProxy
 :value: >
-   None
+   'property(...)'
 
 ```{autodoc2-docstring} altdss.GICTransformer.GICTransformerBatch.K
 ```
@@ -1036,7 +1036,7 @@ Bases: {py:obj}`altdss.Batch.DSSBatch`, {py:obj}`altdss.CircuitElement.CircuitEl
 :canonical: altdss.GICTransformer.GICTransformerBatch.MVA
 :type: altdss.ArrayProxy.BatchFloat64ArrayProxy
 :value: >
-   None
+   'property(...)'
 
 ```{autodoc2-docstring} altdss.GICTransformer.GICTransformerBatch.MVA
 ```
@@ -1064,7 +1064,7 @@ Bases: {py:obj}`altdss.Batch.DSSBatch`, {py:obj}`altdss.CircuitElement.CircuitEl
 :canonical: altdss.GICTransformer.GICTransformerBatch.NormAmps
 :type: altdss.ArrayProxy.BatchFloat64ArrayProxy
 :value: >
-   None
+   'property(...)'
 
 ```{autodoc2-docstring} altdss.GICTransformer.GICTransformerBatch.NormAmps
 ```
@@ -1155,7 +1155,7 @@ Bases: {py:obj}`altdss.Batch.DSSBatch`, {py:obj}`altdss.CircuitElement.CircuitEl
 :canonical: altdss.GICTransformer.GICTransformerBatch.Phases
 :type: altdss.ArrayProxy.BatchInt32ArrayProxy
 :value: >
-   None
+   'property(...)'
 
 ```{autodoc2-docstring} altdss.GICTransformer.GICTransformerBatch.Phases
 ```
@@ -1174,7 +1174,7 @@ Bases: {py:obj}`altdss.Batch.DSSBatch`, {py:obj}`altdss.CircuitElement.CircuitEl
 :canonical: altdss.GICTransformer.GICTransformerBatch.R1
 :type: altdss.ArrayProxy.BatchFloat64ArrayProxy
 :value: >
-   None
+   'property(...)'
 
 ```{autodoc2-docstring} altdss.GICTransformer.GICTransformerBatch.R1
 ```
@@ -1185,7 +1185,7 @@ Bases: {py:obj}`altdss.Batch.DSSBatch`, {py:obj}`altdss.CircuitElement.CircuitEl
 :canonical: altdss.GICTransformer.GICTransformerBatch.R2
 :type: altdss.ArrayProxy.BatchFloat64ArrayProxy
 :value: >
-   None
+   'property(...)'
 
 ```{autodoc2-docstring} altdss.GICTransformer.GICTransformerBatch.R2
 ```
@@ -1196,7 +1196,7 @@ Bases: {py:obj}`altdss.Batch.DSSBatch`, {py:obj}`altdss.CircuitElement.CircuitEl
 :canonical: altdss.GICTransformer.GICTransformerBatch.Repair
 :type: altdss.ArrayProxy.BatchFloat64ArrayProxy
 :value: >
-   None
+   'property(...)'
 
 ```{autodoc2-docstring} altdss.GICTransformer.GICTransformerBatch.Repair
 ```
@@ -1263,7 +1263,7 @@ Bases: {py:obj}`altdss.Batch.DSSBatch`, {py:obj}`altdss.CircuitElement.CircuitEl
 :canonical: altdss.GICTransformer.GICTransformerBatch.Type
 :type: altdss.ArrayProxy.BatchInt32ArrayProxy
 :value: >
-   None
+   'property(...)'
 
 ```{autodoc2-docstring} altdss.GICTransformer.GICTransformerBatch.Type
 ```
@@ -1274,7 +1274,7 @@ Bases: {py:obj}`altdss.Batch.DSSBatch`, {py:obj}`altdss.CircuitElement.CircuitEl
 :canonical: altdss.GICTransformer.GICTransformerBatch.Type_str
 :type: typing.List[str]
 :value: >
-   None
+   'property(...)'
 
 ```{autodoc2-docstring} altdss.GICTransformer.GICTransformerBatch.Type_str
 ```
@@ -1285,7 +1285,7 @@ Bases: {py:obj}`altdss.Batch.DSSBatch`, {py:obj}`altdss.CircuitElement.CircuitEl
 :canonical: altdss.GICTransformer.GICTransformerBatch.VarCurve
 :type: typing.List[altdss.XYcurve.XYcurve]
 :value: >
-   None
+   'property(...)'
 
 ```{autodoc2-docstring} altdss.GICTransformer.GICTransformerBatch.VarCurve
 ```
@@ -1296,7 +1296,7 @@ Bases: {py:obj}`altdss.Batch.DSSBatch`, {py:obj}`altdss.CircuitElement.CircuitEl
 :canonical: altdss.GICTransformer.GICTransformerBatch.VarCurve_str
 :type: typing.List[str]
 :value: >
-   None
+   'property(...)'
 
 ```{autodoc2-docstring} altdss.GICTransformer.GICTransformerBatch.VarCurve_str
 ```
@@ -1379,7 +1379,7 @@ Bases: {py:obj}`altdss.Batch.DSSBatch`, {py:obj}`altdss.CircuitElement.CircuitEl
 :canonical: altdss.GICTransformer.GICTransformerBatch.kVLL1
 :type: altdss.ArrayProxy.BatchFloat64ArrayProxy
 :value: >
-   None
+   'property(...)'
 
 ```{autodoc2-docstring} altdss.GICTransformer.GICTransformerBatch.kVLL1
 ```
@@ -1390,7 +1390,7 @@ Bases: {py:obj}`altdss.Batch.DSSBatch`, {py:obj}`altdss.CircuitElement.CircuitEl
 :canonical: altdss.GICTransformer.GICTransformerBatch.kVLL2
 :type: altdss.ArrayProxy.BatchFloat64ArrayProxy
 :value: >
-   None
+   'property(...)'
 
 ```{autodoc2-docstring} altdss.GICTransformer.GICTransformerBatch.kVLL2
 ```
@@ -1401,7 +1401,7 @@ Bases: {py:obj}`altdss.Batch.DSSBatch`, {py:obj}`altdss.CircuitElement.CircuitEl
 :canonical: altdss.GICTransformer.GICTransformerBatch.pctPerm
 :type: altdss.ArrayProxy.BatchFloat64ArrayProxy
 :value: >
-   None
+   'property(...)'
 
 ```{autodoc2-docstring} altdss.GICTransformer.GICTransformerBatch.pctPerm
 ```
@@ -1412,7 +1412,7 @@ Bases: {py:obj}`altdss.Batch.DSSBatch`, {py:obj}`altdss.CircuitElement.CircuitEl
 :canonical: altdss.GICTransformer.GICTransformerBatch.pctR1
 :type: altdss.ArrayProxy.BatchFloat64ArrayProxy
 :value: >
-   None
+   'property(...)'
 
 ```{autodoc2-docstring} altdss.GICTransformer.GICTransformerBatch.pctR1
 ```
@@ -1423,7 +1423,7 @@ Bases: {py:obj}`altdss.Batch.DSSBatch`, {py:obj}`altdss.CircuitElement.CircuitEl
 :canonical: altdss.GICTransformer.GICTransformerBatch.pctR2
 :type: altdss.ArrayProxy.BatchFloat64ArrayProxy
 :value: >
-   None
+   'property(...)'
 
 ```{autodoc2-docstring} altdss.GICTransformer.GICTransformerBatch.pctR2
 ```
@@ -2602,7 +2602,7 @@ Bases: {py:obj}`altdss.DSSObj.IDSSObj`, {py:obj}`altdss.GICTransformer.GICTransf
 :canonical: altdss.GICTransformer.IGICTransformer.BaseFreq
 :type: altdss.ArrayProxy.BatchFloat64ArrayProxy
 :value: >
-   None
+   'property(...)'
 
 ```{autodoc2-docstring} altdss.GICTransformer.IGICTransformer.BaseFreq
 ```
@@ -2613,7 +2613,7 @@ Bases: {py:obj}`altdss.DSSObj.IDSSObj`, {py:obj}`altdss.GICTransformer.GICTransf
 :canonical: altdss.GICTransformer.IGICTransformer.BusH
 :type: typing.List[str]
 :value: >
-   None
+   'property(...)'
 
 ```{autodoc2-docstring} altdss.GICTransformer.IGICTransformer.BusH
 ```
@@ -2624,7 +2624,7 @@ Bases: {py:obj}`altdss.DSSObj.IDSSObj`, {py:obj}`altdss.GICTransformer.GICTransf
 :canonical: altdss.GICTransformer.IGICTransformer.BusNH
 :type: typing.List[str]
 :value: >
-   None
+   'property(...)'
 
 ```{autodoc2-docstring} altdss.GICTransformer.IGICTransformer.BusNH
 ```
@@ -2635,7 +2635,7 @@ Bases: {py:obj}`altdss.DSSObj.IDSSObj`, {py:obj}`altdss.GICTransformer.GICTransf
 :canonical: altdss.GICTransformer.IGICTransformer.BusNX
 :type: typing.List[str]
 :value: >
-   None
+   'property(...)'
 
 ```{autodoc2-docstring} altdss.GICTransformer.IGICTransformer.BusNX
 ```
@@ -2646,7 +2646,7 @@ Bases: {py:obj}`altdss.DSSObj.IDSSObj`, {py:obj}`altdss.GICTransformer.GICTransf
 :canonical: altdss.GICTransformer.IGICTransformer.BusX
 :type: typing.List[str]
 :value: >
-   None
+   'property(...)'
 
 ```{autodoc2-docstring} altdss.GICTransformer.IGICTransformer.BusX
 ```
@@ -2689,7 +2689,7 @@ Bases: {py:obj}`altdss.DSSObj.IDSSObj`, {py:obj}`altdss.GICTransformer.GICTransf
 :canonical: altdss.GICTransformer.IGICTransformer.EmergAmps
 :type: altdss.ArrayProxy.BatchFloat64ArrayProxy
 :value: >
-   None
+   'property(...)'
 
 ```{autodoc2-docstring} altdss.GICTransformer.IGICTransformer.EmergAmps
 ```
@@ -2700,7 +2700,7 @@ Bases: {py:obj}`altdss.DSSObj.IDSSObj`, {py:obj}`altdss.GICTransformer.GICTransf
 :canonical: altdss.GICTransformer.IGICTransformer.Enabled
 :type: typing.List[bool]
 :value: >
-   None
+   'property(...)'
 
 ```{autodoc2-docstring} altdss.GICTransformer.IGICTransformer.Enabled
 ```
@@ -2727,7 +2727,7 @@ Bases: {py:obj}`altdss.DSSObj.IDSSObj`, {py:obj}`altdss.GICTransformer.GICTransf
 :canonical: altdss.GICTransformer.IGICTransformer.FaultRate
 :type: altdss.ArrayProxy.BatchFloat64ArrayProxy
 :value: >
-   None
+   'property(...)'
 
 ```{autodoc2-docstring} altdss.GICTransformer.IGICTransformer.FaultRate
 ```
@@ -2810,7 +2810,7 @@ Bases: {py:obj}`altdss.DSSObj.IDSSObj`, {py:obj}`altdss.GICTransformer.GICTransf
 :canonical: altdss.GICTransformer.IGICTransformer.K
 :type: altdss.ArrayProxy.BatchFloat64ArrayProxy
 :value: >
-   None
+   'property(...)'
 
 ```{autodoc2-docstring} altdss.GICTransformer.IGICTransformer.K
 ```
@@ -2845,7 +2845,7 @@ Bases: {py:obj}`altdss.DSSObj.IDSSObj`, {py:obj}`altdss.GICTransformer.GICTransf
 :canonical: altdss.GICTransformer.IGICTransformer.MVA
 :type: altdss.ArrayProxy.BatchFloat64ArrayProxy
 :value: >
-   None
+   'property(...)'
 
 ```{autodoc2-docstring} altdss.GICTransformer.IGICTransformer.MVA
 ```
@@ -2873,7 +2873,7 @@ Bases: {py:obj}`altdss.DSSObj.IDSSObj`, {py:obj}`altdss.GICTransformer.GICTransf
 :canonical: altdss.GICTransformer.IGICTransformer.NormAmps
 :type: altdss.ArrayProxy.BatchFloat64ArrayProxy
 :value: >
-   None
+   'property(...)'
 
 ```{autodoc2-docstring} altdss.GICTransformer.IGICTransformer.NormAmps
 ```
@@ -2964,7 +2964,7 @@ Bases: {py:obj}`altdss.DSSObj.IDSSObj`, {py:obj}`altdss.GICTransformer.GICTransf
 :canonical: altdss.GICTransformer.IGICTransformer.Phases
 :type: altdss.ArrayProxy.BatchInt32ArrayProxy
 :value: >
-   None
+   'property(...)'
 
 ```{autodoc2-docstring} altdss.GICTransformer.IGICTransformer.Phases
 ```
@@ -2983,7 +2983,7 @@ Bases: {py:obj}`altdss.DSSObj.IDSSObj`, {py:obj}`altdss.GICTransformer.GICTransf
 :canonical: altdss.GICTransformer.IGICTransformer.R1
 :type: altdss.ArrayProxy.BatchFloat64ArrayProxy
 :value: >
-   None
+   'property(...)'
 
 ```{autodoc2-docstring} altdss.GICTransformer.IGICTransformer.R1
 ```
@@ -2994,7 +2994,7 @@ Bases: {py:obj}`altdss.DSSObj.IDSSObj`, {py:obj}`altdss.GICTransformer.GICTransf
 :canonical: altdss.GICTransformer.IGICTransformer.R2
 :type: altdss.ArrayProxy.BatchFloat64ArrayProxy
 :value: >
-   None
+   'property(...)'
 
 ```{autodoc2-docstring} altdss.GICTransformer.IGICTransformer.R2
 ```
@@ -3005,7 +3005,7 @@ Bases: {py:obj}`altdss.DSSObj.IDSSObj`, {py:obj}`altdss.GICTransformer.GICTransf
 :canonical: altdss.GICTransformer.IGICTransformer.Repair
 :type: altdss.ArrayProxy.BatchFloat64ArrayProxy
 :value: >
-   None
+   'property(...)'
 
 ```{autodoc2-docstring} altdss.GICTransformer.IGICTransformer.Repair
 ```
@@ -3072,7 +3072,7 @@ Bases: {py:obj}`altdss.DSSObj.IDSSObj`, {py:obj}`altdss.GICTransformer.GICTransf
 :canonical: altdss.GICTransformer.IGICTransformer.Type
 :type: altdss.ArrayProxy.BatchInt32ArrayProxy
 :value: >
-   None
+   'property(...)'
 
 ```{autodoc2-docstring} altdss.GICTransformer.IGICTransformer.Type
 ```
@@ -3083,7 +3083,7 @@ Bases: {py:obj}`altdss.DSSObj.IDSSObj`, {py:obj}`altdss.GICTransformer.GICTransf
 :canonical: altdss.GICTransformer.IGICTransformer.Type_str
 :type: typing.List[str]
 :value: >
-   None
+   'property(...)'
 
 ```{autodoc2-docstring} altdss.GICTransformer.IGICTransformer.Type_str
 ```
@@ -3094,7 +3094,7 @@ Bases: {py:obj}`altdss.DSSObj.IDSSObj`, {py:obj}`altdss.GICTransformer.GICTransf
 :canonical: altdss.GICTransformer.IGICTransformer.VarCurve
 :type: typing.List[altdss.XYcurve.XYcurve]
 :value: >
-   None
+   'property(...)'
 
 ```{autodoc2-docstring} altdss.GICTransformer.IGICTransformer.VarCurve
 ```
@@ -3105,7 +3105,7 @@ Bases: {py:obj}`altdss.DSSObj.IDSSObj`, {py:obj}`altdss.GICTransformer.GICTransf
 :canonical: altdss.GICTransformer.IGICTransformer.VarCurve_str
 :type: typing.List[str]
 :value: >
-   None
+   'property(...)'
 
 ```{autodoc2-docstring} altdss.GICTransformer.IGICTransformer.VarCurve_str
 ```
@@ -3220,7 +3220,7 @@ Bases: {py:obj}`altdss.DSSObj.IDSSObj`, {py:obj}`altdss.GICTransformer.GICTransf
 :canonical: altdss.GICTransformer.IGICTransformer.kVLL1
 :type: altdss.ArrayProxy.BatchFloat64ArrayProxy
 :value: >
-   None
+   'property(...)'
 
 ```{autodoc2-docstring} altdss.GICTransformer.IGICTransformer.kVLL1
 ```
@@ -3231,7 +3231,7 @@ Bases: {py:obj}`altdss.DSSObj.IDSSObj`, {py:obj}`altdss.GICTransformer.GICTransf
 :canonical: altdss.GICTransformer.IGICTransformer.kVLL2
 :type: altdss.ArrayProxy.BatchFloat64ArrayProxy
 :value: >
-   None
+   'property(...)'
 
 ```{autodoc2-docstring} altdss.GICTransformer.IGICTransformer.kVLL2
 ```
@@ -3250,7 +3250,7 @@ Bases: {py:obj}`altdss.DSSObj.IDSSObj`, {py:obj}`altdss.GICTransformer.GICTransf
 :canonical: altdss.GICTransformer.IGICTransformer.pctPerm
 :type: altdss.ArrayProxy.BatchFloat64ArrayProxy
 :value: >
-   None
+   'property(...)'
 
 ```{autodoc2-docstring} altdss.GICTransformer.IGICTransformer.pctPerm
 ```
@@ -3261,7 +3261,7 @@ Bases: {py:obj}`altdss.DSSObj.IDSSObj`, {py:obj}`altdss.GICTransformer.GICTransf
 :canonical: altdss.GICTransformer.IGICTransformer.pctR1
 :type: altdss.ArrayProxy.BatchFloat64ArrayProxy
 :value: >
-   None
+   'property(...)'
 
 ```{autodoc2-docstring} altdss.GICTransformer.IGICTransformer.pctR1
 ```
@@ -3272,7 +3272,7 @@ Bases: {py:obj}`altdss.DSSObj.IDSSObj`, {py:obj}`altdss.GICTransformer.GICTransf
 :canonical: altdss.GICTransformer.IGICTransformer.pctR2
 :type: altdss.ArrayProxy.BatchFloat64ArrayProxy
 :value: >
-   None
+   'property(...)'
 
 ```{autodoc2-docstring} altdss.GICTransformer.IGICTransformer.pctR2
 ```

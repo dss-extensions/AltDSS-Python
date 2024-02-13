@@ -6,9 +6,9 @@
 
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.19: https://docutils.sourceforge.io/" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
-    <title>altdss.LineGeometry &#8212; AltDSS-Python 0.1.0 documentation</title>
+    <title>altdss.LineGeometry &#8212; AltDSS-Python 0.1.2 documentation</title>
   
   
   
@@ -28,7 +28,7 @@
 <link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.5.1/webfonts/fa-brands-400.woff2" />
 <link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.5.1/webfonts/fa-regular-400.woff2" />
 
-    <link rel="stylesheet" type="text/css" href="../../_static/pygments.css?v=362ab14a" />
+    <link rel="stylesheet" type="text/css" href="../../_static/pygments.css?v=a746c00c" />
     <link rel="stylesheet" type="text/css" href="../../_static/styles/sphinx-book-theme.css?v=384b581d" />
     <link rel="stylesheet" type="text/css" href="../../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
     <link rel="stylesheet" type="text/css" href="../../_static/design-style.1e8bd061cd6da7fc9cf755528e8ffc24.min.css?v=0a3b3ea7" />
@@ -38,7 +38,7 @@
 <link rel="preload" as="script" href="../../_static/scripts/pydata-sphinx-theme.js?digest=8d27b9dea8ad943066ae" />
   <script src="../../_static/vendor/fontawesome/6.5.1/js/all.min.js?digest=8d27b9dea8ad943066ae"></script>
 
-    <script src="../../_static/documentation_options.js?v=a1637f0b"></script>
+    <script src="../../_static/documentation_options.js?v=0deb7d70"></script>
     <script src="../../_static/doctools.js?v=888ff710"></script>
     <script src="../../_static/sphinx_highlight.js?v=dc90522c"></script>
     <script src="../../_static/scripts/sphinx-book-theme.js?v=efea14e4"></script>
@@ -137,8 +137,8 @@
       
     
     
-    <img src="../../_static/altdss-python.svg" class="logo__image only-light" alt="AltDSS-Python 0.1.0 documentation - Home"/>
-    <script>document.write(`<img src="../../_static/altdss-python-dark.svg" class="logo__image only-dark" alt="AltDSS-Python 0.1.0 documentation - Home"/>`);</script>
+    <img src="../../_static/altdss-python.svg" class="logo__image only-light" alt="AltDSS-Python 0.1.2 documentation - Home"/>
+    <script>document.write(`<img src="../../_static/altdss-python-dark.svg" class="logo__image only-dark" alt="AltDSS-Python 0.1.2 documentation - Home"/>`);</script>
   
   
 </a></div>
@@ -247,12 +247,12 @@
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">External links</span></p>
 <ul class="nav bd-sidenav">
-<li class="toctree-l1"><a class="reference external" href="https://github.com/dss-extensions/dss_python">GitHub repository</a></li>
-<li class="toctree-l1"><a class="reference external" href="https://pypi.python.org/pypi/OpenDSSDirect.py/">Package on PyPI</a></li>
+<li class="toctree-l1"><a class="reference external" href="https://github.com/dss-extensions/AltDSS-Python">GitHub repository</a></li>
+<li class="toctree-l1"><a class="reference external" href="https://pypi.python.org/pypi/altdss/">Package on PyPI</a></li>
 <li class="toctree-l1"><a class="reference external" href="https://github.com/dss-extensions/electricdss-tst">Test/example circuits</a></li>
 
 <li class="toctree-l1"><a class="reference external" href="https://dss-extensions.org/OpenDSSDirect.py">OpenDSSDirect.py</a></li>
-<li class="toctree-l1"><a class="reference external" href="https://dss-extensions.org/dss_python/">DSS-Python</a></li>
+<li class="toctree-l1"><a class="reference external" href="https://dss-extensions.org/DSS-Python/">DSS-Python</a></li>
 <li class="toctree-l1"><a class="reference external" href="https://github.com/orgs/dss-extensions/discussions">DSS-Extensions Discussions</a></li>
 <li class="toctree-l1"><a class="reference external" href="https://sourceforge.net/p/electricdss/discussion/">OpenDSS forum</a></li>
 <li class="toctree-l1"><a class="reference external" href="https://opendss.epri.com/opendss_documentation.html">OpenDSS documentation</a></li>
@@ -408,6 +408,8 @@ document.write(`
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#classes">Classes</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#api">API</a><ul class="nav section-nav flex-column">
 <li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#altdss.LineGeometry.ILineGeometry"><code class="docutils literal notranslate"><span class="pre">ILineGeometry</span></code></a><ul class="nav section-nav flex-column">
+<li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#altdss.LineGeometry.ILineGeometry.Conductors"><code class="docutils literal notranslate"><span class="pre">ILineGeometry.Conductors</span></code></a></li>
+<li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#altdss.LineGeometry.ILineGeometry.Conductors_str"><code class="docutils literal notranslate"><span class="pre">ILineGeometry.Conductors_str</span></code></a></li>
 <li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#altdss.LineGeometry.ILineGeometry.EmergAmps"><code class="docutils literal notranslate"><span class="pre">ILineGeometry.EmergAmps</span></code></a></li>
 <li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#altdss.LineGeometry.ILineGeometry.FullName"><code class="docutils literal notranslate"><span class="pre">ILineGeometry.FullName()</span></code></a></li>
 <li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#altdss.LineGeometry.ILineGeometry.H"><code class="docutils literal notranslate"><span class="pre">ILineGeometry.H</span></code></a></li>
@@ -425,8 +427,6 @@ document.write(`
 <li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#altdss.LineGeometry.ILineGeometry.Spacing_str"><code class="docutils literal notranslate"><span class="pre">ILineGeometry.Spacing_str</span></code></a></li>
 <li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#altdss.LineGeometry.ILineGeometry.Units"><code class="docutils literal notranslate"><span class="pre">ILineGeometry.Units</span></code></a></li>
 <li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#altdss.LineGeometry.ILineGeometry.Units_str"><code class="docutils literal notranslate"><span class="pre">ILineGeometry.Units_str</span></code></a></li>
-<li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#altdss.LineGeometry.ILineGeometry.Wire"><code class="docutils literal notranslate"><span class="pre">ILineGeometry.Wire</span></code></a></li>
-<li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#altdss.LineGeometry.ILineGeometry.Wire_str"><code class="docutils literal notranslate"><span class="pre">ILineGeometry.Wire_str</span></code></a></li>
 <li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#altdss.LineGeometry.ILineGeometry.X"><code class="docutils literal notranslate"><span class="pre">ILineGeometry.X</span></code></a></li>
 <li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#altdss.LineGeometry.ILineGeometry.__call__"><code class="docutils literal notranslate"><span class="pre">ILineGeometry.__call__()</span></code></a></li>
 <li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#altdss.LineGeometry.ILineGeometry.__contains__"><code class="docutils literal notranslate"><span class="pre">ILineGeometry.__contains__()</span></code></a></li>
@@ -445,6 +445,8 @@ document.write(`
 </ul>
 </li>
 <li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#altdss.LineGeometry.LineGeometry"><code class="docutils literal notranslate"><span class="pre">LineGeometry</span></code></a><ul class="nav section-nav flex-column">
+<li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#altdss.LineGeometry.LineGeometry.Conductors"><code class="docutils literal notranslate"><span class="pre">LineGeometry.Conductors</span></code></a></li>
+<li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#altdss.LineGeometry.LineGeometry.Conductors_str"><code class="docutils literal notranslate"><span class="pre">LineGeometry.Conductors_str</span></code></a></li>
 <li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#altdss.LineGeometry.LineGeometry.EmergAmps"><code class="docutils literal notranslate"><span class="pre">LineGeometry.EmergAmps</span></code></a></li>
 <li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#altdss.LineGeometry.LineGeometry.FullName"><code class="docutils literal notranslate"><span class="pre">LineGeometry.FullName()</span></code></a></li>
 <li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#altdss.LineGeometry.LineGeometry.H"><code class="docutils literal notranslate"><span class="pre">LineGeometry.H</span></code></a></li>
@@ -462,8 +464,6 @@ document.write(`
 <li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#altdss.LineGeometry.LineGeometry.Spacing_str"><code class="docutils literal notranslate"><span class="pre">LineGeometry.Spacing_str</span></code></a></li>
 <li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#altdss.LineGeometry.LineGeometry.Units"><code class="docutils literal notranslate"><span class="pre">LineGeometry.Units</span></code></a></li>
 <li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#altdss.LineGeometry.LineGeometry.Units_str"><code class="docutils literal notranslate"><span class="pre">LineGeometry.Units_str</span></code></a></li>
-<li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#altdss.LineGeometry.LineGeometry.Wire"><code class="docutils literal notranslate"><span class="pre">LineGeometry.Wire</span></code></a></li>
-<li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#altdss.LineGeometry.LineGeometry.Wire_str"><code class="docutils literal notranslate"><span class="pre">LineGeometry.Wire_str</span></code></a></li>
 <li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#altdss.LineGeometry.LineGeometry.X"><code class="docutils literal notranslate"><span class="pre">LineGeometry.X</span></code></a></li>
 <li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#altdss.LineGeometry.LineGeometry.__hash__"><code class="docutils literal notranslate"><span class="pre">LineGeometry.__hash__()</span></code></a></li>
 <li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#altdss.LineGeometry.LineGeometry.__init__"><code class="docutils literal notranslate"><span class="pre">LineGeometry.__init__()</span></code></a></li>
@@ -475,6 +475,8 @@ document.write(`
 </ul>
 </li>
 <li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#altdss.LineGeometry.LineGeometryBatch"><code class="docutils literal notranslate"><span class="pre">LineGeometryBatch</span></code></a><ul class="nav section-nav flex-column">
+<li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#altdss.LineGeometry.LineGeometryBatch.Conductors"><code class="docutils literal notranslate"><span class="pre">LineGeometryBatch.Conductors</span></code></a></li>
+<li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#altdss.LineGeometry.LineGeometryBatch.Conductors_str"><code class="docutils literal notranslate"><span class="pre">LineGeometryBatch.Conductors_str</span></code></a></li>
 <li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#altdss.LineGeometry.LineGeometryBatch.EmergAmps"><code class="docutils literal notranslate"><span class="pre">LineGeometryBatch.EmergAmps</span></code></a></li>
 <li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#altdss.LineGeometry.LineGeometryBatch.FullName"><code class="docutils literal notranslate"><span class="pre">LineGeometryBatch.FullName()</span></code></a></li>
 <li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#altdss.LineGeometry.LineGeometryBatch.H"><code class="docutils literal notranslate"><span class="pre">LineGeometryBatch.H</span></code></a></li>
@@ -492,8 +494,6 @@ document.write(`
 <li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#altdss.LineGeometry.LineGeometryBatch.Spacing_str"><code class="docutils literal notranslate"><span class="pre">LineGeometryBatch.Spacing_str</span></code></a></li>
 <li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#altdss.LineGeometry.LineGeometryBatch.Units"><code class="docutils literal notranslate"><span class="pre">LineGeometryBatch.Units</span></code></a></li>
 <li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#altdss.LineGeometry.LineGeometryBatch.Units_str"><code class="docutils literal notranslate"><span class="pre">LineGeometryBatch.Units_str</span></code></a></li>
-<li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#altdss.LineGeometry.LineGeometryBatch.Wire"><code class="docutils literal notranslate"><span class="pre">LineGeometryBatch.Wire</span></code></a></li>
-<li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#altdss.LineGeometry.LineGeometryBatch.Wire_str"><code class="docutils literal notranslate"><span class="pre">LineGeometryBatch.Wire_str</span></code></a></li>
 <li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#altdss.LineGeometry.LineGeometryBatch.X"><code class="docutils literal notranslate"><span class="pre">LineGeometryBatch.X</span></code></a></li>
 <li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#altdss.LineGeometry.LineGeometryBatch.__call__"><code class="docutils literal notranslate"><span class="pre">LineGeometryBatch.__call__()</span></code></a></li>
 <li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#altdss.LineGeometry.LineGeometryBatch.__getitem__"><code class="docutils literal notranslate"><span class="pre">LineGeometryBatch.__getitem__()</span></code></a></li>
@@ -507,6 +507,7 @@ document.write(`
 </ul>
 </li>
 <li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#altdss.LineGeometry.LineGeometryBatchProperties"><code class="docutils literal notranslate"><span class="pre">LineGeometryBatchProperties</span></code></a><ul class="nav section-nav flex-column">
+<li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#altdss.LineGeometry.LineGeometryBatchProperties.Conductors"><code class="docutils literal notranslate"><span class="pre">LineGeometryBatchProperties.Conductors</span></code></a></li>
 <li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#altdss.LineGeometry.LineGeometryBatchProperties.EmergAmps"><code class="docutils literal notranslate"><span class="pre">LineGeometryBatchProperties.EmergAmps</span></code></a></li>
 <li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#altdss.LineGeometry.LineGeometryBatchProperties.H"><code class="docutils literal notranslate"><span class="pre">LineGeometryBatchProperties.H</span></code></a></li>
 <li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#altdss.LineGeometry.LineGeometryBatchProperties.Like"><code class="docutils literal notranslate"><span class="pre">LineGeometryBatchProperties.Like</span></code></a></li>
@@ -519,7 +520,6 @@ document.write(`
 <li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#altdss.LineGeometry.LineGeometryBatchProperties.Seasons"><code class="docutils literal notranslate"><span class="pre">LineGeometryBatchProperties.Seasons</span></code></a></li>
 <li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#altdss.LineGeometry.LineGeometryBatchProperties.Spacing"><code class="docutils literal notranslate"><span class="pre">LineGeometryBatchProperties.Spacing</span></code></a></li>
 <li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#altdss.LineGeometry.LineGeometryBatchProperties.Units"><code class="docutils literal notranslate"><span class="pre">LineGeometryBatchProperties.Units</span></code></a></li>
-<li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#altdss.LineGeometry.LineGeometryBatchProperties.Wire"><code class="docutils literal notranslate"><span class="pre">LineGeometryBatchProperties.Wire</span></code></a></li>
 <li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#altdss.LineGeometry.LineGeometryBatchProperties.X"><code class="docutils literal notranslate"><span class="pre">LineGeometryBatchProperties.X</span></code></a></li>
 <li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#altdss.LineGeometry.LineGeometryBatchProperties.__contains__"><code class="docutils literal notranslate"><span class="pre">LineGeometryBatchProperties.__contains__()</span></code></a></li>
 <li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#altdss.LineGeometry.LineGeometryBatchProperties.__delattr__"><code class="docutils literal notranslate"><span class="pre">LineGeometryBatchProperties.__delattr__()</span></code></a></li>
@@ -562,6 +562,7 @@ document.write(`
 </ul>
 </li>
 <li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#altdss.LineGeometry.LineGeometryProperties"><code class="docutils literal notranslate"><span class="pre">LineGeometryProperties</span></code></a><ul class="nav section-nav flex-column">
+<li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#altdss.LineGeometry.LineGeometryProperties.Conductors"><code class="docutils literal notranslate"><span class="pre">LineGeometryProperties.Conductors</span></code></a></li>
 <li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#altdss.LineGeometry.LineGeometryProperties.EmergAmps"><code class="docutils literal notranslate"><span class="pre">LineGeometryProperties.EmergAmps</span></code></a></li>
 <li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#altdss.LineGeometry.LineGeometryProperties.H"><code class="docutils literal notranslate"><span class="pre">LineGeometryProperties.H</span></code></a></li>
 <li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#altdss.LineGeometry.LineGeometryProperties.Like"><code class="docutils literal notranslate"><span class="pre">LineGeometryProperties.Like</span></code></a></li>
@@ -574,7 +575,6 @@ document.write(`
 <li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#altdss.LineGeometry.LineGeometryProperties.Seasons"><code class="docutils literal notranslate"><span class="pre">LineGeometryProperties.Seasons</span></code></a></li>
 <li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#altdss.LineGeometry.LineGeometryProperties.Spacing"><code class="docutils literal notranslate"><span class="pre">LineGeometryProperties.Spacing</span></code></a></li>
 <li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#altdss.LineGeometry.LineGeometryProperties.Units"><code class="docutils literal notranslate"><span class="pre">LineGeometryProperties.Units</span></code></a></li>
-<li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#altdss.LineGeometry.LineGeometryProperties.Wire"><code class="docutils literal notranslate"><span class="pre">LineGeometryProperties.Wire</span></code></a></li>
 <li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#altdss.LineGeometry.LineGeometryProperties.X"><code class="docutils literal notranslate"><span class="pre">LineGeometryProperties.X</span></code></a></li>
 <li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#altdss.LineGeometry.LineGeometryProperties.__contains__"><code class="docutils literal notranslate"><span class="pre">LineGeometryProperties.__contains__()</span></code></a></li>
 <li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#altdss.LineGeometry.LineGeometryProperties.__delattr__"><code class="docutils literal notranslate"><span class="pre">LineGeometryProperties.__delattr__()</span></code></a></li>
@@ -680,9 +680,21 @@ in the keyword argument list.  For example:  dict(one=1, two=2)</p></td>
 <em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">altdss.LineGeometry.</span></span><span class="sig-name descname"><span class="pre">ILineGeometry</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">iobj</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#altdss.LineGeometry.ILineGeometry" title="Link to this definition">#</a></dt>
 <dd><p>Bases: <a class="reference internal" href="altdss.DSSObj.html#altdss.DSSObj.IDSSObj" title="altdss.DSSObj.IDSSObj"><code class="xref py py-obj docutils literal notranslate"><span class="pre">altdss.DSSObj.IDSSObj</span></code></a>, <a class="reference internal" href="#altdss.LineGeometry.LineGeometryBatch" title="altdss.LineGeometry.LineGeometryBatch"><code class="xref py py-obj docutils literal notranslate"><span class="pre">altdss.LineGeometry.LineGeometryBatch</span></code></a></p>
 <dl class="py attribute">
+<dt class="sig sig-object py" id="altdss.LineGeometry.ILineGeometry.Conductors">
+<span class="sig-name descname"><span class="pre">Conductors</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">List</span><span class="p"><span class="pre">[</span></span><span class="pre">List</span><span class="p"><span class="pre">[</span></span><span class="pre">Union</span><span class="p"><span class="pre">[</span></span><a class="reference internal" href="altdss.WireData.html#altdss.WireData.WireData" title="altdss.WireData.WireData"><span class="pre">altdss.WireData.WireData</span></a><span class="p"><span class="pre">,</span></span><span class="w"> </span><a class="reference internal" href="altdss.CNData.html#altdss.CNData.CNData" title="altdss.CNData.CNData"><span class="pre">altdss.CNData.CNData</span></a><span class="p"><span class="pre">,</span></span><span class="w"> </span><a class="reference internal" href="altdss.TSData.html#altdss.TSData.TSData" title="altdss.TSData.TSData"><span class="pre">altdss.TSData.TSData</span></a><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">]</span></span></em><a class="headerlink" href="#altdss.LineGeometry.ILineGeometry.Conductors" title="Link to this definition">#</a></dt>
+<dd><p>‘property(…)’</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="altdss.LineGeometry.ILineGeometry.Conductors_str">
+<span class="sig-name descname"><span class="pre">Conductors_str</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">List</span><span class="p"><span class="pre">[</span></span><span class="pre">List</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">]</span></span></em><a class="headerlink" href="#altdss.LineGeometry.ILineGeometry.Conductors_str" title="Link to this definition">#</a></dt>
+<dd><p>‘property(…)’</p>
+</dd></dl>
+
+<dl class="py attribute">
 <dt class="sig sig-object py" id="altdss.LineGeometry.ILineGeometry.EmergAmps">
 <span class="sig-name descname"><span class="pre">EmergAmps</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><a class="reference internal" href="altdss.ArrayProxy.html#altdss.ArrayProxy.BatchFloat64ArrayProxy" title="altdss.ArrayProxy.BatchFloat64ArrayProxy"><span class="pre">altdss.ArrayProxy.BatchFloat64ArrayProxy</span></a></em><a class="headerlink" href="#altdss.LineGeometry.ILineGeometry.EmergAmps" title="Link to this definition">#</a></dt>
-<dd><p>None</p>
+<dd><p>‘property(…)’</p>
 </dd></dl>
 
 <dl class="py method">
@@ -694,7 +706,7 @@ in the keyword argument list.  For example:  dict(one=1, two=2)</p></td>
 <dl class="py attribute">
 <dt class="sig sig-object py" id="altdss.LineGeometry.ILineGeometry.H">
 <span class="sig-name descname"><span class="pre">H</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">List</span><span class="p"><span class="pre">[</span></span><span class="pre">altdss.types.Float64Array</span><span class="p"><span class="pre">]</span></span></em><a class="headerlink" href="#altdss.LineGeometry.ILineGeometry.H" title="Link to this definition">#</a></dt>
-<dd><p>None</p>
+<dd><p>‘property(…)’</p>
 </dd></dl>
 
 <dl class="py method">
@@ -708,25 +720,25 @@ in the keyword argument list.  For example:  dict(one=1, two=2)</p></td>
 <dl class="py attribute">
 <dt class="sig sig-object py" id="altdss.LineGeometry.ILineGeometry.LineType">
 <span class="sig-name descname"><span class="pre">LineType</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><a class="reference internal" href="altdss.ArrayProxy.html#altdss.ArrayProxy.BatchInt32ArrayProxy" title="altdss.ArrayProxy.BatchInt32ArrayProxy"><span class="pre">altdss.ArrayProxy.BatchInt32ArrayProxy</span></a></em><a class="headerlink" href="#altdss.LineGeometry.ILineGeometry.LineType" title="Link to this definition">#</a></dt>
-<dd><p>None</p>
+<dd><p>‘property(…)’</p>
 </dd></dl>
 
 <dl class="py attribute">
 <dt class="sig sig-object py" id="altdss.LineGeometry.ILineGeometry.LineType_str">
 <span class="sig-name descname"><span class="pre">LineType_str</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">List</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">]</span></span></em><a class="headerlink" href="#altdss.LineGeometry.ILineGeometry.LineType_str" title="Link to this definition">#</a></dt>
-<dd><p>None</p>
+<dd><p>‘property(…)’</p>
 </dd></dl>
 
 <dl class="py attribute">
 <dt class="sig sig-object py" id="altdss.LineGeometry.ILineGeometry.NConds">
 <span class="sig-name descname"><span class="pre">NConds</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><a class="reference internal" href="altdss.ArrayProxy.html#altdss.ArrayProxy.BatchInt32ArrayProxy" title="altdss.ArrayProxy.BatchInt32ArrayProxy"><span class="pre">altdss.ArrayProxy.BatchInt32ArrayProxy</span></a></em><a class="headerlink" href="#altdss.LineGeometry.ILineGeometry.NConds" title="Link to this definition">#</a></dt>
-<dd><p>None</p>
+<dd><p>‘property(…)’</p>
 </dd></dl>
 
 <dl class="py attribute">
 <dt class="sig sig-object py" id="altdss.LineGeometry.ILineGeometry.NPhases">
 <span class="sig-name descname"><span class="pre">NPhases</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><a class="reference internal" href="altdss.ArrayProxy.html#altdss.ArrayProxy.BatchInt32ArrayProxy" title="altdss.ArrayProxy.BatchInt32ArrayProxy"><span class="pre">altdss.ArrayProxy.BatchInt32ArrayProxy</span></a></em><a class="headerlink" href="#altdss.LineGeometry.ILineGeometry.NPhases" title="Link to this definition">#</a></dt>
-<dd><p>None</p>
+<dd><p>‘property(…)’</p>
 </dd></dl>
 
 <dl class="py property">
@@ -737,67 +749,55 @@ in the keyword argument list.  For example:  dict(one=1, two=2)</p></td>
 <dl class="py attribute">
 <dt class="sig sig-object py" id="altdss.LineGeometry.ILineGeometry.NormAmps">
 <span class="sig-name descname"><span class="pre">NormAmps</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><a class="reference internal" href="altdss.ArrayProxy.html#altdss.ArrayProxy.BatchFloat64ArrayProxy" title="altdss.ArrayProxy.BatchFloat64ArrayProxy"><span class="pre">altdss.ArrayProxy.BatchFloat64ArrayProxy</span></a></em><a class="headerlink" href="#altdss.LineGeometry.ILineGeometry.NormAmps" title="Link to this definition">#</a></dt>
-<dd><p>None</p>
+<dd><p>‘property(…)’</p>
 </dd></dl>
 
 <dl class="py attribute">
 <dt class="sig sig-object py" id="altdss.LineGeometry.ILineGeometry.Ratings">
 <span class="sig-name descname"><span class="pre">Ratings</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">List</span><span class="p"><span class="pre">[</span></span><span class="pre">altdss.types.Float64Array</span><span class="p"><span class="pre">]</span></span></em><a class="headerlink" href="#altdss.LineGeometry.ILineGeometry.Ratings" title="Link to this definition">#</a></dt>
-<dd><p>None</p>
+<dd><p>‘property(…)’</p>
 </dd></dl>
 
 <dl class="py attribute">
 <dt class="sig sig-object py" id="altdss.LineGeometry.ILineGeometry.Reduce">
 <span class="sig-name descname"><span class="pre">Reduce</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">List</span><span class="p"><span class="pre">[</span></span><span class="pre">bool</span><span class="p"><span class="pre">]</span></span></em><a class="headerlink" href="#altdss.LineGeometry.ILineGeometry.Reduce" title="Link to this definition">#</a></dt>
-<dd><p>None</p>
+<dd><p>‘property(…)’</p>
 </dd></dl>
 
 <dl class="py attribute">
 <dt class="sig sig-object py" id="altdss.LineGeometry.ILineGeometry.Seasons">
 <span class="sig-name descname"><span class="pre">Seasons</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><a class="reference internal" href="altdss.ArrayProxy.html#altdss.ArrayProxy.BatchInt32ArrayProxy" title="altdss.ArrayProxy.BatchInt32ArrayProxy"><span class="pre">altdss.ArrayProxy.BatchInt32ArrayProxy</span></a></em><a class="headerlink" href="#altdss.LineGeometry.ILineGeometry.Seasons" title="Link to this definition">#</a></dt>
-<dd><p>None</p>
+<dd><p>‘property(…)’</p>
 </dd></dl>
 
 <dl class="py attribute">
 <dt class="sig sig-object py" id="altdss.LineGeometry.ILineGeometry.Spacing">
 <span class="sig-name descname"><span class="pre">Spacing</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">List</span><span class="p"><span class="pre">[</span></span><a class="reference internal" href="altdss.LineSpacing.html#altdss.LineSpacing.LineSpacing" title="altdss.LineSpacing.LineSpacing"><span class="pre">altdss.LineSpacing.LineSpacing</span></a><span class="p"><span class="pre">]</span></span></em><a class="headerlink" href="#altdss.LineGeometry.ILineGeometry.Spacing" title="Link to this definition">#</a></dt>
-<dd><p>None</p>
+<dd><p>‘property(…)’</p>
 </dd></dl>
 
 <dl class="py attribute">
 <dt class="sig sig-object py" id="altdss.LineGeometry.ILineGeometry.Spacing_str">
 <span class="sig-name descname"><span class="pre">Spacing_str</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">List</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">]</span></span></em><a class="headerlink" href="#altdss.LineGeometry.ILineGeometry.Spacing_str" title="Link to this definition">#</a></dt>
-<dd><p>None</p>
+<dd><p>‘property(…)’</p>
 </dd></dl>
 
 <dl class="py attribute">
 <dt class="sig sig-object py" id="altdss.LineGeometry.ILineGeometry.Units">
 <span class="sig-name descname"><span class="pre">Units</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><a class="reference internal" href="altdss.ArrayProxy.html#altdss.ArrayProxy.BatchInt32ArrayProxy" title="altdss.ArrayProxy.BatchInt32ArrayProxy"><span class="pre">altdss.ArrayProxy.BatchInt32ArrayProxy</span></a></em><a class="headerlink" href="#altdss.LineGeometry.ILineGeometry.Units" title="Link to this definition">#</a></dt>
-<dd><p>None</p>
+<dd><p>‘property(…)’</p>
 </dd></dl>
 
 <dl class="py attribute">
 <dt class="sig sig-object py" id="altdss.LineGeometry.ILineGeometry.Units_str">
 <span class="sig-name descname"><span class="pre">Units_str</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">List</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">]</span></span></em><a class="headerlink" href="#altdss.LineGeometry.ILineGeometry.Units_str" title="Link to this definition">#</a></dt>
-<dd><p>None</p>
-</dd></dl>
-
-<dl class="py attribute">
-<dt class="sig sig-object py" id="altdss.LineGeometry.ILineGeometry.Wire">
-<span class="sig-name descname"><span class="pre">Wire</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">List</span><span class="p"><span class="pre">[</span></span><span class="pre">List</span><span class="p"><span class="pre">[</span></span><a class="reference internal" href="altdss.WireData.html#altdss.WireData.WireData" title="altdss.WireData.WireData"><span class="pre">altdss.WireData.WireData</span></a><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">]</span></span></em><a class="headerlink" href="#altdss.LineGeometry.ILineGeometry.Wire" title="Link to this definition">#</a></dt>
-<dd><p>None</p>
-</dd></dl>
-
-<dl class="py attribute">
-<dt class="sig sig-object py" id="altdss.LineGeometry.ILineGeometry.Wire_str">
-<span class="sig-name descname"><span class="pre">Wire_str</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">List</span><span class="p"><span class="pre">[</span></span><span class="pre">List</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">]</span></span></em><a class="headerlink" href="#altdss.LineGeometry.ILineGeometry.Wire_str" title="Link to this definition">#</a></dt>
-<dd><p>None</p>
+<dd><p>‘property(…)’</p>
 </dd></dl>
 
 <dl class="py attribute">
 <dt class="sig sig-object py" id="altdss.LineGeometry.ILineGeometry.X">
 <span class="sig-name descname"><span class="pre">X</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">List</span><span class="p"><span class="pre">[</span></span><span class="pre">altdss.types.Float64Array</span><span class="p"><span class="pre">]</span></span></em><a class="headerlink" href="#altdss.LineGeometry.ILineGeometry.X" title="Link to this definition">#</a></dt>
-<dd><p>None</p>
+<dd><p>‘property(…)’</p>
 </dd></dl>
 
 <dl class="py method">
@@ -897,9 +897,21 @@ See <code class="docutils literal notranslate"><span class="pre">Obj_ToJSON</spa
 <em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">altdss.LineGeometry.</span></span><span class="sig-name descname"><span class="pre">LineGeometry</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">api_util</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">ptr</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#altdss.LineGeometry.LineGeometry" title="Link to this definition">#</a></dt>
 <dd><p>Bases: <a class="reference internal" href="altdss.DSSObj.html#altdss.DSSObj.DSSObj" title="altdss.DSSObj.DSSObj"><code class="xref py py-obj docutils literal notranslate"><span class="pre">altdss.DSSObj.DSSObj</span></code></a></p>
 <dl class="py attribute">
+<dt class="sig sig-object py" id="altdss.LineGeometry.LineGeometry.Conductors">
+<span class="sig-name descname"><span class="pre">Conductors</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">List</span><span class="p"><span class="pre">[</span></span><span class="pre">Union</span><span class="p"><span class="pre">[</span></span><a class="reference internal" href="altdss.WireData.html#altdss.WireData.WireData" title="altdss.WireData.WireData"><span class="pre">altdss.WireData.WireData</span></a><span class="p"><span class="pre">,</span></span><span class="w"> </span><a class="reference internal" href="altdss.CNData.html#altdss.CNData.CNData" title="altdss.CNData.CNData"><span class="pre">altdss.CNData.CNData</span></a><span class="p"><span class="pre">,</span></span><span class="w"> </span><a class="reference internal" href="altdss.TSData.html#altdss.TSData.TSData" title="altdss.TSData.TSData"><span class="pre">altdss.TSData.TSData</span></a><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">]</span></span></em><a class="headerlink" href="#altdss.LineGeometry.LineGeometry.Conductors" title="Link to this definition">#</a></dt>
+<dd><p>‘property(…)’</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="altdss.LineGeometry.LineGeometry.Conductors_str">
+<span class="sig-name descname"><span class="pre">Conductors_str</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">List</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">]</span></span></em><a class="headerlink" href="#altdss.LineGeometry.LineGeometry.Conductors_str" title="Link to this definition">#</a></dt>
+<dd><p>‘property(…)’</p>
+</dd></dl>
+
+<dl class="py attribute">
 <dt class="sig sig-object py" id="altdss.LineGeometry.LineGeometry.EmergAmps">
 <span class="sig-name descname"><span class="pre">EmergAmps</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">float</span></em><a class="headerlink" href="#altdss.LineGeometry.LineGeometry.EmergAmps" title="Link to this definition">#</a></dt>
-<dd><p>None</p>
+<dd><p>‘property(…)’</p>
 </dd></dl>
 
 <dl class="py method">
@@ -910,7 +922,7 @@ See <code class="docutils literal notranslate"><span class="pre">Obj_ToJSON</spa
 <dl class="py attribute">
 <dt class="sig sig-object py" id="altdss.LineGeometry.LineGeometry.H">
 <span class="sig-name descname"><span class="pre">H</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">altdss.types.Float64Array</span></em><a class="headerlink" href="#altdss.LineGeometry.LineGeometry.H" title="Link to this definition">#</a></dt>
-<dd><p>None</p>
+<dd><p>‘property(…)’</p>
 </dd></dl>
 
 <dl class="py method">
@@ -924,25 +936,25 @@ See <code class="docutils literal notranslate"><span class="pre">Obj_ToJSON</spa
 <dl class="py attribute">
 <dt class="sig sig-object py" id="altdss.LineGeometry.LineGeometry.LineType">
 <span class="sig-name descname"><span class="pre">LineType</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><a class="reference internal" href="altdss.enums.html#altdss.enums.LineType" title="altdss.enums.LineType"><span class="pre">altdss.enums.LineType</span></a></em><a class="headerlink" href="#altdss.LineGeometry.LineGeometry.LineType" title="Link to this definition">#</a></dt>
-<dd><p>None</p>
+<dd><p>‘property(…)’</p>
 </dd></dl>
 
 <dl class="py attribute">
 <dt class="sig sig-object py" id="altdss.LineGeometry.LineGeometry.LineType_str">
 <span class="sig-name descname"><span class="pre">LineType_str</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">str</span></em><a class="headerlink" href="#altdss.LineGeometry.LineGeometry.LineType_str" title="Link to this definition">#</a></dt>
-<dd><p>None</p>
+<dd><p>‘property(…)’</p>
 </dd></dl>
 
 <dl class="py attribute">
 <dt class="sig sig-object py" id="altdss.LineGeometry.LineGeometry.NConds">
 <span class="sig-name descname"><span class="pre">NConds</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">int</span></em><a class="headerlink" href="#altdss.LineGeometry.LineGeometry.NConds" title="Link to this definition">#</a></dt>
-<dd><p>None</p>
+<dd><p>‘property(…)’</p>
 </dd></dl>
 
 <dl class="py attribute">
 <dt class="sig sig-object py" id="altdss.LineGeometry.LineGeometry.NPhases">
 <span class="sig-name descname"><span class="pre">NPhases</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">int</span></em><a class="headerlink" href="#altdss.LineGeometry.LineGeometry.NPhases" title="Link to this definition">#</a></dt>
-<dd><p>None</p>
+<dd><p>‘property(…)’</p>
 </dd></dl>
 
 <dl class="py property">
@@ -953,67 +965,55 @@ See <code class="docutils literal notranslate"><span class="pre">Obj_ToJSON</spa
 <dl class="py attribute">
 <dt class="sig sig-object py" id="altdss.LineGeometry.LineGeometry.NormAmps">
 <span class="sig-name descname"><span class="pre">NormAmps</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">float</span></em><a class="headerlink" href="#altdss.LineGeometry.LineGeometry.NormAmps" title="Link to this definition">#</a></dt>
-<dd><p>None</p>
+<dd><p>‘property(…)’</p>
 </dd></dl>
 
 <dl class="py attribute">
 <dt class="sig sig-object py" id="altdss.LineGeometry.LineGeometry.Ratings">
 <span class="sig-name descname"><span class="pre">Ratings</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">altdss.types.Float64Array</span></em><a class="headerlink" href="#altdss.LineGeometry.LineGeometry.Ratings" title="Link to this definition">#</a></dt>
-<dd><p>None</p>
+<dd><p>‘property(…)’</p>
 </dd></dl>
 
 <dl class="py attribute">
 <dt class="sig sig-object py" id="altdss.LineGeometry.LineGeometry.Reduce">
 <span class="sig-name descname"><span class="pre">Reduce</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">bool</span></em><a class="headerlink" href="#altdss.LineGeometry.LineGeometry.Reduce" title="Link to this definition">#</a></dt>
-<dd><p>None</p>
+<dd><p>‘property(…)’</p>
 </dd></dl>
 
 <dl class="py attribute">
 <dt class="sig sig-object py" id="altdss.LineGeometry.LineGeometry.Seasons">
 <span class="sig-name descname"><span class="pre">Seasons</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">int</span></em><a class="headerlink" href="#altdss.LineGeometry.LineGeometry.Seasons" title="Link to this definition">#</a></dt>
-<dd><p>None</p>
+<dd><p>‘property(…)’</p>
 </dd></dl>
 
 <dl class="py attribute">
 <dt class="sig sig-object py" id="altdss.LineGeometry.LineGeometry.Spacing">
 <span class="sig-name descname"><span class="pre">Spacing</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><a class="reference internal" href="altdss.LineSpacing.html#altdss.LineSpacing.LineSpacing" title="altdss.LineSpacing.LineSpacing"><span class="pre">altdss.LineSpacing.LineSpacing</span></a></em><a class="headerlink" href="#altdss.LineGeometry.LineGeometry.Spacing" title="Link to this definition">#</a></dt>
-<dd><p>None</p>
+<dd><p>‘property(…)’</p>
 </dd></dl>
 
 <dl class="py attribute">
 <dt class="sig sig-object py" id="altdss.LineGeometry.LineGeometry.Spacing_str">
 <span class="sig-name descname"><span class="pre">Spacing_str</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">str</span></em><a class="headerlink" href="#altdss.LineGeometry.LineGeometry.Spacing_str" title="Link to this definition">#</a></dt>
-<dd><p>None</p>
+<dd><p>‘property(…)’</p>
 </dd></dl>
 
 <dl class="py attribute">
 <dt class="sig sig-object py" id="altdss.LineGeometry.LineGeometry.Units">
 <span class="sig-name descname"><span class="pre">Units</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><a class="reference internal" href="altdss.enums.html#altdss.enums.LengthUnit" title="altdss.enums.LengthUnit"><span class="pre">altdss.enums.LengthUnit</span></a></em><a class="headerlink" href="#altdss.LineGeometry.LineGeometry.Units" title="Link to this definition">#</a></dt>
-<dd><p>None</p>
+<dd><p>‘property(…)’</p>
 </dd></dl>
 
 <dl class="py attribute">
 <dt class="sig sig-object py" id="altdss.LineGeometry.LineGeometry.Units_str">
 <span class="sig-name descname"><span class="pre">Units_str</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">str</span></em><a class="headerlink" href="#altdss.LineGeometry.LineGeometry.Units_str" title="Link to this definition">#</a></dt>
-<dd><p>None</p>
-</dd></dl>
-
-<dl class="py attribute">
-<dt class="sig sig-object py" id="altdss.LineGeometry.LineGeometry.Wire">
-<span class="sig-name descname"><span class="pre">Wire</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">List</span><span class="p"><span class="pre">[</span></span><a class="reference internal" href="altdss.WireData.html#altdss.WireData.WireData" title="altdss.WireData.WireData"><span class="pre">altdss.WireData.WireData</span></a><span class="p"><span class="pre">]</span></span></em><a class="headerlink" href="#altdss.LineGeometry.LineGeometry.Wire" title="Link to this definition">#</a></dt>
-<dd><p>None</p>
-</dd></dl>
-
-<dl class="py attribute">
-<dt class="sig sig-object py" id="altdss.LineGeometry.LineGeometry.Wire_str">
-<span class="sig-name descname"><span class="pre">Wire_str</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">List</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">]</span></span></em><a class="headerlink" href="#altdss.LineGeometry.LineGeometry.Wire_str" title="Link to this definition">#</a></dt>
-<dd><p>None</p>
+<dd><p>‘property(…)’</p>
 </dd></dl>
 
 <dl class="py attribute">
 <dt class="sig sig-object py" id="altdss.LineGeometry.LineGeometry.X">
 <span class="sig-name descname"><span class="pre">X</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">altdss.types.Float64Array</span></em><a class="headerlink" href="#altdss.LineGeometry.LineGeometry.X" title="Link to this definition">#</a></dt>
-<dd><p>None</p>
+<dd><p>‘property(…)’</p>
 </dd></dl>
 
 <dl class="py method">
@@ -1094,9 +1094,21 @@ Values used by this function are:</p>
 <em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">altdss.LineGeometry.</span></span><span class="sig-name descname"><span class="pre">LineGeometryBatch</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">api_util</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#altdss.LineGeometry.LineGeometryBatch" title="Link to this definition">#</a></dt>
 <dd><p>Bases: <a class="reference internal" href="altdss.Batch.html#altdss.Batch.DSSBatch" title="altdss.Batch.DSSBatch"><code class="xref py py-obj docutils literal notranslate"><span class="pre">altdss.Batch.DSSBatch</span></code></a></p>
 <dl class="py attribute">
+<dt class="sig sig-object py" id="altdss.LineGeometry.LineGeometryBatch.Conductors">
+<span class="sig-name descname"><span class="pre">Conductors</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">List</span><span class="p"><span class="pre">[</span></span><span class="pre">List</span><span class="p"><span class="pre">[</span></span><span class="pre">Union</span><span class="p"><span class="pre">[</span></span><a class="reference internal" href="altdss.WireData.html#altdss.WireData.WireData" title="altdss.WireData.WireData"><span class="pre">altdss.WireData.WireData</span></a><span class="p"><span class="pre">,</span></span><span class="w"> </span><a class="reference internal" href="altdss.CNData.html#altdss.CNData.CNData" title="altdss.CNData.CNData"><span class="pre">altdss.CNData.CNData</span></a><span class="p"><span class="pre">,</span></span><span class="w"> </span><a class="reference internal" href="altdss.TSData.html#altdss.TSData.TSData" title="altdss.TSData.TSData"><span class="pre">altdss.TSData.TSData</span></a><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">]</span></span></em><a class="headerlink" href="#altdss.LineGeometry.LineGeometryBatch.Conductors" title="Link to this definition">#</a></dt>
+<dd><p>‘property(…)’</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="altdss.LineGeometry.LineGeometryBatch.Conductors_str">
+<span class="sig-name descname"><span class="pre">Conductors_str</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">List</span><span class="p"><span class="pre">[</span></span><span class="pre">List</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">]</span></span></em><a class="headerlink" href="#altdss.LineGeometry.LineGeometryBatch.Conductors_str" title="Link to this definition">#</a></dt>
+<dd><p>‘property(…)’</p>
+</dd></dl>
+
+<dl class="py attribute">
 <dt class="sig sig-object py" id="altdss.LineGeometry.LineGeometryBatch.EmergAmps">
 <span class="sig-name descname"><span class="pre">EmergAmps</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><a class="reference internal" href="altdss.ArrayProxy.html#altdss.ArrayProxy.BatchFloat64ArrayProxy" title="altdss.ArrayProxy.BatchFloat64ArrayProxy"><span class="pre">altdss.ArrayProxy.BatchFloat64ArrayProxy</span></a></em><a class="headerlink" href="#altdss.LineGeometry.LineGeometryBatch.EmergAmps" title="Link to this definition">#</a></dt>
-<dd><p>None</p>
+<dd><p>‘property(…)’</p>
 </dd></dl>
 
 <dl class="py method">
@@ -1108,7 +1120,7 @@ Values used by this function are:</p>
 <dl class="py attribute">
 <dt class="sig sig-object py" id="altdss.LineGeometry.LineGeometryBatch.H">
 <span class="sig-name descname"><span class="pre">H</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">List</span><span class="p"><span class="pre">[</span></span><span class="pre">altdss.types.Float64Array</span><span class="p"><span class="pre">]</span></span></em><a class="headerlink" href="#altdss.LineGeometry.LineGeometryBatch.H" title="Link to this definition">#</a></dt>
-<dd><p>None</p>
+<dd><p>‘property(…)’</p>
 </dd></dl>
 
 <dl class="py method">
@@ -1122,25 +1134,25 @@ Values used by this function are:</p>
 <dl class="py attribute">
 <dt class="sig sig-object py" id="altdss.LineGeometry.LineGeometryBatch.LineType">
 <span class="sig-name descname"><span class="pre">LineType</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><a class="reference internal" href="altdss.ArrayProxy.html#altdss.ArrayProxy.BatchInt32ArrayProxy" title="altdss.ArrayProxy.BatchInt32ArrayProxy"><span class="pre">altdss.ArrayProxy.BatchInt32ArrayProxy</span></a></em><a class="headerlink" href="#altdss.LineGeometry.LineGeometryBatch.LineType" title="Link to this definition">#</a></dt>
-<dd><p>None</p>
+<dd><p>‘property(…)’</p>
 </dd></dl>
 
 <dl class="py attribute">
 <dt class="sig sig-object py" id="altdss.LineGeometry.LineGeometryBatch.LineType_str">
 <span class="sig-name descname"><span class="pre">LineType_str</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">List</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">]</span></span></em><a class="headerlink" href="#altdss.LineGeometry.LineGeometryBatch.LineType_str" title="Link to this definition">#</a></dt>
-<dd><p>None</p>
+<dd><p>‘property(…)’</p>
 </dd></dl>
 
 <dl class="py attribute">
 <dt class="sig sig-object py" id="altdss.LineGeometry.LineGeometryBatch.NConds">
 <span class="sig-name descname"><span class="pre">NConds</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><a class="reference internal" href="altdss.ArrayProxy.html#altdss.ArrayProxy.BatchInt32ArrayProxy" title="altdss.ArrayProxy.BatchInt32ArrayProxy"><span class="pre">altdss.ArrayProxy.BatchInt32ArrayProxy</span></a></em><a class="headerlink" href="#altdss.LineGeometry.LineGeometryBatch.NConds" title="Link to this definition">#</a></dt>
-<dd><p>None</p>
+<dd><p>‘property(…)’</p>
 </dd></dl>
 
 <dl class="py attribute">
 <dt class="sig sig-object py" id="altdss.LineGeometry.LineGeometryBatch.NPhases">
 <span class="sig-name descname"><span class="pre">NPhases</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><a class="reference internal" href="altdss.ArrayProxy.html#altdss.ArrayProxy.BatchInt32ArrayProxy" title="altdss.ArrayProxy.BatchInt32ArrayProxy"><span class="pre">altdss.ArrayProxy.BatchInt32ArrayProxy</span></a></em><a class="headerlink" href="#altdss.LineGeometry.LineGeometryBatch.NPhases" title="Link to this definition">#</a></dt>
-<dd><p>None</p>
+<dd><p>‘property(…)’</p>
 </dd></dl>
 
 <dl class="py property">
@@ -1151,67 +1163,55 @@ Values used by this function are:</p>
 <dl class="py attribute">
 <dt class="sig sig-object py" id="altdss.LineGeometry.LineGeometryBatch.NormAmps">
 <span class="sig-name descname"><span class="pre">NormAmps</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><a class="reference internal" href="altdss.ArrayProxy.html#altdss.ArrayProxy.BatchFloat64ArrayProxy" title="altdss.ArrayProxy.BatchFloat64ArrayProxy"><span class="pre">altdss.ArrayProxy.BatchFloat64ArrayProxy</span></a></em><a class="headerlink" href="#altdss.LineGeometry.LineGeometryBatch.NormAmps" title="Link to this definition">#</a></dt>
-<dd><p>None</p>
+<dd><p>‘property(…)’</p>
 </dd></dl>
 
 <dl class="py attribute">
 <dt class="sig sig-object py" id="altdss.LineGeometry.LineGeometryBatch.Ratings">
 <span class="sig-name descname"><span class="pre">Ratings</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">List</span><span class="p"><span class="pre">[</span></span><span class="pre">altdss.types.Float64Array</span><span class="p"><span class="pre">]</span></span></em><a class="headerlink" href="#altdss.LineGeometry.LineGeometryBatch.Ratings" title="Link to this definition">#</a></dt>
-<dd><p>None</p>
+<dd><p>‘property(…)’</p>
 </dd></dl>
 
 <dl class="py attribute">
 <dt class="sig sig-object py" id="altdss.LineGeometry.LineGeometryBatch.Reduce">
 <span class="sig-name descname"><span class="pre">Reduce</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">List</span><span class="p"><span class="pre">[</span></span><span class="pre">bool</span><span class="p"><span class="pre">]</span></span></em><a class="headerlink" href="#altdss.LineGeometry.LineGeometryBatch.Reduce" title="Link to this definition">#</a></dt>
-<dd><p>None</p>
+<dd><p>‘property(…)’</p>
 </dd></dl>
 
 <dl class="py attribute">
 <dt class="sig sig-object py" id="altdss.LineGeometry.LineGeometryBatch.Seasons">
 <span class="sig-name descname"><span class="pre">Seasons</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><a class="reference internal" href="altdss.ArrayProxy.html#altdss.ArrayProxy.BatchInt32ArrayProxy" title="altdss.ArrayProxy.BatchInt32ArrayProxy"><span class="pre">altdss.ArrayProxy.BatchInt32ArrayProxy</span></a></em><a class="headerlink" href="#altdss.LineGeometry.LineGeometryBatch.Seasons" title="Link to this definition">#</a></dt>
-<dd><p>None</p>
+<dd><p>‘property(…)’</p>
 </dd></dl>
 
 <dl class="py attribute">
 <dt class="sig sig-object py" id="altdss.LineGeometry.LineGeometryBatch.Spacing">
 <span class="sig-name descname"><span class="pre">Spacing</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">List</span><span class="p"><span class="pre">[</span></span><a class="reference internal" href="altdss.LineSpacing.html#altdss.LineSpacing.LineSpacing" title="altdss.LineSpacing.LineSpacing"><span class="pre">altdss.LineSpacing.LineSpacing</span></a><span class="p"><span class="pre">]</span></span></em><a class="headerlink" href="#altdss.LineGeometry.LineGeometryBatch.Spacing" title="Link to this definition">#</a></dt>
-<dd><p>None</p>
+<dd><p>‘property(…)’</p>
 </dd></dl>
 
 <dl class="py attribute">
 <dt class="sig sig-object py" id="altdss.LineGeometry.LineGeometryBatch.Spacing_str">
 <span class="sig-name descname"><span class="pre">Spacing_str</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">List</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">]</span></span></em><a class="headerlink" href="#altdss.LineGeometry.LineGeometryBatch.Spacing_str" title="Link to this definition">#</a></dt>
-<dd><p>None</p>
+<dd><p>‘property(…)’</p>
 </dd></dl>
 
 <dl class="py attribute">
 <dt class="sig sig-object py" id="altdss.LineGeometry.LineGeometryBatch.Units">
 <span class="sig-name descname"><span class="pre">Units</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><a class="reference internal" href="altdss.ArrayProxy.html#altdss.ArrayProxy.BatchInt32ArrayProxy" title="altdss.ArrayProxy.BatchInt32ArrayProxy"><span class="pre">altdss.ArrayProxy.BatchInt32ArrayProxy</span></a></em><a class="headerlink" href="#altdss.LineGeometry.LineGeometryBatch.Units" title="Link to this definition">#</a></dt>
-<dd><p>None</p>
+<dd><p>‘property(…)’</p>
 </dd></dl>
 
 <dl class="py attribute">
 <dt class="sig sig-object py" id="altdss.LineGeometry.LineGeometryBatch.Units_str">
 <span class="sig-name descname"><span class="pre">Units_str</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">List</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">]</span></span></em><a class="headerlink" href="#altdss.LineGeometry.LineGeometryBatch.Units_str" title="Link to this definition">#</a></dt>
-<dd><p>None</p>
-</dd></dl>
-
-<dl class="py attribute">
-<dt class="sig sig-object py" id="altdss.LineGeometry.LineGeometryBatch.Wire">
-<span class="sig-name descname"><span class="pre">Wire</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">List</span><span class="p"><span class="pre">[</span></span><span class="pre">List</span><span class="p"><span class="pre">[</span></span><a class="reference internal" href="altdss.WireData.html#altdss.WireData.WireData" title="altdss.WireData.WireData"><span class="pre">altdss.WireData.WireData</span></a><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">]</span></span></em><a class="headerlink" href="#altdss.LineGeometry.LineGeometryBatch.Wire" title="Link to this definition">#</a></dt>
-<dd><p>None</p>
-</dd></dl>
-
-<dl class="py attribute">
-<dt class="sig sig-object py" id="altdss.LineGeometry.LineGeometryBatch.Wire_str">
-<span class="sig-name descname"><span class="pre">Wire_str</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">List</span><span class="p"><span class="pre">[</span></span><span class="pre">List</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">]</span></span></em><a class="headerlink" href="#altdss.LineGeometry.LineGeometryBatch.Wire_str" title="Link to this definition">#</a></dt>
-<dd><p>None</p>
+<dd><p>‘property(…)’</p>
 </dd></dl>
 
 <dl class="py attribute">
 <dt class="sig sig-object py" id="altdss.LineGeometry.LineGeometryBatch.X">
 <span class="sig-name descname"><span class="pre">X</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">List</span><span class="p"><span class="pre">[</span></span><span class="pre">altdss.types.Float64Array</span><span class="p"><span class="pre">]</span></span></em><a class="headerlink" href="#altdss.LineGeometry.LineGeometryBatch.X" title="Link to this definition">#</a></dt>
-<dd><p>None</p>
+<dd><p>‘property(…)’</p>
 </dd></dl>
 
 <dl class="py method">
@@ -1292,6 +1292,12 @@ d[k] = v
 dict(**kwargs) -&gt; new dictionary initialized with the name=value pairs
 in the keyword argument list.  For example:  dict(one=1, two=2)</p>
 <dl class="py attribute">
+<dt class="sig sig-object py" id="altdss.LineGeometry.LineGeometryBatchProperties.Conductors">
+<span class="sig-name descname"><span class="pre">Conductors</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">Union</span><span class="p"><span class="pre">[</span></span><span class="pre">List</span><span class="p"><span class="pre">[</span></span><span class="pre">AnyStr</span><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">List</span><span class="p"><span class="pre">[</span></span><span class="pre">Union</span><span class="p"><span class="pre">[</span></span><a class="reference internal" href="altdss.WireData.html#altdss.WireData.WireData" title="altdss.WireData.WireData"><span class="pre">altdss.WireData.WireData</span></a><span class="p"><span class="pre">,</span></span><span class="w"> </span><a class="reference internal" href="altdss.CNData.html#altdss.CNData.CNData" title="altdss.CNData.CNData"><span class="pre">altdss.CNData.CNData</span></a><span class="p"><span class="pre">,</span></span><span class="w"> </span><a class="reference internal" href="altdss.TSData.html#altdss.TSData.TSData" title="altdss.TSData.TSData"><span class="pre">altdss.TSData.TSData</span></a><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">]</span></span></em><a class="headerlink" href="#altdss.LineGeometry.LineGeometryBatchProperties.Conductors" title="Link to this definition">#</a></dt>
+<dd><p>None</p>
+</dd></dl>
+
+<dl class="py attribute">
 <dt class="sig sig-object py" id="altdss.LineGeometry.LineGeometryBatchProperties.EmergAmps">
 <span class="sig-name descname"><span class="pre">EmergAmps</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">Union</span><span class="p"><span class="pre">[</span></span><span class="pre">float</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">altdss.types.Float64Array</span><span class="p"><span class="pre">]</span></span></em><a class="headerlink" href="#altdss.LineGeometry.LineGeometryBatchProperties.EmergAmps" title="Link to this definition">#</a></dt>
 <dd><p>None</p>
@@ -1364,12 +1370,6 @@ in the keyword argument list.  For example:  dict(one=1, two=2)</p>
 </dd></dl>
 
 <dl class="py attribute">
-<dt class="sig sig-object py" id="altdss.LineGeometry.LineGeometryBatchProperties.Wire">
-<span class="sig-name descname"><span class="pre">Wire</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">Union</span><span class="p"><span class="pre">[</span></span><span class="pre">List</span><span class="p"><span class="pre">[</span></span><span class="pre">AnyStr</span><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">List</span><span class="p"><span class="pre">[</span></span><a class="reference internal" href="altdss.WireData.html#altdss.WireData.WireData" title="altdss.WireData.WireData"><span class="pre">altdss.WireData.WireData</span></a><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">]</span></span></em><a class="headerlink" href="#altdss.LineGeometry.LineGeometryBatchProperties.Wire" title="Link to this definition">#</a></dt>
-<dd><p>None</p>
-</dd></dl>
-
-<dl class="py attribute">
 <dt class="sig sig-object py" id="altdss.LineGeometry.LineGeometryBatchProperties.X">
 <span class="sig-name descname"><span class="pre">X</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">altdss.types.Float64Array</span></em><a class="headerlink" href="#altdss.LineGeometry.LineGeometryBatchProperties.X" title="Link to this definition">#</a></dt>
 <dd><p>None</p>
@@ -1403,6 +1403,7 @@ in the keyword argument list.  For example:  dict(one=1, two=2)</p>
 <dt class="sig sig-object py" id="altdss.LineGeometry.LineGeometryBatchProperties.__format__">
 <span class="sig-name descname"><span class="pre">__format__</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#altdss.LineGeometry.LineGeometryBatchProperties.__format__" title="Link to this definition">#</a></dt>
 <dd><p>Default object formatter.</p>
+<p>Return str(self) if format_spec is empty. Raise TypeError otherwise.</p>
 </dd></dl>
 
 <dl class="py method">
@@ -1420,7 +1421,7 @@ in the keyword argument list.  For example:  dict(one=1, two=2)</p>
 <dl class="py method">
 <dt class="sig sig-object py" id="altdss.LineGeometry.LineGeometryBatchProperties.__getitem__">
 <span class="sig-name descname"><span class="pre">__getitem__</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#altdss.LineGeometry.LineGeometryBatchProperties.__getitem__" title="Link to this definition">#</a></dt>
-<dd><p>x.<strong>getitem</strong>(y) &lt;==&gt; x[y]</p>
+<dd><p>Return self[key].</p>
 </dd></dl>
 
 <dl class="py method">
@@ -1631,6 +1632,12 @@ d[k] = v
 dict(**kwargs) -&gt; new dictionary initialized with the name=value pairs
 in the keyword argument list.  For example:  dict(one=1, two=2)</p>
 <dl class="py attribute">
+<dt class="sig sig-object py" id="altdss.LineGeometry.LineGeometryProperties.Conductors">
+<span class="sig-name descname"><span class="pre">Conductors</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">List</span><span class="p"><span class="pre">[</span></span><span class="pre">Union</span><span class="p"><span class="pre">[</span></span><span class="pre">AnyStr</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">Union</span><span class="p"><span class="pre">[</span></span><a class="reference internal" href="altdss.WireData.html#altdss.WireData.WireData" title="altdss.WireData.WireData"><span class="pre">altdss.WireData.WireData</span></a><span class="p"><span class="pre">,</span></span><span class="w"> </span><a class="reference internal" href="altdss.CNData.html#altdss.CNData.CNData" title="altdss.CNData.CNData"><span class="pre">altdss.CNData.CNData</span></a><span class="p"><span class="pre">,</span></span><span class="w"> </span><a class="reference internal" href="altdss.TSData.html#altdss.TSData.TSData" title="altdss.TSData.TSData"><span class="pre">altdss.TSData.TSData</span></a><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">]</span></span></em><a class="headerlink" href="#altdss.LineGeometry.LineGeometryProperties.Conductors" title="Link to this definition">#</a></dt>
+<dd><p>None</p>
+</dd></dl>
+
+<dl class="py attribute">
 <dt class="sig sig-object py" id="altdss.LineGeometry.LineGeometryProperties.EmergAmps">
 <span class="sig-name descname"><span class="pre">EmergAmps</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">float</span></em><a class="headerlink" href="#altdss.LineGeometry.LineGeometryProperties.EmergAmps" title="Link to this definition">#</a></dt>
 <dd><p>None</p>
@@ -1703,12 +1710,6 @@ in the keyword argument list.  For example:  dict(one=1, two=2)</p>
 </dd></dl>
 
 <dl class="py attribute">
-<dt class="sig sig-object py" id="altdss.LineGeometry.LineGeometryProperties.Wire">
-<span class="sig-name descname"><span class="pre">Wire</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">List</span><span class="p"><span class="pre">[</span></span><span class="pre">Union</span><span class="p"><span class="pre">[</span></span><span class="pre">AnyStr</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><a class="reference internal" href="altdss.WireData.html#altdss.WireData.WireData" title="altdss.WireData.WireData"><span class="pre">altdss.WireData.WireData</span></a><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">]</span></span></em><a class="headerlink" href="#altdss.LineGeometry.LineGeometryProperties.Wire" title="Link to this definition">#</a></dt>
-<dd><p>None</p>
-</dd></dl>
-
-<dl class="py attribute">
 <dt class="sig sig-object py" id="altdss.LineGeometry.LineGeometryProperties.X">
 <span class="sig-name descname"><span class="pre">X</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">altdss.types.Float64Array</span></em><a class="headerlink" href="#altdss.LineGeometry.LineGeometryProperties.X" title="Link to this definition">#</a></dt>
 <dd><p>None</p>
@@ -1742,6 +1743,7 @@ in the keyword argument list.  For example:  dict(one=1, two=2)</p>
 <dt class="sig sig-object py" id="altdss.LineGeometry.LineGeometryProperties.__format__">
 <span class="sig-name descname"><span class="pre">__format__</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#altdss.LineGeometry.LineGeometryProperties.__format__" title="Link to this definition">#</a></dt>
 <dd><p>Default object formatter.</p>
+<p>Return str(self) if format_spec is empty. Raise TypeError otherwise.</p>
 </dd></dl>
 
 <dl class="py method">
@@ -1759,7 +1761,7 @@ in the keyword argument list.  For example:  dict(one=1, two=2)</p>
 <dl class="py method">
 <dt class="sig sig-object py" id="altdss.LineGeometry.LineGeometryProperties.__getitem__">
 <span class="sig-name descname"><span class="pre">__getitem__</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#altdss.LineGeometry.LineGeometryProperties.__getitem__" title="Link to this definition">#</a></dt>
-<dd><p>x.<strong>getitem</strong>(y) &lt;==&gt; x[y]</p>
+<dd><p>Return self[key].</p>
 </dd></dl>
 
 <dl class="py method">
@@ -2009,6 +2011,8 @@ In either case, this is followed by: for k in F:  D[k] = F[k]</p>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#classes">Classes</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#api">API</a><ul class="nav section-nav flex-column">
 <li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#altdss.LineGeometry.ILineGeometry"><code class="docutils literal notranslate"><span class="pre">ILineGeometry</span></code></a><ul class="nav section-nav flex-column">
+<li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#altdss.LineGeometry.ILineGeometry.Conductors"><code class="docutils literal notranslate"><span class="pre">ILineGeometry.Conductors</span></code></a></li>
+<li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#altdss.LineGeometry.ILineGeometry.Conductors_str"><code class="docutils literal notranslate"><span class="pre">ILineGeometry.Conductors_str</span></code></a></li>
 <li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#altdss.LineGeometry.ILineGeometry.EmergAmps"><code class="docutils literal notranslate"><span class="pre">ILineGeometry.EmergAmps</span></code></a></li>
 <li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#altdss.LineGeometry.ILineGeometry.FullName"><code class="docutils literal notranslate"><span class="pre">ILineGeometry.FullName()</span></code></a></li>
 <li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#altdss.LineGeometry.ILineGeometry.H"><code class="docutils literal notranslate"><span class="pre">ILineGeometry.H</span></code></a></li>
@@ -2026,8 +2030,6 @@ In either case, this is followed by: for k in F:  D[k] = F[k]</p>
 <li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#altdss.LineGeometry.ILineGeometry.Spacing_str"><code class="docutils literal notranslate"><span class="pre">ILineGeometry.Spacing_str</span></code></a></li>
 <li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#altdss.LineGeometry.ILineGeometry.Units"><code class="docutils literal notranslate"><span class="pre">ILineGeometry.Units</span></code></a></li>
 <li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#altdss.LineGeometry.ILineGeometry.Units_str"><code class="docutils literal notranslate"><span class="pre">ILineGeometry.Units_str</span></code></a></li>
-<li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#altdss.LineGeometry.ILineGeometry.Wire"><code class="docutils literal notranslate"><span class="pre">ILineGeometry.Wire</span></code></a></li>
-<li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#altdss.LineGeometry.ILineGeometry.Wire_str"><code class="docutils literal notranslate"><span class="pre">ILineGeometry.Wire_str</span></code></a></li>
 <li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#altdss.LineGeometry.ILineGeometry.X"><code class="docutils literal notranslate"><span class="pre">ILineGeometry.X</span></code></a></li>
 <li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#altdss.LineGeometry.ILineGeometry.__call__"><code class="docutils literal notranslate"><span class="pre">ILineGeometry.__call__()</span></code></a></li>
 <li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#altdss.LineGeometry.ILineGeometry.__contains__"><code class="docutils literal notranslate"><span class="pre">ILineGeometry.__contains__()</span></code></a></li>
@@ -2046,6 +2048,8 @@ In either case, this is followed by: for k in F:  D[k] = F[k]</p>
 </ul>
 </li>
 <li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#altdss.LineGeometry.LineGeometry"><code class="docutils literal notranslate"><span class="pre">LineGeometry</span></code></a><ul class="nav section-nav flex-column">
+<li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#altdss.LineGeometry.LineGeometry.Conductors"><code class="docutils literal notranslate"><span class="pre">LineGeometry.Conductors</span></code></a></li>
+<li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#altdss.LineGeometry.LineGeometry.Conductors_str"><code class="docutils literal notranslate"><span class="pre">LineGeometry.Conductors_str</span></code></a></li>
 <li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#altdss.LineGeometry.LineGeometry.EmergAmps"><code class="docutils literal notranslate"><span class="pre">LineGeometry.EmergAmps</span></code></a></li>
 <li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#altdss.LineGeometry.LineGeometry.FullName"><code class="docutils literal notranslate"><span class="pre">LineGeometry.FullName()</span></code></a></li>
 <li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#altdss.LineGeometry.LineGeometry.H"><code class="docutils literal notranslate"><span class="pre">LineGeometry.H</span></code></a></li>
@@ -2063,8 +2067,6 @@ In either case, this is followed by: for k in F:  D[k] = F[k]</p>
 <li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#altdss.LineGeometry.LineGeometry.Spacing_str"><code class="docutils literal notranslate"><span class="pre">LineGeometry.Spacing_str</span></code></a></li>
 <li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#altdss.LineGeometry.LineGeometry.Units"><code class="docutils literal notranslate"><span class="pre">LineGeometry.Units</span></code></a></li>
 <li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#altdss.LineGeometry.LineGeometry.Units_str"><code class="docutils literal notranslate"><span class="pre">LineGeometry.Units_str</span></code></a></li>
-<li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#altdss.LineGeometry.LineGeometry.Wire"><code class="docutils literal notranslate"><span class="pre">LineGeometry.Wire</span></code></a></li>
-<li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#altdss.LineGeometry.LineGeometry.Wire_str"><code class="docutils literal notranslate"><span class="pre">LineGeometry.Wire_str</span></code></a></li>
 <li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#altdss.LineGeometry.LineGeometry.X"><code class="docutils literal notranslate"><span class="pre">LineGeometry.X</span></code></a></li>
 <li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#altdss.LineGeometry.LineGeometry.__hash__"><code class="docutils literal notranslate"><span class="pre">LineGeometry.__hash__()</span></code></a></li>
 <li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#altdss.LineGeometry.LineGeometry.__init__"><code class="docutils literal notranslate"><span class="pre">LineGeometry.__init__()</span></code></a></li>
@@ -2076,6 +2078,8 @@ In either case, this is followed by: for k in F:  D[k] = F[k]</p>
 </ul>
 </li>
 <li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#altdss.LineGeometry.LineGeometryBatch"><code class="docutils literal notranslate"><span class="pre">LineGeometryBatch</span></code></a><ul class="nav section-nav flex-column">
+<li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#altdss.LineGeometry.LineGeometryBatch.Conductors"><code class="docutils literal notranslate"><span class="pre">LineGeometryBatch.Conductors</span></code></a></li>
+<li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#altdss.LineGeometry.LineGeometryBatch.Conductors_str"><code class="docutils literal notranslate"><span class="pre">LineGeometryBatch.Conductors_str</span></code></a></li>
 <li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#altdss.LineGeometry.LineGeometryBatch.EmergAmps"><code class="docutils literal notranslate"><span class="pre">LineGeometryBatch.EmergAmps</span></code></a></li>
 <li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#altdss.LineGeometry.LineGeometryBatch.FullName"><code class="docutils literal notranslate"><span class="pre">LineGeometryBatch.FullName()</span></code></a></li>
 <li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#altdss.LineGeometry.LineGeometryBatch.H"><code class="docutils literal notranslate"><span class="pre">LineGeometryBatch.H</span></code></a></li>
@@ -2093,8 +2097,6 @@ In either case, this is followed by: for k in F:  D[k] = F[k]</p>
 <li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#altdss.LineGeometry.LineGeometryBatch.Spacing_str"><code class="docutils literal notranslate"><span class="pre">LineGeometryBatch.Spacing_str</span></code></a></li>
 <li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#altdss.LineGeometry.LineGeometryBatch.Units"><code class="docutils literal notranslate"><span class="pre">LineGeometryBatch.Units</span></code></a></li>
 <li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#altdss.LineGeometry.LineGeometryBatch.Units_str"><code class="docutils literal notranslate"><span class="pre">LineGeometryBatch.Units_str</span></code></a></li>
-<li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#altdss.LineGeometry.LineGeometryBatch.Wire"><code class="docutils literal notranslate"><span class="pre">LineGeometryBatch.Wire</span></code></a></li>
-<li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#altdss.LineGeometry.LineGeometryBatch.Wire_str"><code class="docutils literal notranslate"><span class="pre">LineGeometryBatch.Wire_str</span></code></a></li>
 <li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#altdss.LineGeometry.LineGeometryBatch.X"><code class="docutils literal notranslate"><span class="pre">LineGeometryBatch.X</span></code></a></li>
 <li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#altdss.LineGeometry.LineGeometryBatch.__call__"><code class="docutils literal notranslate"><span class="pre">LineGeometryBatch.__call__()</span></code></a></li>
 <li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#altdss.LineGeometry.LineGeometryBatch.__getitem__"><code class="docutils literal notranslate"><span class="pre">LineGeometryBatch.__getitem__()</span></code></a></li>
@@ -2108,6 +2110,7 @@ In either case, this is followed by: for k in F:  D[k] = F[k]</p>
 </ul>
 </li>
 <li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#altdss.LineGeometry.LineGeometryBatchProperties"><code class="docutils literal notranslate"><span class="pre">LineGeometryBatchProperties</span></code></a><ul class="nav section-nav flex-column">
+<li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#altdss.LineGeometry.LineGeometryBatchProperties.Conductors"><code class="docutils literal notranslate"><span class="pre">LineGeometryBatchProperties.Conductors</span></code></a></li>
 <li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#altdss.LineGeometry.LineGeometryBatchProperties.EmergAmps"><code class="docutils literal notranslate"><span class="pre">LineGeometryBatchProperties.EmergAmps</span></code></a></li>
 <li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#altdss.LineGeometry.LineGeometryBatchProperties.H"><code class="docutils literal notranslate"><span class="pre">LineGeometryBatchProperties.H</span></code></a></li>
 <li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#altdss.LineGeometry.LineGeometryBatchProperties.Like"><code class="docutils literal notranslate"><span class="pre">LineGeometryBatchProperties.Like</span></code></a></li>
@@ -2120,7 +2123,6 @@ In either case, this is followed by: for k in F:  D[k] = F[k]</p>
 <li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#altdss.LineGeometry.LineGeometryBatchProperties.Seasons"><code class="docutils literal notranslate"><span class="pre">LineGeometryBatchProperties.Seasons</span></code></a></li>
 <li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#altdss.LineGeometry.LineGeometryBatchProperties.Spacing"><code class="docutils literal notranslate"><span class="pre">LineGeometryBatchProperties.Spacing</span></code></a></li>
 <li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#altdss.LineGeometry.LineGeometryBatchProperties.Units"><code class="docutils literal notranslate"><span class="pre">LineGeometryBatchProperties.Units</span></code></a></li>
-<li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#altdss.LineGeometry.LineGeometryBatchProperties.Wire"><code class="docutils literal notranslate"><span class="pre">LineGeometryBatchProperties.Wire</span></code></a></li>
 <li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#altdss.LineGeometry.LineGeometryBatchProperties.X"><code class="docutils literal notranslate"><span class="pre">LineGeometryBatchProperties.X</span></code></a></li>
 <li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#altdss.LineGeometry.LineGeometryBatchProperties.__contains__"><code class="docutils literal notranslate"><span class="pre">LineGeometryBatchProperties.__contains__()</span></code></a></li>
 <li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#altdss.LineGeometry.LineGeometryBatchProperties.__delattr__"><code class="docutils literal notranslate"><span class="pre">LineGeometryBatchProperties.__delattr__()</span></code></a></li>
@@ -2163,6 +2165,7 @@ In either case, this is followed by: for k in F:  D[k] = F[k]</p>
 </ul>
 </li>
 <li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#altdss.LineGeometry.LineGeometryProperties"><code class="docutils literal notranslate"><span class="pre">LineGeometryProperties</span></code></a><ul class="nav section-nav flex-column">
+<li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#altdss.LineGeometry.LineGeometryProperties.Conductors"><code class="docutils literal notranslate"><span class="pre">LineGeometryProperties.Conductors</span></code></a></li>
 <li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#altdss.LineGeometry.LineGeometryProperties.EmergAmps"><code class="docutils literal notranslate"><span class="pre">LineGeometryProperties.EmergAmps</span></code></a></li>
 <li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#altdss.LineGeometry.LineGeometryProperties.H"><code class="docutils literal notranslate"><span class="pre">LineGeometryProperties.H</span></code></a></li>
 <li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#altdss.LineGeometry.LineGeometryProperties.Like"><code class="docutils literal notranslate"><span class="pre">LineGeometryProperties.Like</span></code></a></li>
@@ -2175,7 +2178,6 @@ In either case, this is followed by: for k in F:  D[k] = F[k]</p>
 <li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#altdss.LineGeometry.LineGeometryProperties.Seasons"><code class="docutils literal notranslate"><span class="pre">LineGeometryProperties.Seasons</span></code></a></li>
 <li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#altdss.LineGeometry.LineGeometryProperties.Spacing"><code class="docutils literal notranslate"><span class="pre">LineGeometryProperties.Spacing</span></code></a></li>
 <li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#altdss.LineGeometry.LineGeometryProperties.Units"><code class="docutils literal notranslate"><span class="pre">LineGeometryProperties.Units</span></code></a></li>
-<li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#altdss.LineGeometry.LineGeometryProperties.Wire"><code class="docutils literal notranslate"><span class="pre">LineGeometryProperties.Wire</span></code></a></li>
 <li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#altdss.LineGeometry.LineGeometryProperties.X"><code class="docutils literal notranslate"><span class="pre">LineGeometryProperties.X</span></code></a></li>
 <li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#altdss.LineGeometry.LineGeometryProperties.__contains__"><code class="docutils literal notranslate"><span class="pre">LineGeometryProperties.__contains__()</span></code></a></li>
 <li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#altdss.LineGeometry.LineGeometryProperties.__delattr__"><code class="docutils literal notranslate"><span class="pre">LineGeometryProperties.__delattr__()</span></code></a></li>

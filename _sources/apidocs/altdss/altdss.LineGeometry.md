@@ -47,11 +47,33 @@ Bases: {py:obj}`altdss.DSSObj.IDSSObj`, {py:obj}`altdss.LineGeometry.LineGeometr
 ```{autodoc2-docstring} altdss.LineGeometry.ILineGeometry
 ```
 
+````{py:attribute} Conductors
+:canonical: altdss.LineGeometry.ILineGeometry.Conductors
+:type: typing.List[typing.List[typing.Union[altdss.WireData.WireData, altdss.CNData.CNData, altdss.TSData.TSData]]]
+:value: >
+   'property(...)'
+
+```{autodoc2-docstring} altdss.LineGeometry.ILineGeometry.Conductors
+```
+
+````
+
+````{py:attribute} Conductors_str
+:canonical: altdss.LineGeometry.ILineGeometry.Conductors_str
+:type: typing.List[typing.List[str]]
+:value: >
+   'property(...)'
+
+```{autodoc2-docstring} altdss.LineGeometry.ILineGeometry.Conductors_str
+```
+
+````
+
 ````{py:attribute} EmergAmps
 :canonical: altdss.LineGeometry.ILineGeometry.EmergAmps
 :type: altdss.ArrayProxy.BatchFloat64ArrayProxy
 :value: >
-   None
+   'property(...)'
 
 ```{autodoc2-docstring} altdss.LineGeometry.ILineGeometry.EmergAmps
 ```
@@ -70,7 +92,7 @@ Bases: {py:obj}`altdss.DSSObj.IDSSObj`, {py:obj}`altdss.LineGeometry.LineGeometr
 :canonical: altdss.LineGeometry.ILineGeometry.H
 :type: typing.List[altdss.types.Float64Array]
 :value: >
-   None
+   'property(...)'
 
 ```{autodoc2-docstring} altdss.LineGeometry.ILineGeometry.H
 ```
@@ -89,7 +111,7 @@ Bases: {py:obj}`altdss.DSSObj.IDSSObj`, {py:obj}`altdss.LineGeometry.LineGeometr
 :canonical: altdss.LineGeometry.ILineGeometry.LineType
 :type: altdss.ArrayProxy.BatchInt32ArrayProxy
 :value: >
-   None
+   'property(...)'
 
 ```{autodoc2-docstring} altdss.LineGeometry.ILineGeometry.LineType
 ```
@@ -100,7 +122,7 @@ Bases: {py:obj}`altdss.DSSObj.IDSSObj`, {py:obj}`altdss.LineGeometry.LineGeometr
 :canonical: altdss.LineGeometry.ILineGeometry.LineType_str
 :type: typing.List[str]
 :value: >
-   None
+   'property(...)'
 
 ```{autodoc2-docstring} altdss.LineGeometry.ILineGeometry.LineType_str
 ```
@@ -111,7 +133,7 @@ Bases: {py:obj}`altdss.DSSObj.IDSSObj`, {py:obj}`altdss.LineGeometry.LineGeometr
 :canonical: altdss.LineGeometry.ILineGeometry.NConds
 :type: altdss.ArrayProxy.BatchInt32ArrayProxy
 :value: >
-   None
+   'property(...)'
 
 ```{autodoc2-docstring} altdss.LineGeometry.ILineGeometry.NConds
 ```
@@ -122,7 +144,7 @@ Bases: {py:obj}`altdss.DSSObj.IDSSObj`, {py:obj}`altdss.LineGeometry.LineGeometr
 :canonical: altdss.LineGeometry.ILineGeometry.NPhases
 :type: altdss.ArrayProxy.BatchInt32ArrayProxy
 :value: >
-   None
+   'property(...)'
 
 ```{autodoc2-docstring} altdss.LineGeometry.ILineGeometry.NPhases
 ```
@@ -142,7 +164,7 @@ Bases: {py:obj}`altdss.DSSObj.IDSSObj`, {py:obj}`altdss.LineGeometry.LineGeometr
 :canonical: altdss.LineGeometry.ILineGeometry.NormAmps
 :type: altdss.ArrayProxy.BatchFloat64ArrayProxy
 :value: >
-   None
+   'property(...)'
 
 ```{autodoc2-docstring} altdss.LineGeometry.ILineGeometry.NormAmps
 ```
@@ -153,7 +175,7 @@ Bases: {py:obj}`altdss.DSSObj.IDSSObj`, {py:obj}`altdss.LineGeometry.LineGeometr
 :canonical: altdss.LineGeometry.ILineGeometry.Ratings
 :type: typing.List[altdss.types.Float64Array]
 :value: >
-   None
+   'property(...)'
 
 ```{autodoc2-docstring} altdss.LineGeometry.ILineGeometry.Ratings
 ```
@@ -164,7 +186,7 @@ Bases: {py:obj}`altdss.DSSObj.IDSSObj`, {py:obj}`altdss.LineGeometry.LineGeometr
 :canonical: altdss.LineGeometry.ILineGeometry.Reduce
 :type: typing.List[bool]
 :value: >
-   None
+   'property(...)'
 
 ```{autodoc2-docstring} altdss.LineGeometry.ILineGeometry.Reduce
 ```
@@ -175,7 +197,7 @@ Bases: {py:obj}`altdss.DSSObj.IDSSObj`, {py:obj}`altdss.LineGeometry.LineGeometr
 :canonical: altdss.LineGeometry.ILineGeometry.Seasons
 :type: altdss.ArrayProxy.BatchInt32ArrayProxy
 :value: >
-   None
+   'property(...)'
 
 ```{autodoc2-docstring} altdss.LineGeometry.ILineGeometry.Seasons
 ```
@@ -186,7 +208,7 @@ Bases: {py:obj}`altdss.DSSObj.IDSSObj`, {py:obj}`altdss.LineGeometry.LineGeometr
 :canonical: altdss.LineGeometry.ILineGeometry.Spacing
 :type: typing.List[altdss.LineSpacing.LineSpacing]
 :value: >
-   None
+   'property(...)'
 
 ```{autodoc2-docstring} altdss.LineGeometry.ILineGeometry.Spacing
 ```
@@ -197,7 +219,7 @@ Bases: {py:obj}`altdss.DSSObj.IDSSObj`, {py:obj}`altdss.LineGeometry.LineGeometr
 :canonical: altdss.LineGeometry.ILineGeometry.Spacing_str
 :type: typing.List[str]
 :value: >
-   None
+   'property(...)'
 
 ```{autodoc2-docstring} altdss.LineGeometry.ILineGeometry.Spacing_str
 ```
@@ -208,7 +230,7 @@ Bases: {py:obj}`altdss.DSSObj.IDSSObj`, {py:obj}`altdss.LineGeometry.LineGeometr
 :canonical: altdss.LineGeometry.ILineGeometry.Units
 :type: altdss.ArrayProxy.BatchInt32ArrayProxy
 :value: >
-   None
+   'property(...)'
 
 ```{autodoc2-docstring} altdss.LineGeometry.ILineGeometry.Units
 ```
@@ -219,31 +241,9 @@ Bases: {py:obj}`altdss.DSSObj.IDSSObj`, {py:obj}`altdss.LineGeometry.LineGeometr
 :canonical: altdss.LineGeometry.ILineGeometry.Units_str
 :type: typing.List[str]
 :value: >
-   None
+   'property(...)'
 
 ```{autodoc2-docstring} altdss.LineGeometry.ILineGeometry.Units_str
-```
-
-````
-
-````{py:attribute} Wire
-:canonical: altdss.LineGeometry.ILineGeometry.Wire
-:type: typing.List[typing.List[altdss.WireData.WireData]]
-:value: >
-   None
-
-```{autodoc2-docstring} altdss.LineGeometry.ILineGeometry.Wire
-```
-
-````
-
-````{py:attribute} Wire_str
-:canonical: altdss.LineGeometry.ILineGeometry.Wire_str
-:type: typing.List[typing.List[str]]
-:value: >
-   None
-
-```{autodoc2-docstring} altdss.LineGeometry.ILineGeometry.Wire_str
 ```
 
 ````
@@ -252,7 +252,7 @@ Bases: {py:obj}`altdss.DSSObj.IDSSObj`, {py:obj}`altdss.LineGeometry.LineGeometr
 :canonical: altdss.LineGeometry.ILineGeometry.X
 :type: typing.List[altdss.types.Float64Array]
 :value: >
-   None
+   'property(...)'
 
 ```{autodoc2-docstring} altdss.LineGeometry.ILineGeometry.X
 ```
@@ -381,11 +381,33 @@ Bases: {py:obj}`altdss.DSSObj.DSSObj`
 ```{autodoc2-docstring} altdss.LineGeometry.LineGeometry
 ```
 
+````{py:attribute} Conductors
+:canonical: altdss.LineGeometry.LineGeometry.Conductors
+:type: typing.List[typing.Union[altdss.WireData.WireData, altdss.CNData.CNData, altdss.TSData.TSData]]
+:value: >
+   'property(...)'
+
+```{autodoc2-docstring} altdss.LineGeometry.LineGeometry.Conductors
+```
+
+````
+
+````{py:attribute} Conductors_str
+:canonical: altdss.LineGeometry.LineGeometry.Conductors_str
+:type: typing.List[str]
+:value: >
+   'property(...)'
+
+```{autodoc2-docstring} altdss.LineGeometry.LineGeometry.Conductors_str
+```
+
+````
+
 ````{py:attribute} EmergAmps
 :canonical: altdss.LineGeometry.LineGeometry.EmergAmps
 :type: float
 :value: >
-   None
+   'property(...)'
 
 ```{autodoc2-docstring} altdss.LineGeometry.LineGeometry.EmergAmps
 ```
@@ -404,7 +426,7 @@ Bases: {py:obj}`altdss.DSSObj.DSSObj`
 :canonical: altdss.LineGeometry.LineGeometry.H
 :type: altdss.types.Float64Array
 :value: >
-   None
+   'property(...)'
 
 ```{autodoc2-docstring} altdss.LineGeometry.LineGeometry.H
 ```
@@ -423,7 +445,7 @@ Bases: {py:obj}`altdss.DSSObj.DSSObj`
 :canonical: altdss.LineGeometry.LineGeometry.LineType
 :type: altdss.enums.LineType
 :value: >
-   None
+   'property(...)'
 
 ```{autodoc2-docstring} altdss.LineGeometry.LineGeometry.LineType
 ```
@@ -434,7 +456,7 @@ Bases: {py:obj}`altdss.DSSObj.DSSObj`
 :canonical: altdss.LineGeometry.LineGeometry.LineType_str
 :type: str
 :value: >
-   None
+   'property(...)'
 
 ```{autodoc2-docstring} altdss.LineGeometry.LineGeometry.LineType_str
 ```
@@ -445,7 +467,7 @@ Bases: {py:obj}`altdss.DSSObj.DSSObj`
 :canonical: altdss.LineGeometry.LineGeometry.NConds
 :type: int
 :value: >
-   None
+   'property(...)'
 
 ```{autodoc2-docstring} altdss.LineGeometry.LineGeometry.NConds
 ```
@@ -456,7 +478,7 @@ Bases: {py:obj}`altdss.DSSObj.DSSObj`
 :canonical: altdss.LineGeometry.LineGeometry.NPhases
 :type: int
 :value: >
-   None
+   'property(...)'
 
 ```{autodoc2-docstring} altdss.LineGeometry.LineGeometry.NPhases
 ```
@@ -476,7 +498,7 @@ Bases: {py:obj}`altdss.DSSObj.DSSObj`
 :canonical: altdss.LineGeometry.LineGeometry.NormAmps
 :type: float
 :value: >
-   None
+   'property(...)'
 
 ```{autodoc2-docstring} altdss.LineGeometry.LineGeometry.NormAmps
 ```
@@ -487,7 +509,7 @@ Bases: {py:obj}`altdss.DSSObj.DSSObj`
 :canonical: altdss.LineGeometry.LineGeometry.Ratings
 :type: altdss.types.Float64Array
 :value: >
-   None
+   'property(...)'
 
 ```{autodoc2-docstring} altdss.LineGeometry.LineGeometry.Ratings
 ```
@@ -498,7 +520,7 @@ Bases: {py:obj}`altdss.DSSObj.DSSObj`
 :canonical: altdss.LineGeometry.LineGeometry.Reduce
 :type: bool
 :value: >
-   None
+   'property(...)'
 
 ```{autodoc2-docstring} altdss.LineGeometry.LineGeometry.Reduce
 ```
@@ -509,7 +531,7 @@ Bases: {py:obj}`altdss.DSSObj.DSSObj`
 :canonical: altdss.LineGeometry.LineGeometry.Seasons
 :type: int
 :value: >
-   None
+   'property(...)'
 
 ```{autodoc2-docstring} altdss.LineGeometry.LineGeometry.Seasons
 ```
@@ -520,7 +542,7 @@ Bases: {py:obj}`altdss.DSSObj.DSSObj`
 :canonical: altdss.LineGeometry.LineGeometry.Spacing
 :type: altdss.LineSpacing.LineSpacing
 :value: >
-   None
+   'property(...)'
 
 ```{autodoc2-docstring} altdss.LineGeometry.LineGeometry.Spacing
 ```
@@ -531,7 +553,7 @@ Bases: {py:obj}`altdss.DSSObj.DSSObj`
 :canonical: altdss.LineGeometry.LineGeometry.Spacing_str
 :type: str
 :value: >
-   None
+   'property(...)'
 
 ```{autodoc2-docstring} altdss.LineGeometry.LineGeometry.Spacing_str
 ```
@@ -542,7 +564,7 @@ Bases: {py:obj}`altdss.DSSObj.DSSObj`
 :canonical: altdss.LineGeometry.LineGeometry.Units
 :type: altdss.enums.LengthUnit
 :value: >
-   None
+   'property(...)'
 
 ```{autodoc2-docstring} altdss.LineGeometry.LineGeometry.Units
 ```
@@ -553,31 +575,9 @@ Bases: {py:obj}`altdss.DSSObj.DSSObj`
 :canonical: altdss.LineGeometry.LineGeometry.Units_str
 :type: str
 :value: >
-   None
+   'property(...)'
 
 ```{autodoc2-docstring} altdss.LineGeometry.LineGeometry.Units_str
-```
-
-````
-
-````{py:attribute} Wire
-:canonical: altdss.LineGeometry.LineGeometry.Wire
-:type: typing.List[altdss.WireData.WireData]
-:value: >
-   None
-
-```{autodoc2-docstring} altdss.LineGeometry.LineGeometry.Wire
-```
-
-````
-
-````{py:attribute} Wire_str
-:canonical: altdss.LineGeometry.LineGeometry.Wire_str
-:type: typing.List[str]
-:value: >
-   None
-
-```{autodoc2-docstring} altdss.LineGeometry.LineGeometry.Wire_str
 ```
 
 ````
@@ -586,7 +586,7 @@ Bases: {py:obj}`altdss.DSSObj.DSSObj`
 :canonical: altdss.LineGeometry.LineGeometry.X
 :type: altdss.types.Float64Array
 :value: >
-   None
+   'property(...)'
 
 ```{autodoc2-docstring} altdss.LineGeometry.LineGeometry.X
 ```
@@ -659,11 +659,33 @@ Bases: {py:obj}`altdss.Batch.DSSBatch`
 ```{autodoc2-docstring} altdss.LineGeometry.LineGeometryBatch
 ```
 
+````{py:attribute} Conductors
+:canonical: altdss.LineGeometry.LineGeometryBatch.Conductors
+:type: typing.List[typing.List[typing.Union[altdss.WireData.WireData, altdss.CNData.CNData, altdss.TSData.TSData]]]
+:value: >
+   'property(...)'
+
+```{autodoc2-docstring} altdss.LineGeometry.LineGeometryBatch.Conductors
+```
+
+````
+
+````{py:attribute} Conductors_str
+:canonical: altdss.LineGeometry.LineGeometryBatch.Conductors_str
+:type: typing.List[typing.List[str]]
+:value: >
+   'property(...)'
+
+```{autodoc2-docstring} altdss.LineGeometry.LineGeometryBatch.Conductors_str
+```
+
+````
+
 ````{py:attribute} EmergAmps
 :canonical: altdss.LineGeometry.LineGeometryBatch.EmergAmps
 :type: altdss.ArrayProxy.BatchFloat64ArrayProxy
 :value: >
-   None
+   'property(...)'
 
 ```{autodoc2-docstring} altdss.LineGeometry.LineGeometryBatch.EmergAmps
 ```
@@ -682,7 +704,7 @@ Bases: {py:obj}`altdss.Batch.DSSBatch`
 :canonical: altdss.LineGeometry.LineGeometryBatch.H
 :type: typing.List[altdss.types.Float64Array]
 :value: >
-   None
+   'property(...)'
 
 ```{autodoc2-docstring} altdss.LineGeometry.LineGeometryBatch.H
 ```
@@ -701,7 +723,7 @@ Bases: {py:obj}`altdss.Batch.DSSBatch`
 :canonical: altdss.LineGeometry.LineGeometryBatch.LineType
 :type: altdss.ArrayProxy.BatchInt32ArrayProxy
 :value: >
-   None
+   'property(...)'
 
 ```{autodoc2-docstring} altdss.LineGeometry.LineGeometryBatch.LineType
 ```
@@ -712,7 +734,7 @@ Bases: {py:obj}`altdss.Batch.DSSBatch`
 :canonical: altdss.LineGeometry.LineGeometryBatch.LineType_str
 :type: typing.List[str]
 :value: >
-   None
+   'property(...)'
 
 ```{autodoc2-docstring} altdss.LineGeometry.LineGeometryBatch.LineType_str
 ```
@@ -723,7 +745,7 @@ Bases: {py:obj}`altdss.Batch.DSSBatch`
 :canonical: altdss.LineGeometry.LineGeometryBatch.NConds
 :type: altdss.ArrayProxy.BatchInt32ArrayProxy
 :value: >
-   None
+   'property(...)'
 
 ```{autodoc2-docstring} altdss.LineGeometry.LineGeometryBatch.NConds
 ```
@@ -734,7 +756,7 @@ Bases: {py:obj}`altdss.Batch.DSSBatch`
 :canonical: altdss.LineGeometry.LineGeometryBatch.NPhases
 :type: altdss.ArrayProxy.BatchInt32ArrayProxy
 :value: >
-   None
+   'property(...)'
 
 ```{autodoc2-docstring} altdss.LineGeometry.LineGeometryBatch.NPhases
 ```
@@ -754,7 +776,7 @@ Bases: {py:obj}`altdss.Batch.DSSBatch`
 :canonical: altdss.LineGeometry.LineGeometryBatch.NormAmps
 :type: altdss.ArrayProxy.BatchFloat64ArrayProxy
 :value: >
-   None
+   'property(...)'
 
 ```{autodoc2-docstring} altdss.LineGeometry.LineGeometryBatch.NormAmps
 ```
@@ -765,7 +787,7 @@ Bases: {py:obj}`altdss.Batch.DSSBatch`
 :canonical: altdss.LineGeometry.LineGeometryBatch.Ratings
 :type: typing.List[altdss.types.Float64Array]
 :value: >
-   None
+   'property(...)'
 
 ```{autodoc2-docstring} altdss.LineGeometry.LineGeometryBatch.Ratings
 ```
@@ -776,7 +798,7 @@ Bases: {py:obj}`altdss.Batch.DSSBatch`
 :canonical: altdss.LineGeometry.LineGeometryBatch.Reduce
 :type: typing.List[bool]
 :value: >
-   None
+   'property(...)'
 
 ```{autodoc2-docstring} altdss.LineGeometry.LineGeometryBatch.Reduce
 ```
@@ -787,7 +809,7 @@ Bases: {py:obj}`altdss.Batch.DSSBatch`
 :canonical: altdss.LineGeometry.LineGeometryBatch.Seasons
 :type: altdss.ArrayProxy.BatchInt32ArrayProxy
 :value: >
-   None
+   'property(...)'
 
 ```{autodoc2-docstring} altdss.LineGeometry.LineGeometryBatch.Seasons
 ```
@@ -798,7 +820,7 @@ Bases: {py:obj}`altdss.Batch.DSSBatch`
 :canonical: altdss.LineGeometry.LineGeometryBatch.Spacing
 :type: typing.List[altdss.LineSpacing.LineSpacing]
 :value: >
-   None
+   'property(...)'
 
 ```{autodoc2-docstring} altdss.LineGeometry.LineGeometryBatch.Spacing
 ```
@@ -809,7 +831,7 @@ Bases: {py:obj}`altdss.Batch.DSSBatch`
 :canonical: altdss.LineGeometry.LineGeometryBatch.Spacing_str
 :type: typing.List[str]
 :value: >
-   None
+   'property(...)'
 
 ```{autodoc2-docstring} altdss.LineGeometry.LineGeometryBatch.Spacing_str
 ```
@@ -820,7 +842,7 @@ Bases: {py:obj}`altdss.Batch.DSSBatch`
 :canonical: altdss.LineGeometry.LineGeometryBatch.Units
 :type: altdss.ArrayProxy.BatchInt32ArrayProxy
 :value: >
-   None
+   'property(...)'
 
 ```{autodoc2-docstring} altdss.LineGeometry.LineGeometryBatch.Units
 ```
@@ -831,31 +853,9 @@ Bases: {py:obj}`altdss.Batch.DSSBatch`
 :canonical: altdss.LineGeometry.LineGeometryBatch.Units_str
 :type: typing.List[str]
 :value: >
-   None
+   'property(...)'
 
 ```{autodoc2-docstring} altdss.LineGeometry.LineGeometryBatch.Units_str
-```
-
-````
-
-````{py:attribute} Wire
-:canonical: altdss.LineGeometry.LineGeometryBatch.Wire
-:type: typing.List[typing.List[altdss.WireData.WireData]]
-:value: >
-   None
-
-```{autodoc2-docstring} altdss.LineGeometry.LineGeometryBatch.Wire
-```
-
-````
-
-````{py:attribute} Wire_str
-:canonical: altdss.LineGeometry.LineGeometryBatch.Wire_str
-:type: typing.List[typing.List[str]]
-:value: >
-   None
-
-```{autodoc2-docstring} altdss.LineGeometry.LineGeometryBatch.Wire_str
 ```
 
 ````
@@ -864,7 +864,7 @@ Bases: {py:obj}`altdss.Batch.DSSBatch`
 :canonical: altdss.LineGeometry.LineGeometryBatch.X
 :type: typing.List[altdss.types.Float64Array]
 :value: >
-   None
+   'property(...)'
 
 ```{autodoc2-docstring} altdss.LineGeometry.LineGeometryBatch.X
 ```
@@ -952,6 +952,17 @@ Bases: {py:obj}`typing_extensions.TypedDict`
 
 ```{autodoc2-docstring} altdss.LineGeometry.LineGeometryBatchProperties
 ```
+
+````{py:attribute} Conductors
+:canonical: altdss.LineGeometry.LineGeometryBatchProperties.Conductors
+:type: typing.Union[typing.List[typing.AnyStr], typing.List[typing.Union[altdss.WireData.WireData, altdss.CNData.CNData, altdss.TSData.TSData]]]
+:value: >
+   None
+
+```{autodoc2-docstring} altdss.LineGeometry.LineGeometryBatchProperties.Conductors
+```
+
+````
 
 ````{py:attribute} EmergAmps
 :canonical: altdss.LineGeometry.LineGeometryBatchProperties.EmergAmps
@@ -1081,17 +1092,6 @@ Bases: {py:obj}`typing_extensions.TypedDict`
    None
 
 ```{autodoc2-docstring} altdss.LineGeometry.LineGeometryBatchProperties.Units
-```
-
-````
-
-````{py:attribute} Wire
-:canonical: altdss.LineGeometry.LineGeometryBatchProperties.Wire
-:type: typing.Union[typing.List[typing.AnyStr], typing.List[altdss.WireData.WireData]]
-:value: >
-   None
-
-```{autodoc2-docstring} altdss.LineGeometry.LineGeometryBatchProperties.Wire
 ```
 
 ````
@@ -1421,6 +1421,17 @@ Bases: {py:obj}`typing_extensions.TypedDict`
 ```{autodoc2-docstring} altdss.LineGeometry.LineGeometryProperties
 ```
 
+````{py:attribute} Conductors
+:canonical: altdss.LineGeometry.LineGeometryProperties.Conductors
+:type: typing.List[typing.Union[typing.AnyStr, typing.Union[altdss.WireData.WireData, altdss.CNData.CNData, altdss.TSData.TSData]]]
+:value: >
+   None
+
+```{autodoc2-docstring} altdss.LineGeometry.LineGeometryProperties.Conductors
+```
+
+````
+
 ````{py:attribute} EmergAmps
 :canonical: altdss.LineGeometry.LineGeometryProperties.EmergAmps
 :type: float
@@ -1549,17 +1560,6 @@ Bases: {py:obj}`typing_extensions.TypedDict`
    None
 
 ```{autodoc2-docstring} altdss.LineGeometry.LineGeometryProperties.Units
-```
-
-````
-
-````{py:attribute} Wire
-:canonical: altdss.LineGeometry.LineGeometryProperties.Wire
-:type: typing.List[typing.Union[typing.AnyStr, altdss.WireData.WireData]]
-:value: >
-   None
-
-```{autodoc2-docstring} altdss.LineGeometry.LineGeometryProperties.Wire
 ```
 
 ````

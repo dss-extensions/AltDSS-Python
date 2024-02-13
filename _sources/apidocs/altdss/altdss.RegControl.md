@@ -51,7 +51,7 @@ Bases: {py:obj}`altdss.DSSObj.IDSSObj`, {py:obj}`altdss.RegControl.RegControlBat
 :canonical: altdss.RegControl.IRegControl.Band
 :type: altdss.ArrayProxy.BatchFloat64ArrayProxy
 :value: >
-   None
+   'property(...)'
 
 ```{autodoc2-docstring} altdss.RegControl.IRegControl.Band
 ```
@@ -62,7 +62,7 @@ Bases: {py:obj}`altdss.DSSObj.IDSSObj`, {py:obj}`altdss.RegControl.RegControlBat
 :canonical: altdss.RegControl.IRegControl.BaseFreq
 :type: altdss.ArrayProxy.BatchFloat64ArrayProxy
 :value: >
-   None
+   'property(...)'
 
 ```{autodoc2-docstring} altdss.RegControl.IRegControl.BaseFreq
 ```
@@ -73,7 +73,7 @@ Bases: {py:obj}`altdss.DSSObj.IDSSObj`, {py:obj}`altdss.RegControl.RegControlBat
 :canonical: altdss.RegControl.IRegControl.Bus
 :type: typing.List[str]
 :value: >
-   None
+   'property(...)'
 
 ```{autodoc2-docstring} altdss.RegControl.IRegControl.Bus
 ```
@@ -84,7 +84,7 @@ Bases: {py:obj}`altdss.DSSObj.IDSSObj`, {py:obj}`altdss.RegControl.RegControlBat
 :canonical: altdss.RegControl.IRegControl.CTPrim
 :type: altdss.ArrayProxy.BatchFloat64ArrayProxy
 :value: >
-   None
+   'property(...)'
 
 ```{autodoc2-docstring} altdss.RegControl.IRegControl.CTPrim
 ```
@@ -95,7 +95,7 @@ Bases: {py:obj}`altdss.DSSObj.IDSSObj`, {py:obj}`altdss.RegControl.RegControlBat
 :canonical: altdss.RegControl.IRegControl.Cogen
 :type: typing.List[bool]
 :value: >
-   None
+   'property(...)'
 
 ```{autodoc2-docstring} altdss.RegControl.IRegControl.Cogen
 ```
@@ -138,7 +138,7 @@ Bases: {py:obj}`altdss.DSSObj.IDSSObj`, {py:obj}`altdss.RegControl.RegControlBat
 :canonical: altdss.RegControl.IRegControl.DebugTrace
 :type: typing.List[bool]
 :value: >
-   None
+   'property(...)'
 
 ```{autodoc2-docstring} altdss.RegControl.IRegControl.DebugTrace
 ```
@@ -149,7 +149,7 @@ Bases: {py:obj}`altdss.DSSObj.IDSSObj`, {py:obj}`altdss.RegControl.RegControlBat
 :canonical: altdss.RegControl.IRegControl.Delay
 :type: altdss.ArrayProxy.BatchFloat64ArrayProxy
 :value: >
-   None
+   'property(...)'
 
 ```{autodoc2-docstring} altdss.RegControl.IRegControl.Delay
 ```
@@ -160,7 +160,7 @@ Bases: {py:obj}`altdss.DSSObj.IDSSObj`, {py:obj}`altdss.RegControl.RegControlBat
 :canonical: altdss.RegControl.IRegControl.Enabled
 :type: typing.List[bool]
 :value: >
-   None
+   'property(...)'
 
 ```{autodoc2-docstring} altdss.RegControl.IRegControl.Enabled
 ```
@@ -171,7 +171,7 @@ Bases: {py:obj}`altdss.DSSObj.IDSSObj`, {py:obj}`altdss.RegControl.RegControlBat
 :canonical: altdss.RegControl.IRegControl.EventLog
 :type: typing.List[bool]
 :value: >
-   None
+   'property(...)'
 
 ```{autodoc2-docstring} altdss.RegControl.IRegControl.EventLog
 ```
@@ -230,7 +230,7 @@ Bases: {py:obj}`altdss.DSSObj.IDSSObj`, {py:obj}`altdss.RegControl.RegControlBat
 :canonical: altdss.RegControl.IRegControl.InverseTime
 :type: typing.List[bool]
 :value: >
-   None
+   'property(...)'
 
 ```{autodoc2-docstring} altdss.RegControl.IRegControl.InverseTime
 ```
@@ -249,7 +249,7 @@ Bases: {py:obj}`altdss.DSSObj.IDSSObj`, {py:obj}`altdss.RegControl.RegControlBat
 :canonical: altdss.RegControl.IRegControl.LDC_Z
 :type: altdss.ArrayProxy.BatchFloat64ArrayProxy
 :value: >
-   None
+   'property(...)'
 
 ```{autodoc2-docstring} altdss.RegControl.IRegControl.LDC_Z
 ```
@@ -284,7 +284,7 @@ Bases: {py:obj}`altdss.DSSObj.IDSSObj`, {py:obj}`altdss.RegControl.RegControlBat
 :canonical: altdss.RegControl.IRegControl.MaxTapChange
 :type: altdss.ArrayProxy.BatchInt32ArrayProxy
 :value: >
-   None
+   'property(...)'
 
 ```{autodoc2-docstring} altdss.RegControl.IRegControl.MaxTapChange
 ```
@@ -360,7 +360,7 @@ Bases: {py:obj}`altdss.DSSObj.IDSSObj`, {py:obj}`altdss.RegControl.RegControlBat
 :canonical: altdss.RegControl.IRegControl.PTPhase
 :type: altdss.ArrayProxy.BatchInt32ArrayProxy
 :value: >
-   None
+   'property(...)'
 
 ```{autodoc2-docstring} altdss.RegControl.IRegControl.PTPhase
 ```
@@ -371,7 +371,7 @@ Bases: {py:obj}`altdss.DSSObj.IDSSObj`, {py:obj}`altdss.RegControl.RegControlBat
 :canonical: altdss.RegControl.IRegControl.PTPhase_str
 :type: typing.List[str]
 :value: >
-   None
+   'property(...)'
 
 ```{autodoc2-docstring} altdss.RegControl.IRegControl.PTPhase_str
 ```
@@ -382,7 +382,7 @@ Bases: {py:obj}`altdss.DSSObj.IDSSObj`, {py:obj}`altdss.RegControl.RegControlBat
 :canonical: altdss.RegControl.IRegControl.PTRatio
 :type: altdss.ArrayProxy.BatchFloat64ArrayProxy
 :value: >
-   None
+   'property(...)'
 
 ```{autodoc2-docstring} altdss.RegControl.IRegControl.PTRatio
 ```
@@ -409,7 +409,7 @@ Bases: {py:obj}`altdss.DSSObj.IDSSObj`, {py:obj}`altdss.RegControl.RegControlBat
 :canonical: altdss.RegControl.IRegControl.R
 :type: altdss.ArrayProxy.BatchFloat64ArrayProxy
 :value: >
-   None
+   'property(...)'
 
 ```{autodoc2-docstring} altdss.RegControl.IRegControl.R
 ```
@@ -420,7 +420,7 @@ Bases: {py:obj}`altdss.DSSObj.IDSSObj`, {py:obj}`altdss.RegControl.RegControlBat
 :canonical: altdss.RegControl.IRegControl.RemotePTRatio
 :type: altdss.ArrayProxy.BatchFloat64ArrayProxy
 :value: >
-   None
+   'property(...)'
 
 ```{autodoc2-docstring} altdss.RegControl.IRegControl.RemotePTRatio
 ```
@@ -439,7 +439,7 @@ Bases: {py:obj}`altdss.DSSObj.IDSSObj`, {py:obj}`altdss.RegControl.RegControlBat
 :canonical: altdss.RegControl.IRegControl.RevBand
 :type: altdss.ArrayProxy.BatchFloat64ArrayProxy
 :value: >
-   None
+   'property(...)'
 
 ```{autodoc2-docstring} altdss.RegControl.IRegControl.RevBand
 ```
@@ -450,7 +450,7 @@ Bases: {py:obj}`altdss.DSSObj.IDSSObj`, {py:obj}`altdss.RegControl.RegControlBat
 :canonical: altdss.RegControl.IRegControl.RevDelay
 :type: altdss.ArrayProxy.BatchFloat64ArrayProxy
 :value: >
-   None
+   'property(...)'
 
 ```{autodoc2-docstring} altdss.RegControl.IRegControl.RevDelay
 ```
@@ -461,7 +461,7 @@ Bases: {py:obj}`altdss.DSSObj.IDSSObj`, {py:obj}`altdss.RegControl.RegControlBat
 :canonical: altdss.RegControl.IRegControl.RevNeutral
 :type: typing.List[bool]
 :value: >
-   None
+   'property(...)'
 
 ```{autodoc2-docstring} altdss.RegControl.IRegControl.RevNeutral
 ```
@@ -472,7 +472,7 @@ Bases: {py:obj}`altdss.DSSObj.IDSSObj`, {py:obj}`altdss.RegControl.RegControlBat
 :canonical: altdss.RegControl.IRegControl.RevR
 :type: altdss.ArrayProxy.BatchFloat64ArrayProxy
 :value: >
-   None
+   'property(...)'
 
 ```{autodoc2-docstring} altdss.RegControl.IRegControl.RevR
 ```
@@ -483,7 +483,7 @@ Bases: {py:obj}`altdss.DSSObj.IDSSObj`, {py:obj}`altdss.RegControl.RegControlBat
 :canonical: altdss.RegControl.IRegControl.RevThreshold
 :type: altdss.ArrayProxy.BatchFloat64ArrayProxy
 :value: >
-   None
+   'property(...)'
 
 ```{autodoc2-docstring} altdss.RegControl.IRegControl.RevThreshold
 ```
@@ -494,7 +494,7 @@ Bases: {py:obj}`altdss.DSSObj.IDSSObj`, {py:obj}`altdss.RegControl.RegControlBat
 :canonical: altdss.RegControl.IRegControl.RevVReg
 :type: altdss.ArrayProxy.BatchFloat64ArrayProxy
 :value: >
-   None
+   'property(...)'
 
 ```{autodoc2-docstring} altdss.RegControl.IRegControl.RevVReg
 ```
@@ -505,7 +505,7 @@ Bases: {py:obj}`altdss.DSSObj.IDSSObj`, {py:obj}`altdss.RegControl.RegControlBat
 :canonical: altdss.RegControl.IRegControl.RevX
 :type: altdss.ArrayProxy.BatchFloat64ArrayProxy
 :value: >
-   None
+   'property(...)'
 
 ```{autodoc2-docstring} altdss.RegControl.IRegControl.RevX
 ```
@@ -516,7 +516,7 @@ Bases: {py:obj}`altdss.DSSObj.IDSSObj`, {py:obj}`altdss.RegControl.RegControlBat
 :canonical: altdss.RegControl.IRegControl.Rev_Z
 :type: altdss.ArrayProxy.BatchFloat64ArrayProxy
 :value: >
-   None
+   'property(...)'
 
 ```{autodoc2-docstring} altdss.RegControl.IRegControl.Rev_Z
 ```
@@ -527,7 +527,7 @@ Bases: {py:obj}`altdss.DSSObj.IDSSObj`, {py:obj}`altdss.RegControl.RegControlBat
 :canonical: altdss.RegControl.IRegControl.Reversible
 :type: typing.List[bool]
 :value: >
-   None
+   'property(...)'
 
 ```{autodoc2-docstring} altdss.RegControl.IRegControl.Reversible
 ```
@@ -562,7 +562,7 @@ Bases: {py:obj}`altdss.DSSObj.IDSSObj`, {py:obj}`altdss.RegControl.RegControlBat
 :canonical: altdss.RegControl.IRegControl.TapDelay
 :type: altdss.ArrayProxy.BatchFloat64ArrayProxy
 :value: >
-   None
+   'property(...)'
 
 ```{autodoc2-docstring} altdss.RegControl.IRegControl.TapDelay
 ```
@@ -573,7 +573,7 @@ Bases: {py:obj}`altdss.DSSObj.IDSSObj`, {py:obj}`altdss.RegControl.RegControlBat
 :canonical: altdss.RegControl.IRegControl.TapNum
 :type: altdss.ArrayProxy.BatchInt32ArrayProxy
 :value: >
-   None
+   'property(...)'
 
 ```{autodoc2-docstring} altdss.RegControl.IRegControl.TapNum
 ```
@@ -584,7 +584,7 @@ Bases: {py:obj}`altdss.DSSObj.IDSSObj`, {py:obj}`altdss.RegControl.RegControlBat
 :canonical: altdss.RegControl.IRegControl.TapWinding
 :type: altdss.ArrayProxy.BatchInt32ArrayProxy
 :value: >
-   None
+   'property(...)'
 
 ```{autodoc2-docstring} altdss.RegControl.IRegControl.TapWinding
 ```
@@ -603,7 +603,7 @@ Bases: {py:obj}`altdss.DSSObj.IDSSObj`, {py:obj}`altdss.RegControl.RegControlBat
 :canonical: altdss.RegControl.IRegControl.Transformer
 :type: typing.List[typing.Union[altdss.Transformer.Transformer, altdss.AutoTrans.AutoTrans]]
 :value: >
-   None
+   'property(...)'
 
 ```{autodoc2-docstring} altdss.RegControl.IRegControl.Transformer
 ```
@@ -614,7 +614,7 @@ Bases: {py:obj}`altdss.DSSObj.IDSSObj`, {py:obj}`altdss.RegControl.RegControlBat
 :canonical: altdss.RegControl.IRegControl.Transformer_str
 :type: typing.List[str]
 :value: >
-   None
+   'property(...)'
 
 ```{autodoc2-docstring} altdss.RegControl.IRegControl.Transformer_str
 ```
@@ -625,7 +625,7 @@ Bases: {py:obj}`altdss.DSSObj.IDSSObj`, {py:obj}`altdss.RegControl.RegControlBat
 :canonical: altdss.RegControl.IRegControl.VLimit
 :type: altdss.ArrayProxy.BatchFloat64ArrayProxy
 :value: >
-   None
+   'property(...)'
 
 ```{autodoc2-docstring} altdss.RegControl.IRegControl.VLimit
 ```
@@ -636,7 +636,7 @@ Bases: {py:obj}`altdss.DSSObj.IDSSObj`, {py:obj}`altdss.RegControl.RegControlBat
 :canonical: altdss.RegControl.IRegControl.VReg
 :type: altdss.ArrayProxy.BatchFloat64ArrayProxy
 :value: >
-   None
+   'property(...)'
 
 ```{autodoc2-docstring} altdss.RegControl.IRegControl.VReg
 ```
@@ -663,7 +663,7 @@ Bases: {py:obj}`altdss.DSSObj.IDSSObj`, {py:obj}`altdss.RegControl.RegControlBat
 :canonical: altdss.RegControl.IRegControl.Winding
 :type: altdss.ArrayProxy.BatchInt32ArrayProxy
 :value: >
-   None
+   'property(...)'
 
 ```{autodoc2-docstring} altdss.RegControl.IRegControl.Winding
 ```
@@ -674,7 +674,7 @@ Bases: {py:obj}`altdss.DSSObj.IDSSObj`, {py:obj}`altdss.RegControl.RegControlBat
 :canonical: altdss.RegControl.IRegControl.X
 :type: altdss.ArrayProxy.BatchFloat64ArrayProxy
 :value: >
-   None
+   'property(...)'
 
 ```{autodoc2-docstring} altdss.RegControl.IRegControl.X
 ```
@@ -807,7 +807,7 @@ Bases: {py:obj}`altdss.DSSObj.DSSObj`, {py:obj}`altdss.CircuitElement.CircuitEle
 :canonical: altdss.RegControl.RegControl.Band
 :type: float
 :value: >
-   None
+   'property(...)'
 
 ```{autodoc2-docstring} altdss.RegControl.RegControl.Band
 ```
@@ -818,7 +818,7 @@ Bases: {py:obj}`altdss.DSSObj.DSSObj`, {py:obj}`altdss.CircuitElement.CircuitEle
 :canonical: altdss.RegControl.RegControl.BaseFreq
 :type: float
 :value: >
-   None
+   'property(...)'
 
 ```{autodoc2-docstring} altdss.RegControl.RegControl.BaseFreq
 ```
@@ -829,7 +829,7 @@ Bases: {py:obj}`altdss.DSSObj.DSSObj`, {py:obj}`altdss.CircuitElement.CircuitEle
 :canonical: altdss.RegControl.RegControl.Bus
 :type: str
 :value: >
-   None
+   'property(...)'
 
 ```{autodoc2-docstring} altdss.RegControl.RegControl.Bus
 ```
@@ -840,7 +840,7 @@ Bases: {py:obj}`altdss.DSSObj.DSSObj`, {py:obj}`altdss.CircuitElement.CircuitEle
 :canonical: altdss.RegControl.RegControl.CTPrim
 :type: float
 :value: >
-   None
+   'property(...)'
 
 ```{autodoc2-docstring} altdss.RegControl.RegControl.CTPrim
 ```
@@ -859,7 +859,7 @@ Bases: {py:obj}`altdss.DSSObj.DSSObj`, {py:obj}`altdss.CircuitElement.CircuitEle
 :canonical: altdss.RegControl.RegControl.Cogen
 :type: bool
 :value: >
-   None
+   'property(...)'
 
 ```{autodoc2-docstring} altdss.RegControl.RegControl.Cogen
 ```
@@ -894,7 +894,7 @@ Bases: {py:obj}`altdss.DSSObj.DSSObj`, {py:obj}`altdss.CircuitElement.CircuitEle
 :canonical: altdss.RegControl.RegControl.DebugTrace
 :type: bool
 :value: >
-   None
+   'property(...)'
 
 ```{autodoc2-docstring} altdss.RegControl.RegControl.DebugTrace
 ```
@@ -905,7 +905,7 @@ Bases: {py:obj}`altdss.DSSObj.DSSObj`, {py:obj}`altdss.CircuitElement.CircuitEle
 :canonical: altdss.RegControl.RegControl.Delay
 :type: float
 :value: >
-   None
+   'property(...)'
 
 ```{autodoc2-docstring} altdss.RegControl.RegControl.Delay
 ```
@@ -916,7 +916,7 @@ Bases: {py:obj}`altdss.DSSObj.DSSObj`, {py:obj}`altdss.CircuitElement.CircuitEle
 :canonical: altdss.RegControl.RegControl.DisplayName
 :type: str
 :value: >
-   None
+   'property(...)'
 
 ```{autodoc2-docstring} altdss.RegControl.RegControl.DisplayName
 ```
@@ -927,7 +927,7 @@ Bases: {py:obj}`altdss.DSSObj.DSSObj`, {py:obj}`altdss.CircuitElement.CircuitEle
 :canonical: altdss.RegControl.RegControl.Enabled
 :type: bool
 :value: >
-   None
+   'property(...)'
 
 ```{autodoc2-docstring} altdss.RegControl.RegControl.Enabled
 ```
@@ -938,7 +938,7 @@ Bases: {py:obj}`altdss.DSSObj.DSSObj`, {py:obj}`altdss.CircuitElement.CircuitEle
 :canonical: altdss.RegControl.RegControl.EventLog
 :type: bool
 :value: >
-   None
+   'property(...)'
 
 ```{autodoc2-docstring} altdss.RegControl.RegControl.EventLog
 ```
@@ -997,7 +997,7 @@ Bases: {py:obj}`altdss.DSSObj.DSSObj`, {py:obj}`altdss.CircuitElement.CircuitEle
 :canonical: altdss.RegControl.RegControl.InverseTime
 :type: bool
 :value: >
-   None
+   'property(...)'
 
 ```{autodoc2-docstring} altdss.RegControl.RegControl.InverseTime
 ```
@@ -1024,7 +1024,7 @@ Bases: {py:obj}`altdss.DSSObj.DSSObj`, {py:obj}`altdss.CircuitElement.CircuitEle
 :canonical: altdss.RegControl.RegControl.LDC_Z
 :type: float
 :value: >
-   None
+   'property(...)'
 
 ```{autodoc2-docstring} altdss.RegControl.RegControl.LDC_Z
 ```
@@ -1059,7 +1059,7 @@ Bases: {py:obj}`altdss.DSSObj.DSSObj`, {py:obj}`altdss.CircuitElement.CircuitEle
 :canonical: altdss.RegControl.RegControl.MaxTapChange
 :type: int
 :value: >
-   None
+   'property(...)'
 
 ```{autodoc2-docstring} altdss.RegControl.RegControl.MaxTapChange
 ```
@@ -1159,7 +1159,7 @@ Bases: {py:obj}`altdss.DSSObj.DSSObj`, {py:obj}`altdss.CircuitElement.CircuitEle
 :canonical: altdss.RegControl.RegControl.PTPhase
 :type: altdss.enums.RegControlPhaseSelection
 :value: >
-   None
+   'property(...)'
 
 ```{autodoc2-docstring} altdss.RegControl.RegControl.PTPhase
 ```
@@ -1170,7 +1170,7 @@ Bases: {py:obj}`altdss.DSSObj.DSSObj`, {py:obj}`altdss.CircuitElement.CircuitEle
 :canonical: altdss.RegControl.RegControl.PTPhase_str
 :type: str
 :value: >
-   None
+   'property(...)'
 
 ```{autodoc2-docstring} altdss.RegControl.RegControl.PTPhase_str
 ```
@@ -1181,7 +1181,7 @@ Bases: {py:obj}`altdss.DSSObj.DSSObj`, {py:obj}`altdss.CircuitElement.CircuitEle
 :canonical: altdss.RegControl.RegControl.PTRatio
 :type: float
 :value: >
-   None
+   'property(...)'
 
 ```{autodoc2-docstring} altdss.RegControl.RegControl.PTRatio
 ```
@@ -1208,7 +1208,7 @@ Bases: {py:obj}`altdss.DSSObj.DSSObj`, {py:obj}`altdss.CircuitElement.CircuitEle
 :canonical: altdss.RegControl.RegControl.R
 :type: float
 :value: >
-   None
+   'property(...)'
 
 ```{autodoc2-docstring} altdss.RegControl.RegControl.R
 ```
@@ -1219,7 +1219,7 @@ Bases: {py:obj}`altdss.DSSObj.DSSObj`, {py:obj}`altdss.CircuitElement.CircuitEle
 :canonical: altdss.RegControl.RegControl.RemotePTRatio
 :type: float
 :value: >
-   None
+   'property(...)'
 
 ```{autodoc2-docstring} altdss.RegControl.RegControl.RemotePTRatio
 ```
@@ -1246,7 +1246,7 @@ Bases: {py:obj}`altdss.DSSObj.DSSObj`, {py:obj}`altdss.CircuitElement.CircuitEle
 :canonical: altdss.RegControl.RegControl.RevBand
 :type: float
 :value: >
-   None
+   'property(...)'
 
 ```{autodoc2-docstring} altdss.RegControl.RegControl.RevBand
 ```
@@ -1257,7 +1257,7 @@ Bases: {py:obj}`altdss.DSSObj.DSSObj`, {py:obj}`altdss.CircuitElement.CircuitEle
 :canonical: altdss.RegControl.RegControl.RevDelay
 :type: float
 :value: >
-   None
+   'property(...)'
 
 ```{autodoc2-docstring} altdss.RegControl.RegControl.RevDelay
 ```
@@ -1268,7 +1268,7 @@ Bases: {py:obj}`altdss.DSSObj.DSSObj`, {py:obj}`altdss.CircuitElement.CircuitEle
 :canonical: altdss.RegControl.RegControl.RevNeutral
 :type: bool
 :value: >
-   None
+   'property(...)'
 
 ```{autodoc2-docstring} altdss.RegControl.RegControl.RevNeutral
 ```
@@ -1279,7 +1279,7 @@ Bases: {py:obj}`altdss.DSSObj.DSSObj`, {py:obj}`altdss.CircuitElement.CircuitEle
 :canonical: altdss.RegControl.RegControl.RevR
 :type: float
 :value: >
-   None
+   'property(...)'
 
 ```{autodoc2-docstring} altdss.RegControl.RegControl.RevR
 ```
@@ -1290,7 +1290,7 @@ Bases: {py:obj}`altdss.DSSObj.DSSObj`, {py:obj}`altdss.CircuitElement.CircuitEle
 :canonical: altdss.RegControl.RegControl.RevThreshold
 :type: float
 :value: >
-   None
+   'property(...)'
 
 ```{autodoc2-docstring} altdss.RegControl.RegControl.RevThreshold
 ```
@@ -1301,7 +1301,7 @@ Bases: {py:obj}`altdss.DSSObj.DSSObj`, {py:obj}`altdss.CircuitElement.CircuitEle
 :canonical: altdss.RegControl.RegControl.RevVReg
 :type: float
 :value: >
-   None
+   'property(...)'
 
 ```{autodoc2-docstring} altdss.RegControl.RegControl.RevVReg
 ```
@@ -1312,7 +1312,7 @@ Bases: {py:obj}`altdss.DSSObj.DSSObj`, {py:obj}`altdss.CircuitElement.CircuitEle
 :canonical: altdss.RegControl.RegControl.RevX
 :type: float
 :value: >
-   None
+   'property(...)'
 
 ```{autodoc2-docstring} altdss.RegControl.RegControl.RevX
 ```
@@ -1323,7 +1323,7 @@ Bases: {py:obj}`altdss.DSSObj.DSSObj`, {py:obj}`altdss.CircuitElement.CircuitEle
 :canonical: altdss.RegControl.RegControl.Rev_Z
 :type: float
 :value: >
-   None
+   'property(...)'
 
 ```{autodoc2-docstring} altdss.RegControl.RegControl.Rev_Z
 ```
@@ -1334,7 +1334,7 @@ Bases: {py:obj}`altdss.DSSObj.DSSObj`, {py:obj}`altdss.CircuitElement.CircuitEle
 :canonical: altdss.RegControl.RegControl.Reversible
 :type: bool
 :value: >
-   None
+   'property(...)'
 
 ```{autodoc2-docstring} altdss.RegControl.RegControl.Reversible
 ```
@@ -1369,7 +1369,7 @@ Bases: {py:obj}`altdss.DSSObj.DSSObj`, {py:obj}`altdss.CircuitElement.CircuitEle
 :canonical: altdss.RegControl.RegControl.TapDelay
 :type: float
 :value: >
-   None
+   'property(...)'
 
 ```{autodoc2-docstring} altdss.RegControl.RegControl.TapDelay
 ```
@@ -1380,7 +1380,7 @@ Bases: {py:obj}`altdss.DSSObj.DSSObj`, {py:obj}`altdss.CircuitElement.CircuitEle
 :canonical: altdss.RegControl.RegControl.TapNum
 :type: int
 :value: >
-   None
+   'property(...)'
 
 ```{autodoc2-docstring} altdss.RegControl.RegControl.TapNum
 ```
@@ -1391,7 +1391,7 @@ Bases: {py:obj}`altdss.DSSObj.DSSObj`, {py:obj}`altdss.CircuitElement.CircuitEle
 :canonical: altdss.RegControl.RegControl.TapWinding
 :type: int
 :value: >
-   None
+   'property(...)'
 
 ```{autodoc2-docstring} altdss.RegControl.RegControl.TapWinding
 ```
@@ -1410,7 +1410,7 @@ Bases: {py:obj}`altdss.DSSObj.DSSObj`, {py:obj}`altdss.CircuitElement.CircuitEle
 :canonical: altdss.RegControl.RegControl.Transformer
 :type: (altdss.Transformer.Transformer, altdss.AutoTrans.AutoTrans)
 :value: >
-   None
+   'property(...)'
 
 ```{autodoc2-docstring} altdss.RegControl.RegControl.Transformer
 ```
@@ -1421,7 +1421,7 @@ Bases: {py:obj}`altdss.DSSObj.DSSObj`, {py:obj}`altdss.CircuitElement.CircuitEle
 :canonical: altdss.RegControl.RegControl.Transformer_str
 :type: str
 :value: >
-   None
+   'property(...)'
 
 ```{autodoc2-docstring} altdss.RegControl.RegControl.Transformer_str
 ```
@@ -1432,7 +1432,7 @@ Bases: {py:obj}`altdss.DSSObj.DSSObj`, {py:obj}`altdss.CircuitElement.CircuitEle
 :canonical: altdss.RegControl.RegControl.VLimit
 :type: float
 :value: >
-   None
+   'property(...)'
 
 ```{autodoc2-docstring} altdss.RegControl.RegControl.VLimit
 ```
@@ -1443,7 +1443,7 @@ Bases: {py:obj}`altdss.DSSObj.DSSObj`, {py:obj}`altdss.CircuitElement.CircuitEle
 :canonical: altdss.RegControl.RegControl.VReg
 :type: float
 :value: >
-   None
+   'property(...)'
 
 ```{autodoc2-docstring} altdss.RegControl.RegControl.VReg
 ```
@@ -1470,7 +1470,7 @@ Bases: {py:obj}`altdss.DSSObj.DSSObj`, {py:obj}`altdss.CircuitElement.CircuitEle
 :canonical: altdss.RegControl.RegControl.Winding
 :type: int
 :value: >
-   None
+   'property(...)'
 
 ```{autodoc2-docstring} altdss.RegControl.RegControl.Winding
 ```
@@ -1481,7 +1481,7 @@ Bases: {py:obj}`altdss.DSSObj.DSSObj`, {py:obj}`altdss.CircuitElement.CircuitEle
 :canonical: altdss.RegControl.RegControl.X
 :type: float
 :value: >
-   None
+   'property(...)'
 
 ```{autodoc2-docstring} altdss.RegControl.RegControl.X
 ```
@@ -1566,7 +1566,7 @@ Bases: {py:obj}`altdss.Batch.DSSBatch`, {py:obj}`altdss.CircuitElement.CircuitEl
 :canonical: altdss.RegControl.RegControlBatch.Band
 :type: altdss.ArrayProxy.BatchFloat64ArrayProxy
 :value: >
-   None
+   'property(...)'
 
 ```{autodoc2-docstring} altdss.RegControl.RegControlBatch.Band
 ```
@@ -1577,7 +1577,7 @@ Bases: {py:obj}`altdss.Batch.DSSBatch`, {py:obj}`altdss.CircuitElement.CircuitEl
 :canonical: altdss.RegControl.RegControlBatch.BaseFreq
 :type: altdss.ArrayProxy.BatchFloat64ArrayProxy
 :value: >
-   None
+   'property(...)'
 
 ```{autodoc2-docstring} altdss.RegControl.RegControlBatch.BaseFreq
 ```
@@ -1588,7 +1588,7 @@ Bases: {py:obj}`altdss.Batch.DSSBatch`, {py:obj}`altdss.CircuitElement.CircuitEl
 :canonical: altdss.RegControl.RegControlBatch.Bus
 :type: typing.List[str]
 :value: >
-   None
+   'property(...)'
 
 ```{autodoc2-docstring} altdss.RegControl.RegControlBatch.Bus
 ```
@@ -1599,7 +1599,7 @@ Bases: {py:obj}`altdss.Batch.DSSBatch`, {py:obj}`altdss.CircuitElement.CircuitEl
 :canonical: altdss.RegControl.RegControlBatch.CTPrim
 :type: altdss.ArrayProxy.BatchFloat64ArrayProxy
 :value: >
-   None
+   'property(...)'
 
 ```{autodoc2-docstring} altdss.RegControl.RegControlBatch.CTPrim
 ```
@@ -1610,7 +1610,7 @@ Bases: {py:obj}`altdss.Batch.DSSBatch`, {py:obj}`altdss.CircuitElement.CircuitEl
 :canonical: altdss.RegControl.RegControlBatch.Cogen
 :type: typing.List[bool]
 :value: >
-   None
+   'property(...)'
 
 ```{autodoc2-docstring} altdss.RegControl.RegControlBatch.Cogen
 ```
@@ -1653,7 +1653,7 @@ Bases: {py:obj}`altdss.Batch.DSSBatch`, {py:obj}`altdss.CircuitElement.CircuitEl
 :canonical: altdss.RegControl.RegControlBatch.DebugTrace
 :type: typing.List[bool]
 :value: >
-   None
+   'property(...)'
 
 ```{autodoc2-docstring} altdss.RegControl.RegControlBatch.DebugTrace
 ```
@@ -1664,7 +1664,7 @@ Bases: {py:obj}`altdss.Batch.DSSBatch`, {py:obj}`altdss.CircuitElement.CircuitEl
 :canonical: altdss.RegControl.RegControlBatch.Delay
 :type: altdss.ArrayProxy.BatchFloat64ArrayProxy
 :value: >
-   None
+   'property(...)'
 
 ```{autodoc2-docstring} altdss.RegControl.RegControlBatch.Delay
 ```
@@ -1675,7 +1675,7 @@ Bases: {py:obj}`altdss.Batch.DSSBatch`, {py:obj}`altdss.CircuitElement.CircuitEl
 :canonical: altdss.RegControl.RegControlBatch.Enabled
 :type: typing.List[bool]
 :value: >
-   None
+   'property(...)'
 
 ```{autodoc2-docstring} altdss.RegControl.RegControlBatch.Enabled
 ```
@@ -1686,7 +1686,7 @@ Bases: {py:obj}`altdss.Batch.DSSBatch`, {py:obj}`altdss.CircuitElement.CircuitEl
 :canonical: altdss.RegControl.RegControlBatch.EventLog
 :type: typing.List[bool]
 :value: >
-   None
+   'property(...)'
 
 ```{autodoc2-docstring} altdss.RegControl.RegControlBatch.EventLog
 ```
@@ -1745,7 +1745,7 @@ Bases: {py:obj}`altdss.Batch.DSSBatch`, {py:obj}`altdss.CircuitElement.CircuitEl
 :canonical: altdss.RegControl.RegControlBatch.InverseTime
 :type: typing.List[bool]
 :value: >
-   None
+   'property(...)'
 
 ```{autodoc2-docstring} altdss.RegControl.RegControlBatch.InverseTime
 ```
@@ -1764,7 +1764,7 @@ Bases: {py:obj}`altdss.Batch.DSSBatch`, {py:obj}`altdss.CircuitElement.CircuitEl
 :canonical: altdss.RegControl.RegControlBatch.LDC_Z
 :type: altdss.ArrayProxy.BatchFloat64ArrayProxy
 :value: >
-   None
+   'property(...)'
 
 ```{autodoc2-docstring} altdss.RegControl.RegControlBatch.LDC_Z
 ```
@@ -1799,7 +1799,7 @@ Bases: {py:obj}`altdss.Batch.DSSBatch`, {py:obj}`altdss.CircuitElement.CircuitEl
 :canonical: altdss.RegControl.RegControlBatch.MaxTapChange
 :type: altdss.ArrayProxy.BatchInt32ArrayProxy
 :value: >
-   None
+   'property(...)'
 
 ```{autodoc2-docstring} altdss.RegControl.RegControlBatch.MaxTapChange
 ```
@@ -1875,7 +1875,7 @@ Bases: {py:obj}`altdss.Batch.DSSBatch`, {py:obj}`altdss.CircuitElement.CircuitEl
 :canonical: altdss.RegControl.RegControlBatch.PTPhase
 :type: altdss.ArrayProxy.BatchInt32ArrayProxy
 :value: >
-   None
+   'property(...)'
 
 ```{autodoc2-docstring} altdss.RegControl.RegControlBatch.PTPhase
 ```
@@ -1886,7 +1886,7 @@ Bases: {py:obj}`altdss.Batch.DSSBatch`, {py:obj}`altdss.CircuitElement.CircuitEl
 :canonical: altdss.RegControl.RegControlBatch.PTPhase_str
 :type: typing.List[str]
 :value: >
-   None
+   'property(...)'
 
 ```{autodoc2-docstring} altdss.RegControl.RegControlBatch.PTPhase_str
 ```
@@ -1897,7 +1897,7 @@ Bases: {py:obj}`altdss.Batch.DSSBatch`, {py:obj}`altdss.CircuitElement.CircuitEl
 :canonical: altdss.RegControl.RegControlBatch.PTRatio
 :type: altdss.ArrayProxy.BatchFloat64ArrayProxy
 :value: >
-   None
+   'property(...)'
 
 ```{autodoc2-docstring} altdss.RegControl.RegControlBatch.PTRatio
 ```
@@ -1924,7 +1924,7 @@ Bases: {py:obj}`altdss.Batch.DSSBatch`, {py:obj}`altdss.CircuitElement.CircuitEl
 :canonical: altdss.RegControl.RegControlBatch.R
 :type: altdss.ArrayProxy.BatchFloat64ArrayProxy
 :value: >
-   None
+   'property(...)'
 
 ```{autodoc2-docstring} altdss.RegControl.RegControlBatch.R
 ```
@@ -1935,7 +1935,7 @@ Bases: {py:obj}`altdss.Batch.DSSBatch`, {py:obj}`altdss.CircuitElement.CircuitEl
 :canonical: altdss.RegControl.RegControlBatch.RemotePTRatio
 :type: altdss.ArrayProxy.BatchFloat64ArrayProxy
 :value: >
-   None
+   'property(...)'
 
 ```{autodoc2-docstring} altdss.RegControl.RegControlBatch.RemotePTRatio
 ```
@@ -1954,7 +1954,7 @@ Bases: {py:obj}`altdss.Batch.DSSBatch`, {py:obj}`altdss.CircuitElement.CircuitEl
 :canonical: altdss.RegControl.RegControlBatch.RevBand
 :type: altdss.ArrayProxy.BatchFloat64ArrayProxy
 :value: >
-   None
+   'property(...)'
 
 ```{autodoc2-docstring} altdss.RegControl.RegControlBatch.RevBand
 ```
@@ -1965,7 +1965,7 @@ Bases: {py:obj}`altdss.Batch.DSSBatch`, {py:obj}`altdss.CircuitElement.CircuitEl
 :canonical: altdss.RegControl.RegControlBatch.RevDelay
 :type: altdss.ArrayProxy.BatchFloat64ArrayProxy
 :value: >
-   None
+   'property(...)'
 
 ```{autodoc2-docstring} altdss.RegControl.RegControlBatch.RevDelay
 ```
@@ -1976,7 +1976,7 @@ Bases: {py:obj}`altdss.Batch.DSSBatch`, {py:obj}`altdss.CircuitElement.CircuitEl
 :canonical: altdss.RegControl.RegControlBatch.RevNeutral
 :type: typing.List[bool]
 :value: >
-   None
+   'property(...)'
 
 ```{autodoc2-docstring} altdss.RegControl.RegControlBatch.RevNeutral
 ```
@@ -1987,7 +1987,7 @@ Bases: {py:obj}`altdss.Batch.DSSBatch`, {py:obj}`altdss.CircuitElement.CircuitEl
 :canonical: altdss.RegControl.RegControlBatch.RevR
 :type: altdss.ArrayProxy.BatchFloat64ArrayProxy
 :value: >
-   None
+   'property(...)'
 
 ```{autodoc2-docstring} altdss.RegControl.RegControlBatch.RevR
 ```
@@ -1998,7 +1998,7 @@ Bases: {py:obj}`altdss.Batch.DSSBatch`, {py:obj}`altdss.CircuitElement.CircuitEl
 :canonical: altdss.RegControl.RegControlBatch.RevThreshold
 :type: altdss.ArrayProxy.BatchFloat64ArrayProxy
 :value: >
-   None
+   'property(...)'
 
 ```{autodoc2-docstring} altdss.RegControl.RegControlBatch.RevThreshold
 ```
@@ -2009,7 +2009,7 @@ Bases: {py:obj}`altdss.Batch.DSSBatch`, {py:obj}`altdss.CircuitElement.CircuitEl
 :canonical: altdss.RegControl.RegControlBatch.RevVReg
 :type: altdss.ArrayProxy.BatchFloat64ArrayProxy
 :value: >
-   None
+   'property(...)'
 
 ```{autodoc2-docstring} altdss.RegControl.RegControlBatch.RevVReg
 ```
@@ -2020,7 +2020,7 @@ Bases: {py:obj}`altdss.Batch.DSSBatch`, {py:obj}`altdss.CircuitElement.CircuitEl
 :canonical: altdss.RegControl.RegControlBatch.RevX
 :type: altdss.ArrayProxy.BatchFloat64ArrayProxy
 :value: >
-   None
+   'property(...)'
 
 ```{autodoc2-docstring} altdss.RegControl.RegControlBatch.RevX
 ```
@@ -2031,7 +2031,7 @@ Bases: {py:obj}`altdss.Batch.DSSBatch`, {py:obj}`altdss.CircuitElement.CircuitEl
 :canonical: altdss.RegControl.RegControlBatch.Rev_Z
 :type: altdss.ArrayProxy.BatchFloat64ArrayProxy
 :value: >
-   None
+   'property(...)'
 
 ```{autodoc2-docstring} altdss.RegControl.RegControlBatch.Rev_Z
 ```
@@ -2042,7 +2042,7 @@ Bases: {py:obj}`altdss.Batch.DSSBatch`, {py:obj}`altdss.CircuitElement.CircuitEl
 :canonical: altdss.RegControl.RegControlBatch.Reversible
 :type: typing.List[bool]
 :value: >
-   None
+   'property(...)'
 
 ```{autodoc2-docstring} altdss.RegControl.RegControlBatch.Reversible
 ```
@@ -2077,7 +2077,7 @@ Bases: {py:obj}`altdss.Batch.DSSBatch`, {py:obj}`altdss.CircuitElement.CircuitEl
 :canonical: altdss.RegControl.RegControlBatch.TapDelay
 :type: altdss.ArrayProxy.BatchFloat64ArrayProxy
 :value: >
-   None
+   'property(...)'
 
 ```{autodoc2-docstring} altdss.RegControl.RegControlBatch.TapDelay
 ```
@@ -2088,7 +2088,7 @@ Bases: {py:obj}`altdss.Batch.DSSBatch`, {py:obj}`altdss.CircuitElement.CircuitEl
 :canonical: altdss.RegControl.RegControlBatch.TapNum
 :type: altdss.ArrayProxy.BatchInt32ArrayProxy
 :value: >
-   None
+   'property(...)'
 
 ```{autodoc2-docstring} altdss.RegControl.RegControlBatch.TapNum
 ```
@@ -2099,7 +2099,7 @@ Bases: {py:obj}`altdss.Batch.DSSBatch`, {py:obj}`altdss.CircuitElement.CircuitEl
 :canonical: altdss.RegControl.RegControlBatch.TapWinding
 :type: altdss.ArrayProxy.BatchInt32ArrayProxy
 :value: >
-   None
+   'property(...)'
 
 ```{autodoc2-docstring} altdss.RegControl.RegControlBatch.TapWinding
 ```
@@ -2118,7 +2118,7 @@ Bases: {py:obj}`altdss.Batch.DSSBatch`, {py:obj}`altdss.CircuitElement.CircuitEl
 :canonical: altdss.RegControl.RegControlBatch.Transformer
 :type: typing.List[typing.Union[altdss.Transformer.Transformer, altdss.AutoTrans.AutoTrans]]
 :value: >
-   None
+   'property(...)'
 
 ```{autodoc2-docstring} altdss.RegControl.RegControlBatch.Transformer
 ```
@@ -2129,7 +2129,7 @@ Bases: {py:obj}`altdss.Batch.DSSBatch`, {py:obj}`altdss.CircuitElement.CircuitEl
 :canonical: altdss.RegControl.RegControlBatch.Transformer_str
 :type: typing.List[str]
 :value: >
-   None
+   'property(...)'
 
 ```{autodoc2-docstring} altdss.RegControl.RegControlBatch.Transformer_str
 ```
@@ -2140,7 +2140,7 @@ Bases: {py:obj}`altdss.Batch.DSSBatch`, {py:obj}`altdss.CircuitElement.CircuitEl
 :canonical: altdss.RegControl.RegControlBatch.VLimit
 :type: altdss.ArrayProxy.BatchFloat64ArrayProxy
 :value: >
-   None
+   'property(...)'
 
 ```{autodoc2-docstring} altdss.RegControl.RegControlBatch.VLimit
 ```
@@ -2151,7 +2151,7 @@ Bases: {py:obj}`altdss.Batch.DSSBatch`, {py:obj}`altdss.CircuitElement.CircuitEl
 :canonical: altdss.RegControl.RegControlBatch.VReg
 :type: altdss.ArrayProxy.BatchFloat64ArrayProxy
 :value: >
-   None
+   'property(...)'
 
 ```{autodoc2-docstring} altdss.RegControl.RegControlBatch.VReg
 ```
@@ -2178,7 +2178,7 @@ Bases: {py:obj}`altdss.Batch.DSSBatch`, {py:obj}`altdss.CircuitElement.CircuitEl
 :canonical: altdss.RegControl.RegControlBatch.Winding
 :type: altdss.ArrayProxy.BatchInt32ArrayProxy
 :value: >
-   None
+   'property(...)'
 
 ```{autodoc2-docstring} altdss.RegControl.RegControlBatch.Winding
 ```
@@ -2189,7 +2189,7 @@ Bases: {py:obj}`altdss.Batch.DSSBatch`, {py:obj}`altdss.CircuitElement.CircuitEl
 :canonical: altdss.RegControl.RegControlBatch.X
 :type: altdss.ArrayProxy.BatchFloat64ArrayProxy
 :value: >
-   None
+   'property(...)'
 
 ```{autodoc2-docstring} altdss.RegControl.RegControlBatch.X
 ```

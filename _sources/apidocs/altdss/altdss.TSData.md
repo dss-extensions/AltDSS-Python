@@ -51,7 +51,7 @@ Bases: {py:obj}`altdss.DSSObj.IDSSObj`, {py:obj}`altdss.TSData.TSDataBatch`
 :canonical: altdss.TSData.ITSData.CapRadius
 :type: altdss.ArrayProxy.BatchFloat64ArrayProxy
 :value: >
-   None
+   'property(...)'
 
 ```{autodoc2-docstring} altdss.TSData.ITSData.CapRadius
 ```
@@ -62,7 +62,7 @@ Bases: {py:obj}`altdss.DSSObj.IDSSObj`, {py:obj}`altdss.TSData.TSDataBatch`
 :canonical: altdss.TSData.ITSData.DiaCable
 :type: altdss.ArrayProxy.BatchFloat64ArrayProxy
 :value: >
-   None
+   'property(...)'
 
 ```{autodoc2-docstring} altdss.TSData.ITSData.DiaCable
 ```
@@ -73,7 +73,7 @@ Bases: {py:obj}`altdss.DSSObj.IDSSObj`, {py:obj}`altdss.TSData.TSDataBatch`
 :canonical: altdss.TSData.ITSData.DiaIns
 :type: altdss.ArrayProxy.BatchFloat64ArrayProxy
 :value: >
-   None
+   'property(...)'
 
 ```{autodoc2-docstring} altdss.TSData.ITSData.DiaIns
 ```
@@ -84,7 +84,7 @@ Bases: {py:obj}`altdss.DSSObj.IDSSObj`, {py:obj}`altdss.TSData.TSDataBatch`
 :canonical: altdss.TSData.ITSData.DiaShield
 :type: altdss.ArrayProxy.BatchFloat64ArrayProxy
 :value: >
-   None
+   'property(...)'
 
 ```{autodoc2-docstring} altdss.TSData.ITSData.DiaShield
 ```
@@ -95,7 +95,7 @@ Bases: {py:obj}`altdss.DSSObj.IDSSObj`, {py:obj}`altdss.TSData.TSDataBatch`
 :canonical: altdss.TSData.ITSData.Diam
 :type: altdss.ArrayProxy.BatchFloat64ArrayProxy
 :value: >
-   None
+   'property(...)'
 
 ```{autodoc2-docstring} altdss.TSData.ITSData.Diam
 ```
@@ -106,7 +106,7 @@ Bases: {py:obj}`altdss.DSSObj.IDSSObj`, {py:obj}`altdss.TSData.TSDataBatch`
 :canonical: altdss.TSData.ITSData.EmergAmps
 :type: altdss.ArrayProxy.BatchFloat64ArrayProxy
 :value: >
-   None
+   'property(...)'
 
 ```{autodoc2-docstring} altdss.TSData.ITSData.EmergAmps
 ```
@@ -117,7 +117,7 @@ Bases: {py:obj}`altdss.DSSObj.IDSSObj`, {py:obj}`altdss.TSData.TSDataBatch`
 :canonical: altdss.TSData.ITSData.EpsR
 :type: altdss.ArrayProxy.BatchFloat64ArrayProxy
 :value: >
-   None
+   'property(...)'
 
 ```{autodoc2-docstring} altdss.TSData.ITSData.EpsR
 ```
@@ -136,7 +136,7 @@ Bases: {py:obj}`altdss.DSSObj.IDSSObj`, {py:obj}`altdss.TSData.TSDataBatch`
 :canonical: altdss.TSData.ITSData.GMRAC
 :type: altdss.ArrayProxy.BatchFloat64ArrayProxy
 :value: >
-   None
+   'property(...)'
 
 ```{autodoc2-docstring} altdss.TSData.ITSData.GMRAC
 ```
@@ -147,7 +147,7 @@ Bases: {py:obj}`altdss.DSSObj.IDSSObj`, {py:obj}`altdss.TSData.TSDataBatch`
 :canonical: altdss.TSData.ITSData.GMRUnits
 :type: altdss.ArrayProxy.BatchInt32ArrayProxy
 :value: >
-   None
+   'property(...)'
 
 ```{autodoc2-docstring} altdss.TSData.ITSData.GMRUnits
 ```
@@ -158,7 +158,7 @@ Bases: {py:obj}`altdss.DSSObj.IDSSObj`, {py:obj}`altdss.TSData.TSDataBatch`
 :canonical: altdss.TSData.ITSData.GMRUnits_str
 :type: typing.List[str]
 :value: >
-   None
+   'property(...)'
 
 ```{autodoc2-docstring} altdss.TSData.ITSData.GMRUnits_str
 ```
@@ -169,7 +169,7 @@ Bases: {py:obj}`altdss.DSSObj.IDSSObj`, {py:obj}`altdss.TSData.TSDataBatch`
 :canonical: altdss.TSData.ITSData.InsLayer
 :type: altdss.ArrayProxy.BatchFloat64ArrayProxy
 :value: >
-   None
+   'property(...)'
 
 ```{autodoc2-docstring} altdss.TSData.ITSData.InsLayer
 ```
@@ -197,7 +197,7 @@ Bases: {py:obj}`altdss.DSSObj.IDSSObj`, {py:obj}`altdss.TSData.TSDataBatch`
 :canonical: altdss.TSData.ITSData.NormAmps
 :type: altdss.ArrayProxy.BatchFloat64ArrayProxy
 :value: >
-   None
+   'property(...)'
 
 ```{autodoc2-docstring} altdss.TSData.ITSData.NormAmps
 ```
@@ -208,7 +208,7 @@ Bases: {py:obj}`altdss.DSSObj.IDSSObj`, {py:obj}`altdss.TSData.TSDataBatch`
 :canonical: altdss.TSData.ITSData.RAC
 :type: altdss.ArrayProxy.BatchFloat64ArrayProxy
 :value: >
-   None
+   'property(...)'
 
 ```{autodoc2-docstring} altdss.TSData.ITSData.RAC
 ```
@@ -219,7 +219,7 @@ Bases: {py:obj}`altdss.DSSObj.IDSSObj`, {py:obj}`altdss.TSData.TSDataBatch`
 :canonical: altdss.TSData.ITSData.RDC
 :type: altdss.ArrayProxy.BatchFloat64ArrayProxy
 :value: >
-   None
+   'property(...)'
 
 ```{autodoc2-docstring} altdss.TSData.ITSData.RDC
 ```
@@ -230,7 +230,7 @@ Bases: {py:obj}`altdss.DSSObj.IDSSObj`, {py:obj}`altdss.TSData.TSDataBatch`
 :canonical: altdss.TSData.ITSData.RUnits
 :type: altdss.ArrayProxy.BatchInt32ArrayProxy
 :value: >
-   None
+   'property(...)'
 
 ```{autodoc2-docstring} altdss.TSData.ITSData.RUnits
 ```
@@ -241,7 +241,7 @@ Bases: {py:obj}`altdss.DSSObj.IDSSObj`, {py:obj}`altdss.TSData.TSDataBatch`
 :canonical: altdss.TSData.ITSData.RUnits_str
 :type: typing.List[str]
 :value: >
-   None
+   'property(...)'
 
 ```{autodoc2-docstring} altdss.TSData.ITSData.RUnits_str
 ```
@@ -252,7 +252,7 @@ Bases: {py:obj}`altdss.DSSObj.IDSSObj`, {py:obj}`altdss.TSData.TSDataBatch`
 :canonical: altdss.TSData.ITSData.RadUnits
 :type: altdss.ArrayProxy.BatchInt32ArrayProxy
 :value: >
-   None
+   'property(...)'
 
 ```{autodoc2-docstring} altdss.TSData.ITSData.RadUnits
 ```
@@ -263,7 +263,7 @@ Bases: {py:obj}`altdss.DSSObj.IDSSObj`, {py:obj}`altdss.TSData.TSDataBatch`
 :canonical: altdss.TSData.ITSData.RadUnits_str
 :type: typing.List[str]
 :value: >
-   None
+   'property(...)'
 
 ```{autodoc2-docstring} altdss.TSData.ITSData.RadUnits_str
 ```
@@ -274,7 +274,7 @@ Bases: {py:obj}`altdss.DSSObj.IDSSObj`, {py:obj}`altdss.TSData.TSDataBatch`
 :canonical: altdss.TSData.ITSData.Radius
 :type: altdss.ArrayProxy.BatchFloat64ArrayProxy
 :value: >
-   None
+   'property(...)'
 
 ```{autodoc2-docstring} altdss.TSData.ITSData.Radius
 ```
@@ -285,7 +285,7 @@ Bases: {py:obj}`altdss.DSSObj.IDSSObj`, {py:obj}`altdss.TSData.TSDataBatch`
 :canonical: altdss.TSData.ITSData.Ratings
 :type: typing.List[altdss.types.Float64Array]
 :value: >
-   None
+   'property(...)'
 
 ```{autodoc2-docstring} altdss.TSData.ITSData.Ratings
 ```
@@ -296,7 +296,7 @@ Bases: {py:obj}`altdss.DSSObj.IDSSObj`, {py:obj}`altdss.TSData.TSDataBatch`
 :canonical: altdss.TSData.ITSData.Seasons
 :type: altdss.ArrayProxy.BatchInt32ArrayProxy
 :value: >
-   None
+   'property(...)'
 
 ```{autodoc2-docstring} altdss.TSData.ITSData.Seasons
 ```
@@ -307,7 +307,7 @@ Bases: {py:obj}`altdss.DSSObj.IDSSObj`, {py:obj}`altdss.TSData.TSDataBatch`
 :canonical: altdss.TSData.ITSData.TapeLap
 :type: altdss.ArrayProxy.BatchFloat64ArrayProxy
 :value: >
-   None
+   'property(...)'
 
 ```{autodoc2-docstring} altdss.TSData.ITSData.TapeLap
 ```
@@ -318,7 +318,7 @@ Bases: {py:obj}`altdss.DSSObj.IDSSObj`, {py:obj}`altdss.TSData.TSDataBatch`
 :canonical: altdss.TSData.ITSData.TapeLayer
 :type: altdss.ArrayProxy.BatchFloat64ArrayProxy
 :value: >
-   None
+   'property(...)'
 
 ```{autodoc2-docstring} altdss.TSData.ITSData.TapeLayer
 ```
@@ -451,7 +451,7 @@ Bases: {py:obj}`altdss.DSSObj.DSSObj`
 :canonical: altdss.TSData.TSData.CapRadius
 :type: float
 :value: >
-   None
+   'property(...)'
 
 ```{autodoc2-docstring} altdss.TSData.TSData.CapRadius
 ```
@@ -462,7 +462,7 @@ Bases: {py:obj}`altdss.DSSObj.DSSObj`
 :canonical: altdss.TSData.TSData.DiaCable
 :type: float
 :value: >
-   None
+   'property(...)'
 
 ```{autodoc2-docstring} altdss.TSData.TSData.DiaCable
 ```
@@ -473,7 +473,7 @@ Bases: {py:obj}`altdss.DSSObj.DSSObj`
 :canonical: altdss.TSData.TSData.DiaIns
 :type: float
 :value: >
-   None
+   'property(...)'
 
 ```{autodoc2-docstring} altdss.TSData.TSData.DiaIns
 ```
@@ -484,7 +484,7 @@ Bases: {py:obj}`altdss.DSSObj.DSSObj`
 :canonical: altdss.TSData.TSData.DiaShield
 :type: float
 :value: >
-   None
+   'property(...)'
 
 ```{autodoc2-docstring} altdss.TSData.TSData.DiaShield
 ```
@@ -495,7 +495,7 @@ Bases: {py:obj}`altdss.DSSObj.DSSObj`
 :canonical: altdss.TSData.TSData.Diam
 :type: float
 :value: >
-   None
+   'property(...)'
 
 ```{autodoc2-docstring} altdss.TSData.TSData.Diam
 ```
@@ -506,7 +506,7 @@ Bases: {py:obj}`altdss.DSSObj.DSSObj`
 :canonical: altdss.TSData.TSData.EmergAmps
 :type: float
 :value: >
-   None
+   'property(...)'
 
 ```{autodoc2-docstring} altdss.TSData.TSData.EmergAmps
 ```
@@ -517,7 +517,7 @@ Bases: {py:obj}`altdss.DSSObj.DSSObj`
 :canonical: altdss.TSData.TSData.EpsR
 :type: float
 :value: >
-   None
+   'property(...)'
 
 ```{autodoc2-docstring} altdss.TSData.TSData.EpsR
 ```
@@ -536,7 +536,7 @@ Bases: {py:obj}`altdss.DSSObj.DSSObj`
 :canonical: altdss.TSData.TSData.GMRAC
 :type: float
 :value: >
-   None
+   'property(...)'
 
 ```{autodoc2-docstring} altdss.TSData.TSData.GMRAC
 ```
@@ -547,7 +547,7 @@ Bases: {py:obj}`altdss.DSSObj.DSSObj`
 :canonical: altdss.TSData.TSData.GMRUnits
 :type: altdss.enums.LengthUnit
 :value: >
-   None
+   'property(...)'
 
 ```{autodoc2-docstring} altdss.TSData.TSData.GMRUnits
 ```
@@ -558,7 +558,7 @@ Bases: {py:obj}`altdss.DSSObj.DSSObj`
 :canonical: altdss.TSData.TSData.GMRUnits_str
 :type: str
 :value: >
-   None
+   'property(...)'
 
 ```{autodoc2-docstring} altdss.TSData.TSData.GMRUnits_str
 ```
@@ -569,7 +569,7 @@ Bases: {py:obj}`altdss.DSSObj.DSSObj`
 :canonical: altdss.TSData.TSData.InsLayer
 :type: float
 :value: >
-   None
+   'property(...)'
 
 ```{autodoc2-docstring} altdss.TSData.TSData.InsLayer
 ```
@@ -597,7 +597,7 @@ Bases: {py:obj}`altdss.DSSObj.DSSObj`
 :canonical: altdss.TSData.TSData.NormAmps
 :type: float
 :value: >
-   None
+   'property(...)'
 
 ```{autodoc2-docstring} altdss.TSData.TSData.NormAmps
 ```
@@ -608,7 +608,7 @@ Bases: {py:obj}`altdss.DSSObj.DSSObj`
 :canonical: altdss.TSData.TSData.RAC
 :type: float
 :value: >
-   None
+   'property(...)'
 
 ```{autodoc2-docstring} altdss.TSData.TSData.RAC
 ```
@@ -619,7 +619,7 @@ Bases: {py:obj}`altdss.DSSObj.DSSObj`
 :canonical: altdss.TSData.TSData.RDC
 :type: float
 :value: >
-   None
+   'property(...)'
 
 ```{autodoc2-docstring} altdss.TSData.TSData.RDC
 ```
@@ -630,7 +630,7 @@ Bases: {py:obj}`altdss.DSSObj.DSSObj`
 :canonical: altdss.TSData.TSData.RUnits
 :type: altdss.enums.LengthUnit
 :value: >
-   None
+   'property(...)'
 
 ```{autodoc2-docstring} altdss.TSData.TSData.RUnits
 ```
@@ -641,7 +641,7 @@ Bases: {py:obj}`altdss.DSSObj.DSSObj`
 :canonical: altdss.TSData.TSData.RUnits_str
 :type: str
 :value: >
-   None
+   'property(...)'
 
 ```{autodoc2-docstring} altdss.TSData.TSData.RUnits_str
 ```
@@ -652,7 +652,7 @@ Bases: {py:obj}`altdss.DSSObj.DSSObj`
 :canonical: altdss.TSData.TSData.RadUnits
 :type: altdss.enums.LengthUnit
 :value: >
-   None
+   'property(...)'
 
 ```{autodoc2-docstring} altdss.TSData.TSData.RadUnits
 ```
@@ -663,7 +663,7 @@ Bases: {py:obj}`altdss.DSSObj.DSSObj`
 :canonical: altdss.TSData.TSData.RadUnits_str
 :type: str
 :value: >
-   None
+   'property(...)'
 
 ```{autodoc2-docstring} altdss.TSData.TSData.RadUnits_str
 ```
@@ -674,7 +674,7 @@ Bases: {py:obj}`altdss.DSSObj.DSSObj`
 :canonical: altdss.TSData.TSData.Radius
 :type: float
 :value: >
-   None
+   'property(...)'
 
 ```{autodoc2-docstring} altdss.TSData.TSData.Radius
 ```
@@ -685,7 +685,7 @@ Bases: {py:obj}`altdss.DSSObj.DSSObj`
 :canonical: altdss.TSData.TSData.Ratings
 :type: altdss.types.Float64Array
 :value: >
-   None
+   'property(...)'
 
 ```{autodoc2-docstring} altdss.TSData.TSData.Ratings
 ```
@@ -696,7 +696,7 @@ Bases: {py:obj}`altdss.DSSObj.DSSObj`
 :canonical: altdss.TSData.TSData.Seasons
 :type: int
 :value: >
-   None
+   'property(...)'
 
 ```{autodoc2-docstring} altdss.TSData.TSData.Seasons
 ```
@@ -707,7 +707,7 @@ Bases: {py:obj}`altdss.DSSObj.DSSObj`
 :canonical: altdss.TSData.TSData.TapeLap
 :type: float
 :value: >
-   None
+   'property(...)'
 
 ```{autodoc2-docstring} altdss.TSData.TSData.TapeLap
 ```
@@ -718,7 +718,7 @@ Bases: {py:obj}`altdss.DSSObj.DSSObj`
 :canonical: altdss.TSData.TSData.TapeLayer
 :type: float
 :value: >
-   None
+   'property(...)'
 
 ```{autodoc2-docstring} altdss.TSData.TSData.TapeLayer
 ```
@@ -795,7 +795,7 @@ Bases: {py:obj}`altdss.Batch.DSSBatch`
 :canonical: altdss.TSData.TSDataBatch.CapRadius
 :type: altdss.ArrayProxy.BatchFloat64ArrayProxy
 :value: >
-   None
+   'property(...)'
 
 ```{autodoc2-docstring} altdss.TSData.TSDataBatch.CapRadius
 ```
@@ -806,7 +806,7 @@ Bases: {py:obj}`altdss.Batch.DSSBatch`
 :canonical: altdss.TSData.TSDataBatch.DiaCable
 :type: altdss.ArrayProxy.BatchFloat64ArrayProxy
 :value: >
-   None
+   'property(...)'
 
 ```{autodoc2-docstring} altdss.TSData.TSDataBatch.DiaCable
 ```
@@ -817,7 +817,7 @@ Bases: {py:obj}`altdss.Batch.DSSBatch`
 :canonical: altdss.TSData.TSDataBatch.DiaIns
 :type: altdss.ArrayProxy.BatchFloat64ArrayProxy
 :value: >
-   None
+   'property(...)'
 
 ```{autodoc2-docstring} altdss.TSData.TSDataBatch.DiaIns
 ```
@@ -828,7 +828,7 @@ Bases: {py:obj}`altdss.Batch.DSSBatch`
 :canonical: altdss.TSData.TSDataBatch.DiaShield
 :type: altdss.ArrayProxy.BatchFloat64ArrayProxy
 :value: >
-   None
+   'property(...)'
 
 ```{autodoc2-docstring} altdss.TSData.TSDataBatch.DiaShield
 ```
@@ -839,7 +839,7 @@ Bases: {py:obj}`altdss.Batch.DSSBatch`
 :canonical: altdss.TSData.TSDataBatch.Diam
 :type: altdss.ArrayProxy.BatchFloat64ArrayProxy
 :value: >
-   None
+   'property(...)'
 
 ```{autodoc2-docstring} altdss.TSData.TSDataBatch.Diam
 ```
@@ -850,7 +850,7 @@ Bases: {py:obj}`altdss.Batch.DSSBatch`
 :canonical: altdss.TSData.TSDataBatch.EmergAmps
 :type: altdss.ArrayProxy.BatchFloat64ArrayProxy
 :value: >
-   None
+   'property(...)'
 
 ```{autodoc2-docstring} altdss.TSData.TSDataBatch.EmergAmps
 ```
@@ -861,7 +861,7 @@ Bases: {py:obj}`altdss.Batch.DSSBatch`
 :canonical: altdss.TSData.TSDataBatch.EpsR
 :type: altdss.ArrayProxy.BatchFloat64ArrayProxy
 :value: >
-   None
+   'property(...)'
 
 ```{autodoc2-docstring} altdss.TSData.TSDataBatch.EpsR
 ```
@@ -880,7 +880,7 @@ Bases: {py:obj}`altdss.Batch.DSSBatch`
 :canonical: altdss.TSData.TSDataBatch.GMRAC
 :type: altdss.ArrayProxy.BatchFloat64ArrayProxy
 :value: >
-   None
+   'property(...)'
 
 ```{autodoc2-docstring} altdss.TSData.TSDataBatch.GMRAC
 ```
@@ -891,7 +891,7 @@ Bases: {py:obj}`altdss.Batch.DSSBatch`
 :canonical: altdss.TSData.TSDataBatch.GMRUnits
 :type: altdss.ArrayProxy.BatchInt32ArrayProxy
 :value: >
-   None
+   'property(...)'
 
 ```{autodoc2-docstring} altdss.TSData.TSDataBatch.GMRUnits
 ```
@@ -902,7 +902,7 @@ Bases: {py:obj}`altdss.Batch.DSSBatch`
 :canonical: altdss.TSData.TSDataBatch.GMRUnits_str
 :type: typing.List[str]
 :value: >
-   None
+   'property(...)'
 
 ```{autodoc2-docstring} altdss.TSData.TSDataBatch.GMRUnits_str
 ```
@@ -913,7 +913,7 @@ Bases: {py:obj}`altdss.Batch.DSSBatch`
 :canonical: altdss.TSData.TSDataBatch.InsLayer
 :type: altdss.ArrayProxy.BatchFloat64ArrayProxy
 :value: >
-   None
+   'property(...)'
 
 ```{autodoc2-docstring} altdss.TSData.TSDataBatch.InsLayer
 ```
@@ -941,7 +941,7 @@ Bases: {py:obj}`altdss.Batch.DSSBatch`
 :canonical: altdss.TSData.TSDataBatch.NormAmps
 :type: altdss.ArrayProxy.BatchFloat64ArrayProxy
 :value: >
-   None
+   'property(...)'
 
 ```{autodoc2-docstring} altdss.TSData.TSDataBatch.NormAmps
 ```
@@ -952,7 +952,7 @@ Bases: {py:obj}`altdss.Batch.DSSBatch`
 :canonical: altdss.TSData.TSDataBatch.RAC
 :type: altdss.ArrayProxy.BatchFloat64ArrayProxy
 :value: >
-   None
+   'property(...)'
 
 ```{autodoc2-docstring} altdss.TSData.TSDataBatch.RAC
 ```
@@ -963,7 +963,7 @@ Bases: {py:obj}`altdss.Batch.DSSBatch`
 :canonical: altdss.TSData.TSDataBatch.RDC
 :type: altdss.ArrayProxy.BatchFloat64ArrayProxy
 :value: >
-   None
+   'property(...)'
 
 ```{autodoc2-docstring} altdss.TSData.TSDataBatch.RDC
 ```
@@ -974,7 +974,7 @@ Bases: {py:obj}`altdss.Batch.DSSBatch`
 :canonical: altdss.TSData.TSDataBatch.RUnits
 :type: altdss.ArrayProxy.BatchInt32ArrayProxy
 :value: >
-   None
+   'property(...)'
 
 ```{autodoc2-docstring} altdss.TSData.TSDataBatch.RUnits
 ```
@@ -985,7 +985,7 @@ Bases: {py:obj}`altdss.Batch.DSSBatch`
 :canonical: altdss.TSData.TSDataBatch.RUnits_str
 :type: typing.List[str]
 :value: >
-   None
+   'property(...)'
 
 ```{autodoc2-docstring} altdss.TSData.TSDataBatch.RUnits_str
 ```
@@ -996,7 +996,7 @@ Bases: {py:obj}`altdss.Batch.DSSBatch`
 :canonical: altdss.TSData.TSDataBatch.RadUnits
 :type: altdss.ArrayProxy.BatchInt32ArrayProxy
 :value: >
-   None
+   'property(...)'
 
 ```{autodoc2-docstring} altdss.TSData.TSDataBatch.RadUnits
 ```
@@ -1007,7 +1007,7 @@ Bases: {py:obj}`altdss.Batch.DSSBatch`
 :canonical: altdss.TSData.TSDataBatch.RadUnits_str
 :type: typing.List[str]
 :value: >
-   None
+   'property(...)'
 
 ```{autodoc2-docstring} altdss.TSData.TSDataBatch.RadUnits_str
 ```
@@ -1018,7 +1018,7 @@ Bases: {py:obj}`altdss.Batch.DSSBatch`
 :canonical: altdss.TSData.TSDataBatch.Radius
 :type: altdss.ArrayProxy.BatchFloat64ArrayProxy
 :value: >
-   None
+   'property(...)'
 
 ```{autodoc2-docstring} altdss.TSData.TSDataBatch.Radius
 ```
@@ -1029,7 +1029,7 @@ Bases: {py:obj}`altdss.Batch.DSSBatch`
 :canonical: altdss.TSData.TSDataBatch.Ratings
 :type: typing.List[altdss.types.Float64Array]
 :value: >
-   None
+   'property(...)'
 
 ```{autodoc2-docstring} altdss.TSData.TSDataBatch.Ratings
 ```
@@ -1040,7 +1040,7 @@ Bases: {py:obj}`altdss.Batch.DSSBatch`
 :canonical: altdss.TSData.TSDataBatch.Seasons
 :type: altdss.ArrayProxy.BatchInt32ArrayProxy
 :value: >
-   None
+   'property(...)'
 
 ```{autodoc2-docstring} altdss.TSData.TSDataBatch.Seasons
 ```
@@ -1051,7 +1051,7 @@ Bases: {py:obj}`altdss.Batch.DSSBatch`
 :canonical: altdss.TSData.TSDataBatch.TapeLap
 :type: altdss.ArrayProxy.BatchFloat64ArrayProxy
 :value: >
-   None
+   'property(...)'
 
 ```{autodoc2-docstring} altdss.TSData.TSDataBatch.TapeLap
 ```
@@ -1062,7 +1062,7 @@ Bases: {py:obj}`altdss.Batch.DSSBatch`
 :canonical: altdss.TSData.TSDataBatch.TapeLayer
 :type: altdss.ArrayProxy.BatchFloat64ArrayProxy
 :value: >
-   None
+   'property(...)'
 
 ```{autodoc2-docstring} altdss.TSData.TSDataBatch.TapeLayer
 ```

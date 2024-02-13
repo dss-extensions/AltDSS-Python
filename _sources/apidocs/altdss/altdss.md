@@ -107,7 +107,7 @@ altdss.types
 ````{py:data} altdss
 :canonical: altdss.altdss
 :value: >
-   None
+   'AltDSS(...)'
 
 ```{autodoc2-docstring} altdss.altdss
 ```

@@ -51,7 +51,7 @@ Bases: {py:obj}`altdss.DSSObj.DSSObj`, {py:obj}`altdss.CircuitElement.CircuitEle
 :canonical: altdss.ESPVLControl.ESPVLControl.BaseFreq
 :type: float
 :value: >
-   None
+   'property(...)'
 
 ```{autodoc2-docstring} altdss.ESPVLControl.ESPVLControl.BaseFreq
 ```
@@ -94,7 +94,7 @@ Bases: {py:obj}`altdss.DSSObj.DSSObj`, {py:obj}`altdss.CircuitElement.CircuitEle
 :canonical: altdss.ESPVLControl.ESPVLControl.DisplayName
 :type: str
 :value: >
-   None
+   'property(...)'
 
 ```{autodoc2-docstring} altdss.ESPVLControl.ESPVLControl.DisplayName
 ```
@@ -105,7 +105,7 @@ Bases: {py:obj}`altdss.DSSObj.DSSObj`, {py:obj}`altdss.CircuitElement.CircuitEle
 :canonical: altdss.ESPVLControl.ESPVLControl.Element
 :type: altdss.DSSObj.DSSObj
 :value: >
-   None
+   'property(...)'
 
 ```{autodoc2-docstring} altdss.ESPVLControl.ESPVLControl.Element
 ```
@@ -116,7 +116,7 @@ Bases: {py:obj}`altdss.DSSObj.DSSObj`, {py:obj}`altdss.CircuitElement.CircuitEle
 :canonical: altdss.ESPVLControl.ESPVLControl.Element_str
 :type: str
 :value: >
-   None
+   'property(...)'
 
 ```{autodoc2-docstring} altdss.ESPVLControl.ESPVLControl.Element_str
 ```
@@ -127,7 +127,7 @@ Bases: {py:obj}`altdss.DSSObj.DSSObj`, {py:obj}`altdss.CircuitElement.CircuitEle
 :canonical: altdss.ESPVLControl.ESPVLControl.Enabled
 :type: bool
 :value: >
-   None
+   'property(...)'
 
 ```{autodoc2-docstring} altdss.ESPVLControl.ESPVLControl.Enabled
 ```
@@ -210,7 +210,7 @@ Bases: {py:obj}`altdss.DSSObj.DSSObj`, {py:obj}`altdss.CircuitElement.CircuitEle
 :canonical: altdss.ESPVLControl.ESPVLControl.LocalControlList
 :type: typing.List[str]
 :value: >
-   None
+   'property(...)'
 
 ```{autodoc2-docstring} altdss.ESPVLControl.ESPVLControl.LocalControlList
 ```
@@ -221,7 +221,7 @@ Bases: {py:obj}`altdss.DSSObj.DSSObj`, {py:obj}`altdss.CircuitElement.CircuitEle
 :canonical: altdss.ESPVLControl.ESPVLControl.LocalControlWeights
 :type: altdss.types.Float64Array
 :value: >
-   None
+   'property(...)'
 
 ```{autodoc2-docstring} altdss.ESPVLControl.ESPVLControl.LocalControlWeights
 ```
@@ -337,7 +337,7 @@ Bases: {py:obj}`altdss.DSSObj.DSSObj`, {py:obj}`altdss.CircuitElement.CircuitEle
 :canonical: altdss.ESPVLControl.ESPVLControl.PVSystemList
 :type: typing.List[str]
 :value: >
-   None
+   'property(...)'
 
 ```{autodoc2-docstring} altdss.ESPVLControl.ESPVLControl.PVSystemList
 ```
@@ -348,7 +348,7 @@ Bases: {py:obj}`altdss.DSSObj.DSSObj`, {py:obj}`altdss.CircuitElement.CircuitEle
 :canonical: altdss.ESPVLControl.ESPVLControl.PVSystemWeights
 :type: altdss.types.Float64Array
 :value: >
-   None
+   'property(...)'
 
 ```{autodoc2-docstring} altdss.ESPVLControl.ESPVLControl.PVSystemWeights
 ```
@@ -407,7 +407,7 @@ Bases: {py:obj}`altdss.DSSObj.DSSObj`, {py:obj}`altdss.CircuitElement.CircuitEle
 :canonical: altdss.ESPVLControl.ESPVLControl.StorageList
 :type: typing.List[str]
 :value: >
-   None
+   'property(...)'
 
 ```{autodoc2-docstring} altdss.ESPVLControl.ESPVLControl.StorageList
 ```
@@ -418,7 +418,7 @@ Bases: {py:obj}`altdss.DSSObj.DSSObj`, {py:obj}`altdss.CircuitElement.CircuitEle
 :canonical: altdss.ESPVLControl.ESPVLControl.StorageWeights
 :type: altdss.types.Float64Array
 :value: >
-   None
+   'property(...)'
 
 ```{autodoc2-docstring} altdss.ESPVLControl.ESPVLControl.StorageWeights
 ```
@@ -429,7 +429,7 @@ Bases: {py:obj}`altdss.DSSObj.DSSObj`, {py:obj}`altdss.CircuitElement.CircuitEle
 :canonical: altdss.ESPVLControl.ESPVLControl.Terminal
 :type: int
 :value: >
-   None
+   'property(...)'
 
 ```{autodoc2-docstring} altdss.ESPVLControl.ESPVLControl.Terminal
 ```
@@ -448,7 +448,7 @@ Bases: {py:obj}`altdss.DSSObj.DSSObj`, {py:obj}`altdss.CircuitElement.CircuitEle
 :canonical: altdss.ESPVLControl.ESPVLControl.Type
 :type: altdss.enums.ESPVLControlType
 :value: >
-   None
+   'property(...)'
 
 ```{autodoc2-docstring} altdss.ESPVLControl.ESPVLControl.Type
 ```
@@ -459,7 +459,7 @@ Bases: {py:obj}`altdss.DSSObj.DSSObj`, {py:obj}`altdss.CircuitElement.CircuitEle
 :canonical: altdss.ESPVLControl.ESPVLControl.Type_str
 :type: str
 :value: >
-   None
+   'property(...)'
 
 ```{autodoc2-docstring} altdss.ESPVLControl.ESPVLControl.Type_str
 ```
@@ -542,7 +542,7 @@ Bases: {py:obj}`altdss.DSSObj.DSSObj`, {py:obj}`altdss.CircuitElement.CircuitEle
 :canonical: altdss.ESPVLControl.ESPVLControl.kWBand
 :type: float
 :value: >
-   None
+   'property(...)'
 
 ```{autodoc2-docstring} altdss.ESPVLControl.ESPVLControl.kWBand
 ```
@@ -553,7 +553,7 @@ Bases: {py:obj}`altdss.DSSObj.DSSObj`, {py:obj}`altdss.CircuitElement.CircuitEle
 :canonical: altdss.ESPVLControl.ESPVLControl.kvarLimit
 :type: float
 :value: >
-   None
+   'property(...)'
 
 ```{autodoc2-docstring} altdss.ESPVLControl.ESPVLControl.kvarLimit
 ```
@@ -582,7 +582,7 @@ Bases: {py:obj}`altdss.Batch.DSSBatch`, {py:obj}`altdss.CircuitElement.CircuitEl
 :canonical: altdss.ESPVLControl.ESPVLControlBatch.BaseFreq
 :type: altdss.ArrayProxy.BatchFloat64ArrayProxy
 :value: >
-   None
+   'property(...)'
 
 ```{autodoc2-docstring} altdss.ESPVLControl.ESPVLControlBatch.BaseFreq
 ```
@@ -625,7 +625,7 @@ Bases: {py:obj}`altdss.Batch.DSSBatch`, {py:obj}`altdss.CircuitElement.CircuitEl
 :canonical: altdss.ESPVLControl.ESPVLControlBatch.Element
 :type: typing.List[altdss.DSSObj.DSSObj]
 :value: >
-   None
+   'property(...)'
 
 ```{autodoc2-docstring} altdss.ESPVLControl.ESPVLControlBatch.Element
 ```
@@ -636,7 +636,7 @@ Bases: {py:obj}`altdss.Batch.DSSBatch`, {py:obj}`altdss.CircuitElement.CircuitEl
 :canonical: altdss.ESPVLControl.ESPVLControlBatch.Element_str
 :type: typing.List[str]
 :value: >
-   None
+   'property(...)'
 
 ```{autodoc2-docstring} altdss.ESPVLControl.ESPVLControlBatch.Element_str
 ```
@@ -647,7 +647,7 @@ Bases: {py:obj}`altdss.Batch.DSSBatch`, {py:obj}`altdss.CircuitElement.CircuitEl
 :canonical: altdss.ESPVLControl.ESPVLControlBatch.Enabled
 :type: typing.List[bool]
 :value: >
-   None
+   'property(...)'
 
 ```{autodoc2-docstring} altdss.ESPVLControl.ESPVLControlBatch.Enabled
 ```
@@ -722,7 +722,7 @@ Bases: {py:obj}`altdss.Batch.DSSBatch`, {py:obj}`altdss.CircuitElement.CircuitEl
 :canonical: altdss.ESPVLControl.ESPVLControlBatch.LocalControlList
 :type: typing.List[typing.List[str]]
 :value: >
-   None
+   'property(...)'
 
 ```{autodoc2-docstring} altdss.ESPVLControl.ESPVLControlBatch.LocalControlList
 ```
@@ -733,7 +733,7 @@ Bases: {py:obj}`altdss.Batch.DSSBatch`, {py:obj}`altdss.CircuitElement.CircuitEl
 :canonical: altdss.ESPVLControl.ESPVLControlBatch.LocalControlWeights
 :type: typing.List[altdss.types.Float64Array]
 :value: >
-   None
+   'property(...)'
 
 ```{autodoc2-docstring} altdss.ESPVLControl.ESPVLControlBatch.LocalControlWeights
 ```
@@ -825,7 +825,7 @@ Bases: {py:obj}`altdss.Batch.DSSBatch`, {py:obj}`altdss.CircuitElement.CircuitEl
 :canonical: altdss.ESPVLControl.ESPVLControlBatch.PVSystemList
 :type: typing.List[typing.List[str]]
 :value: >
-   None
+   'property(...)'
 
 ```{autodoc2-docstring} altdss.ESPVLControl.ESPVLControlBatch.PVSystemList
 ```
@@ -836,7 +836,7 @@ Bases: {py:obj}`altdss.Batch.DSSBatch`, {py:obj}`altdss.CircuitElement.CircuitEl
 :canonical: altdss.ESPVLControl.ESPVLControlBatch.PVSystemWeights
 :type: typing.List[altdss.types.Float64Array]
 :value: >
-   None
+   'property(...)'
 
 ```{autodoc2-docstring} altdss.ESPVLControl.ESPVLControlBatch.PVSystemWeights
 ```
@@ -887,7 +887,7 @@ Bases: {py:obj}`altdss.Batch.DSSBatch`, {py:obj}`altdss.CircuitElement.CircuitEl
 :canonical: altdss.ESPVLControl.ESPVLControlBatch.StorageList
 :type: typing.List[typing.List[str]]
 :value: >
-   None
+   'property(...)'
 
 ```{autodoc2-docstring} altdss.ESPVLControl.ESPVLControlBatch.StorageList
 ```
@@ -898,7 +898,7 @@ Bases: {py:obj}`altdss.Batch.DSSBatch`, {py:obj}`altdss.CircuitElement.CircuitEl
 :canonical: altdss.ESPVLControl.ESPVLControlBatch.StorageWeights
 :type: typing.List[altdss.types.Float64Array]
 :value: >
-   None
+   'property(...)'
 
 ```{autodoc2-docstring} altdss.ESPVLControl.ESPVLControlBatch.StorageWeights
 ```
@@ -909,7 +909,7 @@ Bases: {py:obj}`altdss.Batch.DSSBatch`, {py:obj}`altdss.CircuitElement.CircuitEl
 :canonical: altdss.ESPVLControl.ESPVLControlBatch.Terminal
 :type: altdss.ArrayProxy.BatchInt32ArrayProxy
 :value: >
-   None
+   'property(...)'
 
 ```{autodoc2-docstring} altdss.ESPVLControl.ESPVLControlBatch.Terminal
 ```
@@ -928,7 +928,7 @@ Bases: {py:obj}`altdss.Batch.DSSBatch`, {py:obj}`altdss.CircuitElement.CircuitEl
 :canonical: altdss.ESPVLControl.ESPVLControlBatch.Type
 :type: altdss.ArrayProxy.BatchInt32ArrayProxy
 :value: >
-   None
+   'property(...)'
 
 ```{autodoc2-docstring} altdss.ESPVLControl.ESPVLControlBatch.Type
 ```
@@ -939,7 +939,7 @@ Bases: {py:obj}`altdss.Batch.DSSBatch`, {py:obj}`altdss.CircuitElement.CircuitEl
 :canonical: altdss.ESPVLControl.ESPVLControlBatch.Type_str
 :type: typing.List[str]
 :value: >
-   None
+   'property(...)'
 
 ```{autodoc2-docstring} altdss.ESPVLControl.ESPVLControlBatch.Type_str
 ```
@@ -1022,7 +1022,7 @@ Bases: {py:obj}`altdss.Batch.DSSBatch`, {py:obj}`altdss.CircuitElement.CircuitEl
 :canonical: altdss.ESPVLControl.ESPVLControlBatch.kWBand
 :type: altdss.ArrayProxy.BatchFloat64ArrayProxy
 :value: >
-   None
+   'property(...)'
 
 ```{autodoc2-docstring} altdss.ESPVLControl.ESPVLControlBatch.kWBand
 ```
@@ -1033,7 +1033,7 @@ Bases: {py:obj}`altdss.Batch.DSSBatch`, {py:obj}`altdss.CircuitElement.CircuitEl
 :canonical: altdss.ESPVLControl.ESPVLControlBatch.kvarLimit
 :type: altdss.ArrayProxy.BatchFloat64ArrayProxy
 :value: >
-   None
+   'property(...)'
 
 ```{autodoc2-docstring} altdss.ESPVLControl.ESPVLControlBatch.kvarLimit
 ```
@@ -2006,7 +2006,7 @@ Bases: {py:obj}`altdss.DSSObj.IDSSObj`, {py:obj}`altdss.ESPVLControl.ESPVLContro
 :canonical: altdss.ESPVLControl.IESPVLControl.BaseFreq
 :type: altdss.ArrayProxy.BatchFloat64ArrayProxy
 :value: >
-   None
+   'property(...)'
 
 ```{autodoc2-docstring} altdss.ESPVLControl.IESPVLControl.BaseFreq
 ```
@@ -2049,7 +2049,7 @@ Bases: {py:obj}`altdss.DSSObj.IDSSObj`, {py:obj}`altdss.ESPVLControl.ESPVLContro
 :canonical: altdss.ESPVLControl.IESPVLControl.Element
 :type: typing.List[altdss.DSSObj.DSSObj]
 :value: >
-   None
+   'property(...)'
 
 ```{autodoc2-docstring} altdss.ESPVLControl.IESPVLControl.Element
 ```
@@ -2060,7 +2060,7 @@ Bases: {py:obj}`altdss.DSSObj.IDSSObj`, {py:obj}`altdss.ESPVLControl.ESPVLContro
 :canonical: altdss.ESPVLControl.IESPVLControl.Element_str
 :type: typing.List[str]
 :value: >
-   None
+   'property(...)'
 
 ```{autodoc2-docstring} altdss.ESPVLControl.IESPVLControl.Element_str
 ```
@@ -2071,7 +2071,7 @@ Bases: {py:obj}`altdss.DSSObj.IDSSObj`, {py:obj}`altdss.ESPVLControl.ESPVLContro
 :canonical: altdss.ESPVLControl.IESPVLControl.Enabled
 :type: typing.List[bool]
 :value: >
-   None
+   'property(...)'
 
 ```{autodoc2-docstring} altdss.ESPVLControl.IESPVLControl.Enabled
 ```
@@ -2146,7 +2146,7 @@ Bases: {py:obj}`altdss.DSSObj.IDSSObj`, {py:obj}`altdss.ESPVLControl.ESPVLContro
 :canonical: altdss.ESPVLControl.IESPVLControl.LocalControlList
 :type: typing.List[typing.List[str]]
 :value: >
-   None
+   'property(...)'
 
 ```{autodoc2-docstring} altdss.ESPVLControl.IESPVLControl.LocalControlList
 ```
@@ -2157,7 +2157,7 @@ Bases: {py:obj}`altdss.DSSObj.IDSSObj`, {py:obj}`altdss.ESPVLControl.ESPVLContro
 :canonical: altdss.ESPVLControl.IESPVLControl.LocalControlWeights
 :type: typing.List[altdss.types.Float64Array]
 :value: >
-   None
+   'property(...)'
 
 ```{autodoc2-docstring} altdss.ESPVLControl.IESPVLControl.LocalControlWeights
 ```
@@ -2249,7 +2249,7 @@ Bases: {py:obj}`altdss.DSSObj.IDSSObj`, {py:obj}`altdss.ESPVLControl.ESPVLContro
 :canonical: altdss.ESPVLControl.IESPVLControl.PVSystemList
 :type: typing.List[typing.List[str]]
 :value: >
-   None
+   'property(...)'
 
 ```{autodoc2-docstring} altdss.ESPVLControl.IESPVLControl.PVSystemList
 ```
@@ -2260,7 +2260,7 @@ Bases: {py:obj}`altdss.DSSObj.IDSSObj`, {py:obj}`altdss.ESPVLControl.ESPVLContro
 :canonical: altdss.ESPVLControl.IESPVLControl.PVSystemWeights
 :type: typing.List[altdss.types.Float64Array]
 :value: >
-   None
+   'property(...)'
 
 ```{autodoc2-docstring} altdss.ESPVLControl.IESPVLControl.PVSystemWeights
 ```
@@ -2311,7 +2311,7 @@ Bases: {py:obj}`altdss.DSSObj.IDSSObj`, {py:obj}`altdss.ESPVLControl.ESPVLContro
 :canonical: altdss.ESPVLControl.IESPVLControl.StorageList
 :type: typing.List[typing.List[str]]
 :value: >
-   None
+   'property(...)'
 
 ```{autodoc2-docstring} altdss.ESPVLControl.IESPVLControl.StorageList
 ```
@@ -2322,7 +2322,7 @@ Bases: {py:obj}`altdss.DSSObj.IDSSObj`, {py:obj}`altdss.ESPVLControl.ESPVLContro
 :canonical: altdss.ESPVLControl.IESPVLControl.StorageWeights
 :type: typing.List[altdss.types.Float64Array]
 :value: >
-   None
+   'property(...)'
 
 ```{autodoc2-docstring} altdss.ESPVLControl.IESPVLControl.StorageWeights
 ```
@@ -2333,7 +2333,7 @@ Bases: {py:obj}`altdss.DSSObj.IDSSObj`, {py:obj}`altdss.ESPVLControl.ESPVLContro
 :canonical: altdss.ESPVLControl.IESPVLControl.Terminal
 :type: altdss.ArrayProxy.BatchInt32ArrayProxy
 :value: >
-   None
+   'property(...)'
 
 ```{autodoc2-docstring} altdss.ESPVLControl.IESPVLControl.Terminal
 ```
@@ -2352,7 +2352,7 @@ Bases: {py:obj}`altdss.DSSObj.IDSSObj`, {py:obj}`altdss.ESPVLControl.ESPVLContro
 :canonical: altdss.ESPVLControl.IESPVLControl.Type
 :type: altdss.ArrayProxy.BatchInt32ArrayProxy
 :value: >
-   None
+   'property(...)'
 
 ```{autodoc2-docstring} altdss.ESPVLControl.IESPVLControl.Type
 ```
@@ -2363,7 +2363,7 @@ Bases: {py:obj}`altdss.DSSObj.IDSSObj`, {py:obj}`altdss.ESPVLControl.ESPVLContro
 :canonical: altdss.ESPVLControl.IESPVLControl.Type_str
 :type: typing.List[str]
 :value: >
-   None
+   'property(...)'
 
 ```{autodoc2-docstring} altdss.ESPVLControl.IESPVLControl.Type_str
 ```
@@ -2478,7 +2478,7 @@ Bases: {py:obj}`altdss.DSSObj.IDSSObj`, {py:obj}`altdss.ESPVLControl.ESPVLContro
 :canonical: altdss.ESPVLControl.IESPVLControl.kWBand
 :type: altdss.ArrayProxy.BatchFloat64ArrayProxy
 :value: >
-   None
+   'property(...)'
 
 ```{autodoc2-docstring} altdss.ESPVLControl.IESPVLControl.kWBand
 ```
@@ -2489,7 +2489,7 @@ Bases: {py:obj}`altdss.DSSObj.IDSSObj`, {py:obj}`altdss.ESPVLControl.ESPVLContro
 :canonical: altdss.ESPVLControl.IESPVLControl.kvarLimit
 :type: altdss.ArrayProxy.BatchFloat64ArrayProxy
 :value: >
-   None
+   'property(...)'
 
 ```{autodoc2-docstring} altdss.ESPVLControl.IESPVLControl.kvarLimit
 ```

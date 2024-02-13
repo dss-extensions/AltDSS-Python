@@ -51,7 +51,7 @@ Bases: {py:obj}`altdss.DSSObj.IDSSObj`, {py:obj}`altdss.TCC_Curve.TCC_CurveBatch
 :canonical: altdss.TCC_Curve.ITCC_Curve.C_Array
 :type: typing.List[altdss.types.Float64Array]
 :value: >
-   None
+   'property(...)'
 
 ```{autodoc2-docstring} altdss.TCC_Curve.ITCC_Curve.C_Array
 ```
@@ -78,7 +78,7 @@ Bases: {py:obj}`altdss.DSSObj.IDSSObj`, {py:obj}`altdss.TCC_Curve.TCC_CurveBatch
 :canonical: altdss.TCC_Curve.ITCC_Curve.NPts
 :type: altdss.ArrayProxy.BatchInt32ArrayProxy
 :value: >
-   None
+   'property(...)'
 
 ```{autodoc2-docstring} altdss.TCC_Curve.ITCC_Curve.NPts
 ```
@@ -98,7 +98,7 @@ Bases: {py:obj}`altdss.DSSObj.IDSSObj`, {py:obj}`altdss.TCC_Curve.TCC_CurveBatch
 :canonical: altdss.TCC_Curve.ITCC_Curve.T_Array
 :type: typing.List[altdss.types.Float64Array]
 :value: >
-   None
+   'property(...)'
 
 ```{autodoc2-docstring} altdss.TCC_Curve.ITCC_Curve.T_Array
 ```
@@ -231,7 +231,7 @@ Bases: {py:obj}`altdss.DSSObj.DSSObj`
 :canonical: altdss.TCC_Curve.TCC_Curve.C_Array
 :type: altdss.types.Float64Array
 :value: >
-   None
+   'property(...)'
 
 ```{autodoc2-docstring} altdss.TCC_Curve.TCC_Curve.C_Array
 ```
@@ -258,7 +258,7 @@ Bases: {py:obj}`altdss.DSSObj.DSSObj`
 :canonical: altdss.TCC_Curve.TCC_Curve.NPts
 :type: int
 :value: >
-   None
+   'property(...)'
 
 ```{autodoc2-docstring} altdss.TCC_Curve.TCC_Curve.NPts
 ```
@@ -278,7 +278,7 @@ Bases: {py:obj}`altdss.DSSObj.DSSObj`
 :canonical: altdss.TCC_Curve.TCC_Curve.T_Array
 :type: altdss.types.Float64Array
 :value: >
-   None
+   'property(...)'
 
 ```{autodoc2-docstring} altdss.TCC_Curve.TCC_Curve.T_Array
 ```
@@ -355,7 +355,7 @@ Bases: {py:obj}`altdss.Batch.DSSBatch`
 :canonical: altdss.TCC_Curve.TCC_CurveBatch.C_Array
 :type: typing.List[altdss.types.Float64Array]
 :value: >
-   None
+   'property(...)'
 
 ```{autodoc2-docstring} altdss.TCC_Curve.TCC_CurveBatch.C_Array
 ```
@@ -382,7 +382,7 @@ Bases: {py:obj}`altdss.Batch.DSSBatch`
 :canonical: altdss.TCC_Curve.TCC_CurveBatch.NPts
 :type: altdss.ArrayProxy.BatchInt32ArrayProxy
 :value: >
-   None
+   'property(...)'
 
 ```{autodoc2-docstring} altdss.TCC_Curve.TCC_CurveBatch.NPts
 ```
@@ -402,7 +402,7 @@ Bases: {py:obj}`altdss.Batch.DSSBatch`
 :canonical: altdss.TCC_Curve.TCC_CurveBatch.T_Array
 :type: typing.List[altdss.types.Float64Array]
 :value: >
-   None
+   'property(...)'
 
 ```{autodoc2-docstring} altdss.TCC_Curve.TCC_CurveBatch.T_Array
 ```

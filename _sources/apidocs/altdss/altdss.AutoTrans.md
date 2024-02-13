@@ -59,7 +59,7 @@ Bases: {py:obj}`altdss.DSSObj.DSSObj`, {py:obj}`altdss.CircuitElement.CircuitEle
 :canonical: altdss.AutoTrans.AutoTrans.Bank
 :type: str
 :value: >
-   None
+   'property(...)'
 
 ```{autodoc2-docstring} altdss.AutoTrans.AutoTrans.Bank
 ```
@@ -70,7 +70,7 @@ Bases: {py:obj}`altdss.DSSObj.DSSObj`, {py:obj}`altdss.CircuitElement.CircuitEle
 :canonical: altdss.AutoTrans.AutoTrans.BaseFreq
 :type: float
 :value: >
-   None
+   'property(...)'
 
 ```{autodoc2-docstring} altdss.AutoTrans.AutoTrans.BaseFreq
 ```
@@ -81,7 +81,7 @@ Bases: {py:obj}`altdss.DSSObj.DSSObj`, {py:obj}`altdss.CircuitElement.CircuitEle
 :canonical: altdss.AutoTrans.AutoTrans.Buses
 :type: typing.List[str]
 :value: >
-   None
+   'property(...)'
 
 ```{autodoc2-docstring} altdss.AutoTrans.AutoTrans.Buses
 ```
@@ -116,7 +116,7 @@ Bases: {py:obj}`altdss.DSSObj.DSSObj`, {py:obj}`altdss.CircuitElement.CircuitEle
 :canonical: altdss.AutoTrans.AutoTrans.Conns
 :type: altdss.enums.AutoTransConnection
 :value: >
-   None
+   'property(...)'
 
 ```{autodoc2-docstring} altdss.AutoTrans.AutoTrans.Conns
 ```
@@ -127,7 +127,7 @@ Bases: {py:obj}`altdss.DSSObj.DSSObj`, {py:obj}`altdss.CircuitElement.CircuitEle
 :canonical: altdss.AutoTrans.AutoTrans.Conns_str
 :type: typing.List[str]
 :value: >
-   None
+   'property(...)'
 
 ```{autodoc2-docstring} altdss.AutoTrans.AutoTrans.Conns_str
 ```
@@ -138,7 +138,7 @@ Bases: {py:obj}`altdss.DSSObj.DSSObj`, {py:obj}`altdss.CircuitElement.CircuitEle
 :canonical: altdss.AutoTrans.AutoTrans.Core
 :type: altdss.enums.CoreType
 :value: >
-   None
+   'property(...)'
 
 ```{autodoc2-docstring} altdss.AutoTrans.AutoTrans.Core
 ```
@@ -149,7 +149,7 @@ Bases: {py:obj}`altdss.DSSObj.DSSObj`, {py:obj}`altdss.CircuitElement.CircuitEle
 :canonical: altdss.AutoTrans.AutoTrans.Core_str
 :type: str
 :value: >
-   None
+   'property(...)'
 
 ```{autodoc2-docstring} altdss.AutoTrans.AutoTrans.Core_str
 ```
@@ -168,7 +168,7 @@ Bases: {py:obj}`altdss.DSSObj.DSSObj`, {py:obj}`altdss.CircuitElement.CircuitEle
 :canonical: altdss.AutoTrans.AutoTrans.DisplayName
 :type: str
 :value: >
-   None
+   'property(...)'
 
 ```{autodoc2-docstring} altdss.AutoTrans.AutoTrans.DisplayName
 ```
@@ -179,7 +179,7 @@ Bases: {py:obj}`altdss.DSSObj.DSSObj`, {py:obj}`altdss.CircuitElement.CircuitEle
 :canonical: altdss.AutoTrans.AutoTrans.EmergAmps
 :type: float
 :value: >
-   None
+   'property(...)'
 
 ```{autodoc2-docstring} altdss.AutoTrans.AutoTrans.EmergAmps
 ```
@@ -190,7 +190,7 @@ Bases: {py:obj}`altdss.DSSObj.DSSObj`, {py:obj}`altdss.CircuitElement.CircuitEle
 :canonical: altdss.AutoTrans.AutoTrans.EmergHkVA
 :type: float
 :value: >
-   None
+   'property(...)'
 
 ```{autodoc2-docstring} altdss.AutoTrans.AutoTrans.EmergHkVA
 ```
@@ -201,7 +201,7 @@ Bases: {py:obj}`altdss.DSSObj.DSSObj`, {py:obj}`altdss.CircuitElement.CircuitEle
 :canonical: altdss.AutoTrans.AutoTrans.Enabled
 :type: bool
 :value: >
-   None
+   'property(...)'
 
 ```{autodoc2-docstring} altdss.AutoTrans.AutoTrans.Enabled
 ```
@@ -228,7 +228,7 @@ Bases: {py:obj}`altdss.DSSObj.DSSObj`, {py:obj}`altdss.CircuitElement.CircuitEle
 :canonical: altdss.AutoTrans.AutoTrans.FLRise
 :type: float
 :value: >
-   None
+   'property(...)'
 
 ```{autodoc2-docstring} altdss.AutoTrans.AutoTrans.FLRise
 ```
@@ -239,7 +239,7 @@ Bases: {py:obj}`altdss.DSSObj.DSSObj`, {py:obj}`altdss.CircuitElement.CircuitEle
 :canonical: altdss.AutoTrans.AutoTrans.FaultRate
 :type: float
 :value: >
-   None
+   'property(...)'
 
 ```{autodoc2-docstring} altdss.AutoTrans.AutoTrans.FaultRate
 ```
@@ -274,7 +274,7 @@ Bases: {py:obj}`altdss.DSSObj.DSSObj`, {py:obj}`altdss.CircuitElement.CircuitEle
 :canonical: altdss.AutoTrans.AutoTrans.HSRise
 :type: float
 :value: >
-   None
+   'property(...)'
 
 ```{autodoc2-docstring} altdss.AutoTrans.AutoTrans.HSRise
 ```
@@ -349,7 +349,7 @@ Bases: {py:obj}`altdss.DSSObj.DSSObj`, {py:obj}`altdss.CircuitElement.CircuitEle
 :canonical: altdss.AutoTrans.AutoTrans.LeadLag
 :type: altdss.enums.PhaseSequence
 :value: >
-   None
+   'property(...)'
 
 ```{autodoc2-docstring} altdss.AutoTrans.AutoTrans.LeadLag
 ```
@@ -360,7 +360,7 @@ Bases: {py:obj}`altdss.DSSObj.DSSObj`, {py:obj}`altdss.CircuitElement.CircuitEle
 :canonical: altdss.AutoTrans.AutoTrans.LeadLag_str
 :type: str
 :value: >
-   None
+   'property(...)'
 
 ```{autodoc2-docstring} altdss.AutoTrans.AutoTrans.LeadLag_str
 ```
@@ -403,7 +403,7 @@ Bases: {py:obj}`altdss.DSSObj.DSSObj`, {py:obj}`altdss.CircuitElement.CircuitEle
 :canonical: altdss.AutoTrans.AutoTrans.MaxTap
 :type: altdss.types.Float64Array
 :value: >
-   None
+   'property(...)'
 
 ```{autodoc2-docstring} altdss.AutoTrans.AutoTrans.MaxTap
 ```
@@ -414,7 +414,7 @@ Bases: {py:obj}`altdss.DSSObj.DSSObj`, {py:obj}`altdss.CircuitElement.CircuitEle
 :canonical: altdss.AutoTrans.AutoTrans.MinTap
 :type: altdss.types.Float64Array
 :value: >
-   None
+   'property(...)'
 
 ```{autodoc2-docstring} altdss.AutoTrans.AutoTrans.MinTap
 ```
@@ -450,7 +450,7 @@ Bases: {py:obj}`altdss.DSSObj.DSSObj`, {py:obj}`altdss.CircuitElement.CircuitEle
 :canonical: altdss.AutoTrans.AutoTrans.NormAmps
 :type: float
 :value: >
-   None
+   'property(...)'
 
 ```{autodoc2-docstring} altdss.AutoTrans.AutoTrans.NormAmps
 ```
@@ -461,7 +461,7 @@ Bases: {py:obj}`altdss.DSSObj.DSSObj`, {py:obj}`altdss.CircuitElement.CircuitEle
 :canonical: altdss.AutoTrans.AutoTrans.NormHkVA
 :type: float
 :value: >
-   None
+   'property(...)'
 
 ```{autodoc2-docstring} altdss.AutoTrans.AutoTrans.NormHkVA
 ```
@@ -504,7 +504,7 @@ Bases: {py:obj}`altdss.DSSObj.DSSObj`, {py:obj}`altdss.CircuitElement.CircuitEle
 :canonical: altdss.AutoTrans.AutoTrans.NumTaps
 :type: altdss.types.Int32Array
 :value: >
-   None
+   'property(...)'
 
 ```{autodoc2-docstring} altdss.AutoTrans.AutoTrans.NumTaps
 ```
@@ -571,7 +571,7 @@ Bases: {py:obj}`altdss.DSSObj.DSSObj`, {py:obj}`altdss.CircuitElement.CircuitEle
 :canonical: altdss.AutoTrans.AutoTrans.Phases
 :type: int
 :value: >
-   None
+   'property(...)'
 
 ```{autodoc2-docstring} altdss.AutoTrans.AutoTrans.Phases
 ```
@@ -590,7 +590,7 @@ Bases: {py:obj}`altdss.DSSObj.DSSObj`, {py:obj}`altdss.CircuitElement.CircuitEle
 :canonical: altdss.AutoTrans.AutoTrans.RDCOhms
 :type: altdss.types.Float64Array
 :value: >
-   None
+   'property(...)'
 
 ```{autodoc2-docstring} altdss.AutoTrans.AutoTrans.RDCOhms
 ```
@@ -601,7 +601,7 @@ Bases: {py:obj}`altdss.DSSObj.DSSObj`, {py:obj}`altdss.CircuitElement.CircuitEle
 :canonical: altdss.AutoTrans.AutoTrans.Repair
 :type: float
 :value: >
-   None
+   'property(...)'
 
 ```{autodoc2-docstring} altdss.AutoTrans.AutoTrans.Repair
 ```
@@ -652,7 +652,7 @@ Bases: {py:obj}`altdss.DSSObj.DSSObj`, {py:obj}`altdss.CircuitElement.CircuitEle
 :canonical: altdss.AutoTrans.AutoTrans.Sub
 :type: bool
 :value: >
-   None
+   'property(...)'
 
 ```{autodoc2-docstring} altdss.AutoTrans.AutoTrans.Sub
 ```
@@ -663,7 +663,7 @@ Bases: {py:obj}`altdss.DSSObj.DSSObj`, {py:obj}`altdss.CircuitElement.CircuitEle
 :canonical: altdss.AutoTrans.AutoTrans.SubName
 :type: str
 :value: >
-   None
+   'property(...)'
 
 ```{autodoc2-docstring} altdss.AutoTrans.AutoTrans.SubName
 ```
@@ -674,7 +674,7 @@ Bases: {py:obj}`altdss.DSSObj.DSSObj`, {py:obj}`altdss.CircuitElement.CircuitEle
 :canonical: altdss.AutoTrans.AutoTrans.Taps
 :type: altdss.types.Float64Array
 :value: >
-   None
+   'property(...)'
 
 ```{autodoc2-docstring} altdss.AutoTrans.AutoTrans.Taps
 ```
@@ -685,7 +685,7 @@ Bases: {py:obj}`altdss.DSSObj.DSSObj`, {py:obj}`altdss.CircuitElement.CircuitEle
 :canonical: altdss.AutoTrans.AutoTrans.Thermal
 :type: float
 :value: >
-   None
+   'property(...)'
 
 ```{autodoc2-docstring} altdss.AutoTrans.AutoTrans.Thermal
 ```
@@ -752,7 +752,7 @@ Bases: {py:obj}`altdss.DSSObj.DSSObj`, {py:obj}`altdss.CircuitElement.CircuitEle
 :canonical: altdss.AutoTrans.AutoTrans.Windings
 :type: int
 :value: >
-   None
+   'property(...)'
 
 ```{autodoc2-docstring} altdss.AutoTrans.AutoTrans.Windings
 ```
@@ -763,7 +763,7 @@ Bases: {py:obj}`altdss.DSSObj.DSSObj`, {py:obj}`altdss.CircuitElement.CircuitEle
 :canonical: altdss.AutoTrans.AutoTrans.XHT
 :type: float
 :value: >
-   None
+   'property(...)'
 
 ```{autodoc2-docstring} altdss.AutoTrans.AutoTrans.XHT
 ```
@@ -774,7 +774,7 @@ Bases: {py:obj}`altdss.DSSObj.DSSObj`, {py:obj}`altdss.CircuitElement.CircuitEle
 :canonical: altdss.AutoTrans.AutoTrans.XHX
 :type: float
 :value: >
-   None
+   'property(...)'
 
 ```{autodoc2-docstring} altdss.AutoTrans.AutoTrans.XHX
 ```
@@ -785,7 +785,7 @@ Bases: {py:obj}`altdss.DSSObj.DSSObj`, {py:obj}`altdss.CircuitElement.CircuitEle
 :canonical: altdss.AutoTrans.AutoTrans.XRConst
 :type: bool
 :value: >
-   None
+   'property(...)'
 
 ```{autodoc2-docstring} altdss.AutoTrans.AutoTrans.XRConst
 ```
@@ -796,7 +796,7 @@ Bases: {py:obj}`altdss.DSSObj.DSSObj`, {py:obj}`altdss.CircuitElement.CircuitEle
 :canonical: altdss.AutoTrans.AutoTrans.XSCArray
 :type: altdss.types.Float64Array
 :value: >
-   None
+   'property(...)'
 
 ```{autodoc2-docstring} altdss.AutoTrans.AutoTrans.XSCArray
 ```
@@ -807,7 +807,7 @@ Bases: {py:obj}`altdss.DSSObj.DSSObj`, {py:obj}`altdss.CircuitElement.CircuitEle
 :canonical: altdss.AutoTrans.AutoTrans.XXT
 :type: float
 :value: >
-   None
+   'property(...)'
 
 ```{autodoc2-docstring} altdss.AutoTrans.AutoTrans.XXT
 ```
@@ -874,7 +874,7 @@ Bases: {py:obj}`altdss.DSSObj.DSSObj`, {py:obj}`altdss.CircuitElement.CircuitEle
 :canonical: altdss.AutoTrans.AutoTrans.kVAs
 :type: altdss.types.Float64Array
 :value: >
-   None
+   'property(...)'
 
 ```{autodoc2-docstring} altdss.AutoTrans.AutoTrans.kVAs
 ```
@@ -885,7 +885,7 @@ Bases: {py:obj}`altdss.DSSObj.DSSObj`, {py:obj}`altdss.CircuitElement.CircuitEle
 :canonical: altdss.AutoTrans.AutoTrans.kVs
 :type: altdss.types.Float64Array
 :value: >
-   None
+   'property(...)'
 
 ```{autodoc2-docstring} altdss.AutoTrans.AutoTrans.kVs
 ```
@@ -896,7 +896,7 @@ Bases: {py:obj}`altdss.DSSObj.DSSObj`, {py:obj}`altdss.CircuitElement.CircuitEle
 :canonical: altdss.AutoTrans.AutoTrans.m
 :type: float
 :value: >
-   None
+   'property(...)'
 
 ```{autodoc2-docstring} altdss.AutoTrans.AutoTrans.m
 ```
@@ -907,7 +907,7 @@ Bases: {py:obj}`altdss.DSSObj.DSSObj`, {py:obj}`altdss.CircuitElement.CircuitEle
 :canonical: altdss.AutoTrans.AutoTrans.n
 :type: float
 :value: >
-   None
+   'property(...)'
 
 ```{autodoc2-docstring} altdss.AutoTrans.AutoTrans.n
 ```
@@ -926,7 +926,7 @@ Bases: {py:obj}`altdss.DSSObj.DSSObj`, {py:obj}`altdss.CircuitElement.CircuitEle
 :canonical: altdss.AutoTrans.AutoTrans.pctIMag
 :type: float
 :value: >
-   None
+   'property(...)'
 
 ```{autodoc2-docstring} altdss.AutoTrans.AutoTrans.pctIMag
 ```
@@ -937,7 +937,7 @@ Bases: {py:obj}`altdss.DSSObj.DSSObj`, {py:obj}`altdss.CircuitElement.CircuitEle
 :canonical: altdss.AutoTrans.AutoTrans.pctLoadLoss
 :type: float
 :value: >
-   None
+   'property(...)'
 
 ```{autodoc2-docstring} altdss.AutoTrans.AutoTrans.pctLoadLoss
 ```
@@ -948,7 +948,7 @@ Bases: {py:obj}`altdss.DSSObj.DSSObj`, {py:obj}`altdss.CircuitElement.CircuitEle
 :canonical: altdss.AutoTrans.AutoTrans.pctNoLoadLoss
 :type: float
 :value: >
-   None
+   'property(...)'
 
 ```{autodoc2-docstring} altdss.AutoTrans.AutoTrans.pctNoLoadLoss
 ```
@@ -967,7 +967,7 @@ Bases: {py:obj}`altdss.DSSObj.DSSObj`, {py:obj}`altdss.CircuitElement.CircuitEle
 :canonical: altdss.AutoTrans.AutoTrans.pctPerm
 :type: float
 :value: >
-   None
+   'property(...)'
 
 ```{autodoc2-docstring} altdss.AutoTrans.AutoTrans.pctPerm
 ```
@@ -978,7 +978,7 @@ Bases: {py:obj}`altdss.DSSObj.DSSObj`, {py:obj}`altdss.CircuitElement.CircuitEle
 :canonical: altdss.AutoTrans.AutoTrans.pctR
 :type: altdss.types.Float64Array
 :value: >
-   None
+   'property(...)'
 
 ```{autodoc2-docstring} altdss.AutoTrans.AutoTrans.pctR
 ```
@@ -989,7 +989,7 @@ Bases: {py:obj}`altdss.DSSObj.DSSObj`, {py:obj}`altdss.CircuitElement.CircuitEle
 :canonical: altdss.AutoTrans.AutoTrans.pctRs
 :type: altdss.types.Float64Array
 :value: >
-   None
+   'property(...)'
 
 ```{autodoc2-docstring} altdss.AutoTrans.AutoTrans.pctRs
 ```
@@ -1000,7 +1000,7 @@ Bases: {py:obj}`altdss.DSSObj.DSSObj`, {py:obj}`altdss.CircuitElement.CircuitEle
 :canonical: altdss.AutoTrans.AutoTrans.ppm_Antifloat
 :type: float
 :value: >
-   None
+   'property(...)'
 
 ```{autodoc2-docstring} altdss.AutoTrans.AutoTrans.ppm_Antifloat
 ```
@@ -1037,7 +1037,7 @@ Bases: {py:obj}`altdss.Batch.DSSBatch`, {py:obj}`altdss.CircuitElement.CircuitEl
 :canonical: altdss.AutoTrans.AutoTransBatch.Bank
 :type: typing.List[str]
 :value: >
-   None
+   'property(...)'
 
 ```{autodoc2-docstring} altdss.AutoTrans.AutoTransBatch.Bank
 ```
@@ -1048,7 +1048,7 @@ Bases: {py:obj}`altdss.Batch.DSSBatch`, {py:obj}`altdss.CircuitElement.CircuitEl
 :canonical: altdss.AutoTrans.AutoTransBatch.BaseFreq
 :type: altdss.ArrayProxy.BatchFloat64ArrayProxy
 :value: >
-   None
+   'property(...)'
 
 ```{autodoc2-docstring} altdss.AutoTrans.AutoTransBatch.BaseFreq
 ```
@@ -1059,7 +1059,7 @@ Bases: {py:obj}`altdss.Batch.DSSBatch`, {py:obj}`altdss.CircuitElement.CircuitEl
 :canonical: altdss.AutoTrans.AutoTransBatch.Buses
 :type: typing.List[typing.List[str]]
 :value: >
-   None
+   'property(...)'
 
 ```{autodoc2-docstring} altdss.AutoTrans.AutoTransBatch.Buses
 ```
@@ -1086,7 +1086,7 @@ Bases: {py:obj}`altdss.Batch.DSSBatch`, {py:obj}`altdss.CircuitElement.CircuitEl
 :canonical: altdss.AutoTrans.AutoTransBatch.Conns
 :type: typing.List[altdss.types.Int32Array]
 :value: >
-   None
+   'property(...)'
 
 ```{autodoc2-docstring} altdss.AutoTrans.AutoTransBatch.Conns
 ```
@@ -1097,7 +1097,7 @@ Bases: {py:obj}`altdss.Batch.DSSBatch`, {py:obj}`altdss.CircuitElement.CircuitEl
 :canonical: altdss.AutoTrans.AutoTransBatch.Conns_str
 :type: typing.List[typing.List[str]]
 :value: >
-   None
+   'property(...)'
 
 ```{autodoc2-docstring} altdss.AutoTrans.AutoTransBatch.Conns_str
 ```
@@ -1108,7 +1108,7 @@ Bases: {py:obj}`altdss.Batch.DSSBatch`, {py:obj}`altdss.CircuitElement.CircuitEl
 :canonical: altdss.AutoTrans.AutoTransBatch.Core
 :type: altdss.ArrayProxy.BatchInt32ArrayProxy
 :value: >
-   None
+   'property(...)'
 
 ```{autodoc2-docstring} altdss.AutoTrans.AutoTransBatch.Core
 ```
@@ -1119,7 +1119,7 @@ Bases: {py:obj}`altdss.Batch.DSSBatch`, {py:obj}`altdss.CircuitElement.CircuitEl
 :canonical: altdss.AutoTrans.AutoTransBatch.Core_str
 :type: typing.List[str]
 :value: >
-   None
+   'property(...)'
 
 ```{autodoc2-docstring} altdss.AutoTrans.AutoTransBatch.Core_str
 ```
@@ -1146,7 +1146,7 @@ Bases: {py:obj}`altdss.Batch.DSSBatch`, {py:obj}`altdss.CircuitElement.CircuitEl
 :canonical: altdss.AutoTrans.AutoTransBatch.EmergAmps
 :type: altdss.ArrayProxy.BatchFloat64ArrayProxy
 :value: >
-   None
+   'property(...)'
 
 ```{autodoc2-docstring} altdss.AutoTrans.AutoTransBatch.EmergAmps
 ```
@@ -1157,7 +1157,7 @@ Bases: {py:obj}`altdss.Batch.DSSBatch`, {py:obj}`altdss.CircuitElement.CircuitEl
 :canonical: altdss.AutoTrans.AutoTransBatch.EmergHkVA
 :type: altdss.ArrayProxy.BatchFloat64ArrayProxy
 :value: >
-   None
+   'property(...)'
 
 ```{autodoc2-docstring} altdss.AutoTrans.AutoTransBatch.EmergHkVA
 ```
@@ -1168,7 +1168,7 @@ Bases: {py:obj}`altdss.Batch.DSSBatch`, {py:obj}`altdss.CircuitElement.CircuitEl
 :canonical: altdss.AutoTrans.AutoTransBatch.Enabled
 :type: typing.List[bool]
 :value: >
-   None
+   'property(...)'
 
 ```{autodoc2-docstring} altdss.AutoTrans.AutoTransBatch.Enabled
 ```
@@ -1195,7 +1195,7 @@ Bases: {py:obj}`altdss.Batch.DSSBatch`, {py:obj}`altdss.CircuitElement.CircuitEl
 :canonical: altdss.AutoTrans.AutoTransBatch.FLRise
 :type: altdss.ArrayProxy.BatchFloat64ArrayProxy
 :value: >
-   None
+   'property(...)'
 
 ```{autodoc2-docstring} altdss.AutoTrans.AutoTransBatch.FLRise
 ```
@@ -1206,7 +1206,7 @@ Bases: {py:obj}`altdss.Batch.DSSBatch`, {py:obj}`altdss.CircuitElement.CircuitEl
 :canonical: altdss.AutoTrans.AutoTransBatch.FaultRate
 :type: altdss.ArrayProxy.BatchFloat64ArrayProxy
 :value: >
-   None
+   'property(...)'
 
 ```{autodoc2-docstring} altdss.AutoTrans.AutoTransBatch.FaultRate
 ```
@@ -1241,7 +1241,7 @@ Bases: {py:obj}`altdss.Batch.DSSBatch`, {py:obj}`altdss.CircuitElement.CircuitEl
 :canonical: altdss.AutoTrans.AutoTransBatch.HSRise
 :type: altdss.ArrayProxy.BatchFloat64ArrayProxy
 :value: >
-   None
+   'property(...)'
 
 ```{autodoc2-docstring} altdss.AutoTrans.AutoTransBatch.HSRise
 ```
@@ -1308,7 +1308,7 @@ Bases: {py:obj}`altdss.Batch.DSSBatch`, {py:obj}`altdss.CircuitElement.CircuitEl
 :canonical: altdss.AutoTrans.AutoTransBatch.LeadLag
 :type: altdss.ArrayProxy.BatchInt32ArrayProxy
 :value: >
-   None
+   'property(...)'
 
 ```{autodoc2-docstring} altdss.AutoTrans.AutoTransBatch.LeadLag
 ```
@@ -1319,7 +1319,7 @@ Bases: {py:obj}`altdss.Batch.DSSBatch`, {py:obj}`altdss.CircuitElement.CircuitEl
 :canonical: altdss.AutoTrans.AutoTransBatch.LeadLag_str
 :type: typing.List[str]
 :value: >
-   None
+   'property(...)'
 
 ```{autodoc2-docstring} altdss.AutoTrans.AutoTransBatch.LeadLag_str
 ```
@@ -1354,7 +1354,7 @@ Bases: {py:obj}`altdss.Batch.DSSBatch`, {py:obj}`altdss.CircuitElement.CircuitEl
 :canonical: altdss.AutoTrans.AutoTransBatch.MaxTap
 :type: typing.List[altdss.types.Float64Array]
 :value: >
-   None
+   'property(...)'
 
 ```{autodoc2-docstring} altdss.AutoTrans.AutoTransBatch.MaxTap
 ```
@@ -1365,7 +1365,7 @@ Bases: {py:obj}`altdss.Batch.DSSBatch`, {py:obj}`altdss.CircuitElement.CircuitEl
 :canonical: altdss.AutoTrans.AutoTransBatch.MinTap
 :type: typing.List[altdss.types.Float64Array]
 :value: >
-   None
+   'property(...)'
 
 ```{autodoc2-docstring} altdss.AutoTrans.AutoTransBatch.MinTap
 ```
@@ -1385,7 +1385,7 @@ Bases: {py:obj}`altdss.Batch.DSSBatch`, {py:obj}`altdss.CircuitElement.CircuitEl
 :canonical: altdss.AutoTrans.AutoTransBatch.NormAmps
 :type: altdss.ArrayProxy.BatchFloat64ArrayProxy
 :value: >
-   None
+   'property(...)'
 
 ```{autodoc2-docstring} altdss.AutoTrans.AutoTransBatch.NormAmps
 ```
@@ -1396,7 +1396,7 @@ Bases: {py:obj}`altdss.Batch.DSSBatch`, {py:obj}`altdss.CircuitElement.CircuitEl
 :canonical: altdss.AutoTrans.AutoTransBatch.NormHkVA
 :type: altdss.ArrayProxy.BatchFloat64ArrayProxy
 :value: >
-   None
+   'property(...)'
 
 ```{autodoc2-docstring} altdss.AutoTrans.AutoTransBatch.NormHkVA
 ```
@@ -1439,7 +1439,7 @@ Bases: {py:obj}`altdss.Batch.DSSBatch`, {py:obj}`altdss.CircuitElement.CircuitEl
 :canonical: altdss.AutoTrans.AutoTransBatch.NumTaps
 :type: typing.List[altdss.types.Int32Array]
 :value: >
-   None
+   'property(...)'
 
 ```{autodoc2-docstring} altdss.AutoTrans.AutoTransBatch.NumTaps
 ```
@@ -1498,7 +1498,7 @@ Bases: {py:obj}`altdss.Batch.DSSBatch`, {py:obj}`altdss.CircuitElement.CircuitEl
 :canonical: altdss.AutoTrans.AutoTransBatch.Phases
 :type: altdss.ArrayProxy.BatchInt32ArrayProxy
 :value: >
-   None
+   'property(...)'
 
 ```{autodoc2-docstring} altdss.AutoTrans.AutoTransBatch.Phases
 ```
@@ -1517,7 +1517,7 @@ Bases: {py:obj}`altdss.Batch.DSSBatch`, {py:obj}`altdss.CircuitElement.CircuitEl
 :canonical: altdss.AutoTrans.AutoTransBatch.RDCOhms
 :type: typing.List[altdss.types.Float64Array]
 :value: >
-   None
+   'property(...)'
 
 ```{autodoc2-docstring} altdss.AutoTrans.AutoTransBatch.RDCOhms
 ```
@@ -1528,7 +1528,7 @@ Bases: {py:obj}`altdss.Batch.DSSBatch`, {py:obj}`altdss.CircuitElement.CircuitEl
 :canonical: altdss.AutoTrans.AutoTransBatch.Repair
 :type: altdss.ArrayProxy.BatchFloat64ArrayProxy
 :value: >
-   None
+   'property(...)'
 
 ```{autodoc2-docstring} altdss.AutoTrans.AutoTransBatch.Repair
 ```
@@ -1571,7 +1571,7 @@ Bases: {py:obj}`altdss.Batch.DSSBatch`, {py:obj}`altdss.CircuitElement.CircuitEl
 :canonical: altdss.AutoTrans.AutoTransBatch.Sub
 :type: typing.List[bool]
 :value: >
-   None
+   'property(...)'
 
 ```{autodoc2-docstring} altdss.AutoTrans.AutoTransBatch.Sub
 ```
@@ -1582,7 +1582,7 @@ Bases: {py:obj}`altdss.Batch.DSSBatch`, {py:obj}`altdss.CircuitElement.CircuitEl
 :canonical: altdss.AutoTrans.AutoTransBatch.SubName
 :type: typing.List[str]
 :value: >
-   None
+   'property(...)'
 
 ```{autodoc2-docstring} altdss.AutoTrans.AutoTransBatch.SubName
 ```
@@ -1593,7 +1593,7 @@ Bases: {py:obj}`altdss.Batch.DSSBatch`, {py:obj}`altdss.CircuitElement.CircuitEl
 :canonical: altdss.AutoTrans.AutoTransBatch.Taps
 :type: typing.List[altdss.types.Float64Array]
 :value: >
-   None
+   'property(...)'
 
 ```{autodoc2-docstring} altdss.AutoTrans.AutoTransBatch.Taps
 ```
@@ -1604,7 +1604,7 @@ Bases: {py:obj}`altdss.Batch.DSSBatch`, {py:obj}`altdss.CircuitElement.CircuitEl
 :canonical: altdss.AutoTrans.AutoTransBatch.Thermal
 :type: altdss.ArrayProxy.BatchFloat64ArrayProxy
 :value: >
-   None
+   'property(...)'
 
 ```{autodoc2-docstring} altdss.AutoTrans.AutoTransBatch.Thermal
 ```
@@ -1655,7 +1655,7 @@ Bases: {py:obj}`altdss.Batch.DSSBatch`, {py:obj}`altdss.CircuitElement.CircuitEl
 :canonical: altdss.AutoTrans.AutoTransBatch.Windings
 :type: altdss.ArrayProxy.BatchInt32ArrayProxy
 :value: >
-   None
+   'property(...)'
 
 ```{autodoc2-docstring} altdss.AutoTrans.AutoTransBatch.Windings
 ```
@@ -1666,7 +1666,7 @@ Bases: {py:obj}`altdss.Batch.DSSBatch`, {py:obj}`altdss.CircuitElement.CircuitEl
 :canonical: altdss.AutoTrans.AutoTransBatch.XHT
 :type: altdss.ArrayProxy.BatchFloat64ArrayProxy
 :value: >
-   None
+   'property(...)'
 
 ```{autodoc2-docstring} altdss.AutoTrans.AutoTransBatch.XHT
 ```
@@ -1677,7 +1677,7 @@ Bases: {py:obj}`altdss.Batch.DSSBatch`, {py:obj}`altdss.CircuitElement.CircuitEl
 :canonical: altdss.AutoTrans.AutoTransBatch.XHX
 :type: altdss.ArrayProxy.BatchFloat64ArrayProxy
 :value: >
-   None
+   'property(...)'
 
 ```{autodoc2-docstring} altdss.AutoTrans.AutoTransBatch.XHX
 ```
@@ -1688,7 +1688,7 @@ Bases: {py:obj}`altdss.Batch.DSSBatch`, {py:obj}`altdss.CircuitElement.CircuitEl
 :canonical: altdss.AutoTrans.AutoTransBatch.XRConst
 :type: typing.List[bool]
 :value: >
-   None
+   'property(...)'
 
 ```{autodoc2-docstring} altdss.AutoTrans.AutoTransBatch.XRConst
 ```
@@ -1699,7 +1699,7 @@ Bases: {py:obj}`altdss.Batch.DSSBatch`, {py:obj}`altdss.CircuitElement.CircuitEl
 :canonical: altdss.AutoTrans.AutoTransBatch.XSCArray
 :type: typing.List[altdss.types.Float64Array]
 :value: >
-   None
+   'property(...)'
 
 ```{autodoc2-docstring} altdss.AutoTrans.AutoTransBatch.XSCArray
 ```
@@ -1710,7 +1710,7 @@ Bases: {py:obj}`altdss.Batch.DSSBatch`, {py:obj}`altdss.CircuitElement.CircuitEl
 :canonical: altdss.AutoTrans.AutoTransBatch.XXT
 :type: altdss.ArrayProxy.BatchFloat64ArrayProxy
 :value: >
-   None
+   'property(...)'
 
 ```{autodoc2-docstring} altdss.AutoTrans.AutoTransBatch.XXT
 ```
@@ -1777,7 +1777,7 @@ Bases: {py:obj}`altdss.Batch.DSSBatch`, {py:obj}`altdss.CircuitElement.CircuitEl
 :canonical: altdss.AutoTrans.AutoTransBatch.kVAs
 :type: typing.List[altdss.types.Float64Array]
 :value: >
-   None
+   'property(...)'
 
 ```{autodoc2-docstring} altdss.AutoTrans.AutoTransBatch.kVAs
 ```
@@ -1788,7 +1788,7 @@ Bases: {py:obj}`altdss.Batch.DSSBatch`, {py:obj}`altdss.CircuitElement.CircuitEl
 :canonical: altdss.AutoTrans.AutoTransBatch.kVs
 :type: typing.List[altdss.types.Float64Array]
 :value: >
-   None
+   'property(...)'
 
 ```{autodoc2-docstring} altdss.AutoTrans.AutoTransBatch.kVs
 ```
@@ -1799,7 +1799,7 @@ Bases: {py:obj}`altdss.Batch.DSSBatch`, {py:obj}`altdss.CircuitElement.CircuitEl
 :canonical: altdss.AutoTrans.AutoTransBatch.m
 :type: altdss.ArrayProxy.BatchFloat64ArrayProxy
 :value: >
-   None
+   'property(...)'
 
 ```{autodoc2-docstring} altdss.AutoTrans.AutoTransBatch.m
 ```
@@ -1810,7 +1810,7 @@ Bases: {py:obj}`altdss.Batch.DSSBatch`, {py:obj}`altdss.CircuitElement.CircuitEl
 :canonical: altdss.AutoTrans.AutoTransBatch.n
 :type: altdss.ArrayProxy.BatchFloat64ArrayProxy
 :value: >
-   None
+   'property(...)'
 
 ```{autodoc2-docstring} altdss.AutoTrans.AutoTransBatch.n
 ```
@@ -1821,7 +1821,7 @@ Bases: {py:obj}`altdss.Batch.DSSBatch`, {py:obj}`altdss.CircuitElement.CircuitEl
 :canonical: altdss.AutoTrans.AutoTransBatch.pctIMag
 :type: altdss.ArrayProxy.BatchFloat64ArrayProxy
 :value: >
-   None
+   'property(...)'
 
 ```{autodoc2-docstring} altdss.AutoTrans.AutoTransBatch.pctIMag
 ```
@@ -1832,7 +1832,7 @@ Bases: {py:obj}`altdss.Batch.DSSBatch`, {py:obj}`altdss.CircuitElement.CircuitEl
 :canonical: altdss.AutoTrans.AutoTransBatch.pctLoadLoss
 :type: altdss.ArrayProxy.BatchFloat64ArrayProxy
 :value: >
-   None
+   'property(...)'
 
 ```{autodoc2-docstring} altdss.AutoTrans.AutoTransBatch.pctLoadLoss
 ```
@@ -1843,7 +1843,7 @@ Bases: {py:obj}`altdss.Batch.DSSBatch`, {py:obj}`altdss.CircuitElement.CircuitEl
 :canonical: altdss.AutoTrans.AutoTransBatch.pctNoLoadLoss
 :type: altdss.ArrayProxy.BatchFloat64ArrayProxy
 :value: >
-   None
+   'property(...)'
 
 ```{autodoc2-docstring} altdss.AutoTrans.AutoTransBatch.pctNoLoadLoss
 ```
@@ -1854,7 +1854,7 @@ Bases: {py:obj}`altdss.Batch.DSSBatch`, {py:obj}`altdss.CircuitElement.CircuitEl
 :canonical: altdss.AutoTrans.AutoTransBatch.pctPerm
 :type: altdss.ArrayProxy.BatchFloat64ArrayProxy
 :value: >
-   None
+   'property(...)'
 
 ```{autodoc2-docstring} altdss.AutoTrans.AutoTransBatch.pctPerm
 ```
@@ -1865,7 +1865,7 @@ Bases: {py:obj}`altdss.Batch.DSSBatch`, {py:obj}`altdss.CircuitElement.CircuitEl
 :canonical: altdss.AutoTrans.AutoTransBatch.pctR
 :type: typing.List[altdss.types.Float64Array]
 :value: >
-   None
+   'property(...)'
 
 ```{autodoc2-docstring} altdss.AutoTrans.AutoTransBatch.pctR
 ```
@@ -1876,7 +1876,7 @@ Bases: {py:obj}`altdss.Batch.DSSBatch`, {py:obj}`altdss.CircuitElement.CircuitEl
 :canonical: altdss.AutoTrans.AutoTransBatch.pctRs
 :type: typing.List[altdss.types.Float64Array]
 :value: >
-   None
+   'property(...)'
 
 ```{autodoc2-docstring} altdss.AutoTrans.AutoTransBatch.pctRs
 ```
@@ -1887,7 +1887,7 @@ Bases: {py:obj}`altdss.Batch.DSSBatch`, {py:obj}`altdss.CircuitElement.CircuitEl
 :canonical: altdss.AutoTrans.AutoTransBatch.ppm_Antifloat
 :type: altdss.ArrayProxy.BatchFloat64ArrayProxy
 :value: >
-   None
+   'property(...)'
 
 ```{autodoc2-docstring} altdss.AutoTrans.AutoTransBatch.ppm_Antifloat
 ```
@@ -3484,7 +3484,7 @@ Bases: {py:obj}`altdss.DSSObj.IDSSObj`, {py:obj}`altdss.AutoTrans.AutoTransBatch
 :canonical: altdss.AutoTrans.IAutoTrans.Bank
 :type: typing.List[str]
 :value: >
-   None
+   'property(...)'
 
 ```{autodoc2-docstring} altdss.AutoTrans.IAutoTrans.Bank
 ```
@@ -3495,7 +3495,7 @@ Bases: {py:obj}`altdss.DSSObj.IDSSObj`, {py:obj}`altdss.AutoTrans.AutoTransBatch
 :canonical: altdss.AutoTrans.IAutoTrans.BaseFreq
 :type: altdss.ArrayProxy.BatchFloat64ArrayProxy
 :value: >
-   None
+   'property(...)'
 
 ```{autodoc2-docstring} altdss.AutoTrans.IAutoTrans.BaseFreq
 ```
@@ -3506,7 +3506,7 @@ Bases: {py:obj}`altdss.DSSObj.IDSSObj`, {py:obj}`altdss.AutoTrans.AutoTransBatch
 :canonical: altdss.AutoTrans.IAutoTrans.Buses
 :type: typing.List[typing.List[str]]
 :value: >
-   None
+   'property(...)'
 
 ```{autodoc2-docstring} altdss.AutoTrans.IAutoTrans.Buses
 ```
@@ -3533,7 +3533,7 @@ Bases: {py:obj}`altdss.DSSObj.IDSSObj`, {py:obj}`altdss.AutoTrans.AutoTransBatch
 :canonical: altdss.AutoTrans.IAutoTrans.Conns
 :type: typing.List[altdss.types.Int32Array]
 :value: >
-   None
+   'property(...)'
 
 ```{autodoc2-docstring} altdss.AutoTrans.IAutoTrans.Conns
 ```
@@ -3544,7 +3544,7 @@ Bases: {py:obj}`altdss.DSSObj.IDSSObj`, {py:obj}`altdss.AutoTrans.AutoTransBatch
 :canonical: altdss.AutoTrans.IAutoTrans.Conns_str
 :type: typing.List[typing.List[str]]
 :value: >
-   None
+   'property(...)'
 
 ```{autodoc2-docstring} altdss.AutoTrans.IAutoTrans.Conns_str
 ```
@@ -3555,7 +3555,7 @@ Bases: {py:obj}`altdss.DSSObj.IDSSObj`, {py:obj}`altdss.AutoTrans.AutoTransBatch
 :canonical: altdss.AutoTrans.IAutoTrans.Core
 :type: altdss.ArrayProxy.BatchInt32ArrayProxy
 :value: >
-   None
+   'property(...)'
 
 ```{autodoc2-docstring} altdss.AutoTrans.IAutoTrans.Core
 ```
@@ -3566,7 +3566,7 @@ Bases: {py:obj}`altdss.DSSObj.IDSSObj`, {py:obj}`altdss.AutoTrans.AutoTransBatch
 :canonical: altdss.AutoTrans.IAutoTrans.Core_str
 :type: typing.List[str]
 :value: >
-   None
+   'property(...)'
 
 ```{autodoc2-docstring} altdss.AutoTrans.IAutoTrans.Core_str
 ```
@@ -3593,7 +3593,7 @@ Bases: {py:obj}`altdss.DSSObj.IDSSObj`, {py:obj}`altdss.AutoTrans.AutoTransBatch
 :canonical: altdss.AutoTrans.IAutoTrans.EmergAmps
 :type: altdss.ArrayProxy.BatchFloat64ArrayProxy
 :value: >
-   None
+   'property(...)'
 
 ```{autodoc2-docstring} altdss.AutoTrans.IAutoTrans.EmergAmps
 ```
@@ -3604,7 +3604,7 @@ Bases: {py:obj}`altdss.DSSObj.IDSSObj`, {py:obj}`altdss.AutoTrans.AutoTransBatch
 :canonical: altdss.AutoTrans.IAutoTrans.EmergHkVA
 :type: altdss.ArrayProxy.BatchFloat64ArrayProxy
 :value: >
-   None
+   'property(...)'
 
 ```{autodoc2-docstring} altdss.AutoTrans.IAutoTrans.EmergHkVA
 ```
@@ -3615,7 +3615,7 @@ Bases: {py:obj}`altdss.DSSObj.IDSSObj`, {py:obj}`altdss.AutoTrans.AutoTransBatch
 :canonical: altdss.AutoTrans.IAutoTrans.Enabled
 :type: typing.List[bool]
 :value: >
-   None
+   'property(...)'
 
 ```{autodoc2-docstring} altdss.AutoTrans.IAutoTrans.Enabled
 ```
@@ -3642,7 +3642,7 @@ Bases: {py:obj}`altdss.DSSObj.IDSSObj`, {py:obj}`altdss.AutoTrans.AutoTransBatch
 :canonical: altdss.AutoTrans.IAutoTrans.FLRise
 :type: altdss.ArrayProxy.BatchFloat64ArrayProxy
 :value: >
-   None
+   'property(...)'
 
 ```{autodoc2-docstring} altdss.AutoTrans.IAutoTrans.FLRise
 ```
@@ -3653,7 +3653,7 @@ Bases: {py:obj}`altdss.DSSObj.IDSSObj`, {py:obj}`altdss.AutoTrans.AutoTransBatch
 :canonical: altdss.AutoTrans.IAutoTrans.FaultRate
 :type: altdss.ArrayProxy.BatchFloat64ArrayProxy
 :value: >
-   None
+   'property(...)'
 
 ```{autodoc2-docstring} altdss.AutoTrans.IAutoTrans.FaultRate
 ```
@@ -3688,7 +3688,7 @@ Bases: {py:obj}`altdss.DSSObj.IDSSObj`, {py:obj}`altdss.AutoTrans.AutoTransBatch
 :canonical: altdss.AutoTrans.IAutoTrans.HSRise
 :type: altdss.ArrayProxy.BatchFloat64ArrayProxy
 :value: >
-   None
+   'property(...)'
 
 ```{autodoc2-docstring} altdss.AutoTrans.IAutoTrans.HSRise
 ```
@@ -3755,7 +3755,7 @@ Bases: {py:obj}`altdss.DSSObj.IDSSObj`, {py:obj}`altdss.AutoTrans.AutoTransBatch
 :canonical: altdss.AutoTrans.IAutoTrans.LeadLag
 :type: altdss.ArrayProxy.BatchInt32ArrayProxy
 :value: >
-   None
+   'property(...)'
 
 ```{autodoc2-docstring} altdss.AutoTrans.IAutoTrans.LeadLag
 ```
@@ -3766,7 +3766,7 @@ Bases: {py:obj}`altdss.DSSObj.IDSSObj`, {py:obj}`altdss.AutoTrans.AutoTransBatch
 :canonical: altdss.AutoTrans.IAutoTrans.LeadLag_str
 :type: typing.List[str]
 :value: >
-   None
+   'property(...)'
 
 ```{autodoc2-docstring} altdss.AutoTrans.IAutoTrans.LeadLag_str
 ```
@@ -3801,7 +3801,7 @@ Bases: {py:obj}`altdss.DSSObj.IDSSObj`, {py:obj}`altdss.AutoTrans.AutoTransBatch
 :canonical: altdss.AutoTrans.IAutoTrans.MaxTap
 :type: typing.List[altdss.types.Float64Array]
 :value: >
-   None
+   'property(...)'
 
 ```{autodoc2-docstring} altdss.AutoTrans.IAutoTrans.MaxTap
 ```
@@ -3812,7 +3812,7 @@ Bases: {py:obj}`altdss.DSSObj.IDSSObj`, {py:obj}`altdss.AutoTrans.AutoTransBatch
 :canonical: altdss.AutoTrans.IAutoTrans.MinTap
 :type: typing.List[altdss.types.Float64Array]
 :value: >
-   None
+   'property(...)'
 
 ```{autodoc2-docstring} altdss.AutoTrans.IAutoTrans.MinTap
 ```
@@ -3832,7 +3832,7 @@ Bases: {py:obj}`altdss.DSSObj.IDSSObj`, {py:obj}`altdss.AutoTrans.AutoTransBatch
 :canonical: altdss.AutoTrans.IAutoTrans.NormAmps
 :type: altdss.ArrayProxy.BatchFloat64ArrayProxy
 :value: >
-   None
+   'property(...)'
 
 ```{autodoc2-docstring} altdss.AutoTrans.IAutoTrans.NormAmps
 ```
@@ -3843,7 +3843,7 @@ Bases: {py:obj}`altdss.DSSObj.IDSSObj`, {py:obj}`altdss.AutoTrans.AutoTransBatch
 :canonical: altdss.AutoTrans.IAutoTrans.NormHkVA
 :type: altdss.ArrayProxy.BatchFloat64ArrayProxy
 :value: >
-   None
+   'property(...)'
 
 ```{autodoc2-docstring} altdss.AutoTrans.IAutoTrans.NormHkVA
 ```
@@ -3886,7 +3886,7 @@ Bases: {py:obj}`altdss.DSSObj.IDSSObj`, {py:obj}`altdss.AutoTrans.AutoTransBatch
 :canonical: altdss.AutoTrans.IAutoTrans.NumTaps
 :type: typing.List[altdss.types.Int32Array]
 :value: >
-   None
+   'property(...)'
 
 ```{autodoc2-docstring} altdss.AutoTrans.IAutoTrans.NumTaps
 ```
@@ -3945,7 +3945,7 @@ Bases: {py:obj}`altdss.DSSObj.IDSSObj`, {py:obj}`altdss.AutoTrans.AutoTransBatch
 :canonical: altdss.AutoTrans.IAutoTrans.Phases
 :type: altdss.ArrayProxy.BatchInt32ArrayProxy
 :value: >
-   None
+   'property(...)'
 
 ```{autodoc2-docstring} altdss.AutoTrans.IAutoTrans.Phases
 ```
@@ -3964,7 +3964,7 @@ Bases: {py:obj}`altdss.DSSObj.IDSSObj`, {py:obj}`altdss.AutoTrans.AutoTransBatch
 :canonical: altdss.AutoTrans.IAutoTrans.RDCOhms
 :type: typing.List[altdss.types.Float64Array]
 :value: >
-   None
+   'property(...)'
 
 ```{autodoc2-docstring} altdss.AutoTrans.IAutoTrans.RDCOhms
 ```
@@ -3975,7 +3975,7 @@ Bases: {py:obj}`altdss.DSSObj.IDSSObj`, {py:obj}`altdss.AutoTrans.AutoTransBatch
 :canonical: altdss.AutoTrans.IAutoTrans.Repair
 :type: altdss.ArrayProxy.BatchFloat64ArrayProxy
 :value: >
-   None
+   'property(...)'
 
 ```{autodoc2-docstring} altdss.AutoTrans.IAutoTrans.Repair
 ```
@@ -4018,7 +4018,7 @@ Bases: {py:obj}`altdss.DSSObj.IDSSObj`, {py:obj}`altdss.AutoTrans.AutoTransBatch
 :canonical: altdss.AutoTrans.IAutoTrans.Sub
 :type: typing.List[bool]
 :value: >
-   None
+   'property(...)'
 
 ```{autodoc2-docstring} altdss.AutoTrans.IAutoTrans.Sub
 ```
@@ -4029,7 +4029,7 @@ Bases: {py:obj}`altdss.DSSObj.IDSSObj`, {py:obj}`altdss.AutoTrans.AutoTransBatch
 :canonical: altdss.AutoTrans.IAutoTrans.SubName
 :type: typing.List[str]
 :value: >
-   None
+   'property(...)'
 
 ```{autodoc2-docstring} altdss.AutoTrans.IAutoTrans.SubName
 ```
@@ -4040,7 +4040,7 @@ Bases: {py:obj}`altdss.DSSObj.IDSSObj`, {py:obj}`altdss.AutoTrans.AutoTransBatch
 :canonical: altdss.AutoTrans.IAutoTrans.Taps
 :type: typing.List[altdss.types.Float64Array]
 :value: >
-   None
+   'property(...)'
 
 ```{autodoc2-docstring} altdss.AutoTrans.IAutoTrans.Taps
 ```
@@ -4051,7 +4051,7 @@ Bases: {py:obj}`altdss.DSSObj.IDSSObj`, {py:obj}`altdss.AutoTrans.AutoTransBatch
 :canonical: altdss.AutoTrans.IAutoTrans.Thermal
 :type: altdss.ArrayProxy.BatchFloat64ArrayProxy
 :value: >
-   None
+   'property(...)'
 
 ```{autodoc2-docstring} altdss.AutoTrans.IAutoTrans.Thermal
 ```
@@ -4102,7 +4102,7 @@ Bases: {py:obj}`altdss.DSSObj.IDSSObj`, {py:obj}`altdss.AutoTrans.AutoTransBatch
 :canonical: altdss.AutoTrans.IAutoTrans.Windings
 :type: altdss.ArrayProxy.BatchInt32ArrayProxy
 :value: >
-   None
+   'property(...)'
 
 ```{autodoc2-docstring} altdss.AutoTrans.IAutoTrans.Windings
 ```
@@ -4113,7 +4113,7 @@ Bases: {py:obj}`altdss.DSSObj.IDSSObj`, {py:obj}`altdss.AutoTrans.AutoTransBatch
 :canonical: altdss.AutoTrans.IAutoTrans.XHT
 :type: altdss.ArrayProxy.BatchFloat64ArrayProxy
 :value: >
-   None
+   'property(...)'
 
 ```{autodoc2-docstring} altdss.AutoTrans.IAutoTrans.XHT
 ```
@@ -4124,7 +4124,7 @@ Bases: {py:obj}`altdss.DSSObj.IDSSObj`, {py:obj}`altdss.AutoTrans.AutoTransBatch
 :canonical: altdss.AutoTrans.IAutoTrans.XHX
 :type: altdss.ArrayProxy.BatchFloat64ArrayProxy
 :value: >
-   None
+   'property(...)'
 
 ```{autodoc2-docstring} altdss.AutoTrans.IAutoTrans.XHX
 ```
@@ -4135,7 +4135,7 @@ Bases: {py:obj}`altdss.DSSObj.IDSSObj`, {py:obj}`altdss.AutoTrans.AutoTransBatch
 :canonical: altdss.AutoTrans.IAutoTrans.XRConst
 :type: typing.List[bool]
 :value: >
-   None
+   'property(...)'
 
 ```{autodoc2-docstring} altdss.AutoTrans.IAutoTrans.XRConst
 ```
@@ -4146,7 +4146,7 @@ Bases: {py:obj}`altdss.DSSObj.IDSSObj`, {py:obj}`altdss.AutoTrans.AutoTransBatch
 :canonical: altdss.AutoTrans.IAutoTrans.XSCArray
 :type: typing.List[altdss.types.Float64Array]
 :value: >
-   None
+   'property(...)'
 
 ```{autodoc2-docstring} altdss.AutoTrans.IAutoTrans.XSCArray
 ```
@@ -4157,7 +4157,7 @@ Bases: {py:obj}`altdss.DSSObj.IDSSObj`, {py:obj}`altdss.AutoTrans.AutoTransBatch
 :canonical: altdss.AutoTrans.IAutoTrans.XXT
 :type: altdss.ArrayProxy.BatchFloat64ArrayProxy
 :value: >
-   None
+   'property(...)'
 
 ```{autodoc2-docstring} altdss.AutoTrans.IAutoTrans.XXT
 ```
@@ -4256,7 +4256,7 @@ Bases: {py:obj}`altdss.DSSObj.IDSSObj`, {py:obj}`altdss.AutoTrans.AutoTransBatch
 :canonical: altdss.AutoTrans.IAutoTrans.kVAs
 :type: typing.List[altdss.types.Float64Array]
 :value: >
-   None
+   'property(...)'
 
 ```{autodoc2-docstring} altdss.AutoTrans.IAutoTrans.kVAs
 ```
@@ -4267,7 +4267,7 @@ Bases: {py:obj}`altdss.DSSObj.IDSSObj`, {py:obj}`altdss.AutoTrans.AutoTransBatch
 :canonical: altdss.AutoTrans.IAutoTrans.kVs
 :type: typing.List[altdss.types.Float64Array]
 :value: >
-   None
+   'property(...)'
 
 ```{autodoc2-docstring} altdss.AutoTrans.IAutoTrans.kVs
 ```
@@ -4278,7 +4278,7 @@ Bases: {py:obj}`altdss.DSSObj.IDSSObj`, {py:obj}`altdss.AutoTrans.AutoTransBatch
 :canonical: altdss.AutoTrans.IAutoTrans.m
 :type: altdss.ArrayProxy.BatchFloat64ArrayProxy
 :value: >
-   None
+   'property(...)'
 
 ```{autodoc2-docstring} altdss.AutoTrans.IAutoTrans.m
 ```
@@ -4289,7 +4289,7 @@ Bases: {py:obj}`altdss.DSSObj.IDSSObj`, {py:obj}`altdss.AutoTrans.AutoTransBatch
 :canonical: altdss.AutoTrans.IAutoTrans.n
 :type: altdss.ArrayProxy.BatchFloat64ArrayProxy
 :value: >
-   None
+   'property(...)'
 
 ```{autodoc2-docstring} altdss.AutoTrans.IAutoTrans.n
 ```
@@ -4308,7 +4308,7 @@ Bases: {py:obj}`altdss.DSSObj.IDSSObj`, {py:obj}`altdss.AutoTrans.AutoTransBatch
 :canonical: altdss.AutoTrans.IAutoTrans.pctIMag
 :type: altdss.ArrayProxy.BatchFloat64ArrayProxy
 :value: >
-   None
+   'property(...)'
 
 ```{autodoc2-docstring} altdss.AutoTrans.IAutoTrans.pctIMag
 ```
@@ -4319,7 +4319,7 @@ Bases: {py:obj}`altdss.DSSObj.IDSSObj`, {py:obj}`altdss.AutoTrans.AutoTransBatch
 :canonical: altdss.AutoTrans.IAutoTrans.pctLoadLoss
 :type: altdss.ArrayProxy.BatchFloat64ArrayProxy
 :value: >
-   None
+   'property(...)'
 
 ```{autodoc2-docstring} altdss.AutoTrans.IAutoTrans.pctLoadLoss
 ```
@@ -4330,7 +4330,7 @@ Bases: {py:obj}`altdss.DSSObj.IDSSObj`, {py:obj}`altdss.AutoTrans.AutoTransBatch
 :canonical: altdss.AutoTrans.IAutoTrans.pctNoLoadLoss
 :type: altdss.ArrayProxy.BatchFloat64ArrayProxy
 :value: >
-   None
+   'property(...)'
 
 ```{autodoc2-docstring} altdss.AutoTrans.IAutoTrans.pctNoLoadLoss
 ```
@@ -4341,7 +4341,7 @@ Bases: {py:obj}`altdss.DSSObj.IDSSObj`, {py:obj}`altdss.AutoTrans.AutoTransBatch
 :canonical: altdss.AutoTrans.IAutoTrans.pctPerm
 :type: altdss.ArrayProxy.BatchFloat64ArrayProxy
 :value: >
-   None
+   'property(...)'
 
 ```{autodoc2-docstring} altdss.AutoTrans.IAutoTrans.pctPerm
 ```
@@ -4352,7 +4352,7 @@ Bases: {py:obj}`altdss.DSSObj.IDSSObj`, {py:obj}`altdss.AutoTrans.AutoTransBatch
 :canonical: altdss.AutoTrans.IAutoTrans.pctR
 :type: typing.List[altdss.types.Float64Array]
 :value: >
-   None
+   'property(...)'
 
 ```{autodoc2-docstring} altdss.AutoTrans.IAutoTrans.pctR
 ```
@@ -4363,7 +4363,7 @@ Bases: {py:obj}`altdss.DSSObj.IDSSObj`, {py:obj}`altdss.AutoTrans.AutoTransBatch
 :canonical: altdss.AutoTrans.IAutoTrans.pctRs
 :type: typing.List[altdss.types.Float64Array]
 :value: >
-   None
+   'property(...)'
 
 ```{autodoc2-docstring} altdss.AutoTrans.IAutoTrans.pctRs
 ```
@@ -4374,7 +4374,7 @@ Bases: {py:obj}`altdss.DSSObj.IDSSObj`, {py:obj}`altdss.AutoTrans.AutoTransBatch
 :canonical: altdss.AutoTrans.IAutoTrans.ppm_Antifloat
 :type: altdss.ArrayProxy.BatchFloat64ArrayProxy
 :value: >
-   None
+   'property(...)'
 
 ```{autodoc2-docstring} altdss.AutoTrans.IAutoTrans.ppm_Antifloat
 ```

@@ -51,7 +51,7 @@ Bases: {py:obj}`altdss.DSSObj.IDSSObj`, {py:obj}`altdss.XYcurve.XYcurveBatch`
 :canonical: altdss.XYcurve.IXYcurve.CSVFile
 :type: typing.List[str]
 :value: >
-   None
+   'property(...)'
 
 ```{autodoc2-docstring} altdss.XYcurve.IXYcurve.CSVFile
 ```
@@ -62,7 +62,7 @@ Bases: {py:obj}`altdss.DSSObj.IDSSObj`, {py:obj}`altdss.XYcurve.XYcurveBatch`
 :canonical: altdss.XYcurve.IXYcurve.DblFile
 :type: typing.List[str]
 :value: >
-   None
+   'property(...)'
 
 ```{autodoc2-docstring} altdss.XYcurve.IXYcurve.DblFile
 ```
@@ -89,7 +89,7 @@ Bases: {py:obj}`altdss.DSSObj.IDSSObj`, {py:obj}`altdss.XYcurve.XYcurveBatch`
 :canonical: altdss.XYcurve.IXYcurve.NPts
 :type: altdss.ArrayProxy.BatchInt32ArrayProxy
 :value: >
-   None
+   'property(...)'
 
 ```{autodoc2-docstring} altdss.XYcurve.IXYcurve.NPts
 ```
@@ -109,7 +109,7 @@ Bases: {py:obj}`altdss.DSSObj.IDSSObj`, {py:obj}`altdss.XYcurve.XYcurveBatch`
 :canonical: altdss.XYcurve.IXYcurve.SngFile
 :type: typing.List[str]
 :value: >
-   None
+   'property(...)'
 
 ```{autodoc2-docstring} altdss.XYcurve.IXYcurve.SngFile
 ```
@@ -120,7 +120,7 @@ Bases: {py:obj}`altdss.DSSObj.IDSSObj`, {py:obj}`altdss.XYcurve.XYcurveBatch`
 :canonical: altdss.XYcurve.IXYcurve.X
 :type: altdss.ArrayProxy.BatchFloat64ArrayProxy
 :value: >
-   None
+   'property(...)'
 
 ```{autodoc2-docstring} altdss.XYcurve.IXYcurve.X
 ```
@@ -131,7 +131,7 @@ Bases: {py:obj}`altdss.DSSObj.IDSSObj`, {py:obj}`altdss.XYcurve.XYcurveBatch`
 :canonical: altdss.XYcurve.IXYcurve.XArray
 :type: typing.List[altdss.types.Float64Array]
 :value: >
-   None
+   'property(...)'
 
 ```{autodoc2-docstring} altdss.XYcurve.IXYcurve.XArray
 ```
@@ -142,7 +142,7 @@ Bases: {py:obj}`altdss.DSSObj.IDSSObj`, {py:obj}`altdss.XYcurve.XYcurveBatch`
 :canonical: altdss.XYcurve.IXYcurve.XScale
 :type: altdss.ArrayProxy.BatchFloat64ArrayProxy
 :value: >
-   None
+   'property(...)'
 
 ```{autodoc2-docstring} altdss.XYcurve.IXYcurve.XScale
 ```
@@ -153,7 +153,7 @@ Bases: {py:obj}`altdss.DSSObj.IDSSObj`, {py:obj}`altdss.XYcurve.XYcurveBatch`
 :canonical: altdss.XYcurve.IXYcurve.XShift
 :type: altdss.ArrayProxy.BatchFloat64ArrayProxy
 :value: >
-   None
+   'property(...)'
 
 ```{autodoc2-docstring} altdss.XYcurve.IXYcurve.XShift
 ```
@@ -164,7 +164,7 @@ Bases: {py:obj}`altdss.DSSObj.IDSSObj`, {py:obj}`altdss.XYcurve.XYcurveBatch`
 :canonical: altdss.XYcurve.IXYcurve.Y
 :type: altdss.ArrayProxy.BatchFloat64ArrayProxy
 :value: >
-   None
+   'property(...)'
 
 ```{autodoc2-docstring} altdss.XYcurve.IXYcurve.Y
 ```
@@ -175,7 +175,7 @@ Bases: {py:obj}`altdss.DSSObj.IDSSObj`, {py:obj}`altdss.XYcurve.XYcurveBatch`
 :canonical: altdss.XYcurve.IXYcurve.YArray
 :type: typing.List[altdss.types.Float64Array]
 :value: >
-   None
+   'property(...)'
 
 ```{autodoc2-docstring} altdss.XYcurve.IXYcurve.YArray
 ```
@@ -186,7 +186,7 @@ Bases: {py:obj}`altdss.DSSObj.IDSSObj`, {py:obj}`altdss.XYcurve.XYcurveBatch`
 :canonical: altdss.XYcurve.IXYcurve.YScale
 :type: altdss.ArrayProxy.BatchFloat64ArrayProxy
 :value: >
-   None
+   'property(...)'
 
 ```{autodoc2-docstring} altdss.XYcurve.IXYcurve.YScale
 ```
@@ -197,7 +197,7 @@ Bases: {py:obj}`altdss.DSSObj.IDSSObj`, {py:obj}`altdss.XYcurve.XYcurveBatch`
 :canonical: altdss.XYcurve.IXYcurve.YShift
 :type: altdss.ArrayProxy.BatchFloat64ArrayProxy
 :value: >
-   None
+   'property(...)'
 
 ```{autodoc2-docstring} altdss.XYcurve.IXYcurve.YShift
 ```
@@ -330,7 +330,7 @@ Bases: {py:obj}`altdss.DSSObj.DSSObj`
 :canonical: altdss.XYcurve.XYcurve.CSVFile
 :type: str
 :value: >
-   None
+   'property(...)'
 
 ```{autodoc2-docstring} altdss.XYcurve.XYcurve.CSVFile
 ```
@@ -341,7 +341,7 @@ Bases: {py:obj}`altdss.DSSObj.DSSObj`
 :canonical: altdss.XYcurve.XYcurve.DblFile
 :type: str
 :value: >
-   None
+   'property(...)'
 
 ```{autodoc2-docstring} altdss.XYcurve.XYcurve.DblFile
 ```
@@ -368,7 +368,7 @@ Bases: {py:obj}`altdss.DSSObj.DSSObj`
 :canonical: altdss.XYcurve.XYcurve.NPts
 :type: int
 :value: >
-   None
+   'property(...)'
 
 ```{autodoc2-docstring} altdss.XYcurve.XYcurve.NPts
 ```
@@ -388,7 +388,7 @@ Bases: {py:obj}`altdss.DSSObj.DSSObj`
 :canonical: altdss.XYcurve.XYcurve.SngFile
 :type: str
 :value: >
-   None
+   'property(...)'
 
 ```{autodoc2-docstring} altdss.XYcurve.XYcurve.SngFile
 ```
@@ -399,7 +399,7 @@ Bases: {py:obj}`altdss.DSSObj.DSSObj`
 :canonical: altdss.XYcurve.XYcurve.X
 :type: float
 :value: >
-   None
+   'property(...)'
 
 ```{autodoc2-docstring} altdss.XYcurve.XYcurve.X
 ```
@@ -410,7 +410,7 @@ Bases: {py:obj}`altdss.DSSObj.DSSObj`
 :canonical: altdss.XYcurve.XYcurve.XArray
 :type: altdss.types.Float64Array
 :value: >
-   None
+   'property(...)'
 
 ```{autodoc2-docstring} altdss.XYcurve.XYcurve.XArray
 ```
@@ -421,7 +421,7 @@ Bases: {py:obj}`altdss.DSSObj.DSSObj`
 :canonical: altdss.XYcurve.XYcurve.XScale
 :type: float
 :value: >
-   None
+   'property(...)'
 
 ```{autodoc2-docstring} altdss.XYcurve.XYcurve.XScale
 ```
@@ -432,7 +432,7 @@ Bases: {py:obj}`altdss.DSSObj.DSSObj`
 :canonical: altdss.XYcurve.XYcurve.XShift
 :type: float
 :value: >
-   None
+   'property(...)'
 
 ```{autodoc2-docstring} altdss.XYcurve.XYcurve.XShift
 ```
@@ -443,7 +443,7 @@ Bases: {py:obj}`altdss.DSSObj.DSSObj`
 :canonical: altdss.XYcurve.XYcurve.Y
 :type: float
 :value: >
-   None
+   'property(...)'
 
 ```{autodoc2-docstring} altdss.XYcurve.XYcurve.Y
 ```
@@ -454,7 +454,7 @@ Bases: {py:obj}`altdss.DSSObj.DSSObj`
 :canonical: altdss.XYcurve.XYcurve.YArray
 :type: altdss.types.Float64Array
 :value: >
-   None
+   'property(...)'
 
 ```{autodoc2-docstring} altdss.XYcurve.XYcurve.YArray
 ```
@@ -465,7 +465,7 @@ Bases: {py:obj}`altdss.DSSObj.DSSObj`
 :canonical: altdss.XYcurve.XYcurve.YScale
 :type: float
 :value: >
-   None
+   'property(...)'
 
 ```{autodoc2-docstring} altdss.XYcurve.XYcurve.YScale
 ```
@@ -476,7 +476,7 @@ Bases: {py:obj}`altdss.DSSObj.DSSObj`
 :canonical: altdss.XYcurve.XYcurve.YShift
 :type: float
 :value: >
-   None
+   'property(...)'
 
 ```{autodoc2-docstring} altdss.XYcurve.XYcurve.YShift
 ```
@@ -553,7 +553,7 @@ Bases: {py:obj}`altdss.Batch.DSSBatch`
 :canonical: altdss.XYcurve.XYcurveBatch.CSVFile
 :type: typing.List[str]
 :value: >
-   None
+   'property(...)'
 
 ```{autodoc2-docstring} altdss.XYcurve.XYcurveBatch.CSVFile
 ```
@@ -564,7 +564,7 @@ Bases: {py:obj}`altdss.Batch.DSSBatch`
 :canonical: altdss.XYcurve.XYcurveBatch.DblFile
 :type: typing.List[str]
 :value: >
-   None
+   'property(...)'
 
 ```{autodoc2-docstring} altdss.XYcurve.XYcurveBatch.DblFile
 ```
@@ -591,7 +591,7 @@ Bases: {py:obj}`altdss.Batch.DSSBatch`
 :canonical: altdss.XYcurve.XYcurveBatch.NPts
 :type: altdss.ArrayProxy.BatchInt32ArrayProxy
 :value: >
-   None
+   'property(...)'
 
 ```{autodoc2-docstring} altdss.XYcurve.XYcurveBatch.NPts
 ```
@@ -611,7 +611,7 @@ Bases: {py:obj}`altdss.Batch.DSSBatch`
 :canonical: altdss.XYcurve.XYcurveBatch.SngFile
 :type: typing.List[str]
 :value: >
-   None
+   'property(...)'
 
 ```{autodoc2-docstring} altdss.XYcurve.XYcurveBatch.SngFile
 ```
@@ -622,7 +622,7 @@ Bases: {py:obj}`altdss.Batch.DSSBatch`
 :canonical: altdss.XYcurve.XYcurveBatch.X
 :type: altdss.ArrayProxy.BatchFloat64ArrayProxy
 :value: >
-   None
+   'property(...)'
 
 ```{autodoc2-docstring} altdss.XYcurve.XYcurveBatch.X
 ```
@@ -633,7 +633,7 @@ Bases: {py:obj}`altdss.Batch.DSSBatch`
 :canonical: altdss.XYcurve.XYcurveBatch.XArray
 :type: typing.List[altdss.types.Float64Array]
 :value: >
-   None
+   'property(...)'
 
 ```{autodoc2-docstring} altdss.XYcurve.XYcurveBatch.XArray
 ```
@@ -644,7 +644,7 @@ Bases: {py:obj}`altdss.Batch.DSSBatch`
 :canonical: altdss.XYcurve.XYcurveBatch.XScale
 :type: altdss.ArrayProxy.BatchFloat64ArrayProxy
 :value: >
-   None
+   'property(...)'
 
 ```{autodoc2-docstring} altdss.XYcurve.XYcurveBatch.XScale
 ```
@@ -655,7 +655,7 @@ Bases: {py:obj}`altdss.Batch.DSSBatch`
 :canonical: altdss.XYcurve.XYcurveBatch.XShift
 :type: altdss.ArrayProxy.BatchFloat64ArrayProxy
 :value: >
-   None
+   'property(...)'
 
 ```{autodoc2-docstring} altdss.XYcurve.XYcurveBatch.XShift
 ```
@@ -666,7 +666,7 @@ Bases: {py:obj}`altdss.Batch.DSSBatch`
 :canonical: altdss.XYcurve.XYcurveBatch.Y
 :type: altdss.ArrayProxy.BatchFloat64ArrayProxy
 :value: >
-   None
+   'property(...)'
 
 ```{autodoc2-docstring} altdss.XYcurve.XYcurveBatch.Y
 ```
@@ -677,7 +677,7 @@ Bases: {py:obj}`altdss.Batch.DSSBatch`
 :canonical: altdss.XYcurve.XYcurveBatch.YArray
 :type: typing.List[altdss.types.Float64Array]
 :value: >
-   None
+   'property(...)'
 
 ```{autodoc2-docstring} altdss.XYcurve.XYcurveBatch.YArray
 ```
@@ -688,7 +688,7 @@ Bases: {py:obj}`altdss.Batch.DSSBatch`
 :canonical: altdss.XYcurve.XYcurveBatch.YScale
 :type: altdss.ArrayProxy.BatchFloat64ArrayProxy
 :value: >
-   None
+   'property(...)'
 
 ```{autodoc2-docstring} altdss.XYcurve.XYcurveBatch.YScale
 ```
@@ -699,7 +699,7 @@ Bases: {py:obj}`altdss.Batch.DSSBatch`
 :canonical: altdss.XYcurve.XYcurveBatch.YShift
 :type: altdss.ArrayProxy.BatchFloat64ArrayProxy
 :value: >
-   None
+   'property(...)'
 
 ```{autodoc2-docstring} altdss.XYcurve.XYcurveBatch.YShift
 ```

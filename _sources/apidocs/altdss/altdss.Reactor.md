@@ -59,7 +59,7 @@ Bases: {py:obj}`altdss.DSSObj.IDSSObj`, {py:obj}`altdss.Reactor.ReactorBatch`
 :canonical: altdss.Reactor.IReactor.BaseFreq
 :type: altdss.ArrayProxy.BatchFloat64ArrayProxy
 :value: >
-   None
+   'property(...)'
 
 ```{autodoc2-docstring} altdss.Reactor.IReactor.BaseFreq
 ```
@@ -70,7 +70,7 @@ Bases: {py:obj}`altdss.DSSObj.IDSSObj`, {py:obj}`altdss.Reactor.ReactorBatch`
 :canonical: altdss.Reactor.IReactor.Bus1
 :type: typing.List[str]
 :value: >
-   None
+   'property(...)'
 
 ```{autodoc2-docstring} altdss.Reactor.IReactor.Bus1
 ```
@@ -81,7 +81,7 @@ Bases: {py:obj}`altdss.DSSObj.IDSSObj`, {py:obj}`altdss.Reactor.ReactorBatch`
 :canonical: altdss.Reactor.IReactor.Bus2
 :type: typing.List[str]
 :value: >
-   None
+   'property(...)'
 
 ```{autodoc2-docstring} altdss.Reactor.IReactor.Bus2
 ```
@@ -108,7 +108,7 @@ Bases: {py:obj}`altdss.DSSObj.IDSSObj`, {py:obj}`altdss.Reactor.ReactorBatch`
 :canonical: altdss.Reactor.IReactor.Conn
 :type: altdss.ArrayProxy.BatchInt32ArrayProxy
 :value: >
-   None
+   'property(...)'
 
 ```{autodoc2-docstring} altdss.Reactor.IReactor.Conn
 ```
@@ -119,7 +119,7 @@ Bases: {py:obj}`altdss.DSSObj.IDSSObj`, {py:obj}`altdss.Reactor.ReactorBatch`
 :canonical: altdss.Reactor.IReactor.Conn_str
 :type: typing.List[str]
 :value: >
-   None
+   'property(...)'
 
 ```{autodoc2-docstring} altdss.Reactor.IReactor.Conn_str
 ```
@@ -146,7 +146,7 @@ Bases: {py:obj}`altdss.DSSObj.IDSSObj`, {py:obj}`altdss.Reactor.ReactorBatch`
 :canonical: altdss.Reactor.IReactor.EmergAmps
 :type: altdss.ArrayProxy.BatchFloat64ArrayProxy
 :value: >
-   None
+   'property(...)'
 
 ```{autodoc2-docstring} altdss.Reactor.IReactor.EmergAmps
 ```
@@ -157,7 +157,7 @@ Bases: {py:obj}`altdss.DSSObj.IDSSObj`, {py:obj}`altdss.Reactor.ReactorBatch`
 :canonical: altdss.Reactor.IReactor.Enabled
 :type: typing.List[bool]
 :value: >
-   None
+   'property(...)'
 
 ```{autodoc2-docstring} altdss.Reactor.IReactor.Enabled
 ```
@@ -184,7 +184,7 @@ Bases: {py:obj}`altdss.DSSObj.IDSSObj`, {py:obj}`altdss.Reactor.ReactorBatch`
 :canonical: altdss.Reactor.IReactor.FaultRate
 :type: altdss.ArrayProxy.BatchFloat64ArrayProxy
 :value: >
-   None
+   'property(...)'
 
 ```{autodoc2-docstring} altdss.Reactor.IReactor.FaultRate
 ```
@@ -267,7 +267,7 @@ Bases: {py:obj}`altdss.DSSObj.IDSSObj`, {py:obj}`altdss.Reactor.ReactorBatch`
 :canonical: altdss.Reactor.IReactor.LCurve
 :type: typing.List[altdss.XYcurve.XYcurve]
 :value: >
-   None
+   'property(...)'
 
 ```{autodoc2-docstring} altdss.Reactor.IReactor.LCurve
 ```
@@ -278,7 +278,7 @@ Bases: {py:obj}`altdss.DSSObj.IDSSObj`, {py:obj}`altdss.Reactor.ReactorBatch`
 :canonical: altdss.Reactor.IReactor.LCurve_str
 :type: typing.List[str]
 :value: >
-   None
+   'property(...)'
 
 ```{autodoc2-docstring} altdss.Reactor.IReactor.LCurve_str
 ```
@@ -305,7 +305,7 @@ Bases: {py:obj}`altdss.DSSObj.IDSSObj`, {py:obj}`altdss.Reactor.ReactorBatch`
 :canonical: altdss.Reactor.IReactor.LmH
 :type: altdss.ArrayProxy.BatchFloat64ArrayProxy
 :value: >
-   None
+   'property(...)'
 
 ```{autodoc2-docstring} altdss.Reactor.IReactor.LmH
 ```
@@ -341,7 +341,7 @@ Bases: {py:obj}`altdss.DSSObj.IDSSObj`, {py:obj}`altdss.Reactor.ReactorBatch`
 :canonical: altdss.Reactor.IReactor.NormAmps
 :type: altdss.ArrayProxy.BatchFloat64ArrayProxy
 :value: >
-   None
+   'property(...)'
 
 ```{autodoc2-docstring} altdss.Reactor.IReactor.NormAmps
 ```
@@ -416,7 +416,7 @@ Bases: {py:obj}`altdss.DSSObj.IDSSObj`, {py:obj}`altdss.Reactor.ReactorBatch`
 :canonical: altdss.Reactor.IReactor.Parallel
 :type: typing.List[bool]
 :value: >
-   None
+   'property(...)'
 
 ```{autodoc2-docstring} altdss.Reactor.IReactor.Parallel
 ```
@@ -443,7 +443,7 @@ Bases: {py:obj}`altdss.DSSObj.IDSSObj`, {py:obj}`altdss.Reactor.ReactorBatch`
 :canonical: altdss.Reactor.IReactor.Phases
 :type: altdss.ArrayProxy.BatchInt32ArrayProxy
 :value: >
-   None
+   'property(...)'
 
 ```{autodoc2-docstring} altdss.Reactor.IReactor.Phases
 ```
@@ -462,7 +462,7 @@ Bases: {py:obj}`altdss.DSSObj.IDSSObj`, {py:obj}`altdss.Reactor.ReactorBatch`
 :canonical: altdss.Reactor.IReactor.R
 :type: altdss.ArrayProxy.BatchFloat64ArrayProxy
 :value: >
-   None
+   'property(...)'
 
 ```{autodoc2-docstring} altdss.Reactor.IReactor.R
 ```
@@ -473,7 +473,7 @@ Bases: {py:obj}`altdss.DSSObj.IDSSObj`, {py:obj}`altdss.Reactor.ReactorBatch`
 :canonical: altdss.Reactor.IReactor.RCurve
 :type: typing.List[altdss.XYcurve.XYcurve]
 :value: >
-   None
+   'property(...)'
 
 ```{autodoc2-docstring} altdss.Reactor.IReactor.RCurve
 ```
@@ -484,7 +484,7 @@ Bases: {py:obj}`altdss.DSSObj.IDSSObj`, {py:obj}`altdss.Reactor.ReactorBatch`
 :canonical: altdss.Reactor.IReactor.RCurve_str
 :type: typing.List[str]
 :value: >
-   None
+   'property(...)'
 
 ```{autodoc2-docstring} altdss.Reactor.IReactor.RCurve_str
 ```
@@ -495,7 +495,7 @@ Bases: {py:obj}`altdss.DSSObj.IDSSObj`, {py:obj}`altdss.Reactor.ReactorBatch`
 :canonical: altdss.Reactor.IReactor.RMatrix
 :type: typing.List[altdss.types.Float64Array]
 :value: >
-   None
+   'property(...)'
 
 ```{autodoc2-docstring} altdss.Reactor.IReactor.RMatrix
 ```
@@ -506,7 +506,7 @@ Bases: {py:obj}`altdss.DSSObj.IDSSObj`, {py:obj}`altdss.Reactor.ReactorBatch`
 :canonical: altdss.Reactor.IReactor.Repair
 :type: altdss.ArrayProxy.BatchFloat64ArrayProxy
 :value: >
-   None
+   'property(...)'
 
 ```{autodoc2-docstring} altdss.Reactor.IReactor.Repair
 ```
@@ -517,7 +517,7 @@ Bases: {py:obj}`altdss.DSSObj.IDSSObj`, {py:obj}`altdss.Reactor.ReactorBatch`
 :canonical: altdss.Reactor.IReactor.Rp
 :type: altdss.ArrayProxy.BatchFloat64ArrayProxy
 :value: >
-   None
+   'property(...)'
 
 ```{autodoc2-docstring} altdss.Reactor.IReactor.Rp
 ```
@@ -600,7 +600,7 @@ Bases: {py:obj}`altdss.DSSObj.IDSSObj`, {py:obj}`altdss.Reactor.ReactorBatch`
 :canonical: altdss.Reactor.IReactor.X
 :type: altdss.ArrayProxy.BatchFloat64ArrayProxy
 :value: >
-   None
+   'property(...)'
 
 ```{autodoc2-docstring} altdss.Reactor.IReactor.X
 ```
@@ -611,7 +611,7 @@ Bases: {py:obj}`altdss.DSSObj.IDSSObj`, {py:obj}`altdss.Reactor.ReactorBatch`
 :canonical: altdss.Reactor.IReactor.XMatrix
 :type: typing.List[altdss.types.Float64Array]
 :value: >
-   None
+   'property(...)'
 
 ```{autodoc2-docstring} altdss.Reactor.IReactor.XMatrix
 ```
@@ -622,7 +622,7 @@ Bases: {py:obj}`altdss.DSSObj.IDSSObj`, {py:obj}`altdss.Reactor.ReactorBatch`
 :canonical: altdss.Reactor.IReactor.Z0
 :type: typing.List[complex]
 :value: >
-   None
+   'property(...)'
 
 ```{autodoc2-docstring} altdss.Reactor.IReactor.Z0
 ```
@@ -633,7 +633,7 @@ Bases: {py:obj}`altdss.DSSObj.IDSSObj`, {py:obj}`altdss.Reactor.ReactorBatch`
 :canonical: altdss.Reactor.IReactor.Z1
 :type: typing.List[complex]
 :value: >
-   None
+   'property(...)'
 
 ```{autodoc2-docstring} altdss.Reactor.IReactor.Z1
 ```
@@ -644,7 +644,7 @@ Bases: {py:obj}`altdss.DSSObj.IDSSObj`, {py:obj}`altdss.Reactor.ReactorBatch`
 :canonical: altdss.Reactor.IReactor.Z2
 :type: typing.List[complex]
 :value: >
-   None
+   'property(...)'
 
 ```{autodoc2-docstring} altdss.Reactor.IReactor.Z2
 ```
@@ -743,7 +743,7 @@ Bases: {py:obj}`altdss.DSSObj.IDSSObj`, {py:obj}`altdss.Reactor.ReactorBatch`
 :canonical: altdss.Reactor.IReactor.kV
 :type: altdss.ArrayProxy.BatchFloat64ArrayProxy
 :value: >
-   None
+   'property(...)'
 
 ```{autodoc2-docstring} altdss.Reactor.IReactor.kV
 ```
@@ -754,7 +754,7 @@ Bases: {py:obj}`altdss.DSSObj.IDSSObj`, {py:obj}`altdss.Reactor.ReactorBatch`
 :canonical: altdss.Reactor.IReactor.kvar
 :type: altdss.ArrayProxy.BatchFloat64ArrayProxy
 :value: >
-   None
+   'property(...)'
 
 ```{autodoc2-docstring} altdss.Reactor.IReactor.kvar
 ```
@@ -773,7 +773,7 @@ Bases: {py:obj}`altdss.DSSObj.IDSSObj`, {py:obj}`altdss.Reactor.ReactorBatch`
 :canonical: altdss.Reactor.IReactor.pctPerm
 :type: altdss.ArrayProxy.BatchFloat64ArrayProxy
 :value: >
-   None
+   'property(...)'
 
 ```{autodoc2-docstring} altdss.Reactor.IReactor.pctPerm
 ```
@@ -818,7 +818,7 @@ Bases: {py:obj}`altdss.DSSObj.DSSObj`, {py:obj}`altdss.CircuitElement.CircuitEle
 :canonical: altdss.Reactor.Reactor.BaseFreq
 :type: float
 :value: >
-   None
+   'property(...)'
 
 ```{autodoc2-docstring} altdss.Reactor.Reactor.BaseFreq
 ```
@@ -829,7 +829,7 @@ Bases: {py:obj}`altdss.DSSObj.DSSObj`, {py:obj}`altdss.CircuitElement.CircuitEle
 :canonical: altdss.Reactor.Reactor.Bus1
 :type: str
 :value: >
-   None
+   'property(...)'
 
 ```{autodoc2-docstring} altdss.Reactor.Reactor.Bus1
 ```
@@ -840,7 +840,7 @@ Bases: {py:obj}`altdss.DSSObj.DSSObj`, {py:obj}`altdss.CircuitElement.CircuitEle
 :canonical: altdss.Reactor.Reactor.Bus2
 :type: str
 :value: >
-   None
+   'property(...)'
 
 ```{autodoc2-docstring} altdss.Reactor.Reactor.Bus2
 ```
@@ -875,7 +875,7 @@ Bases: {py:obj}`altdss.DSSObj.DSSObj`, {py:obj}`altdss.CircuitElement.CircuitEle
 :canonical: altdss.Reactor.Reactor.Conn
 :type: altdss.enums.Connection
 :value: >
-   None
+   'property(...)'
 
 ```{autodoc2-docstring} altdss.Reactor.Reactor.Conn
 ```
@@ -886,7 +886,7 @@ Bases: {py:obj}`altdss.DSSObj.DSSObj`, {py:obj}`altdss.CircuitElement.CircuitEle
 :canonical: altdss.Reactor.Reactor.Conn_str
 :type: str
 :value: >
-   None
+   'property(...)'
 
 ```{autodoc2-docstring} altdss.Reactor.Reactor.Conn_str
 ```
@@ -905,7 +905,7 @@ Bases: {py:obj}`altdss.DSSObj.DSSObj`, {py:obj}`altdss.CircuitElement.CircuitEle
 :canonical: altdss.Reactor.Reactor.DisplayName
 :type: str
 :value: >
-   None
+   'property(...)'
 
 ```{autodoc2-docstring} altdss.Reactor.Reactor.DisplayName
 ```
@@ -916,7 +916,7 @@ Bases: {py:obj}`altdss.DSSObj.DSSObj`, {py:obj}`altdss.CircuitElement.CircuitEle
 :canonical: altdss.Reactor.Reactor.EmergAmps
 :type: float
 :value: >
-   None
+   'property(...)'
 
 ```{autodoc2-docstring} altdss.Reactor.Reactor.EmergAmps
 ```
@@ -927,7 +927,7 @@ Bases: {py:obj}`altdss.DSSObj.DSSObj`, {py:obj}`altdss.CircuitElement.CircuitEle
 :canonical: altdss.Reactor.Reactor.Enabled
 :type: bool
 :value: >
-   None
+   'property(...)'
 
 ```{autodoc2-docstring} altdss.Reactor.Reactor.Enabled
 ```
@@ -954,7 +954,7 @@ Bases: {py:obj}`altdss.DSSObj.DSSObj`, {py:obj}`altdss.CircuitElement.CircuitEle
 :canonical: altdss.Reactor.Reactor.FaultRate
 :type: float
 :value: >
-   None
+   'property(...)'
 
 ```{autodoc2-docstring} altdss.Reactor.Reactor.FaultRate
 ```
@@ -1045,7 +1045,7 @@ Bases: {py:obj}`altdss.DSSObj.DSSObj`, {py:obj}`altdss.CircuitElement.CircuitEle
 :canonical: altdss.Reactor.Reactor.LCurve
 :type: altdss.XYcurve.XYcurve
 :value: >
-   None
+   'property(...)'
 
 ```{autodoc2-docstring} altdss.Reactor.Reactor.LCurve
 ```
@@ -1056,7 +1056,7 @@ Bases: {py:obj}`altdss.DSSObj.DSSObj`, {py:obj}`altdss.CircuitElement.CircuitEle
 :canonical: altdss.Reactor.Reactor.LCurve_str
 :type: str
 :value: >
-   None
+   'property(...)'
 
 ```{autodoc2-docstring} altdss.Reactor.Reactor.LCurve_str
 ```
@@ -1083,7 +1083,7 @@ Bases: {py:obj}`altdss.DSSObj.DSSObj`, {py:obj}`altdss.CircuitElement.CircuitEle
 :canonical: altdss.Reactor.Reactor.LmH
 :type: float
 :value: >
-   None
+   'property(...)'
 
 ```{autodoc2-docstring} altdss.Reactor.Reactor.LmH
 ```
@@ -1135,7 +1135,7 @@ Bases: {py:obj}`altdss.DSSObj.DSSObj`, {py:obj}`altdss.CircuitElement.CircuitEle
 :canonical: altdss.Reactor.Reactor.NormAmps
 :type: float
 :value: >
-   None
+   'property(...)'
 
 ```{autodoc2-docstring} altdss.Reactor.Reactor.NormAmps
 ```
@@ -1218,7 +1218,7 @@ Bases: {py:obj}`altdss.DSSObj.DSSObj`, {py:obj}`altdss.CircuitElement.CircuitEle
 :canonical: altdss.Reactor.Reactor.Parallel
 :type: bool
 :value: >
-   None
+   'property(...)'
 
 ```{autodoc2-docstring} altdss.Reactor.Reactor.Parallel
 ```
@@ -1245,7 +1245,7 @@ Bases: {py:obj}`altdss.DSSObj.DSSObj`, {py:obj}`altdss.CircuitElement.CircuitEle
 :canonical: altdss.Reactor.Reactor.Phases
 :type: int
 :value: >
-   None
+   'property(...)'
 
 ```{autodoc2-docstring} altdss.Reactor.Reactor.Phases
 ```
@@ -1264,7 +1264,7 @@ Bases: {py:obj}`altdss.DSSObj.DSSObj`, {py:obj}`altdss.CircuitElement.CircuitEle
 :canonical: altdss.Reactor.Reactor.R
 :type: float
 :value: >
-   None
+   'property(...)'
 
 ```{autodoc2-docstring} altdss.Reactor.Reactor.R
 ```
@@ -1275,7 +1275,7 @@ Bases: {py:obj}`altdss.DSSObj.DSSObj`, {py:obj}`altdss.CircuitElement.CircuitEle
 :canonical: altdss.Reactor.Reactor.RCurve
 :type: altdss.XYcurve.XYcurve
 :value: >
-   None
+   'property(...)'
 
 ```{autodoc2-docstring} altdss.Reactor.Reactor.RCurve
 ```
@@ -1286,7 +1286,7 @@ Bases: {py:obj}`altdss.DSSObj.DSSObj`, {py:obj}`altdss.CircuitElement.CircuitEle
 :canonical: altdss.Reactor.Reactor.RCurve_str
 :type: str
 :value: >
-   None
+   'property(...)'
 
 ```{autodoc2-docstring} altdss.Reactor.Reactor.RCurve_str
 ```
@@ -1297,7 +1297,7 @@ Bases: {py:obj}`altdss.DSSObj.DSSObj`, {py:obj}`altdss.CircuitElement.CircuitEle
 :canonical: altdss.Reactor.Reactor.RMatrix
 :type: altdss.types.Float64Array
 :value: >
-   None
+   'property(...)'
 
 ```{autodoc2-docstring} altdss.Reactor.Reactor.RMatrix
 ```
@@ -1308,7 +1308,7 @@ Bases: {py:obj}`altdss.DSSObj.DSSObj`, {py:obj}`altdss.CircuitElement.CircuitEle
 :canonical: altdss.Reactor.Reactor.Repair
 :type: float
 :value: >
-   None
+   'property(...)'
 
 ```{autodoc2-docstring} altdss.Reactor.Reactor.Repair
 ```
@@ -1327,7 +1327,7 @@ Bases: {py:obj}`altdss.DSSObj.DSSObj`, {py:obj}`altdss.CircuitElement.CircuitEle
 :canonical: altdss.Reactor.Reactor.Rp
 :type: float
 :value: >
-   None
+   'property(...)'
 
 ```{autodoc2-docstring} altdss.Reactor.Reactor.Rp
 ```
@@ -1410,7 +1410,7 @@ Bases: {py:obj}`altdss.DSSObj.DSSObj`, {py:obj}`altdss.CircuitElement.CircuitEle
 :canonical: altdss.Reactor.Reactor.X
 :type: float
 :value: >
-   None
+   'property(...)'
 
 ```{autodoc2-docstring} altdss.Reactor.Reactor.X
 ```
@@ -1421,7 +1421,7 @@ Bases: {py:obj}`altdss.DSSObj.DSSObj`, {py:obj}`altdss.CircuitElement.CircuitEle
 :canonical: altdss.Reactor.Reactor.XMatrix
 :type: altdss.types.Float64Array
 :value: >
-   None
+   'property(...)'
 
 ```{autodoc2-docstring} altdss.Reactor.Reactor.XMatrix
 ```
@@ -1440,7 +1440,7 @@ Bases: {py:obj}`altdss.DSSObj.DSSObj`, {py:obj}`altdss.CircuitElement.CircuitEle
 :canonical: altdss.Reactor.Reactor.Z0
 :type: complex
 :value: >
-   None
+   'property(...)'
 
 ```{autodoc2-docstring} altdss.Reactor.Reactor.Z0
 ```
@@ -1451,7 +1451,7 @@ Bases: {py:obj}`altdss.DSSObj.DSSObj`, {py:obj}`altdss.CircuitElement.CircuitEle
 :canonical: altdss.Reactor.Reactor.Z1
 :type: complex
 :value: >
-   None
+   'property(...)'
 
 ```{autodoc2-docstring} altdss.Reactor.Reactor.Z1
 ```
@@ -1462,7 +1462,7 @@ Bases: {py:obj}`altdss.DSSObj.DSSObj`, {py:obj}`altdss.CircuitElement.CircuitEle
 :canonical: altdss.Reactor.Reactor.Z2
 :type: complex
 :value: >
-   None
+   'property(...)'
 
 ```{autodoc2-docstring} altdss.Reactor.Reactor.Z2
 ```
@@ -1521,7 +1521,7 @@ Bases: {py:obj}`altdss.DSSObj.DSSObj`, {py:obj}`altdss.CircuitElement.CircuitEle
 :canonical: altdss.Reactor.Reactor.kV
 :type: float
 :value: >
-   None
+   'property(...)'
 
 ```{autodoc2-docstring} altdss.Reactor.Reactor.kV
 ```
@@ -1532,7 +1532,7 @@ Bases: {py:obj}`altdss.DSSObj.DSSObj`, {py:obj}`altdss.CircuitElement.CircuitEle
 :canonical: altdss.Reactor.Reactor.kvar
 :type: float
 :value: >
-   None
+   'property(...)'
 
 ```{autodoc2-docstring} altdss.Reactor.Reactor.kvar
 ```
@@ -1559,7 +1559,7 @@ Bases: {py:obj}`altdss.DSSObj.DSSObj`, {py:obj}`altdss.CircuitElement.CircuitEle
 :canonical: altdss.Reactor.Reactor.pctPerm
 :type: float
 :value: >
-   None
+   'property(...)'
 
 ```{autodoc2-docstring} altdss.Reactor.Reactor.pctPerm
 ```
@@ -1596,7 +1596,7 @@ Bases: {py:obj}`altdss.Batch.DSSBatch`, {py:obj}`altdss.CircuitElement.CircuitEl
 :canonical: altdss.Reactor.ReactorBatch.BaseFreq
 :type: altdss.ArrayProxy.BatchFloat64ArrayProxy
 :value: >
-   None
+   'property(...)'
 
 ```{autodoc2-docstring} altdss.Reactor.ReactorBatch.BaseFreq
 ```
@@ -1607,7 +1607,7 @@ Bases: {py:obj}`altdss.Batch.DSSBatch`, {py:obj}`altdss.CircuitElement.CircuitEl
 :canonical: altdss.Reactor.ReactorBatch.Bus1
 :type: typing.List[str]
 :value: >
-   None
+   'property(...)'
 
 ```{autodoc2-docstring} altdss.Reactor.ReactorBatch.Bus1
 ```
@@ -1618,7 +1618,7 @@ Bases: {py:obj}`altdss.Batch.DSSBatch`, {py:obj}`altdss.CircuitElement.CircuitEl
 :canonical: altdss.Reactor.ReactorBatch.Bus2
 :type: typing.List[str]
 :value: >
-   None
+   'property(...)'
 
 ```{autodoc2-docstring} altdss.Reactor.ReactorBatch.Bus2
 ```
@@ -1645,7 +1645,7 @@ Bases: {py:obj}`altdss.Batch.DSSBatch`, {py:obj}`altdss.CircuitElement.CircuitEl
 :canonical: altdss.Reactor.ReactorBatch.Conn
 :type: altdss.ArrayProxy.BatchInt32ArrayProxy
 :value: >
-   None
+   'property(...)'
 
 ```{autodoc2-docstring} altdss.Reactor.ReactorBatch.Conn
 ```
@@ -1656,7 +1656,7 @@ Bases: {py:obj}`altdss.Batch.DSSBatch`, {py:obj}`altdss.CircuitElement.CircuitEl
 :canonical: altdss.Reactor.ReactorBatch.Conn_str
 :type: typing.List[str]
 :value: >
-   None
+   'property(...)'
 
 ```{autodoc2-docstring} altdss.Reactor.ReactorBatch.Conn_str
 ```
@@ -1683,7 +1683,7 @@ Bases: {py:obj}`altdss.Batch.DSSBatch`, {py:obj}`altdss.CircuitElement.CircuitEl
 :canonical: altdss.Reactor.ReactorBatch.EmergAmps
 :type: altdss.ArrayProxy.BatchFloat64ArrayProxy
 :value: >
-   None
+   'property(...)'
 
 ```{autodoc2-docstring} altdss.Reactor.ReactorBatch.EmergAmps
 ```
@@ -1694,7 +1694,7 @@ Bases: {py:obj}`altdss.Batch.DSSBatch`, {py:obj}`altdss.CircuitElement.CircuitEl
 :canonical: altdss.Reactor.ReactorBatch.Enabled
 :type: typing.List[bool]
 :value: >
-   None
+   'property(...)'
 
 ```{autodoc2-docstring} altdss.Reactor.ReactorBatch.Enabled
 ```
@@ -1721,7 +1721,7 @@ Bases: {py:obj}`altdss.Batch.DSSBatch`, {py:obj}`altdss.CircuitElement.CircuitEl
 :canonical: altdss.Reactor.ReactorBatch.FaultRate
 :type: altdss.ArrayProxy.BatchFloat64ArrayProxy
 :value: >
-   None
+   'property(...)'
 
 ```{autodoc2-docstring} altdss.Reactor.ReactorBatch.FaultRate
 ```
@@ -1804,7 +1804,7 @@ Bases: {py:obj}`altdss.Batch.DSSBatch`, {py:obj}`altdss.CircuitElement.CircuitEl
 :canonical: altdss.Reactor.ReactorBatch.LCurve
 :type: typing.List[altdss.XYcurve.XYcurve]
 :value: >
-   None
+   'property(...)'
 
 ```{autodoc2-docstring} altdss.Reactor.ReactorBatch.LCurve
 ```
@@ -1815,7 +1815,7 @@ Bases: {py:obj}`altdss.Batch.DSSBatch`, {py:obj}`altdss.CircuitElement.CircuitEl
 :canonical: altdss.Reactor.ReactorBatch.LCurve_str
 :type: typing.List[str]
 :value: >
-   None
+   'property(...)'
 
 ```{autodoc2-docstring} altdss.Reactor.ReactorBatch.LCurve_str
 ```
@@ -1842,7 +1842,7 @@ Bases: {py:obj}`altdss.Batch.DSSBatch`, {py:obj}`altdss.CircuitElement.CircuitEl
 :canonical: altdss.Reactor.ReactorBatch.LmH
 :type: altdss.ArrayProxy.BatchFloat64ArrayProxy
 :value: >
-   None
+   'property(...)'
 
 ```{autodoc2-docstring} altdss.Reactor.ReactorBatch.LmH
 ```
@@ -1878,7 +1878,7 @@ Bases: {py:obj}`altdss.Batch.DSSBatch`, {py:obj}`altdss.CircuitElement.CircuitEl
 :canonical: altdss.Reactor.ReactorBatch.NormAmps
 :type: altdss.ArrayProxy.BatchFloat64ArrayProxy
 :value: >
-   None
+   'property(...)'
 
 ```{autodoc2-docstring} altdss.Reactor.ReactorBatch.NormAmps
 ```
@@ -1953,7 +1953,7 @@ Bases: {py:obj}`altdss.Batch.DSSBatch`, {py:obj}`altdss.CircuitElement.CircuitEl
 :canonical: altdss.Reactor.ReactorBatch.Parallel
 :type: typing.List[bool]
 :value: >
-   None
+   'property(...)'
 
 ```{autodoc2-docstring} altdss.Reactor.ReactorBatch.Parallel
 ```
@@ -1980,7 +1980,7 @@ Bases: {py:obj}`altdss.Batch.DSSBatch`, {py:obj}`altdss.CircuitElement.CircuitEl
 :canonical: altdss.Reactor.ReactorBatch.Phases
 :type: altdss.ArrayProxy.BatchInt32ArrayProxy
 :value: >
-   None
+   'property(...)'
 
 ```{autodoc2-docstring} altdss.Reactor.ReactorBatch.Phases
 ```
@@ -1999,7 +1999,7 @@ Bases: {py:obj}`altdss.Batch.DSSBatch`, {py:obj}`altdss.CircuitElement.CircuitEl
 :canonical: altdss.Reactor.ReactorBatch.R
 :type: altdss.ArrayProxy.BatchFloat64ArrayProxy
 :value: >
-   None
+   'property(...)'
 
 ```{autodoc2-docstring} altdss.Reactor.ReactorBatch.R
 ```
@@ -2010,7 +2010,7 @@ Bases: {py:obj}`altdss.Batch.DSSBatch`, {py:obj}`altdss.CircuitElement.CircuitEl
 :canonical: altdss.Reactor.ReactorBatch.RCurve
 :type: typing.List[altdss.XYcurve.XYcurve]
 :value: >
-   None
+   'property(...)'
 
 ```{autodoc2-docstring} altdss.Reactor.ReactorBatch.RCurve
 ```
@@ -2021,7 +2021,7 @@ Bases: {py:obj}`altdss.Batch.DSSBatch`, {py:obj}`altdss.CircuitElement.CircuitEl
 :canonical: altdss.Reactor.ReactorBatch.RCurve_str
 :type: typing.List[str]
 :value: >
-   None
+   'property(...)'
 
 ```{autodoc2-docstring} altdss.Reactor.ReactorBatch.RCurve_str
 ```
@@ -2032,7 +2032,7 @@ Bases: {py:obj}`altdss.Batch.DSSBatch`, {py:obj}`altdss.CircuitElement.CircuitEl
 :canonical: altdss.Reactor.ReactorBatch.RMatrix
 :type: typing.List[altdss.types.Float64Array]
 :value: >
-   None
+   'property(...)'
 
 ```{autodoc2-docstring} altdss.Reactor.ReactorBatch.RMatrix
 ```
@@ -2043,7 +2043,7 @@ Bases: {py:obj}`altdss.Batch.DSSBatch`, {py:obj}`altdss.CircuitElement.CircuitEl
 :canonical: altdss.Reactor.ReactorBatch.Repair
 :type: altdss.ArrayProxy.BatchFloat64ArrayProxy
 :value: >
-   None
+   'property(...)'
 
 ```{autodoc2-docstring} altdss.Reactor.ReactorBatch.Repair
 ```
@@ -2054,7 +2054,7 @@ Bases: {py:obj}`altdss.Batch.DSSBatch`, {py:obj}`altdss.CircuitElement.CircuitEl
 :canonical: altdss.Reactor.ReactorBatch.Rp
 :type: altdss.ArrayProxy.BatchFloat64ArrayProxy
 :value: >
-   None
+   'property(...)'
 
 ```{autodoc2-docstring} altdss.Reactor.ReactorBatch.Rp
 ```
@@ -2137,7 +2137,7 @@ Bases: {py:obj}`altdss.Batch.DSSBatch`, {py:obj}`altdss.CircuitElement.CircuitEl
 :canonical: altdss.Reactor.ReactorBatch.X
 :type: altdss.ArrayProxy.BatchFloat64ArrayProxy
 :value: >
-   None
+   'property(...)'
 
 ```{autodoc2-docstring} altdss.Reactor.ReactorBatch.X
 ```
@@ -2148,7 +2148,7 @@ Bases: {py:obj}`altdss.Batch.DSSBatch`, {py:obj}`altdss.CircuitElement.CircuitEl
 :canonical: altdss.Reactor.ReactorBatch.XMatrix
 :type: typing.List[altdss.types.Float64Array]
 :value: >
-   None
+   'property(...)'
 
 ```{autodoc2-docstring} altdss.Reactor.ReactorBatch.XMatrix
 ```
@@ -2159,7 +2159,7 @@ Bases: {py:obj}`altdss.Batch.DSSBatch`, {py:obj}`altdss.CircuitElement.CircuitEl
 :canonical: altdss.Reactor.ReactorBatch.Z0
 :type: typing.List[complex]
 :value: >
-   None
+   'property(...)'
 
 ```{autodoc2-docstring} altdss.Reactor.ReactorBatch.Z0
 ```
@@ -2170,7 +2170,7 @@ Bases: {py:obj}`altdss.Batch.DSSBatch`, {py:obj}`altdss.CircuitElement.CircuitEl
 :canonical: altdss.Reactor.ReactorBatch.Z1
 :type: typing.List[complex]
 :value: >
-   None
+   'property(...)'
 
 ```{autodoc2-docstring} altdss.Reactor.ReactorBatch.Z1
 ```
@@ -2181,7 +2181,7 @@ Bases: {py:obj}`altdss.Batch.DSSBatch`, {py:obj}`altdss.CircuitElement.CircuitEl
 :canonical: altdss.Reactor.ReactorBatch.Z2
 :type: typing.List[complex]
 :value: >
-   None
+   'property(...)'
 
 ```{autodoc2-docstring} altdss.Reactor.ReactorBatch.Z2
 ```
@@ -2248,7 +2248,7 @@ Bases: {py:obj}`altdss.Batch.DSSBatch`, {py:obj}`altdss.CircuitElement.CircuitEl
 :canonical: altdss.Reactor.ReactorBatch.kV
 :type: altdss.ArrayProxy.BatchFloat64ArrayProxy
 :value: >
-   None
+   'property(...)'
 
 ```{autodoc2-docstring} altdss.Reactor.ReactorBatch.kV
 ```
@@ -2259,7 +2259,7 @@ Bases: {py:obj}`altdss.Batch.DSSBatch`, {py:obj}`altdss.CircuitElement.CircuitEl
 :canonical: altdss.Reactor.ReactorBatch.kvar
 :type: altdss.ArrayProxy.BatchFloat64ArrayProxy
 :value: >
-   None
+   'property(...)'
 
 ```{autodoc2-docstring} altdss.Reactor.ReactorBatch.kvar
 ```
@@ -2270,7 +2270,7 @@ Bases: {py:obj}`altdss.Batch.DSSBatch`, {py:obj}`altdss.CircuitElement.CircuitEl
 :canonical: altdss.Reactor.ReactorBatch.pctPerm
 :type: altdss.ArrayProxy.BatchFloat64ArrayProxy
 :value: >
-   None
+   'property(...)'
 
 ```{autodoc2-docstring} altdss.Reactor.ReactorBatch.pctPerm
 ```

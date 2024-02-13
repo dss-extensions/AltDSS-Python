@@ -51,7 +51,7 @@ Bases: {py:obj}`altdss.DSSObj.DSSObj`
 :canonical: altdss.GrowthShape.GrowthShape.CSVFile
 :type: str
 :value: >
-   None
+   'property(...)'
 
 ```{autodoc2-docstring} altdss.GrowthShape.GrowthShape.CSVFile
 ```
@@ -62,7 +62,7 @@ Bases: {py:obj}`altdss.DSSObj.DSSObj`
 :canonical: altdss.GrowthShape.GrowthShape.DblFile
 :type: str
 :value: >
-   None
+   'property(...)'
 
 ```{autodoc2-docstring} altdss.GrowthShape.GrowthShape.DblFile
 ```
@@ -89,7 +89,7 @@ Bases: {py:obj}`altdss.DSSObj.DSSObj`
 :canonical: altdss.GrowthShape.GrowthShape.Mult
 :type: altdss.types.Float64Array
 :value: >
-   None
+   'property(...)'
 
 ```{autodoc2-docstring} altdss.GrowthShape.GrowthShape.Mult
 ```
@@ -100,7 +100,7 @@ Bases: {py:obj}`altdss.DSSObj.DSSObj`
 :canonical: altdss.GrowthShape.GrowthShape.NPts
 :type: int
 :value: >
-   None
+   'property(...)'
 
 ```{autodoc2-docstring} altdss.GrowthShape.GrowthShape.NPts
 ```
@@ -120,7 +120,7 @@ Bases: {py:obj}`altdss.DSSObj.DSSObj`
 :canonical: altdss.GrowthShape.GrowthShape.SngFile
 :type: str
 :value: >
-   None
+   'property(...)'
 
 ```{autodoc2-docstring} altdss.GrowthShape.GrowthShape.SngFile
 ```
@@ -131,7 +131,7 @@ Bases: {py:obj}`altdss.DSSObj.DSSObj`
 :canonical: altdss.GrowthShape.GrowthShape.Year
 :type: altdss.types.Float64Array
 :value: >
-   None
+   'property(...)'
 
 ```{autodoc2-docstring} altdss.GrowthShape.GrowthShape.Year
 ```
@@ -208,7 +208,7 @@ Bases: {py:obj}`altdss.Batch.DSSBatch`
 :canonical: altdss.GrowthShape.GrowthShapeBatch.CSVFile
 :type: typing.List[str]
 :value: >
-   None
+   'property(...)'
 
 ```{autodoc2-docstring} altdss.GrowthShape.GrowthShapeBatch.CSVFile
 ```
@@ -219,7 +219,7 @@ Bases: {py:obj}`altdss.Batch.DSSBatch`
 :canonical: altdss.GrowthShape.GrowthShapeBatch.DblFile
 :type: typing.List[str]
 :value: >
-   None
+   'property(...)'
 
 ```{autodoc2-docstring} altdss.GrowthShape.GrowthShapeBatch.DblFile
 ```
@@ -246,7 +246,7 @@ Bases: {py:obj}`altdss.Batch.DSSBatch`
 :canonical: altdss.GrowthShape.GrowthShapeBatch.Mult
 :type: typing.List[altdss.types.Float64Array]
 :value: >
-   None
+   'property(...)'
 
 ```{autodoc2-docstring} altdss.GrowthShape.GrowthShapeBatch.Mult
 ```
@@ -257,7 +257,7 @@ Bases: {py:obj}`altdss.Batch.DSSBatch`
 :canonical: altdss.GrowthShape.GrowthShapeBatch.NPts
 :type: altdss.ArrayProxy.BatchInt32ArrayProxy
 :value: >
-   None
+   'property(...)'
 
 ```{autodoc2-docstring} altdss.GrowthShape.GrowthShapeBatch.NPts
 ```
@@ -277,7 +277,7 @@ Bases: {py:obj}`altdss.Batch.DSSBatch`
 :canonical: altdss.GrowthShape.GrowthShapeBatch.SngFile
 :type: typing.List[str]
 :value: >
-   None
+   'property(...)'
 
 ```{autodoc2-docstring} altdss.GrowthShape.GrowthShapeBatch.SngFile
 ```
@@ -288,7 +288,7 @@ Bases: {py:obj}`altdss.Batch.DSSBatch`
 :canonical: altdss.GrowthShape.GrowthShapeBatch.Year
 :type: typing.List[altdss.types.Float64Array]
 :value: >
-   None
+   'property(...)'
 
 ```{autodoc2-docstring} altdss.GrowthShape.GrowthShapeBatch.Year
 ```
@@ -1163,7 +1163,7 @@ Bases: {py:obj}`altdss.DSSObj.IDSSObj`, {py:obj}`altdss.GrowthShape.GrowthShapeB
 :canonical: altdss.GrowthShape.IGrowthShape.CSVFile
 :type: typing.List[str]
 :value: >
-   None
+   'property(...)'
 
 ```{autodoc2-docstring} altdss.GrowthShape.IGrowthShape.CSVFile
 ```
@@ -1174,7 +1174,7 @@ Bases: {py:obj}`altdss.DSSObj.IDSSObj`, {py:obj}`altdss.GrowthShape.GrowthShapeB
 :canonical: altdss.GrowthShape.IGrowthShape.DblFile
 :type: typing.List[str]
 :value: >
-   None
+   'property(...)'
 
 ```{autodoc2-docstring} altdss.GrowthShape.IGrowthShape.DblFile
 ```
@@ -1201,7 +1201,7 @@ Bases: {py:obj}`altdss.DSSObj.IDSSObj`, {py:obj}`altdss.GrowthShape.GrowthShapeB
 :canonical: altdss.GrowthShape.IGrowthShape.Mult
 :type: typing.List[altdss.types.Float64Array]
 :value: >
-   None
+   'property(...)'
 
 ```{autodoc2-docstring} altdss.GrowthShape.IGrowthShape.Mult
 ```
@@ -1212,7 +1212,7 @@ Bases: {py:obj}`altdss.DSSObj.IDSSObj`, {py:obj}`altdss.GrowthShape.GrowthShapeB
 :canonical: altdss.GrowthShape.IGrowthShape.NPts
 :type: altdss.ArrayProxy.BatchInt32ArrayProxy
 :value: >
-   None
+   'property(...)'
 
 ```{autodoc2-docstring} altdss.GrowthShape.IGrowthShape.NPts
 ```
@@ -1232,7 +1232,7 @@ Bases: {py:obj}`altdss.DSSObj.IDSSObj`, {py:obj}`altdss.GrowthShape.GrowthShapeB
 :canonical: altdss.GrowthShape.IGrowthShape.SngFile
 :type: typing.List[str]
 :value: >
-   None
+   'property(...)'
 
 ```{autodoc2-docstring} altdss.GrowthShape.IGrowthShape.SngFile
 ```
@@ -1243,7 +1243,7 @@ Bases: {py:obj}`altdss.DSSObj.IDSSObj`, {py:obj}`altdss.GrowthShape.GrowthShapeB
 :canonical: altdss.GrowthShape.IGrowthShape.Year
 :type: typing.List[altdss.types.Float64Array]
 :value: >
-   None
+   'property(...)'
 
 ```{autodoc2-docstring} altdss.GrowthShape.IGrowthShape.Year
 ```
