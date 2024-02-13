@@ -20,7 +20,7 @@ artifacts = ["altdss/_version.py"]
 name = "altdss"
 dynamic = ["version"]
 dependencies = [
-    "dss_python>=0.15.0,<0.16.0",
+    "dss_python>=0.15.1,<0.16.0",
     "numpy>=1.21.0",
     "typing_extensions>=4.5,<5",
     "scipy",
@@ -68,5 +68,5 @@ test = [
   "pytest",
 ]
 all = [
-  "dss_python[all]>=0.15.0,<0.16.0",  
+  "dss_python[all]>=0.15.1,<0.16.0",  
 ]
