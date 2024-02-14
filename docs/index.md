@@ -19,16 +19,16 @@ For alternatives for other programming languages, including in MATLAB, C++, C#/.
 ```mermaid
 flowchart TD
     C["AltDSS engine/DSS C-API\n(libdss_capi)"] --> P["DSS-Python: Backend"]
-    P --- DSSPY["<a href='https://dss-extensions.org/dss_python/'>DSS-Python\n(dss package)</a>"]
+    P --- DSSPY["<a href='https://dss-extensions.org/DSS-Python/'>DSS-Python\n(dss package)</a>"]
     P --- ODDPY["<a href='https://dss-extensions.org/opendssdirect.py'>OpenDSSDirect.py\n(opendssdirect package)</a>"]
     P --- ALTDSSPY["AltDSS-Python\n(altdss package)"]
 ```
 
 </center>
 
-AltDSS-Python is one of three Python projects under DSS-Extensions. See [DSS-Extensions — OpenDSS: Overview of Python APIs](https://dss-extensions.org/python_apis.html) for a brief comparison between these and the official COM API. Both OpenDSSDirect.py and DSS-Python expose the classic OpenDSS API (closer to the COM implementation), including most of its limitations. AltDSS-Python, on the other hand, exposes all OpenDSS objects, batch operations, and a more intuitive API. If required, users can mix all three packages in the same project to access some of their unique features, or just to avoid changing legacy/stable code.
+AltDSS-Python is one of three Python projects under DSS-Extensions. See [DSS-Extensions — OpenDSS: Overview of Python APIs](https://dss-extensions.org/python_apis.html) for a brief comparison between these and the official COM API. Both OpenDSSDirect.py and DSS-Python expose the classic OpenDSS API (closer to the COM implementation). AltDSS-Python, on the other hand, exposes all OpenDSS objects, batch operations, and a more intuitive API. If required, users can mix all three packages in the same project to access some of their unique features, or just to avoid changing legacy/stable code.
 
-Since the base code is share, other features from [DSS-Python such as plotting](https://dss-extensions.org/dss_python/examples/Plotting.html) can be used here. Other examples from DSS-Python or OpenDSSDirect.py can be adapted quite easily too.
+Since the base code is shared, other features from [DSS-Python such as plotting](https://dss-extensions.org/DSS-Python/examples/Plotting.html) can be used here. Other examples from DSS-Python or OpenDSSDirect.py can be adapted quite easily too.
 
 ## What is AltDSS?
 
@@ -69,7 +69,7 @@ Note that the general interaction through .DSS scripts is unchanged and users ca
 
 Besides the naming issue, although both DSS-Python and OpenDSSDirect.py acquired features since 2018, when DSS-Extensions was born, adding a lot of the features from AltDSS would break compatibility in a major way. Initially, more Pythonic and extra features were expected to land on OpenDSSDirect.py. Looking into the list of publications and public repositories using both packages suggests that breaking the API to introduce features is not advisable.
 
-Moreover, many users still see OpenDSSDirect.py and think that it uses OpenDSSDirect.DLL. That is not the case, and even when it was (before August 2018), the Linux and macOS builds of OpenDSS were not supported by EPRI, the original OpenDSS developer. Effectively, OpenDSSDirect.py (OpenDSSDirect.jl is in a similar situation) never used an official binary on non-Windows platforms, since there is not as of February 2024.
+Moreover, many users still see OpenDSSDirect.py and think that it uses OpenDSSDirect.DLL. That is not the case, and even when it was (before August 2018), the Linux and macOS builds of OpenDSS were not supported by EPRI, the original OpenDSS developer. Effectively, OpenDSSDirect.py (OpenDSSDirect.jl is in a similar situation) never used an official binary on non-Windows platforms, since there is not any as of February 2024.
 
 That said, we hope both new and experienced OpenDSS users find it easy to adopt it.
 
@@ -97,12 +97,12 @@ altdss package <apidocs/index.rst>
 :maxdepth: 1
 :hidden:
 :caption: External links
-GitHub repository <https://github.com/dss-extensions/dss_python>
-Package on PyPI <https://pypi.python.org/pypi/OpenDSSDirect.py/>
+GitHub repository <https://github.com/dss-extensions/AltDSS-Python>
+Package on PyPI <https://pypi.python.org/pypi/altdss/>
 Test/example circuits <https://github.com/dss-extensions/electricdss-tst>
 DSS-Extensions/FAQ <https://github.com/dss-extensions/dss-extensions#faq>
 OpenDSSDirect.py <https://dss-extensions.org/OpenDSSDirect.py>
-DSS-Python <https://dss-extensions.org/dss_python/>
+DSS-Python <https://dss-extensions.org/DSS-Python/>
 DSS-Extensions Discussions <https://github.com/orgs/dss-extensions/discussions>
 OpenDSS forum <https://sourceforge.net/p/electricdss/discussion/>
 OpenDSS documentation <https://opendss.epri.com/opendss_documentation.html>

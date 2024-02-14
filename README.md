@@ -28,9 +28,9 @@ flowchart TD
 
 </center>
 
-AltDSS-Python is one of three Python projects under DSS-Extensions. See [DSS-Extensions — OpenDSS: Overview of Python APIs](https://dss-extensions.org/python_apis.html) for a brief comparison between these and the official COM API. Both OpenDSSDirect.py and DSS-Python expose the classic OpenDSS API (closer to the COM implementation), including most of its limitations. AltDSS-Python, on the other hand, exposes all OpenDSS objects, batch operations, and a more intuitive API. If required, users can mix all three packages in the same project to access some of their unique features, or just to avoid changing legacy/stable code.
+AltDSS-Python is one of three Python projects under DSS-Extensions. See [DSS-Extensions — OpenDSS: Overview of Python APIs](https://dss-extensions.org/python_apis.html) for a brief comparison between these and the official COM API. Both OpenDSSDirect.py and DSS-Python expose the classic OpenDSS API (closer to the COM implementation). AltDSS-Python, on the other hand, exposes all OpenDSS objects, batch operations, and a more intuitive API. If required, users can mix all three packages in the same project to access some of their unique features, or just to avoid changing legacy/stable code.
 
-Since the base code is share, other features from [DSS-Python such as plotting](https://dss-extensions.org/dss_python/examples/Plotting.html) can be used here. Other examples from DSS-Python or OpenDSSDirect.py can be adapted quite easily too.
+Since the base code is shared, other features from [DSS-Python such as plotting](https://dss-extensions.org/DSS-Python/examples/Plotting.html) can be used here. Other examples from DSS-Python or OpenDSSDirect.py can be adapted quite easily too.
 
 ## What is AltDSS?
 
