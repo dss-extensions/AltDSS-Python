@@ -519,8 +519,8 @@ class DSSBatch(Base, BatchCommon):
             raise ValueError("The number of elements must match the number of elements in the batch.")
 
         other_ptr = self._ffi.new('void*[]', len(other))
-        other_ptr[:] = [o._ptr if o is not None else self._ffi.NULL for o in other]
         other_cnt = len(other)
+        other_ptr[0:other_cnt] = [o._ptr if o is not None else self._ffi.NULL for o in other]
         self._lib.Batch_SetObjectArray(*self._get_ptr_cnt(), idx, other_ptr, flags)
         self._check_for_error()
 
@@ -534,8 +534,8 @@ class DSSBatch(Base, BatchCommon):
             other_cnt = 0
         else:
             other_ptr = self._ffi.new('void*[]', len(other))
-            other_ptr[:] = [o._ptr if o is not None else self._ffi.NULL for o in other]
             other_cnt = len(other)
+            other_ptr[0:other_cnt] = [o._ptr if o is not None else self._ffi.NULL for o in other]
 
         for ptr in self._unpack():
             self._lib.Obj_SetObjectArray(ptr, idx, other_ptr, other_cnt, flags)

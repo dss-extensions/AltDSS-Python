@@ -137,9 +137,9 @@ class EnergyMeterObjMixin:
         '''Number of feeder sections in this meter's zone'''
         return self._lib.Alt_Meter_Get_NumSections(self._ptr)
 
-    def DoReliabilityCalc(self, assumeRestoration) -> None:
+    def DoReliabilityCalc(self, assumeRestoration: bool) -> None:
         '''Calculate reliability indices'''
-        self.lib._Alt_Meter_DoReliabilityCalc(self._ptr, assumeRestoration)
+        self._lib.Alt_Meter_DoReliabilityCalc(self._ptr, assumeRestoration)
 
     @property
     def CalcCurrent(self) -> Float64Array:
@@ -188,10 +188,10 @@ class EnergyMeterBatchMixin:
         '''Number of feeder sections in the zone of each meter'''
         return self._get_batch_int32_func("Alt_Meter_Get_NumSections")
 
-    def DoReliabilityCalc(self, assumeRestoration) -> None:
+    def DoReliabilityCalc(self, assumeRestoration: bool) -> None:
         '''Calculate reliability indices for each meter'''
         for ptr in self._unpack():
-            self.lib._Alt_Meter_DoReliabilityCalc(ptr, assumeRestoration)
+            self._lib.Alt_Meter_DoReliabilityCalc(ptr, assumeRestoration)
 
 
 class IEnergyMeterMixin:

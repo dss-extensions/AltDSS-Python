@@ -25,7 +25,7 @@ class PCElementMixin:
             if not isinstance(varIdxName, bytes):
                 varIdxName = varIdxName.encode(self._api_util.codec)
 
-            return self._lib.Alt_PCE_Get_VariableValueS(self._ptr, varIdxName)
+            return self._lib.Alt_PCE_Get_VariableSValue(self._ptr, varIdxName)
 
 
     def SetVariableValue(self, varIdxName: Union[AnyStr, int], value: float):
@@ -35,7 +35,7 @@ class PCElementMixin:
             if not isinstance(varIdxName, bytes):
                 varIdxName = varIdxName.encode(self._api_util.codec)
 
-            self._lib.Alt_PCE_Set_VariableValueS(self._ptr, varIdxName, value)
+            self._lib.Alt_PCE_Set_VariableSValue(self._ptr, varIdxName, value)
 
     def EnergyMeter(self) -> DSSObj:
         return self._get_obj_from_ptr(self._lib.Alt_PCE_Get_EnergyMeter(self._ptr))

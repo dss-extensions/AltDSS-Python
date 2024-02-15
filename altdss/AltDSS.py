@@ -228,7 +228,7 @@ class AltDSS(IObj):
     @property
     def NumCircuitElements(self) -> int:
         '''Number of CircuitElements in the circuit.'''
-        return self._check_for_error(self._lib.Circuit_Get_NumCircuitElements())
+        return self._check_for_error(self._lib.Circuit_Get_NumCktElements())
 
     @property
     def NumNodes(self) -> int:

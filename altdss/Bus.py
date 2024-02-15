@@ -142,7 +142,7 @@ class Bus:
     @property
     def Voc(self) -> ComplexArray:
         '''Open circuit voltage; Complex array.'''
-        return self._get_fcomplex128_array(self._lib.Alt_Bus_Get_Voc_GR, self._ptr)
+        return self._get_fcomplex128_array(self._lib.Alt_Bus_Get_Voc, self._ptr)
 
     @property
     def Voltages(self) -> ComplexArray:
@@ -180,9 +180,9 @@ class Bus:
         return self._get_fcomplex128_array(self._lib.Alt_Bus_Get_puVLL, self._ptr)
 
     @property
-    def puVmagAngle(self) -> Float64Array:
+    def puVMagAngle(self) -> Float64Array:
         '''Array of doubles containing voltage magnitude, angle (degrees) pairs in per unit'''
-        return self._get_float64_array(self._lib.Alt_Bus_Get_puVmagAngle, self._ptr)
+        return self._get_float64_array(self._lib.Alt_Bus_Get_puVMagAngle, self._ptr)
 
     @property
     def puVoltages(self) -> ComplexArray:

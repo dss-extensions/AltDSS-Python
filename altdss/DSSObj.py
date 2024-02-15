@@ -1,3 +1,4 @@
+from __future__ import annotations
 import numpy as np
 from dss.enums import DSSJSONFlags
 from .enums import SetterFlags
@@ -35,7 +36,8 @@ class DSSObj(Base):
         return self._ptr.__hash__()
 
     def __eq__(self, other):
-        return self._ptr == getattr(other, '_ptr')
+        # return isinstance(other, self.__class__) and (other._ptr == self._ptr)
+        return hasattr(other, '_ptr') and self._ptr == other._ptr
 
     def __ne__(self, other):
         return self._ptr != getattr(other, '_ptr')
@@ -87,9 +89,6 @@ class DSSObj(Base):
         s = self._ffi.gc(self._lib.Obj_ToJSON(self._ptr, options), self._lib.DSS_Dispose_String)
         self._check_for_error()
         return self._ffi.string(s).decode(self._api_util.codec)
-
-    def __eq__(self, other):
-        return isinstance(other, self.__class__) and (other._ptr == self._ptr)
 
     def __repr__(self):
         # This could probably be done in DSS C-API instead (equivalent to SaveWrite)
@@ -245,14 +244,14 @@ class DSSObj(Base):
         return res
 
 
-    def _set_obj_array(self, idx: int, other, flags: SetterFlags = 0):
+    def _set_obj_array(self, idx: int, other: List[DSSObj], flags: SetterFlags = 0):
         if other is None or (isinstance(other, LIST_LIKE) and len(other) == 0):
             other_ptr = self._ffi.NULL
             other_cnt = 0
         else:
             other_cnt = len(other)
-            other_ptr = self.ffi.new('void*[]', other_cnt)
-            other_ptr[:] = [o._ptr for o in other]
+            other_ptr = self._ffi.new('void*[]', other_cnt)
+            other_ptr[0:other_cnt] = [o._ptr for o in other]
 
         self._lib.Obj_SetObjectArray(self._ptr, idx, other_ptr, other_cnt, flags)
         self._check_for_error()

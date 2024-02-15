@@ -9,6 +9,11 @@ relevant. See [DSS C-API's repository](https://github.com/dss-extensions/dss_cap
 - Line: adjust Conductors to allow any conductor data object (WireData, CNData, TSData).
 - LineGeometry: rename "Wire" to "Conductors", follow the changes in Line.
 - Depend on DSS-Python 0.15.2 for the updated backend.
+- Add tests to ensure the following issues don't happen again:
+    - Bus: Fix typo in `puVMagAngle` (rename it from `puVmagAngle`), and `Voc`.
+    - Meters: Fix typo in call to `DoReliabilityCalc`
+    - Circuit: Fix typo in `NumCircuitElements`
+    - PCE: Found a function not implemented in the engine. Fixed there.
 
 ## 0.1.0
 
