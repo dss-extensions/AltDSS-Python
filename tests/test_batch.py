@@ -627,6 +627,13 @@ def test_create_ckt13_batch_df():
 # def test_create_ckt13_batch_dump_df():
 #     _test_create_ckt13_batch(4)
 
+def test_batch_set_obj():
+    create_ref_ckt13(altdss)
+    ls = altdss.LoadShape['default']
+    assert altdss.Load.Daily_str == [''] * len(altdss.Load)
+    altdss.Load.Daily = ls
+    assert altdss.Load.Daily_str == ['default'] * len(altdss.Load)
+
 if __name__ == '__main__':
     # Adjust for manually running a test-case
     test_loads_no_yprim()

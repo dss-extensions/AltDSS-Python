@@ -505,13 +505,13 @@ class DSSBatch(Base, BatchCommon):
             self._check_for_error()
             return
 
-        if other is not None or isinstance(other, (bytes, str)) or (isinstance(other, LIST_LIKE) and len(other) and isinstance(other[0], (bytes, str))):
-            self._set_batch_string(idx, other, flags)
-            return
-
         if isinstance(other, DSSObj):
             self._lib.Batch_SetObject(*self._get_ptr_cnt(), idx, other._ptr, flags)
             self._check_for_error()
+            return
+
+        if other is not None or isinstance(other, (bytes, str)) or (isinstance(other, LIST_LIKE) and len(other) and isinstance(other[0], (bytes, str))):
+            self._set_batch_string(idx, other, flags)
             return
 
         # Assume it's a list otherwise
