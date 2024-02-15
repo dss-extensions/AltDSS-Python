@@ -3,6 +3,12 @@
 Remember that changes in our alternative OpenDSS engine, currently known as AltDSS/DSS C-API, are always
 relevant. See [DSS C-API's repository](https://github.com/dss-extensions/dss_capi/) for more information.
 
+## 0.1.1
+
+- Batch: fix setter for single object
+- Line: adjust Conductors to allow any conductor data object (WireData, CNData, TSData).
+- LineGeometry: rename "Wire" to "Conductors", follow the changes in Line.
+- Depend on DSS-Python 0.15.2 for the updated backend.
 
 ## 0.1.0
 

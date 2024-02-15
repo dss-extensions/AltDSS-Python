@@ -10,6 +10,8 @@ from .ArrayProxy import BatchFloat64ArrayProxy, BatchInt32ArrayProxy
 from .common import LIST_LIKE
 from .LineSpacing import LineSpacing
 from .WireData import WireData
+from .CNData import CNData
+from .TSData import TSData
 
 class LineGeometry(DSSObj):
     __slots__ = DSSObj._extra_slots
@@ -66,7 +68,7 @@ class LineGeometry(DSSObj):
 
     NPhases = property(_get_NPhases, _set_NPhases) # type: int
 
-    def _get_Wire_str(self) -> List[str]:
+    def _get_Conductors_str(self) -> List[str]:
         """
         Code from WireData. MUST BE PREVIOUSLY DEFINED. no default.
         Specifies use of Overhead Line parameter calculation,
@@ -74,14 +76,14 @@ class LineGeometry(DSSObj):
 
         DSS property name: `Wire`, DSS property index: 4.
         """
-        return self._get_string_array(self._lib.Obj_GetStringArray, self._ptr, 4)
+        return self._get_string_array(self._lib.Obj_GetStringArray, self._ptr, 12)
 
-    def _set_Wire_str(self, value: List[AnyStr], flags: enums.SetterFlags = 0):
-        self._set_string_array_o(4, value, flags)
+    def _set_Conductors_str(self, value: List[AnyStr], flags: enums.SetterFlags = 0):
+        self._set_string_array_o(12, value, flags | enums.SetterFlags.AllowAllConductors)
 
-    Wire_str = property(_get_Wire_str, _set_Wire_str) # type: List[str]
+    Conductors_str = property(_get_Conductors_str, _set_Conductors_str) # type: List[str]
 
-    def _get_Wire(self) -> List[WireData]:
+    def _get_Conductors(self) -> List[Union[WireData, CNData, TSData]]:
         """
         Code from WireData. MUST BE PREVIOUSLY DEFINED. no default.
         Specifies use of Overhead Line parameter calculation,
@@ -89,16 +91,16 @@ class LineGeometry(DSSObj):
 
         DSS property name: `Wire`, DSS property index: 4.
         """
-        return self._get_obj_array(4, WireData)
+        return self._get_obj_array(12)
 
-    def _set_Wire(self, value: List[Union[AnyStr, WireData]], flags: enums.SetterFlags = 0):
+    def _set_Conductors(self, value: List[Union[AnyStr, WireData]], flags: enums.SetterFlags = 0):
         if value is None or len(value) == 0 or not isinstance(value[0], DSSObj):
-            self._set_string_array_o(4, value, flags)
+            self._set_string_array_o(12, value, flags | enums.SetterFlags.AllowAllConductors)
             return
 
-        self._set_obj_array(4, value, flags)
+        self._set_obj_array(12, value, flags | enums.SetterFlags.AllowAllConductors)
 
-    Wire = property(_get_Wire, _set_Wire) # type: List[WireData]
+    Conductors = property(_get_Conductors, _set_Conductors) # type: List[Union[WireData, CNData, TSData]]
 
     def _get_X(self) -> Float64Array:
         """
@@ -306,7 +308,7 @@ class LineGeometry(DSSObj):
 class LineGeometryProperties(TypedDict):
     NConds: int
     NPhases: int
-    Wire: List[Union[AnyStr, WireData]]
+    Conductors: List[Union[AnyStr, Union[WireData, CNData, TSData]]]
     X: Float64Array
     H: Float64Array
     Units: Union[AnyStr, int, enums.LengthUnit]
@@ -355,7 +357,7 @@ class LineGeometryBatch(DSSBatch):
 
     NPhases = property(_get_NPhases, _set_NPhases) # type: BatchInt32ArrayProxy
 
-    def _get_Wire_str(self) -> List[List[str]]:
+    def _get_Conductors_str(self) -> List[List[str]]:
         """
         Code from WireData. MUST BE PREVIOUSLY DEFINED. no default.
         Specifies use of Overhead Line parameter calculation,
@@ -363,14 +365,14 @@ class LineGeometryBatch(DSSBatch):
 
         DSS property name: `Wire`, DSS property index: 4.
         """
-        return self._get_string_ll(4)
+        return self._get_string_ll(12)
 
-    def _set_Wire_str(self, value: List[AnyStr], flags: enums.SetterFlags = 0):
-        self._set_batch_stringlist_prop(4, value, flags)
+    def _set_Conductors_str(self, value: List[AnyStr], flags: enums.SetterFlags = 0):
+        self._set_batch_stringlist_prop(12, value, flags | enums.SetterFlags.AllowAllConductors)
 
-    Wire_str = property(_get_Wire_str, _set_Wire_str) # type: List[List[str]]
+    Conductors_str = property(_get_Conductors_str, _set_Conductors_str) # type: List[List[str]]
 
-    def _get_Wire(self) -> List[List[WireData]]:
+    def _get_Conductors(self) -> List[List[Union[WireData, CNData, TSData]]]:
         """
         Code from WireData. MUST BE PREVIOUSLY DEFINED. no default.
         Specifies use of Overhead Line parameter calculation,
@@ -378,16 +380,16 @@ class LineGeometryBatch(DSSBatch):
 
         DSS property name: `Wire`, DSS property index: 4.
         """
-        return self._get_obj_ll(4, WireData)
+        return self._get_obj_ll(12)
 
-    def _set_Wire(self, value: Union[List[AnyStr], List[WireData]], flags: enums.SetterFlags = 0):
+    def _set_Conductors(self, value: Union[List[AnyStr], List[Union[WireData, CNData, TSData]]], flags: enums.SetterFlags = 0):
         if (not len(value)) or isinstance(value[0], (bytes, str)) or (len(value[0]) and isinstance(value[0][0], (bytes, str))):
-            self._set_batch_stringlist_prop(4, value, flags)
+            self._set_batch_stringlist_prop(12, value, flags | enums.SetterFlags.AllowAllConductors)
             return
 
-        self._set_batch_objlist_prop(4, value, flags)
+        self._set_batch_objlist_prop(12, value, flags | enums.SetterFlags.AllowAllConductors)
 
-    Wire = property(_get_Wire, _set_Wire) # type: List[List[WireData]]
+    Conductors = property(_get_Conductors, _set_Conductors) # type: List[List[Union[WireData, CNData, TSData]]]
 
     def _get_X(self) -> List[Float64Array]:
         """
@@ -603,7 +605,7 @@ class LineGeometryBatch(DSSBatch):
 class LineGeometryBatchProperties(TypedDict):
     NConds: Union[int, Int32Array]
     NPhases: Union[int, Int32Array]
-    Wire: Union[List[AnyStr], List[WireData]]
+    Conductors: Union[List[AnyStr], List[Union[WireData, CNData, TSData]]]
     X: Float64Array
     H: Float64Array
     Units: Union[AnyStr, int, enums.LengthUnit, List[AnyStr], List[int], List[enums.LengthUnit], Int32Array]

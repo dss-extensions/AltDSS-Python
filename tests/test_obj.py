@@ -19,7 +19,7 @@ else:
 from altdss import (
     Vsource, Transformer, LineCode, Load, Line, Capacitor, 
     Connection as Conn, RegControl, LengthUnit as Units,
-    LoadModel, Edit, AltDSS, altdss
+    LoadModel, Edit, AltDSS, altdss, LineGeometry, LineSpacing,
 )    
 
 def create_ref_ckt13(ref):
@@ -686,6 +686,55 @@ def test_obj_lifetime():
     names = loads_all.Name
 
 
+def test_line_linegeo_conductors():
+    create_ref_ckt13(altdss)
+    cn = altdss.CNData.new('250_1/3', k=13, DiaStrand=0.064, RStrand=2.816666667, EpsR=2.3, 
+        InsLayer=0.220, DiaIns=1.06, DiaCable=1.16, RAC=0.076705, GMRAC=0.20568, Diam=0.573, 
+        RUnits=Units.kft, RadUnits=Units.inch, GMRUnits=Units.inch
+    )
+    cn.end_edit()
+    cn2 = altdss.CNData.new('250_1/3--2', k=13, DiaStrand=0.064, RStrand=2.816666667, EpsR=2.3, 
+        InsLayer=0.220, DiaIns=1.06, DiaCable=1.16, RAC=0.076705, GMRAC=0.20568, Diam=0.573, 
+        RUnits=Units.kft, RadUnits=Units.inch, GMRUnits=Units.inch
+    )
+    cn2.end_edit()
+
+    ls: LineSpacing = altdss.LineSpacing.new('test_spacing')
+    ls.NConds = 3
+    ls.NPhases = 3
+    ls.X = [-0.5, 0, 0.5]
+    ls.H = [-4, -4, -4]
+    ls.end_edit()
+
+
+    l: Line = altdss.Line[0]
+    ls = altdss.LineSpacing[0]
+    l.Spacing = ls
+    l.Conductors = [cn] * l.Phases
+    assert l.Conductors_str == [cn.FullName()] * l.Phases
+    l.Conductors_str = [cn2.FullName()] * l.Phases
+    assert l.Conductors == [cn2] * l.Phases
+    l.Conductors = [cn.FullName()] * l.Phases
+
+    lg: LineGeometry = altdss.LineGeometry.new('606')
+    lg.NPhases = 3
+    lg.NConds = 3
+    lg.Units = Units.ft
+    print([cn.FullName()] * 3)
+    lg.Conductors = [cn, cn, cn]
+    lg.X = [-0.5, 0, 0.5]
+    lg.H = [-4, -4, -4]
+    print('LG conductors (str):', lg.Conductors_str)
+    print('LG conductors:', lg.Conductors)
+    lg.Conductors = [cn, cn, cn]
+    assert lg.Conductors_str == [cn.FullName()] * lg.NConds
+    lg.Conductors_str = [cn2.FullName()] * lg.NConds
+    assert lg.Conductors == [cn2, cn2, cn2]
+
+    lg.end_edit()
+
+    print(len(altdss.LineGeometry))
+
 if __name__ == '__main__':
     # Adjust for manual running a test-case
-    test_create_ckt13_shortcut()
+    test_obj_array()

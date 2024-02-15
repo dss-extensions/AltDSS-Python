@@ -14,6 +14,8 @@ from .LineCode import LineCode as LineCodeObj
 from .LineGeometry import LineGeometry
 from .LineSpacing import LineSpacing
 from .WireData import WireData
+from .CNData import CNData
+from .TSData import TSData
 
 class Line(DSSObj, CircuitElementMixin, PDElementMixin):
     __slots__ = DSSObj._extra_slots + CircuitElementMixin._extra_slots + PDElementMixin._extra_slots
@@ -428,11 +430,11 @@ class Line(DSSObj, CircuitElementMixin, PDElementMixin):
         return self._get_string_array(self._lib.Obj_GetStringArray, self._ptr, 22)
 
     def _set_Conductors_str(self, value: List[AnyStr], flags: enums.SetterFlags = 0):
-        self._set_string_array_o(22, value, flags)
+        self._set_string_array_o(22, value, flags | enums.SetterFlags.AllowAllConductors)
 
     Conductors_str = property(_get_Conductors_str, _set_Conductors_str) # type: List[str]
 
-    def _get_Conductors(self) -> List[WireData]:
+    def _get_Conductors(self) -> List[Union[WireData, CNData, TSData]]:
         """
         Array of WireData names for use in an overhead line constants calculation.
         Must be used in conjunction with the Spacing property.
@@ -441,16 +443,16 @@ class Line(DSSObj, CircuitElementMixin, PDElementMixin):
 
         DSS property name: `Wires`, DSS property index: 22.
         """
-        return self._get_obj_array(22, WireData)
+        return self._get_obj_array(22)
 
-    def _set_Conductors(self, value: List[Union[AnyStr, WireData]], flags: enums.SetterFlags = 0):
+    def _set_Conductors(self, value: List[Union[AnyStr, Union[WireData, CNData, TSData]]], flags: enums.SetterFlags = 0):
         if value is None or len(value) == 0 or not isinstance(value[0], DSSObj):
-            self._set_string_array_o(22, value, flags)
+            self._set_string_array_o(22, value, flags | enums.SetterFlags.AllowAllConductors)
             return
 
-        self._set_obj_array(22, value, flags)
+        self._set_obj_array(22, value, flags | enums.SetterFlags.AllowAllConductors)
 
-    Conductors = property(_get_Conductors, _set_Conductors) # type: List[WireData]
+    Conductors = property(_get_Conductors, _set_Conductors) # type: List[Union[WireData, CNData, TSData]]
 
     def _get_EarthModel(self) -> enums.EarthModel:
         """
@@ -693,7 +695,7 @@ class LineProperties(TypedDict):
     Geometry: Union[AnyStr, LineGeometry]
     Units: Union[AnyStr, int, enums.LengthUnit]
     Spacing: Union[AnyStr, LineSpacing]
-    Conductors: List[Union[AnyStr, WireData]]
+    Conductors: List[Union[AnyStr, Union[WireData, CNData, TSData]]]
     EarthModel: Union[AnyStr, int, enums.EarthModel]
     B1: float
     B0: float
@@ -1085,11 +1087,11 @@ class LineBatch(DSSBatch, CircuitElementBatchMixin, PDElementBatchMixin):
         return self._get_string_ll(22)
 
     def _set_Conductors_str(self, value: List[AnyStr], flags: enums.SetterFlags = 0):
-        self._set_batch_stringlist_prop(22, value, flags)
+        self._set_batch_stringlist_prop(22, value, flags | enums.SetterFlags.AllowAllConductors)
 
     Conductors_str = property(_get_Conductors_str, _set_Conductors_str) # type: List[List[str]]
 
-    def _get_Conductors(self) -> List[List[WireData]]:
+    def _get_Conductors(self) -> List[List[Union[WireData, CNData, TSData]]]:
         """
         Array of WireData names for use in an overhead line constants calculation.
         Must be used in conjunction with the Spacing property.
@@ -1098,16 +1100,16 @@ class LineBatch(DSSBatch, CircuitElementBatchMixin, PDElementBatchMixin):
 
         DSS property name: `Wires`, DSS property index: 22.
         """
-        return self._get_obj_ll(22, WireData)
+        return self._get_obj_ll(22)
 
-    def _set_Conductors(self, value: Union[List[AnyStr], List[WireData]], flags: enums.SetterFlags = 0):
+    def _set_Conductors(self, value: Union[List[AnyStr], List[Union[WireData, CNData, TSData]]], flags: enums.SetterFlags = 0):
         if (not len(value)) or isinstance(value[0], (bytes, str)) or (len(value[0]) and isinstance(value[0][0], (bytes, str))):
-            self._set_batch_stringlist_prop(22, value, flags)
+            self._set_batch_stringlist_prop(22, value, flags | enums.SetterFlags.AllowAllConductors)
             return
 
         self._set_batch_objlist_prop(22, value, flags)
 
-    Conductors = property(_get_Conductors, _set_Conductors) # type: List[List[WireData]]
+    Conductors = property(_get_Conductors, _set_Conductors) # type: List[List[Union[WireData, CNData, TSData]]]
 
     def _get_EarthModel(self) -> BatchInt32ArrayProxy:
         """
@@ -1356,7 +1358,7 @@ class LineBatchProperties(TypedDict):
     Geometry: Union[AnyStr, LineGeometry, List[AnyStr], List[LineGeometry]]
     Units: Union[AnyStr, int, enums.LengthUnit, List[AnyStr], List[int], List[enums.LengthUnit], Int32Array]
     Spacing: Union[AnyStr, LineSpacing, List[AnyStr], List[LineSpacing]]
-    Conductors: Union[List[AnyStr], List[WireData]]
+    Conductors: Union[List[AnyStr], List[Union[WireData, CNData, TSData]]]
     EarthModel: Union[AnyStr, int, enums.EarthModel, List[AnyStr], List[int], List[enums.EarthModel], Int32Array]
     B1: Union[float, Float64Array]
     B0: Union[float, Float64Array]
