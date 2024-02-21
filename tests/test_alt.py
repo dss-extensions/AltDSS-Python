@@ -8,7 +8,7 @@ import numpy
 numpy.set_printoptions(linewidth=999)
 import numpy.testing as nptest
 from altdss import altdss, AltDSS
-from altdss.CircuitElement import CircuitElementMixin
+from altdss.CircuitElement import CircuitElementMixin, ElementHasRegistersMixin
 from altdss.PDElement import PDElementMixin
 from altdss.PCElement import PCElementMixin
 from altdss.LoadShape import LoadShapeObjMixin
@@ -42,157 +42,176 @@ altdss(f'redirect "{BASE_DIR}/Version8/Distrib/IEEETestCases/LVTestCase/Master.d
 errors = []
 
 dss = altdss.to_dss_python()
-for cname in dss.Classes:
-    cls = getattr(altdss, cname)
-    if not len(cls):
-        continue
+for pass_num in (0, 1):
+    if pass_num == 1:
+        altdss('solve mode=daily')
 
-    print('=' * 40)
-    c = cls[0]
-    for k in dir(c):
-        if k.lower() in c._cls_prop_idx:
-            print(f'{c.FullName()}.{k}={getattr(c, k)}')
+    for cname in dss.Classes:
+        cls = getattr(altdss, cname)
+        if not len(cls):
+            continue
 
-    # DSSObj
-    print('Name', c.Name)
-    print('FullName', c.FullName())
+        print('=' * 40)
+        c = cls[0]
+        for k in dir(c):
+            if k.lower() in c._cls_prop_idx:
+                print(f'{c.FullName()}.{k}={getattr(c, k)}')
 
-    if isinstance(c, CircuitElementMixin):
-        print('DisplayName', c.DisplayName)
-        for funcname in [
-            'Handle',
-            'NumConductors',
-            'NumPhases',
-            'NumTerminals',
-            'NumControllers',
-            'OCPDevice',
-            'OCPDeviceType',
-            'OCPDeviceIndex',
-            'IsIsolated',
-            'HasOCPDevice',
-            'HasSwitchControl',
-            'HasVoltControl',
-            'NodeOrder',
-            'NodeRef',
-            'ComplexSeqVoltages',
-            'ComplexSeqCurrents',
-            'Currents',
-            'Voltages',
-            'Losses',
-            'PhaseLosses',
-            'Powers',
-            'SeqVoltages',
-            'Residuals',
-            'YPrim',
-            'VoltagesMagAng',
-            'TotalPowers',
-        ]:
-            if isinstance(c, EnergyMeterObjMixin) and funcname == 'Losses':
-                continue
+        # DSSObj
+        print('Name', c.Name)
+        print('FullName', c.FullName())
 
-            try:
-                print(funcname, getattr(c, funcname)())
-            except:
-                errors.append((c.FullName(), funcname))
-                continue
+        if isinstance(c, CircuitElementMixin):
+            print('DisplayName', c.DisplayName)
+            for funcname in [
+                'Handle',
+                'NumConductors',
+                'NumPhases',
+                'NumTerminals',
+                'NumControllers',
+                'OCPDevice',
+                'OCPDeviceType',
+                'OCPDeviceIndex',
+                'IsIsolated',
+                'HasOCPDevice',
+                'HasSwitchControl',
+                'HasVoltControl',
+                'NodeOrder',
+                'NodeRef',
+                'ComplexSeqVoltages',
+                'ComplexSeqCurrents',
+                'Currents',
+                'Voltages',
+                'Losses',
+                'PhaseLosses',
+                'Powers',
+                'SeqVoltages',
+                'Residuals',
+                'YPrim',
+                'VoltagesMagAng',
+                'TotalPowers',
+            ]:
+                if isinstance(c, EnergyMeterObjMixin) and funcname == 'Losses':
+                    continue
 
-
-    if isinstance(c, PCElementMixin):
-        for funcname in [
-            'VariableNames',
-            'VariableValues',
-            'VariablesDict',
-            'EnergyMeter',
-            'EnergyMeterName',
-        ]:
-            try:
-                print(funcname, getattr(c, funcname)())
-            except:
-                errors.append((c.FullName(), funcname))
-                continue
-
-    if isinstance(c, PDElementMixin):
-        for funcname in [
-            'EnergyMeter',
-            'EnergyMeterName',
-            'IsShunt',
-            'AccumulatedL',
-            'Lambda',
-            'NumCustomers',
-            'ParentPDElement',
-            'TotalCustomers',
-            'FromTerminal',
-            'TotalMiles',
-            'SectionID',
-            'pctNorm',
-            'pctEmerg',
-        ]:
-            try:
-                print(funcname, getattr(c, funcname)())
-            except:
-                errors.append((c.FullName(), funcname))
-                continue
+                try:
+                    print(funcname, getattr(c, funcname)())
+                except:
+                    errors.append((c.FullName(), funcname))
+                    continue
 
 
-    if isinstance(c, LoadShapeObjMixin):
-        mult_f64 = c.PMult
-        c.UseFloat32()
-        mult_f32 = c.PMult
-        nptest.assert_allclose(mult_f32, mult_f64)
+        if isinstance(c, PCElementMixin):
+            for funcname in [
+                'VariableNames',
+                'VariableValues',
+                'VariablesDict',
+                'EnergyMeter',
+                'EnergyMeterName',
+            ]:
+                try:
+                    print(funcname, getattr(c, funcname)())
+                except:
+                    errors.append((c.FullName(), funcname))
+                    continue
+
+        if isinstance(c, PDElementMixin):
+            for funcname in [
+                'EnergyMeter',
+                'EnergyMeterName',
+                'IsShunt',
+                'AccumulatedL',
+                'Lambda',
+                'NumCustomers',
+                'ParentPDElement',
+                'TotalCustomers',
+                'FromTerminal',
+                'TotalMiles',
+                'SectionID',
+                'pctNorm',
+                'pctEmerg',
+            ]:
+                try:
+                    print(funcname, getattr(c, funcname)())
+                except:
+                    errors.append((c.FullName(), funcname))
+                    continue
 
 
-    if isinstance(c, TransformerObjMixin):
-        for funcname, *params in [
-            ('WindingCurrents',),
-            ('WindingVoltages', 1),
-            ('LossesByType',),
-        ]:
-            try:
-                print(funcname, getattr(c, funcname)(*params))
-            except:
-                errors.append((c.FullName(), funcname))
-                continue
+        if isinstance(c, LoadShapeObjMixin):
+            mult_f64 = c.PMult
+            c.UseFloat32()
+            mult_f32 = c.PMult
+            nptest.assert_allclose(mult_f32, mult_f64)
 
 
-    if isinstance(c, MonitorObjMixin):
-        for funcname in [
-            'Header',
-            'ByteStream',
-            'FileName',
-            'SampleCount',
-            'NumChannels',
-            'RecordSize',
-            'dblFreq',
-            'dblHour',
-            'AsMatrix',
-            'ToDataFrame'
-        ]:
-            try:
-                print(funcname, getattr(c, funcname)())
-            except:
-                errors.append((c.FullName(), funcname))
-                continue
+        if isinstance(c, TransformerObjMixin):
+            for funcname, *params in [
+                ('WindingCurrents',),
+                ('WindingVoltages', 1),
+                ('LossesByType',),
+            ]:
+                try:
+                    print(funcname, getattr(c, funcname)(*params))
+                except:
+                    errors.append((c.FullName(), funcname))
+                    continue
 
 
-    if isinstance(c, EnergyMeterObjMixin):
-        print('CalcCurrent', getattr(c, 'CalcCurrent'))
-        print('AllocFactors', getattr(c, 'AllocFactors'))
-        for funcname in [
-            'TotalCustomers',
-            'NumEndElements',
-            'NumSections',
-            # 'Sections',
-            # 'ZonePCEs',
-            # 'EndElements',
-            # 'Branches',
-            # 'Loads',
-            # 'Sequence',
-        ]:
-            try:
-                print(funcname, getattr(c, funcname)())
-            except:
-                errors.append((c.FullName(), funcname))
-                continue
+        if isinstance(c, MonitorObjMixin):
+            for funcname in [
+                'Header',
+                'ByteStream',
+                'FileName',
+                'SampleCount',
+                'NumChannels',
+                'RecordSize',
+                'dblFreq',
+                'dblHour',
+                'AsMatrix',
+                'ToDataFrame'
+            ]:
+                try:
+                    print(funcname, getattr(c, funcname)())
+                except:
+                    errors.append((c.FullName(), funcname))
+                    continue
+
+
+        if isinstance(c, EnergyMeterObjMixin):
+            print('CalcCurrent', getattr(c, 'CalcCurrent'))
+            print('AllocFactors', getattr(c, 'AllocFactors'))
+            for funcname in [
+                'TotalCustomers',
+                'NumEndElements',
+                'NumSections',
+                # 'Sections',
+                # 'ZonePCEs',
+                # 'EndElements',
+                # 'Branches',
+                # 'Loads',
+                # 'Sequence',
+            ]:
+                try:
+                    print(funcname, getattr(c, funcname)())
+                except:
+                    errors.append((c.FullName(), funcname))
+                    continue
+
+
+        if isinstance(c, ElementHasRegistersMixin):
+            for funcname in [
+                'RegisterNames',
+                'RegisterValues',
+                'RegistersDict',
+            ]:
+                try:
+                    print(funcname, getattr(c, funcname)())
+                except:
+                    errors.append((c.FullName(), funcname))
+                    raise
+                    continue
+
 
 
 print('=' * 40)

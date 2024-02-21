@@ -247,11 +247,15 @@ class ElementHasRegistersMixin:
     def RegisterNames(self) -> List[str]:
         return self._get_string_array(self._lib.Alt_CE_Get_RegisterNames, self._ptr)
 
+    #TODO: remove workaround after DSS C-API 0.14.3
+    def _Alt_CE_Get_RegisterValues(self, resPtr, resDims, cePtr):
+        self._lib.Alt_CE_Get_RegisterValues(self._ffi.cast("void***", resPtr), resDims, cePtr)
+
     def RegisterValues(self) -> Float64Array:
-        return self._get_float64_array(self._lib.Alt_CE_Get_RegisterValues, self._ptr)
+        return self._get_float64_array(self._Alt_CE_Get_RegisterValues, self._ptr)
 
     def RegistersDict(self) -> Dict[str, float]:
-        return dict(*zip(self.RegisterNames(), self.RegisterValues()))
+        return dict(zip(self.RegisterNames(), self.RegisterValues()))
 
 
 class CircuitElementBatch(NonUniformBatch, CircuitElementBatchMixin):
