@@ -177,6 +177,10 @@ for pass_num in (0, 1):
                     errors.append((c.FullName(), funcname))
                     continue
 
+            df = c.ToDataFrame()
+            header = c.Header()
+            for num in range(c.NumChannels()):
+                assert all(df[header[num]] == c.Channel(num + 1)), 'Monitor should match series from DataFrame'
 
         if isinstance(c, EnergyMeterObjMixin):
             print('CalcCurrent', getattr(c, 'CalcCurrent'))

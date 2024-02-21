@@ -63,8 +63,7 @@ class MonitorObjMixin:
             return None
         record_size = buffer.view(dtype=np.int32)[2] + 2
         data = buffer[272:].view(dtype=np.float32)
-        data = data.reshape((len(data) // record_size, record_size)).copy()
-        return data
+        return data[(index + 1)::record_size].copy()
 
 
     def AsMatrix(self) -> Float64Array:
