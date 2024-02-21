@@ -48,6 +48,10 @@ class BatchCommon:
         return res
 
     def _unpack(self):
+        ptr, cnt = self._get_ptr_cnt()
+        if not cnt:
+            return []
+        
         return self._ffi.unpack(*self._get_ptr_cnt())
 
     def _dispose_batch(self, batch_ptr):
@@ -244,7 +248,6 @@ class DSSBatch(Base, BatchCommon):
             yield self._obj_cls(self._api_util, ptr)
 
     def __getitem__(self, idx0) -> DSSObj:
-        #TODO: decide if we keep it 0-based or 1-based here
         '''Get element at 0-based index of the batch pointer array'''
         if idx0 >= len(self) or idx0 < 0:
             raise IndexError
@@ -590,6 +593,7 @@ class NonUniformBatch(Base, BatchCommon):
 
     def _invalidate_ptr(self):
         self._ptr = InvalidatedObject
+        self._pointer = InvalidatedObject
 
     def __init__(self, func, parent, pycls=None, copy_safe=False, sync_cls_idx=None):
         Base.__init__(self, parent._api_util)
