@@ -3,6 +3,11 @@
 Remember that changes in our alternative OpenDSS engine, currently known as AltDSS/DSS C-API, are always
 relevant. See [DSS C-API's repository](https://github.com/dss-extensions/dss_capi/) for more information.
 
+## 0.1.3
+
+- Meter/Generator/etc.: Add workaround for issue with the DSS C-API headers related to `RegisterValues`.
+- Monitor: fix issue with `Channel` returning the whole data instead of the channel data.
+
 ## 0.1.2
 
 - Fix `SetterFlags`: import from backend instead of defining a new enum here.
