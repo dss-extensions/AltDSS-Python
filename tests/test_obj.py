@@ -631,6 +631,10 @@ def test_create_ckt13_shortcut():
     # Should also be the same result now
     assert max(abs(ref.BusVolts() - altdss.BusVolts())) < 1e-12, 'Voltages after changing loads differ'
 
+def test_new_em():
+    create_ref_ckt13(altdss)
+    em = altdss.EnergyMeter.new('sub', Element=altdss.Transformer['sub'], Terminal=1)
+
 
 def test_complex_property():
     altdss.ClearAll()
@@ -734,6 +738,21 @@ def test_line_linegeo_conductors():
     lg.end_edit()
 
     print(len(altdss.LineGeometry))
+
+
+def test_no_new_attr():
+    create_ref_ckt13(altdss)
+    load = altdss.Load[0]
+    with pytest.raises(AttributeError):
+        load.non_existent_attribute_should_fail = True
+
+    with pytest.raises(AttributeError):
+        altdss.Load.non_existent_attribute_should_fail = True
+
+    loads = altdss.Load.batch()
+    with pytest.raises(AttributeError):
+        loads.non_existent_attribute_should_fail = True
+
 
 if __name__ == '__main__':
     # Adjust for manual running a test-case

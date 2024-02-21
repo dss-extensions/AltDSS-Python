@@ -289,6 +289,7 @@ class FaultBatch(DSSBatch, CircuitElementBatchMixin, PDElementBatchMixin):
     _cls_name = 'Fault'
     _obj_cls = Fault
     _cls_idx = 25
+    __slots__ = []
 
     def __init__(self, api_util, **kwargs):
        DSSBatch.__init__(self, api_util, **kwargs)
@@ -551,7 +552,7 @@ class FaultBatchProperties(TypedDict):
     Like: AnyStr
 
 class IFault(IDSSObj, FaultBatch):
-    # __slots__ = () #TODO
+    __slots__ = IDSSObj._extra_slots
 
     def __init__(self, iobj):
         IDSSObj.__init__(self, iobj, Fault, FaultBatch)

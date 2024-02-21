@@ -799,6 +799,7 @@ class StorageControllerBatch(DSSBatch, CircuitElementBatchMixin):
     _cls_name = 'StorageController'
     _obj_cls = StorageController
     _cls_idx = 30
+    __slots__ = []
 
     def __init__(self, api_util, **kwargs):
        DSSBatch.__init__(self, api_util, **kwargs)
@@ -1534,7 +1535,7 @@ class StorageControllerBatchProperties(TypedDict):
     Like: AnyStr
 
 class IStorageController(IDSSObj, StorageControllerBatch):
-    # __slots__ = () #TODO
+    __slots__ = IDSSObj._extra_slots
 
     def __init__(self, iobj):
         IDSSObj.__init__(self, iobj, StorageController, StorageControllerBatch)

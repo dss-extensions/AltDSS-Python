@@ -838,6 +838,7 @@ class LoadBatch(DSSBatch, CircuitElementBatchMixin, PCElementBatchMixin):
     _cls_name = 'Load'
     _obj_cls = Load
     _cls_idx = 19
+    __slots__ = []
 
     def __init__(self, api_util, **kwargs):
        DSSBatch.__init__(self, api_util, **kwargs)
@@ -1593,7 +1594,7 @@ class LoadBatchProperties(TypedDict):
     Like: AnyStr
 
 class ILoad(IDSSObj, LoadBatch):
-    # __slots__ = () #TODO
+    __slots__ = IDSSObj._extra_slots
 
     def __init__(self, iobj):
         IDSSObj.__init__(self, iobj, Load, LoadBatch)

@@ -592,6 +592,7 @@ class RegControlBatch(DSSBatch, CircuitElementBatchMixin):
     _cls_name = 'RegControl'
     _obj_cls = RegControl
     _cls_idx = 21
+    __slots__ = []
 
     def __init__(self, api_util, **kwargs):
        DSSBatch.__init__(self, api_util, **kwargs)
@@ -1138,7 +1139,7 @@ class RegControlBatchProperties(TypedDict):
     Like: AnyStr
 
 class IRegControl(IDSSObj, RegControlBatch):
-    # __slots__ = () #TODO
+    __slots__ = IDSSObj._extra_slots
 
     def __init__(self, iobj):
         IDSSObj.__init__(self, iobj, RegControl, RegControlBatch)

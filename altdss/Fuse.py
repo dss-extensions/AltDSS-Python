@@ -311,6 +311,7 @@ class FuseBatch(DSSBatch, CircuitElementBatchMixin):
     _cls_name = 'Fuse'
     _obj_cls = Fuse
     _cls_idx = 33
+    __slots__ = []
 
     def __init__(self, api_util, **kwargs):
        DSSBatch.__init__(self, api_util, **kwargs)
@@ -597,7 +598,7 @@ class FuseBatchProperties(TypedDict):
     Like: AnyStr
 
 class IFuse(IDSSObj, FuseBatch):
-    # __slots__ = () #TODO
+    __slots__ = IDSSObj._extra_slots
 
     def __init__(self, iobj):
         IDSSObj.__init__(self, iobj, Fuse, FuseBatch)

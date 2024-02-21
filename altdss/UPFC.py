@@ -423,6 +423,7 @@ class UPFCBatch(DSSBatch, CircuitElementBatchMixin, PCElementBatchMixin):
     _cls_name = 'UPFC'
     _obj_cls = UPFC
     _cls_idx = 36
+    __slots__ = []
 
     def __init__(self, api_util, **kwargs):
        DSSBatch.__init__(self, api_util, **kwargs)
@@ -784,7 +785,7 @@ class UPFCBatchProperties(TypedDict):
     Like: AnyStr
 
 class IUPFC(IDSSObj, UPFCBatch):
-    # __slots__ = () #TODO
+    __slots__ = IDSSObj._extra_slots
 
     def __init__(self, iobj):
         IDSSObj.__init__(self, iobj, UPFC, UPFCBatch)

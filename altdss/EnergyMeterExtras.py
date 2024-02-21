@@ -93,7 +93,7 @@ class MeterSections:
 
 
 class EnergyMeterObjMixin:
-    __slots__ = ()
+    __slots__ = []
     # To avoid layout issues, let the final class use the following instead
     _extra_slots = [
         'ZonePCEs',
@@ -174,7 +174,7 @@ class EnergyMeterObjMixin:
 
 
 class EnergyMeterBatchMixin:
-    __slots__ = ()
+    __slots__ = []
 
     def TotalCustomers(self) -> Int32Array:
         '''Total Number of customers in this zone (downline from the EnergyMeter)'''

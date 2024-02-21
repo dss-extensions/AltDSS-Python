@@ -404,6 +404,7 @@ class LoadShapeBatch(DSSBatch, LoadShapeBatchMixin):
     _cls_name = 'LoadShape'
     _obj_cls = LoadShape
     _cls_idx = 2
+    __slots__ = []
 
     def __init__(self, api_util, **kwargs):
        DSSBatch.__init__(self, api_util, **kwargs)
@@ -782,7 +783,7 @@ class LoadShapeBatchProperties(TypedDict):
     Like: AnyStr
 
 class ILoadShape(IDSSObj, LoadShapeBatch):
-    # __slots__ = () #TODO
+    __slots__ = IDSSObj._extra_slots
 
     def __init__(self, iobj):
         IDSSObj.__init__(self, iobj, LoadShape, LoadShapeBatch)

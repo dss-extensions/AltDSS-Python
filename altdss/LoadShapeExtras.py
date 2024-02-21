@@ -1,7 +1,7 @@
 
 class LoadShapeObjMixin:
     # TODO: integrate Alt_LoadShape_Set_Points
-    __slots__ = ()
+    __slots__ = []
     _extra_slots = []
 
     def UseFloat32(self):
@@ -22,7 +22,7 @@ class LoadShapeObjMixin:
 
 
 class LoadShapeBatchMixin:
-    __slots__ = ()
+    __slots__ = []
 
     def UseFloat32(self):
         '''

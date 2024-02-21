@@ -6,7 +6,7 @@ from .types import Float64Array, Int8Array, Float32Array
 
 class MonitorObjMixin:
     #TODO: dataframe
-    __slots__ = ()
+    __slots__ = []
     _extra_slots = []
 
     def Show(self):

@@ -305,6 +305,7 @@ class ExpControlBatch(DSSBatch, CircuitElementBatchMixin):
     _cls_name = 'ExpControl'
     _obj_cls = ExpControl
     _cls_idx = 43
+    __slots__ = []
 
     def __init__(self, api_util, **kwargs):
        DSSBatch.__init__(self, api_util, **kwargs)
@@ -588,7 +589,7 @@ class ExpControlBatchProperties(TypedDict):
     Like: AnyStr
 
 class IExpControl(IDSSObj, ExpControlBatch):
-    # __slots__ = () #TODO
+    __slots__ = IDSSObj._extra_slots
 
     def __init__(self, iobj):
         IDSSObj.__init__(self, iobj, ExpControl, ExpControlBatch)

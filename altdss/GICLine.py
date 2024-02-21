@@ -343,6 +343,7 @@ class GICLineBatch(DSSBatch, CircuitElementBatchMixin, PCElementBatchMixin):
     _cls_name = 'GICLine'
     _obj_cls = GICLine
     _cls_idx = 44
+    __slots__ = []
 
     def __init__(self, api_util, **kwargs):
        DSSBatch.__init__(self, api_util, **kwargs)
@@ -648,7 +649,7 @@ class GICLineBatchProperties(TypedDict):
     Like: AnyStr
 
 class IGICLine(IDSSObj, GICLineBatch):
-    # __slots__ = () #TODO
+    __slots__ = IDSSObj._extra_slots
 
     def __init__(self, iobj):
         IDSSObj.__init__(self, iobj, GICLine, GICLineBatch)

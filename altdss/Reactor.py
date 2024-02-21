@@ -493,6 +493,7 @@ class ReactorBatch(DSSBatch, CircuitElementBatchMixin, PDElementBatchMixin):
     _cls_name = 'Reactor'
     _obj_cls = Reactor
     _cls_idx = 23
+    __slots__ = []
 
     def __init__(self, api_util, **kwargs):
        DSSBatch.__init__(self, api_util, **kwargs)
@@ -1007,7 +1008,7 @@ class ReactorBatchProperties(TypedDict):
     Like: AnyStr
 
 class IReactor(IDSSObj, ReactorBatch):
-    # __slots__ = () #TODO
+    __slots__ = IDSSObj._extra_slots
 
     def __init__(self, iobj):
         IDSSObj.__init__(self, iobj, Reactor, ReactorBatch)

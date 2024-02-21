@@ -10,12 +10,12 @@ from .ArrayProxy import BatchFloat64ArrayProxy, BatchInt32ArrayProxy
 from .common import LIST_LIKE
 from .PDElement import PDElementBatchMixin, PDElementMixin
 from .CircuitElement import CircuitElementBatchMixin, CircuitElementMixin
+from .CNData import CNData
 from .LineCode import LineCode as LineCodeObj
 from .LineGeometry import LineGeometry
 from .LineSpacing import LineSpacing
-from .WireData import WireData
-from .CNData import CNData
 from .TSData import TSData
+from .WireData import WireData
 
 class Line(DSSObj, CircuitElementMixin, PDElementMixin):
     __slots__ = DSSObj._extra_slots + CircuitElementMixin._extra_slots + PDElementMixin._extra_slots
@@ -443,7 +443,7 @@ class Line(DSSObj, CircuitElementMixin, PDElementMixin):
 
         DSS property name: `Wires`, DSS property index: 22.
         """
-        return self._get_obj_array(22)
+        return self._get_obj_array(22, None)
 
     def _set_Conductors(self, value: List[Union[AnyStr, Union[WireData, CNData, TSData]]], flags: enums.SetterFlags = 0):
         if value is None or len(value) == 0 or not isinstance(value[0], DSSObj):
@@ -715,6 +715,7 @@ class LineBatch(DSSBatch, CircuitElementBatchMixin, PDElementBatchMixin):
     _cls_name = 'Line'
     _obj_cls = Line
     _cls_idx = 15
+    __slots__ = []
 
     def __init__(self, api_util, **kwargs):
        DSSBatch.__init__(self, api_util, **kwargs)
@@ -1100,14 +1101,14 @@ class LineBatch(DSSBatch, CircuitElementBatchMixin, PDElementBatchMixin):
 
         DSS property name: `Wires`, DSS property index: 22.
         """
-        return self._get_obj_ll(22)
+        return self._get_obj_ll(22, None)
 
     def _set_Conductors(self, value: Union[List[AnyStr], List[Union[WireData, CNData, TSData]]], flags: enums.SetterFlags = 0):
         if (not len(value)) or isinstance(value[0], (bytes, str)) or (len(value[0]) and isinstance(value[0][0], (bytes, str))):
             self._set_batch_stringlist_prop(22, value, flags | enums.SetterFlags.AllowAllConductors)
             return
 
-        self._set_batch_objlist_prop(22, value, flags)
+        self._set_batch_objlist_prop(22, value, flags | enums.SetterFlags.AllowAllConductors)
 
     Conductors = property(_get_Conductors, _set_Conductors) # type: List[List[Union[WireData, CNData, TSData]]]
 
@@ -1375,7 +1376,7 @@ class LineBatchProperties(TypedDict):
     Like: AnyStr
 
 class ILine(IDSSObj, LineBatch):
-    # __slots__ = () #TODO
+    __slots__ = IDSSObj._extra_slots
 
     def __init__(self, iobj):
         IDSSObj.__init__(self, iobj, Line, LineBatch)

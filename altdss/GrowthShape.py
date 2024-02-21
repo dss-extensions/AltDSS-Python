@@ -132,6 +132,7 @@ class GrowthShapeBatch(DSSBatch):
     _cls_name = 'GrowthShape'
     _obj_cls = GrowthShape
     _cls_idx = 6
+    __slots__ = []
 
 
     if TYPE_CHECKING:
@@ -249,7 +250,7 @@ class GrowthShapeBatchProperties(TypedDict):
     Like: AnyStr
 
 class IGrowthShape(IDSSObj, GrowthShapeBatch):
-    # __slots__ = () #TODO
+    __slots__ = IDSSObj._extra_slots
 
     def __init__(self, iobj):
         IDSSObj.__init__(self, iobj, GrowthShape, GrowthShapeBatch)

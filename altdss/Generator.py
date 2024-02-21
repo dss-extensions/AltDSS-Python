@@ -889,6 +889,7 @@ class GeneratorBatch(DSSBatch, CircuitElementBatchMixin, PCElementBatchMixin):
     _cls_name = 'Generator'
     _obj_cls = Generator
     _cls_idx = 27
+    __slots__ = []
 
     def __init__(self, api_util, **kwargs):
        DSSBatch.__init__(self, api_util, **kwargs)
@@ -1701,7 +1702,7 @@ class GeneratorBatchProperties(TypedDict):
     Like: AnyStr
 
 class IGenerator(IDSSObj, GeneratorBatch):
-    # __slots__ = () #TODO
+    __slots__ = IDSSObj._extra_slots
 
     def __init__(self, iobj):
         IDSSObj.__init__(self, iobj, Generator, GeneratorBatch)

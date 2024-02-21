@@ -274,6 +274,7 @@ class ESPVLControlBatch(DSSBatch, CircuitElementBatchMixin):
     _cls_name = 'ESPVLControl'
     _obj_cls = ESPVLControl
     _cls_idx = 38
+    __slots__ = []
 
     def __init__(self, api_util, **kwargs):
        DSSBatch.__init__(self, api_util, **kwargs)
@@ -532,7 +533,7 @@ class ESPVLControlBatchProperties(TypedDict):
     Like: AnyStr
 
 class IESPVLControl(IDSSObj, ESPVLControlBatch):
-    # __slots__ = () #TODO
+    __slots__ = IDSSObj._extra_slots
 
     def __init__(self, iobj):
         IDSSObj.__init__(self, iobj, ESPVLControl, ESPVLControlBatch)

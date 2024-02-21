@@ -6,7 +6,7 @@ from .CircuitElement import CircuitElementBatch, ElementHasRegistersMixin
 
 
 class PCElementMixin:
-    __slots__ = ()
+    __slots__ = []
     _extra_slots = []
 
     def VariableNames(self) -> List[str]:
@@ -45,7 +45,7 @@ class PCElementMixin:
 
 
 class PCElementBatchMixin:
-    __slots__ = ()
+    __slots__ = []
 
     def EnergyMeter(self) -> List[DSSObj]:
         return [self._get_obj_from_ptr(self._lib.Alt_PCE_Get_EnergyMeter(ptr)) for ptr in self._unpack()]
@@ -60,7 +60,7 @@ class PCElementBatch(CircuitElementBatch, PCElementBatchMixin, ElementHasRegiste
     common functions
     '''
 
-    __slots__ = ()
+    __slots__ = []
 
     def __init__(self, func, parent, sync_cls_idx=ExtraClassIDs.PCElements):
         CircuitElementBatch.__init__(self, func, parent, sync_cls_idx=sync_cls_idx)

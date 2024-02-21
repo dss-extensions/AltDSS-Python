@@ -551,6 +551,7 @@ class RecloserBatch(DSSBatch, CircuitElementBatchMixin):
     _cls_name = 'Recloser'
     _obj_cls = Recloser
     _cls_idx = 32
+    __slots__ = []
 
     def __init__(self, api_util, **kwargs):
        DSSBatch.__init__(self, api_util, **kwargs)
@@ -1041,7 +1042,7 @@ class RecloserBatchProperties(TypedDict):
     Like: AnyStr
 
 class IRecloser(IDSSObj, RecloserBatch):
-    # __slots__ = () #TODO
+    __slots__ = IDSSObj._extra_slots
 
     def __init__(self, iobj):
         IDSSObj.__init__(self, iobj, Recloser, RecloserBatch)

@@ -262,6 +262,7 @@ class GICsourceBatch(DSSBatch, CircuitElementBatchMixin, PCElementBatchMixin):
     _cls_name = 'GICsource'
     _obj_cls = GICsource
     _cls_idx = 40
+    __slots__ = []
 
     def __init__(self, api_util, **kwargs):
        DSSBatch.__init__(self, api_util, **kwargs)
@@ -491,7 +492,7 @@ class GICsourceBatchProperties(TypedDict):
     Like: AnyStr
 
 class IGICsource(IDSSObj, GICsourceBatch):
-    # __slots__ = () #TODO
+    __slots__ = IDSSObj._extra_slots
 
     def __init__(self, iobj):
         IDSSObj.__init__(self, iobj, GICsource, GICsourceBatch)

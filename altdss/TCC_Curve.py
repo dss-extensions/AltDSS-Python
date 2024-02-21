@@ -86,6 +86,7 @@ class TCC_CurveBatch(DSSBatch):
     _cls_name = 'TCC_Curve'
     _obj_cls = TCC_Curve
     _cls_idx = 7
+    __slots__ = []
 
 
     if TYPE_CHECKING:
@@ -160,7 +161,7 @@ class TCC_CurveBatchProperties(TypedDict):
     Like: AnyStr
 
 class ITCC_Curve(IDSSObj, TCC_CurveBatch):
-    # __slots__ = () #TODO
+    __slots__ = IDSSObj._extra_slots
 
     def __init__(self, iobj):
         IDSSObj.__init__(self, iobj, TCC_Curve, TCC_CurveBatch)

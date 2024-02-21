@@ -590,6 +590,7 @@ class XfmrCodeBatch(DSSBatch):
     _cls_name = 'XfmrCode'
     _obj_cls = XfmrCode
     _cls_idx = 14
+    __slots__ = []
 
 
     if TYPE_CHECKING:
@@ -1168,7 +1169,7 @@ class XfmrCodeBatchProperties(TypedDict):
     Like: AnyStr
 
 class IXfmrCode(IDSSObj, XfmrCodeBatch):
-    # __slots__ = () #TODO
+    __slots__ = IDSSObj._extra_slots
 
     def __init__(self, iobj):
         IDSSObj.__init__(self, iobj, XfmrCode, XfmrCodeBatch)

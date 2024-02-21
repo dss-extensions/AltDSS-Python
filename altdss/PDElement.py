@@ -5,7 +5,7 @@ from .DSSObj import DSSObj
 from .CircuitElement import CircuitElementBatch
 
 class PDElementMixin:
-    __slots__ = ()
+    __slots__ = []
     _extra_slots = []
 
     def EnergyMeter(self) -> DSSObj:
@@ -53,7 +53,7 @@ class PDElementMixin:
 
 
 class PDElementBatchMixin:
-    __slots__ = ()
+    __slots__ = []
 
     def EnergyMeter(self) -> List[DSSObj]:
         return [self._get_obj_from_ptr(self._lib.Alt_PDE_Get_EnergyMeter(ptr)) for ptr in self._unpack()]
@@ -95,7 +95,7 @@ class PDElementBatch(CircuitElementBatch, PDElementBatchMixin):
     common functions
     '''
 
-    __slots__ = ()
+    __slots__ = []
 
     def __init__(self, func, parent, sync_cls_idx=ExtraClassIDs.PDElements):
         CircuitElementBatch.__init__(self, func, parent, sync_cls_idx=sync_cls_idx)

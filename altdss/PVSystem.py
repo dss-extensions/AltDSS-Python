@@ -1071,6 +1071,7 @@ class PVSystemBatch(DSSBatch, CircuitElementBatchMixin, PCElementBatchMixin):
     _cls_name = 'PVSystem'
     _obj_cls = PVSystem
     _cls_idx = 35
+    __slots__ = []
 
     def __init__(self, api_util, **kwargs):
        DSSBatch.__init__(self, api_util, **kwargs)
@@ -2036,7 +2037,7 @@ class PVSystemBatchProperties(TypedDict):
     Like: AnyStr
 
 class IPVSystem(IDSSObj, PVSystemBatch):
-    # __slots__ = () #TODO
+    __slots__ = IDSSObj._extra_slots
 
     def __init__(self, iobj):
         IDSSObj.__init__(self, iobj, PVSystem, PVSystemBatch)

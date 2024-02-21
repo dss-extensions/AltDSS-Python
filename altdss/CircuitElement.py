@@ -6,7 +6,7 @@ from .Batch import NonUniformBatch
 from .DSSObj import DSSObj
 
 class CircuitElementMixin:
-    __slots__ = () 
+    __slots__ = [] 
     # To avoid layout issues, let the final class use the following instead
     _extra_slots = ['Controllers', ]
 
@@ -141,7 +141,7 @@ class CircuitElementMixin:
 
 
 class CircuitElementBatchMixin:
-    __slots__ = ()
+    __slots__ = []
 
     def GUID(self) -> str:
         '''GUID/UUID for each object. Currently used only in the CIM-related methods.'''
@@ -241,7 +241,7 @@ class CircuitElementBatchMixin:
 
 
 class ElementHasRegistersMixin:
-    __slots__ = ()
+    __slots__ = []
     _extra_slots = []
 
     def RegisterNames(self) -> List[str]:
@@ -260,7 +260,7 @@ class CircuitElementBatch(NonUniformBatch, CircuitElementBatchMixin):
     common functions
     '''
 
-    __slots__ = ()
+    __slots__ = []
 
     def __init__(self, func, parent, sync_cls_idx=ExtraClassIDs.CktElements):
         NonUniformBatch.__init__(self, func, parent, sync_cls_idx=sync_cls_idx)

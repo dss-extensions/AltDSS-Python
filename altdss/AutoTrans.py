@@ -739,6 +739,7 @@ class AutoTransBatch(DSSBatch, CircuitElementBatchMixin, PDElementBatchMixin):
     _cls_name = 'AutoTrans'
     _obj_cls = AutoTrans
     _cls_idx = 41
+    __slots__ = []
 
     def __init__(self, api_util, **kwargs):
        DSSBatch.__init__(self, api_util, **kwargs)
@@ -1453,7 +1454,7 @@ class AutoTransBatchProperties(TypedDict):
     Like: AnyStr
 
 class IAutoTrans(IDSSObj, AutoTransBatch):
-    # __slots__ = () #TODO
+    __slots__ = IDSSObj._extra_slots
 
     def __init__(self, iobj):
         IDSSObj.__init__(self, iobj, AutoTrans, AutoTransBatch)

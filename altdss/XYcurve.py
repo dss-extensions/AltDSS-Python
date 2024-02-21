@@ -226,6 +226,7 @@ class XYcurveBatch(DSSBatch):
     _cls_name = 'XYcurve'
     _obj_cls = XYcurve
     _cls_idx = 5
+    __slots__ = []
 
 
     if TYPE_CHECKING:
@@ -430,7 +431,7 @@ class XYcurveBatchProperties(TypedDict):
     Like: AnyStr
 
 class IXYcurve(IDSSObj, XYcurveBatch):
-    # __slots__ = () #TODO
+    __slots__ = IDSSObj._extra_slots
 
     def __init__(self, iobj):
         IDSSObj.__init__(self, iobj, XYcurve, XYcurveBatch)

@@ -1,7 +1,7 @@
 from .types import ComplexArray
 
 class TransformerObjMixin: #TODO: batch version?
-    __slots__ = ()
+    __slots__ = []
     _extra_slots = []
 
     def WindingCurrents(self) -> ComplexArray:

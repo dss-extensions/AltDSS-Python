@@ -235,6 +235,7 @@ class PriceShapeBatch(DSSBatch):
     _cls_name = 'PriceShape'
     _obj_cls = PriceShape
     _cls_idx = 4
+    __slots__ = []
 
 
     if TYPE_CHECKING:
@@ -447,7 +448,7 @@ class PriceShapeBatchProperties(TypedDict):
     Like: AnyStr
 
 class IPriceShape(IDSSObj, PriceShapeBatch):
-    # __slots__ = () #TODO
+    __slots__ = IDSSObj._extra_slots
 
     def __init__(self, iobj):
         IDSSObj.__init__(self, iobj, PriceShape, PriceShapeBatch)

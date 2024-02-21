@@ -235,6 +235,7 @@ class TShapeBatch(DSSBatch):
     _cls_name = 'TShape'
     _obj_cls = TShape
     _cls_idx = 3
+    __slots__ = []
 
 
     if TYPE_CHECKING:
@@ -447,7 +448,7 @@ class TShapeBatchProperties(TypedDict):
     Like: AnyStr
 
 class ITShape(IDSSObj, TShapeBatch):
-    # __slots__ = () #TODO
+    __slots__ = IDSSObj._extra_slots
 
     def __init__(self, iobj):
         IDSSObj.__init__(self, iobj, TShape, TShapeBatch)

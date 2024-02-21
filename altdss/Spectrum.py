@@ -120,6 +120,7 @@ class SpectrumBatch(DSSBatch):
     _cls_name = 'Spectrum'
     _obj_cls = Spectrum
     _cls_idx = 8
+    __slots__ = []
 
 
     if TYPE_CHECKING:
@@ -228,7 +229,7 @@ class SpectrumBatchProperties(TypedDict):
     Like: AnyStr
 
 class ISpectrum(IDSSObj, SpectrumBatch):
-    # __slots__ = () #TODO
+    __slots__ = IDSSObj._extra_slots
 
     def __init__(self, iobj):
         IDSSObj.__init__(self, iobj, Spectrum, SpectrumBatch)

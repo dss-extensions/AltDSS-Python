@@ -144,6 +144,7 @@ class DynamicExpBatch(DSSBatch):
     _cls_name = 'DynamicExp'
     _obj_cls = DynamicExp
     _cls_idx = 26
+    __slots__ = []
 
 
     if TYPE_CHECKING:
@@ -269,7 +270,7 @@ class DynamicExpBatchProperties(TypedDict):
     Like: AnyStr
 
 class IDynamicExp(IDSSObj, DynamicExpBatch):
-    # __slots__ = () #TODO
+    __slots__ = IDSSObj._extra_slots
 
     def __init__(self, iobj):
         IDSSObj.__init__(self, iobj, DynamicExp, DynamicExpBatch)

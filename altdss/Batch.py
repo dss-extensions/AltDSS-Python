@@ -8,6 +8,8 @@ from .DSSObj import DSSObj
 from .ArrayProxy import BatchFloat64ArrayProxy, BatchInt32ArrayProxy
 
 class BatchCommon:
+    __slots__ = []
+
     @property
     def Name(self) -> List[str]:
         res = [
@@ -113,6 +115,16 @@ class BatchCommon:
 
 class DSSBatch(Base, BatchCommon):
     #TODO: keep property name for debugging? Or maybe use from the parent object
+    __slots__ = [
+        '_sync_cls_idx',
+        '_ptrptr',
+        '_countptr',
+        '_pointer',
+        '_count',
+        '_ffi',
+        '__weakref__',
+    ]
+
     def __init__(self, api_util, **kwargs):
         begin_edit = kwargs.pop('begin_edit', None)
         if begin_edit is None:
@@ -478,9 +490,9 @@ class DSSBatch(Base, BatchCommon):
             for x in self._unpack()
         ]
     
-    def _get_string(self, str_ptr) -> str:
-        self._check_for_error()
-        return self._ffi.string(str_ptr).decode(self._api_util.codec)
+    # def _get_string(self, str_ptr) -> str:
+    #     self._check_for_error()
+    #     return self._ffi.string(str_ptr).decode(self._api_util.codec)
 
     def _get_obj_ll(self, idx: int, pycls):
         if len(self) == 0:
@@ -567,11 +579,13 @@ class NonUniformBatch(Base, BatchCommon):
         '_func',
         '_parent_ptr',
         '_ptr',
-        '_cnt',
+        '_pointer', #TODO: using both _pointer and _ptr?
+        '_cnt', 
+        '_count', #TODO: using both _count and _cnt?
         '_obj_cls',
         '_ffi',
         '_copy_safe',
-        '__weakref__',
+        '_sync_cls_idx',
     )
 
     def _invalidate_ptr(self):

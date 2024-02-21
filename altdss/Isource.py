@@ -385,6 +385,7 @@ class IsourceBatch(DSSBatch, CircuitElementBatchMixin, PCElementBatchMixin):
     _cls_name = 'Isource'
     _obj_cls = Isource
     _cls_idx = 17
+    __slots__ = []
 
     def __init__(self, api_util, **kwargs):
        DSSBatch.__init__(self, api_util, **kwargs)
@@ -724,7 +725,7 @@ class IsourceBatchProperties(TypedDict):
     Like: AnyStr
 
 class IIsource(IDSSObj, IsourceBatch):
-    # __slots__ = () #TODO
+    __slots__ = IDSSObj._extra_slots
 
     def __init__(self, iobj):
         IDSSObj.__init__(self, iobj, Isource, IsourceBatch)

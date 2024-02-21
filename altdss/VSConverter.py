@@ -412,6 +412,7 @@ class VSConverterBatch(DSSBatch, CircuitElementBatchMixin, PCElementBatchMixin):
     _cls_name = 'VSConverter'
     _obj_cls = VSConverter
     _cls_idx = 46
+    __slots__ = []
 
     def __init__(self, api_util, **kwargs):
        DSSBatch.__init__(self, api_util, **kwargs)
@@ -782,7 +783,7 @@ class VSConverterBatchProperties(TypedDict):
     Like: AnyStr
 
 class IVSConverter(IDSSObj, VSConverterBatch):
-    # __slots__ = () #TODO
+    __slots__ = IDSSObj._extra_slots
 
     def __init__(self, iobj):
         IDSSObj.__init__(self, iobj, VSConverter, VSConverterBatch)

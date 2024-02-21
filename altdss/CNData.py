@@ -400,6 +400,7 @@ class CNDataBatch(DSSBatch):
     _cls_name = 'CNData'
     _obj_cls = CNData
     _cls_idx = 10
+    __slots__ = []
 
 
     if TYPE_CHECKING:
@@ -769,7 +770,7 @@ class CNDataBatchProperties(TypedDict):
     Like: AnyStr
 
 class ICNData(IDSSObj, CNDataBatch):
-    # __slots__ = () #TODO
+    __slots__ = IDSSObj._extra_slots
 
     def __init__(self, iobj):
         IDSSObj.__init__(self, iobj, CNData, CNDataBatch)

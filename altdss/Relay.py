@@ -1034,6 +1034,7 @@ class RelayBatch(DSSBatch, CircuitElementBatchMixin):
     _cls_name = 'Relay'
     _obj_cls = Relay
     _cls_idx = 31
+    __slots__ = []
 
     def __init__(self, api_util, **kwargs):
        DSSBatch.__init__(self, api_util, **kwargs)
@@ -1979,7 +1980,7 @@ class RelayBatchProperties(TypedDict):
     Like: AnyStr
 
 class IRelay(IDSSObj, RelayBatch):
-    # __slots__ = () #TODO
+    __slots__ = IDSSObj._extra_slots
 
     def __init__(self, iobj):
         IDSSObj.__init__(self, iobj, Relay, RelayBatch)

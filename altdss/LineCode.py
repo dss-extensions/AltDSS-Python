@@ -475,6 +475,7 @@ class LineCodeBatch(DSSBatch):
     _cls_name = 'LineCode'
     _obj_cls = LineCode
     _cls_idx = 1
+    __slots__ = []
 
 
     if TYPE_CHECKING:
@@ -921,7 +922,7 @@ class LineCodeBatchProperties(TypedDict):
     Like: AnyStr
 
 class ILineCode(IDSSObj, LineCodeBatch):
-    # __slots__ = () #TODO
+    __slots__ = IDSSObj._extra_slots
 
     def __init__(self, iobj):
         IDSSObj.__init__(self, iobj, LineCode, LineCodeBatch)

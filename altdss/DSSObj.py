@@ -285,6 +285,14 @@ class DSSObj(Base):
 
 
 class IDSSObj(Base):
+    __slots__ = []
+    _extra_slots = [
+        '_iobj',
+        'cls_idx',
+        '_obj_cls',
+        '_batch_cls',
+    ]
+
     def __init__(self, iobj, obj_cls, batch_cls):
         Base.__init__(self, iobj._api_util)
         self._iobj = iobj

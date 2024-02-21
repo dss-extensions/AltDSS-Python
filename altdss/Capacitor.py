@@ -369,6 +369,7 @@ class CapacitorBatch(DSSBatch, CircuitElementBatchMixin, PDElementBatchMixin):
     _cls_name = 'Capacitor'
     _obj_cls = Capacitor
     _cls_idx = 22
+    __slots__ = []
 
     def __init__(self, api_util, **kwargs):
        DSSBatch.__init__(self, api_util, **kwargs)
@@ -724,7 +725,7 @@ class CapacitorBatchProperties(TypedDict):
     Like: AnyStr
 
 class ICapacitor(IDSSObj, CapacitorBatch):
-    # __slots__ = () #TODO
+    __slots__ = IDSSObj._extra_slots
 
     def __init__(self, iobj):
         IDSSObj.__init__(self, iobj, Capacitor, CapacitorBatch)

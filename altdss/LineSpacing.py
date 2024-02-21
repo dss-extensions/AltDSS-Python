@@ -127,6 +127,7 @@ class LineSpacingBatch(DSSBatch):
     _cls_name = 'LineSpacing'
     _obj_cls = LineSpacing
     _cls_idx = 12
+    __slots__ = []
 
 
     if TYPE_CHECKING:
@@ -240,7 +241,7 @@ class LineSpacingBatchProperties(TypedDict):
     Like: AnyStr
 
 class ILineSpacing(IDSSObj, LineSpacingBatch):
-    # __slots__ = () #TODO
+    __slots__ = IDSSObj._extra_slots
 
     def __init__(self, iobj):
         IDSSObj.__init__(self, iobj, LineSpacing, LineSpacingBatch)

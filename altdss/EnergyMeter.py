@@ -500,6 +500,7 @@ class EnergyMeterBatch(DSSBatch, CircuitElementBatchMixin, EnergyMeterBatchMixin
     _cls_name = 'EnergyMeter'
     _obj_cls = EnergyMeter
     _cls_idx = 48
+    __slots__ = []
 
     def __init__(self, api_util, **kwargs):
        DSSBatch.__init__(self, api_util, **kwargs)
@@ -976,7 +977,7 @@ class EnergyMeterBatchProperties(TypedDict):
     Like: AnyStr
 
 class IEnergyMeter(IDSSObj, EnergyMeterBatch, IEnergyMeterMixin):
-    # __slots__ = () #TODO
+    __slots__ = IDSSObj._extra_slots
 
     def __init__(self, iobj):
         IDSSObj.__init__(self, iobj, EnergyMeter, EnergyMeterBatch)

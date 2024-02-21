@@ -418,6 +418,7 @@ class GICTransformerBatch(DSSBatch, CircuitElementBatchMixin, PDElementBatchMixi
     _cls_name = 'GICTransformer'
     _obj_cls = GICTransformer
     _cls_idx = 45
+    __slots__ = []
 
     def __init__(self, api_util, **kwargs):
        DSSBatch.__init__(self, api_util, **kwargs)
@@ -792,7 +793,7 @@ class GICTransformerBatchProperties(TypedDict):
     Like: AnyStr
 
 class IGICTransformer(IDSSObj, GICTransformerBatch):
-    # __slots__ = () #TODO
+    __slots__ = IDSSObj._extra_slots
 
     def __init__(self, iobj):
         IDSSObj.__init__(self, iobj, GICTransformer, GICTransformerBatch)

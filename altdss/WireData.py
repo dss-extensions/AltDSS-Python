@@ -280,6 +280,7 @@ class WireDataBatch(DSSBatch):
     _cls_name = 'WireData'
     _obj_cls = WireData
     _cls_idx = 9
+    __slots__ = []
 
 
     if TYPE_CHECKING:
@@ -537,7 +538,7 @@ class WireDataBatchProperties(TypedDict):
     Like: AnyStr
 
 class IWireData(IDSSObj, WireDataBatch):
-    # __slots__ = () #TODO
+    __slots__ = IDSSObj._extra_slots
 
     def __init__(self, iobj):
         IDSSObj.__init__(self, iobj, WireData, WireDataBatch)

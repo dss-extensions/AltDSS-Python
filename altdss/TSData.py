@@ -385,6 +385,7 @@ class TSDataBatch(DSSBatch):
     _cls_name = 'TSData'
     _obj_cls = TSData
     _cls_idx = 11
+    __slots__ = []
 
 
     if TYPE_CHECKING:
@@ -740,7 +741,7 @@ class TSDataBatchProperties(TypedDict):
     Like: AnyStr
 
 class ITSData(IDSSObj, TSDataBatch):
-    # __slots__ = () #TODO
+    __slots__ = IDSSObj._extra_slots
 
     def __init__(self, iobj):
         IDSSObj.__init__(self, iobj, TSData, TSDataBatch)

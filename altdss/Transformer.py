@@ -878,6 +878,7 @@ class TransformerBatch(DSSBatch, CircuitElementBatchMixin, PDElementBatchMixin):
     _cls_name = 'Transformer'
     _obj_cls = Transformer
     _cls_idx = 20
+    __slots__ = []
 
     def __init__(self, api_util, **kwargs):
        DSSBatch.__init__(self, api_util, **kwargs)
@@ -1727,7 +1728,7 @@ class TransformerBatchProperties(TypedDict):
     Like: AnyStr
 
 class ITransformer(IDSSObj, TransformerBatch):
-    # __slots__ = () #TODO
+    __slots__ = IDSSObj._extra_slots
 
     def __init__(self, iobj):
         IDSSObj.__init__(self, iobj, Transformer, TransformerBatch)

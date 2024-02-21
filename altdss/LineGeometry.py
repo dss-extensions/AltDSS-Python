@@ -8,10 +8,10 @@ from .DSSObj import IDSSObj, DSSObj
 from .Batch import DSSBatch
 from .ArrayProxy import BatchFloat64ArrayProxy, BatchInt32ArrayProxy
 from .common import LIST_LIKE
-from .LineSpacing import LineSpacing
-from .WireData import WireData
 from .CNData import CNData
+from .LineSpacing import LineSpacing
 from .TSData import TSData
+from .WireData import WireData
 
 class LineGeometry(DSSObj):
     __slots__ = DSSObj._extra_slots
@@ -91,9 +91,9 @@ class LineGeometry(DSSObj):
 
         DSS property name: `Wire`, DSS property index: 4.
         """
-        return self._get_obj_array(12)
+        return self._get_obj_array(12, None)
 
-    def _set_Conductors(self, value: List[Union[AnyStr, WireData]], flags: enums.SetterFlags = 0):
+    def _set_Conductors(self, value: List[Union[AnyStr, Union[WireData, CNData, TSData]]], flags: enums.SetterFlags = 0):
         if value is None or len(value) == 0 or not isinstance(value[0], DSSObj):
             self._set_string_array_o(12, value, flags | enums.SetterFlags.AllowAllConductors)
             return
@@ -325,6 +325,7 @@ class LineGeometryBatch(DSSBatch):
     _cls_name = 'LineGeometry'
     _obj_cls = LineGeometry
     _cls_idx = 13
+    __slots__ = []
 
 
     if TYPE_CHECKING:
@@ -380,7 +381,7 @@ class LineGeometryBatch(DSSBatch):
 
         DSS property name: `Wire`, DSS property index: 4.
         """
-        return self._get_obj_ll(12)
+        return self._get_obj_ll(12, None)
 
     def _set_Conductors(self, value: Union[List[AnyStr], List[Union[WireData, CNData, TSData]]], flags: enums.SetterFlags = 0):
         if (not len(value)) or isinstance(value[0], (bytes, str)) or (len(value[0]) and isinstance(value[0][0], (bytes, str))):
@@ -619,7 +620,7 @@ class LineGeometryBatchProperties(TypedDict):
     Like: AnyStr
 
 class ILineGeometry(IDSSObj, LineGeometryBatch):
-    # __slots__ = () #TODO
+    __slots__ = IDSSObj._extra_slots
 
     def __init__(self, iobj):
         IDSSObj.__init__(self, iobj, LineGeometry, LineGeometryBatch)

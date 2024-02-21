@@ -285,6 +285,7 @@ class SensorBatch(DSSBatch, CircuitElementBatchMixin):
     _cls_name = 'Sensor'
     _obj_cls = Sensor
     _cls_idx = 49
+    __slots__ = []
 
     def __init__(self, api_util, **kwargs):
        DSSBatch.__init__(self, api_util, **kwargs)
@@ -551,7 +552,7 @@ class SensorBatchProperties(TypedDict):
 #TODO: warn that begin_edit=False with extra params will be ignored?
 
 class ISensor(IDSSObj, SensorBatch):
-    # __slots__ = () #TODO
+    __slots__ = IDSSObj._extra_slots
 
     def __init__(self, iobj):
         IDSSObj.__init__(self, iobj, Sensor, SensorBatch)
