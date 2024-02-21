@@ -99,7 +99,7 @@ class EnergyMeterObjMixin:
         'ZonePCEs',
         'EndElements',
         'Branches',
-        'Loads',
+        # 'Loads',
         'Sequence',
     ]
 
@@ -112,9 +112,6 @@ class EnergyMeterObjMixin:
     '''Accessor for all branches in the meter zone.'''
     Branches: PDElementBatch
 
-    '''Accessor for all loads in the meter zone (internal LoadList).'''
-    Loads: LoadBatch #TODO: actually... is this uniform?
-
     '''Accessor for all branches in the meter zone (internal SequenceList), in lexical order'''
     Sequence: CircuitElementBatch
 
@@ -122,7 +119,6 @@ class EnergyMeterObjMixin:
         self.ZonePCEs = PCElementBatch(self._lib.Alt_Meter_Get_ZonePCEs, self)
         self.EndElements = CircuitElementBatch(self._lib.Alt_Meter_Get_EndElements, self)
         self.Branches = PDElementBatch(self._lib.Alt_Meter_Get_BranchesInZone, self)
-        self.Loads = LoadBatch(self._api_util, from_func=(self._lib.Alt_Meter_Get_Loads, self._ptr))
         self.Sequence = CircuitElementBatch(self._lib.Alt_Meter_Get_SequenceList, self)
 
     def TotalCustomers(self) -> int:
@@ -136,6 +132,16 @@ class EnergyMeterObjMixin:
     def NumSections(self) -> int:
         '''Number of feeder sections in this meter's zone'''
         return self._lib.Alt_Meter_Get_NumSections(self._ptr)
+
+    def Loads(self) -> LoadBatch: #TODO: might need resync?
+        '''
+        Accessor for all loads in the meter zone (internal LoadList).
+
+        **NOTE**: this a snapshot of the loads; if the circuit is updated, 
+        the batch is **not** updated automatically, i.e., you need to
+        get a new batch from this function.
+        '''
+        return LoadBatch(self._api_util, from_func=(self._lib.Alt_Meter_Get_Loads, self._ptr))
 
     def DoReliabilityCalc(self, assumeRestoration: bool) -> None:
         '''Calculate reliability indices'''
