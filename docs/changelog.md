@@ -3,6 +3,17 @@
 Remember that changes in our alternative OpenDSS engine, currently known as AltDSS/DSS C-API, are always
 relevant. See [DSS C-API's repository](https://github.com/dss-extensions/dss_capi/) for more information.
 
+## 0.1.2
+
+- Fix `SetterFlags`: import from backend instead of defining a new enum here.
+- Batch:
+    - Implement `__slots__` to constrain the attributes and avoid accidental names.
+    - `EnergyMeter.Loads`: make it a function to avoid issues with uninitialized meters (such as new meters).
+    - Minor quality of life changes, such as returning zero instead of error for some empty batches.
+
+-Known issue: reading `pctEmerg` or `pctNorm` for uninitialized PDElements (missing solution for the circuit) will crash. This is already fixed in the engine and will be included in the next backend update.
+
+
 ## 0.1.1
 
 - Batch: fix setter for single object
