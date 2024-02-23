@@ -10,6 +10,8 @@ from .ArrayProxy import BatchFloat64ArrayProxy, BatchInt32ArrayProxy
 class BatchCommon:
     __slots__ = []
 
+    _get_obj_from_ptr = DSSObj._get_obj_from_ptr
+
     @property
     def Name(self) -> List[str]:
         res = [

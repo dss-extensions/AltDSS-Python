@@ -78,7 +78,7 @@ class CircuitElementMixin:
 
     def MaxCurrent(self, terminal: int) -> float:
         '''
-        Returns the maximum current (magnitude) at the specificed terminal. 
+        Returns the maximum current (magnitude) at the specified terminal. 
         Use -1 as terminal to get the value across all terminals.
         '''
         return self._lib.Alt_CE_MaxCurrent(self._ptr, terminal)
