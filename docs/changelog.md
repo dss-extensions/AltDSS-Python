@@ -3,6 +3,19 @@
 Remember that changes in our alternative OpenDSS engine, currently known as AltDSS/DSS C-API, are always
 relevant. See [DSS C-API's repository](https://github.com/dss-extensions/dss_capi/) for more information.
 
+## 0.1.4
+
+- PDElement: 
+    - Fix `ParentPDElement`
+    - Disable/comment `pctNorm`/`pctEmerg` -- these will be reintroduce later with better names
+    - Add/complement docstrings
+
+- AltDSS (main class): adjust capitalization of a few items:
+    - `NodeVmagByPhase` to `NodeVMagByPhase`
+    - `NodeVmagPUByPhase` to `NodeVMagPUByPhase`
+    - `BusVmag` to `BusVMag`
+    - `BusVmagPu` to `BusVMagPU`
+
 ## 0.1.3
 
 - Meter/Generator/etc.: Add workaround for issue with the DSS C-API headers related to `RegisterValues`.

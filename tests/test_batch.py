@@ -443,7 +443,7 @@ def test_loads_no_yprim():
         classic.ActiveCircuit.SystemY.view(dtype=complex).ravel(), 
         alt.SystemY(dense=True).ravel()
     )
-    np.testing.assert_array_equal(classic.ActiveCircuit.AllBusVmag, alt.BusVmag())
+    np.testing.assert_array_equal(classic.ActiveCircuit.AllBusVmag, alt.BusVMag())
 
     # Use set_kW with AvoidFullRecalc to skip Yprim updates
     # like in the classic API
@@ -459,7 +459,7 @@ def test_loads_no_yprim():
         classic.ActiveCircuit.SystemY.view(dtype=complex).ravel(), 
         alt2.SystemY(dense=True).ravel()
     )
-    np.testing.assert_array_equal(classic.ActiveCircuit.AllBusVmag, alt2.BusVmag())
+    np.testing.assert_array_equal(classic.ActiveCircuit.AllBusVmag, alt2.BusVMag())
 
 
 def test_loads_float_na():

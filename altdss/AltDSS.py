@@ -144,12 +144,12 @@ class AltDSS(IObj):
         '''Return array of strings of the node names for the By Phase criteria. Sequence corresponds to other ByPhase properties.'''
         return self._check_for_error(self._get_string_array(self._lib.Circuit_Get_AllNodeNamesByPhase, Phase))
 
-    def NodeVmagByPhase(self, Phase: int) -> Float64Array:
+    def NodeVMagByPhase(self, Phase: int) -> Float64Array:
         '''Returns Array of doubles represent voltage magnitudes for nodes on the specified phase.'''
         self._check_for_error(self._lib.Circuit_Get_AllNodeVmagByPhase_GR(Phase))
         return self._get_float64_gr_array()
 
-    def NodeVmagPUByPhase(self, Phase: int) -> Float64Array:
+    def NodeVMagPUByPhase(self, Phase: int) -> Float64Array:
         '''Returns array of per unit voltage magnitudes for each node by phase'''
         self._check_for_error(self._lib.Circuit_Get_AllNodeVmagPUByPhase_GR(Phase))
         return self._get_float64_gr_array()
@@ -167,16 +167,16 @@ class AltDSS(IObj):
         '''
         return self._check_for_error(self._get_string_array(self._lib.Circuit_Get_AllBusNames))
 
-    def BusVmag(self) -> Float64Array:
+    def BusVMag(self) -> Float64Array:
         '''
         Array of magnitudes (doubles) of voltages at all buses
         '''
         self._check_for_error(self._lib.Circuit_Get_AllBusVmag_GR())
         return self._get_float64_gr_array()
 
-    def BusVmagPu(self) -> Float64Array:
+    def BusVMagPU(self) -> Float64Array:
         '''
-        Double Array of all bus voltages (each node) magnitudes in Per unit
+        Array of all bus voltages (each node) magnitudes in Per unit
         '''
         self._check_for_error(self._lib.Circuit_Get_AllBusVmagPu_GR())
         return self._get_float64_gr_array()
