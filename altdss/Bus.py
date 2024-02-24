@@ -14,6 +14,7 @@ class Bus:
         '_ptr',
         '_lib',
         '_get_fcomplex128_array',
+        '_get_fcomplex128_simple',
         '_get_float64_array',
         '_get_int32_array',
         '_get_string',
@@ -27,180 +28,348 @@ class Bus:
     def __init__(self, api_util, ptr):
         self._get_float64_array = api_util.get_float64_array
         self._get_fcomplex128_array = api_util.get_fcomplex128_array
+        self._get_fcomplex128_simple = api_util.get_fcomplex128_simple
         self._get_int32_array = api_util.get_int32_array
         self._get_string = api_util.get_string
         self._lib = api_util.lib
         self._ptr = ptr
         self._api_util = api_util
-        api_util.track_obj(self)
+        api_util.track_bus(self)
 
     def __repr__(self):
         return f'<Bus.{self.Name}>'
 
     def GetUniqueNodeNumber(self, startNumber: int) -> int:
+        '''
+        Return a unique node number at this bus to avoid node collisions and adds 
+        it to the node list for the bus.
+
+        Original COM help: https://opendss.epri.com/GetUniqueNodeNumber.html
+        '''
         return self._lib.Alt_Bus_GetUniqueNodeNumber(self._ptr, startNumber)
 
-    def ZscRefresh(self) -> bool:
-        '''Refreshes the Zsc matrix for this bus.'''
+    def ZSCRefresh(self) -> bool:
+        '''
+        Refreshes the Zsc matrix for this bus.
+
+        Original COM help: https://opendss.epri.com/ZSCRefresh.html
+        '''
         return self._lib.Alt_Bus_ZscRefresh(self._ptr) != 0
 
     @property
     def CoordDefined(self) -> bool:
-        '''Indicates whether a coordinate has been defined for this bus.'''
+        '''
+        Indicates whether a coordinate has been defined for this bus
+
+        Original COM help: https://opendss.epri.com/Coorddefined.html
+        '''
         return self._lib.Alt_Bus_Get_CoordDefined(self._ptr) != 0
 
     @property
     def ComplexSeqVoltages(self) -> ComplexArray:
-        '''Array of complex numbers, sequence voltages (0, 1, 2) at this bus.'''
+        '''
+        Complex sequence voltages (0, 1, 2) at this bus.
+
+        Original COM help: https://opendss.epri.com/CplxSeqVoltages.html
+        '''
         return self._get_fcomplex128_array(self._lib.Alt_Bus_Get_ComplexSeqVoltages, self._ptr)
 
     @property
     def CustDuration(self) -> float:
-        '''Accumulated customer outage durations.'''
+        '''
+        Accumulated customer outage durations.
+        
+        *Requires a previous call to `RelCalc` command*
+
+        Original COM help: https://opendss.epri.com/Cust_Duration.html
+        '''
         return self._lib.Alt_Bus_Get_CustDuration(self._ptr)
 
     @property
     def CustInterrupts(self) -> float:
-        '''Annual number of customer-interruptions from this bus.'''
+        '''
+        Annual number of customer-interruptions from this bus.
+        
+        *Requires a previous call to `RelCalc` command*
+
+        Original COM help: https://opendss.epri.com/Cust_Interrupts.html
+        '''
         return self._lib.Alt_Bus_Get_CustInterrupts(self._ptr)
 
     @property
     def Distance(self) -> float:
-        '''Distance from energymeter (if non-zero)'''
+        '''
+        Distance from EnergyMeter (if non-zero)
+        
+        *Requires an energy meter with an updated zone.*
+
+        Original COM help: https://opendss.epri.com/Distance.html
+        '''
         return self._lib.Alt_Bus_Get_Distance(self._ptr)
 
     @property
     def IntDuration(self) -> float:
-        '''Average interruption duration, hr.'''
+        '''
+        Average interruption duration in hours.
+        
+        *Requires a previous call to `RelCalc` command*
+
+        Original COM help: https://opendss.epri.com/Int_Duration.html
+        '''
         return self._lib.Alt_Bus_Get_IntDuration(self._ptr)
 
     @property
-    def Isc(self) -> ComplexArray:
-        '''Short circuit currents at bus; Complex Array.'''
+    def ISC(self) -> ComplexArray:
+        '''
+        Short circuit currents ($I_{SC}$) at this bus.
+        
+        *Requires a previous solution in `FaultStudy` mode.*
+
+        Original COM help: https://opendss.epri.com/Isc.html
+        '''
         return self._get_fcomplex128_array(self._lib.Alt_Bus_Get_Isc, self._ptr)
 
     @property
     def Lambda(self) -> float:
-        '''Accumulated failure rate downstream from this bus; faults per year'''
+        '''
+        Accumulated failure rate downstream from this bus; faults per year
+        
+        *Requires a previous call to `RelCalc` command*
+
+        Original COM help: https://opendss.epri.com/Lambda.html
+        '''
         return self._lib.Alt_Bus_Get_Lambda(self._ptr)
 
     @property
     def NumCustomers(self) -> int:
-        '''Total numbers of customers served downline from this bus'''
+        '''
+        Total numbers of customers served downline from this bus
+        
+        *Requires a previous call to `RelCalc` command*
+
+        Original COM help: https://opendss.epri.com/N_Customers.html
+        '''
         return self._lib.Alt_Bus_Get_NumCustomers(self._ptr)
 
     @property
     def NumInterrupts(self) -> float:
-        '''Number of interruptions on this bus per year'''
+        '''
+        Number of interruptions on this bus per year
+
+        *Requires a previous call to `RelCalc` command*
+        
+        Original COM help: https://opendss.epri.com/N_interrupts.html
+        '''
         return self._lib.Alt_Bus_Get_NumInterrupts(self._ptr)
 
     @property
     def Name(self) -> str:
-        '''Name of Bus'''
+        '''Name of this bus'''
         return self._get_string(self._lib.Alt_Bus_Get_Name(self._ptr))
 
     @property
     def Nodes(self) -> Int32Array:
-        '''Integer Array of Node Numbers defined at the bus in same order as the voltages.'''
+        '''
+        Node numbers defined at the bus in same order as the voltages.
+        
+        Original COM help: https://opendss.epri.com/Nodes.html
+        '''
         return self._get_int32_array(self._lib.Alt_Bus_Get_Nodes, self._ptr)
 
     @property
     def NumNodes(self) -> int:
-        '''Number of Nodes this bus.'''
+        '''
+        Number of nodes this bus.
+        
+        Original COM help: https://opendss.epri.com/NumNodes.html
+        '''
         return self._lib.Alt_Bus_Get_NumNodes(self._ptr)
 
     @property
     def SectionID(self) -> int:
-        '''Integer ID of the feeder section in which this bus is located.'''
+        '''
+        Integer ID of the feeder section in which this bus is located.
+        
+        *Requires a previous call to `RelCalc` command*
+
+        Original COM help: https://opendss.epri.com/SectionID.html
+        '''
         return self._lib.Alt_Bus_Get_SectionID(self._ptr)
 
     @property
     def SeqVoltages(self) -> Float64Array:
-        '''Array of sequence voltages at this bus. Magnitudes only.'''
+        '''
+        Sequence voltages at this bus. Magnitudes only.
+        
+        Original COM help: https://opendss.epri.com/SeqVoltages.html
+        '''
         return self._get_float64_array(self._lib.Alt_Bus_Get_SeqVoltages, self._ptr)
 
     @property
     def TotalMiles(self) -> float:
-        '''Total length of line downline from this bus, in miles. For recloser siting algorithm.'''
+        '''
+        Total length of line downline from this bus, in miles. For recloser siting algorithm.
+        
+        *Requires a previous call to `RelCalc` command*
+
+        Original COM help: https://opendss.epri.com/TotalMiles.html
+        '''
         return self._lib.Alt_Bus_Get_TotalMiles(self._ptr)
 
     @property
     def TotalKilometers(self) -> float:
-        '''Total length of line downline from this bus, in kilometers.'''
+        '''
+        Total length of line downline from this bus, in kilometers.
+        
+        *Requires a previous call to `RelCalc` command*
+        '''
         return self._lib.Alt_Bus_Get_TotalMiles(self._ptr) * 1.609344
 
     @property
     def VLL(self) -> ComplexArray:
-        '''For 2- and 3-phase buses, returns array of complex numbers represetin L-L voltages in volts. Returns -1.0 for 1-phase bus. If more than 3 phases, returns only first 3.'''
+        '''
+        For 2- and 3-phase buses, returns array of complex numbers representing L-L voltages in volts. 
+        
+        Returns -1.0 for 1-phase bus. 
+        
+        If more than 3 phases, returns only first 3.
+
+        Original COM help: https://opendss.epri.com/VLL.html
+        '''
         return self._get_fcomplex128_array(self._lib.Alt_Bus_Get_VLL, self._ptr)
 
     @property
     def VMagAngle(self) -> Float64Array:
-        '''Array of doubles containing voltages in Magnitude (VLN), angle (degrees) '''
+        '''
+        Voltages in magnitude (VLN) and angle (degrees) pairs.
+        
+        Original COM help: https://opendss.epri.com/VMagAngle.html
+        '''
         return self._get_float64_array(self._lib.Alt_Bus_Get_VMagAngle, self._ptr)
 
     @property
-    def Voc(self) -> ComplexArray:
-        '''Open circuit voltage; Complex array.'''
+    def VOC(self) -> ComplexArray:
+        '''
+        Open circuit voltages.
+
+        *Requires a previous solution in `FaultStudy` mode.*
+
+        Original COM help: https://opendss.epri.com/Voc.html
+        '''
         return self._get_fcomplex128_array(self._lib.Alt_Bus_Get_Voc, self._ptr)
 
     @property
     def Voltages(self) -> ComplexArray:
-        '''Complex array of voltages at this bus.'''
-        return self._get_complex128_array(self._lib.Alt_Bus_Get_Voltages, self._ptr)
+        '''
+        Complex voltages at this bus.
+        
+        Original COM help: https://opendss.epri.com/Voltages.html
+        '''
+        return self._get_fcomplex128_array(self._lib.Alt_Bus_Get_Voltages, self._ptr)
 
     @property
-    def YscMatrix(self) -> ComplexArray:
-        '''Complex array of Ysc matrix at bus. Column by column.'''
-        return self._get_complex128_array(self._lib.Alt_Bus_Get_YscMatrix, self._ptr)
+    def YSC(self) -> ComplexArray:
+        '''
+        YSC ($Y_{SC}$) matrix at bus.
+        
+        *Requires a previous solution in `FaultStudy` mode or a call to `ZSCRefresh`.*
+
+        Original COM help: https://opendss.epri.com/YscMatrix.html
+        '''
+        return self._get_fcomplex128_array(self._lib.Alt_Bus_Get_YscMatrix, self._ptr)
 
     @property
-    def Zsc0(self) -> complex:
-        '''Complex Zero-Sequence short circuit impedance at bus.'''
+    def ZSC0(self) -> complex:
+        '''
+        Zero-sequence short circuit impedance at bus.
+
+        *Requires a previous solution in `FaultStudy` mode or a call to `ZSCRefresh`.*
+        
+        Original COM help: https://opendss.epri.com/Zsc0.html
+        '''
         return self._get_fcomplex128_simple(self._lib.Alt_Bus_Get_Zsc0, self._ptr)
 
     @property
-    def Zsc1(self) -> complex:
-        '''Complex Positive-Sequence short circuit impedance at bus.'''
+    def ZSC1(self) -> complex:
+        '''
+        Positive-sequence short circuit impedance at bus.
+
+        *Requires a previous solution in `FaultStudy` mode or a call to `ZSCRefresh`.*
+        
+        Original COM help: https://opendss.epri.com/Zsc1.html
+        '''
         return self._get_fcomplex128_simple(self._lib.Alt_Bus_Get_Zsc1, self._ptr)
 
     @property
-    def ZscMatrix(self) -> ComplexArray:
-        '''Complex array of Zsc matrix at bus. Column by column.'''
+    def ZSC(self) -> ComplexArray:
+        '''
+        ZSC ($Z_{SC}$) matrix at the bus. 
+
+        *Requires a previous solution in `FaultStudy` mode or a call to `ZSCRefresh`.*
+
+        Original COM help: https://opendss.epri.com/ZscMatrix.html
+        '''
         return self._get_fcomplex128_array(self._lib.Alt_Bus_Get_ZscMatrix, self._ptr)
 
     @property
-    def kVBase(self) -> float:
-        '''Base voltage at bus in kV'''
+    def kVBase(self) -> float: #TODO: add setter
+        '''
+        Base voltage at bus in kV
+
+        Original COM help: https://opendss.epri.com/kVBase.html
+        '''
         return self._lib.Alt_Bus_Get_kVBase(self._ptr)
 
     @property
     def puVLL(self) -> ComplexArray:
-        '''Returns Complex array of pu L-L voltages for 2- and 3-phase buses. Returns -1.0 for 1-phase bus. If more than 3 phases, returns only 3 phases.'''
+        '''
+        Complex pu L-L voltages for 2- and 3-phase buses.
+        
+        Returns -1.0 for 1-phase bus.
+        If more than 3 phases, returns only 3 phases.
+        
+        Original COM help: https://opendss.epri.com/puVLL.html
+        '''
         return self._get_fcomplex128_array(self._lib.Alt_Bus_Get_puVLL, self._ptr)
 
     @property
     def puVMagAngle(self) -> Float64Array:
-        '''Array of doubles containing voltage magnitude, angle (degrees) pairs in per unit'''
+        '''
+        Voltage magnitudes and angles (degrees), paired, in per unit
+        
+        Original COM help: https://opendss.epri.com/puVmagAngle.html
+        '''
         return self._get_float64_array(self._lib.Alt_Bus_Get_puVMagAngle, self._ptr)
 
     @property
     def puVoltages(self) -> ComplexArray:
-        '''Complex Array of pu voltages at the bus.'''
+        '''
+        Complex pu voltages at the bus.
+        
+        Original COM help: https://opendss.epri.com/puVoltages.html
+        '''
         return self._get_fcomplex128_array(self._lib.Alt_Bus_Get_puVoltages, self._ptr)
 
     @property
-    def Zsc012Matrix(self) -> ComplexArray:
+    def ZSC012(self) -> ComplexArray:
         '''
-        Array of doubles (complex) containing the complete 012 Zsc matrix. 
-        Only available after Zsc is computed, either through the "ZscRefresh" command, or running a "FaultStudy" solution.
+        Complete 012 ZSC ($Z_{SC}$) matrix. 
         Only available for buses with 3 nodes. 
+        Only available after Zsc is computed.
+
+        *Requires a previous solution in `FaultStudy` mode or a call to `ZSCRefresh`.*
+
+        Original COM help: https://opendss.epri.com/ZSC012Matrix.html
         '''
         return self._get_fcomplex128_array(self._lib.Alt_Bus_Get_Zsc012Matrix, self._ptr)
 
     @property
     def X(self) -> float:
-        '''X Coordinate for bus'''
+        '''
+        X coordinate for the bus
+
+        Original COM help: https://opendss.epri.com/x.html
+        '''
         return self._lib.Alt_Bus_Get_X(self._ptr)
 
     @X.setter
@@ -209,7 +378,11 @@ class Bus:
 
     @property
     def Y(self) -> float:
-        '''Y coordinate for bus'''
+        '''
+        Y coordinate for the bus
+
+        Original COM help: https://opendss.epri.com/y.html
+        '''
         return self._lib.Alt_Bus_Get_Y(self._ptr)
 
     @Y.setter
@@ -244,7 +417,7 @@ class Bus:
 
 
 class BusBatch(Base):
-    def ZscRefresh(self) -> bool:
+    def ZSCRefresh(self) -> bool:
         '''
         Refreshes the Zsc matrix for all buses in the batch
         '''
@@ -270,11 +443,11 @@ class BusBatch(Base):
         )
 
     def X(self) -> Float64Array:
-        '''For each bus in the batch: get x coordinate'''
+        '''For each bus in the batch: get X coordinate'''
         return self._busbatch_float64('Alt_Bus_Get_X')
 
     def Y(self) -> Float64Array:
-        '''For each bus in the batch: get y coordinate'''
+        '''For each bus in the batch: get Y coordinate'''
         return self._busbatch_float64('Alt_Bus_Get_Y')
 
     def CustDuration(self) -> Float64Array:
@@ -338,8 +511,8 @@ class BusBatch(Base):
         return self.__getitem__(index)
 
     def __len__(self) -> int:
-        '''Total number of buses in the circuit.'''
-        return self._lib.Circuit_Get_NumBuses()
+        '''Total number of buses in this batch.'''
+        return self._cnt
     
     def __iter__(self) -> Iterator[Bus]:
         ptrList, cnt = self._get_ptr_cnt()

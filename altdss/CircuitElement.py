@@ -266,6 +266,6 @@ class CircuitElementBatch(NonUniformBatch, CircuitElementBatchMixin):
 
     __slots__ = []
 
-    def __init__(self, func, parent, sync_cls_idx=ExtraClassIDs.CktElements):
-        NonUniformBatch.__init__(self, func, parent, sync_cls_idx=sync_cls_idx)
+    def __init__(self, func, parent, sync_cls_idx=ExtraClassIDs.CktElements, copy_safe=False):
+        NonUniformBatch.__init__(self, func, parent, sync_cls_idx=sync_cls_idx, copy_safe=copy_safe)
         CircuitElementBatchMixin.__init__(self)

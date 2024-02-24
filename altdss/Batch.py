@@ -591,6 +591,7 @@ class NonUniformBatch(Base, BatchCommon):
         '_ffi',
         '_copy_safe',
         '_sync_cls_idx',
+        '__weakref__',
     )
 
     def _invalidate_ptr(self):

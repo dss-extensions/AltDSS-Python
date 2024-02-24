@@ -3,18 +3,37 @@
 Remember that changes in our alternative OpenDSS engine, currently known as AltDSS/DSS C-API, are always
 relevant. See [DSS C-API's repository](https://github.com/dss-extensions/dss_capi/) for more information.
 
-## 0.1.4
+## 0.2.0
+
+Version incremented to 0.2.0 due to the number of changes in the function/property names. The engine is also updated to 
 
 - PDElement: 
     - Fix `ParentPDElement`
     - Disable/comment `pctNorm`/`pctEmerg` -- these will be reintroduce later with better names
     - Add/complement docstrings
 
+- Bus class: 
+    - Fix errors in `ZSC0`, `ZSC1`, `Voltages`
+    - Batch: fix `len(bus_batch)`
+    - Fix element batches (PCElements, PDElements)
+    - Tweak tracking when buses are redefined but there are still live objects
+    - Complement docstrings
+    - Update names of several items:
+        - `Voc` to `VOC`
+        - `Isc` to `ISC`
+        - `YscMatrix` to `YSC`
+        - `ZscMatrix` to `ZSC`
+        - `Zsc012Matrix` to `ZSC012`
+        - `Zsc0` to `ZSC0`
+        - `Zsc1` to `ZSC1`
+        - `ZscRefresh` to `ZSCRefresh`
+
 - AltDSS (main class): adjust capitalization of a few items:
     - `NodeVmagByPhase` to `NodeVMagByPhase`
     - `NodeVmagPUByPhase` to `NodeVMagPUByPhase`
     - `BusVmag` to `BusVMag`
     - `BusVmagPu` to `BusVMagPU`
+
 
 ## 0.1.3
 
@@ -29,7 +48,7 @@ relevant. See [DSS C-API's repository](https://github.com/dss-extensions/dss_cap
     - `EnergyMeter.Loads`: make it a function to avoid issues with uninitialized meters (such as new meters).
     - Minor quality of life changes, such as returning zero instead of error for some empty batches.
 
--Known issue: reading `pctEmerg` or `pctNorm` for uninitialized PDElements (missing solution for the circuit) will crash. This is already fixed in the engine and will be included in the next backend update.
+- Known issue: reading `pctEmerg` or `pctNorm` for uninitialized PDElements (missing solution for the circuit) will crash. This is already fixed in the engine and will be included in the next backend update.
 
 
 ## 0.1.1

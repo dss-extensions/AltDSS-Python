@@ -12,7 +12,7 @@ class PDElementMixin:
         '''
         Energy Meter this element is assigned to.
 
-        *This requires an energy meter with an updated zone.*
+        *Requires an energy meter with an updated zone.*
 
         Original COM help: https://opendss.epri.com/EnergyMeter.html
         '''
@@ -22,7 +22,7 @@ class PDElementMixin:
         '''
         Name of the Energy Meter this element is assigned to.
 
-        *This requires an energy meter with an updated zone.*
+        *Requires an energy meter with an updated zone.*
 
         Original COM help: https://opendss.epri.com/EnergyMeter.html
         '''
@@ -40,7 +40,7 @@ class PDElementMixin:
         '''
         Accumulated failure rate for this branch on downline.
 
-        *This requires a previous call to `RelCalc` command*
+        *Requires a previous call to `RelCalc` command*
 
         Original COM help: https://opendss.epri.com/AccumulatedL.html
         '''
@@ -50,7 +50,7 @@ class PDElementMixin:
         '''
         Failure rate for this branch. Faults per year including length of line.
 
-        *This requires a previous call to `RelCalc` command*
+        *Requires a previous call to `RelCalc` command*
 
         Original COM help: https://opendss.epri.com/Lambda1.html
         '''
@@ -60,7 +60,7 @@ class PDElementMixin:
         '''
         Number of customers, this branch.
 
-        *This requires an energy meter with an updated zone.*
+        *Requires an energy meter with an updated zone.*
 
         Original COM help: https://opendss.epri.com/Numcustomers.html
         '''
@@ -70,7 +70,7 @@ class PDElementMixin:
         '''
         Parent PD element of this element, if any. 
         
-        *This requires an energy meter with an updated zone.*
+        *Requires an energy meter with an updated zone.*
         '''
         return self._get_obj_from_ptr(self._lib.Alt_PDE_Get_ParentPDElement(self._ptr))
 
@@ -78,7 +78,7 @@ class PDElementMixin:
         '''
         Total number of customers from this branch to the end of the zone
         
-        *This requires a circuit with an energy meter with an updated zone.*
+        *Requires a circuit with an energy meter with an updated zone.*
 
         Original COM help: https://opendss.epri.com/TotalCustomers1.html
         '''
@@ -88,7 +88,7 @@ class PDElementMixin:
         '''
         Number of the terminal of this PD element that is on the "from" side. 
         
-        *This requires an energy meter with an updated zone.*
+        *Requires an energy meter with an updated zone.*
         '''
         return self._lib.Alt_PDE_Get_FromTerminal(self._ptr)
 
@@ -96,7 +96,7 @@ class PDElementMixin:
         '''
         Total miles of line from this element to the end of the zone. For recloser siting algorithm.
         
-        *This requires a previous call to `RelCalc` command*
+        *Requires a previous call to `RelCalc` command*
 
         Original COM help: https://opendss.epri.com/TotalMiles1.html
         '''
@@ -106,7 +106,7 @@ class PDElementMixin:
         '''
         Total kilometers of line from this element to the end of the zone. For recloser siting algorithm.
         
-        *This requires a previous call to `RelCalc` command*
+        *Requires a previous call to `RelCalc` command*
         '''
         return self._lib.Alt_PDE_Get_TotalMiles(self._ptr) * 1.609344
 
@@ -114,7 +114,7 @@ class PDElementMixin:
         '''
         Integer ID of the feeder section that this PDElement branch is part of.
 
-        *This requires a previous call to `RelCalc` command*
+        *Requires a previous call to `RelCalc` command*
 
         Original COM help: https://opendss.epri.com/SectionID1.html
         '''
@@ -138,7 +138,7 @@ class PDElementBatchMixin:
         '''
         Return the energy meter for each of the elements in this batch.
 
-        *This requires an energy meter with an updated zone.*
+        *Requires an energy meter with an updated zone.*
         '''
         return [self._get_obj_from_ptr(self._lib.Alt_PDE_Get_EnergyMeter(ptr)) for ptr in self._unpack()]
 
@@ -146,7 +146,7 @@ class PDElementBatchMixin:
         '''
         Return the energy meter *name* for each of the elements in this batch.
 
-        *This requires an energy meter with an updated zone.*
+        *Requires an energy meter with an updated zone.*
         '''
         return [self._get_string(self._lib.Alt_PDE_Get_EnergyMeterName(ptr)) for ptr in self._unpack()]
 
@@ -162,7 +162,7 @@ class PDElementBatchMixin:
         '''
         Accumulated failure rate for the branch on downline, for each branch in this batch.
 
-        *This requires a previous call to `RelCalc` command*
+        *Requires a previous call to `RelCalc` command*
 
         Original COM help: https://opendss.epri.com/AccumulatedL.html
         '''
@@ -172,7 +172,7 @@ class PDElementBatchMixin:
         '''
         Failure rate for each of the branches in the batch. Faults per year including length of line.
 
-        *This requires a previous call to `RelCalc` command*
+        *Requires a previous call to `RelCalc` command*
 
         Original COM help: https://opendss.epri.com/Lambda1.html
         '''
@@ -182,7 +182,7 @@ class PDElementBatchMixin:
         '''
         Number of customers for each branch in the batch.
 
-        *This requires an energy meter with an updated zone.*
+        *Requires an energy meter with an updated zone.*
 
         Original COM help: https://opendss.epri.com/Numcustomers.html
         '''
@@ -192,7 +192,7 @@ class PDElementBatchMixin:
         '''
         Returns the parent PD element for each element in this batch.
         
-        *This requires an energy meter with an updated zone.*
+        *Requires an energy meter with an updated zone.*
         '''
         return [self._get_obj_from_ptr(self._lib.Alt_PDE_Get_ParentPDElement(ptr)) for ptr in self._unpack()]
 
@@ -200,7 +200,7 @@ class PDElementBatchMixin:
         '''
         Total number of customers from each branch of this batch to the end of the zone
         
-        *This requires a circuit with an energy meter with an updated zone.*
+        *Requires a circuit with an energy meter with an updated zone.*
 
         Original COM help: https://opendss.epri.com/TotalCustomers1.html
         '''
@@ -210,7 +210,7 @@ class PDElementBatchMixin:
         '''
         Number of the terminal of each PD element of this batch that is on the "from" side. 
         
-        *This requires an energy meter with an updated zone.*
+        *Requires an energy meter with an updated zone.*
         '''
         return self._get_batch_int32_func("Alt_PDE_Get_FromTerminal")
 
@@ -218,7 +218,7 @@ class PDElementBatchMixin:
         '''
         Total miles of line from this element to the end of the zone. For recloser siting algorithm.
         
-        *This requires a previous call to `RelCalc` command*
+        *Requires a previous call to `RelCalc` command*
 
         Original COM help: https://opendss.epri.com/TotalMiles1.html
         '''
@@ -228,7 +228,7 @@ class PDElementBatchMixin:
         '''
         Integer ID of the feeder section that each PDElement branch in this batch is part of.
 
-        *This requires a previous call to `RelCalc` command*
+        *Requires a previous call to `RelCalc` command*
 
         Original COM help: https://opendss.epri.com/SectionID1.html
         '''
@@ -243,8 +243,8 @@ class PDElementBatch(CircuitElementBatch, PDElementBatchMixin):
 
     __slots__ = []
 
-    def __init__(self, func, parent, sync_cls_idx=ExtraClassIDs.PDElements):
-        CircuitElementBatch.__init__(self, func, parent, sync_cls_idx=sync_cls_idx)
+    def __init__(self, func, parent, sync_cls_idx=ExtraClassIDs.PDElements, copy_safe=False):
+        CircuitElementBatch.__init__(self, func, parent, sync_cls_idx=sync_cls_idx, copy_safe=copy_safe)
         PDElementBatchMixin.__init__(self)
 
 

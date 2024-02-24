@@ -41,7 +41,7 @@ class PCElementMixin:
         '''
         Energy Meter this element is assigned to.
 
-        *This requires an energy meter with an updated zone.*
+        *Requires an energy meter with an updated zone.*
 
         Original COM help: https://opendss.epri.com/EnergyMeter.html
         '''
@@ -51,7 +51,7 @@ class PCElementMixin:
         '''
         Name of the Energy Meter this element is assigned to.
 
-        *This requires an energy meter with an updated zone.*
+        *Requires an energy meter with an updated zone.*
 
         Original COM help: https://opendss.epri.com/EnergyMeter.html
         '''
@@ -76,7 +76,7 @@ class PCElementBatch(CircuitElementBatch, PCElementBatchMixin, ElementHasRegiste
 
     __slots__ = []
 
-    def __init__(self, func, parent, sync_cls_idx=ExtraClassIDs.PCElements):
-        CircuitElementBatch.__init__(self, func, parent, sync_cls_idx=sync_cls_idx)
+    def __init__(self, func, parent, sync_cls_idx=ExtraClassIDs.PCElements, copy_safe=False):
+        CircuitElementBatch.__init__(self, func, parent, sync_cls_idx=sync_cls_idx, copy_safe=copy_safe)
         PCElementBatchMixin.__init__(self)
         ElementHasRegistersMixin.__init__(self)
