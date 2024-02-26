@@ -5,11 +5,14 @@ relevant. See [DSS C-API's repository](https://github.com/dss-extensions/dss_cap
 
 ## 0.2.0
 
-Version incremented to 0.2.0 due to the number of changes in the function/property names. The engine is also updated to 
+Version incremented to 0.2.0 due to the number of changes in the function/property names. The engine is also updated to DSS C-API 0.14.2.
 
 - PDElement: 
     - Fix `ParentPDElement`
-    - Disable/comment `pctNorm`/`pctEmerg` -- these will be reintroduce later with better names
+    - Fix and update names:
+        - `pctNorm` to `pctNormal`
+        - `pctEmerg` to `pctEmergency`
+    - Batch: add `pctNormal` and `pctEmergency`
     - Add/complement docstrings
 
 - Bus class: 

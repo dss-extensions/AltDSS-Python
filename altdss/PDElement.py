@@ -120,15 +120,31 @@ class PDElementMixin:
         '''
         return self._lib.Alt_PDE_Get_SectionID(self._ptr)
 
-    # def pctNorm(self, allNodes=False) -> float: #TODO: update, rename?
-    #     '''
-    #     '''
-    #     return self._lib.Alt_PDE_Get_pctNorm(self._ptr, allNodes)
+    def pctNormal(self, allNodes=False) -> float:
+        '''
+        Maximum current across the conductors as a percentage of the **normal** ampere rating.
 
-    # def pctEmerg(self, allNodes=False) -> float: #TODO: update, rename?
-    #     '''
-    #     '''
-    #     return self._lib.Alt_PDE_Get_pctEmerg(self._ptr, allNodes)
+        By default, only the nodes from the *first terminal* is used for the maximum current, matching
+        the behavior of the "export capacity" command. Pass `allNodes=True` to 
+        force the analysis to all terminals.
+        
+        See also: 
+        https://sourceforge.net/p/electricdss/discussion/beginners/thread/da5b93ca/
+        '''
+        return self._lib.Alt_PDE_Get_pctNorm(self._ptr, allNodes)
+
+    def pctEmergency(self, allNodes=False) -> float:
+        '''
+        Maximum current across the conductors as a percentage of the **emergency** ampere rating.
+
+        By default, only the nodes from the *first terminal* is used for the maximum current, matching
+        the behavior of the "export capacity" command. Pass `allNodes=True` to 
+        force the analysis to all terminals.
+        
+        See also: 
+        https://sourceforge.net/p/electricdss/discussion/beginners/thread/da5b93ca/
+        '''
+        return self._lib.Alt_PDE_Get_pctEmerg(self._ptr, allNodes)
 
 
 class PDElementBatchMixin:
@@ -234,6 +250,32 @@ class PDElementBatchMixin:
         '''
         return self._get_batch_int32_func("Alt_PDE_Get_SectionID")
     
+    def pctNormal(self, allNodes=False) -> Float64Array:
+        '''
+        For each element in the batch, calculate the maximum current across the conductors as a percentage of the **normal** ampere rating.
+
+        By default, only the nodes from the *first terminal* is used for the maximum current, matching
+        the behavior of the "export capacity" command. Pass `allNodes=True` to 
+        force the analysis to all terminals.
+        
+        See also: 
+        https://sourceforge.net/p/electricdss/discussion/beginners/thread/da5b93ca/
+        '''
+        return self._get_float64_array(self._lib.Alt_PDEBatch_Get_pctNorm, *self._get_ptr_cnt(), allNodes)
+
+    def pctEmergency(self, allNodes=False) -> Float64Array:
+        '''
+        For each element in the batch, calculate the maximum current across the conductors as a percentage of the **emergency** ampere rating.
+
+        By default, only the nodes from the *first terminal* is used for the maximum current, matching
+        the behavior of the "export capacity" command. Pass `allNodes=True` to 
+        force the analysis to all terminals.
+        
+        See also: 
+        https://sourceforge.net/p/electricdss/discussion/beginners/thread/da5b93ca/
+        '''
+        return self._get_float64_array(self._lib.Alt_PDEBatch_Get_pctEmerg, *self._get_ptr_cnt(), allNodes)
+
 
 class PDElementBatch(CircuitElementBatch, PDElementBatchMixin):
     '''

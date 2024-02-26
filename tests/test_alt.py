@@ -128,8 +128,8 @@ for pass_num in (0, 1):
                 'FromTerminal',
                 'TotalMiles',
                 'SectionID',
-                #'pctNorm',
-                #'pctEmerg',
+                'pctNormal',
+                'pctEmergency',
             ]:
                 try:
                     print(funcname, getattr(c, funcname)())
