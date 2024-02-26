@@ -31,7 +31,7 @@
 
 ### API
 
-`````{py:class} PDElementBatch(func, parent, sync_cls_idx=ExtraClassIDs.PDElements)
+`````{py:class} PDElementBatch(func, parent, sync_cls_idx=ExtraClassIDs.PDElements, copy_safe=False)
 :canonical: altdss.PDElement.PDElementBatch
 
 Bases: {py:obj}`altdss.CircuitElement.CircuitElementBatch`, {py:obj}`altdss.PDElement.PDElementBatchMixin`
@@ -79,7 +79,7 @@ Bases: {py:obj}`altdss.CircuitElement.CircuitElementBatch`, {py:obj}`altdss.PDEl
 
 ````
 
-````{py:method} EnergyMeter() -> typing.List[altdss.DSSObj.DSSObj]
+````{py:method} EnergyMeter() -> typing.List[typing.Optional[altdss.DSSObj.DSSObj]]
 :canonical: altdss.PDElement.PDElementBatch.EnergyMeter
 
 ```{autodoc2-docstring} altdss.PDElement.PDElementBatch.EnergyMeter
@@ -264,7 +264,7 @@ Bases: {py:obj}`altdss.CircuitElement.CircuitElementBatch`, {py:obj}`altdss.PDEl
 
 ````
 
-````{py:method} ParentPDElement() -> typing.List[altdss.DSSObj.DSSObj]
+````{py:method} ParentPDElement() -> typing.List[typing.Optional[altdss.DSSObj.DSSObj]]
 :canonical: altdss.PDElement.PDElementBatch.ParentPDElement
 
 ```{autodoc2-docstring} altdss.PDElement.PDElementBatch.ParentPDElement
@@ -368,7 +368,7 @@ Bases: {py:obj}`altdss.CircuitElement.CircuitElementBatch`, {py:obj}`altdss.PDEl
 
 ````
 
-````{py:method} __init__(func, parent, sync_cls_idx=ExtraClassIDs.PDElements)
+````{py:method} __init__(func, parent, sync_cls_idx=ExtraClassIDs.PDElements, copy_safe=False)
 :canonical: altdss.PDElement.PDElementBatch.__init__
 
 ```{autodoc2-docstring} altdss.PDElement.PDElementBatch.__init__
@@ -388,6 +388,22 @@ Bases: {py:obj}`altdss.CircuitElement.CircuitElementBatch`, {py:obj}`altdss.PDEl
 :canonical: altdss.PDElement.PDElementBatch.__len__
 
 ```{autodoc2-docstring} altdss.PDElement.PDElementBatch.__len__
+```
+
+````
+
+````{py:method} pctEmergency(allNodes=False) -> altdss.types.Float64Array
+:canonical: altdss.PDElement.PDElementBatch.pctEmergency
+
+```{autodoc2-docstring} altdss.PDElement.PDElementBatch.pctEmergency
+```
+
+````
+
+````{py:method} pctNormal(allNodes=False) -> altdss.types.Float64Array
+:canonical: altdss.PDElement.PDElementBatch.pctNormal
+
+```{autodoc2-docstring} altdss.PDElement.PDElementBatch.pctNormal
 ```
 
 ````
@@ -424,7 +440,7 @@ Bases: {py:obj}`altdss.CircuitElement.CircuitElementBatch`, {py:obj}`altdss.PDEl
 
 ````
 
-````{py:method} EnergyMeter() -> typing.List[altdss.DSSObj.DSSObj]
+````{py:method} EnergyMeter() -> typing.List[typing.Optional[altdss.DSSObj.DSSObj]]
 :canonical: altdss.PDElement.PDElementBatchMixin.EnergyMeter
 
 ```{autodoc2-docstring} altdss.PDElement.PDElementBatchMixin.EnergyMeter
@@ -472,7 +488,7 @@ Bases: {py:obj}`altdss.CircuitElement.CircuitElementBatch`, {py:obj}`altdss.PDEl
 
 ````
 
-````{py:method} ParentPDElement() -> typing.List[altdss.DSSObj.DSSObj]
+````{py:method} ParentPDElement() -> typing.List[typing.Optional[altdss.DSSObj.DSSObj]]
 :canonical: altdss.PDElement.PDElementBatchMixin.ParentPDElement
 
 ```{autodoc2-docstring} altdss.PDElement.PDElementBatchMixin.ParentPDElement
@@ -504,6 +520,22 @@ Bases: {py:obj}`altdss.CircuitElement.CircuitElementBatch`, {py:obj}`altdss.PDEl
 
 ````
 
+````{py:method} pctEmergency(allNodes=False) -> altdss.types.Float64Array
+:canonical: altdss.PDElement.PDElementBatchMixin.pctEmergency
+
+```{autodoc2-docstring} altdss.PDElement.PDElementBatchMixin.pctEmergency
+```
+
+````
+
+````{py:method} pctNormal(allNodes=False) -> altdss.types.Float64Array
+:canonical: altdss.PDElement.PDElementBatchMixin.pctNormal
+
+```{autodoc2-docstring} altdss.PDElement.PDElementBatchMixin.pctNormal
+```
+
+````
+
 `````
 
 `````{py:class} PDElementMixin
@@ -520,7 +552,7 @@ Bases: {py:obj}`altdss.CircuitElement.CircuitElementBatch`, {py:obj}`altdss.PDEl
 
 ````
 
-````{py:method} EnergyMeter() -> altdss.DSSObj.DSSObj
+````{py:method} EnergyMeter() -> typing.Optional[altdss.DSSObj.DSSObj]
 :canonical: altdss.PDElement.PDElementMixin.EnergyMeter
 
 ```{autodoc2-docstring} altdss.PDElement.PDElementMixin.EnergyMeter
@@ -568,7 +600,7 @@ Bases: {py:obj}`altdss.CircuitElement.CircuitElementBatch`, {py:obj}`altdss.PDEl
 
 ````
 
-````{py:method} ParentPDElement() -> altdss.DSSObj.DSSObj
+````{py:method} ParentPDElement() -> typing.Optional[altdss.DSSObj.DSSObj]
 :canonical: altdss.PDElement.PDElementMixin.ParentPDElement
 
 ```{autodoc2-docstring} altdss.PDElement.PDElementMixin.ParentPDElement
@@ -592,6 +624,14 @@ Bases: {py:obj}`altdss.CircuitElement.CircuitElementBatch`, {py:obj}`altdss.PDEl
 
 ````
 
+````{py:method} TotalKilometers() -> float
+:canonical: altdss.PDElement.PDElementMixin.TotalKilometers
+
+```{autodoc2-docstring} altdss.PDElement.PDElementMixin.TotalKilometers
+```
+
+````
+
 ````{py:method} TotalMiles() -> float
 :canonical: altdss.PDElement.PDElementMixin.TotalMiles
 
@@ -600,18 +640,18 @@ Bases: {py:obj}`altdss.CircuitElement.CircuitElementBatch`, {py:obj}`altdss.PDEl
 
 ````
 
-````{py:method} pctEmerg(allNodes=False) -> float
-:canonical: altdss.PDElement.PDElementMixin.pctEmerg
+````{py:method} pctEmergency(allNodes=False) -> float
+:canonical: altdss.PDElement.PDElementMixin.pctEmergency
 
-```{autodoc2-docstring} altdss.PDElement.PDElementMixin.pctEmerg
+```{autodoc2-docstring} altdss.PDElement.PDElementMixin.pctEmergency
 ```
 
 ````
 
-````{py:method} pctNorm(allNodes=False) -> float
-:canonical: altdss.PDElement.PDElementMixin.pctNorm
+````{py:method} pctNormal(allNodes=False) -> float
+:canonical: altdss.PDElement.PDElementMixin.pctNormal
 
-```{autodoc2-docstring} altdss.PDElement.PDElementMixin.pctNorm
+```{autodoc2-docstring} altdss.PDElement.PDElementMixin.pctNormal
 ```
 
 ````

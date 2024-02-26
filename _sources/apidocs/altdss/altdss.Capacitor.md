@@ -197,7 +197,7 @@ Bases: {py:obj}`altdss.DSSObj.DSSObj`, {py:obj}`altdss.CircuitElement.CircuitEle
 
 ````
 
-````{py:method} EnergyMeter() -> altdss.DSSObj.DSSObj
+````{py:method} EnergyMeter() -> typing.Optional[altdss.DSSObj.DSSObj]
 :canonical: altdss.Capacitor.Capacitor.EnergyMeter
 
 ```{autodoc2-docstring} altdss.Capacitor.Capacitor.EnergyMeter
@@ -466,7 +466,7 @@ Bases: {py:obj}`altdss.DSSObj.DSSObj`, {py:obj}`altdss.CircuitElement.CircuitEle
 
 ````
 
-````{py:method} ParentPDElement() -> altdss.DSSObj.DSSObj
+````{py:method} ParentPDElement() -> typing.Optional[altdss.DSSObj.DSSObj]
 :canonical: altdss.Capacitor.Capacitor.ParentPDElement
 
 ```{autodoc2-docstring} altdss.Capacitor.Capacitor.ParentPDElement
@@ -578,6 +578,14 @@ Bases: {py:obj}`altdss.DSSObj.DSSObj`, {py:obj}`altdss.CircuitElement.CircuitEle
 :canonical: altdss.Capacitor.Capacitor.TotalCustomers
 
 ```{autodoc2-docstring} altdss.Capacitor.Capacitor.TotalCustomers
+```
+
+````
+
+````{py:method} TotalKilometers() -> float
+:canonical: altdss.Capacitor.Capacitor.TotalKilometers
+
+```{autodoc2-docstring} altdss.Capacitor.Capacitor.TotalKilometers
 ```
 
 ````
@@ -703,18 +711,18 @@ Bases: {py:obj}`altdss.DSSObj.DSSObj`, {py:obj}`altdss.CircuitElement.CircuitEle
 
 ````
 
-````{py:method} pctEmerg(allNodes=False) -> float
-:canonical: altdss.Capacitor.Capacitor.pctEmerg
+````{py:method} pctEmergency(allNodes=False) -> float
+:canonical: altdss.Capacitor.Capacitor.pctEmergency
 
-```{autodoc2-docstring} altdss.Capacitor.Capacitor.pctEmerg
+```{autodoc2-docstring} altdss.Capacitor.Capacitor.pctEmergency
 ```
 
 ````
 
-````{py:method} pctNorm(allNodes=False) -> float
-:canonical: altdss.Capacitor.Capacitor.pctNorm
+````{py:method} pctNormal(allNodes=False) -> float
+:canonical: altdss.Capacitor.Capacitor.pctNormal
 
-```{autodoc2-docstring} altdss.Capacitor.Capacitor.pctNorm
+```{autodoc2-docstring} altdss.Capacitor.Capacitor.pctNormal
 ```
 
 ````
@@ -887,7 +895,7 @@ Bases: {py:obj}`altdss.Batch.DSSBatch`, {py:obj}`altdss.CircuitElement.CircuitEl
 
 ````
 
-````{py:method} EnergyMeter() -> typing.List[altdss.DSSObj.DSSObj]
+````{py:method} EnergyMeter() -> typing.List[typing.Optional[altdss.DSSObj.DSSObj]]
 :canonical: altdss.Capacitor.CapacitorBatch.EnergyMeter
 
 ```{autodoc2-docstring} altdss.Capacitor.CapacitorBatch.EnergyMeter
@@ -1124,7 +1132,7 @@ Bases: {py:obj}`altdss.Batch.DSSBatch`, {py:obj}`altdss.CircuitElement.CircuitEl
 
 ````
 
-````{py:method} ParentPDElement() -> typing.List[altdss.DSSObj.DSSObj]
+````{py:method} ParentPDElement() -> typing.List[typing.Optional[altdss.DSSObj.DSSObj]]
 :canonical: altdss.Capacitor.CapacitorBatch.ParentPDElement
 
 ```{autodoc2-docstring} altdss.Capacitor.CapacitorBatch.ParentPDElement
@@ -1349,6 +1357,22 @@ Bases: {py:obj}`altdss.Batch.DSSBatch`, {py:obj}`altdss.CircuitElement.CircuitEl
    'property(...)'
 
 ```{autodoc2-docstring} altdss.Capacitor.CapacitorBatch.kvar
+```
+
+````
+
+````{py:method} pctEmergency(allNodes=False) -> altdss.types.Float64Array
+:canonical: altdss.Capacitor.CapacitorBatch.pctEmergency
+
+```{autodoc2-docstring} altdss.Capacitor.CapacitorBatch.pctEmergency
+```
+
+````
+
+````{py:method} pctNormal(allNodes=False) -> altdss.types.Float64Array
+:canonical: altdss.Capacitor.CapacitorBatch.pctNormal
+
+```{autodoc2-docstring} altdss.Capacitor.CapacitorBatch.pctNormal
 ```
 
 ````
@@ -2619,7 +2643,7 @@ Bases: {py:obj}`altdss.DSSObj.IDSSObj`, {py:obj}`altdss.Capacitor.CapacitorBatch
 
 ````
 
-````{py:method} EnergyMeter() -> typing.List[altdss.DSSObj.DSSObj]
+````{py:method} EnergyMeter() -> typing.List[typing.Optional[altdss.DSSObj.DSSObj]]
 :canonical: altdss.Capacitor.ICapacitor.EnergyMeter
 
 ```{autodoc2-docstring} altdss.Capacitor.ICapacitor.EnergyMeter
@@ -2856,7 +2880,7 @@ Bases: {py:obj}`altdss.DSSObj.IDSSObj`, {py:obj}`altdss.Capacitor.CapacitorBatch
 
 ````
 
-````{py:method} ParentPDElement() -> typing.List[altdss.DSSObj.DSSObj]
+````{py:method} ParentPDElement() -> typing.List[typing.Optional[altdss.DSSObj.DSSObj]]
 :canonical: altdss.Capacitor.ICapacitor.ParentPDElement
 
 ```{autodoc2-docstring} altdss.Capacitor.ICapacitor.ParentPDElement
@@ -3121,6 +3145,22 @@ Bases: {py:obj}`altdss.DSSObj.IDSSObj`, {py:obj}`altdss.Capacitor.CapacitorBatch
 :canonical: altdss.Capacitor.ICapacitor.new
 
 ```{autodoc2-docstring} altdss.Capacitor.ICapacitor.new
+```
+
+````
+
+````{py:method} pctEmergency(allNodes=False) -> altdss.types.Float64Array
+:canonical: altdss.Capacitor.ICapacitor.pctEmergency
+
+```{autodoc2-docstring} altdss.Capacitor.ICapacitor.pctEmergency
+```
+
+````
+
+````{py:method} pctNormal(allNodes=False) -> altdss.types.Float64Array
+:canonical: altdss.Capacitor.ICapacitor.pctNormal
+
+```{autodoc2-docstring} altdss.Capacitor.ICapacitor.pctNormal
 ```
 
 ````

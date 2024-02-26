@@ -197,7 +197,7 @@ Bases: {py:obj}`altdss.DSSObj.IDSSObj`, {py:obj}`altdss.Transformer.TransformerB
 
 ````
 
-````{py:method} EnergyMeter() -> typing.List[altdss.DSSObj.DSSObj]
+````{py:method} EnergyMeter() -> typing.List[typing.Optional[altdss.DSSObj.DSSObj]]
 :canonical: altdss.Transformer.ITransformer.EnergyMeter
 
 ```{autodoc2-docstring} altdss.Transformer.ITransformer.EnergyMeter
@@ -500,7 +500,7 @@ Bases: {py:obj}`altdss.DSSObj.IDSSObj`, {py:obj}`altdss.Transformer.TransformerB
 
 ````
 
-````{py:method} ParentPDElement() -> typing.List[altdss.DSSObj.DSSObj]
+````{py:method} ParentPDElement() -> typing.List[typing.Optional[altdss.DSSObj.DSSObj]]
 :canonical: altdss.Transformer.ITransformer.ParentPDElement
 
 ```{autodoc2-docstring} altdss.Transformer.ITransformer.ParentPDElement
@@ -978,6 +978,14 @@ Bases: {py:obj}`altdss.DSSObj.IDSSObj`, {py:obj}`altdss.Transformer.TransformerB
 
 ````
 
+````{py:method} pctEmergency(allNodes=False) -> altdss.types.Float64Array
+:canonical: altdss.Transformer.ITransformer.pctEmergency
+
+```{autodoc2-docstring} altdss.Transformer.ITransformer.pctEmergency
+```
+
+````
+
 ````{py:attribute} pctIMag
 :canonical: altdss.Transformer.ITransformer.pctIMag
 :type: altdss.ArrayProxy.BatchFloat64ArrayProxy
@@ -1007,6 +1015,14 @@ Bases: {py:obj}`altdss.DSSObj.IDSSObj`, {py:obj}`altdss.Transformer.TransformerB
    'property(...)'
 
 ```{autodoc2-docstring} altdss.Transformer.ITransformer.pctNoLoadLoss
+```
+
+````
+
+````{py:method} pctNormal(allNodes=False) -> altdss.types.Float64Array
+:canonical: altdss.Transformer.ITransformer.pctNormal
+
+```{autodoc2-docstring} altdss.Transformer.ITransformer.pctNormal
 ```
 
 ````
@@ -1242,7 +1258,7 @@ Bases: {py:obj}`altdss.DSSObj.DSSObj`, {py:obj}`altdss.CircuitElement.CircuitEle
 
 ````
 
-````{py:method} EnergyMeter() -> altdss.DSSObj.DSSObj
+````{py:method} EnergyMeter() -> typing.Optional[altdss.DSSObj.DSSObj]
 :canonical: altdss.Transformer.Transformer.EnergyMeter
 
 ```{autodoc2-docstring} altdss.Transformer.Transformer.EnergyMeter
@@ -1585,7 +1601,7 @@ Bases: {py:obj}`altdss.DSSObj.DSSObj`, {py:obj}`altdss.CircuitElement.CircuitEle
 
 ````
 
-````{py:method} ParentPDElement() -> altdss.DSSObj.DSSObj
+````{py:method} ParentPDElement() -> typing.Optional[altdss.DSSObj.DSSObj]
 :canonical: altdss.Transformer.Transformer.ParentPDElement
 
 ```{autodoc2-docstring} altdss.Transformer.Transformer.ParentPDElement
@@ -1763,6 +1779,14 @@ Bases: {py:obj}`altdss.DSSObj.DSSObj`, {py:obj}`altdss.CircuitElement.CircuitEle
 :canonical: altdss.Transformer.Transformer.TotalCustomers
 
 ```{autodoc2-docstring} altdss.Transformer.Transformer.TotalCustomers
+```
+
+````
+
+````{py:method} TotalKilometers() -> float
+:canonical: altdss.Transformer.Transformer.TotalKilometers
+
+```{autodoc2-docstring} altdss.Transformer.Transformer.TotalKilometers
 ```
 
 ````
@@ -2047,10 +2071,10 @@ Bases: {py:obj}`altdss.DSSObj.DSSObj`, {py:obj}`altdss.CircuitElement.CircuitEle
 
 ````
 
-````{py:method} pctEmerg(allNodes=False) -> float
-:canonical: altdss.Transformer.Transformer.pctEmerg
+````{py:method} pctEmergency(allNodes=False) -> float
+:canonical: altdss.Transformer.Transformer.pctEmergency
 
-```{autodoc2-docstring} altdss.Transformer.Transformer.pctEmerg
+```{autodoc2-docstring} altdss.Transformer.Transformer.pctEmergency
 ```
 
 ````
@@ -2088,10 +2112,10 @@ Bases: {py:obj}`altdss.DSSObj.DSSObj`, {py:obj}`altdss.CircuitElement.CircuitEle
 
 ````
 
-````{py:method} pctNorm(allNodes=False) -> float
-:canonical: altdss.Transformer.Transformer.pctNorm
+````{py:method} pctNormal(allNodes=False) -> float
+:canonical: altdss.Transformer.Transformer.pctNormal
 
-```{autodoc2-docstring} altdss.Transformer.Transformer.pctNorm
+```{autodoc2-docstring} altdss.Transformer.Transformer.pctNormal
 ```
 
 ````
@@ -2308,7 +2332,7 @@ Bases: {py:obj}`altdss.Batch.DSSBatch`, {py:obj}`altdss.CircuitElement.CircuitEl
 
 ````
 
-````{py:method} EnergyMeter() -> typing.List[altdss.DSSObj.DSSObj]
+````{py:method} EnergyMeter() -> typing.List[typing.Optional[altdss.DSSObj.DSSObj]]
 :canonical: altdss.Transformer.TransformerBatch.EnergyMeter
 
 ```{autodoc2-docstring} altdss.Transformer.TransformerBatch.EnergyMeter
@@ -2611,7 +2635,7 @@ Bases: {py:obj}`altdss.Batch.DSSBatch`, {py:obj}`altdss.CircuitElement.CircuitEl
 
 ````
 
-````{py:method} ParentPDElement() -> typing.List[altdss.DSSObj.DSSObj]
+````{py:method} ParentPDElement() -> typing.List[typing.Optional[altdss.DSSObj.DSSObj]]
 :canonical: altdss.Transformer.TransformerBatch.ParentPDElement
 
 ```{autodoc2-docstring} altdss.Transformer.TransformerBatch.ParentPDElement
@@ -3049,6 +3073,14 @@ Bases: {py:obj}`altdss.Batch.DSSBatch`, {py:obj}`altdss.CircuitElement.CircuitEl
 
 ````
 
+````{py:method} pctEmergency(allNodes=False) -> altdss.types.Float64Array
+:canonical: altdss.Transformer.TransformerBatch.pctEmergency
+
+```{autodoc2-docstring} altdss.Transformer.TransformerBatch.pctEmergency
+```
+
+````
+
 ````{py:attribute} pctIMag
 :canonical: altdss.Transformer.TransformerBatch.pctIMag
 :type: altdss.ArrayProxy.BatchFloat64ArrayProxy
@@ -3078,6 +3110,14 @@ Bases: {py:obj}`altdss.Batch.DSSBatch`, {py:obj}`altdss.CircuitElement.CircuitEl
    'property(...)'
 
 ```{autodoc2-docstring} altdss.Transformer.TransformerBatch.pctNoLoadLoss
+```
+
+````
+
+````{py:method} pctNormal(allNodes=False) -> altdss.types.Float64Array
+:canonical: altdss.Transformer.TransformerBatch.pctNormal
+
+```{autodoc2-docstring} altdss.Transformer.TransformerBatch.pctNormal
 ```
 
 ````

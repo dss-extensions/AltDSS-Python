@@ -69,18 +69,18 @@ Bases: {py:obj}`altdss.Obj.IObj`
 
 ````
 
-````{py:method} BusVmag() -> altdss.types.Float64Array
-:canonical: altdss.AltDSS.AltDSS.BusVmag
+````{py:method} BusVMag() -> altdss.types.Float64Array
+:canonical: altdss.AltDSS.AltDSS.BusVMag
 
-```{autodoc2-docstring} altdss.AltDSS.AltDSS.BusVmag
+```{autodoc2-docstring} altdss.AltDSS.AltDSS.BusVMag
 ```
 
 ````
 
-````{py:method} BusVmagPu() -> altdss.types.Float64Array
-:canonical: altdss.AltDSS.AltDSS.BusVmagPu
+````{py:method} BusVMagPU() -> altdss.types.Float64Array
+:canonical: altdss.AltDSS.AltDSS.BusVMagPU
 
-```{autodoc2-docstring} altdss.AltDSS.AltDSS.BusVmagPu
+```{autodoc2-docstring} altdss.AltDSS.AltDSS.BusVMagPU
 ```
 
 ````
@@ -522,18 +522,18 @@ Bases: {py:obj}`altdss.Obj.IObj`
 
 ````
 
-````{py:method} NodeVmagByPhase(Phase: int) -> altdss.types.Float64Array
-:canonical: altdss.AltDSS.AltDSS.NodeVmagByPhase
+````{py:method} NodeVMagByPhase(Phase: int) -> altdss.types.Float64Array
+:canonical: altdss.AltDSS.AltDSS.NodeVMagByPhase
 
-```{autodoc2-docstring} altdss.AltDSS.AltDSS.NodeVmagByPhase
+```{autodoc2-docstring} altdss.AltDSS.AltDSS.NodeVMagByPhase
 ```
 
 ````
 
-````{py:method} NodeVmagPUByPhase(Phase: int) -> altdss.types.Float64Array
-:canonical: altdss.AltDSS.AltDSS.NodeVmagPUByPhase
+````{py:method} NodeVMagPUByPhase(Phase: int) -> altdss.types.Float64Array
+:canonical: altdss.AltDSS.AltDSS.NodeVMagPUByPhase
 
-```{autodoc2-docstring} altdss.AltDSS.AltDSS.NodeVmagPUByPhase
+```{autodoc2-docstring} altdss.AltDSS.AltDSS.NodeVMagPUByPhase
 ```
 
 ````

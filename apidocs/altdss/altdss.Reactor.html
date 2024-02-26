@@ -8,7 +8,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
-    <title>altdss.Reactor &#8212; AltDSS-Python 0.1.2 documentation</title>
+    <title>altdss.Reactor &#8212; AltDSS-Python 0.2.0 documentation</title>
   
   
   
@@ -38,7 +38,7 @@
 <link rel="preload" as="script" href="../../_static/scripts/pydata-sphinx-theme.js?digest=8d27b9dea8ad943066ae" />
   <script src="../../_static/vendor/fontawesome/6.5.1/js/all.min.js?digest=8d27b9dea8ad943066ae"></script>
 
-    <script src="../../_static/documentation_options.js?v=0deb7d70"></script>
+    <script src="../../_static/documentation_options.js?v=7f7c277e"></script>
     <script src="../../_static/doctools.js?v=888ff710"></script>
     <script src="../../_static/sphinx_highlight.js?v=dc90522c"></script>
     <script src="../../_static/scripts/sphinx-book-theme.js?v=efea14e4"></script>
@@ -137,8 +137,8 @@
       
     
     
-    <img src="../../_static/altdss-python.svg" class="logo__image only-light" alt="AltDSS-Python 0.1.2 documentation - Home"/>
-    <script>document.write(`<img src="../../_static/altdss-python-dark.svg" class="logo__image only-dark" alt="AltDSS-Python 0.1.2 documentation - Home"/>`);</script>
+    <img src="../../_static/altdss-python.svg" class="logo__image only-light" alt="AltDSS-Python 0.2.0 documentation - Home"/>
+    <script>document.write(`<img src="../../_static/altdss-python-dark.svg" class="logo__image only-dark" alt="AltDSS-Python 0.2.0 documentation - Home"/>`);</script>
   
   
 </a></div>
@@ -488,6 +488,8 @@ document.write(`
 <li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#altdss.Reactor.IReactor.kV"><code class="docutils literal notranslate"><span class="pre">IReactor.kV</span></code></a></li>
 <li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#altdss.Reactor.IReactor.kvar"><code class="docutils literal notranslate"><span class="pre">IReactor.kvar</span></code></a></li>
 <li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#altdss.Reactor.IReactor.new"><code class="docutils literal notranslate"><span class="pre">IReactor.new()</span></code></a></li>
+<li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#altdss.Reactor.IReactor.pctEmergency"><code class="docutils literal notranslate"><span class="pre">IReactor.pctEmergency()</span></code></a></li>
+<li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#altdss.Reactor.IReactor.pctNormal"><code class="docutils literal notranslate"><span class="pre">IReactor.pctNormal()</span></code></a></li>
 <li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#altdss.Reactor.IReactor.pctPerm"><code class="docutils literal notranslate"><span class="pre">IReactor.pctPerm</span></code></a></li>
 <li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#altdss.Reactor.IReactor.to_json"><code class="docutils literal notranslate"><span class="pre">IReactor.to_json()</span></code></a></li>
 <li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#altdss.Reactor.IReactor.to_list"><code class="docutils literal notranslate"><span class="pre">IReactor.to_list()</span></code></a></li>
@@ -557,6 +559,7 @@ document.write(`
 <li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#altdss.Reactor.Reactor.SeqPowers"><code class="docutils literal notranslate"><span class="pre">Reactor.SeqPowers()</span></code></a></li>
 <li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#altdss.Reactor.Reactor.SeqVoltages"><code class="docutils literal notranslate"><span class="pre">Reactor.SeqVoltages()</span></code></a></li>
 <li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#altdss.Reactor.Reactor.TotalCustomers"><code class="docutils literal notranslate"><span class="pre">Reactor.TotalCustomers()</span></code></a></li>
+<li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#altdss.Reactor.Reactor.TotalKilometers"><code class="docutils literal notranslate"><span class="pre">Reactor.TotalKilometers()</span></code></a></li>
 <li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#altdss.Reactor.Reactor.TotalMiles"><code class="docutils literal notranslate"><span class="pre">Reactor.TotalMiles()</span></code></a></li>
 <li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#altdss.Reactor.Reactor.TotalPowers"><code class="docutils literal notranslate"><span class="pre">Reactor.TotalPowers()</span></code></a></li>
 <li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#altdss.Reactor.Reactor.Voltages"><code class="docutils literal notranslate"><span class="pre">Reactor.Voltages()</span></code></a></li>
@@ -575,8 +578,8 @@ document.write(`
 <li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#altdss.Reactor.Reactor.end_edit"><code class="docutils literal notranslate"><span class="pre">Reactor.end_edit()</span></code></a></li>
 <li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#altdss.Reactor.Reactor.kV"><code class="docutils literal notranslate"><span class="pre">Reactor.kV</span></code></a></li>
 <li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#altdss.Reactor.Reactor.kvar"><code class="docutils literal notranslate"><span class="pre">Reactor.kvar</span></code></a></li>
-<li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#altdss.Reactor.Reactor.pctEmerg"><code class="docutils literal notranslate"><span class="pre">Reactor.pctEmerg()</span></code></a></li>
-<li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#altdss.Reactor.Reactor.pctNorm"><code class="docutils literal notranslate"><span class="pre">Reactor.pctNorm()</span></code></a></li>
+<li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#altdss.Reactor.Reactor.pctEmergency"><code class="docutils literal notranslate"><span class="pre">Reactor.pctEmergency()</span></code></a></li>
+<li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#altdss.Reactor.Reactor.pctNormal"><code class="docutils literal notranslate"><span class="pre">Reactor.pctNormal()</span></code></a></li>
 <li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#altdss.Reactor.Reactor.pctPerm"><code class="docutils literal notranslate"><span class="pre">Reactor.pctPerm</span></code></a></li>
 <li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#altdss.Reactor.Reactor.to_json"><code class="docutils literal notranslate"><span class="pre">Reactor.to_json()</span></code></a></li>
 </ul>
@@ -657,6 +660,8 @@ document.write(`
 <li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#altdss.Reactor.ReactorBatch.end_edit"><code class="docutils literal notranslate"><span class="pre">ReactorBatch.end_edit()</span></code></a></li>
 <li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#altdss.Reactor.ReactorBatch.kV"><code class="docutils literal notranslate"><span class="pre">ReactorBatch.kV</span></code></a></li>
 <li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#altdss.Reactor.ReactorBatch.kvar"><code class="docutils literal notranslate"><span class="pre">ReactorBatch.kvar</span></code></a></li>
+<li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#altdss.Reactor.ReactorBatch.pctEmergency"><code class="docutils literal notranslate"><span class="pre">ReactorBatch.pctEmergency()</span></code></a></li>
+<li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#altdss.Reactor.ReactorBatch.pctNormal"><code class="docutils literal notranslate"><span class="pre">ReactorBatch.pctNormal()</span></code></a></li>
 <li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#altdss.Reactor.ReactorBatch.pctPerm"><code class="docutils literal notranslate"><span class="pre">ReactorBatch.pctPerm</span></code></a></li>
 <li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#altdss.Reactor.ReactorBatch.to_json"><code class="docutils literal notranslate"><span class="pre">ReactorBatch.to_json()</span></code></a></li>
 <li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#altdss.Reactor.ReactorBatch.to_list"><code class="docutils literal notranslate"><span class="pre">ReactorBatch.to_list()</span></code></a></li>
@@ -862,7 +867,10 @@ in the keyword argument list.  For example:  dict(one=1, two=2)</p></td>
 <dl class="py method">
 <dt class="sig sig-object py" id="altdss.Reactor.IReactor.AccumulatedL">
 <span class="sig-name descname"><span class="pre">AccumulatedL</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">altdss.types.Float64Array</span></span></span><a class="headerlink" href="#altdss.Reactor.IReactor.AccumulatedL" title="Link to this definition">#</a></dt>
-<dd></dd></dl>
+<dd><p>Accumulated failure rate for the branch on downline, for each branch in this batch.</p>
+<p><em>Requires a previous call to <code class="docutils literal notranslate"><span class="pre">RelCalc</span></code> command</em></p>
+<p>Original COM help: <a class="reference external" href="https://opendss.epri.com/AccumulatedL.html">https://opendss.epri.com/AccumulatedL.html</a></p>
+</dd></dl>
 
 <dl class="py attribute">
 <dt class="sig sig-object py" id="altdss.Reactor.IReactor.BaseFreq">
@@ -928,13 +936,17 @@ in the keyword argument list.  For example:  dict(one=1, two=2)</p></td>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="altdss.Reactor.IReactor.EnergyMeter">
-<span class="sig-name descname"><span class="pre">EnergyMeter</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">List</span><span class="p"><span class="pre">[</span></span><a class="reference internal" href="altdss.DSSObj.html#altdss.DSSObj.DSSObj" title="altdss.DSSObj.DSSObj"><span class="pre">altdss.DSSObj.DSSObj</span></a><span class="p"><span class="pre">]</span></span></span></span><a class="headerlink" href="#altdss.Reactor.IReactor.EnergyMeter" title="Link to this definition">#</a></dt>
-<dd></dd></dl>
+<span class="sig-name descname"><span class="pre">EnergyMeter</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">List</span><span class="p"><span class="pre">[</span></span><span class="pre">Optional</span><span class="p"><span class="pre">[</span></span><a class="reference internal" href="altdss.DSSObj.html#altdss.DSSObj.DSSObj" title="altdss.DSSObj.DSSObj"><span class="pre">altdss.DSSObj.DSSObj</span></a><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">]</span></span></span></span><a class="headerlink" href="#altdss.Reactor.IReactor.EnergyMeter" title="Link to this definition">#</a></dt>
+<dd><p>Return the energy meter for each of the elements in this batch.</p>
+<p><em>Requires an energy meter with an updated zone.</em></p>
+</dd></dl>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="altdss.Reactor.IReactor.EnergyMeterName">
 <span class="sig-name descname"><span class="pre">EnergyMeterName</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">List</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">]</span></span></span></span><a class="headerlink" href="#altdss.Reactor.IReactor.EnergyMeterName" title="Link to this definition">#</a></dt>
-<dd></dd></dl>
+<dd><p>Return the energy meter <em>name</em> for each of the elements in this batch.</p>
+<p><em>Requires an energy meter with an updated zone.</em></p>
+</dd></dl>
 
 <dl class="py attribute">
 <dt class="sig sig-object py" id="altdss.Reactor.IReactor.FaultRate">
@@ -945,7 +957,9 @@ in the keyword argument list.  For example:  dict(one=1, two=2)</p></td>
 <dl class="py method">
 <dt class="sig sig-object py" id="altdss.Reactor.IReactor.FromTerminal">
 <span class="sig-name descname"><span class="pre">FromTerminal</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">altdss.types.Int32Array</span></span></span><a class="headerlink" href="#altdss.Reactor.IReactor.FromTerminal" title="Link to this definition">#</a></dt>
-<dd></dd></dl>
+<dd><p>Number of the terminal of each PD element of this batch that is on the “from” side.</p>
+<p><em>Requires an energy meter with an updated zone.</em></p>
+</dd></dl>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="altdss.Reactor.IReactor.FullName">
@@ -987,7 +1001,9 @@ in the keyword argument list.  For example:  dict(one=1, two=2)</p></td>
 <dl class="py method">
 <dt class="sig sig-object py" id="altdss.Reactor.IReactor.IsShunt">
 <span class="sig-name descname"><span class="pre">IsShunt</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">List</span><span class="p"><span class="pre">[</span></span><span class="pre">bool</span><span class="p"><span class="pre">]</span></span></span></span><a class="headerlink" href="#altdss.Reactor.IReactor.IsShunt" title="Link to this definition">#</a></dt>
-<dd></dd></dl>
+<dd><p>Indicates if each of the PD elements in the batch should be treated as a shunt element rather than a series element.</p>
+<p>Applies to Capacitor, Reactor, Fault and GICTransformer elements.</p>
+</dd></dl>
 
 <dl class="py attribute">
 <dt class="sig sig-object py" id="altdss.Reactor.IReactor.LCurve">
@@ -1004,7 +1020,10 @@ in the keyword argument list.  For example:  dict(one=1, two=2)</p></td>
 <dl class="py method">
 <dt class="sig sig-object py" id="altdss.Reactor.IReactor.Lambda">
 <span class="sig-name descname"><span class="pre">Lambda</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">altdss.types.Float64Array</span></span></span><a class="headerlink" href="#altdss.Reactor.IReactor.Lambda" title="Link to this definition">#</a></dt>
-<dd></dd></dl>
+<dd><p>Failure rate for each of the branches in the batch. Faults per year including length of line.</p>
+<p><em>Requires a previous call to <code class="docutils literal notranslate"><span class="pre">RelCalc</span></code> command</em></p>
+<p>Original COM help: <a class="reference external" href="https://opendss.epri.com/Lambda1.html">https://opendss.epri.com/Lambda1.html</a></p>
+</dd></dl>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="altdss.Reactor.IReactor.Like">
@@ -1057,7 +1076,10 @@ Use -1 as terminal to get the value across all terminals.</p>
 <dl class="py method">
 <dt class="sig sig-object py" id="altdss.Reactor.IReactor.NumCustomers">
 <span class="sig-name descname"><span class="pre">NumCustomers</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">altdss.types.Int32Array</span></span></span><a class="headerlink" href="#altdss.Reactor.IReactor.NumCustomers" title="Link to this definition">#</a></dt>
-<dd></dd></dl>
+<dd><p>Number of customers for each branch in the batch.</p>
+<p><em>Requires an energy meter with an updated zone.</em></p>
+<p>Original COM help: <a class="reference external" href="https://opendss.epri.com/Numcustomers.html">https://opendss.epri.com/Numcustomers.html</a></p>
+</dd></dl>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="altdss.Reactor.IReactor.NumPhases">
@@ -1092,8 +1114,10 @@ Use -1 as terminal to get the value across all terminals.</p>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="altdss.Reactor.IReactor.ParentPDElement">
-<span class="sig-name descname"><span class="pre">ParentPDElement</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">List</span><span class="p"><span class="pre">[</span></span><a class="reference internal" href="altdss.DSSObj.html#altdss.DSSObj.DSSObj" title="altdss.DSSObj.DSSObj"><span class="pre">altdss.DSSObj.DSSObj</span></a><span class="p"><span class="pre">]</span></span></span></span><a class="headerlink" href="#altdss.Reactor.IReactor.ParentPDElement" title="Link to this definition">#</a></dt>
-<dd></dd></dl>
+<span class="sig-name descname"><span class="pre">ParentPDElement</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">List</span><span class="p"><span class="pre">[</span></span><span class="pre">Optional</span><span class="p"><span class="pre">[</span></span><a class="reference internal" href="altdss.DSSObj.html#altdss.DSSObj.DSSObj" title="altdss.DSSObj.DSSObj"><span class="pre">altdss.DSSObj.DSSObj</span></a><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">]</span></span></span></span><a class="headerlink" href="#altdss.Reactor.IReactor.ParentPDElement" title="Link to this definition">#</a></dt>
+<dd><p>Returns the parent PD element for each element in this batch.</p>
+<p><em>Requires an energy meter with an updated zone.</em></p>
+</dd></dl>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="altdss.Reactor.IReactor.PhaseLosses">
@@ -1152,7 +1176,10 @@ Use -1 as terminal to get the value across all terminals.</p>
 <dl class="py method">
 <dt class="sig sig-object py" id="altdss.Reactor.IReactor.SectionID">
 <span class="sig-name descname"><span class="pre">SectionID</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">altdss.types.Int32Array</span></span></span><a class="headerlink" href="#altdss.Reactor.IReactor.SectionID" title="Link to this definition">#</a></dt>
-<dd></dd></dl>
+<dd><p>Integer ID of the feeder section that each PDElement branch in this batch is part of.</p>
+<p><em>Requires a previous call to <code class="docutils literal notranslate"><span class="pre">RelCalc</span></code> command</em></p>
+<p>Original COM help: <a class="reference external" href="https://opendss.epri.com/SectionID1.html">https://opendss.epri.com/SectionID1.html</a></p>
+</dd></dl>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="altdss.Reactor.IReactor.SeqCurrents">
@@ -1172,12 +1199,18 @@ Use -1 as terminal to get the value across all terminals.</p>
 <dl class="py method">
 <dt class="sig sig-object py" id="altdss.Reactor.IReactor.TotalCustomers">
 <span class="sig-name descname"><span class="pre">TotalCustomers</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">altdss.types.Int32Array</span></span></span><a class="headerlink" href="#altdss.Reactor.IReactor.TotalCustomers" title="Link to this definition">#</a></dt>
-<dd></dd></dl>
+<dd><p>Total number of customers from each branch of this batch to the end of the zone</p>
+<p><em>Requires a circuit with an energy meter with an updated zone.</em></p>
+<p>Original COM help: <a class="reference external" href="https://opendss.epri.com/TotalCustomers1.html">https://opendss.epri.com/TotalCustomers1.html</a></p>
+</dd></dl>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="altdss.Reactor.IReactor.TotalMiles">
 <span class="sig-name descname"><span class="pre">TotalMiles</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">altdss.types.Float64Array</span></span></span><a class="headerlink" href="#altdss.Reactor.IReactor.TotalMiles" title="Link to this definition">#</a></dt>
-<dd></dd></dl>
+<dd><p>Total miles of line from this element to the end of the zone. For recloser siting algorithm.</p>
+<p><em>Requires a previous call to <code class="docutils literal notranslate"><span class="pre">RelCalc</span></code> command</em></p>
+<p>Original COM help: <a class="reference external" href="https://opendss.epri.com/TotalMiles1.html">https://opendss.epri.com/TotalMiles1.html</a></p>
+</dd></dl>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="altdss.Reactor.IReactor.TotalPowers">
@@ -1314,6 +1347,28 @@ the <code class="docutils literal notranslate"><span class="pre">Process</span><
 <span class="sig-name descname"><span class="pre">new</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">name</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">AnyStr</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">begin_edit</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">activate</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">typing_extensions.Unpack</span><span class="p"><span class="pre">[</span></span><a class="reference internal" href="#altdss.Reactor.ReactorProperties" title="altdss.Reactor.ReactorProperties"><span class="pre">altdss.Reactor.ReactorProperties</span></a><span class="p"><span class="pre">]</span></span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference internal" href="#altdss.Reactor.Reactor" title="altdss.Reactor.Reactor"><span class="pre">altdss.Reactor.Reactor</span></a></span></span><a class="headerlink" href="#altdss.Reactor.IReactor.new" title="Link to this definition">#</a></dt>
 <dd></dd></dl>
 
+<dl class="py method">
+<dt class="sig sig-object py" id="altdss.Reactor.IReactor.pctEmergency">
+<span class="sig-name descname"><span class="pre">pctEmergency</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">allNodes</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">altdss.types.Float64Array</span></span></span><a class="headerlink" href="#altdss.Reactor.IReactor.pctEmergency" title="Link to this definition">#</a></dt>
+<dd><p>For each element in the batch, calculate the maximum current across the conductors as a percentage of the <strong>emergency</strong> ampere rating.</p>
+<p>By default, only the nodes from the <em>first terminal</em> is used for the maximum current, matching
+the behavior of the “export capacity” command. Pass <code class="docutils literal notranslate"><span class="pre">allNodes=True</span></code> to
+force the analysis to all terminals.</p>
+<p>See also:
+<a class="reference external" href="https://sourceforge.net/p/electricdss/discussion/beginners/thread/da5b93ca/">https://sourceforge.net/p/electricdss/discussion/beginners/thread/da5b93ca/</a></p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="altdss.Reactor.IReactor.pctNormal">
+<span class="sig-name descname"><span class="pre">pctNormal</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">allNodes</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">altdss.types.Float64Array</span></span></span><a class="headerlink" href="#altdss.Reactor.IReactor.pctNormal" title="Link to this definition">#</a></dt>
+<dd><p>For each element in the batch, calculate the maximum current across the conductors as a percentage of the <strong>normal</strong> ampere rating.</p>
+<p>By default, only the nodes from the <em>first terminal</em> is used for the maximum current, matching
+the behavior of the “export capacity” command. Pass <code class="docutils literal notranslate"><span class="pre">allNodes=True</span></code> to
+force the analysis to all terminals.</p>
+<p>See also:
+<a class="reference external" href="https://sourceforge.net/p/electricdss/discussion/beginners/thread/da5b93ca/">https://sourceforge.net/p/electricdss/discussion/beginners/thread/da5b93ca/</a></p>
+</dd></dl>
+
 <dl class="py attribute">
 <dt class="sig sig-object py" id="altdss.Reactor.IReactor.pctPerm">
 <span class="sig-name descname"><span class="pre">pctPerm</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><a class="reference internal" href="altdss.ArrayProxy.html#altdss.ArrayProxy.BatchFloat64ArrayProxy" title="altdss.ArrayProxy.BatchFloat64ArrayProxy"><span class="pre">altdss.ArrayProxy.BatchFloat64ArrayProxy</span></a></em><a class="headerlink" href="#altdss.Reactor.IReactor.pctPerm" title="Link to this definition">#</a></dt>
@@ -1343,7 +1398,10 @@ See <code class="docutils literal notranslate"><span class="pre">Obj_ToJSON</spa
 <dl class="py method">
 <dt class="sig sig-object py" id="altdss.Reactor.Reactor.AccumulatedL">
 <span class="sig-name descname"><span class="pre">AccumulatedL</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">float</span></span></span><a class="headerlink" href="#altdss.Reactor.Reactor.AccumulatedL" title="Link to this definition">#</a></dt>
-<dd></dd></dl>
+<dd><p>Accumulated failure rate for this branch on downline.</p>
+<p><em>Requires a previous call to <code class="docutils literal notranslate"><span class="pre">RelCalc</span></code> command</em></p>
+<p>Original COM help: <a class="reference external" href="https://opendss.epri.com/AccumulatedL.html">https://opendss.epri.com/AccumulatedL.html</a></p>
+</dd></dl>
 
 <dl class="py attribute">
 <dt class="sig sig-object py" id="altdss.Reactor.Reactor.BaseFreq">
@@ -1415,13 +1473,19 @@ See <code class="docutils literal notranslate"><span class="pre">Obj_ToJSON</spa
 
 <dl class="py method">
 <dt class="sig sig-object py" id="altdss.Reactor.Reactor.EnergyMeter">
-<span class="sig-name descname"><span class="pre">EnergyMeter</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference internal" href="altdss.DSSObj.html#altdss.DSSObj.DSSObj" title="altdss.DSSObj.DSSObj"><span class="pre">altdss.DSSObj.DSSObj</span></a></span></span><a class="headerlink" href="#altdss.Reactor.Reactor.EnergyMeter" title="Link to this definition">#</a></dt>
-<dd></dd></dl>
+<span class="sig-name descname"><span class="pre">EnergyMeter</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">Optional</span><span class="p"><span class="pre">[</span></span><a class="reference internal" href="altdss.DSSObj.html#altdss.DSSObj.DSSObj" title="altdss.DSSObj.DSSObj"><span class="pre">altdss.DSSObj.DSSObj</span></a><span class="p"><span class="pre">]</span></span></span></span><a class="headerlink" href="#altdss.Reactor.Reactor.EnergyMeter" title="Link to this definition">#</a></dt>
+<dd><p>Energy Meter this element is assigned to.</p>
+<p><em>Requires an energy meter with an updated zone.</em></p>
+<p>Original COM help: <a class="reference external" href="https://opendss.epri.com/EnergyMeter.html">https://opendss.epri.com/EnergyMeter.html</a></p>
+</dd></dl>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="altdss.Reactor.Reactor.EnergyMeterName">
 <span class="sig-name descname"><span class="pre">EnergyMeterName</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">str</span></span></span><a class="headerlink" href="#altdss.Reactor.Reactor.EnergyMeterName" title="Link to this definition">#</a></dt>
-<dd></dd></dl>
+<dd><p>Name of the Energy Meter this element is assigned to.</p>
+<p><em>Requires an energy meter with an updated zone.</em></p>
+<p>Original COM help: <a class="reference external" href="https://opendss.epri.com/EnergyMeter.html">https://opendss.epri.com/EnergyMeter.html</a></p>
+</dd></dl>
 
 <dl class="py attribute">
 <dt class="sig sig-object py" id="altdss.Reactor.Reactor.FaultRate">
@@ -1432,7 +1496,9 @@ See <code class="docutils literal notranslate"><span class="pre">Obj_ToJSON</spa
 <dl class="py method">
 <dt class="sig sig-object py" id="altdss.Reactor.Reactor.FromTerminal">
 <span class="sig-name descname"><span class="pre">FromTerminal</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">int</span></span></span><a class="headerlink" href="#altdss.Reactor.Reactor.FromTerminal" title="Link to this definition">#</a></dt>
-<dd></dd></dl>
+<dd><p>Number of the terminal of this PD element that is on the “from” side.</p>
+<p><em>Requires an energy meter with an updated zone.</em></p>
+</dd></dl>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="altdss.Reactor.Reactor.FullName">
@@ -1478,7 +1544,9 @@ See <code class="docutils literal notranslate"><span class="pre">Obj_ToJSON</spa
 <dl class="py method">
 <dt class="sig sig-object py" id="altdss.Reactor.Reactor.IsShunt">
 <span class="sig-name descname"><span class="pre">IsShunt</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">bool</span></span></span><a class="headerlink" href="#altdss.Reactor.Reactor.IsShunt" title="Link to this definition">#</a></dt>
-<dd></dd></dl>
+<dd><p>Indicates if this PD element should be treated as a shunt element rather than a series element.</p>
+<p>Applies to Capacitor, Reactor, Fault and GICTransformer elements.</p>
+</dd></dl>
 
 <dl class="py attribute">
 <dt class="sig sig-object py" id="altdss.Reactor.Reactor.LCurve">
@@ -1495,7 +1563,10 @@ See <code class="docutils literal notranslate"><span class="pre">Obj_ToJSON</spa
 <dl class="py method">
 <dt class="sig sig-object py" id="altdss.Reactor.Reactor.Lambda">
 <span class="sig-name descname"><span class="pre">Lambda</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">float</span></span></span><a class="headerlink" href="#altdss.Reactor.Reactor.Lambda" title="Link to this definition">#</a></dt>
-<dd></dd></dl>
+<dd><p>Failure rate for this branch. Faults per year including length of line.</p>
+<p><em>Requires a previous call to <code class="docutils literal notranslate"><span class="pre">RelCalc</span></code> command</em></p>
+<p>Original COM help: <a class="reference external" href="https://opendss.epri.com/Lambda1.html">https://opendss.epri.com/Lambda1.html</a></p>
+</dd></dl>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="altdss.Reactor.Reactor.Like">
@@ -1520,7 +1591,7 @@ See <code class="docutils literal notranslate"><span class="pre">Obj_ToJSON</spa
 <dl class="py method">
 <dt class="sig sig-object py" id="altdss.Reactor.Reactor.MaxCurrent">
 <span class="sig-name descname"><span class="pre">MaxCurrent</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">terminal</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">float</span></span></span><a class="headerlink" href="#altdss.Reactor.Reactor.MaxCurrent" title="Link to this definition">#</a></dt>
-<dd><p>Returns the maximum current (magnitude) at the specificed terminal.
+<dd><p>Returns the maximum current (magnitude) at the specified terminal.
 Use -1 as terminal to get the value across all terminals.</p>
 </dd></dl>
 
@@ -1558,7 +1629,10 @@ Use -1 as terminal to get the value across all terminals.</p>
 <dl class="py method">
 <dt class="sig sig-object py" id="altdss.Reactor.Reactor.NumCustomers">
 <span class="sig-name descname"><span class="pre">NumCustomers</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">int</span></span></span><a class="headerlink" href="#altdss.Reactor.Reactor.NumCustomers" title="Link to this definition">#</a></dt>
-<dd></dd></dl>
+<dd><p>Number of customers, this branch.</p>
+<p><em>Requires an energy meter with an updated zone.</em></p>
+<p>Original COM help: <a class="reference external" href="https://opendss.epri.com/Numcustomers.html">https://opendss.epri.com/Numcustomers.html</a></p>
+</dd></dl>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="altdss.Reactor.Reactor.NumPhases">
@@ -1598,8 +1672,10 @@ Use -1 as terminal to get the value across all terminals.</p>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="altdss.Reactor.Reactor.ParentPDElement">
-<span class="sig-name descname"><span class="pre">ParentPDElement</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference internal" href="altdss.DSSObj.html#altdss.DSSObj.DSSObj" title="altdss.DSSObj.DSSObj"><span class="pre">altdss.DSSObj.DSSObj</span></a></span></span><a class="headerlink" href="#altdss.Reactor.Reactor.ParentPDElement" title="Link to this definition">#</a></dt>
-<dd></dd></dl>
+<span class="sig-name descname"><span class="pre">ParentPDElement</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">Optional</span><span class="p"><span class="pre">[</span></span><a class="reference internal" href="altdss.DSSObj.html#altdss.DSSObj.DSSObj" title="altdss.DSSObj.DSSObj"><span class="pre">altdss.DSSObj.DSSObj</span></a><span class="p"><span class="pre">]</span></span></span></span><a class="headerlink" href="#altdss.Reactor.Reactor.ParentPDElement" title="Link to this definition">#</a></dt>
+<dd><p>Parent PD element of this element, if any.</p>
+<p><em>Requires an energy meter with an updated zone.</em></p>
+</dd></dl>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="altdss.Reactor.Reactor.PhaseLosses">
@@ -1662,7 +1738,10 @@ Use -1 as terminal to get the value across all terminals.</p>
 <dl class="py method">
 <dt class="sig sig-object py" id="altdss.Reactor.Reactor.SectionID">
 <span class="sig-name descname"><span class="pre">SectionID</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">int</span></span></span><a class="headerlink" href="#altdss.Reactor.Reactor.SectionID" title="Link to this definition">#</a></dt>
-<dd></dd></dl>
+<dd><p>Integer ID of the feeder section that this PDElement branch is part of.</p>
+<p><em>Requires a previous call to <code class="docutils literal notranslate"><span class="pre">RelCalc</span></code> command</em></p>
+<p>Original COM help: <a class="reference external" href="https://opendss.epri.com/SectionID1.html">https://opendss.epri.com/SectionID1.html</a></p>
+</dd></dl>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="altdss.Reactor.Reactor.SeqCurrents">
@@ -1682,12 +1761,25 @@ Use -1 as terminal to get the value across all terminals.</p>
 <dl class="py method">
 <dt class="sig sig-object py" id="altdss.Reactor.Reactor.TotalCustomers">
 <span class="sig-name descname"><span class="pre">TotalCustomers</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">int</span></span></span><a class="headerlink" href="#altdss.Reactor.Reactor.TotalCustomers" title="Link to this definition">#</a></dt>
-<dd></dd></dl>
+<dd><p>Total number of customers from this branch to the end of the zone</p>
+<p><em>Requires a circuit with an energy meter with an updated zone.</em></p>
+<p>Original COM help: <a class="reference external" href="https://opendss.epri.com/TotalCustomers1.html">https://opendss.epri.com/TotalCustomers1.html</a></p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="altdss.Reactor.Reactor.TotalKilometers">
+<span class="sig-name descname"><span class="pre">TotalKilometers</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">float</span></span></span><a class="headerlink" href="#altdss.Reactor.Reactor.TotalKilometers" title="Link to this definition">#</a></dt>
+<dd><p>Total kilometers of line from this element to the end of the zone. For recloser siting algorithm.</p>
+<p><em>Requires a previous call to <code class="docutils literal notranslate"><span class="pre">RelCalc</span></code> command</em></p>
+</dd></dl>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="altdss.Reactor.Reactor.TotalMiles">
 <span class="sig-name descname"><span class="pre">TotalMiles</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">float</span></span></span><a class="headerlink" href="#altdss.Reactor.Reactor.TotalMiles" title="Link to this definition">#</a></dt>
-<dd></dd></dl>
+<dd><p>Total miles of line from this element to the end of the zone. For recloser siting algorithm.</p>
+<p><em>Requires a previous call to <code class="docutils literal notranslate"><span class="pre">RelCalc</span></code> command</em></p>
+<p>Original COM help: <a class="reference external" href="https://opendss.epri.com/TotalMiles1.html">https://opendss.epri.com/TotalMiles1.html</a></p>
+</dd></dl>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="altdss.Reactor.Reactor.TotalPowers">
@@ -1797,14 +1889,26 @@ the <code class="docutils literal notranslate"><span class="pre">Process</span><
 </dd></dl>
 
 <dl class="py method">
-<dt class="sig sig-object py" id="altdss.Reactor.Reactor.pctEmerg">
-<span class="sig-name descname"><span class="pre">pctEmerg</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">allNodes</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">float</span></span></span><a class="headerlink" href="#altdss.Reactor.Reactor.pctEmerg" title="Link to this definition">#</a></dt>
-<dd></dd></dl>
+<dt class="sig sig-object py" id="altdss.Reactor.Reactor.pctEmergency">
+<span class="sig-name descname"><span class="pre">pctEmergency</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">allNodes</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">float</span></span></span><a class="headerlink" href="#altdss.Reactor.Reactor.pctEmergency" title="Link to this definition">#</a></dt>
+<dd><p>Maximum current across the conductors as a percentage of the <strong>emergency</strong> ampere rating.</p>
+<p>By default, only the nodes from the <em>first terminal</em> is used for the maximum current, matching
+the behavior of the “export capacity” command. Pass <code class="docutils literal notranslate"><span class="pre">allNodes=True</span></code> to
+force the analysis to all terminals.</p>
+<p>See also:
+<a class="reference external" href="https://sourceforge.net/p/electricdss/discussion/beginners/thread/da5b93ca/">https://sourceforge.net/p/electricdss/discussion/beginners/thread/da5b93ca/</a></p>
+</dd></dl>
 
 <dl class="py method">
-<dt class="sig sig-object py" id="altdss.Reactor.Reactor.pctNorm">
-<span class="sig-name descname"><span class="pre">pctNorm</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">allNodes</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">float</span></span></span><a class="headerlink" href="#altdss.Reactor.Reactor.pctNorm" title="Link to this definition">#</a></dt>
-<dd></dd></dl>
+<dt class="sig sig-object py" id="altdss.Reactor.Reactor.pctNormal">
+<span class="sig-name descname"><span class="pre">pctNormal</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">allNodes</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">float</span></span></span><a class="headerlink" href="#altdss.Reactor.Reactor.pctNormal" title="Link to this definition">#</a></dt>
+<dd><p>Maximum current across the conductors as a percentage of the <strong>normal</strong> ampere rating.</p>
+<p>By default, only the nodes from the <em>first terminal</em> is used for the maximum current, matching
+the behavior of the “export capacity” command. Pass <code class="docutils literal notranslate"><span class="pre">allNodes=True</span></code> to
+force the analysis to all terminals.</p>
+<p>See also:
+<a class="reference external" href="https://sourceforge.net/p/electricdss/discussion/beginners/thread/da5b93ca/">https://sourceforge.net/p/electricdss/discussion/beginners/thread/da5b93ca/</a></p>
+</dd></dl>
 
 <dl class="py attribute">
 <dt class="sig sig-object py" id="altdss.Reactor.Reactor.pctPerm">
@@ -1847,7 +1951,10 @@ Values used by this function are:</p>
 <dl class="py method">
 <dt class="sig sig-object py" id="altdss.Reactor.ReactorBatch.AccumulatedL">
 <span class="sig-name descname"><span class="pre">AccumulatedL</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">altdss.types.Float64Array</span></span></span><a class="headerlink" href="#altdss.Reactor.ReactorBatch.AccumulatedL" title="Link to this definition">#</a></dt>
-<dd></dd></dl>
+<dd><p>Accumulated failure rate for the branch on downline, for each branch in this batch.</p>
+<p><em>Requires a previous call to <code class="docutils literal notranslate"><span class="pre">RelCalc</span></code> command</em></p>
+<p>Original COM help: <a class="reference external" href="https://opendss.epri.com/AccumulatedL.html">https://opendss.epri.com/AccumulatedL.html</a></p>
+</dd></dl>
 
 <dl class="py attribute">
 <dt class="sig sig-object py" id="altdss.Reactor.ReactorBatch.BaseFreq">
@@ -1913,13 +2020,17 @@ Values used by this function are:</p>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="altdss.Reactor.ReactorBatch.EnergyMeter">
-<span class="sig-name descname"><span class="pre">EnergyMeter</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">List</span><span class="p"><span class="pre">[</span></span><a class="reference internal" href="altdss.DSSObj.html#altdss.DSSObj.DSSObj" title="altdss.DSSObj.DSSObj"><span class="pre">altdss.DSSObj.DSSObj</span></a><span class="p"><span class="pre">]</span></span></span></span><a class="headerlink" href="#altdss.Reactor.ReactorBatch.EnergyMeter" title="Link to this definition">#</a></dt>
-<dd></dd></dl>
+<span class="sig-name descname"><span class="pre">EnergyMeter</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">List</span><span class="p"><span class="pre">[</span></span><span class="pre">Optional</span><span class="p"><span class="pre">[</span></span><a class="reference internal" href="altdss.DSSObj.html#altdss.DSSObj.DSSObj" title="altdss.DSSObj.DSSObj"><span class="pre">altdss.DSSObj.DSSObj</span></a><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">]</span></span></span></span><a class="headerlink" href="#altdss.Reactor.ReactorBatch.EnergyMeter" title="Link to this definition">#</a></dt>
+<dd><p>Return the energy meter for each of the elements in this batch.</p>
+<p><em>Requires an energy meter with an updated zone.</em></p>
+</dd></dl>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="altdss.Reactor.ReactorBatch.EnergyMeterName">
 <span class="sig-name descname"><span class="pre">EnergyMeterName</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">List</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">]</span></span></span></span><a class="headerlink" href="#altdss.Reactor.ReactorBatch.EnergyMeterName" title="Link to this definition">#</a></dt>
-<dd></dd></dl>
+<dd><p>Return the energy meter <em>name</em> for each of the elements in this batch.</p>
+<p><em>Requires an energy meter with an updated zone.</em></p>
+</dd></dl>
 
 <dl class="py attribute">
 <dt class="sig sig-object py" id="altdss.Reactor.ReactorBatch.FaultRate">
@@ -1930,7 +2041,9 @@ Values used by this function are:</p>
 <dl class="py method">
 <dt class="sig sig-object py" id="altdss.Reactor.ReactorBatch.FromTerminal">
 <span class="sig-name descname"><span class="pre">FromTerminal</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">altdss.types.Int32Array</span></span></span><a class="headerlink" href="#altdss.Reactor.ReactorBatch.FromTerminal" title="Link to this definition">#</a></dt>
-<dd></dd></dl>
+<dd><p>Number of the terminal of each PD element of this batch that is on the “from” side.</p>
+<p><em>Requires an energy meter with an updated zone.</em></p>
+</dd></dl>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="altdss.Reactor.ReactorBatch.FullName">
@@ -1972,7 +2085,9 @@ Values used by this function are:</p>
 <dl class="py method">
 <dt class="sig sig-object py" id="altdss.Reactor.ReactorBatch.IsShunt">
 <span class="sig-name descname"><span class="pre">IsShunt</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">List</span><span class="p"><span class="pre">[</span></span><span class="pre">bool</span><span class="p"><span class="pre">]</span></span></span></span><a class="headerlink" href="#altdss.Reactor.ReactorBatch.IsShunt" title="Link to this definition">#</a></dt>
-<dd></dd></dl>
+<dd><p>Indicates if each of the PD elements in the batch should be treated as a shunt element rather than a series element.</p>
+<p>Applies to Capacitor, Reactor, Fault and GICTransformer elements.</p>
+</dd></dl>
 
 <dl class="py attribute">
 <dt class="sig sig-object py" id="altdss.Reactor.ReactorBatch.LCurve">
@@ -1989,7 +2104,10 @@ Values used by this function are:</p>
 <dl class="py method">
 <dt class="sig sig-object py" id="altdss.Reactor.ReactorBatch.Lambda">
 <span class="sig-name descname"><span class="pre">Lambda</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">altdss.types.Float64Array</span></span></span><a class="headerlink" href="#altdss.Reactor.ReactorBatch.Lambda" title="Link to this definition">#</a></dt>
-<dd></dd></dl>
+<dd><p>Failure rate for each of the branches in the batch. Faults per year including length of line.</p>
+<p><em>Requires a previous call to <code class="docutils literal notranslate"><span class="pre">RelCalc</span></code> command</em></p>
+<p>Original COM help: <a class="reference external" href="https://opendss.epri.com/Lambda1.html">https://opendss.epri.com/Lambda1.html</a></p>
+</dd></dl>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="altdss.Reactor.ReactorBatch.Like">
@@ -2042,7 +2160,10 @@ Use -1 as terminal to get the value across all terminals.</p>
 <dl class="py method">
 <dt class="sig sig-object py" id="altdss.Reactor.ReactorBatch.NumCustomers">
 <span class="sig-name descname"><span class="pre">NumCustomers</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">altdss.types.Int32Array</span></span></span><a class="headerlink" href="#altdss.Reactor.ReactorBatch.NumCustomers" title="Link to this definition">#</a></dt>
-<dd></dd></dl>
+<dd><p>Number of customers for each branch in the batch.</p>
+<p><em>Requires an energy meter with an updated zone.</em></p>
+<p>Original COM help: <a class="reference external" href="https://opendss.epri.com/Numcustomers.html">https://opendss.epri.com/Numcustomers.html</a></p>
+</dd></dl>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="altdss.Reactor.ReactorBatch.NumPhases">
@@ -2077,8 +2198,10 @@ Use -1 as terminal to get the value across all terminals.</p>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="altdss.Reactor.ReactorBatch.ParentPDElement">
-<span class="sig-name descname"><span class="pre">ParentPDElement</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">List</span><span class="p"><span class="pre">[</span></span><a class="reference internal" href="altdss.DSSObj.html#altdss.DSSObj.DSSObj" title="altdss.DSSObj.DSSObj"><span class="pre">altdss.DSSObj.DSSObj</span></a><span class="p"><span class="pre">]</span></span></span></span><a class="headerlink" href="#altdss.Reactor.ReactorBatch.ParentPDElement" title="Link to this definition">#</a></dt>
-<dd></dd></dl>
+<span class="sig-name descname"><span class="pre">ParentPDElement</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">List</span><span class="p"><span class="pre">[</span></span><span class="pre">Optional</span><span class="p"><span class="pre">[</span></span><a class="reference internal" href="altdss.DSSObj.html#altdss.DSSObj.DSSObj" title="altdss.DSSObj.DSSObj"><span class="pre">altdss.DSSObj.DSSObj</span></a><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">]</span></span></span></span><a class="headerlink" href="#altdss.Reactor.ReactorBatch.ParentPDElement" title="Link to this definition">#</a></dt>
+<dd><p>Returns the parent PD element for each element in this batch.</p>
+<p><em>Requires an energy meter with an updated zone.</em></p>
+</dd></dl>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="altdss.Reactor.ReactorBatch.PhaseLosses">
@@ -2137,7 +2260,10 @@ Use -1 as terminal to get the value across all terminals.</p>
 <dl class="py method">
 <dt class="sig sig-object py" id="altdss.Reactor.ReactorBatch.SectionID">
 <span class="sig-name descname"><span class="pre">SectionID</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">altdss.types.Int32Array</span></span></span><a class="headerlink" href="#altdss.Reactor.ReactorBatch.SectionID" title="Link to this definition">#</a></dt>
-<dd></dd></dl>
+<dd><p>Integer ID of the feeder section that each PDElement branch in this batch is part of.</p>
+<p><em>Requires a previous call to <code class="docutils literal notranslate"><span class="pre">RelCalc</span></code> command</em></p>
+<p>Original COM help: <a class="reference external" href="https://opendss.epri.com/SectionID1.html">https://opendss.epri.com/SectionID1.html</a></p>
+</dd></dl>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="altdss.Reactor.ReactorBatch.SeqCurrents">
@@ -2157,12 +2283,18 @@ Use -1 as terminal to get the value across all terminals.</p>
 <dl class="py method">
 <dt class="sig sig-object py" id="altdss.Reactor.ReactorBatch.TotalCustomers">
 <span class="sig-name descname"><span class="pre">TotalCustomers</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">altdss.types.Int32Array</span></span></span><a class="headerlink" href="#altdss.Reactor.ReactorBatch.TotalCustomers" title="Link to this definition">#</a></dt>
-<dd></dd></dl>
+<dd><p>Total number of customers from each branch of this batch to the end of the zone</p>
+<p><em>Requires a circuit with an energy meter with an updated zone.</em></p>
+<p>Original COM help: <a class="reference external" href="https://opendss.epri.com/TotalCustomers1.html">https://opendss.epri.com/TotalCustomers1.html</a></p>
+</dd></dl>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="altdss.Reactor.ReactorBatch.TotalMiles">
 <span class="sig-name descname"><span class="pre">TotalMiles</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">altdss.types.Float64Array</span></span></span><a class="headerlink" href="#altdss.Reactor.ReactorBatch.TotalMiles" title="Link to this definition">#</a></dt>
-<dd></dd></dl>
+<dd><p>Total miles of line from this element to the end of the zone. For recloser siting algorithm.</p>
+<p><em>Requires a previous call to <code class="docutils literal notranslate"><span class="pre">RelCalc</span></code> command</em></p>
+<p>Original COM help: <a class="reference external" href="https://opendss.epri.com/TotalMiles1.html">https://opendss.epri.com/TotalMiles1.html</a></p>
+</dd></dl>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="altdss.Reactor.ReactorBatch.TotalPowers">
@@ -2269,6 +2401,28 @@ the <code class="docutils literal notranslate"><span class="pre">Process</span><
 <dt class="sig sig-object py" id="altdss.Reactor.ReactorBatch.kvar">
 <span class="sig-name descname"><span class="pre">kvar</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><a class="reference internal" href="altdss.ArrayProxy.html#altdss.ArrayProxy.BatchFloat64ArrayProxy" title="altdss.ArrayProxy.BatchFloat64ArrayProxy"><span class="pre">altdss.ArrayProxy.BatchFloat64ArrayProxy</span></a></em><a class="headerlink" href="#altdss.Reactor.ReactorBatch.kvar" title="Link to this definition">#</a></dt>
 <dd><p>‘property(…)’</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="altdss.Reactor.ReactorBatch.pctEmergency">
+<span class="sig-name descname"><span class="pre">pctEmergency</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">allNodes</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">altdss.types.Float64Array</span></span></span><a class="headerlink" href="#altdss.Reactor.ReactorBatch.pctEmergency" title="Link to this definition">#</a></dt>
+<dd><p>For each element in the batch, calculate the maximum current across the conductors as a percentage of the <strong>emergency</strong> ampere rating.</p>
+<p>By default, only the nodes from the <em>first terminal</em> is used for the maximum current, matching
+the behavior of the “export capacity” command. Pass <code class="docutils literal notranslate"><span class="pre">allNodes=True</span></code> to
+force the analysis to all terminals.</p>
+<p>See also:
+<a class="reference external" href="https://sourceforge.net/p/electricdss/discussion/beginners/thread/da5b93ca/">https://sourceforge.net/p/electricdss/discussion/beginners/thread/da5b93ca/</a></p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="altdss.Reactor.ReactorBatch.pctNormal">
+<span class="sig-name descname"><span class="pre">pctNormal</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">allNodes</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">altdss.types.Float64Array</span></span></span><a class="headerlink" href="#altdss.Reactor.ReactorBatch.pctNormal" title="Link to this definition">#</a></dt>
+<dd><p>For each element in the batch, calculate the maximum current across the conductors as a percentage of the <strong>normal</strong> ampere rating.</p>
+<p>By default, only the nodes from the <em>first terminal</em> is used for the maximum current, matching
+the behavior of the “export capacity” command. Pass <code class="docutils literal notranslate"><span class="pre">allNodes=True</span></code> to
+force the analysis to all terminals.</p>
+<p>See also:
+<a class="reference external" href="https://sourceforge.net/p/electricdss/discussion/beginners/thread/da5b93ca/">https://sourceforge.net/p/electricdss/discussion/beginners/thread/da5b93ca/</a></p>
 </dd></dl>
 
 <dl class="py attribute">
@@ -3250,6 +3404,8 @@ In either case, this is followed by: for k in F:  D[k] = F[k]</p>
 <li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#altdss.Reactor.IReactor.kV"><code class="docutils literal notranslate"><span class="pre">IReactor.kV</span></code></a></li>
 <li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#altdss.Reactor.IReactor.kvar"><code class="docutils literal notranslate"><span class="pre">IReactor.kvar</span></code></a></li>
 <li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#altdss.Reactor.IReactor.new"><code class="docutils literal notranslate"><span class="pre">IReactor.new()</span></code></a></li>
+<li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#altdss.Reactor.IReactor.pctEmergency"><code class="docutils literal notranslate"><span class="pre">IReactor.pctEmergency()</span></code></a></li>
+<li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#altdss.Reactor.IReactor.pctNormal"><code class="docutils literal notranslate"><span class="pre">IReactor.pctNormal()</span></code></a></li>
 <li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#altdss.Reactor.IReactor.pctPerm"><code class="docutils literal notranslate"><span class="pre">IReactor.pctPerm</span></code></a></li>
 <li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#altdss.Reactor.IReactor.to_json"><code class="docutils literal notranslate"><span class="pre">IReactor.to_json()</span></code></a></li>
 <li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#altdss.Reactor.IReactor.to_list"><code class="docutils literal notranslate"><span class="pre">IReactor.to_list()</span></code></a></li>
@@ -3319,6 +3475,7 @@ In either case, this is followed by: for k in F:  D[k] = F[k]</p>
 <li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#altdss.Reactor.Reactor.SeqPowers"><code class="docutils literal notranslate"><span class="pre">Reactor.SeqPowers()</span></code></a></li>
 <li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#altdss.Reactor.Reactor.SeqVoltages"><code class="docutils literal notranslate"><span class="pre">Reactor.SeqVoltages()</span></code></a></li>
 <li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#altdss.Reactor.Reactor.TotalCustomers"><code class="docutils literal notranslate"><span class="pre">Reactor.TotalCustomers()</span></code></a></li>
+<li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#altdss.Reactor.Reactor.TotalKilometers"><code class="docutils literal notranslate"><span class="pre">Reactor.TotalKilometers()</span></code></a></li>
 <li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#altdss.Reactor.Reactor.TotalMiles"><code class="docutils literal notranslate"><span class="pre">Reactor.TotalMiles()</span></code></a></li>
 <li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#altdss.Reactor.Reactor.TotalPowers"><code class="docutils literal notranslate"><span class="pre">Reactor.TotalPowers()</span></code></a></li>
 <li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#altdss.Reactor.Reactor.Voltages"><code class="docutils literal notranslate"><span class="pre">Reactor.Voltages()</span></code></a></li>
@@ -3337,8 +3494,8 @@ In either case, this is followed by: for k in F:  D[k] = F[k]</p>
 <li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#altdss.Reactor.Reactor.end_edit"><code class="docutils literal notranslate"><span class="pre">Reactor.end_edit()</span></code></a></li>
 <li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#altdss.Reactor.Reactor.kV"><code class="docutils literal notranslate"><span class="pre">Reactor.kV</span></code></a></li>
 <li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#altdss.Reactor.Reactor.kvar"><code class="docutils literal notranslate"><span class="pre">Reactor.kvar</span></code></a></li>
-<li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#altdss.Reactor.Reactor.pctEmerg"><code class="docutils literal notranslate"><span class="pre">Reactor.pctEmerg()</span></code></a></li>
-<li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#altdss.Reactor.Reactor.pctNorm"><code class="docutils literal notranslate"><span class="pre">Reactor.pctNorm()</span></code></a></li>
+<li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#altdss.Reactor.Reactor.pctEmergency"><code class="docutils literal notranslate"><span class="pre">Reactor.pctEmergency()</span></code></a></li>
+<li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#altdss.Reactor.Reactor.pctNormal"><code class="docutils literal notranslate"><span class="pre">Reactor.pctNormal()</span></code></a></li>
 <li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#altdss.Reactor.Reactor.pctPerm"><code class="docutils literal notranslate"><span class="pre">Reactor.pctPerm</span></code></a></li>
 <li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#altdss.Reactor.Reactor.to_json"><code class="docutils literal notranslate"><span class="pre">Reactor.to_json()</span></code></a></li>
 </ul>
@@ -3419,6 +3576,8 @@ In either case, this is followed by: for k in F:  D[k] = F[k]</p>
 <li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#altdss.Reactor.ReactorBatch.end_edit"><code class="docutils literal notranslate"><span class="pre">ReactorBatch.end_edit()</span></code></a></li>
 <li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#altdss.Reactor.ReactorBatch.kV"><code class="docutils literal notranslate"><span class="pre">ReactorBatch.kV</span></code></a></li>
 <li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#altdss.Reactor.ReactorBatch.kvar"><code class="docutils literal notranslate"><span class="pre">ReactorBatch.kvar</span></code></a></li>
+<li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#altdss.Reactor.ReactorBatch.pctEmergency"><code class="docutils literal notranslate"><span class="pre">ReactorBatch.pctEmergency()</span></code></a></li>
+<li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#altdss.Reactor.ReactorBatch.pctNormal"><code class="docutils literal notranslate"><span class="pre">ReactorBatch.pctNormal()</span></code></a></li>
 <li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#altdss.Reactor.ReactorBatch.pctPerm"><code class="docutils literal notranslate"><span class="pre">ReactorBatch.pctPerm</span></code></a></li>
 <li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#altdss.Reactor.ReactorBatch.to_json"><code class="docutils literal notranslate"><span class="pre">ReactorBatch.to_json()</span></code></a></li>
 <li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#altdss.Reactor.ReactorBatch.to_list"><code class="docutils literal notranslate"><span class="pre">ReactorBatch.to_list()</span></code></a></li>

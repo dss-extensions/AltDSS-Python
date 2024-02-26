@@ -164,7 +164,7 @@ Bases: {py:obj}`altdss.DSSObj.IDSSObj`, {py:obj}`altdss.Reactor.ReactorBatch`
 
 ````
 
-````{py:method} EnergyMeter() -> typing.List[altdss.DSSObj.DSSObj]
+````{py:method} EnergyMeter() -> typing.List[typing.Optional[altdss.DSSObj.DSSObj]]
 :canonical: altdss.Reactor.IReactor.EnergyMeter
 
 ```{autodoc2-docstring} altdss.Reactor.IReactor.EnergyMeter
@@ -423,7 +423,7 @@ Bases: {py:obj}`altdss.DSSObj.IDSSObj`, {py:obj}`altdss.Reactor.ReactorBatch`
 
 ````
 
-````{py:method} ParentPDElement() -> typing.List[altdss.DSSObj.DSSObj]
+````{py:method} ParentPDElement() -> typing.List[typing.Optional[altdss.DSSObj.DSSObj]]
 :canonical: altdss.Reactor.IReactor.ParentPDElement
 
 ```{autodoc2-docstring} altdss.Reactor.IReactor.ParentPDElement
@@ -769,6 +769,22 @@ Bases: {py:obj}`altdss.DSSObj.IDSSObj`, {py:obj}`altdss.Reactor.ReactorBatch`
 
 ````
 
+````{py:method} pctEmergency(allNodes=False) -> altdss.types.Float64Array
+:canonical: altdss.Reactor.IReactor.pctEmergency
+
+```{autodoc2-docstring} altdss.Reactor.IReactor.pctEmergency
+```
+
+````
+
+````{py:method} pctNormal(allNodes=False) -> altdss.types.Float64Array
+:canonical: altdss.Reactor.IReactor.pctNormal
+
+```{autodoc2-docstring} altdss.Reactor.IReactor.pctNormal
+```
+
+````
+
 ````{py:attribute} pctPerm
 :canonical: altdss.Reactor.IReactor.pctPerm
 :type: altdss.ArrayProxy.BatchFloat64ArrayProxy
@@ -934,7 +950,7 @@ Bases: {py:obj}`altdss.DSSObj.DSSObj`, {py:obj}`altdss.CircuitElement.CircuitEle
 
 ````
 
-````{py:method} EnergyMeter() -> altdss.DSSObj.DSSObj
+````{py:method} EnergyMeter() -> typing.Optional[altdss.DSSObj.DSSObj]
 :canonical: altdss.Reactor.Reactor.EnergyMeter
 
 ```{autodoc2-docstring} altdss.Reactor.Reactor.EnergyMeter
@@ -1225,7 +1241,7 @@ Bases: {py:obj}`altdss.DSSObj.DSSObj`, {py:obj}`altdss.CircuitElement.CircuitEle
 
 ````
 
-````{py:method} ParentPDElement() -> altdss.DSSObj.DSSObj
+````{py:method} ParentPDElement() -> typing.Optional[altdss.DSSObj.DSSObj]
 :canonical: altdss.Reactor.Reactor.ParentPDElement
 
 ```{autodoc2-docstring} altdss.Reactor.Reactor.ParentPDElement
@@ -1370,6 +1386,14 @@ Bases: {py:obj}`altdss.DSSObj.DSSObj`, {py:obj}`altdss.CircuitElement.CircuitEle
 :canonical: altdss.Reactor.Reactor.TotalCustomers
 
 ```{autodoc2-docstring} altdss.Reactor.Reactor.TotalCustomers
+```
+
+````
+
+````{py:method} TotalKilometers() -> float
+:canonical: altdss.Reactor.Reactor.TotalKilometers
+
+```{autodoc2-docstring} altdss.Reactor.Reactor.TotalKilometers
 ```
 
 ````
@@ -1539,18 +1563,18 @@ Bases: {py:obj}`altdss.DSSObj.DSSObj`, {py:obj}`altdss.CircuitElement.CircuitEle
 
 ````
 
-````{py:method} pctEmerg(allNodes=False) -> float
-:canonical: altdss.Reactor.Reactor.pctEmerg
+````{py:method} pctEmergency(allNodes=False) -> float
+:canonical: altdss.Reactor.Reactor.pctEmergency
 
-```{autodoc2-docstring} altdss.Reactor.Reactor.pctEmerg
+```{autodoc2-docstring} altdss.Reactor.Reactor.pctEmergency
 ```
 
 ````
 
-````{py:method} pctNorm(allNodes=False) -> float
-:canonical: altdss.Reactor.Reactor.pctNorm
+````{py:method} pctNormal(allNodes=False) -> float
+:canonical: altdss.Reactor.Reactor.pctNormal
 
-```{autodoc2-docstring} altdss.Reactor.Reactor.pctNorm
+```{autodoc2-docstring} altdss.Reactor.Reactor.pctNormal
 ```
 
 ````
@@ -1701,7 +1725,7 @@ Bases: {py:obj}`altdss.Batch.DSSBatch`, {py:obj}`altdss.CircuitElement.CircuitEl
 
 ````
 
-````{py:method} EnergyMeter() -> typing.List[altdss.DSSObj.DSSObj]
+````{py:method} EnergyMeter() -> typing.List[typing.Optional[altdss.DSSObj.DSSObj]]
 :canonical: altdss.Reactor.ReactorBatch.EnergyMeter
 
 ```{autodoc2-docstring} altdss.Reactor.ReactorBatch.EnergyMeter
@@ -1960,7 +1984,7 @@ Bases: {py:obj}`altdss.Batch.DSSBatch`, {py:obj}`altdss.CircuitElement.CircuitEl
 
 ````
 
-````{py:method} ParentPDElement() -> typing.List[altdss.DSSObj.DSSObj]
+````{py:method} ParentPDElement() -> typing.List[typing.Optional[altdss.DSSObj.DSSObj]]
 :canonical: altdss.Reactor.ReactorBatch.ParentPDElement
 
 ```{autodoc2-docstring} altdss.Reactor.ReactorBatch.ParentPDElement
@@ -2262,6 +2286,22 @@ Bases: {py:obj}`altdss.Batch.DSSBatch`, {py:obj}`altdss.CircuitElement.CircuitEl
    'property(...)'
 
 ```{autodoc2-docstring} altdss.Reactor.ReactorBatch.kvar
+```
+
+````
+
+````{py:method} pctEmergency(allNodes=False) -> altdss.types.Float64Array
+:canonical: altdss.Reactor.ReactorBatch.pctEmergency
+
+```{autodoc2-docstring} altdss.Reactor.ReactorBatch.pctEmergency
+```
+
+````
+
+````{py:method} pctNormal(allNodes=False) -> altdss.types.Float64Array
+:canonical: altdss.Reactor.ReactorBatch.pctNormal
+
+```{autodoc2-docstring} altdss.Reactor.ReactorBatch.pctNormal
 ```
 
 ````

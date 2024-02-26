@@ -175,7 +175,7 @@ Bases: {py:obj}`altdss.DSSObj.DSSObj`, {py:obj}`altdss.CircuitElement.CircuitEle
 
 ````
 
-````{py:method} EnergyMeter() -> altdss.DSSObj.DSSObj
+````{py:method} EnergyMeter() -> typing.Optional[altdss.DSSObj.DSSObj]
 :canonical: altdss.GICTransformer.GICTransformer.EnergyMeter
 
 ```{autodoc2-docstring} altdss.GICTransformer.GICTransformer.EnergyMeter
@@ -444,7 +444,7 @@ Bases: {py:obj}`altdss.DSSObj.DSSObj`, {py:obj}`altdss.CircuitElement.CircuitEle
 
 ````
 
-````{py:method} ParentPDElement() -> altdss.DSSObj.DSSObj
+````{py:method} ParentPDElement() -> typing.Optional[altdss.DSSObj.DSSObj]
 :canonical: altdss.GICTransformer.GICTransformer.ParentPDElement
 
 ```{autodoc2-docstring} altdss.GICTransformer.GICTransformer.ParentPDElement
@@ -556,6 +556,14 @@ Bases: {py:obj}`altdss.DSSObj.DSSObj`, {py:obj}`altdss.CircuitElement.CircuitEle
 :canonical: altdss.GICTransformer.GICTransformer.TotalCustomers
 
 ```{autodoc2-docstring} altdss.GICTransformer.GICTransformer.TotalCustomers
+```
+
+````
+
+````{py:method} TotalKilometers() -> float
+:canonical: altdss.GICTransformer.GICTransformer.TotalKilometers
+
+```{autodoc2-docstring} altdss.GICTransformer.GICTransformer.TotalKilometers
 ```
 
 ````
@@ -714,18 +722,18 @@ Bases: {py:obj}`altdss.DSSObj.DSSObj`, {py:obj}`altdss.CircuitElement.CircuitEle
 
 ````
 
-````{py:method} pctEmerg(allNodes=False) -> float
-:canonical: altdss.GICTransformer.GICTransformer.pctEmerg
+````{py:method} pctEmergency(allNodes=False) -> float
+:canonical: altdss.GICTransformer.GICTransformer.pctEmergency
 
-```{autodoc2-docstring} altdss.GICTransformer.GICTransformer.pctEmerg
+```{autodoc2-docstring} altdss.GICTransformer.GICTransformer.pctEmergency
 ```
 
 ````
 
-````{py:method} pctNorm(allNodes=False) -> float
-:canonical: altdss.GICTransformer.GICTransformer.pctNorm
+````{py:method} pctNormal(allNodes=False) -> float
+:canonical: altdss.GICTransformer.GICTransformer.pctNormal
 
-```{autodoc2-docstring} altdss.GICTransformer.GICTransformer.pctNorm
+```{autodoc2-docstring} altdss.GICTransformer.GICTransformer.pctNormal
 ```
 
 ````
@@ -898,7 +906,7 @@ Bases: {py:obj}`altdss.Batch.DSSBatch`, {py:obj}`altdss.CircuitElement.CircuitEl
 
 ````
 
-````{py:method} EnergyMeter() -> typing.List[altdss.DSSObj.DSSObj]
+````{py:method} EnergyMeter() -> typing.List[typing.Optional[altdss.DSSObj.DSSObj]]
 :canonical: altdss.GICTransformer.GICTransformerBatch.EnergyMeter
 
 ```{autodoc2-docstring} altdss.GICTransformer.GICTransformerBatch.EnergyMeter
@@ -1135,7 +1143,7 @@ Bases: {py:obj}`altdss.Batch.DSSBatch`, {py:obj}`altdss.CircuitElement.CircuitEl
 
 ````
 
-````{py:method} ParentPDElement() -> typing.List[altdss.DSSObj.DSSObj]
+````{py:method} ParentPDElement() -> typing.List[typing.Optional[altdss.DSSObj.DSSObj]]
 :canonical: altdss.GICTransformer.GICTransformerBatch.ParentPDElement
 
 ```{autodoc2-docstring} altdss.GICTransformer.GICTransformerBatch.ParentPDElement
@@ -1393,6 +1401,22 @@ Bases: {py:obj}`altdss.Batch.DSSBatch`, {py:obj}`altdss.CircuitElement.CircuitEl
    'property(...)'
 
 ```{autodoc2-docstring} altdss.GICTransformer.GICTransformerBatch.kVLL2
+```
+
+````
+
+````{py:method} pctEmergency(allNodes=False) -> altdss.types.Float64Array
+:canonical: altdss.GICTransformer.GICTransformerBatch.pctEmergency
+
+```{autodoc2-docstring} altdss.GICTransformer.GICTransformerBatch.pctEmergency
+```
+
+````
+
+````{py:method} pctNormal(allNodes=False) -> altdss.types.Float64Array
+:canonical: altdss.GICTransformer.GICTransformerBatch.pctNormal
+
+```{autodoc2-docstring} altdss.GICTransformer.GICTransformerBatch.pctNormal
 ```
 
 ````
@@ -2707,7 +2731,7 @@ Bases: {py:obj}`altdss.DSSObj.IDSSObj`, {py:obj}`altdss.GICTransformer.GICTransf
 
 ````
 
-````{py:method} EnergyMeter() -> typing.List[altdss.DSSObj.DSSObj]
+````{py:method} EnergyMeter() -> typing.List[typing.Optional[altdss.DSSObj.DSSObj]]
 :canonical: altdss.GICTransformer.IGICTransformer.EnergyMeter
 
 ```{autodoc2-docstring} altdss.GICTransformer.IGICTransformer.EnergyMeter
@@ -2944,7 +2968,7 @@ Bases: {py:obj}`altdss.DSSObj.IDSSObj`, {py:obj}`altdss.GICTransformer.GICTransf
 
 ````
 
-````{py:method} ParentPDElement() -> typing.List[altdss.DSSObj.DSSObj]
+````{py:method} ParentPDElement() -> typing.List[typing.Optional[altdss.DSSObj.DSSObj]]
 :canonical: altdss.GICTransformer.IGICTransformer.ParentPDElement
 
 ```{autodoc2-docstring} altdss.GICTransformer.IGICTransformer.ParentPDElement
@@ -3242,6 +3266,22 @@ Bases: {py:obj}`altdss.DSSObj.IDSSObj`, {py:obj}`altdss.GICTransformer.GICTransf
 :canonical: altdss.GICTransformer.IGICTransformer.new
 
 ```{autodoc2-docstring} altdss.GICTransformer.IGICTransformer.new
+```
+
+````
+
+````{py:method} pctEmergency(allNodes=False) -> altdss.types.Float64Array
+:canonical: altdss.GICTransformer.IGICTransformer.pctEmergency
+
+```{autodoc2-docstring} altdss.GICTransformer.IGICTransformer.pctEmergency
+```
+
+````
+
+````{py:method} pctNormal(allNodes=False) -> altdss.types.Float64Array
+:canonical: altdss.GICTransformer.IGICTransformer.pctNormal
+
+```{autodoc2-docstring} altdss.GICTransformer.IGICTransformer.pctNormal
 ```
 
 ````

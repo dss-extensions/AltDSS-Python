@@ -90,20 +90,20 @@
 
 ````
 
+````{py:property} ISC
+:canonical: altdss.Bus.Bus.ISC
+:type: altdss.types.ComplexArray
+
+```{autodoc2-docstring} altdss.Bus.Bus.ISC
+```
+
+````
+
 ````{py:property} IntDuration
 :canonical: altdss.Bus.Bus.IntDuration
 :type: float
 
 ```{autodoc2-docstring} altdss.Bus.Bus.IntDuration
-```
-
-````
-
-````{py:property} Isc
-:canonical: altdss.Bus.Bus.Isc
-:type: altdss.types.ComplexArray
-
-```{autodoc2-docstring} altdss.Bus.Bus.Isc
 ```
 
 ````
@@ -248,11 +248,11 @@
 
 ````
 
-````{py:property} Voc
-:canonical: altdss.Bus.Bus.Voc
+````{py:property} VOC
+:canonical: altdss.Bus.Bus.VOC
 :type: altdss.types.ComplexArray
 
-```{autodoc2-docstring} altdss.Bus.Bus.Voc
+```{autodoc2-docstring} altdss.Bus.Bus.VOC
 ```
 
 ````
@@ -284,55 +284,55 @@
 
 ````
 
-````{py:property} YscMatrix
-:canonical: altdss.Bus.Bus.YscMatrix
+````{py:property} YSC
+:canonical: altdss.Bus.Bus.YSC
 :type: altdss.types.ComplexArray
 
-```{autodoc2-docstring} altdss.Bus.Bus.YscMatrix
+```{autodoc2-docstring} altdss.Bus.Bus.YSC
 ```
 
 ````
 
-````{py:property} Zsc0
-:canonical: altdss.Bus.Bus.Zsc0
+````{py:property} ZSC
+:canonical: altdss.Bus.Bus.ZSC
+:type: altdss.types.ComplexArray
+
+```{autodoc2-docstring} altdss.Bus.Bus.ZSC
+```
+
+````
+
+````{py:property} ZSC0
+:canonical: altdss.Bus.Bus.ZSC0
 :type: complex
 
-```{autodoc2-docstring} altdss.Bus.Bus.Zsc0
+```{autodoc2-docstring} altdss.Bus.Bus.ZSC0
 ```
 
 ````
 
-````{py:property} Zsc012Matrix
-:canonical: altdss.Bus.Bus.Zsc012Matrix
+````{py:property} ZSC012
+:canonical: altdss.Bus.Bus.ZSC012
 :type: altdss.types.ComplexArray
 
-```{autodoc2-docstring} altdss.Bus.Bus.Zsc012Matrix
+```{autodoc2-docstring} altdss.Bus.Bus.ZSC012
 ```
 
 ````
 
-````{py:property} Zsc1
-:canonical: altdss.Bus.Bus.Zsc1
+````{py:property} ZSC1
+:canonical: altdss.Bus.Bus.ZSC1
 :type: complex
 
-```{autodoc2-docstring} altdss.Bus.Bus.Zsc1
+```{autodoc2-docstring} altdss.Bus.Bus.ZSC1
 ```
 
 ````
 
-````{py:property} ZscMatrix
-:canonical: altdss.Bus.Bus.ZscMatrix
-:type: altdss.types.ComplexArray
+````{py:method} ZSCRefresh() -> bool
+:canonical: altdss.Bus.Bus.ZSCRefresh
 
-```{autodoc2-docstring} altdss.Bus.Bus.ZscMatrix
-```
-
-````
-
-````{py:method} ZscRefresh() -> bool
-:canonical: altdss.Bus.Bus.ZscRefresh
-
-```{autodoc2-docstring} altdss.Bus.Bus.ZscRefresh
+```{autodoc2-docstring} altdss.Bus.Bus.ZSCRefresh
 ```
 
 ````
@@ -511,10 +511,10 @@ Bases: {py:obj}`altdss.common.Base`
 
 ````
 
-````{py:method} ZscRefresh() -> bool
-:canonical: altdss.Bus.BusBatch.ZscRefresh
+````{py:method} ZSCRefresh() -> bool
+:canonical: altdss.Bus.BusBatch.ZSCRefresh
 
-```{autodoc2-docstring} altdss.Bus.BusBatch.ZscRefresh
+```{autodoc2-docstring} altdss.Bus.BusBatch.ZSCRefresh
 ```
 
 ````
@@ -689,10 +689,10 @@ Bases: {py:obj}`altdss.Bus.BusBatch`
 
 ````
 
-````{py:method} ZscRefresh() -> bool
-:canonical: altdss.Bus.IBuses.ZscRefresh
+````{py:method} ZSCRefresh() -> bool
+:canonical: altdss.Bus.IBuses.ZSCRefresh
 
-```{autodoc2-docstring} altdss.Bus.IBuses.ZscRefresh
+```{autodoc2-docstring} altdss.Bus.IBuses.ZSCRefresh
 ```
 
 ````

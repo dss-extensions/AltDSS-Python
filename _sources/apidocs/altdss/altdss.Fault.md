@@ -153,7 +153,7 @@ Bases: {py:obj}`altdss.DSSObj.DSSObj`, {py:obj}`altdss.CircuitElement.CircuitEle
 
 ````
 
-````{py:method} EnergyMeter() -> altdss.DSSObj.DSSObj
+````{py:method} EnergyMeter() -> typing.Optional[altdss.DSSObj.DSSObj]
 :canonical: altdss.Fault.Fault.EnergyMeter
 
 ```{autodoc2-docstring} altdss.Fault.Fault.EnergyMeter
@@ -433,7 +433,7 @@ Bases: {py:obj}`altdss.DSSObj.DSSObj`, {py:obj}`altdss.CircuitElement.CircuitEle
 
 ````
 
-````{py:method} ParentPDElement() -> altdss.DSSObj.DSSObj
+````{py:method} ParentPDElement() -> typing.Optional[altdss.DSSObj.DSSObj]
 :canonical: altdss.Fault.Fault.ParentPDElement
 
 ```{autodoc2-docstring} altdss.Fault.Fault.ParentPDElement
@@ -549,6 +549,14 @@ Bases: {py:obj}`altdss.DSSObj.DSSObj`, {py:obj}`altdss.CircuitElement.CircuitEle
 
 ````
 
+````{py:method} TotalKilometers() -> float
+:canonical: altdss.Fault.Fault.TotalKilometers
+
+```{autodoc2-docstring} altdss.Fault.Fault.TotalKilometers
+```
+
+````
+
 ````{py:method} TotalMiles() -> float
 :canonical: altdss.Fault.Fault.TotalMiles
 
@@ -637,18 +645,18 @@ Bases: {py:obj}`altdss.DSSObj.DSSObj`, {py:obj}`altdss.CircuitElement.CircuitEle
 
 ````
 
-````{py:method} pctEmerg(allNodes=False) -> float
-:canonical: altdss.Fault.Fault.pctEmerg
+````{py:method} pctEmergency(allNodes=False) -> float
+:canonical: altdss.Fault.Fault.pctEmergency
 
-```{autodoc2-docstring} altdss.Fault.Fault.pctEmerg
+```{autodoc2-docstring} altdss.Fault.Fault.pctEmergency
 ```
 
 ````
 
-````{py:method} pctNorm(allNodes=False) -> float
-:canonical: altdss.Fault.Fault.pctNorm
+````{py:method} pctNormal(allNodes=False) -> float
+:canonical: altdss.Fault.Fault.pctNormal
 
-```{autodoc2-docstring} altdss.Fault.Fault.pctNorm
+```{autodoc2-docstring} altdss.Fault.Fault.pctNormal
 ```
 
 ````
@@ -788,7 +796,7 @@ Bases: {py:obj}`altdss.Batch.DSSBatch`, {py:obj}`altdss.CircuitElement.CircuitEl
 
 ````
 
-````{py:method} EnergyMeter() -> typing.List[altdss.DSSObj.DSSObj]
+````{py:method} EnergyMeter() -> typing.List[typing.Optional[altdss.DSSObj.DSSObj]]
 :canonical: altdss.Fault.FaultBatch.EnergyMeter
 
 ```{autodoc2-docstring} altdss.Fault.FaultBatch.EnergyMeter
@@ -1036,7 +1044,7 @@ Bases: {py:obj}`altdss.Batch.DSSBatch`, {py:obj}`altdss.CircuitElement.CircuitEl
 
 ````
 
-````{py:method} ParentPDElement() -> typing.List[altdss.DSSObj.DSSObj]
+````{py:method} ParentPDElement() -> typing.List[typing.Optional[altdss.DSSObj.DSSObj]]
 :canonical: altdss.Fault.FaultBatch.ParentPDElement
 
 ```{autodoc2-docstring} altdss.Fault.FaultBatch.ParentPDElement
@@ -1228,6 +1236,22 @@ Bases: {py:obj}`altdss.Batch.DSSBatch`, {py:obj}`altdss.CircuitElement.CircuitEl
 :canonical: altdss.Fault.FaultBatch.end_edit
 
 ```{autodoc2-docstring} altdss.Fault.FaultBatch.end_edit
+```
+
+````
+
+````{py:method} pctEmergency(allNodes=False) -> altdss.types.Float64Array
+:canonical: altdss.Fault.FaultBatch.pctEmergency
+
+```{autodoc2-docstring} altdss.Fault.FaultBatch.pctEmergency
+```
+
+````
+
+````{py:method} pctNormal(allNodes=False) -> altdss.types.Float64Array
+:canonical: altdss.Fault.FaultBatch.pctNormal
+
+```{autodoc2-docstring} altdss.Fault.FaultBatch.pctNormal
 ```
 
 ````
@@ -2377,7 +2401,7 @@ Bases: {py:obj}`altdss.DSSObj.IDSSObj`, {py:obj}`altdss.Fault.FaultBatch`
 
 ````
 
-````{py:method} EnergyMeter() -> typing.List[altdss.DSSObj.DSSObj]
+````{py:method} EnergyMeter() -> typing.List[typing.Optional[altdss.DSSObj.DSSObj]]
 :canonical: altdss.Fault.IFault.EnergyMeter
 
 ```{autodoc2-docstring} altdss.Fault.IFault.EnergyMeter
@@ -2625,7 +2649,7 @@ Bases: {py:obj}`altdss.DSSObj.IDSSObj`, {py:obj}`altdss.Fault.FaultBatch`
 
 ````
 
-````{py:method} ParentPDElement() -> typing.List[altdss.DSSObj.DSSObj]
+````{py:method} ParentPDElement() -> typing.List[typing.Optional[altdss.DSSObj.DSSObj]]
 :canonical: altdss.Fault.IFault.ParentPDElement
 
 ```{autodoc2-docstring} altdss.Fault.IFault.ParentPDElement
@@ -2857,6 +2881,22 @@ Bases: {py:obj}`altdss.DSSObj.IDSSObj`, {py:obj}`altdss.Fault.FaultBatch`
 :canonical: altdss.Fault.IFault.new
 
 ```{autodoc2-docstring} altdss.Fault.IFault.new
+```
+
+````
+
+````{py:method} pctEmergency(allNodes=False) -> altdss.types.Float64Array
+:canonical: altdss.Fault.IFault.pctEmergency
+
+```{autodoc2-docstring} altdss.Fault.IFault.pctEmergency
+```
+
+````
+
+````{py:method} pctNormal(allNodes=False) -> altdss.types.Float64Array
+:canonical: altdss.Fault.IFault.pctNormal
+
+```{autodoc2-docstring} altdss.Fault.IFault.pctNormal
 ```
 
 ````

@@ -8,7 +8,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
-    <title>altdss.Fault &#8212; AltDSS-Python 0.1.2 documentation</title>
+    <title>altdss.Fault &#8212; AltDSS-Python 0.2.0 documentation</title>
   
   
   
@@ -38,7 +38,7 @@
 <link rel="preload" as="script" href="../../_static/scripts/pydata-sphinx-theme.js?digest=8d27b9dea8ad943066ae" />
   <script src="../../_static/vendor/fontawesome/6.5.1/js/all.min.js?digest=8d27b9dea8ad943066ae"></script>
 
-    <script src="../../_static/documentation_options.js?v=0deb7d70"></script>
+    <script src="../../_static/documentation_options.js?v=7f7c277e"></script>
     <script src="../../_static/doctools.js?v=888ff710"></script>
     <script src="../../_static/sphinx_highlight.js?v=dc90522c"></script>
     <script src="../../_static/scripts/sphinx-book-theme.js?v=efea14e4"></script>
@@ -137,8 +137,8 @@
       
     
     
-    <img src="../../_static/altdss-python.svg" class="logo__image only-light" alt="AltDSS-Python 0.1.2 documentation - Home"/>
-    <script>document.write(`<img src="../../_static/altdss-python-dark.svg" class="logo__image only-dark" alt="AltDSS-Python 0.1.2 documentation - Home"/>`);</script>
+    <img src="../../_static/altdss-python.svg" class="logo__image only-light" alt="AltDSS-Python 0.2.0 documentation - Home"/>
+    <script>document.write(`<img src="../../_static/altdss-python-dark.svg" class="logo__image only-dark" alt="AltDSS-Python 0.2.0 documentation - Home"/>`);</script>
   
   
 </a></div>
@@ -465,6 +465,7 @@ document.write(`
 <li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#altdss.Fault.Fault.SeqVoltages"><code class="docutils literal notranslate"><span class="pre">Fault.SeqVoltages()</span></code></a></li>
 <li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#altdss.Fault.Fault.Temporary"><code class="docutils literal notranslate"><span class="pre">Fault.Temporary</span></code></a></li>
 <li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#altdss.Fault.Fault.TotalCustomers"><code class="docutils literal notranslate"><span class="pre">Fault.TotalCustomers()</span></code></a></li>
+<li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#altdss.Fault.Fault.TotalKilometers"><code class="docutils literal notranslate"><span class="pre">Fault.TotalKilometers()</span></code></a></li>
 <li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#altdss.Fault.Fault.TotalMiles"><code class="docutils literal notranslate"><span class="pre">Fault.TotalMiles()</span></code></a></li>
 <li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#altdss.Fault.Fault.TotalPowers"><code class="docutils literal notranslate"><span class="pre">Fault.TotalPowers()</span></code></a></li>
 <li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#altdss.Fault.Fault.Voltages"><code class="docutils literal notranslate"><span class="pre">Fault.Voltages()</span></code></a></li>
@@ -476,8 +477,8 @@ document.write(`
 <li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#altdss.Fault.Fault.__repr__"><code class="docutils literal notranslate"><span class="pre">Fault.__repr__()</span></code></a></li>
 <li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#altdss.Fault.Fault.begin_edit"><code class="docutils literal notranslate"><span class="pre">Fault.begin_edit()</span></code></a></li>
 <li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#altdss.Fault.Fault.end_edit"><code class="docutils literal notranslate"><span class="pre">Fault.end_edit()</span></code></a></li>
-<li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#altdss.Fault.Fault.pctEmerg"><code class="docutils literal notranslate"><span class="pre">Fault.pctEmerg()</span></code></a></li>
-<li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#altdss.Fault.Fault.pctNorm"><code class="docutils literal notranslate"><span class="pre">Fault.pctNorm()</span></code></a></li>
+<li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#altdss.Fault.Fault.pctEmergency"><code class="docutils literal notranslate"><span class="pre">Fault.pctEmergency()</span></code></a></li>
+<li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#altdss.Fault.Fault.pctNormal"><code class="docutils literal notranslate"><span class="pre">Fault.pctNormal()</span></code></a></li>
 <li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#altdss.Fault.Fault.pctPerm"><code class="docutils literal notranslate"><span class="pre">Fault.pctPerm</span></code></a></li>
 <li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#altdss.Fault.Fault.pctStdDev"><code class="docutils literal notranslate"><span class="pre">Fault.pctStdDev</span></code></a></li>
 <li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#altdss.Fault.Fault.to_json"><code class="docutils literal notranslate"><span class="pre">Fault.to_json()</span></code></a></li>
@@ -546,6 +547,8 @@ document.write(`
 <li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#altdss.Fault.FaultBatch.__len__"><code class="docutils literal notranslate"><span class="pre">FaultBatch.__len__()</span></code></a></li>
 <li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#altdss.Fault.FaultBatch.begin_edit"><code class="docutils literal notranslate"><span class="pre">FaultBatch.begin_edit()</span></code></a></li>
 <li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#altdss.Fault.FaultBatch.end_edit"><code class="docutils literal notranslate"><span class="pre">FaultBatch.end_edit()</span></code></a></li>
+<li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#altdss.Fault.FaultBatch.pctEmergency"><code class="docutils literal notranslate"><span class="pre">FaultBatch.pctEmergency()</span></code></a></li>
+<li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#altdss.Fault.FaultBatch.pctNormal"><code class="docutils literal notranslate"><span class="pre">FaultBatch.pctNormal()</span></code></a></li>
 <li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#altdss.Fault.FaultBatch.pctPerm"><code class="docutils literal notranslate"><span class="pre">FaultBatch.pctPerm</span></code></a></li>
 <li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#altdss.Fault.FaultBatch.pctStdDev"><code class="docutils literal notranslate"><span class="pre">FaultBatch.pctStdDev</span></code></a></li>
 <li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#altdss.Fault.FaultBatch.to_json"><code class="docutils literal notranslate"><span class="pre">FaultBatch.to_json()</span></code></a></li>
@@ -736,6 +739,8 @@ document.write(`
 <li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#altdss.Fault.IFault.end_edit"><code class="docutils literal notranslate"><span class="pre">IFault.end_edit()</span></code></a></li>
 <li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#altdss.Fault.IFault.find"><code class="docutils literal notranslate"><span class="pre">IFault.find()</span></code></a></li>
 <li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#altdss.Fault.IFault.new"><code class="docutils literal notranslate"><span class="pre">IFault.new()</span></code></a></li>
+<li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#altdss.Fault.IFault.pctEmergency"><code class="docutils literal notranslate"><span class="pre">IFault.pctEmergency()</span></code></a></li>
+<li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#altdss.Fault.IFault.pctNormal"><code class="docutils literal notranslate"><span class="pre">IFault.pctNormal()</span></code></a></li>
 <li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#altdss.Fault.IFault.pctPerm"><code class="docutils literal notranslate"><span class="pre">IFault.pctPerm</span></code></a></li>
 <li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#altdss.Fault.IFault.pctStdDev"><code class="docutils literal notranslate"><span class="pre">IFault.pctStdDev</span></code></a></li>
 <li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#altdss.Fault.IFault.to_json"><code class="docutils literal notranslate"><span class="pre">IFault.to_json()</span></code></a></li>
@@ -808,7 +813,10 @@ in the keyword argument list.  For example:  dict(one=1, two=2)</p></td>
 <dl class="py method">
 <dt class="sig sig-object py" id="altdss.Fault.Fault.AccumulatedL">
 <span class="sig-name descname"><span class="pre">AccumulatedL</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">float</span></span></span><a class="headerlink" href="#altdss.Fault.Fault.AccumulatedL" title="Link to this definition">#</a></dt>
-<dd></dd></dl>
+<dd><p>Accumulated failure rate for this branch on downline.</p>
+<p><em>Requires a previous call to <code class="docutils literal notranslate"><span class="pre">RelCalc</span></code> command</em></p>
+<p>Original COM help: <a class="reference external" href="https://opendss.epri.com/AccumulatedL.html">https://opendss.epri.com/AccumulatedL.html</a></p>
+</dd></dl>
 
 <dl class="py attribute">
 <dt class="sig sig-object py" id="altdss.Fault.Fault.BaseFreq">
@@ -868,13 +876,19 @@ in the keyword argument list.  For example:  dict(one=1, two=2)</p></td>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="altdss.Fault.Fault.EnergyMeter">
-<span class="sig-name descname"><span class="pre">EnergyMeter</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference internal" href="altdss.DSSObj.html#altdss.DSSObj.DSSObj" title="altdss.DSSObj.DSSObj"><span class="pre">altdss.DSSObj.DSSObj</span></a></span></span><a class="headerlink" href="#altdss.Fault.Fault.EnergyMeter" title="Link to this definition">#</a></dt>
-<dd></dd></dl>
+<span class="sig-name descname"><span class="pre">EnergyMeter</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">Optional</span><span class="p"><span class="pre">[</span></span><a class="reference internal" href="altdss.DSSObj.html#altdss.DSSObj.DSSObj" title="altdss.DSSObj.DSSObj"><span class="pre">altdss.DSSObj.DSSObj</span></a><span class="p"><span class="pre">]</span></span></span></span><a class="headerlink" href="#altdss.Fault.Fault.EnergyMeter" title="Link to this definition">#</a></dt>
+<dd><p>Energy Meter this element is assigned to.</p>
+<p><em>Requires an energy meter with an updated zone.</em></p>
+<p>Original COM help: <a class="reference external" href="https://opendss.epri.com/EnergyMeter.html">https://opendss.epri.com/EnergyMeter.html</a></p>
+</dd></dl>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="altdss.Fault.Fault.EnergyMeterName">
 <span class="sig-name descname"><span class="pre">EnergyMeterName</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">str</span></span></span><a class="headerlink" href="#altdss.Fault.Fault.EnergyMeterName" title="Link to this definition">#</a></dt>
-<dd></dd></dl>
+<dd><p>Name of the Energy Meter this element is assigned to.</p>
+<p><em>Requires an energy meter with an updated zone.</em></p>
+<p>Original COM help: <a class="reference external" href="https://opendss.epri.com/EnergyMeter.html">https://opendss.epri.com/EnergyMeter.html</a></p>
+</dd></dl>
 
 <dl class="py attribute">
 <dt class="sig sig-object py" id="altdss.Fault.Fault.FaultRate">
@@ -885,7 +899,9 @@ in the keyword argument list.  For example:  dict(one=1, two=2)</p></td>
 <dl class="py method">
 <dt class="sig sig-object py" id="altdss.Fault.Fault.FromTerminal">
 <span class="sig-name descname"><span class="pre">FromTerminal</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">int</span></span></span><a class="headerlink" href="#altdss.Fault.Fault.FromTerminal" title="Link to this definition">#</a></dt>
-<dd></dd></dl>
+<dd><p>Number of the terminal of this PD element that is on the “from” side.</p>
+<p><em>Requires an energy meter with an updated zone.</em></p>
+</dd></dl>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="altdss.Fault.Fault.FullName">
@@ -937,12 +953,17 @@ in the keyword argument list.  For example:  dict(one=1, two=2)</p></td>
 <dl class="py method">
 <dt class="sig sig-object py" id="altdss.Fault.Fault.IsShunt">
 <span class="sig-name descname"><span class="pre">IsShunt</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">bool</span></span></span><a class="headerlink" href="#altdss.Fault.Fault.IsShunt" title="Link to this definition">#</a></dt>
-<dd></dd></dl>
+<dd><p>Indicates if this PD element should be treated as a shunt element rather than a series element.</p>
+<p>Applies to Capacitor, Reactor, Fault and GICTransformer elements.</p>
+</dd></dl>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="altdss.Fault.Fault.Lambda">
 <span class="sig-name descname"><span class="pre">Lambda</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">float</span></span></span><a class="headerlink" href="#altdss.Fault.Fault.Lambda" title="Link to this definition">#</a></dt>
-<dd></dd></dl>
+<dd><p>Failure rate for this branch. Faults per year including length of line.</p>
+<p><em>Requires a previous call to <code class="docutils literal notranslate"><span class="pre">RelCalc</span></code> command</em></p>
+<p>Original COM help: <a class="reference external" href="https://opendss.epri.com/Lambda1.html">https://opendss.epri.com/Lambda1.html</a></p>
+</dd></dl>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="altdss.Fault.Fault.Like">
@@ -961,7 +982,7 @@ in the keyword argument list.  For example:  dict(one=1, two=2)</p></td>
 <dl class="py method">
 <dt class="sig sig-object py" id="altdss.Fault.Fault.MaxCurrent">
 <span class="sig-name descname"><span class="pre">MaxCurrent</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">terminal</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">float</span></span></span><a class="headerlink" href="#altdss.Fault.Fault.MaxCurrent" title="Link to this definition">#</a></dt>
-<dd><p>Returns the maximum current (magnitude) at the specificed terminal.
+<dd><p>Returns the maximum current (magnitude) at the specified terminal.
 Use -1 as terminal to get the value across all terminals.</p>
 </dd></dl>
 
@@ -1005,7 +1026,10 @@ Use -1 as terminal to get the value across all terminals.</p>
 <dl class="py method">
 <dt class="sig sig-object py" id="altdss.Fault.Fault.NumCustomers">
 <span class="sig-name descname"><span class="pre">NumCustomers</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">int</span></span></span><a class="headerlink" href="#altdss.Fault.Fault.NumCustomers" title="Link to this definition">#</a></dt>
-<dd></dd></dl>
+<dd><p>Number of customers, this branch.</p>
+<p><em>Requires an energy meter with an updated zone.</em></p>
+<p>Original COM help: <a class="reference external" href="https://opendss.epri.com/Numcustomers.html">https://opendss.epri.com/Numcustomers.html</a></p>
+</dd></dl>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="altdss.Fault.Fault.NumPhases">
@@ -1045,8 +1069,10 @@ Use -1 as terminal to get the value across all terminals.</p>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="altdss.Fault.Fault.ParentPDElement">
-<span class="sig-name descname"><span class="pre">ParentPDElement</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference internal" href="altdss.DSSObj.html#altdss.DSSObj.DSSObj" title="altdss.DSSObj.DSSObj"><span class="pre">altdss.DSSObj.DSSObj</span></a></span></span><a class="headerlink" href="#altdss.Fault.Fault.ParentPDElement" title="Link to this definition">#</a></dt>
-<dd></dd></dl>
+<span class="sig-name descname"><span class="pre">ParentPDElement</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">Optional</span><span class="p"><span class="pre">[</span></span><a class="reference internal" href="altdss.DSSObj.html#altdss.DSSObj.DSSObj" title="altdss.DSSObj.DSSObj"><span class="pre">altdss.DSSObj.DSSObj</span></a><span class="p"><span class="pre">]</span></span></span></span><a class="headerlink" href="#altdss.Fault.Fault.ParentPDElement" title="Link to this definition">#</a></dt>
+<dd><p>Parent PD element of this element, if any.</p>
+<p><em>Requires an energy meter with an updated zone.</em></p>
+</dd></dl>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="altdss.Fault.Fault.PhaseLosses">
@@ -1085,7 +1111,10 @@ Use -1 as terminal to get the value across all terminals.</p>
 <dl class="py method">
 <dt class="sig sig-object py" id="altdss.Fault.Fault.SectionID">
 <span class="sig-name descname"><span class="pre">SectionID</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">int</span></span></span><a class="headerlink" href="#altdss.Fault.Fault.SectionID" title="Link to this definition">#</a></dt>
-<dd></dd></dl>
+<dd><p>Integer ID of the feeder section that this PDElement branch is part of.</p>
+<p><em>Requires a previous call to <code class="docutils literal notranslate"><span class="pre">RelCalc</span></code> command</em></p>
+<p>Original COM help: <a class="reference external" href="https://opendss.epri.com/SectionID1.html">https://opendss.epri.com/SectionID1.html</a></p>
+</dd></dl>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="altdss.Fault.Fault.SeqCurrents">
@@ -1111,12 +1140,25 @@ Use -1 as terminal to get the value across all terminals.</p>
 <dl class="py method">
 <dt class="sig sig-object py" id="altdss.Fault.Fault.TotalCustomers">
 <span class="sig-name descname"><span class="pre">TotalCustomers</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">int</span></span></span><a class="headerlink" href="#altdss.Fault.Fault.TotalCustomers" title="Link to this definition">#</a></dt>
-<dd></dd></dl>
+<dd><p>Total number of customers from this branch to the end of the zone</p>
+<p><em>Requires a circuit with an energy meter with an updated zone.</em></p>
+<p>Original COM help: <a class="reference external" href="https://opendss.epri.com/TotalCustomers1.html">https://opendss.epri.com/TotalCustomers1.html</a></p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="altdss.Fault.Fault.TotalKilometers">
+<span class="sig-name descname"><span class="pre">TotalKilometers</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">float</span></span></span><a class="headerlink" href="#altdss.Fault.Fault.TotalKilometers" title="Link to this definition">#</a></dt>
+<dd><p>Total kilometers of line from this element to the end of the zone. For recloser siting algorithm.</p>
+<p><em>Requires a previous call to <code class="docutils literal notranslate"><span class="pre">RelCalc</span></code> command</em></p>
+</dd></dl>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="altdss.Fault.Fault.TotalMiles">
 <span class="sig-name descname"><span class="pre">TotalMiles</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">float</span></span></span><a class="headerlink" href="#altdss.Fault.Fault.TotalMiles" title="Link to this definition">#</a></dt>
-<dd></dd></dl>
+<dd><p>Total miles of line from this element to the end of the zone. For recloser siting algorithm.</p>
+<p><em>Requires a previous call to <code class="docutils literal notranslate"><span class="pre">RelCalc</span></code> command</em></p>
+<p>Original COM help: <a class="reference external" href="https://opendss.epri.com/TotalMiles1.html">https://opendss.epri.com/TotalMiles1.html</a></p>
+</dd></dl>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="altdss.Fault.Fault.TotalPowers">
@@ -1184,14 +1226,26 @@ the <code class="docutils literal notranslate"><span class="pre">Process</span><
 </dd></dl>
 
 <dl class="py method">
-<dt class="sig sig-object py" id="altdss.Fault.Fault.pctEmerg">
-<span class="sig-name descname"><span class="pre">pctEmerg</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">allNodes</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">float</span></span></span><a class="headerlink" href="#altdss.Fault.Fault.pctEmerg" title="Link to this definition">#</a></dt>
-<dd></dd></dl>
+<dt class="sig sig-object py" id="altdss.Fault.Fault.pctEmergency">
+<span class="sig-name descname"><span class="pre">pctEmergency</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">allNodes</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">float</span></span></span><a class="headerlink" href="#altdss.Fault.Fault.pctEmergency" title="Link to this definition">#</a></dt>
+<dd><p>Maximum current across the conductors as a percentage of the <strong>emergency</strong> ampere rating.</p>
+<p>By default, only the nodes from the <em>first terminal</em> is used for the maximum current, matching
+the behavior of the “export capacity” command. Pass <code class="docutils literal notranslate"><span class="pre">allNodes=True</span></code> to
+force the analysis to all terminals.</p>
+<p>See also:
+<a class="reference external" href="https://sourceforge.net/p/electricdss/discussion/beginners/thread/da5b93ca/">https://sourceforge.net/p/electricdss/discussion/beginners/thread/da5b93ca/</a></p>
+</dd></dl>
 
 <dl class="py method">
-<dt class="sig sig-object py" id="altdss.Fault.Fault.pctNorm">
-<span class="sig-name descname"><span class="pre">pctNorm</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">allNodes</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">float</span></span></span><a class="headerlink" href="#altdss.Fault.Fault.pctNorm" title="Link to this definition">#</a></dt>
-<dd></dd></dl>
+<dt class="sig sig-object py" id="altdss.Fault.Fault.pctNormal">
+<span class="sig-name descname"><span class="pre">pctNormal</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">allNodes</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">float</span></span></span><a class="headerlink" href="#altdss.Fault.Fault.pctNormal" title="Link to this definition">#</a></dt>
+<dd><p>Maximum current across the conductors as a percentage of the <strong>normal</strong> ampere rating.</p>
+<p>By default, only the nodes from the <em>first terminal</em> is used for the maximum current, matching
+the behavior of the “export capacity” command. Pass <code class="docutils literal notranslate"><span class="pre">allNodes=True</span></code> to
+force the analysis to all terminals.</p>
+<p>See also:
+<a class="reference external" href="https://sourceforge.net/p/electricdss/discussion/beginners/thread/da5b93ca/">https://sourceforge.net/p/electricdss/discussion/beginners/thread/da5b93ca/</a></p>
+</dd></dl>
 
 <dl class="py attribute">
 <dt class="sig sig-object py" id="altdss.Fault.Fault.pctPerm">
@@ -1240,7 +1294,10 @@ Values used by this function are:</p>
 <dl class="py method">
 <dt class="sig sig-object py" id="altdss.Fault.FaultBatch.AccumulatedL">
 <span class="sig-name descname"><span class="pre">AccumulatedL</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">altdss.types.Float64Array</span></span></span><a class="headerlink" href="#altdss.Fault.FaultBatch.AccumulatedL" title="Link to this definition">#</a></dt>
-<dd></dd></dl>
+<dd><p>Accumulated failure rate for the branch on downline, for each branch in this batch.</p>
+<p><em>Requires a previous call to <code class="docutils literal notranslate"><span class="pre">RelCalc</span></code> command</em></p>
+<p>Original COM help: <a class="reference external" href="https://opendss.epri.com/AccumulatedL.html">https://opendss.epri.com/AccumulatedL.html</a></p>
+</dd></dl>
 
 <dl class="py attribute">
 <dt class="sig sig-object py" id="altdss.Fault.FaultBatch.BaseFreq">
@@ -1294,13 +1351,17 @@ Values used by this function are:</p>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="altdss.Fault.FaultBatch.EnergyMeter">
-<span class="sig-name descname"><span class="pre">EnergyMeter</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">List</span><span class="p"><span class="pre">[</span></span><a class="reference internal" href="altdss.DSSObj.html#altdss.DSSObj.DSSObj" title="altdss.DSSObj.DSSObj"><span class="pre">altdss.DSSObj.DSSObj</span></a><span class="p"><span class="pre">]</span></span></span></span><a class="headerlink" href="#altdss.Fault.FaultBatch.EnergyMeter" title="Link to this definition">#</a></dt>
-<dd></dd></dl>
+<span class="sig-name descname"><span class="pre">EnergyMeter</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">List</span><span class="p"><span class="pre">[</span></span><span class="pre">Optional</span><span class="p"><span class="pre">[</span></span><a class="reference internal" href="altdss.DSSObj.html#altdss.DSSObj.DSSObj" title="altdss.DSSObj.DSSObj"><span class="pre">altdss.DSSObj.DSSObj</span></a><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">]</span></span></span></span><a class="headerlink" href="#altdss.Fault.FaultBatch.EnergyMeter" title="Link to this definition">#</a></dt>
+<dd><p>Return the energy meter for each of the elements in this batch.</p>
+<p><em>Requires an energy meter with an updated zone.</em></p>
+</dd></dl>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="altdss.Fault.FaultBatch.EnergyMeterName">
 <span class="sig-name descname"><span class="pre">EnergyMeterName</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">List</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">]</span></span></span></span><a class="headerlink" href="#altdss.Fault.FaultBatch.EnergyMeterName" title="Link to this definition">#</a></dt>
-<dd></dd></dl>
+<dd><p>Return the energy meter <em>name</em> for each of the elements in this batch.</p>
+<p><em>Requires an energy meter with an updated zone.</em></p>
+</dd></dl>
 
 <dl class="py attribute">
 <dt class="sig sig-object py" id="altdss.Fault.FaultBatch.FaultRate">
@@ -1311,7 +1372,9 @@ Values used by this function are:</p>
 <dl class="py method">
 <dt class="sig sig-object py" id="altdss.Fault.FaultBatch.FromTerminal">
 <span class="sig-name descname"><span class="pre">FromTerminal</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">altdss.types.Int32Array</span></span></span><a class="headerlink" href="#altdss.Fault.FaultBatch.FromTerminal" title="Link to this definition">#</a></dt>
-<dd></dd></dl>
+<dd><p>Number of the terminal of each PD element of this batch that is on the “from” side.</p>
+<p><em>Requires an energy meter with an updated zone.</em></p>
+</dd></dl>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="altdss.Fault.FaultBatch.FullName">
@@ -1359,12 +1422,17 @@ Values used by this function are:</p>
 <dl class="py method">
 <dt class="sig sig-object py" id="altdss.Fault.FaultBatch.IsShunt">
 <span class="sig-name descname"><span class="pre">IsShunt</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">List</span><span class="p"><span class="pre">[</span></span><span class="pre">bool</span><span class="p"><span class="pre">]</span></span></span></span><a class="headerlink" href="#altdss.Fault.FaultBatch.IsShunt" title="Link to this definition">#</a></dt>
-<dd></dd></dl>
+<dd><p>Indicates if each of the PD elements in the batch should be treated as a shunt element rather than a series element.</p>
+<p>Applies to Capacitor, Reactor, Fault and GICTransformer elements.</p>
+</dd></dl>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="altdss.Fault.FaultBatch.Lambda">
 <span class="sig-name descname"><span class="pre">Lambda</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">altdss.types.Float64Array</span></span></span><a class="headerlink" href="#altdss.Fault.FaultBatch.Lambda" title="Link to this definition">#</a></dt>
-<dd></dd></dl>
+<dd><p>Failure rate for each of the branches in the batch. Faults per year including length of line.</p>
+<p><em>Requires a previous call to <code class="docutils literal notranslate"><span class="pre">RelCalc</span></code> command</em></p>
+<p>Original COM help: <a class="reference external" href="https://opendss.epri.com/Lambda1.html">https://opendss.epri.com/Lambda1.html</a></p>
+</dd></dl>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="altdss.Fault.FaultBatch.Like">
@@ -1417,7 +1485,10 @@ Use -1 as terminal to get the value across all terminals.</p>
 <dl class="py method">
 <dt class="sig sig-object py" id="altdss.Fault.FaultBatch.NumCustomers">
 <span class="sig-name descname"><span class="pre">NumCustomers</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">altdss.types.Int32Array</span></span></span><a class="headerlink" href="#altdss.Fault.FaultBatch.NumCustomers" title="Link to this definition">#</a></dt>
-<dd></dd></dl>
+<dd><p>Number of customers for each branch in the batch.</p>
+<p><em>Requires an energy meter with an updated zone.</em></p>
+<p>Original COM help: <a class="reference external" href="https://opendss.epri.com/Numcustomers.html">https://opendss.epri.com/Numcustomers.html</a></p>
+</dd></dl>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="altdss.Fault.FaultBatch.NumPhases">
@@ -1452,8 +1523,10 @@ Use -1 as terminal to get the value across all terminals.</p>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="altdss.Fault.FaultBatch.ParentPDElement">
-<span class="sig-name descname"><span class="pre">ParentPDElement</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">List</span><span class="p"><span class="pre">[</span></span><a class="reference internal" href="altdss.DSSObj.html#altdss.DSSObj.DSSObj" title="altdss.DSSObj.DSSObj"><span class="pre">altdss.DSSObj.DSSObj</span></a><span class="p"><span class="pre">]</span></span></span></span><a class="headerlink" href="#altdss.Fault.FaultBatch.ParentPDElement" title="Link to this definition">#</a></dt>
-<dd></dd></dl>
+<span class="sig-name descname"><span class="pre">ParentPDElement</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">List</span><span class="p"><span class="pre">[</span></span><span class="pre">Optional</span><span class="p"><span class="pre">[</span></span><a class="reference internal" href="altdss.DSSObj.html#altdss.DSSObj.DSSObj" title="altdss.DSSObj.DSSObj"><span class="pre">altdss.DSSObj.DSSObj</span></a><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">]</span></span></span></span><a class="headerlink" href="#altdss.Fault.FaultBatch.ParentPDElement" title="Link to this definition">#</a></dt>
+<dd><p>Returns the parent PD element for each element in this batch.</p>
+<p><em>Requires an energy meter with an updated zone.</em></p>
+</dd></dl>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="altdss.Fault.FaultBatch.PhaseLosses">
@@ -1488,7 +1561,10 @@ Use -1 as terminal to get the value across all terminals.</p>
 <dl class="py method">
 <dt class="sig sig-object py" id="altdss.Fault.FaultBatch.SectionID">
 <span class="sig-name descname"><span class="pre">SectionID</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">altdss.types.Int32Array</span></span></span><a class="headerlink" href="#altdss.Fault.FaultBatch.SectionID" title="Link to this definition">#</a></dt>
-<dd></dd></dl>
+<dd><p>Integer ID of the feeder section that each PDElement branch in this batch is part of.</p>
+<p><em>Requires a previous call to <code class="docutils literal notranslate"><span class="pre">RelCalc</span></code> command</em></p>
+<p>Original COM help: <a class="reference external" href="https://opendss.epri.com/SectionID1.html">https://opendss.epri.com/SectionID1.html</a></p>
+</dd></dl>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="altdss.Fault.FaultBatch.SeqCurrents">
@@ -1514,12 +1590,18 @@ Use -1 as terminal to get the value across all terminals.</p>
 <dl class="py method">
 <dt class="sig sig-object py" id="altdss.Fault.FaultBatch.TotalCustomers">
 <span class="sig-name descname"><span class="pre">TotalCustomers</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">altdss.types.Int32Array</span></span></span><a class="headerlink" href="#altdss.Fault.FaultBatch.TotalCustomers" title="Link to this definition">#</a></dt>
-<dd></dd></dl>
+<dd><p>Total number of customers from each branch of this batch to the end of the zone</p>
+<p><em>Requires a circuit with an energy meter with an updated zone.</em></p>
+<p>Original COM help: <a class="reference external" href="https://opendss.epri.com/TotalCustomers1.html">https://opendss.epri.com/TotalCustomers1.html</a></p>
+</dd></dl>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="altdss.Fault.FaultBatch.TotalMiles">
 <span class="sig-name descname"><span class="pre">TotalMiles</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">altdss.types.Float64Array</span></span></span><a class="headerlink" href="#altdss.Fault.FaultBatch.TotalMiles" title="Link to this definition">#</a></dt>
-<dd></dd></dl>
+<dd><p>Total miles of line from this element to the end of the zone. For recloser siting algorithm.</p>
+<p><em>Requires a previous call to <code class="docutils literal notranslate"><span class="pre">RelCalc</span></code> command</em></p>
+<p>Original COM help: <a class="reference external" href="https://opendss.epri.com/TotalMiles1.html">https://opendss.epri.com/TotalMiles1.html</a></p>
+</dd></dl>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="altdss.Fault.FaultBatch.TotalPowers">
@@ -1584,6 +1666,28 @@ emitted automatically when editing single properties outside an edit block.</p>
 and must be the number of properties modified in the current editing block. As of DSS C-API
 v0.13, this is only required for the Monitor class, when the <code class="docutils literal notranslate"><span class="pre">Action</span></code> property is used with
 the <code class="docutils literal notranslate"><span class="pre">Process</span></code> value.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="altdss.Fault.FaultBatch.pctEmergency">
+<span class="sig-name descname"><span class="pre">pctEmergency</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">allNodes</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">altdss.types.Float64Array</span></span></span><a class="headerlink" href="#altdss.Fault.FaultBatch.pctEmergency" title="Link to this definition">#</a></dt>
+<dd><p>For each element in the batch, calculate the maximum current across the conductors as a percentage of the <strong>emergency</strong> ampere rating.</p>
+<p>By default, only the nodes from the <em>first terminal</em> is used for the maximum current, matching
+the behavior of the “export capacity” command. Pass <code class="docutils literal notranslate"><span class="pre">allNodes=True</span></code> to
+force the analysis to all terminals.</p>
+<p>See also:
+<a class="reference external" href="https://sourceforge.net/p/electricdss/discussion/beginners/thread/da5b93ca/">https://sourceforge.net/p/electricdss/discussion/beginners/thread/da5b93ca/</a></p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="altdss.Fault.FaultBatch.pctNormal">
+<span class="sig-name descname"><span class="pre">pctNormal</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">allNodes</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">altdss.types.Float64Array</span></span></span><a class="headerlink" href="#altdss.Fault.FaultBatch.pctNormal" title="Link to this definition">#</a></dt>
+<dd><p>For each element in the batch, calculate the maximum current across the conductors as a percentage of the <strong>normal</strong> ampere rating.</p>
+<p>By default, only the nodes from the <em>first terminal</em> is used for the maximum current, matching
+the behavior of the “export capacity” command. Pass <code class="docutils literal notranslate"><span class="pre">allNodes=True</span></code> to
+force the analysis to all terminals.</p>
+<p>See also:
+<a class="reference external" href="https://sourceforge.net/p/electricdss/discussion/beginners/thread/da5b93ca/">https://sourceforge.net/p/electricdss/discussion/beginners/thread/da5b93ca/</a></p>
 </dd></dl>
 
 <dl class="py attribute">
@@ -2337,7 +2441,10 @@ In either case, this is followed by: for k in F:  D[k] = F[k]</p>
 <dl class="py method">
 <dt class="sig sig-object py" id="altdss.Fault.IFault.AccumulatedL">
 <span class="sig-name descname"><span class="pre">AccumulatedL</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">altdss.types.Float64Array</span></span></span><a class="headerlink" href="#altdss.Fault.IFault.AccumulatedL" title="Link to this definition">#</a></dt>
-<dd></dd></dl>
+<dd><p>Accumulated failure rate for the branch on downline, for each branch in this batch.</p>
+<p><em>Requires a previous call to <code class="docutils literal notranslate"><span class="pre">RelCalc</span></code> command</em></p>
+<p>Original COM help: <a class="reference external" href="https://opendss.epri.com/AccumulatedL.html">https://opendss.epri.com/AccumulatedL.html</a></p>
+</dd></dl>
 
 <dl class="py attribute">
 <dt class="sig sig-object py" id="altdss.Fault.IFault.BaseFreq">
@@ -2391,13 +2498,17 @@ In either case, this is followed by: for k in F:  D[k] = F[k]</p>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="altdss.Fault.IFault.EnergyMeter">
-<span class="sig-name descname"><span class="pre">EnergyMeter</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">List</span><span class="p"><span class="pre">[</span></span><a class="reference internal" href="altdss.DSSObj.html#altdss.DSSObj.DSSObj" title="altdss.DSSObj.DSSObj"><span class="pre">altdss.DSSObj.DSSObj</span></a><span class="p"><span class="pre">]</span></span></span></span><a class="headerlink" href="#altdss.Fault.IFault.EnergyMeter" title="Link to this definition">#</a></dt>
-<dd></dd></dl>
+<span class="sig-name descname"><span class="pre">EnergyMeter</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">List</span><span class="p"><span class="pre">[</span></span><span class="pre">Optional</span><span class="p"><span class="pre">[</span></span><a class="reference internal" href="altdss.DSSObj.html#altdss.DSSObj.DSSObj" title="altdss.DSSObj.DSSObj"><span class="pre">altdss.DSSObj.DSSObj</span></a><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">]</span></span></span></span><a class="headerlink" href="#altdss.Fault.IFault.EnergyMeter" title="Link to this definition">#</a></dt>
+<dd><p>Return the energy meter for each of the elements in this batch.</p>
+<p><em>Requires an energy meter with an updated zone.</em></p>
+</dd></dl>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="altdss.Fault.IFault.EnergyMeterName">
 <span class="sig-name descname"><span class="pre">EnergyMeterName</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">List</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">]</span></span></span></span><a class="headerlink" href="#altdss.Fault.IFault.EnergyMeterName" title="Link to this definition">#</a></dt>
-<dd></dd></dl>
+<dd><p>Return the energy meter <em>name</em> for each of the elements in this batch.</p>
+<p><em>Requires an energy meter with an updated zone.</em></p>
+</dd></dl>
 
 <dl class="py attribute">
 <dt class="sig sig-object py" id="altdss.Fault.IFault.FaultRate">
@@ -2408,7 +2519,9 @@ In either case, this is followed by: for k in F:  D[k] = F[k]</p>
 <dl class="py method">
 <dt class="sig sig-object py" id="altdss.Fault.IFault.FromTerminal">
 <span class="sig-name descname"><span class="pre">FromTerminal</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">altdss.types.Int32Array</span></span></span><a class="headerlink" href="#altdss.Fault.IFault.FromTerminal" title="Link to this definition">#</a></dt>
-<dd></dd></dl>
+<dd><p>Number of the terminal of each PD element of this batch that is on the “from” side.</p>
+<p><em>Requires an energy meter with an updated zone.</em></p>
+</dd></dl>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="altdss.Fault.IFault.FullName">
@@ -2456,12 +2569,17 @@ In either case, this is followed by: for k in F:  D[k] = F[k]</p>
 <dl class="py method">
 <dt class="sig sig-object py" id="altdss.Fault.IFault.IsShunt">
 <span class="sig-name descname"><span class="pre">IsShunt</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">List</span><span class="p"><span class="pre">[</span></span><span class="pre">bool</span><span class="p"><span class="pre">]</span></span></span></span><a class="headerlink" href="#altdss.Fault.IFault.IsShunt" title="Link to this definition">#</a></dt>
-<dd></dd></dl>
+<dd><p>Indicates if each of the PD elements in the batch should be treated as a shunt element rather than a series element.</p>
+<p>Applies to Capacitor, Reactor, Fault and GICTransformer elements.</p>
+</dd></dl>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="altdss.Fault.IFault.Lambda">
 <span class="sig-name descname"><span class="pre">Lambda</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">altdss.types.Float64Array</span></span></span><a class="headerlink" href="#altdss.Fault.IFault.Lambda" title="Link to this definition">#</a></dt>
-<dd></dd></dl>
+<dd><p>Failure rate for each of the branches in the batch. Faults per year including length of line.</p>
+<p><em>Requires a previous call to <code class="docutils literal notranslate"><span class="pre">RelCalc</span></code> command</em></p>
+<p>Original COM help: <a class="reference external" href="https://opendss.epri.com/Lambda1.html">https://opendss.epri.com/Lambda1.html</a></p>
+</dd></dl>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="altdss.Fault.IFault.Like">
@@ -2514,7 +2632,10 @@ Use -1 as terminal to get the value across all terminals.</p>
 <dl class="py method">
 <dt class="sig sig-object py" id="altdss.Fault.IFault.NumCustomers">
 <span class="sig-name descname"><span class="pre">NumCustomers</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">altdss.types.Int32Array</span></span></span><a class="headerlink" href="#altdss.Fault.IFault.NumCustomers" title="Link to this definition">#</a></dt>
-<dd></dd></dl>
+<dd><p>Number of customers for each branch in the batch.</p>
+<p><em>Requires an energy meter with an updated zone.</em></p>
+<p>Original COM help: <a class="reference external" href="https://opendss.epri.com/Numcustomers.html">https://opendss.epri.com/Numcustomers.html</a></p>
+</dd></dl>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="altdss.Fault.IFault.NumPhases">
@@ -2549,8 +2670,10 @@ Use -1 as terminal to get the value across all terminals.</p>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="altdss.Fault.IFault.ParentPDElement">
-<span class="sig-name descname"><span class="pre">ParentPDElement</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">List</span><span class="p"><span class="pre">[</span></span><a class="reference internal" href="altdss.DSSObj.html#altdss.DSSObj.DSSObj" title="altdss.DSSObj.DSSObj"><span class="pre">altdss.DSSObj.DSSObj</span></a><span class="p"><span class="pre">]</span></span></span></span><a class="headerlink" href="#altdss.Fault.IFault.ParentPDElement" title="Link to this definition">#</a></dt>
-<dd></dd></dl>
+<span class="sig-name descname"><span class="pre">ParentPDElement</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">List</span><span class="p"><span class="pre">[</span></span><span class="pre">Optional</span><span class="p"><span class="pre">[</span></span><a class="reference internal" href="altdss.DSSObj.html#altdss.DSSObj.DSSObj" title="altdss.DSSObj.DSSObj"><span class="pre">altdss.DSSObj.DSSObj</span></a><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">]</span></span></span></span><a class="headerlink" href="#altdss.Fault.IFault.ParentPDElement" title="Link to this definition">#</a></dt>
+<dd><p>Returns the parent PD element for each element in this batch.</p>
+<p><em>Requires an energy meter with an updated zone.</em></p>
+</dd></dl>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="altdss.Fault.IFault.PhaseLosses">
@@ -2585,7 +2708,10 @@ Use -1 as terminal to get the value across all terminals.</p>
 <dl class="py method">
 <dt class="sig sig-object py" id="altdss.Fault.IFault.SectionID">
 <span class="sig-name descname"><span class="pre">SectionID</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">altdss.types.Int32Array</span></span></span><a class="headerlink" href="#altdss.Fault.IFault.SectionID" title="Link to this definition">#</a></dt>
-<dd></dd></dl>
+<dd><p>Integer ID of the feeder section that each PDElement branch in this batch is part of.</p>
+<p><em>Requires a previous call to <code class="docutils literal notranslate"><span class="pre">RelCalc</span></code> command</em></p>
+<p>Original COM help: <a class="reference external" href="https://opendss.epri.com/SectionID1.html">https://opendss.epri.com/SectionID1.html</a></p>
+</dd></dl>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="altdss.Fault.IFault.SeqCurrents">
@@ -2611,12 +2737,18 @@ Use -1 as terminal to get the value across all terminals.</p>
 <dl class="py method">
 <dt class="sig sig-object py" id="altdss.Fault.IFault.TotalCustomers">
 <span class="sig-name descname"><span class="pre">TotalCustomers</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">altdss.types.Int32Array</span></span></span><a class="headerlink" href="#altdss.Fault.IFault.TotalCustomers" title="Link to this definition">#</a></dt>
-<dd></dd></dl>
+<dd><p>Total number of customers from each branch of this batch to the end of the zone</p>
+<p><em>Requires a circuit with an energy meter with an updated zone.</em></p>
+<p>Original COM help: <a class="reference external" href="https://opendss.epri.com/TotalCustomers1.html">https://opendss.epri.com/TotalCustomers1.html</a></p>
+</dd></dl>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="altdss.Fault.IFault.TotalMiles">
 <span class="sig-name descname"><span class="pre">TotalMiles</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">altdss.types.Float64Array</span></span></span><a class="headerlink" href="#altdss.Fault.IFault.TotalMiles" title="Link to this definition">#</a></dt>
-<dd></dd></dl>
+<dd><p>Total miles of line from this element to the end of the zone. For recloser siting algorithm.</p>
+<p><em>Requires a previous call to <code class="docutils literal notranslate"><span class="pre">RelCalc</span></code> command</em></p>
+<p>Original COM help: <a class="reference external" href="https://opendss.epri.com/TotalMiles1.html">https://opendss.epri.com/TotalMiles1.html</a></p>
+</dd></dl>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="altdss.Fault.IFault.TotalPowers">
@@ -2710,6 +2842,28 @@ the <code class="docutils literal notranslate"><span class="pre">Process</span><
 <dt class="sig sig-object py" id="altdss.Fault.IFault.new">
 <span class="sig-name descname"><span class="pre">new</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">name</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">AnyStr</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">begin_edit</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">activate</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">typing_extensions.Unpack</span><span class="p"><span class="pre">[</span></span><a class="reference internal" href="#altdss.Fault.FaultProperties" title="altdss.Fault.FaultProperties"><span class="pre">altdss.Fault.FaultProperties</span></a><span class="p"><span class="pre">]</span></span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference internal" href="#altdss.Fault.Fault" title="altdss.Fault.Fault"><span class="pre">altdss.Fault.Fault</span></a></span></span><a class="headerlink" href="#altdss.Fault.IFault.new" title="Link to this definition">#</a></dt>
 <dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="altdss.Fault.IFault.pctEmergency">
+<span class="sig-name descname"><span class="pre">pctEmergency</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">allNodes</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">altdss.types.Float64Array</span></span></span><a class="headerlink" href="#altdss.Fault.IFault.pctEmergency" title="Link to this definition">#</a></dt>
+<dd><p>For each element in the batch, calculate the maximum current across the conductors as a percentage of the <strong>emergency</strong> ampere rating.</p>
+<p>By default, only the nodes from the <em>first terminal</em> is used for the maximum current, matching
+the behavior of the “export capacity” command. Pass <code class="docutils literal notranslate"><span class="pre">allNodes=True</span></code> to
+force the analysis to all terminals.</p>
+<p>See also:
+<a class="reference external" href="https://sourceforge.net/p/electricdss/discussion/beginners/thread/da5b93ca/">https://sourceforge.net/p/electricdss/discussion/beginners/thread/da5b93ca/</a></p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="altdss.Fault.IFault.pctNormal">
+<span class="sig-name descname"><span class="pre">pctNormal</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">allNodes</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">altdss.types.Float64Array</span></span></span><a class="headerlink" href="#altdss.Fault.IFault.pctNormal" title="Link to this definition">#</a></dt>
+<dd><p>For each element in the batch, calculate the maximum current across the conductors as a percentage of the <strong>normal</strong> ampere rating.</p>
+<p>By default, only the nodes from the <em>first terminal</em> is used for the maximum current, matching
+the behavior of the “export capacity” command. Pass <code class="docutils literal notranslate"><span class="pre">allNodes=True</span></code> to
+force the analysis to all terminals.</p>
+<p>See also:
+<a class="reference external" href="https://sourceforge.net/p/electricdss/discussion/beginners/thread/da5b93ca/">https://sourceforge.net/p/electricdss/discussion/beginners/thread/da5b93ca/</a></p>
+</dd></dl>
 
 <dl class="py attribute">
 <dt class="sig sig-object py" id="altdss.Fault.IFault.pctPerm">
@@ -2849,6 +3003,7 @@ See <code class="docutils literal notranslate"><span class="pre">Obj_ToJSON</spa
 <li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#altdss.Fault.Fault.SeqVoltages"><code class="docutils literal notranslate"><span class="pre">Fault.SeqVoltages()</span></code></a></li>
 <li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#altdss.Fault.Fault.Temporary"><code class="docutils literal notranslate"><span class="pre">Fault.Temporary</span></code></a></li>
 <li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#altdss.Fault.Fault.TotalCustomers"><code class="docutils literal notranslate"><span class="pre">Fault.TotalCustomers()</span></code></a></li>
+<li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#altdss.Fault.Fault.TotalKilometers"><code class="docutils literal notranslate"><span class="pre">Fault.TotalKilometers()</span></code></a></li>
 <li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#altdss.Fault.Fault.TotalMiles"><code class="docutils literal notranslate"><span class="pre">Fault.TotalMiles()</span></code></a></li>
 <li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#altdss.Fault.Fault.TotalPowers"><code class="docutils literal notranslate"><span class="pre">Fault.TotalPowers()</span></code></a></li>
 <li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#altdss.Fault.Fault.Voltages"><code class="docutils literal notranslate"><span class="pre">Fault.Voltages()</span></code></a></li>
@@ -2860,8 +3015,8 @@ See <code class="docutils literal notranslate"><span class="pre">Obj_ToJSON</spa
 <li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#altdss.Fault.Fault.__repr__"><code class="docutils literal notranslate"><span class="pre">Fault.__repr__()</span></code></a></li>
 <li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#altdss.Fault.Fault.begin_edit"><code class="docutils literal notranslate"><span class="pre">Fault.begin_edit()</span></code></a></li>
 <li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#altdss.Fault.Fault.end_edit"><code class="docutils literal notranslate"><span class="pre">Fault.end_edit()</span></code></a></li>
-<li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#altdss.Fault.Fault.pctEmerg"><code class="docutils literal notranslate"><span class="pre">Fault.pctEmerg()</span></code></a></li>
-<li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#altdss.Fault.Fault.pctNorm"><code class="docutils literal notranslate"><span class="pre">Fault.pctNorm()</span></code></a></li>
+<li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#altdss.Fault.Fault.pctEmergency"><code class="docutils literal notranslate"><span class="pre">Fault.pctEmergency()</span></code></a></li>
+<li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#altdss.Fault.Fault.pctNormal"><code class="docutils literal notranslate"><span class="pre">Fault.pctNormal()</span></code></a></li>
 <li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#altdss.Fault.Fault.pctPerm"><code class="docutils literal notranslate"><span class="pre">Fault.pctPerm</span></code></a></li>
 <li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#altdss.Fault.Fault.pctStdDev"><code class="docutils literal notranslate"><span class="pre">Fault.pctStdDev</span></code></a></li>
 <li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#altdss.Fault.Fault.to_json"><code class="docutils literal notranslate"><span class="pre">Fault.to_json()</span></code></a></li>
@@ -2930,6 +3085,8 @@ See <code class="docutils literal notranslate"><span class="pre">Obj_ToJSON</spa
 <li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#altdss.Fault.FaultBatch.__len__"><code class="docutils literal notranslate"><span class="pre">FaultBatch.__len__()</span></code></a></li>
 <li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#altdss.Fault.FaultBatch.begin_edit"><code class="docutils literal notranslate"><span class="pre">FaultBatch.begin_edit()</span></code></a></li>
 <li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#altdss.Fault.FaultBatch.end_edit"><code class="docutils literal notranslate"><span class="pre">FaultBatch.end_edit()</span></code></a></li>
+<li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#altdss.Fault.FaultBatch.pctEmergency"><code class="docutils literal notranslate"><span class="pre">FaultBatch.pctEmergency()</span></code></a></li>
+<li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#altdss.Fault.FaultBatch.pctNormal"><code class="docutils literal notranslate"><span class="pre">FaultBatch.pctNormal()</span></code></a></li>
 <li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#altdss.Fault.FaultBatch.pctPerm"><code class="docutils literal notranslate"><span class="pre">FaultBatch.pctPerm</span></code></a></li>
 <li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#altdss.Fault.FaultBatch.pctStdDev"><code class="docutils literal notranslate"><span class="pre">FaultBatch.pctStdDev</span></code></a></li>
 <li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#altdss.Fault.FaultBatch.to_json"><code class="docutils literal notranslate"><span class="pre">FaultBatch.to_json()</span></code></a></li>
@@ -3120,6 +3277,8 @@ See <code class="docutils literal notranslate"><span class="pre">Obj_ToJSON</spa
 <li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#altdss.Fault.IFault.end_edit"><code class="docutils literal notranslate"><span class="pre">IFault.end_edit()</span></code></a></li>
 <li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#altdss.Fault.IFault.find"><code class="docutils literal notranslate"><span class="pre">IFault.find()</span></code></a></li>
 <li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#altdss.Fault.IFault.new"><code class="docutils literal notranslate"><span class="pre">IFault.new()</span></code></a></li>
+<li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#altdss.Fault.IFault.pctEmergency"><code class="docutils literal notranslate"><span class="pre">IFault.pctEmergency()</span></code></a></li>
+<li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#altdss.Fault.IFault.pctNormal"><code class="docutils literal notranslate"><span class="pre">IFault.pctNormal()</span></code></a></li>
 <li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#altdss.Fault.IFault.pctPerm"><code class="docutils literal notranslate"><span class="pre">IFault.pctPerm</span></code></a></li>
 <li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#altdss.Fault.IFault.pctStdDev"><code class="docutils literal notranslate"><span class="pre">IFault.pctStdDev</span></code></a></li>
 <li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#altdss.Fault.IFault.to_json"><code class="docutils literal notranslate"><span class="pre">IFault.to_json()</span></code></a></li>

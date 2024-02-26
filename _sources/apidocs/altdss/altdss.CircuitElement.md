@@ -35,7 +35,7 @@
 
 ### API
 
-`````{py:class} CircuitElementBatch(func, parent, sync_cls_idx=ExtraClassIDs.CktElements)
+`````{py:class} CircuitElementBatch(func, parent, sync_cls_idx=ExtraClassIDs.CktElements, copy_safe=False)
 :canonical: altdss.CircuitElement.CircuitElementBatch
 
 Bases: {py:obj}`altdss.Batch.NonUniformBatch`, {py:obj}`altdss.CircuitElement.CircuitElementBatchMixin`
@@ -284,7 +284,7 @@ Bases: {py:obj}`altdss.Batch.NonUniformBatch`, {py:obj}`altdss.CircuitElement.Ci
 
 ````
 
-````{py:method} __init__(func, parent, sync_cls_idx=ExtraClassIDs.CktElements)
+````{py:method} __init__(func, parent, sync_cls_idx=ExtraClassIDs.CktElements, copy_safe=False)
 :canonical: altdss.CircuitElement.CircuitElementBatch.__init__
 
 ```{autodoc2-docstring} altdss.CircuitElement.CircuitElementBatch.__init__

@@ -31,7 +31,7 @@
 
 ### API
 
-`````{py:class} PCElementBatch(func, parent, sync_cls_idx=ExtraClassIDs.PCElements)
+`````{py:class} PCElementBatch(func, parent, sync_cls_idx=ExtraClassIDs.PCElements, copy_safe=False)
 :canonical: altdss.PCElement.PCElementBatch
 
 Bases: {py:obj}`altdss.CircuitElement.CircuitElementBatch`, {py:obj}`altdss.PCElement.PCElementBatchMixin`, {py:obj}`altdss.CircuitElement.ElementHasRegistersMixin`
@@ -320,7 +320,7 @@ Bases: {py:obj}`altdss.CircuitElement.CircuitElementBatch`, {py:obj}`altdss.PCEl
 
 ````
 
-````{py:method} __init__(func, parent, sync_cls_idx=ExtraClassIDs.PCElements)
+````{py:method} __init__(func, parent, sync_cls_idx=ExtraClassIDs.PCElements, copy_safe=False)
 :canonical: altdss.PCElement.PCElementBatch.__init__
 
 ```{autodoc2-docstring} altdss.PCElement.PCElementBatch.__init__

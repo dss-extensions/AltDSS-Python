@@ -8,7 +8,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
-    <title>altdss.PDElement &#8212; AltDSS-Python 0.1.2 documentation</title>
+    <title>altdss.PDElement &#8212; AltDSS-Python 0.2.0 documentation</title>
   
   
   
@@ -38,7 +38,7 @@
 <link rel="preload" as="script" href="../../_static/scripts/pydata-sphinx-theme.js?digest=8d27b9dea8ad943066ae" />
   <script src="../../_static/vendor/fontawesome/6.5.1/js/all.min.js?digest=8d27b9dea8ad943066ae"></script>
 
-    <script src="../../_static/documentation_options.js?v=0deb7d70"></script>
+    <script src="../../_static/documentation_options.js?v=7f7c277e"></script>
     <script src="../../_static/doctools.js?v=888ff710"></script>
     <script src="../../_static/sphinx_highlight.js?v=dc90522c"></script>
     <script src="../../_static/scripts/sphinx-book-theme.js?v=efea14e4"></script>
@@ -137,8 +137,8 @@
       
     
     
-    <img src="../../_static/altdss-python.svg" class="logo__image only-light" alt="AltDSS-Python 0.1.2 documentation - Home"/>
-    <script>document.write(`<img src="../../_static/altdss-python-dark.svg" class="logo__image only-dark" alt="AltDSS-Python 0.1.2 documentation - Home"/>`);</script>
+    <img src="../../_static/altdss-python.svg" class="logo__image only-light" alt="AltDSS-Python 0.2.0 documentation - Home"/>
+    <script>document.write(`<img src="../../_static/altdss-python-dark.svg" class="logo__image only-dark" alt="AltDSS-Python 0.2.0 documentation - Home"/>`);</script>
   
   
 </a></div>
@@ -452,6 +452,8 @@ document.write(`
 <li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#altdss.PDElement.PDElementBatch.__init__"><code class="docutils literal notranslate"><span class="pre">PDElementBatch.__init__()</span></code></a></li>
 <li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#altdss.PDElement.PDElementBatch.__iter__"><code class="docutils literal notranslate"><span class="pre">PDElementBatch.__iter__()</span></code></a></li>
 <li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#altdss.PDElement.PDElementBatch.__len__"><code class="docutils literal notranslate"><span class="pre">PDElementBatch.__len__()</span></code></a></li>
+<li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#altdss.PDElement.PDElementBatch.pctEmergency"><code class="docutils literal notranslate"><span class="pre">PDElementBatch.pctEmergency()</span></code></a></li>
+<li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#altdss.PDElement.PDElementBatch.pctNormal"><code class="docutils literal notranslate"><span class="pre">PDElementBatch.pctNormal()</span></code></a></li>
 <li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#altdss.PDElement.PDElementBatch.to_json"><code class="docutils literal notranslate"><span class="pre">PDElementBatch.to_json()</span></code></a></li>
 <li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#altdss.PDElement.PDElementBatch.to_list"><code class="docutils literal notranslate"><span class="pre">PDElementBatch.to_list()</span></code></a></li>
 </ul>
@@ -468,6 +470,8 @@ document.write(`
 <li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#altdss.PDElement.PDElementBatchMixin.SectionID"><code class="docutils literal notranslate"><span class="pre">PDElementBatchMixin.SectionID()</span></code></a></li>
 <li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#altdss.PDElement.PDElementBatchMixin.TotalCustomers"><code class="docutils literal notranslate"><span class="pre">PDElementBatchMixin.TotalCustomers()</span></code></a></li>
 <li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#altdss.PDElement.PDElementBatchMixin.TotalMiles"><code class="docutils literal notranslate"><span class="pre">PDElementBatchMixin.TotalMiles()</span></code></a></li>
+<li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#altdss.PDElement.PDElementBatchMixin.pctEmergency"><code class="docutils literal notranslate"><span class="pre">PDElementBatchMixin.pctEmergency()</span></code></a></li>
+<li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#altdss.PDElement.PDElementBatchMixin.pctNormal"><code class="docutils literal notranslate"><span class="pre">PDElementBatchMixin.pctNormal()</span></code></a></li>
 </ul>
 </li>
 <li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#altdss.PDElement.PDElementMixin"><code class="docutils literal notranslate"><span class="pre">PDElementMixin</span></code></a><ul class="nav section-nav flex-column">
@@ -481,9 +485,10 @@ document.write(`
 <li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#altdss.PDElement.PDElementMixin.ParentPDElement"><code class="docutils literal notranslate"><span class="pre">PDElementMixin.ParentPDElement()</span></code></a></li>
 <li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#altdss.PDElement.PDElementMixin.SectionID"><code class="docutils literal notranslate"><span class="pre">PDElementMixin.SectionID()</span></code></a></li>
 <li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#altdss.PDElement.PDElementMixin.TotalCustomers"><code class="docutils literal notranslate"><span class="pre">PDElementMixin.TotalCustomers()</span></code></a></li>
+<li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#altdss.PDElement.PDElementMixin.TotalKilometers"><code class="docutils literal notranslate"><span class="pre">PDElementMixin.TotalKilometers()</span></code></a></li>
 <li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#altdss.PDElement.PDElementMixin.TotalMiles"><code class="docutils literal notranslate"><span class="pre">PDElementMixin.TotalMiles()</span></code></a></li>
-<li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#altdss.PDElement.PDElementMixin.pctEmerg"><code class="docutils literal notranslate"><span class="pre">PDElementMixin.pctEmerg()</span></code></a></li>
-<li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#altdss.PDElement.PDElementMixin.pctNorm"><code class="docutils literal notranslate"><span class="pre">PDElementMixin.pctNorm()</span></code></a></li>
+<li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#altdss.PDElement.PDElementMixin.pctEmergency"><code class="docutils literal notranslate"><span class="pre">PDElementMixin.pctEmergency()</span></code></a></li>
+<li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#altdss.PDElement.PDElementMixin.pctNormal"><code class="docutils literal notranslate"><span class="pre">PDElementMixin.pctNormal()</span></code></a></li>
 </ul>
 </li>
 </ul>
@@ -526,14 +531,17 @@ common functions</p></td>
 <h3>API<a class="headerlink" href="#api" title="Link to this heading">#</a></h3>
 <dl class="py class">
 <dt class="sig sig-object py" id="altdss.PDElement.PDElementBatch">
-<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">altdss.PDElement.</span></span><span class="sig-name descname"><span class="pre">PDElementBatch</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">func</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">parent</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">sync_cls_idx</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">ExtraClassIDs.PDElements</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#altdss.PDElement.PDElementBatch" title="Link to this definition">#</a></dt>
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">altdss.PDElement.</span></span><span class="sig-name descname"><span class="pre">PDElementBatch</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">func</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">parent</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">sync_cls_idx</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">ExtraClassIDs.PDElements</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">copy_safe</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#altdss.PDElement.PDElementBatch" title="Link to this definition">#</a></dt>
 <dd><p>Bases: <a class="reference internal" href="altdss.CircuitElement.html#altdss.CircuitElement.CircuitElementBatch" title="altdss.CircuitElement.CircuitElementBatch"><code class="xref py py-obj docutils literal notranslate"><span class="pre">altdss.CircuitElement.CircuitElementBatch</span></code></a>, <a class="reference internal" href="#altdss.PDElement.PDElementBatchMixin" title="altdss.PDElement.PDElementBatchMixin"><code class="xref py py-obj docutils literal notranslate"><span class="pre">altdss.PDElement.PDElementBatchMixin</span></code></a></p>
 <p>Non-uniform batch of PD elements. Can contain distinct PD types, while providing
 common functions</p>
 <dl class="py method">
 <dt class="sig sig-object py" id="altdss.PDElement.PDElementBatch.AccumulatedL">
 <span class="sig-name descname"><span class="pre">AccumulatedL</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">altdss.types.Float64Array</span></span></span><a class="headerlink" href="#altdss.PDElement.PDElementBatch.AccumulatedL" title="Link to this definition">#</a></dt>
-<dd></dd></dl>
+<dd><p>Accumulated failure rate for the branch on downline, for each branch in this batch.</p>
+<p><em>Requires a previous call to <code class="docutils literal notranslate"><span class="pre">RelCalc</span></code> command</em></p>
+<p>Original COM help: <a class="reference external" href="https://opendss.epri.com/AccumulatedL.html">https://opendss.epri.com/AccumulatedL.html</a></p>
+</dd></dl>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="altdss.PDElement.PDElementBatch.ComplexSeqCurrents">
@@ -557,18 +565,24 @@ common functions</p>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="altdss.PDElement.PDElementBatch.EnergyMeter">
-<span class="sig-name descname"><span class="pre">EnergyMeter</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">List</span><span class="p"><span class="pre">[</span></span><a class="reference internal" href="altdss.DSSObj.html#altdss.DSSObj.DSSObj" title="altdss.DSSObj.DSSObj"><span class="pre">altdss.DSSObj.DSSObj</span></a><span class="p"><span class="pre">]</span></span></span></span><a class="headerlink" href="#altdss.PDElement.PDElementBatch.EnergyMeter" title="Link to this definition">#</a></dt>
-<dd></dd></dl>
+<span class="sig-name descname"><span class="pre">EnergyMeter</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">List</span><span class="p"><span class="pre">[</span></span><span class="pre">Optional</span><span class="p"><span class="pre">[</span></span><a class="reference internal" href="altdss.DSSObj.html#altdss.DSSObj.DSSObj" title="altdss.DSSObj.DSSObj"><span class="pre">altdss.DSSObj.DSSObj</span></a><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">]</span></span></span></span><a class="headerlink" href="#altdss.PDElement.PDElementBatch.EnergyMeter" title="Link to this definition">#</a></dt>
+<dd><p>Return the energy meter for each of the elements in this batch.</p>
+<p><em>Requires an energy meter with an updated zone.</em></p>
+</dd></dl>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="altdss.PDElement.PDElementBatch.EnergyMeterName">
 <span class="sig-name descname"><span class="pre">EnergyMeterName</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">List</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">]</span></span></span></span><a class="headerlink" href="#altdss.PDElement.PDElementBatch.EnergyMeterName" title="Link to this definition">#</a></dt>
-<dd></dd></dl>
+<dd><p>Return the energy meter <em>name</em> for each of the elements in this batch.</p>
+<p><em>Requires an energy meter with an updated zone.</em></p>
+</dd></dl>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="altdss.PDElement.PDElementBatch.FromTerminal">
 <span class="sig-name descname"><span class="pre">FromTerminal</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">altdss.types.Int32Array</span></span></span><a class="headerlink" href="#altdss.PDElement.PDElementBatch.FromTerminal" title="Link to this definition">#</a></dt>
-<dd></dd></dl>
+<dd><p>Number of the terminal of each PD element of this batch that is on the “from” side.</p>
+<p><em>Requires an energy meter with an updated zone.</em></p>
+</dd></dl>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="altdss.PDElement.PDElementBatch.FullName">
@@ -610,12 +624,17 @@ common functions</p>
 <dl class="py method">
 <dt class="sig sig-object py" id="altdss.PDElement.PDElementBatch.IsShunt">
 <span class="sig-name descname"><span class="pre">IsShunt</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">List</span><span class="p"><span class="pre">[</span></span><span class="pre">bool</span><span class="p"><span class="pre">]</span></span></span></span><a class="headerlink" href="#altdss.PDElement.PDElementBatch.IsShunt" title="Link to this definition">#</a></dt>
-<dd></dd></dl>
+<dd><p>Indicates if each of the PD elements in the batch should be treated as a shunt element rather than a series element.</p>
+<p>Applies to Capacitor, Reactor, Fault and GICTransformer elements.</p>
+</dd></dl>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="altdss.PDElement.PDElementBatch.Lambda">
 <span class="sig-name descname"><span class="pre">Lambda</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">altdss.types.Float64Array</span></span></span><a class="headerlink" href="#altdss.PDElement.PDElementBatch.Lambda" title="Link to this definition">#</a></dt>
-<dd></dd></dl>
+<dd><p>Failure rate for each of the branches in the batch. Faults per year including length of line.</p>
+<p><em>Requires a previous call to <code class="docutils literal notranslate"><span class="pre">RelCalc</span></code> command</em></p>
+<p>Original COM help: <a class="reference external" href="https://opendss.epri.com/Lambda1.html">https://opendss.epri.com/Lambda1.html</a></p>
+</dd></dl>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="altdss.PDElement.PDElementBatch.Losses">
@@ -648,7 +667,10 @@ Use -1 as terminal to get the value across all terminals.</p>
 <dl class="py method">
 <dt class="sig sig-object py" id="altdss.PDElement.PDElementBatch.NumCustomers">
 <span class="sig-name descname"><span class="pre">NumCustomers</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">altdss.types.Int32Array</span></span></span><a class="headerlink" href="#altdss.PDElement.PDElementBatch.NumCustomers" title="Link to this definition">#</a></dt>
-<dd></dd></dl>
+<dd><p>Number of customers for each branch in the batch.</p>
+<p><em>Requires an energy meter with an updated zone.</em></p>
+<p>Original COM help: <a class="reference external" href="https://opendss.epri.com/Numcustomers.html">https://opendss.epri.com/Numcustomers.html</a></p>
+</dd></dl>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="altdss.PDElement.PDElementBatch.NumPhases">
@@ -677,8 +699,10 @@ Use -1 as terminal to get the value across all terminals.</p>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="altdss.PDElement.PDElementBatch.ParentPDElement">
-<span class="sig-name descname"><span class="pre">ParentPDElement</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">List</span><span class="p"><span class="pre">[</span></span><a class="reference internal" href="altdss.DSSObj.html#altdss.DSSObj.DSSObj" title="altdss.DSSObj.DSSObj"><span class="pre">altdss.DSSObj.DSSObj</span></a><span class="p"><span class="pre">]</span></span></span></span><a class="headerlink" href="#altdss.PDElement.PDElementBatch.ParentPDElement" title="Link to this definition">#</a></dt>
-<dd></dd></dl>
+<span class="sig-name descname"><span class="pre">ParentPDElement</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">List</span><span class="p"><span class="pre">[</span></span><span class="pre">Optional</span><span class="p"><span class="pre">[</span></span><a class="reference internal" href="altdss.DSSObj.html#altdss.DSSObj.DSSObj" title="altdss.DSSObj.DSSObj"><span class="pre">altdss.DSSObj.DSSObj</span></a><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">]</span></span></span></span><a class="headerlink" href="#altdss.PDElement.PDElementBatch.ParentPDElement" title="Link to this definition">#</a></dt>
+<dd><p>Returns the parent PD element for each element in this batch.</p>
+<p><em>Requires an energy meter with an updated zone.</em></p>
+</dd></dl>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="altdss.PDElement.PDElementBatch.PhaseLosses">
@@ -695,7 +719,10 @@ Use -1 as terminal to get the value across all terminals.</p>
 <dl class="py method">
 <dt class="sig sig-object py" id="altdss.PDElement.PDElementBatch.SectionID">
 <span class="sig-name descname"><span class="pre">SectionID</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">altdss.types.Int32Array</span></span></span><a class="headerlink" href="#altdss.PDElement.PDElementBatch.SectionID" title="Link to this definition">#</a></dt>
-<dd></dd></dl>
+<dd><p>Integer ID of the feeder section that each PDElement branch in this batch is part of.</p>
+<p><em>Requires a previous call to <code class="docutils literal notranslate"><span class="pre">RelCalc</span></code> command</em></p>
+<p>Original COM help: <a class="reference external" href="https://opendss.epri.com/SectionID1.html">https://opendss.epri.com/SectionID1.html</a></p>
+</dd></dl>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="altdss.PDElement.PDElementBatch.SeqCurrents">
@@ -715,12 +742,18 @@ Use -1 as terminal to get the value across all terminals.</p>
 <dl class="py method">
 <dt class="sig sig-object py" id="altdss.PDElement.PDElementBatch.TotalCustomers">
 <span class="sig-name descname"><span class="pre">TotalCustomers</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">altdss.types.Int32Array</span></span></span><a class="headerlink" href="#altdss.PDElement.PDElementBatch.TotalCustomers" title="Link to this definition">#</a></dt>
-<dd></dd></dl>
+<dd><p>Total number of customers from each branch of this batch to the end of the zone</p>
+<p><em>Requires a circuit with an energy meter with an updated zone.</em></p>
+<p>Original COM help: <a class="reference external" href="https://opendss.epri.com/TotalCustomers1.html">https://opendss.epri.com/TotalCustomers1.html</a></p>
+</dd></dl>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="altdss.PDElement.PDElementBatch.TotalMiles">
 <span class="sig-name descname"><span class="pre">TotalMiles</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">altdss.types.Float64Array</span></span></span><a class="headerlink" href="#altdss.PDElement.PDElementBatch.TotalMiles" title="Link to this definition">#</a></dt>
-<dd></dd></dl>
+<dd><p>Total miles of line from this element to the end of the zone. For recloser siting algorithm.</p>
+<p><em>Requires a previous call to <code class="docutils literal notranslate"><span class="pre">RelCalc</span></code> command</em></p>
+<p>Original COM help: <a class="reference external" href="https://opendss.epri.com/TotalMiles1.html">https://opendss.epri.com/TotalMiles1.html</a></p>
+</dd></dl>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="altdss.PDElement.PDElementBatch.TotalPowers">
@@ -746,7 +779,7 @@ Use -1 as terminal to get the value across all terminals.</p>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="altdss.PDElement.PDElementBatch.__init__">
-<span class="sig-name descname"><span class="pre">__init__</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">func</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">parent</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">sync_cls_idx</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">ExtraClassIDs.PDElements</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#altdss.PDElement.PDElementBatch.__init__" title="Link to this definition">#</a></dt>
+<span class="sig-name descname"><span class="pre">__init__</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">func</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">parent</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">sync_cls_idx</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">ExtraClassIDs.PDElements</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">copy_safe</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#altdss.PDElement.PDElementBatch.__init__" title="Link to this definition">#</a></dt>
 <dd></dd></dl>
 
 <dl class="py method">
@@ -758,6 +791,28 @@ Use -1 as terminal to get the value across all terminals.</p>
 <dt class="sig sig-object py" id="altdss.PDElement.PDElementBatch.__len__">
 <span class="sig-name descname"><span class="pre">__len__</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">int</span></span></span><a class="headerlink" href="#altdss.PDElement.PDElementBatch.__len__" title="Link to this definition">#</a></dt>
 <dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="altdss.PDElement.PDElementBatch.pctEmergency">
+<span class="sig-name descname"><span class="pre">pctEmergency</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">allNodes</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">altdss.types.Float64Array</span></span></span><a class="headerlink" href="#altdss.PDElement.PDElementBatch.pctEmergency" title="Link to this definition">#</a></dt>
+<dd><p>For each element in the batch, calculate the maximum current across the conductors as a percentage of the <strong>emergency</strong> ampere rating.</p>
+<p>By default, only the nodes from the <em>first terminal</em> is used for the maximum current, matching
+the behavior of the “export capacity” command. Pass <code class="docutils literal notranslate"><span class="pre">allNodes=True</span></code> to
+force the analysis to all terminals.</p>
+<p>See also:
+<a class="reference external" href="https://sourceforge.net/p/electricdss/discussion/beginners/thread/da5b93ca/">https://sourceforge.net/p/electricdss/discussion/beginners/thread/da5b93ca/</a></p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="altdss.PDElement.PDElementBatch.pctNormal">
+<span class="sig-name descname"><span class="pre">pctNormal</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">allNodes</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">altdss.types.Float64Array</span></span></span><a class="headerlink" href="#altdss.PDElement.PDElementBatch.pctNormal" title="Link to this definition">#</a></dt>
+<dd><p>For each element in the batch, calculate the maximum current across the conductors as a percentage of the <strong>normal</strong> ampere rating.</p>
+<p>By default, only the nodes from the <em>first terminal</em> is used for the maximum current, matching
+the behavior of the “export capacity” command. Pass <code class="docutils literal notranslate"><span class="pre">allNodes=True</span></code> to
+force the analysis to all terminals.</p>
+<p>See also:
+<a class="reference external" href="https://sourceforge.net/p/electricdss/discussion/beginners/thread/da5b93ca/">https://sourceforge.net/p/electricdss/discussion/beginners/thread/da5b93ca/</a></p>
+</dd></dl>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="altdss.PDElement.PDElementBatch.to_json">
@@ -781,57 +836,107 @@ See <code class="docutils literal notranslate"><span class="pre">Obj_ToJSON</spa
 <dd><dl class="py method">
 <dt class="sig sig-object py" id="altdss.PDElement.PDElementBatchMixin.AccumulatedL">
 <span class="sig-name descname"><span class="pre">AccumulatedL</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">altdss.types.Float64Array</span></span></span><a class="headerlink" href="#altdss.PDElement.PDElementBatchMixin.AccumulatedL" title="Link to this definition">#</a></dt>
-<dd></dd></dl>
+<dd><p>Accumulated failure rate for the branch on downline, for each branch in this batch.</p>
+<p><em>Requires a previous call to <code class="docutils literal notranslate"><span class="pre">RelCalc</span></code> command</em></p>
+<p>Original COM help: <a class="reference external" href="https://opendss.epri.com/AccumulatedL.html">https://opendss.epri.com/AccumulatedL.html</a></p>
+</dd></dl>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="altdss.PDElement.PDElementBatchMixin.EnergyMeter">
-<span class="sig-name descname"><span class="pre">EnergyMeter</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">List</span><span class="p"><span class="pre">[</span></span><a class="reference internal" href="altdss.DSSObj.html#altdss.DSSObj.DSSObj" title="altdss.DSSObj.DSSObj"><span class="pre">altdss.DSSObj.DSSObj</span></a><span class="p"><span class="pre">]</span></span></span></span><a class="headerlink" href="#altdss.PDElement.PDElementBatchMixin.EnergyMeter" title="Link to this definition">#</a></dt>
-<dd></dd></dl>
+<span class="sig-name descname"><span class="pre">EnergyMeter</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">List</span><span class="p"><span class="pre">[</span></span><span class="pre">Optional</span><span class="p"><span class="pre">[</span></span><a class="reference internal" href="altdss.DSSObj.html#altdss.DSSObj.DSSObj" title="altdss.DSSObj.DSSObj"><span class="pre">altdss.DSSObj.DSSObj</span></a><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">]</span></span></span></span><a class="headerlink" href="#altdss.PDElement.PDElementBatchMixin.EnergyMeter" title="Link to this definition">#</a></dt>
+<dd><p>Return the energy meter for each of the elements in this batch.</p>
+<p><em>Requires an energy meter with an updated zone.</em></p>
+</dd></dl>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="altdss.PDElement.PDElementBatchMixin.EnergyMeterName">
 <span class="sig-name descname"><span class="pre">EnergyMeterName</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">List</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">]</span></span></span></span><a class="headerlink" href="#altdss.PDElement.PDElementBatchMixin.EnergyMeterName" title="Link to this definition">#</a></dt>
-<dd></dd></dl>
+<dd><p>Return the energy meter <em>name</em> for each of the elements in this batch.</p>
+<p><em>Requires an energy meter with an updated zone.</em></p>
+</dd></dl>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="altdss.PDElement.PDElementBatchMixin.FromTerminal">
 <span class="sig-name descname"><span class="pre">FromTerminal</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">altdss.types.Int32Array</span></span></span><a class="headerlink" href="#altdss.PDElement.PDElementBatchMixin.FromTerminal" title="Link to this definition">#</a></dt>
-<dd></dd></dl>
+<dd><p>Number of the terminal of each PD element of this batch that is on the “from” side.</p>
+<p><em>Requires an energy meter with an updated zone.</em></p>
+</dd></dl>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="altdss.PDElement.PDElementBatchMixin.IsShunt">
 <span class="sig-name descname"><span class="pre">IsShunt</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">List</span><span class="p"><span class="pre">[</span></span><span class="pre">bool</span><span class="p"><span class="pre">]</span></span></span></span><a class="headerlink" href="#altdss.PDElement.PDElementBatchMixin.IsShunt" title="Link to this definition">#</a></dt>
-<dd></dd></dl>
+<dd><p>Indicates if each of the PD elements in the batch should be treated as a shunt element rather than a series element.</p>
+<p>Applies to Capacitor, Reactor, Fault and GICTransformer elements.</p>
+</dd></dl>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="altdss.PDElement.PDElementBatchMixin.Lambda">
 <span class="sig-name descname"><span class="pre">Lambda</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">altdss.types.Float64Array</span></span></span><a class="headerlink" href="#altdss.PDElement.PDElementBatchMixin.Lambda" title="Link to this definition">#</a></dt>
-<dd></dd></dl>
+<dd><p>Failure rate for each of the branches in the batch. Faults per year including length of line.</p>
+<p><em>Requires a previous call to <code class="docutils literal notranslate"><span class="pre">RelCalc</span></code> command</em></p>
+<p>Original COM help: <a class="reference external" href="https://opendss.epri.com/Lambda1.html">https://opendss.epri.com/Lambda1.html</a></p>
+</dd></dl>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="altdss.PDElement.PDElementBatchMixin.NumCustomers">
 <span class="sig-name descname"><span class="pre">NumCustomers</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">altdss.types.Int32Array</span></span></span><a class="headerlink" href="#altdss.PDElement.PDElementBatchMixin.NumCustomers" title="Link to this definition">#</a></dt>
-<dd></dd></dl>
+<dd><p>Number of customers for each branch in the batch.</p>
+<p><em>Requires an energy meter with an updated zone.</em></p>
+<p>Original COM help: <a class="reference external" href="https://opendss.epri.com/Numcustomers.html">https://opendss.epri.com/Numcustomers.html</a></p>
+</dd></dl>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="altdss.PDElement.PDElementBatchMixin.ParentPDElement">
-<span class="sig-name descname"><span class="pre">ParentPDElement</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">List</span><span class="p"><span class="pre">[</span></span><a class="reference internal" href="altdss.DSSObj.html#altdss.DSSObj.DSSObj" title="altdss.DSSObj.DSSObj"><span class="pre">altdss.DSSObj.DSSObj</span></a><span class="p"><span class="pre">]</span></span></span></span><a class="headerlink" href="#altdss.PDElement.PDElementBatchMixin.ParentPDElement" title="Link to this definition">#</a></dt>
-<dd></dd></dl>
+<span class="sig-name descname"><span class="pre">ParentPDElement</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">List</span><span class="p"><span class="pre">[</span></span><span class="pre">Optional</span><span class="p"><span class="pre">[</span></span><a class="reference internal" href="altdss.DSSObj.html#altdss.DSSObj.DSSObj" title="altdss.DSSObj.DSSObj"><span class="pre">altdss.DSSObj.DSSObj</span></a><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">]</span></span></span></span><a class="headerlink" href="#altdss.PDElement.PDElementBatchMixin.ParentPDElement" title="Link to this definition">#</a></dt>
+<dd><p>Returns the parent PD element for each element in this batch.</p>
+<p><em>Requires an energy meter with an updated zone.</em></p>
+</dd></dl>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="altdss.PDElement.PDElementBatchMixin.SectionID">
 <span class="sig-name descname"><span class="pre">SectionID</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">altdss.types.Int32Array</span></span></span><a class="headerlink" href="#altdss.PDElement.PDElementBatchMixin.SectionID" title="Link to this definition">#</a></dt>
-<dd></dd></dl>
+<dd><p>Integer ID of the feeder section that each PDElement branch in this batch is part of.</p>
+<p><em>Requires a previous call to <code class="docutils literal notranslate"><span class="pre">RelCalc</span></code> command</em></p>
+<p>Original COM help: <a class="reference external" href="https://opendss.epri.com/SectionID1.html">https://opendss.epri.com/SectionID1.html</a></p>
+</dd></dl>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="altdss.PDElement.PDElementBatchMixin.TotalCustomers">
 <span class="sig-name descname"><span class="pre">TotalCustomers</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">altdss.types.Int32Array</span></span></span><a class="headerlink" href="#altdss.PDElement.PDElementBatchMixin.TotalCustomers" title="Link to this definition">#</a></dt>
-<dd></dd></dl>
+<dd><p>Total number of customers from each branch of this batch to the end of the zone</p>
+<p><em>Requires a circuit with an energy meter with an updated zone.</em></p>
+<p>Original COM help: <a class="reference external" href="https://opendss.epri.com/TotalCustomers1.html">https://opendss.epri.com/TotalCustomers1.html</a></p>
+</dd></dl>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="altdss.PDElement.PDElementBatchMixin.TotalMiles">
 <span class="sig-name descname"><span class="pre">TotalMiles</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">altdss.types.Float64Array</span></span></span><a class="headerlink" href="#altdss.PDElement.PDElementBatchMixin.TotalMiles" title="Link to this definition">#</a></dt>
-<dd></dd></dl>
+<dd><p>Total miles of line from this element to the end of the zone. For recloser siting algorithm.</p>
+<p><em>Requires a previous call to <code class="docutils literal notranslate"><span class="pre">RelCalc</span></code> command</em></p>
+<p>Original COM help: <a class="reference external" href="https://opendss.epri.com/TotalMiles1.html">https://opendss.epri.com/TotalMiles1.html</a></p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="altdss.PDElement.PDElementBatchMixin.pctEmergency">
+<span class="sig-name descname"><span class="pre">pctEmergency</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">allNodes</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">altdss.types.Float64Array</span></span></span><a class="headerlink" href="#altdss.PDElement.PDElementBatchMixin.pctEmergency" title="Link to this definition">#</a></dt>
+<dd><p>For each element in the batch, calculate the maximum current across the conductors as a percentage of the <strong>emergency</strong> ampere rating.</p>
+<p>By default, only the nodes from the <em>first terminal</em> is used for the maximum current, matching
+the behavior of the “export capacity” command. Pass <code class="docutils literal notranslate"><span class="pre">allNodes=True</span></code> to
+force the analysis to all terminals.</p>
+<p>See also:
+<a class="reference external" href="https://sourceforge.net/p/electricdss/discussion/beginners/thread/da5b93ca/">https://sourceforge.net/p/electricdss/discussion/beginners/thread/da5b93ca/</a></p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="altdss.PDElement.PDElementBatchMixin.pctNormal">
+<span class="sig-name descname"><span class="pre">pctNormal</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">allNodes</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">altdss.types.Float64Array</span></span></span><a class="headerlink" href="#altdss.PDElement.PDElementBatchMixin.pctNormal" title="Link to this definition">#</a></dt>
+<dd><p>For each element in the batch, calculate the maximum current across the conductors as a percentage of the <strong>normal</strong> ampere rating.</p>
+<p>By default, only the nodes from the <em>first terminal</em> is used for the maximum current, matching
+the behavior of the “export capacity” command. Pass <code class="docutils literal notranslate"><span class="pre">allNodes=True</span></code> to
+force the analysis to all terminals.</p>
+<p>See also:
+<a class="reference external" href="https://sourceforge.net/p/electricdss/discussion/beginners/thread/da5b93ca/">https://sourceforge.net/p/electricdss/discussion/beginners/thread/da5b93ca/</a></p>
+</dd></dl>
 
 </dd></dl>
 
@@ -841,67 +946,116 @@ See <code class="docutils literal notranslate"><span class="pre">Obj_ToJSON</spa
 <dd><dl class="py method">
 <dt class="sig sig-object py" id="altdss.PDElement.PDElementMixin.AccumulatedL">
 <span class="sig-name descname"><span class="pre">AccumulatedL</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">float</span></span></span><a class="headerlink" href="#altdss.PDElement.PDElementMixin.AccumulatedL" title="Link to this definition">#</a></dt>
-<dd></dd></dl>
+<dd><p>Accumulated failure rate for this branch on downline.</p>
+<p><em>Requires a previous call to <code class="docutils literal notranslate"><span class="pre">RelCalc</span></code> command</em></p>
+<p>Original COM help: <a class="reference external" href="https://opendss.epri.com/AccumulatedL.html">https://opendss.epri.com/AccumulatedL.html</a></p>
+</dd></dl>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="altdss.PDElement.PDElementMixin.EnergyMeter">
-<span class="sig-name descname"><span class="pre">EnergyMeter</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference internal" href="altdss.DSSObj.html#altdss.DSSObj.DSSObj" title="altdss.DSSObj.DSSObj"><span class="pre">altdss.DSSObj.DSSObj</span></a></span></span><a class="headerlink" href="#altdss.PDElement.PDElementMixin.EnergyMeter" title="Link to this definition">#</a></dt>
-<dd></dd></dl>
+<span class="sig-name descname"><span class="pre">EnergyMeter</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">Optional</span><span class="p"><span class="pre">[</span></span><a class="reference internal" href="altdss.DSSObj.html#altdss.DSSObj.DSSObj" title="altdss.DSSObj.DSSObj"><span class="pre">altdss.DSSObj.DSSObj</span></a><span class="p"><span class="pre">]</span></span></span></span><a class="headerlink" href="#altdss.PDElement.PDElementMixin.EnergyMeter" title="Link to this definition">#</a></dt>
+<dd><p>Energy Meter this element is assigned to.</p>
+<p><em>Requires an energy meter with an updated zone.</em></p>
+<p>Original COM help: <a class="reference external" href="https://opendss.epri.com/EnergyMeter.html">https://opendss.epri.com/EnergyMeter.html</a></p>
+</dd></dl>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="altdss.PDElement.PDElementMixin.EnergyMeterName">
 <span class="sig-name descname"><span class="pre">EnergyMeterName</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">str</span></span></span><a class="headerlink" href="#altdss.PDElement.PDElementMixin.EnergyMeterName" title="Link to this definition">#</a></dt>
-<dd></dd></dl>
+<dd><p>Name of the Energy Meter this element is assigned to.</p>
+<p><em>Requires an energy meter with an updated zone.</em></p>
+<p>Original COM help: <a class="reference external" href="https://opendss.epri.com/EnergyMeter.html">https://opendss.epri.com/EnergyMeter.html</a></p>
+</dd></dl>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="altdss.PDElement.PDElementMixin.FromTerminal">
 <span class="sig-name descname"><span class="pre">FromTerminal</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">int</span></span></span><a class="headerlink" href="#altdss.PDElement.PDElementMixin.FromTerminal" title="Link to this definition">#</a></dt>
-<dd></dd></dl>
+<dd><p>Number of the terminal of this PD element that is on the “from” side.</p>
+<p><em>Requires an energy meter with an updated zone.</em></p>
+</dd></dl>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="altdss.PDElement.PDElementMixin.IsShunt">
 <span class="sig-name descname"><span class="pre">IsShunt</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">bool</span></span></span><a class="headerlink" href="#altdss.PDElement.PDElementMixin.IsShunt" title="Link to this definition">#</a></dt>
-<dd></dd></dl>
+<dd><p>Indicates if this PD element should be treated as a shunt element rather than a series element.</p>
+<p>Applies to Capacitor, Reactor, Fault and GICTransformer elements.</p>
+</dd></dl>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="altdss.PDElement.PDElementMixin.Lambda">
 <span class="sig-name descname"><span class="pre">Lambda</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">float</span></span></span><a class="headerlink" href="#altdss.PDElement.PDElementMixin.Lambda" title="Link to this definition">#</a></dt>
-<dd></dd></dl>
+<dd><p>Failure rate for this branch. Faults per year including length of line.</p>
+<p><em>Requires a previous call to <code class="docutils literal notranslate"><span class="pre">RelCalc</span></code> command</em></p>
+<p>Original COM help: <a class="reference external" href="https://opendss.epri.com/Lambda1.html">https://opendss.epri.com/Lambda1.html</a></p>
+</dd></dl>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="altdss.PDElement.PDElementMixin.NumCustomers">
 <span class="sig-name descname"><span class="pre">NumCustomers</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">int</span></span></span><a class="headerlink" href="#altdss.PDElement.PDElementMixin.NumCustomers" title="Link to this definition">#</a></dt>
-<dd></dd></dl>
+<dd><p>Number of customers, this branch.</p>
+<p><em>Requires an energy meter with an updated zone.</em></p>
+<p>Original COM help: <a class="reference external" href="https://opendss.epri.com/Numcustomers.html">https://opendss.epri.com/Numcustomers.html</a></p>
+</dd></dl>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="altdss.PDElement.PDElementMixin.ParentPDElement">
-<span class="sig-name descname"><span class="pre">ParentPDElement</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference internal" href="altdss.DSSObj.html#altdss.DSSObj.DSSObj" title="altdss.DSSObj.DSSObj"><span class="pre">altdss.DSSObj.DSSObj</span></a></span></span><a class="headerlink" href="#altdss.PDElement.PDElementMixin.ParentPDElement" title="Link to this definition">#</a></dt>
-<dd></dd></dl>
+<span class="sig-name descname"><span class="pre">ParentPDElement</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">Optional</span><span class="p"><span class="pre">[</span></span><a class="reference internal" href="altdss.DSSObj.html#altdss.DSSObj.DSSObj" title="altdss.DSSObj.DSSObj"><span class="pre">altdss.DSSObj.DSSObj</span></a><span class="p"><span class="pre">]</span></span></span></span><a class="headerlink" href="#altdss.PDElement.PDElementMixin.ParentPDElement" title="Link to this definition">#</a></dt>
+<dd><p>Parent PD element of this element, if any.</p>
+<p><em>Requires an energy meter with an updated zone.</em></p>
+</dd></dl>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="altdss.PDElement.PDElementMixin.SectionID">
 <span class="sig-name descname"><span class="pre">SectionID</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">int</span></span></span><a class="headerlink" href="#altdss.PDElement.PDElementMixin.SectionID" title="Link to this definition">#</a></dt>
-<dd></dd></dl>
+<dd><p>Integer ID of the feeder section that this PDElement branch is part of.</p>
+<p><em>Requires a previous call to <code class="docutils literal notranslate"><span class="pre">RelCalc</span></code> command</em></p>
+<p>Original COM help: <a class="reference external" href="https://opendss.epri.com/SectionID1.html">https://opendss.epri.com/SectionID1.html</a></p>
+</dd></dl>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="altdss.PDElement.PDElementMixin.TotalCustomers">
 <span class="sig-name descname"><span class="pre">TotalCustomers</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">int</span></span></span><a class="headerlink" href="#altdss.PDElement.PDElementMixin.TotalCustomers" title="Link to this definition">#</a></dt>
-<dd></dd></dl>
+<dd><p>Total number of customers from this branch to the end of the zone</p>
+<p><em>Requires a circuit with an energy meter with an updated zone.</em></p>
+<p>Original COM help: <a class="reference external" href="https://opendss.epri.com/TotalCustomers1.html">https://opendss.epri.com/TotalCustomers1.html</a></p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="altdss.PDElement.PDElementMixin.TotalKilometers">
+<span class="sig-name descname"><span class="pre">TotalKilometers</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">float</span></span></span><a class="headerlink" href="#altdss.PDElement.PDElementMixin.TotalKilometers" title="Link to this definition">#</a></dt>
+<dd><p>Total kilometers of line from this element to the end of the zone. For recloser siting algorithm.</p>
+<p><em>Requires a previous call to <code class="docutils literal notranslate"><span class="pre">RelCalc</span></code> command</em></p>
+</dd></dl>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="altdss.PDElement.PDElementMixin.TotalMiles">
 <span class="sig-name descname"><span class="pre">TotalMiles</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">float</span></span></span><a class="headerlink" href="#altdss.PDElement.PDElementMixin.TotalMiles" title="Link to this definition">#</a></dt>
-<dd></dd></dl>
+<dd><p>Total miles of line from this element to the end of the zone. For recloser siting algorithm.</p>
+<p><em>Requires a previous call to <code class="docutils literal notranslate"><span class="pre">RelCalc</span></code> command</em></p>
+<p>Original COM help: <a class="reference external" href="https://opendss.epri.com/TotalMiles1.html">https://opendss.epri.com/TotalMiles1.html</a></p>
+</dd></dl>
 
 <dl class="py method">
-<dt class="sig sig-object py" id="altdss.PDElement.PDElementMixin.pctEmerg">
-<span class="sig-name descname"><span class="pre">pctEmerg</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">allNodes</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">float</span></span></span><a class="headerlink" href="#altdss.PDElement.PDElementMixin.pctEmerg" title="Link to this definition">#</a></dt>
-<dd></dd></dl>
+<dt class="sig sig-object py" id="altdss.PDElement.PDElementMixin.pctEmergency">
+<span class="sig-name descname"><span class="pre">pctEmergency</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">allNodes</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">float</span></span></span><a class="headerlink" href="#altdss.PDElement.PDElementMixin.pctEmergency" title="Link to this definition">#</a></dt>
+<dd><p>Maximum current across the conductors as a percentage of the <strong>emergency</strong> ampere rating.</p>
+<p>By default, only the nodes from the <em>first terminal</em> is used for the maximum current, matching
+the behavior of the “export capacity” command. Pass <code class="docutils literal notranslate"><span class="pre">allNodes=True</span></code> to
+force the analysis to all terminals.</p>
+<p>See also:
+<a class="reference external" href="https://sourceforge.net/p/electricdss/discussion/beginners/thread/da5b93ca/">https://sourceforge.net/p/electricdss/discussion/beginners/thread/da5b93ca/</a></p>
+</dd></dl>
 
 <dl class="py method">
-<dt class="sig sig-object py" id="altdss.PDElement.PDElementMixin.pctNorm">
-<span class="sig-name descname"><span class="pre">pctNorm</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">allNodes</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">float</span></span></span><a class="headerlink" href="#altdss.PDElement.PDElementMixin.pctNorm" title="Link to this definition">#</a></dt>
-<dd></dd></dl>
+<dt class="sig sig-object py" id="altdss.PDElement.PDElementMixin.pctNormal">
+<span class="sig-name descname"><span class="pre">pctNormal</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">allNodes</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">float</span></span></span><a class="headerlink" href="#altdss.PDElement.PDElementMixin.pctNormal" title="Link to this definition">#</a></dt>
+<dd><p>Maximum current across the conductors as a percentage of the <strong>normal</strong> ampere rating.</p>
+<p>By default, only the nodes from the <em>first terminal</em> is used for the maximum current, matching
+the behavior of the “export capacity” command. Pass <code class="docutils literal notranslate"><span class="pre">allNodes=True</span></code> to
+force the analysis to all terminals.</p>
+<p>See also:
+<a class="reference external" href="https://sourceforge.net/p/electricdss/discussion/beginners/thread/da5b93ca/">https://sourceforge.net/p/electricdss/discussion/beginners/thread/da5b93ca/</a></p>
+</dd></dl>
 
 </dd></dl>
 
@@ -1002,6 +1156,8 @@ See <code class="docutils literal notranslate"><span class="pre">Obj_ToJSON</spa
 <li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#altdss.PDElement.PDElementBatch.__init__"><code class="docutils literal notranslate"><span class="pre">PDElementBatch.__init__()</span></code></a></li>
 <li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#altdss.PDElement.PDElementBatch.__iter__"><code class="docutils literal notranslate"><span class="pre">PDElementBatch.__iter__()</span></code></a></li>
 <li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#altdss.PDElement.PDElementBatch.__len__"><code class="docutils literal notranslate"><span class="pre">PDElementBatch.__len__()</span></code></a></li>
+<li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#altdss.PDElement.PDElementBatch.pctEmergency"><code class="docutils literal notranslate"><span class="pre">PDElementBatch.pctEmergency()</span></code></a></li>
+<li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#altdss.PDElement.PDElementBatch.pctNormal"><code class="docutils literal notranslate"><span class="pre">PDElementBatch.pctNormal()</span></code></a></li>
 <li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#altdss.PDElement.PDElementBatch.to_json"><code class="docutils literal notranslate"><span class="pre">PDElementBatch.to_json()</span></code></a></li>
 <li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#altdss.PDElement.PDElementBatch.to_list"><code class="docutils literal notranslate"><span class="pre">PDElementBatch.to_list()</span></code></a></li>
 </ul>
@@ -1018,6 +1174,8 @@ See <code class="docutils literal notranslate"><span class="pre">Obj_ToJSON</spa
 <li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#altdss.PDElement.PDElementBatchMixin.SectionID"><code class="docutils literal notranslate"><span class="pre">PDElementBatchMixin.SectionID()</span></code></a></li>
 <li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#altdss.PDElement.PDElementBatchMixin.TotalCustomers"><code class="docutils literal notranslate"><span class="pre">PDElementBatchMixin.TotalCustomers()</span></code></a></li>
 <li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#altdss.PDElement.PDElementBatchMixin.TotalMiles"><code class="docutils literal notranslate"><span class="pre">PDElementBatchMixin.TotalMiles()</span></code></a></li>
+<li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#altdss.PDElement.PDElementBatchMixin.pctEmergency"><code class="docutils literal notranslate"><span class="pre">PDElementBatchMixin.pctEmergency()</span></code></a></li>
+<li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#altdss.PDElement.PDElementBatchMixin.pctNormal"><code class="docutils literal notranslate"><span class="pre">PDElementBatchMixin.pctNormal()</span></code></a></li>
 </ul>
 </li>
 <li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#altdss.PDElement.PDElementMixin"><code class="docutils literal notranslate"><span class="pre">PDElementMixin</span></code></a><ul class="nav section-nav flex-column">
@@ -1031,9 +1189,10 @@ See <code class="docutils literal notranslate"><span class="pre">Obj_ToJSON</spa
 <li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#altdss.PDElement.PDElementMixin.ParentPDElement"><code class="docutils literal notranslate"><span class="pre">PDElementMixin.ParentPDElement()</span></code></a></li>
 <li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#altdss.PDElement.PDElementMixin.SectionID"><code class="docutils literal notranslate"><span class="pre">PDElementMixin.SectionID()</span></code></a></li>
 <li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#altdss.PDElement.PDElementMixin.TotalCustomers"><code class="docutils literal notranslate"><span class="pre">PDElementMixin.TotalCustomers()</span></code></a></li>
+<li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#altdss.PDElement.PDElementMixin.TotalKilometers"><code class="docutils literal notranslate"><span class="pre">PDElementMixin.TotalKilometers()</span></code></a></li>
 <li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#altdss.PDElement.PDElementMixin.TotalMiles"><code class="docutils literal notranslate"><span class="pre">PDElementMixin.TotalMiles()</span></code></a></li>
-<li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#altdss.PDElement.PDElementMixin.pctEmerg"><code class="docutils literal notranslate"><span class="pre">PDElementMixin.pctEmerg()</span></code></a></li>
-<li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#altdss.PDElement.PDElementMixin.pctNorm"><code class="docutils literal notranslate"><span class="pre">PDElementMixin.pctNorm()</span></code></a></li>
+<li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#altdss.PDElement.PDElementMixin.pctEmergency"><code class="docutils literal notranslate"><span class="pre">PDElementMixin.pctEmergency()</span></code></a></li>
+<li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#altdss.PDElement.PDElementMixin.pctNormal"><code class="docutils literal notranslate"><span class="pre">PDElementMixin.pctNormal()</span></code></a></li>
 </ul>
 </li>
 </ul>
