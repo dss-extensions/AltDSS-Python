@@ -635,6 +635,16 @@ def test_new_em():
     create_ref_ckt13(altdss)
     em = altdss.EnergyMeter.new('sub', Element=altdss.Transformer['sub'], Terminal=1)
 
+def test_register_values():
+    create_ref_ckt13(altdss)
+    em = altdss.EnergyMeter.new('sub', Element=altdss.Transformer['sub'], Terminal=1)
+    altdss('solve mode=daily')
+    np.testing.assert_allclose(em.RegisterValues()[:4], [85609.18080707958, 41674.44443457667, 3567.050400975543, 3967.2483965911006])
+
+    altdss('new generator.test')
+    generator = altdss.Generator[0]
+    print(generator.RegistersDict())
+
 
 def test_complex_property():
     altdss.ClearAll()
@@ -756,4 +766,4 @@ def test_no_new_attr():
 
 if __name__ == '__main__':
     # Adjust for manual running a test-case
-    test_obj_array()
+    test_register_values()

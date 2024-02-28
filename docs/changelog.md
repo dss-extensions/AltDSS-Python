@@ -3,6 +3,10 @@
 Remember that changes in our alternative OpenDSS engine, currently known as AltDSS/DSS C-API, are always
 relevant. See [DSS C-API's repository](https://github.com/dss-extensions/dss_capi/) for more information.
 
+## 0.2.1
+
+- Meter/Generator/etc.: Remove the previous workaround for issue with the DSS C-API headers related to `RegisterValues` -- now working without it. Add test.
+
 ## 0.2.0
 
 Version incremented to 0.2.0 due to the number of changes in the function/property names. The engine is also updated to DSS C-API 0.14.2.
