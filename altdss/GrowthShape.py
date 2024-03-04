@@ -24,89 +24,89 @@ class GrowthShape(DSSObj):
 
 
     def _get_NPts(self) -> int:
-        """
-        Number of points to expect in subsequent vector.
-
-        DSS property name: `NPts`, DSS property index: 1.
-        """
         return self._lib.Obj_GetInt32(self._ptr, 1)
 
     def _set_NPts(self, value: int, flags: enums.SetterFlags = 0):
         self._lib.Obj_SetInt32(self._ptr, 1, value, flags)
 
     NPts = property(_get_NPts, _set_NPts) # type: int
+    """
+    Number of points to expect in subsequent vector.
+
+    DSS property name: `NPts`, DSS property index: 1.
+    """
 
     def _get_Year(self) -> Float64Array:
-        """
-        Array of year values, or a text file spec, corresponding to the multipliers. Enter only those years where the growth changes. May be any integer sequence -- just so it is consistent. See help on Mult.
-
-        DSS property name: `Year`, DSS property index: 2.
-        """
         return self._get_float64_array(self._lib.Obj_GetFloat64Array, self._ptr, 2)
 
     def _set_Year(self, value: Float64Array, flags: enums.SetterFlags = 0):
         self._set_float64_array_o(2, value, flags)
 
     Year = property(_get_Year, _set_Year) # type: Float64Array
+    """
+    Array of year values, or a text file spec, corresponding to the multipliers. Enter only those years where the growth changes. May be any integer sequence -- just so it is consistent. See help on Mult.
+
+    DSS property name: `Year`, DSS property index: 2.
+    """
 
     def _get_Mult(self) -> Float64Array:
-        """
-        Array of growth multiplier values, or a text file spec, corresponding to the year values. Enter the multiplier by which you would multiply the previous year's load to get the present year's.
-
-        Examples:
-
-          Year = [1, 2, 5]   Mult=[1.05, 1.025, 1.02].
-          Year= (File=years.txt) Mult= (file=mults.txt).
-
-        Text files contain one value per line.
-
-        DSS property name: `Mult`, DSS property index: 3.
-        """
         return self._get_float64_array(self._lib.Obj_GetFloat64Array, self._ptr, 3)
 
     def _set_Mult(self, value: Float64Array, flags: enums.SetterFlags = 0):
         self._set_float64_array_o(3, value, flags)
 
     Mult = property(_get_Mult, _set_Mult) # type: Float64Array
+    """
+    Array of growth multiplier values, or a text file spec, corresponding to the year values. Enter the multiplier by which you would multiply the previous year's load to get the present year's.
+
+    Examples:
+
+      Year = [1, 2, 5]   Mult=[1.05, 1.025, 1.02].
+      Year= (File=years.txt) Mult= (file=mults.txt).
+
+    Text files contain one value per line.
+
+    DSS property name: `Mult`, DSS property index: 3.
+    """
 
     def _get_CSVFile(self) -> str:
-        """
-        Switch input of growth curve data to a csv file containing (year, mult) points, one per line.
-
-        DSS property name: `CSVFile`, DSS property index: 4.
-        """
         return self._get_prop_string(4)
 
     def _set_CSVFile(self, value: AnyStr, flags: enums.SetterFlags = 0):
         self._set_string_o(4, value, flags)
 
     CSVFile = property(_get_CSVFile, _set_CSVFile) # type: str
+    """
+    Switch input of growth curve data to a csv file containing (year, mult) points, one per line.
+
+    DSS property name: `CSVFile`, DSS property index: 4.
+    """
 
     def _get_SngFile(self) -> str:
-        """
-        Switch input of growth curve data to a binary file of singles containing (year, mult) points, packed one after another.
-
-        DSS property name: `SngFile`, DSS property index: 5.
-        """
         return self._get_prop_string(5)
 
     def _set_SngFile(self, value: AnyStr, flags: enums.SetterFlags = 0):
         self._set_string_o(5, value, flags)
 
     SngFile = property(_get_SngFile, _set_SngFile) # type: str
+    """
+    Switch input of growth curve data to a binary file of singles containing (year, mult) points, packed one after another.
+
+    DSS property name: `SngFile`, DSS property index: 5.
+    """
 
     def _get_DblFile(self) -> str:
-        """
-        Switch input of growth curve data to a binary file of doubles containing (year, mult) points, packed one after another.
-
-        DSS property name: `DblFile`, DSS property index: 6.
-        """
         return self._get_prop_string(6)
 
     def _set_DblFile(self, value: AnyStr, flags: enums.SetterFlags = 0):
         self._set_string_o(6, value, flags)
 
     DblFile = property(_get_DblFile, _set_DblFile) # type: str
+    """
+    Switch input of growth curve data to a binary file of doubles containing (year, mult) points, packed one after another.
+
+    DSS property name: `DblFile`, DSS property index: 6.
+    """
 
     def Like(self, value: AnyStr):
         """
@@ -140,24 +140,19 @@ class GrowthShapeBatch(DSSBatch):
             yield from DSSBatch.__iter__(self)
 
     def _get_NPts(self) -> BatchInt32ArrayProxy:
-        """
-        Number of points to expect in subsequent vector.
-
-        DSS property name: `NPts`, DSS property index: 1.
-        """
         return BatchInt32ArrayProxy(self, 1)
 
     def _set_NPts(self, value: Union[int, Int32Array], flags: enums.SetterFlags = 0):
         self._set_batch_int32_array(1, value, flags)
 
     NPts = property(_get_NPts, _set_NPts) # type: BatchInt32ArrayProxy
+    """
+    Number of points to expect in subsequent vector.
+
+    DSS property name: `NPts`, DSS property index: 1.
+    """
 
     def _get_Year(self) -> List[Float64Array]:
-        """
-        Array of year values, or a text file spec, corresponding to the multipliers. Enter only those years where the growth changes. May be any integer sequence -- just so it is consistent. See help on Mult.
-
-        DSS property name: `Year`, DSS property index: 2.
-        """
         return [
             self._get_float64_array(self._lib.Obj_GetFloat64Array, x, 2)
             for x in self._unpack()
@@ -167,20 +162,13 @@ class GrowthShapeBatch(DSSBatch):
         self._set_batch_float64_array_prop(2, value, flags)
 
     Year = property(_get_Year, _set_Year) # type: List[Float64Array]
+    """
+    Array of year values, or a text file spec, corresponding to the multipliers. Enter only those years where the growth changes. May be any integer sequence -- just so it is consistent. See help on Mult.
+
+    DSS property name: `Year`, DSS property index: 2.
+    """
 
     def _get_Mult(self) -> List[Float64Array]:
-        """
-        Array of growth multiplier values, or a text file spec, corresponding to the year values. Enter the multiplier by which you would multiply the previous year's load to get the present year's.
-
-        Examples:
-
-          Year = [1, 2, 5]   Mult=[1.05, 1.025, 1.02].
-          Year= (File=years.txt) Mult= (file=mults.txt).
-
-        Text files contain one value per line.
-
-        DSS property name: `Mult`, DSS property index: 3.
-        """
         return [
             self._get_float64_array(self._lib.Obj_GetFloat64Array, x, 3)
             for x in self._unpack()
@@ -190,45 +178,57 @@ class GrowthShapeBatch(DSSBatch):
         self._set_batch_float64_array_prop(3, value, flags)
 
     Mult = property(_get_Mult, _set_Mult) # type: List[Float64Array]
+    """
+    Array of growth multiplier values, or a text file spec, corresponding to the year values. Enter the multiplier by which you would multiply the previous year's load to get the present year's.
+
+    Examples:
+
+      Year = [1, 2, 5]   Mult=[1.05, 1.025, 1.02].
+      Year= (File=years.txt) Mult= (file=mults.txt).
+
+    Text files contain one value per line.
+
+    DSS property name: `Mult`, DSS property index: 3.
+    """
 
     def _get_CSVFile(self) -> List[str]:
-        """
-        Switch input of growth curve data to a csv file containing (year, mult) points, one per line.
-
-        DSS property name: `CSVFile`, DSS property index: 4.
-        """
         return self._get_batch_str_prop(4)
 
     def _set_CSVFile(self, value: Union[AnyStr, List[AnyStr]], flags: enums.SetterFlags = 0):
         self._set_batch_string(4, value, flags)
 
     CSVFile = property(_get_CSVFile, _set_CSVFile) # type: List[str]
+    """
+    Switch input of growth curve data to a csv file containing (year, mult) points, one per line.
+
+    DSS property name: `CSVFile`, DSS property index: 4.
+    """
 
     def _get_SngFile(self) -> List[str]:
-        """
-        Switch input of growth curve data to a binary file of singles containing (year, mult) points, packed one after another.
-
-        DSS property name: `SngFile`, DSS property index: 5.
-        """
         return self._get_batch_str_prop(5)
 
     def _set_SngFile(self, value: Union[AnyStr, List[AnyStr]], flags: enums.SetterFlags = 0):
         self._set_batch_string(5, value, flags)
 
     SngFile = property(_get_SngFile, _set_SngFile) # type: List[str]
+    """
+    Switch input of growth curve data to a binary file of singles containing (year, mult) points, packed one after another.
+
+    DSS property name: `SngFile`, DSS property index: 5.
+    """
 
     def _get_DblFile(self) -> List[str]:
-        """
-        Switch input of growth curve data to a binary file of doubles containing (year, mult) points, packed one after another.
-
-        DSS property name: `DblFile`, DSS property index: 6.
-        """
         return self._get_batch_str_prop(6)
 
     def _set_DblFile(self, value: Union[AnyStr, List[AnyStr]], flags: enums.SetterFlags = 0):
         self._set_batch_string(6, value, flags)
 
     DblFile = property(_get_DblFile, _set_DblFile) # type: List[str]
+    """
+    Switch input of growth curve data to a binary file of doubles containing (year, mult) points, packed one after another.
+
+    DSS property name: `DblFile`, DSS property index: 6.
+    """
 
     def Like(self, value: AnyStr, flags: enums.SetterFlags = 0):
         """

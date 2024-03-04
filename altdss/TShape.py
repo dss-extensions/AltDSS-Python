@@ -31,159 +31,159 @@ class TShape(DSSObj):
 
 
     def _get_NPts(self) -> int:
-        """
-        Max number of points to expect in temperature shape vectors. This gets reset to the number of Temperature values found if less than specified.
-
-        DSS property name: `NPts`, DSS property index: 1.
-        """
         return self._lib.Obj_GetInt32(self._ptr, 1)
 
     def _set_NPts(self, value: int, flags: enums.SetterFlags = 0):
         self._lib.Obj_SetInt32(self._ptr, 1, value, flags)
 
     NPts = property(_get_NPts, _set_NPts) # type: int
+    """
+    Max number of points to expect in temperature shape vectors. This gets reset to the number of Temperature values found if less than specified.
+
+    DSS property name: `NPts`, DSS property index: 1.
+    """
 
     def _get_Interval(self) -> float:
-        """
-        Time interval for fixed interval data, hrs. Default = 1. If Interval = 0 then time data (in hours) may be at irregular intervals and time value must be specified using either the Hour property or input files. Then values are interpolated when Interval=0, but not for fixed interval data.  
-
-        See also "sinterval" and "minterval".
-
-        DSS property name: `Interval`, DSS property index: 2.
-        """
         return self._lib.Obj_GetFloat64(self._ptr, 2)
 
     def _set_Interval(self, value: float, flags: enums.SetterFlags = 0):
         self._lib.Obj_SetFloat64(self._ptr, 2, value, flags)
 
     Interval = property(_get_Interval, _set_Interval) # type: float
+    """
+    Time interval for fixed interval data, hrs. Default = 1. If Interval = 0 then time data (in hours) may be at irregular intervals and time value must be specified using either the Hour property or input files. Then values are interpolated when Interval=0, but not for fixed interval data.  
+
+    See also "sinterval" and "minterval".
+
+    DSS property name: `Interval`, DSS property index: 2.
+    """
 
     def _get_Temp(self) -> Float64Array:
-        """
-        Array of temperature values.  Units should be compatible with the object using the data. You can also use the syntax: 
-        Temp = (file=filename)     !for text file one value per line
-        Temp = (dblfile=filename)  !for packed file of doubles
-        Temp = (sngfile=filename)  !for packed file of singles 
-
-        Note: this property will reset Npts if the  number of values in the files are fewer.
-
-        DSS property name: `Temp`, DSS property index: 3.
-        """
         return self._get_float64_array(self._lib.Obj_GetFloat64Array, self._ptr, 3)
 
     def _set_Temp(self, value: Float64Array, flags: enums.SetterFlags = 0):
         self._set_float64_array_o(3, value, flags)
 
     Temp = property(_get_Temp, _set_Temp) # type: Float64Array
+    """
+    Array of temperature values.  Units should be compatible with the object using the data. You can also use the syntax: 
+    Temp = (file=filename)     !for text file one value per line
+    Temp = (dblfile=filename)  !for packed file of doubles
+    Temp = (sngfile=filename)  !for packed file of singles 
+
+    Note: this property will reset Npts if the  number of values in the files are fewer.
+
+    DSS property name: `Temp`, DSS property index: 3.
+    """
 
     def _get_Hour(self) -> Float64Array:
-        """
-        Array of hour values. Only necessary to define this property for variable interval data. If the data are fixed interval, do not use this property. You can also use the syntax: 
-        hour = (file=filename)     !for text file one value per line
-        hour = (dblfile=filename)  !for packed file of doubles
-        hour = (sngfile=filename)  !for packed file of singles 
-
-        DSS property name: `Hour`, DSS property index: 4.
-        """
         return self._get_float64_array(self._lib.Obj_GetFloat64Array, self._ptr, 4)
 
     def _set_Hour(self, value: Float64Array, flags: enums.SetterFlags = 0):
         self._set_float64_array_o(4, value, flags)
 
     Hour = property(_get_Hour, _set_Hour) # type: Float64Array
+    """
+    Array of hour values. Only necessary to define this property for variable interval data. If the data are fixed interval, do not use this property. You can also use the syntax: 
+    hour = (file=filename)     !for text file one value per line
+    hour = (dblfile=filename)  !for packed file of doubles
+    hour = (sngfile=filename)  !for packed file of singles 
+
+    DSS property name: `Hour`, DSS property index: 4.
+    """
 
     def _get_Mean(self) -> float:
-        """
-        Mean of the temperature curve values.  This is computed on demand the first time a value is needed.  However, you may set it to another value independently. Used for Monte Carlo load simulations.
-
-        DSS property name: `Mean`, DSS property index: 5.
-        """
         return self._lib.Obj_GetFloat64(self._ptr, 5)
 
     def _set_Mean(self, value: float, flags: enums.SetterFlags = 0):
         self._lib.Obj_SetFloat64(self._ptr, 5, value, flags)
 
     Mean = property(_get_Mean, _set_Mean) # type: float
+    """
+    Mean of the temperature curve values.  This is computed on demand the first time a value is needed.  However, you may set it to another value independently. Used for Monte Carlo load simulations.
+
+    DSS property name: `Mean`, DSS property index: 5.
+    """
 
     def _get_StdDev(self) -> float:
-        """
-        Standard deviation of the temperatures.  This is computed on demand the first time a value is needed.  However, you may set it to another value independently.Is overwritten if you subsequently read in a curve
-
-        Used for Monte Carlo load simulations.
-
-        DSS property name: `StdDev`, DSS property index: 6.
-        """
         return self._lib.Obj_GetFloat64(self._ptr, 6)
 
     def _set_StdDev(self, value: float, flags: enums.SetterFlags = 0):
         self._lib.Obj_SetFloat64(self._ptr, 6, value, flags)
 
     StdDev = property(_get_StdDev, _set_StdDev) # type: float
+    """
+    Standard deviation of the temperatures.  This is computed on demand the first time a value is needed.  However, you may set it to another value independently.Is overwritten if you subsequently read in a curve
+
+    Used for Monte Carlo load simulations.
+
+    DSS property name: `StdDev`, DSS property index: 6.
+    """
 
     def _get_CSVFile(self) -> str:
-        """
-        Switch input of  temperature curve data to a csv file containing (hour, Temp) points, or simply (Temp) values for fixed time interval data, one per line. NOTE: This action may reset the number of points to a lower value.
-
-        DSS property name: `CSVFile`, DSS property index: 7.
-        """
         return self._get_prop_string(7)
 
     def _set_CSVFile(self, value: AnyStr, flags: enums.SetterFlags = 0):
         self._set_string_o(7, value, flags)
 
     CSVFile = property(_get_CSVFile, _set_CSVFile) # type: str
+    """
+    Switch input of  temperature curve data to a csv file containing (hour, Temp) points, or simply (Temp) values for fixed time interval data, one per line. NOTE: This action may reset the number of points to a lower value.
+
+    DSS property name: `CSVFile`, DSS property index: 7.
+    """
 
     def _get_SngFile(self) -> str:
-        """
-        Switch input of  temperature curve data to a binary file of singles containing (hour, Temp) points, or simply (Temp) values for fixed time interval data, packed one after another. NOTE: This action may reset the number of points to a lower value.
-
-        DSS property name: `SngFile`, DSS property index: 8.
-        """
         return self._get_prop_string(8)
 
     def _set_SngFile(self, value: AnyStr, flags: enums.SetterFlags = 0):
         self._set_string_o(8, value, flags)
 
     SngFile = property(_get_SngFile, _set_SngFile) # type: str
+    """
+    Switch input of  temperature curve data to a binary file of singles containing (hour, Temp) points, or simply (Temp) values for fixed time interval data, packed one after another. NOTE: This action may reset the number of points to a lower value.
+
+    DSS property name: `SngFile`, DSS property index: 8.
+    """
 
     def _get_DblFile(self) -> str:
-        """
-        Switch input of  temperature curve data to a binary file of doubles containing (hour, Temp) points, or simply (Temp) values for fixed time interval data, packed one after another. NOTE: This action may reset the number of points to a lower value.
-
-        DSS property name: `DblFile`, DSS property index: 9.
-        """
         return self._get_prop_string(9)
 
     def _set_DblFile(self, value: AnyStr, flags: enums.SetterFlags = 0):
         self._set_string_o(9, value, flags)
 
     DblFile = property(_get_DblFile, _set_DblFile) # type: str
+    """
+    Switch input of  temperature curve data to a binary file of doubles containing (hour, Temp) points, or simply (Temp) values for fixed time interval data, packed one after another. NOTE: This action may reset the number of points to a lower value.
+
+    DSS property name: `DblFile`, DSS property index: 9.
+    """
 
     def _get_SInterval(self) -> float:
-        """
-        Specify fixed interval in SECONDS. Alternate way to specify Interval property.
-
-        DSS property name: `SInterval`, DSS property index: 10.
-        """
         return self._lib.Obj_GetFloat64(self._ptr, 10)
 
     def _set_SInterval(self, value: float, flags: enums.SetterFlags = 0):
         self._lib.Obj_SetFloat64(self._ptr, 10, value, flags)
 
     SInterval = property(_get_SInterval, _set_SInterval) # type: float
+    """
+    Specify fixed interval in SECONDS. Alternate way to specify Interval property.
+
+    DSS property name: `SInterval`, DSS property index: 10.
+    """
 
     def _get_MInterval(self) -> float:
-        """
-        Specify fixed interval in MINUTES. Alternate way to specify Interval property.
-
-        DSS property name: `MInterval`, DSS property index: 11.
-        """
         return self._lib.Obj_GetFloat64(self._ptr, 11)
 
     def _set_MInterval(self, value: float, flags: enums.SetterFlags = 0):
         self._lib.Obj_SetFloat64(self._ptr, 11, value, flags)
 
     MInterval = property(_get_MInterval, _set_MInterval) # type: float
+    """
+    Specify fixed interval in MINUTES. Alternate way to specify Interval property.
+
+    DSS property name: `MInterval`, DSS property index: 11.
+    """
 
     def Action(self, value: Union[AnyStr, int, enums.TShapeAction], flags: enums.SetterFlags = 0):
         """
@@ -243,44 +243,34 @@ class TShapeBatch(DSSBatch):
             yield from DSSBatch.__iter__(self)
 
     def _get_NPts(self) -> BatchInt32ArrayProxy:
-        """
-        Max number of points to expect in temperature shape vectors. This gets reset to the number of Temperature values found if less than specified.
-
-        DSS property name: `NPts`, DSS property index: 1.
-        """
         return BatchInt32ArrayProxy(self, 1)
 
     def _set_NPts(self, value: Union[int, Int32Array], flags: enums.SetterFlags = 0):
         self._set_batch_int32_array(1, value, flags)
 
     NPts = property(_get_NPts, _set_NPts) # type: BatchInt32ArrayProxy
+    """
+    Max number of points to expect in temperature shape vectors. This gets reset to the number of Temperature values found if less than specified.
+
+    DSS property name: `NPts`, DSS property index: 1.
+    """
 
     def _get_Interval(self) -> BatchFloat64ArrayProxy:
-        """
-        Time interval for fixed interval data, hrs. Default = 1. If Interval = 0 then time data (in hours) may be at irregular intervals and time value must be specified using either the Hour property or input files. Then values are interpolated when Interval=0, but not for fixed interval data.  
-
-        See also "sinterval" and "minterval".
-
-        DSS property name: `Interval`, DSS property index: 2.
-        """
         return BatchFloat64ArrayProxy(self, 2)
 
     def _set_Interval(self, value: Union[float, Float64Array], flags: enums.SetterFlags = 0):
         self._set_batch_float64_array(2, value, flags)
 
     Interval = property(_get_Interval, _set_Interval) # type: BatchFloat64ArrayProxy
+    """
+    Time interval for fixed interval data, hrs. Default = 1. If Interval = 0 then time data (in hours) may be at irregular intervals and time value must be specified using either the Hour property or input files. Then values are interpolated when Interval=0, but not for fixed interval data.  
+
+    See also "sinterval" and "minterval".
+
+    DSS property name: `Interval`, DSS property index: 2.
+    """
 
     def _get_Temp(self) -> List[Float64Array]:
-        """
-        Array of temperature values.  Units should be compatible with the object using the data. You can also use the syntax: 
-        Temp = (file=filename)     !for text file one value per line
-        Temp = (dblfile=filename)  !for packed file of doubles
-        Temp = (sngfile=filename)  !for packed file of singles 
-
-        Note: this property will reset Npts if the  number of values in the files are fewer.
-
-        DSS property name: `Temp`, DSS property index: 3.
-        """
         return [
             self._get_float64_array(self._lib.Obj_GetFloat64Array, x, 3)
             for x in self._unpack()
@@ -290,16 +280,18 @@ class TShapeBatch(DSSBatch):
         self._set_batch_float64_array_prop(3, value, flags)
 
     Temp = property(_get_Temp, _set_Temp) # type: List[Float64Array]
+    """
+    Array of temperature values.  Units should be compatible with the object using the data. You can also use the syntax: 
+    Temp = (file=filename)     !for text file one value per line
+    Temp = (dblfile=filename)  !for packed file of doubles
+    Temp = (sngfile=filename)  !for packed file of singles 
+
+    Note: this property will reset Npts if the  number of values in the files are fewer.
+
+    DSS property name: `Temp`, DSS property index: 3.
+    """
 
     def _get_Hour(self) -> List[Float64Array]:
-        """
-        Array of hour values. Only necessary to define this property for variable interval data. If the data are fixed interval, do not use this property. You can also use the syntax: 
-        hour = (file=filename)     !for text file one value per line
-        hour = (dblfile=filename)  !for packed file of doubles
-        hour = (sngfile=filename)  !for packed file of singles 
-
-        DSS property name: `Hour`, DSS property index: 4.
-        """
         return [
             self._get_float64_array(self._lib.Obj_GetFloat64Array, x, 4)
             for x in self._unpack()
@@ -309,99 +301,107 @@ class TShapeBatch(DSSBatch):
         self._set_batch_float64_array_prop(4, value, flags)
 
     Hour = property(_get_Hour, _set_Hour) # type: List[Float64Array]
+    """
+    Array of hour values. Only necessary to define this property for variable interval data. If the data are fixed interval, do not use this property. You can also use the syntax: 
+    hour = (file=filename)     !for text file one value per line
+    hour = (dblfile=filename)  !for packed file of doubles
+    hour = (sngfile=filename)  !for packed file of singles 
+
+    DSS property name: `Hour`, DSS property index: 4.
+    """
 
     def _get_Mean(self) -> BatchFloat64ArrayProxy:
-        """
-        Mean of the temperature curve values.  This is computed on demand the first time a value is needed.  However, you may set it to another value independently. Used for Monte Carlo load simulations.
-
-        DSS property name: `Mean`, DSS property index: 5.
-        """
         return BatchFloat64ArrayProxy(self, 5)
 
     def _set_Mean(self, value: Union[float, Float64Array], flags: enums.SetterFlags = 0):
         self._set_batch_float64_array(5, value, flags)
 
     Mean = property(_get_Mean, _set_Mean) # type: BatchFloat64ArrayProxy
+    """
+    Mean of the temperature curve values.  This is computed on demand the first time a value is needed.  However, you may set it to another value independently. Used for Monte Carlo load simulations.
+
+    DSS property name: `Mean`, DSS property index: 5.
+    """
 
     def _get_StdDev(self) -> BatchFloat64ArrayProxy:
-        """
-        Standard deviation of the temperatures.  This is computed on demand the first time a value is needed.  However, you may set it to another value independently.Is overwritten if you subsequently read in a curve
-
-        Used for Monte Carlo load simulations.
-
-        DSS property name: `StdDev`, DSS property index: 6.
-        """
         return BatchFloat64ArrayProxy(self, 6)
 
     def _set_StdDev(self, value: Union[float, Float64Array], flags: enums.SetterFlags = 0):
         self._set_batch_float64_array(6, value, flags)
 
     StdDev = property(_get_StdDev, _set_StdDev) # type: BatchFloat64ArrayProxy
+    """
+    Standard deviation of the temperatures.  This is computed on demand the first time a value is needed.  However, you may set it to another value independently.Is overwritten if you subsequently read in a curve
+
+    Used for Monte Carlo load simulations.
+
+    DSS property name: `StdDev`, DSS property index: 6.
+    """
 
     def _get_CSVFile(self) -> List[str]:
-        """
-        Switch input of  temperature curve data to a csv file containing (hour, Temp) points, or simply (Temp) values for fixed time interval data, one per line. NOTE: This action may reset the number of points to a lower value.
-
-        DSS property name: `CSVFile`, DSS property index: 7.
-        """
         return self._get_batch_str_prop(7)
 
     def _set_CSVFile(self, value: Union[AnyStr, List[AnyStr]], flags: enums.SetterFlags = 0):
         self._set_batch_string(7, value, flags)
 
     CSVFile = property(_get_CSVFile, _set_CSVFile) # type: List[str]
+    """
+    Switch input of  temperature curve data to a csv file containing (hour, Temp) points, or simply (Temp) values for fixed time interval data, one per line. NOTE: This action may reset the number of points to a lower value.
+
+    DSS property name: `CSVFile`, DSS property index: 7.
+    """
 
     def _get_SngFile(self) -> List[str]:
-        """
-        Switch input of  temperature curve data to a binary file of singles containing (hour, Temp) points, or simply (Temp) values for fixed time interval data, packed one after another. NOTE: This action may reset the number of points to a lower value.
-
-        DSS property name: `SngFile`, DSS property index: 8.
-        """
         return self._get_batch_str_prop(8)
 
     def _set_SngFile(self, value: Union[AnyStr, List[AnyStr]], flags: enums.SetterFlags = 0):
         self._set_batch_string(8, value, flags)
 
     SngFile = property(_get_SngFile, _set_SngFile) # type: List[str]
+    """
+    Switch input of  temperature curve data to a binary file of singles containing (hour, Temp) points, or simply (Temp) values for fixed time interval data, packed one after another. NOTE: This action may reset the number of points to a lower value.
+
+    DSS property name: `SngFile`, DSS property index: 8.
+    """
 
     def _get_DblFile(self) -> List[str]:
-        """
-        Switch input of  temperature curve data to a binary file of doubles containing (hour, Temp) points, or simply (Temp) values for fixed time interval data, packed one after another. NOTE: This action may reset the number of points to a lower value.
-
-        DSS property name: `DblFile`, DSS property index: 9.
-        """
         return self._get_batch_str_prop(9)
 
     def _set_DblFile(self, value: Union[AnyStr, List[AnyStr]], flags: enums.SetterFlags = 0):
         self._set_batch_string(9, value, flags)
 
     DblFile = property(_get_DblFile, _set_DblFile) # type: List[str]
+    """
+    Switch input of  temperature curve data to a binary file of doubles containing (hour, Temp) points, or simply (Temp) values for fixed time interval data, packed one after another. NOTE: This action may reset the number of points to a lower value.
+
+    DSS property name: `DblFile`, DSS property index: 9.
+    """
 
     def _get_SInterval(self) -> BatchFloat64ArrayProxy:
-        """
-        Specify fixed interval in SECONDS. Alternate way to specify Interval property.
-
-        DSS property name: `SInterval`, DSS property index: 10.
-        """
         return BatchFloat64ArrayProxy(self, 10)
 
     def _set_SInterval(self, value: Union[float, Float64Array], flags: enums.SetterFlags = 0):
         self._set_batch_float64_array(10, value, flags)
 
     SInterval = property(_get_SInterval, _set_SInterval) # type: BatchFloat64ArrayProxy
+    """
+    Specify fixed interval in SECONDS. Alternate way to specify Interval property.
+
+    DSS property name: `SInterval`, DSS property index: 10.
+    """
 
     def _get_MInterval(self) -> BatchFloat64ArrayProxy:
-        """
-        Specify fixed interval in MINUTES. Alternate way to specify Interval property.
-
-        DSS property name: `MInterval`, DSS property index: 11.
-        """
         return BatchFloat64ArrayProxy(self, 11)
 
     def _set_MInterval(self, value: Union[float, Float64Array], flags: enums.SetterFlags = 0):
         self._set_batch_float64_array(11, value, flags)
 
     MInterval = property(_get_MInterval, _set_MInterval) # type: BatchFloat64ArrayProxy
+    """
+    Specify fixed interval in MINUTES. Alternate way to specify Interval property.
+
+    DSS property name: `MInterval`, DSS property index: 11.
+    """
 
     def Action(self, value: Union[AnyStr, int, enums.TShapeAction], flags: enums.SetterFlags = 0):
         """

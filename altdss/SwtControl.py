@@ -33,24 +33,19 @@ class SwtControl(DSSObj, CircuitElementMixin):
        CircuitElementMixin.__init__(self)
 
     def _get_SwitchedObj_str(self) -> str:
-        """
-        Name of circuit element switch that the SwtControl operates. Specify the full object class and name.
-
-        DSS property name: `SwitchedObj`, DSS property index: 1.
-        """
         return self._get_prop_string(1)
 
     def _set_SwitchedObj_str(self, value: AnyStr, flags: enums.SetterFlags = 0):
         self._set_string_o(1, value, flags)
 
     SwitchedObj_str = property(_get_SwitchedObj_str, _set_SwitchedObj_str) # type: str
+    """
+    Name of circuit element switch that the SwtControl operates. Specify the full object class and name.
+
+    DSS property name: `SwitchedObj`, DSS property index: 1.
+    """
 
     def _get_SwitchedObj(self) -> DSSObj:
-        """
-        Name of circuit element switch that the SwtControl operates. Specify the full object class and name.
-
-        DSS property name: `SwitchedObj`, DSS property index: 1.
-        """
         return self._get_obj(1, None)
 
     def _set_SwitchedObj(self, value: Union[AnyStr, DSSObj], flags: enums.SetterFlags = 0):
@@ -61,52 +56,52 @@ class SwtControl(DSSObj, CircuitElementMixin):
         self._set_string_o(1, value, flags)
 
     SwitchedObj = property(_get_SwitchedObj, _set_SwitchedObj) # type: DSSObj
+    """
+    Name of circuit element switch that the SwtControl operates. Specify the full object class and name.
+
+    DSS property name: `SwitchedObj`, DSS property index: 1.
+    """
 
     def _get_SwitchedTerm(self) -> int:
-        """
-        Terminal number of the controlled element switch. 1 or 2, typically.  Default is 1.
-
-        DSS property name: `SwitchedTerm`, DSS property index: 2.
-        """
         return self._lib.Obj_GetInt32(self._ptr, 2)
 
     def _set_SwitchedTerm(self, value: int, flags: enums.SetterFlags = 0):
         self._lib.Obj_SetInt32(self._ptr, 2, value, flags)
 
     SwitchedTerm = property(_get_SwitchedTerm, _set_SwitchedTerm) # type: int
+    """
+    Terminal number of the controlled element switch. 1 or 2, typically.  Default is 1.
+
+    DSS property name: `SwitchedTerm`, DSS property index: 2.
+    """
 
     def _get_Lock(self) -> bool:
-        """
-        {Yes | No} Delayed action. Sends CTRL_LOCK or CTRL_UNLOCK message to control queue. After delay time, controlled switch is locked in its present open / close state or unlocked. Switch will not respond to either manual (Action) or automatic (APIs) control or internal OpenDSS Reset when locked.
-
-        DSS property name: `Lock`, DSS property index: 4.
-        """
         return self._lib.Obj_GetInt32(self._ptr, 4) != 0
 
     def _set_Lock(self, value: bool, flags: enums.SetterFlags = 0):
         self._lib.Obj_SetInt32(self._ptr, 4, value, flags)
 
     Lock = property(_get_Lock, _set_Lock) # type: bool
+    """
+    {Yes | No} Delayed action. Sends CTRL_LOCK or CTRL_UNLOCK message to control queue. After delay time, controlled switch is locked in its present open / close state or unlocked. Switch will not respond to either manual (Action) or automatic (APIs) control or internal OpenDSS Reset when locked.
+
+    DSS property name: `Lock`, DSS property index: 4.
+    """
 
     def _get_Delay(self) -> float:
-        """
-        Operating time delay (sec) of the switch. Defaults to 120.
-
-        DSS property name: `Delay`, DSS property index: 5.
-        """
         return self._lib.Obj_GetFloat64(self._ptr, 5)
 
     def _set_Delay(self, value: float, flags: enums.SetterFlags = 0):
         self._lib.Obj_SetFloat64(self._ptr, 5, value, flags)
 
     Delay = property(_get_Delay, _set_Delay) # type: float
+    """
+    Operating time delay (sec) of the switch. Defaults to 120.
+
+    DSS property name: `Delay`, DSS property index: 5.
+    """
 
     def _get_Normal(self) -> enums.SwtControlState:
-        """
-        {Open | Closed] Normal state of the switch. If not Locked, the switch reverts to this state for reset, change of mode, etc. Defaults to first Action or State specified if not specifically declared.
-
-        DSS property name: `Normal`, DSS property index: 6.
-        """
         return enums.SwtControlState(self._lib.Obj_GetInt32(self._ptr, 6))
 
     def _set_Normal(self, value: Union[AnyStr, int, enums.SwtControlState], flags: enums.SetterFlags = 0):
@@ -116,26 +111,26 @@ class SwtControl(DSSObj, CircuitElementMixin):
         self._lib.Obj_SetInt32(self._ptr, 6, value, flags)
 
     Normal = property(_get_Normal, _set_Normal) # type: enums.SwtControlState
+    """
+    {Open | Closed] Normal state of the switch. If not Locked, the switch reverts to this state for reset, change of mode, etc. Defaults to first Action or State specified if not specifically declared.
+
+    DSS property name: `Normal`, DSS property index: 6.
+    """
 
     def _get_Normal_str(self) -> str:
-        """
-        {Open | Closed] Normal state of the switch. If not Locked, the switch reverts to this state for reset, change of mode, etc. Defaults to first Action or State specified if not specifically declared.
-
-        DSS property name: `Normal`, DSS property index: 6.
-        """
         return self._get_prop_string(6)
 
     def _set_Normal_str(self, value: AnyStr, flags: enums.SetterFlags = 0):
         self._set_Normal(value, flags)
 
     Normal_str = property(_get_Normal_str, _set_Normal_str) # type: str
+    """
+    {Open | Closed] Normal state of the switch. If not Locked, the switch reverts to this state for reset, change of mode, etc. Defaults to first Action or State specified if not specifically declared.
+
+    DSS property name: `Normal`, DSS property index: 6.
+    """
 
     def _get_State(self) -> enums.SwtControlState:
-        """
-        {Open | Closed] Present state of the switch. Upon setting, immediately forces state of switch.
-
-        DSS property name: `State`, DSS property index: 7.
-        """
         return enums.SwtControlState(self._lib.Obj_GetInt32(self._ptr, 7))
 
     def _set_State(self, value: Union[AnyStr, int, enums.SwtControlState], flags: enums.SetterFlags = 0):
@@ -145,19 +140,24 @@ class SwtControl(DSSObj, CircuitElementMixin):
         self._lib.Obj_SetInt32(self._ptr, 7, value, flags)
 
     State = property(_get_State, _set_State) # type: enums.SwtControlState
+    """
+    {Open | Closed] Present state of the switch. Upon setting, immediately forces state of switch.
+
+    DSS property name: `State`, DSS property index: 7.
+    """
 
     def _get_State_str(self) -> str:
-        """
-        {Open | Closed] Present state of the switch. Upon setting, immediately forces state of switch.
-
-        DSS property name: `State`, DSS property index: 7.
-        """
         return self._get_prop_string(7)
 
     def _set_State_str(self, value: AnyStr, flags: enums.SetterFlags = 0):
         self._set_State(value, flags)
 
     State_str = property(_get_State_str, _set_State_str) # type: str
+    """
+    {Open | Closed] Present state of the switch. Upon setting, immediately forces state of switch.
+
+    DSS property name: `State`, DSS property index: 7.
+    """
 
     def Reset(self, value: bool = True, flags: enums.SetterFlags = 0):
         """
@@ -168,30 +168,30 @@ class SwtControl(DSSObj, CircuitElementMixin):
         self._lib.Obj_SetInt32(self._ptr, 8, value, flags)
 
     def _get_BaseFreq(self) -> float:
-        """
-        Base Frequency for ratings.
-
-        DSS property name: `BaseFreq`, DSS property index: 9.
-        """
         return self._lib.Obj_GetFloat64(self._ptr, 9)
 
     def _set_BaseFreq(self, value: float, flags: enums.SetterFlags = 0):
         self._lib.Obj_SetFloat64(self._ptr, 9, value, flags)
 
     BaseFreq = property(_get_BaseFreq, _set_BaseFreq) # type: float
+    """
+    Base Frequency for ratings.
+
+    DSS property name: `BaseFreq`, DSS property index: 9.
+    """
 
     def _get_Enabled(self) -> bool:
-        """
-        {Yes|No or True|False} Indicates whether this element is enabled.
-
-        DSS property name: `Enabled`, DSS property index: 10.
-        """
         return self._lib.Obj_GetInt32(self._ptr, 10) != 0
 
     def _set_Enabled(self, value: bool, flags: enums.SetterFlags = 0):
         self._lib.Obj_SetInt32(self._ptr, 10, value, flags)
 
     Enabled = property(_get_Enabled, _set_Enabled) # type: bool
+    """
+    {Yes|No or True|False} Indicates whether this element is enabled.
+
+    DSS property name: `Enabled`, DSS property index: 10.
+    """
 
     def Like(self, value: AnyStr):
         """
@@ -231,50 +231,45 @@ class SwtControlBatch(DSSBatch, CircuitElementBatchMixin):
             yield from DSSBatch.__iter__(self)
 
     def _get_SwitchedObj_str(self) -> List[str]:
-        """
-        Name of circuit element switch that the SwtControl operates. Specify the full object class and name.
-
-        DSS property name: `SwitchedObj`, DSS property index: 1.
-        """
         return self._get_batch_str_prop(1)
 
     def _set_SwitchedObj_str(self, value: Union[AnyStr, List[AnyStr]], flags: enums.SetterFlags = 0):
         self._set_batch_string(1, value, flags)
 
     SwitchedObj_str = property(_get_SwitchedObj_str, _set_SwitchedObj_str) # type: List[str]
+    """
+    Name of circuit element switch that the SwtControl operates. Specify the full object class and name.
+
+    DSS property name: `SwitchedObj`, DSS property index: 1.
+    """
 
     def _get_SwitchedObj(self) -> List[DSSObj]:
-        """
-        Name of circuit element switch that the SwtControl operates. Specify the full object class and name.
-
-        DSS property name: `SwitchedObj`, DSS property index: 1.
-        """
         return self._get_batch_obj_prop(1)
 
     def _set_SwitchedObj(self, value: Union[AnyStr, DSSObj, List[AnyStr], List[DSSObj]], flags: enums.SetterFlags = 0):
         self._set_batch_obj_prop(1, value, flags)
 
     SwitchedObj = property(_get_SwitchedObj, _set_SwitchedObj) # type: List[DSSObj]
+    """
+    Name of circuit element switch that the SwtControl operates. Specify the full object class and name.
+
+    DSS property name: `SwitchedObj`, DSS property index: 1.
+    """
 
     def _get_SwitchedTerm(self) -> BatchInt32ArrayProxy:
-        """
-        Terminal number of the controlled element switch. 1 or 2, typically.  Default is 1.
-
-        DSS property name: `SwitchedTerm`, DSS property index: 2.
-        """
         return BatchInt32ArrayProxy(self, 2)
 
     def _set_SwitchedTerm(self, value: Union[int, Int32Array], flags: enums.SetterFlags = 0):
         self._set_batch_int32_array(2, value, flags)
 
     SwitchedTerm = property(_get_SwitchedTerm, _set_SwitchedTerm) # type: BatchInt32ArrayProxy
+    """
+    Terminal number of the controlled element switch. 1 or 2, typically.  Default is 1.
+
+    DSS property name: `SwitchedTerm`, DSS property index: 2.
+    """
 
     def _get_Lock(self) -> List[bool]:
-        """
-        {Yes | No} Delayed action. Sends CTRL_LOCK or CTRL_UNLOCK message to control queue. After delay time, controlled switch is locked in its present open / close state or unlocked. Switch will not respond to either manual (Action) or automatic (APIs) control or internal OpenDSS Reset when locked.
-
-        DSS property name: `Lock`, DSS property index: 4.
-        """
         return [v != 0 for v in
             self._get_batch_int32_prop(4)
         ]
@@ -283,26 +278,26 @@ class SwtControlBatch(DSSBatch, CircuitElementBatchMixin):
         self._set_batch_int32_array(4, value, flags)
 
     Lock = property(_get_Lock, _set_Lock) # type: List[bool]
+    """
+    {Yes | No} Delayed action. Sends CTRL_LOCK or CTRL_UNLOCK message to control queue. After delay time, controlled switch is locked in its present open / close state or unlocked. Switch will not respond to either manual (Action) or automatic (APIs) control or internal OpenDSS Reset when locked.
+
+    DSS property name: `Lock`, DSS property index: 4.
+    """
 
     def _get_Delay(self) -> BatchFloat64ArrayProxy:
-        """
-        Operating time delay (sec) of the switch. Defaults to 120.
-
-        DSS property name: `Delay`, DSS property index: 5.
-        """
         return BatchFloat64ArrayProxy(self, 5)
 
     def _set_Delay(self, value: Union[float, Float64Array], flags: enums.SetterFlags = 0):
         self._set_batch_float64_array(5, value, flags)
 
     Delay = property(_get_Delay, _set_Delay) # type: BatchFloat64ArrayProxy
+    """
+    Operating time delay (sec) of the switch. Defaults to 120.
+
+    DSS property name: `Delay`, DSS property index: 5.
+    """
 
     def _get_Normal(self) -> BatchInt32ArrayProxy:
-        """
-        {Open | Closed] Normal state of the switch. If not Locked, the switch reverts to this state for reset, change of mode, etc. Defaults to first Action or State specified if not specifically declared.
-
-        DSS property name: `Normal`, DSS property index: 6.
-        """
         return BatchInt32ArrayProxy(self, 6)
 
     def _set_Normal(self, value: Union[AnyStr, int, enums.SwtControlState, List[AnyStr], List[int], List[enums.SwtControlState], Int32Array], flags: enums.SetterFlags = 0):
@@ -313,26 +308,26 @@ class SwtControlBatch(DSSBatch, CircuitElementBatchMixin):
         self._set_batch_int32_array(6, value, flags)
 
     Normal = property(_get_Normal, _set_Normal) # type: BatchInt32ArrayProxy
+    """
+    {Open | Closed] Normal state of the switch. If not Locked, the switch reverts to this state for reset, change of mode, etc. Defaults to first Action or State specified if not specifically declared.
+
+    DSS property name: `Normal`, DSS property index: 6.
+    """
 
     def _get_Normal_str(self) -> List[str]:
-        """
-        {Open | Closed] Normal state of the switch. If not Locked, the switch reverts to this state for reset, change of mode, etc. Defaults to first Action or State specified if not specifically declared.
-
-        DSS property name: `Normal`, DSS property index: 6.
-        """
         return self._get_batch_str_prop(6)
 
     def _set_Normal_str(self, value: AnyStr, flags: enums.SetterFlags = 0):
         self._set_Normal(value, flags)
 
     Normal_str = property(_get_Normal_str, _set_Normal_str) # type: List[str]
+    """
+    {Open | Closed] Normal state of the switch. If not Locked, the switch reverts to this state for reset, change of mode, etc. Defaults to first Action or State specified if not specifically declared.
+
+    DSS property name: `Normal`, DSS property index: 6.
+    """
 
     def _get_State(self) -> BatchInt32ArrayProxy:
-        """
-        {Open | Closed] Present state of the switch. Upon setting, immediately forces state of switch.
-
-        DSS property name: `State`, DSS property index: 7.
-        """
         return BatchInt32ArrayProxy(self, 7)
 
     def _set_State(self, value: Union[AnyStr, int, enums.SwtControlState, List[AnyStr], List[int], List[enums.SwtControlState], Int32Array], flags: enums.SetterFlags = 0):
@@ -343,19 +338,24 @@ class SwtControlBatch(DSSBatch, CircuitElementBatchMixin):
         self._set_batch_int32_array(7, value, flags)
 
     State = property(_get_State, _set_State) # type: BatchInt32ArrayProxy
+    """
+    {Open | Closed] Present state of the switch. Upon setting, immediately forces state of switch.
+
+    DSS property name: `State`, DSS property index: 7.
+    """
 
     def _get_State_str(self) -> List[str]:
-        """
-        {Open | Closed] Present state of the switch. Upon setting, immediately forces state of switch.
-
-        DSS property name: `State`, DSS property index: 7.
-        """
         return self._get_batch_str_prop(7)
 
     def _set_State_str(self, value: AnyStr, flags: enums.SetterFlags = 0):
         self._set_State(value, flags)
 
     State_str = property(_get_State_str, _set_State_str) # type: List[str]
+    """
+    {Open | Closed] Present state of the switch. Upon setting, immediately forces state of switch.
+
+    DSS property name: `State`, DSS property index: 7.
+    """
 
     def Reset(self, value: Union[bool, List[bool]] = True, flags: enums.SetterFlags = 0):
         """
@@ -366,24 +366,19 @@ class SwtControlBatch(DSSBatch, CircuitElementBatchMixin):
         self._set_batch_int32_array(8, value, flags)
 
     def _get_BaseFreq(self) -> BatchFloat64ArrayProxy:
-        """
-        Base Frequency for ratings.
-
-        DSS property name: `BaseFreq`, DSS property index: 9.
-        """
         return BatchFloat64ArrayProxy(self, 9)
 
     def _set_BaseFreq(self, value: Union[float, Float64Array], flags: enums.SetterFlags = 0):
         self._set_batch_float64_array(9, value, flags)
 
     BaseFreq = property(_get_BaseFreq, _set_BaseFreq) # type: BatchFloat64ArrayProxy
+    """
+    Base Frequency for ratings.
+
+    DSS property name: `BaseFreq`, DSS property index: 9.
+    """
 
     def _get_Enabled(self) -> List[bool]:
-        """
-        {Yes|No or True|False} Indicates whether this element is enabled.
-
-        DSS property name: `Enabled`, DSS property index: 10.
-        """
         return [v != 0 for v in
             self._get_batch_int32_prop(10)
         ]
@@ -392,6 +387,11 @@ class SwtControlBatch(DSSBatch, CircuitElementBatchMixin):
         self._set_batch_int32_array(10, value, flags)
 
     Enabled = property(_get_Enabled, _set_Enabled) # type: List[bool]
+    """
+    {Yes|No or True|False} Indicates whether this element is enabled.
+
+    DSS property name: `Enabled`, DSS property index: 10.
+    """
 
     def Like(self, value: AnyStr, flags: enums.SetterFlags = 0):
         """

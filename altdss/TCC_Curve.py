@@ -21,49 +21,49 @@ class TCC_Curve(DSSObj):
 
 
     def _get_NPts(self) -> int:
-        """
-        Number of points to expect in time-current arrays.
-
-        DSS property name: `NPts`, DSS property index: 1.
-        """
         return self._lib.Obj_GetInt32(self._ptr, 1)
 
     def _set_NPts(self, value: int, flags: enums.SetterFlags = 0):
         self._lib.Obj_SetInt32(self._ptr, 1, value, flags)
 
     NPts = property(_get_NPts, _set_NPts) # type: int
+    """
+    Number of points to expect in time-current arrays.
+
+    DSS property name: `NPts`, DSS property index: 1.
+    """
 
     def _get_C_Array(self) -> Float64Array:
-        """
-        Array of current (or voltage) values corresponding to time values (see help on T_Array).
-
-        DSS property name: `C_Array`, DSS property index: 2.
-        """
         return self._get_float64_array(self._lib.Obj_GetFloat64Array, self._ptr, 2)
 
     def _set_C_Array(self, value: Float64Array, flags: enums.SetterFlags = 0):
         self._set_float64_array_o(2, value, flags)
 
     C_Array = property(_get_C_Array, _set_C_Array) # type: Float64Array
+    """
+    Array of current (or voltage) values corresponding to time values (see help on T_Array).
+
+    DSS property name: `C_Array`, DSS property index: 2.
+    """
 
     def _get_T_Array(self) -> Float64Array:
-        """
-        Array of time values in sec. Typical array syntax: 
-        t_array = (1, 2, 3, 4, ...)
-
-        Can also substitute a file designation: 
-        t_array =  (file=filename)
-
-        The specified file has one value per line.
-
-        DSS property name: `T_Array`, DSS property index: 3.
-        """
         return self._get_float64_array(self._lib.Obj_GetFloat64Array, self._ptr, 3)
 
     def _set_T_Array(self, value: Float64Array, flags: enums.SetterFlags = 0):
         self._set_float64_array_o(3, value, flags)
 
     T_Array = property(_get_T_Array, _set_T_Array) # type: Float64Array
+    """
+    Array of time values in sec. Typical array syntax: 
+    t_array = (1, 2, 3, 4, ...)
+
+    Can also substitute a file designation: 
+    t_array =  (file=filename)
+
+    The specified file has one value per line.
+
+    DSS property name: `T_Array`, DSS property index: 3.
+    """
 
     def Like(self, value: AnyStr):
         """
@@ -94,24 +94,19 @@ class TCC_CurveBatch(DSSBatch):
             yield from DSSBatch.__iter__(self)
 
     def _get_NPts(self) -> BatchInt32ArrayProxy:
-        """
-        Number of points to expect in time-current arrays.
-
-        DSS property name: `NPts`, DSS property index: 1.
-        """
         return BatchInt32ArrayProxy(self, 1)
 
     def _set_NPts(self, value: Union[int, Int32Array], flags: enums.SetterFlags = 0):
         self._set_batch_int32_array(1, value, flags)
 
     NPts = property(_get_NPts, _set_NPts) # type: BatchInt32ArrayProxy
+    """
+    Number of points to expect in time-current arrays.
+
+    DSS property name: `NPts`, DSS property index: 1.
+    """
 
     def _get_C_Array(self) -> List[Float64Array]:
-        """
-        Array of current (or voltage) values corresponding to time values (see help on T_Array).
-
-        DSS property name: `C_Array`, DSS property index: 2.
-        """
         return [
             self._get_float64_array(self._lib.Obj_GetFloat64Array, x, 2)
             for x in self._unpack()
@@ -121,19 +116,13 @@ class TCC_CurveBatch(DSSBatch):
         self._set_batch_float64_array_prop(2, value, flags)
 
     C_Array = property(_get_C_Array, _set_C_Array) # type: List[Float64Array]
+    """
+    Array of current (or voltage) values corresponding to time values (see help on T_Array).
+
+    DSS property name: `C_Array`, DSS property index: 2.
+    """
 
     def _get_T_Array(self) -> List[Float64Array]:
-        """
-        Array of time values in sec. Typical array syntax: 
-        t_array = (1, 2, 3, 4, ...)
-
-        Can also substitute a file designation: 
-        t_array =  (file=filename)
-
-        The specified file has one value per line.
-
-        DSS property name: `T_Array`, DSS property index: 3.
-        """
         return [
             self._get_float64_array(self._lib.Obj_GetFloat64Array, x, 3)
             for x in self._unpack()
@@ -143,6 +132,17 @@ class TCC_CurveBatch(DSSBatch):
         self._set_batch_float64_array_prop(3, value, flags)
 
     T_Array = property(_get_T_Array, _set_T_Array) # type: List[Float64Array]
+    """
+    Array of time values in sec. Typical array syntax: 
+    t_array = (1, 2, 3, 4, ...)
+
+    Can also substitute a file designation: 
+    t_array =  (file=filename)
+
+    The specified file has one value per line.
+
+    DSS property name: `T_Array`, DSS property index: 3.
+    """
 
     def Like(self, value: AnyStr, flags: enums.SetterFlags = 0):
         """
