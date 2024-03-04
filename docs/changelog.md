@@ -3,6 +3,10 @@
 Remember that changes in our alternative OpenDSS engine, currently known as AltDSS/DSS C-API, are always
 relevant. See [DSS C-API's repository](https://github.com/dss-extensions/dss_capi/) for more information.
 
+## 0.2.2
+
+- CircuitElementBatch: fix `MaxCurrent`. This will require the backend to be updated to v0.14.3.
+
 ## 0.2.1
 
 - Meter/Generator/etc.: Remove the previous workaround for issue with the DSS C-API headers related to `RegisterValues` -- now working without it. Add test.

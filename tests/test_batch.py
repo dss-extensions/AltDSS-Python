@@ -634,6 +634,19 @@ def test_batch_set_obj():
     altdss.Load.Daily = ls
     assert altdss.Load.Daily_str == ['default'] * len(altdss.Load)
 
+
+def test_batch_maxcurrent():
+    create_ref_ckt13(altdss)
+
+    lines = altdss.Line()
+    assert [l.MaxCurrent(1) for l in lines] == list(altdss.Line.MaxCurrent(1))
+    assert [l.MaxCurrent(2) for l in lines] == list(altdss.Line.MaxCurrent(2))
+    assert [l.MaxCurrent(-1) for l in lines] == list(altdss.Line.MaxCurrent(-1))
+
+    loads = altdss.Load()
+    assert [l.MaxCurrent(1) for l in loads] == list(altdss.Load.MaxCurrent(1))
+    assert [l.MaxCurrent(-1) for l in loads] == list(altdss.Load.MaxCurrent(-1))
+
 if __name__ == '__main__':
     # Adjust for manually running a test-case
     test_loads_no_yprim()

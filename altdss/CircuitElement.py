@@ -175,10 +175,10 @@ class CircuitElementBatchMixin:
 
     def MaxCurrent(self, terminal: int) -> float:
         '''
-        Returns the maximum current (magnitude) at the specificed terminal for all elements in this batch. 
+        Returns the maximum current (magnitude) at the specified terminal for each element in this batch. 
         Use -1 as terminal to get the value across all terminals.
         '''
-        return self._get_batch_float_int32_func("Alt_CE_MaxCurrent", terminal)
+        return self._get_batch_float64_int32_func("Alt_CE_MaxCurrent", terminal)
     
     def IsIsolated(self) -> BoolArray:
         return self._get_batch_int32_func("Alt_CE_Get_IsIsolated").astype(bool)
