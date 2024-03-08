@@ -6,6 +6,7 @@ relevant. See [DSS C-API's repository](https://github.com/dss-extensions/dss_cap
 ## 0.2.2
 
 - CircuitElementBatch: fix `MaxCurrent`. This will require the backend to be updated to v0.14.3.
+- NonUniformBatch: allow `batch[idx]` to get a single element by index.
 
 ## 0.2.1
 

@@ -131,3 +131,6 @@ altdss/_version.py
 
 apidocs
 electricdss-tst
+htmlcov/
+.coverage
+private_tests/

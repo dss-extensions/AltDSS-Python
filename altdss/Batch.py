@@ -648,5 +648,24 @@ class NonUniformBatch(Base, BatchCommon):
         for idx in range(cnt[0]):
             yield self._obj_cls(self._api_util, ptr[idx])
 
+    def __getitem__(self, idx: int) -> DSSObj:
+        '''
+        Return an object of the batch by index (0-based).
+        '''
+        _pointer, _count = self._get_ptr_cnt()
+        if idx > _count or idx < 0:
+            raise IndexError('Invalid object index inside the batch')
+        
+        ptr = _pointer[idx]
+        if ptr == self._ffi.NULL:
+            return None
+
+        if self._obj_cls is None:
+            cls_idx = self._lib.Obj_GetClassIdx(ptr)
+            pycls = DSSObj._idx_to_cls[cls_idx]
+            return pycls(self._api_util, ptr)
+
+        return self._obj_cls(self._api_util, ptr)
+
 
 __all__ = ('DSSBatch', 'NonUniformBatch', )
