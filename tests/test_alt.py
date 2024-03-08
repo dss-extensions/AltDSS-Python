@@ -139,10 +139,16 @@ for pass_num in (0, 1):
 
 
         if isinstance(c, LoadShapeObjMixin):
+            c.PMult = c.PMult * 100000000 # force it to lose precision
             mult_f64 = c.PMult
             c.UseFloat32()
             mult_f32 = c.PMult
             nptest.assert_allclose(mult_f32, mult_f64)
+            assert list(mult_f32) != list(mult_f64)
+            c.UseFloat64()
+            mult_f64_2 = c.PMult
+            assert list(mult_f64_2) != list(mult_f64)
+            assert list(mult_f32) == list(mult_f64_2)
 
 
         if isinstance(c, TransformerObjMixin):
