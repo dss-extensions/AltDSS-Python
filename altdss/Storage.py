@@ -280,7 +280,7 @@ class Storage(DSSObj, CircuitElementMixin, PCElementMixin, ElementHasRegistersMi
         return self._get_obj(11, XYcurve)
 
     def _set_EffCurve(self, value: Union[AnyStr, XYcurve], flags: enums.SetterFlags = 0):
-        if isinstance(value, DSSObj):
+        if isinstance(value, DSSObj) or value is None:
             self._set_obj(11, value, flags)
             return
 
@@ -669,7 +669,7 @@ class Storage(DSSObj, CircuitElementMixin, PCElementMixin, ElementHasRegistersMi
         return self._get_obj(39, LoadShape)
 
     def _set_Yearly(self, value: Union[AnyStr, LoadShape], flags: enums.SetterFlags = 0):
-        if isinstance(value, DSSObj):
+        if isinstance(value, DSSObj) or value is None:
             self._set_obj(39, value, flags)
             return
 
@@ -699,7 +699,7 @@ class Storage(DSSObj, CircuitElementMixin, PCElementMixin, ElementHasRegistersMi
         return self._get_obj(40, LoadShape)
 
     def _set_Daily(self, value: Union[AnyStr, LoadShape], flags: enums.SetterFlags = 0):
-        if isinstance(value, DSSObj):
+        if isinstance(value, DSSObj) or value is None:
             self._set_obj(40, value, flags)
             return
 
@@ -733,7 +733,7 @@ class Storage(DSSObj, CircuitElementMixin, PCElementMixin, ElementHasRegistersMi
         return self._get_obj(41, LoadShape)
 
     def _set_Duty(self, value: Union[AnyStr, LoadShape], flags: enums.SetterFlags = 0):
-        if isinstance(value, DSSObj):
+        if isinstance(value, DSSObj) or value is None:
             self._set_obj(41, value, flags)
             return
 
@@ -1000,7 +1000,7 @@ class Storage(DSSObj, CircuitElementMixin, PCElementMixin, ElementHasRegistersMi
         return self._get_obj(57, DynamicExp)
 
     def _set_DynamicEq(self, value: Union[AnyStr, DynamicExp], flags: enums.SetterFlags = 0):
-        if isinstance(value, DSSObj):
+        if isinstance(value, DSSObj) or value is None:
             self._set_obj(57, value, flags)
             return
 
@@ -1109,7 +1109,7 @@ class Storage(DSSObj, CircuitElementMixin, PCElementMixin, ElementHasRegistersMi
         return self._get_obj(62, SpectrumObj)
 
     def _set_Spectrum(self, value: Union[AnyStr, SpectrumObj], flags: enums.SetterFlags = 0):
-        if isinstance(value, DSSObj):
+        if isinstance(value, DSSObj) or value is None:
             self._set_obj(62, value, flags)
             return
 

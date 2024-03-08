@@ -125,7 +125,7 @@ class VCCS(DSSObj, CircuitElementMixin, PCElementMixin):
         return self._get_obj(6, XYcurve)
 
     def _set_BP1(self, value: Union[AnyStr, XYcurve], flags: enums.SetterFlags = 0):
-        if isinstance(value, DSSObj):
+        if isinstance(value, DSSObj) or value is None:
             self._set_obj(6, value, flags)
             return
 
@@ -155,7 +155,7 @@ class VCCS(DSSObj, CircuitElementMixin, PCElementMixin):
         return self._get_obj(7, XYcurve)
 
     def _set_BP2(self, value: Union[AnyStr, XYcurve], flags: enums.SetterFlags = 0):
-        if isinstance(value, DSSObj):
+        if isinstance(value, DSSObj) or value is None:
             self._set_obj(7, value, flags)
             return
 
@@ -185,7 +185,7 @@ class VCCS(DSSObj, CircuitElementMixin, PCElementMixin):
         return self._get_obj(8, XYcurve)
 
     def _set_Filter(self, value: Union[AnyStr, XYcurve], flags: enums.SetterFlags = 0):
-        if isinstance(value, DSSObj):
+        if isinstance(value, DSSObj) or value is None:
             self._set_obj(8, value, flags)
             return
 
@@ -280,7 +280,7 @@ class VCCS(DSSObj, CircuitElementMixin, PCElementMixin):
         return self._get_obj(14, SpectrumObj)
 
     def _set_Spectrum(self, value: Union[AnyStr, SpectrumObj], flags: enums.SetterFlags = 0):
-        if isinstance(value, DSSObj):
+        if isinstance(value, DSSObj) or value is None:
             self._set_obj(14, value, flags)
             return
 

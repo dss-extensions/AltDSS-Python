@@ -216,7 +216,7 @@ class LineGeometry(DSSObj):
         return self._get_obj(11, LineSpacing)
 
     def _set_Spacing(self, value: Union[AnyStr, LineSpacing], flags: enums.SetterFlags = 0):
-        if isinstance(value, DSSObj):
+        if isinstance(value, DSSObj) or value is None:
             self._set_obj(11, value, flags)
             return
 

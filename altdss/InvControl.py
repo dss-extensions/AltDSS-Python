@@ -206,7 +206,7 @@ class InvControl(DSSObj, CircuitElementMixin):
         return self._get_obj(4, XYcurve)
 
     def _set_VVC_Curve1(self, value: Union[AnyStr, XYcurve], flags: enums.SetterFlags = 0):
-        if isinstance(value, DSSObj):
+        if isinstance(value, DSSObj) or value is None:
             self._set_obj(4, value, flags)
             return
 
@@ -340,7 +340,7 @@ class InvControl(DSSObj, CircuitElementMixin):
         return self._get_obj(8, XYcurve)
 
     def _set_VoltWatt_Curve(self, value: Union[AnyStr, XYcurve], flags: enums.SetterFlags = 0):
-        if isinstance(value, DSSObj):
+        if isinstance(value, DSSObj) or value is None:
             self._set_obj(8, value, flags)
             return
 
@@ -815,7 +815,7 @@ class InvControl(DSSObj, CircuitElementMixin):
         return self._get_obj(28, XYcurve)
 
     def _set_VoltWattCH_Curve(self, value: Union[AnyStr, XYcurve], flags: enums.SetterFlags = 0):
-        if isinstance(value, DSSObj):
+        if isinstance(value, DSSObj) or value is None:
             self._set_obj(28, value, flags)
             return
 
@@ -866,7 +866,7 @@ class InvControl(DSSObj, CircuitElementMixin):
         return self._get_obj(29, XYcurve)
 
     def _set_WattPF_Curve(self, value: Union[AnyStr, XYcurve], flags: enums.SetterFlags = 0):
-        if isinstance(value, DSSObj):
+        if isinstance(value, DSSObj) or value is None:
             self._set_obj(29, value, flags)
             return
 
@@ -914,7 +914,7 @@ class InvControl(DSSObj, CircuitElementMixin):
         return self._get_obj(30, XYcurve)
 
     def _set_WattVar_Curve(self, value: Union[AnyStr, XYcurve], flags: enums.SetterFlags = 0):
-        if isinstance(value, DSSObj):
+        if isinstance(value, DSSObj) or value is None:
             self._set_obj(30, value, flags)
             return
 

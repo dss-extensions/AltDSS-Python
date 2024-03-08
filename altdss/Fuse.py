@@ -52,7 +52,7 @@ class Fuse(DSSObj, CircuitElementMixin):
         return self._get_obj(1, None)
 
     def _set_MonitoredObj(self, value: Union[AnyStr, DSSObj], flags: enums.SetterFlags = 0):
-        if isinstance(value, DSSObj):
+        if isinstance(value, DSSObj) or value is None:
             self._set_obj(1, value, flags)
             return
 
@@ -95,7 +95,7 @@ class Fuse(DSSObj, CircuitElementMixin):
         return self._get_obj(3, None)
 
     def _set_SwitchedObj(self, value: Union[AnyStr, DSSObj], flags: enums.SetterFlags = 0):
-        if isinstance(value, DSSObj):
+        if isinstance(value, DSSObj) or value is None:
             self._set_obj(3, value, flags)
             return
 
@@ -138,7 +138,7 @@ class Fuse(DSSObj, CircuitElementMixin):
         return self._get_obj(5, TCC_Curve)
 
     def _set_FuseCurve(self, value: Union[AnyStr, TCC_Curve], flags: enums.SetterFlags = 0):
-        if isinstance(value, DSSObj):
+        if isinstance(value, DSSObj) or value is None:
             self._set_obj(5, value, flags)
             return
 

@@ -11,6 +11,8 @@ relevant. See [DSS C-API's repository](https://github.com/dss-extensions/dss_cap
     - Implement `OCPDevice`
 
 - NonUniformBatch: allow `batch[idx]` to get a single element by index.
+- Setters: allow using `None` to clear object references (e.g. `altdss.Load[0].Daily = None`)
+
 
 ## 0.2.1
 

@@ -187,7 +187,7 @@ class Isource(DSSObj, CircuitElementMixin, PCElementMixin):
         return self._get_obj(8, LoadShape)
 
     def _set_Yearly(self, value: Union[AnyStr, LoadShape], flags: enums.SetterFlags = 0):
-        if isinstance(value, DSSObj):
+        if isinstance(value, DSSObj) or value is None:
             self._set_obj(8, value, flags)
             return
 
@@ -225,7 +225,7 @@ class Isource(DSSObj, CircuitElementMixin, PCElementMixin):
         return self._get_obj(9, LoadShape)
 
     def _set_Daily(self, value: Union[AnyStr, LoadShape], flags: enums.SetterFlags = 0):
-        if isinstance(value, DSSObj):
+        if isinstance(value, DSSObj) or value is None:
             self._set_obj(9, value, flags)
             return
 
@@ -263,7 +263,7 @@ class Isource(DSSObj, CircuitElementMixin, PCElementMixin):
         return self._get_obj(10, LoadShape)
 
     def _set_Duty(self, value: Union[AnyStr, LoadShape], flags: enums.SetterFlags = 0):
-        if isinstance(value, DSSObj):
+        if isinstance(value, DSSObj) or value is None:
             self._set_obj(10, value, flags)
             return
 
@@ -314,7 +314,7 @@ class Isource(DSSObj, CircuitElementMixin, PCElementMixin):
         return self._get_obj(12, SpectrumObj)
 
     def _set_Spectrum(self, value: Union[AnyStr, SpectrumObj], flags: enums.SetterFlags = 0):
-        if isinstance(value, DSSObj):
+        if isinstance(value, DSSObj) or value is None:
             self._set_obj(12, value, flags)
             return
 

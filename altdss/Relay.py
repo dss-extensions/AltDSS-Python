@@ -100,7 +100,7 @@ class Relay(DSSObj, CircuitElementMixin):
         return self._get_obj(1, None)
 
     def _set_MonitoredObj(self, value: Union[AnyStr, DSSObj], flags: enums.SetterFlags = 0):
-        if isinstance(value, DSSObj):
+        if isinstance(value, DSSObj) or value is None:
             self._set_obj(1, value, flags)
             return
 
@@ -143,7 +143,7 @@ class Relay(DSSObj, CircuitElementMixin):
         return self._get_obj(3, None)
 
     def _set_SwitchedObj(self, value: Union[AnyStr, DSSObj], flags: enums.SetterFlags = 0):
-        if isinstance(value, DSSObj):
+        if isinstance(value, DSSObj) or value is None:
             self._set_obj(3, value, flags)
             return
 
@@ -237,7 +237,7 @@ class Relay(DSSObj, CircuitElementMixin):
         return self._get_obj(6, TCC_Curve)
 
     def _set_PhaseCurve(self, value: Union[AnyStr, TCC_Curve], flags: enums.SetterFlags = 0):
-        if isinstance(value, DSSObj):
+        if isinstance(value, DSSObj) or value is None:
             self._set_obj(6, value, flags)
             return
 
@@ -267,7 +267,7 @@ class Relay(DSSObj, CircuitElementMixin):
         return self._get_obj(7, TCC_Curve)
 
     def _set_GroundCurve(self, value: Union[AnyStr, TCC_Curve], flags: enums.SetterFlags = 0):
-        if isinstance(value, DSSObj):
+        if isinstance(value, DSSObj) or value is None:
             self._set_obj(7, value, flags)
             return
 
@@ -427,7 +427,7 @@ class Relay(DSSObj, CircuitElementMixin):
         return self._get_obj(18, TCC_Curve)
 
     def _set_OvervoltCurve(self, value: Union[AnyStr, TCC_Curve], flags: enums.SetterFlags = 0):
-        if isinstance(value, DSSObj):
+        if isinstance(value, DSSObj) or value is None:
             self._set_obj(18, value, flags)
             return
 
@@ -457,7 +457,7 @@ class Relay(DSSObj, CircuitElementMixin):
         return self._get_obj(19, TCC_Curve)
 
     def _set_UndervoltCurve(self, value: Union[AnyStr, TCC_Curve], flags: enums.SetterFlags = 0):
-        if isinstance(value, DSSObj):
+        if isinstance(value, DSSObj) or value is None:
             self._set_obj(19, value, flags)
             return
 
@@ -886,7 +886,7 @@ class Relay(DSSObj, CircuitElementMixin):
         return self._get_obj(47, TCC_Curve)
 
     def _set_DOC_PhaseCurveInner(self, value: Union[AnyStr, TCC_Curve], flags: enums.SetterFlags = 0):
-        if isinstance(value, DSSObj):
+        if isinstance(value, DSSObj) or value is None:
             self._set_obj(47, value, flags)
             return
 

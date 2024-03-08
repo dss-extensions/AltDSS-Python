@@ -224,7 +224,7 @@ class Generator(DSSObj, CircuitElementMixin, PCElementMixin, ElementHasRegisters
         return self._get_obj(10, LoadShape)
 
     def _set_Yearly(self, value: Union[AnyStr, LoadShape], flags: enums.SetterFlags = 0):
-        if isinstance(value, DSSObj):
+        if isinstance(value, DSSObj) or value is None:
             self._set_obj(10, value, flags)
             return
 
@@ -254,7 +254,7 @@ class Generator(DSSObj, CircuitElementMixin, PCElementMixin, ElementHasRegisters
         return self._get_obj(11, LoadShape)
 
     def _set_Daily(self, value: Union[AnyStr, LoadShape], flags: enums.SetterFlags = 0):
-        if isinstance(value, DSSObj):
+        if isinstance(value, DSSObj) or value is None:
             self._set_obj(11, value, flags)
             return
 
@@ -284,7 +284,7 @@ class Generator(DSSObj, CircuitElementMixin, PCElementMixin, ElementHasRegisters
         return self._get_obj(12, LoadShape)
 
     def _set_Duty(self, value: Union[AnyStr, LoadShape], flags: enums.SetterFlags = 0):
-        if isinstance(value, DSSObj):
+        if isinstance(value, DSSObj) or value is None:
             self._set_obj(12, value, flags)
             return
 
@@ -736,7 +736,7 @@ class Generator(DSSObj, CircuitElementMixin, PCElementMixin, ElementHasRegisters
         return self._get_obj(43, DynamicExp)
 
     def _set_DynamicEq(self, value: Union[AnyStr, DynamicExp], flags: enums.SetterFlags = 0):
-        if isinstance(value, DSSObj):
+        if isinstance(value, DSSObj) or value is None:
             self._set_obj(43, value, flags)
             return
 
@@ -786,7 +786,7 @@ class Generator(DSSObj, CircuitElementMixin, PCElementMixin, ElementHasRegisters
         return self._get_obj(45, SpectrumObj)
 
     def _set_Spectrum(self, value: Union[AnyStr, SpectrumObj], flags: enums.SetterFlags = 0):
-        if isinstance(value, DSSObj):
+        if isinstance(value, DSSObj) or value is None:
             self._set_obj(45, value, flags)
             return
 

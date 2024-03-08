@@ -303,7 +303,7 @@ class Reactor(DSSObj, CircuitElementMixin, PDElementMixin):
         return self._get_obj(17, XYcurve)
 
     def _set_RCurve(self, value: Union[AnyStr, XYcurve], flags: enums.SetterFlags = 0):
-        if isinstance(value, DSSObj):
+        if isinstance(value, DSSObj) or value is None:
             self._set_obj(17, value, flags)
             return
 
@@ -333,7 +333,7 @@ class Reactor(DSSObj, CircuitElementMixin, PDElementMixin):
         return self._get_obj(18, XYcurve)
 
     def _set_LCurve(self, value: Union[AnyStr, XYcurve], flags: enums.SetterFlags = 0):
-        if isinstance(value, DSSObj):
+        if isinstance(value, DSSObj) or value is None:
             self._set_obj(18, value, flags)
             return
 

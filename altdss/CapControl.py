@@ -66,7 +66,7 @@ class CapControl(DSSObj, CircuitElementMixin):
         return self._get_obj(1, None)
 
     def _set_Element(self, value: Union[AnyStr, DSSObj], flags: enums.SetterFlags = 0):
-        if isinstance(value, DSSObj):
+        if isinstance(value, DSSObj) or value is None:
             self._set_obj(1, value, flags)
             return
 
@@ -111,7 +111,7 @@ class CapControl(DSSObj, CircuitElementMixin):
         return self._get_obj(3, CapacitorObj)
 
     def _set_Capacitor(self, value: Union[AnyStr, CapacitorObj], flags: enums.SetterFlags = 0):
-        if isinstance(value, DSSObj):
+        if isinstance(value, DSSObj) or value is None:
             self._set_obj(3, value, flags)
             return
 
@@ -450,7 +450,7 @@ class CapControl(DSSObj, CircuitElementMixin):
         return self._get_obj(23, LoadShape)
 
     def _set_ControlSignal(self, value: Union[AnyStr, LoadShape], flags: enums.SetterFlags = 0):
-        if isinstance(value, DSSObj):
+        if isinstance(value, DSSObj) or value is None:
             self._set_obj(23, value, flags)
             return
 

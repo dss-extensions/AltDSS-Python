@@ -77,7 +77,7 @@ class RegControl(DSSObj, CircuitElementMixin):
         return self._get_obj(1, None)
 
     def _set_Transformer(self, value: Union[AnyStr, TransformerObj, AutoTrans], flags: enums.SetterFlags = 0):
-        if isinstance(value, DSSObj):
+        if isinstance(value, DSSObj) or value is None:
             self._set_obj(1, value, flags)
             return
 

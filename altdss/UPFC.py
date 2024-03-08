@@ -219,7 +219,7 @@ class UPFC(DSSObj, CircuitElementMixin, PCElementMixin):
         return self._get_obj(11, XYcurve)
 
     def _set_LossCurve(self, value: Union[AnyStr, XYcurve], flags: enums.SetterFlags = 0):
-        if isinstance(value, DSSObj):
+        if isinstance(value, DSSObj) or value is None:
             self._set_obj(11, value, flags)
             return
 
@@ -316,7 +316,7 @@ class UPFC(DSSObj, CircuitElementMixin, PCElementMixin):
         return self._get_obj(17, PDElement)
 
     def _set_Element(self, value: Union[AnyStr, PDElement], flags: enums.SetterFlags = 0):
-        if isinstance(value, DSSObj):
+        if isinstance(value, DSSObj) or value is None:
             self._set_obj(17, value, flags)
             return
 
@@ -346,7 +346,7 @@ class UPFC(DSSObj, CircuitElementMixin, PCElementMixin):
         return self._get_obj(18, SpectrumObj)
 
     def _set_Spectrum(self, value: Union[AnyStr, SpectrumObj], flags: enums.SetterFlags = 0):
-        if isinstance(value, DSSObj):
+        if isinstance(value, DSSObj) or value is None:
             self._set_obj(18, value, flags)
             return
 

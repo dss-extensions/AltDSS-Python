@@ -185,7 +185,7 @@ class Load(DSSObj, CircuitElementMixin, PCElementMixin):
         return self._get_obj(7, LoadShape)
 
     def _set_Yearly(self, value: Union[AnyStr, LoadShape], flags: enums.SetterFlags = 0):
-        if isinstance(value, DSSObj):
+        if isinstance(value, DSSObj) or value is None:
             self._set_obj(7, value, flags)
             return
 
@@ -215,7 +215,7 @@ class Load(DSSObj, CircuitElementMixin, PCElementMixin):
         return self._get_obj(8, LoadShape)
 
     def _set_Daily(self, value: Union[AnyStr, LoadShape], flags: enums.SetterFlags = 0):
-        if isinstance(value, DSSObj):
+        if isinstance(value, DSSObj) or value is None:
             self._set_obj(8, value, flags)
             return
 
@@ -245,7 +245,7 @@ class Load(DSSObj, CircuitElementMixin, PCElementMixin):
         return self._get_obj(9, LoadShape)
 
     def _set_Duty(self, value: Union[AnyStr, LoadShape], flags: enums.SetterFlags = 0):
-        if isinstance(value, DSSObj):
+        if isinstance(value, DSSObj) or value is None:
             self._set_obj(9, value, flags)
             return
 
@@ -275,7 +275,7 @@ class Load(DSSObj, CircuitElementMixin, PCElementMixin):
         return self._get_obj(10, GrowthShape)
 
     def _set_Growth(self, value: Union[AnyStr, GrowthShape], flags: enums.SetterFlags = 0):
-        if isinstance(value, DSSObj):
+        if isinstance(value, DSSObj) or value is None:
             self._set_obj(10, value, flags)
             return
 
@@ -608,7 +608,7 @@ class Load(DSSObj, CircuitElementMixin, PCElementMixin):
         return self._get_obj(31, LoadShape)
 
     def _set_CVRCurve(self, value: Union[AnyStr, LoadShape], flags: enums.SetterFlags = 0):
-        if isinstance(value, DSSObj):
+        if isinstance(value, DSSObj) or value is None:
             self._set_obj(31, value, flags)
             return
 
@@ -740,7 +740,7 @@ class Load(DSSObj, CircuitElementMixin, PCElementMixin):
         return self._get_obj(39, SpectrumObj)
 
     def _set_Spectrum(self, value: Union[AnyStr, SpectrumObj], flags: enums.SetterFlags = 0):
-        if isinstance(value, DSSObj):
+        if isinstance(value, DSSObj) or value is None:
             self._set_obj(39, value, flags)
             return
 

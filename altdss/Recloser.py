@@ -66,7 +66,7 @@ class Recloser(DSSObj, CircuitElementMixin):
         return self._get_obj(1, None)
 
     def _set_MonitoredObj(self, value: Union[AnyStr, DSSObj], flags: enums.SetterFlags = 0):
-        if isinstance(value, DSSObj):
+        if isinstance(value, DSSObj) or value is None:
             self._set_obj(1, value, flags)
             return
 
@@ -109,7 +109,7 @@ class Recloser(DSSObj, CircuitElementMixin):
         return self._get_obj(3, None)
 
     def _set_SwitchedObj(self, value: Union[AnyStr, DSSObj], flags: enums.SetterFlags = 0):
-        if isinstance(value, DSSObj):
+        if isinstance(value, DSSObj) or value is None:
             self._set_obj(3, value, flags)
             return
 
@@ -165,7 +165,7 @@ class Recloser(DSSObj, CircuitElementMixin):
         return self._get_obj(6, TCC_Curve)
 
     def _set_PhaseFast(self, value: Union[AnyStr, TCC_Curve], flags: enums.SetterFlags = 0):
-        if isinstance(value, DSSObj):
+        if isinstance(value, DSSObj) or value is None:
             self._set_obj(6, value, flags)
             return
 
@@ -195,7 +195,7 @@ class Recloser(DSSObj, CircuitElementMixin):
         return self._get_obj(7, TCC_Curve)
 
     def _set_PhaseDelayed(self, value: Union[AnyStr, TCC_Curve], flags: enums.SetterFlags = 0):
-        if isinstance(value, DSSObj):
+        if isinstance(value, DSSObj) or value is None:
             self._set_obj(7, value, flags)
             return
 
@@ -225,7 +225,7 @@ class Recloser(DSSObj, CircuitElementMixin):
         return self._get_obj(8, TCC_Curve)
 
     def _set_GroundFast(self, value: Union[AnyStr, TCC_Curve], flags: enums.SetterFlags = 0):
-        if isinstance(value, DSSObj):
+        if isinstance(value, DSSObj) or value is None:
             self._set_obj(8, value, flags)
             return
 
@@ -255,7 +255,7 @@ class Recloser(DSSObj, CircuitElementMixin):
         return self._get_obj(9, TCC_Curve)
 
     def _set_GroundDelayed(self, value: Union[AnyStr, TCC_Curve], flags: enums.SetterFlags = 0):
-        if isinstance(value, DSSObj):
+        if isinstance(value, DSSObj) or value is None:
             self._set_obj(9, value, flags)
             return
 

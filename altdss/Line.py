@@ -115,7 +115,7 @@ class Line(DSSObj, CircuitElementMixin, PDElementMixin):
         return self._get_obj(3, LineCodeObj)
 
     def _set_LineCode(self, value: Union[AnyStr, LineCodeObj], flags: enums.SetterFlags = 0):
-        if isinstance(value, DSSObj):
+        if isinstance(value, DSSObj) or value is None:
             self._set_obj(3, value, flags)
             return
 
@@ -342,7 +342,7 @@ class Line(DSSObj, CircuitElementMixin, PDElementMixin):
         return self._get_obj(19, LineGeometry)
 
     def _set_Geometry(self, value: Union[AnyStr, LineGeometry], flags: enums.SetterFlags = 0):
-        if isinstance(value, DSSObj):
+        if isinstance(value, DSSObj) or value is None:
             self._set_obj(19, value, flags)
             return
 
@@ -403,7 +403,7 @@ class Line(DSSObj, CircuitElementMixin, PDElementMixin):
         return self._get_obj(21, LineSpacing)
 
     def _set_Spacing(self, value: Union[AnyStr, LineSpacing], flags: enums.SetterFlags = 0):
-        if isinstance(value, DSSObj):
+        if isinstance(value, DSSObj) or value is None:
             self._set_obj(21, value, flags)
             return
 

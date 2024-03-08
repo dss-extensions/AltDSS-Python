@@ -557,7 +557,7 @@ class Transformer(DSSObj, CircuitElementMixin, PDElementMixin, TransformerObjMix
         return self._get_obj(39, XfmrCodeObj)
 
     def _set_XfmrCode(self, value: Union[AnyStr, XfmrCodeObj], flags: enums.SetterFlags = 0):
-        if isinstance(value, DSSObj):
+        if isinstance(value, DSSObj) or value is None:
             self._set_obj(39, value, flags)
             return
 

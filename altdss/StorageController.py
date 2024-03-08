@@ -84,7 +84,7 @@ class StorageController(DSSObj, CircuitElementMixin):
         return self._get_obj(1, None)
 
     def _set_Element(self, value: Union[AnyStr, DSSObj], flags: enums.SetterFlags = 0):
-        if isinstance(value, DSSObj):
+        if isinstance(value, DSSObj) or value is None:
             self._set_obj(1, value, flags)
             return
 
@@ -498,7 +498,7 @@ class StorageController(DSSObj, CircuitElementMixin):
         return self._get_obj(24, LoadShape)
 
     def _set_Yearly(self, value: Union[AnyStr, LoadShape], flags: enums.SetterFlags = 0):
-        if isinstance(value, DSSObj):
+        if isinstance(value, DSSObj) or value is None:
             self._set_obj(24, value, flags)
             return
 
@@ -528,7 +528,7 @@ class StorageController(DSSObj, CircuitElementMixin):
         return self._get_obj(25, LoadShape)
 
     def _set_Daily(self, value: Union[AnyStr, LoadShape], flags: enums.SetterFlags = 0):
-        if isinstance(value, DSSObj):
+        if isinstance(value, DSSObj) or value is None:
             self._set_obj(25, value, flags)
             return
 
@@ -558,7 +558,7 @@ class StorageController(DSSObj, CircuitElementMixin):
         return self._get_obj(26, LoadShape)
 
     def _set_Duty(self, value: Union[AnyStr, LoadShape], flags: enums.SetterFlags = 0):
-        if isinstance(value, DSSObj):
+        if isinstance(value, DSSObj) or value is None:
             self._set_obj(26, value, flags)
             return
 

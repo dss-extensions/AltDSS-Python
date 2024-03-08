@@ -268,7 +268,7 @@ class GICLine(DSSObj, CircuitElementMixin, PCElementMixin):
         return self._get_obj(16, SpectrumObj)
 
     def _set_Spectrum(self, value: Union[AnyStr, SpectrumObj], flags: enums.SetterFlags = 0):
-        if isinstance(value, DSSObj):
+        if isinstance(value, DSSObj) or value is None:
             self._set_obj(16, value, flags)
             return
 

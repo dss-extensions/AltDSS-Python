@@ -227,7 +227,7 @@ class GICTransformer(DSSObj, CircuitElementMixin, PDElementMixin):
         return self._get_obj(12, XYcurve)
 
     def _set_VarCurve(self, value: Union[AnyStr, XYcurve], flags: enums.SetterFlags = 0):
-        if isinstance(value, DSSObj):
+        if isinstance(value, DSSObj) or value is None:
             self._set_obj(12, value, flags)
             return
 

@@ -296,7 +296,7 @@ class PVSystem(DSSObj, CircuitElementMixin, PCElementMixin, ElementHasRegistersM
         return self._get_obj(14, XYcurve)
 
     def _set_EffCurve(self, value: Union[AnyStr, XYcurve], flags: enums.SetterFlags = 0):
-        if isinstance(value, DSSObj):
+        if isinstance(value, DSSObj) or value is None:
             self._set_obj(14, value, flags)
             return
 
@@ -326,7 +326,7 @@ class PVSystem(DSSObj, CircuitElementMixin, PCElementMixin, ElementHasRegistersM
         return self._get_obj(15, XYcurve)
 
     def _set_PTCurve(self, value: Union[AnyStr, XYcurve], flags: enums.SetterFlags = 0):
-        if isinstance(value, DSSObj):
+        if isinstance(value, DSSObj) or value is None:
             self._set_obj(15, value, flags)
             return
 
@@ -451,7 +451,7 @@ class PVSystem(DSSObj, CircuitElementMixin, PCElementMixin, ElementHasRegistersM
         return self._get_obj(23, LoadShape)
 
     def _set_Yearly(self, value: Union[AnyStr, LoadShape], flags: enums.SetterFlags = 0):
-        if isinstance(value, DSSObj):
+        if isinstance(value, DSSObj) or value is None:
             self._set_obj(23, value, flags)
             return
 
@@ -481,7 +481,7 @@ class PVSystem(DSSObj, CircuitElementMixin, PCElementMixin, ElementHasRegistersM
         return self._get_obj(24, LoadShape)
 
     def _set_Daily(self, value: Union[AnyStr, LoadShape], flags: enums.SetterFlags = 0):
-        if isinstance(value, DSSObj):
+        if isinstance(value, DSSObj) or value is None:
             self._set_obj(24, value, flags)
             return
 
@@ -511,7 +511,7 @@ class PVSystem(DSSObj, CircuitElementMixin, PCElementMixin, ElementHasRegistersM
         return self._get_obj(25, LoadShape)
 
     def _set_Duty(self, value: Union[AnyStr, LoadShape], flags: enums.SetterFlags = 0):
-        if isinstance(value, DSSObj):
+        if isinstance(value, DSSObj) or value is None:
             self._set_obj(25, value, flags)
             return
 
@@ -541,7 +541,7 @@ class PVSystem(DSSObj, CircuitElementMixin, PCElementMixin, ElementHasRegistersM
         return self._get_obj(26, TShape)
 
     def _set_TYearly(self, value: Union[AnyStr, TShape], flags: enums.SetterFlags = 0):
-        if isinstance(value, DSSObj):
+        if isinstance(value, DSSObj) or value is None:
             self._set_obj(26, value, flags)
             return
 
@@ -571,7 +571,7 @@ class PVSystem(DSSObj, CircuitElementMixin, PCElementMixin, ElementHasRegistersM
         return self._get_obj(27, TShape)
 
     def _set_TDaily(self, value: Union[AnyStr, TShape], flags: enums.SetterFlags = 0):
-        if isinstance(value, DSSObj):
+        if isinstance(value, DSSObj) or value is None:
             self._set_obj(27, value, flags)
             return
 
@@ -601,7 +601,7 @@ class PVSystem(DSSObj, CircuitElementMixin, PCElementMixin, ElementHasRegistersM
         return self._get_obj(28, TShape)
 
     def _set_TDuty(self, value: Union[AnyStr, TShape], flags: enums.SetterFlags = 0):
-        if isinstance(value, DSSObj):
+        if isinstance(value, DSSObj) or value is None:
             self._set_obj(28, value, flags)
             return
 
@@ -852,7 +852,7 @@ class PVSystem(DSSObj, CircuitElementMixin, PCElementMixin, ElementHasRegistersM
         return self._get_obj(46, DynamicExp)
 
     def _set_DynamicEq(self, value: Union[AnyStr, DynamicExp], flags: enums.SetterFlags = 0):
-        if isinstance(value, DSSObj):
+        if isinstance(value, DSSObj) or value is None:
             self._set_obj(46, value, flags)
             return
 
@@ -961,7 +961,7 @@ class PVSystem(DSSObj, CircuitElementMixin, PCElementMixin, ElementHasRegistersM
         return self._get_obj(51, SpectrumObj)
 
     def _set_Spectrum(self, value: Union[AnyStr, SpectrumObj], flags: enums.SetterFlags = 0):
-        if isinstance(value, DSSObj):
+        if isinstance(value, DSSObj) or value is None:
             self._set_obj(51, value, flags)
             return
 
