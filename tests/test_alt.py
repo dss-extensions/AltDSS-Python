@@ -185,6 +185,7 @@ for pass_num in (0, 1):
         if isinstance(c, EnergyMeterObjMixin):
             print('CalcCurrent', getattr(c, 'CalcCurrent'))
             print('AllocFactors', getattr(c, 'AllocFactors'))
+            print('len(Sections)', len(c.Sections()))
             for funcname in [
                 'TotalCustomers',
                 'NumEndElements',

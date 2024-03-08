@@ -46,9 +46,11 @@ if len(altdss.EnergyMeter) == 0:
 
 altdss(f'''    
     solve
-    RelCalc
 ''')
+
 m = altdss.EnergyMeter[0]
+m.DoReliabilityCalc(False)
+altdss.EnergyMeter.DoReliabilityCalc(False)
 #TODO: add error message in one of these to point that no relcalc was done beforehand
 print(m.NumSections())
 for section in m.Sections():
@@ -61,3 +63,10 @@ print(m.SAIDI)
 print(m.SAIFI)
 print(m.SAIFIkW)
 print(m.CustInterrupts)
+
+print(altdss.EnergyMeter.TotalCustomers())
+print(altdss.EnergyMeter.NumEndElements())
+print(altdss.EnergyMeter.NumSections())
+print(altdss.EnergyMeter.Totals())
+print(altdss.EnergyMeter.DIFilesAreOpen())
+
