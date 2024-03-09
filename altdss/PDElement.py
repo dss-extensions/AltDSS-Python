@@ -182,7 +182,7 @@ class PDElementBatchMixin:
 
         Original COM help: https://opendss.epri.com/AccumulatedL.html
         '''
-        return self._get_batch_float_func("Alt_PDE_Get_AccumulatedL")
+        return self._get_batch_float64_func("Alt_PDE_Get_AccumulatedL")
 
     def Lambda(self) -> Float64Array:
         '''
@@ -192,7 +192,7 @@ class PDElementBatchMixin:
 
         Original COM help: https://opendss.epri.com/Lambda1.html
         '''
-        return self._get_batch_float_func("Alt_PDE_Get_Lambda")
+        return self._get_batch_float64_func("Alt_PDE_Get_Lambda")
 
     def NumCustomers(self) -> Int32Array:
         '''
@@ -238,7 +238,7 @@ class PDElementBatchMixin:
 
         Original COM help: https://opendss.epri.com/TotalMiles1.html
         '''
-        return self._get_batch_float_func("Alt_PDE_Get_TotalMiles")
+        return self._get_batch_float64_func("Alt_PDE_Get_TotalMiles")
 
     def SectionID(self) -> Int32Array:
         '''

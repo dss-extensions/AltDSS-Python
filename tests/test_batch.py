@@ -103,6 +103,7 @@ def create_ref_ckt13(ref):
 def create_ckt13_batch_attr(dss: AltDSS):
     dss.ClearAll()
     dss('new circuit.IEEE13Nodeckt')
+    assert len(dss.Vsource) == 1
     dss.Settings.AdvancedTypes = True
 
     # Get some local names for cleaner syntax
@@ -577,6 +578,16 @@ def _test_create_ckt13_batch(which):
     assert altdss.Transformer.Name == ref.Transformer.Name
     assert altdss.Element.FullName() == ref.Element.FullName()
 
+    with pt.raises(ValueError):
+        line = altdss.Line[10000]
+
+    with pt.raises(IndexError):
+        line = altdss.Line.batch()[10000]
+
+    with pt.raises(DSSException):
+        bus = altdss.Bus[10000]
+
+
     # Check some batch properties
     line_batch = altdss.Line # .batch()
     assert [l.LineCode_str for l in ref.Line] == line_batch.linecode_str
@@ -646,6 +657,38 @@ def test_batch_maxcurrent():
     loads = altdss.Load()
     assert [l.MaxCurrent(1) for l in loads] == list(altdss.Load.MaxCurrent(1))
     assert [l.MaxCurrent(-1) for l in loads] == list(altdss.Load.MaxCurrent(-1))
+
+def test_batch_bus_elements():
+    create_ref_ckt13(altdss)
+    
+    pdes = altdss.Bus[1].PDElements()
+    cnt = len(pdes)
+    assert len([x for x in pdes]) == cnt
+    assert pdes == pdes
+    pces = altdss.Bus[2].PCElements()
+    assert len(pces) == 0
+    assert pces._unpack() == []
+
+    assert len(altdss.PDElement) == len(altdss.Line) + len(altdss.Transformer) + len(altdss.Capacitor)
+
+    loads = altdss.Bus[1].Loads()
+    names = [x.Name for x in loads]
+    assert names == loads.Name
+
+    for n in range(len(loads)):
+        assert names[n] == loads[n].Name
+
+    lines = altdss.Bus[1].Lines()
+    names = [x.Name for x in lines]
+    assert names == lines.Name
+
+    for n in range(len(lines)):
+        assert names[n] == lines[n].Name
+
+    with pt.raises(IndexError):
+        line = lines[10000]
+
+
 
 if __name__ == '__main__':
     # Adjust for manually running a test-case

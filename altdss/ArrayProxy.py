@@ -10,7 +10,7 @@ class BatchFloat64ArrayProxy:
         return self._batch._get_batch_float_prop(self._idx)
 
     def to_list(self):
-        return self._batch._get_batch_float_prop(self._idx)
+        return self._batch._get_batch_float_prop_as_list(self._idx)
 
     def __call__(self):
         return self.to_array()
@@ -60,11 +60,11 @@ class BatchFloat64ArrayProxy:
         if len(other) != len(batch):
             raise ValueError(f"Number of elements ({len(other)}) doesn't match the batch size ({len(batch)})")
 
-        data = self.to_array() + other
-        data, data_ptr, _ = batch._prepare_float64_array(data)
-        batch._lib.Batch_SetFloat64Array(
+        data, data_ptr, _ = batch._prepare_float64_array(other)
+        batch._lib.Batch_Float64Array(
             *ptr_cnt,
             self._idx,
+            self._lib.BatchOperation_Increment,
             data_ptr,
             flags
         )
@@ -77,7 +77,7 @@ class BatchFloat64ArrayProxy:
 
         Use `isub` instead of the `-=` operator in order to specify SetterFlags.
         '''
-        return self.__iadd__(-other, flags)
+        return self.__iadd__(-np.asarray(other), flags)
 
     def __imul__(self, other, flags=0):
         '''
@@ -100,18 +100,18 @@ class BatchFloat64ArrayProxy:
         if len(other) != len(batch):
             raise ValueError(f"Number of elements ({len(other)}) doesn't match the batch size ({len(batch)})")
 
-        data = self.to_array() * other
-        data, data_ptr, _ = batch._prepare_float64_array(data)
-        batch._lib.Batch_SetFloat64Array(
+        data, data_ptr, _ = batch._prepare_float64_array(other)
+        batch._lib.Batch_Float64Array(
             *ptr_cnt,
             self._idx,
+            self._lib.BatchOperation_Multiply,
             data_ptr,
             flags
         )
         batch._check_for_error()
         return self
 
-    def __idiv__(self, other, flags=0):
+    def __itruediv__(self, other, flags=0):
         '''
         Inplace modification of the array. When possible, it runs the operation in the engine.
 
@@ -123,8 +123,8 @@ class BatchFloat64ArrayProxy:
             self._lib.Batch_Float64(
                 *ptr_cnt,
                 self._idx,
-                self._lib.BatchOperation_Multiply,
-                1 / other,
+                self._lib.BatchOperation_Divide,
+                other,
                 flags
             )
             return self
@@ -132,18 +132,20 @@ class BatchFloat64ArrayProxy:
         if len(other) != len(batch):
             raise ValueError(f"Number of elements ({len(other)}) doesn't match the batch size ({len(batch)})")
 
-        data = self.to_array() / other
-        data, data_ptr, _ = batch._prepare_float64_array(data)
-        batch._lib.Batch_SetFloat64Array(
+        data, data_ptr, _ = batch._prepare_float64_array(other)
+        batch._lib.Batch_Float64Array(
             *ptr_cnt,
             self._idx,
+            self._lib.BatchOperation_Divide,
             data_ptr,
             flags
         )
         batch._check_for_error()
         return self
 
-    idiv = __idiv__
+
+
+    idiv = __itruediv__
     imul = __imul__
     iadd = __iadd__
     isub = __isub__
@@ -209,11 +211,11 @@ class BatchInt32ArrayProxy:
         if len(other) != len(batch):
             raise ValueError(f"Number of elements ({len(other)}) doesn't match the batch size ({len(batch)})")
 
-        data = self.to_array() + other
-        data, data_ptr, _ = batch._api_util.prepare_int32_array(data)
-        batch._lib.Batch_SetInt32Array(
+        data, data_ptr, _ = batch._api_util.prepare_int32_array(other)
+        batch._lib.Batch_Int32Array(
             *ptr_cnt,
             self._idx,
+            self._lib.BatchOperation_Increment,
             data_ptr,
             flags
         )
@@ -226,7 +228,7 @@ class BatchInt32ArrayProxy:
 
         Use `isub` instead of the `-=` operator in order to specify SetterFlags.
         '''
-        return self.__iadd__(-other, flags)
+        return self.__iadd__(-np.asarray(other), flags)
 
     def __imul__(self, other, flags=0):
         '''
@@ -249,18 +251,18 @@ class BatchInt32ArrayProxy:
         if len(other) != len(batch):
             raise ValueError(f"Number of elements ({len(other)}) doesn't match the batch size ({len(batch)})")
 
-        data = self.to_array() * other
-        data, data_ptr, _ = batch._prepare_int32_array(data)
-        batch._lib.Batch_SetInt32Array(
+        data, data_ptr, _ = batch._prepare_int32_array(other)
+        batch._lib.Batch_Int32Array(
             *ptr_cnt,
             self._idx,
+            self._lib.BatchOperation_Multiply,
             data_ptr,
             flags
         )
         batch._check_for_error()
         return self
 
-    def __idiv__(self, other, flags=0):
+    def __ifloordiv__(self, other, flags=0):
         '''
         Inplace modification of the array. When possible, it runs the operation in the engine.
 
@@ -272,8 +274,8 @@ class BatchInt32ArrayProxy:
             self._lib.Batch_Int32(
                 *ptr_cnt,
                 self._idx,
-                self._lib.BatchOperation_Multiply,
-                1 / other,
+                self._lib.BatchOperation_Divide,
+                other,
                 flags
             )
             return self
@@ -281,18 +283,18 @@ class BatchInt32ArrayProxy:
         if len(other) != len(batch):
             raise ValueError(f"Number of elements ({len(other)}) doesn't match the batch size ({len(batch)})")
 
-        data = self.to_array() / other
-        data, data_ptr, _ = batch._prepare_int32_array(data)
-        self._lib.Batch_SetInt32Array(
+        data, data_ptr, _ = batch._prepare_int32_array(other)
+        self._lib.Batch_Int32Array(
             *ptr_cnt,
             self._idx,
+            self._lib.BatchOperation_Divide,
             data_ptr,
             flags
         )
         batch._check_for_error()
         return self
 
-    idiv = __idiv__
+    idiv = __floordiv__
     imul = __imul__
     iadd = __iadd__
     isub = __isub__

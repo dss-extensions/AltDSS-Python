@@ -50,6 +50,10 @@ for pass_num in (0, 1):
         cls = getattr(altdss, cname)
         if not len(cls):
             continue
+        
+        _ = cls.to_json()
+
+        print(cls, cls._sync_cls_idx, len(cls))
 
         print('=' * 40)
         c = cls[0]

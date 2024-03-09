@@ -12,6 +12,10 @@ relevant. See [DSS C-API's repository](https://github.com/dss-extensions/dss_cap
 
 - NonUniformBatch: allow `batch[idx]` to get a single element by index.
 - Setters: allow using `None` to clear object references (e.g. `altdss.Load[0].Daily = None`)
+- ArrayProxy: 
+    - Fix `BatchFloat64ArrayProxy.to_list()`. It was returning an array instead a list.
+    - Accepts lists for in-place sub, e.g. `arrayProxy -= [1.1, 1.4]` now works as expected.
+    - Use new low-level operations for in-place operations with array values
 
 
 ## 0.2.1

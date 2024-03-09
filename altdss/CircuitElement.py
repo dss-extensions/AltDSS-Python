@@ -63,7 +63,7 @@ class CircuitElementMixin:
         '''
         return self._lib.Alt_CE_Get_NumConductors(self._ptr)
 
-    def NumPhases(self) -> int:
+    def NumPhases(self) -> int: #TODO remove? Redundant
         '''
         Number of phases
 

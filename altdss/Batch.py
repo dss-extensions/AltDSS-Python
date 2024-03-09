@@ -31,7 +31,7 @@ class BatchCommon:
         self._check_for_error()
         return res
 
-    def _get_batch_float_func(self, funcname):
+    def _get_batch_float64_func(self, funcname):
         func = self._ffi.addressof(self._api_util.lib_unpatched, funcname)
         res = self._get_float64_array(self._lib.Batch_GetFloat64FromFunc, *self._get_ptr_cnt(), func)
         self._check_for_error()
@@ -281,9 +281,10 @@ class DSSBatch(Base, BatchCommon):
         if data_cnt != len(self):
             raise ValueError("Number of elements must match")
 
-        self._lib.Batch_SetFloat64Array(
+        self._lib.Batch_Float64Array(
             *ptr_cnt,
             idx,
+            self._lib.BatchOperation_Set,
             data_ptr,
             flags
         )
@@ -312,9 +313,10 @@ class DSSBatch(Base, BatchCommon):
         if data_cnt != len(self):
             raise ValueError("Number of elements must match")
 
-        self._lib.Batch_SetInt32Array(
+        self._lib.Batch_Int32Array(
             *ptr_cnt,
             idx,
+            self._lib.BatchOperation_Set,
             data_ptr,
             flags
         )
