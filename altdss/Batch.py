@@ -529,7 +529,7 @@ class DSSBatch(Base, BatchCommon):
             self._check_for_error()
             return
 
-        if other is not None or isinstance(other, (bytes, str)) or (isinstance(other, LIST_LIKE) and len(other) and isinstance(other[0], (bytes, str))):
+        if (other is not None and isinstance(other, (bytes, str))) or (isinstance(other, LIST_LIKE) and len(other) and isinstance(other[0], (bytes, str))):
             self._set_batch_string(idx, other, flags)
             return
 

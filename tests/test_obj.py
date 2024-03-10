@@ -764,6 +764,42 @@ def test_no_new_attr():
         loads.non_existent_attribute_should_fail = True
 
 
+def test_obj_setter():
+    create_ref_ckt13(altdss)
+    altdss.Load.Daily = 'default'
+    default_shape = altdss.LoadShape['default']
+    assert all(l.Daily == default_shape for l in altdss.Load)
+
+    create_ref_ckt13(altdss)
+    altdss.Load.Daily_str = 'default'
+    default_shape = altdss.LoadShape['default']
+    assert all(l.Daily == default_shape for l in altdss.Load)
+
+    create_ref_ckt13(altdss)
+    default_shape = altdss.LoadShape['default']
+    altdss.Load.Daily = default_shape
+    assert all(l.Daily_str == 'default' for l in altdss.Load)
+    assert all(l.Daily == default_shape for l in altdss.Load)
+
+    create_ref_ckt13(altdss)
+    default_shape = altdss.LoadShape['default']
+    altdss.Load.Daily = ['default'] * len(altdss.Load)
+    assert all(l.Daily_str == 'default' for l in altdss.Load)
+    assert all(l.Daily == default_shape for l in altdss.Load)
+
+    create_ref_ckt13(altdss)
+    default_shape = altdss.LoadShape['default']
+    altdss.Load.Daily_str = ['default'] * len(altdss.Load)
+    assert all(l.Daily_str == 'default' for l in altdss.Load)
+    assert all(l.Daily == default_shape for l in altdss.Load)
+
+    create_ref_ckt13(altdss)
+    default_shape = altdss.LoadShape['default']
+    altdss.Load.Daily = [default_shape] * len(altdss.Load)
+    assert all(l.Daily_str == 'default' for l in altdss.Load)
+    assert all(l.Daily == default_shape for l in altdss.Load)
+
+
 if __name__ == '__main__':
     # Adjust for manual running a test-case
     test_register_values()

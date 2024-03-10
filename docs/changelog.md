@@ -11,7 +11,9 @@ relevant. See [DSS C-API's repository](https://github.com/dss-extensions/dss_cap
     - Implement `OCPDevice`
 
 - NonUniformBatch: allow `batch[idx]` to get a single element by index.
-- Setters: allow using `None` to clear object references (e.g. `altdss.Load[0].Daily = None`)
+- Setters: 
+    - Allow using `None` to clear object references (e.g. `altdss.Load[0].Daily = None`)
+    - Allow using list of live objects to fill a property that represents a DSS object.
 - ArrayProxy: 
     - Fix `BatchFloat64ArrayProxy.to_list()`. It was returning an array instead a list.
     - Accepts lists for in-place sub, e.g. `arrayProxy -= [1.1, 1.4]` now works as expected.
