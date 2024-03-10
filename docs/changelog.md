@@ -5,6 +5,7 @@ relevant. See [DSS C-API's repository](https://github.com/dss-extensions/dss_cap
 
 ## 0.2.2
 
+- SystemY: in `AltDSS.SystemY`, return the matrix as a SciPy sparse matrix directly.
 - CircuitElement/CircuitElementBatch: Complement doc strings; fix some type hints.
 - CircuitElementBatch: 
     - Fix `MaxCurrent`. This will require the backend to be updated to v0.14.3.

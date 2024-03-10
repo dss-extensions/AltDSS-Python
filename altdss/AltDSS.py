@@ -273,11 +273,12 @@ class AltDSS(IObj):
             res = None
         else:
             # return as (data, indices, indptr) that can fed into scipy.sparse.csc_matrix
-            res = (
+            from scipy.sparse import csc_matrix
+            return csc_matrix((
                 np.frombuffer(ffi.buffer(cValsPtr[0], nNz[0] * 16), dtype=complex).copy(),
                 np.frombuffer(ffi.buffer(RowIdxPtr[0], nNz[0] * 4), dtype=np.int32).copy(),
                 np.frombuffer(ffi.buffer(ColPtr[0], (nBus[0] + 1) * 4), dtype=np.int32).copy()
-            )
+            ))
 
         self._lib.DSS_Dispose_PInteger(ColPtr)
         self._lib.DSS_Dispose_PInteger(RowIdxPtr)
