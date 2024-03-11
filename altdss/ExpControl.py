@@ -13,6 +13,24 @@ class ExpControl(DSSObj, CircuitElementMixin):
     __slots__ = DSSObj._extra_slots + CircuitElementMixin._extra_slots
     _cls_name = 'ExpControl'
     _cls_idx = 43
+    _cls_int_idx = {
+        10,
+        12,
+        16,
+    }
+    _cls_float_idx = {
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        11,
+        13,
+        15,
+    }
     _cls_prop_idx = {
         'pvsystemlist': 1,
         'vreg': 2,

@@ -13,6 +13,13 @@ class LineSpacing(DSSObj):
     __slots__ = DSSObj._extra_slots
     _cls_name = 'LineSpacing'
     _cls_idx = 12
+    _cls_int_idx = {
+        1,
+        2,
+        5,
+    }
+    _cls_float_idx = {
+    }
     _cls_prop_idx = {
         'nconds': 1,
         'nphases': 2,

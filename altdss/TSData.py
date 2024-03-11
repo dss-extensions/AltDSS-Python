@@ -13,6 +13,29 @@ class TSData(DSSObj):
     __slots__ = DSSObj._extra_slots
     _cls_name = 'TSData'
     _cls_idx = 11
+    _cls_int_idx = {
+        10,
+        12,
+        14,
+        18,
+    }
+    _cls_float_idx = {
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        11,
+        13,
+        15,
+        16,
+        17,
+        20,
+    }
     _cls_prop_idx = {
         'diashield': 1,
         'tapelayer': 2,

@@ -21,6 +21,35 @@ class Line(DSSObj, CircuitElementMixin, PDElementMixin):
     __slots__ = DSSObj._extra_slots + CircuitElementMixin._extra_slots + PDElementMixin._extra_slots
     _cls_name = 'Line'
     _cls_idx = 15
+    _cls_int_idx = {
+        5,
+        15,
+        20,
+        23,
+        28,
+        30,
+        37,
+    }
+    _cls_float_idx = {
+        4,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        16,
+        17,
+        18,
+        26,
+        27,
+        31,
+        32,
+        33,
+        34,
+        35,
+        36,
+    }
     _cls_prop_idx = {
         'bus1': 1,
         'bus2': 2,

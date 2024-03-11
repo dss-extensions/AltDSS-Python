@@ -12,6 +12,41 @@ class XfmrCode(DSSObj):
     __slots__ = DSSObj._extra_slots
     _cls_name = 'XfmrCode'
     _cls_idx = 14
+    _cls_int_idx = {
+        1,
+        2,
+        3,
+        30,
+        38,
+    }
+    _cls_float_idx = {
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        15,
+        16,
+        17,
+        19,
+        20,
+        21,
+        22,
+        23,
+        24,
+        25,
+        26,
+        27,
+        28,
+        29,
+        31,
+        32,
+        34,
+        35,
+        36,
+        37,
+    }
     _cls_prop_idx = {
         'phases': 1,
         'windings': 2,

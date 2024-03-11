@@ -13,6 +13,16 @@ class GenDispatcher(DSSObj, CircuitElementMixin):
     __slots__ = DSSObj._extra_slots + CircuitElementMixin._extra_slots
     _cls_name = 'GenDispatcher'
     _cls_idx = 28
+    _cls_int_idx = {
+        2,
+        9,
+    }
+    _cls_float_idx = {
+        3,
+        4,
+        5,
+        8,
+    }
     _cls_prop_idx = {
         'element': 1,
         'terminal': 2,

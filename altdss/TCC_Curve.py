@@ -12,6 +12,11 @@ class TCC_Curve(DSSObj):
     __slots__ = DSSObj._extra_slots
     _cls_name = 'TCC_Curve'
     _cls_idx = 7
+    _cls_int_idx = {
+        1,
+    }
+    _cls_float_idx = {
+    }
     _cls_prop_idx = {
         'npts': 1,
         'c_array': 2,

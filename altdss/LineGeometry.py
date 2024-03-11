@@ -17,6 +17,21 @@ class LineGeometry(DSSObj):
     __slots__ = DSSObj._extra_slots
     _cls_name = 'LineGeometry'
     _cls_idx = 13
+    _cls_int_idx = {
+        1,
+        2,
+        3,
+        7,
+        10,
+        17,
+        19,
+    }
+    _cls_float_idx = {
+        5,
+        6,
+        8,
+        9,
+    }
     _cls_prop_idx = {
         'nconds': 1,
         'nphases': 2,

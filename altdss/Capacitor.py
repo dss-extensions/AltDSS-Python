@@ -15,6 +15,21 @@ class Capacitor(DSSObj, CircuitElementMixin, PDElementMixin):
     __slots__ = DSSObj._extra_slots + CircuitElementMixin._extra_slots + PDElementMixin._extra_slots
     _cls_name = 'Capacitor'
     _cls_idx = 22
+    _cls_int_idx = {
+        3,
+        6,
+        12,
+        20,
+    }
+    _cls_float_idx = {
+        5,
+        14,
+        15,
+        16,
+        17,
+        18,
+        19,
+    }
     _cls_prop_idx = {
         'bus1': 1,
         'bus2': 2,

@@ -12,6 +12,17 @@ class XYcurve(DSSObj):
     __slots__ = DSSObj._extra_slots
     _cls_name = 'XYcurve'
     _cls_idx = 5
+    _cls_int_idx = {
+        1,
+    }
+    _cls_float_idx = {
+        8,
+        9,
+        10,
+        11,
+        12,
+        13,
+    }
     _cls_prop_idx = {
         'npts': 1,
         'points': 2,

@@ -16,6 +16,26 @@ class Reactor(DSSObj, CircuitElementMixin, PDElementMixin):
     __slots__ = DSSObj._extra_slots + CircuitElementMixin._extra_slots + PDElementMixin._extra_slots
     _cls_name = 'Reactor'
     _cls_idx = 23
+    _cls_int_idx = {
+        3,
+        6,
+        9,
+        26,
+    }
+    _cls_float_idx = {
+        4,
+        5,
+        10,
+        11,
+        12,
+        19,
+        20,
+        21,
+        22,
+        23,
+        24,
+        25,
+    }
     _cls_prop_idx = {
         'bus1': 1,
         'bus2': 2,

@@ -12,6 +12,11 @@ class GrowthShape(DSSObj):
     __slots__ = DSSObj._extra_slots
     _cls_name = 'GrowthShape'
     _cls_idx = 6
+    _cls_int_idx = {
+        1,
+    }
+    _cls_float_idx = {
+    }
     _cls_prop_idx = {
         'npts': 1,
         'year': 2,

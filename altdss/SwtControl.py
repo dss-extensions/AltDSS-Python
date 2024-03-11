@@ -14,6 +14,18 @@ class SwtControl(DSSObj, CircuitElementMixin):
     __slots__ = DSSObj._extra_slots + CircuitElementMixin._extra_slots
     _cls_name = 'SwtControl'
     _cls_idx = 34
+    _cls_int_idx = {
+        2,
+        3,
+        4,
+        6,
+        7,
+        10,
+    }
+    _cls_float_idx = {
+        5,
+        9,
+    }
     _cls_prop_idx = {
         'switchedobj': 1,
         'switchedterm': 2,

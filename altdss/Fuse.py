@@ -15,6 +15,16 @@ class Fuse(DSSObj, CircuitElementMixin):
     __slots__ = DSSObj._extra_slots + CircuitElementMixin._extra_slots
     _cls_name = 'Fuse'
     _cls_idx = 33
+    _cls_int_idx = {
+        2,
+        4,
+        12,
+    }
+    _cls_float_idx = {
+        6,
+        7,
+        11,
+    }
     _cls_prop_idx = {
         'monitoredobj': 1,
         'monitoredterm': 2,

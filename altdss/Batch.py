@@ -196,18 +196,35 @@ class DSSBatch(Base, BatchCommon):
             return
 
         idx = kwargs.get('idx')
-        if regexp is not None:
-            idx, idx_ptr, idx_cnt = self._prepare_int32_array(idx)
+        if idx is not None:
+            idx, idx_ptr, idx_cnt = self._prepare_int32_array(np.asarray(idx) + 1)
             self._lib.Batch_CreateByIndex(ptrptr, countptr, self._cls_idx, idx_ptr, idx_cnt)
             self._wrap_ptr(ptrptr, countptr)
             self._check_for_error()
             return
 
-        (prop_name, intval), = kwargs.items()
+        (prop_name, val), = kwargs.items()
         prop_idx = self._obj_cls._cls_prop_idx.get(prop_name.lower())
         if prop_idx is None:
-            raise ValueError('Invalid property name "{}"'.format(prop_name))
-        self._lib.Batch_CreateByInt32Property(ptrptr, countptr, self._cls_idx, prop_idx, intval)
+            raise ValueError(f'Invalid property name "{prop_name}"')
+        
+        if isinstance(val, int) and prop_idx in self._obj_cls._cls_int_idx:
+            # Single integer value for an integer property
+            self._lib.Batch_CreateByInt32Property(ptrptr, countptr, self._cls_idx, prop_idx, val)
+            kwargs = None
+        elif prop_idx in self._obj_cls._cls_float_idx:
+            if isinstance(val, LIST_LIKE) and len(val) == 2 and isinstance(val[0], (int, float)):
+                # Range of values for a float property
+                self._lib.Batch_CreateByFloat64PropertyRange(ptrptr, countptr, self._cls_idx, prop_idx, *val)
+                kwargs = None
+            elif isinstance(val, (int, float)):
+                # Single value for a float property
+                self._lib.Batch_CreateByFloat64PropertyRange(ptrptr, countptr, self._cls_idx, prop_idx, val, val)
+                kwargs = None
+
+        if kwargs is not None:
+            raise ValueError(f'Property "{prop_name}" cannot be used to create a filtered batch with value {repr(val)}.')
+
         self._wrap_ptr(ptrptr, countptr)
         self._check_for_error()
 
@@ -215,8 +232,8 @@ class DSSBatch(Base, BatchCommon):
         '''
         Marks for editing all DSS objects in the batch
 
-        In the editing mode, some final side-effects of changing properties are post-poned
-        until `_end_edit` is called. This side-effects can be somewhat costly, like updating
+        In the editing mode, some final side-effects of changing properties are postponed
+        until `end_edit` is called. This side-effects can be somewhat costly, like updating
         the model parameters or internal matrices.
 
         If you don't have any performance constraint, you may edit each property individually

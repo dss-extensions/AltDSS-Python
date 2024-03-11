@@ -13,6 +13,16 @@ class TShape(DSSObj):
     __slots__ = DSSObj._extra_slots
     _cls_name = 'TShape'
     _cls_idx = 3
+    _cls_int_idx = {
+        1,
+    }
+    _cls_float_idx = {
+        2,
+        5,
+        6,
+        10,
+        11,
+    }
     _cls_prop_idx = {
         'npts': 1,
         'interval': 2,

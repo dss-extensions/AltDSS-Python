@@ -12,6 +12,11 @@ class Spectrum(DSSObj):
     __slots__ = DSSObj._extra_slots
     _cls_name = 'Spectrum'
     _cls_idx = 8
+    _cls_int_idx = {
+        1,
+    }
+    _cls_float_idx = {
+    }
     _cls_prop_idx = {
         'numharm': 1,
         'harmonic': 2,

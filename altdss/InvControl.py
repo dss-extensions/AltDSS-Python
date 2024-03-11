@@ -15,6 +15,36 @@ class InvControl(DSSObj, CircuitElementMixin):
     __slots__ = DSSObj._extra_slots + CircuitElementMixin._extra_slots
     _cls_name = 'InvControl'
     _cls_idx = 42
+    _cls_int_idx = {
+        2,
+        3,
+        6,
+        7,
+        13,
+        17,
+        18,
+        22,
+        23,
+        25,
+        34,
+        36,
+    }
+    _cls_float_idx = {
+        5,
+        9,
+        10,
+        11,
+        12,
+        14,
+        15,
+        16,
+        19,
+        20,
+        21,
+        24,
+        33,
+        35,
+    }
     _cls_prop_idx = {
         'derlist': 1,
         'mode': 2,

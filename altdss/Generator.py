@@ -18,6 +18,45 @@ class Generator(DSSObj, CircuitElementMixin, PCElementMixin, ElementHasRegisters
     __slots__ = DSSObj._extra_slots + CircuitElementMixin._extra_slots + PCElementMixin._extra_slots + ElementHasRegistersMixin._extra_slots
     _cls_name = 'Generator'
     _cls_idx = 27
+    _cls_int_idx = {
+        1,
+        7,
+        13,
+        15,
+        16,
+        17,
+        22,
+        35,
+        36,
+        38,
+        47,
+    }
+    _cls_float_idx = {
+        3,
+        4,
+        5,
+        6,
+        8,
+        9,
+        14,
+        18,
+        19,
+        20,
+        21,
+        23,
+        24,
+        25,
+        26,
+        27,
+        28,
+        29,
+        34,
+        37,
+        39,
+        40,
+        41,
+        46,
+    }
     _cls_prop_idx = {
         'phases': 1,
         'bus1': 2,

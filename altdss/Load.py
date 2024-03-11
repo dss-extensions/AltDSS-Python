@@ -18,6 +18,43 @@ class Load(DSSObj, CircuitElementMixin, PCElementMixin):
     __slots__ = DSSObj._extra_slots + CircuitElementMixin._extra_slots + PCElementMixin._extra_slots
     _cls_name = 'Load'
     _cls_idx = 19
+    _cls_int_idx = {
+        1,
+        6,
+        11,
+        15,
+        16,
+        32,
+        41,
+    }
+    _cls_float_idx = {
+        3,
+        4,
+        5,
+        12,
+        13,
+        14,
+        17,
+        18,
+        19,
+        20,
+        21,
+        22,
+        23,
+        24,
+        25,
+        26,
+        27,
+        28,
+        29,
+        30,
+        34,
+        35,
+        36,
+        37,
+        38,
+        40,
+    }
     _cls_prop_idx = {
         'phases': 1,
         'bus1': 2,

@@ -14,6 +14,16 @@ class ESPVLControl(DSSObj, CircuitElementMixin):
     __slots__ = DSSObj._extra_slots + CircuitElementMixin._extra_slots
     _cls_name = 'ESPVLControl'
     _cls_idx = 38
+    _cls_int_idx = {
+        2,
+        3,
+        13,
+    }
+    _cls_float_idx = {
+        4,
+        5,
+        12,
+    }
     _cls_prop_idx = {
         'element': 1,
         'terminal': 2,

@@ -260,8 +260,8 @@ class DSSObj(Base):
         '''
         Marks a DSS object for editing
 
-        In the editing mode, some final side-effects of changing properties are post-poned
-        until `_end_edit` is called. This side-effects can be somewhat costly, like updating
+        In the editing mode, some final side-effects of changing properties are postponed
+        until `end_edit` is called. This side-effects can be somewhat costly, like updating
         the model parameters or internal matrices.
 
         If you don't have any performance constraint, you may edit each property individually

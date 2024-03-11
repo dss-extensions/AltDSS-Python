@@ -5,6 +5,8 @@ except ImportError:
     from _settings import BASE_DIR, WIN32
 import numpy as np
 import pandas as pd
+import re
+
 if WIN32:
     # When running pytest, the faulthandler seems too eager to grab FPC's exceptions, even when handled
     import faulthandler
@@ -350,6 +352,56 @@ def create_ckt13_batch_df(dss: AltDSS):
     dss.Settings.VoltageBases = [115, 4.16, .48]
     dss('CalcV')
     dss.Solution.Solve()
+
+
+def test_batch_creation():
+    create_ref_ckt13(altdss)
+
+    phases_1 = altdss.Load.batch(Phases=1)
+    phases_3 = altdss.Load.batch(Phases=3)
+    load0 = altdss.Load[0]
+    load0_batch = altdss.Load.batch(kV=load0.kV)
+    assert len(load0_batch)
+    assert load0_batch[0] == load0
+    assert all(l.kV == load0.kV for l in load0_batch)
+    low_voltage = altdss.Load.batch(kV=[0, 1])
+    high_voltage = altdss.Load.batch(kV=[1.0, 1e6])
+    assert all(l.Phases == 1 for l in phases_1)
+    assert all(l.Phases == 3 for l in phases_3)
+    assert all(l.kV <= 1 for l in low_voltage)
+    assert all(l.kV >= 1 for l in high_voltage)
+
+    assert low_voltage.to_list() == [l for l in altdss.Load if l.kV <= 1]
+    assert high_voltage.to_list() == [l for l in altdss.Load if l.kV >= 1]
+
+    loads_012 = altdss.Load.batch(idx=[0, 1, 2])
+    assert loads_012.to_list() == altdss.Load.to_list()[:3]
+
+    pattern = r'^6.*a$'
+    loads_re = altdss.Load.batch(re=pattern)
+    assert all(re.fullmatch(pattern, l.Name, flags=re.IGNORECASE) for l in loads_re)
+
+    with pt.raises(ValueError):
+        altdss.Load.batch(kV='invalid data')
+
+    with pt.raises(ValueError):
+        altdss.Load.batch(kV=[1, 2, 3])
+
+    with pt.raises(ValueError):
+        altdss.Load.batch(Phases=1.1)
+
+    with pt.raises(ValueError):
+        altdss.Load.batch(Phases='invalid data')
+
+    with pt.raises(ValueError):
+        altdss.Load.batch(Phase=2)
+
+    assert altdss.Load.Daily == [None] * len(altdss.Load)
+    altdss.Load.Daily = 'default'
+    assert altdss.Load.Daily == [altdss.LoadShape['default']] * len(altdss.Load)
+
+    assert altdss.Generator.Daily == []
+
 
 # def create_from_dump(dss: AltDSS):
 #     # Try exporting as dataframes from JSON and reading back.

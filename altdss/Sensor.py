@@ -14,6 +14,18 @@ class Sensor(DSSObj, CircuitElementMixin):
     __slots__ = DSSObj._extra_slots + CircuitElementMixin._extra_slots
     _cls_name = 'Sensor'
     _cls_idx = 49
+    _cls_int_idx = {
+        2,
+        9,
+        10,
+        14,
+    }
+    _cls_float_idx = {
+        3,
+        11,
+        12,
+        13,
+    }
     _cls_prop_idx = {
         'element': 1,
         'terminal': 2,

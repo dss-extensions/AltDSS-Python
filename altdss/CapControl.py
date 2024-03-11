@@ -16,6 +16,28 @@ class CapControl(DSSObj, CircuitElementMixin):
     __slots__ = DSSObj._extra_slots + CircuitElementMixin._extra_slots
     _cls_name = 'CapControl'
     _cls_idx = 24
+    _cls_int_idx = {
+        2,
+        4,
+        10,
+        15,
+        16,
+        18,
+        25,
+    }
+    _cls_float_idx = {
+        5,
+        6,
+        7,
+        8,
+        9,
+        11,
+        12,
+        13,
+        14,
+        21,
+        24,
+    }
     _cls_prop_idx = {
         'element': 1,
         'terminal': 2,

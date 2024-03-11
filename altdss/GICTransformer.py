@@ -16,6 +16,27 @@ class GICTransformer(DSSObj, CircuitElementMixin, PDElementMixin):
     __slots__ = DSSObj._extra_slots + CircuitElementMixin._extra_slots + PDElementMixin._extra_slots
     _cls_name = 'GICTransformer'
     _cls_idx = 45
+    _cls_int_idx = {
+        5,
+        6,
+        22,
+    }
+    _cls_float_idx = {
+        7,
+        8,
+        9,
+        10,
+        11,
+        13,
+        14,
+        15,
+        16,
+        17,
+        18,
+        19,
+        20,
+        21,
+    }
     _cls_prop_idx = {
         'bush': 1,
         'busnh': 2,

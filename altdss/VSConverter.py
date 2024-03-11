@@ -16,6 +16,30 @@ class VSConverter(DSSObj, CircuitElementMixin, PCElementMixin):
     __slots__ = DSSObj._extra_slots + CircuitElementMixin._extra_slots + PCElementMixin._extra_slots
     _cls_name = 'VSConverter'
     _cls_idx = 46
+    _cls_int_idx = {
+        1,
+        6,
+        19,
+        22,
+    }
+    _cls_float_idx = {
+        3,
+        4,
+        5,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12,
+        13,
+        14,
+        15,
+        16,
+        17,
+        18,
+        21,
+    }
     _cls_prop_idx = {
         'phases': 1,
         'bus1': 2,

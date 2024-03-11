@@ -13,6 +13,13 @@ class DynamicExp(DSSObj):
     __slots__ = DSSObj._extra_slots
     _cls_name = 'DynamicExp'
     _cls_idx = 26
+    _cls_int_idx = {
+        1,
+        4,
+        6,
+    }
+    _cls_float_idx = {
+    }
     _cls_prop_idx = {
         'nvariables': 1,
         'varnames': 2,

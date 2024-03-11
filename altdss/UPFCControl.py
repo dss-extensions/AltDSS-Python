@@ -13,6 +13,12 @@ class UPFCControl(DSSObj, CircuitElementMixin):
     __slots__ = DSSObj._extra_slots + CircuitElementMixin._extra_slots
     _cls_name = 'UPFCControl'
     _cls_idx = 37
+    _cls_int_idx = {
+        3,
+    }
+    _cls_float_idx = {
+        2,
+    }
     _cls_prop_idx = {
         'upfclist': 1,
         'basefreq': 2,

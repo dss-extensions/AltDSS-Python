@@ -29,6 +29,25 @@ class UPFC(DSSObj, CircuitElementMixin, PCElementMixin):
     __slots__ = DSSObj._extra_slots + CircuitElementMixin._extra_slots + PCElementMixin._extra_slots
     _cls_name = 'UPFC'
     _cls_idx = 36
+    _cls_int_idx = {
+        6,
+        9,
+        20,
+    }
+    _cls_float_idx = {
+        3,
+        4,
+        5,
+        7,
+        8,
+        10,
+        12,
+        13,
+        14,
+        15,
+        16,
+        19,
+    }
     _cls_prop_idx = {
         'bus1': 1,
         'bus2': 2,

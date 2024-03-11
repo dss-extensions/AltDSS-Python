@@ -17,6 +17,31 @@ class Vsource(DSSObj, CircuitElementMixin, PCElementMixin):
     __slots__ = DSSObj._extra_slots + CircuitElementMixin._extra_slots + PCElementMixin._extra_slots
     _cls_name = 'Vsource'
     _cls_idx = 16
+    _cls_int_idx = {
+        6,
+        17,
+        18,
+        30,
+        34,
+    }
+    _cls_float_idx = {
+        2,
+        3,
+        4,
+        5,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12,
+        13,
+        14,
+        15,
+        16,
+        26,
+        33,
+    }
     _cls_prop_idx = {
         'bus1': 1,
         'basekv': 2,

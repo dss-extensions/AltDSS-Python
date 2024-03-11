@@ -15,6 +15,29 @@ class Recloser(DSSObj, CircuitElementMixin):
     __slots__ = DSSObj._extra_slots + CircuitElementMixin._extra_slots
     _cls_name = 'Recloser'
     _cls_idx = 32
+    _cls_int_idx = {
+        2,
+        4,
+        5,
+        15,
+        18,
+        23,
+        24,
+        26,
+    }
+    _cls_float_idx = {
+        10,
+        11,
+        12,
+        13,
+        14,
+        17,
+        19,
+        20,
+        21,
+        22,
+        25,
+    }
     _cls_prop_idx = {
         'monitoredobj': 1,
         'monitoredterm': 2,

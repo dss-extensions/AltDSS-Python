@@ -17,6 +17,29 @@ class IndMach012(DSSObj, CircuitElementMixin, PCElementMixin):
     __slots__ = DSSObj._extra_slots + CircuitElementMixin._extra_slots + PCElementMixin._extra_slots
     _cls_name = 'IndMach012'
     _cls_idx = 39
+    _cls_int_idx = {
+        1,
+        6,
+        17,
+        21,
+        24,
+    }
+    _cls_float_idx = {
+        3,
+        4,
+        5,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12,
+        13,
+        14,
+        15,
+        16,
+        23,
+    }
     _cls_prop_idx = {
         'phases': 1,
         'bus1': 2,

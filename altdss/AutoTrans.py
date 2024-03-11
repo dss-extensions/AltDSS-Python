@@ -16,6 +16,46 @@ class AutoTrans(DSSObj, CircuitElementMixin, PDElementMixin, TransformerObjMixin
     __slots__ = DSSObj._extra_slots + CircuitElementMixin._extra_slots + PDElementMixin._extra_slots + TransformerObjMixin._extra_slots
     _cls_name = 'AutoTrans'
     _cls_idx = 41
+    _cls_int_idx = {
+        1,
+        2,
+        3,
+        11,
+        30,
+        33,
+        39,
+        40,
+        48,
+    }
+    _cls_float_idx = {
+        6,
+        7,
+        8,
+        9,
+        10,
+        17,
+        18,
+        19,
+        21,
+        22,
+        23,
+        24,
+        25,
+        26,
+        27,
+        28,
+        29,
+        31,
+        32,
+        35,
+        36,
+        42,
+        43,
+        44,
+        45,
+        46,
+        47,
+    }
     _cls_prop_idx = {
         'phases': 1,
         'windings': 2,

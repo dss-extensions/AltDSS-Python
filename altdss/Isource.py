@@ -17,6 +17,18 @@ class Isource(DSSObj, CircuitElementMixin, PCElementMixin):
     __slots__ = DSSObj._extra_slots + CircuitElementMixin._extra_slots + PCElementMixin._extra_slots
     _cls_name = 'Isource'
     _cls_idx = 17
+    _cls_int_idx = {
+        5,
+        6,
+        7,
+        14,
+    }
+    _cls_float_idx = {
+        2,
+        3,
+        4,
+        13,
+    }
     _cls_prop_idx = {
         'bus1': 1,
         'amps': 2,

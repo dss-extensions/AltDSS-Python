@@ -14,6 +14,23 @@ class Fault(DSSObj, CircuitElementMixin, PDElementMixin):
     __slots__ = DSSObj._extra_slots + CircuitElementMixin._extra_slots + PDElementMixin._extra_slots
     _cls_name = 'Fault'
     _cls_idx = 25
+    _cls_int_idx = {
+        3,
+        8,
+        16,
+    }
+    _cls_float_idx = {
+        4,
+        5,
+        7,
+        9,
+        10,
+        11,
+        12,
+        13,
+        14,
+        15,
+    }
     _cls_prop_idx = {
         'bus1': 1,
         'bus2': 2,

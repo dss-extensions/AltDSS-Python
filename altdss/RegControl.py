@@ -16,6 +16,41 @@ class RegControl(DSSObj, CircuitElementMixin):
     __slots__ = DSSObj._extra_slots + CircuitElementMixin._extra_slots
     _cls_name = 'RegControl'
     _cls_idx = 21
+    _cls_int_idx = {
+        2,
+        11,
+        17,
+        18,
+        19,
+        20,
+        22,
+        25,
+        26,
+        28,
+        32,
+        34,
+    }
+    _cls_float_idx = {
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        10,
+        12,
+        13,
+        14,
+        15,
+        16,
+        21,
+        23,
+        24,
+        27,
+        30,
+        31,
+        33,
+    }
     _cls_prop_idx = {
         'transformer': 1,
         'winding': 2,

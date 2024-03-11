@@ -15,6 +15,17 @@ class Monitor(DSSObj, CircuitElementMixin, MonitorObjMixin):
     __slots__ = DSSObj._extra_slots + CircuitElementMixin._extra_slots + MonitorObjMixin._extra_slots
     _cls_name = 'Monitor'
     _cls_idx = 47
+    _cls_int_idx = {
+        2,
+        3,
+        5,
+        6,
+        7,
+        9,
+    }
+    _cls_float_idx = {
+        8,
+    }
     _cls_prop_idx = {
         'element': 1,
         'terminal': 2,

@@ -16,6 +16,30 @@ class EnergyMeter(DSSObj, CircuitElementMixin, EnergyMeterObjMixin, ElementHasRe
     __slots__ = DSSObj._extra_slots + CircuitElementMixin._extra_slots + EnergyMeterObjMixin._extra_slots + ElementHasRegistersMixin._extra_slots
     _cls_name = 'EnergyMeter'
     _cls_idx = 48
+    _cls_int_idx = {
+        2,
+        9,
+        11,
+        12,
+        13,
+        14,
+        15,
+        16,
+        17,
+        26,
+    }
+    _cls_float_idx = {
+        5,
+        6,
+        18,
+        19,
+        20,
+        21,
+        22,
+        23,
+        24,
+        25,
+    }
     _cls_prop_idx = {
         'element': 1,
         'terminal': 2,

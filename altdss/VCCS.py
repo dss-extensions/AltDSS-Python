@@ -16,6 +16,21 @@ class VCCS(DSSObj, CircuitElementMixin, PCElementMixin):
     __slots__ = DSSObj._extra_slots + CircuitElementMixin._extra_slots + PCElementMixin._extra_slots
     _cls_name = 'VCCS'
     _cls_idx = 18
+    _cls_int_idx = {
+        2,
+        10,
+        16,
+    }
+    _cls_float_idx = {
+        3,
+        4,
+        5,
+        9,
+        11,
+        12,
+        13,
+        15,
+    }
     _cls_prop_idx = {
         'bus1': 1,
         'phases': 2,

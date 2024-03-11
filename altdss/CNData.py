@@ -13,6 +13,30 @@ class CNData(DSSObj):
     __slots__ = DSSObj._extra_slots
     _cls_name = 'CNData'
     _cls_idx = 10
+    _cls_int_idx = {
+        1,
+        11,
+        13,
+        15,
+        19,
+    }
+    _cls_float_idx = {
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        12,
+        14,
+        16,
+        17,
+        18,
+        21,
+    }
     _cls_prop_idx = {
         'k': 1,
         'diastrand': 2,

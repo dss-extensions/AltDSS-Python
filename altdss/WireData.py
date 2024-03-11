@@ -13,6 +13,22 @@ class WireData(DSSObj):
     __slots__ = DSSObj._extra_slots
     _cls_name = 'WireData'
     _cls_idx = 9
+    _cls_int_idx = {
+        3,
+        5,
+        7,
+        11,
+    }
+    _cls_float_idx = {
+        1,
+        2,
+        4,
+        6,
+        8,
+        9,
+        10,
+        13,
+    }
     _cls_prop_idx = {
         'rdc': 1,
         'rac': 2,

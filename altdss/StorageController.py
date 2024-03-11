@@ -15,6 +15,41 @@ class StorageController(DSSObj, CircuitElementMixin):
     __slots__ = DSSObj._extra_slots + CircuitElementMixin._extra_slots
     _cls_name = 'StorageController'
     _cls_idx = 30
+    _cls_int_idx = {
+        2,
+        3,
+        12,
+        13,
+        27,
+        28,
+        35,
+        39,
+    }
+    _cls_float_idx = {
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        14,
+        15,
+        16,
+        17,
+        18,
+        19,
+        20,
+        21,
+        22,
+        23,
+        29,
+        30,
+        31,
+        32,
+        33,
+        34,
+        38,
+    }
     _cls_prop_idx = {
         'element': 1,
         'terminal': 2,

@@ -14,6 +14,23 @@ class LoadShape(DSSObj, LoadShapeObjMixin):
     __slots__ = DSSObj._extra_slots + LoadShapeObjMixin._extra_slots
     _cls_name = 'LoadShape'
     _cls_idx = 2
+    _cls_int_idx = {
+        1,
+        12,
+        21,
+        22,
+    }
+    _cls_float_idx = {
+        2,
+        5,
+        6,
+        13,
+        14,
+        15,
+        16,
+        17,
+        18,
+    }
     _cls_prop_idx = {
         'npts': 1,
         'interval': 2,

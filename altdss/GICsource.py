@@ -15,6 +15,22 @@ class GICsource(DSSObj, CircuitElementMixin, PCElementMixin):
     __slots__ = DSSObj._extra_slots + CircuitElementMixin._extra_slots + PCElementMixin._extra_slots
     _cls_name = 'GICsource'
     _cls_idx = 40
+    _cls_int_idx = {
+        4,
+        13,
+    }
+    _cls_float_idx = {
+        1,
+        2,
+        3,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        12,
+    }
     _cls_prop_idx = {
         'volts': 1,
         'angle': 2,
