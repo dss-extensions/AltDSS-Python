@@ -6,11 +6,11 @@ relevant. See [DSS C-API's repository](https://github.com/dss-extensions/dss_cap
 ## 0.2.2
 
 - SystemY: in `AltDSS.SystemY`, return the matrix as a SciPy sparse matrix directly.
+- BusBatch: Add missing `Name` function (the bus names were already exposed in the individual objects and at circuit level in `AltDSS.BusNames`).
 - CircuitElement/CircuitElementBatch: Complement doc strings; fix some type hints.
 - CircuitElementBatch: 
     - Fix `MaxCurrent`. This will require the backend to be updated to v0.14.3.
     - Implement `OCPDevice`
-
 - NonUniformBatch: allow `batch[idx]` to get a single element by index.
 - Setters: 
     - Allow using `None` to clear object references (e.g. `altdss.Load[0].Daily = None`)

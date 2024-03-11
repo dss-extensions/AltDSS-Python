@@ -240,6 +240,16 @@ class PDElementBatchMixin:
         '''
         return self._get_batch_float64_func("Alt_PDE_Get_TotalMiles")
 
+    def TotalKilometers(self) -> Float64Array:
+        '''
+        Total kilometers of line from this element to the end of the zone. For recloser siting algorithm.
+        
+        *Requires a previous call to `RelCalc` command*
+
+        Original COM help: https://opendss.epri.com/TotalMiles1.html
+        '''
+        return self._get_batch_float64_func("Alt_PDE_Get_TotalMiles") * 1.609344
+
     def SectionID(self) -> Int32Array:
         '''
         Integer ID of the feeder section that each PDElement branch in this batch is part of.

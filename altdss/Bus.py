@@ -1,6 +1,6 @@
 # Copyright (c) 2023-2024 Paulo Meira
 # Copyright (c) 2023-2024 DSS-Extensions contributors
-from typing import Union, Iterator
+from typing import Union, Iterator, List
 from dss.enums import DSSJSONFlags
 from .types import Float64Array, Int32Array, ComplexArray
 from .common import Base, InvalidatedBus
@@ -417,16 +417,28 @@ class Bus:
 
 
 class BusBatch(Base):
+    def _unpack(self):
+        ptr, cnt = self._get_ptr_cnt()
+        if cnt == 0:
+            return []
+
+        return self._api_util.ffi.unpack(ptr, cnt)
+
     def ZSCRefresh(self) -> bool:
         '''
         Refreshes the Zsc matrix for all buses in the batch
         '''
-        ptrList, cnt = self._get_ptr_cnt()
         res = True
-        for n in range(cnt):
-            res = res and (self._lib.Alt_Bus_ZscRefresh(ptrList[n]) != 0)
+        for ptr in self._unpack():
+            res = res and (self._lib.Alt_Bus_ZscRefresh(ptr) != 0)
             
         return res
+
+    def Name(self) -> List[str]:
+        '''
+        Array of strings containing names of all buses in circuit.
+        '''
+        return [self._get_string(self._lib.Alt_Bus_Get_Name(ptr)) for ptr in self._unpack()]
 
     def _busbatch_float64(self, fname: str):
         return self._get_float64_array(
@@ -515,9 +527,8 @@ class BusBatch(Base):
         return self._cnt
     
     def __iter__(self) -> Iterator[Bus]:
-        ptrList, cnt = self._get_ptr_cnt()
-        for n in range(cnt):
-            yield Bus(self._api_util, ptrList[n])
+        for ptr in self._unpack():
+            yield Bus(self._api_util, ptr)
 
     def to_json(self, options: Union[int, DSSJSONFlags] = 0):
         '''
@@ -560,3 +571,8 @@ class IBuses(BusBatch):
         '''
         return self[index_or_name]
 
+    def Name(self) -> List[str]:
+        '''
+        Array of strings containing names of all buses in circuit.
+        '''
+        return self._check_for_error(self._get_string_array(self._lib.Circuit_Get_AllBusNames))
