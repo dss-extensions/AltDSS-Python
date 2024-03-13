@@ -30,7 +30,7 @@ orphan: true
 ````{py:data} __version__
 :canonical: altdss._version.__version__
 :value: >
-   '0.2.0'
+   '0.2.2'
 
 ```{autodoc2-docstring} altdss._version.__version__
 ```

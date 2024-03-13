@@ -8,7 +8,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
-    <title>altdss.CircuitElement &#8212; AltDSS-Python 0.2.0 documentation</title>
+    <title>altdss.CircuitElement &#8212; AltDSS-Python 0.2.2 documentation</title>
   
   
   
@@ -38,7 +38,7 @@
 <link rel="preload" as="script" href="../../_static/scripts/pydata-sphinx-theme.js?digest=8d27b9dea8ad943066ae" />
   <script src="../../_static/vendor/fontawesome/6.5.1/js/all.min.js?digest=8d27b9dea8ad943066ae"></script>
 
-    <script src="../../_static/documentation_options.js?v=7f7c277e"></script>
+    <script src="../../_static/documentation_options.js?v=d3f42505"></script>
     <script src="../../_static/doctools.js?v=888ff710"></script>
     <script src="../../_static/sphinx_highlight.js?v=dc90522c"></script>
     <script src="../../_static/scripts/sphinx-book-theme.js?v=efea14e4"></script>
@@ -137,8 +137,8 @@
       
     
     
-    <img src="../../_static/altdss-python.svg" class="logo__image only-light" alt="AltDSS-Python 0.2.0 documentation - Home"/>
-    <script>document.write(`<img src="../../_static/altdss-python-dark.svg" class="logo__image only-dark" alt="AltDSS-Python 0.2.0 documentation - Home"/>`);</script>
+    <img src="../../_static/altdss-python.svg" class="logo__image only-light" alt="AltDSS-Python 0.2.2 documentation - Home"/>
+    <script>document.write(`<img src="../../_static/altdss-python-dark.svg" class="logo__image only-dark" alt="AltDSS-Python 0.2.2 documentation - Home"/>`);</script>
   
   
 </a></div>
@@ -160,6 +160,7 @@
 <li class="toctree-l1"><a class="reference internal" href="../../index.html">AltDSS-Python</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../Architecture.html">Architecture details</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../examples/GettingStarted.html">Getting Started</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../examples/Batches.html">Batches</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../changelog.html">Changelog</a></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">API Reference</span></p>
@@ -438,6 +439,7 @@ document.write(`
 <li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#altdss.CircuitElement.CircuitElementBatch.Voltages"><code class="docutils literal notranslate"><span class="pre">CircuitElementBatch.Voltages()</span></code></a></li>
 <li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#altdss.CircuitElement.CircuitElementBatch.VoltagesMagAng"><code class="docutils literal notranslate"><span class="pre">CircuitElementBatch.VoltagesMagAng()</span></code></a></li>
 <li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#altdss.CircuitElement.CircuitElementBatch.__call__"><code class="docutils literal notranslate"><span class="pre">CircuitElementBatch.__call__()</span></code></a></li>
+<li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#altdss.CircuitElement.CircuitElementBatch.__getitem__"><code class="docutils literal notranslate"><span class="pre">CircuitElementBatch.__getitem__()</span></code></a></li>
 <li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#altdss.CircuitElement.CircuitElementBatch.__init__"><code class="docutils literal notranslate"><span class="pre">CircuitElementBatch.__init__()</span></code></a></li>
 <li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#altdss.CircuitElement.CircuitElementBatch.__iter__"><code class="docutils literal notranslate"><span class="pre">CircuitElementBatch.__iter__()</span></code></a></li>
 <li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#altdss.CircuitElement.CircuitElementBatch.__len__"><code class="docutils literal notranslate"><span class="pre">CircuitElementBatch.__len__()</span></code></a></li>
@@ -479,6 +481,7 @@ document.write(`
 <li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#altdss.CircuitElement.CircuitElementMixin.Close"><code class="docutils literal notranslate"><span class="pre">CircuitElementMixin.Close()</span></code></a></li>
 <li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#altdss.CircuitElement.CircuitElementMixin.ComplexSeqCurrents"><code class="docutils literal notranslate"><span class="pre">CircuitElementMixin.ComplexSeqCurrents()</span></code></a></li>
 <li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#altdss.CircuitElement.CircuitElementMixin.ComplexSeqVoltages"><code class="docutils literal notranslate"><span class="pre">CircuitElementMixin.ComplexSeqVoltages()</span></code></a></li>
+<li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#altdss.CircuitElement.CircuitElementMixin.Controllers"><code class="docutils literal notranslate"><span class="pre">CircuitElementMixin.Controllers</span></code></a></li>
 <li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#altdss.CircuitElement.CircuitElementMixin.Currents"><code class="docutils literal notranslate"><span class="pre">CircuitElementMixin.Currents()</span></code></a></li>
 <li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#altdss.CircuitElement.CircuitElementMixin.DisplayName"><code class="docutils literal notranslate"><span class="pre">CircuitElementMixin.DisplayName</span></code></a></li>
 <li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#altdss.CircuitElement.CircuitElementMixin.GUID"><code class="docutils literal notranslate"><span class="pre">CircuitElementMixin.GUID()</span></code></a></li>
@@ -569,22 +572,30 @@ common functions</p>
 <dl class="py method">
 <dt class="sig sig-object py" id="altdss.CircuitElement.CircuitElementBatch.ComplexSeqCurrents">
 <span class="sig-name descname"><span class="pre">ComplexSeqCurrents</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">altdss.types.ComplexArray</span></span></span><a class="headerlink" href="#altdss.CircuitElement.CircuitElementBatch.ComplexSeqCurrents" title="Link to this definition">#</a></dt>
-<dd></dd></dl>
+<dd><p>Complex double array of Sequence Currents for all conductors of all terminals of active circuit element.</p>
+<p>Original COM help: <a class="reference external" href="https://opendss.epri.com/CplxSeqCurrents.html">https://opendss.epri.com/CplxSeqCurrents.html</a></p>
+</dd></dl>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="altdss.CircuitElement.CircuitElementBatch.ComplexSeqVoltages">
 <span class="sig-name descname"><span class="pre">ComplexSeqVoltages</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">altdss.types.ComplexArray</span></span></span><a class="headerlink" href="#altdss.CircuitElement.CircuitElementBatch.ComplexSeqVoltages" title="Link to this definition">#</a></dt>
-<dd></dd></dl>
+<dd><p>Complex double array of Sequence Voltage for all terminals of active circuit element.</p>
+<p>Original COM help: <a class="reference external" href="https://opendss.epri.com/CplxSeqVoltages1.html">https://opendss.epri.com/CplxSeqVoltages1.html</a></p>
+</dd></dl>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="altdss.CircuitElement.CircuitElementBatch.Currents">
 <span class="sig-name descname"><span class="pre">Currents</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">altdss.types.ComplexArray</span></span></span><a class="headerlink" href="#altdss.CircuitElement.CircuitElementBatch.Currents" title="Link to this definition">#</a></dt>
-<dd></dd></dl>
+<dd><p>Complex array of currents into each conductor of each terminal</p>
+<p>Original COM help: <a class="reference external" href="https://opendss.epri.com/Currents1.html">https://opendss.epri.com/Currents1.html</a></p>
+</dd></dl>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="altdss.CircuitElement.CircuitElementBatch.CurrentsMagAng">
 <span class="sig-name descname"><span class="pre">CurrentsMagAng</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">altdss.types.Float64Array</span></span></span><a class="headerlink" href="#altdss.CircuitElement.CircuitElementBatch.CurrentsMagAng" title="Link to this definition">#</a></dt>
-<dd></dd></dl>
+<dd><p>Currents in magnitude, angle (degrees) format as a array of doubles.</p>
+<p>Original COM help: <a class="reference external" href="https://opendss.epri.com/CurrentsMagAng.html">https://opendss.epri.com/CurrentsMagAng.html</a></p>
+</dd></dl>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="altdss.CircuitElement.CircuitElementBatch.FullName">
@@ -594,45 +605,58 @@ common functions</p>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="altdss.CircuitElement.CircuitElementBatch.GUID">
-<span class="sig-name descname"><span class="pre">GUID</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">str</span></span></span><a class="headerlink" href="#altdss.CircuitElement.CircuitElementBatch.GUID" title="Link to this definition">#</a></dt>
+<span class="sig-name descname"><span class="pre">GUID</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">List</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">]</span></span></span></span><a class="headerlink" href="#altdss.CircuitElement.CircuitElementBatch.GUID" title="Link to this definition">#</a></dt>
 <dd><p>GUID/UUID for each object. Currently used only in the CIM-related methods.</p>
+<p>Original COM help: <a class="reference external" href="https://opendss.epri.com/GUID.html">https://opendss.epri.com/GUID.html</a></p>
 </dd></dl>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="altdss.CircuitElement.CircuitElementBatch.Handle">
 <span class="sig-name descname"><span class="pre">Handle</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">altdss.types.Int32Array</span></span></span><a class="headerlink" href="#altdss.CircuitElement.CircuitElementBatch.Handle" title="Link to this definition">#</a></dt>
-<dd></dd></dl>
+<dd><p>Index of each element into the circuit’s element list.</p>
+<p>Original COM help: <a class="reference external" href="https://opendss.epri.com/Handle.html">https://opendss.epri.com/Handle.html</a></p>
+</dd></dl>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="altdss.CircuitElement.CircuitElementBatch.HasOCPDevice">
-<span class="sig-name descname"><span class="pre">HasOCPDevice</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">bool</span></span></span><a class="headerlink" href="#altdss.CircuitElement.CircuitElementBatch.HasOCPDevice" title="Link to this definition">#</a></dt>
-<dd></dd></dl>
+<span class="sig-name descname"><span class="pre">HasOCPDevice</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">altdss.types.BoolArray</span></span></span><a class="headerlink" href="#altdss.CircuitElement.CircuitElementBatch.HasOCPDevice" title="Link to this definition">#</a></dt>
+<dd><p>For each element in the batch: returns true if a recloser, relay, or fuse controlling the circuit element.</p>
+<p>OCP = Overcurrent Protection</p>
+<p>Original COM help: <a class="reference external" href="https://opendss.epri.com/HasOCPDevice.html">https://opendss.epri.com/HasOCPDevice.html</a></p>
+</dd></dl>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="altdss.CircuitElement.CircuitElementBatch.HasSwitchControl">
-<span class="sig-name descname"><span class="pre">HasSwitchControl</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">bool</span></span></span><a class="headerlink" href="#altdss.CircuitElement.CircuitElementBatch.HasSwitchControl" title="Link to this definition">#</a></dt>
-<dd></dd></dl>
+<span class="sig-name descname"><span class="pre">HasSwitchControl</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">altdss.types.BoolArray</span></span></span><a class="headerlink" href="#altdss.CircuitElement.CircuitElementBatch.HasSwitchControl" title="Link to this definition">#</a></dt>
+<dd><p>For each element in the batch: returns true if the element has a SwtControl attached.</p>
+<p>Original COM help: <a class="reference external" href="https://opendss.epri.com/HasSwitchControl.html">https://opendss.epri.com/HasSwitchControl.html</a></p>
+</dd></dl>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="altdss.CircuitElement.CircuitElementBatch.HasVoltControl">
-<span class="sig-name descname"><span class="pre">HasVoltControl</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">bool</span></span></span><a class="headerlink" href="#altdss.CircuitElement.CircuitElementBatch.HasVoltControl" title="Link to this definition">#</a></dt>
-<dd></dd></dl>
+<span class="sig-name descname"><span class="pre">HasVoltControl</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">altdss.types.BoolArray</span></span></span><a class="headerlink" href="#altdss.CircuitElement.CircuitElementBatch.HasVoltControl" title="Link to this definition">#</a></dt>
+<dd><p>For each element in the batch: returns true if the element has a CapControl or RegControl attached.</p>
+<p>Original COM help: <a class="reference external" href="https://opendss.epri.com/HasVoltControl.html">https://opendss.epri.com/HasVoltControl.html</a></p>
+</dd></dl>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="altdss.CircuitElement.CircuitElementBatch.IsIsolated">
 <span class="sig-name descname"><span class="pre">IsIsolated</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">altdss.types.BoolArray</span></span></span><a class="headerlink" href="#altdss.CircuitElement.CircuitElementBatch.IsIsolated" title="Link to this definition">#</a></dt>
-<dd></dd></dl>
+<dd><p>For each element in the batch: returns true if the element is isolated.
+Note that this only fetches the current value. See also the Topology interface.</p>
+</dd></dl>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="altdss.CircuitElement.CircuitElementBatch.Losses">
 <span class="sig-name descname"><span class="pre">Losses</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">altdss.types.ComplexArray</span></span></span><a class="headerlink" href="#altdss.CircuitElement.CircuitElementBatch.Losses" title="Link to this definition">#</a></dt>
-<dd><p>Total losses for each element, complex VA (watts, vars)</p>
+<dd><p>For each element in the batch: total losses in the element, in VA (watts, vars).</p>
+<p>Original COM help: <a class="reference external" href="https://opendss.epri.com/Losses1.html">https://opendss.epri.com/Losses1.html</a></p>
 </dd></dl>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="altdss.CircuitElement.CircuitElementBatch.MaxCurrent">
-<span class="sig-name descname"><span class="pre">MaxCurrent</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">terminal</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">float</span></span></span><a class="headerlink" href="#altdss.CircuitElement.CircuitElementBatch.MaxCurrent" title="Link to this definition">#</a></dt>
-<dd><p>Returns the maximum current (magnitude) at the specificed terminal for all elements in this batch.
+<span class="sig-name descname"><span class="pre">MaxCurrent</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">terminal</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">altdss.types.Float64Array</span></span></span><a class="headerlink" href="#altdss.CircuitElement.CircuitElementBatch.MaxCurrent" title="Link to this definition">#</a></dt>
+<dd><p>Returns the maximum current (magnitude) at the specified terminal for each element in this batch.
 Use -1 as terminal to get the value across all terminals.</p>
 </dd></dl>
 
@@ -644,64 +668,85 @@ Use -1 as terminal to get the value across all terminals.</p>
 <dl class="py method">
 <dt class="sig sig-object py" id="altdss.CircuitElement.CircuitElementBatch.NumConductors">
 <span class="sig-name descname"><span class="pre">NumConductors</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">altdss.types.Int32Array</span></span></span><a class="headerlink" href="#altdss.CircuitElement.CircuitElementBatch.NumConductors" title="Link to this definition">#</a></dt>
-<dd></dd></dl>
+<dd><p>Number of conductors per terminal for each element in the batch.</p>
+<p>Original COM help: <a class="reference external" href="https://opendss.epri.com/NumConductors.html">https://opendss.epri.com/NumConductors.html</a></p>
+</dd></dl>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="altdss.CircuitElement.CircuitElementBatch.NumControllers">
 <span class="sig-name descname"><span class="pre">NumControllers</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">altdss.types.Int32Array</span></span></span><a class="headerlink" href="#altdss.CircuitElement.CircuitElementBatch.NumControllers" title="Link to this definition">#</a></dt>
-<dd></dd></dl>
+<dd><p>Number of controllers connected to each device in the batch.</p>
+<p>Original COM help: <a class="reference external" href="https://opendss.epri.com/NumControls.html">https://opendss.epri.com/NumControls.html</a></p>
+</dd></dl>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="altdss.CircuitElement.CircuitElementBatch.NumPhases">
 <span class="sig-name descname"><span class="pre">NumPhases</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">altdss.types.Int32Array</span></span></span><a class="headerlink" href="#altdss.CircuitElement.CircuitElementBatch.NumPhases" title="Link to this definition">#</a></dt>
-<dd></dd></dl>
+<dd><p>Number of Phases for each element in this batch.</p>
+<p>Original COM help: <a class="reference external" href="https://opendss.epri.com/NumPhases.html">https://opendss.epri.com/NumPhases.html</a></p>
+</dd></dl>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="altdss.CircuitElement.CircuitElementBatch.NumTerminals">
 <span class="sig-name descname"><span class="pre">NumTerminals</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">altdss.types.Int32Array</span></span></span><a class="headerlink" href="#altdss.CircuitElement.CircuitElementBatch.NumTerminals" title="Link to this definition">#</a></dt>
-<dd></dd></dl>
+<dd><p>Number of terminals for each Circuit Element in the batch.</p>
+<p>Original COM help: <a class="reference external" href="https://opendss.epri.com/NumTerminals.html">https://opendss.epri.com/NumTerminals.html</a></p>
+</dd></dl>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="altdss.CircuitElement.CircuitElementBatch.OCPDevice">
 <span class="sig-name descname"><span class="pre">OCPDevice</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">List</span><span class="p"><span class="pre">[</span></span><span class="pre">Union</span><span class="p"><span class="pre">[</span></span><a class="reference internal" href="altdss.DSSObj.html#altdss.DSSObj.DSSObj" title="altdss.DSSObj.DSSObj"><span class="pre">altdss.DSSObj.DSSObj</span></a><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">None</span><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">]</span></span></span></span><a class="headerlink" href="#altdss.CircuitElement.CircuitElementBatch.OCPDevice" title="Link to this definition">#</a></dt>
-<dd></dd></dl>
+<dd><p>Returns (as a list of Python objects) the OCP device controlling each element.</p>
+</dd></dl>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="altdss.CircuitElement.CircuitElementBatch.OCPDeviceIndex">
 <span class="sig-name descname"><span class="pre">OCPDeviceIndex</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">altdss.types.Int32Array</span></span></span><a class="headerlink" href="#altdss.CircuitElement.CircuitElementBatch.OCPDeviceIndex" title="Link to this definition">#</a></dt>
-<dd></dd></dl>
+<dd><p>For each element in the batch: index into each controller list of the OCP Device controlling each circuit element</p>
+<p>Original COM help: <a class="reference external" href="https://opendss.epri.com/OCPDevIndex.html">https://opendss.epri.com/OCPDevIndex.html</a></p>
+</dd></dl>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="altdss.CircuitElement.CircuitElementBatch.OCPDeviceType">
-<span class="sig-name descname"><span class="pre">OCPDeviceType</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">dss.enums.OCPDevType</span></span></span><a class="headerlink" href="#altdss.CircuitElement.CircuitElementBatch.OCPDeviceType" title="Link to this definition">#</a></dt>
-<dd></dd></dl>
+<span class="sig-name descname"><span class="pre">OCPDeviceType</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">List</span><span class="p"><span class="pre">[</span></span><span class="pre">dss.enums.OCPDevType</span><span class="p"><span class="pre">]</span></span></span></span><a class="headerlink" href="#altdss.CircuitElement.CircuitElementBatch.OCPDeviceType" title="Link to this definition">#</a></dt>
+<dd><p>For each element in the batch: type of OCP controller device</p>
+<p>Original COM help: <a class="reference external" href="https://opendss.epri.com/OCPDevType.html">https://opendss.epri.com/OCPDevType.html</a></p>
+</dd></dl>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="altdss.CircuitElement.CircuitElementBatch.PhaseLosses">
 <span class="sig-name descname"><span class="pre">PhaseLosses</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">altdss.types.ComplexArray</span></span></span><a class="headerlink" href="#altdss.CircuitElement.CircuitElementBatch.PhaseLosses" title="Link to this definition">#</a></dt>
-<dd><p>Complex array of losses (kVA) by phase, for each element</p>
+<dd><p>Complex array of losses (kVA) by phase</p>
+<p>Original COM help: <a class="reference external" href="https://opendss.epri.com/PhaseLosses.html">https://opendss.epri.com/PhaseLosses.html</a></p>
 </dd></dl>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="altdss.CircuitElement.CircuitElementBatch.Powers">
 <span class="sig-name descname"><span class="pre">Powers</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">altdss.types.ComplexArray</span></span></span><a class="headerlink" href="#altdss.CircuitElement.CircuitElementBatch.Powers" title="Link to this definition">#</a></dt>
 <dd><p>Complex array of powers (kVA) into each conductor of each terminal, of each element in the batch.</p>
+<p>Original COM help: <a class="reference external" href="https://opendss.epri.com/Powers.html">https://opendss.epri.com/Powers.html</a></p>
 </dd></dl>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="altdss.CircuitElement.CircuitElementBatch.SeqCurrents">
 <span class="sig-name descname"><span class="pre">SeqCurrents</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">altdss.types.Float64Array</span></span></span><a class="headerlink" href="#altdss.CircuitElement.CircuitElementBatch.SeqCurrents" title="Link to this definition">#</a></dt>
-<dd></dd></dl>
+<dd><p>Array of symmetrical component currents (magnitudes only) into each 3-phase terminal of each element</p>
+<p>Original COM help: <a class="reference external" href="https://opendss.epri.com/SeqCurrents.html">https://opendss.epri.com/SeqCurrents.html</a></p>
+</dd></dl>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="altdss.CircuitElement.CircuitElementBatch.SeqPowers">
 <span class="sig-name descname"><span class="pre">SeqPowers</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">altdss.types.ComplexArray</span></span></span><a class="headerlink" href="#altdss.CircuitElement.CircuitElementBatch.SeqPowers" title="Link to this definition">#</a></dt>
-<dd></dd></dl>
+<dd><p>Complex array of sequence powers (kW, kvar) into each 3-phase terminal of each element</p>
+<p>Original COM help: <a class="reference external" href="https://opendss.epri.com/SeqPowers.html">https://opendss.epri.com/SeqPowers.html</a></p>
+</dd></dl>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="altdss.CircuitElement.CircuitElementBatch.SeqVoltages">
 <span class="sig-name descname"><span class="pre">SeqVoltages</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">altdss.types.Float64Array</span></span></span><a class="headerlink" href="#altdss.CircuitElement.CircuitElementBatch.SeqVoltages" title="Link to this definition">#</a></dt>
-<dd></dd></dl>
+<dd><p>Double array of symmetrical component voltages (magnitudes only) at each 3-phase terminal</p>
+<p>Original COM help: <a class="reference external" href="https://opendss.epri.com/SeqVoltages1.html">https://opendss.epri.com/SeqVoltages1.html</a></p>
+</dd></dl>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="altdss.CircuitElement.CircuitElementBatch.TotalPowers">
@@ -713,17 +758,27 @@ Use -1 as terminal to get the value across all terminals.</p>
 <dl class="py method">
 <dt class="sig sig-object py" id="altdss.CircuitElement.CircuitElementBatch.Voltages">
 <span class="sig-name descname"><span class="pre">Voltages</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">altdss.types.ComplexArray</span></span></span><a class="headerlink" href="#altdss.CircuitElement.CircuitElementBatch.Voltages" title="Link to this definition">#</a></dt>
-<dd></dd></dl>
+<dd><p>Complex array of voltages at terminals</p>
+<p>Original COM help: <a class="reference external" href="https://opendss.epri.com/Voltages1.html">https://opendss.epri.com/Voltages1.html</a></p>
+</dd></dl>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="altdss.CircuitElement.CircuitElementBatch.VoltagesMagAng">
 <span class="sig-name descname"><span class="pre">VoltagesMagAng</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">altdss.types.Float64Array</span></span></span><a class="headerlink" href="#altdss.CircuitElement.CircuitElementBatch.VoltagesMagAng" title="Link to this definition">#</a></dt>
-<dd></dd></dl>
+<dd><p>Voltages at each conductor in magnitude, angle form as array of doubles.</p>
+<p>Original COM help: <a class="reference external" href="https://opendss.epri.com/VoltagesMagAng.html">https://opendss.epri.com/VoltagesMagAng.html</a></p>
+</dd></dl>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="altdss.CircuitElement.CircuitElementBatch.__call__">
 <span class="sig-name descname"><span class="pre">__call__</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#altdss.CircuitElement.CircuitElementBatch.__call__" title="Link to this definition">#</a></dt>
 <dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="altdss.CircuitElement.CircuitElementBatch.__getitem__">
+<span class="sig-name descname"><span class="pre">__getitem__</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">idx</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference internal" href="altdss.DSSObj.html#altdss.DSSObj.DSSObj" title="altdss.DSSObj.DSSObj"><span class="pre">altdss.DSSObj.DSSObj</span></a></span></span><a class="headerlink" href="#altdss.CircuitElement.CircuitElementBatch.__getitem__" title="Link to this definition">#</a></dt>
+<dd><p>Return an object of the batch by index (0-based).</p>
+</dd></dl>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="altdss.CircuitElement.CircuitElementBatch.__init__">
@@ -762,128 +817,170 @@ See <code class="docutils literal notranslate"><span class="pre">Obj_ToJSON</spa
 <dd><dl class="py method">
 <dt class="sig sig-object py" id="altdss.CircuitElement.CircuitElementBatchMixin.ComplexSeqCurrents">
 <span class="sig-name descname"><span class="pre">ComplexSeqCurrents</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">altdss.types.ComplexArray</span></span></span><a class="headerlink" href="#altdss.CircuitElement.CircuitElementBatchMixin.ComplexSeqCurrents" title="Link to this definition">#</a></dt>
-<dd></dd></dl>
+<dd><p>Complex double array of Sequence Currents for all conductors of all terminals of active circuit element.</p>
+<p>Original COM help: <a class="reference external" href="https://opendss.epri.com/CplxSeqCurrents.html">https://opendss.epri.com/CplxSeqCurrents.html</a></p>
+</dd></dl>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="altdss.CircuitElement.CircuitElementBatchMixin.ComplexSeqVoltages">
 <span class="sig-name descname"><span class="pre">ComplexSeqVoltages</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">altdss.types.ComplexArray</span></span></span><a class="headerlink" href="#altdss.CircuitElement.CircuitElementBatchMixin.ComplexSeqVoltages" title="Link to this definition">#</a></dt>
-<dd></dd></dl>
+<dd><p>Complex double array of Sequence Voltage for all terminals of active circuit element.</p>
+<p>Original COM help: <a class="reference external" href="https://opendss.epri.com/CplxSeqVoltages1.html">https://opendss.epri.com/CplxSeqVoltages1.html</a></p>
+</dd></dl>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="altdss.CircuitElement.CircuitElementBatchMixin.Currents">
 <span class="sig-name descname"><span class="pre">Currents</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">altdss.types.ComplexArray</span></span></span><a class="headerlink" href="#altdss.CircuitElement.CircuitElementBatchMixin.Currents" title="Link to this definition">#</a></dt>
-<dd></dd></dl>
+<dd><p>Complex array of currents into each conductor of each terminal</p>
+<p>Original COM help: <a class="reference external" href="https://opendss.epri.com/Currents1.html">https://opendss.epri.com/Currents1.html</a></p>
+</dd></dl>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="altdss.CircuitElement.CircuitElementBatchMixin.CurrentsMagAng">
 <span class="sig-name descname"><span class="pre">CurrentsMagAng</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">altdss.types.Float64Array</span></span></span><a class="headerlink" href="#altdss.CircuitElement.CircuitElementBatchMixin.CurrentsMagAng" title="Link to this definition">#</a></dt>
-<dd></dd></dl>
+<dd><p>Currents in magnitude, angle (degrees) format as a array of doubles.</p>
+<p>Original COM help: <a class="reference external" href="https://opendss.epri.com/CurrentsMagAng.html">https://opendss.epri.com/CurrentsMagAng.html</a></p>
+</dd></dl>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="altdss.CircuitElement.CircuitElementBatchMixin.GUID">
-<span class="sig-name descname"><span class="pre">GUID</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">str</span></span></span><a class="headerlink" href="#altdss.CircuitElement.CircuitElementBatchMixin.GUID" title="Link to this definition">#</a></dt>
+<span class="sig-name descname"><span class="pre">GUID</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">List</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">]</span></span></span></span><a class="headerlink" href="#altdss.CircuitElement.CircuitElementBatchMixin.GUID" title="Link to this definition">#</a></dt>
 <dd><p>GUID/UUID for each object. Currently used only in the CIM-related methods.</p>
+<p>Original COM help: <a class="reference external" href="https://opendss.epri.com/GUID.html">https://opendss.epri.com/GUID.html</a></p>
 </dd></dl>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="altdss.CircuitElement.CircuitElementBatchMixin.Handle">
 <span class="sig-name descname"><span class="pre">Handle</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">altdss.types.Int32Array</span></span></span><a class="headerlink" href="#altdss.CircuitElement.CircuitElementBatchMixin.Handle" title="Link to this definition">#</a></dt>
-<dd></dd></dl>
+<dd><p>Index of each element into the circuit’s element list.</p>
+<p>Original COM help: <a class="reference external" href="https://opendss.epri.com/Handle.html">https://opendss.epri.com/Handle.html</a></p>
+</dd></dl>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="altdss.CircuitElement.CircuitElementBatchMixin.HasOCPDevice">
-<span class="sig-name descname"><span class="pre">HasOCPDevice</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">bool</span></span></span><a class="headerlink" href="#altdss.CircuitElement.CircuitElementBatchMixin.HasOCPDevice" title="Link to this definition">#</a></dt>
-<dd></dd></dl>
+<span class="sig-name descname"><span class="pre">HasOCPDevice</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">altdss.types.BoolArray</span></span></span><a class="headerlink" href="#altdss.CircuitElement.CircuitElementBatchMixin.HasOCPDevice" title="Link to this definition">#</a></dt>
+<dd><p>For each element in the batch: returns true if a recloser, relay, or fuse controlling the circuit element.</p>
+<p>OCP = Overcurrent Protection</p>
+<p>Original COM help: <a class="reference external" href="https://opendss.epri.com/HasOCPDevice.html">https://opendss.epri.com/HasOCPDevice.html</a></p>
+</dd></dl>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="altdss.CircuitElement.CircuitElementBatchMixin.HasSwitchControl">
-<span class="sig-name descname"><span class="pre">HasSwitchControl</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">bool</span></span></span><a class="headerlink" href="#altdss.CircuitElement.CircuitElementBatchMixin.HasSwitchControl" title="Link to this definition">#</a></dt>
-<dd></dd></dl>
+<span class="sig-name descname"><span class="pre">HasSwitchControl</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">altdss.types.BoolArray</span></span></span><a class="headerlink" href="#altdss.CircuitElement.CircuitElementBatchMixin.HasSwitchControl" title="Link to this definition">#</a></dt>
+<dd><p>For each element in the batch: returns true if the element has a SwtControl attached.</p>
+<p>Original COM help: <a class="reference external" href="https://opendss.epri.com/HasSwitchControl.html">https://opendss.epri.com/HasSwitchControl.html</a></p>
+</dd></dl>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="altdss.CircuitElement.CircuitElementBatchMixin.HasVoltControl">
-<span class="sig-name descname"><span class="pre">HasVoltControl</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">bool</span></span></span><a class="headerlink" href="#altdss.CircuitElement.CircuitElementBatchMixin.HasVoltControl" title="Link to this definition">#</a></dt>
-<dd></dd></dl>
+<span class="sig-name descname"><span class="pre">HasVoltControl</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">altdss.types.BoolArray</span></span></span><a class="headerlink" href="#altdss.CircuitElement.CircuitElementBatchMixin.HasVoltControl" title="Link to this definition">#</a></dt>
+<dd><p>For each element in the batch: returns true if the element has a CapControl or RegControl attached.</p>
+<p>Original COM help: <a class="reference external" href="https://opendss.epri.com/HasVoltControl.html">https://opendss.epri.com/HasVoltControl.html</a></p>
+</dd></dl>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="altdss.CircuitElement.CircuitElementBatchMixin.IsIsolated">
 <span class="sig-name descname"><span class="pre">IsIsolated</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">altdss.types.BoolArray</span></span></span><a class="headerlink" href="#altdss.CircuitElement.CircuitElementBatchMixin.IsIsolated" title="Link to this definition">#</a></dt>
-<dd></dd></dl>
+<dd><p>For each element in the batch: returns true if the element is isolated.
+Note that this only fetches the current value. See also the Topology interface.</p>
+</dd></dl>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="altdss.CircuitElement.CircuitElementBatchMixin.Losses">
 <span class="sig-name descname"><span class="pre">Losses</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">altdss.types.ComplexArray</span></span></span><a class="headerlink" href="#altdss.CircuitElement.CircuitElementBatchMixin.Losses" title="Link to this definition">#</a></dt>
-<dd><p>Total losses for each element, complex VA (watts, vars)</p>
+<dd><p>For each element in the batch: total losses in the element, in VA (watts, vars).</p>
+<p>Original COM help: <a class="reference external" href="https://opendss.epri.com/Losses1.html">https://opendss.epri.com/Losses1.html</a></p>
 </dd></dl>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="altdss.CircuitElement.CircuitElementBatchMixin.MaxCurrent">
-<span class="sig-name descname"><span class="pre">MaxCurrent</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">terminal</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">float</span></span></span><a class="headerlink" href="#altdss.CircuitElement.CircuitElementBatchMixin.MaxCurrent" title="Link to this definition">#</a></dt>
-<dd><p>Returns the maximum current (magnitude) at the specificed terminal for all elements in this batch.
+<span class="sig-name descname"><span class="pre">MaxCurrent</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">terminal</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">altdss.types.Float64Array</span></span></span><a class="headerlink" href="#altdss.CircuitElement.CircuitElementBatchMixin.MaxCurrent" title="Link to this definition">#</a></dt>
+<dd><p>Returns the maximum current (magnitude) at the specified terminal for each element in this batch.
 Use -1 as terminal to get the value across all terminals.</p>
 </dd></dl>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="altdss.CircuitElement.CircuitElementBatchMixin.NumConductors">
 <span class="sig-name descname"><span class="pre">NumConductors</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">altdss.types.Int32Array</span></span></span><a class="headerlink" href="#altdss.CircuitElement.CircuitElementBatchMixin.NumConductors" title="Link to this definition">#</a></dt>
-<dd></dd></dl>
+<dd><p>Number of conductors per terminal for each element in the batch.</p>
+<p>Original COM help: <a class="reference external" href="https://opendss.epri.com/NumConductors.html">https://opendss.epri.com/NumConductors.html</a></p>
+</dd></dl>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="altdss.CircuitElement.CircuitElementBatchMixin.NumControllers">
 <span class="sig-name descname"><span class="pre">NumControllers</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">altdss.types.Int32Array</span></span></span><a class="headerlink" href="#altdss.CircuitElement.CircuitElementBatchMixin.NumControllers" title="Link to this definition">#</a></dt>
-<dd></dd></dl>
+<dd><p>Number of controllers connected to each device in the batch.</p>
+<p>Original COM help: <a class="reference external" href="https://opendss.epri.com/NumControls.html">https://opendss.epri.com/NumControls.html</a></p>
+</dd></dl>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="altdss.CircuitElement.CircuitElementBatchMixin.NumPhases">
 <span class="sig-name descname"><span class="pre">NumPhases</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">altdss.types.Int32Array</span></span></span><a class="headerlink" href="#altdss.CircuitElement.CircuitElementBatchMixin.NumPhases" title="Link to this definition">#</a></dt>
-<dd></dd></dl>
+<dd><p>Number of Phases for each element in this batch.</p>
+<p>Original COM help: <a class="reference external" href="https://opendss.epri.com/NumPhases.html">https://opendss.epri.com/NumPhases.html</a></p>
+</dd></dl>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="altdss.CircuitElement.CircuitElementBatchMixin.NumTerminals">
 <span class="sig-name descname"><span class="pre">NumTerminals</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">altdss.types.Int32Array</span></span></span><a class="headerlink" href="#altdss.CircuitElement.CircuitElementBatchMixin.NumTerminals" title="Link to this definition">#</a></dt>
-<dd></dd></dl>
+<dd><p>Number of terminals for each Circuit Element in the batch.</p>
+<p>Original COM help: <a class="reference external" href="https://opendss.epri.com/NumTerminals.html">https://opendss.epri.com/NumTerminals.html</a></p>
+</dd></dl>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="altdss.CircuitElement.CircuitElementBatchMixin.OCPDevice">
 <span class="sig-name descname"><span class="pre">OCPDevice</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">List</span><span class="p"><span class="pre">[</span></span><span class="pre">Union</span><span class="p"><span class="pre">[</span></span><a class="reference internal" href="altdss.DSSObj.html#altdss.DSSObj.DSSObj" title="altdss.DSSObj.DSSObj"><span class="pre">altdss.DSSObj.DSSObj</span></a><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">None</span><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">]</span></span></span></span><a class="headerlink" href="#altdss.CircuitElement.CircuitElementBatchMixin.OCPDevice" title="Link to this definition">#</a></dt>
-<dd></dd></dl>
+<dd><p>Returns (as a list of Python objects) the OCP device controlling each element.</p>
+</dd></dl>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="altdss.CircuitElement.CircuitElementBatchMixin.OCPDeviceIndex">
 <span class="sig-name descname"><span class="pre">OCPDeviceIndex</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">altdss.types.Int32Array</span></span></span><a class="headerlink" href="#altdss.CircuitElement.CircuitElementBatchMixin.OCPDeviceIndex" title="Link to this definition">#</a></dt>
-<dd></dd></dl>
+<dd><p>For each element in the batch: index into each controller list of the OCP Device controlling each circuit element</p>
+<p>Original COM help: <a class="reference external" href="https://opendss.epri.com/OCPDevIndex.html">https://opendss.epri.com/OCPDevIndex.html</a></p>
+</dd></dl>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="altdss.CircuitElement.CircuitElementBatchMixin.OCPDeviceType">
-<span class="sig-name descname"><span class="pre">OCPDeviceType</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">dss.enums.OCPDevType</span></span></span><a class="headerlink" href="#altdss.CircuitElement.CircuitElementBatchMixin.OCPDeviceType" title="Link to this definition">#</a></dt>
-<dd></dd></dl>
+<span class="sig-name descname"><span class="pre">OCPDeviceType</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">List</span><span class="p"><span class="pre">[</span></span><span class="pre">dss.enums.OCPDevType</span><span class="p"><span class="pre">]</span></span></span></span><a class="headerlink" href="#altdss.CircuitElement.CircuitElementBatchMixin.OCPDeviceType" title="Link to this definition">#</a></dt>
+<dd><p>For each element in the batch: type of OCP controller device</p>
+<p>Original COM help: <a class="reference external" href="https://opendss.epri.com/OCPDevType.html">https://opendss.epri.com/OCPDevType.html</a></p>
+</dd></dl>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="altdss.CircuitElement.CircuitElementBatchMixin.PhaseLosses">
 <span class="sig-name descname"><span class="pre">PhaseLosses</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">altdss.types.ComplexArray</span></span></span><a class="headerlink" href="#altdss.CircuitElement.CircuitElementBatchMixin.PhaseLosses" title="Link to this definition">#</a></dt>
-<dd><p>Complex array of losses (kVA) by phase, for each element</p>
+<dd><p>Complex array of losses (kVA) by phase</p>
+<p>Original COM help: <a class="reference external" href="https://opendss.epri.com/PhaseLosses.html">https://opendss.epri.com/PhaseLosses.html</a></p>
 </dd></dl>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="altdss.CircuitElement.CircuitElementBatchMixin.Powers">
 <span class="sig-name descname"><span class="pre">Powers</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">altdss.types.ComplexArray</span></span></span><a class="headerlink" href="#altdss.CircuitElement.CircuitElementBatchMixin.Powers" title="Link to this definition">#</a></dt>
 <dd><p>Complex array of powers (kVA) into each conductor of each terminal, of each element in the batch.</p>
+<p>Original COM help: <a class="reference external" href="https://opendss.epri.com/Powers.html">https://opendss.epri.com/Powers.html</a></p>
 </dd></dl>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="altdss.CircuitElement.CircuitElementBatchMixin.SeqCurrents">
 <span class="sig-name descname"><span class="pre">SeqCurrents</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">altdss.types.Float64Array</span></span></span><a class="headerlink" href="#altdss.CircuitElement.CircuitElementBatchMixin.SeqCurrents" title="Link to this definition">#</a></dt>
-<dd></dd></dl>
+<dd><p>Array of symmetrical component currents (magnitudes only) into each 3-phase terminal of each element</p>
+<p>Original COM help: <a class="reference external" href="https://opendss.epri.com/SeqCurrents.html">https://opendss.epri.com/SeqCurrents.html</a></p>
+</dd></dl>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="altdss.CircuitElement.CircuitElementBatchMixin.SeqPowers">
 <span class="sig-name descname"><span class="pre">SeqPowers</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">altdss.types.ComplexArray</span></span></span><a class="headerlink" href="#altdss.CircuitElement.CircuitElementBatchMixin.SeqPowers" title="Link to this definition">#</a></dt>
-<dd></dd></dl>
+<dd><p>Complex array of sequence powers (kW, kvar) into each 3-phase terminal of each element</p>
+<p>Original COM help: <a class="reference external" href="https://opendss.epri.com/SeqPowers.html">https://opendss.epri.com/SeqPowers.html</a></p>
+</dd></dl>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="altdss.CircuitElement.CircuitElementBatchMixin.SeqVoltages">
 <span class="sig-name descname"><span class="pre">SeqVoltages</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">altdss.types.Float64Array</span></span></span><a class="headerlink" href="#altdss.CircuitElement.CircuitElementBatchMixin.SeqVoltages" title="Link to this definition">#</a></dt>
-<dd></dd></dl>
+<dd><p>Double array of symmetrical component voltages (magnitudes only) at each 3-phase terminal</p>
+<p>Original COM help: <a class="reference external" href="https://opendss.epri.com/SeqVoltages1.html">https://opendss.epri.com/SeqVoltages1.html</a></p>
+</dd></dl>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="altdss.CircuitElement.CircuitElementBatchMixin.TotalPowers">
@@ -895,12 +992,16 @@ Use -1 as terminal to get the value across all terminals.</p>
 <dl class="py method">
 <dt class="sig sig-object py" id="altdss.CircuitElement.CircuitElementBatchMixin.Voltages">
 <span class="sig-name descname"><span class="pre">Voltages</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">altdss.types.ComplexArray</span></span></span><a class="headerlink" href="#altdss.CircuitElement.CircuitElementBatchMixin.Voltages" title="Link to this definition">#</a></dt>
-<dd></dd></dl>
+<dd><p>Complex array of voltages at terminals</p>
+<p>Original COM help: <a class="reference external" href="https://opendss.epri.com/Voltages1.html">https://opendss.epri.com/Voltages1.html</a></p>
+</dd></dl>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="altdss.CircuitElement.CircuitElementBatchMixin.VoltagesMagAng">
 <span class="sig-name descname"><span class="pre">VoltagesMagAng</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">altdss.types.Float64Array</span></span></span><a class="headerlink" href="#altdss.CircuitElement.CircuitElementBatchMixin.VoltagesMagAng" title="Link to this definition">#</a></dt>
-<dd></dd></dl>
+<dd><p>Voltages at each conductor in magnitude, angle form as array of doubles.</p>
+<p>Original COM help: <a class="reference external" href="https://opendss.epri.com/VoltagesMagAng.html">https://opendss.epri.com/VoltagesMagAng.html</a></p>
+</dd></dl>
 
 </dd></dl>
 
@@ -910,69 +1011,101 @@ Use -1 as terminal to get the value across all terminals.</p>
 <dd><dl class="py method">
 <dt class="sig sig-object py" id="altdss.CircuitElement.CircuitElementMixin.Close">
 <span class="sig-name descname"><span class="pre">Close</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">terminal</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">phase</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span><a class="headerlink" href="#altdss.CircuitElement.CircuitElementMixin.Close" title="Link to this definition">#</a></dt>
-<dd></dd></dl>
+<dd><p>Close the specified terminal and phase, if non-zero, or all conductors at the terminal.</p>
+<p>Original COM help: <a class="reference external" href="https://opendss.epri.com/Close1.html">https://opendss.epri.com/Close1.html</a></p>
+</dd></dl>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="altdss.CircuitElement.CircuitElementMixin.ComplexSeqCurrents">
 <span class="sig-name descname"><span class="pre">ComplexSeqCurrents</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">altdss.types.ComplexArray</span></span></span><a class="headerlink" href="#altdss.CircuitElement.CircuitElementMixin.ComplexSeqCurrents" title="Link to this definition">#</a></dt>
-<dd></dd></dl>
+<dd><p>Complex double array of Sequence Currents for all conductors of all terminals of active circuit element.</p>
+<p>Original COM help: <a class="reference external" href="https://opendss.epri.com/CplxSeqCurrents.html">https://opendss.epri.com/CplxSeqCurrents.html</a></p>
+</dd></dl>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="altdss.CircuitElement.CircuitElementMixin.ComplexSeqVoltages">
 <span class="sig-name descname"><span class="pre">ComplexSeqVoltages</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">altdss.types.ComplexArray</span></span></span><a class="headerlink" href="#altdss.CircuitElement.CircuitElementMixin.ComplexSeqVoltages" title="Link to this definition">#</a></dt>
-<dd></dd></dl>
+<dd><p>Complex double array of Sequence Voltage for all terminals of active circuit element.</p>
+<p>Original COM help: <a class="reference external" href="https://opendss.epri.com/CplxSeqVoltages1.html">https://opendss.epri.com/CplxSeqVoltages1.html</a></p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="altdss.CircuitElement.CircuitElementMixin.Controllers">
+<span class="sig-name descname"><span class="pre">Controllers</span></span><a class="headerlink" href="#altdss.CircuitElement.CircuitElementMixin.Controllers" title="Link to this definition">#</a></dt>
+<dd><p>‘NonUniformBatch(…)’</p>
+<p>Controllers attached to this element.</p>
+</dd></dl>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="altdss.CircuitElement.CircuitElementMixin.Currents">
 <span class="sig-name descname"><span class="pre">Currents</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">altdss.types.ComplexArray</span></span></span><a class="headerlink" href="#altdss.CircuitElement.CircuitElementMixin.Currents" title="Link to this definition">#</a></dt>
-<dd></dd></dl>
+<dd><p>Complex array of currents into each conductor of each terminal</p>
+<p>Original COM help: <a class="reference external" href="https://opendss.epri.com/Currents1.html">https://opendss.epri.com/Currents1.html</a></p>
+</dd></dl>
 
 <dl class="py attribute">
 <dt class="sig sig-object py" id="altdss.CircuitElement.CircuitElementMixin.DisplayName">
 <span class="sig-name descname"><span class="pre">DisplayName</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">str</span></em><a class="headerlink" href="#altdss.CircuitElement.CircuitElementMixin.DisplayName" title="Link to this definition">#</a></dt>
 <dd><p>‘property(…)’</p>
+<p>Display name of the object (not necessarily unique)</p>
+<p>Original COM help: <a class="reference external" href="https://opendss.epri.com/DisplayName.html">https://opendss.epri.com/DisplayName.html</a></p>
 </dd></dl>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="altdss.CircuitElement.CircuitElementMixin.GUID">
 <span class="sig-name descname"><span class="pre">GUID</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">str</span></span></span><a class="headerlink" href="#altdss.CircuitElement.CircuitElementMixin.GUID" title="Link to this definition">#</a></dt>
 <dd><p>Object’s GUID/UUID. Currently used only in the CIM-related methods.</p>
+<p>Original COM help: <a class="reference external" href="https://opendss.epri.com/GUID.html">https://opendss.epri.com/GUID.html</a></p>
 </dd></dl>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="altdss.CircuitElement.CircuitElementMixin.Handle">
 <span class="sig-name descname"><span class="pre">Handle</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">int</span></span></span><a class="headerlink" href="#altdss.CircuitElement.CircuitElementMixin.Handle" title="Link to this definition">#</a></dt>
-<dd></dd></dl>
+<dd><p>Index of this element into the circuit’s element list.</p>
+<p>Original COM help: <a class="reference external" href="https://opendss.epri.com/Handle.html">https://opendss.epri.com/Handle.html</a></p>
+</dd></dl>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="altdss.CircuitElement.CircuitElementMixin.HasOCPDevice">
 <span class="sig-name descname"><span class="pre">HasOCPDevice</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">bool</span></span></span><a class="headerlink" href="#altdss.CircuitElement.CircuitElementMixin.HasOCPDevice" title="Link to this definition">#</a></dt>
-<dd></dd></dl>
+<dd><p>Returns true if a recloser, relay, or fuse controlling the circuit element.</p>
+<p>OCP = Overcurrent Protection</p>
+<p>Original COM help: <a class="reference external" href="https://opendss.epri.com/HasOCPDevice.html">https://opendss.epri.com/HasOCPDevice.html</a></p>
+</dd></dl>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="altdss.CircuitElement.CircuitElementMixin.HasSwitchControl">
 <span class="sig-name descname"><span class="pre">HasSwitchControl</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">bool</span></span></span><a class="headerlink" href="#altdss.CircuitElement.CircuitElementMixin.HasSwitchControl" title="Link to this definition">#</a></dt>
-<dd></dd></dl>
+<dd><p>Returns true if the element has a SwtControl attached.</p>
+<p>Original COM help: <a class="reference external" href="https://opendss.epri.com/HasSwitchControl.html">https://opendss.epri.com/HasSwitchControl.html</a></p>
+</dd></dl>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="altdss.CircuitElement.CircuitElementMixin.HasVoltControl">
 <span class="sig-name descname"><span class="pre">HasVoltControl</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">bool</span></span></span><a class="headerlink" href="#altdss.CircuitElement.CircuitElementMixin.HasVoltControl" title="Link to this definition">#</a></dt>
-<dd></dd></dl>
+<dd><p>Returns true if the element has a CapControl or RegControl attached.</p>
+<p>Original COM help: <a class="reference external" href="https://opendss.epri.com/HasVoltControl.html">https://opendss.epri.com/HasVoltControl.html</a></p>
+</dd></dl>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="altdss.CircuitElement.CircuitElementMixin.IsIsolated">
 <span class="sig-name descname"><span class="pre">IsIsolated</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">bool</span></span></span><a class="headerlink" href="#altdss.CircuitElement.CircuitElementMixin.IsIsolated" title="Link to this definition">#</a></dt>
-<dd></dd></dl>
+<dd><p>Returns true if the element is isolated.
+Note that this only fetches the current value. See also the Topology interface.</p>
+</dd></dl>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="altdss.CircuitElement.CircuitElementMixin.IsOpen">
 <span class="sig-name descname"><span class="pre">IsOpen</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">terminal</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">phase</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">bool</span></span></span><a class="headerlink" href="#altdss.CircuitElement.CircuitElementMixin.IsOpen" title="Link to this definition">#</a></dt>
-<dd></dd></dl>
+<dd><p>Returns true if the specified terminal and phase are open.</p>
+<p>If the <code class="docutils literal notranslate"><span class="pre">phase</span></code> parameter is zero, returns if <strong>any</strong> conductor at the terminal is open.</p>
+</dd></dl>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="altdss.CircuitElement.CircuitElementMixin.Losses">
 <span class="sig-name descname"><span class="pre">Losses</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">complex</span></span></span><a class="headerlink" href="#altdss.CircuitElement.CircuitElementMixin.Losses" title="Link to this definition">#</a></dt>
 <dd><p>Total (complex) losses in the element, in VA (watts, vars)</p>
+<p>Original COM help: <a class="reference external" href="https://opendss.epri.com/Losses1.html">https://opendss.epri.com/Losses1.html</a></p>
 </dd></dl>
 
 <dl class="py method">
@@ -985,103 +1118,141 @@ Use -1 as terminal to get the value across all terminals.</p>
 <dl class="py method">
 <dt class="sig sig-object py" id="altdss.CircuitElement.CircuitElementMixin.NodeOrder">
 <span class="sig-name descname"><span class="pre">NodeOrder</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">altdss.types.Int32Array</span></span></span><a class="headerlink" href="#altdss.CircuitElement.CircuitElementMixin.NodeOrder" title="Link to this definition">#</a></dt>
-<dd></dd></dl>
+<dd><p>Array of integer containing the node numbers (representing phases, for example) for each conductor of each terminal.</p>
+<p>Be sure to run a solution to initialize the values after the circuit is created or modified.</p>
+</dd></dl>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="altdss.CircuitElement.CircuitElementMixin.NodeRef">
 <span class="sig-name descname"><span class="pre">NodeRef</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">altdss.types.Int32Array</span></span></span><a class="headerlink" href="#altdss.CircuitElement.CircuitElementMixin.NodeRef" title="Link to this definition">#</a></dt>
-<dd></dd></dl>
+<dd><p>Array of integers, a copy of the internal NodeRef of the CktElement.</p>
+<p>Be sure to run a solution to initialize the values after the circuit is created or modified.</p>
+</dd></dl>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="altdss.CircuitElement.CircuitElementMixin.NumConductors">
 <span class="sig-name descname"><span class="pre">NumConductors</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">int</span></span></span><a class="headerlink" href="#altdss.CircuitElement.CircuitElementMixin.NumConductors" title="Link to this definition">#</a></dt>
-<dd></dd></dl>
+<dd><p>Number of conductors per terminal</p>
+<p>Original COM help: <a class="reference external" href="https://opendss.epri.com/NumConductors.html">https://opendss.epri.com/NumConductors.html</a></p>
+</dd></dl>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="altdss.CircuitElement.CircuitElementMixin.NumControllers">
 <span class="sig-name descname"><span class="pre">NumControllers</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">int</span></span></span><a class="headerlink" href="#altdss.CircuitElement.CircuitElementMixin.NumControllers" title="Link to this definition">#</a></dt>
-<dd></dd></dl>
+<dd><p>Number of controllers connected to this device.</p>
+<p>Original COM help: <a class="reference external" href="https://opendss.epri.com/NumControls.html">https://opendss.epri.com/NumControls.html</a></p>
+</dd></dl>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="altdss.CircuitElement.CircuitElementMixin.NumPhases">
 <span class="sig-name descname"><span class="pre">NumPhases</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">int</span></span></span><a class="headerlink" href="#altdss.CircuitElement.CircuitElementMixin.NumPhases" title="Link to this definition">#</a></dt>
-<dd></dd></dl>
+<dd><p>Number of phases</p>
+<p>Original COM help: <a class="reference external" href="https://opendss.epri.com/NumPhases.html">https://opendss.epri.com/NumPhases.html</a></p>
+</dd></dl>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="altdss.CircuitElement.CircuitElementMixin.NumTerminals">
 <span class="sig-name descname"><span class="pre">NumTerminals</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">int</span></span></span><a class="headerlink" href="#altdss.CircuitElement.CircuitElementMixin.NumTerminals" title="Link to this definition">#</a></dt>
-<dd></dd></dl>
+<dd><p>Number of terminals in this circuit element</p>
+<p>Original COM help: <a class="reference external" href="https://opendss.epri.com/NumTerminals.html">https://opendss.epri.com/NumTerminals.html</a></p>
+</dd></dl>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="altdss.CircuitElement.CircuitElementMixin.OCPDevice">
 <span class="sig-name descname"><span class="pre">OCPDevice</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">Union</span><span class="p"><span class="pre">[</span></span><a class="reference internal" href="altdss.DSSObj.html#altdss.DSSObj.DSSObj" title="altdss.DSSObj.DSSObj"><span class="pre">altdss.DSSObj.DSSObj</span></a><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">None</span><span class="p"><span class="pre">]</span></span></span></span><a class="headerlink" href="#altdss.CircuitElement.CircuitElementMixin.OCPDevice" title="Link to this definition">#</a></dt>
-<dd></dd></dl>
+<dd><p>Returns (as a Python object) the OCP device controlling this element, if any.</p>
+</dd></dl>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="altdss.CircuitElement.CircuitElementMixin.OCPDeviceIndex">
 <span class="sig-name descname"><span class="pre">OCPDeviceIndex</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">int</span></span></span><a class="headerlink" href="#altdss.CircuitElement.CircuitElementMixin.OCPDeviceIndex" title="Link to this definition">#</a></dt>
-<dd></dd></dl>
+<dd><p>Index into controller list of OCP Device controlling this circuit element</p>
+<p>Original COM help: <a class="reference external" href="https://opendss.epri.com/OCPDevIndex.html">https://opendss.epri.com/OCPDevIndex.html</a></p>
+</dd></dl>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="altdss.CircuitElement.CircuitElementMixin.OCPDeviceType">
 <span class="sig-name descname"><span class="pre">OCPDeviceType</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">dss.enums.OCPDevType</span></span></span><a class="headerlink" href="#altdss.CircuitElement.CircuitElementMixin.OCPDeviceType" title="Link to this definition">#</a></dt>
-<dd></dd></dl>
+<dd><p>Type of OCP controller device</p>
+<p>Original COM help: <a class="reference external" href="https://opendss.epri.com/OCPDevType.html">https://opendss.epri.com/OCPDevType.html</a></p>
+</dd></dl>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="altdss.CircuitElement.CircuitElementMixin.Open">
 <span class="sig-name descname"><span class="pre">Open</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">terminal</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">phase</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span><a class="headerlink" href="#altdss.CircuitElement.CircuitElementMixin.Open" title="Link to this definition">#</a></dt>
-<dd></dd></dl>
+<dd><p>Open the specified terminal and phase, if non-zero, or all conductors at the terminal.</p>
+<p>Original COM help: <a class="reference external" href="https://opendss.epri.com/Open1.html">https://opendss.epri.com/Open1.html</a></p>
+</dd></dl>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="altdss.CircuitElement.CircuitElementMixin.PhaseLosses">
 <span class="sig-name descname"><span class="pre">PhaseLosses</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">altdss.types.ComplexArray</span></span></span><a class="headerlink" href="#altdss.CircuitElement.CircuitElementMixin.PhaseLosses" title="Link to this definition">#</a></dt>
 <dd><p>Complex array of losses (kVA) by phase</p>
+<p>Original COM help: <a class="reference external" href="https://opendss.epri.com/PhaseLosses.html">https://opendss.epri.com/PhaseLosses.html</a></p>
 </dd></dl>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="altdss.CircuitElement.CircuitElementMixin.Powers">
 <span class="sig-name descname"><span class="pre">Powers</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">altdss.types.ComplexArray</span></span></span><a class="headerlink" href="#altdss.CircuitElement.CircuitElementMixin.Powers" title="Link to this definition">#</a></dt>
-<dd></dd></dl>
+<dd><p>Complex array of powers (kVA) into each conductor of each terminal</p>
+<p>Original COM help: <a class="reference external" href="https://opendss.epri.com/Powers.html">https://opendss.epri.com/Powers.html</a></p>
+</dd></dl>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="altdss.CircuitElement.CircuitElementMixin.Residuals">
 <span class="sig-name descname"><span class="pre">Residuals</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">altdss.types.Float64Array</span></span></span><a class="headerlink" href="#altdss.CircuitElement.CircuitElementMixin.Residuals" title="Link to this definition">#</a></dt>
-<dd></dd></dl>
+<dd><p>Residual currents for each terminal: (magnitude, angle in degrees)</p>
+<p>Original COM help: <a class="reference external" href="https://opendss.epri.com/Residuals.html">https://opendss.epri.com/Residuals.html</a></p>
+</dd></dl>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="altdss.CircuitElement.CircuitElementMixin.SeqCurrents">
 <span class="sig-name descname"><span class="pre">SeqCurrents</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">altdss.types.Float64Array</span></span></span><a class="headerlink" href="#altdss.CircuitElement.CircuitElementMixin.SeqCurrents" title="Link to this definition">#</a></dt>
-<dd></dd></dl>
+<dd><p>Array of symmetrical component currents (magnitudes only) into each 3-phase terminal</p>
+<p>Original COM help: <a class="reference external" href="https://opendss.epri.com/SeqCurrents.html">https://opendss.epri.com/SeqCurrents.html</a></p>
+</dd></dl>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="altdss.CircuitElement.CircuitElementMixin.SeqPowers">
 <span class="sig-name descname"><span class="pre">SeqPowers</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">altdss.types.ComplexArray</span></span></span><a class="headerlink" href="#altdss.CircuitElement.CircuitElementMixin.SeqPowers" title="Link to this definition">#</a></dt>
-<dd></dd></dl>
+<dd><p>Complex array of sequence powers (kW, kvar) into each 3-phase terminal</p>
+<p>Original COM help: <a class="reference external" href="https://opendss.epri.com/SeqPowers.html">https://opendss.epri.com/SeqPowers.html</a></p>
+</dd></dl>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="altdss.CircuitElement.CircuitElementMixin.SeqVoltages">
 <span class="sig-name descname"><span class="pre">SeqVoltages</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">altdss.types.Float64Array</span></span></span><a class="headerlink" href="#altdss.CircuitElement.CircuitElementMixin.SeqVoltages" title="Link to this definition">#</a></dt>
-<dd></dd></dl>
+<dd><p>Double array of symmetrical component voltages (magnitudes only) at each 3-phase terminal</p>
+<p>Original COM help: <a class="reference external" href="https://opendss.epri.com/SeqVoltages1.html">https://opendss.epri.com/SeqVoltages1.html</a></p>
+</dd></dl>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="altdss.CircuitElement.CircuitElementMixin.TotalPowers">
 <span class="sig-name descname"><span class="pre">TotalPowers</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">altdss.types.ComplexArray</span></span></span><a class="headerlink" href="#altdss.CircuitElement.CircuitElementMixin.TotalPowers" title="Link to this definition">#</a></dt>
-<dd></dd></dl>
+<dd><p>Returns an array with the total powers (complex, kVA) at ALL terminals of the active circuit element.</p>
+<p>Original COM help: <a class="reference external" href="https://opendss.epri.com/TotalPowers.html">https://opendss.epri.com/TotalPowers.html</a></p>
+</dd></dl>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="altdss.CircuitElement.CircuitElementMixin.Voltages">
 <span class="sig-name descname"><span class="pre">Voltages</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">altdss.types.ComplexArray</span></span></span><a class="headerlink" href="#altdss.CircuitElement.CircuitElementMixin.Voltages" title="Link to this definition">#</a></dt>
-<dd></dd></dl>
+<dd><p>Complex array of voltages at terminals</p>
+<p>Original COM help: <a class="reference external" href="https://opendss.epri.com/Voltages1.html">https://opendss.epri.com/Voltages1.html</a></p>
+</dd></dl>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="altdss.CircuitElement.CircuitElementMixin.VoltagesMagAng">
 <span class="sig-name descname"><span class="pre">VoltagesMagAng</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">altdss.types.Float64Array</span></span></span><a class="headerlink" href="#altdss.CircuitElement.CircuitElementMixin.VoltagesMagAng" title="Link to this definition">#</a></dt>
-<dd></dd></dl>
+<dd><p>Voltages at each conductor in magnitude, angle form as array of doubles.</p>
+<p>Original COM help: <a class="reference external" href="https://opendss.epri.com/VoltagesMagAng.html">https://opendss.epri.com/VoltagesMagAng.html</a></p>
+</dd></dl>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="altdss.CircuitElement.CircuitElementMixin.YPrim">
 <span class="sig-name descname"><span class="pre">YPrim</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">altdss.types.ComplexArray</span></span></span><a class="headerlink" href="#altdss.CircuitElement.CircuitElementMixin.YPrim" title="Link to this definition">#</a></dt>
-<dd></dd></dl>
+<dd><p>YPrim matrix, column order, complex numbers</p>
+<p>Original COM help: <a class="reference external" href="https://opendss.epri.com/Yprim.html">https://opendss.epri.com/Yprim.html</a></p>
+</dd></dl>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="altdss.CircuitElement.CircuitElementMixin.__init__">
@@ -1096,17 +1267,22 @@ Use -1 as terminal to get the value across all terminals.</p>
 <dd><dl class="py method">
 <dt class="sig sig-object py" id="altdss.CircuitElement.ElementHasRegistersMixin.RegisterNames">
 <span class="sig-name descname"><span class="pre">RegisterNames</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">List</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">]</span></span></span></span><a class="headerlink" href="#altdss.CircuitElement.ElementHasRegistersMixin.RegisterNames" title="Link to this definition">#</a></dt>
-<dd></dd></dl>
+<dd><p>List of names of the energy meter registers for this element.</p>
+<p>See also the enums <code class="docutils literal notranslate"><span class="pre">EnergyMeterRegisters</span></code> and <code class="docutils literal notranslate"><span class="pre">GeneratorRegisters</span></code>.</p>
+</dd></dl>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="altdss.CircuitElement.ElementHasRegistersMixin.RegisterValues">
 <span class="sig-name descname"><span class="pre">RegisterValues</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">altdss.types.Float64Array</span></span></span><a class="headerlink" href="#altdss.CircuitElement.ElementHasRegistersMixin.RegisterValues" title="Link to this definition">#</a></dt>
-<dd></dd></dl>
+<dd><p>Array of values in this element’s energy meter registers.</p>
+<p>Original COM help: <a class="reference external" href="https://opendss.epri.com/RegisterValues.html">https://opendss.epri.com/RegisterValues.html</a></p>
+</dd></dl>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="altdss.CircuitElement.ElementHasRegistersMixin.RegistersDict">
 <span class="sig-name descname"><span class="pre">RegistersDict</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">Dict</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">float</span><span class="p"><span class="pre">]</span></span></span></span><a class="headerlink" href="#altdss.CircuitElement.ElementHasRegistersMixin.RegistersDict" title="Link to this definition">#</a></dt>
-<dd></dd></dl>
+<dd><p>Convenience function: returns a dict of the element’s energy meter register names mapping to their current values.</p>
+</dd></dl>
 
 </dd></dl>
 
@@ -1193,6 +1369,7 @@ Use -1 as terminal to get the value across all terminals.</p>
 <li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#altdss.CircuitElement.CircuitElementBatch.Voltages"><code class="docutils literal notranslate"><span class="pre">CircuitElementBatch.Voltages()</span></code></a></li>
 <li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#altdss.CircuitElement.CircuitElementBatch.VoltagesMagAng"><code class="docutils literal notranslate"><span class="pre">CircuitElementBatch.VoltagesMagAng()</span></code></a></li>
 <li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#altdss.CircuitElement.CircuitElementBatch.__call__"><code class="docutils literal notranslate"><span class="pre">CircuitElementBatch.__call__()</span></code></a></li>
+<li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#altdss.CircuitElement.CircuitElementBatch.__getitem__"><code class="docutils literal notranslate"><span class="pre">CircuitElementBatch.__getitem__()</span></code></a></li>
 <li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#altdss.CircuitElement.CircuitElementBatch.__init__"><code class="docutils literal notranslate"><span class="pre">CircuitElementBatch.__init__()</span></code></a></li>
 <li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#altdss.CircuitElement.CircuitElementBatch.__iter__"><code class="docutils literal notranslate"><span class="pre">CircuitElementBatch.__iter__()</span></code></a></li>
 <li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#altdss.CircuitElement.CircuitElementBatch.__len__"><code class="docutils literal notranslate"><span class="pre">CircuitElementBatch.__len__()</span></code></a></li>
@@ -1234,6 +1411,7 @@ Use -1 as terminal to get the value across all terminals.</p>
 <li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#altdss.CircuitElement.CircuitElementMixin.Close"><code class="docutils literal notranslate"><span class="pre">CircuitElementMixin.Close()</span></code></a></li>
 <li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#altdss.CircuitElement.CircuitElementMixin.ComplexSeqCurrents"><code class="docutils literal notranslate"><span class="pre">CircuitElementMixin.ComplexSeqCurrents()</span></code></a></li>
 <li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#altdss.CircuitElement.CircuitElementMixin.ComplexSeqVoltages"><code class="docutils literal notranslate"><span class="pre">CircuitElementMixin.ComplexSeqVoltages()</span></code></a></li>
+<li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#altdss.CircuitElement.CircuitElementMixin.Controllers"><code class="docutils literal notranslate"><span class="pre">CircuitElementMixin.Controllers</span></code></a></li>
 <li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#altdss.CircuitElement.CircuitElementMixin.Currents"><code class="docutils literal notranslate"><span class="pre">CircuitElementMixin.Currents()</span></code></a></li>
 <li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#altdss.CircuitElement.CircuitElementMixin.DisplayName"><code class="docutils literal notranslate"><span class="pre">CircuitElementMixin.DisplayName</span></code></a></li>
 <li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#altdss.CircuitElement.CircuitElementMixin.GUID"><code class="docutils literal notranslate"><span class="pre">CircuitElementMixin.GUID()</span></code></a></li>

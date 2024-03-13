@@ -357,6 +357,14 @@ Bases: {py:obj}`altdss.Batch.DSSBatch`
 
 ````
 
+````{py:method} batch(**kwargs) -> altdss.Batch.DSSBatch
+:canonical: altdss.DynamicExp.DynamicExpBatch.batch
+
+```{autodoc2-docstring} altdss.DynamicExp.DynamicExpBatch.batch
+```
+
+````
+
 ````{py:method} begin_edit() -> None
 :canonical: altdss.DynamicExp.DynamicExpBatch.begin_edit
 

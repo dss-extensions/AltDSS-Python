@@ -1,0 +1,1400 @@
+
+<!DOCTYPE html>
+
+
+<html lang="en" data-content_root="../" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>Batches &#8212; AltDSS-Python 0.2.2 documentation</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "light";
+  </script>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../_static/styles/theme.css?digest=8d27b9dea8ad943066ae" rel="stylesheet" />
+<link href="../_static/styles/bootstrap.css?digest=8d27b9dea8ad943066ae" rel="stylesheet" />
+<link href="../_static/styles/pydata-sphinx-theme.css?digest=8d27b9dea8ad943066ae" rel="stylesheet" />
+
+  
+  <link href="../_static/vendor/fontawesome/6.5.1/css/all.min.css?digest=8d27b9dea8ad943066ae" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.5.1/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.5.1/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.5.1/webfonts/fa-regular-400.woff2" />
+
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=a746c00c" />
+    <link rel="stylesheet" type="text/css" href="../_static/styles/sphinx-book-theme.css?v=384b581d" />
+    <link rel="stylesheet" type="text/css" href="../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/design-style.1e8bd061cd6da7fc9cf755528e8ffc24.min.css?v=0a3b3ea7" />
+  
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../_static/scripts/bootstrap.js?digest=8d27b9dea8ad943066ae" />
+<link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=8d27b9dea8ad943066ae" />
+  <script src="../_static/vendor/fontawesome/6.5.1/js/all.min.js?digest=8d27b9dea8ad943066ae"></script>
+
+    <script src="../_static/documentation_options.js?v=d3f42505"></script>
+    <script src="../_static/doctools.js?v=888ff710"></script>
+    <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../_static/scripts/sphinx-book-theme.js?v=efea14e4"></script>
+    <script src="../_static/design-tabs.js?v=36754332"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'examples/Batches';</script>
+    <link rel="icon" href="../_static/dssx.png"/>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="AltDSS-Python changelog" href="../changelog.html" />
+    <link rel="prev" title="Getting Started" href="GettingStarted.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <a id="pst-skip-link" class="skip-link" href="#main-content">Skip to main content</a>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>
+    Back to top
+  </button>
+
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__primary"
+          id="__primary"/>
+  <label class="overlay overlay-primary" for="__primary"></label>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__secondary"
+          id="__secondary"/>
+  <label class="overlay overlay-secondary" for="__secondary"></label>
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container">
+<form class="bd-search d-flex align-items-center"
+      action="../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         id="search-input"
+         placeholder="Search..."
+         aria-label="Search..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+  </div>
+  
+    <header class="bd-header navbar navbar-expand-lg bd-navbar">
+    </header>
+  
+
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      
+      
+      <div class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+    
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+
+  
+
+<a class="navbar-brand logo" href="../index.html">
+  
+  
+  
+  
+  
+    
+    
+      
+    
+    
+    <img src="../_static/altdss-python.svg" class="logo__image only-light" alt="AltDSS-Python 0.2.2 documentation - Home"/>
+    <script>document.write(`<img src="../_static/altdss-python-dark.svg" class="logo__image only-dark" alt="AltDSS-Python 0.2.2 documentation - Home"/>`);</script>
+  
+  
+</a></div>
+        <div class="sidebar-primary-item">
+
+ <script>
+ document.write(`
+   <button class="btn navbar-btn search-button-field search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+    <span class="search-button__default-text">Search</span>
+    <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+   </button>
+ `);
+ </script></div>
+        <div class="sidebar-primary-item"><nav class="bd-links bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
+        <p aria-level="2" class="caption" role="heading"><span class="caption-text">General</span></p>
+<ul class="current nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../index.html">AltDSS-Python</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Architecture.html">Architecture details</a></li>
+<li class="toctree-l1"><a class="reference internal" href="GettingStarted.html">Getting Started</a></li>
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">Batches</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../changelog.html">Changelog</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">API Reference</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../enumerations.html">General enums</a></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../apidocs/index.html">altdss package</a><input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-1"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2 has-children"><a class="reference internal" href="../apidocs/altdss/altdss.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">altdss</span></code></a><input class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-2"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l3"><a class="reference internal" href="../apidocs/altdss/altdss.AltDSS.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">altdss.AltDSS</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="../apidocs/altdss/altdss.ArrayProxy.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">altdss.ArrayProxy</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="../apidocs/altdss/altdss.AutoTrans.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">altdss.AutoTrans</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="../apidocs/altdss/altdss.Batch.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">altdss.Batch</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="../apidocs/altdss/altdss.Bus.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">altdss.Bus</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="../apidocs/altdss/altdss.CNData.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">altdss.CNData</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="../apidocs/altdss/altdss.CapControl.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">altdss.CapControl</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="../apidocs/altdss/altdss.Capacitor.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">altdss.Capacitor</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="../apidocs/altdss/altdss.CircuitElement.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">altdss.CircuitElement</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="../apidocs/altdss/altdss.ControlQueue.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">altdss.ControlQueue</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="../apidocs/altdss/altdss.DSSObj.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">altdss.DSSObj</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="../apidocs/altdss/altdss.DynamicExp.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">altdss.DynamicExp</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="../apidocs/altdss/altdss.ESPVLControl.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">altdss.ESPVLControl</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="../apidocs/altdss/altdss.EnergyMeter.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">altdss.EnergyMeter</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="../apidocs/altdss/altdss.EnergyMeterExtras.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">altdss.EnergyMeterExtras</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="../apidocs/altdss/altdss.Error.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">altdss.Error</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="../apidocs/altdss/altdss.ExpControl.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">altdss.ExpControl</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="../apidocs/altdss/altdss.Fault.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">altdss.Fault</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="../apidocs/altdss/altdss.Fuse.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">altdss.Fuse</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="../apidocs/altdss/altdss.GICLine.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">altdss.GICLine</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="../apidocs/altdss/altdss.GICTransformer.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">altdss.GICTransformer</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="../apidocs/altdss/altdss.GICsource.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">altdss.GICsource</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="../apidocs/altdss/altdss.GenDispatcher.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">altdss.GenDispatcher</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="../apidocs/altdss/altdss.Generator.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">altdss.Generator</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="../apidocs/altdss/altdss.GrowthShape.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">altdss.GrowthShape</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="../apidocs/altdss/altdss.IndMach012.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">altdss.IndMach012</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="../apidocs/altdss/altdss.InvControl.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">altdss.InvControl</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="../apidocs/altdss/altdss.Isource.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">altdss.Isource</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="../apidocs/altdss/altdss.Line.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">altdss.Line</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="../apidocs/altdss/altdss.LineCode.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">altdss.LineCode</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="../apidocs/altdss/altdss.LineGeometry.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">altdss.LineGeometry</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="../apidocs/altdss/altdss.LineSpacing.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">altdss.LineSpacing</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="../apidocs/altdss/altdss.Load.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">altdss.Load</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="../apidocs/altdss/altdss.LoadShape.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">altdss.LoadShape</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="../apidocs/altdss/altdss.LoadShapeExtras.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">altdss.LoadShapeExtras</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="../apidocs/altdss/altdss.Monitor.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">altdss.Monitor</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="../apidocs/altdss/altdss.MonitorExtras.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">altdss.MonitorExtras</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="../apidocs/altdss/altdss.Obj.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">altdss.Obj</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="../apidocs/altdss/altdss.PCElement.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">altdss.PCElement</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="../apidocs/altdss/altdss.PDElement.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">altdss.PDElement</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="../apidocs/altdss/altdss.PVSystem.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">altdss.PVSystem</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="../apidocs/altdss/altdss.PriceShape.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">altdss.PriceShape</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="../apidocs/altdss/altdss.Reactor.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">altdss.Reactor</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="../apidocs/altdss/altdss.Recloser.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">altdss.Recloser</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="../apidocs/altdss/altdss.ReduceCkt.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">altdss.ReduceCkt</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="../apidocs/altdss/altdss.RegControl.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">altdss.RegControl</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="../apidocs/altdss/altdss.Relay.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">altdss.Relay</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="../apidocs/altdss/altdss.Sensor.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">altdss.Sensor</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="../apidocs/altdss/altdss.Settings.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">altdss.Settings</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="../apidocs/altdss/altdss.Solution.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">altdss.Solution</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="../apidocs/altdss/altdss.Spectrum.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">altdss.Spectrum</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="../apidocs/altdss/altdss.Storage.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">altdss.Storage</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="../apidocs/altdss/altdss.StorageController.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">altdss.StorageController</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="../apidocs/altdss/altdss.SwtControl.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">altdss.SwtControl</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="../apidocs/altdss/altdss.TCC_Curve.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">altdss.TCC_Curve</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="../apidocs/altdss/altdss.TSData.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">altdss.TSData</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="../apidocs/altdss/altdss.TShape.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">altdss.TShape</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="../apidocs/altdss/altdss.Topology.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">altdss.Topology</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="../apidocs/altdss/altdss.Transformer.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">altdss.Transformer</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="../apidocs/altdss/altdss.TransformerExtras.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">altdss.TransformerExtras</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="../apidocs/altdss/altdss.UPFC.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">altdss.UPFC</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="../apidocs/altdss/altdss.UPFCControl.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">altdss.UPFCControl</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="../apidocs/altdss/altdss.VCCS.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">altdss.VCCS</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="../apidocs/altdss/altdss.VSConverter.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">altdss.VSConverter</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="../apidocs/altdss/altdss.Vsource.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">altdss.Vsource</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="../apidocs/altdss/altdss.WireData.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">altdss.WireData</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="../apidocs/altdss/altdss.XYcurve.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">altdss.XYcurve</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="../apidocs/altdss/altdss.XfmrCode.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">altdss.XfmrCode</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="../apidocs/altdss/altdss.YMatrix.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">altdss.YMatrix</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="../apidocs/altdss/altdss.ZIP.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">altdss.ZIP</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="../apidocs/altdss/altdss.common.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">altdss.common</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="../apidocs/altdss/altdss.enums.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">altdss.enums</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="../apidocs/altdss/altdss.types.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">altdss.types</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">External links</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference external" href="https://github.com/dss-extensions/AltDSS-Python">GitHub repository</a></li>
+<li class="toctree-l1"><a class="reference external" href="https://pypi.python.org/pypi/altdss/">Package on PyPI</a></li>
+<li class="toctree-l1"><a class="reference external" href="https://github.com/dss-extensions/electricdss-tst">Test/example circuits</a></li>
+
+<li class="toctree-l1"><a class="reference external" href="https://dss-extensions.org/OpenDSSDirect.py">OpenDSSDirect.py</a></li>
+<li class="toctree-l1"><a class="reference external" href="https://dss-extensions.org/DSS-Python/">DSS-Python</a></li>
+<li class="toctree-l1"><a class="reference external" href="https://github.com/orgs/dss-extensions/discussions">DSS-Extensions Discussions</a></li>
+<li class="toctree-l1"><a class="reference external" href="https://sourceforge.net/p/electricdss/discussion/">OpenDSS forum</a></li>
+<li class="toctree-l1"><a class="reference external" href="https://opendss.epri.com/opendss_documentation.html">OpenDSS documentation</a></li>
+</ul>
+
+    </div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+  
+  <div id="rtd-footer-container"></div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main">
+        
+        
+
+<div class="sbt-scroll-pixel-helper"></div>
+
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item"><label class="sidebar-toggle primary-toggle btn btn-sm" for="__primary" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <span class="fa-solid fa-bars"></span>
+</label></div>
+      
+    </div>
+  
+  
+    <div class="header-article-items__end">
+      
+        <div class="header-article-item">
+
+<div class="article-header-buttons">
+
+
+
+
+
+<div class="dropdown dropdown-download-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Download this page">
+    <i class="fas fa-download"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="../_sources/examples/Batches.ipynb" target="_blank"
+   class="btn btn-sm btn-download-source-button dropdown-item"
+   title="Download source file"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="btn__text-container">.ipynb</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li>
+<button onclick="window.print()"
+  class="btn btn-sm btn-download-pdf-button dropdown-item"
+  title="Print to PDF"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="btn__text-container">.pdf</span>
+</button>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+<button onclick="toggleFullScreen()"
+  class="btn btn-sm btn-fullscreen-button"
+  title="Fullscreen mode"
+  data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm navbar-btn theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="theme-switch nav-link" data-mode="light"><i class="fa-solid fa-sun fa-lg"></i></span>
+    <span class="theme-switch nav-link" data-mode="dark"><i class="fa-solid fa-moon fa-lg"></i></span>
+    <span class="theme-switch nav-link" data-mode="auto"><i class="fa-solid fa-circle-half-stroke fa-lg"></i></span>
+  </button>
+`);
+</script>
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm navbar-btn search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass fa-lg"></i>
+  </button>
+`);
+</script>
+<label class="sidebar-toggle secondary-toggle btn btn-sm" for="__secondary"title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</label>
+</div></div>
+      
+    </div>
+  
+</div>
+</div>
+              
+              
+
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1>Batches</h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
+            
+            <div>
+                <h2> Contents </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#what-are-batches">What are batches?</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#why-use-batches">Why use batches?</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#loading-a-circuit">Loading a circuit</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#implicit-collections-as-batches">Implicit collections as batches</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#using-the-api-methods">Using the API methods</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#using-the-dss-properties">Using the DSS properties</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#filtered-batches">Filtered batches</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#batches-from-indices">Batches from indices</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#batches-by-filtering-integer-dss-properties">Batches by filtering integer (DSS) properties</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#batches-by-filtering-float-dss-properties">Batches by filtering float (DSS) properties</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#filtering-an-existing-batch">Filtering an existing batch</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#combining-filters">Combining filters</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#other-features-and-details">Other features and details</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#invalidation">Invalidation</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#whats-in-the-future">What’s in the future?</a></li>
+</ul>
+            </nav>
+        </div>
+    </div>
+</div>
+
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article">
+                  
+  <section class="tex2jax_ignore mathjax_ignore" id="batches">
+<h1>Batches<a class="headerlink" href="#batches" title="Link to this heading">#</a></h1>
+<p><em>Bulk operations in AltDSS</em></p>
+<p><strong>Note:</strong> Although there are some runtime numbers in this document, required to show some of the motivation for the implementation, this is not intended as a benchmark. By default, it runs on DSS-Extensions modules only, and the times from the official Windows COM implementation should be higher – feel free to uncomment and rerun to check it yourself.</p>
+<p><strong>Notebook requirements</strong></p>
+<p>This is a Jupyter notebook. Running it as-is will try to download the required files.</p>
+<p>You can open and then run this notebook on Google Colab for a quick overview if you don’t want to set up a local environment: <strong><a class="reference external" href="https://colab.research.google.com/github/dss-extensions/AltDSS-Python/blob/master/docs/examples/Batches.ipynb">Open in Colab</a></strong>.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># When running via Colab, install the package first</span>
+<span class="kn">import</span> <span class="nn">os</span><span class="o">,</span> <span class="nn">subprocess</span>
+<span class="k">if</span> <span class="n">os</span><span class="o">.</span><span class="n">getenv</span><span class="p">(</span><span class="s2">&quot;COLAB_RELEASE_TAG&quot;</span><span class="p">):</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">subprocess</span><span class="o">.</span><span class="n">check_output</span><span class="p">(</span><span class="s1">&#39;pip install altdss[all]&#39;</span><span class="p">,</span> <span class="n">shell</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span><span class="o">.</span><span class="n">decode</span><span class="p">())</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Download the sample circuits and test cases if they do not exist already</span>
+<span class="kn">from</span> <span class="nn">dss.examples</span> <span class="kn">import</span> <span class="n">download_repo_snapshot</span>
+<span class="n">BASE_PATH</span> <span class="o">=</span> <span class="n">download_repo_snapshot</span><span class="p">(</span><span class="s1">&#39;.&#39;</span><span class="p">,</span> <span class="n">repo_name</span><span class="o">=</span><span class="s1">&#39;electricdss-tst&#39;</span><span class="p">,</span> <span class="n">use_version</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
+<span class="n">CKT7_PATH</span> <span class="o">=</span> <span class="n">BASE_PATH</span> <span class="o">/</span> <span class="s1">&#39;Version8/Distrib/EPRITestCircuits/ckt7/Master_ckt7.dss&#39;</span>
+<span class="k">assert</span> <span class="n">CKT7_PATH</span><span class="o">.</span><span class="n">exists</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>If you are reading this notebook online and would like to run in your local Python installation, you can download both the AltDSS-Python repository (which contains this notebook) and the sample circuits with <code class="docutils literal notranslate"><span class="pre">download_examples</span></code>.</p>
+<p>On Windows, run on a command prompt in your Python environment to install all optional dependencies:</p>
+<div class="highlight-batch notranslate"><div class="highlight"><pre><span></span>pip install altdss[all]
+python -c <span class="s2">&quot;from dss.examples import download_examples; download_examples(r&#39;c:\temp&#39;, repo_name=&#39;AltDSS-Python&#39;)&quot;</span>
+<span class="k">cd</span> c:\temp\AltDSS-Python\docs\examples
+jupyter lab
+</pre></div>
+</div>
+<section id="what-are-batches">
+<h2>What are batches?<a class="headerlink" href="#what-are-batches" title="Link to this heading">#</a></h2>
+<p>Batches, in AltDSS, are Python objects that allow interacting with whole collections or a selection of filtered items of OpenDSS items from the AltDSS engine.</p>
+<p>Uniform batches allow interacting with the OpenDSS properties and using most functions that the individual object would present.</p>
+</section>
+<section id="why-use-batches">
+<h2>Why use batches?<a class="headerlink" href="#why-use-batches" title="Link to this heading">#</a></h2>
+<p>The batch operations provide a simpler interface and usually better performance profile than directly interacting with each object, or interacting with the <a class="reference external" href="https://dss-extensions.org/classic_api.html">classic APIs</a> through either the dedicated interfaces or the <code class="docutils literal notranslate"><span class="pre">Active...</span></code> interfaces.</p>
+<p>Batches pass many operations to the engine level, hence the better performance in Python.</p>
+<p>Since AltDSS can be used as a companion package with <a class="reference external" href="https://dss-extensions.org/DSS-Python/">DSS-Python</a> and/or <a class="reference external" href="https://dss-extensions.org/OpenDSSDirect.py/">OpenDSSDirect.py</a>, users can adopt batches where they see fit, without requiring a full codebase rewrite.</p>
+</section>
+<section id="loading-a-circuit">
+<h2>Loading a circuit<a class="headerlink" href="#loading-a-circuit" title="Link to this heading">#</a></h2>
+<p>Before using the batches, let’s load a circuit and inspect some values.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">altdss</span> <span class="kn">import</span> <span class="n">altdss</span>
+<span class="n">altdss</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;redirect &quot;</span><span class="si">{</span><span class="n">CKT7_PATH</span><span class="si">}</span><span class="s1">&quot;&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>While we don’t have a dedicated dataframe integration, let’s look into the loads using JSON and later compare with the batches:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
+<span class="kn">import</span> <span class="nn">json</span>
+<span class="kn">from</span> <span class="nn">dss</span> <span class="kn">import</span> <span class="n">DSSJSONFlags</span>
+<span class="n">df_loads</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">(</span><span class="n">json</span><span class="o">.</span><span class="n">loads</span><span class="p">(</span><span class="n">altdss</span><span class="o">.</span><span class="n">Load</span><span class="o">.</span><span class="n">to_json</span><span class="p">(</span><span class="n">DSSJSONFlags</span><span class="o">.</span><span class="n">Full</span><span class="p">)))</span> <span class="c1"># include all properties for inspection, even those not set explicitly</span>
+<span class="n">df_loads</span><span class="o">.</span><span class="n">kV</span><span class="o">.</span><span class="n">value_counts</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>kV
+0.240    534
+0.208    333
+7.200     39
+Name: count, dtype: int64
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df_loads</span><span class="o">.</span><span class="n">Phases</span><span class="o">.</span><span class="n">value_counts</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Phases
+1    573
+3    333
+Name: count, dtype: int64
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df_loads</span><span class="o">.</span><span class="n">Conn</span><span class="o">.</span><span class="n">value_counts</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Conn
+wye    906
+Name: count, dtype: int64
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<span class="n">np</span><span class="o">.</span><span class="n">histogram</span><span class="p">(</span><span class="n">df_loads</span><span class="o">.</span><span class="n">kW</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>(array([867,   0,   0,   0,   2,   9,   5,   6,   8,   9]),
+ array([7.81118088e-01, 2.45423006e+02, 4.90064894e+02, 7.34706783e+02,
+        9.79348671e+02, 1.22399056e+03, 1.46863245e+03, 1.71327434e+03,
+        1.95791622e+03, 2.20255811e+03, 2.44720000e+03]))
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="implicit-collections-as-batches">
+<h2>Implicit collections as batches<a class="headerlink" href="#implicit-collections-as-batches" title="Link to this heading">#</a></h2>
+<p>Implicit collections are the lists of objects of a certain types, as tracked by the OpenDSS engine.</p>
+<p>AltDSS exposes collections for all DSS objects implemented in the AltDSS/DSS C-API engine. That is, in AltDSS, not only you can interact directly in Python with all DSS objects, you can use them in batches.</p>
+<p>That is, the Load API itself is exposed as a dynamic batch. If new loads are added, this batch reflects that. Most user-created batches are static and are not updated automatically with new elements.</p>
+<p>All the collections behave as batches and some can contain a few extra functions.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">len</span><span class="p">(</span><span class="n">altdss</span><span class="o">.</span><span class="n">Load</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>906
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">altdss</span><span class="o">.</span><span class="n">Load</span><span class="o">.</span><span class="n">Name</span><span class="p">[:</span><span class="mi">10</span><span class="p">]</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&#39;25609_a&#39;,
+ &#39;25609_b&#39;,
+ &#39;25609_c&#39;,
+ &#39;25615_a&#39;,
+ &#39;25615_b&#39;,
+ &#39;25615_c&#39;,
+ &#39;25625_a&#39;,
+ &#39;25625_b&#39;,
+ &#39;25625_c&#39;,
+ &#39;25627_a&#39;]
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">altdss</span><span class="o">.</span><span class="n">Load</span><span class="o">.</span><span class="n">Bus1</span><span class="p">[:</span><span class="mi">10</span><span class="p">]</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&#39;ckt7.1&#39;,
+ &#39;ckt7.2&#39;,
+ &#39;ckt7.3&#39;,
+ &#39;ckt7.1&#39;,
+ &#39;ckt7.2&#39;,
+ &#39;ckt7.3&#39;,
+ &#39;ckt7.1&#39;,
+ &#39;ckt7.2&#39;,
+ &#39;ckt7.3&#39;,
+ &#39;ckt7.1&#39;]
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">altdss</span><span class="o">.</span><span class="n">Vsource</span><span class="o">.</span><span class="n">Name</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&#39;source&#39;]
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">altdss</span><span class="o">.</span><span class="n">Spectrum</span><span class="o">.</span><span class="n">Name</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&#39;default&#39;,
+ &#39;defaultload&#39;,
+ &#39;defaultgen&#39;,
+ &#39;defaultvsource&#39;,
+ &#39;linear&#39;,
+ &#39;pwm6&#39;,
+ &#39;dc6&#39;]
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">altdss</span><span class="o">.</span><span class="n">Generator</span><span class="o">.</span><span class="n">Name</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[]
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="using-the-api-methods">
+<h2>Using the API methods<a class="headerlink" href="#using-the-api-methods" title="Link to this heading">#</a></h2>
+<p>Most DSS properties can be accessed, but also most of the classic API functions were generalized to operate on batches too!</p>
+<p>Let’s compare how to get all powers from all loads in AltDSS and DSS-Python (which would be equivalent to the classic OpenDSS COM interface):</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">dss</span> <span class="o">=</span> <span class="n">altdss</span><span class="o">.</span><span class="n">to_dss_python</span><span class="p">()</span> <span class="c1"># Get a DSS-Python instance</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>If you wish to compare with EPRI’s COM implementation of OpenDSS instead (requires Windows), uncomment one of the blocks below (for win32com or comtypes):</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># import win32com.client # Unfortunately win32com is still the most recommended option, but it&#39;s the slowest</span>
+<span class="c1"># dss = win32com.client.gencache.EnsureDispatch(&#39;opendssengine.dss&#39;)</span>
+<span class="c1"># dss.Text.Command = f&#39;redirect &quot;{CKT7_PATH}&quot;&#39;</span>
+
+<span class="c1"># import comtypes.client # Prefer comtypes if you&#39;re using the official COM object</span>
+<span class="c1"># dss = comtypes.client.CreateObject(&#39;opendssengine.dss&#39;)</span>
+<span class="c1"># dss.Text.Command = f&#39;redirect &quot;{CKT7_PATH}&quot;&#39;</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>For classic COM-like access, without using the API extensions, the equivalent would be:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">%%time</span>it
+<span class="n">powers_classic</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">zeros</span><span class="p">(</span><span class="n">dss</span><span class="o">.</span><span class="n">ActiveCircuit</span><span class="o">.</span><span class="n">Loads</span><span class="o">.</span><span class="n">Count</span><span class="p">,</span> <span class="n">dtype</span><span class="o">=</span><span class="nb">complex</span><span class="p">)</span>
+<span class="n">idx</span> <span class="o">=</span> <span class="n">dss</span><span class="o">.</span><span class="n">ActiveCircuit</span><span class="o">.</span><span class="n">Loads</span><span class="o">.</span><span class="n">First</span>
+<span class="k">while</span> <span class="n">idx</span> <span class="o">!=</span> <span class="mi">0</span><span class="p">:</span>
+    <span class="n">powers_classic</span><span class="p">[</span><span class="n">idx</span> <span class="o">-</span> <span class="mi">1</span><span class="p">]</span> <span class="o">=</span> <span class="nb">complex</span><span class="p">(</span><span class="o">*</span><span class="n">dss</span><span class="o">.</span><span class="n">ActiveCircuit</span><span class="o">.</span><span class="n">ActiveCktElement</span><span class="o">.</span><span class="n">TotalPowers</span><span class="p">)</span>
+    <span class="n">idx</span> <span class="o">=</span> <span class="n">dss</span><span class="o">.</span><span class="n">ActiveCircuit</span><span class="o">.</span><span class="n">Loads</span><span class="o">.</span><span class="n">Next</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>1.46 ms ± 3.82 µs per loop (mean ± std. dev. of 7 runs, 1,000 loops each)
+</pre></div>
+</div>
+</div>
+</div>
+<p>In AltDSS:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">%%time</span>it
+<span class="n">powers_alt</span> <span class="o">=</span> <span class="n">altdss</span><span class="o">.</span><span class="n">Load</span><span class="o">.</span><span class="n">TotalPowers</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>26.7 µs ± 29.1 ns per loop (mean ± std. dev. of 7 runs, 10,000 loops each)
+</pre></div>
+</div>
+</div>
+</div>
+<p>The times are very different, but do the results match? Sure, the same numerical results:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">powers_alt</span> <span class="o">=</span> <span class="n">altdss</span><span class="o">.</span><span class="n">Load</span><span class="o">.</span><span class="n">TotalPowers</span><span class="p">()</span>
+<span class="n">powers_classic</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">zeros</span><span class="p">(</span><span class="n">dss</span><span class="o">.</span><span class="n">ActiveCircuit</span><span class="o">.</span><span class="n">Loads</span><span class="o">.</span><span class="n">Count</span><span class="p">,</span> <span class="n">dtype</span><span class="o">=</span><span class="nb">complex</span><span class="p">)</span>
+<span class="n">idx</span> <span class="o">=</span> <span class="n">dss</span><span class="o">.</span><span class="n">ActiveCircuit</span><span class="o">.</span><span class="n">Loads</span><span class="o">.</span><span class="n">First</span>
+<span class="k">while</span> <span class="n">idx</span> <span class="o">!=</span> <span class="mi">0</span><span class="p">:</span>
+    <span class="n">powers_classic</span><span class="p">[</span><span class="n">idx</span> <span class="o">-</span> <span class="mi">1</span><span class="p">]</span> <span class="o">=</span> <span class="nb">complex</span><span class="p">(</span><span class="o">*</span><span class="n">dss</span><span class="o">.</span><span class="n">ActiveCircuit</span><span class="o">.</span><span class="n">ActiveCktElement</span><span class="o">.</span><span class="n">TotalPowers</span><span class="p">)</span>
+    <span class="n">idx</span> <span class="o">=</span> <span class="n">dss</span><span class="o">.</span><span class="n">ActiveCircuit</span><span class="o">.</span><span class="n">Loads</span><span class="o">.</span><span class="n">Next</span>
+
+<span class="n">np</span><span class="o">.</span><span class="n">testing</span><span class="o">.</span><span class="n">assert_array_equal</span><span class="p">(</span><span class="n">powers_classic</span><span class="p">,</span> <span class="n">powers_alt</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>The main difference is the effort spent by the Python interpreter to create an array or list for each element in the loop, and calling the functions multiple times. It is common to get 10-100x speed-up in this kind of operation. There are minor optimizations that could be done with the classic API, but it’s not possible to achieve nearly the same performance.</p>
+<p>Although not widely advertised, DSS-Python (and OpenDSSDirect.py) are typically faster than the official COM object for many of the operations illustrated above. That’s in part due to COM itself, part due to how win32com and comtypes are implemented, and part due to optimization done in DSS C-API.<br />
+That said, don’t be surprised it the time ratio between the COM impl. vs. the batch API from AltDSS reaches 1000x.</p>
+</section>
+<section id="using-the-dss-properties">
+<h2>Using the DSS properties<a class="headerlink" href="#using-the-dss-properties" title="Link to this heading">#</a></h2>
+<p>Using the DSS properties as seem in .DSS scripts can also be applied to batches.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">%%time</span>it
+<span class="n">power_spec_classic</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">zeros</span><span class="p">(</span><span class="n">dss</span><span class="o">.</span><span class="n">ActiveCircuit</span><span class="o">.</span><span class="n">Loads</span><span class="o">.</span><span class="n">Count</span><span class="p">,</span> <span class="n">dtype</span><span class="o">=</span><span class="nb">complex</span><span class="p">)</span>
+<span class="n">idx</span> <span class="o">=</span> <span class="n">dss</span><span class="o">.</span><span class="n">ActiveCircuit</span><span class="o">.</span><span class="n">Loads</span><span class="o">.</span><span class="n">First</span>
+<span class="k">while</span> <span class="n">idx</span> <span class="o">!=</span> <span class="mi">0</span><span class="p">:</span>
+    <span class="n">power_spec_classic</span><span class="p">[</span><span class="n">idx</span> <span class="o">-</span> <span class="mi">1</span><span class="p">]</span> <span class="o">=</span> <span class="nb">complex</span><span class="p">(</span><span class="n">dss</span><span class="o">.</span><span class="n">ActiveCircuit</span><span class="o">.</span><span class="n">Loads</span><span class="o">.</span><span class="n">kW</span><span class="p">,</span> <span class="n">dss</span><span class="o">.</span><span class="n">ActiveCircuit</span><span class="o">.</span><span class="n">Loads</span><span class="o">.</span><span class="n">kvar</span><span class="p">)</span>
+    <span class="n">idx</span> <span class="o">=</span> <span class="n">dss</span><span class="o">.</span><span class="n">ActiveCircuit</span><span class="o">.</span><span class="n">Loads</span><span class="o">.</span><span class="n">Next</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>414 µs ± 8.98 µs per loop (mean ± std. dev. of 7 runs, 1,000 loops each)
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">%%time</span>it
+<span class="n">power_spec_alt</span> <span class="o">=</span> <span class="n">altdss</span><span class="o">.</span><span class="n">Load</span><span class="o">.</span><span class="n">kW</span> <span class="o">+</span> <span class="n">altdss</span><span class="o">.</span><span class="n">Load</span><span class="o">.</span><span class="n">kvar</span> <span class="o">*</span> <span class="mi">1</span><span class="n">j</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>13.2 µs ± 48.3 ns per loop (mean ± std. dev. of 7 runs, 100,000 loops each)
+</pre></div>
+</div>
+</div>
+</div>
+<p>Again, let’s check:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">power_spec_classic</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">zeros</span><span class="p">(</span><span class="n">dss</span><span class="o">.</span><span class="n">ActiveCircuit</span><span class="o">.</span><span class="n">Loads</span><span class="o">.</span><span class="n">Count</span><span class="p">,</span> <span class="n">dtype</span><span class="o">=</span><span class="nb">complex</span><span class="p">)</span>
+<span class="n">idx</span> <span class="o">=</span> <span class="n">dss</span><span class="o">.</span><span class="n">ActiveCircuit</span><span class="o">.</span><span class="n">Loads</span><span class="o">.</span><span class="n">First</span>
+<span class="k">while</span> <span class="n">idx</span> <span class="o">!=</span> <span class="mi">0</span><span class="p">:</span>
+    <span class="n">power_spec_classic</span><span class="p">[</span><span class="n">idx</span> <span class="o">-</span> <span class="mi">1</span><span class="p">]</span> <span class="o">=</span> <span class="nb">complex</span><span class="p">(</span><span class="n">dss</span><span class="o">.</span><span class="n">ActiveCircuit</span><span class="o">.</span><span class="n">Loads</span><span class="o">.</span><span class="n">kW</span><span class="p">,</span> <span class="n">dss</span><span class="o">.</span><span class="n">ActiveCircuit</span><span class="o">.</span><span class="n">Loads</span><span class="o">.</span><span class="n">kvar</span><span class="p">)</span>
+    <span class="n">idx</span> <span class="o">=</span> <span class="n">dss</span><span class="o">.</span><span class="n">ActiveCircuit</span><span class="o">.</span><span class="n">Loads</span><span class="o">.</span><span class="n">Next</span>
+
+<span class="n">power_spec_alt</span> <span class="o">=</span> <span class="n">altdss</span><span class="o">.</span><span class="n">Load</span><span class="o">.</span><span class="n">kW</span> <span class="o">+</span> <span class="n">altdss</span><span class="o">.</span><span class="n">Load</span><span class="o">.</span><span class="n">kvar</span> <span class="o">*</span> <span class="mi">1</span><span class="n">j</span>
+
+<span class="n">np</span><span class="o">.</span><span class="n">testing</span><span class="o">.</span><span class="n">assert_array_equal</span><span class="p">(</span><span class="n">power_spec_classic</span><span class="p">,</span> <span class="n">power_spec_alt</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>In this case, there are no further allocations for arrays or buffers, we are just getting the internal <code class="docutils literal notranslate"><span class="pre">float64</span></code> values for the “kW” and “kvar” DSS properties. Still, we can get around 30x speed-up on a simple test by using batches in AltDSS.</p>
+<p>Technically, most DSS classes do not expose all properties in the API classes (COM or DDLL). For those, one would need to use either the Properties API, or the Text API. Both may result in some loss of precision in the values.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">%%time</span>it
+<span class="n">power_spec_classic_prop</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">zeros</span><span class="p">(</span><span class="n">dss</span><span class="o">.</span><span class="n">ActiveCircuit</span><span class="o">.</span><span class="n">Loads</span><span class="o">.</span><span class="n">Count</span><span class="p">,</span> <span class="n">dtype</span><span class="o">=</span><span class="nb">complex</span><span class="p">)</span>
+<span class="n">idx</span> <span class="o">=</span> <span class="n">dss</span><span class="o">.</span><span class="n">ActiveCircuit</span><span class="o">.</span><span class="n">Loads</span><span class="o">.</span><span class="n">First</span>
+<span class="k">while</span> <span class="n">idx</span> <span class="o">!=</span> <span class="mi">0</span><span class="p">:</span>
+    <span class="n">power_spec_classic_prop</span><span class="p">[</span><span class="n">idx</span> <span class="o">-</span> <span class="mi">1</span><span class="p">]</span> <span class="o">=</span> <span class="nb">complex</span><span class="p">(</span>
+        <span class="nb">float</span><span class="p">(</span><span class="n">dss</span><span class="o">.</span><span class="n">ActiveCircuit</span><span class="o">.</span><span class="n">ActiveDSSElement</span><span class="o">.</span><span class="n">Properties</span><span class="p">(</span><span class="s1">&#39;kW&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">Val</span><span class="p">),</span> 
+        <span class="nb">float</span><span class="p">(</span><span class="n">dss</span><span class="o">.</span><span class="n">ActiveCircuit</span><span class="o">.</span><span class="n">ActiveDSSElement</span><span class="o">.</span><span class="n">Properties</span><span class="p">(</span><span class="s1">&#39;kvar&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">Val</span><span class="p">)</span>
+    <span class="p">)</span>
+    <span class="n">idx</span> <span class="o">=</span> <span class="n">dss</span><span class="o">.</span><span class="n">ActiveCircuit</span><span class="o">.</span><span class="n">Loads</span><span class="o">.</span><span class="n">Next</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>2.38 ms ± 6.05 µs per loop (mean ± std. dev. of 7 runs, 100 loops each)
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">%%time</span>it
+<span class="n">power_spec_classic_prop</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">zeros</span><span class="p">(</span><span class="n">dss</span><span class="o">.</span><span class="n">ActiveCircuit</span><span class="o">.</span><span class="n">Loads</span><span class="o">.</span><span class="n">Count</span><span class="p">,</span> <span class="n">dtype</span><span class="o">=</span><span class="nb">complex</span><span class="p">)</span>
+<span class="n">idx</span> <span class="o">=</span> <span class="n">dss</span><span class="o">.</span><span class="n">ActiveCircuit</span><span class="o">.</span><span class="n">Loads</span><span class="o">.</span><span class="n">First</span>
+<span class="k">while</span> <span class="n">idx</span> <span class="o">!=</span> <span class="mi">0</span><span class="p">:</span>
+    <span class="n">dss</span><span class="o">.</span><span class="n">Text</span><span class="o">.</span><span class="n">Command</span> <span class="o">=</span> <span class="s1">&#39;? kW&#39;</span>
+    <span class="n">kW</span> <span class="o">=</span>  <span class="n">dss</span><span class="o">.</span><span class="n">Text</span><span class="o">.</span><span class="n">Result</span>
+    <span class="n">dss</span><span class="o">.</span><span class="n">Text</span><span class="o">.</span><span class="n">Command</span> <span class="o">=</span> <span class="s1">&#39;? kvar&#39;</span>
+    <span class="n">kvar</span> <span class="o">=</span> <span class="n">dss</span><span class="o">.</span><span class="n">Text</span><span class="o">.</span><span class="n">Result</span>
+
+    <span class="n">power_spec_classic_prop</span><span class="p">[</span><span class="n">idx</span> <span class="o">-</span> <span class="mi">1</span><span class="p">]</span> <span class="o">=</span> <span class="nb">complex</span><span class="p">(</span>
+        <span class="nb">float</span><span class="p">(</span><span class="n">kW</span><span class="p">),</span> 
+        <span class="nb">float</span><span class="p">(</span><span class="n">kvar</span><span class="p">)</span>
+    <span class="p">)</span>
+    <span class="n">idx</span> <span class="o">=</span> <span class="n">dss</span><span class="o">.</span><span class="n">ActiveCircuit</span><span class="o">.</span><span class="n">Loads</span><span class="o">.</span><span class="n">Next</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>3.43 ms ± 52.5 µs per loop (mean ± std. dev. of 7 runs, 100 loops each)
+</pre></div>
+</div>
+</div>
+</div>
+<p>We can see that these alternatives can take a lot longer, in the range 100-300x vs. the batch approach in AltDSS.</p>
+<p>For comparison, here’s the time to run a simple snapshot solution:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">%</span><span class="k">timeit</span> altdss(f&#39;solve mode=snap&#39;)
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>1.93 ms ± 32.7 µs per loop (mean ± std. dev. of 7 runs, 100 loops each)
+</pre></div>
+</div>
+</div>
+</div>
+<p>As we can see, using the classic Text or Properties APIs to get the property values can be very expensive, reaching beyond the time required to actually solve the circuit.</p>
+</section>
+<section id="filtered-batches">
+<h2>Filtered batches<a class="headerlink" href="#filtered-batches" title="Link to this heading">#</a></h2>
+<p>Although performance benefits are nice, it can become cumbersome to get arrays and then have to filter them in a separate, sometimes complicated loop.</p>
+<p>To avoid this, batches support filtering:</p>
+<ul class="simple">
+<li><p>If you have a specific list of elements, you can create a batch for those (<code class="docutils literal notranslate"><span class="pre">idx</span></code> keyword argument)</p></li>
+<li><p>You can use integer and float DSS properties to select objects</p></li>
+<li><p>You can later filter an existing batch to create another</p></li>
+</ul>
+<section id="batches-from-indices">
+<h3>Batches from indices<a class="headerlink" href="#batches-from-indices" title="Link to this heading">#</a></h3>
+<p>AltDSS uses 0-based indices for this.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">some_loads</span> <span class="o">=</span> <span class="n">altdss</span><span class="o">.</span><span class="n">Load</span><span class="o">.</span><span class="n">batch</span><span class="p">(</span><span class="n">idx</span><span class="o">=</span><span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">10</span><span class="p">,</span> <span class="mi">20</span><span class="p">,</span> <span class="mi">30</span><span class="p">])</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">some_loads</span><span class="o">.</span><span class="n">Name</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="nb">abs</span><span class="p">(</span><span class="n">some_loads</span><span class="o">.</span><span class="n">TotalPowers</span><span class="p">()))</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&#39;25609_a&#39;, &#39;25627_b&#39;, &#39;25617_c&#39;, &#39;25603_a&#39;]
+[2474.93608703 2366.93848343 1517.96030515 1447.96260768]
+</pre></div>
+</div>
+</div>
+</div>
+<p>This kind of batch is especially useful if you want to filter the loads using an external function. For example, let’s get the loads that result in more than 300 A each:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">loads_300A</span> <span class="o">=</span> <span class="n">altdss</span><span class="o">.</span><span class="n">Load</span><span class="o">.</span><span class="n">batch</span><span class="p">(</span><span class="n">idx</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">where</span><span class="p">(</span><span class="n">altdss</span><span class="o">.</span><span class="n">Load</span><span class="o">.</span><span class="n">MaxCurrent</span><span class="p">(</span><span class="o">-</span><span class="mi">1</span><span class="p">)</span> <span class="o">&gt;</span> <span class="mi">300</span><span class="p">))</span>
+<span class="n">loads_300A</span><span class="o">.</span><span class="n">Name</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&#39;25609_a&#39;,
+ &#39;25609_b&#39;,
+ &#39;25609_c&#39;,
+ &#39;25615_a&#39;,
+ &#39;25615_b&#39;,
+ &#39;25615_c&#39;,
+ &#39;25627_a&#39;,
+ &#39;25627_b&#39;,
+ &#39;25627_c&#39;,
+ &#39;25629_b&#39;,
+ &#39;25629_c&#39;,
+ &#39;25601_a&#39;,
+ &#39;25601_b&#39;,
+ &#39;25601_c&#39;,
+ &#39;25605_a&#39;,
+ &#39;25605_c&#39;,
+ &#39;1001933-d1&#39;,
+ &#39;1001933-d2&#39;,
+ &#39;1001933-d3&#39;,
+ &#39;1001665-d1&#39;,
+ &#39;1001665-d2&#39;,
+ &#39;1001665-d3&#39;,
+ &#39;1001577-d1&#39;,
+ &#39;1001577-d2&#39;,
+ &#39;1001577-d3&#39;]
+</pre></div>
+</div>
+</div>
+</div>
+<p>The batch can be converted to a list of Python objects using the <code class="docutils literal notranslate"><span class="pre">to_list</span></code> method or using the call operator. This way, each of this loads could be inspected individually, if the batch operations don’t fit well in the analysis.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">loads_300A</span><span class="o">.</span><span class="n">to_list</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&lt;Load.25609_a&gt;,
+ &lt;Load.25609_b&gt;,
+ &lt;Load.25609_c&gt;,
+ &lt;Load.25615_a&gt;,
+ &lt;Load.25615_b&gt;,
+ &lt;Load.25615_c&gt;,
+ &lt;Load.25627_a&gt;,
+ &lt;Load.25627_b&gt;,
+ &lt;Load.25627_c&gt;,
+ &lt;Load.25629_b&gt;,
+ &lt;Load.25629_c&gt;,
+ &lt;Load.25601_a&gt;,
+ &lt;Load.25601_b&gt;,
+ &lt;Load.25601_c&gt;,
+ &lt;Load.25605_a&gt;,
+ &lt;Load.25605_c&gt;,
+ &lt;Load.1001933-d1&gt;,
+ &lt;Load.1001933-d2&gt;,
+ &lt;Load.1001933-d3&gt;,
+ &lt;Load.1001665-d1&gt;,
+ &lt;Load.1001665-d2&gt;,
+ &lt;Load.1001665-d3&gt;,
+ &lt;Load.1001577-d1&gt;,
+ &lt;Load.1001577-d2&gt;,
+ &lt;Load.1001577-d3&gt;]
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">loads_300A</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&lt;Load.25609_a&gt;,
+ &lt;Load.25609_b&gt;,
+ &lt;Load.25609_c&gt;,
+ &lt;Load.25615_a&gt;,
+ &lt;Load.25615_b&gt;,
+ &lt;Load.25615_c&gt;,
+ &lt;Load.25627_a&gt;,
+ &lt;Load.25627_b&gt;,
+ &lt;Load.25627_c&gt;,
+ &lt;Load.25629_b&gt;,
+ &lt;Load.25629_c&gt;,
+ &lt;Load.25601_a&gt;,
+ &lt;Load.25601_b&gt;,
+ &lt;Load.25601_c&gt;,
+ &lt;Load.25605_a&gt;,
+ &lt;Load.25605_c&gt;,
+ &lt;Load.1001933-d1&gt;,
+ &lt;Load.1001933-d2&gt;,
+ &lt;Load.1001933-d3&gt;,
+ &lt;Load.1001665-d1&gt;,
+ &lt;Load.1001665-d2&gt;,
+ &lt;Load.1001665-d3&gt;,
+ &lt;Load.1001577-d1&gt;,
+ &lt;Load.1001577-d2&gt;,
+ &lt;Load.1001577-d3&gt;]
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="batches-by-filtering-integer-dss-properties">
+<h3>Batches by filtering integer (DSS) properties<a class="headerlink" href="#batches-by-filtering-integer-dss-properties" title="Link to this heading">#</a></h3>
+<p>Any integer property can be used. Let’s get all three-phase loads:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">loads_3ph</span> <span class="o">=</span> <span class="n">altdss</span><span class="o">.</span><span class="n">Load</span><span class="o">.</span><span class="n">batch</span><span class="p">(</span><span class="n">Phases</span><span class="o">=</span><span class="mi">3</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">loads_3ph</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>333
+</pre></div>
+</div>
+</div>
+</div>
+<p>As expected from the dataframe in the “Loading the circuit” section, we get 333 three-phase loads.</p>
+</section>
+<section id="batches-by-filtering-float-dss-properties">
+<h3>Batches by filtering float (DSS) properties<a class="headerlink" href="#batches-by-filtering-float-dss-properties" title="Link to this heading">#</a></h3>
+<p>The recommended way to filter floating-point properties, especially nonzero values, is to use a range of values represented as a tuple. If you just have a lower (or higher) limit, use a very large (or small) value as the other limit:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">loads_gt2MW</span> <span class="o">=</span> <span class="n">altdss</span><span class="o">.</span><span class="n">Load</span><span class="o">.</span><span class="n">batch</span><span class="p">(</span><span class="n">kW</span><span class="o">=</span><span class="p">(</span><span class="mi">2000</span><span class="p">,</span> <span class="mf">1e10</span><span class="p">))</span>
+
+<span class="nb">len</span><span class="p">(</span><span class="n">loads_gt2MW</span><span class="o">.</span><span class="n">kW</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>15
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="filtering-an-existing-batch">
+<h3>Filtering an existing batch<a class="headerlink" href="#filtering-an-existing-batch" title="Link to this heading">#</a></h3>
+<p>Just apply the batch function again:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">loads_3ph_100to200kW</span> <span class="o">=</span> <span class="n">loads_3ph</span><span class="o">.</span><span class="n">batch</span><span class="p">(</span><span class="n">kW</span><span class="o">=</span><span class="p">(</span><span class="mi">100</span><span class="p">,</span> <span class="mi">200</span><span class="p">))</span>
+<span class="n">loads_3ph_100to200kW</span><span class="o">.</span><span class="n">kW</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>array([110.86689132, 110.86689132, 110.86689132, 110.86689132,
+       110.86689132, 110.86689132])
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="combining-filters">
+<h3>Combining filters<a class="headerlink" href="#combining-filters" title="Link to this heading">#</a></h3>
+<p>Multiple filters can be used at once. It can be useful to separate elements into multiple categories. Using properties:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">loads_3ph_100to200kW</span> <span class="o">=</span> <span class="n">altdss</span><span class="o">.</span><span class="n">Load</span><span class="o">.</span><span class="n">batch</span><span class="p">(</span><span class="n">Phases</span><span class="o">=</span><span class="mi">3</span><span class="p">,</span> <span class="n">kW</span><span class="o">=</span><span class="p">(</span><span class="mi">100</span><span class="p">,</span> <span class="mi">200</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>Using indices (from the main collection, always applied first) and properties combined:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">batch_combined_filter</span> <span class="o">=</span> <span class="n">altdss</span><span class="o">.</span><span class="n">Load</span><span class="o">.</span><span class="n">batch</span><span class="p">(</span><span class="n">idx</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">where</span><span class="p">(</span><span class="n">altdss</span><span class="o">.</span><span class="n">Load</span><span class="o">.</span><span class="n">MaxCurrent</span><span class="p">(</span><span class="o">-</span><span class="mi">1</span><span class="p">)</span> <span class="o">&gt;</span> <span class="mi">300</span><span class="p">),</span> <span class="n">Phases</span><span class="o">=</span><span class="mi">3</span><span class="p">,</span> <span class="n">kW</span><span class="o">=</span><span class="p">(</span><span class="mi">100</span><span class="p">,</span> <span class="mi">200</span><span class="p">))</span>
+<span class="n">batch_combined_filter</span><span class="o">.</span><span class="n">Name</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&#39;1001933-d1&#39;,
+ &#39;1001933-d2&#39;,
+ &#39;1001933-d3&#39;,
+ &#39;1001665-d1&#39;,
+ &#39;1001665-d2&#39;,
+ &#39;1001665-d3&#39;]
+</pre></div>
+</div>
+</div>
+</div>
+<p>For fun, let’s compare how this last expression would be implemented in the classic API (assuming the same order of operations):</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">idx</span> <span class="o">=</span> <span class="n">dss</span><span class="o">.</span><span class="n">ActiveCircuit</span><span class="o">.</span><span class="n">Loads</span><span class="o">.</span><span class="n">First</span>
+<span class="n">CE</span> <span class="o">=</span> <span class="n">dss</span><span class="o">.</span><span class="n">ActiveCircuit</span><span class="o">.</span><span class="n">ActiveCktElement</span>
+<span class="n">Loads</span> <span class="o">=</span> <span class="n">dss</span><span class="o">.</span><span class="n">ActiveCircuit</span><span class="o">.</span><span class="n">Loads</span>
+<span class="n">names</span> <span class="o">=</span> <span class="p">[]</span>
+<span class="k">while</span> <span class="n">idx</span> <span class="o">!=</span> <span class="mi">0</span><span class="p">:</span>
+    <span class="k">if</span> <span class="nb">max</span><span class="p">(</span><span class="n">CE</span><span class="o">.</span><span class="n">CurrentsMagAng</span><span class="p">[::</span><span class="mi">2</span><span class="p">])</span> <span class="o">&gt;</span> <span class="mi">300</span> <span class="ow">and</span> <span class="n">Loads</span><span class="o">.</span><span class="n">Phases</span> <span class="o">==</span> <span class="mi">3</span> <span class="ow">and</span> <span class="mi">100</span> <span class="o">&lt;=</span> <span class="n">Loads</span><span class="o">.</span><span class="n">kW</span> <span class="o">&lt;=</span> <span class="mi">200</span><span class="p">:</span>
+        <span class="n">names</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">Loads</span><span class="o">.</span><span class="n">Name</span><span class="p">)</span>
+        
+    <span class="n">idx</span> <span class="o">=</span> <span class="n">dss</span><span class="o">.</span><span class="n">ActiveCircuit</span><span class="o">.</span><span class="n">Loads</span><span class="o">.</span><span class="n">Next</span>
+
+<span class="k">assert</span> <span class="n">names</span> <span class="o">==</span> <span class="n">batch_combined_filter</span><span class="o">.</span><span class="n">Name</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>And the times:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">%</span><span class="k">timeit</span> altdss.Load.batch(idx=np.where(altdss.Load.MaxCurrent(-1) &gt; 300), Phases=3, kW=(100, 200)).Name
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>28.5 µs ± 331 ns per loop (mean ± std. dev. of 7 runs, 10,000 loops each)
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">%%time</span>it
+<span class="n">idx</span> <span class="o">=</span> <span class="n">dss</span><span class="o">.</span><span class="n">ActiveCircuit</span><span class="o">.</span><span class="n">Loads</span><span class="o">.</span><span class="n">First</span>
+<span class="n">CE</span> <span class="o">=</span> <span class="n">dss</span><span class="o">.</span><span class="n">ActiveCircuit</span><span class="o">.</span><span class="n">ActiveCktElement</span>
+<span class="n">Loads</span> <span class="o">=</span> <span class="n">dss</span><span class="o">.</span><span class="n">ActiveCircuit</span><span class="o">.</span><span class="n">Loads</span>
+<span class="n">names</span> <span class="o">=</span> <span class="p">[]</span>
+<span class="k">while</span> <span class="n">idx</span> <span class="o">!=</span> <span class="mi">0</span><span class="p">:</span>
+    <span class="k">if</span> <span class="nb">max</span><span class="p">(</span><span class="n">CE</span><span class="o">.</span><span class="n">CurrentsMagAng</span><span class="p">[::</span><span class="mi">2</span><span class="p">])</span> <span class="o">&gt;</span> <span class="mi">300</span> <span class="ow">and</span> <span class="n">CE</span><span class="o">.</span><span class="n">NumPhases</span> <span class="o">==</span> <span class="mi">3</span> <span class="ow">and</span> <span class="mi">100</span> <span class="o">&lt;=</span> <span class="n">Loads</span><span class="o">.</span><span class="n">kW</span> <span class="o">&lt;=</span> <span class="mi">200</span><span class="p">:</span>
+        <span class="n">names</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">Loads</span><span class="o">.</span><span class="n">Name</span><span class="p">)</span>
+        
+    <span class="n">idx</span> <span class="o">=</span> <span class="n">dss</span><span class="o">.</span><span class="n">ActiveCircuit</span><span class="o">.</span><span class="n">Loads</span><span class="o">.</span><span class="n">Next</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>1.49 ms ± 4.89 µs per loop (mean ± std. dev. of 7 runs, 1,000 loops each)
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+</section>
+<section id="other-features-and-details">
+<h2>Other features and details<a class="headerlink" href="#other-features-and-details" title="Link to this heading">#</a></h2>
+<ul class="simple">
+<li><p>All batch properties support broadcast from a single value, or a list/array of values. Objects can be set by their names, or a DSS object in Python.</p></li>
+</ul>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">batch_combined_filter</span><span class="o">.</span><span class="n">Daily</span> <span class="o">=</span> <span class="s1">&#39;default&#39;</span>
+<span class="n">batch_combined_filter</span><span class="o">.</span><span class="n">Daily</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&lt;LoadShape.default&gt;,
+ &lt;LoadShape.default&gt;,
+ &lt;LoadShape.default&gt;,
+ &lt;LoadShape.default&gt;,
+ &lt;LoadShape.default&gt;,
+ &lt;LoadShape.default&gt;]
+</pre></div>
+</div>
+</div>
+</div>
+<ul class="simple">
+<li><p>Array proxies are used when possible. This also pushes some operations to the engine:</p></li>
+</ul>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">batch_combined_filter</span><span class="o">.</span><span class="n">kW</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;altdss.ArrayProxy.BatchFloat64ArrayProxy at 0x7f55dfa75f40&gt;
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">batch_combined_filter</span><span class="o">.</span><span class="n">kW</span><span class="p">()</span> <span class="c1"># convert to array (load the data from the engine and create a NumPy array</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>array([110.86689132, 110.86689132, 110.86689132, 110.86689132,
+       110.86689132, 110.86689132])
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">batch_combined_filter</span><span class="o">.</span><span class="n">kW</span> <span class="o">+</span> <span class="mi">1</span> <span class="c1"># this is fine, converts to array and uses NumPy to do the sum</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>array([111.86689132, 111.86689132, 111.86689132, 111.86689132,
+       111.86689132, 111.86689132])
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">batch_combined_filter</span><span class="o">.</span><span class="n">kW</span> <span class="o">*=</span> <span class="mf">1.2</span> <span class="c1"># done in the engine!</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">batch_combined_filter</span><span class="o">.</span><span class="n">kW</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>array([133.04026958, 133.04026958, 133.04026958, 133.04026958,
+       133.04026958, 133.04026958])
+</pre></div>
+</div>
+</div>
+</div>
+<ul class="simple">
+<li><p>There are some advanced features we need to document. Sometimes it’s not very apparent why some features exist. For example, the setter for each property allows for custom “setter flags”, which preserves the current Yprim for some circuit components. E.g. this always forces new Yprim and is equivalent to (but faster than) a DSS command <code class="docutils literal notranslate"><span class="pre">edit</span> <span class="pre">load.LOAD_NAME</span> <span class="pre">kW=150</span></code> for each load in the batch:</p></li>
+</ul>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">batch_combined_filter</span><span class="o">.</span><span class="n">kW</span> <span class="o">=</span> <span class="mi">150</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>To avoid the full recalc and reproduce how the classic API kW property (<code class="docutils literal notranslate"><span class="pre">DSS.ActiveCircuit.Loads.kW</span></code>) works, we need to use a custom flag:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">dss</span> <span class="kn">import</span> <span class="n">SetterFlags</span>
+<span class="n">batch_combined_filter</span><span class="o">.</span><span class="n">_set_kW</span><span class="p">(</span><span class="mi">150</span><span class="p">,</span> <span class="n">SetterFlags</span><span class="o">.</span><span class="n">AvoidFullRecalc</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>We are studying an alternative to still use <code class="docutils literal notranslate"><span class="pre">batch_combined_filter.kW</span> <span class="pre">=</span> <span class="pre">150</span></code> but pass the flags somehow.</p>
+<section id="invalidation">
+<h3>Invalidation<a class="headerlink" href="#invalidation" title="Link to this heading">#</a></h3>
+<p>Like the objects and buses, batches are tracked and invalidated when the circuit is cleared, avoiding crashes and weird behavior. For example, if we clear and try to get the element names, we get an error mentioning “InvalidatedDSSObject”:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">altdss</span><span class="o">.</span><span class="n">Clear</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">batch_combined_filter</span><span class="o">.</span><span class="n">Name</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
+<span class="ne">TypeError</span><span class="g g-Whitespace">                                 </span>Traceback (most recent call last)
+<span class="n">Cell</span> <span class="n">In</span><span class="p">[</span><span class="mi">46</span><span class="p">],</span> <span class="n">line</span> <span class="mi">1</span>
+<span class="ne">----&gt; </span><span class="mi">1</span> <span class="n">batch_combined_filter</span><span class="o">.</span><span class="n">Name</span>
+
+<span class="nn">File /opt/python/lib/python3.12/site-packages/altdss/Batch.py:20,</span> in <span class="ni">BatchCommon.Name</span><span class="nt">(self)</span>
+<span class="g g-Whitespace">     </span><span class="mi">16</span> <span class="nd">@property</span>
+<span class="g g-Whitespace">     </span><span class="mi">17</span> <span class="k">def</span> <span class="nf">Name</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">List</span><span class="p">[</span><span class="nb">str</span><span class="p">]:</span>
+<span class="g g-Whitespace">     </span><span class="mi">18</span>     <span class="n">res</span> <span class="o">=</span> <span class="p">[</span>
+<span class="g g-Whitespace">     </span><span class="mi">19</span>         <span class="bp">self</span><span class="o">.</span><span class="n">_ffi</span><span class="o">.</span><span class="n">string</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_lib</span><span class="o">.</span><span class="n">Obj_GetName</span><span class="p">(</span><span class="n">ptr</span><span class="p">))</span><span class="o">.</span><span class="n">decode</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_api_util</span><span class="o">.</span><span class="n">codec</span><span class="p">)</span>
+<span class="nn">---&gt; 20         for ptr</span> in <span class="ni">self._unpack</span><span class="nt">()</span>
+<span class="g g-Whitespace">     </span><span class="mi">21</span>     <span class="p">]</span>
+<span class="g g-Whitespace">     </span><span class="mi">22</span>     <span class="bp">self</span><span class="o">.</span><span class="n">_check_for_error</span><span class="p">()</span>
+<span class="g g-Whitespace">     </span><span class="mi">23</span>     <span class="k">return</span> <span class="n">res</span>
+
+<span class="nn">File /opt/python/lib/python3.12/site-packages/altdss/Batch.py:58,</span> in <span class="ni">BatchCommon._unpack</span><span class="nt">(self)</span>
+<span class="g g-Whitespace">     </span><span class="mi">55</span> <span class="k">if</span> <span class="ow">not</span> <span class="n">cnt</span><span class="p">:</span>
+<span class="g g-Whitespace">     </span><span class="mi">56</span>     <span class="k">return</span> <span class="p">[]</span>
+<span class="ne">---&gt; </span><span class="mi">58</span> <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_ffi</span><span class="o">.</span><span class="n">unpack</span><span class="p">(</span><span class="o">*</span><span class="bp">self</span><span class="o">.</span><span class="n">_get_ptr_cnt</span><span class="p">())</span>
+
+<span class="ne">TypeError</span>: unpack() argument 1 must be _cffi_backend._CDataBase, not InvalidatedDSSObject
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+</section>
+<section id="whats-in-the-future">
+<h2>What’s in the future?<a class="headerlink" href="#whats-in-the-future" title="Link to this heading">#</a></h2>
+<ul class="simple">
+<li><p>Investigate adding filters for the current state instead of just DSS properties.</p></li>
+<li><p>Plotting integration of batches to allow easier interactive analysis.</p></li>
+<li><p>Native Apache Arrow integration for cross-language dataframes.</p></li>
+<li><p>General adjustments according to user feedback.</p></li>
+</ul>
+<p>Have an idea or suggestion? Please feel free to reach out on GitHub <a class="reference external" href="https://github.com/dss-extensions/dss-extensions/issues">Issues</a> or <a class="reference internal" href="#"><span class="xref myst">Discussions</span></a>.</p>
+</section>
+</section>
+
+
+                </article>
+              
+
+              
+              
+              
+              
+                <footer class="prev-next-footer">
+                  
+<div class="prev-next-area">
+    <a class="left-prev"
+       href="GettingStarted.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title">Getting Started</p>
+      </div>
+    </a>
+    <a class="right-next"
+       href="../changelog.html"
+       title="next page">
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">AltDSS-Python changelog</p>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
+    </a>
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#what-are-batches">What are batches?</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#why-use-batches">Why use batches?</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#loading-a-circuit">Loading a circuit</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#implicit-collections-as-batches">Implicit collections as batches</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#using-the-api-methods">Using the API methods</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#using-the-dss-properties">Using the DSS properties</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#filtered-batches">Filtered batches</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#batches-from-indices">Batches from indices</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#batches-by-filtering-integer-dss-properties">Batches by filtering integer (DSS) properties</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#batches-by-filtering-float-dss-properties">Batches by filtering float (DSS) properties</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#filtering-an-existing-batch">Filtering an existing batch</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#combining-filters">Combining filters</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#other-features-and-details">Other features and details</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#invalidation">Invalidation</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#whats-in-the-future">What’s in the future?</a></li>
+</ul>
+  </nav></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+<div class="bd-footer-content__inner container">
+  
+  <div class="footer-item">
+    
+
+  <p class="copyright">
+    
+      © Copyright 2018-2024 Paulo Meira, Dheepak Krishnamurthy, DSS-Extensions contributors.
+      <br/>
+    
+  </p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+</div>
+          </footer>
+        
+
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="../_static/scripts/bootstrap.js?digest=8d27b9dea8ad943066ae"></script>
+<script src="../_static/scripts/pydata-sphinx-theme.js?digest=8d27b9dea8ad943066ae"></script>
+
+  <footer class="bd-footer">
+  </footer>
+  </body>
+</html>

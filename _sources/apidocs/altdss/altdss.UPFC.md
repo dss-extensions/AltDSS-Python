@@ -203,7 +203,7 @@ Bases: {py:obj}`altdss.DSSObj.IDSSObj`, {py:obj}`altdss.UPFC.UPFCBatch`
 
 ````
 
-````{py:method} GUID() -> str
+````{py:method} GUID() -> typing.List[str]
 :canonical: altdss.UPFC.IUPFC.GUID
 
 ```{autodoc2-docstring} altdss.UPFC.IUPFC.GUID
@@ -219,7 +219,7 @@ Bases: {py:obj}`altdss.DSSObj.IDSSObj`, {py:obj}`altdss.UPFC.UPFCBatch`
 
 ````
 
-````{py:method} HasOCPDevice() -> bool
+````{py:method} HasOCPDevice() -> altdss.types.BoolArray
 :canonical: altdss.UPFC.IUPFC.HasOCPDevice
 
 ```{autodoc2-docstring} altdss.UPFC.IUPFC.HasOCPDevice
@@ -227,7 +227,7 @@ Bases: {py:obj}`altdss.DSSObj.IDSSObj`, {py:obj}`altdss.UPFC.UPFCBatch`
 
 ````
 
-````{py:method} HasSwitchControl() -> bool
+````{py:method} HasSwitchControl() -> altdss.types.BoolArray
 :canonical: altdss.UPFC.IUPFC.HasSwitchControl
 
 ```{autodoc2-docstring} altdss.UPFC.IUPFC.HasSwitchControl
@@ -235,7 +235,7 @@ Bases: {py:obj}`altdss.DSSObj.IDSSObj`, {py:obj}`altdss.UPFC.UPFCBatch`
 
 ````
 
-````{py:method} HasVoltControl() -> bool
+````{py:method} HasVoltControl() -> altdss.types.BoolArray
 :canonical: altdss.UPFC.IUPFC.HasVoltControl
 
 ```{autodoc2-docstring} altdss.UPFC.IUPFC.HasVoltControl
@@ -289,7 +289,7 @@ Bases: {py:obj}`altdss.DSSObj.IDSSObj`, {py:obj}`altdss.UPFC.UPFCBatch`
 
 ````
 
-````{py:method} MaxCurrent(terminal: int) -> float
+````{py:method} MaxCurrent(terminal: int) -> altdss.types.Float64Array
 :canonical: altdss.UPFC.IUPFC.MaxCurrent
 
 ```{autodoc2-docstring} altdss.UPFC.IUPFC.MaxCurrent
@@ -365,7 +365,7 @@ Bases: {py:obj}`altdss.DSSObj.IDSSObj`, {py:obj}`altdss.UPFC.UPFCBatch`
 
 ````
 
-````{py:method} OCPDeviceType() -> dss.enums.OCPDevType
+````{py:method} OCPDeviceType() -> typing.List[dss.enums.OCPDevType]
 :canonical: altdss.UPFC.IUPFC.OCPDeviceType
 
 ```{autodoc2-docstring} altdss.UPFC.IUPFC.OCPDeviceType
@@ -1520,7 +1520,7 @@ Bases: {py:obj}`altdss.Batch.DSSBatch`, {py:obj}`altdss.CircuitElement.CircuitEl
 
 ````
 
-````{py:method} GUID() -> str
+````{py:method} GUID() -> typing.List[str]
 :canonical: altdss.UPFC.UPFCBatch.GUID
 
 ```{autodoc2-docstring} altdss.UPFC.UPFCBatch.GUID
@@ -1536,7 +1536,7 @@ Bases: {py:obj}`altdss.Batch.DSSBatch`, {py:obj}`altdss.CircuitElement.CircuitEl
 
 ````
 
-````{py:method} HasOCPDevice() -> bool
+````{py:method} HasOCPDevice() -> altdss.types.BoolArray
 :canonical: altdss.UPFC.UPFCBatch.HasOCPDevice
 
 ```{autodoc2-docstring} altdss.UPFC.UPFCBatch.HasOCPDevice
@@ -1544,7 +1544,7 @@ Bases: {py:obj}`altdss.Batch.DSSBatch`, {py:obj}`altdss.CircuitElement.CircuitEl
 
 ````
 
-````{py:method} HasSwitchControl() -> bool
+````{py:method} HasSwitchControl() -> altdss.types.BoolArray
 :canonical: altdss.UPFC.UPFCBatch.HasSwitchControl
 
 ```{autodoc2-docstring} altdss.UPFC.UPFCBatch.HasSwitchControl
@@ -1552,7 +1552,7 @@ Bases: {py:obj}`altdss.Batch.DSSBatch`, {py:obj}`altdss.CircuitElement.CircuitEl
 
 ````
 
-````{py:method} HasVoltControl() -> bool
+````{py:method} HasVoltControl() -> altdss.types.BoolArray
 :canonical: altdss.UPFC.UPFCBatch.HasVoltControl
 
 ```{autodoc2-docstring} altdss.UPFC.UPFCBatch.HasVoltControl
@@ -1606,7 +1606,7 @@ Bases: {py:obj}`altdss.Batch.DSSBatch`, {py:obj}`altdss.CircuitElement.CircuitEl
 
 ````
 
-````{py:method} MaxCurrent(terminal: int) -> float
+````{py:method} MaxCurrent(terminal: int) -> altdss.types.Float64Array
 :canonical: altdss.UPFC.UPFCBatch.MaxCurrent
 
 ```{autodoc2-docstring} altdss.UPFC.UPFCBatch.MaxCurrent
@@ -1682,7 +1682,7 @@ Bases: {py:obj}`altdss.Batch.DSSBatch`, {py:obj}`altdss.CircuitElement.CircuitEl
 
 ````
 
-````{py:method} OCPDeviceType() -> dss.enums.OCPDevType
+````{py:method} OCPDeviceType() -> typing.List[dss.enums.OCPDevType]
 :canonical: altdss.UPFC.UPFCBatch.OCPDeviceType
 
 ```{autodoc2-docstring} altdss.UPFC.UPFCBatch.OCPDeviceType
@@ -1900,6 +1900,14 @@ Bases: {py:obj}`altdss.Batch.DSSBatch`, {py:obj}`altdss.CircuitElement.CircuitEl
 :canonical: altdss.UPFC.UPFCBatch.__len__
 
 ```{autodoc2-docstring} altdss.UPFC.UPFCBatch.__len__
+```
+
+````
+
+````{py:method} batch(**kwargs) -> altdss.Batch.DSSBatch
+:canonical: altdss.UPFC.UPFCBatch.batch
+
+```{autodoc2-docstring} altdss.UPFC.UPFCBatch.batch
 ```
 
 ````

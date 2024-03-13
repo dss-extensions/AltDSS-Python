@@ -400,7 +400,7 @@ Bases: {py:obj}`altdss.DSSObj.IDSSObj`, {py:obj}`altdss.Storage.StorageBatch`
 
 ````
 
-````{py:method} GUID() -> str
+````{py:method} GUID() -> typing.List[str]
 :canonical: altdss.Storage.IStorage.GUID
 
 ```{autodoc2-docstring} altdss.Storage.IStorage.GUID
@@ -416,7 +416,7 @@ Bases: {py:obj}`altdss.DSSObj.IDSSObj`, {py:obj}`altdss.Storage.StorageBatch`
 
 ````
 
-````{py:method} HasOCPDevice() -> bool
+````{py:method} HasOCPDevice() -> altdss.types.BoolArray
 :canonical: altdss.Storage.IStorage.HasOCPDevice
 
 ```{autodoc2-docstring} altdss.Storage.IStorage.HasOCPDevice
@@ -424,7 +424,7 @@ Bases: {py:obj}`altdss.DSSObj.IDSSObj`, {py:obj}`altdss.Storage.StorageBatch`
 
 ````
 
-````{py:method} HasSwitchControl() -> bool
+````{py:method} HasSwitchControl() -> altdss.types.BoolArray
 :canonical: altdss.Storage.IStorage.HasSwitchControl
 
 ```{autodoc2-docstring} altdss.Storage.IStorage.HasSwitchControl
@@ -432,7 +432,7 @@ Bases: {py:obj}`altdss.DSSObj.IDSSObj`, {py:obj}`altdss.Storage.StorageBatch`
 
 ````
 
-````{py:method} HasVoltControl() -> bool
+````{py:method} HasVoltControl() -> altdss.types.BoolArray
 :canonical: altdss.Storage.IStorage.HasVoltControl
 
 ```{autodoc2-docstring} altdss.Storage.IStorage.HasVoltControl
@@ -486,7 +486,7 @@ Bases: {py:obj}`altdss.DSSObj.IDSSObj`, {py:obj}`altdss.Storage.StorageBatch`
 
 ````
 
-````{py:method} MaxCurrent(terminal: int) -> float
+````{py:method} MaxCurrent(terminal: int) -> altdss.types.Float64Array
 :canonical: altdss.Storage.IStorage.MaxCurrent
 
 ```{autodoc2-docstring} altdss.Storage.IStorage.MaxCurrent
@@ -562,7 +562,7 @@ Bases: {py:obj}`altdss.DSSObj.IDSSObj`, {py:obj}`altdss.Storage.StorageBatch`
 
 ````
 
-````{py:method} OCPDeviceType() -> dss.enums.OCPDevType
+````{py:method} OCPDeviceType() -> typing.List[dss.enums.OCPDevType]
 :canonical: altdss.Storage.IStorage.OCPDeviceType
 
 ```{autodoc2-docstring} altdss.Storage.IStorage.OCPDeviceType
@@ -2831,7 +2831,7 @@ Bases: {py:obj}`altdss.Batch.DSSBatch`, {py:obj}`altdss.CircuitElement.CircuitEl
 
 ````
 
-````{py:method} GUID() -> str
+````{py:method} GUID() -> typing.List[str]
 :canonical: altdss.Storage.StorageBatch.GUID
 
 ```{autodoc2-docstring} altdss.Storage.StorageBatch.GUID
@@ -2847,7 +2847,7 @@ Bases: {py:obj}`altdss.Batch.DSSBatch`, {py:obj}`altdss.CircuitElement.CircuitEl
 
 ````
 
-````{py:method} HasOCPDevice() -> bool
+````{py:method} HasOCPDevice() -> altdss.types.BoolArray
 :canonical: altdss.Storage.StorageBatch.HasOCPDevice
 
 ```{autodoc2-docstring} altdss.Storage.StorageBatch.HasOCPDevice
@@ -2855,7 +2855,7 @@ Bases: {py:obj}`altdss.Batch.DSSBatch`, {py:obj}`altdss.CircuitElement.CircuitEl
 
 ````
 
-````{py:method} HasSwitchControl() -> bool
+````{py:method} HasSwitchControl() -> altdss.types.BoolArray
 :canonical: altdss.Storage.StorageBatch.HasSwitchControl
 
 ```{autodoc2-docstring} altdss.Storage.StorageBatch.HasSwitchControl
@@ -2863,7 +2863,7 @@ Bases: {py:obj}`altdss.Batch.DSSBatch`, {py:obj}`altdss.CircuitElement.CircuitEl
 
 ````
 
-````{py:method} HasVoltControl() -> bool
+````{py:method} HasVoltControl() -> altdss.types.BoolArray
 :canonical: altdss.Storage.StorageBatch.HasVoltControl
 
 ```{autodoc2-docstring} altdss.Storage.StorageBatch.HasVoltControl
@@ -2917,7 +2917,7 @@ Bases: {py:obj}`altdss.Batch.DSSBatch`, {py:obj}`altdss.CircuitElement.CircuitEl
 
 ````
 
-````{py:method} MaxCurrent(terminal: int) -> float
+````{py:method} MaxCurrent(terminal: int) -> altdss.types.Float64Array
 :canonical: altdss.Storage.StorageBatch.MaxCurrent
 
 ```{autodoc2-docstring} altdss.Storage.StorageBatch.MaxCurrent
@@ -2993,7 +2993,7 @@ Bases: {py:obj}`altdss.Batch.DSSBatch`, {py:obj}`altdss.CircuitElement.CircuitEl
 
 ````
 
-````{py:method} OCPDeviceType() -> dss.enums.OCPDevType
+````{py:method} OCPDeviceType() -> typing.List[dss.enums.OCPDevType]
 :canonical: altdss.Storage.StorageBatch.OCPDeviceType
 
 ```{autodoc2-docstring} altdss.Storage.StorageBatch.OCPDeviceType
@@ -3310,6 +3310,14 @@ Bases: {py:obj}`altdss.Batch.DSSBatch`, {py:obj}`altdss.CircuitElement.CircuitEl
 :canonical: altdss.Storage.StorageBatch.__len__
 
 ```{autodoc2-docstring} altdss.Storage.StorageBatch.__len__
+```
+
+````
+
+````{py:method} batch(**kwargs) -> altdss.Batch.DSSBatch
+:canonical: altdss.Storage.StorageBatch.batch
+
+```{autodoc2-docstring} altdss.Storage.StorageBatch.batch
 ```
 
 ````

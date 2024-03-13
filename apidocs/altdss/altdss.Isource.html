@@ -8,7 +8,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
-    <title>altdss.Isource &#8212; AltDSS-Python 0.2.0 documentation</title>
+    <title>altdss.Isource &#8212; AltDSS-Python 0.2.2 documentation</title>
   
   
   
@@ -38,7 +38,7 @@
 <link rel="preload" as="script" href="../../_static/scripts/pydata-sphinx-theme.js?digest=8d27b9dea8ad943066ae" />
   <script src="../../_static/vendor/fontawesome/6.5.1/js/all.min.js?digest=8d27b9dea8ad943066ae"></script>
 
-    <script src="../../_static/documentation_options.js?v=7f7c277e"></script>
+    <script src="../../_static/documentation_options.js?v=d3f42505"></script>
     <script src="../../_static/doctools.js?v=888ff710"></script>
     <script src="../../_static/sphinx_highlight.js?v=dc90522c"></script>
     <script src="../../_static/scripts/sphinx-book-theme.js?v=efea14e4"></script>
@@ -137,8 +137,8 @@
       
     
     
-    <img src="../../_static/altdss-python.svg" class="logo__image only-light" alt="AltDSS-Python 0.2.0 documentation - Home"/>
-    <script>document.write(`<img src="../../_static/altdss-python-dark.svg" class="logo__image only-dark" alt="AltDSS-Python 0.2.0 documentation - Home"/>`);</script>
+    <img src="../../_static/altdss-python.svg" class="logo__image only-light" alt="AltDSS-Python 0.2.2 documentation - Home"/>
+    <script>document.write(`<img src="../../_static/altdss-python-dark.svg" class="logo__image only-dark" alt="AltDSS-Python 0.2.2 documentation - Home"/>`);</script>
   
   
 </a></div>
@@ -160,6 +160,7 @@
 <li class="toctree-l1"><a class="reference internal" href="../../index.html">AltDSS-Python</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../Architecture.html">Architecture details</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../examples/GettingStarted.html">Getting Started</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../examples/Batches.html">Batches</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../changelog.html">Changelog</a></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">API Reference</span></p>
@@ -608,6 +609,7 @@ document.write(`
 <li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#altdss.Isource.IsourceBatch.__init__"><code class="docutils literal notranslate"><span class="pre">IsourceBatch.__init__()</span></code></a></li>
 <li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#altdss.Isource.IsourceBatch.__iter__"><code class="docutils literal notranslate"><span class="pre">IsourceBatch.__iter__()</span></code></a></li>
 <li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#altdss.Isource.IsourceBatch.__len__"><code class="docutils literal notranslate"><span class="pre">IsourceBatch.__len__()</span></code></a></li>
+<li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#altdss.Isource.IsourceBatch.batch"><code class="docutils literal notranslate"><span class="pre">IsourceBatch.batch()</span></code></a></li>
 <li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#altdss.Isource.IsourceBatch.begin_edit"><code class="docutils literal notranslate"><span class="pre">IsourceBatch.begin_edit()</span></code></a></li>
 <li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#altdss.Isource.IsourceBatch.end_edit"><code class="docutils literal notranslate"><span class="pre">IsourceBatch.end_edit()</span></code></a></li>
 <li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#altdss.Isource.IsourceBatch.to_json"><code class="docutils literal notranslate"><span class="pre">IsourceBatch.to_json()</span></code></a></li>
@@ -793,80 +795,122 @@ in the keyword argument list.  For example:  dict(one=1, two=2)</p></td>
 <dt class="sig sig-object py" id="altdss.Isource.IIsource.Amps">
 <span class="sig-name descname"><span class="pre">Amps</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><a class="reference internal" href="altdss.ArrayProxy.html#altdss.ArrayProxy.BatchFloat64ArrayProxy" title="altdss.ArrayProxy.BatchFloat64ArrayProxy"><span class="pre">altdss.ArrayProxy.BatchFloat64ArrayProxy</span></a></em><a class="headerlink" href="#altdss.Isource.IIsource.Amps" title="Link to this definition">#</a></dt>
 <dd><p>‘property(…)’</p>
+<p>Magnitude of current source, each phase, in Amps.</p>
+<p>DSS property name: <code class="docutils literal notranslate"><span class="pre">Amps</span></code>, DSS property index: 2.</p>
 </dd></dl>
 
 <dl class="py attribute">
 <dt class="sig sig-object py" id="altdss.Isource.IIsource.Angle">
 <span class="sig-name descname"><span class="pre">Angle</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><a class="reference internal" href="altdss.ArrayProxy.html#altdss.ArrayProxy.BatchFloat64ArrayProxy" title="altdss.ArrayProxy.BatchFloat64ArrayProxy"><span class="pre">altdss.ArrayProxy.BatchFloat64ArrayProxy</span></a></em><a class="headerlink" href="#altdss.Isource.IIsource.Angle" title="Link to this definition">#</a></dt>
 <dd><p>‘property(…)’</p>
+<p>Phase angle in degrees of first phase: e.g.,Angle=10.3.
+Phase shift between phases is assumed 120 degrees when number of phases &lt;= 3</p>
+<p>DSS property name: <code class="docutils literal notranslate"><span class="pre">Angle</span></code>, DSS property index: 3.</p>
 </dd></dl>
 
 <dl class="py attribute">
 <dt class="sig sig-object py" id="altdss.Isource.IIsource.BaseFreq">
 <span class="sig-name descname"><span class="pre">BaseFreq</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><a class="reference internal" href="altdss.ArrayProxy.html#altdss.ArrayProxy.BatchFloat64ArrayProxy" title="altdss.ArrayProxy.BatchFloat64ArrayProxy"><span class="pre">altdss.ArrayProxy.BatchFloat64ArrayProxy</span></a></em><a class="headerlink" href="#altdss.Isource.IIsource.BaseFreq" title="Link to this definition">#</a></dt>
 <dd><p>‘property(…)’</p>
+<p>Base Frequency for ratings.</p>
+<p>DSS property name: <code class="docutils literal notranslate"><span class="pre">BaseFreq</span></code>, DSS property index: 13.</p>
 </dd></dl>
 
 <dl class="py attribute">
 <dt class="sig sig-object py" id="altdss.Isource.IIsource.Bus1">
 <span class="sig-name descname"><span class="pre">Bus1</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">List</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">]</span></span></em><a class="headerlink" href="#altdss.Isource.IIsource.Bus1" title="Link to this definition">#</a></dt>
 <dd><p>‘property(…)’</p>
+<p>Name of bus to which source is connected.
+bus1=busname
+bus1=busname.1.2.3</p>
+<p>DSS property name: <code class="docutils literal notranslate"><span class="pre">Bus1</span></code>, DSS property index: 1.</p>
 </dd></dl>
 
 <dl class="py attribute">
 <dt class="sig sig-object py" id="altdss.Isource.IIsource.Bus2">
 <span class="sig-name descname"><span class="pre">Bus2</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">List</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">]</span></span></em><a class="headerlink" href="#altdss.Isource.IIsource.Bus2" title="Link to this definition">#</a></dt>
 <dd><p>‘property(…)’</p>
+<p>Name of bus to which 2nd terminal is connected.
+bus2=busname
+bus2=busname.1.2.3</p>
+<p>Default is Bus1.0.0.0 (grounded-wye connection)</p>
+<p>DSS property name: <code class="docutils literal notranslate"><span class="pre">Bus2</span></code>, DSS property index: 11.</p>
 </dd></dl>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="altdss.Isource.IIsource.ComplexSeqCurrents">
 <span class="sig-name descname"><span class="pre">ComplexSeqCurrents</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">altdss.types.ComplexArray</span></span></span><a class="headerlink" href="#altdss.Isource.IIsource.ComplexSeqCurrents" title="Link to this definition">#</a></dt>
-<dd></dd></dl>
+<dd><p>Complex double array of Sequence Currents for all conductors of all terminals of active circuit element.</p>
+<p>Original COM help: <a class="reference external" href="https://opendss.epri.com/CplxSeqCurrents.html">https://opendss.epri.com/CplxSeqCurrents.html</a></p>
+</dd></dl>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="altdss.Isource.IIsource.ComplexSeqVoltages">
 <span class="sig-name descname"><span class="pre">ComplexSeqVoltages</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">altdss.types.ComplexArray</span></span></span><a class="headerlink" href="#altdss.Isource.IIsource.ComplexSeqVoltages" title="Link to this definition">#</a></dt>
-<dd></dd></dl>
+<dd><p>Complex double array of Sequence Voltage for all terminals of active circuit element.</p>
+<p>Original COM help: <a class="reference external" href="https://opendss.epri.com/CplxSeqVoltages1.html">https://opendss.epri.com/CplxSeqVoltages1.html</a></p>
+</dd></dl>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="altdss.Isource.IIsource.Currents">
 <span class="sig-name descname"><span class="pre">Currents</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">altdss.types.ComplexArray</span></span></span><a class="headerlink" href="#altdss.Isource.IIsource.Currents" title="Link to this definition">#</a></dt>
-<dd></dd></dl>
+<dd><p>Complex array of currents into each conductor of each terminal</p>
+<p>Original COM help: <a class="reference external" href="https://opendss.epri.com/Currents1.html">https://opendss.epri.com/Currents1.html</a></p>
+</dd></dl>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="altdss.Isource.IIsource.CurrentsMagAng">
 <span class="sig-name descname"><span class="pre">CurrentsMagAng</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">altdss.types.Float64Array</span></span></span><a class="headerlink" href="#altdss.Isource.IIsource.CurrentsMagAng" title="Link to this definition">#</a></dt>
-<dd></dd></dl>
+<dd><p>Currents in magnitude, angle (degrees) format as a array of doubles.</p>
+<p>Original COM help: <a class="reference external" href="https://opendss.epri.com/CurrentsMagAng.html">https://opendss.epri.com/CurrentsMagAng.html</a></p>
+</dd></dl>
 
 <dl class="py attribute">
 <dt class="sig sig-object py" id="altdss.Isource.IIsource.Daily">
 <span class="sig-name descname"><span class="pre">Daily</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">List</span><span class="p"><span class="pre">[</span></span><a class="reference internal" href="altdss.LoadShape.html#altdss.LoadShape.LoadShape" title="altdss.LoadShape.LoadShape"><span class="pre">altdss.LoadShape.LoadShape</span></a><span class="p"><span class="pre">]</span></span></em><a class="headerlink" href="#altdss.Isource.IIsource.Daily" title="Link to this definition">#</a></dt>
 <dd><p>‘property(…)’</p>
+<p>LOADSHAPE object to use for the per-unit current for DAILY-mode simulations. Set the Mult property of the LOADSHAPE to the pu curve. Qmult is not used. If UseActual=Yes then the Mult curve should be actual A.</p>
+<p>Must be previously defined as a LOADSHAPE object.</p>
+<p>Sets Yearly curve if it is not already defined.   Set to NONE to reset to no loadshape for Yearly mode. The default is no variation.</p>
+<p>DSS property name: <code class="docutils literal notranslate"><span class="pre">Daily</span></code>, DSS property index: 9.</p>
 </dd></dl>
 
 <dl class="py attribute">
 <dt class="sig sig-object py" id="altdss.Isource.IIsource.Daily_str">
 <span class="sig-name descname"><span class="pre">Daily_str</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">List</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">]</span></span></em><a class="headerlink" href="#altdss.Isource.IIsource.Daily_str" title="Link to this definition">#</a></dt>
 <dd><p>‘property(…)’</p>
+<p>LOADSHAPE object to use for the per-unit current for DAILY-mode simulations. Set the Mult property of the LOADSHAPE to the pu curve. Qmult is not used. If UseActual=Yes then the Mult curve should be actual A.</p>
+<p>Must be previously defined as a LOADSHAPE object.</p>
+<p>Sets Yearly curve if it is not already defined.   Set to NONE to reset to no loadshape for Yearly mode. The default is no variation.</p>
+<p>DSS property name: <code class="docutils literal notranslate"><span class="pre">Daily</span></code>, DSS property index: 9.</p>
 </dd></dl>
 
 <dl class="py attribute">
 <dt class="sig sig-object py" id="altdss.Isource.IIsource.Duty">
 <span class="sig-name descname"><span class="pre">Duty</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">List</span><span class="p"><span class="pre">[</span></span><a class="reference internal" href="altdss.LoadShape.html#altdss.LoadShape.LoadShape" title="altdss.LoadShape.LoadShape"><span class="pre">altdss.LoadShape.LoadShape</span></a><span class="p"><span class="pre">]</span></span></em><a class="headerlink" href="#altdss.Isource.IIsource.Duty" title="Link to this definition">#</a></dt>
 <dd><p>‘property(…)’</p>
+<p>LOADSHAPE object to use for the per-unit current for DUTYCYCLE-mode simulations. Set the Mult property of the LOADSHAPE to the pu curve. Qmult is not used. If UseActual=Yes then the Mult curve should be actual A.</p>
+<p>Must be previously defined as a LOADSHAPE object.</p>
+<p>Defaults to Daily load shape when Daily is defined.   Set to NONE to reset to no loadshape for Yearly mode. The default is no variation.</p>
+<p>DSS property name: <code class="docutils literal notranslate"><span class="pre">Duty</span></code>, DSS property index: 10.</p>
 </dd></dl>
 
 <dl class="py attribute">
 <dt class="sig sig-object py" id="altdss.Isource.IIsource.Duty_str">
 <span class="sig-name descname"><span class="pre">Duty_str</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">List</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">]</span></span></em><a class="headerlink" href="#altdss.Isource.IIsource.Duty_str" title="Link to this definition">#</a></dt>
 <dd><p>‘property(…)’</p>
+<p>LOADSHAPE object to use for the per-unit current for DUTYCYCLE-mode simulations. Set the Mult property of the LOADSHAPE to the pu curve. Qmult is not used. If UseActual=Yes then the Mult curve should be actual A.</p>
+<p>Must be previously defined as a LOADSHAPE object.</p>
+<p>Defaults to Daily load shape when Daily is defined.   Set to NONE to reset to no loadshape for Yearly mode. The default is no variation.</p>
+<p>DSS property name: <code class="docutils literal notranslate"><span class="pre">Duty</span></code>, DSS property index: 10.</p>
 </dd></dl>
 
 <dl class="py attribute">
 <dt class="sig sig-object py" id="altdss.Isource.IIsource.Enabled">
 <span class="sig-name descname"><span class="pre">Enabled</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">List</span><span class="p"><span class="pre">[</span></span><span class="pre">bool</span><span class="p"><span class="pre">]</span></span></em><a class="headerlink" href="#altdss.Isource.IIsource.Enabled" title="Link to this definition">#</a></dt>
 <dd><p>‘property(…)’</p>
+<p>{Yes|No or True|False} Indicates whether this element is enabled.</p>
+<p>DSS property name: <code class="docutils literal notranslate"><span class="pre">Enabled</span></code>, DSS property index: 14.</p>
 </dd></dl>
 
 <dl class="py method">
@@ -883,6 +927,8 @@ in the keyword argument list.  For example:  dict(one=1, two=2)</p></td>
 <dt class="sig sig-object py" id="altdss.Isource.IIsource.Frequency">
 <span class="sig-name descname"><span class="pre">Frequency</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><a class="reference internal" href="altdss.ArrayProxy.html#altdss.ArrayProxy.BatchFloat64ArrayProxy" title="altdss.ArrayProxy.BatchFloat64ArrayProxy"><span class="pre">altdss.ArrayProxy.BatchFloat64ArrayProxy</span></a></em><a class="headerlink" href="#altdss.Isource.IIsource.Frequency" title="Link to this definition">#</a></dt>
 <dd><p>‘property(…)’</p>
+<p>Source frequency.  Defaults to  circuit fundamental frequency.</p>
+<p>DSS property name: <code class="docutils literal notranslate"><span class="pre">Frequency</span></code>, DSS property index: 4.</p>
 </dd></dl>
 
 <dl class="py method">
@@ -893,34 +939,46 @@ in the keyword argument list.  For example:  dict(one=1, two=2)</p></td>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="altdss.Isource.IIsource.GUID">
-<span class="sig-name descname"><span class="pre">GUID</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">str</span></span></span><a class="headerlink" href="#altdss.Isource.IIsource.GUID" title="Link to this definition">#</a></dt>
+<span class="sig-name descname"><span class="pre">GUID</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">List</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">]</span></span></span></span><a class="headerlink" href="#altdss.Isource.IIsource.GUID" title="Link to this definition">#</a></dt>
 <dd><p>GUID/UUID for each object. Currently used only in the CIM-related methods.</p>
+<p>Original COM help: <a class="reference external" href="https://opendss.epri.com/GUID.html">https://opendss.epri.com/GUID.html</a></p>
 </dd></dl>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="altdss.Isource.IIsource.Handle">
 <span class="sig-name descname"><span class="pre">Handle</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">altdss.types.Int32Array</span></span></span><a class="headerlink" href="#altdss.Isource.IIsource.Handle" title="Link to this definition">#</a></dt>
-<dd></dd></dl>
+<dd><p>Index of each element into the circuit’s element list.</p>
+<p>Original COM help: <a class="reference external" href="https://opendss.epri.com/Handle.html">https://opendss.epri.com/Handle.html</a></p>
+</dd></dl>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="altdss.Isource.IIsource.HasOCPDevice">
-<span class="sig-name descname"><span class="pre">HasOCPDevice</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">bool</span></span></span><a class="headerlink" href="#altdss.Isource.IIsource.HasOCPDevice" title="Link to this definition">#</a></dt>
-<dd></dd></dl>
+<span class="sig-name descname"><span class="pre">HasOCPDevice</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">altdss.types.BoolArray</span></span></span><a class="headerlink" href="#altdss.Isource.IIsource.HasOCPDevice" title="Link to this definition">#</a></dt>
+<dd><p>For each element in the batch: returns true if a recloser, relay, or fuse controlling the circuit element.</p>
+<p>OCP = Overcurrent Protection</p>
+<p>Original COM help: <a class="reference external" href="https://opendss.epri.com/HasOCPDevice.html">https://opendss.epri.com/HasOCPDevice.html</a></p>
+</dd></dl>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="altdss.Isource.IIsource.HasSwitchControl">
-<span class="sig-name descname"><span class="pre">HasSwitchControl</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">bool</span></span></span><a class="headerlink" href="#altdss.Isource.IIsource.HasSwitchControl" title="Link to this definition">#</a></dt>
-<dd></dd></dl>
+<span class="sig-name descname"><span class="pre">HasSwitchControl</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">altdss.types.BoolArray</span></span></span><a class="headerlink" href="#altdss.Isource.IIsource.HasSwitchControl" title="Link to this definition">#</a></dt>
+<dd><p>For each element in the batch: returns true if the element has a SwtControl attached.</p>
+<p>Original COM help: <a class="reference external" href="https://opendss.epri.com/HasSwitchControl.html">https://opendss.epri.com/HasSwitchControl.html</a></p>
+</dd></dl>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="altdss.Isource.IIsource.HasVoltControl">
-<span class="sig-name descname"><span class="pre">HasVoltControl</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">bool</span></span></span><a class="headerlink" href="#altdss.Isource.IIsource.HasVoltControl" title="Link to this definition">#</a></dt>
-<dd></dd></dl>
+<span class="sig-name descname"><span class="pre">HasVoltControl</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">altdss.types.BoolArray</span></span></span><a class="headerlink" href="#altdss.Isource.IIsource.HasVoltControl" title="Link to this definition">#</a></dt>
+<dd><p>For each element in the batch: returns true if the element has a CapControl or RegControl attached.</p>
+<p>Original COM help: <a class="reference external" href="https://opendss.epri.com/HasVoltControl.html">https://opendss.epri.com/HasVoltControl.html</a></p>
+</dd></dl>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="altdss.Isource.IIsource.IsIsolated">
 <span class="sig-name descname"><span class="pre">IsIsolated</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">altdss.types.BoolArray</span></span></span><a class="headerlink" href="#altdss.Isource.IIsource.IsIsolated" title="Link to this definition">#</a></dt>
-<dd></dd></dl>
+<dd><p>For each element in the batch: returns true if the element is isolated.
+Note that this only fetches the current value. See also the Topology interface.</p>
+</dd></dl>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="altdss.Isource.IIsource.Like">
@@ -933,13 +991,14 @@ in the keyword argument list.  For example:  dict(one=1, two=2)</p></td>
 <dl class="py method">
 <dt class="sig sig-object py" id="altdss.Isource.IIsource.Losses">
 <span class="sig-name descname"><span class="pre">Losses</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">altdss.types.ComplexArray</span></span></span><a class="headerlink" href="#altdss.Isource.IIsource.Losses" title="Link to this definition">#</a></dt>
-<dd><p>Total losses for each element, complex VA (watts, vars)</p>
+<dd><p>For each element in the batch: total losses in the element, in VA (watts, vars).</p>
+<p>Original COM help: <a class="reference external" href="https://opendss.epri.com/Losses1.html">https://opendss.epri.com/Losses1.html</a></p>
 </dd></dl>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="altdss.Isource.IIsource.MaxCurrent">
-<span class="sig-name descname"><span class="pre">MaxCurrent</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">terminal</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">float</span></span></span><a class="headerlink" href="#altdss.Isource.IIsource.MaxCurrent" title="Link to this definition">#</a></dt>
-<dd><p>Returns the maximum current (magnitude) at the specificed terminal for all elements in this batch.
+<span class="sig-name descname"><span class="pre">MaxCurrent</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">terminal</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">altdss.types.Float64Array</span></span></span><a class="headerlink" href="#altdss.Isource.IIsource.MaxCurrent" title="Link to this definition">#</a></dt>
+<dd><p>Returns the maximum current (magnitude) at the specified terminal for each element in this batch.
 Use -1 as terminal to get the value across all terminals.</p>
 </dd></dl>
 
@@ -951,105 +1010,140 @@ Use -1 as terminal to get the value across all terminals.</p>
 <dl class="py method">
 <dt class="sig sig-object py" id="altdss.Isource.IIsource.NumConductors">
 <span class="sig-name descname"><span class="pre">NumConductors</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">altdss.types.Int32Array</span></span></span><a class="headerlink" href="#altdss.Isource.IIsource.NumConductors" title="Link to this definition">#</a></dt>
-<dd></dd></dl>
+<dd><p>Number of conductors per terminal for each element in the batch.</p>
+<p>Original COM help: <a class="reference external" href="https://opendss.epri.com/NumConductors.html">https://opendss.epri.com/NumConductors.html</a></p>
+</dd></dl>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="altdss.Isource.IIsource.NumControllers">
 <span class="sig-name descname"><span class="pre">NumControllers</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">altdss.types.Int32Array</span></span></span><a class="headerlink" href="#altdss.Isource.IIsource.NumControllers" title="Link to this definition">#</a></dt>
-<dd></dd></dl>
+<dd><p>Number of controllers connected to each device in the batch.</p>
+<p>Original COM help: <a class="reference external" href="https://opendss.epri.com/NumControls.html">https://opendss.epri.com/NumControls.html</a></p>
+</dd></dl>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="altdss.Isource.IIsource.NumPhases">
 <span class="sig-name descname"><span class="pre">NumPhases</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">altdss.types.Int32Array</span></span></span><a class="headerlink" href="#altdss.Isource.IIsource.NumPhases" title="Link to this definition">#</a></dt>
-<dd></dd></dl>
+<dd><p>Number of Phases for each element in this batch.</p>
+<p>Original COM help: <a class="reference external" href="https://opendss.epri.com/NumPhases.html">https://opendss.epri.com/NumPhases.html</a></p>
+</dd></dl>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="altdss.Isource.IIsource.NumTerminals">
 <span class="sig-name descname"><span class="pre">NumTerminals</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">altdss.types.Int32Array</span></span></span><a class="headerlink" href="#altdss.Isource.IIsource.NumTerminals" title="Link to this definition">#</a></dt>
-<dd></dd></dl>
+<dd><p>Number of terminals for each Circuit Element in the batch.</p>
+<p>Original COM help: <a class="reference external" href="https://opendss.epri.com/NumTerminals.html">https://opendss.epri.com/NumTerminals.html</a></p>
+</dd></dl>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="altdss.Isource.IIsource.OCPDevice">
 <span class="sig-name descname"><span class="pre">OCPDevice</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">List</span><span class="p"><span class="pre">[</span></span><span class="pre">Union</span><span class="p"><span class="pre">[</span></span><a class="reference internal" href="altdss.DSSObj.html#altdss.DSSObj.DSSObj" title="altdss.DSSObj.DSSObj"><span class="pre">altdss.DSSObj.DSSObj</span></a><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">None</span><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">]</span></span></span></span><a class="headerlink" href="#altdss.Isource.IIsource.OCPDevice" title="Link to this definition">#</a></dt>
-<dd></dd></dl>
+<dd><p>Returns (as a list of Python objects) the OCP device controlling each element.</p>
+</dd></dl>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="altdss.Isource.IIsource.OCPDeviceIndex">
 <span class="sig-name descname"><span class="pre">OCPDeviceIndex</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">altdss.types.Int32Array</span></span></span><a class="headerlink" href="#altdss.Isource.IIsource.OCPDeviceIndex" title="Link to this definition">#</a></dt>
-<dd></dd></dl>
+<dd><p>For each element in the batch: index into each controller list of the OCP Device controlling each circuit element</p>
+<p>Original COM help: <a class="reference external" href="https://opendss.epri.com/OCPDevIndex.html">https://opendss.epri.com/OCPDevIndex.html</a></p>
+</dd></dl>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="altdss.Isource.IIsource.OCPDeviceType">
-<span class="sig-name descname"><span class="pre">OCPDeviceType</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">dss.enums.OCPDevType</span></span></span><a class="headerlink" href="#altdss.Isource.IIsource.OCPDeviceType" title="Link to this definition">#</a></dt>
-<dd></dd></dl>
+<span class="sig-name descname"><span class="pre">OCPDeviceType</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">List</span><span class="p"><span class="pre">[</span></span><span class="pre">dss.enums.OCPDevType</span><span class="p"><span class="pre">]</span></span></span></span><a class="headerlink" href="#altdss.Isource.IIsource.OCPDeviceType" title="Link to this definition">#</a></dt>
+<dd><p>For each element in the batch: type of OCP controller device</p>
+<p>Original COM help: <a class="reference external" href="https://opendss.epri.com/OCPDevType.html">https://opendss.epri.com/OCPDevType.html</a></p>
+</dd></dl>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="altdss.Isource.IIsource.PhaseLosses">
 <span class="sig-name descname"><span class="pre">PhaseLosses</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">altdss.types.ComplexArray</span></span></span><a class="headerlink" href="#altdss.Isource.IIsource.PhaseLosses" title="Link to this definition">#</a></dt>
-<dd><p>Complex array of losses (kVA) by phase, for each element</p>
+<dd><p>Complex array of losses (kVA) by phase</p>
+<p>Original COM help: <a class="reference external" href="https://opendss.epri.com/PhaseLosses.html">https://opendss.epri.com/PhaseLosses.html</a></p>
 </dd></dl>
 
 <dl class="py attribute">
 <dt class="sig sig-object py" id="altdss.Isource.IIsource.Phases">
 <span class="sig-name descname"><span class="pre">Phases</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><a class="reference internal" href="altdss.ArrayProxy.html#altdss.ArrayProxy.BatchInt32ArrayProxy" title="altdss.ArrayProxy.BatchInt32ArrayProxy"><span class="pre">altdss.ArrayProxy.BatchInt32ArrayProxy</span></a></em><a class="headerlink" href="#altdss.Isource.IIsource.Phases" title="Link to this definition">#</a></dt>
 <dd><p>‘property(…)’</p>
+<p>Number of phases.  Defaults to 3. For 3 or less, phase shift is 120 degrees.</p>
+<p>DSS property name: <code class="docutils literal notranslate"><span class="pre">Phases</span></code>, DSS property index: 5.</p>
 </dd></dl>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="altdss.Isource.IIsource.Powers">
 <span class="sig-name descname"><span class="pre">Powers</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">altdss.types.ComplexArray</span></span></span><a class="headerlink" href="#altdss.Isource.IIsource.Powers" title="Link to this definition">#</a></dt>
 <dd><p>Complex array of powers (kVA) into each conductor of each terminal, of each element in the batch.</p>
+<p>Original COM help: <a class="reference external" href="https://opendss.epri.com/Powers.html">https://opendss.epri.com/Powers.html</a></p>
 </dd></dl>
 
 <dl class="py attribute">
 <dt class="sig sig-object py" id="altdss.Isource.IIsource.ScanType">
 <span class="sig-name descname"><span class="pre">ScanType</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><a class="reference internal" href="altdss.ArrayProxy.html#altdss.ArrayProxy.BatchInt32ArrayProxy" title="altdss.ArrayProxy.BatchInt32ArrayProxy"><span class="pre">altdss.ArrayProxy.BatchInt32ArrayProxy</span></a></em><a class="headerlink" href="#altdss.Isource.IIsource.ScanType" title="Link to this definition">#</a></dt>
 <dd><p>‘property(…)’</p>
+<p>{pos*| zero | none} Maintain specified sequence for harmonic solution. Default is positive sequence. Otherwise, angle between phases rotates with harmonic.</p>
+<p>DSS property name: <code class="docutils literal notranslate"><span class="pre">ScanType</span></code>, DSS property index: 6.</p>
 </dd></dl>
 
 <dl class="py attribute">
 <dt class="sig sig-object py" id="altdss.Isource.IIsource.ScanType_str">
 <span class="sig-name descname"><span class="pre">ScanType_str</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">List</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">]</span></span></em><a class="headerlink" href="#altdss.Isource.IIsource.ScanType_str" title="Link to this definition">#</a></dt>
 <dd><p>‘property(…)’</p>
+<p>{pos*| zero | none} Maintain specified sequence for harmonic solution. Default is positive sequence. Otherwise, angle between phases rotates with harmonic.</p>
+<p>DSS property name: <code class="docutils literal notranslate"><span class="pre">ScanType</span></code>, DSS property index: 6.</p>
 </dd></dl>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="altdss.Isource.IIsource.SeqCurrents">
 <span class="sig-name descname"><span class="pre">SeqCurrents</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">altdss.types.Float64Array</span></span></span><a class="headerlink" href="#altdss.Isource.IIsource.SeqCurrents" title="Link to this definition">#</a></dt>
-<dd></dd></dl>
+<dd><p>Array of symmetrical component currents (magnitudes only) into each 3-phase terminal of each element</p>
+<p>Original COM help: <a class="reference external" href="https://opendss.epri.com/SeqCurrents.html">https://opendss.epri.com/SeqCurrents.html</a></p>
+</dd></dl>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="altdss.Isource.IIsource.SeqPowers">
 <span class="sig-name descname"><span class="pre">SeqPowers</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">altdss.types.ComplexArray</span></span></span><a class="headerlink" href="#altdss.Isource.IIsource.SeqPowers" title="Link to this definition">#</a></dt>
-<dd></dd></dl>
+<dd><p>Complex array of sequence powers (kW, kvar) into each 3-phase terminal of each element</p>
+<p>Original COM help: <a class="reference external" href="https://opendss.epri.com/SeqPowers.html">https://opendss.epri.com/SeqPowers.html</a></p>
+</dd></dl>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="altdss.Isource.IIsource.SeqVoltages">
 <span class="sig-name descname"><span class="pre">SeqVoltages</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">altdss.types.Float64Array</span></span></span><a class="headerlink" href="#altdss.Isource.IIsource.SeqVoltages" title="Link to this definition">#</a></dt>
-<dd></dd></dl>
+<dd><p>Double array of symmetrical component voltages (magnitudes only) at each 3-phase terminal</p>
+<p>Original COM help: <a class="reference external" href="https://opendss.epri.com/SeqVoltages1.html">https://opendss.epri.com/SeqVoltages1.html</a></p>
+</dd></dl>
 
 <dl class="py attribute">
 <dt class="sig sig-object py" id="altdss.Isource.IIsource.Sequence">
 <span class="sig-name descname"><span class="pre">Sequence</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><a class="reference internal" href="altdss.ArrayProxy.html#altdss.ArrayProxy.BatchInt32ArrayProxy" title="altdss.ArrayProxy.BatchInt32ArrayProxy"><span class="pre">altdss.ArrayProxy.BatchInt32ArrayProxy</span></a></em><a class="headerlink" href="#altdss.Isource.IIsource.Sequence" title="Link to this definition">#</a></dt>
 <dd><p>‘property(…)’</p>
+<p>{pos*| neg | zero} Set the phase angles for the specified symmetrical component sequence for non-harmonic solution modes. Default is positive sequence.</p>
+<p>DSS property name: <code class="docutils literal notranslate"><span class="pre">Sequence</span></code>, DSS property index: 7.</p>
 </dd></dl>
 
 <dl class="py attribute">
 <dt class="sig sig-object py" id="altdss.Isource.IIsource.Sequence_str">
 <span class="sig-name descname"><span class="pre">Sequence_str</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">List</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">]</span></span></em><a class="headerlink" href="#altdss.Isource.IIsource.Sequence_str" title="Link to this definition">#</a></dt>
 <dd><p>‘property(…)’</p>
+<p>{pos*| neg | zero} Set the phase angles for the specified symmetrical component sequence for non-harmonic solution modes. Default is positive sequence.</p>
+<p>DSS property name: <code class="docutils literal notranslate"><span class="pre">Sequence</span></code>, DSS property index: 7.</p>
 </dd></dl>
 
 <dl class="py attribute">
 <dt class="sig sig-object py" id="altdss.Isource.IIsource.Spectrum">
 <span class="sig-name descname"><span class="pre">Spectrum</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">List</span><span class="p"><span class="pre">[</span></span><a class="reference internal" href="altdss.Spectrum.html#altdss.Spectrum.Spectrum" title="altdss.Spectrum.Spectrum"><span class="pre">altdss.Spectrum.Spectrum</span></a><span class="p"><span class="pre">]</span></span></em><a class="headerlink" href="#altdss.Isource.IIsource.Spectrum" title="Link to this definition">#</a></dt>
 <dd><p>‘property(…)’</p>
+<p>Harmonic spectrum assumed for this source.  Default is “default”.</p>
+<p>DSS property name: <code class="docutils literal notranslate"><span class="pre">Spectrum</span></code>, DSS property index: 12.</p>
 </dd></dl>
 
 <dl class="py attribute">
 <dt class="sig sig-object py" id="altdss.Isource.IIsource.Spectrum_str">
 <span class="sig-name descname"><span class="pre">Spectrum_str</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">List</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">]</span></span></em><a class="headerlink" href="#altdss.Isource.IIsource.Spectrum_str" title="Link to this definition">#</a></dt>
 <dd><p>‘property(…)’</p>
+<p>Harmonic spectrum assumed for this source.  Default is “default”.</p>
+<p>DSS property name: <code class="docutils literal notranslate"><span class="pre">Spectrum</span></code>, DSS property index: 12.</p>
 </dd></dl>
 
 <dl class="py method">
@@ -1062,23 +1156,35 @@ Use -1 as terminal to get the value across all terminals.</p>
 <dl class="py method">
 <dt class="sig sig-object py" id="altdss.Isource.IIsource.Voltages">
 <span class="sig-name descname"><span class="pre">Voltages</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">altdss.types.ComplexArray</span></span></span><a class="headerlink" href="#altdss.Isource.IIsource.Voltages" title="Link to this definition">#</a></dt>
-<dd></dd></dl>
+<dd><p>Complex array of voltages at terminals</p>
+<p>Original COM help: <a class="reference external" href="https://opendss.epri.com/Voltages1.html">https://opendss.epri.com/Voltages1.html</a></p>
+</dd></dl>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="altdss.Isource.IIsource.VoltagesMagAng">
 <span class="sig-name descname"><span class="pre">VoltagesMagAng</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">altdss.types.Float64Array</span></span></span><a class="headerlink" href="#altdss.Isource.IIsource.VoltagesMagAng" title="Link to this definition">#</a></dt>
-<dd></dd></dl>
+<dd><p>Voltages at each conductor in magnitude, angle form as array of doubles.</p>
+<p>Original COM help: <a class="reference external" href="https://opendss.epri.com/VoltagesMagAng.html">https://opendss.epri.com/VoltagesMagAng.html</a></p>
+</dd></dl>
 
 <dl class="py attribute">
 <dt class="sig sig-object py" id="altdss.Isource.IIsource.Yearly">
 <span class="sig-name descname"><span class="pre">Yearly</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">List</span><span class="p"><span class="pre">[</span></span><a class="reference internal" href="altdss.LoadShape.html#altdss.LoadShape.LoadShape" title="altdss.LoadShape.LoadShape"><span class="pre">altdss.LoadShape.LoadShape</span></a><span class="p"><span class="pre">]</span></span></em><a class="headerlink" href="#altdss.Isource.IIsource.Yearly" title="Link to this definition">#</a></dt>
 <dd><p>‘property(…)’</p>
+<p>LOADSHAPE object to use for the per-unit current for YEARLY-mode simulations. Set the Mult property of the LOADSHAPE to the pu curve. Qmult is not used. If UseActual=Yes then the Mult curve should be actual Amp.</p>
+<p>Must be previously defined as a LOADSHAPE object.</p>
+<p>Is set to the Daily load shape when Daily is defined.  The daily load shape is repeated in this case. Set to NONE to reset to no loadshape for Yearly mode. The default is no variation.</p>
+<p>DSS property name: <code class="docutils literal notranslate"><span class="pre">Yearly</span></code>, DSS property index: 8.</p>
 </dd></dl>
 
 <dl class="py attribute">
 <dt class="sig sig-object py" id="altdss.Isource.IIsource.Yearly_str">
 <span class="sig-name descname"><span class="pre">Yearly_str</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">List</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">]</span></span></em><a class="headerlink" href="#altdss.Isource.IIsource.Yearly_str" title="Link to this definition">#</a></dt>
 <dd><p>‘property(…)’</p>
+<p>LOADSHAPE object to use for the per-unit current for YEARLY-mode simulations. Set the Mult property of the LOADSHAPE to the pu curve. Qmult is not used. If UseActual=Yes then the Mult curve should be actual Amp.</p>
+<p>Must be previously defined as a LOADSHAPE object.</p>
+<p>Is set to the Daily load shape when Daily is defined.  The daily load shape is repeated in this case. Set to NONE to reset to no loadshape for Yearly mode. The default is no variation.</p>
+<p>DSS property name: <code class="docutils literal notranslate"><span class="pre">Yearly</span></code>, DSS property index: 8.</p>
 </dd></dl>
 
 <dl class="py method">
@@ -1128,8 +1234,8 @@ or “count” elements with a randomized prefix.</p>
 <dt class="sig sig-object py" id="altdss.Isource.IIsource.begin_edit">
 <span class="sig-name descname"><span class="pre">begin_edit</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span><a class="headerlink" href="#altdss.Isource.IIsource.begin_edit" title="Link to this definition">#</a></dt>
 <dd><p>Marks for editing all DSS objects in the batch</p>
-<p>In the editing mode, some final side-effects of changing properties are post-poned
-until <code class="docutils literal notranslate"><span class="pre">_end_edit</span></code> is called. This side-effects can be somewhat costly, like updating
+<p>In the editing mode, some final side-effects of changing properties are postponed
+until <code class="docutils literal notranslate"><span class="pre">end_edit</span></code> is called. This side-effects can be somewhat costly, like updating
 the model parameters or internal matrices.</p>
 <p>If you don’t have any performance constraint, you may edit each property individually
 without worrying about using <code class="docutils literal notranslate"><span class="pre">begin_edit</span></code> and <code class="docutils literal notranslate"><span class="pre">end_edit</span></code>. For convenience, those are
@@ -1181,86 +1287,130 @@ See <code class="docutils literal notranslate"><span class="pre">Obj_ToJSON</spa
 <dt class="sig sig-object py" id="altdss.Isource.Isource.Amps">
 <span class="sig-name descname"><span class="pre">Amps</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">float</span></em><a class="headerlink" href="#altdss.Isource.Isource.Amps" title="Link to this definition">#</a></dt>
 <dd><p>‘property(…)’</p>
+<p>Magnitude of current source, each phase, in Amps.</p>
+<p>DSS property name: <code class="docutils literal notranslate"><span class="pre">Amps</span></code>, DSS property index: 2.</p>
 </dd></dl>
 
 <dl class="py attribute">
 <dt class="sig sig-object py" id="altdss.Isource.Isource.Angle">
 <span class="sig-name descname"><span class="pre">Angle</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">float</span></em><a class="headerlink" href="#altdss.Isource.Isource.Angle" title="Link to this definition">#</a></dt>
 <dd><p>‘property(…)’</p>
+<p>Phase angle in degrees of first phase: e.g.,Angle=10.3.
+Phase shift between phases is assumed 120 degrees when number of phases &lt;= 3</p>
+<p>DSS property name: <code class="docutils literal notranslate"><span class="pre">Angle</span></code>, DSS property index: 3.</p>
 </dd></dl>
 
 <dl class="py attribute">
 <dt class="sig sig-object py" id="altdss.Isource.Isource.BaseFreq">
 <span class="sig-name descname"><span class="pre">BaseFreq</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">float</span></em><a class="headerlink" href="#altdss.Isource.Isource.BaseFreq" title="Link to this definition">#</a></dt>
 <dd><p>‘property(…)’</p>
+<p>Base Frequency for ratings.</p>
+<p>DSS property name: <code class="docutils literal notranslate"><span class="pre">BaseFreq</span></code>, DSS property index: 13.</p>
 </dd></dl>
 
 <dl class="py attribute">
 <dt class="sig sig-object py" id="altdss.Isource.Isource.Bus1">
 <span class="sig-name descname"><span class="pre">Bus1</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">str</span></em><a class="headerlink" href="#altdss.Isource.Isource.Bus1" title="Link to this definition">#</a></dt>
 <dd><p>‘property(…)’</p>
+<p>Name of bus to which source is connected.
+bus1=busname
+bus1=busname.1.2.3</p>
+<p>DSS property name: <code class="docutils literal notranslate"><span class="pre">Bus1</span></code>, DSS property index: 1.</p>
 </dd></dl>
 
 <dl class="py attribute">
 <dt class="sig sig-object py" id="altdss.Isource.Isource.Bus2">
 <span class="sig-name descname"><span class="pre">Bus2</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">str</span></em><a class="headerlink" href="#altdss.Isource.Isource.Bus2" title="Link to this definition">#</a></dt>
 <dd><p>‘property(…)’</p>
+<p>Name of bus to which 2nd terminal is connected.
+bus2=busname
+bus2=busname.1.2.3</p>
+<p>Default is Bus1.0.0.0 (grounded-wye connection)</p>
+<p>DSS property name: <code class="docutils literal notranslate"><span class="pre">Bus2</span></code>, DSS property index: 11.</p>
 </dd></dl>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="altdss.Isource.Isource.Close">
 <span class="sig-name descname"><span class="pre">Close</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">terminal</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">phase</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span><a class="headerlink" href="#altdss.Isource.Isource.Close" title="Link to this definition">#</a></dt>
-<dd></dd></dl>
+<dd><p>Close the specified terminal and phase, if non-zero, or all conductors at the terminal.</p>
+<p>Original COM help: <a class="reference external" href="https://opendss.epri.com/Close1.html">https://opendss.epri.com/Close1.html</a></p>
+</dd></dl>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="altdss.Isource.Isource.ComplexSeqCurrents">
 <span class="sig-name descname"><span class="pre">ComplexSeqCurrents</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">altdss.types.ComplexArray</span></span></span><a class="headerlink" href="#altdss.Isource.Isource.ComplexSeqCurrents" title="Link to this definition">#</a></dt>
-<dd></dd></dl>
+<dd><p>Complex double array of Sequence Currents for all conductors of all terminals of active circuit element.</p>
+<p>Original COM help: <a class="reference external" href="https://opendss.epri.com/CplxSeqCurrents.html">https://opendss.epri.com/CplxSeqCurrents.html</a></p>
+</dd></dl>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="altdss.Isource.Isource.ComplexSeqVoltages">
 <span class="sig-name descname"><span class="pre">ComplexSeqVoltages</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">altdss.types.ComplexArray</span></span></span><a class="headerlink" href="#altdss.Isource.Isource.ComplexSeqVoltages" title="Link to this definition">#</a></dt>
-<dd></dd></dl>
+<dd><p>Complex double array of Sequence Voltage for all terminals of active circuit element.</p>
+<p>Original COM help: <a class="reference external" href="https://opendss.epri.com/CplxSeqVoltages1.html">https://opendss.epri.com/CplxSeqVoltages1.html</a></p>
+</dd></dl>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="altdss.Isource.Isource.Currents">
 <span class="sig-name descname"><span class="pre">Currents</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">altdss.types.ComplexArray</span></span></span><a class="headerlink" href="#altdss.Isource.Isource.Currents" title="Link to this definition">#</a></dt>
-<dd></dd></dl>
+<dd><p>Complex array of currents into each conductor of each terminal</p>
+<p>Original COM help: <a class="reference external" href="https://opendss.epri.com/Currents1.html">https://opendss.epri.com/Currents1.html</a></p>
+</dd></dl>
 
 <dl class="py attribute">
 <dt class="sig sig-object py" id="altdss.Isource.Isource.Daily">
 <span class="sig-name descname"><span class="pre">Daily</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><a class="reference internal" href="altdss.LoadShape.html#altdss.LoadShape.LoadShape" title="altdss.LoadShape.LoadShape"><span class="pre">altdss.LoadShape.LoadShape</span></a></em><a class="headerlink" href="#altdss.Isource.Isource.Daily" title="Link to this definition">#</a></dt>
 <dd><p>‘property(…)’</p>
+<p>LOADSHAPE object to use for the per-unit current for DAILY-mode simulations. Set the Mult property of the LOADSHAPE to the pu curve. Qmult is not used. If UseActual=Yes then the Mult curve should be actual A.</p>
+<p>Must be previously defined as a LOADSHAPE object.</p>
+<p>Sets Yearly curve if it is not already defined.   Set to NONE to reset to no loadshape for Yearly mode. The default is no variation.</p>
+<p>DSS property name: <code class="docutils literal notranslate"><span class="pre">Daily</span></code>, DSS property index: 9.</p>
 </dd></dl>
 
 <dl class="py attribute">
 <dt class="sig sig-object py" id="altdss.Isource.Isource.Daily_str">
 <span class="sig-name descname"><span class="pre">Daily_str</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">str</span></em><a class="headerlink" href="#altdss.Isource.Isource.Daily_str" title="Link to this definition">#</a></dt>
 <dd><p>‘property(…)’</p>
+<p>LOADSHAPE object to use for the per-unit current for DAILY-mode simulations. Set the Mult property of the LOADSHAPE to the pu curve. Qmult is not used. If UseActual=Yes then the Mult curve should be actual A.</p>
+<p>Must be previously defined as a LOADSHAPE object.</p>
+<p>Sets Yearly curve if it is not already defined.   Set to NONE to reset to no loadshape for Yearly mode. The default is no variation.</p>
+<p>DSS property name: <code class="docutils literal notranslate"><span class="pre">Daily</span></code>, DSS property index: 9.</p>
 </dd></dl>
 
 <dl class="py attribute">
 <dt class="sig sig-object py" id="altdss.Isource.Isource.DisplayName">
 <span class="sig-name descname"><span class="pre">DisplayName</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">str</span></em><a class="headerlink" href="#altdss.Isource.Isource.DisplayName" title="Link to this definition">#</a></dt>
 <dd><p>‘property(…)’</p>
+<p>Display name of the object (not necessarily unique)</p>
+<p>Original COM help: <a class="reference external" href="https://opendss.epri.com/DisplayName.html">https://opendss.epri.com/DisplayName.html</a></p>
 </dd></dl>
 
 <dl class="py attribute">
 <dt class="sig sig-object py" id="altdss.Isource.Isource.Duty">
 <span class="sig-name descname"><span class="pre">Duty</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><a class="reference internal" href="altdss.LoadShape.html#altdss.LoadShape.LoadShape" title="altdss.LoadShape.LoadShape"><span class="pre">altdss.LoadShape.LoadShape</span></a></em><a class="headerlink" href="#altdss.Isource.Isource.Duty" title="Link to this definition">#</a></dt>
 <dd><p>‘property(…)’</p>
+<p>LOADSHAPE object to use for the per-unit current for DUTYCYCLE-mode simulations. Set the Mult property of the LOADSHAPE to the pu curve. Qmult is not used. If UseActual=Yes then the Mult curve should be actual A.</p>
+<p>Must be previously defined as a LOADSHAPE object.</p>
+<p>Defaults to Daily load shape when Daily is defined.   Set to NONE to reset to no loadshape for Yearly mode. The default is no variation.</p>
+<p>DSS property name: <code class="docutils literal notranslate"><span class="pre">Duty</span></code>, DSS property index: 10.</p>
 </dd></dl>
 
 <dl class="py attribute">
 <dt class="sig sig-object py" id="altdss.Isource.Isource.Duty_str">
 <span class="sig-name descname"><span class="pre">Duty_str</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">str</span></em><a class="headerlink" href="#altdss.Isource.Isource.Duty_str" title="Link to this definition">#</a></dt>
 <dd><p>‘property(…)’</p>
+<p>LOADSHAPE object to use for the per-unit current for DUTYCYCLE-mode simulations. Set the Mult property of the LOADSHAPE to the pu curve. Qmult is not used. If UseActual=Yes then the Mult curve should be actual A.</p>
+<p>Must be previously defined as a LOADSHAPE object.</p>
+<p>Defaults to Daily load shape when Daily is defined.   Set to NONE to reset to no loadshape for Yearly mode. The default is no variation.</p>
+<p>DSS property name: <code class="docutils literal notranslate"><span class="pre">Duty</span></code>, DSS property index: 10.</p>
 </dd></dl>
 
 <dl class="py attribute">
 <dt class="sig sig-object py" id="altdss.Isource.Isource.Enabled">
 <span class="sig-name descname"><span class="pre">Enabled</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">bool</span></em><a class="headerlink" href="#altdss.Isource.Isource.Enabled" title="Link to this definition">#</a></dt>
 <dd><p>‘property(…)’</p>
+<p>{Yes|No or True|False} Indicates whether this element is enabled.</p>
+<p>DSS property name: <code class="docutils literal notranslate"><span class="pre">Enabled</span></code>, DSS property index: 14.</p>
 </dd></dl>
 
 <dl class="py method">
@@ -1283,6 +1433,8 @@ See <code class="docutils literal notranslate"><span class="pre">Obj_ToJSON</spa
 <dt class="sig sig-object py" id="altdss.Isource.Isource.Frequency">
 <span class="sig-name descname"><span class="pre">Frequency</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">float</span></em><a class="headerlink" href="#altdss.Isource.Isource.Frequency" title="Link to this definition">#</a></dt>
 <dd><p>‘property(…)’</p>
+<p>Source frequency.  Defaults to  circuit fundamental frequency.</p>
+<p>DSS property name: <code class="docutils literal notranslate"><span class="pre">Frequency</span></code>, DSS property index: 4.</p>
 </dd></dl>
 
 <dl class="py method">
@@ -1294,6 +1446,7 @@ See <code class="docutils literal notranslate"><span class="pre">Obj_ToJSON</spa
 <dt class="sig sig-object py" id="altdss.Isource.Isource.GUID">
 <span class="sig-name descname"><span class="pre">GUID</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">str</span></span></span><a class="headerlink" href="#altdss.Isource.Isource.GUID" title="Link to this definition">#</a></dt>
 <dd><p>Object’s GUID/UUID. Currently used only in the CIM-related methods.</p>
+<p>Original COM help: <a class="reference external" href="https://opendss.epri.com/GUID.html">https://opendss.epri.com/GUID.html</a></p>
 </dd></dl>
 
 <dl class="py method">
@@ -1304,32 +1457,45 @@ See <code class="docutils literal notranslate"><span class="pre">Obj_ToJSON</spa
 <dl class="py method">
 <dt class="sig sig-object py" id="altdss.Isource.Isource.Handle">
 <span class="sig-name descname"><span class="pre">Handle</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">int</span></span></span><a class="headerlink" href="#altdss.Isource.Isource.Handle" title="Link to this definition">#</a></dt>
-<dd></dd></dl>
+<dd><p>Index of this element into the circuit’s element list.</p>
+<p>Original COM help: <a class="reference external" href="https://opendss.epri.com/Handle.html">https://opendss.epri.com/Handle.html</a></p>
+</dd></dl>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="altdss.Isource.Isource.HasOCPDevice">
 <span class="sig-name descname"><span class="pre">HasOCPDevice</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">bool</span></span></span><a class="headerlink" href="#altdss.Isource.Isource.HasOCPDevice" title="Link to this definition">#</a></dt>
-<dd></dd></dl>
+<dd><p>Returns true if a recloser, relay, or fuse controlling the circuit element.</p>
+<p>OCP = Overcurrent Protection</p>
+<p>Original COM help: <a class="reference external" href="https://opendss.epri.com/HasOCPDevice.html">https://opendss.epri.com/HasOCPDevice.html</a></p>
+</dd></dl>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="altdss.Isource.Isource.HasSwitchControl">
 <span class="sig-name descname"><span class="pre">HasSwitchControl</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">bool</span></span></span><a class="headerlink" href="#altdss.Isource.Isource.HasSwitchControl" title="Link to this definition">#</a></dt>
-<dd></dd></dl>
+<dd><p>Returns true if the element has a SwtControl attached.</p>
+<p>Original COM help: <a class="reference external" href="https://opendss.epri.com/HasSwitchControl.html">https://opendss.epri.com/HasSwitchControl.html</a></p>
+</dd></dl>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="altdss.Isource.Isource.HasVoltControl">
 <span class="sig-name descname"><span class="pre">HasVoltControl</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">bool</span></span></span><a class="headerlink" href="#altdss.Isource.Isource.HasVoltControl" title="Link to this definition">#</a></dt>
-<dd></dd></dl>
+<dd><p>Returns true if the element has a CapControl or RegControl attached.</p>
+<p>Original COM help: <a class="reference external" href="https://opendss.epri.com/HasVoltControl.html">https://opendss.epri.com/HasVoltControl.html</a></p>
+</dd></dl>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="altdss.Isource.Isource.IsIsolated">
 <span class="sig-name descname"><span class="pre">IsIsolated</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">bool</span></span></span><a class="headerlink" href="#altdss.Isource.Isource.IsIsolated" title="Link to this definition">#</a></dt>
-<dd></dd></dl>
+<dd><p>Returns true if the element is isolated.
+Note that this only fetches the current value. See also the Topology interface.</p>
+</dd></dl>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="altdss.Isource.Isource.IsOpen">
 <span class="sig-name descname"><span class="pre">IsOpen</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">terminal</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">phase</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">bool</span></span></span><a class="headerlink" href="#altdss.Isource.Isource.IsOpen" title="Link to this definition">#</a></dt>
-<dd></dd></dl>
+<dd><p>Returns true if the specified terminal and phase are open.</p>
+<p>If the <code class="docutils literal notranslate"><span class="pre">phase</span></code> parameter is zero, returns if <strong>any</strong> conductor at the terminal is open.</p>
+</dd></dl>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="altdss.Isource.Isource.Like">
@@ -1343,6 +1509,7 @@ See <code class="docutils literal notranslate"><span class="pre">Obj_ToJSON</spa
 <dt class="sig sig-object py" id="altdss.Isource.Isource.Losses">
 <span class="sig-name descname"><span class="pre">Losses</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">complex</span></span></span><a class="headerlink" href="#altdss.Isource.Isource.Losses" title="Link to this definition">#</a></dt>
 <dd><p>Total (complex) losses in the element, in VA (watts, vars)</p>
+<p>Original COM help: <a class="reference external" href="https://opendss.epri.com/Losses1.html">https://opendss.epri.com/Losses1.html</a></p>
 </dd></dl>
 
 <dl class="py method">
@@ -1360,112 +1527,152 @@ Use -1 as terminal to get the value across all terminals.</p>
 <dl class="py method">
 <dt class="sig sig-object py" id="altdss.Isource.Isource.NodeOrder">
 <span class="sig-name descname"><span class="pre">NodeOrder</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">altdss.types.Int32Array</span></span></span><a class="headerlink" href="#altdss.Isource.Isource.NodeOrder" title="Link to this definition">#</a></dt>
-<dd></dd></dl>
+<dd><p>Array of integer containing the node numbers (representing phases, for example) for each conductor of each terminal.</p>
+<p>Be sure to run a solution to initialize the values after the circuit is created or modified.</p>
+</dd></dl>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="altdss.Isource.Isource.NodeRef">
 <span class="sig-name descname"><span class="pre">NodeRef</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">altdss.types.Int32Array</span></span></span><a class="headerlink" href="#altdss.Isource.Isource.NodeRef" title="Link to this definition">#</a></dt>
-<dd></dd></dl>
+<dd><p>Array of integers, a copy of the internal NodeRef of the CktElement.</p>
+<p>Be sure to run a solution to initialize the values after the circuit is created or modified.</p>
+</dd></dl>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="altdss.Isource.Isource.NumConductors">
 <span class="sig-name descname"><span class="pre">NumConductors</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">int</span></span></span><a class="headerlink" href="#altdss.Isource.Isource.NumConductors" title="Link to this definition">#</a></dt>
-<dd></dd></dl>
+<dd><p>Number of conductors per terminal</p>
+<p>Original COM help: <a class="reference external" href="https://opendss.epri.com/NumConductors.html">https://opendss.epri.com/NumConductors.html</a></p>
+</dd></dl>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="altdss.Isource.Isource.NumControllers">
 <span class="sig-name descname"><span class="pre">NumControllers</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">int</span></span></span><a class="headerlink" href="#altdss.Isource.Isource.NumControllers" title="Link to this definition">#</a></dt>
-<dd></dd></dl>
+<dd><p>Number of controllers connected to this device.</p>
+<p>Original COM help: <a class="reference external" href="https://opendss.epri.com/NumControls.html">https://opendss.epri.com/NumControls.html</a></p>
+</dd></dl>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="altdss.Isource.Isource.NumPhases">
 <span class="sig-name descname"><span class="pre">NumPhases</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">int</span></span></span><a class="headerlink" href="#altdss.Isource.Isource.NumPhases" title="Link to this definition">#</a></dt>
-<dd></dd></dl>
+<dd><p>Number of phases</p>
+<p>Original COM help: <a class="reference external" href="https://opendss.epri.com/NumPhases.html">https://opendss.epri.com/NumPhases.html</a></p>
+</dd></dl>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="altdss.Isource.Isource.NumTerminals">
 <span class="sig-name descname"><span class="pre">NumTerminals</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">int</span></span></span><a class="headerlink" href="#altdss.Isource.Isource.NumTerminals" title="Link to this definition">#</a></dt>
-<dd></dd></dl>
+<dd><p>Number of terminals in this circuit element</p>
+<p>Original COM help: <a class="reference external" href="https://opendss.epri.com/NumTerminals.html">https://opendss.epri.com/NumTerminals.html</a></p>
+</dd></dl>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="altdss.Isource.Isource.OCPDevice">
 <span class="sig-name descname"><span class="pre">OCPDevice</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">Union</span><span class="p"><span class="pre">[</span></span><a class="reference internal" href="altdss.DSSObj.html#altdss.DSSObj.DSSObj" title="altdss.DSSObj.DSSObj"><span class="pre">altdss.DSSObj.DSSObj</span></a><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">None</span><span class="p"><span class="pre">]</span></span></span></span><a class="headerlink" href="#altdss.Isource.Isource.OCPDevice" title="Link to this definition">#</a></dt>
-<dd></dd></dl>
+<dd><p>Returns (as a Python object) the OCP device controlling this element, if any.</p>
+</dd></dl>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="altdss.Isource.Isource.OCPDeviceIndex">
 <span class="sig-name descname"><span class="pre">OCPDeviceIndex</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">int</span></span></span><a class="headerlink" href="#altdss.Isource.Isource.OCPDeviceIndex" title="Link to this definition">#</a></dt>
-<dd></dd></dl>
+<dd><p>Index into controller list of OCP Device controlling this circuit element</p>
+<p>Original COM help: <a class="reference external" href="https://opendss.epri.com/OCPDevIndex.html">https://opendss.epri.com/OCPDevIndex.html</a></p>
+</dd></dl>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="altdss.Isource.Isource.OCPDeviceType">
 <span class="sig-name descname"><span class="pre">OCPDeviceType</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">dss.enums.OCPDevType</span></span></span><a class="headerlink" href="#altdss.Isource.Isource.OCPDeviceType" title="Link to this definition">#</a></dt>
-<dd></dd></dl>
+<dd><p>Type of OCP controller device</p>
+<p>Original COM help: <a class="reference external" href="https://opendss.epri.com/OCPDevType.html">https://opendss.epri.com/OCPDevType.html</a></p>
+</dd></dl>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="altdss.Isource.Isource.Open">
 <span class="sig-name descname"><span class="pre">Open</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">terminal</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">phase</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span><a class="headerlink" href="#altdss.Isource.Isource.Open" title="Link to this definition">#</a></dt>
-<dd></dd></dl>
+<dd><p>Open the specified terminal and phase, if non-zero, or all conductors at the terminal.</p>
+<p>Original COM help: <a class="reference external" href="https://opendss.epri.com/Open1.html">https://opendss.epri.com/Open1.html</a></p>
+</dd></dl>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="altdss.Isource.Isource.PhaseLosses">
 <span class="sig-name descname"><span class="pre">PhaseLosses</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">altdss.types.ComplexArray</span></span></span><a class="headerlink" href="#altdss.Isource.Isource.PhaseLosses" title="Link to this definition">#</a></dt>
 <dd><p>Complex array of losses (kVA) by phase</p>
+<p>Original COM help: <a class="reference external" href="https://opendss.epri.com/PhaseLosses.html">https://opendss.epri.com/PhaseLosses.html</a></p>
 </dd></dl>
 
 <dl class="py attribute">
 <dt class="sig sig-object py" id="altdss.Isource.Isource.Phases">
 <span class="sig-name descname"><span class="pre">Phases</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">int</span></em><a class="headerlink" href="#altdss.Isource.Isource.Phases" title="Link to this definition">#</a></dt>
 <dd><p>‘property(…)’</p>
+<p>Number of phases.  Defaults to 3. For 3 or less, phase shift is 120 degrees.</p>
+<p>DSS property name: <code class="docutils literal notranslate"><span class="pre">Phases</span></code>, DSS property index: 5.</p>
 </dd></dl>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="altdss.Isource.Isource.Powers">
 <span class="sig-name descname"><span class="pre">Powers</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">altdss.types.ComplexArray</span></span></span><a class="headerlink" href="#altdss.Isource.Isource.Powers" title="Link to this definition">#</a></dt>
-<dd></dd></dl>
+<dd><p>Complex array of powers (kVA) into each conductor of each terminal</p>
+<p>Original COM help: <a class="reference external" href="https://opendss.epri.com/Powers.html">https://opendss.epri.com/Powers.html</a></p>
+</dd></dl>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="altdss.Isource.Isource.Residuals">
 <span class="sig-name descname"><span class="pre">Residuals</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">altdss.types.Float64Array</span></span></span><a class="headerlink" href="#altdss.Isource.Isource.Residuals" title="Link to this definition">#</a></dt>
-<dd></dd></dl>
+<dd><p>Residual currents for each terminal: (magnitude, angle in degrees)</p>
+<p>Original COM help: <a class="reference external" href="https://opendss.epri.com/Residuals.html">https://opendss.epri.com/Residuals.html</a></p>
+</dd></dl>
 
 <dl class="py attribute">
 <dt class="sig sig-object py" id="altdss.Isource.Isource.ScanType">
 <span class="sig-name descname"><span class="pre">ScanType</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><a class="reference internal" href="altdss.enums.html#altdss.enums.ScanType" title="altdss.enums.ScanType"><span class="pre">altdss.enums.ScanType</span></a></em><a class="headerlink" href="#altdss.Isource.Isource.ScanType" title="Link to this definition">#</a></dt>
 <dd><p>‘property(…)’</p>
+<p>{pos*| zero | none} Maintain specified sequence for harmonic solution. Default is positive sequence. Otherwise, angle between phases rotates with harmonic.</p>
+<p>DSS property name: <code class="docutils literal notranslate"><span class="pre">ScanType</span></code>, DSS property index: 6.</p>
 </dd></dl>
 
 <dl class="py attribute">
 <dt class="sig sig-object py" id="altdss.Isource.Isource.ScanType_str">
 <span class="sig-name descname"><span class="pre">ScanType_str</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">str</span></em><a class="headerlink" href="#altdss.Isource.Isource.ScanType_str" title="Link to this definition">#</a></dt>
 <dd><p>‘property(…)’</p>
+<p>{pos*| zero | none} Maintain specified sequence for harmonic solution. Default is positive sequence. Otherwise, angle between phases rotates with harmonic.</p>
+<p>DSS property name: <code class="docutils literal notranslate"><span class="pre">ScanType</span></code>, DSS property index: 6.</p>
 </dd></dl>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="altdss.Isource.Isource.SeqCurrents">
 <span class="sig-name descname"><span class="pre">SeqCurrents</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">altdss.types.Float64Array</span></span></span><a class="headerlink" href="#altdss.Isource.Isource.SeqCurrents" title="Link to this definition">#</a></dt>
-<dd></dd></dl>
+<dd><p>Array of symmetrical component currents (magnitudes only) into each 3-phase terminal</p>
+<p>Original COM help: <a class="reference external" href="https://opendss.epri.com/SeqCurrents.html">https://opendss.epri.com/SeqCurrents.html</a></p>
+</dd></dl>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="altdss.Isource.Isource.SeqPowers">
 <span class="sig-name descname"><span class="pre">SeqPowers</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">altdss.types.ComplexArray</span></span></span><a class="headerlink" href="#altdss.Isource.Isource.SeqPowers" title="Link to this definition">#</a></dt>
-<dd></dd></dl>
+<dd><p>Complex array of sequence powers (kW, kvar) into each 3-phase terminal</p>
+<p>Original COM help: <a class="reference external" href="https://opendss.epri.com/SeqPowers.html">https://opendss.epri.com/SeqPowers.html</a></p>
+</dd></dl>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="altdss.Isource.Isource.SeqVoltages">
 <span class="sig-name descname"><span class="pre">SeqVoltages</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">altdss.types.Float64Array</span></span></span><a class="headerlink" href="#altdss.Isource.Isource.SeqVoltages" title="Link to this definition">#</a></dt>
-<dd></dd></dl>
+<dd><p>Double array of symmetrical component voltages (magnitudes only) at each 3-phase terminal</p>
+<p>Original COM help: <a class="reference external" href="https://opendss.epri.com/SeqVoltages1.html">https://opendss.epri.com/SeqVoltages1.html</a></p>
+</dd></dl>
 
 <dl class="py attribute">
 <dt class="sig sig-object py" id="altdss.Isource.Isource.Sequence">
 <span class="sig-name descname"><span class="pre">Sequence</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><a class="reference internal" href="altdss.enums.html#altdss.enums.SequenceType" title="altdss.enums.SequenceType"><span class="pre">altdss.enums.SequenceType</span></a></em><a class="headerlink" href="#altdss.Isource.Isource.Sequence" title="Link to this definition">#</a></dt>
 <dd><p>‘property(…)’</p>
+<p>{pos*| neg | zero} Set the phase angles for the specified symmetrical component sequence for non-harmonic solution modes. Default is positive sequence.</p>
+<p>DSS property name: <code class="docutils literal notranslate"><span class="pre">Sequence</span></code>, DSS property index: 7.</p>
 </dd></dl>
 
 <dl class="py attribute">
 <dt class="sig sig-object py" id="altdss.Isource.Isource.Sequence_str">
 <span class="sig-name descname"><span class="pre">Sequence_str</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">str</span></em><a class="headerlink" href="#altdss.Isource.Isource.Sequence_str" title="Link to this definition">#</a></dt>
 <dd><p>‘property(…)’</p>
+<p>{pos*| neg | zero} Set the phase angles for the specified symmetrical component sequence for non-harmonic solution modes. Default is positive sequence.</p>
+<p>DSS property name: <code class="docutils literal notranslate"><span class="pre">Sequence</span></code>, DSS property index: 7.</p>
 </dd></dl>
 
 <dl class="py method">
@@ -1477,18 +1684,24 @@ Use -1 as terminal to get the value across all terminals.</p>
 <dt class="sig sig-object py" id="altdss.Isource.Isource.Spectrum">
 <span class="sig-name descname"><span class="pre">Spectrum</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><a class="reference internal" href="altdss.Spectrum.html#altdss.Spectrum.Spectrum" title="altdss.Spectrum.Spectrum"><span class="pre">altdss.Spectrum.Spectrum</span></a></em><a class="headerlink" href="#altdss.Isource.Isource.Spectrum" title="Link to this definition">#</a></dt>
 <dd><p>‘property(…)’</p>
+<p>Harmonic spectrum assumed for this source.  Default is “default”.</p>
+<p>DSS property name: <code class="docutils literal notranslate"><span class="pre">Spectrum</span></code>, DSS property index: 12.</p>
 </dd></dl>
 
 <dl class="py attribute">
 <dt class="sig sig-object py" id="altdss.Isource.Isource.Spectrum_str">
 <span class="sig-name descname"><span class="pre">Spectrum_str</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">str</span></em><a class="headerlink" href="#altdss.Isource.Isource.Spectrum_str" title="Link to this definition">#</a></dt>
 <dd><p>‘property(…)’</p>
+<p>Harmonic spectrum assumed for this source.  Default is “default”.</p>
+<p>DSS property name: <code class="docutils literal notranslate"><span class="pre">Spectrum</span></code>, DSS property index: 12.</p>
 </dd></dl>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="altdss.Isource.Isource.TotalPowers">
 <span class="sig-name descname"><span class="pre">TotalPowers</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">altdss.types.ComplexArray</span></span></span><a class="headerlink" href="#altdss.Isource.Isource.TotalPowers" title="Link to this definition">#</a></dt>
-<dd></dd></dl>
+<dd><p>Returns an array with the total powers (complex, kVA) at ALL terminals of the active circuit element.</p>
+<p>Original COM help: <a class="reference external" href="https://opendss.epri.com/TotalPowers.html">https://opendss.epri.com/TotalPowers.html</a></p>
+</dd></dl>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="altdss.Isource.Isource.VariableNames">
@@ -1508,28 +1721,42 @@ Use -1 as terminal to get the value across all terminals.</p>
 <dl class="py method">
 <dt class="sig sig-object py" id="altdss.Isource.Isource.Voltages">
 <span class="sig-name descname"><span class="pre">Voltages</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">altdss.types.ComplexArray</span></span></span><a class="headerlink" href="#altdss.Isource.Isource.Voltages" title="Link to this definition">#</a></dt>
-<dd></dd></dl>
+<dd><p>Complex array of voltages at terminals</p>
+<p>Original COM help: <a class="reference external" href="https://opendss.epri.com/Voltages1.html">https://opendss.epri.com/Voltages1.html</a></p>
+</dd></dl>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="altdss.Isource.Isource.VoltagesMagAng">
 <span class="sig-name descname"><span class="pre">VoltagesMagAng</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">altdss.types.Float64Array</span></span></span><a class="headerlink" href="#altdss.Isource.Isource.VoltagesMagAng" title="Link to this definition">#</a></dt>
-<dd></dd></dl>
+<dd><p>Voltages at each conductor in magnitude, angle form as array of doubles.</p>
+<p>Original COM help: <a class="reference external" href="https://opendss.epri.com/VoltagesMagAng.html">https://opendss.epri.com/VoltagesMagAng.html</a></p>
+</dd></dl>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="altdss.Isource.Isource.YPrim">
 <span class="sig-name descname"><span class="pre">YPrim</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">altdss.types.ComplexArray</span></span></span><a class="headerlink" href="#altdss.Isource.Isource.YPrim" title="Link to this definition">#</a></dt>
-<dd></dd></dl>
+<dd><p>YPrim matrix, column order, complex numbers</p>
+<p>Original COM help: <a class="reference external" href="https://opendss.epri.com/Yprim.html">https://opendss.epri.com/Yprim.html</a></p>
+</dd></dl>
 
 <dl class="py attribute">
 <dt class="sig sig-object py" id="altdss.Isource.Isource.Yearly">
 <span class="sig-name descname"><span class="pre">Yearly</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><a class="reference internal" href="altdss.LoadShape.html#altdss.LoadShape.LoadShape" title="altdss.LoadShape.LoadShape"><span class="pre">altdss.LoadShape.LoadShape</span></a></em><a class="headerlink" href="#altdss.Isource.Isource.Yearly" title="Link to this definition">#</a></dt>
 <dd><p>‘property(…)’</p>
+<p>LOADSHAPE object to use for the per-unit current for YEARLY-mode simulations. Set the Mult property of the LOADSHAPE to the pu curve. Qmult is not used. If UseActual=Yes then the Mult curve should be actual Amp.</p>
+<p>Must be previously defined as a LOADSHAPE object.</p>
+<p>Is set to the Daily load shape when Daily is defined.  The daily load shape is repeated in this case. Set to NONE to reset to no loadshape for Yearly mode. The default is no variation.</p>
+<p>DSS property name: <code class="docutils literal notranslate"><span class="pre">Yearly</span></code>, DSS property index: 8.</p>
 </dd></dl>
 
 <dl class="py attribute">
 <dt class="sig sig-object py" id="altdss.Isource.Isource.Yearly_str">
 <span class="sig-name descname"><span class="pre">Yearly_str</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">str</span></em><a class="headerlink" href="#altdss.Isource.Isource.Yearly_str" title="Link to this definition">#</a></dt>
 <dd><p>‘property(…)’</p>
+<p>LOADSHAPE object to use for the per-unit current for YEARLY-mode simulations. Set the Mult property of the LOADSHAPE to the pu curve. Qmult is not used. If UseActual=Yes then the Mult curve should be actual Amp.</p>
+<p>Must be previously defined as a LOADSHAPE object.</p>
+<p>Is set to the Daily load shape when Daily is defined.  The daily load shape is repeated in this case. Set to NONE to reset to no loadshape for Yearly mode. The default is no variation.</p>
+<p>DSS property name: <code class="docutils literal notranslate"><span class="pre">Yearly</span></code>, DSS property index: 8.</p>
 </dd></dl>
 
 <dl class="py method">
@@ -1559,8 +1786,8 @@ Use -1 as terminal to get the value across all terminals.</p>
 <dt class="sig sig-object py" id="altdss.Isource.Isource.begin_edit">
 <span class="sig-name descname"><span class="pre">begin_edit</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span><a class="headerlink" href="#altdss.Isource.Isource.begin_edit" title="Link to this definition">#</a></dt>
 <dd><p>Marks a DSS object for editing</p>
-<p>In the editing mode, some final side-effects of changing properties are post-poned
-until <code class="docutils literal notranslate"><span class="pre">_end_edit</span></code> is called. This side-effects can be somewhat costly, like updating
+<p>In the editing mode, some final side-effects of changing properties are postponed
+until <code class="docutils literal notranslate"><span class="pre">end_edit</span></code> is called. This side-effects can be somewhat costly, like updating
 the model parameters or internal matrices.</p>
 <p>If you don’t have any performance constraint, you may edit each property individually
 without worrying about using <code class="docutils literal notranslate"><span class="pre">begin_edit</span></code> and <code class="docutils literal notranslate"><span class="pre">end_edit</span></code>. For convenience, those are
@@ -1613,80 +1840,122 @@ Values used by this function are:</p>
 <dt class="sig sig-object py" id="altdss.Isource.IsourceBatch.Amps">
 <span class="sig-name descname"><span class="pre">Amps</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><a class="reference internal" href="altdss.ArrayProxy.html#altdss.ArrayProxy.BatchFloat64ArrayProxy" title="altdss.ArrayProxy.BatchFloat64ArrayProxy"><span class="pre">altdss.ArrayProxy.BatchFloat64ArrayProxy</span></a></em><a class="headerlink" href="#altdss.Isource.IsourceBatch.Amps" title="Link to this definition">#</a></dt>
 <dd><p>‘property(…)’</p>
+<p>Magnitude of current source, each phase, in Amps.</p>
+<p>DSS property name: <code class="docutils literal notranslate"><span class="pre">Amps</span></code>, DSS property index: 2.</p>
 </dd></dl>
 
 <dl class="py attribute">
 <dt class="sig sig-object py" id="altdss.Isource.IsourceBatch.Angle">
 <span class="sig-name descname"><span class="pre">Angle</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><a class="reference internal" href="altdss.ArrayProxy.html#altdss.ArrayProxy.BatchFloat64ArrayProxy" title="altdss.ArrayProxy.BatchFloat64ArrayProxy"><span class="pre">altdss.ArrayProxy.BatchFloat64ArrayProxy</span></a></em><a class="headerlink" href="#altdss.Isource.IsourceBatch.Angle" title="Link to this definition">#</a></dt>
 <dd><p>‘property(…)’</p>
+<p>Phase angle in degrees of first phase: e.g.,Angle=10.3.
+Phase shift between phases is assumed 120 degrees when number of phases &lt;= 3</p>
+<p>DSS property name: <code class="docutils literal notranslate"><span class="pre">Angle</span></code>, DSS property index: 3.</p>
 </dd></dl>
 
 <dl class="py attribute">
 <dt class="sig sig-object py" id="altdss.Isource.IsourceBatch.BaseFreq">
 <span class="sig-name descname"><span class="pre">BaseFreq</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><a class="reference internal" href="altdss.ArrayProxy.html#altdss.ArrayProxy.BatchFloat64ArrayProxy" title="altdss.ArrayProxy.BatchFloat64ArrayProxy"><span class="pre">altdss.ArrayProxy.BatchFloat64ArrayProxy</span></a></em><a class="headerlink" href="#altdss.Isource.IsourceBatch.BaseFreq" title="Link to this definition">#</a></dt>
 <dd><p>‘property(…)’</p>
+<p>Base Frequency for ratings.</p>
+<p>DSS property name: <code class="docutils literal notranslate"><span class="pre">BaseFreq</span></code>, DSS property index: 13.</p>
 </dd></dl>
 
 <dl class="py attribute">
 <dt class="sig sig-object py" id="altdss.Isource.IsourceBatch.Bus1">
 <span class="sig-name descname"><span class="pre">Bus1</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">List</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">]</span></span></em><a class="headerlink" href="#altdss.Isource.IsourceBatch.Bus1" title="Link to this definition">#</a></dt>
 <dd><p>‘property(…)’</p>
+<p>Name of bus to which source is connected.
+bus1=busname
+bus1=busname.1.2.3</p>
+<p>DSS property name: <code class="docutils literal notranslate"><span class="pre">Bus1</span></code>, DSS property index: 1.</p>
 </dd></dl>
 
 <dl class="py attribute">
 <dt class="sig sig-object py" id="altdss.Isource.IsourceBatch.Bus2">
 <span class="sig-name descname"><span class="pre">Bus2</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">List</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">]</span></span></em><a class="headerlink" href="#altdss.Isource.IsourceBatch.Bus2" title="Link to this definition">#</a></dt>
 <dd><p>‘property(…)’</p>
+<p>Name of bus to which 2nd terminal is connected.
+bus2=busname
+bus2=busname.1.2.3</p>
+<p>Default is Bus1.0.0.0 (grounded-wye connection)</p>
+<p>DSS property name: <code class="docutils literal notranslate"><span class="pre">Bus2</span></code>, DSS property index: 11.</p>
 </dd></dl>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="altdss.Isource.IsourceBatch.ComplexSeqCurrents">
 <span class="sig-name descname"><span class="pre">ComplexSeqCurrents</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">altdss.types.ComplexArray</span></span></span><a class="headerlink" href="#altdss.Isource.IsourceBatch.ComplexSeqCurrents" title="Link to this definition">#</a></dt>
-<dd></dd></dl>
+<dd><p>Complex double array of Sequence Currents for all conductors of all terminals of active circuit element.</p>
+<p>Original COM help: <a class="reference external" href="https://opendss.epri.com/CplxSeqCurrents.html">https://opendss.epri.com/CplxSeqCurrents.html</a></p>
+</dd></dl>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="altdss.Isource.IsourceBatch.ComplexSeqVoltages">
 <span class="sig-name descname"><span class="pre">ComplexSeqVoltages</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">altdss.types.ComplexArray</span></span></span><a class="headerlink" href="#altdss.Isource.IsourceBatch.ComplexSeqVoltages" title="Link to this definition">#</a></dt>
-<dd></dd></dl>
+<dd><p>Complex double array of Sequence Voltage for all terminals of active circuit element.</p>
+<p>Original COM help: <a class="reference external" href="https://opendss.epri.com/CplxSeqVoltages1.html">https://opendss.epri.com/CplxSeqVoltages1.html</a></p>
+</dd></dl>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="altdss.Isource.IsourceBatch.Currents">
 <span class="sig-name descname"><span class="pre">Currents</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">altdss.types.ComplexArray</span></span></span><a class="headerlink" href="#altdss.Isource.IsourceBatch.Currents" title="Link to this definition">#</a></dt>
-<dd></dd></dl>
+<dd><p>Complex array of currents into each conductor of each terminal</p>
+<p>Original COM help: <a class="reference external" href="https://opendss.epri.com/Currents1.html">https://opendss.epri.com/Currents1.html</a></p>
+</dd></dl>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="altdss.Isource.IsourceBatch.CurrentsMagAng">
 <span class="sig-name descname"><span class="pre">CurrentsMagAng</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">altdss.types.Float64Array</span></span></span><a class="headerlink" href="#altdss.Isource.IsourceBatch.CurrentsMagAng" title="Link to this definition">#</a></dt>
-<dd></dd></dl>
+<dd><p>Currents in magnitude, angle (degrees) format as a array of doubles.</p>
+<p>Original COM help: <a class="reference external" href="https://opendss.epri.com/CurrentsMagAng.html">https://opendss.epri.com/CurrentsMagAng.html</a></p>
+</dd></dl>
 
 <dl class="py attribute">
 <dt class="sig sig-object py" id="altdss.Isource.IsourceBatch.Daily">
 <span class="sig-name descname"><span class="pre">Daily</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">List</span><span class="p"><span class="pre">[</span></span><a class="reference internal" href="altdss.LoadShape.html#altdss.LoadShape.LoadShape" title="altdss.LoadShape.LoadShape"><span class="pre">altdss.LoadShape.LoadShape</span></a><span class="p"><span class="pre">]</span></span></em><a class="headerlink" href="#altdss.Isource.IsourceBatch.Daily" title="Link to this definition">#</a></dt>
 <dd><p>‘property(…)’</p>
+<p>LOADSHAPE object to use for the per-unit current for DAILY-mode simulations. Set the Mult property of the LOADSHAPE to the pu curve. Qmult is not used. If UseActual=Yes then the Mult curve should be actual A.</p>
+<p>Must be previously defined as a LOADSHAPE object.</p>
+<p>Sets Yearly curve if it is not already defined.   Set to NONE to reset to no loadshape for Yearly mode. The default is no variation.</p>
+<p>DSS property name: <code class="docutils literal notranslate"><span class="pre">Daily</span></code>, DSS property index: 9.</p>
 </dd></dl>
 
 <dl class="py attribute">
 <dt class="sig sig-object py" id="altdss.Isource.IsourceBatch.Daily_str">
 <span class="sig-name descname"><span class="pre">Daily_str</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">List</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">]</span></span></em><a class="headerlink" href="#altdss.Isource.IsourceBatch.Daily_str" title="Link to this definition">#</a></dt>
 <dd><p>‘property(…)’</p>
+<p>LOADSHAPE object to use for the per-unit current for DAILY-mode simulations. Set the Mult property of the LOADSHAPE to the pu curve. Qmult is not used. If UseActual=Yes then the Mult curve should be actual A.</p>
+<p>Must be previously defined as a LOADSHAPE object.</p>
+<p>Sets Yearly curve if it is not already defined.   Set to NONE to reset to no loadshape for Yearly mode. The default is no variation.</p>
+<p>DSS property name: <code class="docutils literal notranslate"><span class="pre">Daily</span></code>, DSS property index: 9.</p>
 </dd></dl>
 
 <dl class="py attribute">
 <dt class="sig sig-object py" id="altdss.Isource.IsourceBatch.Duty">
 <span class="sig-name descname"><span class="pre">Duty</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">List</span><span class="p"><span class="pre">[</span></span><a class="reference internal" href="altdss.LoadShape.html#altdss.LoadShape.LoadShape" title="altdss.LoadShape.LoadShape"><span class="pre">altdss.LoadShape.LoadShape</span></a><span class="p"><span class="pre">]</span></span></em><a class="headerlink" href="#altdss.Isource.IsourceBatch.Duty" title="Link to this definition">#</a></dt>
 <dd><p>‘property(…)’</p>
+<p>LOADSHAPE object to use for the per-unit current for DUTYCYCLE-mode simulations. Set the Mult property of the LOADSHAPE to the pu curve. Qmult is not used. If UseActual=Yes then the Mult curve should be actual A.</p>
+<p>Must be previously defined as a LOADSHAPE object.</p>
+<p>Defaults to Daily load shape when Daily is defined.   Set to NONE to reset to no loadshape for Yearly mode. The default is no variation.</p>
+<p>DSS property name: <code class="docutils literal notranslate"><span class="pre">Duty</span></code>, DSS property index: 10.</p>
 </dd></dl>
 
 <dl class="py attribute">
 <dt class="sig sig-object py" id="altdss.Isource.IsourceBatch.Duty_str">
 <span class="sig-name descname"><span class="pre">Duty_str</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">List</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">]</span></span></em><a class="headerlink" href="#altdss.Isource.IsourceBatch.Duty_str" title="Link to this definition">#</a></dt>
 <dd><p>‘property(…)’</p>
+<p>LOADSHAPE object to use for the per-unit current for DUTYCYCLE-mode simulations. Set the Mult property of the LOADSHAPE to the pu curve. Qmult is not used. If UseActual=Yes then the Mult curve should be actual A.</p>
+<p>Must be previously defined as a LOADSHAPE object.</p>
+<p>Defaults to Daily load shape when Daily is defined.   Set to NONE to reset to no loadshape for Yearly mode. The default is no variation.</p>
+<p>DSS property name: <code class="docutils literal notranslate"><span class="pre">Duty</span></code>, DSS property index: 10.</p>
 </dd></dl>
 
 <dl class="py attribute">
 <dt class="sig sig-object py" id="altdss.Isource.IsourceBatch.Enabled">
 <span class="sig-name descname"><span class="pre">Enabled</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">List</span><span class="p"><span class="pre">[</span></span><span class="pre">bool</span><span class="p"><span class="pre">]</span></span></em><a class="headerlink" href="#altdss.Isource.IsourceBatch.Enabled" title="Link to this definition">#</a></dt>
 <dd><p>‘property(…)’</p>
+<p>{Yes|No or True|False} Indicates whether this element is enabled.</p>
+<p>DSS property name: <code class="docutils literal notranslate"><span class="pre">Enabled</span></code>, DSS property index: 14.</p>
 </dd></dl>
 
 <dl class="py method">
@@ -1703,6 +1972,8 @@ Values used by this function are:</p>
 <dt class="sig sig-object py" id="altdss.Isource.IsourceBatch.Frequency">
 <span class="sig-name descname"><span class="pre">Frequency</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><a class="reference internal" href="altdss.ArrayProxy.html#altdss.ArrayProxy.BatchFloat64ArrayProxy" title="altdss.ArrayProxy.BatchFloat64ArrayProxy"><span class="pre">altdss.ArrayProxy.BatchFloat64ArrayProxy</span></a></em><a class="headerlink" href="#altdss.Isource.IsourceBatch.Frequency" title="Link to this definition">#</a></dt>
 <dd><p>‘property(…)’</p>
+<p>Source frequency.  Defaults to  circuit fundamental frequency.</p>
+<p>DSS property name: <code class="docutils literal notranslate"><span class="pre">Frequency</span></code>, DSS property index: 4.</p>
 </dd></dl>
 
 <dl class="py method">
@@ -1713,34 +1984,46 @@ Values used by this function are:</p>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="altdss.Isource.IsourceBatch.GUID">
-<span class="sig-name descname"><span class="pre">GUID</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">str</span></span></span><a class="headerlink" href="#altdss.Isource.IsourceBatch.GUID" title="Link to this definition">#</a></dt>
+<span class="sig-name descname"><span class="pre">GUID</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">List</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">]</span></span></span></span><a class="headerlink" href="#altdss.Isource.IsourceBatch.GUID" title="Link to this definition">#</a></dt>
 <dd><p>GUID/UUID for each object. Currently used only in the CIM-related methods.</p>
+<p>Original COM help: <a class="reference external" href="https://opendss.epri.com/GUID.html">https://opendss.epri.com/GUID.html</a></p>
 </dd></dl>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="altdss.Isource.IsourceBatch.Handle">
 <span class="sig-name descname"><span class="pre">Handle</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">altdss.types.Int32Array</span></span></span><a class="headerlink" href="#altdss.Isource.IsourceBatch.Handle" title="Link to this definition">#</a></dt>
-<dd></dd></dl>
+<dd><p>Index of each element into the circuit’s element list.</p>
+<p>Original COM help: <a class="reference external" href="https://opendss.epri.com/Handle.html">https://opendss.epri.com/Handle.html</a></p>
+</dd></dl>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="altdss.Isource.IsourceBatch.HasOCPDevice">
-<span class="sig-name descname"><span class="pre">HasOCPDevice</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">bool</span></span></span><a class="headerlink" href="#altdss.Isource.IsourceBatch.HasOCPDevice" title="Link to this definition">#</a></dt>
-<dd></dd></dl>
+<span class="sig-name descname"><span class="pre">HasOCPDevice</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">altdss.types.BoolArray</span></span></span><a class="headerlink" href="#altdss.Isource.IsourceBatch.HasOCPDevice" title="Link to this definition">#</a></dt>
+<dd><p>For each element in the batch: returns true if a recloser, relay, or fuse controlling the circuit element.</p>
+<p>OCP = Overcurrent Protection</p>
+<p>Original COM help: <a class="reference external" href="https://opendss.epri.com/HasOCPDevice.html">https://opendss.epri.com/HasOCPDevice.html</a></p>
+</dd></dl>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="altdss.Isource.IsourceBatch.HasSwitchControl">
-<span class="sig-name descname"><span class="pre">HasSwitchControl</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">bool</span></span></span><a class="headerlink" href="#altdss.Isource.IsourceBatch.HasSwitchControl" title="Link to this definition">#</a></dt>
-<dd></dd></dl>
+<span class="sig-name descname"><span class="pre">HasSwitchControl</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">altdss.types.BoolArray</span></span></span><a class="headerlink" href="#altdss.Isource.IsourceBatch.HasSwitchControl" title="Link to this definition">#</a></dt>
+<dd><p>For each element in the batch: returns true if the element has a SwtControl attached.</p>
+<p>Original COM help: <a class="reference external" href="https://opendss.epri.com/HasSwitchControl.html">https://opendss.epri.com/HasSwitchControl.html</a></p>
+</dd></dl>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="altdss.Isource.IsourceBatch.HasVoltControl">
-<span class="sig-name descname"><span class="pre">HasVoltControl</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">bool</span></span></span><a class="headerlink" href="#altdss.Isource.IsourceBatch.HasVoltControl" title="Link to this definition">#</a></dt>
-<dd></dd></dl>
+<span class="sig-name descname"><span class="pre">HasVoltControl</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">altdss.types.BoolArray</span></span></span><a class="headerlink" href="#altdss.Isource.IsourceBatch.HasVoltControl" title="Link to this definition">#</a></dt>
+<dd><p>For each element in the batch: returns true if the element has a CapControl or RegControl attached.</p>
+<p>Original COM help: <a class="reference external" href="https://opendss.epri.com/HasVoltControl.html">https://opendss.epri.com/HasVoltControl.html</a></p>
+</dd></dl>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="altdss.Isource.IsourceBatch.IsIsolated">
 <span class="sig-name descname"><span class="pre">IsIsolated</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">altdss.types.BoolArray</span></span></span><a class="headerlink" href="#altdss.Isource.IsourceBatch.IsIsolated" title="Link to this definition">#</a></dt>
-<dd></dd></dl>
+<dd><p>For each element in the batch: returns true if the element is isolated.
+Note that this only fetches the current value. See also the Topology interface.</p>
+</dd></dl>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="altdss.Isource.IsourceBatch.Like">
@@ -1753,13 +2036,14 @@ Values used by this function are:</p>
 <dl class="py method">
 <dt class="sig sig-object py" id="altdss.Isource.IsourceBatch.Losses">
 <span class="sig-name descname"><span class="pre">Losses</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">altdss.types.ComplexArray</span></span></span><a class="headerlink" href="#altdss.Isource.IsourceBatch.Losses" title="Link to this definition">#</a></dt>
-<dd><p>Total losses for each element, complex VA (watts, vars)</p>
+<dd><p>For each element in the batch: total losses in the element, in VA (watts, vars).</p>
+<p>Original COM help: <a class="reference external" href="https://opendss.epri.com/Losses1.html">https://opendss.epri.com/Losses1.html</a></p>
 </dd></dl>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="altdss.Isource.IsourceBatch.MaxCurrent">
-<span class="sig-name descname"><span class="pre">MaxCurrent</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">terminal</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">float</span></span></span><a class="headerlink" href="#altdss.Isource.IsourceBatch.MaxCurrent" title="Link to this definition">#</a></dt>
-<dd><p>Returns the maximum current (magnitude) at the specificed terminal for all elements in this batch.
+<span class="sig-name descname"><span class="pre">MaxCurrent</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">terminal</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">altdss.types.Float64Array</span></span></span><a class="headerlink" href="#altdss.Isource.IsourceBatch.MaxCurrent" title="Link to this definition">#</a></dt>
+<dd><p>Returns the maximum current (magnitude) at the specified terminal for each element in this batch.
 Use -1 as terminal to get the value across all terminals.</p>
 </dd></dl>
 
@@ -1771,105 +2055,140 @@ Use -1 as terminal to get the value across all terminals.</p>
 <dl class="py method">
 <dt class="sig sig-object py" id="altdss.Isource.IsourceBatch.NumConductors">
 <span class="sig-name descname"><span class="pre">NumConductors</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">altdss.types.Int32Array</span></span></span><a class="headerlink" href="#altdss.Isource.IsourceBatch.NumConductors" title="Link to this definition">#</a></dt>
-<dd></dd></dl>
+<dd><p>Number of conductors per terminal for each element in the batch.</p>
+<p>Original COM help: <a class="reference external" href="https://opendss.epri.com/NumConductors.html">https://opendss.epri.com/NumConductors.html</a></p>
+</dd></dl>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="altdss.Isource.IsourceBatch.NumControllers">
 <span class="sig-name descname"><span class="pre">NumControllers</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">altdss.types.Int32Array</span></span></span><a class="headerlink" href="#altdss.Isource.IsourceBatch.NumControllers" title="Link to this definition">#</a></dt>
-<dd></dd></dl>
+<dd><p>Number of controllers connected to each device in the batch.</p>
+<p>Original COM help: <a class="reference external" href="https://opendss.epri.com/NumControls.html">https://opendss.epri.com/NumControls.html</a></p>
+</dd></dl>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="altdss.Isource.IsourceBatch.NumPhases">
 <span class="sig-name descname"><span class="pre">NumPhases</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">altdss.types.Int32Array</span></span></span><a class="headerlink" href="#altdss.Isource.IsourceBatch.NumPhases" title="Link to this definition">#</a></dt>
-<dd></dd></dl>
+<dd><p>Number of Phases for each element in this batch.</p>
+<p>Original COM help: <a class="reference external" href="https://opendss.epri.com/NumPhases.html">https://opendss.epri.com/NumPhases.html</a></p>
+</dd></dl>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="altdss.Isource.IsourceBatch.NumTerminals">
 <span class="sig-name descname"><span class="pre">NumTerminals</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">altdss.types.Int32Array</span></span></span><a class="headerlink" href="#altdss.Isource.IsourceBatch.NumTerminals" title="Link to this definition">#</a></dt>
-<dd></dd></dl>
+<dd><p>Number of terminals for each Circuit Element in the batch.</p>
+<p>Original COM help: <a class="reference external" href="https://opendss.epri.com/NumTerminals.html">https://opendss.epri.com/NumTerminals.html</a></p>
+</dd></dl>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="altdss.Isource.IsourceBatch.OCPDevice">
 <span class="sig-name descname"><span class="pre">OCPDevice</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">List</span><span class="p"><span class="pre">[</span></span><span class="pre">Union</span><span class="p"><span class="pre">[</span></span><a class="reference internal" href="altdss.DSSObj.html#altdss.DSSObj.DSSObj" title="altdss.DSSObj.DSSObj"><span class="pre">altdss.DSSObj.DSSObj</span></a><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">None</span><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">]</span></span></span></span><a class="headerlink" href="#altdss.Isource.IsourceBatch.OCPDevice" title="Link to this definition">#</a></dt>
-<dd></dd></dl>
+<dd><p>Returns (as a list of Python objects) the OCP device controlling each element.</p>
+</dd></dl>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="altdss.Isource.IsourceBatch.OCPDeviceIndex">
 <span class="sig-name descname"><span class="pre">OCPDeviceIndex</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">altdss.types.Int32Array</span></span></span><a class="headerlink" href="#altdss.Isource.IsourceBatch.OCPDeviceIndex" title="Link to this definition">#</a></dt>
-<dd></dd></dl>
+<dd><p>For each element in the batch: index into each controller list of the OCP Device controlling each circuit element</p>
+<p>Original COM help: <a class="reference external" href="https://opendss.epri.com/OCPDevIndex.html">https://opendss.epri.com/OCPDevIndex.html</a></p>
+</dd></dl>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="altdss.Isource.IsourceBatch.OCPDeviceType">
-<span class="sig-name descname"><span class="pre">OCPDeviceType</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">dss.enums.OCPDevType</span></span></span><a class="headerlink" href="#altdss.Isource.IsourceBatch.OCPDeviceType" title="Link to this definition">#</a></dt>
-<dd></dd></dl>
+<span class="sig-name descname"><span class="pre">OCPDeviceType</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">List</span><span class="p"><span class="pre">[</span></span><span class="pre">dss.enums.OCPDevType</span><span class="p"><span class="pre">]</span></span></span></span><a class="headerlink" href="#altdss.Isource.IsourceBatch.OCPDeviceType" title="Link to this definition">#</a></dt>
+<dd><p>For each element in the batch: type of OCP controller device</p>
+<p>Original COM help: <a class="reference external" href="https://opendss.epri.com/OCPDevType.html">https://opendss.epri.com/OCPDevType.html</a></p>
+</dd></dl>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="altdss.Isource.IsourceBatch.PhaseLosses">
 <span class="sig-name descname"><span class="pre">PhaseLosses</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">altdss.types.ComplexArray</span></span></span><a class="headerlink" href="#altdss.Isource.IsourceBatch.PhaseLosses" title="Link to this definition">#</a></dt>
-<dd><p>Complex array of losses (kVA) by phase, for each element</p>
+<dd><p>Complex array of losses (kVA) by phase</p>
+<p>Original COM help: <a class="reference external" href="https://opendss.epri.com/PhaseLosses.html">https://opendss.epri.com/PhaseLosses.html</a></p>
 </dd></dl>
 
 <dl class="py attribute">
 <dt class="sig sig-object py" id="altdss.Isource.IsourceBatch.Phases">
 <span class="sig-name descname"><span class="pre">Phases</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><a class="reference internal" href="altdss.ArrayProxy.html#altdss.ArrayProxy.BatchInt32ArrayProxy" title="altdss.ArrayProxy.BatchInt32ArrayProxy"><span class="pre">altdss.ArrayProxy.BatchInt32ArrayProxy</span></a></em><a class="headerlink" href="#altdss.Isource.IsourceBatch.Phases" title="Link to this definition">#</a></dt>
 <dd><p>‘property(…)’</p>
+<p>Number of phases.  Defaults to 3. For 3 or less, phase shift is 120 degrees.</p>
+<p>DSS property name: <code class="docutils literal notranslate"><span class="pre">Phases</span></code>, DSS property index: 5.</p>
 </dd></dl>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="altdss.Isource.IsourceBatch.Powers">
 <span class="sig-name descname"><span class="pre">Powers</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">altdss.types.ComplexArray</span></span></span><a class="headerlink" href="#altdss.Isource.IsourceBatch.Powers" title="Link to this definition">#</a></dt>
 <dd><p>Complex array of powers (kVA) into each conductor of each terminal, of each element in the batch.</p>
+<p>Original COM help: <a class="reference external" href="https://opendss.epri.com/Powers.html">https://opendss.epri.com/Powers.html</a></p>
 </dd></dl>
 
 <dl class="py attribute">
 <dt class="sig sig-object py" id="altdss.Isource.IsourceBatch.ScanType">
 <span class="sig-name descname"><span class="pre">ScanType</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><a class="reference internal" href="altdss.ArrayProxy.html#altdss.ArrayProxy.BatchInt32ArrayProxy" title="altdss.ArrayProxy.BatchInt32ArrayProxy"><span class="pre">altdss.ArrayProxy.BatchInt32ArrayProxy</span></a></em><a class="headerlink" href="#altdss.Isource.IsourceBatch.ScanType" title="Link to this definition">#</a></dt>
 <dd><p>‘property(…)’</p>
+<p>{pos*| zero | none} Maintain specified sequence for harmonic solution. Default is positive sequence. Otherwise, angle between phases rotates with harmonic.</p>
+<p>DSS property name: <code class="docutils literal notranslate"><span class="pre">ScanType</span></code>, DSS property index: 6.</p>
 </dd></dl>
 
 <dl class="py attribute">
 <dt class="sig sig-object py" id="altdss.Isource.IsourceBatch.ScanType_str">
 <span class="sig-name descname"><span class="pre">ScanType_str</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">List</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">]</span></span></em><a class="headerlink" href="#altdss.Isource.IsourceBatch.ScanType_str" title="Link to this definition">#</a></dt>
 <dd><p>‘property(…)’</p>
+<p>{pos*| zero | none} Maintain specified sequence for harmonic solution. Default is positive sequence. Otherwise, angle between phases rotates with harmonic.</p>
+<p>DSS property name: <code class="docutils literal notranslate"><span class="pre">ScanType</span></code>, DSS property index: 6.</p>
 </dd></dl>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="altdss.Isource.IsourceBatch.SeqCurrents">
 <span class="sig-name descname"><span class="pre">SeqCurrents</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">altdss.types.Float64Array</span></span></span><a class="headerlink" href="#altdss.Isource.IsourceBatch.SeqCurrents" title="Link to this definition">#</a></dt>
-<dd></dd></dl>
+<dd><p>Array of symmetrical component currents (magnitudes only) into each 3-phase terminal of each element</p>
+<p>Original COM help: <a class="reference external" href="https://opendss.epri.com/SeqCurrents.html">https://opendss.epri.com/SeqCurrents.html</a></p>
+</dd></dl>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="altdss.Isource.IsourceBatch.SeqPowers">
 <span class="sig-name descname"><span class="pre">SeqPowers</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">altdss.types.ComplexArray</span></span></span><a class="headerlink" href="#altdss.Isource.IsourceBatch.SeqPowers" title="Link to this definition">#</a></dt>
-<dd></dd></dl>
+<dd><p>Complex array of sequence powers (kW, kvar) into each 3-phase terminal of each element</p>
+<p>Original COM help: <a class="reference external" href="https://opendss.epri.com/SeqPowers.html">https://opendss.epri.com/SeqPowers.html</a></p>
+</dd></dl>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="altdss.Isource.IsourceBatch.SeqVoltages">
 <span class="sig-name descname"><span class="pre">SeqVoltages</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">altdss.types.Float64Array</span></span></span><a class="headerlink" href="#altdss.Isource.IsourceBatch.SeqVoltages" title="Link to this definition">#</a></dt>
-<dd></dd></dl>
+<dd><p>Double array of symmetrical component voltages (magnitudes only) at each 3-phase terminal</p>
+<p>Original COM help: <a class="reference external" href="https://opendss.epri.com/SeqVoltages1.html">https://opendss.epri.com/SeqVoltages1.html</a></p>
+</dd></dl>
 
 <dl class="py attribute">
 <dt class="sig sig-object py" id="altdss.Isource.IsourceBatch.Sequence">
 <span class="sig-name descname"><span class="pre">Sequence</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><a class="reference internal" href="altdss.ArrayProxy.html#altdss.ArrayProxy.BatchInt32ArrayProxy" title="altdss.ArrayProxy.BatchInt32ArrayProxy"><span class="pre">altdss.ArrayProxy.BatchInt32ArrayProxy</span></a></em><a class="headerlink" href="#altdss.Isource.IsourceBatch.Sequence" title="Link to this definition">#</a></dt>
 <dd><p>‘property(…)’</p>
+<p>{pos*| neg | zero} Set the phase angles for the specified symmetrical component sequence for non-harmonic solution modes. Default is positive sequence.</p>
+<p>DSS property name: <code class="docutils literal notranslate"><span class="pre">Sequence</span></code>, DSS property index: 7.</p>
 </dd></dl>
 
 <dl class="py attribute">
 <dt class="sig sig-object py" id="altdss.Isource.IsourceBatch.Sequence_str">
 <span class="sig-name descname"><span class="pre">Sequence_str</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">List</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">]</span></span></em><a class="headerlink" href="#altdss.Isource.IsourceBatch.Sequence_str" title="Link to this definition">#</a></dt>
 <dd><p>‘property(…)’</p>
+<p>{pos*| neg | zero} Set the phase angles for the specified symmetrical component sequence for non-harmonic solution modes. Default is positive sequence.</p>
+<p>DSS property name: <code class="docutils literal notranslate"><span class="pre">Sequence</span></code>, DSS property index: 7.</p>
 </dd></dl>
 
 <dl class="py attribute">
 <dt class="sig sig-object py" id="altdss.Isource.IsourceBatch.Spectrum">
 <span class="sig-name descname"><span class="pre">Spectrum</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">List</span><span class="p"><span class="pre">[</span></span><a class="reference internal" href="altdss.Spectrum.html#altdss.Spectrum.Spectrum" title="altdss.Spectrum.Spectrum"><span class="pre">altdss.Spectrum.Spectrum</span></a><span class="p"><span class="pre">]</span></span></em><a class="headerlink" href="#altdss.Isource.IsourceBatch.Spectrum" title="Link to this definition">#</a></dt>
 <dd><p>‘property(…)’</p>
+<p>Harmonic spectrum assumed for this source.  Default is “default”.</p>
+<p>DSS property name: <code class="docutils literal notranslate"><span class="pre">Spectrum</span></code>, DSS property index: 12.</p>
 </dd></dl>
 
 <dl class="py attribute">
 <dt class="sig sig-object py" id="altdss.Isource.IsourceBatch.Spectrum_str">
 <span class="sig-name descname"><span class="pre">Spectrum_str</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">List</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">]</span></span></em><a class="headerlink" href="#altdss.Isource.IsourceBatch.Spectrum_str" title="Link to this definition">#</a></dt>
 <dd><p>‘property(…)’</p>
+<p>Harmonic spectrum assumed for this source.  Default is “default”.</p>
+<p>DSS property name: <code class="docutils literal notranslate"><span class="pre">Spectrum</span></code>, DSS property index: 12.</p>
 </dd></dl>
 
 <dl class="py method">
@@ -1882,23 +2201,35 @@ Use -1 as terminal to get the value across all terminals.</p>
 <dl class="py method">
 <dt class="sig sig-object py" id="altdss.Isource.IsourceBatch.Voltages">
 <span class="sig-name descname"><span class="pre">Voltages</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">altdss.types.ComplexArray</span></span></span><a class="headerlink" href="#altdss.Isource.IsourceBatch.Voltages" title="Link to this definition">#</a></dt>
-<dd></dd></dl>
+<dd><p>Complex array of voltages at terminals</p>
+<p>Original COM help: <a class="reference external" href="https://opendss.epri.com/Voltages1.html">https://opendss.epri.com/Voltages1.html</a></p>
+</dd></dl>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="altdss.Isource.IsourceBatch.VoltagesMagAng">
 <span class="sig-name descname"><span class="pre">VoltagesMagAng</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">altdss.types.Float64Array</span></span></span><a class="headerlink" href="#altdss.Isource.IsourceBatch.VoltagesMagAng" title="Link to this definition">#</a></dt>
-<dd></dd></dl>
+<dd><p>Voltages at each conductor in magnitude, angle form as array of doubles.</p>
+<p>Original COM help: <a class="reference external" href="https://opendss.epri.com/VoltagesMagAng.html">https://opendss.epri.com/VoltagesMagAng.html</a></p>
+</dd></dl>
 
 <dl class="py attribute">
 <dt class="sig sig-object py" id="altdss.Isource.IsourceBatch.Yearly">
 <span class="sig-name descname"><span class="pre">Yearly</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">List</span><span class="p"><span class="pre">[</span></span><a class="reference internal" href="altdss.LoadShape.html#altdss.LoadShape.LoadShape" title="altdss.LoadShape.LoadShape"><span class="pre">altdss.LoadShape.LoadShape</span></a><span class="p"><span class="pre">]</span></span></em><a class="headerlink" href="#altdss.Isource.IsourceBatch.Yearly" title="Link to this definition">#</a></dt>
 <dd><p>‘property(…)’</p>
+<p>LOADSHAPE object to use for the per-unit current for YEARLY-mode simulations. Set the Mult property of the LOADSHAPE to the pu curve. Qmult is not used. If UseActual=Yes then the Mult curve should be actual Amp.</p>
+<p>Must be previously defined as a LOADSHAPE object.</p>
+<p>Is set to the Daily load shape when Daily is defined.  The daily load shape is repeated in this case. Set to NONE to reset to no loadshape for Yearly mode. The default is no variation.</p>
+<p>DSS property name: <code class="docutils literal notranslate"><span class="pre">Yearly</span></code>, DSS property index: 8.</p>
 </dd></dl>
 
 <dl class="py attribute">
 <dt class="sig sig-object py" id="altdss.Isource.IsourceBatch.Yearly_str">
 <span class="sig-name descname"><span class="pre">Yearly_str</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">List</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">]</span></span></em><a class="headerlink" href="#altdss.Isource.IsourceBatch.Yearly_str" title="Link to this definition">#</a></dt>
 <dd><p>‘property(…)’</p>
+<p>LOADSHAPE object to use for the per-unit current for YEARLY-mode simulations. Set the Mult property of the LOADSHAPE to the pu curve. Qmult is not used. If UseActual=Yes then the Mult curve should be actual Amp.</p>
+<p>Must be previously defined as a LOADSHAPE object.</p>
+<p>Is set to the Daily load shape when Daily is defined.  The daily load shape is repeated in this case. Set to NONE to reset to no loadshape for Yearly mode. The default is no variation.</p>
+<p>DSS property name: <code class="docutils literal notranslate"><span class="pre">Yearly</span></code>, DSS property index: 8.</p>
 </dd></dl>
 
 <dl class="py method">
@@ -1928,11 +2259,29 @@ Use -1 as terminal to get the value across all terminals.</p>
 <dd></dd></dl>
 
 <dl class="py method">
+<dt class="sig sig-object py" id="altdss.Isource.IsourceBatch.batch">
+<span class="sig-name descname"><span class="pre">batch</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference internal" href="altdss.Batch.html#altdss.Batch.DSSBatch" title="altdss.Batch.DSSBatch"><span class="pre">altdss.Batch.DSSBatch</span></a></span></span><a class="headerlink" href="#altdss.Isource.IsourceBatch.batch" title="Link to this definition">#</a></dt>
+<dd><p>Filter a batch using integer or float DSS properties, returning a new batch.</p>
+<p>For integers, provide a single value to match.</p>
+<p>For floats, provide a range as a 2-valued tuple/list (min value, max value), or an exact value to value (not recommended).</p>
+<p>Multiple properties can be listed to allow filtering various conditions.</p>
+<p>Example for loads:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span>    <span class="c1"># Create an initial batch using a regular expression</span>
+    <span class="n">abc_loads</span> <span class="o">=</span> <span class="n">altdss</span><span class="o">.</span><span class="n">Load</span><span class="o">.</span><span class="n">batch</span><span class="p">(</span><span class="n">re</span><span class="o">=</span><span class="sa">r</span><span class="s1">&#39;^abc.*$&#39;</span><span class="p">)</span> <span class="c1"># a batch of all loads with names starting with &quot;abc&quot;</span>
+    <span class="n">abc_loads_filtered</span> <span class="o">=</span> <span class="n">abc_loads</span><span class="o">.</span><span class="n">batch</span><span class="p">(</span><span class="n">Class</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">Phases</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">kV</span><span class="o">=</span><span class="p">(</span><span class="mf">0.1</span><span class="p">,</span> <span class="mf">1.0</span><span class="p">))</span>
+
+    <span class="c1"># Create an initial batch, already filtered</span>
+    <span class="n">abc_loads_filtered</span> <span class="o">=</span> <span class="n">altdss</span><span class="o">.</span><span class="n">Load</span><span class="o">.</span><span class="n">batch</span><span class="p">(</span><span class="n">re</span><span class="o">=</span><span class="sa">r</span><span class="s1">&#39;^abc.*$&#39;</span><span class="p">,</span> <span class="n">Class</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">Phases</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">kV</span><span class="o">=</span><span class="p">(</span><span class="mf">0.1</span><span class="p">,</span> <span class="mf">1.0</span><span class="p">))</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="py method">
 <dt class="sig sig-object py" id="altdss.Isource.IsourceBatch.begin_edit">
 <span class="sig-name descname"><span class="pre">begin_edit</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span><a class="headerlink" href="#altdss.Isource.IsourceBatch.begin_edit" title="Link to this definition">#</a></dt>
 <dd><p>Marks for editing all DSS objects in the batch</p>
-<p>In the editing mode, some final side-effects of changing properties are post-poned
-until <code class="docutils literal notranslate"><span class="pre">_end_edit</span></code> is called. This side-effects can be somewhat costly, like updating
+<p>In the editing mode, some final side-effects of changing properties are postponed
+until <code class="docutils literal notranslate"><span class="pre">end_edit</span></code> is called. This side-effects can be somewhat costly, like updating
 the model parameters or internal matrices.</p>
 <p>If you don’t have any performance constraint, you may edit each property individually
 without worrying about using <code class="docutils literal notranslate"><span class="pre">begin_edit</span></code> and <code class="docutils literal notranslate"><span class="pre">end_edit</span></code>. For convenience, those are
@@ -2910,6 +3259,7 @@ In either case, this is followed by: for k in F:  D[k] = F[k]</p>
 <li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#altdss.Isource.IsourceBatch.__init__"><code class="docutils literal notranslate"><span class="pre">IsourceBatch.__init__()</span></code></a></li>
 <li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#altdss.Isource.IsourceBatch.__iter__"><code class="docutils literal notranslate"><span class="pre">IsourceBatch.__iter__()</span></code></a></li>
 <li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#altdss.Isource.IsourceBatch.__len__"><code class="docutils literal notranslate"><span class="pre">IsourceBatch.__len__()</span></code></a></li>
+<li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#altdss.Isource.IsourceBatch.batch"><code class="docutils literal notranslate"><span class="pre">IsourceBatch.batch()</span></code></a></li>
 <li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#altdss.Isource.IsourceBatch.begin_edit"><code class="docutils literal notranslate"><span class="pre">IsourceBatch.begin_edit()</span></code></a></li>
 <li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#altdss.Isource.IsourceBatch.end_edit"><code class="docutils literal notranslate"><span class="pre">IsourceBatch.end_edit()</span></code></a></li>
 <li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#altdss.Isource.IsourceBatch.to_json"><code class="docutils literal notranslate"><span class="pre">IsourceBatch.to_json()</span></code></a></li>

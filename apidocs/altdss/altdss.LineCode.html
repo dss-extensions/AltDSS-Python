@@ -8,7 +8,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
-    <title>altdss.LineCode &#8212; AltDSS-Python 0.2.0 documentation</title>
+    <title>altdss.LineCode &#8212; AltDSS-Python 0.2.2 documentation</title>
   
   
   
@@ -38,7 +38,7 @@
 <link rel="preload" as="script" href="../../_static/scripts/pydata-sphinx-theme.js?digest=8d27b9dea8ad943066ae" />
   <script src="../../_static/vendor/fontawesome/6.5.1/js/all.min.js?digest=8d27b9dea8ad943066ae"></script>
 
-    <script src="../../_static/documentation_options.js?v=7f7c277e"></script>
+    <script src="../../_static/documentation_options.js?v=d3f42505"></script>
     <script src="../../_static/doctools.js?v=888ff710"></script>
     <script src="../../_static/sphinx_highlight.js?v=dc90522c"></script>
     <script src="../../_static/scripts/sphinx-book-theme.js?v=efea14e4"></script>
@@ -137,8 +137,8 @@
       
     
     
-    <img src="../../_static/altdss-python.svg" class="logo__image only-light" alt="AltDSS-Python 0.2.0 documentation - Home"/>
-    <script>document.write(`<img src="../../_static/altdss-python-dark.svg" class="logo__image only-dark" alt="AltDSS-Python 0.2.0 documentation - Home"/>`);</script>
+    <img src="../../_static/altdss-python.svg" class="logo__image only-light" alt="AltDSS-Python 0.2.2 documentation - Home"/>
+    <script>document.write(`<img src="../../_static/altdss-python-dark.svg" class="logo__image only-dark" alt="AltDSS-Python 0.2.2 documentation - Home"/>`);</script>
   
   
 </a></div>
@@ -160,6 +160,7 @@
 <li class="toctree-l1"><a class="reference internal" href="../../index.html">AltDSS-Python</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../Architecture.html">Architecture details</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../examples/GettingStarted.html">Getting Started</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../examples/Batches.html">Batches</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../changelog.html">Changelog</a></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">API Reference</span></p>
@@ -535,6 +536,7 @@ document.write(`
 <li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#altdss.LineCode.LineCodeBatch.__init__"><code class="docutils literal notranslate"><span class="pre">LineCodeBatch.__init__()</span></code></a></li>
 <li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#altdss.LineCode.LineCodeBatch.__iter__"><code class="docutils literal notranslate"><span class="pre">LineCodeBatch.__iter__()</span></code></a></li>
 <li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#altdss.LineCode.LineCodeBatch.__len__"><code class="docutils literal notranslate"><span class="pre">LineCodeBatch.__len__()</span></code></a></li>
+<li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#altdss.LineCode.LineCodeBatch.batch"><code class="docutils literal notranslate"><span class="pre">LineCodeBatch.batch()</span></code></a></li>
 <li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#altdss.LineCode.LineCodeBatch.begin_edit"><code class="docutils literal notranslate"><span class="pre">LineCodeBatch.begin_edit()</span></code></a></li>
 <li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#altdss.LineCode.LineCodeBatch.end_edit"><code class="docutils literal notranslate"><span class="pre">LineCodeBatch.end_edit()</span></code></a></li>
 <li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#altdss.LineCode.LineCodeBatch.rho"><code class="docutils literal notranslate"><span class="pre">LineCodeBatch.rho</span></code></a></li>
@@ -747,48 +749,64 @@ in the keyword argument list.  For example:  dict(one=1, two=2)</p></td>
 <dt class="sig sig-object py" id="altdss.LineCode.ILineCode.B0">
 <span class="sig-name descname"><span class="pre">B0</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><a class="reference internal" href="altdss.ArrayProxy.html#altdss.ArrayProxy.BatchFloat64ArrayProxy" title="altdss.ArrayProxy.BatchFloat64ArrayProxy"><span class="pre">altdss.ArrayProxy.BatchFloat64ArrayProxy</span></a></em><a class="headerlink" href="#altdss.LineCode.ILineCode.B0" title="Link to this definition">#</a></dt>
 <dd><p>‘property(…)’</p>
+<p>Alternate way to specify C0. MicroS per unit length</p>
+<p>DSS property name: <code class="docutils literal notranslate"><span class="pre">B0</span></code>, DSS property index: 24.</p>
 </dd></dl>
 
 <dl class="py attribute">
 <dt class="sig sig-object py" id="altdss.LineCode.ILineCode.B1">
 <span class="sig-name descname"><span class="pre">B1</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><a class="reference internal" href="altdss.ArrayProxy.html#altdss.ArrayProxy.BatchFloat64ArrayProxy" title="altdss.ArrayProxy.BatchFloat64ArrayProxy"><span class="pre">altdss.ArrayProxy.BatchFloat64ArrayProxy</span></a></em><a class="headerlink" href="#altdss.LineCode.ILineCode.B1" title="Link to this definition">#</a></dt>
 <dd><p>‘property(…)’</p>
+<p>Alternate way to specify C1. MicroS per unit length</p>
+<p>DSS property name: <code class="docutils literal notranslate"><span class="pre">B1</span></code>, DSS property index: 23.</p>
 </dd></dl>
 
 <dl class="py attribute">
 <dt class="sig sig-object py" id="altdss.LineCode.ILineCode.BaseFreq">
 <span class="sig-name descname"><span class="pre">BaseFreq</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><a class="reference internal" href="altdss.ArrayProxy.html#altdss.ArrayProxy.BatchFloat64ArrayProxy" title="altdss.ArrayProxy.BatchFloat64ArrayProxy"><span class="pre">altdss.ArrayProxy.BatchFloat64ArrayProxy</span></a></em><a class="headerlink" href="#altdss.LineCode.ILineCode.BaseFreq" title="Link to this definition">#</a></dt>
 <dd><p>‘property(…)’</p>
+<p>Frequency at which impedances are specified.</p>
+<p>DSS property name: <code class="docutils literal notranslate"><span class="pre">BaseFreq</span></code>, DSS property index: 12.</p>
 </dd></dl>
 
 <dl class="py attribute">
 <dt class="sig sig-object py" id="altdss.LineCode.ILineCode.C0">
 <span class="sig-name descname"><span class="pre">C0</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><a class="reference internal" href="altdss.ArrayProxy.html#altdss.ArrayProxy.BatchFloat64ArrayProxy" title="altdss.ArrayProxy.BatchFloat64ArrayProxy"><span class="pre">altdss.ArrayProxy.BatchFloat64ArrayProxy</span></a></em><a class="headerlink" href="#altdss.LineCode.ILineCode.C0" title="Link to this definition">#</a></dt>
 <dd><p>‘property(…)’</p>
+<p>Zero-sequence capacitance, nf per unit length. Setting any of R1, R0, X1, X0, C1, C0 forces the program to use the symmetrical component line definition. See also B0.</p>
+<p>DSS property name: <code class="docutils literal notranslate"><span class="pre">C0</span></code>, DSS property index: 7.</p>
 </dd></dl>
 
 <dl class="py attribute">
 <dt class="sig sig-object py" id="altdss.LineCode.ILineCode.C1">
 <span class="sig-name descname"><span class="pre">C1</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><a class="reference internal" href="altdss.ArrayProxy.html#altdss.ArrayProxy.BatchFloat64ArrayProxy" title="altdss.ArrayProxy.BatchFloat64ArrayProxy"><span class="pre">altdss.ArrayProxy.BatchFloat64ArrayProxy</span></a></em><a class="headerlink" href="#altdss.LineCode.ILineCode.C1" title="Link to this definition">#</a></dt>
 <dd><p>‘property(…)’</p>
+<p>Positive-sequence capacitance, nf per unit length. Setting any of R1, R0, X1, X0, C1, C0 forces the program to use the symmetrical component line definition. See also Cmatrix and B1.</p>
+<p>DSS property name: <code class="docutils literal notranslate"><span class="pre">C1</span></code>, DSS property index: 6.</p>
 </dd></dl>
 
 <dl class="py attribute">
 <dt class="sig sig-object py" id="altdss.LineCode.ILineCode.CMatrix">
 <span class="sig-name descname"><span class="pre">CMatrix</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">List</span><span class="p"><span class="pre">[</span></span><span class="pre">altdss.types.Float64Array</span><span class="p"><span class="pre">]</span></span></em><a class="headerlink" href="#altdss.LineCode.ILineCode.CMatrix" title="Link to this definition">#</a></dt>
 <dd><p>‘property(…)’</p>
+<p>Nodal Capacitance matrix, lower triangle, nf per unit length.Order of the matrix is the number of phases. May be used to specify the shunt capacitance of any line configuration.  For balanced line models, you may use the standard symmetrical component data definition instead.</p>
+<p>DSS property name: <code class="docutils literal notranslate"><span class="pre">CMatrix</span></code>, DSS property index: 11.</p>
 </dd></dl>
 
 <dl class="py attribute">
 <dt class="sig sig-object py" id="altdss.LineCode.ILineCode.EmergAmps">
 <span class="sig-name descname"><span class="pre">EmergAmps</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><a class="reference internal" href="altdss.ArrayProxy.html#altdss.ArrayProxy.BatchFloat64ArrayProxy" title="altdss.ArrayProxy.BatchFloat64ArrayProxy"><span class="pre">altdss.ArrayProxy.BatchFloat64ArrayProxy</span></a></em><a class="headerlink" href="#altdss.LineCode.ILineCode.EmergAmps" title="Link to this definition">#</a></dt>
 <dd><p>‘property(…)’</p>
+<p>Emergency ampere limit on line (usually one-hour rating).</p>
+<p>DSS property name: <code class="docutils literal notranslate"><span class="pre">EmergAmps</span></code>, DSS property index: 14.</p>
 </dd></dl>
 
 <dl class="py attribute">
 <dt class="sig sig-object py" id="altdss.LineCode.ILineCode.FaultRate">
 <span class="sig-name descname"><span class="pre">FaultRate</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><a class="reference internal" href="altdss.ArrayProxy.html#altdss.ArrayProxy.BatchFloat64ArrayProxy" title="altdss.ArrayProxy.BatchFloat64ArrayProxy"><span class="pre">altdss.ArrayProxy.BatchFloat64ArrayProxy</span></a></em><a class="headerlink" href="#altdss.LineCode.ILineCode.FaultRate" title="Link to this definition">#</a></dt>
 <dd><p>‘property(…)’</p>
+<p>Number of faults per unit length per year.</p>
+<p>DSS property name: <code class="docutils literal notranslate"><span class="pre">FaultRate</span></code>, DSS property index: 15.</p>
 </dd></dl>
 
 <dl class="py method">
@@ -816,18 +834,28 @@ in the keyword argument list.  For example:  dict(one=1, two=2)</p></td>
 <dt class="sig sig-object py" id="altdss.LineCode.ILineCode.LineType">
 <span class="sig-name descname"><span class="pre">LineType</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><a class="reference internal" href="altdss.ArrayProxy.html#altdss.ArrayProxy.BatchInt32ArrayProxy" title="altdss.ArrayProxy.BatchInt32ArrayProxy"><span class="pre">altdss.ArrayProxy.BatchInt32ArrayProxy</span></a></em><a class="headerlink" href="#altdss.LineCode.ILineCode.LineType" title="Link to this definition">#</a></dt>
 <dd><p>‘property(…)’</p>
+<p>Code designating the type of line.
+One of: OH, UG, UG_TS, UG_CN, SWT_LDBRK, SWT_FUSE, SWT_SECT, SWT_REC, SWT_DISC, SWT_BRK, SWT_ELBOW, BUSBAR</p>
+<p>OpenDSS currently does not use this internally. For whatever purpose the user defines. Default is OH.</p>
+<p>DSS property name: <code class="docutils literal notranslate"><span class="pre">LineType</span></code>, DSS property index: 27.</p>
 </dd></dl>
 
 <dl class="py attribute">
 <dt class="sig sig-object py" id="altdss.LineCode.ILineCode.LineType_str">
 <span class="sig-name descname"><span class="pre">LineType_str</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">List</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">]</span></span></em><a class="headerlink" href="#altdss.LineCode.ILineCode.LineType_str" title="Link to this definition">#</a></dt>
 <dd><p>‘property(…)’</p>
+<p>Code designating the type of line.
+One of: OH, UG, UG_TS, UG_CN, SWT_LDBRK, SWT_FUSE, SWT_SECT, SWT_REC, SWT_DISC, SWT_BRK, SWT_ELBOW, BUSBAR</p>
+<p>OpenDSS currently does not use this internally. For whatever purpose the user defines. Default is OH.</p>
+<p>DSS property name: <code class="docutils literal notranslate"><span class="pre">LineType</span></code>, DSS property index: 27.</p>
 </dd></dl>
 
 <dl class="py attribute">
 <dt class="sig sig-object py" id="altdss.LineCode.ILineCode.NPhases">
 <span class="sig-name descname"><span class="pre">NPhases</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><a class="reference internal" href="altdss.ArrayProxy.html#altdss.ArrayProxy.BatchInt32ArrayProxy" title="altdss.ArrayProxy.BatchInt32ArrayProxy"><span class="pre">altdss.ArrayProxy.BatchInt32ArrayProxy</span></a></em><a class="headerlink" href="#altdss.LineCode.ILineCode.NPhases" title="Link to this definition">#</a></dt>
 <dd><p>‘property(…)’</p>
+<p>Number of phases in the line this line code data represents.  Setting this property reinitializes the line code.  Impedance matrix is reset for default symmetrical component.</p>
+<p>DSS property name: <code class="docutils literal notranslate"><span class="pre">NPhases</span></code>, DSS property index: 1.</p>
 </dd></dl>
 
 <dl class="py property">
@@ -839,96 +867,129 @@ in the keyword argument list.  For example:  dict(one=1, two=2)</p></td>
 <dt class="sig sig-object py" id="altdss.LineCode.ILineCode.Neutral">
 <span class="sig-name descname"><span class="pre">Neutral</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><a class="reference internal" href="altdss.ArrayProxy.html#altdss.ArrayProxy.BatchInt32ArrayProxy" title="altdss.ArrayProxy.BatchInt32ArrayProxy"><span class="pre">altdss.ArrayProxy.BatchInt32ArrayProxy</span></a></em><a class="headerlink" href="#altdss.LineCode.ILineCode.Neutral" title="Link to this definition">#</a></dt>
 <dd><p>‘property(…)’</p>
+<p>Designates which conductor is the “neutral” conductor that will be eliminated by Kron reduction. Default is the last conductor (nphases value). After Kron reduction is set to 0. Subsequent issuing of Kron=Yes will not do anything until this property is set to a legal value. Applies only to LineCodes defined by R, X, and C matrix.</p>
+<p>DSS property name: <code class="docutils literal notranslate"><span class="pre">Neutral</span></code>, DSS property index: 22.</p>
 </dd></dl>
 
 <dl class="py attribute">
 <dt class="sig sig-object py" id="altdss.LineCode.ILineCode.NormAmps">
 <span class="sig-name descname"><span class="pre">NormAmps</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><a class="reference internal" href="altdss.ArrayProxy.html#altdss.ArrayProxy.BatchFloat64ArrayProxy" title="altdss.ArrayProxy.BatchFloat64ArrayProxy"><span class="pre">altdss.ArrayProxy.BatchFloat64ArrayProxy</span></a></em><a class="headerlink" href="#altdss.LineCode.ILineCode.NormAmps" title="Link to this definition">#</a></dt>
 <dd><p>‘property(…)’</p>
+<p>Normal ampere limit on line.  This is the so-called Planning Limit. It may also be the value above which load will have to be dropped in a contingency.  Usually about 75% - 80% of the emergency (one-hour) rating.</p>
+<p>DSS property name: <code class="docutils literal notranslate"><span class="pre">NormAmps</span></code>, DSS property index: 13.</p>
 </dd></dl>
 
 <dl class="py attribute">
 <dt class="sig sig-object py" id="altdss.LineCode.ILineCode.PctPerm">
 <span class="sig-name descname"><span class="pre">PctPerm</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><a class="reference internal" href="altdss.ArrayProxy.html#altdss.ArrayProxy.BatchFloat64ArrayProxy" title="altdss.ArrayProxy.BatchFloat64ArrayProxy"><span class="pre">altdss.ArrayProxy.BatchFloat64ArrayProxy</span></a></em><a class="headerlink" href="#altdss.LineCode.ILineCode.PctPerm" title="Link to this definition">#</a></dt>
 <dd><p>‘property(…)’</p>
+<p>Percentage of the faults that become permanent.</p>
+<p>DSS property name: <code class="docutils literal notranslate"><span class="pre">PctPerm</span></code>, DSS property index: 16.</p>
 </dd></dl>
 
 <dl class="py attribute">
 <dt class="sig sig-object py" id="altdss.LineCode.ILineCode.R0">
 <span class="sig-name descname"><span class="pre">R0</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><a class="reference internal" href="altdss.ArrayProxy.html#altdss.ArrayProxy.BatchFloat64ArrayProxy" title="altdss.ArrayProxy.BatchFloat64ArrayProxy"><span class="pre">altdss.ArrayProxy.BatchFloat64ArrayProxy</span></a></em><a class="headerlink" href="#altdss.LineCode.ILineCode.R0" title="Link to this definition">#</a></dt>
 <dd><p>‘property(…)’</p>
+<p>Zero-sequence Resistance, ohms per unit length. Setting any of R1, R0, X1, X0, C1, C0 forces the program to use the symmetrical component line definition.</p>
+<p>DSS property name: <code class="docutils literal notranslate"><span class="pre">R0</span></code>, DSS property index: 4.</p>
 </dd></dl>
 
 <dl class="py attribute">
 <dt class="sig sig-object py" id="altdss.LineCode.ILineCode.R1">
 <span class="sig-name descname"><span class="pre">R1</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><a class="reference internal" href="altdss.ArrayProxy.html#altdss.ArrayProxy.BatchFloat64ArrayProxy" title="altdss.ArrayProxy.BatchFloat64ArrayProxy"><span class="pre">altdss.ArrayProxy.BatchFloat64ArrayProxy</span></a></em><a class="headerlink" href="#altdss.LineCode.ILineCode.R1" title="Link to this definition">#</a></dt>
 <dd><p>‘property(…)’</p>
+<p>Positive-sequence Resistance, ohms per unit length. Setting any of R1, R0, X1, X0, C1, C0 forces the program to use the symmetrical component line definition. See also Rmatrix.</p>
+<p>DSS property name: <code class="docutils literal notranslate"><span class="pre">R1</span></code>, DSS property index: 2.</p>
 </dd></dl>
 
 <dl class="py attribute">
 <dt class="sig sig-object py" id="altdss.LineCode.ILineCode.RMatrix">
 <span class="sig-name descname"><span class="pre">RMatrix</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">List</span><span class="p"><span class="pre">[</span></span><span class="pre">altdss.types.Float64Array</span><span class="p"><span class="pre">]</span></span></em><a class="headerlink" href="#altdss.LineCode.ILineCode.RMatrix" title="Link to this definition">#</a></dt>
 <dd><p>‘property(…)’</p>
+<p>Resistance matrix, lower triangle, ohms per unit length. Order of the matrix is the number of phases. May be used to specify the impedance of any line configuration.  For balanced line models, you may use the standard symmetrical component data definition instead.</p>
+<p>DSS property name: <code class="docutils literal notranslate"><span class="pre">RMatrix</span></code>, DSS property index: 9.</p>
 </dd></dl>
 
 <dl class="py attribute">
 <dt class="sig sig-object py" id="altdss.LineCode.ILineCode.Ratings">
 <span class="sig-name descname"><span class="pre">Ratings</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">List</span><span class="p"><span class="pre">[</span></span><span class="pre">altdss.types.Float64Array</span><span class="p"><span class="pre">]</span></span></em><a class="headerlink" href="#altdss.LineCode.ILineCode.Ratings" title="Link to this definition">#</a></dt>
 <dd><p>‘property(…)’</p>
+<p>An array of ratings to be used when the seasonal ratings flag is True. It can be used to insert
+multiple ratings to change during a QSTS simulation to evaluate different ratings in lines.</p>
+<p>DSS property name: <code class="docutils literal notranslate"><span class="pre">Ratings</span></code>, DSS property index: 26.</p>
 </dd></dl>
 
 <dl class="py attribute">
 <dt class="sig sig-object py" id="altdss.LineCode.ILineCode.Repair">
 <span class="sig-name descname"><span class="pre">Repair</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><a class="reference internal" href="altdss.ArrayProxy.html#altdss.ArrayProxy.BatchFloat64ArrayProxy" title="altdss.ArrayProxy.BatchFloat64ArrayProxy"><span class="pre">altdss.ArrayProxy.BatchFloat64ArrayProxy</span></a></em><a class="headerlink" href="#altdss.LineCode.ILineCode.Repair" title="Link to this definition">#</a></dt>
 <dd><p>‘property(…)’</p>
+<p>Hours to repair.</p>
+<p>DSS property name: <code class="docutils literal notranslate"><span class="pre">Repair</span></code>, DSS property index: 17.</p>
 </dd></dl>
 
 <dl class="py attribute">
 <dt class="sig sig-object py" id="altdss.LineCode.ILineCode.Rg">
 <span class="sig-name descname"><span class="pre">Rg</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><a class="reference internal" href="altdss.ArrayProxy.html#altdss.ArrayProxy.BatchFloat64ArrayProxy" title="altdss.ArrayProxy.BatchFloat64ArrayProxy"><span class="pre">altdss.ArrayProxy.BatchFloat64ArrayProxy</span></a></em><a class="headerlink" href="#altdss.LineCode.ILineCode.Rg" title="Link to this definition">#</a></dt>
 <dd><p>‘property(…)’</p>
+<p>Carson earth return resistance per unit length used to compute impedance values at base frequency.  For making better frequency adjustments. Default is 0.01805 = 60 Hz value in ohms per kft (matches default line impedances). This value is required for harmonic solutions if you wish to adjust the earth return impedances for frequency. If not, set both Rg and Xg = 0.</p>
+<p>DSS property name: <code class="docutils literal notranslate"><span class="pre">Rg</span></code>, DSS property index: 19.</p>
 </dd></dl>
 
 <dl class="py attribute">
 <dt class="sig sig-object py" id="altdss.LineCode.ILineCode.Seasons">
 <span class="sig-name descname"><span class="pre">Seasons</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><a class="reference internal" href="altdss.ArrayProxy.html#altdss.ArrayProxy.BatchInt32ArrayProxy" title="altdss.ArrayProxy.BatchInt32ArrayProxy"><span class="pre">altdss.ArrayProxy.BatchInt32ArrayProxy</span></a></em><a class="headerlink" href="#altdss.LineCode.ILineCode.Seasons" title="Link to this definition">#</a></dt>
 <dd><p>‘property(…)’</p>
+<p>Defines the number of ratings to be defined for the wire, to be used only when defining seasonal ratings using the “Ratings” property.</p>
+<p>DSS property name: <code class="docutils literal notranslate"><span class="pre">Seasons</span></code>, DSS property index: 25.</p>
 </dd></dl>
 
 <dl class="py attribute">
 <dt class="sig sig-object py" id="altdss.LineCode.ILineCode.Units">
 <span class="sig-name descname"><span class="pre">Units</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><a class="reference internal" href="altdss.ArrayProxy.html#altdss.ArrayProxy.BatchInt32ArrayProxy" title="altdss.ArrayProxy.BatchInt32ArrayProxy"><span class="pre">altdss.ArrayProxy.BatchInt32ArrayProxy</span></a></em><a class="headerlink" href="#altdss.LineCode.ILineCode.Units" title="Link to this definition">#</a></dt>
 <dd><p>‘property(…)’</p>
+<p>One of (ohms per …) {none|mi|km|kft|m|me|ft|in|cm}.  Default is none; assumes units agree with length units given in Line object</p>
+<p>DSS property name: <code class="docutils literal notranslate"><span class="pre">Units</span></code>, DSS property index: 8.</p>
 </dd></dl>
 
 <dl class="py attribute">
 <dt class="sig sig-object py" id="altdss.LineCode.ILineCode.Units_str">
 <span class="sig-name descname"><span class="pre">Units_str</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">List</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">]</span></span></em><a class="headerlink" href="#altdss.LineCode.ILineCode.Units_str" title="Link to this definition">#</a></dt>
 <dd><p>‘property(…)’</p>
+<p>One of (ohms per …) {none|mi|km|kft|m|me|ft|in|cm}.  Default is none; assumes units agree with length units given in Line object</p>
+<p>DSS property name: <code class="docutils literal notranslate"><span class="pre">Units</span></code>, DSS property index: 8.</p>
 </dd></dl>
 
 <dl class="py attribute">
 <dt class="sig sig-object py" id="altdss.LineCode.ILineCode.X0">
 <span class="sig-name descname"><span class="pre">X0</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><a class="reference internal" href="altdss.ArrayProxy.html#altdss.ArrayProxy.BatchFloat64ArrayProxy" title="altdss.ArrayProxy.BatchFloat64ArrayProxy"><span class="pre">altdss.ArrayProxy.BatchFloat64ArrayProxy</span></a></em><a class="headerlink" href="#altdss.LineCode.ILineCode.X0" title="Link to this definition">#</a></dt>
 <dd><p>‘property(…)’</p>
+<p>Zero-sequence Reactance, ohms per unit length. Setting any of R1, R0, X1, X0, C1, C0 forces the program to use the symmetrical component line definition.</p>
+<p>DSS property name: <code class="docutils literal notranslate"><span class="pre">X0</span></code>, DSS property index: 5.</p>
 </dd></dl>
 
 <dl class="py attribute">
 <dt class="sig sig-object py" id="altdss.LineCode.ILineCode.X1">
 <span class="sig-name descname"><span class="pre">X1</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><a class="reference internal" href="altdss.ArrayProxy.html#altdss.ArrayProxy.BatchFloat64ArrayProxy" title="altdss.ArrayProxy.BatchFloat64ArrayProxy"><span class="pre">altdss.ArrayProxy.BatchFloat64ArrayProxy</span></a></em><a class="headerlink" href="#altdss.LineCode.ILineCode.X1" title="Link to this definition">#</a></dt>
 <dd><p>‘property(…)’</p>
+<p>Positive-sequence Reactance, ohms per unit length. Setting any of R1, R0, X1, X0, C1, C0 forces the program to use the symmetrical component line definition. See also Xmatrix</p>
+<p>DSS property name: <code class="docutils literal notranslate"><span class="pre">X1</span></code>, DSS property index: 3.</p>
 </dd></dl>
 
 <dl class="py attribute">
 <dt class="sig sig-object py" id="altdss.LineCode.ILineCode.XMatrix">
 <span class="sig-name descname"><span class="pre">XMatrix</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">List</span><span class="p"><span class="pre">[</span></span><span class="pre">altdss.types.Float64Array</span><span class="p"><span class="pre">]</span></span></em><a class="headerlink" href="#altdss.LineCode.ILineCode.XMatrix" title="Link to this definition">#</a></dt>
 <dd><p>‘property(…)’</p>
+<p>Reactance matrix, lower triangle, ohms per unit length. Order of the matrix is the number of phases. May be used to specify the impedance of any line configuration.  For balanced line models, you may use the standard symmetrical component data definition instead.</p>
+<p>DSS property name: <code class="docutils literal notranslate"><span class="pre">XMatrix</span></code>, DSS property index: 10.</p>
 </dd></dl>
 
 <dl class="py attribute">
 <dt class="sig sig-object py" id="altdss.LineCode.ILineCode.Xg">
 <span class="sig-name descname"><span class="pre">Xg</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><a class="reference internal" href="altdss.ArrayProxy.html#altdss.ArrayProxy.BatchFloat64ArrayProxy" title="altdss.ArrayProxy.BatchFloat64ArrayProxy"><span class="pre">altdss.ArrayProxy.BatchFloat64ArrayProxy</span></a></em><a class="headerlink" href="#altdss.LineCode.ILineCode.Xg" title="Link to this definition">#</a></dt>
 <dd><p>‘property(…)’</p>
+<p>Carson earth return reactance per unit length used to compute impedance values at base frequency.  For making better frequency adjustments. Default value is 0.155081 = 60 Hz value in ohms per kft (matches default line impedances). This value is required for harmonic solutions if you wish to adjust the earth return impedances for frequency. If not, set both Rg and Xg = 0.</p>
+<p>DSS property name: <code class="docutils literal notranslate"><span class="pre">Xg</span></code>, DSS property index: 20.</p>
 </dd></dl>
 
 <dl class="py method">
@@ -978,8 +1039,8 @@ or “count” elements with a randomized prefix.</p>
 <dt class="sig sig-object py" id="altdss.LineCode.ILineCode.begin_edit">
 <span class="sig-name descname"><span class="pre">begin_edit</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span><a class="headerlink" href="#altdss.LineCode.ILineCode.begin_edit" title="Link to this definition">#</a></dt>
 <dd><p>Marks for editing all DSS objects in the batch</p>
-<p>In the editing mode, some final side-effects of changing properties are post-poned
-until <code class="docutils literal notranslate"><span class="pre">_end_edit</span></code> is called. This side-effects can be somewhat costly, like updating
+<p>In the editing mode, some final side-effects of changing properties are postponed
+until <code class="docutils literal notranslate"><span class="pre">end_edit</span></code> is called. This side-effects can be somewhat costly, like updating
 the model parameters or internal matrices.</p>
 <p>If you don’t have any performance constraint, you may edit each property individually
 without worrying about using <code class="docutils literal notranslate"><span class="pre">begin_edit</span></code> and <code class="docutils literal notranslate"><span class="pre">end_edit</span></code>. For convenience, those are
@@ -1011,6 +1072,8 @@ the <code class="docutils literal notranslate"><span class="pre">Process</span><
 <dt class="sig sig-object py" id="altdss.LineCode.ILineCode.rho">
 <span class="sig-name descname"><span class="pre">rho</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><a class="reference internal" href="altdss.ArrayProxy.html#altdss.ArrayProxy.BatchFloat64ArrayProxy" title="altdss.ArrayProxy.BatchFloat64ArrayProxy"><span class="pre">altdss.ArrayProxy.BatchFloat64ArrayProxy</span></a></em><a class="headerlink" href="#altdss.LineCode.ILineCode.rho" title="Link to this definition">#</a></dt>
 <dd><p>‘property(…)’</p>
+<p>Default=100 meter ohms.  Earth resitivity used to compute earth correction factor.</p>
+<p>DSS property name: <code class="docutils literal notranslate"><span class="pre">rho</span></code>, DSS property index: 21.</p>
 </dd></dl>
 
 <dl class="py method">
@@ -1037,48 +1100,64 @@ See <code class="docutils literal notranslate"><span class="pre">Obj_ToJSON</spa
 <dt class="sig sig-object py" id="altdss.LineCode.LineCode.B0">
 <span class="sig-name descname"><span class="pre">B0</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">float</span></em><a class="headerlink" href="#altdss.LineCode.LineCode.B0" title="Link to this definition">#</a></dt>
 <dd><p>‘property(…)’</p>
+<p>Alternate way to specify C0. MicroS per unit length</p>
+<p>DSS property name: <code class="docutils literal notranslate"><span class="pre">B0</span></code>, DSS property index: 24.</p>
 </dd></dl>
 
 <dl class="py attribute">
 <dt class="sig sig-object py" id="altdss.LineCode.LineCode.B1">
 <span class="sig-name descname"><span class="pre">B1</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">float</span></em><a class="headerlink" href="#altdss.LineCode.LineCode.B1" title="Link to this definition">#</a></dt>
 <dd><p>‘property(…)’</p>
+<p>Alternate way to specify C1. MicroS per unit length</p>
+<p>DSS property name: <code class="docutils literal notranslate"><span class="pre">B1</span></code>, DSS property index: 23.</p>
 </dd></dl>
 
 <dl class="py attribute">
 <dt class="sig sig-object py" id="altdss.LineCode.LineCode.BaseFreq">
 <span class="sig-name descname"><span class="pre">BaseFreq</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">float</span></em><a class="headerlink" href="#altdss.LineCode.LineCode.BaseFreq" title="Link to this definition">#</a></dt>
 <dd><p>‘property(…)’</p>
+<p>Frequency at which impedances are specified.</p>
+<p>DSS property name: <code class="docutils literal notranslate"><span class="pre">BaseFreq</span></code>, DSS property index: 12.</p>
 </dd></dl>
 
 <dl class="py attribute">
 <dt class="sig sig-object py" id="altdss.LineCode.LineCode.C0">
 <span class="sig-name descname"><span class="pre">C0</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">float</span></em><a class="headerlink" href="#altdss.LineCode.LineCode.C0" title="Link to this definition">#</a></dt>
 <dd><p>‘property(…)’</p>
+<p>Zero-sequence capacitance, nf per unit length. Setting any of R1, R0, X1, X0, C1, C0 forces the program to use the symmetrical component line definition. See also B0.</p>
+<p>DSS property name: <code class="docutils literal notranslate"><span class="pre">C0</span></code>, DSS property index: 7.</p>
 </dd></dl>
 
 <dl class="py attribute">
 <dt class="sig sig-object py" id="altdss.LineCode.LineCode.C1">
 <span class="sig-name descname"><span class="pre">C1</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">float</span></em><a class="headerlink" href="#altdss.LineCode.LineCode.C1" title="Link to this definition">#</a></dt>
 <dd><p>‘property(…)’</p>
+<p>Positive-sequence capacitance, nf per unit length. Setting any of R1, R0, X1, X0, C1, C0 forces the program to use the symmetrical component line definition. See also Cmatrix and B1.</p>
+<p>DSS property name: <code class="docutils literal notranslate"><span class="pre">C1</span></code>, DSS property index: 6.</p>
 </dd></dl>
 
 <dl class="py attribute">
 <dt class="sig sig-object py" id="altdss.LineCode.LineCode.CMatrix">
 <span class="sig-name descname"><span class="pre">CMatrix</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">altdss.types.Float64Array</span></em><a class="headerlink" href="#altdss.LineCode.LineCode.CMatrix" title="Link to this definition">#</a></dt>
 <dd><p>‘property(…)’</p>
+<p>Nodal Capacitance matrix, lower triangle, nf per unit length.Order of the matrix is the number of phases. May be used to specify the shunt capacitance of any line configuration.  For balanced line models, you may use the standard symmetrical component data definition instead.</p>
+<p>DSS property name: <code class="docutils literal notranslate"><span class="pre">CMatrix</span></code>, DSS property index: 11.</p>
 </dd></dl>
 
 <dl class="py attribute">
 <dt class="sig sig-object py" id="altdss.LineCode.LineCode.EmergAmps">
 <span class="sig-name descname"><span class="pre">EmergAmps</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">float</span></em><a class="headerlink" href="#altdss.LineCode.LineCode.EmergAmps" title="Link to this definition">#</a></dt>
 <dd><p>‘property(…)’</p>
+<p>Emergency ampere limit on line (usually one-hour rating).</p>
+<p>DSS property name: <code class="docutils literal notranslate"><span class="pre">EmergAmps</span></code>, DSS property index: 14.</p>
 </dd></dl>
 
 <dl class="py attribute">
 <dt class="sig sig-object py" id="altdss.LineCode.LineCode.FaultRate">
 <span class="sig-name descname"><span class="pre">FaultRate</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">float</span></em><a class="headerlink" href="#altdss.LineCode.LineCode.FaultRate" title="Link to this definition">#</a></dt>
 <dd><p>‘property(…)’</p>
+<p>Number of faults per unit length per year.</p>
+<p>DSS property name: <code class="docutils literal notranslate"><span class="pre">FaultRate</span></code>, DSS property index: 15.</p>
 </dd></dl>
 
 <dl class="py method">
@@ -1105,18 +1184,28 @@ See <code class="docutils literal notranslate"><span class="pre">Obj_ToJSON</spa
 <dt class="sig sig-object py" id="altdss.LineCode.LineCode.LineType">
 <span class="sig-name descname"><span class="pre">LineType</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><a class="reference internal" href="altdss.enums.html#altdss.enums.LineType" title="altdss.enums.LineType"><span class="pre">altdss.enums.LineType</span></a></em><a class="headerlink" href="#altdss.LineCode.LineCode.LineType" title="Link to this definition">#</a></dt>
 <dd><p>‘property(…)’</p>
+<p>Code designating the type of line.
+One of: OH, UG, UG_TS, UG_CN, SWT_LDBRK, SWT_FUSE, SWT_SECT, SWT_REC, SWT_DISC, SWT_BRK, SWT_ELBOW, BUSBAR</p>
+<p>OpenDSS currently does not use this internally. For whatever purpose the user defines. Default is OH.</p>
+<p>DSS property name: <code class="docutils literal notranslate"><span class="pre">LineType</span></code>, DSS property index: 27.</p>
 </dd></dl>
 
 <dl class="py attribute">
 <dt class="sig sig-object py" id="altdss.LineCode.LineCode.LineType_str">
 <span class="sig-name descname"><span class="pre">LineType_str</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">str</span></em><a class="headerlink" href="#altdss.LineCode.LineCode.LineType_str" title="Link to this definition">#</a></dt>
 <dd><p>‘property(…)’</p>
+<p>Code designating the type of line.
+One of: OH, UG, UG_TS, UG_CN, SWT_LDBRK, SWT_FUSE, SWT_SECT, SWT_REC, SWT_DISC, SWT_BRK, SWT_ELBOW, BUSBAR</p>
+<p>OpenDSS currently does not use this internally. For whatever purpose the user defines. Default is OH.</p>
+<p>DSS property name: <code class="docutils literal notranslate"><span class="pre">LineType</span></code>, DSS property index: 27.</p>
 </dd></dl>
 
 <dl class="py attribute">
 <dt class="sig sig-object py" id="altdss.LineCode.LineCode.NPhases">
 <span class="sig-name descname"><span class="pre">NPhases</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">int</span></em><a class="headerlink" href="#altdss.LineCode.LineCode.NPhases" title="Link to this definition">#</a></dt>
 <dd><p>‘property(…)’</p>
+<p>Number of phases in the line this line code data represents.  Setting this property reinitializes the line code.  Impedance matrix is reset for default symmetrical component.</p>
+<p>DSS property name: <code class="docutils literal notranslate"><span class="pre">NPhases</span></code>, DSS property index: 1.</p>
 </dd></dl>
 
 <dl class="py property">
@@ -1128,96 +1217,129 @@ See <code class="docutils literal notranslate"><span class="pre">Obj_ToJSON</spa
 <dt class="sig sig-object py" id="altdss.LineCode.LineCode.Neutral">
 <span class="sig-name descname"><span class="pre">Neutral</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">int</span></em><a class="headerlink" href="#altdss.LineCode.LineCode.Neutral" title="Link to this definition">#</a></dt>
 <dd><p>‘property(…)’</p>
+<p>Designates which conductor is the “neutral” conductor that will be eliminated by Kron reduction. Default is the last conductor (nphases value). After Kron reduction is set to 0. Subsequent issuing of Kron=Yes will not do anything until this property is set to a legal value. Applies only to LineCodes defined by R, X, and C matrix.</p>
+<p>DSS property name: <code class="docutils literal notranslate"><span class="pre">Neutral</span></code>, DSS property index: 22.</p>
 </dd></dl>
 
 <dl class="py attribute">
 <dt class="sig sig-object py" id="altdss.LineCode.LineCode.NormAmps">
 <span class="sig-name descname"><span class="pre">NormAmps</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">float</span></em><a class="headerlink" href="#altdss.LineCode.LineCode.NormAmps" title="Link to this definition">#</a></dt>
 <dd><p>‘property(…)’</p>
+<p>Normal ampere limit on line.  This is the so-called Planning Limit. It may also be the value above which load will have to be dropped in a contingency.  Usually about 75% - 80% of the emergency (one-hour) rating.</p>
+<p>DSS property name: <code class="docutils literal notranslate"><span class="pre">NormAmps</span></code>, DSS property index: 13.</p>
 </dd></dl>
 
 <dl class="py attribute">
 <dt class="sig sig-object py" id="altdss.LineCode.LineCode.PctPerm">
 <span class="sig-name descname"><span class="pre">PctPerm</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">float</span></em><a class="headerlink" href="#altdss.LineCode.LineCode.PctPerm" title="Link to this definition">#</a></dt>
 <dd><p>‘property(…)’</p>
+<p>Percentage of the faults that become permanent.</p>
+<p>DSS property name: <code class="docutils literal notranslate"><span class="pre">PctPerm</span></code>, DSS property index: 16.</p>
 </dd></dl>
 
 <dl class="py attribute">
 <dt class="sig sig-object py" id="altdss.LineCode.LineCode.R0">
 <span class="sig-name descname"><span class="pre">R0</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">float</span></em><a class="headerlink" href="#altdss.LineCode.LineCode.R0" title="Link to this definition">#</a></dt>
 <dd><p>‘property(…)’</p>
+<p>Zero-sequence Resistance, ohms per unit length. Setting any of R1, R0, X1, X0, C1, C0 forces the program to use the symmetrical component line definition.</p>
+<p>DSS property name: <code class="docutils literal notranslate"><span class="pre">R0</span></code>, DSS property index: 4.</p>
 </dd></dl>
 
 <dl class="py attribute">
 <dt class="sig sig-object py" id="altdss.LineCode.LineCode.R1">
 <span class="sig-name descname"><span class="pre">R1</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">float</span></em><a class="headerlink" href="#altdss.LineCode.LineCode.R1" title="Link to this definition">#</a></dt>
 <dd><p>‘property(…)’</p>
+<p>Positive-sequence Resistance, ohms per unit length. Setting any of R1, R0, X1, X0, C1, C0 forces the program to use the symmetrical component line definition. See also Rmatrix.</p>
+<p>DSS property name: <code class="docutils literal notranslate"><span class="pre">R1</span></code>, DSS property index: 2.</p>
 </dd></dl>
 
 <dl class="py attribute">
 <dt class="sig sig-object py" id="altdss.LineCode.LineCode.RMatrix">
 <span class="sig-name descname"><span class="pre">RMatrix</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">altdss.types.Float64Array</span></em><a class="headerlink" href="#altdss.LineCode.LineCode.RMatrix" title="Link to this definition">#</a></dt>
 <dd><p>‘property(…)’</p>
+<p>Resistance matrix, lower triangle, ohms per unit length. Order of the matrix is the number of phases. May be used to specify the impedance of any line configuration.  For balanced line models, you may use the standard symmetrical component data definition instead.</p>
+<p>DSS property name: <code class="docutils literal notranslate"><span class="pre">RMatrix</span></code>, DSS property index: 9.</p>
 </dd></dl>
 
 <dl class="py attribute">
 <dt class="sig sig-object py" id="altdss.LineCode.LineCode.Ratings">
 <span class="sig-name descname"><span class="pre">Ratings</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">altdss.types.Float64Array</span></em><a class="headerlink" href="#altdss.LineCode.LineCode.Ratings" title="Link to this definition">#</a></dt>
 <dd><p>‘property(…)’</p>
+<p>An array of ratings to be used when the seasonal ratings flag is True. It can be used to insert
+multiple ratings to change during a QSTS simulation to evaluate different ratings in lines.</p>
+<p>DSS property name: <code class="docutils literal notranslate"><span class="pre">Ratings</span></code>, DSS property index: 26.</p>
 </dd></dl>
 
 <dl class="py attribute">
 <dt class="sig sig-object py" id="altdss.LineCode.LineCode.Repair">
 <span class="sig-name descname"><span class="pre">Repair</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">float</span></em><a class="headerlink" href="#altdss.LineCode.LineCode.Repair" title="Link to this definition">#</a></dt>
 <dd><p>‘property(…)’</p>
+<p>Hours to repair.</p>
+<p>DSS property name: <code class="docutils literal notranslate"><span class="pre">Repair</span></code>, DSS property index: 17.</p>
 </dd></dl>
 
 <dl class="py attribute">
 <dt class="sig sig-object py" id="altdss.LineCode.LineCode.Rg">
 <span class="sig-name descname"><span class="pre">Rg</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">float</span></em><a class="headerlink" href="#altdss.LineCode.LineCode.Rg" title="Link to this definition">#</a></dt>
 <dd><p>‘property(…)’</p>
+<p>Carson earth return resistance per unit length used to compute impedance values at base frequency.  For making better frequency adjustments. Default is 0.01805 = 60 Hz value in ohms per kft (matches default line impedances). This value is required for harmonic solutions if you wish to adjust the earth return impedances for frequency. If not, set both Rg and Xg = 0.</p>
+<p>DSS property name: <code class="docutils literal notranslate"><span class="pre">Rg</span></code>, DSS property index: 19.</p>
 </dd></dl>
 
 <dl class="py attribute">
 <dt class="sig sig-object py" id="altdss.LineCode.LineCode.Seasons">
 <span class="sig-name descname"><span class="pre">Seasons</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">int</span></em><a class="headerlink" href="#altdss.LineCode.LineCode.Seasons" title="Link to this definition">#</a></dt>
 <dd><p>‘property(…)’</p>
+<p>Defines the number of ratings to be defined for the wire, to be used only when defining seasonal ratings using the “Ratings” property.</p>
+<p>DSS property name: <code class="docutils literal notranslate"><span class="pre">Seasons</span></code>, DSS property index: 25.</p>
 </dd></dl>
 
 <dl class="py attribute">
 <dt class="sig sig-object py" id="altdss.LineCode.LineCode.Units">
 <span class="sig-name descname"><span class="pre">Units</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><a class="reference internal" href="altdss.enums.html#altdss.enums.LengthUnit" title="altdss.enums.LengthUnit"><span class="pre">altdss.enums.LengthUnit</span></a></em><a class="headerlink" href="#altdss.LineCode.LineCode.Units" title="Link to this definition">#</a></dt>
 <dd><p>‘property(…)’</p>
+<p>One of (ohms per …) {none|mi|km|kft|m|me|ft|in|cm}.  Default is none; assumes units agree with length units given in Line object</p>
+<p>DSS property name: <code class="docutils literal notranslate"><span class="pre">Units</span></code>, DSS property index: 8.</p>
 </dd></dl>
 
 <dl class="py attribute">
 <dt class="sig sig-object py" id="altdss.LineCode.LineCode.Units_str">
 <span class="sig-name descname"><span class="pre">Units_str</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">str</span></em><a class="headerlink" href="#altdss.LineCode.LineCode.Units_str" title="Link to this definition">#</a></dt>
 <dd><p>‘property(…)’</p>
+<p>One of (ohms per …) {none|mi|km|kft|m|me|ft|in|cm}.  Default is none; assumes units agree with length units given in Line object</p>
+<p>DSS property name: <code class="docutils literal notranslate"><span class="pre">Units</span></code>, DSS property index: 8.</p>
 </dd></dl>
 
 <dl class="py attribute">
 <dt class="sig sig-object py" id="altdss.LineCode.LineCode.X0">
 <span class="sig-name descname"><span class="pre">X0</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">float</span></em><a class="headerlink" href="#altdss.LineCode.LineCode.X0" title="Link to this definition">#</a></dt>
 <dd><p>‘property(…)’</p>
+<p>Zero-sequence Reactance, ohms per unit length. Setting any of R1, R0, X1, X0, C1, C0 forces the program to use the symmetrical component line definition.</p>
+<p>DSS property name: <code class="docutils literal notranslate"><span class="pre">X0</span></code>, DSS property index: 5.</p>
 </dd></dl>
 
 <dl class="py attribute">
 <dt class="sig sig-object py" id="altdss.LineCode.LineCode.X1">
 <span class="sig-name descname"><span class="pre">X1</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">float</span></em><a class="headerlink" href="#altdss.LineCode.LineCode.X1" title="Link to this definition">#</a></dt>
 <dd><p>‘property(…)’</p>
+<p>Positive-sequence Reactance, ohms per unit length. Setting any of R1, R0, X1, X0, C1, C0 forces the program to use the symmetrical component line definition. See also Xmatrix</p>
+<p>DSS property name: <code class="docutils literal notranslate"><span class="pre">X1</span></code>, DSS property index: 3.</p>
 </dd></dl>
 
 <dl class="py attribute">
 <dt class="sig sig-object py" id="altdss.LineCode.LineCode.XMatrix">
 <span class="sig-name descname"><span class="pre">XMatrix</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">altdss.types.Float64Array</span></em><a class="headerlink" href="#altdss.LineCode.LineCode.XMatrix" title="Link to this definition">#</a></dt>
 <dd><p>‘property(…)’</p>
+<p>Reactance matrix, lower triangle, ohms per unit length. Order of the matrix is the number of phases. May be used to specify the impedance of any line configuration.  For balanced line models, you may use the standard symmetrical component data definition instead.</p>
+<p>DSS property name: <code class="docutils literal notranslate"><span class="pre">XMatrix</span></code>, DSS property index: 10.</p>
 </dd></dl>
 
 <dl class="py attribute">
 <dt class="sig sig-object py" id="altdss.LineCode.LineCode.Xg">
 <span class="sig-name descname"><span class="pre">Xg</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">float</span></em><a class="headerlink" href="#altdss.LineCode.LineCode.Xg" title="Link to this definition">#</a></dt>
 <dd><p>‘property(…)’</p>
+<p>Carson earth return reactance per unit length used to compute impedance values at base frequency.  For making better frequency adjustments. Default value is 0.155081 = 60 Hz value in ohms per kft (matches default line impedances). This value is required for harmonic solutions if you wish to adjust the earth return impedances for frequency. If not, set both Rg and Xg = 0.</p>
+<p>DSS property name: <code class="docutils literal notranslate"><span class="pre">Xg</span></code>, DSS property index: 20.</p>
 </dd></dl>
 
 <dl class="py method">
@@ -1247,8 +1369,8 @@ See <code class="docutils literal notranslate"><span class="pre">Obj_ToJSON</spa
 <dt class="sig sig-object py" id="altdss.LineCode.LineCode.begin_edit">
 <span class="sig-name descname"><span class="pre">begin_edit</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span><a class="headerlink" href="#altdss.LineCode.LineCode.begin_edit" title="Link to this definition">#</a></dt>
 <dd><p>Marks a DSS object for editing</p>
-<p>In the editing mode, some final side-effects of changing properties are post-poned
-until <code class="docutils literal notranslate"><span class="pre">_end_edit</span></code> is called. This side-effects can be somewhat costly, like updating
+<p>In the editing mode, some final side-effects of changing properties are postponed
+until <code class="docutils literal notranslate"><span class="pre">end_edit</span></code> is called. This side-effects can be somewhat costly, like updating
 the model parameters or internal matrices.</p>
 <p>If you don’t have any performance constraint, you may edit each property individually
 without worrying about using <code class="docutils literal notranslate"><span class="pre">begin_edit</span></code> and <code class="docutils literal notranslate"><span class="pre">end_edit</span></code>. For convenience, those are
@@ -1269,6 +1391,8 @@ the <code class="docutils literal notranslate"><span class="pre">Process</span><
 <dt class="sig sig-object py" id="altdss.LineCode.LineCode.rho">
 <span class="sig-name descname"><span class="pre">rho</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">float</span></em><a class="headerlink" href="#altdss.LineCode.LineCode.rho" title="Link to this definition">#</a></dt>
 <dd><p>‘property(…)’</p>
+<p>Default=100 meter ohms.  Earth resitivity used to compute earth correction factor.</p>
+<p>DSS property name: <code class="docutils literal notranslate"><span class="pre">rho</span></code>, DSS property index: 21.</p>
 </dd></dl>
 
 <dl class="py method">
@@ -1307,48 +1431,64 @@ Values used by this function are:</p>
 <dt class="sig sig-object py" id="altdss.LineCode.LineCodeBatch.B0">
 <span class="sig-name descname"><span class="pre">B0</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><a class="reference internal" href="altdss.ArrayProxy.html#altdss.ArrayProxy.BatchFloat64ArrayProxy" title="altdss.ArrayProxy.BatchFloat64ArrayProxy"><span class="pre">altdss.ArrayProxy.BatchFloat64ArrayProxy</span></a></em><a class="headerlink" href="#altdss.LineCode.LineCodeBatch.B0" title="Link to this definition">#</a></dt>
 <dd><p>‘property(…)’</p>
+<p>Alternate way to specify C0. MicroS per unit length</p>
+<p>DSS property name: <code class="docutils literal notranslate"><span class="pre">B0</span></code>, DSS property index: 24.</p>
 </dd></dl>
 
 <dl class="py attribute">
 <dt class="sig sig-object py" id="altdss.LineCode.LineCodeBatch.B1">
 <span class="sig-name descname"><span class="pre">B1</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><a class="reference internal" href="altdss.ArrayProxy.html#altdss.ArrayProxy.BatchFloat64ArrayProxy" title="altdss.ArrayProxy.BatchFloat64ArrayProxy"><span class="pre">altdss.ArrayProxy.BatchFloat64ArrayProxy</span></a></em><a class="headerlink" href="#altdss.LineCode.LineCodeBatch.B1" title="Link to this definition">#</a></dt>
 <dd><p>‘property(…)’</p>
+<p>Alternate way to specify C1. MicroS per unit length</p>
+<p>DSS property name: <code class="docutils literal notranslate"><span class="pre">B1</span></code>, DSS property index: 23.</p>
 </dd></dl>
 
 <dl class="py attribute">
 <dt class="sig sig-object py" id="altdss.LineCode.LineCodeBatch.BaseFreq">
 <span class="sig-name descname"><span class="pre">BaseFreq</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><a class="reference internal" href="altdss.ArrayProxy.html#altdss.ArrayProxy.BatchFloat64ArrayProxy" title="altdss.ArrayProxy.BatchFloat64ArrayProxy"><span class="pre">altdss.ArrayProxy.BatchFloat64ArrayProxy</span></a></em><a class="headerlink" href="#altdss.LineCode.LineCodeBatch.BaseFreq" title="Link to this definition">#</a></dt>
 <dd><p>‘property(…)’</p>
+<p>Frequency at which impedances are specified.</p>
+<p>DSS property name: <code class="docutils literal notranslate"><span class="pre">BaseFreq</span></code>, DSS property index: 12.</p>
 </dd></dl>
 
 <dl class="py attribute">
 <dt class="sig sig-object py" id="altdss.LineCode.LineCodeBatch.C0">
 <span class="sig-name descname"><span class="pre">C0</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><a class="reference internal" href="altdss.ArrayProxy.html#altdss.ArrayProxy.BatchFloat64ArrayProxy" title="altdss.ArrayProxy.BatchFloat64ArrayProxy"><span class="pre">altdss.ArrayProxy.BatchFloat64ArrayProxy</span></a></em><a class="headerlink" href="#altdss.LineCode.LineCodeBatch.C0" title="Link to this definition">#</a></dt>
 <dd><p>‘property(…)’</p>
+<p>Zero-sequence capacitance, nf per unit length. Setting any of R1, R0, X1, X0, C1, C0 forces the program to use the symmetrical component line definition. See also B0.</p>
+<p>DSS property name: <code class="docutils literal notranslate"><span class="pre">C0</span></code>, DSS property index: 7.</p>
 </dd></dl>
 
 <dl class="py attribute">
 <dt class="sig sig-object py" id="altdss.LineCode.LineCodeBatch.C1">
 <span class="sig-name descname"><span class="pre">C1</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><a class="reference internal" href="altdss.ArrayProxy.html#altdss.ArrayProxy.BatchFloat64ArrayProxy" title="altdss.ArrayProxy.BatchFloat64ArrayProxy"><span class="pre">altdss.ArrayProxy.BatchFloat64ArrayProxy</span></a></em><a class="headerlink" href="#altdss.LineCode.LineCodeBatch.C1" title="Link to this definition">#</a></dt>
 <dd><p>‘property(…)’</p>
+<p>Positive-sequence capacitance, nf per unit length. Setting any of R1, R0, X1, X0, C1, C0 forces the program to use the symmetrical component line definition. See also Cmatrix and B1.</p>
+<p>DSS property name: <code class="docutils literal notranslate"><span class="pre">C1</span></code>, DSS property index: 6.</p>
 </dd></dl>
 
 <dl class="py attribute">
 <dt class="sig sig-object py" id="altdss.LineCode.LineCodeBatch.CMatrix">
 <span class="sig-name descname"><span class="pre">CMatrix</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">List</span><span class="p"><span class="pre">[</span></span><span class="pre">altdss.types.Float64Array</span><span class="p"><span class="pre">]</span></span></em><a class="headerlink" href="#altdss.LineCode.LineCodeBatch.CMatrix" title="Link to this definition">#</a></dt>
 <dd><p>‘property(…)’</p>
+<p>Nodal Capacitance matrix, lower triangle, nf per unit length.Order of the matrix is the number of phases. May be used to specify the shunt capacitance of any line configuration.  For balanced line models, you may use the standard symmetrical component data definition instead.</p>
+<p>DSS property name: <code class="docutils literal notranslate"><span class="pre">CMatrix</span></code>, DSS property index: 11.</p>
 </dd></dl>
 
 <dl class="py attribute">
 <dt class="sig sig-object py" id="altdss.LineCode.LineCodeBatch.EmergAmps">
 <span class="sig-name descname"><span class="pre">EmergAmps</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><a class="reference internal" href="altdss.ArrayProxy.html#altdss.ArrayProxy.BatchFloat64ArrayProxy" title="altdss.ArrayProxy.BatchFloat64ArrayProxy"><span class="pre">altdss.ArrayProxy.BatchFloat64ArrayProxy</span></a></em><a class="headerlink" href="#altdss.LineCode.LineCodeBatch.EmergAmps" title="Link to this definition">#</a></dt>
 <dd><p>‘property(…)’</p>
+<p>Emergency ampere limit on line (usually one-hour rating).</p>
+<p>DSS property name: <code class="docutils literal notranslate"><span class="pre">EmergAmps</span></code>, DSS property index: 14.</p>
 </dd></dl>
 
 <dl class="py attribute">
 <dt class="sig sig-object py" id="altdss.LineCode.LineCodeBatch.FaultRate">
 <span class="sig-name descname"><span class="pre">FaultRate</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><a class="reference internal" href="altdss.ArrayProxy.html#altdss.ArrayProxy.BatchFloat64ArrayProxy" title="altdss.ArrayProxy.BatchFloat64ArrayProxy"><span class="pre">altdss.ArrayProxy.BatchFloat64ArrayProxy</span></a></em><a class="headerlink" href="#altdss.LineCode.LineCodeBatch.FaultRate" title="Link to this definition">#</a></dt>
 <dd><p>‘property(…)’</p>
+<p>Number of faults per unit length per year.</p>
+<p>DSS property name: <code class="docutils literal notranslate"><span class="pre">FaultRate</span></code>, DSS property index: 15.</p>
 </dd></dl>
 
 <dl class="py method">
@@ -1376,18 +1516,28 @@ Values used by this function are:</p>
 <dt class="sig sig-object py" id="altdss.LineCode.LineCodeBatch.LineType">
 <span class="sig-name descname"><span class="pre">LineType</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><a class="reference internal" href="altdss.ArrayProxy.html#altdss.ArrayProxy.BatchInt32ArrayProxy" title="altdss.ArrayProxy.BatchInt32ArrayProxy"><span class="pre">altdss.ArrayProxy.BatchInt32ArrayProxy</span></a></em><a class="headerlink" href="#altdss.LineCode.LineCodeBatch.LineType" title="Link to this definition">#</a></dt>
 <dd><p>‘property(…)’</p>
+<p>Code designating the type of line.
+One of: OH, UG, UG_TS, UG_CN, SWT_LDBRK, SWT_FUSE, SWT_SECT, SWT_REC, SWT_DISC, SWT_BRK, SWT_ELBOW, BUSBAR</p>
+<p>OpenDSS currently does not use this internally. For whatever purpose the user defines. Default is OH.</p>
+<p>DSS property name: <code class="docutils literal notranslate"><span class="pre">LineType</span></code>, DSS property index: 27.</p>
 </dd></dl>
 
 <dl class="py attribute">
 <dt class="sig sig-object py" id="altdss.LineCode.LineCodeBatch.LineType_str">
 <span class="sig-name descname"><span class="pre">LineType_str</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">List</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">]</span></span></em><a class="headerlink" href="#altdss.LineCode.LineCodeBatch.LineType_str" title="Link to this definition">#</a></dt>
 <dd><p>‘property(…)’</p>
+<p>Code designating the type of line.
+One of: OH, UG, UG_TS, UG_CN, SWT_LDBRK, SWT_FUSE, SWT_SECT, SWT_REC, SWT_DISC, SWT_BRK, SWT_ELBOW, BUSBAR</p>
+<p>OpenDSS currently does not use this internally. For whatever purpose the user defines. Default is OH.</p>
+<p>DSS property name: <code class="docutils literal notranslate"><span class="pre">LineType</span></code>, DSS property index: 27.</p>
 </dd></dl>
 
 <dl class="py attribute">
 <dt class="sig sig-object py" id="altdss.LineCode.LineCodeBatch.NPhases">
 <span class="sig-name descname"><span class="pre">NPhases</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><a class="reference internal" href="altdss.ArrayProxy.html#altdss.ArrayProxy.BatchInt32ArrayProxy" title="altdss.ArrayProxy.BatchInt32ArrayProxy"><span class="pre">altdss.ArrayProxy.BatchInt32ArrayProxy</span></a></em><a class="headerlink" href="#altdss.LineCode.LineCodeBatch.NPhases" title="Link to this definition">#</a></dt>
 <dd><p>‘property(…)’</p>
+<p>Number of phases in the line this line code data represents.  Setting this property reinitializes the line code.  Impedance matrix is reset for default symmetrical component.</p>
+<p>DSS property name: <code class="docutils literal notranslate"><span class="pre">NPhases</span></code>, DSS property index: 1.</p>
 </dd></dl>
 
 <dl class="py property">
@@ -1399,96 +1549,129 @@ Values used by this function are:</p>
 <dt class="sig sig-object py" id="altdss.LineCode.LineCodeBatch.Neutral">
 <span class="sig-name descname"><span class="pre">Neutral</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><a class="reference internal" href="altdss.ArrayProxy.html#altdss.ArrayProxy.BatchInt32ArrayProxy" title="altdss.ArrayProxy.BatchInt32ArrayProxy"><span class="pre">altdss.ArrayProxy.BatchInt32ArrayProxy</span></a></em><a class="headerlink" href="#altdss.LineCode.LineCodeBatch.Neutral" title="Link to this definition">#</a></dt>
 <dd><p>‘property(…)’</p>
+<p>Designates which conductor is the “neutral” conductor that will be eliminated by Kron reduction. Default is the last conductor (nphases value). After Kron reduction is set to 0. Subsequent issuing of Kron=Yes will not do anything until this property is set to a legal value. Applies only to LineCodes defined by R, X, and C matrix.</p>
+<p>DSS property name: <code class="docutils literal notranslate"><span class="pre">Neutral</span></code>, DSS property index: 22.</p>
 </dd></dl>
 
 <dl class="py attribute">
 <dt class="sig sig-object py" id="altdss.LineCode.LineCodeBatch.NormAmps">
 <span class="sig-name descname"><span class="pre">NormAmps</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><a class="reference internal" href="altdss.ArrayProxy.html#altdss.ArrayProxy.BatchFloat64ArrayProxy" title="altdss.ArrayProxy.BatchFloat64ArrayProxy"><span class="pre">altdss.ArrayProxy.BatchFloat64ArrayProxy</span></a></em><a class="headerlink" href="#altdss.LineCode.LineCodeBatch.NormAmps" title="Link to this definition">#</a></dt>
 <dd><p>‘property(…)’</p>
+<p>Normal ampere limit on line.  This is the so-called Planning Limit. It may also be the value above which load will have to be dropped in a contingency.  Usually about 75% - 80% of the emergency (one-hour) rating.</p>
+<p>DSS property name: <code class="docutils literal notranslate"><span class="pre">NormAmps</span></code>, DSS property index: 13.</p>
 </dd></dl>
 
 <dl class="py attribute">
 <dt class="sig sig-object py" id="altdss.LineCode.LineCodeBatch.PctPerm">
 <span class="sig-name descname"><span class="pre">PctPerm</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><a class="reference internal" href="altdss.ArrayProxy.html#altdss.ArrayProxy.BatchFloat64ArrayProxy" title="altdss.ArrayProxy.BatchFloat64ArrayProxy"><span class="pre">altdss.ArrayProxy.BatchFloat64ArrayProxy</span></a></em><a class="headerlink" href="#altdss.LineCode.LineCodeBatch.PctPerm" title="Link to this definition">#</a></dt>
 <dd><p>‘property(…)’</p>
+<p>Percentage of the faults that become permanent.</p>
+<p>DSS property name: <code class="docutils literal notranslate"><span class="pre">PctPerm</span></code>, DSS property index: 16.</p>
 </dd></dl>
 
 <dl class="py attribute">
 <dt class="sig sig-object py" id="altdss.LineCode.LineCodeBatch.R0">
 <span class="sig-name descname"><span class="pre">R0</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><a class="reference internal" href="altdss.ArrayProxy.html#altdss.ArrayProxy.BatchFloat64ArrayProxy" title="altdss.ArrayProxy.BatchFloat64ArrayProxy"><span class="pre">altdss.ArrayProxy.BatchFloat64ArrayProxy</span></a></em><a class="headerlink" href="#altdss.LineCode.LineCodeBatch.R0" title="Link to this definition">#</a></dt>
 <dd><p>‘property(…)’</p>
+<p>Zero-sequence Resistance, ohms per unit length. Setting any of R1, R0, X1, X0, C1, C0 forces the program to use the symmetrical component line definition.</p>
+<p>DSS property name: <code class="docutils literal notranslate"><span class="pre">R0</span></code>, DSS property index: 4.</p>
 </dd></dl>
 
 <dl class="py attribute">
 <dt class="sig sig-object py" id="altdss.LineCode.LineCodeBatch.R1">
 <span class="sig-name descname"><span class="pre">R1</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><a class="reference internal" href="altdss.ArrayProxy.html#altdss.ArrayProxy.BatchFloat64ArrayProxy" title="altdss.ArrayProxy.BatchFloat64ArrayProxy"><span class="pre">altdss.ArrayProxy.BatchFloat64ArrayProxy</span></a></em><a class="headerlink" href="#altdss.LineCode.LineCodeBatch.R1" title="Link to this definition">#</a></dt>
 <dd><p>‘property(…)’</p>
+<p>Positive-sequence Resistance, ohms per unit length. Setting any of R1, R0, X1, X0, C1, C0 forces the program to use the symmetrical component line definition. See also Rmatrix.</p>
+<p>DSS property name: <code class="docutils literal notranslate"><span class="pre">R1</span></code>, DSS property index: 2.</p>
 </dd></dl>
 
 <dl class="py attribute">
 <dt class="sig sig-object py" id="altdss.LineCode.LineCodeBatch.RMatrix">
 <span class="sig-name descname"><span class="pre">RMatrix</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">List</span><span class="p"><span class="pre">[</span></span><span class="pre">altdss.types.Float64Array</span><span class="p"><span class="pre">]</span></span></em><a class="headerlink" href="#altdss.LineCode.LineCodeBatch.RMatrix" title="Link to this definition">#</a></dt>
 <dd><p>‘property(…)’</p>
+<p>Resistance matrix, lower triangle, ohms per unit length. Order of the matrix is the number of phases. May be used to specify the impedance of any line configuration.  For balanced line models, you may use the standard symmetrical component data definition instead.</p>
+<p>DSS property name: <code class="docutils literal notranslate"><span class="pre">RMatrix</span></code>, DSS property index: 9.</p>
 </dd></dl>
 
 <dl class="py attribute">
 <dt class="sig sig-object py" id="altdss.LineCode.LineCodeBatch.Ratings">
 <span class="sig-name descname"><span class="pre">Ratings</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">List</span><span class="p"><span class="pre">[</span></span><span class="pre">altdss.types.Float64Array</span><span class="p"><span class="pre">]</span></span></em><a class="headerlink" href="#altdss.LineCode.LineCodeBatch.Ratings" title="Link to this definition">#</a></dt>
 <dd><p>‘property(…)’</p>
+<p>An array of ratings to be used when the seasonal ratings flag is True. It can be used to insert
+multiple ratings to change during a QSTS simulation to evaluate different ratings in lines.</p>
+<p>DSS property name: <code class="docutils literal notranslate"><span class="pre">Ratings</span></code>, DSS property index: 26.</p>
 </dd></dl>
 
 <dl class="py attribute">
 <dt class="sig sig-object py" id="altdss.LineCode.LineCodeBatch.Repair">
 <span class="sig-name descname"><span class="pre">Repair</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><a class="reference internal" href="altdss.ArrayProxy.html#altdss.ArrayProxy.BatchFloat64ArrayProxy" title="altdss.ArrayProxy.BatchFloat64ArrayProxy"><span class="pre">altdss.ArrayProxy.BatchFloat64ArrayProxy</span></a></em><a class="headerlink" href="#altdss.LineCode.LineCodeBatch.Repair" title="Link to this definition">#</a></dt>
 <dd><p>‘property(…)’</p>
+<p>Hours to repair.</p>
+<p>DSS property name: <code class="docutils literal notranslate"><span class="pre">Repair</span></code>, DSS property index: 17.</p>
 </dd></dl>
 
 <dl class="py attribute">
 <dt class="sig sig-object py" id="altdss.LineCode.LineCodeBatch.Rg">
 <span class="sig-name descname"><span class="pre">Rg</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><a class="reference internal" href="altdss.ArrayProxy.html#altdss.ArrayProxy.BatchFloat64ArrayProxy" title="altdss.ArrayProxy.BatchFloat64ArrayProxy"><span class="pre">altdss.ArrayProxy.BatchFloat64ArrayProxy</span></a></em><a class="headerlink" href="#altdss.LineCode.LineCodeBatch.Rg" title="Link to this definition">#</a></dt>
 <dd><p>‘property(…)’</p>
+<p>Carson earth return resistance per unit length used to compute impedance values at base frequency.  For making better frequency adjustments. Default is 0.01805 = 60 Hz value in ohms per kft (matches default line impedances). This value is required for harmonic solutions if you wish to adjust the earth return impedances for frequency. If not, set both Rg and Xg = 0.</p>
+<p>DSS property name: <code class="docutils literal notranslate"><span class="pre">Rg</span></code>, DSS property index: 19.</p>
 </dd></dl>
 
 <dl class="py attribute">
 <dt class="sig sig-object py" id="altdss.LineCode.LineCodeBatch.Seasons">
 <span class="sig-name descname"><span class="pre">Seasons</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><a class="reference internal" href="altdss.ArrayProxy.html#altdss.ArrayProxy.BatchInt32ArrayProxy" title="altdss.ArrayProxy.BatchInt32ArrayProxy"><span class="pre">altdss.ArrayProxy.BatchInt32ArrayProxy</span></a></em><a class="headerlink" href="#altdss.LineCode.LineCodeBatch.Seasons" title="Link to this definition">#</a></dt>
 <dd><p>‘property(…)’</p>
+<p>Defines the number of ratings to be defined for the wire, to be used only when defining seasonal ratings using the “Ratings” property.</p>
+<p>DSS property name: <code class="docutils literal notranslate"><span class="pre">Seasons</span></code>, DSS property index: 25.</p>
 </dd></dl>
 
 <dl class="py attribute">
 <dt class="sig sig-object py" id="altdss.LineCode.LineCodeBatch.Units">
 <span class="sig-name descname"><span class="pre">Units</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><a class="reference internal" href="altdss.ArrayProxy.html#altdss.ArrayProxy.BatchInt32ArrayProxy" title="altdss.ArrayProxy.BatchInt32ArrayProxy"><span class="pre">altdss.ArrayProxy.BatchInt32ArrayProxy</span></a></em><a class="headerlink" href="#altdss.LineCode.LineCodeBatch.Units" title="Link to this definition">#</a></dt>
 <dd><p>‘property(…)’</p>
+<p>One of (ohms per …) {none|mi|km|kft|m|me|ft|in|cm}.  Default is none; assumes units agree with length units given in Line object</p>
+<p>DSS property name: <code class="docutils literal notranslate"><span class="pre">Units</span></code>, DSS property index: 8.</p>
 </dd></dl>
 
 <dl class="py attribute">
 <dt class="sig sig-object py" id="altdss.LineCode.LineCodeBatch.Units_str">
 <span class="sig-name descname"><span class="pre">Units_str</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">List</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">]</span></span></em><a class="headerlink" href="#altdss.LineCode.LineCodeBatch.Units_str" title="Link to this definition">#</a></dt>
 <dd><p>‘property(…)’</p>
+<p>One of (ohms per …) {none|mi|km|kft|m|me|ft|in|cm}.  Default is none; assumes units agree with length units given in Line object</p>
+<p>DSS property name: <code class="docutils literal notranslate"><span class="pre">Units</span></code>, DSS property index: 8.</p>
 </dd></dl>
 
 <dl class="py attribute">
 <dt class="sig sig-object py" id="altdss.LineCode.LineCodeBatch.X0">
 <span class="sig-name descname"><span class="pre">X0</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><a class="reference internal" href="altdss.ArrayProxy.html#altdss.ArrayProxy.BatchFloat64ArrayProxy" title="altdss.ArrayProxy.BatchFloat64ArrayProxy"><span class="pre">altdss.ArrayProxy.BatchFloat64ArrayProxy</span></a></em><a class="headerlink" href="#altdss.LineCode.LineCodeBatch.X0" title="Link to this definition">#</a></dt>
 <dd><p>‘property(…)’</p>
+<p>Zero-sequence Reactance, ohms per unit length. Setting any of R1, R0, X1, X0, C1, C0 forces the program to use the symmetrical component line definition.</p>
+<p>DSS property name: <code class="docutils literal notranslate"><span class="pre">X0</span></code>, DSS property index: 5.</p>
 </dd></dl>
 
 <dl class="py attribute">
 <dt class="sig sig-object py" id="altdss.LineCode.LineCodeBatch.X1">
 <span class="sig-name descname"><span class="pre">X1</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><a class="reference internal" href="altdss.ArrayProxy.html#altdss.ArrayProxy.BatchFloat64ArrayProxy" title="altdss.ArrayProxy.BatchFloat64ArrayProxy"><span class="pre">altdss.ArrayProxy.BatchFloat64ArrayProxy</span></a></em><a class="headerlink" href="#altdss.LineCode.LineCodeBatch.X1" title="Link to this definition">#</a></dt>
 <dd><p>‘property(…)’</p>
+<p>Positive-sequence Reactance, ohms per unit length. Setting any of R1, R0, X1, X0, C1, C0 forces the program to use the symmetrical component line definition. See also Xmatrix</p>
+<p>DSS property name: <code class="docutils literal notranslate"><span class="pre">X1</span></code>, DSS property index: 3.</p>
 </dd></dl>
 
 <dl class="py attribute">
 <dt class="sig sig-object py" id="altdss.LineCode.LineCodeBatch.XMatrix">
 <span class="sig-name descname"><span class="pre">XMatrix</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">List</span><span class="p"><span class="pre">[</span></span><span class="pre">altdss.types.Float64Array</span><span class="p"><span class="pre">]</span></span></em><a class="headerlink" href="#altdss.LineCode.LineCodeBatch.XMatrix" title="Link to this definition">#</a></dt>
 <dd><p>‘property(…)’</p>
+<p>Reactance matrix, lower triangle, ohms per unit length. Order of the matrix is the number of phases. May be used to specify the impedance of any line configuration.  For balanced line models, you may use the standard symmetrical component data definition instead.</p>
+<p>DSS property name: <code class="docutils literal notranslate"><span class="pre">XMatrix</span></code>, DSS property index: 10.</p>
 </dd></dl>
 
 <dl class="py attribute">
 <dt class="sig sig-object py" id="altdss.LineCode.LineCodeBatch.Xg">
 <span class="sig-name descname"><span class="pre">Xg</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><a class="reference internal" href="altdss.ArrayProxy.html#altdss.ArrayProxy.BatchFloat64ArrayProxy" title="altdss.ArrayProxy.BatchFloat64ArrayProxy"><span class="pre">altdss.ArrayProxy.BatchFloat64ArrayProxy</span></a></em><a class="headerlink" href="#altdss.LineCode.LineCodeBatch.Xg" title="Link to this definition">#</a></dt>
 <dd><p>‘property(…)’</p>
+<p>Carson earth return reactance per unit length used to compute impedance values at base frequency.  For making better frequency adjustments. Default value is 0.155081 = 60 Hz value in ohms per kft (matches default line impedances). This value is required for harmonic solutions if you wish to adjust the earth return impedances for frequency. If not, set both Rg and Xg = 0.</p>
+<p>DSS property name: <code class="docutils literal notranslate"><span class="pre">Xg</span></code>, DSS property index: 20.</p>
 </dd></dl>
 
 <dl class="py method">
@@ -1518,11 +1701,29 @@ Values used by this function are:</p>
 <dd></dd></dl>
 
 <dl class="py method">
+<dt class="sig sig-object py" id="altdss.LineCode.LineCodeBatch.batch">
+<span class="sig-name descname"><span class="pre">batch</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference internal" href="altdss.Batch.html#altdss.Batch.DSSBatch" title="altdss.Batch.DSSBatch"><span class="pre">altdss.Batch.DSSBatch</span></a></span></span><a class="headerlink" href="#altdss.LineCode.LineCodeBatch.batch" title="Link to this definition">#</a></dt>
+<dd><p>Filter a batch using integer or float DSS properties, returning a new batch.</p>
+<p>For integers, provide a single value to match.</p>
+<p>For floats, provide a range as a 2-valued tuple/list (min value, max value), or an exact value to value (not recommended).</p>
+<p>Multiple properties can be listed to allow filtering various conditions.</p>
+<p>Example for loads:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span>    <span class="c1"># Create an initial batch using a regular expression</span>
+    <span class="n">abc_loads</span> <span class="o">=</span> <span class="n">altdss</span><span class="o">.</span><span class="n">Load</span><span class="o">.</span><span class="n">batch</span><span class="p">(</span><span class="n">re</span><span class="o">=</span><span class="sa">r</span><span class="s1">&#39;^abc.*$&#39;</span><span class="p">)</span> <span class="c1"># a batch of all loads with names starting with &quot;abc&quot;</span>
+    <span class="n">abc_loads_filtered</span> <span class="o">=</span> <span class="n">abc_loads</span><span class="o">.</span><span class="n">batch</span><span class="p">(</span><span class="n">Class</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">Phases</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">kV</span><span class="o">=</span><span class="p">(</span><span class="mf">0.1</span><span class="p">,</span> <span class="mf">1.0</span><span class="p">))</span>
+
+    <span class="c1"># Create an initial batch, already filtered</span>
+    <span class="n">abc_loads_filtered</span> <span class="o">=</span> <span class="n">altdss</span><span class="o">.</span><span class="n">Load</span><span class="o">.</span><span class="n">batch</span><span class="p">(</span><span class="n">re</span><span class="o">=</span><span class="sa">r</span><span class="s1">&#39;^abc.*$&#39;</span><span class="p">,</span> <span class="n">Class</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">Phases</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">kV</span><span class="o">=</span><span class="p">(</span><span class="mf">0.1</span><span class="p">,</span> <span class="mf">1.0</span><span class="p">))</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="py method">
 <dt class="sig sig-object py" id="altdss.LineCode.LineCodeBatch.begin_edit">
 <span class="sig-name descname"><span class="pre">begin_edit</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span><a class="headerlink" href="#altdss.LineCode.LineCodeBatch.begin_edit" title="Link to this definition">#</a></dt>
 <dd><p>Marks for editing all DSS objects in the batch</p>
-<p>In the editing mode, some final side-effects of changing properties are post-poned
-until <code class="docutils literal notranslate"><span class="pre">_end_edit</span></code> is called. This side-effects can be somewhat costly, like updating
+<p>In the editing mode, some final side-effects of changing properties are postponed
+until <code class="docutils literal notranslate"><span class="pre">end_edit</span></code> is called. This side-effects can be somewhat costly, like updating
 the model parameters or internal matrices.</p>
 <p>If you don’t have any performance constraint, you may edit each property individually
 without worrying about using <code class="docutils literal notranslate"><span class="pre">begin_edit</span></code> and <code class="docutils literal notranslate"><span class="pre">end_edit</span></code>. For convenience, those are
@@ -1543,6 +1744,8 @@ the <code class="docutils literal notranslate"><span class="pre">Process</span><
 <dt class="sig sig-object py" id="altdss.LineCode.LineCodeBatch.rho">
 <span class="sig-name descname"><span class="pre">rho</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><a class="reference internal" href="altdss.ArrayProxy.html#altdss.ArrayProxy.BatchFloat64ArrayProxy" title="altdss.ArrayProxy.BatchFloat64ArrayProxy"><span class="pre">altdss.ArrayProxy.BatchFloat64ArrayProxy</span></a></em><a class="headerlink" href="#altdss.LineCode.LineCodeBatch.rho" title="Link to this definition">#</a></dt>
 <dd><p>‘property(…)’</p>
+<p>Default=100 meter ohms.  Earth resitivity used to compute earth correction factor.</p>
+<p>DSS property name: <code class="docutils literal notranslate"><span class="pre">rho</span></code>, DSS property index: 21.</p>
 </dd></dl>
 
 <dl class="py method">
@@ -2589,6 +2792,7 @@ In either case, this is followed by: for k in F:  D[k] = F[k]</p>
 <li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#altdss.LineCode.LineCodeBatch.__init__"><code class="docutils literal notranslate"><span class="pre">LineCodeBatch.__init__()</span></code></a></li>
 <li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#altdss.LineCode.LineCodeBatch.__iter__"><code class="docutils literal notranslate"><span class="pre">LineCodeBatch.__iter__()</span></code></a></li>
 <li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#altdss.LineCode.LineCodeBatch.__len__"><code class="docutils literal notranslate"><span class="pre">LineCodeBatch.__len__()</span></code></a></li>
+<li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#altdss.LineCode.LineCodeBatch.batch"><code class="docutils literal notranslate"><span class="pre">LineCodeBatch.batch()</span></code></a></li>
 <li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#altdss.LineCode.LineCodeBatch.begin_edit"><code class="docutils literal notranslate"><span class="pre">LineCodeBatch.begin_edit()</span></code></a></li>
 <li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#altdss.LineCode.LineCodeBatch.end_edit"><code class="docutils literal notranslate"><span class="pre">LineCodeBatch.end_edit()</span></code></a></li>
 <li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#altdss.LineCode.LineCodeBatch.rho"><code class="docutils literal notranslate"><span class="pre">LineCodeBatch.rho</span></code></a></li>

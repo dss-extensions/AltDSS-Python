@@ -911,6 +911,14 @@ Bases: {py:obj}`altdss.Batch.DSSBatch`
 
 ````
 
+````{py:method} batch(**kwargs) -> altdss.Batch.DSSBatch
+:canonical: altdss.LineGeometry.LineGeometryBatch.batch
+
+```{autodoc2-docstring} altdss.LineGeometry.LineGeometryBatch.batch
+```
+
+````
+
 ````{py:method} begin_edit() -> None
 :canonical: altdss.LineGeometry.LineGeometryBatch.begin_edit
 

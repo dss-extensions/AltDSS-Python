@@ -7,7 +7,7 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Index &#8212; AltDSS-Python 0.2.0 documentation</title>
+    <title>Index &#8212; AltDSS-Python 0.2.2 documentation</title>
   
   
   
@@ -37,7 +37,7 @@
 <link rel="preload" as="script" href="_static/scripts/pydata-sphinx-theme.js?digest=8d27b9dea8ad943066ae" />
   <script src="_static/vendor/fontawesome/6.5.1/js/all.min.js?digest=8d27b9dea8ad943066ae"></script>
 
-    <script src="_static/documentation_options.js?v=7f7c277e"></script>
+    <script src="_static/documentation_options.js?v=d3f42505"></script>
     <script src="_static/doctools.js?v=888ff710"></script>
     <script src="_static/sphinx_highlight.js?v=dc90522c"></script>
     <script src="_static/scripts/sphinx-book-theme.js?v=efea14e4"></script>
@@ -138,8 +138,8 @@
       
     
     
-    <img src="_static/altdss-python.svg" class="logo__image only-light" alt="AltDSS-Python 0.2.0 documentation - Home"/>
-    <script>document.write(`<img src="_static/altdss-python-dark.svg" class="logo__image only-dark" alt="AltDSS-Python 0.2.0 documentation - Home"/>`);</script>
+    <img src="_static/altdss-python.svg" class="logo__image only-light" alt="AltDSS-Python 0.2.2 documentation - Home"/>
+    <script>document.write(`<img src="_static/altdss-python-dark.svg" class="logo__image only-dark" alt="AltDSS-Python 0.2.2 documentation - Home"/>`);</script>
   
   
 </a></div>
@@ -161,6 +161,7 @@
 <li class="toctree-l1"><a class="reference internal" href="index.html">AltDSS-Python</a></li>
 <li class="toctree-l1"><a class="reference internal" href="Architecture.html">Architecture details</a></li>
 <li class="toctree-l1"><a class="reference internal" href="examples/GettingStarted.html">Getting Started</a></li>
+<li class="toctree-l1"><a class="reference internal" href="examples/Batches.html">Batches</a></li>
 <li class="toctree-l1"><a class="reference internal" href="changelog.html">Changelog</a></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">API Reference</span></p>
@@ -4205,6 +4206,8 @@ document.write(`
 </li>
         <li><a href="apidocs/altdss/altdss.Batch.html#altdss.Batch.DSSBatch.__getitem__">(altdss.Batch.DSSBatch method)</a>
 </li>
+        <li><a href="apidocs/altdss/altdss.Batch.html#altdss.Batch.NonUniformBatch.__getitem__">(altdss.Batch.NonUniformBatch method)</a>
+</li>
         <li><a href="apidocs/altdss/altdss.Bus.html#altdss.Bus.BusBatch.__getitem__">(altdss.Bus.BusBatch method)</a>
 </li>
         <li><a href="apidocs/altdss/altdss.Bus.html#altdss.Bus.IBuses.__getitem__">(altdss.Bus.IBuses method)</a>
@@ -4224,6 +4227,8 @@ document.write(`
         <li><a href="apidocs/altdss/altdss.CapControl.html#altdss.CapControl.CapControlProperties.__getitem__">(altdss.CapControl.CapControlProperties method)</a>
 </li>
         <li><a href="apidocs/altdss/altdss.CapControl.html#altdss.CapControl.ICapControl.__getitem__">(altdss.CapControl.ICapControl method)</a>
+</li>
+        <li><a href="apidocs/altdss/altdss.CircuitElement.html#altdss.CircuitElement.CircuitElementBatch.__getitem__">(altdss.CircuitElement.CircuitElementBatch method)</a>
 </li>
         <li><a href="apidocs/altdss/altdss.CNData.html#altdss.CNData.CNDataBatch.__getitem__">(altdss.CNData.CNDataBatch method)</a>
 </li>
@@ -4410,6 +4415,10 @@ document.write(`
         <li><a href="apidocs/altdss/altdss.Monitor.html#altdss.Monitor.MonitorBatchProperties.__getitem__">(altdss.Monitor.MonitorBatchProperties method)</a>
 </li>
         <li><a href="apidocs/altdss/altdss.Monitor.html#altdss.Monitor.MonitorProperties.__getitem__">(altdss.Monitor.MonitorProperties method)</a>
+</li>
+        <li><a href="apidocs/altdss/altdss.PCElement.html#altdss.PCElement.PCElementBatch.__getitem__">(altdss.PCElement.PCElementBatch method)</a>
+</li>
+        <li><a href="apidocs/altdss/altdss.PDElement.html#altdss.PDElement.PDElementBatch.__getitem__">(altdss.PDElement.PDElementBatch method)</a>
 </li>
         <li><a href="apidocs/altdss/altdss.PriceShape.html#altdss.PriceShape.IPriceShape.__getitem__">(altdss.PriceShape.IPriceShape method)</a>
 </li>
@@ -5616,12 +5625,8 @@ document.write(`
         <li><a href="apidocs/altdss/altdss.ArrayProxy.html#altdss.ArrayProxy.BatchInt32ArrayProxy.__iadd__">(altdss.ArrayProxy.BatchInt32ArrayProxy method)</a>
 </li>
       </ul></li>
-      <li><a href="apidocs/altdss/altdss.ArrayProxy.html#altdss.ArrayProxy.BatchFloat64ArrayProxy.__idiv__">__idiv__() (altdss.ArrayProxy.BatchFloat64ArrayProxy method)</a>
-
-      <ul>
-        <li><a href="apidocs/altdss/altdss.ArrayProxy.html#altdss.ArrayProxy.BatchInt32ArrayProxy.__idiv__">(altdss.ArrayProxy.BatchInt32ArrayProxy method)</a>
+      <li><a href="apidocs/altdss/altdss.ArrayProxy.html#altdss.ArrayProxy.BatchInt32ArrayProxy.__ifloordiv__">__ifloordiv__() (altdss.ArrayProxy.BatchInt32ArrayProxy method)</a>
 </li>
-      </ul></li>
       <li><a href="apidocs/altdss/altdss.ArrayProxy.html#altdss.ArrayProxy.BatchFloat64ArrayProxy.__imul__">__imul__() (altdss.ArrayProxy.BatchFloat64ArrayProxy method)</a>
 
       <ul>
@@ -7312,6 +7317,8 @@ document.write(`
         <li><a href="apidocs/altdss/altdss.XYcurve.html#altdss.XYcurve.XYcurveProperties.__iter__">(altdss.XYcurve.XYcurveProperties method)</a>
 </li>
       </ul></li>
+      <li><a href="apidocs/altdss/altdss.ArrayProxy.html#altdss.ArrayProxy.BatchFloat64ArrayProxy.__itruediv__">__itruediv__() (altdss.ArrayProxy.BatchFloat64ArrayProxy method)</a>
+</li>
       <li><a href="apidocs/altdss/altdss.AutoTrans.html#altdss.AutoTrans.AutoTransBatchProperties.__le__">__le__() (altdss.AutoTrans.AutoTransBatchProperties method)</a>
 
       <ul>
@@ -17115,106 +17122,206 @@ document.write(`
         <li><a href="apidocs/altdss/altdss.Vsource.html#altdss.Vsource.VsourceProperties.BaseMVA">(altdss.Vsource.VsourceProperties attribute)</a>
 </li>
       </ul></li>
-      <li><a href="apidocs/altdss/altdss.AutoTrans.html#altdss.AutoTrans.IAutoTrans.batch">batch() (altdss.AutoTrans.IAutoTrans method)</a>
+      <li><a href="apidocs/altdss/altdss.AutoTrans.html#altdss.AutoTrans.AutoTransBatch.batch">batch() (altdss.AutoTrans.AutoTransBatch method)</a>
 
       <ul>
+        <li><a href="apidocs/altdss/altdss.AutoTrans.html#altdss.AutoTrans.IAutoTrans.batch">(altdss.AutoTrans.IAutoTrans method)</a>
+</li>
+        <li><a href="apidocs/altdss/altdss.Batch.html#altdss.Batch.DSSBatch.batch">(altdss.Batch.DSSBatch method)</a>
+</li>
+        <li><a href="apidocs/altdss/altdss.Capacitor.html#altdss.Capacitor.CapacitorBatch.batch">(altdss.Capacitor.CapacitorBatch method)</a>
+</li>
         <li><a href="apidocs/altdss/altdss.Capacitor.html#altdss.Capacitor.ICapacitor.batch">(altdss.Capacitor.ICapacitor method)</a>
 </li>
+        <li><a href="apidocs/altdss/altdss.CapControl.html#altdss.CapControl.CapControlBatch.batch">(altdss.CapControl.CapControlBatch method)</a>
+</li>
         <li><a href="apidocs/altdss/altdss.CapControl.html#altdss.CapControl.ICapControl.batch">(altdss.CapControl.ICapControl method)</a>
+</li>
+        <li><a href="apidocs/altdss/altdss.CNData.html#altdss.CNData.CNDataBatch.batch">(altdss.CNData.CNDataBatch method)</a>
 </li>
         <li><a href="apidocs/altdss/altdss.CNData.html#altdss.CNData.ICNData.batch">(altdss.CNData.ICNData method)</a>
 </li>
         <li><a href="apidocs/altdss/altdss.DSSObj.html#altdss.DSSObj.IDSSObj.batch">(altdss.DSSObj.IDSSObj method)</a>
 </li>
+        <li><a href="apidocs/altdss/altdss.DynamicExp.html#altdss.DynamicExp.DynamicExpBatch.batch">(altdss.DynamicExp.DynamicExpBatch method)</a>
+</li>
         <li><a href="apidocs/altdss/altdss.DynamicExp.html#altdss.DynamicExp.IDynamicExp.batch">(altdss.DynamicExp.IDynamicExp method)</a>
+</li>
+        <li><a href="apidocs/altdss/altdss.EnergyMeter.html#altdss.EnergyMeter.EnergyMeterBatch.batch">(altdss.EnergyMeter.EnergyMeterBatch method)</a>
 </li>
         <li><a href="apidocs/altdss/altdss.EnergyMeter.html#altdss.EnergyMeter.IEnergyMeter.batch">(altdss.EnergyMeter.IEnergyMeter method)</a>
 </li>
+        <li><a href="apidocs/altdss/altdss.ESPVLControl.html#altdss.ESPVLControl.ESPVLControlBatch.batch">(altdss.ESPVLControl.ESPVLControlBatch method)</a>
+</li>
         <li><a href="apidocs/altdss/altdss.ESPVLControl.html#altdss.ESPVLControl.IESPVLControl.batch">(altdss.ESPVLControl.IESPVLControl method)</a>
+</li>
+        <li><a href="apidocs/altdss/altdss.ExpControl.html#altdss.ExpControl.ExpControlBatch.batch">(altdss.ExpControl.ExpControlBatch method)</a>
 </li>
         <li><a href="apidocs/altdss/altdss.ExpControl.html#altdss.ExpControl.IExpControl.batch">(altdss.ExpControl.IExpControl method)</a>
 </li>
+        <li><a href="apidocs/altdss/altdss.Fault.html#altdss.Fault.FaultBatch.batch">(altdss.Fault.FaultBatch method)</a>
+</li>
         <li><a href="apidocs/altdss/altdss.Fault.html#altdss.Fault.IFault.batch">(altdss.Fault.IFault method)</a>
+</li>
+        <li><a href="apidocs/altdss/altdss.Fuse.html#altdss.Fuse.FuseBatch.batch">(altdss.Fuse.FuseBatch method)</a>
 </li>
         <li><a href="apidocs/altdss/altdss.Fuse.html#altdss.Fuse.IFuse.batch">(altdss.Fuse.IFuse method)</a>
 </li>
+        <li><a href="apidocs/altdss/altdss.GenDispatcher.html#altdss.GenDispatcher.GenDispatcherBatch.batch">(altdss.GenDispatcher.GenDispatcherBatch method)</a>
+</li>
         <li><a href="apidocs/altdss/altdss.GenDispatcher.html#altdss.GenDispatcher.IGenDispatcher.batch">(altdss.GenDispatcher.IGenDispatcher method)</a>
+</li>
+        <li><a href="apidocs/altdss/altdss.Generator.html#altdss.Generator.GeneratorBatch.batch">(altdss.Generator.GeneratorBatch method)</a>
 </li>
         <li><a href="apidocs/altdss/altdss.Generator.html#altdss.Generator.IGenerator.batch">(altdss.Generator.IGenerator method)</a>
 </li>
+        <li><a href="apidocs/altdss/altdss.GICLine.html#altdss.GICLine.GICLineBatch.batch">(altdss.GICLine.GICLineBatch method)</a>
+</li>
         <li><a href="apidocs/altdss/altdss.GICLine.html#altdss.GICLine.IGICLine.batch">(altdss.GICLine.IGICLine method)</a>
+</li>
+        <li><a href="apidocs/altdss/altdss.GICsource.html#altdss.GICsource.GICsourceBatch.batch">(altdss.GICsource.GICsourceBatch method)</a>
 </li>
         <li><a href="apidocs/altdss/altdss.GICsource.html#altdss.GICsource.IGICsource.batch">(altdss.GICsource.IGICsource method)</a>
 </li>
+        <li><a href="apidocs/altdss/altdss.GICTransformer.html#altdss.GICTransformer.GICTransformerBatch.batch">(altdss.GICTransformer.GICTransformerBatch method)</a>
+</li>
         <li><a href="apidocs/altdss/altdss.GICTransformer.html#altdss.GICTransformer.IGICTransformer.batch">(altdss.GICTransformer.IGICTransformer method)</a>
+</li>
+        <li><a href="apidocs/altdss/altdss.GrowthShape.html#altdss.GrowthShape.GrowthShapeBatch.batch">(altdss.GrowthShape.GrowthShapeBatch method)</a>
 </li>
         <li><a href="apidocs/altdss/altdss.GrowthShape.html#altdss.GrowthShape.IGrowthShape.batch">(altdss.GrowthShape.IGrowthShape method)</a>
 </li>
         <li><a href="apidocs/altdss/altdss.IndMach012.html#altdss.IndMach012.IIndMach012.batch">(altdss.IndMach012.IIndMach012 method)</a>
 </li>
+        <li><a href="apidocs/altdss/altdss.IndMach012.html#altdss.IndMach012.IndMach012Batch.batch">(altdss.IndMach012.IndMach012Batch method)</a>
+</li>
         <li><a href="apidocs/altdss/altdss.InvControl.html#altdss.InvControl.IInvControl.batch">(altdss.InvControl.IInvControl method)</a>
+</li>
+        <li><a href="apidocs/altdss/altdss.InvControl.html#altdss.InvControl.InvControlBatch.batch">(altdss.InvControl.InvControlBatch method)</a>
 </li>
         <li><a href="apidocs/altdss/altdss.Isource.html#altdss.Isource.IIsource.batch">(altdss.Isource.IIsource method)</a>
 </li>
+        <li><a href="apidocs/altdss/altdss.Isource.html#altdss.Isource.IsourceBatch.batch">(altdss.Isource.IsourceBatch method)</a>
+</li>
         <li><a href="apidocs/altdss/altdss.Line.html#altdss.Line.ILine.batch">(altdss.Line.ILine method)</a>
+</li>
+        <li><a href="apidocs/altdss/altdss.Line.html#altdss.Line.LineBatch.batch">(altdss.Line.LineBatch method)</a>
 </li>
         <li><a href="apidocs/altdss/altdss.LineCode.html#altdss.LineCode.ILineCode.batch">(altdss.LineCode.ILineCode method)</a>
 </li>
+        <li><a href="apidocs/altdss/altdss.LineCode.html#altdss.LineCode.LineCodeBatch.batch">(altdss.LineCode.LineCodeBatch method)</a>
+</li>
         <li><a href="apidocs/altdss/altdss.LineGeometry.html#altdss.LineGeometry.ILineGeometry.batch">(altdss.LineGeometry.ILineGeometry method)</a>
+</li>
+        <li><a href="apidocs/altdss/altdss.LineGeometry.html#altdss.LineGeometry.LineGeometryBatch.batch">(altdss.LineGeometry.LineGeometryBatch method)</a>
 </li>
         <li><a href="apidocs/altdss/altdss.LineSpacing.html#altdss.LineSpacing.ILineSpacing.batch">(altdss.LineSpacing.ILineSpacing method)</a>
 </li>
+        <li><a href="apidocs/altdss/altdss.LineSpacing.html#altdss.LineSpacing.LineSpacingBatch.batch">(altdss.LineSpacing.LineSpacingBatch method)</a>
+</li>
         <li><a href="apidocs/altdss/altdss.Load.html#altdss.Load.ILoad.batch">(altdss.Load.ILoad method)</a>
+</li>
+        <li><a href="apidocs/altdss/altdss.Load.html#altdss.Load.LoadBatch.batch">(altdss.Load.LoadBatch method)</a>
 </li>
         <li><a href="apidocs/altdss/altdss.LoadShape.html#altdss.LoadShape.ILoadShape.batch">(altdss.LoadShape.ILoadShape method)</a>
 </li>
+        <li><a href="apidocs/altdss/altdss.LoadShape.html#altdss.LoadShape.LoadShapeBatch.batch">(altdss.LoadShape.LoadShapeBatch method)</a>
+</li>
         <li><a href="apidocs/altdss/altdss.Monitor.html#altdss.Monitor.IMonitor.batch">(altdss.Monitor.IMonitor method)</a>
+</li>
+        <li><a href="apidocs/altdss/altdss.Monitor.html#altdss.Monitor.MonitorBatch.batch">(altdss.Monitor.MonitorBatch method)</a>
 </li>
         <li><a href="apidocs/altdss/altdss.PriceShape.html#altdss.PriceShape.IPriceShape.batch">(altdss.PriceShape.IPriceShape method)</a>
 </li>
+        <li><a href="apidocs/altdss/altdss.PriceShape.html#altdss.PriceShape.PriceShapeBatch.batch">(altdss.PriceShape.PriceShapeBatch method)</a>
+</li>
         <li><a href="apidocs/altdss/altdss.PVSystem.html#altdss.PVSystem.IPVSystem.batch">(altdss.PVSystem.IPVSystem method)</a>
+</li>
+        <li><a href="apidocs/altdss/altdss.PVSystem.html#altdss.PVSystem.PVSystemBatch.batch">(altdss.PVSystem.PVSystemBatch method)</a>
 </li>
         <li><a href="apidocs/altdss/altdss.Reactor.html#altdss.Reactor.IReactor.batch">(altdss.Reactor.IReactor method)</a>
 </li>
+        <li><a href="apidocs/altdss/altdss.Reactor.html#altdss.Reactor.ReactorBatch.batch">(altdss.Reactor.ReactorBatch method)</a>
+</li>
         <li><a href="apidocs/altdss/altdss.Recloser.html#altdss.Recloser.IRecloser.batch">(altdss.Recloser.IRecloser method)</a>
+</li>
+        <li><a href="apidocs/altdss/altdss.Recloser.html#altdss.Recloser.RecloserBatch.batch">(altdss.Recloser.RecloserBatch method)</a>
 </li>
         <li><a href="apidocs/altdss/altdss.RegControl.html#altdss.RegControl.IRegControl.batch">(altdss.RegControl.IRegControl method)</a>
 </li>
+        <li><a href="apidocs/altdss/altdss.RegControl.html#altdss.RegControl.RegControlBatch.batch">(altdss.RegControl.RegControlBatch method)</a>
+</li>
         <li><a href="apidocs/altdss/altdss.Relay.html#altdss.Relay.IRelay.batch">(altdss.Relay.IRelay method)</a>
+</li>
+        <li><a href="apidocs/altdss/altdss.Relay.html#altdss.Relay.RelayBatch.batch">(altdss.Relay.RelayBatch method)</a>
 </li>
         <li><a href="apidocs/altdss/altdss.Sensor.html#altdss.Sensor.ISensor.batch">(altdss.Sensor.ISensor method)</a>
 </li>
+        <li><a href="apidocs/altdss/altdss.Sensor.html#altdss.Sensor.SensorBatch.batch">(altdss.Sensor.SensorBatch method)</a>
+</li>
         <li><a href="apidocs/altdss/altdss.Spectrum.html#altdss.Spectrum.ISpectrum.batch">(altdss.Spectrum.ISpectrum method)</a>
+</li>
+        <li><a href="apidocs/altdss/altdss.Spectrum.html#altdss.Spectrum.SpectrumBatch.batch">(altdss.Spectrum.SpectrumBatch method)</a>
 </li>
         <li><a href="apidocs/altdss/altdss.Storage.html#altdss.Storage.IStorage.batch">(altdss.Storage.IStorage method)</a>
 </li>
+        <li><a href="apidocs/altdss/altdss.Storage.html#altdss.Storage.StorageBatch.batch">(altdss.Storage.StorageBatch method)</a>
+</li>
         <li><a href="apidocs/altdss/altdss.StorageController.html#altdss.StorageController.IStorageController.batch">(altdss.StorageController.IStorageController method)</a>
+</li>
+        <li><a href="apidocs/altdss/altdss.StorageController.html#altdss.StorageController.StorageControllerBatch.batch">(altdss.StorageController.StorageControllerBatch method)</a>
 </li>
         <li><a href="apidocs/altdss/altdss.SwtControl.html#altdss.SwtControl.ISwtControl.batch">(altdss.SwtControl.ISwtControl method)</a>
 </li>
+        <li><a href="apidocs/altdss/altdss.SwtControl.html#altdss.SwtControl.SwtControlBatch.batch">(altdss.SwtControl.SwtControlBatch method)</a>
+</li>
         <li><a href="apidocs/altdss/altdss.TCC_Curve.html#altdss.TCC_Curve.ITCC_Curve.batch">(altdss.TCC_Curve.ITCC_Curve method)</a>
+</li>
+        <li><a href="apidocs/altdss/altdss.TCC_Curve.html#altdss.TCC_Curve.TCC_CurveBatch.batch">(altdss.TCC_Curve.TCC_CurveBatch method)</a>
 </li>
         <li><a href="apidocs/altdss/altdss.Transformer.html#altdss.Transformer.ITransformer.batch">(altdss.Transformer.ITransformer method)</a>
 </li>
+        <li><a href="apidocs/altdss/altdss.Transformer.html#altdss.Transformer.TransformerBatch.batch">(altdss.Transformer.TransformerBatch method)</a>
+</li>
         <li><a href="apidocs/altdss/altdss.TSData.html#altdss.TSData.ITSData.batch">(altdss.TSData.ITSData method)</a>
+</li>
+        <li><a href="apidocs/altdss/altdss.TSData.html#altdss.TSData.TSDataBatch.batch">(altdss.TSData.TSDataBatch method)</a>
 </li>
         <li><a href="apidocs/altdss/altdss.TShape.html#altdss.TShape.ITShape.batch">(altdss.TShape.ITShape method)</a>
 </li>
+        <li><a href="apidocs/altdss/altdss.TShape.html#altdss.TShape.TShapeBatch.batch">(altdss.TShape.TShapeBatch method)</a>
+</li>
         <li><a href="apidocs/altdss/altdss.UPFC.html#altdss.UPFC.IUPFC.batch">(altdss.UPFC.IUPFC method)</a>
+</li>
+        <li><a href="apidocs/altdss/altdss.UPFC.html#altdss.UPFC.UPFCBatch.batch">(altdss.UPFC.UPFCBatch method)</a>
 </li>
         <li><a href="apidocs/altdss/altdss.UPFCControl.html#altdss.UPFCControl.IUPFCControl.batch">(altdss.UPFCControl.IUPFCControl method)</a>
 </li>
+        <li><a href="apidocs/altdss/altdss.UPFCControl.html#altdss.UPFCControl.UPFCControlBatch.batch">(altdss.UPFCControl.UPFCControlBatch method)</a>
+</li>
         <li><a href="apidocs/altdss/altdss.VCCS.html#altdss.VCCS.IVCCS.batch">(altdss.VCCS.IVCCS method)</a>
+</li>
+        <li><a href="apidocs/altdss/altdss.VCCS.html#altdss.VCCS.VCCSBatch.batch">(altdss.VCCS.VCCSBatch method)</a>
 </li>
         <li><a href="apidocs/altdss/altdss.VSConverter.html#altdss.VSConverter.IVSConverter.batch">(altdss.VSConverter.IVSConverter method)</a>
 </li>
+        <li><a href="apidocs/altdss/altdss.VSConverter.html#altdss.VSConverter.VSConverterBatch.batch">(altdss.VSConverter.VSConverterBatch method)</a>
+</li>
         <li><a href="apidocs/altdss/altdss.Vsource.html#altdss.Vsource.IVsource.batch">(altdss.Vsource.IVsource method)</a>
+</li>
+        <li><a href="apidocs/altdss/altdss.Vsource.html#altdss.Vsource.VsourceBatch.batch">(altdss.Vsource.VsourceBatch method)</a>
 </li>
         <li><a href="apidocs/altdss/altdss.WireData.html#altdss.WireData.IWireData.batch">(altdss.WireData.IWireData method)</a>
 </li>
+        <li><a href="apidocs/altdss/altdss.WireData.html#altdss.WireData.WireDataBatch.batch">(altdss.WireData.WireDataBatch method)</a>
+</li>
         <li><a href="apidocs/altdss/altdss.XfmrCode.html#altdss.XfmrCode.IXfmrCode.batch">(altdss.XfmrCode.IXfmrCode method)</a>
 </li>
+        <li><a href="apidocs/altdss/altdss.XfmrCode.html#altdss.XfmrCode.XfmrCodeBatch.batch">(altdss.XfmrCode.XfmrCodeBatch method)</a>
+</li>
         <li><a href="apidocs/altdss/altdss.XYcurve.html#altdss.XYcurve.IXYcurve.batch">(altdss.XYcurve.IXYcurve method)</a>
+</li>
+        <li><a href="apidocs/altdss/altdss.XYcurve.html#altdss.XYcurve.XYcurveBatch.batch">(altdss.XYcurve.XYcurveBatch method)</a>
 </li>
       </ul></li>
       <li><a href="apidocs/altdss/altdss.AutoTrans.html#altdss.AutoTrans.IAutoTrans.batch_new">batch_new() (altdss.AutoTrans.IAutoTrans method)</a>
@@ -19904,6 +20011,8 @@ document.write(`
       <li><a href="apidocs/altdss/altdss.Solution.html#altdss.Solution.ISolution.ControlActionsDone">ControlActionsDone (altdss.Solution.ISolution property)</a>
 </li>
       <li><a href="apidocs/altdss/altdss.Solution.html#altdss.Solution.ISolution.ControlIterations">ControlIterations (altdss.Solution.ISolution property)</a>
+</li>
+      <li><a href="apidocs/altdss/altdss.CircuitElement.html#altdss.CircuitElement.CircuitElementMixin.Controllers">Controllers (altdss.CircuitElement.CircuitElementMixin attribute)</a>
 </li>
       <li><a href="apidocs/altdss/altdss.PVSystem.html#altdss.PVSystem.IPVSystem.ControlMode">ControlMode (altdss.PVSystem.IPVSystem attribute)</a>
 
@@ -31812,6 +31921,12 @@ document.write(`
         <li><a href="apidocs/altdss/altdss.XYcurve.html#altdss.XYcurve.XYcurveBatch.Name">(altdss.XYcurve.XYcurveBatch property)</a>
 </li>
       </ul></li>
+      <li><a href="apidocs/altdss/altdss.Bus.html#altdss.Bus.BusBatch.Name">Name() (altdss.Bus.BusBatch method)</a>
+
+      <ul>
+        <li><a href="apidocs/altdss/altdss.Bus.html#altdss.Bus.IBuses.Name">(altdss.Bus.IBuses method)</a>
+</li>
+      </ul></li>
       <li><a href="apidocs/altdss/altdss.enums.html#altdss.enums.AutoAddDeviceType.name">name() (altdss.enums.AutoAddDeviceType method)</a>
 
       <ul>
@@ -42405,23 +42520,55 @@ document.write(`
       <li><a href="apidocs/altdss/altdss.AutoTrans.html#altdss.AutoTrans.AutoTrans.TotalKilometers">TotalKilometers() (altdss.AutoTrans.AutoTrans method)</a>
 
       <ul>
+        <li><a href="apidocs/altdss/altdss.AutoTrans.html#altdss.AutoTrans.AutoTransBatch.TotalKilometers">(altdss.AutoTrans.AutoTransBatch method)</a>
+</li>
+        <li><a href="apidocs/altdss/altdss.AutoTrans.html#altdss.AutoTrans.IAutoTrans.TotalKilometers">(altdss.AutoTrans.IAutoTrans method)</a>
+</li>
         <li><a href="apidocs/altdss/altdss.Bus.html#altdss.Bus.BusBatch.TotalKilometers">(altdss.Bus.BusBatch method)</a>
 </li>
         <li><a href="apidocs/altdss/altdss.Bus.html#altdss.Bus.IBuses.TotalKilometers">(altdss.Bus.IBuses method)</a>
 </li>
         <li><a href="apidocs/altdss/altdss.Capacitor.html#altdss.Capacitor.Capacitor.TotalKilometers">(altdss.Capacitor.Capacitor method)</a>
 </li>
+        <li><a href="apidocs/altdss/altdss.Capacitor.html#altdss.Capacitor.CapacitorBatch.TotalKilometers">(altdss.Capacitor.CapacitorBatch method)</a>
+</li>
+        <li><a href="apidocs/altdss/altdss.Capacitor.html#altdss.Capacitor.ICapacitor.TotalKilometers">(altdss.Capacitor.ICapacitor method)</a>
+</li>
         <li><a href="apidocs/altdss/altdss.Fault.html#altdss.Fault.Fault.TotalKilometers">(altdss.Fault.Fault method)</a>
+</li>
+        <li><a href="apidocs/altdss/altdss.Fault.html#altdss.Fault.FaultBatch.TotalKilometers">(altdss.Fault.FaultBatch method)</a>
+</li>
+        <li><a href="apidocs/altdss/altdss.Fault.html#altdss.Fault.IFault.TotalKilometers">(altdss.Fault.IFault method)</a>
 </li>
         <li><a href="apidocs/altdss/altdss.GICTransformer.html#altdss.GICTransformer.GICTransformer.TotalKilometers">(altdss.GICTransformer.GICTransformer method)</a>
 </li>
+        <li><a href="apidocs/altdss/altdss.GICTransformer.html#altdss.GICTransformer.GICTransformerBatch.TotalKilometers">(altdss.GICTransformer.GICTransformerBatch method)</a>
+</li>
+        <li><a href="apidocs/altdss/altdss.GICTransformer.html#altdss.GICTransformer.IGICTransformer.TotalKilometers">(altdss.GICTransformer.IGICTransformer method)</a>
+</li>
+        <li><a href="apidocs/altdss/altdss.Line.html#altdss.Line.ILine.TotalKilometers">(altdss.Line.ILine method)</a>
+</li>
         <li><a href="apidocs/altdss/altdss.Line.html#altdss.Line.Line.TotalKilometers">(altdss.Line.Line method)</a>
+</li>
+        <li><a href="apidocs/altdss/altdss.Line.html#altdss.Line.LineBatch.TotalKilometers">(altdss.Line.LineBatch method)</a>
+</li>
+        <li><a href="apidocs/altdss/altdss.PDElement.html#altdss.PDElement.PDElementBatch.TotalKilometers">(altdss.PDElement.PDElementBatch method)</a>
+</li>
+        <li><a href="apidocs/altdss/altdss.PDElement.html#altdss.PDElement.PDElementBatchMixin.TotalKilometers">(altdss.PDElement.PDElementBatchMixin method)</a>
 </li>
         <li><a href="apidocs/altdss/altdss.PDElement.html#altdss.PDElement.PDElementMixin.TotalKilometers">(altdss.PDElement.PDElementMixin method)</a>
 </li>
+        <li><a href="apidocs/altdss/altdss.Reactor.html#altdss.Reactor.IReactor.TotalKilometers">(altdss.Reactor.IReactor method)</a>
+</li>
         <li><a href="apidocs/altdss/altdss.Reactor.html#altdss.Reactor.Reactor.TotalKilometers">(altdss.Reactor.Reactor method)</a>
 </li>
+        <li><a href="apidocs/altdss/altdss.Reactor.html#altdss.Reactor.ReactorBatch.TotalKilometers">(altdss.Reactor.ReactorBatch method)</a>
+</li>
+        <li><a href="apidocs/altdss/altdss.Transformer.html#altdss.Transformer.ITransformer.TotalKilometers">(altdss.Transformer.ITransformer method)</a>
+</li>
         <li><a href="apidocs/altdss/altdss.Transformer.html#altdss.Transformer.Transformer.TotalKilometers">(altdss.Transformer.Transformer method)</a>
+</li>
+        <li><a href="apidocs/altdss/altdss.Transformer.html#altdss.Transformer.TransformerBatch.TotalKilometers">(altdss.Transformer.TransformerBatch method)</a>
 </li>
       </ul></li>
       <li><a href="apidocs/altdss/altdss.Bus.html#altdss.Bus.Bus.TotalMiles">TotalMiles (altdss.Bus.Bus property)</a>

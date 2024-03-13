@@ -8,7 +8,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
-    <title>altdss.DSSObj &#8212; AltDSS-Python 0.2.0 documentation</title>
+    <title>altdss.DSSObj &#8212; AltDSS-Python 0.2.2 documentation</title>
   
   
   
@@ -38,7 +38,7 @@
 <link rel="preload" as="script" href="../../_static/scripts/pydata-sphinx-theme.js?digest=8d27b9dea8ad943066ae" />
   <script src="../../_static/vendor/fontawesome/6.5.1/js/all.min.js?digest=8d27b9dea8ad943066ae"></script>
 
-    <script src="../../_static/documentation_options.js?v=7f7c277e"></script>
+    <script src="../../_static/documentation_options.js?v=d3f42505"></script>
     <script src="../../_static/doctools.js?v=888ff710"></script>
     <script src="../../_static/sphinx_highlight.js?v=dc90522c"></script>
     <script src="../../_static/scripts/sphinx-book-theme.js?v=efea14e4"></script>
@@ -137,8 +137,8 @@
       
     
     
-    <img src="../../_static/altdss-python.svg" class="logo__image only-light" alt="AltDSS-Python 0.2.0 documentation - Home"/>
-    <script>document.write(`<img src="../../_static/altdss-python-dark.svg" class="logo__image only-dark" alt="AltDSS-Python 0.2.0 documentation - Home"/>`);</script>
+    <img src="../../_static/altdss-python.svg" class="logo__image only-light" alt="AltDSS-Python 0.2.2 documentation - Home"/>
+    <script>document.write(`<img src="../../_static/altdss-python-dark.svg" class="logo__image only-dark" alt="AltDSS-Python 0.2.2 documentation - Home"/>`);</script>
   
   
 </a></div>
@@ -160,6 +160,7 @@
 <li class="toctree-l1"><a class="reference internal" href="../../index.html">AltDSS-Python</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../Architecture.html">Architecture details</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../examples/GettingStarted.html">Getting Started</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../examples/Batches.html">Batches</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../changelog.html">Changelog</a></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">API Reference</span></p>
@@ -506,8 +507,8 @@ document.write(`
 <dt class="sig sig-object py" id="altdss.DSSObj.DSSObj.begin_edit">
 <span class="sig-name descname"><span class="pre">begin_edit</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span><a class="headerlink" href="#altdss.DSSObj.DSSObj.begin_edit" title="Link to this definition">#</a></dt>
 <dd><p>Marks a DSS object for editing</p>
-<p>In the editing mode, some final side-effects of changing properties are post-poned
-until <code class="docutils literal notranslate"><span class="pre">_end_edit</span></code> is called. This side-effects can be somewhat costly, like updating
+<p>In the editing mode, some final side-effects of changing properties are postponed
+until <code class="docutils literal notranslate"><span class="pre">end_edit</span></code> is called. This side-effects can be somewhat costly, like updating
 the model parameters or internal matrices.</p>
 <p>If you don’t have any performance constraint, you may edit each property individually
 without worrying about using <code class="docutils literal notranslate"><span class="pre">begin_edit</span></code> and <code class="docutils literal notranslate"><span class="pre">end_edit</span></code>. For convenience, those are

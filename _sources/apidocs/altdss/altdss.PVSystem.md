@@ -345,7 +345,7 @@ Bases: {py:obj}`altdss.DSSObj.IDSSObj`, {py:obj}`altdss.PVSystem.PVSystemBatch`
 
 ````
 
-````{py:method} GUID() -> str
+````{py:method} GUID() -> typing.List[str]
 :canonical: altdss.PVSystem.IPVSystem.GUID
 
 ```{autodoc2-docstring} altdss.PVSystem.IPVSystem.GUID
@@ -361,7 +361,7 @@ Bases: {py:obj}`altdss.DSSObj.IDSSObj`, {py:obj}`altdss.PVSystem.PVSystemBatch`
 
 ````
 
-````{py:method} HasOCPDevice() -> bool
+````{py:method} HasOCPDevice() -> altdss.types.BoolArray
 :canonical: altdss.PVSystem.IPVSystem.HasOCPDevice
 
 ```{autodoc2-docstring} altdss.PVSystem.IPVSystem.HasOCPDevice
@@ -369,7 +369,7 @@ Bases: {py:obj}`altdss.DSSObj.IDSSObj`, {py:obj}`altdss.PVSystem.PVSystemBatch`
 
 ````
 
-````{py:method} HasSwitchControl() -> bool
+````{py:method} HasSwitchControl() -> altdss.types.BoolArray
 :canonical: altdss.PVSystem.IPVSystem.HasSwitchControl
 
 ```{autodoc2-docstring} altdss.PVSystem.IPVSystem.HasSwitchControl
@@ -377,7 +377,7 @@ Bases: {py:obj}`altdss.DSSObj.IDSSObj`, {py:obj}`altdss.PVSystem.PVSystemBatch`
 
 ````
 
-````{py:method} HasVoltControl() -> bool
+````{py:method} HasVoltControl() -> altdss.types.BoolArray
 :canonical: altdss.PVSystem.IPVSystem.HasVoltControl
 
 ```{autodoc2-docstring} altdss.PVSystem.IPVSystem.HasVoltControl
@@ -442,7 +442,7 @@ Bases: {py:obj}`altdss.DSSObj.IDSSObj`, {py:obj}`altdss.PVSystem.PVSystemBatch`
 
 ````
 
-````{py:method} MaxCurrent(terminal: int) -> float
+````{py:method} MaxCurrent(terminal: int) -> altdss.types.Float64Array
 :canonical: altdss.PVSystem.IPVSystem.MaxCurrent
 
 ```{autodoc2-docstring} altdss.PVSystem.IPVSystem.MaxCurrent
@@ -518,7 +518,7 @@ Bases: {py:obj}`altdss.DSSObj.IDSSObj`, {py:obj}`altdss.PVSystem.PVSystemBatch`
 
 ````
 
-````{py:method} OCPDeviceType() -> dss.enums.OCPDevType
+````{py:method} OCPDeviceType() -> typing.List[dss.enums.OCPDevType]
 :canonical: altdss.PVSystem.IPVSystem.OCPDeviceType
 
 ```{autodoc2-docstring} altdss.PVSystem.IPVSystem.OCPDeviceType
@@ -2600,7 +2600,7 @@ Bases: {py:obj}`altdss.Batch.DSSBatch`, {py:obj}`altdss.CircuitElement.CircuitEl
 
 ````
 
-````{py:method} GUID() -> str
+````{py:method} GUID() -> typing.List[str]
 :canonical: altdss.PVSystem.PVSystemBatch.GUID
 
 ```{autodoc2-docstring} altdss.PVSystem.PVSystemBatch.GUID
@@ -2616,7 +2616,7 @@ Bases: {py:obj}`altdss.Batch.DSSBatch`, {py:obj}`altdss.CircuitElement.CircuitEl
 
 ````
 
-````{py:method} HasOCPDevice() -> bool
+````{py:method} HasOCPDevice() -> altdss.types.BoolArray
 :canonical: altdss.PVSystem.PVSystemBatch.HasOCPDevice
 
 ```{autodoc2-docstring} altdss.PVSystem.PVSystemBatch.HasOCPDevice
@@ -2624,7 +2624,7 @@ Bases: {py:obj}`altdss.Batch.DSSBatch`, {py:obj}`altdss.CircuitElement.CircuitEl
 
 ````
 
-````{py:method} HasSwitchControl() -> bool
+````{py:method} HasSwitchControl() -> altdss.types.BoolArray
 :canonical: altdss.PVSystem.PVSystemBatch.HasSwitchControl
 
 ```{autodoc2-docstring} altdss.PVSystem.PVSystemBatch.HasSwitchControl
@@ -2632,7 +2632,7 @@ Bases: {py:obj}`altdss.Batch.DSSBatch`, {py:obj}`altdss.CircuitElement.CircuitEl
 
 ````
 
-````{py:method} HasVoltControl() -> bool
+````{py:method} HasVoltControl() -> altdss.types.BoolArray
 :canonical: altdss.PVSystem.PVSystemBatch.HasVoltControl
 
 ```{autodoc2-docstring} altdss.PVSystem.PVSystemBatch.HasVoltControl
@@ -2697,7 +2697,7 @@ Bases: {py:obj}`altdss.Batch.DSSBatch`, {py:obj}`altdss.CircuitElement.CircuitEl
 
 ````
 
-````{py:method} MaxCurrent(terminal: int) -> float
+````{py:method} MaxCurrent(terminal: int) -> altdss.types.Float64Array
 :canonical: altdss.PVSystem.PVSystemBatch.MaxCurrent
 
 ```{autodoc2-docstring} altdss.PVSystem.PVSystemBatch.MaxCurrent
@@ -2773,7 +2773,7 @@ Bases: {py:obj}`altdss.Batch.DSSBatch`, {py:obj}`altdss.CircuitElement.CircuitEl
 
 ````
 
-````{py:method} OCPDeviceType() -> dss.enums.OCPDevType
+````{py:method} OCPDeviceType() -> typing.List[dss.enums.OCPDevType]
 :canonical: altdss.PVSystem.PVSystemBatch.OCPDeviceType
 
 ```{autodoc2-docstring} altdss.PVSystem.PVSystemBatch.OCPDeviceType
@@ -3167,6 +3167,14 @@ Bases: {py:obj}`altdss.Batch.DSSBatch`, {py:obj}`altdss.CircuitElement.CircuitEl
 :canonical: altdss.PVSystem.PVSystemBatch.__len__
 
 ```{autodoc2-docstring} altdss.PVSystem.PVSystemBatch.__len__
+```
+
+````
+
+````{py:method} batch(**kwargs) -> altdss.Batch.DSSBatch
+:canonical: altdss.PVSystem.PVSystemBatch.batch
+
+```{autodoc2-docstring} altdss.PVSystem.PVSystemBatch.batch
 ```
 
 ````

@@ -175,7 +175,7 @@ Bases: {py:obj}`altdss.DSSObj.IDSSObj`, {py:obj}`altdss.Sensor.SensorBatch`
 
 ````
 
-````{py:method} GUID() -> str
+````{py:method} GUID() -> typing.List[str]
 :canonical: altdss.Sensor.ISensor.GUID
 
 ```{autodoc2-docstring} altdss.Sensor.ISensor.GUID
@@ -191,7 +191,7 @@ Bases: {py:obj}`altdss.DSSObj.IDSSObj`, {py:obj}`altdss.Sensor.SensorBatch`
 
 ````
 
-````{py:method} HasOCPDevice() -> bool
+````{py:method} HasOCPDevice() -> altdss.types.BoolArray
 :canonical: altdss.Sensor.ISensor.HasOCPDevice
 
 ```{autodoc2-docstring} altdss.Sensor.ISensor.HasOCPDevice
@@ -199,7 +199,7 @@ Bases: {py:obj}`altdss.DSSObj.IDSSObj`, {py:obj}`altdss.Sensor.SensorBatch`
 
 ````
 
-````{py:method} HasSwitchControl() -> bool
+````{py:method} HasSwitchControl() -> altdss.types.BoolArray
 :canonical: altdss.Sensor.ISensor.HasSwitchControl
 
 ```{autodoc2-docstring} altdss.Sensor.ISensor.HasSwitchControl
@@ -207,7 +207,7 @@ Bases: {py:obj}`altdss.DSSObj.IDSSObj`, {py:obj}`altdss.Sensor.SensorBatch`
 
 ````
 
-````{py:method} HasVoltControl() -> bool
+````{py:method} HasVoltControl() -> altdss.types.BoolArray
 :canonical: altdss.Sensor.ISensor.HasVoltControl
 
 ```{autodoc2-docstring} altdss.Sensor.ISensor.HasVoltControl
@@ -239,7 +239,7 @@ Bases: {py:obj}`altdss.DSSObj.IDSSObj`, {py:obj}`altdss.Sensor.SensorBatch`
 
 ````
 
-````{py:method} MaxCurrent(terminal: int) -> float
+````{py:method} MaxCurrent(terminal: int) -> altdss.types.Float64Array
 :canonical: altdss.Sensor.ISensor.MaxCurrent
 
 ```{autodoc2-docstring} altdss.Sensor.ISensor.MaxCurrent
@@ -304,7 +304,7 @@ Bases: {py:obj}`altdss.DSSObj.IDSSObj`, {py:obj}`altdss.Sensor.SensorBatch`
 
 ````
 
-````{py:method} OCPDeviceType() -> dss.enums.OCPDevType
+````{py:method} OCPDeviceType() -> typing.List[dss.enums.OCPDevType]
 :canonical: altdss.Sensor.ISensor.OCPDeviceType
 
 ```{autodoc2-docstring} altdss.Sensor.ISensor.OCPDeviceType
@@ -1234,7 +1234,7 @@ Bases: {py:obj}`altdss.Batch.DSSBatch`, {py:obj}`altdss.CircuitElement.CircuitEl
 
 ````
 
-````{py:method} GUID() -> str
+````{py:method} GUID() -> typing.List[str]
 :canonical: altdss.Sensor.SensorBatch.GUID
 
 ```{autodoc2-docstring} altdss.Sensor.SensorBatch.GUID
@@ -1250,7 +1250,7 @@ Bases: {py:obj}`altdss.Batch.DSSBatch`, {py:obj}`altdss.CircuitElement.CircuitEl
 
 ````
 
-````{py:method} HasOCPDevice() -> bool
+````{py:method} HasOCPDevice() -> altdss.types.BoolArray
 :canonical: altdss.Sensor.SensorBatch.HasOCPDevice
 
 ```{autodoc2-docstring} altdss.Sensor.SensorBatch.HasOCPDevice
@@ -1258,7 +1258,7 @@ Bases: {py:obj}`altdss.Batch.DSSBatch`, {py:obj}`altdss.CircuitElement.CircuitEl
 
 ````
 
-````{py:method} HasSwitchControl() -> bool
+````{py:method} HasSwitchControl() -> altdss.types.BoolArray
 :canonical: altdss.Sensor.SensorBatch.HasSwitchControl
 
 ```{autodoc2-docstring} altdss.Sensor.SensorBatch.HasSwitchControl
@@ -1266,7 +1266,7 @@ Bases: {py:obj}`altdss.Batch.DSSBatch`, {py:obj}`altdss.CircuitElement.CircuitEl
 
 ````
 
-````{py:method} HasVoltControl() -> bool
+````{py:method} HasVoltControl() -> altdss.types.BoolArray
 :canonical: altdss.Sensor.SensorBatch.HasVoltControl
 
 ```{autodoc2-docstring} altdss.Sensor.SensorBatch.HasVoltControl
@@ -1298,7 +1298,7 @@ Bases: {py:obj}`altdss.Batch.DSSBatch`, {py:obj}`altdss.CircuitElement.CircuitEl
 
 ````
 
-````{py:method} MaxCurrent(terminal: int) -> float
+````{py:method} MaxCurrent(terminal: int) -> altdss.types.Float64Array
 :canonical: altdss.Sensor.SensorBatch.MaxCurrent
 
 ```{autodoc2-docstring} altdss.Sensor.SensorBatch.MaxCurrent
@@ -1363,7 +1363,7 @@ Bases: {py:obj}`altdss.Batch.DSSBatch`, {py:obj}`altdss.CircuitElement.CircuitEl
 
 ````
 
-````{py:method} OCPDeviceType() -> dss.enums.OCPDevType
+````{py:method} OCPDeviceType() -> typing.List[dss.enums.OCPDevType]
 :canonical: altdss.Sensor.SensorBatch.OCPDeviceType
 
 ```{autodoc2-docstring} altdss.Sensor.SensorBatch.OCPDeviceType
@@ -1493,6 +1493,14 @@ Bases: {py:obj}`altdss.Batch.DSSBatch`, {py:obj}`altdss.CircuitElement.CircuitEl
 :canonical: altdss.Sensor.SensorBatch.__len__
 
 ```{autodoc2-docstring} altdss.Sensor.SensorBatch.__len__
+```
+
+````
+
+````{py:method} batch(**kwargs) -> altdss.Batch.DSSBatch
+:canonical: altdss.Sensor.SensorBatch.batch
+
+```{autodoc2-docstring} altdss.Sensor.SensorBatch.batch
 ```
 
 ````

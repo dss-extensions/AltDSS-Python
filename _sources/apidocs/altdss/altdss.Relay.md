@@ -351,7 +351,7 @@ Bases: {py:obj}`altdss.DSSObj.IDSSObj`, {py:obj}`altdss.Relay.RelayBatch`
 
 ````
 
-````{py:method} GUID() -> str
+````{py:method} GUID() -> typing.List[str]
 :canonical: altdss.Relay.IRelay.GUID
 
 ```{autodoc2-docstring} altdss.Relay.IRelay.GUID
@@ -411,7 +411,7 @@ Bases: {py:obj}`altdss.DSSObj.IDSSObj`, {py:obj}`altdss.Relay.RelayBatch`
 
 ````
 
-````{py:method} HasOCPDevice() -> bool
+````{py:method} HasOCPDevice() -> altdss.types.BoolArray
 :canonical: altdss.Relay.IRelay.HasOCPDevice
 
 ```{autodoc2-docstring} altdss.Relay.IRelay.HasOCPDevice
@@ -419,7 +419,7 @@ Bases: {py:obj}`altdss.DSSObj.IDSSObj`, {py:obj}`altdss.Relay.RelayBatch`
 
 ````
 
-````{py:method} HasSwitchControl() -> bool
+````{py:method} HasSwitchControl() -> altdss.types.BoolArray
 :canonical: altdss.Relay.IRelay.HasSwitchControl
 
 ```{autodoc2-docstring} altdss.Relay.IRelay.HasSwitchControl
@@ -427,7 +427,7 @@ Bases: {py:obj}`altdss.DSSObj.IDSSObj`, {py:obj}`altdss.Relay.RelayBatch`
 
 ````
 
-````{py:method} HasVoltControl() -> bool
+````{py:method} HasVoltControl() -> altdss.types.BoolArray
 :canonical: altdss.Relay.IRelay.HasVoltControl
 
 ```{autodoc2-docstring} altdss.Relay.IRelay.HasVoltControl
@@ -481,7 +481,7 @@ Bases: {py:obj}`altdss.DSSObj.IDSSObj`, {py:obj}`altdss.Relay.RelayBatch`
 
 ````
 
-````{py:method} MaxCurrent(terminal: int) -> float
+````{py:method} MaxCurrent(terminal: int) -> altdss.types.Float64Array
 :canonical: altdss.Relay.IRelay.MaxCurrent
 
 ```{autodoc2-docstring} altdss.Relay.IRelay.MaxCurrent
@@ -601,7 +601,7 @@ Bases: {py:obj}`altdss.DSSObj.IDSSObj`, {py:obj}`altdss.Relay.RelayBatch`
 
 ````
 
-````{py:method} OCPDeviceType() -> dss.enums.OCPDevType
+````{py:method} OCPDeviceType() -> typing.List[dss.enums.OCPDevType]
 :canonical: altdss.Relay.IRelay.OCPDeviceType
 
 ```{autodoc2-docstring} altdss.Relay.IRelay.OCPDeviceType
@@ -2466,7 +2466,7 @@ Bases: {py:obj}`altdss.Batch.DSSBatch`, {py:obj}`altdss.CircuitElement.CircuitEl
 
 ````
 
-````{py:method} GUID() -> str
+````{py:method} GUID() -> typing.List[str]
 :canonical: altdss.Relay.RelayBatch.GUID
 
 ```{autodoc2-docstring} altdss.Relay.RelayBatch.GUID
@@ -2526,7 +2526,7 @@ Bases: {py:obj}`altdss.Batch.DSSBatch`, {py:obj}`altdss.CircuitElement.CircuitEl
 
 ````
 
-````{py:method} HasOCPDevice() -> bool
+````{py:method} HasOCPDevice() -> altdss.types.BoolArray
 :canonical: altdss.Relay.RelayBatch.HasOCPDevice
 
 ```{autodoc2-docstring} altdss.Relay.RelayBatch.HasOCPDevice
@@ -2534,7 +2534,7 @@ Bases: {py:obj}`altdss.Batch.DSSBatch`, {py:obj}`altdss.CircuitElement.CircuitEl
 
 ````
 
-````{py:method} HasSwitchControl() -> bool
+````{py:method} HasSwitchControl() -> altdss.types.BoolArray
 :canonical: altdss.Relay.RelayBatch.HasSwitchControl
 
 ```{autodoc2-docstring} altdss.Relay.RelayBatch.HasSwitchControl
@@ -2542,7 +2542,7 @@ Bases: {py:obj}`altdss.Batch.DSSBatch`, {py:obj}`altdss.CircuitElement.CircuitEl
 
 ````
 
-````{py:method} HasVoltControl() -> bool
+````{py:method} HasVoltControl() -> altdss.types.BoolArray
 :canonical: altdss.Relay.RelayBatch.HasVoltControl
 
 ```{autodoc2-docstring} altdss.Relay.RelayBatch.HasVoltControl
@@ -2596,7 +2596,7 @@ Bases: {py:obj}`altdss.Batch.DSSBatch`, {py:obj}`altdss.CircuitElement.CircuitEl
 
 ````
 
-````{py:method} MaxCurrent(terminal: int) -> float
+````{py:method} MaxCurrent(terminal: int) -> altdss.types.Float64Array
 :canonical: altdss.Relay.RelayBatch.MaxCurrent
 
 ```{autodoc2-docstring} altdss.Relay.RelayBatch.MaxCurrent
@@ -2716,7 +2716,7 @@ Bases: {py:obj}`altdss.Batch.DSSBatch`, {py:obj}`altdss.CircuitElement.CircuitEl
 
 ````
 
-````{py:method} OCPDeviceType() -> dss.enums.OCPDevType
+````{py:method} OCPDeviceType() -> typing.List[dss.enums.OCPDevType]
 :canonical: altdss.Relay.RelayBatch.OCPDeviceType
 
 ```{autodoc2-docstring} altdss.Relay.RelayBatch.OCPDeviceType
@@ -3121,6 +3121,14 @@ Bases: {py:obj}`altdss.Batch.DSSBatch`, {py:obj}`altdss.CircuitElement.CircuitEl
 :canonical: altdss.Relay.RelayBatch.__len__
 
 ```{autodoc2-docstring} altdss.Relay.RelayBatch.__len__
+```
+
+````
+
+````{py:method} batch(**kwargs) -> altdss.Batch.DSSBatch
+:canonical: altdss.Relay.RelayBatch.batch
+
+```{autodoc2-docstring} altdss.Relay.RelayBatch.batch
 ```
 
 ````

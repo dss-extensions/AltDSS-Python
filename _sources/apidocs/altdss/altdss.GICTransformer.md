@@ -949,7 +949,7 @@ Bases: {py:obj}`altdss.Batch.DSSBatch`, {py:obj}`altdss.CircuitElement.CircuitEl
 
 ````
 
-````{py:method} GUID() -> str
+````{py:method} GUID() -> typing.List[str]
 :canonical: altdss.GICTransformer.GICTransformerBatch.GUID
 
 ```{autodoc2-docstring} altdss.GICTransformer.GICTransformerBatch.GUID
@@ -965,7 +965,7 @@ Bases: {py:obj}`altdss.Batch.DSSBatch`, {py:obj}`altdss.CircuitElement.CircuitEl
 
 ````
 
-````{py:method} HasOCPDevice() -> bool
+````{py:method} HasOCPDevice() -> altdss.types.BoolArray
 :canonical: altdss.GICTransformer.GICTransformerBatch.HasOCPDevice
 
 ```{autodoc2-docstring} altdss.GICTransformer.GICTransformerBatch.HasOCPDevice
@@ -973,7 +973,7 @@ Bases: {py:obj}`altdss.Batch.DSSBatch`, {py:obj}`altdss.CircuitElement.CircuitEl
 
 ````
 
-````{py:method} HasSwitchControl() -> bool
+````{py:method} HasSwitchControl() -> altdss.types.BoolArray
 :canonical: altdss.GICTransformer.GICTransformerBatch.HasSwitchControl
 
 ```{autodoc2-docstring} altdss.GICTransformer.GICTransformerBatch.HasSwitchControl
@@ -981,7 +981,7 @@ Bases: {py:obj}`altdss.Batch.DSSBatch`, {py:obj}`altdss.CircuitElement.CircuitEl
 
 ````
 
-````{py:method} HasVoltControl() -> bool
+````{py:method} HasVoltControl() -> altdss.types.BoolArray
 :canonical: altdss.GICTransformer.GICTransformerBatch.HasVoltControl
 
 ```{autodoc2-docstring} altdss.GICTransformer.GICTransformerBatch.HasVoltControl
@@ -1051,7 +1051,7 @@ Bases: {py:obj}`altdss.Batch.DSSBatch`, {py:obj}`altdss.CircuitElement.CircuitEl
 
 ````
 
-````{py:method} MaxCurrent(terminal: int) -> float
+````{py:method} MaxCurrent(terminal: int) -> altdss.types.Float64Array
 :canonical: altdss.GICTransformer.GICTransformerBatch.MaxCurrent
 
 ```{autodoc2-docstring} altdss.GICTransformer.GICTransformerBatch.MaxCurrent
@@ -1135,7 +1135,7 @@ Bases: {py:obj}`altdss.Batch.DSSBatch`, {py:obj}`altdss.CircuitElement.CircuitEl
 
 ````
 
-````{py:method} OCPDeviceType() -> dss.enums.OCPDevType
+````{py:method} OCPDeviceType() -> typing.List[dss.enums.OCPDevType]
 :canonical: altdss.GICTransformer.GICTransformerBatch.OCPDeviceType
 
 ```{autodoc2-docstring} altdss.GICTransformer.GICTransformerBatch.OCPDeviceType
@@ -1247,6 +1247,14 @@ Bases: {py:obj}`altdss.Batch.DSSBatch`, {py:obj}`altdss.CircuitElement.CircuitEl
 :canonical: altdss.GICTransformer.GICTransformerBatch.TotalCustomers
 
 ```{autodoc2-docstring} altdss.GICTransformer.GICTransformerBatch.TotalCustomers
+```
+
+````
+
+````{py:method} TotalKilometers() -> altdss.types.Float64Array
+:canonical: altdss.GICTransformer.GICTransformerBatch.TotalKilometers
+
+```{autodoc2-docstring} altdss.GICTransformer.GICTransformerBatch.TotalKilometers
 ```
 
 ````
@@ -1363,6 +1371,14 @@ Bases: {py:obj}`altdss.Batch.DSSBatch`, {py:obj}`altdss.CircuitElement.CircuitEl
 :canonical: altdss.GICTransformer.GICTransformerBatch.__len__
 
 ```{autodoc2-docstring} altdss.GICTransformer.GICTransformerBatch.__len__
+```
+
+````
+
+````{py:method} batch(**kwargs) -> altdss.Batch.DSSBatch
+:canonical: altdss.GICTransformer.GICTransformerBatch.batch
+
+```{autodoc2-docstring} altdss.GICTransformer.GICTransformerBatch.batch
 ```
 
 ````
@@ -2774,7 +2790,7 @@ Bases: {py:obj}`altdss.DSSObj.IDSSObj`, {py:obj}`altdss.GICTransformer.GICTransf
 
 ````
 
-````{py:method} GUID() -> str
+````{py:method} GUID() -> typing.List[str]
 :canonical: altdss.GICTransformer.IGICTransformer.GUID
 
 ```{autodoc2-docstring} altdss.GICTransformer.IGICTransformer.GUID
@@ -2790,7 +2806,7 @@ Bases: {py:obj}`altdss.DSSObj.IDSSObj`, {py:obj}`altdss.GICTransformer.GICTransf
 
 ````
 
-````{py:method} HasOCPDevice() -> bool
+````{py:method} HasOCPDevice() -> altdss.types.BoolArray
 :canonical: altdss.GICTransformer.IGICTransformer.HasOCPDevice
 
 ```{autodoc2-docstring} altdss.GICTransformer.IGICTransformer.HasOCPDevice
@@ -2798,7 +2814,7 @@ Bases: {py:obj}`altdss.DSSObj.IDSSObj`, {py:obj}`altdss.GICTransformer.GICTransf
 
 ````
 
-````{py:method} HasSwitchControl() -> bool
+````{py:method} HasSwitchControl() -> altdss.types.BoolArray
 :canonical: altdss.GICTransformer.IGICTransformer.HasSwitchControl
 
 ```{autodoc2-docstring} altdss.GICTransformer.IGICTransformer.HasSwitchControl
@@ -2806,7 +2822,7 @@ Bases: {py:obj}`altdss.DSSObj.IDSSObj`, {py:obj}`altdss.GICTransformer.GICTransf
 
 ````
 
-````{py:method} HasVoltControl() -> bool
+````{py:method} HasVoltControl() -> altdss.types.BoolArray
 :canonical: altdss.GICTransformer.IGICTransformer.HasVoltControl
 
 ```{autodoc2-docstring} altdss.GICTransformer.IGICTransformer.HasVoltControl
@@ -2876,7 +2892,7 @@ Bases: {py:obj}`altdss.DSSObj.IDSSObj`, {py:obj}`altdss.GICTransformer.GICTransf
 
 ````
 
-````{py:method} MaxCurrent(terminal: int) -> float
+````{py:method} MaxCurrent(terminal: int) -> altdss.types.Float64Array
 :canonical: altdss.GICTransformer.IGICTransformer.MaxCurrent
 
 ```{autodoc2-docstring} altdss.GICTransformer.IGICTransformer.MaxCurrent
@@ -2960,7 +2976,7 @@ Bases: {py:obj}`altdss.DSSObj.IDSSObj`, {py:obj}`altdss.GICTransformer.GICTransf
 
 ````
 
-````{py:method} OCPDeviceType() -> dss.enums.OCPDevType
+````{py:method} OCPDeviceType() -> typing.List[dss.enums.OCPDevType]
 :canonical: altdss.GICTransformer.IGICTransformer.OCPDeviceType
 
 ```{autodoc2-docstring} altdss.GICTransformer.IGICTransformer.OCPDeviceType
@@ -3072,6 +3088,14 @@ Bases: {py:obj}`altdss.DSSObj.IDSSObj`, {py:obj}`altdss.GICTransformer.GICTransf
 :canonical: altdss.GICTransformer.IGICTransformer.TotalCustomers
 
 ```{autodoc2-docstring} altdss.GICTransformer.IGICTransformer.TotalCustomers
+```
+
+````
+
+````{py:method} TotalKilometers() -> altdss.types.Float64Array
+:canonical: altdss.GICTransformer.IGICTransformer.TotalKilometers
+
+```{autodoc2-docstring} altdss.GICTransformer.IGICTransformer.TotalKilometers
 ```
 
 ````

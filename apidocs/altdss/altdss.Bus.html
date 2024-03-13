@@ -8,7 +8,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
-    <title>altdss.Bus &#8212; AltDSS-Python 0.2.0 documentation</title>
+    <title>altdss.Bus &#8212; AltDSS-Python 0.2.2 documentation</title>
   
   
   
@@ -38,7 +38,7 @@
 <link rel="preload" as="script" href="../../_static/scripts/pydata-sphinx-theme.js?digest=8d27b9dea8ad943066ae" />
   <script src="../../_static/vendor/fontawesome/6.5.1/js/all.min.js?digest=8d27b9dea8ad943066ae"></script>
 
-    <script src="../../_static/documentation_options.js?v=7f7c277e"></script>
+    <script src="../../_static/documentation_options.js?v=d3f42505"></script>
     <script src="../../_static/doctools.js?v=888ff710"></script>
     <script src="../../_static/sphinx_highlight.js?v=dc90522c"></script>
     <script src="../../_static/scripts/sphinx-book-theme.js?v=efea14e4"></script>
@@ -139,8 +139,8 @@
       
     
     
-    <img src="../../_static/altdss-python.svg" class="logo__image only-light" alt="AltDSS-Python 0.2.0 documentation - Home"/>
-    <script>document.write(`<img src="../../_static/altdss-python-dark.svg" class="logo__image only-dark" alt="AltDSS-Python 0.2.0 documentation - Home"/>`);</script>
+    <img src="../../_static/altdss-python.svg" class="logo__image only-light" alt="AltDSS-Python 0.2.2 documentation - Home"/>
+    <script>document.write(`<img src="../../_static/altdss-python-dark.svg" class="logo__image only-dark" alt="AltDSS-Python 0.2.2 documentation - Home"/>`);</script>
   
   
 </a></div>
@@ -162,6 +162,7 @@
 <li class="toctree-l1"><a class="reference internal" href="../../index.html">AltDSS-Python</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../Architecture.html">Architecture details</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../examples/GettingStarted.html">Getting Started</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../examples/Batches.html">Batches</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../changelog.html">Changelog</a></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">API Reference</span></p>
@@ -459,6 +460,7 @@ document.write(`
 <li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#altdss.Bus.BusBatch.Distance"><code class="docutils literal notranslate"><span class="pre">BusBatch.Distance()</span></code></a></li>
 <li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#altdss.Bus.BusBatch.IntDuration"><code class="docutils literal notranslate"><span class="pre">BusBatch.IntDuration()</span></code></a></li>
 <li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#altdss.Bus.BusBatch.Lambda"><code class="docutils literal notranslate"><span class="pre">BusBatch.Lambda()</span></code></a></li>
+<li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#altdss.Bus.BusBatch.Name"><code class="docutils literal notranslate"><span class="pre">BusBatch.Name()</span></code></a></li>
 <li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#altdss.Bus.BusBatch.NumCustomers"><code class="docutils literal notranslate"><span class="pre">BusBatch.NumCustomers()</span></code></a></li>
 <li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#altdss.Bus.BusBatch.NumInterrupts"><code class="docutils literal notranslate"><span class="pre">BusBatch.NumInterrupts()</span></code></a></li>
 <li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#altdss.Bus.BusBatch.NumNodes"><code class="docutils literal notranslate"><span class="pre">BusBatch.NumNodes()</span></code></a></li>
@@ -483,6 +485,7 @@ document.write(`
 <li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#altdss.Bus.IBuses.Distance"><code class="docutils literal notranslate"><span class="pre">IBuses.Distance()</span></code></a></li>
 <li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#altdss.Bus.IBuses.IntDuration"><code class="docutils literal notranslate"><span class="pre">IBuses.IntDuration()</span></code></a></li>
 <li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#altdss.Bus.IBuses.Lambda"><code class="docutils literal notranslate"><span class="pre">IBuses.Lambda()</span></code></a></li>
+<li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#altdss.Bus.IBuses.Name"><code class="docutils literal notranslate"><span class="pre">IBuses.Name()</span></code></a></li>
 <li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#altdss.Bus.IBuses.NumCustomers"><code class="docutils literal notranslate"><span class="pre">IBuses.NumCustomers()</span></code></a></li>
 <li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#altdss.Bus.IBuses.NumInterrupts"><code class="docutils literal notranslate"><span class="pre">IBuses.NumInterrupts()</span></code></a></li>
 <li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#altdss.Bus.IBuses.NumNodes"><code class="docutils literal notranslate"><span class="pre">IBuses.NumNodes()</span></code></a></li>
@@ -883,6 +886,12 @@ If more than 3 phases, returns only 3 phases.</p>
 </dd></dl>
 
 <dl class="py method">
+<dt class="sig sig-object py" id="altdss.Bus.BusBatch.Name">
+<span class="sig-name descname"><span class="pre">Name</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">List</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">]</span></span></span></span><a class="headerlink" href="#altdss.Bus.BusBatch.Name" title="Link to this definition">#</a></dt>
+<dd><p>Array of strings containing names of all buses in circuit.</p>
+</dd></dl>
+
+<dl class="py method">
 <dt class="sig sig-object py" id="altdss.Bus.BusBatch.NumCustomers">
 <span class="sig-name descname"><span class="pre">NumCustomers</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">altdss.types.Int32Array</span></span></span><a class="headerlink" href="#altdss.Bus.BusBatch.NumCustomers" title="Link to this definition">#</a></dt>
 <dd><p>For each bus in the batch: total numbers of customers served downline from the bus</p>
@@ -1012,6 +1021,12 @@ all buses.</p>
 <dt class="sig sig-object py" id="altdss.Bus.IBuses.Lambda">
 <span class="sig-name descname"><span class="pre">Lambda</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">altdss.types.Float64Array</span></span></span><a class="headerlink" href="#altdss.Bus.IBuses.Lambda" title="Link to this definition">#</a></dt>
 <dd><p>For each bus in the batch: accumulated failure rate downstream from the bus; faults per year</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="altdss.Bus.IBuses.Name">
+<span class="sig-name descname"><span class="pre">Name</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">List</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">]</span></span></span></span><a class="headerlink" href="#altdss.Bus.IBuses.Name" title="Link to this definition">#</a></dt>
+<dd><p>Array of strings containing names of all buses in circuit.</p>
 </dd></dl>
 
 <dl class="py method">
@@ -1218,6 +1233,7 @@ all buses.</p>
 <li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#altdss.Bus.BusBatch.Distance"><code class="docutils literal notranslate"><span class="pre">BusBatch.Distance()</span></code></a></li>
 <li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#altdss.Bus.BusBatch.IntDuration"><code class="docutils literal notranslate"><span class="pre">BusBatch.IntDuration()</span></code></a></li>
 <li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#altdss.Bus.BusBatch.Lambda"><code class="docutils literal notranslate"><span class="pre">BusBatch.Lambda()</span></code></a></li>
+<li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#altdss.Bus.BusBatch.Name"><code class="docutils literal notranslate"><span class="pre">BusBatch.Name()</span></code></a></li>
 <li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#altdss.Bus.BusBatch.NumCustomers"><code class="docutils literal notranslate"><span class="pre">BusBatch.NumCustomers()</span></code></a></li>
 <li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#altdss.Bus.BusBatch.NumInterrupts"><code class="docutils literal notranslate"><span class="pre">BusBatch.NumInterrupts()</span></code></a></li>
 <li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#altdss.Bus.BusBatch.NumNodes"><code class="docutils literal notranslate"><span class="pre">BusBatch.NumNodes()</span></code></a></li>
@@ -1242,6 +1258,7 @@ all buses.</p>
 <li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#altdss.Bus.IBuses.Distance"><code class="docutils literal notranslate"><span class="pre">IBuses.Distance()</span></code></a></li>
 <li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#altdss.Bus.IBuses.IntDuration"><code class="docutils literal notranslate"><span class="pre">IBuses.IntDuration()</span></code></a></li>
 <li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#altdss.Bus.IBuses.Lambda"><code class="docutils literal notranslate"><span class="pre">IBuses.Lambda()</span></code></a></li>
+<li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#altdss.Bus.IBuses.Name"><code class="docutils literal notranslate"><span class="pre">IBuses.Name()</span></code></a></li>
 <li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#altdss.Bus.IBuses.NumCustomers"><code class="docutils literal notranslate"><span class="pre">IBuses.NumCustomers()</span></code></a></li>
 <li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#altdss.Bus.IBuses.NumInterrupts"><code class="docutils literal notranslate"><span class="pre">IBuses.NumInterrupts()</span></code></a></li>
 <li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#altdss.Bus.IBuses.NumNodes"><code class="docutils literal notranslate"><span class="pre">IBuses.NumNodes()</span></code></a></li>

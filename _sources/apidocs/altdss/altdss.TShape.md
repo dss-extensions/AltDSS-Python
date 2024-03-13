@@ -785,6 +785,14 @@ Bases: {py:obj}`altdss.Batch.DSSBatch`
 
 ````
 
+````{py:method} batch(**kwargs) -> altdss.Batch.DSSBatch
+:canonical: altdss.TShape.TShapeBatch.batch
+
+```{autodoc2-docstring} altdss.TShape.TShapeBatch.batch
+```
+
+````
+
 ````{py:method} begin_edit() -> None
 :canonical: altdss.TShape.TShapeBatch.begin_edit
 

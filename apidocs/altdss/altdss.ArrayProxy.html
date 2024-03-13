@@ -8,7 +8,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
-    <title>altdss.ArrayProxy &#8212; AltDSS-Python 0.2.0 documentation</title>
+    <title>altdss.ArrayProxy &#8212; AltDSS-Python 0.2.2 documentation</title>
   
   
   
@@ -38,7 +38,7 @@
 <link rel="preload" as="script" href="../../_static/scripts/pydata-sphinx-theme.js?digest=8d27b9dea8ad943066ae" />
   <script src="../../_static/vendor/fontawesome/6.5.1/js/all.min.js?digest=8d27b9dea8ad943066ae"></script>
 
-    <script src="../../_static/documentation_options.js?v=7f7c277e"></script>
+    <script src="../../_static/documentation_options.js?v=d3f42505"></script>
     <script src="../../_static/doctools.js?v=888ff710"></script>
     <script src="../../_static/sphinx_highlight.js?v=dc90522c"></script>
     <script src="../../_static/scripts/sphinx-book-theme.js?v=efea14e4"></script>
@@ -137,8 +137,8 @@
       
     
     
-    <img src="../../_static/altdss-python.svg" class="logo__image only-light" alt="AltDSS-Python 0.2.0 documentation - Home"/>
-    <script>document.write(`<img src="../../_static/altdss-python-dark.svg" class="logo__image only-dark" alt="AltDSS-Python 0.2.0 documentation - Home"/>`);</script>
+    <img src="../../_static/altdss-python.svg" class="logo__image only-light" alt="AltDSS-Python 0.2.2 documentation - Home"/>
+    <script>document.write(`<img src="../../_static/altdss-python-dark.svg" class="logo__image only-dark" alt="AltDSS-Python 0.2.2 documentation - Home"/>`);</script>
   
   
 </a></div>
@@ -160,6 +160,7 @@
 <li class="toctree-l1"><a class="reference internal" href="../../index.html">AltDSS-Python</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../Architecture.html">Architecture details</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../examples/GettingStarted.html">Getting Started</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../examples/Batches.html">Batches</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../changelog.html">Changelog</a></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">API Reference</span></p>
@@ -413,11 +414,11 @@ document.write(`
 <li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#altdss.ArrayProxy.BatchFloat64ArrayProxy.__call__"><code class="docutils literal notranslate"><span class="pre">BatchFloat64ArrayProxy.__call__()</span></code></a></li>
 <li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#altdss.ArrayProxy.BatchFloat64ArrayProxy.__floordiv__"><code class="docutils literal notranslate"><span class="pre">BatchFloat64ArrayProxy.__floordiv__()</span></code></a></li>
 <li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#altdss.ArrayProxy.BatchFloat64ArrayProxy.__iadd__"><code class="docutils literal notranslate"><span class="pre">BatchFloat64ArrayProxy.__iadd__()</span></code></a></li>
-<li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#altdss.ArrayProxy.BatchFloat64ArrayProxy.__idiv__"><code class="docutils literal notranslate"><span class="pre">BatchFloat64ArrayProxy.__idiv__()</span></code></a></li>
 <li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#altdss.ArrayProxy.BatchFloat64ArrayProxy.__imul__"><code class="docutils literal notranslate"><span class="pre">BatchFloat64ArrayProxy.__imul__()</span></code></a></li>
 <li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#altdss.ArrayProxy.BatchFloat64ArrayProxy.__init__"><code class="docutils literal notranslate"><span class="pre">BatchFloat64ArrayProxy.__init__()</span></code></a></li>
 <li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#altdss.ArrayProxy.BatchFloat64ArrayProxy.__isub__"><code class="docutils literal notranslate"><span class="pre">BatchFloat64ArrayProxy.__isub__()</span></code></a></li>
 <li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#altdss.ArrayProxy.BatchFloat64ArrayProxy.__iter__"><code class="docutils literal notranslate"><span class="pre">BatchFloat64ArrayProxy.__iter__()</span></code></a></li>
+<li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#altdss.ArrayProxy.BatchFloat64ArrayProxy.__itruediv__"><code class="docutils literal notranslate"><span class="pre">BatchFloat64ArrayProxy.__itruediv__()</span></code></a></li>
 <li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#altdss.ArrayProxy.BatchFloat64ArrayProxy.__len__"><code class="docutils literal notranslate"><span class="pre">BatchFloat64ArrayProxy.__len__()</span></code></a></li>
 <li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#altdss.ArrayProxy.BatchFloat64ArrayProxy.__mul__"><code class="docutils literal notranslate"><span class="pre">BatchFloat64ArrayProxy.__mul__()</span></code></a></li>
 <li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#altdss.ArrayProxy.BatchFloat64ArrayProxy.__sub__"><code class="docutils literal notranslate"><span class="pre">BatchFloat64ArrayProxy.__sub__()</span></code></a></li>
@@ -436,7 +437,7 @@ document.write(`
 <li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#altdss.ArrayProxy.BatchInt32ArrayProxy.__call__"><code class="docutils literal notranslate"><span class="pre">BatchInt32ArrayProxy.__call__()</span></code></a></li>
 <li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#altdss.ArrayProxy.BatchInt32ArrayProxy.__floordiv__"><code class="docutils literal notranslate"><span class="pre">BatchInt32ArrayProxy.__floordiv__()</span></code></a></li>
 <li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#altdss.ArrayProxy.BatchInt32ArrayProxy.__iadd__"><code class="docutils literal notranslate"><span class="pre">BatchInt32ArrayProxy.__iadd__()</span></code></a></li>
-<li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#altdss.ArrayProxy.BatchInt32ArrayProxy.__idiv__"><code class="docutils literal notranslate"><span class="pre">BatchInt32ArrayProxy.__idiv__()</span></code></a></li>
+<li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#altdss.ArrayProxy.BatchInt32ArrayProxy.__ifloordiv__"><code class="docutils literal notranslate"><span class="pre">BatchInt32ArrayProxy.__ifloordiv__()</span></code></a></li>
 <li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#altdss.ArrayProxy.BatchInt32ArrayProxy.__imul__"><code class="docutils literal notranslate"><span class="pre">BatchInt32ArrayProxy.__imul__()</span></code></a></li>
 <li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#altdss.ArrayProxy.BatchInt32ArrayProxy.__init__"><code class="docutils literal notranslate"><span class="pre">BatchInt32ArrayProxy.__init__()</span></code></a></li>
 <li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#altdss.ArrayProxy.BatchInt32ArrayProxy.__isub__"><code class="docutils literal notranslate"><span class="pre">BatchInt32ArrayProxy.__isub__()</span></code></a></li>
@@ -518,13 +519,6 @@ document.write(`
 </dd></dl>
 
 <dl class="py method">
-<dt class="sig sig-object py" id="altdss.ArrayProxy.BatchFloat64ArrayProxy.__idiv__">
-<span class="sig-name descname"><span class="pre">__idiv__</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">other</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">flags</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#altdss.ArrayProxy.BatchFloat64ArrayProxy.__idiv__" title="Link to this definition">#</a></dt>
-<dd><p>Inplace modification of the array. When possible, it runs the operation in the engine.</p>
-<p>Use <code class="docutils literal notranslate"><span class="pre">idiv</span></code> instead of the <code class="docutils literal notranslate"><span class="pre">/=</span></code> operator in order to specify SetterFlags.</p>
-</dd></dl>
-
-<dl class="py method">
 <dt class="sig sig-object py" id="altdss.ArrayProxy.BatchFloat64ArrayProxy.__imul__">
 <span class="sig-name descname"><span class="pre">__imul__</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">other</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">flags</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#altdss.ArrayProxy.BatchFloat64ArrayProxy.__imul__" title="Link to this definition">#</a></dt>
 <dd><p>Inplace modification of the array. When possible, it runs the operation in the engine.</p>
@@ -547,6 +541,13 @@ document.write(`
 <dt class="sig sig-object py" id="altdss.ArrayProxy.BatchFloat64ArrayProxy.__iter__">
 <span class="sig-name descname"><span class="pre">__iter__</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#altdss.ArrayProxy.BatchFloat64ArrayProxy.__iter__" title="Link to this definition">#</a></dt>
 <dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="altdss.ArrayProxy.BatchFloat64ArrayProxy.__itruediv__">
+<span class="sig-name descname"><span class="pre">__itruediv__</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">other</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">flags</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#altdss.ArrayProxy.BatchFloat64ArrayProxy.__itruediv__" title="Link to this definition">#</a></dt>
+<dd><p>Inplace modification of the array. When possible, it runs the operation in the engine.</p>
+<p>Use <code class="docutils literal notranslate"><span class="pre">idiv</span></code> instead of the <code class="docutils literal notranslate"><span class="pre">/=</span></code> operator in order to specify SetterFlags.</p>
+</dd></dl>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="altdss.ArrayProxy.BatchFloat64ArrayProxy.__len__">
@@ -635,8 +636,8 @@ document.write(`
 </dd></dl>
 
 <dl class="py method">
-<dt class="sig sig-object py" id="altdss.ArrayProxy.BatchInt32ArrayProxy.__idiv__">
-<span class="sig-name descname"><span class="pre">__idiv__</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">other</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">flags</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#altdss.ArrayProxy.BatchInt32ArrayProxy.__idiv__" title="Link to this definition">#</a></dt>
+<dt class="sig sig-object py" id="altdss.ArrayProxy.BatchInt32ArrayProxy.__ifloordiv__">
+<span class="sig-name descname"><span class="pre">__ifloordiv__</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">other</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">flags</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#altdss.ArrayProxy.BatchInt32ArrayProxy.__ifloordiv__" title="Link to this definition">#</a></dt>
 <dd><p>Inplace modification of the array. When possible, it runs the operation in the engine.</p>
 <p>Use <code class="docutils literal notranslate"><span class="pre">idiv</span></code> instead of the <code class="docutils literal notranslate"><span class="pre">/=</span></code> operator in order to specify SetterFlags.</p>
 </dd></dl>
@@ -779,11 +780,11 @@ document.write(`
 <li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#altdss.ArrayProxy.BatchFloat64ArrayProxy.__call__"><code class="docutils literal notranslate"><span class="pre">BatchFloat64ArrayProxy.__call__()</span></code></a></li>
 <li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#altdss.ArrayProxy.BatchFloat64ArrayProxy.__floordiv__"><code class="docutils literal notranslate"><span class="pre">BatchFloat64ArrayProxy.__floordiv__()</span></code></a></li>
 <li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#altdss.ArrayProxy.BatchFloat64ArrayProxy.__iadd__"><code class="docutils literal notranslate"><span class="pre">BatchFloat64ArrayProxy.__iadd__()</span></code></a></li>
-<li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#altdss.ArrayProxy.BatchFloat64ArrayProxy.__idiv__"><code class="docutils literal notranslate"><span class="pre">BatchFloat64ArrayProxy.__idiv__()</span></code></a></li>
 <li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#altdss.ArrayProxy.BatchFloat64ArrayProxy.__imul__"><code class="docutils literal notranslate"><span class="pre">BatchFloat64ArrayProxy.__imul__()</span></code></a></li>
 <li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#altdss.ArrayProxy.BatchFloat64ArrayProxy.__init__"><code class="docutils literal notranslate"><span class="pre">BatchFloat64ArrayProxy.__init__()</span></code></a></li>
 <li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#altdss.ArrayProxy.BatchFloat64ArrayProxy.__isub__"><code class="docutils literal notranslate"><span class="pre">BatchFloat64ArrayProxy.__isub__()</span></code></a></li>
 <li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#altdss.ArrayProxy.BatchFloat64ArrayProxy.__iter__"><code class="docutils literal notranslate"><span class="pre">BatchFloat64ArrayProxy.__iter__()</span></code></a></li>
+<li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#altdss.ArrayProxy.BatchFloat64ArrayProxy.__itruediv__"><code class="docutils literal notranslate"><span class="pre">BatchFloat64ArrayProxy.__itruediv__()</span></code></a></li>
 <li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#altdss.ArrayProxy.BatchFloat64ArrayProxy.__len__"><code class="docutils literal notranslate"><span class="pre">BatchFloat64ArrayProxy.__len__()</span></code></a></li>
 <li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#altdss.ArrayProxy.BatchFloat64ArrayProxy.__mul__"><code class="docutils literal notranslate"><span class="pre">BatchFloat64ArrayProxy.__mul__()</span></code></a></li>
 <li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#altdss.ArrayProxy.BatchFloat64ArrayProxy.__sub__"><code class="docutils literal notranslate"><span class="pre">BatchFloat64ArrayProxy.__sub__()</span></code></a></li>
@@ -802,7 +803,7 @@ document.write(`
 <li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#altdss.ArrayProxy.BatchInt32ArrayProxy.__call__"><code class="docutils literal notranslate"><span class="pre">BatchInt32ArrayProxy.__call__()</span></code></a></li>
 <li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#altdss.ArrayProxy.BatchInt32ArrayProxy.__floordiv__"><code class="docutils literal notranslate"><span class="pre">BatchInt32ArrayProxy.__floordiv__()</span></code></a></li>
 <li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#altdss.ArrayProxy.BatchInt32ArrayProxy.__iadd__"><code class="docutils literal notranslate"><span class="pre">BatchInt32ArrayProxy.__iadd__()</span></code></a></li>
-<li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#altdss.ArrayProxy.BatchInt32ArrayProxy.__idiv__"><code class="docutils literal notranslate"><span class="pre">BatchInt32ArrayProxy.__idiv__()</span></code></a></li>
+<li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#altdss.ArrayProxy.BatchInt32ArrayProxy.__ifloordiv__"><code class="docutils literal notranslate"><span class="pre">BatchInt32ArrayProxy.__ifloordiv__()</span></code></a></li>
 <li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#altdss.ArrayProxy.BatchInt32ArrayProxy.__imul__"><code class="docutils literal notranslate"><span class="pre">BatchInt32ArrayProxy.__imul__()</span></code></a></li>
 <li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#altdss.ArrayProxy.BatchInt32ArrayProxy.__init__"><code class="docutils literal notranslate"><span class="pre">BatchInt32ArrayProxy.__init__()</span></code></a></li>
 <li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#altdss.ArrayProxy.BatchInt32ArrayProxy.__isub__"><code class="docutils literal notranslate"><span class="pre">BatchInt32ArrayProxy.__isub__()</span></code></a></li>

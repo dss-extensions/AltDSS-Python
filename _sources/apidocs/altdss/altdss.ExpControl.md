@@ -684,7 +684,7 @@ Bases: {py:obj}`altdss.Batch.DSSBatch`, {py:obj}`altdss.CircuitElement.CircuitEl
 
 ````
 
-````{py:method} GUID() -> str
+````{py:method} GUID() -> typing.List[str]
 :canonical: altdss.ExpControl.ExpControlBatch.GUID
 
 ```{autodoc2-docstring} altdss.ExpControl.ExpControlBatch.GUID
@@ -700,7 +700,7 @@ Bases: {py:obj}`altdss.Batch.DSSBatch`, {py:obj}`altdss.CircuitElement.CircuitEl
 
 ````
 
-````{py:method} HasOCPDevice() -> bool
+````{py:method} HasOCPDevice() -> altdss.types.BoolArray
 :canonical: altdss.ExpControl.ExpControlBatch.HasOCPDevice
 
 ```{autodoc2-docstring} altdss.ExpControl.ExpControlBatch.HasOCPDevice
@@ -708,7 +708,7 @@ Bases: {py:obj}`altdss.Batch.DSSBatch`, {py:obj}`altdss.CircuitElement.CircuitEl
 
 ````
 
-````{py:method} HasSwitchControl() -> bool
+````{py:method} HasSwitchControl() -> altdss.types.BoolArray
 :canonical: altdss.ExpControl.ExpControlBatch.HasSwitchControl
 
 ```{autodoc2-docstring} altdss.ExpControl.ExpControlBatch.HasSwitchControl
@@ -716,7 +716,7 @@ Bases: {py:obj}`altdss.Batch.DSSBatch`, {py:obj}`altdss.CircuitElement.CircuitEl
 
 ````
 
-````{py:method} HasVoltControl() -> bool
+````{py:method} HasVoltControl() -> altdss.types.BoolArray
 :canonical: altdss.ExpControl.ExpControlBatch.HasVoltControl
 
 ```{autodoc2-docstring} altdss.ExpControl.ExpControlBatch.HasVoltControl
@@ -748,7 +748,7 @@ Bases: {py:obj}`altdss.Batch.DSSBatch`, {py:obj}`altdss.CircuitElement.CircuitEl
 
 ````
 
-````{py:method} MaxCurrent(terminal: int) -> float
+````{py:method} MaxCurrent(terminal: int) -> altdss.types.Float64Array
 :canonical: altdss.ExpControl.ExpControlBatch.MaxCurrent
 
 ```{autodoc2-docstring} altdss.ExpControl.ExpControlBatch.MaxCurrent
@@ -813,7 +813,7 @@ Bases: {py:obj}`altdss.Batch.DSSBatch`, {py:obj}`altdss.CircuitElement.CircuitEl
 
 ````
 
-````{py:method} OCPDeviceType() -> dss.enums.OCPDevType
+````{py:method} OCPDeviceType() -> typing.List[dss.enums.OCPDevType]
 :canonical: altdss.ExpControl.ExpControlBatch.OCPDeviceType
 
 ```{autodoc2-docstring} altdss.ExpControl.ExpControlBatch.OCPDeviceType
@@ -1042,6 +1042,14 @@ Bases: {py:obj}`altdss.Batch.DSSBatch`, {py:obj}`altdss.CircuitElement.CircuitEl
 :canonical: altdss.ExpControl.ExpControlBatch.__len__
 
 ```{autodoc2-docstring} altdss.ExpControl.ExpControlBatch.__len__
+```
+
+````
+
+````{py:method} batch(**kwargs) -> altdss.Batch.DSSBatch
+:canonical: altdss.ExpControl.ExpControlBatch.batch
+
+```{autodoc2-docstring} altdss.ExpControl.ExpControlBatch.batch
 ```
 
 ````
@@ -2185,7 +2193,7 @@ Bases: {py:obj}`altdss.DSSObj.IDSSObj`, {py:obj}`altdss.ExpControl.ExpControlBat
 
 ````
 
-````{py:method} GUID() -> str
+````{py:method} GUID() -> typing.List[str]
 :canonical: altdss.ExpControl.IExpControl.GUID
 
 ```{autodoc2-docstring} altdss.ExpControl.IExpControl.GUID
@@ -2201,7 +2209,7 @@ Bases: {py:obj}`altdss.DSSObj.IDSSObj`, {py:obj}`altdss.ExpControl.ExpControlBat
 
 ````
 
-````{py:method} HasOCPDevice() -> bool
+````{py:method} HasOCPDevice() -> altdss.types.BoolArray
 :canonical: altdss.ExpControl.IExpControl.HasOCPDevice
 
 ```{autodoc2-docstring} altdss.ExpControl.IExpControl.HasOCPDevice
@@ -2209,7 +2217,7 @@ Bases: {py:obj}`altdss.DSSObj.IDSSObj`, {py:obj}`altdss.ExpControl.ExpControlBat
 
 ````
 
-````{py:method} HasSwitchControl() -> bool
+````{py:method} HasSwitchControl() -> altdss.types.BoolArray
 :canonical: altdss.ExpControl.IExpControl.HasSwitchControl
 
 ```{autodoc2-docstring} altdss.ExpControl.IExpControl.HasSwitchControl
@@ -2217,7 +2225,7 @@ Bases: {py:obj}`altdss.DSSObj.IDSSObj`, {py:obj}`altdss.ExpControl.ExpControlBat
 
 ````
 
-````{py:method} HasVoltControl() -> bool
+````{py:method} HasVoltControl() -> altdss.types.BoolArray
 :canonical: altdss.ExpControl.IExpControl.HasVoltControl
 
 ```{autodoc2-docstring} altdss.ExpControl.IExpControl.HasVoltControl
@@ -2249,7 +2257,7 @@ Bases: {py:obj}`altdss.DSSObj.IDSSObj`, {py:obj}`altdss.ExpControl.ExpControlBat
 
 ````
 
-````{py:method} MaxCurrent(terminal: int) -> float
+````{py:method} MaxCurrent(terminal: int) -> altdss.types.Float64Array
 :canonical: altdss.ExpControl.IExpControl.MaxCurrent
 
 ```{autodoc2-docstring} altdss.ExpControl.IExpControl.MaxCurrent
@@ -2314,7 +2322,7 @@ Bases: {py:obj}`altdss.DSSObj.IDSSObj`, {py:obj}`altdss.ExpControl.ExpControlBat
 
 ````
 
-````{py:method} OCPDeviceType() -> dss.enums.OCPDevType
+````{py:method} OCPDeviceType() -> typing.List[dss.enums.OCPDevType]
 :canonical: altdss.ExpControl.IExpControl.OCPDeviceType
 
 ```{autodoc2-docstring} altdss.ExpControl.IExpControl.OCPDeviceType

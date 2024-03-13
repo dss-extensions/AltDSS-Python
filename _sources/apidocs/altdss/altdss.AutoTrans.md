@@ -1237,7 +1237,7 @@ Bases: {py:obj}`altdss.Batch.DSSBatch`, {py:obj}`altdss.CircuitElement.CircuitEl
 
 ````
 
-````{py:method} GUID() -> str
+````{py:method} GUID() -> typing.List[str]
 :canonical: altdss.AutoTrans.AutoTransBatch.GUID
 
 ```{autodoc2-docstring} altdss.AutoTrans.AutoTransBatch.GUID
@@ -1264,7 +1264,7 @@ Bases: {py:obj}`altdss.Batch.DSSBatch`, {py:obj}`altdss.CircuitElement.CircuitEl
 
 ````
 
-````{py:method} HasOCPDevice() -> bool
+````{py:method} HasOCPDevice() -> altdss.types.BoolArray
 :canonical: altdss.AutoTrans.AutoTransBatch.HasOCPDevice
 
 ```{autodoc2-docstring} altdss.AutoTrans.AutoTransBatch.HasOCPDevice
@@ -1272,7 +1272,7 @@ Bases: {py:obj}`altdss.Batch.DSSBatch`, {py:obj}`altdss.CircuitElement.CircuitEl
 
 ````
 
-````{py:method} HasSwitchControl() -> bool
+````{py:method} HasSwitchControl() -> altdss.types.BoolArray
 :canonical: altdss.AutoTrans.AutoTransBatch.HasSwitchControl
 
 ```{autodoc2-docstring} altdss.AutoTrans.AutoTransBatch.HasSwitchControl
@@ -1280,7 +1280,7 @@ Bases: {py:obj}`altdss.Batch.DSSBatch`, {py:obj}`altdss.CircuitElement.CircuitEl
 
 ````
 
-````{py:method} HasVoltControl() -> bool
+````{py:method} HasVoltControl() -> altdss.types.BoolArray
 :canonical: altdss.AutoTrans.AutoTransBatch.HasVoltControl
 
 ```{autodoc2-docstring} altdss.AutoTrans.AutoTransBatch.HasVoltControl
@@ -1350,7 +1350,7 @@ Bases: {py:obj}`altdss.Batch.DSSBatch`, {py:obj}`altdss.CircuitElement.CircuitEl
 
 ````
 
-````{py:method} MaxCurrent(terminal: int) -> float
+````{py:method} MaxCurrent(terminal: int) -> altdss.types.Float64Array
 :canonical: altdss.AutoTrans.AutoTransBatch.MaxCurrent
 
 ```{autodoc2-docstring} altdss.AutoTrans.AutoTransBatch.MaxCurrent
@@ -1478,7 +1478,7 @@ Bases: {py:obj}`altdss.Batch.DSSBatch`, {py:obj}`altdss.CircuitElement.CircuitEl
 
 ````
 
-````{py:method} OCPDeviceType() -> dss.enums.OCPDevType
+````{py:method} OCPDeviceType() -> typing.List[dss.enums.OCPDevType]
 :canonical: altdss.AutoTrans.AutoTransBatch.OCPDeviceType
 
 ```{autodoc2-docstring} altdss.AutoTrans.AutoTransBatch.OCPDeviceType
@@ -1627,6 +1627,14 @@ Bases: {py:obj}`altdss.Batch.DSSBatch`, {py:obj}`altdss.CircuitElement.CircuitEl
 
 ````
 
+````{py:method} TotalKilometers() -> altdss.types.Float64Array
+:canonical: altdss.AutoTrans.AutoTransBatch.TotalKilometers
+
+```{autodoc2-docstring} altdss.AutoTrans.AutoTransBatch.TotalKilometers
+```
+
+````
+
 ````{py:method} TotalMiles() -> altdss.types.Float64Array
 :canonical: altdss.AutoTrans.AutoTransBatch.TotalMiles
 
@@ -1761,6 +1769,14 @@ Bases: {py:obj}`altdss.Batch.DSSBatch`, {py:obj}`altdss.CircuitElement.CircuitEl
 :canonical: altdss.AutoTrans.AutoTransBatch.__len__
 
 ```{autodoc2-docstring} altdss.AutoTrans.AutoTransBatch.__len__
+```
+
+````
+
+````{py:method} batch(**kwargs) -> altdss.Batch.DSSBatch
+:canonical: altdss.AutoTrans.AutoTransBatch.batch
+
+```{autodoc2-docstring} altdss.AutoTrans.AutoTransBatch.batch
 ```
 
 ````
@@ -3700,7 +3716,7 @@ Bases: {py:obj}`altdss.DSSObj.IDSSObj`, {py:obj}`altdss.AutoTrans.AutoTransBatch
 
 ````
 
-````{py:method} GUID() -> str
+````{py:method} GUID() -> typing.List[str]
 :canonical: altdss.AutoTrans.IAutoTrans.GUID
 
 ```{autodoc2-docstring} altdss.AutoTrans.IAutoTrans.GUID
@@ -3727,7 +3743,7 @@ Bases: {py:obj}`altdss.DSSObj.IDSSObj`, {py:obj}`altdss.AutoTrans.AutoTransBatch
 
 ````
 
-````{py:method} HasOCPDevice() -> bool
+````{py:method} HasOCPDevice() -> altdss.types.BoolArray
 :canonical: altdss.AutoTrans.IAutoTrans.HasOCPDevice
 
 ```{autodoc2-docstring} altdss.AutoTrans.IAutoTrans.HasOCPDevice
@@ -3735,7 +3751,7 @@ Bases: {py:obj}`altdss.DSSObj.IDSSObj`, {py:obj}`altdss.AutoTrans.AutoTransBatch
 
 ````
 
-````{py:method} HasSwitchControl() -> bool
+````{py:method} HasSwitchControl() -> altdss.types.BoolArray
 :canonical: altdss.AutoTrans.IAutoTrans.HasSwitchControl
 
 ```{autodoc2-docstring} altdss.AutoTrans.IAutoTrans.HasSwitchControl
@@ -3743,7 +3759,7 @@ Bases: {py:obj}`altdss.DSSObj.IDSSObj`, {py:obj}`altdss.AutoTrans.AutoTransBatch
 
 ````
 
-````{py:method} HasVoltControl() -> bool
+````{py:method} HasVoltControl() -> altdss.types.BoolArray
 :canonical: altdss.AutoTrans.IAutoTrans.HasVoltControl
 
 ```{autodoc2-docstring} altdss.AutoTrans.IAutoTrans.HasVoltControl
@@ -3813,7 +3829,7 @@ Bases: {py:obj}`altdss.DSSObj.IDSSObj`, {py:obj}`altdss.AutoTrans.AutoTransBatch
 
 ````
 
-````{py:method} MaxCurrent(terminal: int) -> float
+````{py:method} MaxCurrent(terminal: int) -> altdss.types.Float64Array
 :canonical: altdss.AutoTrans.IAutoTrans.MaxCurrent
 
 ```{autodoc2-docstring} altdss.AutoTrans.IAutoTrans.MaxCurrent
@@ -3941,7 +3957,7 @@ Bases: {py:obj}`altdss.DSSObj.IDSSObj`, {py:obj}`altdss.AutoTrans.AutoTransBatch
 
 ````
 
-````{py:method} OCPDeviceType() -> dss.enums.OCPDevType
+````{py:method} OCPDeviceType() -> typing.List[dss.enums.OCPDevType]
 :canonical: altdss.AutoTrans.IAutoTrans.OCPDeviceType
 
 ```{autodoc2-docstring} altdss.AutoTrans.IAutoTrans.OCPDeviceType
@@ -4086,6 +4102,14 @@ Bases: {py:obj}`altdss.DSSObj.IDSSObj`, {py:obj}`altdss.AutoTrans.AutoTransBatch
 :canonical: altdss.AutoTrans.IAutoTrans.TotalCustomers
 
 ```{autodoc2-docstring} altdss.AutoTrans.IAutoTrans.TotalCustomers
+```
+
+````
+
+````{py:method} TotalKilometers() -> altdss.types.Float64Array
+:canonical: altdss.AutoTrans.IAutoTrans.TotalKilometers
+
+```{autodoc2-docstring} altdss.AutoTrans.IAutoTrans.TotalKilometers
 ```
 
 ````

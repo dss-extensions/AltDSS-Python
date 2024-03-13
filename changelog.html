@@ -8,7 +8,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
-    <title>AltDSS-Python changelog &#8212; AltDSS-Python 0.2.0 documentation</title>
+    <title>AltDSS-Python changelog &#8212; AltDSS-Python 0.2.2 documentation</title>
   
   
   
@@ -38,7 +38,7 @@
 <link rel="preload" as="script" href="_static/scripts/pydata-sphinx-theme.js?digest=8d27b9dea8ad943066ae" />
   <script src="_static/vendor/fontawesome/6.5.1/js/all.min.js?digest=8d27b9dea8ad943066ae"></script>
 
-    <script src="_static/documentation_options.js?v=7f7c277e"></script>
+    <script src="_static/documentation_options.js?v=d3f42505"></script>
     <script src="_static/doctools.js?v=888ff710"></script>
     <script src="_static/sphinx_highlight.js?v=dc90522c"></script>
     <script src="_static/scripts/sphinx-book-theme.js?v=efea14e4"></script>
@@ -48,7 +48,7 @@
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
     <link rel="next" title="General enumerations" href="enumerations.html" />
-    <link rel="prev" title="Getting Started" href="examples/GettingStarted.html" />
+    <link rel="prev" title="Batches" href="examples/Batches.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
   </head>
@@ -137,8 +137,8 @@
       
     
     
-    <img src="_static/altdss-python.svg" class="logo__image only-light" alt="AltDSS-Python 0.2.0 documentation - Home"/>
-    <script>document.write(`<img src="_static/altdss-python-dark.svg" class="logo__image only-dark" alt="AltDSS-Python 0.2.0 documentation - Home"/>`);</script>
+    <img src="_static/altdss-python.svg" class="logo__image only-light" alt="AltDSS-Python 0.2.2 documentation - Home"/>
+    <script>document.write(`<img src="_static/altdss-python-dark.svg" class="logo__image only-dark" alt="AltDSS-Python 0.2.2 documentation - Home"/>`);</script>
   
   
 </a></div>
@@ -160,6 +160,7 @@
 <li class="toctree-l1"><a class="reference internal" href="index.html">AltDSS-Python</a></li>
 <li class="toctree-l1"><a class="reference internal" href="Architecture.html">Architecture details</a></li>
 <li class="toctree-l1"><a class="reference internal" href="examples/GettingStarted.html">Getting Started</a></li>
+<li class="toctree-l1"><a class="reference internal" href="examples/Batches.html">Batches</a></li>
 <li class="toctree-l1 current active"><a class="current reference internal" href="#">Changelog</a></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">API Reference</span></p>
@@ -404,12 +405,14 @@ document.write(`
             </div>
             <nav aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id1">0.2.0</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id2">0.1.3</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id3">0.1.2</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id4">0.1.1</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id5">0.1.0</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id6">0.0.1</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id1">0.2.2</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id2">0.2.1</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id3">0.2.0</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id4">0.1.3</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id5">0.1.2</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id6">0.1.1</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id7">0.1.0</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id8">0.0.1</a></li>
 </ul>
             </nav>
         </div>
@@ -424,10 +427,53 @@ document.write(`
   <section class="tex2jax_ignore mathjax_ignore" id="altdss-python-changelog">
 <h1>AltDSS-Python changelog<a class="headerlink" href="#altdss-python-changelog" title="Link to this heading">#</a></h1>
 <p>Remember that changes in our alternative OpenDSS engine, currently known as AltDSS/DSS C-API, are always
-relevant. See <a class="reference external" href="https://github.com/dss-extensions/dss_capi/">DSS C-API’s repository</a> for more information.</p>
+relevant. See <a class="reference external" href="https://github.com/dss-extensions/dss_capi/">AltDSS/DSS C-API’s repository</a> for more information.</p>
 <section id="id1">
-<h2>0.2.0<a class="headerlink" href="#id1" title="Link to this heading">#</a></h2>
-<p>Version incremented to 0.2.0 due to the number of changes in the function/property names. The engine is also updated to DSS C-API 0.14.2.</p>
+<h2>0.2.2<a class="headerlink" href="#id1" title="Link to this heading">#</a></h2>
+<p>This release includes a lot more tests, reaching 100% coverage of the <em>Python</em> code of several important modules, considering both the public and private tests. The engine was updated to AltDSS/DSS C-API 0.14.3 to include a couple of new features and fixes found during the tests.</p>
+<ul class="simple">
+<li><p>SystemY: in <code class="docutils literal notranslate"><span class="pre">AltDSS.SystemY</span></code>, return the matrix as a SciPy sparse matrix directly.</p></li>
+<li><p>BusBatch: Add missing <code class="docutils literal notranslate"><span class="pre">Name</span></code> function (the bus names were already exposed in the individual objects and at circuit level in <code class="docutils literal notranslate"><span class="pre">AltDSS.BusNames</span></code>).</p></li>
+<li><p>Batch, creation function <code class="docutils literal notranslate"><span class="pre">.batch(...)</span></code>:</p>
+<ul>
+<li><p>Fix by list of indices (<code class="docutils literal notranslate"><span class="pre">...batch(idx=[0,1,10]</span></code>)</p></li>
+<li><p>Add some basic type checks</p></li>
+<li><p>Add support for selecting items by float property (<code class="docutils literal notranslate"><span class="pre">...batch(kW=0)</span></code> or <code class="docutils literal notranslate"><span class="pre">...batch(kV=[0.0,</span> <span class="pre">1.0])</span></code>)</p></li>
+<li><p>Add support for filtering multiple properties (<code class="docutils literal notranslate"><span class="pre">...batch(Phases=2,</span> <span class="pre">kV=[0.0,</span> <span class="pre">1.0])</span></code>), and filtering existing batches.</p></li>
+</ul>
+</li>
+<li><p>CircuitElement/CircuitElementBatch: Complement doc strings; fix some type hints.</p></li>
+<li><p>CircuitElementBatch:</p>
+<ul>
+<li><p>Fix <code class="docutils literal notranslate"><span class="pre">MaxCurrent</span></code>. This will require the backend to be updated to v0.14.3.</p></li>
+<li><p>Implement <code class="docutils literal notranslate"><span class="pre">OCPDevice</span></code></p></li>
+</ul>
+</li>
+<li><p>NonUniformBatch: allow <code class="docutils literal notranslate"><span class="pre">batch[idx]</span></code> to get a single element by index.</p></li>
+<li><p>Setters:</p>
+<ul>
+<li><p>Allow using <code class="docutils literal notranslate"><span class="pre">None</span></code> to clear object references (e.g. <code class="docutils literal notranslate"><span class="pre">altdss.Load[0].Daily</span> <span class="pre">=</span> <span class="pre">None</span></code>)</p></li>
+<li><p>Allow using list of live objects to fill a property that represents a DSS object.</p></li>
+</ul>
+</li>
+<li><p>ArrayProxy:</p>
+<ul>
+<li><p>Fix <code class="docutils literal notranslate"><span class="pre">BatchFloat64ArrayProxy.to_list()</span></code>. It was returning an array instead a list.</p></li>
+<li><p>Accepts lists for in-place sub, e.g. <code class="docutils literal notranslate"><span class="pre">arrayProxy</span> <span class="pre">-=</span> <span class="pre">[1.1,</span> <span class="pre">1.4]</span></code> now works as expected.</p></li>
+<li><p>Use new low-level operations for in-place operations with array values</p></li>
+</ul>
+</li>
+</ul>
+</section>
+<section id="id2">
+<h2>0.2.1<a class="headerlink" href="#id2" title="Link to this heading">#</a></h2>
+<ul class="simple">
+<li><p>Meter/Generator/etc.: Remove the previous workaround for issue with the AltDSS/DSS C-API headers related to <code class="docutils literal notranslate"><span class="pre">RegisterValues</span></code> – now working without it. Add test.</p></li>
+</ul>
+</section>
+<section id="id3">
+<h2>0.2.0<a class="headerlink" href="#id3" title="Link to this heading">#</a></h2>
+<p>Version incremented to 0.2.0 due to the number of changes in the function/property names. The engine is also updated to AltDSS/DSS C-API 0.14.2.</p>
 <ul class="simple">
 <li><p>PDElement:</p>
 <ul>
@@ -473,15 +519,15 @@ relevant. See <a class="reference external" href="https://github.com/dss-extensi
 </li>
 </ul>
 </section>
-<section id="id2">
-<h2>0.1.3<a class="headerlink" href="#id2" title="Link to this heading">#</a></h2>
+<section id="id4">
+<h2>0.1.3<a class="headerlink" href="#id4" title="Link to this heading">#</a></h2>
 <ul class="simple">
-<li><p>Meter/Generator/etc.: Add workaround for issue with the DSS C-API headers related to <code class="docutils literal notranslate"><span class="pre">RegisterValues</span></code>.</p></li>
+<li><p>Meter/Generator/etc.: Add workaround for issue with the AltDSS/DSS C-API headers related to <code class="docutils literal notranslate"><span class="pre">RegisterValues</span></code>.</p></li>
 <li><p>Monitor: fix issue with <code class="docutils literal notranslate"><span class="pre">Channel</span></code> returning the whole data instead of the channel data.</p></li>
 </ul>
 </section>
-<section id="id3">
-<h2>0.1.2<a class="headerlink" href="#id3" title="Link to this heading">#</a></h2>
+<section id="id5">
+<h2>0.1.2<a class="headerlink" href="#id5" title="Link to this heading">#</a></h2>
 <ul class="simple">
 <li><p>Fix <code class="docutils literal notranslate"><span class="pre">SetterFlags</span></code>: import from backend instead of defining a new enum here.</p></li>
 <li><p>Batch:</p>
@@ -494,8 +540,8 @@ relevant. See <a class="reference external" href="https://github.com/dss-extensi
 <li><p>Known issue: reading <code class="docutils literal notranslate"><span class="pre">pctEmerg</span></code> or <code class="docutils literal notranslate"><span class="pre">pctNorm</span></code> for uninitialized PDElements (missing solution for the circuit) will crash. This is already fixed in the engine and will be included in the next backend update.</p></li>
 </ul>
 </section>
-<section id="id4">
-<h2>0.1.1<a class="headerlink" href="#id4" title="Link to this heading">#</a></h2>
+<section id="id6">
+<h2>0.1.1<a class="headerlink" href="#id6" title="Link to this heading">#</a></h2>
 <ul class="simple">
 <li><p>Batch: fix setter for single object</p></li>
 <li><p>Line: adjust Conductors to allow any conductor data object (WireData, CNData, TSData).</p></li>
@@ -511,8 +557,8 @@ relevant. See <a class="reference external" href="https://github.com/dss-extensi
 </li>
 </ul>
 </section>
-<section id="id5">
-<h2>0.1.0<a class="headerlink" href="#id5" title="Link to this heading">#</a></h2>
+<section id="id7">
+<h2>0.1.0<a class="headerlink" href="#id7" title="Link to this heading">#</a></h2>
 <p>First version. Still depends on DSS-Python for the backend, but otherwise can be used for a lot of common operations by itself.</p>
 <p>Highlights compared to the previous Obj API on DSS-Python:</p>
 <ul class="simple">
@@ -525,8 +571,8 @@ relevant. See <a class="reference external" href="https://github.com/dss-extensi
 <li><p>Object lifetime: implement synchronization of circuit state and pointers, invalidating dead pointer instead of crashing</p></li>
 </ul>
 </section>
-<section id="id6">
-<h2>0.0.1<a class="headerlink" href="#id6" title="Link to this heading">#</a></h2>
+<section id="id8">
+<h2>0.0.1<a class="headerlink" href="#id8" title="Link to this heading">#</a></h2>
 <p>Published to PyPI to reserve the name.</p>
 </section>
 </section>
@@ -543,12 +589,12 @@ relevant. See <a class="reference external" href="https://github.com/dss-extensi
                   
 <div class="prev-next-area">
     <a class="left-prev"
-       href="examples/GettingStarted.html"
+       href="examples/Batches.html"
        title="previous page">
       <i class="fa-solid fa-angle-left"></i>
       <div class="prev-next-info">
         <p class="prev-next-subtitle">previous</p>
-        <p class="prev-next-title">Getting Started</p>
+        <p class="prev-next-title">Batches</p>
       </div>
     </a>
     <a class="right-next"
@@ -576,12 +622,14 @@ relevant. See <a class="reference external" href="https://github.com/dss-extensi
   </div>
   <nav class="bd-toc-nav page-toc">
     <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id1">0.2.0</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id2">0.1.3</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id3">0.1.2</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id4">0.1.1</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id5">0.1.0</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id6">0.0.1</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id1">0.2.2</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id2">0.2.1</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id3">0.2.0</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id4">0.1.3</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id5">0.1.2</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id6">0.1.1</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id7">0.1.0</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id8">0.0.1</a></li>
 </ul>
   </nav></div>
 

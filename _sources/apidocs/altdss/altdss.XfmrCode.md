@@ -1395,6 +1395,14 @@ Bases: {py:obj}`altdss.Batch.DSSBatch`
 
 ````
 
+````{py:method} batch(**kwargs) -> altdss.Batch.DSSBatch
+:canonical: altdss.XfmrCode.XfmrCodeBatch.batch
+
+```{autodoc2-docstring} altdss.XfmrCode.XfmrCodeBatch.batch
+```
+
+````
+
 ````{py:method} begin_edit() -> None
 :canonical: altdss.XfmrCode.XfmrCodeBatch.begin_edit
 

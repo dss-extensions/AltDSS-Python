@@ -73,14 +73,6 @@
 
 ````
 
-````{py:method} __idiv__(other, flags=0)
-:canonical: altdss.ArrayProxy.BatchFloat64ArrayProxy.__idiv__
-
-```{autodoc2-docstring} altdss.ArrayProxy.BatchFloat64ArrayProxy.__idiv__
-```
-
-````
-
 ````{py:method} __imul__(other, flags=0)
 :canonical: altdss.ArrayProxy.BatchFloat64ArrayProxy.__imul__
 
@@ -109,6 +101,14 @@
 :canonical: altdss.ArrayProxy.BatchFloat64ArrayProxy.__iter__
 
 ```{autodoc2-docstring} altdss.ArrayProxy.BatchFloat64ArrayProxy.__iter__
+```
+
+````
+
+````{py:method} __itruediv__(other, flags=0)
+:canonical: altdss.ArrayProxy.BatchFloat64ArrayProxy.__itruediv__
+
+```{autodoc2-docstring} altdss.ArrayProxy.BatchFloat64ArrayProxy.__itruediv__
 ```
 
 ````
@@ -249,10 +249,10 @@
 
 ````
 
-````{py:method} __idiv__(other, flags=0)
-:canonical: altdss.ArrayProxy.BatchInt32ArrayProxy.__idiv__
+````{py:method} __ifloordiv__(other, flags=0)
+:canonical: altdss.ArrayProxy.BatchInt32ArrayProxy.__ifloordiv__
 
-```{autodoc2-docstring} altdss.ArrayProxy.BatchInt32ArrayProxy.__idiv__
+```{autodoc2-docstring} altdss.ArrayProxy.BatchInt32ArrayProxy.__ifloordiv__
 ```
 
 ````

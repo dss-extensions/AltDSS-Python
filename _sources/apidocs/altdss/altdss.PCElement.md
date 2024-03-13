@@ -95,7 +95,7 @@ Bases: {py:obj}`altdss.CircuitElement.CircuitElementBatch`, {py:obj}`altdss.PCEl
 
 ````
 
-````{py:method} GUID() -> str
+````{py:method} GUID() -> typing.List[str]
 :canonical: altdss.PCElement.PCElementBatch.GUID
 
 ```{autodoc2-docstring} altdss.PCElement.PCElementBatch.GUID
@@ -111,7 +111,7 @@ Bases: {py:obj}`altdss.CircuitElement.CircuitElementBatch`, {py:obj}`altdss.PCEl
 
 ````
 
-````{py:method} HasOCPDevice() -> bool
+````{py:method} HasOCPDevice() -> altdss.types.BoolArray
 :canonical: altdss.PCElement.PCElementBatch.HasOCPDevice
 
 ```{autodoc2-docstring} altdss.PCElement.PCElementBatch.HasOCPDevice
@@ -119,7 +119,7 @@ Bases: {py:obj}`altdss.CircuitElement.CircuitElementBatch`, {py:obj}`altdss.PCEl
 
 ````
 
-````{py:method} HasSwitchControl() -> bool
+````{py:method} HasSwitchControl() -> altdss.types.BoolArray
 :canonical: altdss.PCElement.PCElementBatch.HasSwitchControl
 
 ```{autodoc2-docstring} altdss.PCElement.PCElementBatch.HasSwitchControl
@@ -127,7 +127,7 @@ Bases: {py:obj}`altdss.CircuitElement.CircuitElementBatch`, {py:obj}`altdss.PCEl
 
 ````
 
-````{py:method} HasVoltControl() -> bool
+````{py:method} HasVoltControl() -> altdss.types.BoolArray
 :canonical: altdss.PCElement.PCElementBatch.HasVoltControl
 
 ```{autodoc2-docstring} altdss.PCElement.PCElementBatch.HasVoltControl
@@ -151,7 +151,7 @@ Bases: {py:obj}`altdss.CircuitElement.CircuitElementBatch`, {py:obj}`altdss.PCEl
 
 ````
 
-````{py:method} MaxCurrent(terminal: int) -> float
+````{py:method} MaxCurrent(terminal: int) -> altdss.types.Float64Array
 :canonical: altdss.PCElement.PCElementBatch.MaxCurrent
 
 ```{autodoc2-docstring} altdss.PCElement.PCElementBatch.MaxCurrent
@@ -216,7 +216,7 @@ Bases: {py:obj}`altdss.CircuitElement.CircuitElementBatch`, {py:obj}`altdss.PCEl
 
 ````
 
-````{py:method} OCPDeviceType() -> dss.enums.OCPDevType
+````{py:method} OCPDeviceType() -> typing.List[dss.enums.OCPDevType]
 :canonical: altdss.PCElement.PCElementBatch.OCPDeviceType
 
 ```{autodoc2-docstring} altdss.PCElement.PCElementBatch.OCPDeviceType
@@ -316,6 +316,14 @@ Bases: {py:obj}`altdss.CircuitElement.CircuitElementBatch`, {py:obj}`altdss.PCEl
 :canonical: altdss.PCElement.PCElementBatch.__call__
 
 ```{autodoc2-docstring} altdss.PCElement.PCElementBatch.__call__
+```
+
+````
+
+````{py:method} __getitem__(idx: int) -> altdss.DSSObj.DSSObj
+:canonical: altdss.PCElement.PCElementBatch.__getitem__
+
+```{autodoc2-docstring} altdss.PCElement.PCElementBatch.__getitem__
 ```
 
 ````

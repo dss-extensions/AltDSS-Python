@@ -335,6 +335,14 @@ Bases: {py:obj}`altdss.Batch.DSSBatch`
 
 ````
 
+````{py:method} batch(**kwargs) -> altdss.Batch.DSSBatch
+:canonical: altdss.GrowthShape.GrowthShapeBatch.batch
+
+```{autodoc2-docstring} altdss.GrowthShape.GrowthShapeBatch.batch
+```
+
+````
+
 ````{py:method} begin_edit() -> None
 :canonical: altdss.GrowthShape.GrowthShapeBatch.begin_edit
 

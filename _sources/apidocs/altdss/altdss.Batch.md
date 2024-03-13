@@ -153,6 +153,14 @@ Bases: {py:obj}`altdss.common.Base`, {py:obj}`altdss.Batch.BatchCommon`
 
 ````
 
+````{py:method} batch(**kwargs) -> altdss.Batch.DSSBatch
+:canonical: altdss.Batch.DSSBatch.batch
+
+```{autodoc2-docstring} altdss.Batch.DSSBatch.batch
+```
+
+````
+
 ````{py:method} begin_edit() -> None
 :canonical: altdss.Batch.DSSBatch.begin_edit
 
@@ -216,6 +224,14 @@ Bases: {py:obj}`altdss.common.Base`, {py:obj}`altdss.Batch.BatchCommon`
 :canonical: altdss.Batch.NonUniformBatch.__call__
 
 ```{autodoc2-docstring} altdss.Batch.NonUniformBatch.__call__
+```
+
+````
+
+````{py:method} __getitem__(idx: int) -> altdss.DSSObj.DSSObj
+:canonical: altdss.Batch.NonUniformBatch.__getitem__
+
+```{autodoc2-docstring} altdss.Batch.NonUniformBatch.__getitem__
 ```
 
 ````

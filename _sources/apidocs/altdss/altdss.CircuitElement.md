@@ -83,7 +83,7 @@ Bases: {py:obj}`altdss.Batch.NonUniformBatch`, {py:obj}`altdss.CircuitElement.Ci
 
 ````
 
-````{py:method} GUID() -> str
+````{py:method} GUID() -> typing.List[str]
 :canonical: altdss.CircuitElement.CircuitElementBatch.GUID
 
 ```{autodoc2-docstring} altdss.CircuitElement.CircuitElementBatch.GUID
@@ -99,7 +99,7 @@ Bases: {py:obj}`altdss.Batch.NonUniformBatch`, {py:obj}`altdss.CircuitElement.Ci
 
 ````
 
-````{py:method} HasOCPDevice() -> bool
+````{py:method} HasOCPDevice() -> altdss.types.BoolArray
 :canonical: altdss.CircuitElement.CircuitElementBatch.HasOCPDevice
 
 ```{autodoc2-docstring} altdss.CircuitElement.CircuitElementBatch.HasOCPDevice
@@ -107,7 +107,7 @@ Bases: {py:obj}`altdss.Batch.NonUniformBatch`, {py:obj}`altdss.CircuitElement.Ci
 
 ````
 
-````{py:method} HasSwitchControl() -> bool
+````{py:method} HasSwitchControl() -> altdss.types.BoolArray
 :canonical: altdss.CircuitElement.CircuitElementBatch.HasSwitchControl
 
 ```{autodoc2-docstring} altdss.CircuitElement.CircuitElementBatch.HasSwitchControl
@@ -115,7 +115,7 @@ Bases: {py:obj}`altdss.Batch.NonUniformBatch`, {py:obj}`altdss.CircuitElement.Ci
 
 ````
 
-````{py:method} HasVoltControl() -> bool
+````{py:method} HasVoltControl() -> altdss.types.BoolArray
 :canonical: altdss.CircuitElement.CircuitElementBatch.HasVoltControl
 
 ```{autodoc2-docstring} altdss.CircuitElement.CircuitElementBatch.HasVoltControl
@@ -139,7 +139,7 @@ Bases: {py:obj}`altdss.Batch.NonUniformBatch`, {py:obj}`altdss.CircuitElement.Ci
 
 ````
 
-````{py:method} MaxCurrent(terminal: int) -> float
+````{py:method} MaxCurrent(terminal: int) -> altdss.types.Float64Array
 :canonical: altdss.CircuitElement.CircuitElementBatch.MaxCurrent
 
 ```{autodoc2-docstring} altdss.CircuitElement.CircuitElementBatch.MaxCurrent
@@ -204,7 +204,7 @@ Bases: {py:obj}`altdss.Batch.NonUniformBatch`, {py:obj}`altdss.CircuitElement.Ci
 
 ````
 
-````{py:method} OCPDeviceType() -> dss.enums.OCPDevType
+````{py:method} OCPDeviceType() -> typing.List[dss.enums.OCPDevType]
 :canonical: altdss.CircuitElement.CircuitElementBatch.OCPDeviceType
 
 ```{autodoc2-docstring} altdss.CircuitElement.CircuitElementBatch.OCPDeviceType
@@ -280,6 +280,14 @@ Bases: {py:obj}`altdss.Batch.NonUniformBatch`, {py:obj}`altdss.CircuitElement.Ci
 :canonical: altdss.CircuitElement.CircuitElementBatch.__call__
 
 ```{autodoc2-docstring} altdss.CircuitElement.CircuitElementBatch.__call__
+```
+
+````
+
+````{py:method} __getitem__(idx: int) -> altdss.DSSObj.DSSObj
+:canonical: altdss.CircuitElement.CircuitElementBatch.__getitem__
+
+```{autodoc2-docstring} altdss.CircuitElement.CircuitElementBatch.__getitem__
 ```
 
 ````
@@ -364,7 +372,7 @@ Bases: {py:obj}`altdss.Batch.NonUniformBatch`, {py:obj}`altdss.CircuitElement.Ci
 
 ````
 
-````{py:method} GUID() -> str
+````{py:method} GUID() -> typing.List[str]
 :canonical: altdss.CircuitElement.CircuitElementBatchMixin.GUID
 
 ```{autodoc2-docstring} altdss.CircuitElement.CircuitElementBatchMixin.GUID
@@ -380,7 +388,7 @@ Bases: {py:obj}`altdss.Batch.NonUniformBatch`, {py:obj}`altdss.CircuitElement.Ci
 
 ````
 
-````{py:method} HasOCPDevice() -> bool
+````{py:method} HasOCPDevice() -> altdss.types.BoolArray
 :canonical: altdss.CircuitElement.CircuitElementBatchMixin.HasOCPDevice
 
 ```{autodoc2-docstring} altdss.CircuitElement.CircuitElementBatchMixin.HasOCPDevice
@@ -388,7 +396,7 @@ Bases: {py:obj}`altdss.Batch.NonUniformBatch`, {py:obj}`altdss.CircuitElement.Ci
 
 ````
 
-````{py:method} HasSwitchControl() -> bool
+````{py:method} HasSwitchControl() -> altdss.types.BoolArray
 :canonical: altdss.CircuitElement.CircuitElementBatchMixin.HasSwitchControl
 
 ```{autodoc2-docstring} altdss.CircuitElement.CircuitElementBatchMixin.HasSwitchControl
@@ -396,7 +404,7 @@ Bases: {py:obj}`altdss.Batch.NonUniformBatch`, {py:obj}`altdss.CircuitElement.Ci
 
 ````
 
-````{py:method} HasVoltControl() -> bool
+````{py:method} HasVoltControl() -> altdss.types.BoolArray
 :canonical: altdss.CircuitElement.CircuitElementBatchMixin.HasVoltControl
 
 ```{autodoc2-docstring} altdss.CircuitElement.CircuitElementBatchMixin.HasVoltControl
@@ -420,7 +428,7 @@ Bases: {py:obj}`altdss.Batch.NonUniformBatch`, {py:obj}`altdss.CircuitElement.Ci
 
 ````
 
-````{py:method} MaxCurrent(terminal: int) -> float
+````{py:method} MaxCurrent(terminal: int) -> altdss.types.Float64Array
 :canonical: altdss.CircuitElement.CircuitElementBatchMixin.MaxCurrent
 
 ```{autodoc2-docstring} altdss.CircuitElement.CircuitElementBatchMixin.MaxCurrent
@@ -476,7 +484,7 @@ Bases: {py:obj}`altdss.Batch.NonUniformBatch`, {py:obj}`altdss.CircuitElement.Ci
 
 ````
 
-````{py:method} OCPDeviceType() -> dss.enums.OCPDevType
+````{py:method} OCPDeviceType() -> typing.List[dss.enums.OCPDevType]
 :canonical: altdss.CircuitElement.CircuitElementBatchMixin.OCPDeviceType
 
 ```{autodoc2-docstring} altdss.CircuitElement.CircuitElementBatchMixin.OCPDeviceType
@@ -576,6 +584,16 @@ Bases: {py:obj}`altdss.Batch.NonUniformBatch`, {py:obj}`altdss.CircuitElement.Ci
 :canonical: altdss.CircuitElement.CircuitElementMixin.ComplexSeqVoltages
 
 ```{autodoc2-docstring} altdss.CircuitElement.CircuitElementMixin.ComplexSeqVoltages
+```
+
+````
+
+````{py:attribute} Controllers
+:canonical: altdss.CircuitElement.CircuitElementMixin.Controllers
+:value: >
+   'NonUniformBatch(...)'
+
+```{autodoc2-docstring} altdss.CircuitElement.CircuitElementMixin.Controllers
 ```
 
 ````

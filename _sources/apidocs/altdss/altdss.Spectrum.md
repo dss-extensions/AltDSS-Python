@@ -504,6 +504,14 @@ Bases: {py:obj}`altdss.Batch.DSSBatch`
 
 ````
 
+````{py:method} batch(**kwargs) -> altdss.Batch.DSSBatch
+:canonical: altdss.Spectrum.SpectrumBatch.batch
+
+```{autodoc2-docstring} altdss.Spectrum.SpectrumBatch.batch
+```
+
+````
+
 ````{py:method} begin_edit() -> None
 :canonical: altdss.Spectrum.SpectrumBatch.begin_edit
 

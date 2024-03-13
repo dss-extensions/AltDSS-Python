@@ -716,7 +716,7 @@ Bases: {py:obj}`altdss.Batch.DSSBatch`, {py:obj}`altdss.CircuitElement.CircuitEl
 
 ````
 
-````{py:method} GUID() -> str
+````{py:method} GUID() -> typing.List[str]
 :canonical: altdss.Fuse.FuseBatch.GUID
 
 ```{autodoc2-docstring} altdss.Fuse.FuseBatch.GUID
@@ -732,7 +732,7 @@ Bases: {py:obj}`altdss.Batch.DSSBatch`, {py:obj}`altdss.CircuitElement.CircuitEl
 
 ````
 
-````{py:method} HasOCPDevice() -> bool
+````{py:method} HasOCPDevice() -> altdss.types.BoolArray
 :canonical: altdss.Fuse.FuseBatch.HasOCPDevice
 
 ```{autodoc2-docstring} altdss.Fuse.FuseBatch.HasOCPDevice
@@ -740,7 +740,7 @@ Bases: {py:obj}`altdss.Batch.DSSBatch`, {py:obj}`altdss.CircuitElement.CircuitEl
 
 ````
 
-````{py:method} HasSwitchControl() -> bool
+````{py:method} HasSwitchControl() -> altdss.types.BoolArray
 :canonical: altdss.Fuse.FuseBatch.HasSwitchControl
 
 ```{autodoc2-docstring} altdss.Fuse.FuseBatch.HasSwitchControl
@@ -748,7 +748,7 @@ Bases: {py:obj}`altdss.Batch.DSSBatch`, {py:obj}`altdss.CircuitElement.CircuitEl
 
 ````
 
-````{py:method} HasVoltControl() -> bool
+````{py:method} HasVoltControl() -> altdss.types.BoolArray
 :canonical: altdss.Fuse.FuseBatch.HasVoltControl
 
 ```{autodoc2-docstring} altdss.Fuse.FuseBatch.HasVoltControl
@@ -780,7 +780,7 @@ Bases: {py:obj}`altdss.Batch.DSSBatch`, {py:obj}`altdss.CircuitElement.CircuitEl
 
 ````
 
-````{py:method} MaxCurrent(terminal: int) -> float
+````{py:method} MaxCurrent(terminal: int) -> altdss.types.Float64Array
 :canonical: altdss.Fuse.FuseBatch.MaxCurrent
 
 ```{autodoc2-docstring} altdss.Fuse.FuseBatch.MaxCurrent
@@ -900,7 +900,7 @@ Bases: {py:obj}`altdss.Batch.DSSBatch`, {py:obj}`altdss.CircuitElement.CircuitEl
 
 ````
 
-````{py:method} OCPDeviceType() -> dss.enums.OCPDevType
+````{py:method} OCPDeviceType() -> typing.List[dss.enums.OCPDevType]
 :canonical: altdss.Fuse.FuseBatch.OCPDeviceType
 
 ```{autodoc2-docstring} altdss.Fuse.FuseBatch.OCPDeviceType
@@ -1074,6 +1074,14 @@ Bases: {py:obj}`altdss.Batch.DSSBatch`, {py:obj}`altdss.CircuitElement.CircuitEl
 :canonical: altdss.Fuse.FuseBatch.__len__
 
 ```{autodoc2-docstring} altdss.Fuse.FuseBatch.__len__
+```
+
+````
+
+````{py:method} batch(**kwargs) -> altdss.Batch.DSSBatch
+:canonical: altdss.Fuse.FuseBatch.batch
+
+```{autodoc2-docstring} altdss.Fuse.FuseBatch.batch
 ```
 
 ````
@@ -2153,7 +2161,7 @@ Bases: {py:obj}`altdss.DSSObj.IDSSObj`, {py:obj}`altdss.Fuse.FuseBatch`
 
 ````
 
-````{py:method} GUID() -> str
+````{py:method} GUID() -> typing.List[str]
 :canonical: altdss.Fuse.IFuse.GUID
 
 ```{autodoc2-docstring} altdss.Fuse.IFuse.GUID
@@ -2169,7 +2177,7 @@ Bases: {py:obj}`altdss.DSSObj.IDSSObj`, {py:obj}`altdss.Fuse.FuseBatch`
 
 ````
 
-````{py:method} HasOCPDevice() -> bool
+````{py:method} HasOCPDevice() -> altdss.types.BoolArray
 :canonical: altdss.Fuse.IFuse.HasOCPDevice
 
 ```{autodoc2-docstring} altdss.Fuse.IFuse.HasOCPDevice
@@ -2177,7 +2185,7 @@ Bases: {py:obj}`altdss.DSSObj.IDSSObj`, {py:obj}`altdss.Fuse.FuseBatch`
 
 ````
 
-````{py:method} HasSwitchControl() -> bool
+````{py:method} HasSwitchControl() -> altdss.types.BoolArray
 :canonical: altdss.Fuse.IFuse.HasSwitchControl
 
 ```{autodoc2-docstring} altdss.Fuse.IFuse.HasSwitchControl
@@ -2185,7 +2193,7 @@ Bases: {py:obj}`altdss.DSSObj.IDSSObj`, {py:obj}`altdss.Fuse.FuseBatch`
 
 ````
 
-````{py:method} HasVoltControl() -> bool
+````{py:method} HasVoltControl() -> altdss.types.BoolArray
 :canonical: altdss.Fuse.IFuse.HasVoltControl
 
 ```{autodoc2-docstring} altdss.Fuse.IFuse.HasVoltControl
@@ -2217,7 +2225,7 @@ Bases: {py:obj}`altdss.DSSObj.IDSSObj`, {py:obj}`altdss.Fuse.FuseBatch`
 
 ````
 
-````{py:method} MaxCurrent(terminal: int) -> float
+````{py:method} MaxCurrent(terminal: int) -> altdss.types.Float64Array
 :canonical: altdss.Fuse.IFuse.MaxCurrent
 
 ```{autodoc2-docstring} altdss.Fuse.IFuse.MaxCurrent
@@ -2337,7 +2345,7 @@ Bases: {py:obj}`altdss.DSSObj.IDSSObj`, {py:obj}`altdss.Fuse.FuseBatch`
 
 ````
 
-````{py:method} OCPDeviceType() -> dss.enums.OCPDevType
+````{py:method} OCPDeviceType() -> typing.List[dss.enums.OCPDevType]
 :canonical: altdss.Fuse.IFuse.OCPDeviceType
 
 ```{autodoc2-docstring} altdss.Fuse.IFuse.OCPDeviceType

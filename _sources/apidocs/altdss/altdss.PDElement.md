@@ -111,7 +111,7 @@ Bases: {py:obj}`altdss.CircuitElement.CircuitElementBatch`, {py:obj}`altdss.PDEl
 
 ````
 
-````{py:method} GUID() -> str
+````{py:method} GUID() -> typing.List[str]
 :canonical: altdss.PDElement.PDElementBatch.GUID
 
 ```{autodoc2-docstring} altdss.PDElement.PDElementBatch.GUID
@@ -127,7 +127,7 @@ Bases: {py:obj}`altdss.CircuitElement.CircuitElementBatch`, {py:obj}`altdss.PDEl
 
 ````
 
-````{py:method} HasOCPDevice() -> bool
+````{py:method} HasOCPDevice() -> altdss.types.BoolArray
 :canonical: altdss.PDElement.PDElementBatch.HasOCPDevice
 
 ```{autodoc2-docstring} altdss.PDElement.PDElementBatch.HasOCPDevice
@@ -135,7 +135,7 @@ Bases: {py:obj}`altdss.CircuitElement.CircuitElementBatch`, {py:obj}`altdss.PDEl
 
 ````
 
-````{py:method} HasSwitchControl() -> bool
+````{py:method} HasSwitchControl() -> altdss.types.BoolArray
 :canonical: altdss.PDElement.PDElementBatch.HasSwitchControl
 
 ```{autodoc2-docstring} altdss.PDElement.PDElementBatch.HasSwitchControl
@@ -143,7 +143,7 @@ Bases: {py:obj}`altdss.CircuitElement.CircuitElementBatch`, {py:obj}`altdss.PDEl
 
 ````
 
-````{py:method} HasVoltControl() -> bool
+````{py:method} HasVoltControl() -> altdss.types.BoolArray
 :canonical: altdss.PDElement.PDElementBatch.HasVoltControl
 
 ```{autodoc2-docstring} altdss.PDElement.PDElementBatch.HasVoltControl
@@ -183,7 +183,7 @@ Bases: {py:obj}`altdss.CircuitElement.CircuitElementBatch`, {py:obj}`altdss.PDEl
 
 ````
 
-````{py:method} MaxCurrent(terminal: int) -> float
+````{py:method} MaxCurrent(terminal: int) -> altdss.types.Float64Array
 :canonical: altdss.PDElement.PDElementBatch.MaxCurrent
 
 ```{autodoc2-docstring} altdss.PDElement.PDElementBatch.MaxCurrent
@@ -256,7 +256,7 @@ Bases: {py:obj}`altdss.CircuitElement.CircuitElementBatch`, {py:obj}`altdss.PDEl
 
 ````
 
-````{py:method} OCPDeviceType() -> dss.enums.OCPDevType
+````{py:method} OCPDeviceType() -> typing.List[dss.enums.OCPDevType]
 :canonical: altdss.PDElement.PDElementBatch.OCPDeviceType
 
 ```{autodoc2-docstring} altdss.PDElement.PDElementBatch.OCPDeviceType
@@ -328,6 +328,14 @@ Bases: {py:obj}`altdss.CircuitElement.CircuitElementBatch`, {py:obj}`altdss.PDEl
 
 ````
 
+````{py:method} TotalKilometers() -> altdss.types.Float64Array
+:canonical: altdss.PDElement.PDElementBatch.TotalKilometers
+
+```{autodoc2-docstring} altdss.PDElement.PDElementBatch.TotalKilometers
+```
+
+````
+
 ````{py:method} TotalMiles() -> altdss.types.Float64Array
 :canonical: altdss.PDElement.PDElementBatch.TotalMiles
 
@@ -364,6 +372,14 @@ Bases: {py:obj}`altdss.CircuitElement.CircuitElementBatch`, {py:obj}`altdss.PDEl
 :canonical: altdss.PDElement.PDElementBatch.__call__
 
 ```{autodoc2-docstring} altdss.PDElement.PDElementBatch.__call__
+```
+
+````
+
+````{py:method} __getitem__(idx: int) -> altdss.DSSObj.DSSObj
+:canonical: altdss.PDElement.PDElementBatch.__getitem__
+
+```{autodoc2-docstring} altdss.PDElement.PDElementBatch.__getitem__
 ```
 
 ````
@@ -508,6 +524,14 @@ Bases: {py:obj}`altdss.CircuitElement.CircuitElementBatch`, {py:obj}`altdss.PDEl
 :canonical: altdss.PDElement.PDElementBatchMixin.TotalCustomers
 
 ```{autodoc2-docstring} altdss.PDElement.PDElementBatchMixin.TotalCustomers
+```
+
+````
+
+````{py:method} TotalKilometers() -> altdss.types.Float64Array
+:canonical: altdss.PDElement.PDElementBatchMixin.TotalKilometers
+
+```{autodoc2-docstring} altdss.PDElement.PDElementBatchMixin.TotalKilometers
 ```
 
 ````

@@ -1027,7 +1027,7 @@ Bases: {py:obj}`altdss.Batch.DSSBatch`, {py:obj}`altdss.CircuitElement.CircuitEl
 
 ````
 
-````{py:method} GUID() -> str
+````{py:method} GUID() -> typing.List[str]
 :canonical: altdss.EnergyMeter.EnergyMeterBatch.GUID
 
 ```{autodoc2-docstring} altdss.EnergyMeter.EnergyMeterBatch.GUID
@@ -1043,7 +1043,7 @@ Bases: {py:obj}`altdss.Batch.DSSBatch`, {py:obj}`altdss.CircuitElement.CircuitEl
 
 ````
 
-````{py:method} HasOCPDevice() -> bool
+````{py:method} HasOCPDevice() -> altdss.types.BoolArray
 :canonical: altdss.EnergyMeter.EnergyMeterBatch.HasOCPDevice
 
 ```{autodoc2-docstring} altdss.EnergyMeter.EnergyMeterBatch.HasOCPDevice
@@ -1051,7 +1051,7 @@ Bases: {py:obj}`altdss.Batch.DSSBatch`, {py:obj}`altdss.CircuitElement.CircuitEl
 
 ````
 
-````{py:method} HasSwitchControl() -> bool
+````{py:method} HasSwitchControl() -> altdss.types.BoolArray
 :canonical: altdss.EnergyMeter.EnergyMeterBatch.HasSwitchControl
 
 ```{autodoc2-docstring} altdss.EnergyMeter.EnergyMeterBatch.HasSwitchControl
@@ -1059,7 +1059,7 @@ Bases: {py:obj}`altdss.Batch.DSSBatch`, {py:obj}`altdss.CircuitElement.CircuitEl
 
 ````
 
-````{py:method} HasVoltControl() -> bool
+````{py:method} HasVoltControl() -> altdss.types.BoolArray
 :canonical: altdss.EnergyMeter.EnergyMeterBatch.HasVoltControl
 
 ```{autodoc2-docstring} altdss.EnergyMeter.EnergyMeterBatch.HasVoltControl
@@ -1149,7 +1149,7 @@ Bases: {py:obj}`altdss.Batch.DSSBatch`, {py:obj}`altdss.CircuitElement.CircuitEl
 
 ````
 
-````{py:method} MaxCurrent(terminal: int) -> float
+````{py:method} MaxCurrent(terminal: int) -> altdss.types.Float64Array
 :canonical: altdss.EnergyMeter.EnergyMeterBatch.MaxCurrent
 
 ```{autodoc2-docstring} altdss.EnergyMeter.EnergyMeterBatch.MaxCurrent
@@ -1230,7 +1230,7 @@ Bases: {py:obj}`altdss.Batch.DSSBatch`, {py:obj}`altdss.CircuitElement.CircuitEl
 
 ````
 
-````{py:method} OCPDeviceType() -> dss.enums.OCPDevType
+````{py:method} OCPDeviceType() -> typing.List[dss.enums.OCPDevType]
 :canonical: altdss.EnergyMeter.EnergyMeterBatch.OCPDeviceType
 
 ```{autodoc2-docstring} altdss.EnergyMeter.EnergyMeterBatch.OCPDeviceType
@@ -1510,6 +1510,14 @@ Bases: {py:obj}`altdss.Batch.DSSBatch`, {py:obj}`altdss.CircuitElement.CircuitEl
 :canonical: altdss.EnergyMeter.EnergyMeterBatch.__len__
 
 ```{autodoc2-docstring} altdss.EnergyMeter.EnergyMeterBatch.__len__
+```
+
+````
+
+````{py:method} batch(**kwargs) -> altdss.Batch.DSSBatch
+:canonical: altdss.EnergyMeter.EnergyMeterBatch.batch
+
+```{autodoc2-docstring} altdss.EnergyMeter.EnergyMeterBatch.batch
 ```
 
 ````
@@ -2954,7 +2962,7 @@ Bases: {py:obj}`altdss.DSSObj.IDSSObj`, {py:obj}`altdss.EnergyMeter.EnergyMeterB
 
 ````
 
-````{py:method} GUID() -> str
+````{py:method} GUID() -> typing.List[str]
 :canonical: altdss.EnergyMeter.IEnergyMeter.GUID
 
 ```{autodoc2-docstring} altdss.EnergyMeter.IEnergyMeter.GUID
@@ -2970,7 +2978,7 @@ Bases: {py:obj}`altdss.DSSObj.IDSSObj`, {py:obj}`altdss.EnergyMeter.EnergyMeterB
 
 ````
 
-````{py:method} HasOCPDevice() -> bool
+````{py:method} HasOCPDevice() -> altdss.types.BoolArray
 :canonical: altdss.EnergyMeter.IEnergyMeter.HasOCPDevice
 
 ```{autodoc2-docstring} altdss.EnergyMeter.IEnergyMeter.HasOCPDevice
@@ -2978,7 +2986,7 @@ Bases: {py:obj}`altdss.DSSObj.IDSSObj`, {py:obj}`altdss.EnergyMeter.EnergyMeterB
 
 ````
 
-````{py:method} HasSwitchControl() -> bool
+````{py:method} HasSwitchControl() -> altdss.types.BoolArray
 :canonical: altdss.EnergyMeter.IEnergyMeter.HasSwitchControl
 
 ```{autodoc2-docstring} altdss.EnergyMeter.IEnergyMeter.HasSwitchControl
@@ -2986,7 +2994,7 @@ Bases: {py:obj}`altdss.DSSObj.IDSSObj`, {py:obj}`altdss.EnergyMeter.EnergyMeterB
 
 ````
 
-````{py:method} HasVoltControl() -> bool
+````{py:method} HasVoltControl() -> altdss.types.BoolArray
 :canonical: altdss.EnergyMeter.IEnergyMeter.HasVoltControl
 
 ```{autodoc2-docstring} altdss.EnergyMeter.IEnergyMeter.HasVoltControl
@@ -3076,7 +3084,7 @@ Bases: {py:obj}`altdss.DSSObj.IDSSObj`, {py:obj}`altdss.EnergyMeter.EnergyMeterB
 
 ````
 
-````{py:method} MaxCurrent(terminal: int) -> float
+````{py:method} MaxCurrent(terminal: int) -> altdss.types.Float64Array
 :canonical: altdss.EnergyMeter.IEnergyMeter.MaxCurrent
 
 ```{autodoc2-docstring} altdss.EnergyMeter.IEnergyMeter.MaxCurrent
@@ -3157,7 +3165,7 @@ Bases: {py:obj}`altdss.DSSObj.IDSSObj`, {py:obj}`altdss.EnergyMeter.EnergyMeterB
 
 ````
 
-````{py:method} OCPDeviceType() -> dss.enums.OCPDevType
+````{py:method} OCPDeviceType() -> typing.List[dss.enums.OCPDevType]
 :canonical: altdss.EnergyMeter.IEnergyMeter.OCPDeviceType
 
 ```{autodoc2-docstring} altdss.EnergyMeter.IEnergyMeter.OCPDeviceType

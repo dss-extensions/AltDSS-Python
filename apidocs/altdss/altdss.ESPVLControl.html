@@ -8,7 +8,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
-    <title>altdss.ESPVLControl &#8212; AltDSS-Python 0.2.0 documentation</title>
+    <title>altdss.ESPVLControl &#8212; AltDSS-Python 0.2.2 documentation</title>
   
   
   
@@ -38,7 +38,7 @@
 <link rel="preload" as="script" href="../../_static/scripts/pydata-sphinx-theme.js?digest=8d27b9dea8ad943066ae" />
   <script src="../../_static/vendor/fontawesome/6.5.1/js/all.min.js?digest=8d27b9dea8ad943066ae"></script>
 
-    <script src="../../_static/documentation_options.js?v=7f7c277e"></script>
+    <script src="../../_static/documentation_options.js?v=d3f42505"></script>
     <script src="../../_static/doctools.js?v=888ff710"></script>
     <script src="../../_static/sphinx_highlight.js?v=dc90522c"></script>
     <script src="../../_static/scripts/sphinx-book-theme.js?v=efea14e4"></script>
@@ -137,8 +137,8 @@
       
     
     
-    <img src="../../_static/altdss-python.svg" class="logo__image only-light" alt="AltDSS-Python 0.2.0 documentation - Home"/>
-    <script>document.write(`<img src="../../_static/altdss-python-dark.svg" class="logo__image only-dark" alt="AltDSS-Python 0.2.0 documentation - Home"/>`);</script>
+    <img src="../../_static/altdss-python.svg" class="logo__image only-light" alt="AltDSS-Python 0.2.2 documentation - Home"/>
+    <script>document.write(`<img src="../../_static/altdss-python-dark.svg" class="logo__image only-dark" alt="AltDSS-Python 0.2.2 documentation - Home"/>`);</script>
   
   
 </a></div>
@@ -160,6 +160,7 @@
 <li class="toctree-l1"><a class="reference internal" href="../../index.html">AltDSS-Python</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../Architecture.html">Architecture details</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../examples/GettingStarted.html">Getting Started</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../examples/Batches.html">Batches</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../changelog.html">Changelog</a></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">API Reference</span></p>
@@ -518,6 +519,7 @@ document.write(`
 <li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#altdss.ESPVLControl.ESPVLControlBatch.__init__"><code class="docutils literal notranslate"><span class="pre">ESPVLControlBatch.__init__()</span></code></a></li>
 <li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#altdss.ESPVLControl.ESPVLControlBatch.__iter__"><code class="docutils literal notranslate"><span class="pre">ESPVLControlBatch.__iter__()</span></code></a></li>
 <li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#altdss.ESPVLControl.ESPVLControlBatch.__len__"><code class="docutils literal notranslate"><span class="pre">ESPVLControlBatch.__len__()</span></code></a></li>
+<li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#altdss.ESPVLControl.ESPVLControlBatch.batch"><code class="docutils literal notranslate"><span class="pre">ESPVLControlBatch.batch()</span></code></a></li>
 <li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#altdss.ESPVLControl.ESPVLControlBatch.begin_edit"><code class="docutils literal notranslate"><span class="pre">ESPVLControlBatch.begin_edit()</span></code></a></li>
 <li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#altdss.ESPVLControl.ESPVLControlBatch.end_edit"><code class="docutils literal notranslate"><span class="pre">ESPVLControlBatch.end_edit()</span></code></a></li>
 <li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#altdss.ESPVLControl.ESPVLControlBatch.kWBand"><code class="docutils literal notranslate"><span class="pre">ESPVLControlBatch.kWBand</span></code></a></li>
@@ -765,50 +767,68 @@ in the keyword argument list.  For example:  dict(one=1, two=2)</p></td>
 <dt class="sig sig-object py" id="altdss.ESPVLControl.ESPVLControl.BaseFreq">
 <span class="sig-name descname"><span class="pre">BaseFreq</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">float</span></em><a class="headerlink" href="#altdss.ESPVLControl.ESPVLControl.BaseFreq" title="Link to this definition">#</a></dt>
 <dd><p>‘property(…)’</p>
+<p>Base Frequency for ratings.</p>
+<p>DSS property name: <code class="docutils literal notranslate"><span class="pre">BaseFreq</span></code>, DSS property index: 12.</p>
 </dd></dl>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="altdss.ESPVLControl.ESPVLControl.Close">
 <span class="sig-name descname"><span class="pre">Close</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">terminal</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">phase</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span><a class="headerlink" href="#altdss.ESPVLControl.ESPVLControl.Close" title="Link to this definition">#</a></dt>
-<dd></dd></dl>
+<dd><p>Close the specified terminal and phase, if non-zero, or all conductors at the terminal.</p>
+<p>Original COM help: <a class="reference external" href="https://opendss.epri.com/Close1.html">https://opendss.epri.com/Close1.html</a></p>
+</dd></dl>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="altdss.ESPVLControl.ESPVLControl.ComplexSeqCurrents">
 <span class="sig-name descname"><span class="pre">ComplexSeqCurrents</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">altdss.types.ComplexArray</span></span></span><a class="headerlink" href="#altdss.ESPVLControl.ESPVLControl.ComplexSeqCurrents" title="Link to this definition">#</a></dt>
-<dd></dd></dl>
+<dd><p>Complex double array of Sequence Currents for all conductors of all terminals of active circuit element.</p>
+<p>Original COM help: <a class="reference external" href="https://opendss.epri.com/CplxSeqCurrents.html">https://opendss.epri.com/CplxSeqCurrents.html</a></p>
+</dd></dl>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="altdss.ESPVLControl.ESPVLControl.ComplexSeqVoltages">
 <span class="sig-name descname"><span class="pre">ComplexSeqVoltages</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">altdss.types.ComplexArray</span></span></span><a class="headerlink" href="#altdss.ESPVLControl.ESPVLControl.ComplexSeqVoltages" title="Link to this definition">#</a></dt>
-<dd></dd></dl>
+<dd><p>Complex double array of Sequence Voltage for all terminals of active circuit element.</p>
+<p>Original COM help: <a class="reference external" href="https://opendss.epri.com/CplxSeqVoltages1.html">https://opendss.epri.com/CplxSeqVoltages1.html</a></p>
+</dd></dl>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="altdss.ESPVLControl.ESPVLControl.Currents">
 <span class="sig-name descname"><span class="pre">Currents</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">altdss.types.ComplexArray</span></span></span><a class="headerlink" href="#altdss.ESPVLControl.ESPVLControl.Currents" title="Link to this definition">#</a></dt>
-<dd></dd></dl>
+<dd><p>Complex array of currents into each conductor of each terminal</p>
+<p>Original COM help: <a class="reference external" href="https://opendss.epri.com/Currents1.html">https://opendss.epri.com/Currents1.html</a></p>
+</dd></dl>
 
 <dl class="py attribute">
 <dt class="sig sig-object py" id="altdss.ESPVLControl.ESPVLControl.DisplayName">
 <span class="sig-name descname"><span class="pre">DisplayName</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">str</span></em><a class="headerlink" href="#altdss.ESPVLControl.ESPVLControl.DisplayName" title="Link to this definition">#</a></dt>
 <dd><p>‘property(…)’</p>
+<p>Display name of the object (not necessarily unique)</p>
+<p>Original COM help: <a class="reference external" href="https://opendss.epri.com/DisplayName.html">https://opendss.epri.com/DisplayName.html</a></p>
 </dd></dl>
 
 <dl class="py attribute">
 <dt class="sig sig-object py" id="altdss.ESPVLControl.ESPVLControl.Element">
 <span class="sig-name descname"><span class="pre">Element</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><a class="reference internal" href="altdss.DSSObj.html#altdss.DSSObj.DSSObj" title="altdss.DSSObj.DSSObj"><span class="pre">altdss.DSSObj.DSSObj</span></a></em><a class="headerlink" href="#altdss.ESPVLControl.ESPVLControl.Element" title="Link to this definition">#</a></dt>
 <dd><p>‘property(…)’</p>
+<p>Full object name of the circuit element, typically a line or transformer, which the control is monitoring. There is no default; must be specified.</p>
+<p>DSS property name: <code class="docutils literal notranslate"><span class="pre">Element</span></code>, DSS property index: 1.</p>
 </dd></dl>
 
 <dl class="py attribute">
 <dt class="sig sig-object py" id="altdss.ESPVLControl.ESPVLControl.Element_str">
 <span class="sig-name descname"><span class="pre">Element_str</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">str</span></em><a class="headerlink" href="#altdss.ESPVLControl.ESPVLControl.Element_str" title="Link to this definition">#</a></dt>
 <dd><p>‘property(…)’</p>
+<p>Full object name of the circuit element, typically a line or transformer, which the control is monitoring. There is no default; must be specified.</p>
+<p>DSS property name: <code class="docutils literal notranslate"><span class="pre">Element</span></code>, DSS property index: 1.</p>
 </dd></dl>
 
 <dl class="py attribute">
 <dt class="sig sig-object py" id="altdss.ESPVLControl.ESPVLControl.Enabled">
 <span class="sig-name descname"><span class="pre">Enabled</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">bool</span></em><a class="headerlink" href="#altdss.ESPVLControl.ESPVLControl.Enabled" title="Link to this definition">#</a></dt>
 <dd><p>‘property(…)’</p>
+<p>{Yes|No or True|False} Indicates whether this element is enabled.</p>
+<p>DSS property name: <code class="docutils literal notranslate"><span class="pre">Enabled</span></code>, DSS property index: 13.</p>
 </dd></dl>
 
 <dl class="py method">
@@ -820,37 +840,51 @@ in the keyword argument list.  For example:  dict(one=1, two=2)</p></td>
 <dt class="sig sig-object py" id="altdss.ESPVLControl.ESPVLControl.GUID">
 <span class="sig-name descname"><span class="pre">GUID</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">str</span></span></span><a class="headerlink" href="#altdss.ESPVLControl.ESPVLControl.GUID" title="Link to this definition">#</a></dt>
 <dd><p>Object’s GUID/UUID. Currently used only in the CIM-related methods.</p>
+<p>Original COM help: <a class="reference external" href="https://opendss.epri.com/GUID.html">https://opendss.epri.com/GUID.html</a></p>
 </dd></dl>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="altdss.ESPVLControl.ESPVLControl.Handle">
 <span class="sig-name descname"><span class="pre">Handle</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">int</span></span></span><a class="headerlink" href="#altdss.ESPVLControl.ESPVLControl.Handle" title="Link to this definition">#</a></dt>
-<dd></dd></dl>
+<dd><p>Index of this element into the circuit’s element list.</p>
+<p>Original COM help: <a class="reference external" href="https://opendss.epri.com/Handle.html">https://opendss.epri.com/Handle.html</a></p>
+</dd></dl>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="altdss.ESPVLControl.ESPVLControl.HasOCPDevice">
 <span class="sig-name descname"><span class="pre">HasOCPDevice</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">bool</span></span></span><a class="headerlink" href="#altdss.ESPVLControl.ESPVLControl.HasOCPDevice" title="Link to this definition">#</a></dt>
-<dd></dd></dl>
+<dd><p>Returns true if a recloser, relay, or fuse controlling the circuit element.</p>
+<p>OCP = Overcurrent Protection</p>
+<p>Original COM help: <a class="reference external" href="https://opendss.epri.com/HasOCPDevice.html">https://opendss.epri.com/HasOCPDevice.html</a></p>
+</dd></dl>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="altdss.ESPVLControl.ESPVLControl.HasSwitchControl">
 <span class="sig-name descname"><span class="pre">HasSwitchControl</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">bool</span></span></span><a class="headerlink" href="#altdss.ESPVLControl.ESPVLControl.HasSwitchControl" title="Link to this definition">#</a></dt>
-<dd></dd></dl>
+<dd><p>Returns true if the element has a SwtControl attached.</p>
+<p>Original COM help: <a class="reference external" href="https://opendss.epri.com/HasSwitchControl.html">https://opendss.epri.com/HasSwitchControl.html</a></p>
+</dd></dl>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="altdss.ESPVLControl.ESPVLControl.HasVoltControl">
 <span class="sig-name descname"><span class="pre">HasVoltControl</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">bool</span></span></span><a class="headerlink" href="#altdss.ESPVLControl.ESPVLControl.HasVoltControl" title="Link to this definition">#</a></dt>
-<dd></dd></dl>
+<dd><p>Returns true if the element has a CapControl or RegControl attached.</p>
+<p>Original COM help: <a class="reference external" href="https://opendss.epri.com/HasVoltControl.html">https://opendss.epri.com/HasVoltControl.html</a></p>
+</dd></dl>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="altdss.ESPVLControl.ESPVLControl.IsIsolated">
 <span class="sig-name descname"><span class="pre">IsIsolated</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">bool</span></span></span><a class="headerlink" href="#altdss.ESPVLControl.ESPVLControl.IsIsolated" title="Link to this definition">#</a></dt>
-<dd></dd></dl>
+<dd><p>Returns true if the element is isolated.
+Note that this only fetches the current value. See also the Topology interface.</p>
+</dd></dl>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="altdss.ESPVLControl.ESPVLControl.IsOpen">
 <span class="sig-name descname"><span class="pre">IsOpen</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">terminal</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">phase</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">bool</span></span></span><a class="headerlink" href="#altdss.ESPVLControl.ESPVLControl.IsOpen" title="Link to this definition">#</a></dt>
-<dd></dd></dl>
+<dd><p>Returns true if the specified terminal and phase are open.</p>
+<p>If the <code class="docutils literal notranslate"><span class="pre">phase</span></code> parameter is zero, returns if <strong>any</strong> conductor at the terminal is open.</p>
+</dd></dl>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="altdss.ESPVLControl.ESPVLControl.Like">
@@ -864,18 +898,23 @@ in the keyword argument list.  For example:  dict(one=1, two=2)</p></td>
 <dt class="sig sig-object py" id="altdss.ESPVLControl.ESPVLControl.LocalControlList">
 <span class="sig-name descname"><span class="pre">LocalControlList</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">List</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">]</span></span></em><a class="headerlink" href="#altdss.ESPVLControl.ESPVLControl.LocalControlList" title="Link to this definition">#</a></dt>
 <dd><p>‘property(…)’</p>
+<p>Array list of ESPVLControl local controller objects to be dispatched by System Controller. If not specified, all ESPVLControl devices with type=local in the circuit not attached to another controller are assumed to be part of this controller’s fleet.</p>
+<p>DSS property name: <code class="docutils literal notranslate"><span class="pre">LocalControlList</span></code>, DSS property index: 6.</p>
 </dd></dl>
 
 <dl class="py attribute">
 <dt class="sig sig-object py" id="altdss.ESPVLControl.ESPVLControl.LocalControlWeights">
 <span class="sig-name descname"><span class="pre">LocalControlWeights</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">altdss.types.Float64Array</span></em><a class="headerlink" href="#altdss.ESPVLControl.ESPVLControl.LocalControlWeights" title="Link to this definition">#</a></dt>
 <dd><p>‘property(…)’</p>
+<p>Array of proportional weights corresponding to each ESPVLControl local controller in the LocalControlList.</p>
+<p>DSS property name: <code class="docutils literal notranslate"><span class="pre">LocalControlWeights</span></code>, DSS property index: 7.</p>
 </dd></dl>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="altdss.ESPVLControl.ESPVLControl.Losses">
 <span class="sig-name descname"><span class="pre">Losses</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">complex</span></span></span><a class="headerlink" href="#altdss.ESPVLControl.ESPVLControl.Losses" title="Link to this definition">#</a></dt>
 <dd><p>Total (complex) losses in the element, in VA (watts, vars)</p>
+<p>Original COM help: <a class="reference external" href="https://opendss.epri.com/Losses1.html">https://opendss.epri.com/Losses1.html</a></p>
 </dd></dl>
 
 <dl class="py method">
@@ -893,145 +932,197 @@ Use -1 as terminal to get the value across all terminals.</p>
 <dl class="py method">
 <dt class="sig sig-object py" id="altdss.ESPVLControl.ESPVLControl.NodeOrder">
 <span class="sig-name descname"><span class="pre">NodeOrder</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">altdss.types.Int32Array</span></span></span><a class="headerlink" href="#altdss.ESPVLControl.ESPVLControl.NodeOrder" title="Link to this definition">#</a></dt>
-<dd></dd></dl>
+<dd><p>Array of integer containing the node numbers (representing phases, for example) for each conductor of each terminal.</p>
+<p>Be sure to run a solution to initialize the values after the circuit is created or modified.</p>
+</dd></dl>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="altdss.ESPVLControl.ESPVLControl.NodeRef">
 <span class="sig-name descname"><span class="pre">NodeRef</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">altdss.types.Int32Array</span></span></span><a class="headerlink" href="#altdss.ESPVLControl.ESPVLControl.NodeRef" title="Link to this definition">#</a></dt>
-<dd></dd></dl>
+<dd><p>Array of integers, a copy of the internal NodeRef of the CktElement.</p>
+<p>Be sure to run a solution to initialize the values after the circuit is created or modified.</p>
+</dd></dl>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="altdss.ESPVLControl.ESPVLControl.NumConductors">
 <span class="sig-name descname"><span class="pre">NumConductors</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">int</span></span></span><a class="headerlink" href="#altdss.ESPVLControl.ESPVLControl.NumConductors" title="Link to this definition">#</a></dt>
-<dd></dd></dl>
+<dd><p>Number of conductors per terminal</p>
+<p>Original COM help: <a class="reference external" href="https://opendss.epri.com/NumConductors.html">https://opendss.epri.com/NumConductors.html</a></p>
+</dd></dl>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="altdss.ESPVLControl.ESPVLControl.NumControllers">
 <span class="sig-name descname"><span class="pre">NumControllers</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">int</span></span></span><a class="headerlink" href="#altdss.ESPVLControl.ESPVLControl.NumControllers" title="Link to this definition">#</a></dt>
-<dd></dd></dl>
+<dd><p>Number of controllers connected to this device.</p>
+<p>Original COM help: <a class="reference external" href="https://opendss.epri.com/NumControls.html">https://opendss.epri.com/NumControls.html</a></p>
+</dd></dl>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="altdss.ESPVLControl.ESPVLControl.NumPhases">
 <span class="sig-name descname"><span class="pre">NumPhases</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">int</span></span></span><a class="headerlink" href="#altdss.ESPVLControl.ESPVLControl.NumPhases" title="Link to this definition">#</a></dt>
-<dd></dd></dl>
+<dd><p>Number of phases</p>
+<p>Original COM help: <a class="reference external" href="https://opendss.epri.com/NumPhases.html">https://opendss.epri.com/NumPhases.html</a></p>
+</dd></dl>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="altdss.ESPVLControl.ESPVLControl.NumTerminals">
 <span class="sig-name descname"><span class="pre">NumTerminals</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">int</span></span></span><a class="headerlink" href="#altdss.ESPVLControl.ESPVLControl.NumTerminals" title="Link to this definition">#</a></dt>
-<dd></dd></dl>
+<dd><p>Number of terminals in this circuit element</p>
+<p>Original COM help: <a class="reference external" href="https://opendss.epri.com/NumTerminals.html">https://opendss.epri.com/NumTerminals.html</a></p>
+</dd></dl>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="altdss.ESPVLControl.ESPVLControl.OCPDevice">
 <span class="sig-name descname"><span class="pre">OCPDevice</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">Union</span><span class="p"><span class="pre">[</span></span><a class="reference internal" href="altdss.DSSObj.html#altdss.DSSObj.DSSObj" title="altdss.DSSObj.DSSObj"><span class="pre">altdss.DSSObj.DSSObj</span></a><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">None</span><span class="p"><span class="pre">]</span></span></span></span><a class="headerlink" href="#altdss.ESPVLControl.ESPVLControl.OCPDevice" title="Link to this definition">#</a></dt>
-<dd></dd></dl>
+<dd><p>Returns (as a Python object) the OCP device controlling this element, if any.</p>
+</dd></dl>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="altdss.ESPVLControl.ESPVLControl.OCPDeviceIndex">
 <span class="sig-name descname"><span class="pre">OCPDeviceIndex</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">int</span></span></span><a class="headerlink" href="#altdss.ESPVLControl.ESPVLControl.OCPDeviceIndex" title="Link to this definition">#</a></dt>
-<dd></dd></dl>
+<dd><p>Index into controller list of OCP Device controlling this circuit element</p>
+<p>Original COM help: <a class="reference external" href="https://opendss.epri.com/OCPDevIndex.html">https://opendss.epri.com/OCPDevIndex.html</a></p>
+</dd></dl>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="altdss.ESPVLControl.ESPVLControl.OCPDeviceType">
 <span class="sig-name descname"><span class="pre">OCPDeviceType</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">dss.enums.OCPDevType</span></span></span><a class="headerlink" href="#altdss.ESPVLControl.ESPVLControl.OCPDeviceType" title="Link to this definition">#</a></dt>
-<dd></dd></dl>
+<dd><p>Type of OCP controller device</p>
+<p>Original COM help: <a class="reference external" href="https://opendss.epri.com/OCPDevType.html">https://opendss.epri.com/OCPDevType.html</a></p>
+</dd></dl>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="altdss.ESPVLControl.ESPVLControl.Open">
 <span class="sig-name descname"><span class="pre">Open</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">terminal</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">phase</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span><a class="headerlink" href="#altdss.ESPVLControl.ESPVLControl.Open" title="Link to this definition">#</a></dt>
-<dd></dd></dl>
+<dd><p>Open the specified terminal and phase, if non-zero, or all conductors at the terminal.</p>
+<p>Original COM help: <a class="reference external" href="https://opendss.epri.com/Open1.html">https://opendss.epri.com/Open1.html</a></p>
+</dd></dl>
 
 <dl class="py attribute">
 <dt class="sig sig-object py" id="altdss.ESPVLControl.ESPVLControl.PVSystemList">
 <span class="sig-name descname"><span class="pre">PVSystemList</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">List</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">]</span></span></em><a class="headerlink" href="#altdss.ESPVLControl.ESPVLControl.PVSystemList" title="Link to this definition">#</a></dt>
 <dd><p>‘property(…)’</p>
+<p>Array list of PVSystem objects to be dispatched by a Local Controller.</p>
+<p>DSS property name: <code class="docutils literal notranslate"><span class="pre">PVSystemList</span></code>, DSS property index: 8.</p>
 </dd></dl>
 
 <dl class="py attribute">
 <dt class="sig sig-object py" id="altdss.ESPVLControl.ESPVLControl.PVSystemWeights">
 <span class="sig-name descname"><span class="pre">PVSystemWeights</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">altdss.types.Float64Array</span></em><a class="headerlink" href="#altdss.ESPVLControl.ESPVLControl.PVSystemWeights" title="Link to this definition">#</a></dt>
 <dd><p>‘property(…)’</p>
+<p>Array of proportional weights corresponding to each PVSystem in the PVSystemList.</p>
+<p>DSS property name: <code class="docutils literal notranslate"><span class="pre">PVSystemWeights</span></code>, DSS property index: 9.</p>
 </dd></dl>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="altdss.ESPVLControl.ESPVLControl.PhaseLosses">
 <span class="sig-name descname"><span class="pre">PhaseLosses</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">altdss.types.ComplexArray</span></span></span><a class="headerlink" href="#altdss.ESPVLControl.ESPVLControl.PhaseLosses" title="Link to this definition">#</a></dt>
 <dd><p>Complex array of losses (kVA) by phase</p>
+<p>Original COM help: <a class="reference external" href="https://opendss.epri.com/PhaseLosses.html">https://opendss.epri.com/PhaseLosses.html</a></p>
 </dd></dl>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="altdss.ESPVLControl.ESPVLControl.Powers">
 <span class="sig-name descname"><span class="pre">Powers</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">altdss.types.ComplexArray</span></span></span><a class="headerlink" href="#altdss.ESPVLControl.ESPVLControl.Powers" title="Link to this definition">#</a></dt>
-<dd></dd></dl>
+<dd><p>Complex array of powers (kVA) into each conductor of each terminal</p>
+<p>Original COM help: <a class="reference external" href="https://opendss.epri.com/Powers.html">https://opendss.epri.com/Powers.html</a></p>
+</dd></dl>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="altdss.ESPVLControl.ESPVLControl.Residuals">
 <span class="sig-name descname"><span class="pre">Residuals</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">altdss.types.Float64Array</span></span></span><a class="headerlink" href="#altdss.ESPVLControl.ESPVLControl.Residuals" title="Link to this definition">#</a></dt>
-<dd></dd></dl>
+<dd><p>Residual currents for each terminal: (magnitude, angle in degrees)</p>
+<p>Original COM help: <a class="reference external" href="https://opendss.epri.com/Residuals.html">https://opendss.epri.com/Residuals.html</a></p>
+</dd></dl>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="altdss.ESPVLControl.ESPVLControl.SeqCurrents">
 <span class="sig-name descname"><span class="pre">SeqCurrents</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">altdss.types.Float64Array</span></span></span><a class="headerlink" href="#altdss.ESPVLControl.ESPVLControl.SeqCurrents" title="Link to this definition">#</a></dt>
-<dd></dd></dl>
+<dd><p>Array of symmetrical component currents (magnitudes only) into each 3-phase terminal</p>
+<p>Original COM help: <a class="reference external" href="https://opendss.epri.com/SeqCurrents.html">https://opendss.epri.com/SeqCurrents.html</a></p>
+</dd></dl>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="altdss.ESPVLControl.ESPVLControl.SeqPowers">
 <span class="sig-name descname"><span class="pre">SeqPowers</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">altdss.types.ComplexArray</span></span></span><a class="headerlink" href="#altdss.ESPVLControl.ESPVLControl.SeqPowers" title="Link to this definition">#</a></dt>
-<dd></dd></dl>
+<dd><p>Complex array of sequence powers (kW, kvar) into each 3-phase terminal</p>
+<p>Original COM help: <a class="reference external" href="https://opendss.epri.com/SeqPowers.html">https://opendss.epri.com/SeqPowers.html</a></p>
+</dd></dl>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="altdss.ESPVLControl.ESPVLControl.SeqVoltages">
 <span class="sig-name descname"><span class="pre">SeqVoltages</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">altdss.types.Float64Array</span></span></span><a class="headerlink" href="#altdss.ESPVLControl.ESPVLControl.SeqVoltages" title="Link to this definition">#</a></dt>
-<dd></dd></dl>
+<dd><p>Double array of symmetrical component voltages (magnitudes only) at each 3-phase terminal</p>
+<p>Original COM help: <a class="reference external" href="https://opendss.epri.com/SeqVoltages1.html">https://opendss.epri.com/SeqVoltages1.html</a></p>
+</dd></dl>
 
 <dl class="py attribute">
 <dt class="sig sig-object py" id="altdss.ESPVLControl.ESPVLControl.StorageList">
 <span class="sig-name descname"><span class="pre">StorageList</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">List</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">]</span></span></em><a class="headerlink" href="#altdss.ESPVLControl.ESPVLControl.StorageList" title="Link to this definition">#</a></dt>
 <dd><p>‘property(…)’</p>
+<p>Array list of Storage objects to be dispatched by Local Controller.</p>
+<p>DSS property name: <code class="docutils literal notranslate"><span class="pre">StorageList</span></code>, DSS property index: 10.</p>
 </dd></dl>
 
 <dl class="py attribute">
 <dt class="sig sig-object py" id="altdss.ESPVLControl.ESPVLControl.StorageWeights">
 <span class="sig-name descname"><span class="pre">StorageWeights</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">altdss.types.Float64Array</span></em><a class="headerlink" href="#altdss.ESPVLControl.ESPVLControl.StorageWeights" title="Link to this definition">#</a></dt>
 <dd><p>‘property(…)’</p>
+<p>Array of proportional weights corresponding to each Storage object in the StorageControlList.</p>
+<p>DSS property name: <code class="docutils literal notranslate"><span class="pre">StorageWeights</span></code>, DSS property index: 11.</p>
 </dd></dl>
 
 <dl class="py attribute">
 <dt class="sig sig-object py" id="altdss.ESPVLControl.ESPVLControl.Terminal">
 <span class="sig-name descname"><span class="pre">Terminal</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">int</span></em><a class="headerlink" href="#altdss.ESPVLControl.ESPVLControl.Terminal" title="Link to this definition">#</a></dt>
 <dd><p>‘property(…)’</p>
+<p>Number of the terminal of the circuit element to which the ESPVLControl control is connected. 1 or 2, typically.  Default is 1. Make sure you have the direction on the power matching the sign of kWLimit.</p>
+<p>DSS property name: <code class="docutils literal notranslate"><span class="pre">Terminal</span></code>, DSS property index: 2.</p>
 </dd></dl>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="altdss.ESPVLControl.ESPVLControl.TotalPowers">
 <span class="sig-name descname"><span class="pre">TotalPowers</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">altdss.types.ComplexArray</span></span></span><a class="headerlink" href="#altdss.ESPVLControl.ESPVLControl.TotalPowers" title="Link to this definition">#</a></dt>
-<dd></dd></dl>
+<dd><p>Returns an array with the total powers (complex, kVA) at ALL terminals of the active circuit element.</p>
+<p>Original COM help: <a class="reference external" href="https://opendss.epri.com/TotalPowers.html">https://opendss.epri.com/TotalPowers.html</a></p>
+</dd></dl>
 
 <dl class="py attribute">
 <dt class="sig sig-object py" id="altdss.ESPVLControl.ESPVLControl.Type">
 <span class="sig-name descname"><span class="pre">Type</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><a class="reference internal" href="altdss.enums.html#altdss.enums.ESPVLControlType" title="altdss.enums.ESPVLControlType"><span class="pre">altdss.enums.ESPVLControlType</span></a></em><a class="headerlink" href="#altdss.ESPVLControl.ESPVLControl.Type" title="Link to this definition">#</a></dt>
 <dd><p>‘property(…)’</p>
+<p>Type of controller.  1= System Controller; 2= Local controller.</p>
+<p>DSS property name: <code class="docutils literal notranslate"><span class="pre">Type</span></code>, DSS property index: 3.</p>
 </dd></dl>
 
 <dl class="py attribute">
 <dt class="sig sig-object py" id="altdss.ESPVLControl.ESPVLControl.Type_str">
 <span class="sig-name descname"><span class="pre">Type_str</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">str</span></em><a class="headerlink" href="#altdss.ESPVLControl.ESPVLControl.Type_str" title="Link to this definition">#</a></dt>
 <dd><p>‘property(…)’</p>
+<p>Type of controller.  1= System Controller; 2= Local controller.</p>
+<p>DSS property name: <code class="docutils literal notranslate"><span class="pre">Type</span></code>, DSS property index: 3.</p>
 </dd></dl>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="altdss.ESPVLControl.ESPVLControl.Voltages">
 <span class="sig-name descname"><span class="pre">Voltages</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">altdss.types.ComplexArray</span></span></span><a class="headerlink" href="#altdss.ESPVLControl.ESPVLControl.Voltages" title="Link to this definition">#</a></dt>
-<dd></dd></dl>
+<dd><p>Complex array of voltages at terminals</p>
+<p>Original COM help: <a class="reference external" href="https://opendss.epri.com/Voltages1.html">https://opendss.epri.com/Voltages1.html</a></p>
+</dd></dl>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="altdss.ESPVLControl.ESPVLControl.VoltagesMagAng">
 <span class="sig-name descname"><span class="pre">VoltagesMagAng</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">altdss.types.Float64Array</span></span></span><a class="headerlink" href="#altdss.ESPVLControl.ESPVLControl.VoltagesMagAng" title="Link to this definition">#</a></dt>
-<dd></dd></dl>
+<dd><p>Voltages at each conductor in magnitude, angle form as array of doubles.</p>
+<p>Original COM help: <a class="reference external" href="https://opendss.epri.com/VoltagesMagAng.html">https://opendss.epri.com/VoltagesMagAng.html</a></p>
+</dd></dl>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="altdss.ESPVLControl.ESPVLControl.YPrim">
 <span class="sig-name descname"><span class="pre">YPrim</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">altdss.types.ComplexArray</span></span></span><a class="headerlink" href="#altdss.ESPVLControl.ESPVLControl.YPrim" title="Link to this definition">#</a></dt>
-<dd></dd></dl>
+<dd><p>YPrim matrix, column order, complex numbers</p>
+<p>Original COM help: <a class="reference external" href="https://opendss.epri.com/Yprim.html">https://opendss.epri.com/Yprim.html</a></p>
+</dd></dl>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="altdss.ESPVLControl.ESPVLControl.__hash__">
@@ -1060,8 +1151,8 @@ Use -1 as terminal to get the value across all terminals.</p>
 <dt class="sig sig-object py" id="altdss.ESPVLControl.ESPVLControl.begin_edit">
 <span class="sig-name descname"><span class="pre">begin_edit</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span><a class="headerlink" href="#altdss.ESPVLControl.ESPVLControl.begin_edit" title="Link to this definition">#</a></dt>
 <dd><p>Marks a DSS object for editing</p>
-<p>In the editing mode, some final side-effects of changing properties are post-poned
-until <code class="docutils literal notranslate"><span class="pre">_end_edit</span></code> is called. This side-effects can be somewhat costly, like updating
+<p>In the editing mode, some final side-effects of changing properties are postponed
+until <code class="docutils literal notranslate"><span class="pre">end_edit</span></code> is called. This side-effects can be somewhat costly, like updating
 the model parameters or internal matrices.</p>
 <p>If you don’t have any performance constraint, you may edit each property individually
 without worrying about using <code class="docutils literal notranslate"><span class="pre">begin_edit</span></code> and <code class="docutils literal notranslate"><span class="pre">end_edit</span></code>. For convenience, those are
@@ -1082,12 +1173,16 @@ the <code class="docutils literal notranslate"><span class="pre">Process</span><
 <dt class="sig sig-object py" id="altdss.ESPVLControl.ESPVLControl.kWBand">
 <span class="sig-name descname"><span class="pre">kWBand</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">float</span></em><a class="headerlink" href="#altdss.ESPVLControl.ESPVLControl.kWBand" title="Link to this definition">#</a></dt>
 <dd><p>‘property(…)’</p>
+<p>Bandwidth (kW) of the dead band around the target limit.No dispatch changes are attempted if the power in the monitored terminal stays within this band.</p>
+<p>DSS property name: <code class="docutils literal notranslate"><span class="pre">kWBand</span></code>, DSS property index: 4.</p>
 </dd></dl>
 
 <dl class="py attribute">
 <dt class="sig sig-object py" id="altdss.ESPVLControl.ESPVLControl.kvarLimit">
 <span class="sig-name descname"><span class="pre">kvarLimit</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">float</span></em><a class="headerlink" href="#altdss.ESPVLControl.ESPVLControl.kvarLimit" title="Link to this definition">#</a></dt>
 <dd><p>‘property(…)’</p>
+<p>Max kvar to be delivered through the element.  Uses same dead band as kW.</p>
+<p>DSS property name: <code class="docutils literal notranslate"><span class="pre">kvarLimit</span></code>, DSS property index: 5.</p>
 </dd></dl>
 
 <dl class="py method">
@@ -1126,44 +1221,60 @@ Values used by this function are:</p>
 <dt class="sig sig-object py" id="altdss.ESPVLControl.ESPVLControlBatch.BaseFreq">
 <span class="sig-name descname"><span class="pre">BaseFreq</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><a class="reference internal" href="altdss.ArrayProxy.html#altdss.ArrayProxy.BatchFloat64ArrayProxy" title="altdss.ArrayProxy.BatchFloat64ArrayProxy"><span class="pre">altdss.ArrayProxy.BatchFloat64ArrayProxy</span></a></em><a class="headerlink" href="#altdss.ESPVLControl.ESPVLControlBatch.BaseFreq" title="Link to this definition">#</a></dt>
 <dd><p>‘property(…)’</p>
+<p>Base Frequency for ratings.</p>
+<p>DSS property name: <code class="docutils literal notranslate"><span class="pre">BaseFreq</span></code>, DSS property index: 12.</p>
 </dd></dl>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="altdss.ESPVLControl.ESPVLControlBatch.ComplexSeqCurrents">
 <span class="sig-name descname"><span class="pre">ComplexSeqCurrents</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">altdss.types.ComplexArray</span></span></span><a class="headerlink" href="#altdss.ESPVLControl.ESPVLControlBatch.ComplexSeqCurrents" title="Link to this definition">#</a></dt>
-<dd></dd></dl>
+<dd><p>Complex double array of Sequence Currents for all conductors of all terminals of active circuit element.</p>
+<p>Original COM help: <a class="reference external" href="https://opendss.epri.com/CplxSeqCurrents.html">https://opendss.epri.com/CplxSeqCurrents.html</a></p>
+</dd></dl>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="altdss.ESPVLControl.ESPVLControlBatch.ComplexSeqVoltages">
 <span class="sig-name descname"><span class="pre">ComplexSeqVoltages</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">altdss.types.ComplexArray</span></span></span><a class="headerlink" href="#altdss.ESPVLControl.ESPVLControlBatch.ComplexSeqVoltages" title="Link to this definition">#</a></dt>
-<dd></dd></dl>
+<dd><p>Complex double array of Sequence Voltage for all terminals of active circuit element.</p>
+<p>Original COM help: <a class="reference external" href="https://opendss.epri.com/CplxSeqVoltages1.html">https://opendss.epri.com/CplxSeqVoltages1.html</a></p>
+</dd></dl>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="altdss.ESPVLControl.ESPVLControlBatch.Currents">
 <span class="sig-name descname"><span class="pre">Currents</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">altdss.types.ComplexArray</span></span></span><a class="headerlink" href="#altdss.ESPVLControl.ESPVLControlBatch.Currents" title="Link to this definition">#</a></dt>
-<dd></dd></dl>
+<dd><p>Complex array of currents into each conductor of each terminal</p>
+<p>Original COM help: <a class="reference external" href="https://opendss.epri.com/Currents1.html">https://opendss.epri.com/Currents1.html</a></p>
+</dd></dl>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="altdss.ESPVLControl.ESPVLControlBatch.CurrentsMagAng">
 <span class="sig-name descname"><span class="pre">CurrentsMagAng</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">altdss.types.Float64Array</span></span></span><a class="headerlink" href="#altdss.ESPVLControl.ESPVLControlBatch.CurrentsMagAng" title="Link to this definition">#</a></dt>
-<dd></dd></dl>
+<dd><p>Currents in magnitude, angle (degrees) format as a array of doubles.</p>
+<p>Original COM help: <a class="reference external" href="https://opendss.epri.com/CurrentsMagAng.html">https://opendss.epri.com/CurrentsMagAng.html</a></p>
+</dd></dl>
 
 <dl class="py attribute">
 <dt class="sig sig-object py" id="altdss.ESPVLControl.ESPVLControlBatch.Element">
 <span class="sig-name descname"><span class="pre">Element</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">List</span><span class="p"><span class="pre">[</span></span><a class="reference internal" href="altdss.DSSObj.html#altdss.DSSObj.DSSObj" title="altdss.DSSObj.DSSObj"><span class="pre">altdss.DSSObj.DSSObj</span></a><span class="p"><span class="pre">]</span></span></em><a class="headerlink" href="#altdss.ESPVLControl.ESPVLControlBatch.Element" title="Link to this definition">#</a></dt>
 <dd><p>‘property(…)’</p>
+<p>Full object name of the circuit element, typically a line or transformer, which the control is monitoring. There is no default; must be specified.</p>
+<p>DSS property name: <code class="docutils literal notranslate"><span class="pre">Element</span></code>, DSS property index: 1.</p>
 </dd></dl>
 
 <dl class="py attribute">
 <dt class="sig sig-object py" id="altdss.ESPVLControl.ESPVLControlBatch.Element_str">
 <span class="sig-name descname"><span class="pre">Element_str</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">List</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">]</span></span></em><a class="headerlink" href="#altdss.ESPVLControl.ESPVLControlBatch.Element_str" title="Link to this definition">#</a></dt>
 <dd><p>‘property(…)’</p>
+<p>Full object name of the circuit element, typically a line or transformer, which the control is monitoring. There is no default; must be specified.</p>
+<p>DSS property name: <code class="docutils literal notranslate"><span class="pre">Element</span></code>, DSS property index: 1.</p>
 </dd></dl>
 
 <dl class="py attribute">
 <dt class="sig sig-object py" id="altdss.ESPVLControl.ESPVLControlBatch.Enabled">
 <span class="sig-name descname"><span class="pre">Enabled</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">List</span><span class="p"><span class="pre">[</span></span><span class="pre">bool</span><span class="p"><span class="pre">]</span></span></em><a class="headerlink" href="#altdss.ESPVLControl.ESPVLControlBatch.Enabled" title="Link to this definition">#</a></dt>
 <dd><p>‘property(…)’</p>
+<p>{Yes|No or True|False} Indicates whether this element is enabled.</p>
+<p>DSS property name: <code class="docutils literal notranslate"><span class="pre">Enabled</span></code>, DSS property index: 13.</p>
 </dd></dl>
 
 <dl class="py method">
@@ -1174,34 +1285,46 @@ Values used by this function are:</p>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="altdss.ESPVLControl.ESPVLControlBatch.GUID">
-<span class="sig-name descname"><span class="pre">GUID</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">str</span></span></span><a class="headerlink" href="#altdss.ESPVLControl.ESPVLControlBatch.GUID" title="Link to this definition">#</a></dt>
+<span class="sig-name descname"><span class="pre">GUID</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">List</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">]</span></span></span></span><a class="headerlink" href="#altdss.ESPVLControl.ESPVLControlBatch.GUID" title="Link to this definition">#</a></dt>
 <dd><p>GUID/UUID for each object. Currently used only in the CIM-related methods.</p>
+<p>Original COM help: <a class="reference external" href="https://opendss.epri.com/GUID.html">https://opendss.epri.com/GUID.html</a></p>
 </dd></dl>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="altdss.ESPVLControl.ESPVLControlBatch.Handle">
 <span class="sig-name descname"><span class="pre">Handle</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">altdss.types.Int32Array</span></span></span><a class="headerlink" href="#altdss.ESPVLControl.ESPVLControlBatch.Handle" title="Link to this definition">#</a></dt>
-<dd></dd></dl>
+<dd><p>Index of each element into the circuit’s element list.</p>
+<p>Original COM help: <a class="reference external" href="https://opendss.epri.com/Handle.html">https://opendss.epri.com/Handle.html</a></p>
+</dd></dl>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="altdss.ESPVLControl.ESPVLControlBatch.HasOCPDevice">
-<span class="sig-name descname"><span class="pre">HasOCPDevice</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">bool</span></span></span><a class="headerlink" href="#altdss.ESPVLControl.ESPVLControlBatch.HasOCPDevice" title="Link to this definition">#</a></dt>
-<dd></dd></dl>
+<span class="sig-name descname"><span class="pre">HasOCPDevice</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">altdss.types.BoolArray</span></span></span><a class="headerlink" href="#altdss.ESPVLControl.ESPVLControlBatch.HasOCPDevice" title="Link to this definition">#</a></dt>
+<dd><p>For each element in the batch: returns true if a recloser, relay, or fuse controlling the circuit element.</p>
+<p>OCP = Overcurrent Protection</p>
+<p>Original COM help: <a class="reference external" href="https://opendss.epri.com/HasOCPDevice.html">https://opendss.epri.com/HasOCPDevice.html</a></p>
+</dd></dl>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="altdss.ESPVLControl.ESPVLControlBatch.HasSwitchControl">
-<span class="sig-name descname"><span class="pre">HasSwitchControl</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">bool</span></span></span><a class="headerlink" href="#altdss.ESPVLControl.ESPVLControlBatch.HasSwitchControl" title="Link to this definition">#</a></dt>
-<dd></dd></dl>
+<span class="sig-name descname"><span class="pre">HasSwitchControl</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">altdss.types.BoolArray</span></span></span><a class="headerlink" href="#altdss.ESPVLControl.ESPVLControlBatch.HasSwitchControl" title="Link to this definition">#</a></dt>
+<dd><p>For each element in the batch: returns true if the element has a SwtControl attached.</p>
+<p>Original COM help: <a class="reference external" href="https://opendss.epri.com/HasSwitchControl.html">https://opendss.epri.com/HasSwitchControl.html</a></p>
+</dd></dl>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="altdss.ESPVLControl.ESPVLControlBatch.HasVoltControl">
-<span class="sig-name descname"><span class="pre">HasVoltControl</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">bool</span></span></span><a class="headerlink" href="#altdss.ESPVLControl.ESPVLControlBatch.HasVoltControl" title="Link to this definition">#</a></dt>
-<dd></dd></dl>
+<span class="sig-name descname"><span class="pre">HasVoltControl</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">altdss.types.BoolArray</span></span></span><a class="headerlink" href="#altdss.ESPVLControl.ESPVLControlBatch.HasVoltControl" title="Link to this definition">#</a></dt>
+<dd><p>For each element in the batch: returns true if the element has a CapControl or RegControl attached.</p>
+<p>Original COM help: <a class="reference external" href="https://opendss.epri.com/HasVoltControl.html">https://opendss.epri.com/HasVoltControl.html</a></p>
+</dd></dl>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="altdss.ESPVLControl.ESPVLControlBatch.IsIsolated">
 <span class="sig-name descname"><span class="pre">IsIsolated</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">altdss.types.BoolArray</span></span></span><a class="headerlink" href="#altdss.ESPVLControl.ESPVLControlBatch.IsIsolated" title="Link to this definition">#</a></dt>
-<dd></dd></dl>
+<dd><p>For each element in the batch: returns true if the element is isolated.
+Note that this only fetches the current value. See also the Topology interface.</p>
+</dd></dl>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="altdss.ESPVLControl.ESPVLControlBatch.Like">
@@ -1215,24 +1338,29 @@ Values used by this function are:</p>
 <dt class="sig sig-object py" id="altdss.ESPVLControl.ESPVLControlBatch.LocalControlList">
 <span class="sig-name descname"><span class="pre">LocalControlList</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">List</span><span class="p"><span class="pre">[</span></span><span class="pre">List</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">]</span></span></em><a class="headerlink" href="#altdss.ESPVLControl.ESPVLControlBatch.LocalControlList" title="Link to this definition">#</a></dt>
 <dd><p>‘property(…)’</p>
+<p>Array list of ESPVLControl local controller objects to be dispatched by System Controller. If not specified, all ESPVLControl devices with type=local in the circuit not attached to another controller are assumed to be part of this controller’s fleet.</p>
+<p>DSS property name: <code class="docutils literal notranslate"><span class="pre">LocalControlList</span></code>, DSS property index: 6.</p>
 </dd></dl>
 
 <dl class="py attribute">
 <dt class="sig sig-object py" id="altdss.ESPVLControl.ESPVLControlBatch.LocalControlWeights">
 <span class="sig-name descname"><span class="pre">LocalControlWeights</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">List</span><span class="p"><span class="pre">[</span></span><span class="pre">altdss.types.Float64Array</span><span class="p"><span class="pre">]</span></span></em><a class="headerlink" href="#altdss.ESPVLControl.ESPVLControlBatch.LocalControlWeights" title="Link to this definition">#</a></dt>
 <dd><p>‘property(…)’</p>
+<p>Array of proportional weights corresponding to each ESPVLControl local controller in the LocalControlList.</p>
+<p>DSS property name: <code class="docutils literal notranslate"><span class="pre">LocalControlWeights</span></code>, DSS property index: 7.</p>
 </dd></dl>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="altdss.ESPVLControl.ESPVLControlBatch.Losses">
 <span class="sig-name descname"><span class="pre">Losses</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">altdss.types.ComplexArray</span></span></span><a class="headerlink" href="#altdss.ESPVLControl.ESPVLControlBatch.Losses" title="Link to this definition">#</a></dt>
-<dd><p>Total losses for each element, complex VA (watts, vars)</p>
+<dd><p>For each element in the batch: total losses in the element, in VA (watts, vars).</p>
+<p>Original COM help: <a class="reference external" href="https://opendss.epri.com/Losses1.html">https://opendss.epri.com/Losses1.html</a></p>
 </dd></dl>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="altdss.ESPVLControl.ESPVLControlBatch.MaxCurrent">
-<span class="sig-name descname"><span class="pre">MaxCurrent</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">terminal</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">float</span></span></span><a class="headerlink" href="#altdss.ESPVLControl.ESPVLControlBatch.MaxCurrent" title="Link to this definition">#</a></dt>
-<dd><p>Returns the maximum current (magnitude) at the specificed terminal for all elements in this batch.
+<span class="sig-name descname"><span class="pre">MaxCurrent</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">terminal</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">altdss.types.Float64Array</span></span></span><a class="headerlink" href="#altdss.ESPVLControl.ESPVLControlBatch.MaxCurrent" title="Link to this definition">#</a></dt>
+<dd><p>Returns the maximum current (magnitude) at the specified terminal for each element in this batch.
 Use -1 as terminal to get the value across all terminals.</p>
 </dd></dl>
 
@@ -1244,93 +1372,124 @@ Use -1 as terminal to get the value across all terminals.</p>
 <dl class="py method">
 <dt class="sig sig-object py" id="altdss.ESPVLControl.ESPVLControlBatch.NumConductors">
 <span class="sig-name descname"><span class="pre">NumConductors</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">altdss.types.Int32Array</span></span></span><a class="headerlink" href="#altdss.ESPVLControl.ESPVLControlBatch.NumConductors" title="Link to this definition">#</a></dt>
-<dd></dd></dl>
+<dd><p>Number of conductors per terminal for each element in the batch.</p>
+<p>Original COM help: <a class="reference external" href="https://opendss.epri.com/NumConductors.html">https://opendss.epri.com/NumConductors.html</a></p>
+</dd></dl>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="altdss.ESPVLControl.ESPVLControlBatch.NumControllers">
 <span class="sig-name descname"><span class="pre">NumControllers</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">altdss.types.Int32Array</span></span></span><a class="headerlink" href="#altdss.ESPVLControl.ESPVLControlBatch.NumControllers" title="Link to this definition">#</a></dt>
-<dd></dd></dl>
+<dd><p>Number of controllers connected to each device in the batch.</p>
+<p>Original COM help: <a class="reference external" href="https://opendss.epri.com/NumControls.html">https://opendss.epri.com/NumControls.html</a></p>
+</dd></dl>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="altdss.ESPVLControl.ESPVLControlBatch.NumPhases">
 <span class="sig-name descname"><span class="pre">NumPhases</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">altdss.types.Int32Array</span></span></span><a class="headerlink" href="#altdss.ESPVLControl.ESPVLControlBatch.NumPhases" title="Link to this definition">#</a></dt>
-<dd></dd></dl>
+<dd><p>Number of Phases for each element in this batch.</p>
+<p>Original COM help: <a class="reference external" href="https://opendss.epri.com/NumPhases.html">https://opendss.epri.com/NumPhases.html</a></p>
+</dd></dl>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="altdss.ESPVLControl.ESPVLControlBatch.NumTerminals">
 <span class="sig-name descname"><span class="pre">NumTerminals</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">altdss.types.Int32Array</span></span></span><a class="headerlink" href="#altdss.ESPVLControl.ESPVLControlBatch.NumTerminals" title="Link to this definition">#</a></dt>
-<dd></dd></dl>
+<dd><p>Number of terminals for each Circuit Element in the batch.</p>
+<p>Original COM help: <a class="reference external" href="https://opendss.epri.com/NumTerminals.html">https://opendss.epri.com/NumTerminals.html</a></p>
+</dd></dl>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="altdss.ESPVLControl.ESPVLControlBatch.OCPDevice">
 <span class="sig-name descname"><span class="pre">OCPDevice</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">List</span><span class="p"><span class="pre">[</span></span><span class="pre">Union</span><span class="p"><span class="pre">[</span></span><a class="reference internal" href="altdss.DSSObj.html#altdss.DSSObj.DSSObj" title="altdss.DSSObj.DSSObj"><span class="pre">altdss.DSSObj.DSSObj</span></a><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">None</span><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">]</span></span></span></span><a class="headerlink" href="#altdss.ESPVLControl.ESPVLControlBatch.OCPDevice" title="Link to this definition">#</a></dt>
-<dd></dd></dl>
+<dd><p>Returns (as a list of Python objects) the OCP device controlling each element.</p>
+</dd></dl>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="altdss.ESPVLControl.ESPVLControlBatch.OCPDeviceIndex">
 <span class="sig-name descname"><span class="pre">OCPDeviceIndex</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">altdss.types.Int32Array</span></span></span><a class="headerlink" href="#altdss.ESPVLControl.ESPVLControlBatch.OCPDeviceIndex" title="Link to this definition">#</a></dt>
-<dd></dd></dl>
+<dd><p>For each element in the batch: index into each controller list of the OCP Device controlling each circuit element</p>
+<p>Original COM help: <a class="reference external" href="https://opendss.epri.com/OCPDevIndex.html">https://opendss.epri.com/OCPDevIndex.html</a></p>
+</dd></dl>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="altdss.ESPVLControl.ESPVLControlBatch.OCPDeviceType">
-<span class="sig-name descname"><span class="pre">OCPDeviceType</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">dss.enums.OCPDevType</span></span></span><a class="headerlink" href="#altdss.ESPVLControl.ESPVLControlBatch.OCPDeviceType" title="Link to this definition">#</a></dt>
-<dd></dd></dl>
+<span class="sig-name descname"><span class="pre">OCPDeviceType</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">List</span><span class="p"><span class="pre">[</span></span><span class="pre">dss.enums.OCPDevType</span><span class="p"><span class="pre">]</span></span></span></span><a class="headerlink" href="#altdss.ESPVLControl.ESPVLControlBatch.OCPDeviceType" title="Link to this definition">#</a></dt>
+<dd><p>For each element in the batch: type of OCP controller device</p>
+<p>Original COM help: <a class="reference external" href="https://opendss.epri.com/OCPDevType.html">https://opendss.epri.com/OCPDevType.html</a></p>
+</dd></dl>
 
 <dl class="py attribute">
 <dt class="sig sig-object py" id="altdss.ESPVLControl.ESPVLControlBatch.PVSystemList">
 <span class="sig-name descname"><span class="pre">PVSystemList</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">List</span><span class="p"><span class="pre">[</span></span><span class="pre">List</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">]</span></span></em><a class="headerlink" href="#altdss.ESPVLControl.ESPVLControlBatch.PVSystemList" title="Link to this definition">#</a></dt>
 <dd><p>‘property(…)’</p>
+<p>Array list of PVSystem objects to be dispatched by a Local Controller.</p>
+<p>DSS property name: <code class="docutils literal notranslate"><span class="pre">PVSystemList</span></code>, DSS property index: 8.</p>
 </dd></dl>
 
 <dl class="py attribute">
 <dt class="sig sig-object py" id="altdss.ESPVLControl.ESPVLControlBatch.PVSystemWeights">
 <span class="sig-name descname"><span class="pre">PVSystemWeights</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">List</span><span class="p"><span class="pre">[</span></span><span class="pre">altdss.types.Float64Array</span><span class="p"><span class="pre">]</span></span></em><a class="headerlink" href="#altdss.ESPVLControl.ESPVLControlBatch.PVSystemWeights" title="Link to this definition">#</a></dt>
 <dd><p>‘property(…)’</p>
+<p>Array of proportional weights corresponding to each PVSystem in the PVSystemList.</p>
+<p>DSS property name: <code class="docutils literal notranslate"><span class="pre">PVSystemWeights</span></code>, DSS property index: 9.</p>
 </dd></dl>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="altdss.ESPVLControl.ESPVLControlBatch.PhaseLosses">
 <span class="sig-name descname"><span class="pre">PhaseLosses</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">altdss.types.ComplexArray</span></span></span><a class="headerlink" href="#altdss.ESPVLControl.ESPVLControlBatch.PhaseLosses" title="Link to this definition">#</a></dt>
-<dd><p>Complex array of losses (kVA) by phase, for each element</p>
+<dd><p>Complex array of losses (kVA) by phase</p>
+<p>Original COM help: <a class="reference external" href="https://opendss.epri.com/PhaseLosses.html">https://opendss.epri.com/PhaseLosses.html</a></p>
 </dd></dl>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="altdss.ESPVLControl.ESPVLControlBatch.Powers">
 <span class="sig-name descname"><span class="pre">Powers</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">altdss.types.ComplexArray</span></span></span><a class="headerlink" href="#altdss.ESPVLControl.ESPVLControlBatch.Powers" title="Link to this definition">#</a></dt>
 <dd><p>Complex array of powers (kVA) into each conductor of each terminal, of each element in the batch.</p>
+<p>Original COM help: <a class="reference external" href="https://opendss.epri.com/Powers.html">https://opendss.epri.com/Powers.html</a></p>
 </dd></dl>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="altdss.ESPVLControl.ESPVLControlBatch.SeqCurrents">
 <span class="sig-name descname"><span class="pre">SeqCurrents</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">altdss.types.Float64Array</span></span></span><a class="headerlink" href="#altdss.ESPVLControl.ESPVLControlBatch.SeqCurrents" title="Link to this definition">#</a></dt>
-<dd></dd></dl>
+<dd><p>Array of symmetrical component currents (magnitudes only) into each 3-phase terminal of each element</p>
+<p>Original COM help: <a class="reference external" href="https://opendss.epri.com/SeqCurrents.html">https://opendss.epri.com/SeqCurrents.html</a></p>
+</dd></dl>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="altdss.ESPVLControl.ESPVLControlBatch.SeqPowers">
 <span class="sig-name descname"><span class="pre">SeqPowers</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">altdss.types.ComplexArray</span></span></span><a class="headerlink" href="#altdss.ESPVLControl.ESPVLControlBatch.SeqPowers" title="Link to this definition">#</a></dt>
-<dd></dd></dl>
+<dd><p>Complex array of sequence powers (kW, kvar) into each 3-phase terminal of each element</p>
+<p>Original COM help: <a class="reference external" href="https://opendss.epri.com/SeqPowers.html">https://opendss.epri.com/SeqPowers.html</a></p>
+</dd></dl>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="altdss.ESPVLControl.ESPVLControlBatch.SeqVoltages">
 <span class="sig-name descname"><span class="pre">SeqVoltages</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">altdss.types.Float64Array</span></span></span><a class="headerlink" href="#altdss.ESPVLControl.ESPVLControlBatch.SeqVoltages" title="Link to this definition">#</a></dt>
-<dd></dd></dl>
+<dd><p>Double array of symmetrical component voltages (magnitudes only) at each 3-phase terminal</p>
+<p>Original COM help: <a class="reference external" href="https://opendss.epri.com/SeqVoltages1.html">https://opendss.epri.com/SeqVoltages1.html</a></p>
+</dd></dl>
 
 <dl class="py attribute">
 <dt class="sig sig-object py" id="altdss.ESPVLControl.ESPVLControlBatch.StorageList">
 <span class="sig-name descname"><span class="pre">StorageList</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">List</span><span class="p"><span class="pre">[</span></span><span class="pre">List</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">]</span></span></em><a class="headerlink" href="#altdss.ESPVLControl.ESPVLControlBatch.StorageList" title="Link to this definition">#</a></dt>
 <dd><p>‘property(…)’</p>
+<p>Array list of Storage objects to be dispatched by Local Controller.</p>
+<p>DSS property name: <code class="docutils literal notranslate"><span class="pre">StorageList</span></code>, DSS property index: 10.</p>
 </dd></dl>
 
 <dl class="py attribute">
 <dt class="sig sig-object py" id="altdss.ESPVLControl.ESPVLControlBatch.StorageWeights">
 <span class="sig-name descname"><span class="pre">StorageWeights</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">List</span><span class="p"><span class="pre">[</span></span><span class="pre">altdss.types.Float64Array</span><span class="p"><span class="pre">]</span></span></em><a class="headerlink" href="#altdss.ESPVLControl.ESPVLControlBatch.StorageWeights" title="Link to this definition">#</a></dt>
 <dd><p>‘property(…)’</p>
+<p>Array of proportional weights corresponding to each Storage object in the StorageControlList.</p>
+<p>DSS property name: <code class="docutils literal notranslate"><span class="pre">StorageWeights</span></code>, DSS property index: 11.</p>
 </dd></dl>
 
 <dl class="py attribute">
 <dt class="sig sig-object py" id="altdss.ESPVLControl.ESPVLControlBatch.Terminal">
 <span class="sig-name descname"><span class="pre">Terminal</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><a class="reference internal" href="altdss.ArrayProxy.html#altdss.ArrayProxy.BatchInt32ArrayProxy" title="altdss.ArrayProxy.BatchInt32ArrayProxy"><span class="pre">altdss.ArrayProxy.BatchInt32ArrayProxy</span></a></em><a class="headerlink" href="#altdss.ESPVLControl.ESPVLControlBatch.Terminal" title="Link to this definition">#</a></dt>
 <dd><p>‘property(…)’</p>
+<p>Number of the terminal of the circuit element to which the ESPVLControl control is connected. 1 or 2, typically.  Default is 1. Make sure you have the direction on the power matching the sign of kWLimit.</p>
+<p>DSS property name: <code class="docutils literal notranslate"><span class="pre">Terminal</span></code>, DSS property index: 2.</p>
 </dd></dl>
 
 <dl class="py method">
@@ -1344,23 +1503,31 @@ Use -1 as terminal to get the value across all terminals.</p>
 <dt class="sig sig-object py" id="altdss.ESPVLControl.ESPVLControlBatch.Type">
 <span class="sig-name descname"><span class="pre">Type</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><a class="reference internal" href="altdss.ArrayProxy.html#altdss.ArrayProxy.BatchInt32ArrayProxy" title="altdss.ArrayProxy.BatchInt32ArrayProxy"><span class="pre">altdss.ArrayProxy.BatchInt32ArrayProxy</span></a></em><a class="headerlink" href="#altdss.ESPVLControl.ESPVLControlBatch.Type" title="Link to this definition">#</a></dt>
 <dd><p>‘property(…)’</p>
+<p>Type of controller.  1= System Controller; 2= Local controller.</p>
+<p>DSS property name: <code class="docutils literal notranslate"><span class="pre">Type</span></code>, DSS property index: 3.</p>
 </dd></dl>
 
 <dl class="py attribute">
 <dt class="sig sig-object py" id="altdss.ESPVLControl.ESPVLControlBatch.Type_str">
 <span class="sig-name descname"><span class="pre">Type_str</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">List</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">]</span></span></em><a class="headerlink" href="#altdss.ESPVLControl.ESPVLControlBatch.Type_str" title="Link to this definition">#</a></dt>
 <dd><p>‘property(…)’</p>
+<p>Type of controller.  1= System Controller; 2= Local controller.</p>
+<p>DSS property name: <code class="docutils literal notranslate"><span class="pre">Type</span></code>, DSS property index: 3.</p>
 </dd></dl>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="altdss.ESPVLControl.ESPVLControlBatch.Voltages">
 <span class="sig-name descname"><span class="pre">Voltages</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">altdss.types.ComplexArray</span></span></span><a class="headerlink" href="#altdss.ESPVLControl.ESPVLControlBatch.Voltages" title="Link to this definition">#</a></dt>
-<dd></dd></dl>
+<dd><p>Complex array of voltages at terminals</p>
+<p>Original COM help: <a class="reference external" href="https://opendss.epri.com/Voltages1.html">https://opendss.epri.com/Voltages1.html</a></p>
+</dd></dl>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="altdss.ESPVLControl.ESPVLControlBatch.VoltagesMagAng">
 <span class="sig-name descname"><span class="pre">VoltagesMagAng</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">altdss.types.Float64Array</span></span></span><a class="headerlink" href="#altdss.ESPVLControl.ESPVLControlBatch.VoltagesMagAng" title="Link to this definition">#</a></dt>
-<dd></dd></dl>
+<dd><p>Voltages at each conductor in magnitude, angle form as array of doubles.</p>
+<p>Original COM help: <a class="reference external" href="https://opendss.epri.com/VoltagesMagAng.html">https://opendss.epri.com/VoltagesMagAng.html</a></p>
+</dd></dl>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="altdss.ESPVLControl.ESPVLControlBatch.__call__">
@@ -1389,11 +1556,29 @@ Use -1 as terminal to get the value across all terminals.</p>
 <dd></dd></dl>
 
 <dl class="py method">
+<dt class="sig sig-object py" id="altdss.ESPVLControl.ESPVLControlBatch.batch">
+<span class="sig-name descname"><span class="pre">batch</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference internal" href="altdss.Batch.html#altdss.Batch.DSSBatch" title="altdss.Batch.DSSBatch"><span class="pre">altdss.Batch.DSSBatch</span></a></span></span><a class="headerlink" href="#altdss.ESPVLControl.ESPVLControlBatch.batch" title="Link to this definition">#</a></dt>
+<dd><p>Filter a batch using integer or float DSS properties, returning a new batch.</p>
+<p>For integers, provide a single value to match.</p>
+<p>For floats, provide a range as a 2-valued tuple/list (min value, max value), or an exact value to value (not recommended).</p>
+<p>Multiple properties can be listed to allow filtering various conditions.</p>
+<p>Example for loads:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span>    <span class="c1"># Create an initial batch using a regular expression</span>
+    <span class="n">abc_loads</span> <span class="o">=</span> <span class="n">altdss</span><span class="o">.</span><span class="n">Load</span><span class="o">.</span><span class="n">batch</span><span class="p">(</span><span class="n">re</span><span class="o">=</span><span class="sa">r</span><span class="s1">&#39;^abc.*$&#39;</span><span class="p">)</span> <span class="c1"># a batch of all loads with names starting with &quot;abc&quot;</span>
+    <span class="n">abc_loads_filtered</span> <span class="o">=</span> <span class="n">abc_loads</span><span class="o">.</span><span class="n">batch</span><span class="p">(</span><span class="n">Class</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">Phases</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">kV</span><span class="o">=</span><span class="p">(</span><span class="mf">0.1</span><span class="p">,</span> <span class="mf">1.0</span><span class="p">))</span>
+
+    <span class="c1"># Create an initial batch, already filtered</span>
+    <span class="n">abc_loads_filtered</span> <span class="o">=</span> <span class="n">altdss</span><span class="o">.</span><span class="n">Load</span><span class="o">.</span><span class="n">batch</span><span class="p">(</span><span class="n">re</span><span class="o">=</span><span class="sa">r</span><span class="s1">&#39;^abc.*$&#39;</span><span class="p">,</span> <span class="n">Class</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">Phases</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">kV</span><span class="o">=</span><span class="p">(</span><span class="mf">0.1</span><span class="p">,</span> <span class="mf">1.0</span><span class="p">))</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="py method">
 <dt class="sig sig-object py" id="altdss.ESPVLControl.ESPVLControlBatch.begin_edit">
 <span class="sig-name descname"><span class="pre">begin_edit</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span><a class="headerlink" href="#altdss.ESPVLControl.ESPVLControlBatch.begin_edit" title="Link to this definition">#</a></dt>
 <dd><p>Marks for editing all DSS objects in the batch</p>
-<p>In the editing mode, some final side-effects of changing properties are post-poned
-until <code class="docutils literal notranslate"><span class="pre">_end_edit</span></code> is called. This side-effects can be somewhat costly, like updating
+<p>In the editing mode, some final side-effects of changing properties are postponed
+until <code class="docutils literal notranslate"><span class="pre">end_edit</span></code> is called. This side-effects can be somewhat costly, like updating
 the model parameters or internal matrices.</p>
 <p>If you don’t have any performance constraint, you may edit each property individually
 without worrying about using <code class="docutils literal notranslate"><span class="pre">begin_edit</span></code> and <code class="docutils literal notranslate"><span class="pre">end_edit</span></code>. For convenience, those are
@@ -1414,12 +1599,16 @@ the <code class="docutils literal notranslate"><span class="pre">Process</span><
 <dt class="sig sig-object py" id="altdss.ESPVLControl.ESPVLControlBatch.kWBand">
 <span class="sig-name descname"><span class="pre">kWBand</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><a class="reference internal" href="altdss.ArrayProxy.html#altdss.ArrayProxy.BatchFloat64ArrayProxy" title="altdss.ArrayProxy.BatchFloat64ArrayProxy"><span class="pre">altdss.ArrayProxy.BatchFloat64ArrayProxy</span></a></em><a class="headerlink" href="#altdss.ESPVLControl.ESPVLControlBatch.kWBand" title="Link to this definition">#</a></dt>
 <dd><p>‘property(…)’</p>
+<p>Bandwidth (kW) of the dead band around the target limit.No dispatch changes are attempted if the power in the monitored terminal stays within this band.</p>
+<p>DSS property name: <code class="docutils literal notranslate"><span class="pre">kWBand</span></code>, DSS property index: 4.</p>
 </dd></dl>
 
 <dl class="py attribute">
 <dt class="sig sig-object py" id="altdss.ESPVLControl.ESPVLControlBatch.kvarLimit">
 <span class="sig-name descname"><span class="pre">kvarLimit</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><a class="reference internal" href="altdss.ArrayProxy.html#altdss.ArrayProxy.BatchFloat64ArrayProxy" title="altdss.ArrayProxy.BatchFloat64ArrayProxy"><span class="pre">altdss.ArrayProxy.BatchFloat64ArrayProxy</span></a></em><a class="headerlink" href="#altdss.ESPVLControl.ESPVLControlBatch.kvarLimit" title="Link to this definition">#</a></dt>
 <dd><p>‘property(…)’</p>
+<p>Max kvar to be delivered through the element.  Uses same dead band as kW.</p>
+<p>DSS property name: <code class="docutils literal notranslate"><span class="pre">kvarLimit</span></code>, DSS property index: 5.</p>
 </dd></dl>
 
 <dl class="py method">
@@ -2126,44 +2315,60 @@ In either case, this is followed by: for k in F:  D[k] = F[k]</p>
 <dt class="sig sig-object py" id="altdss.ESPVLControl.IESPVLControl.BaseFreq">
 <span class="sig-name descname"><span class="pre">BaseFreq</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><a class="reference internal" href="altdss.ArrayProxy.html#altdss.ArrayProxy.BatchFloat64ArrayProxy" title="altdss.ArrayProxy.BatchFloat64ArrayProxy"><span class="pre">altdss.ArrayProxy.BatchFloat64ArrayProxy</span></a></em><a class="headerlink" href="#altdss.ESPVLControl.IESPVLControl.BaseFreq" title="Link to this definition">#</a></dt>
 <dd><p>‘property(…)’</p>
+<p>Base Frequency for ratings.</p>
+<p>DSS property name: <code class="docutils literal notranslate"><span class="pre">BaseFreq</span></code>, DSS property index: 12.</p>
 </dd></dl>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="altdss.ESPVLControl.IESPVLControl.ComplexSeqCurrents">
 <span class="sig-name descname"><span class="pre">ComplexSeqCurrents</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">altdss.types.ComplexArray</span></span></span><a class="headerlink" href="#altdss.ESPVLControl.IESPVLControl.ComplexSeqCurrents" title="Link to this definition">#</a></dt>
-<dd></dd></dl>
+<dd><p>Complex double array of Sequence Currents for all conductors of all terminals of active circuit element.</p>
+<p>Original COM help: <a class="reference external" href="https://opendss.epri.com/CplxSeqCurrents.html">https://opendss.epri.com/CplxSeqCurrents.html</a></p>
+</dd></dl>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="altdss.ESPVLControl.IESPVLControl.ComplexSeqVoltages">
 <span class="sig-name descname"><span class="pre">ComplexSeqVoltages</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">altdss.types.ComplexArray</span></span></span><a class="headerlink" href="#altdss.ESPVLControl.IESPVLControl.ComplexSeqVoltages" title="Link to this definition">#</a></dt>
-<dd></dd></dl>
+<dd><p>Complex double array of Sequence Voltage for all terminals of active circuit element.</p>
+<p>Original COM help: <a class="reference external" href="https://opendss.epri.com/CplxSeqVoltages1.html">https://opendss.epri.com/CplxSeqVoltages1.html</a></p>
+</dd></dl>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="altdss.ESPVLControl.IESPVLControl.Currents">
 <span class="sig-name descname"><span class="pre">Currents</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">altdss.types.ComplexArray</span></span></span><a class="headerlink" href="#altdss.ESPVLControl.IESPVLControl.Currents" title="Link to this definition">#</a></dt>
-<dd></dd></dl>
+<dd><p>Complex array of currents into each conductor of each terminal</p>
+<p>Original COM help: <a class="reference external" href="https://opendss.epri.com/Currents1.html">https://opendss.epri.com/Currents1.html</a></p>
+</dd></dl>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="altdss.ESPVLControl.IESPVLControl.CurrentsMagAng">
 <span class="sig-name descname"><span class="pre">CurrentsMagAng</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">altdss.types.Float64Array</span></span></span><a class="headerlink" href="#altdss.ESPVLControl.IESPVLControl.CurrentsMagAng" title="Link to this definition">#</a></dt>
-<dd></dd></dl>
+<dd><p>Currents in magnitude, angle (degrees) format as a array of doubles.</p>
+<p>Original COM help: <a class="reference external" href="https://opendss.epri.com/CurrentsMagAng.html">https://opendss.epri.com/CurrentsMagAng.html</a></p>
+</dd></dl>
 
 <dl class="py attribute">
 <dt class="sig sig-object py" id="altdss.ESPVLControl.IESPVLControl.Element">
 <span class="sig-name descname"><span class="pre">Element</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">List</span><span class="p"><span class="pre">[</span></span><a class="reference internal" href="altdss.DSSObj.html#altdss.DSSObj.DSSObj" title="altdss.DSSObj.DSSObj"><span class="pre">altdss.DSSObj.DSSObj</span></a><span class="p"><span class="pre">]</span></span></em><a class="headerlink" href="#altdss.ESPVLControl.IESPVLControl.Element" title="Link to this definition">#</a></dt>
 <dd><p>‘property(…)’</p>
+<p>Full object name of the circuit element, typically a line or transformer, which the control is monitoring. There is no default; must be specified.</p>
+<p>DSS property name: <code class="docutils literal notranslate"><span class="pre">Element</span></code>, DSS property index: 1.</p>
 </dd></dl>
 
 <dl class="py attribute">
 <dt class="sig sig-object py" id="altdss.ESPVLControl.IESPVLControl.Element_str">
 <span class="sig-name descname"><span class="pre">Element_str</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">List</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">]</span></span></em><a class="headerlink" href="#altdss.ESPVLControl.IESPVLControl.Element_str" title="Link to this definition">#</a></dt>
 <dd><p>‘property(…)’</p>
+<p>Full object name of the circuit element, typically a line or transformer, which the control is monitoring. There is no default; must be specified.</p>
+<p>DSS property name: <code class="docutils literal notranslate"><span class="pre">Element</span></code>, DSS property index: 1.</p>
 </dd></dl>
 
 <dl class="py attribute">
 <dt class="sig sig-object py" id="altdss.ESPVLControl.IESPVLControl.Enabled">
 <span class="sig-name descname"><span class="pre">Enabled</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">List</span><span class="p"><span class="pre">[</span></span><span class="pre">bool</span><span class="p"><span class="pre">]</span></span></em><a class="headerlink" href="#altdss.ESPVLControl.IESPVLControl.Enabled" title="Link to this definition">#</a></dt>
 <dd><p>‘property(…)’</p>
+<p>{Yes|No or True|False} Indicates whether this element is enabled.</p>
+<p>DSS property name: <code class="docutils literal notranslate"><span class="pre">Enabled</span></code>, DSS property index: 13.</p>
 </dd></dl>
 
 <dl class="py method">
@@ -2174,34 +2379,46 @@ In either case, this is followed by: for k in F:  D[k] = F[k]</p>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="altdss.ESPVLControl.IESPVLControl.GUID">
-<span class="sig-name descname"><span class="pre">GUID</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">str</span></span></span><a class="headerlink" href="#altdss.ESPVLControl.IESPVLControl.GUID" title="Link to this definition">#</a></dt>
+<span class="sig-name descname"><span class="pre">GUID</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">List</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">]</span></span></span></span><a class="headerlink" href="#altdss.ESPVLControl.IESPVLControl.GUID" title="Link to this definition">#</a></dt>
 <dd><p>GUID/UUID for each object. Currently used only in the CIM-related methods.</p>
+<p>Original COM help: <a class="reference external" href="https://opendss.epri.com/GUID.html">https://opendss.epri.com/GUID.html</a></p>
 </dd></dl>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="altdss.ESPVLControl.IESPVLControl.Handle">
 <span class="sig-name descname"><span class="pre">Handle</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">altdss.types.Int32Array</span></span></span><a class="headerlink" href="#altdss.ESPVLControl.IESPVLControl.Handle" title="Link to this definition">#</a></dt>
-<dd></dd></dl>
+<dd><p>Index of each element into the circuit’s element list.</p>
+<p>Original COM help: <a class="reference external" href="https://opendss.epri.com/Handle.html">https://opendss.epri.com/Handle.html</a></p>
+</dd></dl>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="altdss.ESPVLControl.IESPVLControl.HasOCPDevice">
-<span class="sig-name descname"><span class="pre">HasOCPDevice</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">bool</span></span></span><a class="headerlink" href="#altdss.ESPVLControl.IESPVLControl.HasOCPDevice" title="Link to this definition">#</a></dt>
-<dd></dd></dl>
+<span class="sig-name descname"><span class="pre">HasOCPDevice</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">altdss.types.BoolArray</span></span></span><a class="headerlink" href="#altdss.ESPVLControl.IESPVLControl.HasOCPDevice" title="Link to this definition">#</a></dt>
+<dd><p>For each element in the batch: returns true if a recloser, relay, or fuse controlling the circuit element.</p>
+<p>OCP = Overcurrent Protection</p>
+<p>Original COM help: <a class="reference external" href="https://opendss.epri.com/HasOCPDevice.html">https://opendss.epri.com/HasOCPDevice.html</a></p>
+</dd></dl>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="altdss.ESPVLControl.IESPVLControl.HasSwitchControl">
-<span class="sig-name descname"><span class="pre">HasSwitchControl</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">bool</span></span></span><a class="headerlink" href="#altdss.ESPVLControl.IESPVLControl.HasSwitchControl" title="Link to this definition">#</a></dt>
-<dd></dd></dl>
+<span class="sig-name descname"><span class="pre">HasSwitchControl</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">altdss.types.BoolArray</span></span></span><a class="headerlink" href="#altdss.ESPVLControl.IESPVLControl.HasSwitchControl" title="Link to this definition">#</a></dt>
+<dd><p>For each element in the batch: returns true if the element has a SwtControl attached.</p>
+<p>Original COM help: <a class="reference external" href="https://opendss.epri.com/HasSwitchControl.html">https://opendss.epri.com/HasSwitchControl.html</a></p>
+</dd></dl>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="altdss.ESPVLControl.IESPVLControl.HasVoltControl">
-<span class="sig-name descname"><span class="pre">HasVoltControl</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">bool</span></span></span><a class="headerlink" href="#altdss.ESPVLControl.IESPVLControl.HasVoltControl" title="Link to this definition">#</a></dt>
-<dd></dd></dl>
+<span class="sig-name descname"><span class="pre">HasVoltControl</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">altdss.types.BoolArray</span></span></span><a class="headerlink" href="#altdss.ESPVLControl.IESPVLControl.HasVoltControl" title="Link to this definition">#</a></dt>
+<dd><p>For each element in the batch: returns true if the element has a CapControl or RegControl attached.</p>
+<p>Original COM help: <a class="reference external" href="https://opendss.epri.com/HasVoltControl.html">https://opendss.epri.com/HasVoltControl.html</a></p>
+</dd></dl>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="altdss.ESPVLControl.IESPVLControl.IsIsolated">
 <span class="sig-name descname"><span class="pre">IsIsolated</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">altdss.types.BoolArray</span></span></span><a class="headerlink" href="#altdss.ESPVLControl.IESPVLControl.IsIsolated" title="Link to this definition">#</a></dt>
-<dd></dd></dl>
+<dd><p>For each element in the batch: returns true if the element is isolated.
+Note that this only fetches the current value. See also the Topology interface.</p>
+</dd></dl>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="altdss.ESPVLControl.IESPVLControl.Like">
@@ -2215,24 +2432,29 @@ In either case, this is followed by: for k in F:  D[k] = F[k]</p>
 <dt class="sig sig-object py" id="altdss.ESPVLControl.IESPVLControl.LocalControlList">
 <span class="sig-name descname"><span class="pre">LocalControlList</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">List</span><span class="p"><span class="pre">[</span></span><span class="pre">List</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">]</span></span></em><a class="headerlink" href="#altdss.ESPVLControl.IESPVLControl.LocalControlList" title="Link to this definition">#</a></dt>
 <dd><p>‘property(…)’</p>
+<p>Array list of ESPVLControl local controller objects to be dispatched by System Controller. If not specified, all ESPVLControl devices with type=local in the circuit not attached to another controller are assumed to be part of this controller’s fleet.</p>
+<p>DSS property name: <code class="docutils literal notranslate"><span class="pre">LocalControlList</span></code>, DSS property index: 6.</p>
 </dd></dl>
 
 <dl class="py attribute">
 <dt class="sig sig-object py" id="altdss.ESPVLControl.IESPVLControl.LocalControlWeights">
 <span class="sig-name descname"><span class="pre">LocalControlWeights</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">List</span><span class="p"><span class="pre">[</span></span><span class="pre">altdss.types.Float64Array</span><span class="p"><span class="pre">]</span></span></em><a class="headerlink" href="#altdss.ESPVLControl.IESPVLControl.LocalControlWeights" title="Link to this definition">#</a></dt>
 <dd><p>‘property(…)’</p>
+<p>Array of proportional weights corresponding to each ESPVLControl local controller in the LocalControlList.</p>
+<p>DSS property name: <code class="docutils literal notranslate"><span class="pre">LocalControlWeights</span></code>, DSS property index: 7.</p>
 </dd></dl>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="altdss.ESPVLControl.IESPVLControl.Losses">
 <span class="sig-name descname"><span class="pre">Losses</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">altdss.types.ComplexArray</span></span></span><a class="headerlink" href="#altdss.ESPVLControl.IESPVLControl.Losses" title="Link to this definition">#</a></dt>
-<dd><p>Total losses for each element, complex VA (watts, vars)</p>
+<dd><p>For each element in the batch: total losses in the element, in VA (watts, vars).</p>
+<p>Original COM help: <a class="reference external" href="https://opendss.epri.com/Losses1.html">https://opendss.epri.com/Losses1.html</a></p>
 </dd></dl>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="altdss.ESPVLControl.IESPVLControl.MaxCurrent">
-<span class="sig-name descname"><span class="pre">MaxCurrent</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">terminal</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">float</span></span></span><a class="headerlink" href="#altdss.ESPVLControl.IESPVLControl.MaxCurrent" title="Link to this definition">#</a></dt>
-<dd><p>Returns the maximum current (magnitude) at the specificed terminal for all elements in this batch.
+<span class="sig-name descname"><span class="pre">MaxCurrent</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">terminal</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">altdss.types.Float64Array</span></span></span><a class="headerlink" href="#altdss.ESPVLControl.IESPVLControl.MaxCurrent" title="Link to this definition">#</a></dt>
+<dd><p>Returns the maximum current (magnitude) at the specified terminal for each element in this batch.
 Use -1 as terminal to get the value across all terminals.</p>
 </dd></dl>
 
@@ -2244,93 +2466,124 @@ Use -1 as terminal to get the value across all terminals.</p>
 <dl class="py method">
 <dt class="sig sig-object py" id="altdss.ESPVLControl.IESPVLControl.NumConductors">
 <span class="sig-name descname"><span class="pre">NumConductors</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">altdss.types.Int32Array</span></span></span><a class="headerlink" href="#altdss.ESPVLControl.IESPVLControl.NumConductors" title="Link to this definition">#</a></dt>
-<dd></dd></dl>
+<dd><p>Number of conductors per terminal for each element in the batch.</p>
+<p>Original COM help: <a class="reference external" href="https://opendss.epri.com/NumConductors.html">https://opendss.epri.com/NumConductors.html</a></p>
+</dd></dl>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="altdss.ESPVLControl.IESPVLControl.NumControllers">
 <span class="sig-name descname"><span class="pre">NumControllers</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">altdss.types.Int32Array</span></span></span><a class="headerlink" href="#altdss.ESPVLControl.IESPVLControl.NumControllers" title="Link to this definition">#</a></dt>
-<dd></dd></dl>
+<dd><p>Number of controllers connected to each device in the batch.</p>
+<p>Original COM help: <a class="reference external" href="https://opendss.epri.com/NumControls.html">https://opendss.epri.com/NumControls.html</a></p>
+</dd></dl>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="altdss.ESPVLControl.IESPVLControl.NumPhases">
 <span class="sig-name descname"><span class="pre">NumPhases</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">altdss.types.Int32Array</span></span></span><a class="headerlink" href="#altdss.ESPVLControl.IESPVLControl.NumPhases" title="Link to this definition">#</a></dt>
-<dd></dd></dl>
+<dd><p>Number of Phases for each element in this batch.</p>
+<p>Original COM help: <a class="reference external" href="https://opendss.epri.com/NumPhases.html">https://opendss.epri.com/NumPhases.html</a></p>
+</dd></dl>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="altdss.ESPVLControl.IESPVLControl.NumTerminals">
 <span class="sig-name descname"><span class="pre">NumTerminals</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">altdss.types.Int32Array</span></span></span><a class="headerlink" href="#altdss.ESPVLControl.IESPVLControl.NumTerminals" title="Link to this definition">#</a></dt>
-<dd></dd></dl>
+<dd><p>Number of terminals for each Circuit Element in the batch.</p>
+<p>Original COM help: <a class="reference external" href="https://opendss.epri.com/NumTerminals.html">https://opendss.epri.com/NumTerminals.html</a></p>
+</dd></dl>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="altdss.ESPVLControl.IESPVLControl.OCPDevice">
 <span class="sig-name descname"><span class="pre">OCPDevice</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">List</span><span class="p"><span class="pre">[</span></span><span class="pre">Union</span><span class="p"><span class="pre">[</span></span><a class="reference internal" href="altdss.DSSObj.html#altdss.DSSObj.DSSObj" title="altdss.DSSObj.DSSObj"><span class="pre">altdss.DSSObj.DSSObj</span></a><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">None</span><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">]</span></span></span></span><a class="headerlink" href="#altdss.ESPVLControl.IESPVLControl.OCPDevice" title="Link to this definition">#</a></dt>
-<dd></dd></dl>
+<dd><p>Returns (as a list of Python objects) the OCP device controlling each element.</p>
+</dd></dl>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="altdss.ESPVLControl.IESPVLControl.OCPDeviceIndex">
 <span class="sig-name descname"><span class="pre">OCPDeviceIndex</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">altdss.types.Int32Array</span></span></span><a class="headerlink" href="#altdss.ESPVLControl.IESPVLControl.OCPDeviceIndex" title="Link to this definition">#</a></dt>
-<dd></dd></dl>
+<dd><p>For each element in the batch: index into each controller list of the OCP Device controlling each circuit element</p>
+<p>Original COM help: <a class="reference external" href="https://opendss.epri.com/OCPDevIndex.html">https://opendss.epri.com/OCPDevIndex.html</a></p>
+</dd></dl>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="altdss.ESPVLControl.IESPVLControl.OCPDeviceType">
-<span class="sig-name descname"><span class="pre">OCPDeviceType</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">dss.enums.OCPDevType</span></span></span><a class="headerlink" href="#altdss.ESPVLControl.IESPVLControl.OCPDeviceType" title="Link to this definition">#</a></dt>
-<dd></dd></dl>
+<span class="sig-name descname"><span class="pre">OCPDeviceType</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">List</span><span class="p"><span class="pre">[</span></span><span class="pre">dss.enums.OCPDevType</span><span class="p"><span class="pre">]</span></span></span></span><a class="headerlink" href="#altdss.ESPVLControl.IESPVLControl.OCPDeviceType" title="Link to this definition">#</a></dt>
+<dd><p>For each element in the batch: type of OCP controller device</p>
+<p>Original COM help: <a class="reference external" href="https://opendss.epri.com/OCPDevType.html">https://opendss.epri.com/OCPDevType.html</a></p>
+</dd></dl>
 
 <dl class="py attribute">
 <dt class="sig sig-object py" id="altdss.ESPVLControl.IESPVLControl.PVSystemList">
 <span class="sig-name descname"><span class="pre">PVSystemList</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">List</span><span class="p"><span class="pre">[</span></span><span class="pre">List</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">]</span></span></em><a class="headerlink" href="#altdss.ESPVLControl.IESPVLControl.PVSystemList" title="Link to this definition">#</a></dt>
 <dd><p>‘property(…)’</p>
+<p>Array list of PVSystem objects to be dispatched by a Local Controller.</p>
+<p>DSS property name: <code class="docutils literal notranslate"><span class="pre">PVSystemList</span></code>, DSS property index: 8.</p>
 </dd></dl>
 
 <dl class="py attribute">
 <dt class="sig sig-object py" id="altdss.ESPVLControl.IESPVLControl.PVSystemWeights">
 <span class="sig-name descname"><span class="pre">PVSystemWeights</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">List</span><span class="p"><span class="pre">[</span></span><span class="pre">altdss.types.Float64Array</span><span class="p"><span class="pre">]</span></span></em><a class="headerlink" href="#altdss.ESPVLControl.IESPVLControl.PVSystemWeights" title="Link to this definition">#</a></dt>
 <dd><p>‘property(…)’</p>
+<p>Array of proportional weights corresponding to each PVSystem in the PVSystemList.</p>
+<p>DSS property name: <code class="docutils literal notranslate"><span class="pre">PVSystemWeights</span></code>, DSS property index: 9.</p>
 </dd></dl>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="altdss.ESPVLControl.IESPVLControl.PhaseLosses">
 <span class="sig-name descname"><span class="pre">PhaseLosses</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">altdss.types.ComplexArray</span></span></span><a class="headerlink" href="#altdss.ESPVLControl.IESPVLControl.PhaseLosses" title="Link to this definition">#</a></dt>
-<dd><p>Complex array of losses (kVA) by phase, for each element</p>
+<dd><p>Complex array of losses (kVA) by phase</p>
+<p>Original COM help: <a class="reference external" href="https://opendss.epri.com/PhaseLosses.html">https://opendss.epri.com/PhaseLosses.html</a></p>
 </dd></dl>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="altdss.ESPVLControl.IESPVLControl.Powers">
 <span class="sig-name descname"><span class="pre">Powers</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">altdss.types.ComplexArray</span></span></span><a class="headerlink" href="#altdss.ESPVLControl.IESPVLControl.Powers" title="Link to this definition">#</a></dt>
 <dd><p>Complex array of powers (kVA) into each conductor of each terminal, of each element in the batch.</p>
+<p>Original COM help: <a class="reference external" href="https://opendss.epri.com/Powers.html">https://opendss.epri.com/Powers.html</a></p>
 </dd></dl>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="altdss.ESPVLControl.IESPVLControl.SeqCurrents">
 <span class="sig-name descname"><span class="pre">SeqCurrents</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">altdss.types.Float64Array</span></span></span><a class="headerlink" href="#altdss.ESPVLControl.IESPVLControl.SeqCurrents" title="Link to this definition">#</a></dt>
-<dd></dd></dl>
+<dd><p>Array of symmetrical component currents (magnitudes only) into each 3-phase terminal of each element</p>
+<p>Original COM help: <a class="reference external" href="https://opendss.epri.com/SeqCurrents.html">https://opendss.epri.com/SeqCurrents.html</a></p>
+</dd></dl>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="altdss.ESPVLControl.IESPVLControl.SeqPowers">
 <span class="sig-name descname"><span class="pre">SeqPowers</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">altdss.types.ComplexArray</span></span></span><a class="headerlink" href="#altdss.ESPVLControl.IESPVLControl.SeqPowers" title="Link to this definition">#</a></dt>
-<dd></dd></dl>
+<dd><p>Complex array of sequence powers (kW, kvar) into each 3-phase terminal of each element</p>
+<p>Original COM help: <a class="reference external" href="https://opendss.epri.com/SeqPowers.html">https://opendss.epri.com/SeqPowers.html</a></p>
+</dd></dl>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="altdss.ESPVLControl.IESPVLControl.SeqVoltages">
 <span class="sig-name descname"><span class="pre">SeqVoltages</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">altdss.types.Float64Array</span></span></span><a class="headerlink" href="#altdss.ESPVLControl.IESPVLControl.SeqVoltages" title="Link to this definition">#</a></dt>
-<dd></dd></dl>
+<dd><p>Double array of symmetrical component voltages (magnitudes only) at each 3-phase terminal</p>
+<p>Original COM help: <a class="reference external" href="https://opendss.epri.com/SeqVoltages1.html">https://opendss.epri.com/SeqVoltages1.html</a></p>
+</dd></dl>
 
 <dl class="py attribute">
 <dt class="sig sig-object py" id="altdss.ESPVLControl.IESPVLControl.StorageList">
 <span class="sig-name descname"><span class="pre">StorageList</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">List</span><span class="p"><span class="pre">[</span></span><span class="pre">List</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">]</span></span></em><a class="headerlink" href="#altdss.ESPVLControl.IESPVLControl.StorageList" title="Link to this definition">#</a></dt>
 <dd><p>‘property(…)’</p>
+<p>Array list of Storage objects to be dispatched by Local Controller.</p>
+<p>DSS property name: <code class="docutils literal notranslate"><span class="pre">StorageList</span></code>, DSS property index: 10.</p>
 </dd></dl>
 
 <dl class="py attribute">
 <dt class="sig sig-object py" id="altdss.ESPVLControl.IESPVLControl.StorageWeights">
 <span class="sig-name descname"><span class="pre">StorageWeights</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">List</span><span class="p"><span class="pre">[</span></span><span class="pre">altdss.types.Float64Array</span><span class="p"><span class="pre">]</span></span></em><a class="headerlink" href="#altdss.ESPVLControl.IESPVLControl.StorageWeights" title="Link to this definition">#</a></dt>
 <dd><p>‘property(…)’</p>
+<p>Array of proportional weights corresponding to each Storage object in the StorageControlList.</p>
+<p>DSS property name: <code class="docutils literal notranslate"><span class="pre">StorageWeights</span></code>, DSS property index: 11.</p>
 </dd></dl>
 
 <dl class="py attribute">
 <dt class="sig sig-object py" id="altdss.ESPVLControl.IESPVLControl.Terminal">
 <span class="sig-name descname"><span class="pre">Terminal</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><a class="reference internal" href="altdss.ArrayProxy.html#altdss.ArrayProxy.BatchInt32ArrayProxy" title="altdss.ArrayProxy.BatchInt32ArrayProxy"><span class="pre">altdss.ArrayProxy.BatchInt32ArrayProxy</span></a></em><a class="headerlink" href="#altdss.ESPVLControl.IESPVLControl.Terminal" title="Link to this definition">#</a></dt>
 <dd><p>‘property(…)’</p>
+<p>Number of the terminal of the circuit element to which the ESPVLControl control is connected. 1 or 2, typically.  Default is 1. Make sure you have the direction on the power matching the sign of kWLimit.</p>
+<p>DSS property name: <code class="docutils literal notranslate"><span class="pre">Terminal</span></code>, DSS property index: 2.</p>
 </dd></dl>
 
 <dl class="py method">
@@ -2344,23 +2597,31 @@ Use -1 as terminal to get the value across all terminals.</p>
 <dt class="sig sig-object py" id="altdss.ESPVLControl.IESPVLControl.Type">
 <span class="sig-name descname"><span class="pre">Type</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><a class="reference internal" href="altdss.ArrayProxy.html#altdss.ArrayProxy.BatchInt32ArrayProxy" title="altdss.ArrayProxy.BatchInt32ArrayProxy"><span class="pre">altdss.ArrayProxy.BatchInt32ArrayProxy</span></a></em><a class="headerlink" href="#altdss.ESPVLControl.IESPVLControl.Type" title="Link to this definition">#</a></dt>
 <dd><p>‘property(…)’</p>
+<p>Type of controller.  1= System Controller; 2= Local controller.</p>
+<p>DSS property name: <code class="docutils literal notranslate"><span class="pre">Type</span></code>, DSS property index: 3.</p>
 </dd></dl>
 
 <dl class="py attribute">
 <dt class="sig sig-object py" id="altdss.ESPVLControl.IESPVLControl.Type_str">
 <span class="sig-name descname"><span class="pre">Type_str</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">List</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">]</span></span></em><a class="headerlink" href="#altdss.ESPVLControl.IESPVLControl.Type_str" title="Link to this definition">#</a></dt>
 <dd><p>‘property(…)’</p>
+<p>Type of controller.  1= System Controller; 2= Local controller.</p>
+<p>DSS property name: <code class="docutils literal notranslate"><span class="pre">Type</span></code>, DSS property index: 3.</p>
 </dd></dl>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="altdss.ESPVLControl.IESPVLControl.Voltages">
 <span class="sig-name descname"><span class="pre">Voltages</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">altdss.types.ComplexArray</span></span></span><a class="headerlink" href="#altdss.ESPVLControl.IESPVLControl.Voltages" title="Link to this definition">#</a></dt>
-<dd></dd></dl>
+<dd><p>Complex array of voltages at terminals</p>
+<p>Original COM help: <a class="reference external" href="https://opendss.epri.com/Voltages1.html">https://opendss.epri.com/Voltages1.html</a></p>
+</dd></dl>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="altdss.ESPVLControl.IESPVLControl.VoltagesMagAng">
 <span class="sig-name descname"><span class="pre">VoltagesMagAng</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">altdss.types.Float64Array</span></span></span><a class="headerlink" href="#altdss.ESPVLControl.IESPVLControl.VoltagesMagAng" title="Link to this definition">#</a></dt>
-<dd></dd></dl>
+<dd><p>Voltages at each conductor in magnitude, angle form as array of doubles.</p>
+<p>Original COM help: <a class="reference external" href="https://opendss.epri.com/VoltagesMagAng.html">https://opendss.epri.com/VoltagesMagAng.html</a></p>
+</dd></dl>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="altdss.ESPVLControl.IESPVLControl.__call__">
@@ -2409,8 +2670,8 @@ or “count” elements with a randomized prefix.</p>
 <dt class="sig sig-object py" id="altdss.ESPVLControl.IESPVLControl.begin_edit">
 <span class="sig-name descname"><span class="pre">begin_edit</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span><a class="headerlink" href="#altdss.ESPVLControl.IESPVLControl.begin_edit" title="Link to this definition">#</a></dt>
 <dd><p>Marks for editing all DSS objects in the batch</p>
-<p>In the editing mode, some final side-effects of changing properties are post-poned
-until <code class="docutils literal notranslate"><span class="pre">_end_edit</span></code> is called. This side-effects can be somewhat costly, like updating
+<p>In the editing mode, some final side-effects of changing properties are postponed
+until <code class="docutils literal notranslate"><span class="pre">end_edit</span></code> is called. This side-effects can be somewhat costly, like updating
 the model parameters or internal matrices.</p>
 <p>If you don’t have any performance constraint, you may edit each property individually
 without worrying about using <code class="docutils literal notranslate"><span class="pre">begin_edit</span></code> and <code class="docutils literal notranslate"><span class="pre">end_edit</span></code>. For convenience, those are
@@ -2437,12 +2698,16 @@ the <code class="docutils literal notranslate"><span class="pre">Process</span><
 <dt class="sig sig-object py" id="altdss.ESPVLControl.IESPVLControl.kWBand">
 <span class="sig-name descname"><span class="pre">kWBand</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><a class="reference internal" href="altdss.ArrayProxy.html#altdss.ArrayProxy.BatchFloat64ArrayProxy" title="altdss.ArrayProxy.BatchFloat64ArrayProxy"><span class="pre">altdss.ArrayProxy.BatchFloat64ArrayProxy</span></a></em><a class="headerlink" href="#altdss.ESPVLControl.IESPVLControl.kWBand" title="Link to this definition">#</a></dt>
 <dd><p>‘property(…)’</p>
+<p>Bandwidth (kW) of the dead band around the target limit.No dispatch changes are attempted if the power in the monitored terminal stays within this band.</p>
+<p>DSS property name: <code class="docutils literal notranslate"><span class="pre">kWBand</span></code>, DSS property index: 4.</p>
 </dd></dl>
 
 <dl class="py attribute">
 <dt class="sig sig-object py" id="altdss.ESPVLControl.IESPVLControl.kvarLimit">
 <span class="sig-name descname"><span class="pre">kvarLimit</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><a class="reference internal" href="altdss.ArrayProxy.html#altdss.ArrayProxy.BatchFloat64ArrayProxy" title="altdss.ArrayProxy.BatchFloat64ArrayProxy"><span class="pre">altdss.ArrayProxy.BatchFloat64ArrayProxy</span></a></em><a class="headerlink" href="#altdss.ESPVLControl.IESPVLControl.kvarLimit" title="Link to this definition">#</a></dt>
 <dd><p>‘property(…)’</p>
+<p>Max kvar to be delivered through the element.  Uses same dead band as kW.</p>
+<p>DSS property name: <code class="docutils literal notranslate"><span class="pre">kvarLimit</span></code>, DSS property index: 5.</p>
 </dd></dl>
 
 <dl class="py method">
@@ -2629,6 +2894,7 @@ See <code class="docutils literal notranslate"><span class="pre">Obj_ToJSON</spa
 <li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#altdss.ESPVLControl.ESPVLControlBatch.__init__"><code class="docutils literal notranslate"><span class="pre">ESPVLControlBatch.__init__()</span></code></a></li>
 <li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#altdss.ESPVLControl.ESPVLControlBatch.__iter__"><code class="docutils literal notranslate"><span class="pre">ESPVLControlBatch.__iter__()</span></code></a></li>
 <li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#altdss.ESPVLControl.ESPVLControlBatch.__len__"><code class="docutils literal notranslate"><span class="pre">ESPVLControlBatch.__len__()</span></code></a></li>
+<li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#altdss.ESPVLControl.ESPVLControlBatch.batch"><code class="docutils literal notranslate"><span class="pre">ESPVLControlBatch.batch()</span></code></a></li>
 <li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#altdss.ESPVLControl.ESPVLControlBatch.begin_edit"><code class="docutils literal notranslate"><span class="pre">ESPVLControlBatch.begin_edit()</span></code></a></li>
 <li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#altdss.ESPVLControl.ESPVLControlBatch.end_edit"><code class="docutils literal notranslate"><span class="pre">ESPVLControlBatch.end_edit()</span></code></a></li>
 <li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#altdss.ESPVLControl.ESPVLControlBatch.kWBand"><code class="docutils literal notranslate"><span class="pre">ESPVLControlBatch.kWBand</span></code></a></li>

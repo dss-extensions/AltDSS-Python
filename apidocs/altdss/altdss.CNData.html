@@ -8,7 +8,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
-    <title>altdss.CNData &#8212; AltDSS-Python 0.2.0 documentation</title>
+    <title>altdss.CNData &#8212; AltDSS-Python 0.2.2 documentation</title>
   
   
   
@@ -38,7 +38,7 @@
 <link rel="preload" as="script" href="../../_static/scripts/pydata-sphinx-theme.js?digest=8d27b9dea8ad943066ae" />
   <script src="../../_static/vendor/fontawesome/6.5.1/js/all.min.js?digest=8d27b9dea8ad943066ae"></script>
 
-    <script src="../../_static/documentation_options.js?v=7f7c277e"></script>
+    <script src="../../_static/documentation_options.js?v=d3f42505"></script>
     <script src="../../_static/doctools.js?v=888ff710"></script>
     <script src="../../_static/sphinx_highlight.js?v=dc90522c"></script>
     <script src="../../_static/scripts/sphinx-book-theme.js?v=efea14e4"></script>
@@ -137,8 +137,8 @@
       
     
     
-    <img src="../../_static/altdss-python.svg" class="logo__image only-light" alt="AltDSS-Python 0.2.0 documentation - Home"/>
-    <script>document.write(`<img src="../../_static/altdss-python-dark.svg" class="logo__image only-dark" alt="AltDSS-Python 0.2.0 documentation - Home"/>`);</script>
+    <img src="../../_static/altdss-python.svg" class="logo__image only-light" alt="AltDSS-Python 0.2.2 documentation - Home"/>
+    <script>document.write(`<img src="../../_static/altdss-python-dark.svg" class="logo__image only-dark" alt="AltDSS-Python 0.2.2 documentation - Home"/>`);</script>
   
   
 </a></div>
@@ -160,6 +160,7 @@
 <li class="toctree-l1"><a class="reference internal" href="../../index.html">AltDSS-Python</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../Architecture.html">Architecture details</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../examples/GettingStarted.html">Getting Started</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../examples/Batches.html">Batches</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../changelog.html">Changelog</a></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">API Reference</span></p>
@@ -476,6 +477,7 @@ document.write(`
 <li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#altdss.CNData.CNDataBatch.__init__"><code class="docutils literal notranslate"><span class="pre">CNDataBatch.__init__()</span></code></a></li>
 <li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#altdss.CNData.CNDataBatch.__iter__"><code class="docutils literal notranslate"><span class="pre">CNDataBatch.__iter__()</span></code></a></li>
 <li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#altdss.CNData.CNDataBatch.__len__"><code class="docutils literal notranslate"><span class="pre">CNDataBatch.__len__()</span></code></a></li>
+<li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#altdss.CNData.CNDataBatch.batch"><code class="docutils literal notranslate"><span class="pre">CNDataBatch.batch()</span></code></a></li>
 <li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#altdss.CNData.CNDataBatch.begin_edit"><code class="docutils literal notranslate"><span class="pre">CNDataBatch.begin_edit()</span></code></a></li>
 <li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#altdss.CNData.CNDataBatch.end_edit"><code class="docutils literal notranslate"><span class="pre">CNDataBatch.end_edit()</span></code></a></li>
 <li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#altdss.CNData.CNDataBatch.k"><code class="docutils literal notranslate"><span class="pre">CNDataBatch.k</span></code></a></li>
@@ -720,42 +722,56 @@ in the keyword argument list.  For example:  dict(one=1, two=2)</p></td>
 <dt class="sig sig-object py" id="altdss.CNData.CNData.CapRadius">
 <span class="sig-name descname"><span class="pre">CapRadius</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">float</span></em><a class="headerlink" href="#altdss.CNData.CNData.CapRadius" title="Link to this definition">#</a></dt>
 <dd><p>‘property(…)’</p>
+<p>Equivalent conductor radius for capacitance calcs. Specify this for bundled conductors. Defaults to same value as radius. Define Diam or Radius property first.</p>
+<p>DSS property name: <code class="docutils literal notranslate"><span class="pre">CapRadius</span></code>, DSS property index: 21.</p>
 </dd></dl>
 
 <dl class="py attribute">
 <dt class="sig sig-object py" id="altdss.CNData.CNData.DiaCable">
 <span class="sig-name descname"><span class="pre">DiaCable</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">float</span></em><a class="headerlink" href="#altdss.CNData.CNData.DiaCable" title="Link to this definition">#</a></dt>
 <dd><p>‘property(…)’</p>
+<p>Diameter over cable; same units as radius; no default.</p>
+<p>DSS property name: <code class="docutils literal notranslate"><span class="pre">DiaCable</span></code>, DSS property index: 8.</p>
 </dd></dl>
 
 <dl class="py attribute">
 <dt class="sig sig-object py" id="altdss.CNData.CNData.DiaIns">
 <span class="sig-name descname"><span class="pre">DiaIns</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">float</span></em><a class="headerlink" href="#altdss.CNData.CNData.DiaIns" title="Link to this definition">#</a></dt>
 <dd><p>‘property(…)’</p>
+<p>Diameter over insulation layer; same units as radius; no default. Establishes outer radius for capacitance calculation.</p>
+<p>DSS property name: <code class="docutils literal notranslate"><span class="pre">DiaIns</span></code>, DSS property index: 7.</p>
 </dd></dl>
 
 <dl class="py attribute">
 <dt class="sig sig-object py" id="altdss.CNData.CNData.DiaStrand">
 <span class="sig-name descname"><span class="pre">DiaStrand</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">float</span></em><a class="headerlink" href="#altdss.CNData.CNData.DiaStrand" title="Link to this definition">#</a></dt>
 <dd><p>‘property(…)’</p>
+<p>Diameter of a concentric neutral strand; same units as core conductor radius; no default.</p>
+<p>DSS property name: <code class="docutils literal notranslate"><span class="pre">DiaStrand</span></code>, DSS property index: 2.</p>
 </dd></dl>
 
 <dl class="py attribute">
 <dt class="sig sig-object py" id="altdss.CNData.CNData.Diam">
 <span class="sig-name descname"><span class="pre">Diam</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">float</span></em><a class="headerlink" href="#altdss.CNData.CNData.Diam" title="Link to this definition">#</a></dt>
 <dd><p>‘property(…)’</p>
+<p>Diameter; Alternative method for entering radius.</p>
+<p>DSS property name: <code class="docutils literal notranslate"><span class="pre">Diam</span></code>, DSS property index: 18.</p>
 </dd></dl>
 
 <dl class="py attribute">
 <dt class="sig sig-object py" id="altdss.CNData.CNData.EmergAmps">
 <span class="sig-name descname"><span class="pre">EmergAmps</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">float</span></em><a class="headerlink" href="#altdss.CNData.CNData.EmergAmps" title="Link to this definition">#</a></dt>
 <dd><p>‘property(…)’</p>
+<p>Emergency ampacity, amperes. Defaults to 1.5 * Normal Amps if not specified.</p>
+<p>DSS property name: <code class="docutils literal notranslate"><span class="pre">EmergAmps</span></code>, DSS property index: 17.</p>
 </dd></dl>
 
 <dl class="py attribute">
 <dt class="sig sig-object py" id="altdss.CNData.CNData.EpsR">
 <span class="sig-name descname"><span class="pre">EpsR</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">float</span></em><a class="headerlink" href="#altdss.CNData.CNData.EpsR" title="Link to this definition">#</a></dt>
 <dd><p>‘property(…)’</p>
+<p>Insulation layer relative permittivity; default is 2.3.</p>
+<p>DSS property name: <code class="docutils literal notranslate"><span class="pre">EpsR</span></code>, DSS property index: 5.</p>
 </dd></dl>
 
 <dl class="py method">
@@ -767,30 +783,40 @@ in the keyword argument list.  For example:  dict(one=1, two=2)</p></td>
 <dt class="sig sig-object py" id="altdss.CNData.CNData.GMRAC">
 <span class="sig-name descname"><span class="pre">GMRAC</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">float</span></em><a class="headerlink" href="#altdss.CNData.CNData.GMRAC" title="Link to this definition">#</a></dt>
 <dd><p>‘property(…)’</p>
+<p>GMR at 60 Hz. Defaults to .7788*radius if not specified.</p>
+<p>DSS property name: <code class="docutils literal notranslate"><span class="pre">GMRAC</span></code>, DSS property index: 12.</p>
 </dd></dl>
 
 <dl class="py attribute">
 <dt class="sig sig-object py" id="altdss.CNData.CNData.GMRStrand">
 <span class="sig-name descname"><span class="pre">GMRStrand</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">float</span></em><a class="headerlink" href="#altdss.CNData.CNData.GMRStrand" title="Link to this definition">#</a></dt>
 <dd><p>‘property(…)’</p>
+<p>Geometric mean radius of a concentric neutral strand; same units as core conductor GMR; defaults to 0.7788 * CN strand radius.</p>
+<p>DSS property name: <code class="docutils literal notranslate"><span class="pre">GMRStrand</span></code>, DSS property index: 3.</p>
 </dd></dl>
 
 <dl class="py attribute">
 <dt class="sig sig-object py" id="altdss.CNData.CNData.GMRUnits">
 <span class="sig-name descname"><span class="pre">GMRUnits</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><a class="reference internal" href="altdss.enums.html#altdss.enums.LengthUnit" title="altdss.enums.LengthUnit"><span class="pre">altdss.enums.LengthUnit</span></a></em><a class="headerlink" href="#altdss.CNData.CNData.GMRUnits" title="Link to this definition">#</a></dt>
 <dd><p>‘property(…)’</p>
+<p>Units for GMR: {mi|kft|km|m|Ft|in|cm|mm} Default=none.</p>
+<p>DSS property name: <code class="docutils literal notranslate"><span class="pre">GMRUnits</span></code>, DSS property index: 13.</p>
 </dd></dl>
 
 <dl class="py attribute">
 <dt class="sig sig-object py" id="altdss.CNData.CNData.GMRUnits_str">
 <span class="sig-name descname"><span class="pre">GMRUnits_str</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">str</span></em><a class="headerlink" href="#altdss.CNData.CNData.GMRUnits_str" title="Link to this definition">#</a></dt>
 <dd><p>‘property(…)’</p>
+<p>Units for GMR: {mi|kft|km|m|Ft|in|cm|mm} Default=none.</p>
+<p>DSS property name: <code class="docutils literal notranslate"><span class="pre">GMRUnits</span></code>, DSS property index: 13.</p>
 </dd></dl>
 
 <dl class="py attribute">
 <dt class="sig sig-object py" id="altdss.CNData.CNData.InsLayer">
 <span class="sig-name descname"><span class="pre">InsLayer</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">float</span></em><a class="headerlink" href="#altdss.CNData.CNData.InsLayer" title="Link to this definition">#</a></dt>
 <dd><p>‘property(…)’</p>
+<p>Insulation layer thickness; same units as radius; no default. With DiaIns, establishes inner radius for capacitance calculation.</p>
+<p>DSS property name: <code class="docutils literal notranslate"><span class="pre">InsLayer</span></code>, DSS property index: 6.</p>
 </dd></dl>
 
 <dl class="py method">
@@ -810,66 +836,89 @@ in the keyword argument list.  For example:  dict(one=1, two=2)</p></td>
 <dt class="sig sig-object py" id="altdss.CNData.CNData.NormAmps">
 <span class="sig-name descname"><span class="pre">NormAmps</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">float</span></em><a class="headerlink" href="#altdss.CNData.CNData.NormAmps" title="Link to this definition">#</a></dt>
 <dd><p>‘property(…)’</p>
+<p>Normal ampacity, amperes. Defaults to Emergency amps/1.5 if not specified.</p>
+<p>DSS property name: <code class="docutils literal notranslate"><span class="pre">NormAmps</span></code>, DSS property index: 16.</p>
 </dd></dl>
 
 <dl class="py attribute">
 <dt class="sig sig-object py" id="altdss.CNData.CNData.RAC">
 <span class="sig-name descname"><span class="pre">RAC</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">float</span></em><a class="headerlink" href="#altdss.CNData.CNData.RAC" title="Link to this definition">#</a></dt>
 <dd><p>‘property(…)’</p>
+<p>Resistance at 60 Hz per unit length. Defaults to 1.02*Rdc if not specified.</p>
+<p>DSS property name: <code class="docutils literal notranslate"><span class="pre">RAC</span></code>, DSS property index: 10.</p>
 </dd></dl>
 
 <dl class="py attribute">
 <dt class="sig sig-object py" id="altdss.CNData.CNData.RDC">
 <span class="sig-name descname"><span class="pre">RDC</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">float</span></em><a class="headerlink" href="#altdss.CNData.CNData.RDC" title="Link to this definition">#</a></dt>
 <dd><p>‘property(…)’</p>
+<p>dc Resistance, ohms per unit length (see Runits). Defaults to Rac/1.02 if not specified.</p>
+<p>DSS property name: <code class="docutils literal notranslate"><span class="pre">RDC</span></code>, DSS property index: 9.</p>
 </dd></dl>
 
 <dl class="py attribute">
 <dt class="sig sig-object py" id="altdss.CNData.CNData.RStrand">
 <span class="sig-name descname"><span class="pre">RStrand</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">float</span></em><a class="headerlink" href="#altdss.CNData.CNData.RStrand" title="Link to this definition">#</a></dt>
 <dd><p>‘property(…)’</p>
+<p>AC resistance of a concentric neutral strand; same units as core conductor resistance; no default.</p>
+<p>DSS property name: <code class="docutils literal notranslate"><span class="pre">RStrand</span></code>, DSS property index: 4.</p>
 </dd></dl>
 
 <dl class="py attribute">
 <dt class="sig sig-object py" id="altdss.CNData.CNData.RUnits">
 <span class="sig-name descname"><span class="pre">RUnits</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><a class="reference internal" href="altdss.enums.html#altdss.enums.LengthUnit" title="altdss.enums.LengthUnit"><span class="pre">altdss.enums.LengthUnit</span></a></em><a class="headerlink" href="#altdss.CNData.CNData.RUnits" title="Link to this definition">#</a></dt>
 <dd><p>‘property(…)’</p>
+<p>Length units for resistance: ohms per {mi|kft|km|m|Ft|in|cm|mm} Default=none.</p>
+<p>DSS property name: <code class="docutils literal notranslate"><span class="pre">RUnits</span></code>, DSS property index: 11.</p>
 </dd></dl>
 
 <dl class="py attribute">
 <dt class="sig sig-object py" id="altdss.CNData.CNData.RUnits_str">
 <span class="sig-name descname"><span class="pre">RUnits_str</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">str</span></em><a class="headerlink" href="#altdss.CNData.CNData.RUnits_str" title="Link to this definition">#</a></dt>
 <dd><p>‘property(…)’</p>
+<p>Length units for resistance: ohms per {mi|kft|km|m|Ft|in|cm|mm} Default=none.</p>
+<p>DSS property name: <code class="docutils literal notranslate"><span class="pre">RUnits</span></code>, DSS property index: 11.</p>
 </dd></dl>
 
 <dl class="py attribute">
 <dt class="sig sig-object py" id="altdss.CNData.CNData.RadUnits">
 <span class="sig-name descname"><span class="pre">RadUnits</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><a class="reference internal" href="altdss.enums.html#altdss.enums.LengthUnit" title="altdss.enums.LengthUnit"><span class="pre">altdss.enums.LengthUnit</span></a></em><a class="headerlink" href="#altdss.CNData.CNData.RadUnits" title="Link to this definition">#</a></dt>
 <dd><p>‘property(…)’</p>
+<p>Units for outside radius: {mi|kft|km|m|Ft|in|cm|mm} Default=none.</p>
+<p>DSS property name: <code class="docutils literal notranslate"><span class="pre">RadUnits</span></code>, DSS property index: 15.</p>
 </dd></dl>
 
 <dl class="py attribute">
 <dt class="sig sig-object py" id="altdss.CNData.CNData.RadUnits_str">
 <span class="sig-name descname"><span class="pre">RadUnits_str</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">str</span></em><a class="headerlink" href="#altdss.CNData.CNData.RadUnits_str" title="Link to this definition">#</a></dt>
 <dd><p>‘property(…)’</p>
+<p>Units for outside radius: {mi|kft|km|m|Ft|in|cm|mm} Default=none.</p>
+<p>DSS property name: <code class="docutils literal notranslate"><span class="pre">RadUnits</span></code>, DSS property index: 15.</p>
 </dd></dl>
 
 <dl class="py attribute">
 <dt class="sig sig-object py" id="altdss.CNData.CNData.Radius">
 <span class="sig-name descname"><span class="pre">Radius</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">float</span></em><a class="headerlink" href="#altdss.CNData.CNData.Radius" title="Link to this definition">#</a></dt>
 <dd><p>‘property(…)’</p>
+<p>Outside radius of conductor. Defaults to GMR/0.7788 if not specified.</p>
+<p>DSS property name: <code class="docutils literal notranslate"><span class="pre">Radius</span></code>, DSS property index: 14.</p>
 </dd></dl>
 
 <dl class="py attribute">
 <dt class="sig sig-object py" id="altdss.CNData.CNData.Ratings">
 <span class="sig-name descname"><span class="pre">Ratings</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">altdss.types.Float64Array</span></em><a class="headerlink" href="#altdss.CNData.CNData.Ratings" title="Link to this definition">#</a></dt>
 <dd><p>‘property(…)’</p>
+<p>An array of ratings to be used when the seasonal ratings flag is True. It can be used to insert
+multiple ratings to change during a QSTS simulation to evaluate different ratings in lines.</p>
+<p>DSS property name: <code class="docutils literal notranslate"><span class="pre">Ratings</span></code>, DSS property index: 20.</p>
 </dd></dl>
 
 <dl class="py attribute">
 <dt class="sig sig-object py" id="altdss.CNData.CNData.Seasons">
 <span class="sig-name descname"><span class="pre">Seasons</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">int</span></em><a class="headerlink" href="#altdss.CNData.CNData.Seasons" title="Link to this definition">#</a></dt>
 <dd><p>‘property(…)’</p>
+<p>Defines the number of ratings to be defined for the wire, to be used only when defining seasonal ratings using the “Ratings” property.</p>
+<p>DSS property name: <code class="docutils literal notranslate"><span class="pre">Seasons</span></code>, DSS property index: 19.</p>
 </dd></dl>
 
 <dl class="py method">
@@ -899,8 +948,8 @@ in the keyword argument list.  For example:  dict(one=1, two=2)</p></td>
 <dt class="sig sig-object py" id="altdss.CNData.CNData.begin_edit">
 <span class="sig-name descname"><span class="pre">begin_edit</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span><a class="headerlink" href="#altdss.CNData.CNData.begin_edit" title="Link to this definition">#</a></dt>
 <dd><p>Marks a DSS object for editing</p>
-<p>In the editing mode, some final side-effects of changing properties are post-poned
-until <code class="docutils literal notranslate"><span class="pre">_end_edit</span></code> is called. This side-effects can be somewhat costly, like updating
+<p>In the editing mode, some final side-effects of changing properties are postponed
+until <code class="docutils literal notranslate"><span class="pre">end_edit</span></code> is called. This side-effects can be somewhat costly, like updating
 the model parameters or internal matrices.</p>
 <p>If you don’t have any performance constraint, you may edit each property individually
 without worrying about using <code class="docutils literal notranslate"><span class="pre">begin_edit</span></code> and <code class="docutils literal notranslate"><span class="pre">end_edit</span></code>. For convenience, those are
@@ -921,6 +970,8 @@ the <code class="docutils literal notranslate"><span class="pre">Process</span><
 <dt class="sig sig-object py" id="altdss.CNData.CNData.k">
 <span class="sig-name descname"><span class="pre">k</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">int</span></em><a class="headerlink" href="#altdss.CNData.CNData.k" title="Link to this definition">#</a></dt>
 <dd><p>‘property(…)’</p>
+<p>Number of concentric neutral strands; default is 2</p>
+<p>DSS property name: <code class="docutils literal notranslate"><span class="pre">k</span></code>, DSS property index: 1.</p>
 </dd></dl>
 
 <dl class="py method">
@@ -959,42 +1010,56 @@ Values used by this function are:</p>
 <dt class="sig sig-object py" id="altdss.CNData.CNDataBatch.CapRadius">
 <span class="sig-name descname"><span class="pre">CapRadius</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><a class="reference internal" href="altdss.ArrayProxy.html#altdss.ArrayProxy.BatchFloat64ArrayProxy" title="altdss.ArrayProxy.BatchFloat64ArrayProxy"><span class="pre">altdss.ArrayProxy.BatchFloat64ArrayProxy</span></a></em><a class="headerlink" href="#altdss.CNData.CNDataBatch.CapRadius" title="Link to this definition">#</a></dt>
 <dd><p>‘property(…)’</p>
+<p>Equivalent conductor radius for capacitance calcs. Specify this for bundled conductors. Defaults to same value as radius. Define Diam or Radius property first.</p>
+<p>DSS property name: <code class="docutils literal notranslate"><span class="pre">CapRadius</span></code>, DSS property index: 21.</p>
 </dd></dl>
 
 <dl class="py attribute">
 <dt class="sig sig-object py" id="altdss.CNData.CNDataBatch.DiaCable">
 <span class="sig-name descname"><span class="pre">DiaCable</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><a class="reference internal" href="altdss.ArrayProxy.html#altdss.ArrayProxy.BatchFloat64ArrayProxy" title="altdss.ArrayProxy.BatchFloat64ArrayProxy"><span class="pre">altdss.ArrayProxy.BatchFloat64ArrayProxy</span></a></em><a class="headerlink" href="#altdss.CNData.CNDataBatch.DiaCable" title="Link to this definition">#</a></dt>
 <dd><p>‘property(…)’</p>
+<p>Diameter over cable; same units as radius; no default.</p>
+<p>DSS property name: <code class="docutils literal notranslate"><span class="pre">DiaCable</span></code>, DSS property index: 8.</p>
 </dd></dl>
 
 <dl class="py attribute">
 <dt class="sig sig-object py" id="altdss.CNData.CNDataBatch.DiaIns">
 <span class="sig-name descname"><span class="pre">DiaIns</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><a class="reference internal" href="altdss.ArrayProxy.html#altdss.ArrayProxy.BatchFloat64ArrayProxy" title="altdss.ArrayProxy.BatchFloat64ArrayProxy"><span class="pre">altdss.ArrayProxy.BatchFloat64ArrayProxy</span></a></em><a class="headerlink" href="#altdss.CNData.CNDataBatch.DiaIns" title="Link to this definition">#</a></dt>
 <dd><p>‘property(…)’</p>
+<p>Diameter over insulation layer; same units as radius; no default. Establishes outer radius for capacitance calculation.</p>
+<p>DSS property name: <code class="docutils literal notranslate"><span class="pre">DiaIns</span></code>, DSS property index: 7.</p>
 </dd></dl>
 
 <dl class="py attribute">
 <dt class="sig sig-object py" id="altdss.CNData.CNDataBatch.DiaStrand">
 <span class="sig-name descname"><span class="pre">DiaStrand</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><a class="reference internal" href="altdss.ArrayProxy.html#altdss.ArrayProxy.BatchFloat64ArrayProxy" title="altdss.ArrayProxy.BatchFloat64ArrayProxy"><span class="pre">altdss.ArrayProxy.BatchFloat64ArrayProxy</span></a></em><a class="headerlink" href="#altdss.CNData.CNDataBatch.DiaStrand" title="Link to this definition">#</a></dt>
 <dd><p>‘property(…)’</p>
+<p>Diameter of a concentric neutral strand; same units as core conductor radius; no default.</p>
+<p>DSS property name: <code class="docutils literal notranslate"><span class="pre">DiaStrand</span></code>, DSS property index: 2.</p>
 </dd></dl>
 
 <dl class="py attribute">
 <dt class="sig sig-object py" id="altdss.CNData.CNDataBatch.Diam">
 <span class="sig-name descname"><span class="pre">Diam</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><a class="reference internal" href="altdss.ArrayProxy.html#altdss.ArrayProxy.BatchFloat64ArrayProxy" title="altdss.ArrayProxy.BatchFloat64ArrayProxy"><span class="pre">altdss.ArrayProxy.BatchFloat64ArrayProxy</span></a></em><a class="headerlink" href="#altdss.CNData.CNDataBatch.Diam" title="Link to this definition">#</a></dt>
 <dd><p>‘property(…)’</p>
+<p>Diameter; Alternative method for entering radius.</p>
+<p>DSS property name: <code class="docutils literal notranslate"><span class="pre">Diam</span></code>, DSS property index: 18.</p>
 </dd></dl>
 
 <dl class="py attribute">
 <dt class="sig sig-object py" id="altdss.CNData.CNDataBatch.EmergAmps">
 <span class="sig-name descname"><span class="pre">EmergAmps</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><a class="reference internal" href="altdss.ArrayProxy.html#altdss.ArrayProxy.BatchFloat64ArrayProxy" title="altdss.ArrayProxy.BatchFloat64ArrayProxy"><span class="pre">altdss.ArrayProxy.BatchFloat64ArrayProxy</span></a></em><a class="headerlink" href="#altdss.CNData.CNDataBatch.EmergAmps" title="Link to this definition">#</a></dt>
 <dd><p>‘property(…)’</p>
+<p>Emergency ampacity, amperes. Defaults to 1.5 * Normal Amps if not specified.</p>
+<p>DSS property name: <code class="docutils literal notranslate"><span class="pre">EmergAmps</span></code>, DSS property index: 17.</p>
 </dd></dl>
 
 <dl class="py attribute">
 <dt class="sig sig-object py" id="altdss.CNData.CNDataBatch.EpsR">
 <span class="sig-name descname"><span class="pre">EpsR</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><a class="reference internal" href="altdss.ArrayProxy.html#altdss.ArrayProxy.BatchFloat64ArrayProxy" title="altdss.ArrayProxy.BatchFloat64ArrayProxy"><span class="pre">altdss.ArrayProxy.BatchFloat64ArrayProxy</span></a></em><a class="headerlink" href="#altdss.CNData.CNDataBatch.EpsR" title="Link to this definition">#</a></dt>
 <dd><p>‘property(…)’</p>
+<p>Insulation layer relative permittivity; default is 2.3.</p>
+<p>DSS property name: <code class="docutils literal notranslate"><span class="pre">EpsR</span></code>, DSS property index: 5.</p>
 </dd></dl>
 
 <dl class="py method">
@@ -1007,30 +1072,40 @@ Values used by this function are:</p>
 <dt class="sig sig-object py" id="altdss.CNData.CNDataBatch.GMRAC">
 <span class="sig-name descname"><span class="pre">GMRAC</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><a class="reference internal" href="altdss.ArrayProxy.html#altdss.ArrayProxy.BatchFloat64ArrayProxy" title="altdss.ArrayProxy.BatchFloat64ArrayProxy"><span class="pre">altdss.ArrayProxy.BatchFloat64ArrayProxy</span></a></em><a class="headerlink" href="#altdss.CNData.CNDataBatch.GMRAC" title="Link to this definition">#</a></dt>
 <dd><p>‘property(…)’</p>
+<p>GMR at 60 Hz. Defaults to .7788*radius if not specified.</p>
+<p>DSS property name: <code class="docutils literal notranslate"><span class="pre">GMRAC</span></code>, DSS property index: 12.</p>
 </dd></dl>
 
 <dl class="py attribute">
 <dt class="sig sig-object py" id="altdss.CNData.CNDataBatch.GMRStrand">
 <span class="sig-name descname"><span class="pre">GMRStrand</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><a class="reference internal" href="altdss.ArrayProxy.html#altdss.ArrayProxy.BatchFloat64ArrayProxy" title="altdss.ArrayProxy.BatchFloat64ArrayProxy"><span class="pre">altdss.ArrayProxy.BatchFloat64ArrayProxy</span></a></em><a class="headerlink" href="#altdss.CNData.CNDataBatch.GMRStrand" title="Link to this definition">#</a></dt>
 <dd><p>‘property(…)’</p>
+<p>Geometric mean radius of a concentric neutral strand; same units as core conductor GMR; defaults to 0.7788 * CN strand radius.</p>
+<p>DSS property name: <code class="docutils literal notranslate"><span class="pre">GMRStrand</span></code>, DSS property index: 3.</p>
 </dd></dl>
 
 <dl class="py attribute">
 <dt class="sig sig-object py" id="altdss.CNData.CNDataBatch.GMRUnits">
 <span class="sig-name descname"><span class="pre">GMRUnits</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><a class="reference internal" href="altdss.ArrayProxy.html#altdss.ArrayProxy.BatchInt32ArrayProxy" title="altdss.ArrayProxy.BatchInt32ArrayProxy"><span class="pre">altdss.ArrayProxy.BatchInt32ArrayProxy</span></a></em><a class="headerlink" href="#altdss.CNData.CNDataBatch.GMRUnits" title="Link to this definition">#</a></dt>
 <dd><p>‘property(…)’</p>
+<p>Units for GMR: {mi|kft|km|m|Ft|in|cm|mm} Default=none.</p>
+<p>DSS property name: <code class="docutils literal notranslate"><span class="pre">GMRUnits</span></code>, DSS property index: 13.</p>
 </dd></dl>
 
 <dl class="py attribute">
 <dt class="sig sig-object py" id="altdss.CNData.CNDataBatch.GMRUnits_str">
 <span class="sig-name descname"><span class="pre">GMRUnits_str</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">List</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">]</span></span></em><a class="headerlink" href="#altdss.CNData.CNDataBatch.GMRUnits_str" title="Link to this definition">#</a></dt>
 <dd><p>‘property(…)’</p>
+<p>Units for GMR: {mi|kft|km|m|Ft|in|cm|mm} Default=none.</p>
+<p>DSS property name: <code class="docutils literal notranslate"><span class="pre">GMRUnits</span></code>, DSS property index: 13.</p>
 </dd></dl>
 
 <dl class="py attribute">
 <dt class="sig sig-object py" id="altdss.CNData.CNDataBatch.InsLayer">
 <span class="sig-name descname"><span class="pre">InsLayer</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><a class="reference internal" href="altdss.ArrayProxy.html#altdss.ArrayProxy.BatchFloat64ArrayProxy" title="altdss.ArrayProxy.BatchFloat64ArrayProxy"><span class="pre">altdss.ArrayProxy.BatchFloat64ArrayProxy</span></a></em><a class="headerlink" href="#altdss.CNData.CNDataBatch.InsLayer" title="Link to this definition">#</a></dt>
 <dd><p>‘property(…)’</p>
+<p>Insulation layer thickness; same units as radius; no default. With DiaIns, establishes inner radius for capacitance calculation.</p>
+<p>DSS property name: <code class="docutils literal notranslate"><span class="pre">InsLayer</span></code>, DSS property index: 6.</p>
 </dd></dl>
 
 <dl class="py method">
@@ -1050,66 +1125,89 @@ Values used by this function are:</p>
 <dt class="sig sig-object py" id="altdss.CNData.CNDataBatch.NormAmps">
 <span class="sig-name descname"><span class="pre">NormAmps</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><a class="reference internal" href="altdss.ArrayProxy.html#altdss.ArrayProxy.BatchFloat64ArrayProxy" title="altdss.ArrayProxy.BatchFloat64ArrayProxy"><span class="pre">altdss.ArrayProxy.BatchFloat64ArrayProxy</span></a></em><a class="headerlink" href="#altdss.CNData.CNDataBatch.NormAmps" title="Link to this definition">#</a></dt>
 <dd><p>‘property(…)’</p>
+<p>Normal ampacity, amperes. Defaults to Emergency amps/1.5 if not specified.</p>
+<p>DSS property name: <code class="docutils literal notranslate"><span class="pre">NormAmps</span></code>, DSS property index: 16.</p>
 </dd></dl>
 
 <dl class="py attribute">
 <dt class="sig sig-object py" id="altdss.CNData.CNDataBatch.RAC">
 <span class="sig-name descname"><span class="pre">RAC</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><a class="reference internal" href="altdss.ArrayProxy.html#altdss.ArrayProxy.BatchFloat64ArrayProxy" title="altdss.ArrayProxy.BatchFloat64ArrayProxy"><span class="pre">altdss.ArrayProxy.BatchFloat64ArrayProxy</span></a></em><a class="headerlink" href="#altdss.CNData.CNDataBatch.RAC" title="Link to this definition">#</a></dt>
 <dd><p>‘property(…)’</p>
+<p>Resistance at 60 Hz per unit length. Defaults to 1.02*Rdc if not specified.</p>
+<p>DSS property name: <code class="docutils literal notranslate"><span class="pre">RAC</span></code>, DSS property index: 10.</p>
 </dd></dl>
 
 <dl class="py attribute">
 <dt class="sig sig-object py" id="altdss.CNData.CNDataBatch.RDC">
 <span class="sig-name descname"><span class="pre">RDC</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><a class="reference internal" href="altdss.ArrayProxy.html#altdss.ArrayProxy.BatchFloat64ArrayProxy" title="altdss.ArrayProxy.BatchFloat64ArrayProxy"><span class="pre">altdss.ArrayProxy.BatchFloat64ArrayProxy</span></a></em><a class="headerlink" href="#altdss.CNData.CNDataBatch.RDC" title="Link to this definition">#</a></dt>
 <dd><p>‘property(…)’</p>
+<p>dc Resistance, ohms per unit length (see Runits). Defaults to Rac/1.02 if not specified.</p>
+<p>DSS property name: <code class="docutils literal notranslate"><span class="pre">RDC</span></code>, DSS property index: 9.</p>
 </dd></dl>
 
 <dl class="py attribute">
 <dt class="sig sig-object py" id="altdss.CNData.CNDataBatch.RStrand">
 <span class="sig-name descname"><span class="pre">RStrand</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><a class="reference internal" href="altdss.ArrayProxy.html#altdss.ArrayProxy.BatchFloat64ArrayProxy" title="altdss.ArrayProxy.BatchFloat64ArrayProxy"><span class="pre">altdss.ArrayProxy.BatchFloat64ArrayProxy</span></a></em><a class="headerlink" href="#altdss.CNData.CNDataBatch.RStrand" title="Link to this definition">#</a></dt>
 <dd><p>‘property(…)’</p>
+<p>AC resistance of a concentric neutral strand; same units as core conductor resistance; no default.</p>
+<p>DSS property name: <code class="docutils literal notranslate"><span class="pre">RStrand</span></code>, DSS property index: 4.</p>
 </dd></dl>
 
 <dl class="py attribute">
 <dt class="sig sig-object py" id="altdss.CNData.CNDataBatch.RUnits">
 <span class="sig-name descname"><span class="pre">RUnits</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><a class="reference internal" href="altdss.ArrayProxy.html#altdss.ArrayProxy.BatchInt32ArrayProxy" title="altdss.ArrayProxy.BatchInt32ArrayProxy"><span class="pre">altdss.ArrayProxy.BatchInt32ArrayProxy</span></a></em><a class="headerlink" href="#altdss.CNData.CNDataBatch.RUnits" title="Link to this definition">#</a></dt>
 <dd><p>‘property(…)’</p>
+<p>Length units for resistance: ohms per {mi|kft|km|m|Ft|in|cm|mm} Default=none.</p>
+<p>DSS property name: <code class="docutils literal notranslate"><span class="pre">RUnits</span></code>, DSS property index: 11.</p>
 </dd></dl>
 
 <dl class="py attribute">
 <dt class="sig sig-object py" id="altdss.CNData.CNDataBatch.RUnits_str">
 <span class="sig-name descname"><span class="pre">RUnits_str</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">List</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">]</span></span></em><a class="headerlink" href="#altdss.CNData.CNDataBatch.RUnits_str" title="Link to this definition">#</a></dt>
 <dd><p>‘property(…)’</p>
+<p>Length units for resistance: ohms per {mi|kft|km|m|Ft|in|cm|mm} Default=none.</p>
+<p>DSS property name: <code class="docutils literal notranslate"><span class="pre">RUnits</span></code>, DSS property index: 11.</p>
 </dd></dl>
 
 <dl class="py attribute">
 <dt class="sig sig-object py" id="altdss.CNData.CNDataBatch.RadUnits">
 <span class="sig-name descname"><span class="pre">RadUnits</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><a class="reference internal" href="altdss.ArrayProxy.html#altdss.ArrayProxy.BatchInt32ArrayProxy" title="altdss.ArrayProxy.BatchInt32ArrayProxy"><span class="pre">altdss.ArrayProxy.BatchInt32ArrayProxy</span></a></em><a class="headerlink" href="#altdss.CNData.CNDataBatch.RadUnits" title="Link to this definition">#</a></dt>
 <dd><p>‘property(…)’</p>
+<p>Units for outside radius: {mi|kft|km|m|Ft|in|cm|mm} Default=none.</p>
+<p>DSS property name: <code class="docutils literal notranslate"><span class="pre">RadUnits</span></code>, DSS property index: 15.</p>
 </dd></dl>
 
 <dl class="py attribute">
 <dt class="sig sig-object py" id="altdss.CNData.CNDataBatch.RadUnits_str">
 <span class="sig-name descname"><span class="pre">RadUnits_str</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">List</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">]</span></span></em><a class="headerlink" href="#altdss.CNData.CNDataBatch.RadUnits_str" title="Link to this definition">#</a></dt>
 <dd><p>‘property(…)’</p>
+<p>Units for outside radius: {mi|kft|km|m|Ft|in|cm|mm} Default=none.</p>
+<p>DSS property name: <code class="docutils literal notranslate"><span class="pre">RadUnits</span></code>, DSS property index: 15.</p>
 </dd></dl>
 
 <dl class="py attribute">
 <dt class="sig sig-object py" id="altdss.CNData.CNDataBatch.Radius">
 <span class="sig-name descname"><span class="pre">Radius</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><a class="reference internal" href="altdss.ArrayProxy.html#altdss.ArrayProxy.BatchFloat64ArrayProxy" title="altdss.ArrayProxy.BatchFloat64ArrayProxy"><span class="pre">altdss.ArrayProxy.BatchFloat64ArrayProxy</span></a></em><a class="headerlink" href="#altdss.CNData.CNDataBatch.Radius" title="Link to this definition">#</a></dt>
 <dd><p>‘property(…)’</p>
+<p>Outside radius of conductor. Defaults to GMR/0.7788 if not specified.</p>
+<p>DSS property name: <code class="docutils literal notranslate"><span class="pre">Radius</span></code>, DSS property index: 14.</p>
 </dd></dl>
 
 <dl class="py attribute">
 <dt class="sig sig-object py" id="altdss.CNData.CNDataBatch.Ratings">
 <span class="sig-name descname"><span class="pre">Ratings</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">List</span><span class="p"><span class="pre">[</span></span><span class="pre">altdss.types.Float64Array</span><span class="p"><span class="pre">]</span></span></em><a class="headerlink" href="#altdss.CNData.CNDataBatch.Ratings" title="Link to this definition">#</a></dt>
 <dd><p>‘property(…)’</p>
+<p>An array of ratings to be used when the seasonal ratings flag is True. It can be used to insert
+multiple ratings to change during a QSTS simulation to evaluate different ratings in lines.</p>
+<p>DSS property name: <code class="docutils literal notranslate"><span class="pre">Ratings</span></code>, DSS property index: 20.</p>
 </dd></dl>
 
 <dl class="py attribute">
 <dt class="sig sig-object py" id="altdss.CNData.CNDataBatch.Seasons">
 <span class="sig-name descname"><span class="pre">Seasons</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><a class="reference internal" href="altdss.ArrayProxy.html#altdss.ArrayProxy.BatchInt32ArrayProxy" title="altdss.ArrayProxy.BatchInt32ArrayProxy"><span class="pre">altdss.ArrayProxy.BatchInt32ArrayProxy</span></a></em><a class="headerlink" href="#altdss.CNData.CNDataBatch.Seasons" title="Link to this definition">#</a></dt>
 <dd><p>‘property(…)’</p>
+<p>Defines the number of ratings to be defined for the wire, to be used only when defining seasonal ratings using the “Ratings” property.</p>
+<p>DSS property name: <code class="docutils literal notranslate"><span class="pre">Seasons</span></code>, DSS property index: 19.</p>
 </dd></dl>
 
 <dl class="py method">
@@ -1139,11 +1237,29 @@ Values used by this function are:</p>
 <dd></dd></dl>
 
 <dl class="py method">
+<dt class="sig sig-object py" id="altdss.CNData.CNDataBatch.batch">
+<span class="sig-name descname"><span class="pre">batch</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference internal" href="altdss.Batch.html#altdss.Batch.DSSBatch" title="altdss.Batch.DSSBatch"><span class="pre">altdss.Batch.DSSBatch</span></a></span></span><a class="headerlink" href="#altdss.CNData.CNDataBatch.batch" title="Link to this definition">#</a></dt>
+<dd><p>Filter a batch using integer or float DSS properties, returning a new batch.</p>
+<p>For integers, provide a single value to match.</p>
+<p>For floats, provide a range as a 2-valued tuple/list (min value, max value), or an exact value to value (not recommended).</p>
+<p>Multiple properties can be listed to allow filtering various conditions.</p>
+<p>Example for loads:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span>    <span class="c1"># Create an initial batch using a regular expression</span>
+    <span class="n">abc_loads</span> <span class="o">=</span> <span class="n">altdss</span><span class="o">.</span><span class="n">Load</span><span class="o">.</span><span class="n">batch</span><span class="p">(</span><span class="n">re</span><span class="o">=</span><span class="sa">r</span><span class="s1">&#39;^abc.*$&#39;</span><span class="p">)</span> <span class="c1"># a batch of all loads with names starting with &quot;abc&quot;</span>
+    <span class="n">abc_loads_filtered</span> <span class="o">=</span> <span class="n">abc_loads</span><span class="o">.</span><span class="n">batch</span><span class="p">(</span><span class="n">Class</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">Phases</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">kV</span><span class="o">=</span><span class="p">(</span><span class="mf">0.1</span><span class="p">,</span> <span class="mf">1.0</span><span class="p">))</span>
+
+    <span class="c1"># Create an initial batch, already filtered</span>
+    <span class="n">abc_loads_filtered</span> <span class="o">=</span> <span class="n">altdss</span><span class="o">.</span><span class="n">Load</span><span class="o">.</span><span class="n">batch</span><span class="p">(</span><span class="n">re</span><span class="o">=</span><span class="sa">r</span><span class="s1">&#39;^abc.*$&#39;</span><span class="p">,</span> <span class="n">Class</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">Phases</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">kV</span><span class="o">=</span><span class="p">(</span><span class="mf">0.1</span><span class="p">,</span> <span class="mf">1.0</span><span class="p">))</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="py method">
 <dt class="sig sig-object py" id="altdss.CNData.CNDataBatch.begin_edit">
 <span class="sig-name descname"><span class="pre">begin_edit</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span><a class="headerlink" href="#altdss.CNData.CNDataBatch.begin_edit" title="Link to this definition">#</a></dt>
 <dd><p>Marks for editing all DSS objects in the batch</p>
-<p>In the editing mode, some final side-effects of changing properties are post-poned
-until <code class="docutils literal notranslate"><span class="pre">_end_edit</span></code> is called. This side-effects can be somewhat costly, like updating
+<p>In the editing mode, some final side-effects of changing properties are postponed
+until <code class="docutils literal notranslate"><span class="pre">end_edit</span></code> is called. This side-effects can be somewhat costly, like updating
 the model parameters or internal matrices.</p>
 <p>If you don’t have any performance constraint, you may edit each property individually
 without worrying about using <code class="docutils literal notranslate"><span class="pre">begin_edit</span></code> and <code class="docutils literal notranslate"><span class="pre">end_edit</span></code>. For convenience, those are
@@ -1164,6 +1280,8 @@ the <code class="docutils literal notranslate"><span class="pre">Process</span><
 <dt class="sig sig-object py" id="altdss.CNData.CNDataBatch.k">
 <span class="sig-name descname"><span class="pre">k</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><a class="reference internal" href="altdss.ArrayProxy.html#altdss.ArrayProxy.BatchInt32ArrayProxy" title="altdss.ArrayProxy.BatchInt32ArrayProxy"><span class="pre">altdss.ArrayProxy.BatchInt32ArrayProxy</span></a></em><a class="headerlink" href="#altdss.CNData.CNDataBatch.k" title="Link to this definition">#</a></dt>
 <dd><p>‘property(…)’</p>
+<p>Number of concentric neutral strands; default is 2</p>
+<p>DSS property name: <code class="docutils literal notranslate"><span class="pre">k</span></code>, DSS property index: 1.</p>
 </dd></dl>
 
 <dl class="py method">
@@ -1966,42 +2084,56 @@ In either case, this is followed by: for k in F:  D[k] = F[k]</p>
 <dt class="sig sig-object py" id="altdss.CNData.ICNData.CapRadius">
 <span class="sig-name descname"><span class="pre">CapRadius</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><a class="reference internal" href="altdss.ArrayProxy.html#altdss.ArrayProxy.BatchFloat64ArrayProxy" title="altdss.ArrayProxy.BatchFloat64ArrayProxy"><span class="pre">altdss.ArrayProxy.BatchFloat64ArrayProxy</span></a></em><a class="headerlink" href="#altdss.CNData.ICNData.CapRadius" title="Link to this definition">#</a></dt>
 <dd><p>‘property(…)’</p>
+<p>Equivalent conductor radius for capacitance calcs. Specify this for bundled conductors. Defaults to same value as radius. Define Diam or Radius property first.</p>
+<p>DSS property name: <code class="docutils literal notranslate"><span class="pre">CapRadius</span></code>, DSS property index: 21.</p>
 </dd></dl>
 
 <dl class="py attribute">
 <dt class="sig sig-object py" id="altdss.CNData.ICNData.DiaCable">
 <span class="sig-name descname"><span class="pre">DiaCable</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><a class="reference internal" href="altdss.ArrayProxy.html#altdss.ArrayProxy.BatchFloat64ArrayProxy" title="altdss.ArrayProxy.BatchFloat64ArrayProxy"><span class="pre">altdss.ArrayProxy.BatchFloat64ArrayProxy</span></a></em><a class="headerlink" href="#altdss.CNData.ICNData.DiaCable" title="Link to this definition">#</a></dt>
 <dd><p>‘property(…)’</p>
+<p>Diameter over cable; same units as radius; no default.</p>
+<p>DSS property name: <code class="docutils literal notranslate"><span class="pre">DiaCable</span></code>, DSS property index: 8.</p>
 </dd></dl>
 
 <dl class="py attribute">
 <dt class="sig sig-object py" id="altdss.CNData.ICNData.DiaIns">
 <span class="sig-name descname"><span class="pre">DiaIns</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><a class="reference internal" href="altdss.ArrayProxy.html#altdss.ArrayProxy.BatchFloat64ArrayProxy" title="altdss.ArrayProxy.BatchFloat64ArrayProxy"><span class="pre">altdss.ArrayProxy.BatchFloat64ArrayProxy</span></a></em><a class="headerlink" href="#altdss.CNData.ICNData.DiaIns" title="Link to this definition">#</a></dt>
 <dd><p>‘property(…)’</p>
+<p>Diameter over insulation layer; same units as radius; no default. Establishes outer radius for capacitance calculation.</p>
+<p>DSS property name: <code class="docutils literal notranslate"><span class="pre">DiaIns</span></code>, DSS property index: 7.</p>
 </dd></dl>
 
 <dl class="py attribute">
 <dt class="sig sig-object py" id="altdss.CNData.ICNData.DiaStrand">
 <span class="sig-name descname"><span class="pre">DiaStrand</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><a class="reference internal" href="altdss.ArrayProxy.html#altdss.ArrayProxy.BatchFloat64ArrayProxy" title="altdss.ArrayProxy.BatchFloat64ArrayProxy"><span class="pre">altdss.ArrayProxy.BatchFloat64ArrayProxy</span></a></em><a class="headerlink" href="#altdss.CNData.ICNData.DiaStrand" title="Link to this definition">#</a></dt>
 <dd><p>‘property(…)’</p>
+<p>Diameter of a concentric neutral strand; same units as core conductor radius; no default.</p>
+<p>DSS property name: <code class="docutils literal notranslate"><span class="pre">DiaStrand</span></code>, DSS property index: 2.</p>
 </dd></dl>
 
 <dl class="py attribute">
 <dt class="sig sig-object py" id="altdss.CNData.ICNData.Diam">
 <span class="sig-name descname"><span class="pre">Diam</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><a class="reference internal" href="altdss.ArrayProxy.html#altdss.ArrayProxy.BatchFloat64ArrayProxy" title="altdss.ArrayProxy.BatchFloat64ArrayProxy"><span class="pre">altdss.ArrayProxy.BatchFloat64ArrayProxy</span></a></em><a class="headerlink" href="#altdss.CNData.ICNData.Diam" title="Link to this definition">#</a></dt>
 <dd><p>‘property(…)’</p>
+<p>Diameter; Alternative method for entering radius.</p>
+<p>DSS property name: <code class="docutils literal notranslate"><span class="pre">Diam</span></code>, DSS property index: 18.</p>
 </dd></dl>
 
 <dl class="py attribute">
 <dt class="sig sig-object py" id="altdss.CNData.ICNData.EmergAmps">
 <span class="sig-name descname"><span class="pre">EmergAmps</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><a class="reference internal" href="altdss.ArrayProxy.html#altdss.ArrayProxy.BatchFloat64ArrayProxy" title="altdss.ArrayProxy.BatchFloat64ArrayProxy"><span class="pre">altdss.ArrayProxy.BatchFloat64ArrayProxy</span></a></em><a class="headerlink" href="#altdss.CNData.ICNData.EmergAmps" title="Link to this definition">#</a></dt>
 <dd><p>‘property(…)’</p>
+<p>Emergency ampacity, amperes. Defaults to 1.5 * Normal Amps if not specified.</p>
+<p>DSS property name: <code class="docutils literal notranslate"><span class="pre">EmergAmps</span></code>, DSS property index: 17.</p>
 </dd></dl>
 
 <dl class="py attribute">
 <dt class="sig sig-object py" id="altdss.CNData.ICNData.EpsR">
 <span class="sig-name descname"><span class="pre">EpsR</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><a class="reference internal" href="altdss.ArrayProxy.html#altdss.ArrayProxy.BatchFloat64ArrayProxy" title="altdss.ArrayProxy.BatchFloat64ArrayProxy"><span class="pre">altdss.ArrayProxy.BatchFloat64ArrayProxy</span></a></em><a class="headerlink" href="#altdss.CNData.ICNData.EpsR" title="Link to this definition">#</a></dt>
 <dd><p>‘property(…)’</p>
+<p>Insulation layer relative permittivity; default is 2.3.</p>
+<p>DSS property name: <code class="docutils literal notranslate"><span class="pre">EpsR</span></code>, DSS property index: 5.</p>
 </dd></dl>
 
 <dl class="py method">
@@ -2014,30 +2146,40 @@ In either case, this is followed by: for k in F:  D[k] = F[k]</p>
 <dt class="sig sig-object py" id="altdss.CNData.ICNData.GMRAC">
 <span class="sig-name descname"><span class="pre">GMRAC</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><a class="reference internal" href="altdss.ArrayProxy.html#altdss.ArrayProxy.BatchFloat64ArrayProxy" title="altdss.ArrayProxy.BatchFloat64ArrayProxy"><span class="pre">altdss.ArrayProxy.BatchFloat64ArrayProxy</span></a></em><a class="headerlink" href="#altdss.CNData.ICNData.GMRAC" title="Link to this definition">#</a></dt>
 <dd><p>‘property(…)’</p>
+<p>GMR at 60 Hz. Defaults to .7788*radius if not specified.</p>
+<p>DSS property name: <code class="docutils literal notranslate"><span class="pre">GMRAC</span></code>, DSS property index: 12.</p>
 </dd></dl>
 
 <dl class="py attribute">
 <dt class="sig sig-object py" id="altdss.CNData.ICNData.GMRStrand">
 <span class="sig-name descname"><span class="pre">GMRStrand</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><a class="reference internal" href="altdss.ArrayProxy.html#altdss.ArrayProxy.BatchFloat64ArrayProxy" title="altdss.ArrayProxy.BatchFloat64ArrayProxy"><span class="pre">altdss.ArrayProxy.BatchFloat64ArrayProxy</span></a></em><a class="headerlink" href="#altdss.CNData.ICNData.GMRStrand" title="Link to this definition">#</a></dt>
 <dd><p>‘property(…)’</p>
+<p>Geometric mean radius of a concentric neutral strand; same units as core conductor GMR; defaults to 0.7788 * CN strand radius.</p>
+<p>DSS property name: <code class="docutils literal notranslate"><span class="pre">GMRStrand</span></code>, DSS property index: 3.</p>
 </dd></dl>
 
 <dl class="py attribute">
 <dt class="sig sig-object py" id="altdss.CNData.ICNData.GMRUnits">
 <span class="sig-name descname"><span class="pre">GMRUnits</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><a class="reference internal" href="altdss.ArrayProxy.html#altdss.ArrayProxy.BatchInt32ArrayProxy" title="altdss.ArrayProxy.BatchInt32ArrayProxy"><span class="pre">altdss.ArrayProxy.BatchInt32ArrayProxy</span></a></em><a class="headerlink" href="#altdss.CNData.ICNData.GMRUnits" title="Link to this definition">#</a></dt>
 <dd><p>‘property(…)’</p>
+<p>Units for GMR: {mi|kft|km|m|Ft|in|cm|mm} Default=none.</p>
+<p>DSS property name: <code class="docutils literal notranslate"><span class="pre">GMRUnits</span></code>, DSS property index: 13.</p>
 </dd></dl>
 
 <dl class="py attribute">
 <dt class="sig sig-object py" id="altdss.CNData.ICNData.GMRUnits_str">
 <span class="sig-name descname"><span class="pre">GMRUnits_str</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">List</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">]</span></span></em><a class="headerlink" href="#altdss.CNData.ICNData.GMRUnits_str" title="Link to this definition">#</a></dt>
 <dd><p>‘property(…)’</p>
+<p>Units for GMR: {mi|kft|km|m|Ft|in|cm|mm} Default=none.</p>
+<p>DSS property name: <code class="docutils literal notranslate"><span class="pre">GMRUnits</span></code>, DSS property index: 13.</p>
 </dd></dl>
 
 <dl class="py attribute">
 <dt class="sig sig-object py" id="altdss.CNData.ICNData.InsLayer">
 <span class="sig-name descname"><span class="pre">InsLayer</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><a class="reference internal" href="altdss.ArrayProxy.html#altdss.ArrayProxy.BatchFloat64ArrayProxy" title="altdss.ArrayProxy.BatchFloat64ArrayProxy"><span class="pre">altdss.ArrayProxy.BatchFloat64ArrayProxy</span></a></em><a class="headerlink" href="#altdss.CNData.ICNData.InsLayer" title="Link to this definition">#</a></dt>
 <dd><p>‘property(…)’</p>
+<p>Insulation layer thickness; same units as radius; no default. With DiaIns, establishes inner radius for capacitance calculation.</p>
+<p>DSS property name: <code class="docutils literal notranslate"><span class="pre">InsLayer</span></code>, DSS property index: 6.</p>
 </dd></dl>
 
 <dl class="py method">
@@ -2057,66 +2199,89 @@ In either case, this is followed by: for k in F:  D[k] = F[k]</p>
 <dt class="sig sig-object py" id="altdss.CNData.ICNData.NormAmps">
 <span class="sig-name descname"><span class="pre">NormAmps</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><a class="reference internal" href="altdss.ArrayProxy.html#altdss.ArrayProxy.BatchFloat64ArrayProxy" title="altdss.ArrayProxy.BatchFloat64ArrayProxy"><span class="pre">altdss.ArrayProxy.BatchFloat64ArrayProxy</span></a></em><a class="headerlink" href="#altdss.CNData.ICNData.NormAmps" title="Link to this definition">#</a></dt>
 <dd><p>‘property(…)’</p>
+<p>Normal ampacity, amperes. Defaults to Emergency amps/1.5 if not specified.</p>
+<p>DSS property name: <code class="docutils literal notranslate"><span class="pre">NormAmps</span></code>, DSS property index: 16.</p>
 </dd></dl>
 
 <dl class="py attribute">
 <dt class="sig sig-object py" id="altdss.CNData.ICNData.RAC">
 <span class="sig-name descname"><span class="pre">RAC</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><a class="reference internal" href="altdss.ArrayProxy.html#altdss.ArrayProxy.BatchFloat64ArrayProxy" title="altdss.ArrayProxy.BatchFloat64ArrayProxy"><span class="pre">altdss.ArrayProxy.BatchFloat64ArrayProxy</span></a></em><a class="headerlink" href="#altdss.CNData.ICNData.RAC" title="Link to this definition">#</a></dt>
 <dd><p>‘property(…)’</p>
+<p>Resistance at 60 Hz per unit length. Defaults to 1.02*Rdc if not specified.</p>
+<p>DSS property name: <code class="docutils literal notranslate"><span class="pre">RAC</span></code>, DSS property index: 10.</p>
 </dd></dl>
 
 <dl class="py attribute">
 <dt class="sig sig-object py" id="altdss.CNData.ICNData.RDC">
 <span class="sig-name descname"><span class="pre">RDC</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><a class="reference internal" href="altdss.ArrayProxy.html#altdss.ArrayProxy.BatchFloat64ArrayProxy" title="altdss.ArrayProxy.BatchFloat64ArrayProxy"><span class="pre">altdss.ArrayProxy.BatchFloat64ArrayProxy</span></a></em><a class="headerlink" href="#altdss.CNData.ICNData.RDC" title="Link to this definition">#</a></dt>
 <dd><p>‘property(…)’</p>
+<p>dc Resistance, ohms per unit length (see Runits). Defaults to Rac/1.02 if not specified.</p>
+<p>DSS property name: <code class="docutils literal notranslate"><span class="pre">RDC</span></code>, DSS property index: 9.</p>
 </dd></dl>
 
 <dl class="py attribute">
 <dt class="sig sig-object py" id="altdss.CNData.ICNData.RStrand">
 <span class="sig-name descname"><span class="pre">RStrand</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><a class="reference internal" href="altdss.ArrayProxy.html#altdss.ArrayProxy.BatchFloat64ArrayProxy" title="altdss.ArrayProxy.BatchFloat64ArrayProxy"><span class="pre">altdss.ArrayProxy.BatchFloat64ArrayProxy</span></a></em><a class="headerlink" href="#altdss.CNData.ICNData.RStrand" title="Link to this definition">#</a></dt>
 <dd><p>‘property(…)’</p>
+<p>AC resistance of a concentric neutral strand; same units as core conductor resistance; no default.</p>
+<p>DSS property name: <code class="docutils literal notranslate"><span class="pre">RStrand</span></code>, DSS property index: 4.</p>
 </dd></dl>
 
 <dl class="py attribute">
 <dt class="sig sig-object py" id="altdss.CNData.ICNData.RUnits">
 <span class="sig-name descname"><span class="pre">RUnits</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><a class="reference internal" href="altdss.ArrayProxy.html#altdss.ArrayProxy.BatchInt32ArrayProxy" title="altdss.ArrayProxy.BatchInt32ArrayProxy"><span class="pre">altdss.ArrayProxy.BatchInt32ArrayProxy</span></a></em><a class="headerlink" href="#altdss.CNData.ICNData.RUnits" title="Link to this definition">#</a></dt>
 <dd><p>‘property(…)’</p>
+<p>Length units for resistance: ohms per {mi|kft|km|m|Ft|in|cm|mm} Default=none.</p>
+<p>DSS property name: <code class="docutils literal notranslate"><span class="pre">RUnits</span></code>, DSS property index: 11.</p>
 </dd></dl>
 
 <dl class="py attribute">
 <dt class="sig sig-object py" id="altdss.CNData.ICNData.RUnits_str">
 <span class="sig-name descname"><span class="pre">RUnits_str</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">List</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">]</span></span></em><a class="headerlink" href="#altdss.CNData.ICNData.RUnits_str" title="Link to this definition">#</a></dt>
 <dd><p>‘property(…)’</p>
+<p>Length units for resistance: ohms per {mi|kft|km|m|Ft|in|cm|mm} Default=none.</p>
+<p>DSS property name: <code class="docutils literal notranslate"><span class="pre">RUnits</span></code>, DSS property index: 11.</p>
 </dd></dl>
 
 <dl class="py attribute">
 <dt class="sig sig-object py" id="altdss.CNData.ICNData.RadUnits">
 <span class="sig-name descname"><span class="pre">RadUnits</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><a class="reference internal" href="altdss.ArrayProxy.html#altdss.ArrayProxy.BatchInt32ArrayProxy" title="altdss.ArrayProxy.BatchInt32ArrayProxy"><span class="pre">altdss.ArrayProxy.BatchInt32ArrayProxy</span></a></em><a class="headerlink" href="#altdss.CNData.ICNData.RadUnits" title="Link to this definition">#</a></dt>
 <dd><p>‘property(…)’</p>
+<p>Units for outside radius: {mi|kft|km|m|Ft|in|cm|mm} Default=none.</p>
+<p>DSS property name: <code class="docutils literal notranslate"><span class="pre">RadUnits</span></code>, DSS property index: 15.</p>
 </dd></dl>
 
 <dl class="py attribute">
 <dt class="sig sig-object py" id="altdss.CNData.ICNData.RadUnits_str">
 <span class="sig-name descname"><span class="pre">RadUnits_str</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">List</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">]</span></span></em><a class="headerlink" href="#altdss.CNData.ICNData.RadUnits_str" title="Link to this definition">#</a></dt>
 <dd><p>‘property(…)’</p>
+<p>Units for outside radius: {mi|kft|km|m|Ft|in|cm|mm} Default=none.</p>
+<p>DSS property name: <code class="docutils literal notranslate"><span class="pre">RadUnits</span></code>, DSS property index: 15.</p>
 </dd></dl>
 
 <dl class="py attribute">
 <dt class="sig sig-object py" id="altdss.CNData.ICNData.Radius">
 <span class="sig-name descname"><span class="pre">Radius</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><a class="reference internal" href="altdss.ArrayProxy.html#altdss.ArrayProxy.BatchFloat64ArrayProxy" title="altdss.ArrayProxy.BatchFloat64ArrayProxy"><span class="pre">altdss.ArrayProxy.BatchFloat64ArrayProxy</span></a></em><a class="headerlink" href="#altdss.CNData.ICNData.Radius" title="Link to this definition">#</a></dt>
 <dd><p>‘property(…)’</p>
+<p>Outside radius of conductor. Defaults to GMR/0.7788 if not specified.</p>
+<p>DSS property name: <code class="docutils literal notranslate"><span class="pre">Radius</span></code>, DSS property index: 14.</p>
 </dd></dl>
 
 <dl class="py attribute">
 <dt class="sig sig-object py" id="altdss.CNData.ICNData.Ratings">
 <span class="sig-name descname"><span class="pre">Ratings</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">List</span><span class="p"><span class="pre">[</span></span><span class="pre">altdss.types.Float64Array</span><span class="p"><span class="pre">]</span></span></em><a class="headerlink" href="#altdss.CNData.ICNData.Ratings" title="Link to this definition">#</a></dt>
 <dd><p>‘property(…)’</p>
+<p>An array of ratings to be used when the seasonal ratings flag is True. It can be used to insert
+multiple ratings to change during a QSTS simulation to evaluate different ratings in lines.</p>
+<p>DSS property name: <code class="docutils literal notranslate"><span class="pre">Ratings</span></code>, DSS property index: 20.</p>
 </dd></dl>
 
 <dl class="py attribute">
 <dt class="sig sig-object py" id="altdss.CNData.ICNData.Seasons">
 <span class="sig-name descname"><span class="pre">Seasons</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><a class="reference internal" href="altdss.ArrayProxy.html#altdss.ArrayProxy.BatchInt32ArrayProxy" title="altdss.ArrayProxy.BatchInt32ArrayProxy"><span class="pre">altdss.ArrayProxy.BatchInt32ArrayProxy</span></a></em><a class="headerlink" href="#altdss.CNData.ICNData.Seasons" title="Link to this definition">#</a></dt>
 <dd><p>‘property(…)’</p>
+<p>Defines the number of ratings to be defined for the wire, to be used only when defining seasonal ratings using the “Ratings” property.</p>
+<p>DSS property name: <code class="docutils literal notranslate"><span class="pre">Seasons</span></code>, DSS property index: 19.</p>
 </dd></dl>
 
 <dl class="py method">
@@ -2166,8 +2331,8 @@ or “count” elements with a randomized prefix.</p>
 <dt class="sig sig-object py" id="altdss.CNData.ICNData.begin_edit">
 <span class="sig-name descname"><span class="pre">begin_edit</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span><a class="headerlink" href="#altdss.CNData.ICNData.begin_edit" title="Link to this definition">#</a></dt>
 <dd><p>Marks for editing all DSS objects in the batch</p>
-<p>In the editing mode, some final side-effects of changing properties are post-poned
-until <code class="docutils literal notranslate"><span class="pre">_end_edit</span></code> is called. This side-effects can be somewhat costly, like updating
+<p>In the editing mode, some final side-effects of changing properties are postponed
+until <code class="docutils literal notranslate"><span class="pre">end_edit</span></code> is called. This side-effects can be somewhat costly, like updating
 the model parameters or internal matrices.</p>
 <p>If you don’t have any performance constraint, you may edit each property individually
 without worrying about using <code class="docutils literal notranslate"><span class="pre">begin_edit</span></code> and <code class="docutils literal notranslate"><span class="pre">end_edit</span></code>. For convenience, those are
@@ -2194,6 +2359,8 @@ the <code class="docutils literal notranslate"><span class="pre">Process</span><
 <dt class="sig sig-object py" id="altdss.CNData.ICNData.k">
 <span class="sig-name descname"><span class="pre">k</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><a class="reference internal" href="altdss.ArrayProxy.html#altdss.ArrayProxy.BatchInt32ArrayProxy" title="altdss.ArrayProxy.BatchInt32ArrayProxy"><span class="pre">altdss.ArrayProxy.BatchInt32ArrayProxy</span></a></em><a class="headerlink" href="#altdss.CNData.ICNData.k" title="Link to this definition">#</a></dt>
 <dd><p>‘property(…)’</p>
+<p>Number of concentric neutral strands; default is 2</p>
+<p>DSS property name: <code class="docutils literal notranslate"><span class="pre">k</span></code>, DSS property index: 1.</p>
 </dd></dl>
 
 <dl class="py method">
@@ -2338,6 +2505,7 @@ See <code class="docutils literal notranslate"><span class="pre">Obj_ToJSON</spa
 <li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#altdss.CNData.CNDataBatch.__init__"><code class="docutils literal notranslate"><span class="pre">CNDataBatch.__init__()</span></code></a></li>
 <li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#altdss.CNData.CNDataBatch.__iter__"><code class="docutils literal notranslate"><span class="pre">CNDataBatch.__iter__()</span></code></a></li>
 <li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#altdss.CNData.CNDataBatch.__len__"><code class="docutils literal notranslate"><span class="pre">CNDataBatch.__len__()</span></code></a></li>
+<li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#altdss.CNData.CNDataBatch.batch"><code class="docutils literal notranslate"><span class="pre">CNDataBatch.batch()</span></code></a></li>
 <li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#altdss.CNData.CNDataBatch.begin_edit"><code class="docutils literal notranslate"><span class="pre">CNDataBatch.begin_edit()</span></code></a></li>
 <li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#altdss.CNData.CNDataBatch.end_edit"><code class="docutils literal notranslate"><span class="pre">CNDataBatch.end_edit()</span></code></a></li>
 <li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#altdss.CNData.CNDataBatch.k"><code class="docutils literal notranslate"><span class="pre">CNDataBatch.k</span></code></a></li>

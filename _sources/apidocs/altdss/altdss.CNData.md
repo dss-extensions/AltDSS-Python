@@ -720,6 +720,14 @@ Bases: {py:obj}`altdss.Batch.DSSBatch`
 
 ````
 
+````{py:method} batch(**kwargs) -> altdss.Batch.DSSBatch
+:canonical: altdss.CNData.CNDataBatch.batch
+
+```{autodoc2-docstring} altdss.CNData.CNDataBatch.batch
+```
+
+````
+
 ````{py:method} begin_edit() -> None
 :canonical: altdss.CNData.CNDataBatch.begin_edit
 

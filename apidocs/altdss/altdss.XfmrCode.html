@@ -8,7 +8,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
-    <title>altdss.XfmrCode &#8212; AltDSS-Python 0.2.0 documentation</title>
+    <title>altdss.XfmrCode &#8212; AltDSS-Python 0.2.2 documentation</title>
   
   
   
@@ -38,7 +38,7 @@
 <link rel="preload" as="script" href="../../_static/scripts/pydata-sphinx-theme.js?digest=8d27b9dea8ad943066ae" />
   <script src="../../_static/vendor/fontawesome/6.5.1/js/all.min.js?digest=8d27b9dea8ad943066ae"></script>
 
-    <script src="../../_static/documentation_options.js?v=7f7c277e"></script>
+    <script src="../../_static/documentation_options.js?v=d3f42505"></script>
     <script src="../../_static/doctools.js?v=888ff710"></script>
     <script src="../../_static/sphinx_highlight.js?v=dc90522c"></script>
     <script src="../../_static/scripts/sphinx-book-theme.js?v=efea14e4"></script>
@@ -137,8 +137,8 @@
       
     
     
-    <img src="../../_static/altdss-python.svg" class="logo__image only-light" alt="AltDSS-Python 0.2.0 documentation - Home"/>
-    <script>document.write(`<img src="../../_static/altdss-python-dark.svg" class="logo__image only-dark" alt="AltDSS-Python 0.2.0 documentation - Home"/>`);</script>
+    <img src="../../_static/altdss-python.svg" class="logo__image only-light" alt="AltDSS-Python 0.2.2 documentation - Home"/>
+    <script>document.write(`<img src="../../_static/altdss-python-dark.svg" class="logo__image only-dark" alt="AltDSS-Python 0.2.2 documentation - Home"/>`);</script>
   
   
 </a></div>
@@ -160,6 +160,7 @@
 <li class="toctree-l1"><a class="reference internal" href="../../index.html">AltDSS-Python</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../Architecture.html">Architecture details</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../examples/GettingStarted.html">Getting Started</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../examples/Batches.html">Batches</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../changelog.html">Changelog</a></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">API Reference</span></p>
@@ -544,6 +545,7 @@ document.write(`
 <li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#altdss.XfmrCode.XfmrCodeBatch.__init__"><code class="docutils literal notranslate"><span class="pre">XfmrCodeBatch.__init__()</span></code></a></li>
 <li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#altdss.XfmrCode.XfmrCodeBatch.__iter__"><code class="docutils literal notranslate"><span class="pre">XfmrCodeBatch.__iter__()</span></code></a></li>
 <li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#altdss.XfmrCode.XfmrCodeBatch.__len__"><code class="docutils literal notranslate"><span class="pre">XfmrCodeBatch.__len__()</span></code></a></li>
+<li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#altdss.XfmrCode.XfmrCodeBatch.batch"><code class="docutils literal notranslate"><span class="pre">XfmrCodeBatch.batch()</span></code></a></li>
 <li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#altdss.XfmrCode.XfmrCodeBatch.begin_edit"><code class="docutils literal notranslate"><span class="pre">XfmrCodeBatch.begin_edit()</span></code></a></li>
 <li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#altdss.XfmrCode.XfmrCodeBatch.end_edit"><code class="docutils literal notranslate"><span class="pre">XfmrCodeBatch.end_edit()</span></code></a></li>
 <li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#altdss.XfmrCode.XfmrCodeBatch.kVAs"><code class="docutils literal notranslate"><span class="pre">XfmrCodeBatch.kVAs</span></code></a></li>
@@ -779,24 +781,36 @@ in the keyword argument list.  For example:  dict(one=1, two=2)</p></td>
 <dt class="sig sig-object py" id="altdss.XfmrCode.IXfmrCode.Conns">
 <span class="sig-name descname"><span class="pre">Conns</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">List</span><span class="p"><span class="pre">[</span></span><span class="pre">altdss.types.Int32Array</span><span class="p"><span class="pre">]</span></span></em><a class="headerlink" href="#altdss.XfmrCode.IXfmrCode.Conns" title="Link to this definition">#</a></dt>
 <dd><p>‘property(…)’</p>
+<p>Use this to specify all the Winding connections at once using an array. Example:</p>
+<p>New Transformer.T1 buses=“Hibus, lowbus”
+~ conns=(delta, wye)</p>
+<p>DSS property name: <code class="docutils literal notranslate"><span class="pre">Conns</span></code>, DSS property index: 11.</p>
 </dd></dl>
 
 <dl class="py attribute">
 <dt class="sig sig-object py" id="altdss.XfmrCode.IXfmrCode.Conns_str">
 <span class="sig-name descname"><span class="pre">Conns_str</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">List</span><span class="p"><span class="pre">[</span></span><span class="pre">List</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">]</span></span></em><a class="headerlink" href="#altdss.XfmrCode.IXfmrCode.Conns_str" title="Link to this definition">#</a></dt>
 <dd><p>‘property(…)’</p>
+<p>Use this to specify all the Winding connections at once using an array. Example:</p>
+<p>New Transformer.T1 buses=“Hibus, lowbus”
+~ conns=(delta, wye)</p>
+<p>DSS property name: <code class="docutils literal notranslate"><span class="pre">Conns</span></code>, DSS property index: 11.</p>
 </dd></dl>
 
 <dl class="py attribute">
 <dt class="sig sig-object py" id="altdss.XfmrCode.IXfmrCode.EmergHkVA">
 <span class="sig-name descname"><span class="pre">EmergHkVA</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><a class="reference internal" href="altdss.ArrayProxy.html#altdss.ArrayProxy.BatchFloat64ArrayProxy" title="altdss.ArrayProxy.BatchFloat64ArrayProxy"><span class="pre">altdss.ArrayProxy.BatchFloat64ArrayProxy</span></a></em><a class="headerlink" href="#altdss.XfmrCode.IXfmrCode.EmergHkVA" title="Link to this definition">#</a></dt>
 <dd><p>‘property(…)’</p>
+<p>Emergency (contingency)  kVA rating of H winding (winding 1).  Usually 140% - 150% of maximum nameplate rating, depending on load shape. Defaults to 150% of kVA rating of Winding 1.</p>
+<p>DSS property name: <code class="docutils literal notranslate"><span class="pre">EmergHkVA</span></code>, DSS property index: 27.</p>
 </dd></dl>
 
 <dl class="py attribute">
 <dt class="sig sig-object py" id="altdss.XfmrCode.IXfmrCode.FLRise">
 <span class="sig-name descname"><span class="pre">FLRise</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><a class="reference internal" href="altdss.ArrayProxy.html#altdss.ArrayProxy.BatchFloat64ArrayProxy" title="altdss.ArrayProxy.BatchFloat64ArrayProxy"><span class="pre">altdss.ArrayProxy.BatchFloat64ArrayProxy</span></a></em><a class="headerlink" href="#altdss.XfmrCode.IXfmrCode.FLRise" title="Link to this definition">#</a></dt>
 <dd><p>‘property(…)’</p>
+<p>Temperature rise, deg C, for full load.  Default is 65.</p>
+<p>DSS property name: <code class="docutils literal notranslate"><span class="pre">FLRise</span></code>, DSS property index: 22.</p>
 </dd></dl>
 
 <dl class="py method">
@@ -809,6 +823,8 @@ in the keyword argument list.  For example:  dict(one=1, two=2)</p></td>
 <dt class="sig sig-object py" id="altdss.XfmrCode.IXfmrCode.HSRise">
 <span class="sig-name descname"><span class="pre">HSRise</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><a class="reference internal" href="altdss.ArrayProxy.html#altdss.ArrayProxy.BatchFloat64ArrayProxy" title="altdss.ArrayProxy.BatchFloat64ArrayProxy"><span class="pre">altdss.ArrayProxy.BatchFloat64ArrayProxy</span></a></em><a class="headerlink" href="#altdss.XfmrCode.IXfmrCode.HSRise" title="Link to this definition">#</a></dt>
 <dd><p>‘property(…)’</p>
+<p>Hot spot temperature rise, deg C.  Default is 15.</p>
+<p>DSS property name: <code class="docutils literal notranslate"><span class="pre">HSRise</span></code>, DSS property index: 23.</p>
 </dd></dl>
 
 <dl class="py method">
@@ -823,12 +839,16 @@ in the keyword argument list.  For example:  dict(one=1, two=2)</p></td>
 <dt class="sig sig-object py" id="altdss.XfmrCode.IXfmrCode.MaxTap">
 <span class="sig-name descname"><span class="pre">MaxTap</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">List</span><span class="p"><span class="pre">[</span></span><span class="pre">altdss.types.Float64Array</span><span class="p"><span class="pre">]</span></span></em><a class="headerlink" href="#altdss.XfmrCode.IXfmrCode.MaxTap" title="Link to this definition">#</a></dt>
 <dd><p>‘property(…)’</p>
+<p>Max per unit tap for the active winding.  Default is 1.10</p>
+<p>DSS property name: <code class="docutils literal notranslate"><span class="pre">MaxTap</span></code>, DSS property index: 28.</p>
 </dd></dl>
 
 <dl class="py attribute">
 <dt class="sig sig-object py" id="altdss.XfmrCode.IXfmrCode.MinTap">
 <span class="sig-name descname"><span class="pre">MinTap</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">List</span><span class="p"><span class="pre">[</span></span><span class="pre">altdss.types.Float64Array</span><span class="p"><span class="pre">]</span></span></em><a class="headerlink" href="#altdss.XfmrCode.IXfmrCode.MinTap" title="Link to this definition">#</a></dt>
 <dd><p>‘property(…)’</p>
+<p>Min per unit tap for the active winding.  Default is 0.90</p>
+<p>DSS property name: <code class="docutils literal notranslate"><span class="pre">MinTap</span></code>, DSS property index: 29.</p>
 </dd></dl>
 
 <dl class="py property">
@@ -840,108 +860,147 @@ in the keyword argument list.  For example:  dict(one=1, two=2)</p></td>
 <dt class="sig sig-object py" id="altdss.XfmrCode.IXfmrCode.NormHkVA">
 <span class="sig-name descname"><span class="pre">NormHkVA</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><a class="reference internal" href="altdss.ArrayProxy.html#altdss.ArrayProxy.BatchFloat64ArrayProxy" title="altdss.ArrayProxy.BatchFloat64ArrayProxy"><span class="pre">altdss.ArrayProxy.BatchFloat64ArrayProxy</span></a></em><a class="headerlink" href="#altdss.XfmrCode.IXfmrCode.NormHkVA" title="Link to this definition">#</a></dt>
 <dd><p>‘property(…)’</p>
+<p>Normal maximum kVA rating of H winding (winding 1).  Usually 100% - 110% of maximum nameplate rating, depending on load shape. Defaults to 110% of kVA rating of Winding 1.</p>
+<p>DSS property name: <code class="docutils literal notranslate"><span class="pre">NormHkVA</span></code>, DSS property index: 26.</p>
 </dd></dl>
 
 <dl class="py attribute">
 <dt class="sig sig-object py" id="altdss.XfmrCode.IXfmrCode.NumTaps">
 <span class="sig-name descname"><span class="pre">NumTaps</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">List</span><span class="p"><span class="pre">[</span></span><span class="pre">altdss.types.Int32Array</span><span class="p"><span class="pre">]</span></span></em><a class="headerlink" href="#altdss.XfmrCode.IXfmrCode.NumTaps" title="Link to this definition">#</a></dt>
 <dd><p>‘property(…)’</p>
+<p>Total number of taps between min and max tap.  Default is 32.</p>
+<p>DSS property name: <code class="docutils literal notranslate"><span class="pre">NumTaps</span></code>, DSS property index: 30.</p>
 </dd></dl>
 
 <dl class="py attribute">
 <dt class="sig sig-object py" id="altdss.XfmrCode.IXfmrCode.Phases">
 <span class="sig-name descname"><span class="pre">Phases</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><a class="reference internal" href="altdss.ArrayProxy.html#altdss.ArrayProxy.BatchInt32ArrayProxy" title="altdss.ArrayProxy.BatchInt32ArrayProxy"><span class="pre">altdss.ArrayProxy.BatchInt32ArrayProxy</span></a></em><a class="headerlink" href="#altdss.XfmrCode.IXfmrCode.Phases" title="Link to this definition">#</a></dt>
 <dd><p>‘property(…)’</p>
+<p>Number of phases this transformer. Default is 3.</p>
+<p>DSS property name: <code class="docutils literal notranslate"><span class="pre">Phases</span></code>, DSS property index: 1.</p>
 </dd></dl>
 
 <dl class="py attribute">
 <dt class="sig sig-object py" id="altdss.XfmrCode.IXfmrCode.RDCOhms">
 <span class="sig-name descname"><span class="pre">RDCOhms</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">List</span><span class="p"><span class="pre">[</span></span><span class="pre">altdss.types.Float64Array</span><span class="p"><span class="pre">]</span></span></em><a class="headerlink" href="#altdss.XfmrCode.IXfmrCode.RDCOhms" title="Link to this definition">#</a></dt>
 <dd><p>‘property(…)’</p>
+<p>Winding dc resistance in OHMS. Useful for GIC analysis. From transformer test report. Defaults to 85% of %R property</p>
+<p>DSS property name: <code class="docutils literal notranslate"><span class="pre">RDCOhms</span></code>, DSS property index: 37.</p>
 </dd></dl>
 
 <dl class="py attribute">
 <dt class="sig sig-object py" id="altdss.XfmrCode.IXfmrCode.RNeut">
 <span class="sig-name descname"><span class="pre">RNeut</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">List</span><span class="p"><span class="pre">[</span></span><span class="pre">altdss.types.Float64Array</span><span class="p"><span class="pre">]</span></span></em><a class="headerlink" href="#altdss.XfmrCode.IXfmrCode.RNeut" title="Link to this definition">#</a></dt>
 <dd><p>‘property(…)’</p>
+<p>Default = -1. Neutral resistance of wye (star)-connected winding in actual ohms.If entered as a negative value, the neutral is assumed to be open, or floating.</p>
+<p>DSS property name: <code class="docutils literal notranslate"><span class="pre">RNeut</span></code>, DSS property index: 9.</p>
 </dd></dl>
 
 <dl class="py attribute">
 <dt class="sig sig-object py" id="altdss.XfmrCode.IXfmrCode.Ratings">
 <span class="sig-name descname"><span class="pre">Ratings</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">List</span><span class="p"><span class="pre">[</span></span><span class="pre">altdss.types.Float64Array</span><span class="p"><span class="pre">]</span></span></em><a class="headerlink" href="#altdss.XfmrCode.IXfmrCode.Ratings" title="Link to this definition">#</a></dt>
 <dd><p>‘property(…)’</p>
+<p>An array of ratings to be used when the seasonal ratings flag is True. It can be used to insert
+multiple ratings to change during a QSTS simulation to evaluate different ratings in transformers.</p>
+<p>DSS property name: <code class="docutils literal notranslate"><span class="pre">Ratings</span></code>, DSS property index: 39.</p>
 </dd></dl>
 
 <dl class="py attribute">
 <dt class="sig sig-object py" id="altdss.XfmrCode.IXfmrCode.Seasons">
 <span class="sig-name descname"><span class="pre">Seasons</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><a class="reference internal" href="altdss.ArrayProxy.html#altdss.ArrayProxy.BatchInt32ArrayProxy" title="altdss.ArrayProxy.BatchInt32ArrayProxy"><span class="pre">altdss.ArrayProxy.BatchInt32ArrayProxy</span></a></em><a class="headerlink" href="#altdss.XfmrCode.IXfmrCode.Seasons" title="Link to this definition">#</a></dt>
 <dd><p>‘property(…)’</p>
+<p>Defines the number of ratings to be defined for the transfomer, to be used only when defining seasonal ratings using the “Ratings” property.</p>
+<p>DSS property name: <code class="docutils literal notranslate"><span class="pre">Seasons</span></code>, DSS property index: 38.</p>
 </dd></dl>
 
 <dl class="py attribute">
 <dt class="sig sig-object py" id="altdss.XfmrCode.IXfmrCode.Taps">
 <span class="sig-name descname"><span class="pre">Taps</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">List</span><span class="p"><span class="pre">[</span></span><span class="pre">altdss.types.Float64Array</span><span class="p"><span class="pre">]</span></span></em><a class="headerlink" href="#altdss.XfmrCode.IXfmrCode.Taps" title="Link to this definition">#</a></dt>
 <dd><p>‘property(…)’</p>
+<p>Use this to specify the normal p.u. tap of all windings at once using an array.</p>
+<p>DSS property name: <code class="docutils literal notranslate"><span class="pre">Taps</span></code>, DSS property index: 14.</p>
 </dd></dl>
 
 <dl class="py attribute">
 <dt class="sig sig-object py" id="altdss.XfmrCode.IXfmrCode.Thermal">
 <span class="sig-name descname"><span class="pre">Thermal</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><a class="reference internal" href="altdss.ArrayProxy.html#altdss.ArrayProxy.BatchFloat64ArrayProxy" title="altdss.ArrayProxy.BatchFloat64ArrayProxy"><span class="pre">altdss.ArrayProxy.BatchFloat64ArrayProxy</span></a></em><a class="headerlink" href="#altdss.XfmrCode.IXfmrCode.Thermal" title="Link to this definition">#</a></dt>
 <dd><p>‘property(…)’</p>
+<p>Thermal time constant of the transformer in hours.  Typically about 2.</p>
+<p>DSS property name: <code class="docutils literal notranslate"><span class="pre">Thermal</span></code>, DSS property index: 19.</p>
 </dd></dl>
 
 <dl class="py attribute">
 <dt class="sig sig-object py" id="altdss.XfmrCode.IXfmrCode.Windings">
 <span class="sig-name descname"><span class="pre">Windings</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><a class="reference internal" href="altdss.ArrayProxy.html#altdss.ArrayProxy.BatchInt32ArrayProxy" title="altdss.ArrayProxy.BatchInt32ArrayProxy"><span class="pre">altdss.ArrayProxy.BatchInt32ArrayProxy</span></a></em><a class="headerlink" href="#altdss.XfmrCode.IXfmrCode.Windings" title="Link to this definition">#</a></dt>
 <dd><p>‘property(…)’</p>
+<p>Number of windings, this transformers. (Also is the number of terminals) Default is 2. This property triggers memory allocation for the Transformer and will cause other properties to revert to default values.</p>
+<p>DSS property name: <code class="docutils literal notranslate"><span class="pre">Windings</span></code>, DSS property index: 2.</p>
 </dd></dl>
 
 <dl class="py attribute">
 <dt class="sig sig-object py" id="altdss.XfmrCode.IXfmrCode.X12">
 <span class="sig-name descname"><span class="pre">X12</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><a class="reference internal" href="altdss.ArrayProxy.html#altdss.ArrayProxy.BatchFloat64ArrayProxy" title="altdss.ArrayProxy.BatchFloat64ArrayProxy"><span class="pre">altdss.ArrayProxy.BatchFloat64ArrayProxy</span></a></em><a class="headerlink" href="#altdss.XfmrCode.IXfmrCode.X12" title="Link to this definition">#</a></dt>
 <dd><p>‘property(…)’</p>
+<p>Alternative to XHL for specifying the percent reactance from winding 1 to winding 2.  Use for 2- or 3-winding transformers. Percent on the kVA base of winding 1.</p>
+<p>DSS property name: <code class="docutils literal notranslate"><span class="pre">X12</span></code>, DSS property index: 34.</p>
 </dd></dl>
 
 <dl class="py attribute">
 <dt class="sig sig-object py" id="altdss.XfmrCode.IXfmrCode.X13">
 <span class="sig-name descname"><span class="pre">X13</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><a class="reference internal" href="altdss.ArrayProxy.html#altdss.ArrayProxy.BatchFloat64ArrayProxy" title="altdss.ArrayProxy.BatchFloat64ArrayProxy"><span class="pre">altdss.ArrayProxy.BatchFloat64ArrayProxy</span></a></em><a class="headerlink" href="#altdss.XfmrCode.IXfmrCode.X13" title="Link to this definition">#</a></dt>
 <dd><p>‘property(…)’</p>
+<p>Alternative to XHT for specifying the percent reactance from winding 1 to winding 3.  Use for 3-winding transformers only. Percent on the kVA base of winding 1.</p>
+<p>DSS property name: <code class="docutils literal notranslate"><span class="pre">X13</span></code>, DSS property index: 35.</p>
 </dd></dl>
 
 <dl class="py attribute">
 <dt class="sig sig-object py" id="altdss.XfmrCode.IXfmrCode.X23">
 <span class="sig-name descname"><span class="pre">X23</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><a class="reference internal" href="altdss.ArrayProxy.html#altdss.ArrayProxy.BatchFloat64ArrayProxy" title="altdss.ArrayProxy.BatchFloat64ArrayProxy"><span class="pre">altdss.ArrayProxy.BatchFloat64ArrayProxy</span></a></em><a class="headerlink" href="#altdss.XfmrCode.IXfmrCode.X23" title="Link to this definition">#</a></dt>
 <dd><p>‘property(…)’</p>
+<p>Alternative to XLT for specifying the percent reactance from winding 2 to winding 3.Use for 3-winding transformers only. Percent on the kVA base of winding 1.</p>
+<p>DSS property name: <code class="docutils literal notranslate"><span class="pre">X23</span></code>, DSS property index: 36.</p>
 </dd></dl>
 
 <dl class="py attribute">
 <dt class="sig sig-object py" id="altdss.XfmrCode.IXfmrCode.XHL">
 <span class="sig-name descname"><span class="pre">XHL</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><a class="reference internal" href="altdss.ArrayProxy.html#altdss.ArrayProxy.BatchFloat64ArrayProxy" title="altdss.ArrayProxy.BatchFloat64ArrayProxy"><span class="pre">altdss.ArrayProxy.BatchFloat64ArrayProxy</span></a></em><a class="headerlink" href="#altdss.XfmrCode.IXfmrCode.XHL" title="Link to this definition">#</a></dt>
 <dd><p>‘property(…)’</p>
+<p>Use this to specify the percent reactance, H-L (winding 1 to winding 2).  Use for 2- or 3-winding transformers. On the kva base of winding 1.</p>
+<p>DSS property name: <code class="docutils literal notranslate"><span class="pre">XHL</span></code>, DSS property index: 15.</p>
 </dd></dl>
 
 <dl class="py attribute">
 <dt class="sig sig-object py" id="altdss.XfmrCode.IXfmrCode.XHT">
 <span class="sig-name descname"><span class="pre">XHT</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><a class="reference internal" href="altdss.ArrayProxy.html#altdss.ArrayProxy.BatchFloat64ArrayProxy" title="altdss.ArrayProxy.BatchFloat64ArrayProxy"><span class="pre">altdss.ArrayProxy.BatchFloat64ArrayProxy</span></a></em><a class="headerlink" href="#altdss.XfmrCode.IXfmrCode.XHT" title="Link to this definition">#</a></dt>
 <dd><p>‘property(…)’</p>
+<p>Use this to specify the percent reactance, H-T (winding 1 to winding 3).  Use for 3-winding transformers only. On the kVA base of winding 1.</p>
+<p>DSS property name: <code class="docutils literal notranslate"><span class="pre">XHT</span></code>, DSS property index: 16.</p>
 </dd></dl>
 
 <dl class="py attribute">
 <dt class="sig sig-object py" id="altdss.XfmrCode.IXfmrCode.XLT">
 <span class="sig-name descname"><span class="pre">XLT</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><a class="reference internal" href="altdss.ArrayProxy.html#altdss.ArrayProxy.BatchFloat64ArrayProxy" title="altdss.ArrayProxy.BatchFloat64ArrayProxy"><span class="pre">altdss.ArrayProxy.BatchFloat64ArrayProxy</span></a></em><a class="headerlink" href="#altdss.XfmrCode.IXfmrCode.XLT" title="Link to this definition">#</a></dt>
 <dd><p>‘property(…)’</p>
+<p>Use this to specify the percent reactance, L-T (winding 2 to winding 3).  Use for 3-winding transformers only. On the kVA base of winding 1.</p>
+<p>DSS property name: <code class="docutils literal notranslate"><span class="pre">XLT</span></code>, DSS property index: 17.</p>
 </dd></dl>
 
 <dl class="py attribute">
 <dt class="sig sig-object py" id="altdss.XfmrCode.IXfmrCode.XNeut">
 <span class="sig-name descname"><span class="pre">XNeut</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">List</span><span class="p"><span class="pre">[</span></span><span class="pre">altdss.types.Float64Array</span><span class="p"><span class="pre">]</span></span></em><a class="headerlink" href="#altdss.XfmrCode.IXfmrCode.XNeut" title="Link to this definition">#</a></dt>
 <dd><p>‘property(…)’</p>
+<p>Neutral reactance of wye(star)-connected winding in actual ohms.  May be + or -.</p>
+<p>DSS property name: <code class="docutils literal notranslate"><span class="pre">XNeut</span></code>, DSS property index: 10.</p>
 </dd></dl>
 
 <dl class="py attribute">
 <dt class="sig sig-object py" id="altdss.XfmrCode.IXfmrCode.XSCArray">
 <span class="sig-name descname"><span class="pre">XSCArray</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">List</span><span class="p"><span class="pre">[</span></span><span class="pre">altdss.types.Float64Array</span><span class="p"><span class="pre">]</span></span></em><a class="headerlink" href="#altdss.XfmrCode.IXfmrCode.XSCArray" title="Link to this definition">#</a></dt>
 <dd><p>‘property(…)’</p>
+<p>Use this to specify the percent reactance between all pairs of windings as an array. All values are on the kVA base of winding 1.  The order of the values is as follows:</p>
+<p>(x12 13 14… 23 24.. 34 ..)</p>
+<p>There will be n(n-1)/2 values, where n=number of windings.</p>
+<p>DSS property name: <code class="docutils literal notranslate"><span class="pre">XSCArray</span></code>, DSS property index: 18.</p>
 </dd></dl>
 
 <dl class="py method">
@@ -991,8 +1050,8 @@ or “count” elements with a randomized prefix.</p>
 <dt class="sig sig-object py" id="altdss.XfmrCode.IXfmrCode.begin_edit">
 <span class="sig-name descname"><span class="pre">begin_edit</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span><a class="headerlink" href="#altdss.XfmrCode.IXfmrCode.begin_edit" title="Link to this definition">#</a></dt>
 <dd><p>Marks for editing all DSS objects in the batch</p>
-<p>In the editing mode, some final side-effects of changing properties are post-poned
-until <code class="docutils literal notranslate"><span class="pre">_end_edit</span></code> is called. This side-effects can be somewhat costly, like updating
+<p>In the editing mode, some final side-effects of changing properties are postponed
+until <code class="docutils literal notranslate"><span class="pre">end_edit</span></code> is called. This side-effects can be somewhat costly, like updating
 the model parameters or internal matrices.</p>
 <p>If you don’t have any performance constraint, you may edit each property individually
 without worrying about using <code class="docutils literal notranslate"><span class="pre">begin_edit</span></code> and <code class="docutils literal notranslate"><span class="pre">end_edit</span></code>. For convenience, those are
@@ -1019,24 +1078,36 @@ the <code class="docutils literal notranslate"><span class="pre">Process</span><
 <dt class="sig sig-object py" id="altdss.XfmrCode.IXfmrCode.kVAs">
 <span class="sig-name descname"><span class="pre">kVAs</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">List</span><span class="p"><span class="pre">[</span></span><span class="pre">altdss.types.Float64Array</span><span class="p"><span class="pre">]</span></span></em><a class="headerlink" href="#altdss.XfmrCode.IXfmrCode.kVAs" title="Link to this definition">#</a></dt>
 <dd><p>‘property(…)’</p>
+<p>Use this to specify the kVA ratings of all windings at once using an array.</p>
+<p>DSS property name: <code class="docutils literal notranslate"><span class="pre">kVAs</span></code>, DSS property index: 13.</p>
 </dd></dl>
 
 <dl class="py attribute">
 <dt class="sig sig-object py" id="altdss.XfmrCode.IXfmrCode.kVs">
 <span class="sig-name descname"><span class="pre">kVs</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">List</span><span class="p"><span class="pre">[</span></span><span class="pre">altdss.types.Float64Array</span><span class="p"><span class="pre">]</span></span></em><a class="headerlink" href="#altdss.XfmrCode.IXfmrCode.kVs" title="Link to this definition">#</a></dt>
 <dd><p>‘property(…)’</p>
+<p>Use this to specify the kV ratings of all windings at once using an array. Example:</p>
+<p>New Transformer.T1 buses=“Hibus, lowbus”
+~ conns=(delta, wye)
+~ kvs=(115, 12.47)</p>
+<p>See kV= property for voltage rules.</p>
+<p>DSS property name: <code class="docutils literal notranslate"><span class="pre">kVs</span></code>, DSS property index: 12.</p>
 </dd></dl>
 
 <dl class="py attribute">
 <dt class="sig sig-object py" id="altdss.XfmrCode.IXfmrCode.m">
 <span class="sig-name descname"><span class="pre">m</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><a class="reference internal" href="altdss.ArrayProxy.html#altdss.ArrayProxy.BatchFloat64ArrayProxy" title="altdss.ArrayProxy.BatchFloat64ArrayProxy"><span class="pre">altdss.ArrayProxy.BatchFloat64ArrayProxy</span></a></em><a class="headerlink" href="#altdss.XfmrCode.IXfmrCode.m" title="Link to this definition">#</a></dt>
 <dd><p>‘property(…)’</p>
+<p>m Exponent for thermal properties in IEEE C57.  Typically 0.9 - 1.0</p>
+<p>DSS property name: <code class="docutils literal notranslate"><span class="pre">m</span></code>, DSS property index: 21.</p>
 </dd></dl>
 
 <dl class="py attribute">
 <dt class="sig sig-object py" id="altdss.XfmrCode.IXfmrCode.n">
 <span class="sig-name descname"><span class="pre">n</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><a class="reference internal" href="altdss.ArrayProxy.html#altdss.ArrayProxy.BatchFloat64ArrayProxy" title="altdss.ArrayProxy.BatchFloat64ArrayProxy"><span class="pre">altdss.ArrayProxy.BatchFloat64ArrayProxy</span></a></em><a class="headerlink" href="#altdss.XfmrCode.IXfmrCode.n" title="Link to this definition">#</a></dt>
 <dd><p>‘property(…)’</p>
+<p>n Exponent for thermal properties in IEEE C57.  Typically 0.8.</p>
+<p>DSS property name: <code class="docutils literal notranslate"><span class="pre">n</span></code>, DSS property index: 20.</p>
 </dd></dl>
 
 <dl class="py method">
@@ -1048,36 +1119,49 @@ the <code class="docutils literal notranslate"><span class="pre">Process</span><
 <dt class="sig sig-object py" id="altdss.XfmrCode.IXfmrCode.pctIMag">
 <span class="sig-name descname"><span class="pre">pctIMag</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><a class="reference internal" href="altdss.ArrayProxy.html#altdss.ArrayProxy.BatchFloat64ArrayProxy" title="altdss.ArrayProxy.BatchFloat64ArrayProxy"><span class="pre">altdss.ArrayProxy.BatchFloat64ArrayProxy</span></a></em><a class="headerlink" href="#altdss.XfmrCode.IXfmrCode.pctIMag" title="Link to this definition">#</a></dt>
 <dd><p>‘property(…)’</p>
+<p>Percent magnetizing current. Default=0.0. Magnetizing branch is in parallel with windings in each phase. Also, see “ppm_antifloat”.</p>
+<p>DSS property name: <code class="docutils literal notranslate"><span class="pre">%IMag</span></code>, DSS property index: 31.</p>
 </dd></dl>
 
 <dl class="py attribute">
 <dt class="sig sig-object py" id="altdss.XfmrCode.IXfmrCode.pctLoadLoss">
 <span class="sig-name descname"><span class="pre">pctLoadLoss</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><a class="reference internal" href="altdss.ArrayProxy.html#altdss.ArrayProxy.BatchFloat64ArrayProxy" title="altdss.ArrayProxy.BatchFloat64ArrayProxy"><span class="pre">altdss.ArrayProxy.BatchFloat64ArrayProxy</span></a></em><a class="headerlink" href="#altdss.XfmrCode.IXfmrCode.pctLoadLoss" title="Link to this definition">#</a></dt>
 <dd><p>‘property(…)’</p>
+<p>Percent load loss at full load. The %R of the High and Low windings (1 and 2) are adjusted to agree at rated kVA loading.</p>
+<p>DSS property name: <code class="docutils literal notranslate"><span class="pre">%LoadLoss</span></code>, DSS property index: 24.</p>
 </dd></dl>
 
 <dl class="py attribute">
 <dt class="sig sig-object py" id="altdss.XfmrCode.IXfmrCode.pctNoLoadLoss">
 <span class="sig-name descname"><span class="pre">pctNoLoadLoss</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><a class="reference internal" href="altdss.ArrayProxy.html#altdss.ArrayProxy.BatchFloat64ArrayProxy" title="altdss.ArrayProxy.BatchFloat64ArrayProxy"><span class="pre">altdss.ArrayProxy.BatchFloat64ArrayProxy</span></a></em><a class="headerlink" href="#altdss.XfmrCode.IXfmrCode.pctNoLoadLoss" title="Link to this definition">#</a></dt>
 <dd><p>‘property(…)’</p>
+<p>Percent no load losses at rated excitation voltage. Default is 0. Converts to a resistance in parallel with the magnetizing impedance in each winding.</p>
+<p>DSS property name: <code class="docutils literal notranslate"><span class="pre">%NoLoadLoss</span></code>, DSS property index: 25.</p>
 </dd></dl>
 
 <dl class="py attribute">
 <dt class="sig sig-object py" id="altdss.XfmrCode.IXfmrCode.pctR">
 <span class="sig-name descname"><span class="pre">pctR</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">List</span><span class="p"><span class="pre">[</span></span><span class="pre">altdss.types.Float64Array</span><span class="p"><span class="pre">]</span></span></em><a class="headerlink" href="#altdss.XfmrCode.IXfmrCode.pctR" title="Link to this definition">#</a></dt>
 <dd><p>‘property(…)’</p>
+<p>Percent resistance this winding.  (half of total for a 2-winding).</p>
+<p>DSS property name: <code class="docutils literal notranslate"><span class="pre">%R</span></code>, DSS property index: 8.</p>
 </dd></dl>
 
 <dl class="py attribute">
 <dt class="sig sig-object py" id="altdss.XfmrCode.IXfmrCode.pctRs">
 <span class="sig-name descname"><span class="pre">pctRs</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">List</span><span class="p"><span class="pre">[</span></span><span class="pre">altdss.types.Float64Array</span><span class="p"><span class="pre">]</span></span></em><a class="headerlink" href="#altdss.XfmrCode.IXfmrCode.pctRs" title="Link to this definition">#</a></dt>
 <dd><p>‘property(…)’</p>
+<p>Use this property to specify all the winding %resistances using an array. Example:</p>
+<p>New Transformer.T1 buses=“Hibus, lowbus” ~ %Rs=(0.2  0.3)</p>
+<p>DSS property name: <code class="docutils literal notranslate"><span class="pre">%Rs</span></code>, DSS property index: 33.</p>
 </dd></dl>
 
 <dl class="py attribute">
 <dt class="sig sig-object py" id="altdss.XfmrCode.IXfmrCode.ppm_Antifloat">
 <span class="sig-name descname"><span class="pre">ppm_Antifloat</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><a class="reference internal" href="altdss.ArrayProxy.html#altdss.ArrayProxy.BatchFloat64ArrayProxy" title="altdss.ArrayProxy.BatchFloat64ArrayProxy"><span class="pre">altdss.ArrayProxy.BatchFloat64ArrayProxy</span></a></em><a class="headerlink" href="#altdss.XfmrCode.IXfmrCode.ppm_Antifloat" title="Link to this definition">#</a></dt>
 <dd><p>‘property(…)’</p>
+<p>Default=1 ppm.  Parts per million of transformer winding VA rating connected to ground to protect against accidentally floating a winding without a reference. If positive then the effect is adding a very large reactance to ground.  If negative, then a capacitor.</p>
+<p>DSS property name: <code class="docutils literal notranslate"><span class="pre">ppm_Antifloat</span></code>, DSS property index: 32.</p>
 </dd></dl>
 
 <dl class="py method">
@@ -1104,24 +1188,36 @@ See <code class="docutils literal notranslate"><span class="pre">Obj_ToJSON</spa
 <dt class="sig sig-object py" id="altdss.XfmrCode.XfmrCode.Conns">
 <span class="sig-name descname"><span class="pre">Conns</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><a class="reference internal" href="altdss.enums.html#altdss.enums.Connection" title="altdss.enums.Connection"><span class="pre">altdss.enums.Connection</span></a></em><a class="headerlink" href="#altdss.XfmrCode.XfmrCode.Conns" title="Link to this definition">#</a></dt>
 <dd><p>‘property(…)’</p>
+<p>Use this to specify all the Winding connections at once using an array. Example:</p>
+<p>New Transformer.T1 buses=“Hibus, lowbus”
+~ conns=(delta, wye)</p>
+<p>DSS property name: <code class="docutils literal notranslate"><span class="pre">Conns</span></code>, DSS property index: 11.</p>
 </dd></dl>
 
 <dl class="py attribute">
 <dt class="sig sig-object py" id="altdss.XfmrCode.XfmrCode.Conns_str">
 <span class="sig-name descname"><span class="pre">Conns_str</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">List</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">]</span></span></em><a class="headerlink" href="#altdss.XfmrCode.XfmrCode.Conns_str" title="Link to this definition">#</a></dt>
 <dd><p>‘property(…)’</p>
+<p>Use this to specify all the Winding connections at once using an array. Example:</p>
+<p>New Transformer.T1 buses=“Hibus, lowbus”
+~ conns=(delta, wye)</p>
+<p>DSS property name: <code class="docutils literal notranslate"><span class="pre">Conns</span></code>, DSS property index: 11.</p>
 </dd></dl>
 
 <dl class="py attribute">
 <dt class="sig sig-object py" id="altdss.XfmrCode.XfmrCode.EmergHkVA">
 <span class="sig-name descname"><span class="pre">EmergHkVA</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">float</span></em><a class="headerlink" href="#altdss.XfmrCode.XfmrCode.EmergHkVA" title="Link to this definition">#</a></dt>
 <dd><p>‘property(…)’</p>
+<p>Emergency (contingency)  kVA rating of H winding (winding 1).  Usually 140% - 150% of maximum nameplate rating, depending on load shape. Defaults to 150% of kVA rating of Winding 1.</p>
+<p>DSS property name: <code class="docutils literal notranslate"><span class="pre">EmergHkVA</span></code>, DSS property index: 27.</p>
 </dd></dl>
 
 <dl class="py attribute">
 <dt class="sig sig-object py" id="altdss.XfmrCode.XfmrCode.FLRise">
 <span class="sig-name descname"><span class="pre">FLRise</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">float</span></em><a class="headerlink" href="#altdss.XfmrCode.XfmrCode.FLRise" title="Link to this definition">#</a></dt>
 <dd><p>‘property(…)’</p>
+<p>Temperature rise, deg C, for full load.  Default is 65.</p>
+<p>DSS property name: <code class="docutils literal notranslate"><span class="pre">FLRise</span></code>, DSS property index: 22.</p>
 </dd></dl>
 
 <dl class="py method">
@@ -1133,6 +1229,8 @@ See <code class="docutils literal notranslate"><span class="pre">Obj_ToJSON</spa
 <dt class="sig sig-object py" id="altdss.XfmrCode.XfmrCode.HSRise">
 <span class="sig-name descname"><span class="pre">HSRise</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">float</span></em><a class="headerlink" href="#altdss.XfmrCode.XfmrCode.HSRise" title="Link to this definition">#</a></dt>
 <dd><p>‘property(…)’</p>
+<p>Hot spot temperature rise, deg C.  Default is 15.</p>
+<p>DSS property name: <code class="docutils literal notranslate"><span class="pre">HSRise</span></code>, DSS property index: 23.</p>
 </dd></dl>
 
 <dl class="py method">
@@ -1147,12 +1245,16 @@ See <code class="docutils literal notranslate"><span class="pre">Obj_ToJSON</spa
 <dt class="sig sig-object py" id="altdss.XfmrCode.XfmrCode.MaxTap">
 <span class="sig-name descname"><span class="pre">MaxTap</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">altdss.types.Float64Array</span></em><a class="headerlink" href="#altdss.XfmrCode.XfmrCode.MaxTap" title="Link to this definition">#</a></dt>
 <dd><p>‘property(…)’</p>
+<p>Max per unit tap for the active winding.  Default is 1.10</p>
+<p>DSS property name: <code class="docutils literal notranslate"><span class="pre">MaxTap</span></code>, DSS property index: 28.</p>
 </dd></dl>
 
 <dl class="py attribute">
 <dt class="sig sig-object py" id="altdss.XfmrCode.XfmrCode.MinTap">
 <span class="sig-name descname"><span class="pre">MinTap</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">altdss.types.Float64Array</span></em><a class="headerlink" href="#altdss.XfmrCode.XfmrCode.MinTap" title="Link to this definition">#</a></dt>
 <dd><p>‘property(…)’</p>
+<p>Min per unit tap for the active winding.  Default is 0.90</p>
+<p>DSS property name: <code class="docutils literal notranslate"><span class="pre">MinTap</span></code>, DSS property index: 29.</p>
 </dd></dl>
 
 <dl class="py property">
@@ -1164,108 +1266,147 @@ See <code class="docutils literal notranslate"><span class="pre">Obj_ToJSON</spa
 <dt class="sig sig-object py" id="altdss.XfmrCode.XfmrCode.NormHkVA">
 <span class="sig-name descname"><span class="pre">NormHkVA</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">float</span></em><a class="headerlink" href="#altdss.XfmrCode.XfmrCode.NormHkVA" title="Link to this definition">#</a></dt>
 <dd><p>‘property(…)’</p>
+<p>Normal maximum kVA rating of H winding (winding 1).  Usually 100% - 110% of maximum nameplate rating, depending on load shape. Defaults to 110% of kVA rating of Winding 1.</p>
+<p>DSS property name: <code class="docutils literal notranslate"><span class="pre">NormHkVA</span></code>, DSS property index: 26.</p>
 </dd></dl>
 
 <dl class="py attribute">
 <dt class="sig sig-object py" id="altdss.XfmrCode.XfmrCode.NumTaps">
 <span class="sig-name descname"><span class="pre">NumTaps</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">altdss.types.Int32Array</span></em><a class="headerlink" href="#altdss.XfmrCode.XfmrCode.NumTaps" title="Link to this definition">#</a></dt>
 <dd><p>‘property(…)’</p>
+<p>Total number of taps between min and max tap.  Default is 32.</p>
+<p>DSS property name: <code class="docutils literal notranslate"><span class="pre">NumTaps</span></code>, DSS property index: 30.</p>
 </dd></dl>
 
 <dl class="py attribute">
 <dt class="sig sig-object py" id="altdss.XfmrCode.XfmrCode.Phases">
 <span class="sig-name descname"><span class="pre">Phases</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">int</span></em><a class="headerlink" href="#altdss.XfmrCode.XfmrCode.Phases" title="Link to this definition">#</a></dt>
 <dd><p>‘property(…)’</p>
+<p>Number of phases this transformer. Default is 3.</p>
+<p>DSS property name: <code class="docutils literal notranslate"><span class="pre">Phases</span></code>, DSS property index: 1.</p>
 </dd></dl>
 
 <dl class="py attribute">
 <dt class="sig sig-object py" id="altdss.XfmrCode.XfmrCode.RDCOhms">
 <span class="sig-name descname"><span class="pre">RDCOhms</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">altdss.types.Float64Array</span></em><a class="headerlink" href="#altdss.XfmrCode.XfmrCode.RDCOhms" title="Link to this definition">#</a></dt>
 <dd><p>‘property(…)’</p>
+<p>Winding dc resistance in OHMS. Useful for GIC analysis. From transformer test report. Defaults to 85% of %R property</p>
+<p>DSS property name: <code class="docutils literal notranslate"><span class="pre">RDCOhms</span></code>, DSS property index: 37.</p>
 </dd></dl>
 
 <dl class="py attribute">
 <dt class="sig sig-object py" id="altdss.XfmrCode.XfmrCode.RNeut">
 <span class="sig-name descname"><span class="pre">RNeut</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">altdss.types.Float64Array</span></em><a class="headerlink" href="#altdss.XfmrCode.XfmrCode.RNeut" title="Link to this definition">#</a></dt>
 <dd><p>‘property(…)’</p>
+<p>Default = -1. Neutral resistance of wye (star)-connected winding in actual ohms.If entered as a negative value, the neutral is assumed to be open, or floating.</p>
+<p>DSS property name: <code class="docutils literal notranslate"><span class="pre">RNeut</span></code>, DSS property index: 9.</p>
 </dd></dl>
 
 <dl class="py attribute">
 <dt class="sig sig-object py" id="altdss.XfmrCode.XfmrCode.Ratings">
 <span class="sig-name descname"><span class="pre">Ratings</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">altdss.types.Float64Array</span></em><a class="headerlink" href="#altdss.XfmrCode.XfmrCode.Ratings" title="Link to this definition">#</a></dt>
 <dd><p>‘property(…)’</p>
+<p>An array of ratings to be used when the seasonal ratings flag is True. It can be used to insert
+multiple ratings to change during a QSTS simulation to evaluate different ratings in transformers.</p>
+<p>DSS property name: <code class="docutils literal notranslate"><span class="pre">Ratings</span></code>, DSS property index: 39.</p>
 </dd></dl>
 
 <dl class="py attribute">
 <dt class="sig sig-object py" id="altdss.XfmrCode.XfmrCode.Seasons">
 <span class="sig-name descname"><span class="pre">Seasons</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">int</span></em><a class="headerlink" href="#altdss.XfmrCode.XfmrCode.Seasons" title="Link to this definition">#</a></dt>
 <dd><p>‘property(…)’</p>
+<p>Defines the number of ratings to be defined for the transfomer, to be used only when defining seasonal ratings using the “Ratings” property.</p>
+<p>DSS property name: <code class="docutils literal notranslate"><span class="pre">Seasons</span></code>, DSS property index: 38.</p>
 </dd></dl>
 
 <dl class="py attribute">
 <dt class="sig sig-object py" id="altdss.XfmrCode.XfmrCode.Taps">
 <span class="sig-name descname"><span class="pre">Taps</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">altdss.types.Float64Array</span></em><a class="headerlink" href="#altdss.XfmrCode.XfmrCode.Taps" title="Link to this definition">#</a></dt>
 <dd><p>‘property(…)’</p>
+<p>Use this to specify the normal p.u. tap of all windings at once using an array.</p>
+<p>DSS property name: <code class="docutils literal notranslate"><span class="pre">Taps</span></code>, DSS property index: 14.</p>
 </dd></dl>
 
 <dl class="py attribute">
 <dt class="sig sig-object py" id="altdss.XfmrCode.XfmrCode.Thermal">
 <span class="sig-name descname"><span class="pre">Thermal</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">float</span></em><a class="headerlink" href="#altdss.XfmrCode.XfmrCode.Thermal" title="Link to this definition">#</a></dt>
 <dd><p>‘property(…)’</p>
+<p>Thermal time constant of the transformer in hours.  Typically about 2.</p>
+<p>DSS property name: <code class="docutils literal notranslate"><span class="pre">Thermal</span></code>, DSS property index: 19.</p>
 </dd></dl>
 
 <dl class="py attribute">
 <dt class="sig sig-object py" id="altdss.XfmrCode.XfmrCode.Windings">
 <span class="sig-name descname"><span class="pre">Windings</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">int</span></em><a class="headerlink" href="#altdss.XfmrCode.XfmrCode.Windings" title="Link to this definition">#</a></dt>
 <dd><p>‘property(…)’</p>
+<p>Number of windings, this transformers. (Also is the number of terminals) Default is 2. This property triggers memory allocation for the Transformer and will cause other properties to revert to default values.</p>
+<p>DSS property name: <code class="docutils literal notranslate"><span class="pre">Windings</span></code>, DSS property index: 2.</p>
 </dd></dl>
 
 <dl class="py attribute">
 <dt class="sig sig-object py" id="altdss.XfmrCode.XfmrCode.X12">
 <span class="sig-name descname"><span class="pre">X12</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">float</span></em><a class="headerlink" href="#altdss.XfmrCode.XfmrCode.X12" title="Link to this definition">#</a></dt>
 <dd><p>‘property(…)’</p>
+<p>Alternative to XHL for specifying the percent reactance from winding 1 to winding 2.  Use for 2- or 3-winding transformers. Percent on the kVA base of winding 1.</p>
+<p>DSS property name: <code class="docutils literal notranslate"><span class="pre">X12</span></code>, DSS property index: 34.</p>
 </dd></dl>
 
 <dl class="py attribute">
 <dt class="sig sig-object py" id="altdss.XfmrCode.XfmrCode.X13">
 <span class="sig-name descname"><span class="pre">X13</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">float</span></em><a class="headerlink" href="#altdss.XfmrCode.XfmrCode.X13" title="Link to this definition">#</a></dt>
 <dd><p>‘property(…)’</p>
+<p>Alternative to XHT for specifying the percent reactance from winding 1 to winding 3.  Use for 3-winding transformers only. Percent on the kVA base of winding 1.</p>
+<p>DSS property name: <code class="docutils literal notranslate"><span class="pre">X13</span></code>, DSS property index: 35.</p>
 </dd></dl>
 
 <dl class="py attribute">
 <dt class="sig sig-object py" id="altdss.XfmrCode.XfmrCode.X23">
 <span class="sig-name descname"><span class="pre">X23</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">float</span></em><a class="headerlink" href="#altdss.XfmrCode.XfmrCode.X23" title="Link to this definition">#</a></dt>
 <dd><p>‘property(…)’</p>
+<p>Alternative to XLT for specifying the percent reactance from winding 2 to winding 3.Use for 3-winding transformers only. Percent on the kVA base of winding 1.</p>
+<p>DSS property name: <code class="docutils literal notranslate"><span class="pre">X23</span></code>, DSS property index: 36.</p>
 </dd></dl>
 
 <dl class="py attribute">
 <dt class="sig sig-object py" id="altdss.XfmrCode.XfmrCode.XHL">
 <span class="sig-name descname"><span class="pre">XHL</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">float</span></em><a class="headerlink" href="#altdss.XfmrCode.XfmrCode.XHL" title="Link to this definition">#</a></dt>
 <dd><p>‘property(…)’</p>
+<p>Use this to specify the percent reactance, H-L (winding 1 to winding 2).  Use for 2- or 3-winding transformers. On the kva base of winding 1.</p>
+<p>DSS property name: <code class="docutils literal notranslate"><span class="pre">XHL</span></code>, DSS property index: 15.</p>
 </dd></dl>
 
 <dl class="py attribute">
 <dt class="sig sig-object py" id="altdss.XfmrCode.XfmrCode.XHT">
 <span class="sig-name descname"><span class="pre">XHT</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">float</span></em><a class="headerlink" href="#altdss.XfmrCode.XfmrCode.XHT" title="Link to this definition">#</a></dt>
 <dd><p>‘property(…)’</p>
+<p>Use this to specify the percent reactance, H-T (winding 1 to winding 3).  Use for 3-winding transformers only. On the kVA base of winding 1.</p>
+<p>DSS property name: <code class="docutils literal notranslate"><span class="pre">XHT</span></code>, DSS property index: 16.</p>
 </dd></dl>
 
 <dl class="py attribute">
 <dt class="sig sig-object py" id="altdss.XfmrCode.XfmrCode.XLT">
 <span class="sig-name descname"><span class="pre">XLT</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">float</span></em><a class="headerlink" href="#altdss.XfmrCode.XfmrCode.XLT" title="Link to this definition">#</a></dt>
 <dd><p>‘property(…)’</p>
+<p>Use this to specify the percent reactance, L-T (winding 2 to winding 3).  Use for 3-winding transformers only. On the kVA base of winding 1.</p>
+<p>DSS property name: <code class="docutils literal notranslate"><span class="pre">XLT</span></code>, DSS property index: 17.</p>
 </dd></dl>
 
 <dl class="py attribute">
 <dt class="sig sig-object py" id="altdss.XfmrCode.XfmrCode.XNeut">
 <span class="sig-name descname"><span class="pre">XNeut</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">altdss.types.Float64Array</span></em><a class="headerlink" href="#altdss.XfmrCode.XfmrCode.XNeut" title="Link to this definition">#</a></dt>
 <dd><p>‘property(…)’</p>
+<p>Neutral reactance of wye(star)-connected winding in actual ohms.  May be + or -.</p>
+<p>DSS property name: <code class="docutils literal notranslate"><span class="pre">XNeut</span></code>, DSS property index: 10.</p>
 </dd></dl>
 
 <dl class="py attribute">
 <dt class="sig sig-object py" id="altdss.XfmrCode.XfmrCode.XSCArray">
 <span class="sig-name descname"><span class="pre">XSCArray</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">altdss.types.Float64Array</span></em><a class="headerlink" href="#altdss.XfmrCode.XfmrCode.XSCArray" title="Link to this definition">#</a></dt>
 <dd><p>‘property(…)’</p>
+<p>Use this to specify the percent reactance between all pairs of windings as an array. All values are on the kVA base of winding 1.  The order of the values is as follows:</p>
+<p>(x12 13 14… 23 24.. 34 ..)</p>
+<p>There will be n(n-1)/2 values, where n=number of windings.</p>
+<p>DSS property name: <code class="docutils literal notranslate"><span class="pre">XSCArray</span></code>, DSS property index: 18.</p>
 </dd></dl>
 
 <dl class="py method">
@@ -1295,8 +1436,8 @@ See <code class="docutils literal notranslate"><span class="pre">Obj_ToJSON</spa
 <dt class="sig sig-object py" id="altdss.XfmrCode.XfmrCode.begin_edit">
 <span class="sig-name descname"><span class="pre">begin_edit</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span><a class="headerlink" href="#altdss.XfmrCode.XfmrCode.begin_edit" title="Link to this definition">#</a></dt>
 <dd><p>Marks a DSS object for editing</p>
-<p>In the editing mode, some final side-effects of changing properties are post-poned
-until <code class="docutils literal notranslate"><span class="pre">_end_edit</span></code> is called. This side-effects can be somewhat costly, like updating
+<p>In the editing mode, some final side-effects of changing properties are postponed
+until <code class="docutils literal notranslate"><span class="pre">end_edit</span></code> is called. This side-effects can be somewhat costly, like updating
 the model parameters or internal matrices.</p>
 <p>If you don’t have any performance constraint, you may edit each property individually
 without worrying about using <code class="docutils literal notranslate"><span class="pre">begin_edit</span></code> and <code class="docutils literal notranslate"><span class="pre">end_edit</span></code>. For convenience, those are
@@ -1317,60 +1458,85 @@ the <code class="docutils literal notranslate"><span class="pre">Process</span><
 <dt class="sig sig-object py" id="altdss.XfmrCode.XfmrCode.kVAs">
 <span class="sig-name descname"><span class="pre">kVAs</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">altdss.types.Float64Array</span></em><a class="headerlink" href="#altdss.XfmrCode.XfmrCode.kVAs" title="Link to this definition">#</a></dt>
 <dd><p>‘property(…)’</p>
+<p>Use this to specify the kVA ratings of all windings at once using an array.</p>
+<p>DSS property name: <code class="docutils literal notranslate"><span class="pre">kVAs</span></code>, DSS property index: 13.</p>
 </dd></dl>
 
 <dl class="py attribute">
 <dt class="sig sig-object py" id="altdss.XfmrCode.XfmrCode.kVs">
 <span class="sig-name descname"><span class="pre">kVs</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">altdss.types.Float64Array</span></em><a class="headerlink" href="#altdss.XfmrCode.XfmrCode.kVs" title="Link to this definition">#</a></dt>
 <dd><p>‘property(…)’</p>
+<p>Use this to specify the kV ratings of all windings at once using an array. Example:</p>
+<p>New Transformer.T1 buses=“Hibus, lowbus”
+~ conns=(delta, wye)
+~ kvs=(115, 12.47)</p>
+<p>See kV= property for voltage rules.</p>
+<p>DSS property name: <code class="docutils literal notranslate"><span class="pre">kVs</span></code>, DSS property index: 12.</p>
 </dd></dl>
 
 <dl class="py attribute">
 <dt class="sig sig-object py" id="altdss.XfmrCode.XfmrCode.m">
 <span class="sig-name descname"><span class="pre">m</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">float</span></em><a class="headerlink" href="#altdss.XfmrCode.XfmrCode.m" title="Link to this definition">#</a></dt>
 <dd><p>‘property(…)’</p>
+<p>m Exponent for thermal properties in IEEE C57.  Typically 0.9 - 1.0</p>
+<p>DSS property name: <code class="docutils literal notranslate"><span class="pre">m</span></code>, DSS property index: 21.</p>
 </dd></dl>
 
 <dl class="py attribute">
 <dt class="sig sig-object py" id="altdss.XfmrCode.XfmrCode.n">
 <span class="sig-name descname"><span class="pre">n</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">float</span></em><a class="headerlink" href="#altdss.XfmrCode.XfmrCode.n" title="Link to this definition">#</a></dt>
 <dd><p>‘property(…)’</p>
+<p>n Exponent for thermal properties in IEEE C57.  Typically 0.8.</p>
+<p>DSS property name: <code class="docutils literal notranslate"><span class="pre">n</span></code>, DSS property index: 20.</p>
 </dd></dl>
 
 <dl class="py attribute">
 <dt class="sig sig-object py" id="altdss.XfmrCode.XfmrCode.pctIMag">
 <span class="sig-name descname"><span class="pre">pctIMag</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">float</span></em><a class="headerlink" href="#altdss.XfmrCode.XfmrCode.pctIMag" title="Link to this definition">#</a></dt>
 <dd><p>‘property(…)’</p>
+<p>Percent magnetizing current. Default=0.0. Magnetizing branch is in parallel with windings in each phase. Also, see “ppm_antifloat”.</p>
+<p>DSS property name: <code class="docutils literal notranslate"><span class="pre">%IMag</span></code>, DSS property index: 31.</p>
 </dd></dl>
 
 <dl class="py attribute">
 <dt class="sig sig-object py" id="altdss.XfmrCode.XfmrCode.pctLoadLoss">
 <span class="sig-name descname"><span class="pre">pctLoadLoss</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">float</span></em><a class="headerlink" href="#altdss.XfmrCode.XfmrCode.pctLoadLoss" title="Link to this definition">#</a></dt>
 <dd><p>‘property(…)’</p>
+<p>Percent load loss at full load. The %R of the High and Low windings (1 and 2) are adjusted to agree at rated kVA loading.</p>
+<p>DSS property name: <code class="docutils literal notranslate"><span class="pre">%LoadLoss</span></code>, DSS property index: 24.</p>
 </dd></dl>
 
 <dl class="py attribute">
 <dt class="sig sig-object py" id="altdss.XfmrCode.XfmrCode.pctNoLoadLoss">
 <span class="sig-name descname"><span class="pre">pctNoLoadLoss</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">float</span></em><a class="headerlink" href="#altdss.XfmrCode.XfmrCode.pctNoLoadLoss" title="Link to this definition">#</a></dt>
 <dd><p>‘property(…)’</p>
+<p>Percent no load losses at rated excitation voltage. Default is 0. Converts to a resistance in parallel with the magnetizing impedance in each winding.</p>
+<p>DSS property name: <code class="docutils literal notranslate"><span class="pre">%NoLoadLoss</span></code>, DSS property index: 25.</p>
 </dd></dl>
 
 <dl class="py attribute">
 <dt class="sig sig-object py" id="altdss.XfmrCode.XfmrCode.pctR">
 <span class="sig-name descname"><span class="pre">pctR</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">altdss.types.Float64Array</span></em><a class="headerlink" href="#altdss.XfmrCode.XfmrCode.pctR" title="Link to this definition">#</a></dt>
 <dd><p>‘property(…)’</p>
+<p>Percent resistance this winding.  (half of total for a 2-winding).</p>
+<p>DSS property name: <code class="docutils literal notranslate"><span class="pre">%R</span></code>, DSS property index: 8.</p>
 </dd></dl>
 
 <dl class="py attribute">
 <dt class="sig sig-object py" id="altdss.XfmrCode.XfmrCode.pctRs">
 <span class="sig-name descname"><span class="pre">pctRs</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">altdss.types.Float64Array</span></em><a class="headerlink" href="#altdss.XfmrCode.XfmrCode.pctRs" title="Link to this definition">#</a></dt>
 <dd><p>‘property(…)’</p>
+<p>Use this property to specify all the winding %resistances using an array. Example:</p>
+<p>New Transformer.T1 buses=“Hibus, lowbus” ~ %Rs=(0.2  0.3)</p>
+<p>DSS property name: <code class="docutils literal notranslate"><span class="pre">%Rs</span></code>, DSS property index: 33.</p>
 </dd></dl>
 
 <dl class="py attribute">
 <dt class="sig sig-object py" id="altdss.XfmrCode.XfmrCode.ppm_Antifloat">
 <span class="sig-name descname"><span class="pre">ppm_Antifloat</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">float</span></em><a class="headerlink" href="#altdss.XfmrCode.XfmrCode.ppm_Antifloat" title="Link to this definition">#</a></dt>
 <dd><p>‘property(…)’</p>
+<p>Default=1 ppm.  Parts per million of transformer winding VA rating connected to ground to protect against accidentally floating a winding without a reference. If positive then the effect is adding a very large reactance to ground.  If negative, then a capacitor.</p>
+<p>DSS property name: <code class="docutils literal notranslate"><span class="pre">ppm_Antifloat</span></code>, DSS property index: 32.</p>
 </dd></dl>
 
 <dl class="py method">
@@ -1409,24 +1575,36 @@ Values used by this function are:</p>
 <dt class="sig sig-object py" id="altdss.XfmrCode.XfmrCodeBatch.Conns">
 <span class="sig-name descname"><span class="pre">Conns</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">List</span><span class="p"><span class="pre">[</span></span><span class="pre">altdss.types.Int32Array</span><span class="p"><span class="pre">]</span></span></em><a class="headerlink" href="#altdss.XfmrCode.XfmrCodeBatch.Conns" title="Link to this definition">#</a></dt>
 <dd><p>‘property(…)’</p>
+<p>Use this to specify all the Winding connections at once using an array. Example:</p>
+<p>New Transformer.T1 buses=“Hibus, lowbus”
+~ conns=(delta, wye)</p>
+<p>DSS property name: <code class="docutils literal notranslate"><span class="pre">Conns</span></code>, DSS property index: 11.</p>
 </dd></dl>
 
 <dl class="py attribute">
 <dt class="sig sig-object py" id="altdss.XfmrCode.XfmrCodeBatch.Conns_str">
 <span class="sig-name descname"><span class="pre">Conns_str</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">List</span><span class="p"><span class="pre">[</span></span><span class="pre">List</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">]</span></span></em><a class="headerlink" href="#altdss.XfmrCode.XfmrCodeBatch.Conns_str" title="Link to this definition">#</a></dt>
 <dd><p>‘property(…)’</p>
+<p>Use this to specify all the Winding connections at once using an array. Example:</p>
+<p>New Transformer.T1 buses=“Hibus, lowbus”
+~ conns=(delta, wye)</p>
+<p>DSS property name: <code class="docutils literal notranslate"><span class="pre">Conns</span></code>, DSS property index: 11.</p>
 </dd></dl>
 
 <dl class="py attribute">
 <dt class="sig sig-object py" id="altdss.XfmrCode.XfmrCodeBatch.EmergHkVA">
 <span class="sig-name descname"><span class="pre">EmergHkVA</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><a class="reference internal" href="altdss.ArrayProxy.html#altdss.ArrayProxy.BatchFloat64ArrayProxy" title="altdss.ArrayProxy.BatchFloat64ArrayProxy"><span class="pre">altdss.ArrayProxy.BatchFloat64ArrayProxy</span></a></em><a class="headerlink" href="#altdss.XfmrCode.XfmrCodeBatch.EmergHkVA" title="Link to this definition">#</a></dt>
 <dd><p>‘property(…)’</p>
+<p>Emergency (contingency)  kVA rating of H winding (winding 1).  Usually 140% - 150% of maximum nameplate rating, depending on load shape. Defaults to 150% of kVA rating of Winding 1.</p>
+<p>DSS property name: <code class="docutils literal notranslate"><span class="pre">EmergHkVA</span></code>, DSS property index: 27.</p>
 </dd></dl>
 
 <dl class="py attribute">
 <dt class="sig sig-object py" id="altdss.XfmrCode.XfmrCodeBatch.FLRise">
 <span class="sig-name descname"><span class="pre">FLRise</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><a class="reference internal" href="altdss.ArrayProxy.html#altdss.ArrayProxy.BatchFloat64ArrayProxy" title="altdss.ArrayProxy.BatchFloat64ArrayProxy"><span class="pre">altdss.ArrayProxy.BatchFloat64ArrayProxy</span></a></em><a class="headerlink" href="#altdss.XfmrCode.XfmrCodeBatch.FLRise" title="Link to this definition">#</a></dt>
 <dd><p>‘property(…)’</p>
+<p>Temperature rise, deg C, for full load.  Default is 65.</p>
+<p>DSS property name: <code class="docutils literal notranslate"><span class="pre">FLRise</span></code>, DSS property index: 22.</p>
 </dd></dl>
 
 <dl class="py method">
@@ -1439,6 +1617,8 @@ Values used by this function are:</p>
 <dt class="sig sig-object py" id="altdss.XfmrCode.XfmrCodeBatch.HSRise">
 <span class="sig-name descname"><span class="pre">HSRise</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><a class="reference internal" href="altdss.ArrayProxy.html#altdss.ArrayProxy.BatchFloat64ArrayProxy" title="altdss.ArrayProxy.BatchFloat64ArrayProxy"><span class="pre">altdss.ArrayProxy.BatchFloat64ArrayProxy</span></a></em><a class="headerlink" href="#altdss.XfmrCode.XfmrCodeBatch.HSRise" title="Link to this definition">#</a></dt>
 <dd><p>‘property(…)’</p>
+<p>Hot spot temperature rise, deg C.  Default is 15.</p>
+<p>DSS property name: <code class="docutils literal notranslate"><span class="pre">HSRise</span></code>, DSS property index: 23.</p>
 </dd></dl>
 
 <dl class="py method">
@@ -1453,12 +1633,16 @@ Values used by this function are:</p>
 <dt class="sig sig-object py" id="altdss.XfmrCode.XfmrCodeBatch.MaxTap">
 <span class="sig-name descname"><span class="pre">MaxTap</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">List</span><span class="p"><span class="pre">[</span></span><span class="pre">altdss.types.Float64Array</span><span class="p"><span class="pre">]</span></span></em><a class="headerlink" href="#altdss.XfmrCode.XfmrCodeBatch.MaxTap" title="Link to this definition">#</a></dt>
 <dd><p>‘property(…)’</p>
+<p>Max per unit tap for the active winding.  Default is 1.10</p>
+<p>DSS property name: <code class="docutils literal notranslate"><span class="pre">MaxTap</span></code>, DSS property index: 28.</p>
 </dd></dl>
 
 <dl class="py attribute">
 <dt class="sig sig-object py" id="altdss.XfmrCode.XfmrCodeBatch.MinTap">
 <span class="sig-name descname"><span class="pre">MinTap</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">List</span><span class="p"><span class="pre">[</span></span><span class="pre">altdss.types.Float64Array</span><span class="p"><span class="pre">]</span></span></em><a class="headerlink" href="#altdss.XfmrCode.XfmrCodeBatch.MinTap" title="Link to this definition">#</a></dt>
 <dd><p>‘property(…)’</p>
+<p>Min per unit tap for the active winding.  Default is 0.90</p>
+<p>DSS property name: <code class="docutils literal notranslate"><span class="pre">MinTap</span></code>, DSS property index: 29.</p>
 </dd></dl>
 
 <dl class="py property">
@@ -1470,108 +1654,147 @@ Values used by this function are:</p>
 <dt class="sig sig-object py" id="altdss.XfmrCode.XfmrCodeBatch.NormHkVA">
 <span class="sig-name descname"><span class="pre">NormHkVA</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><a class="reference internal" href="altdss.ArrayProxy.html#altdss.ArrayProxy.BatchFloat64ArrayProxy" title="altdss.ArrayProxy.BatchFloat64ArrayProxy"><span class="pre">altdss.ArrayProxy.BatchFloat64ArrayProxy</span></a></em><a class="headerlink" href="#altdss.XfmrCode.XfmrCodeBatch.NormHkVA" title="Link to this definition">#</a></dt>
 <dd><p>‘property(…)’</p>
+<p>Normal maximum kVA rating of H winding (winding 1).  Usually 100% - 110% of maximum nameplate rating, depending on load shape. Defaults to 110% of kVA rating of Winding 1.</p>
+<p>DSS property name: <code class="docutils literal notranslate"><span class="pre">NormHkVA</span></code>, DSS property index: 26.</p>
 </dd></dl>
 
 <dl class="py attribute">
 <dt class="sig sig-object py" id="altdss.XfmrCode.XfmrCodeBatch.NumTaps">
 <span class="sig-name descname"><span class="pre">NumTaps</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">List</span><span class="p"><span class="pre">[</span></span><span class="pre">altdss.types.Int32Array</span><span class="p"><span class="pre">]</span></span></em><a class="headerlink" href="#altdss.XfmrCode.XfmrCodeBatch.NumTaps" title="Link to this definition">#</a></dt>
 <dd><p>‘property(…)’</p>
+<p>Total number of taps between min and max tap.  Default is 32.</p>
+<p>DSS property name: <code class="docutils literal notranslate"><span class="pre">NumTaps</span></code>, DSS property index: 30.</p>
 </dd></dl>
 
 <dl class="py attribute">
 <dt class="sig sig-object py" id="altdss.XfmrCode.XfmrCodeBatch.Phases">
 <span class="sig-name descname"><span class="pre">Phases</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><a class="reference internal" href="altdss.ArrayProxy.html#altdss.ArrayProxy.BatchInt32ArrayProxy" title="altdss.ArrayProxy.BatchInt32ArrayProxy"><span class="pre">altdss.ArrayProxy.BatchInt32ArrayProxy</span></a></em><a class="headerlink" href="#altdss.XfmrCode.XfmrCodeBatch.Phases" title="Link to this definition">#</a></dt>
 <dd><p>‘property(…)’</p>
+<p>Number of phases this transformer. Default is 3.</p>
+<p>DSS property name: <code class="docutils literal notranslate"><span class="pre">Phases</span></code>, DSS property index: 1.</p>
 </dd></dl>
 
 <dl class="py attribute">
 <dt class="sig sig-object py" id="altdss.XfmrCode.XfmrCodeBatch.RDCOhms">
 <span class="sig-name descname"><span class="pre">RDCOhms</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">List</span><span class="p"><span class="pre">[</span></span><span class="pre">altdss.types.Float64Array</span><span class="p"><span class="pre">]</span></span></em><a class="headerlink" href="#altdss.XfmrCode.XfmrCodeBatch.RDCOhms" title="Link to this definition">#</a></dt>
 <dd><p>‘property(…)’</p>
+<p>Winding dc resistance in OHMS. Useful for GIC analysis. From transformer test report. Defaults to 85% of %R property</p>
+<p>DSS property name: <code class="docutils literal notranslate"><span class="pre">RDCOhms</span></code>, DSS property index: 37.</p>
 </dd></dl>
 
 <dl class="py attribute">
 <dt class="sig sig-object py" id="altdss.XfmrCode.XfmrCodeBatch.RNeut">
 <span class="sig-name descname"><span class="pre">RNeut</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">List</span><span class="p"><span class="pre">[</span></span><span class="pre">altdss.types.Float64Array</span><span class="p"><span class="pre">]</span></span></em><a class="headerlink" href="#altdss.XfmrCode.XfmrCodeBatch.RNeut" title="Link to this definition">#</a></dt>
 <dd><p>‘property(…)’</p>
+<p>Default = -1. Neutral resistance of wye (star)-connected winding in actual ohms.If entered as a negative value, the neutral is assumed to be open, or floating.</p>
+<p>DSS property name: <code class="docutils literal notranslate"><span class="pre">RNeut</span></code>, DSS property index: 9.</p>
 </dd></dl>
 
 <dl class="py attribute">
 <dt class="sig sig-object py" id="altdss.XfmrCode.XfmrCodeBatch.Ratings">
 <span class="sig-name descname"><span class="pre">Ratings</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">List</span><span class="p"><span class="pre">[</span></span><span class="pre">altdss.types.Float64Array</span><span class="p"><span class="pre">]</span></span></em><a class="headerlink" href="#altdss.XfmrCode.XfmrCodeBatch.Ratings" title="Link to this definition">#</a></dt>
 <dd><p>‘property(…)’</p>
+<p>An array of ratings to be used when the seasonal ratings flag is True. It can be used to insert
+multiple ratings to change during a QSTS simulation to evaluate different ratings in transformers.</p>
+<p>DSS property name: <code class="docutils literal notranslate"><span class="pre">Ratings</span></code>, DSS property index: 39.</p>
 </dd></dl>
 
 <dl class="py attribute">
 <dt class="sig sig-object py" id="altdss.XfmrCode.XfmrCodeBatch.Seasons">
 <span class="sig-name descname"><span class="pre">Seasons</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><a class="reference internal" href="altdss.ArrayProxy.html#altdss.ArrayProxy.BatchInt32ArrayProxy" title="altdss.ArrayProxy.BatchInt32ArrayProxy"><span class="pre">altdss.ArrayProxy.BatchInt32ArrayProxy</span></a></em><a class="headerlink" href="#altdss.XfmrCode.XfmrCodeBatch.Seasons" title="Link to this definition">#</a></dt>
 <dd><p>‘property(…)’</p>
+<p>Defines the number of ratings to be defined for the transfomer, to be used only when defining seasonal ratings using the “Ratings” property.</p>
+<p>DSS property name: <code class="docutils literal notranslate"><span class="pre">Seasons</span></code>, DSS property index: 38.</p>
 </dd></dl>
 
 <dl class="py attribute">
 <dt class="sig sig-object py" id="altdss.XfmrCode.XfmrCodeBatch.Taps">
 <span class="sig-name descname"><span class="pre">Taps</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">List</span><span class="p"><span class="pre">[</span></span><span class="pre">altdss.types.Float64Array</span><span class="p"><span class="pre">]</span></span></em><a class="headerlink" href="#altdss.XfmrCode.XfmrCodeBatch.Taps" title="Link to this definition">#</a></dt>
 <dd><p>‘property(…)’</p>
+<p>Use this to specify the normal p.u. tap of all windings at once using an array.</p>
+<p>DSS property name: <code class="docutils literal notranslate"><span class="pre">Taps</span></code>, DSS property index: 14.</p>
 </dd></dl>
 
 <dl class="py attribute">
 <dt class="sig sig-object py" id="altdss.XfmrCode.XfmrCodeBatch.Thermal">
 <span class="sig-name descname"><span class="pre">Thermal</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><a class="reference internal" href="altdss.ArrayProxy.html#altdss.ArrayProxy.BatchFloat64ArrayProxy" title="altdss.ArrayProxy.BatchFloat64ArrayProxy"><span class="pre">altdss.ArrayProxy.BatchFloat64ArrayProxy</span></a></em><a class="headerlink" href="#altdss.XfmrCode.XfmrCodeBatch.Thermal" title="Link to this definition">#</a></dt>
 <dd><p>‘property(…)’</p>
+<p>Thermal time constant of the transformer in hours.  Typically about 2.</p>
+<p>DSS property name: <code class="docutils literal notranslate"><span class="pre">Thermal</span></code>, DSS property index: 19.</p>
 </dd></dl>
 
 <dl class="py attribute">
 <dt class="sig sig-object py" id="altdss.XfmrCode.XfmrCodeBatch.Windings">
 <span class="sig-name descname"><span class="pre">Windings</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><a class="reference internal" href="altdss.ArrayProxy.html#altdss.ArrayProxy.BatchInt32ArrayProxy" title="altdss.ArrayProxy.BatchInt32ArrayProxy"><span class="pre">altdss.ArrayProxy.BatchInt32ArrayProxy</span></a></em><a class="headerlink" href="#altdss.XfmrCode.XfmrCodeBatch.Windings" title="Link to this definition">#</a></dt>
 <dd><p>‘property(…)’</p>
+<p>Number of windings, this transformers. (Also is the number of terminals) Default is 2. This property triggers memory allocation for the Transformer and will cause other properties to revert to default values.</p>
+<p>DSS property name: <code class="docutils literal notranslate"><span class="pre">Windings</span></code>, DSS property index: 2.</p>
 </dd></dl>
 
 <dl class="py attribute">
 <dt class="sig sig-object py" id="altdss.XfmrCode.XfmrCodeBatch.X12">
 <span class="sig-name descname"><span class="pre">X12</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><a class="reference internal" href="altdss.ArrayProxy.html#altdss.ArrayProxy.BatchFloat64ArrayProxy" title="altdss.ArrayProxy.BatchFloat64ArrayProxy"><span class="pre">altdss.ArrayProxy.BatchFloat64ArrayProxy</span></a></em><a class="headerlink" href="#altdss.XfmrCode.XfmrCodeBatch.X12" title="Link to this definition">#</a></dt>
 <dd><p>‘property(…)’</p>
+<p>Alternative to XHL for specifying the percent reactance from winding 1 to winding 2.  Use for 2- or 3-winding transformers. Percent on the kVA base of winding 1.</p>
+<p>DSS property name: <code class="docutils literal notranslate"><span class="pre">X12</span></code>, DSS property index: 34.</p>
 </dd></dl>
 
 <dl class="py attribute">
 <dt class="sig sig-object py" id="altdss.XfmrCode.XfmrCodeBatch.X13">
 <span class="sig-name descname"><span class="pre">X13</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><a class="reference internal" href="altdss.ArrayProxy.html#altdss.ArrayProxy.BatchFloat64ArrayProxy" title="altdss.ArrayProxy.BatchFloat64ArrayProxy"><span class="pre">altdss.ArrayProxy.BatchFloat64ArrayProxy</span></a></em><a class="headerlink" href="#altdss.XfmrCode.XfmrCodeBatch.X13" title="Link to this definition">#</a></dt>
 <dd><p>‘property(…)’</p>
+<p>Alternative to XHT for specifying the percent reactance from winding 1 to winding 3.  Use for 3-winding transformers only. Percent on the kVA base of winding 1.</p>
+<p>DSS property name: <code class="docutils literal notranslate"><span class="pre">X13</span></code>, DSS property index: 35.</p>
 </dd></dl>
 
 <dl class="py attribute">
 <dt class="sig sig-object py" id="altdss.XfmrCode.XfmrCodeBatch.X23">
 <span class="sig-name descname"><span class="pre">X23</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><a class="reference internal" href="altdss.ArrayProxy.html#altdss.ArrayProxy.BatchFloat64ArrayProxy" title="altdss.ArrayProxy.BatchFloat64ArrayProxy"><span class="pre">altdss.ArrayProxy.BatchFloat64ArrayProxy</span></a></em><a class="headerlink" href="#altdss.XfmrCode.XfmrCodeBatch.X23" title="Link to this definition">#</a></dt>
 <dd><p>‘property(…)’</p>
+<p>Alternative to XLT for specifying the percent reactance from winding 2 to winding 3.Use for 3-winding transformers only. Percent on the kVA base of winding 1.</p>
+<p>DSS property name: <code class="docutils literal notranslate"><span class="pre">X23</span></code>, DSS property index: 36.</p>
 </dd></dl>
 
 <dl class="py attribute">
 <dt class="sig sig-object py" id="altdss.XfmrCode.XfmrCodeBatch.XHL">
 <span class="sig-name descname"><span class="pre">XHL</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><a class="reference internal" href="altdss.ArrayProxy.html#altdss.ArrayProxy.BatchFloat64ArrayProxy" title="altdss.ArrayProxy.BatchFloat64ArrayProxy"><span class="pre">altdss.ArrayProxy.BatchFloat64ArrayProxy</span></a></em><a class="headerlink" href="#altdss.XfmrCode.XfmrCodeBatch.XHL" title="Link to this definition">#</a></dt>
 <dd><p>‘property(…)’</p>
+<p>Use this to specify the percent reactance, H-L (winding 1 to winding 2).  Use for 2- or 3-winding transformers. On the kva base of winding 1.</p>
+<p>DSS property name: <code class="docutils literal notranslate"><span class="pre">XHL</span></code>, DSS property index: 15.</p>
 </dd></dl>
 
 <dl class="py attribute">
 <dt class="sig sig-object py" id="altdss.XfmrCode.XfmrCodeBatch.XHT">
 <span class="sig-name descname"><span class="pre">XHT</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><a class="reference internal" href="altdss.ArrayProxy.html#altdss.ArrayProxy.BatchFloat64ArrayProxy" title="altdss.ArrayProxy.BatchFloat64ArrayProxy"><span class="pre">altdss.ArrayProxy.BatchFloat64ArrayProxy</span></a></em><a class="headerlink" href="#altdss.XfmrCode.XfmrCodeBatch.XHT" title="Link to this definition">#</a></dt>
 <dd><p>‘property(…)’</p>
+<p>Use this to specify the percent reactance, H-T (winding 1 to winding 3).  Use for 3-winding transformers only. On the kVA base of winding 1.</p>
+<p>DSS property name: <code class="docutils literal notranslate"><span class="pre">XHT</span></code>, DSS property index: 16.</p>
 </dd></dl>
 
 <dl class="py attribute">
 <dt class="sig sig-object py" id="altdss.XfmrCode.XfmrCodeBatch.XLT">
 <span class="sig-name descname"><span class="pre">XLT</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><a class="reference internal" href="altdss.ArrayProxy.html#altdss.ArrayProxy.BatchFloat64ArrayProxy" title="altdss.ArrayProxy.BatchFloat64ArrayProxy"><span class="pre">altdss.ArrayProxy.BatchFloat64ArrayProxy</span></a></em><a class="headerlink" href="#altdss.XfmrCode.XfmrCodeBatch.XLT" title="Link to this definition">#</a></dt>
 <dd><p>‘property(…)’</p>
+<p>Use this to specify the percent reactance, L-T (winding 2 to winding 3).  Use for 3-winding transformers only. On the kVA base of winding 1.</p>
+<p>DSS property name: <code class="docutils literal notranslate"><span class="pre">XLT</span></code>, DSS property index: 17.</p>
 </dd></dl>
 
 <dl class="py attribute">
 <dt class="sig sig-object py" id="altdss.XfmrCode.XfmrCodeBatch.XNeut">
 <span class="sig-name descname"><span class="pre">XNeut</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">List</span><span class="p"><span class="pre">[</span></span><span class="pre">altdss.types.Float64Array</span><span class="p"><span class="pre">]</span></span></em><a class="headerlink" href="#altdss.XfmrCode.XfmrCodeBatch.XNeut" title="Link to this definition">#</a></dt>
 <dd><p>‘property(…)’</p>
+<p>Neutral reactance of wye(star)-connected winding in actual ohms.  May be + or -.</p>
+<p>DSS property name: <code class="docutils literal notranslate"><span class="pre">XNeut</span></code>, DSS property index: 10.</p>
 </dd></dl>
 
 <dl class="py attribute">
 <dt class="sig sig-object py" id="altdss.XfmrCode.XfmrCodeBatch.XSCArray">
 <span class="sig-name descname"><span class="pre">XSCArray</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">List</span><span class="p"><span class="pre">[</span></span><span class="pre">altdss.types.Float64Array</span><span class="p"><span class="pre">]</span></span></em><a class="headerlink" href="#altdss.XfmrCode.XfmrCodeBatch.XSCArray" title="Link to this definition">#</a></dt>
 <dd><p>‘property(…)’</p>
+<p>Use this to specify the percent reactance between all pairs of windings as an array. All values are on the kVA base of winding 1.  The order of the values is as follows:</p>
+<p>(x12 13 14… 23 24.. 34 ..)</p>
+<p>There will be n(n-1)/2 values, where n=number of windings.</p>
+<p>DSS property name: <code class="docutils literal notranslate"><span class="pre">XSCArray</span></code>, DSS property index: 18.</p>
 </dd></dl>
 
 <dl class="py method">
@@ -1601,11 +1824,29 @@ Values used by this function are:</p>
 <dd></dd></dl>
 
 <dl class="py method">
+<dt class="sig sig-object py" id="altdss.XfmrCode.XfmrCodeBatch.batch">
+<span class="sig-name descname"><span class="pre">batch</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference internal" href="altdss.Batch.html#altdss.Batch.DSSBatch" title="altdss.Batch.DSSBatch"><span class="pre">altdss.Batch.DSSBatch</span></a></span></span><a class="headerlink" href="#altdss.XfmrCode.XfmrCodeBatch.batch" title="Link to this definition">#</a></dt>
+<dd><p>Filter a batch using integer or float DSS properties, returning a new batch.</p>
+<p>For integers, provide a single value to match.</p>
+<p>For floats, provide a range as a 2-valued tuple/list (min value, max value), or an exact value to value (not recommended).</p>
+<p>Multiple properties can be listed to allow filtering various conditions.</p>
+<p>Example for loads:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span>    <span class="c1"># Create an initial batch using a regular expression</span>
+    <span class="n">abc_loads</span> <span class="o">=</span> <span class="n">altdss</span><span class="o">.</span><span class="n">Load</span><span class="o">.</span><span class="n">batch</span><span class="p">(</span><span class="n">re</span><span class="o">=</span><span class="sa">r</span><span class="s1">&#39;^abc.*$&#39;</span><span class="p">)</span> <span class="c1"># a batch of all loads with names starting with &quot;abc&quot;</span>
+    <span class="n">abc_loads_filtered</span> <span class="o">=</span> <span class="n">abc_loads</span><span class="o">.</span><span class="n">batch</span><span class="p">(</span><span class="n">Class</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">Phases</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">kV</span><span class="o">=</span><span class="p">(</span><span class="mf">0.1</span><span class="p">,</span> <span class="mf">1.0</span><span class="p">))</span>
+
+    <span class="c1"># Create an initial batch, already filtered</span>
+    <span class="n">abc_loads_filtered</span> <span class="o">=</span> <span class="n">altdss</span><span class="o">.</span><span class="n">Load</span><span class="o">.</span><span class="n">batch</span><span class="p">(</span><span class="n">re</span><span class="o">=</span><span class="sa">r</span><span class="s1">&#39;^abc.*$&#39;</span><span class="p">,</span> <span class="n">Class</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">Phases</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">kV</span><span class="o">=</span><span class="p">(</span><span class="mf">0.1</span><span class="p">,</span> <span class="mf">1.0</span><span class="p">))</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="py method">
 <dt class="sig sig-object py" id="altdss.XfmrCode.XfmrCodeBatch.begin_edit">
 <span class="sig-name descname"><span class="pre">begin_edit</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span><a class="headerlink" href="#altdss.XfmrCode.XfmrCodeBatch.begin_edit" title="Link to this definition">#</a></dt>
 <dd><p>Marks for editing all DSS objects in the batch</p>
-<p>In the editing mode, some final side-effects of changing properties are post-poned
-until <code class="docutils literal notranslate"><span class="pre">_end_edit</span></code> is called. This side-effects can be somewhat costly, like updating
+<p>In the editing mode, some final side-effects of changing properties are postponed
+until <code class="docutils literal notranslate"><span class="pre">end_edit</span></code> is called. This side-effects can be somewhat costly, like updating
 the model parameters or internal matrices.</p>
 <p>If you don’t have any performance constraint, you may edit each property individually
 without worrying about using <code class="docutils literal notranslate"><span class="pre">begin_edit</span></code> and <code class="docutils literal notranslate"><span class="pre">end_edit</span></code>. For convenience, those are
@@ -1626,60 +1867,85 @@ the <code class="docutils literal notranslate"><span class="pre">Process</span><
 <dt class="sig sig-object py" id="altdss.XfmrCode.XfmrCodeBatch.kVAs">
 <span class="sig-name descname"><span class="pre">kVAs</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">List</span><span class="p"><span class="pre">[</span></span><span class="pre">altdss.types.Float64Array</span><span class="p"><span class="pre">]</span></span></em><a class="headerlink" href="#altdss.XfmrCode.XfmrCodeBatch.kVAs" title="Link to this definition">#</a></dt>
 <dd><p>‘property(…)’</p>
+<p>Use this to specify the kVA ratings of all windings at once using an array.</p>
+<p>DSS property name: <code class="docutils literal notranslate"><span class="pre">kVAs</span></code>, DSS property index: 13.</p>
 </dd></dl>
 
 <dl class="py attribute">
 <dt class="sig sig-object py" id="altdss.XfmrCode.XfmrCodeBatch.kVs">
 <span class="sig-name descname"><span class="pre">kVs</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">List</span><span class="p"><span class="pre">[</span></span><span class="pre">altdss.types.Float64Array</span><span class="p"><span class="pre">]</span></span></em><a class="headerlink" href="#altdss.XfmrCode.XfmrCodeBatch.kVs" title="Link to this definition">#</a></dt>
 <dd><p>‘property(…)’</p>
+<p>Use this to specify the kV ratings of all windings at once using an array. Example:</p>
+<p>New Transformer.T1 buses=“Hibus, lowbus”
+~ conns=(delta, wye)
+~ kvs=(115, 12.47)</p>
+<p>See kV= property for voltage rules.</p>
+<p>DSS property name: <code class="docutils literal notranslate"><span class="pre">kVs</span></code>, DSS property index: 12.</p>
 </dd></dl>
 
 <dl class="py attribute">
 <dt class="sig sig-object py" id="altdss.XfmrCode.XfmrCodeBatch.m">
 <span class="sig-name descname"><span class="pre">m</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><a class="reference internal" href="altdss.ArrayProxy.html#altdss.ArrayProxy.BatchFloat64ArrayProxy" title="altdss.ArrayProxy.BatchFloat64ArrayProxy"><span class="pre">altdss.ArrayProxy.BatchFloat64ArrayProxy</span></a></em><a class="headerlink" href="#altdss.XfmrCode.XfmrCodeBatch.m" title="Link to this definition">#</a></dt>
 <dd><p>‘property(…)’</p>
+<p>m Exponent for thermal properties in IEEE C57.  Typically 0.9 - 1.0</p>
+<p>DSS property name: <code class="docutils literal notranslate"><span class="pre">m</span></code>, DSS property index: 21.</p>
 </dd></dl>
 
 <dl class="py attribute">
 <dt class="sig sig-object py" id="altdss.XfmrCode.XfmrCodeBatch.n">
 <span class="sig-name descname"><span class="pre">n</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><a class="reference internal" href="altdss.ArrayProxy.html#altdss.ArrayProxy.BatchFloat64ArrayProxy" title="altdss.ArrayProxy.BatchFloat64ArrayProxy"><span class="pre">altdss.ArrayProxy.BatchFloat64ArrayProxy</span></a></em><a class="headerlink" href="#altdss.XfmrCode.XfmrCodeBatch.n" title="Link to this definition">#</a></dt>
 <dd><p>‘property(…)’</p>
+<p>n Exponent for thermal properties in IEEE C57.  Typically 0.8.</p>
+<p>DSS property name: <code class="docutils literal notranslate"><span class="pre">n</span></code>, DSS property index: 20.</p>
 </dd></dl>
 
 <dl class="py attribute">
 <dt class="sig sig-object py" id="altdss.XfmrCode.XfmrCodeBatch.pctIMag">
 <span class="sig-name descname"><span class="pre">pctIMag</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><a class="reference internal" href="altdss.ArrayProxy.html#altdss.ArrayProxy.BatchFloat64ArrayProxy" title="altdss.ArrayProxy.BatchFloat64ArrayProxy"><span class="pre">altdss.ArrayProxy.BatchFloat64ArrayProxy</span></a></em><a class="headerlink" href="#altdss.XfmrCode.XfmrCodeBatch.pctIMag" title="Link to this definition">#</a></dt>
 <dd><p>‘property(…)’</p>
+<p>Percent magnetizing current. Default=0.0. Magnetizing branch is in parallel with windings in each phase. Also, see “ppm_antifloat”.</p>
+<p>DSS property name: <code class="docutils literal notranslate"><span class="pre">%IMag</span></code>, DSS property index: 31.</p>
 </dd></dl>
 
 <dl class="py attribute">
 <dt class="sig sig-object py" id="altdss.XfmrCode.XfmrCodeBatch.pctLoadLoss">
 <span class="sig-name descname"><span class="pre">pctLoadLoss</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><a class="reference internal" href="altdss.ArrayProxy.html#altdss.ArrayProxy.BatchFloat64ArrayProxy" title="altdss.ArrayProxy.BatchFloat64ArrayProxy"><span class="pre">altdss.ArrayProxy.BatchFloat64ArrayProxy</span></a></em><a class="headerlink" href="#altdss.XfmrCode.XfmrCodeBatch.pctLoadLoss" title="Link to this definition">#</a></dt>
 <dd><p>‘property(…)’</p>
+<p>Percent load loss at full load. The %R of the High and Low windings (1 and 2) are adjusted to agree at rated kVA loading.</p>
+<p>DSS property name: <code class="docutils literal notranslate"><span class="pre">%LoadLoss</span></code>, DSS property index: 24.</p>
 </dd></dl>
 
 <dl class="py attribute">
 <dt class="sig sig-object py" id="altdss.XfmrCode.XfmrCodeBatch.pctNoLoadLoss">
 <span class="sig-name descname"><span class="pre">pctNoLoadLoss</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><a class="reference internal" href="altdss.ArrayProxy.html#altdss.ArrayProxy.BatchFloat64ArrayProxy" title="altdss.ArrayProxy.BatchFloat64ArrayProxy"><span class="pre">altdss.ArrayProxy.BatchFloat64ArrayProxy</span></a></em><a class="headerlink" href="#altdss.XfmrCode.XfmrCodeBatch.pctNoLoadLoss" title="Link to this definition">#</a></dt>
 <dd><p>‘property(…)’</p>
+<p>Percent no load losses at rated excitation voltage. Default is 0. Converts to a resistance in parallel with the magnetizing impedance in each winding.</p>
+<p>DSS property name: <code class="docutils literal notranslate"><span class="pre">%NoLoadLoss</span></code>, DSS property index: 25.</p>
 </dd></dl>
 
 <dl class="py attribute">
 <dt class="sig sig-object py" id="altdss.XfmrCode.XfmrCodeBatch.pctR">
 <span class="sig-name descname"><span class="pre">pctR</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">List</span><span class="p"><span class="pre">[</span></span><span class="pre">altdss.types.Float64Array</span><span class="p"><span class="pre">]</span></span></em><a class="headerlink" href="#altdss.XfmrCode.XfmrCodeBatch.pctR" title="Link to this definition">#</a></dt>
 <dd><p>‘property(…)’</p>
+<p>Percent resistance this winding.  (half of total for a 2-winding).</p>
+<p>DSS property name: <code class="docutils literal notranslate"><span class="pre">%R</span></code>, DSS property index: 8.</p>
 </dd></dl>
 
 <dl class="py attribute">
 <dt class="sig sig-object py" id="altdss.XfmrCode.XfmrCodeBatch.pctRs">
 <span class="sig-name descname"><span class="pre">pctRs</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">List</span><span class="p"><span class="pre">[</span></span><span class="pre">altdss.types.Float64Array</span><span class="p"><span class="pre">]</span></span></em><a class="headerlink" href="#altdss.XfmrCode.XfmrCodeBatch.pctRs" title="Link to this definition">#</a></dt>
 <dd><p>‘property(…)’</p>
+<p>Use this property to specify all the winding %resistances using an array. Example:</p>
+<p>New Transformer.T1 buses=“Hibus, lowbus” ~ %Rs=(0.2  0.3)</p>
+<p>DSS property name: <code class="docutils literal notranslate"><span class="pre">%Rs</span></code>, DSS property index: 33.</p>
 </dd></dl>
 
 <dl class="py attribute">
 <dt class="sig sig-object py" id="altdss.XfmrCode.XfmrCodeBatch.ppm_Antifloat">
 <span class="sig-name descname"><span class="pre">ppm_Antifloat</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><a class="reference internal" href="altdss.ArrayProxy.html#altdss.ArrayProxy.BatchFloat64ArrayProxy" title="altdss.ArrayProxy.BatchFloat64ArrayProxy"><span class="pre">altdss.ArrayProxy.BatchFloat64ArrayProxy</span></a></em><a class="headerlink" href="#altdss.XfmrCode.XfmrCodeBatch.ppm_Antifloat" title="Link to this definition">#</a></dt>
 <dd><p>‘property(…)’</p>
+<p>Default=1 ppm.  Parts per million of transformer winding VA rating connected to ground to protect against accidentally floating a winding without a reference. If positive then the effect is adding a very large reactance to ground.  If negative, then a capacitor.</p>
+<p>DSS property name: <code class="docutils literal notranslate"><span class="pre">ppm_Antifloat</span></code>, DSS property index: 32.</p>
 </dd></dl>
 
 <dl class="py method">
@@ -2819,6 +3085,7 @@ In either case, this is followed by: for k in F:  D[k] = F[k]</p>
 <li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#altdss.XfmrCode.XfmrCodeBatch.__init__"><code class="docutils literal notranslate"><span class="pre">XfmrCodeBatch.__init__()</span></code></a></li>
 <li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#altdss.XfmrCode.XfmrCodeBatch.__iter__"><code class="docutils literal notranslate"><span class="pre">XfmrCodeBatch.__iter__()</span></code></a></li>
 <li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#altdss.XfmrCode.XfmrCodeBatch.__len__"><code class="docutils literal notranslate"><span class="pre">XfmrCodeBatch.__len__()</span></code></a></li>
+<li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#altdss.XfmrCode.XfmrCodeBatch.batch"><code class="docutils literal notranslate"><span class="pre">XfmrCodeBatch.batch()</span></code></a></li>
 <li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#altdss.XfmrCode.XfmrCodeBatch.begin_edit"><code class="docutils literal notranslate"><span class="pre">XfmrCodeBatch.begin_edit()</span></code></a></li>
 <li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#altdss.XfmrCode.XfmrCodeBatch.end_edit"><code class="docutils literal notranslate"><span class="pre">XfmrCodeBatch.end_edit()</span></code></a></li>
 <li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#altdss.XfmrCode.XfmrCodeBatch.kVAs"><code class="docutils literal notranslate"><span class="pre">XfmrCodeBatch.kVAs</span></code></a></li>

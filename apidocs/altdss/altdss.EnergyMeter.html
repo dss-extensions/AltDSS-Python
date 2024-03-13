@@ -8,7 +8,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
-    <title>altdss.EnergyMeter &#8212; AltDSS-Python 0.2.0 documentation</title>
+    <title>altdss.EnergyMeter &#8212; AltDSS-Python 0.2.2 documentation</title>
   
   
   
@@ -38,7 +38,7 @@
 <link rel="preload" as="script" href="../../_static/scripts/pydata-sphinx-theme.js?digest=8d27b9dea8ad943066ae" />
   <script src="../../_static/vendor/fontawesome/6.5.1/js/all.min.js?digest=8d27b9dea8ad943066ae"></script>
 
-    <script src="../../_static/documentation_options.js?v=7f7c277e"></script>
+    <script src="../../_static/documentation_options.js?v=d3f42505"></script>
     <script src="../../_static/doctools.js?v=888ff710"></script>
     <script src="../../_static/sphinx_highlight.js?v=dc90522c"></script>
     <script src="../../_static/scripts/sphinx-book-theme.js?v=efea14e4"></script>
@@ -137,8 +137,8 @@
       
     
     
-    <img src="../../_static/altdss-python.svg" class="logo__image only-light" alt="AltDSS-Python 0.2.0 documentation - Home"/>
-    <script>document.write(`<img src="../../_static/altdss-python-dark.svg" class="logo__image only-dark" alt="AltDSS-Python 0.2.0 documentation - Home"/>`);</script>
+    <img src="../../_static/altdss-python.svg" class="logo__image only-light" alt="AltDSS-Python 0.2.2 documentation - Home"/>
+    <script>document.write(`<img src="../../_static/altdss-python-dark.svg" class="logo__image only-dark" alt="AltDSS-Python 0.2.2 documentation - Home"/>`);</script>
   
   
 </a></div>
@@ -160,6 +160,7 @@
 <li class="toctree-l1"><a class="reference internal" href="../../index.html">AltDSS-Python</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../Architecture.html">Architecture details</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../examples/GettingStarted.html">Getting Started</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../examples/Batches.html">Batches</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../changelog.html">Changelog</a></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">API Reference</span></p>
@@ -572,6 +573,7 @@ document.write(`
 <li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#altdss.EnergyMeter.EnergyMeterBatch.__init__"><code class="docutils literal notranslate"><span class="pre">EnergyMeterBatch.__init__()</span></code></a></li>
 <li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#altdss.EnergyMeter.EnergyMeterBatch.__iter__"><code class="docutils literal notranslate"><span class="pre">EnergyMeterBatch.__iter__()</span></code></a></li>
 <li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#altdss.EnergyMeter.EnergyMeterBatch.__len__"><code class="docutils literal notranslate"><span class="pre">EnergyMeterBatch.__len__()</span></code></a></li>
+<li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#altdss.EnergyMeter.EnergyMeterBatch.batch"><code class="docutils literal notranslate"><span class="pre">EnergyMeterBatch.batch()</span></code></a></li>
 <li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#altdss.EnergyMeter.EnergyMeterBatch.begin_edit"><code class="docutils literal notranslate"><span class="pre">EnergyMeterBatch.begin_edit()</span></code></a></li>
 <li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#altdss.EnergyMeter.EnergyMeterBatch.end_edit"><code class="docutils literal notranslate"><span class="pre">EnergyMeterBatch.end_edit()</span></code></a></li>
 <li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#altdss.EnergyMeter.EnergyMeterBatch.kVAEmerg"><code class="docutils literal notranslate"><span class="pre">EnergyMeterBatch.kVAEmerg</span></code></a></li>
@@ -897,6 +899,8 @@ File name is “Zone_metername.csv”.</p>
 <dt class="sig sig-object py" id="altdss.EnergyMeter.EnergyMeter.BaseFreq">
 <span class="sig-name descname"><span class="pre">BaseFreq</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">float</span></em><a class="headerlink" href="#altdss.EnergyMeter.EnergyMeter.BaseFreq" title="Link to this definition">#</a></dt>
 <dd><p>‘property(…)’</p>
+<p>Base Frequency for ratings.</p>
+<p>DSS property name: <code class="docutils literal notranslate"><span class="pre">BaseFreq</span></code>, DSS property index: 25.</p>
 </dd></dl>
 
 <dl class="py attribute">
@@ -910,6 +914,8 @@ File name is “Zone_metername.csv”.</p>
 <dt class="sig sig-object py" id="altdss.EnergyMeter.EnergyMeter.CAIDI">
 <span class="sig-name descname"><span class="pre">CAIDI</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">float</span></em><a class="headerlink" href="#altdss.EnergyMeter.EnergyMeter.CAIDI" title="Link to this definition">#</a></dt>
 <dd><p>‘property(…)’</p>
+<p>(Read only) Makes CAIDI result available via return on query (? energymeter.myMeter.CAIDI.</p>
+<p>DSS property name: <code class="docutils literal notranslate"><span class="pre">CAIDI</span></code>, DSS property index: 23.</p>
 </dd></dl>
 
 <dl class="py property">
@@ -928,33 +934,45 @@ for the meter to force some behavior on Load Allocation</p>
 <dl class="py method">
 <dt class="sig sig-object py" id="altdss.EnergyMeter.EnergyMeter.Close">
 <span class="sig-name descname"><span class="pre">Close</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">terminal</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">phase</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span><a class="headerlink" href="#altdss.EnergyMeter.EnergyMeter.Close" title="Link to this definition">#</a></dt>
-<dd></dd></dl>
+<dd><p>Close the specified terminal and phase, if non-zero, or all conductors at the terminal.</p>
+<p>Original COM help: <a class="reference external" href="https://opendss.epri.com/Close1.html">https://opendss.epri.com/Close1.html</a></p>
+</dd></dl>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="altdss.EnergyMeter.EnergyMeter.ComplexSeqCurrents">
 <span class="sig-name descname"><span class="pre">ComplexSeqCurrents</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">altdss.types.ComplexArray</span></span></span><a class="headerlink" href="#altdss.EnergyMeter.EnergyMeter.ComplexSeqCurrents" title="Link to this definition">#</a></dt>
-<dd></dd></dl>
+<dd><p>Complex double array of Sequence Currents for all conductors of all terminals of active circuit element.</p>
+<p>Original COM help: <a class="reference external" href="https://opendss.epri.com/CplxSeqCurrents.html">https://opendss.epri.com/CplxSeqCurrents.html</a></p>
+</dd></dl>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="altdss.EnergyMeter.EnergyMeter.ComplexSeqVoltages">
 <span class="sig-name descname"><span class="pre">ComplexSeqVoltages</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">altdss.types.ComplexArray</span></span></span><a class="headerlink" href="#altdss.EnergyMeter.EnergyMeter.ComplexSeqVoltages" title="Link to this definition">#</a></dt>
-<dd></dd></dl>
+<dd><p>Complex double array of Sequence Voltage for all terminals of active circuit element.</p>
+<p>Original COM help: <a class="reference external" href="https://opendss.epri.com/CplxSeqVoltages1.html">https://opendss.epri.com/CplxSeqVoltages1.html</a></p>
+</dd></dl>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="altdss.EnergyMeter.EnergyMeter.Currents">
 <span class="sig-name descname"><span class="pre">Currents</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">altdss.types.ComplexArray</span></span></span><a class="headerlink" href="#altdss.EnergyMeter.EnergyMeter.Currents" title="Link to this definition">#</a></dt>
-<dd></dd></dl>
+<dd><p>Complex array of currents into each conductor of each terminal</p>
+<p>Original COM help: <a class="reference external" href="https://opendss.epri.com/Currents1.html">https://opendss.epri.com/Currents1.html</a></p>
+</dd></dl>
 
 <dl class="py attribute">
 <dt class="sig sig-object py" id="altdss.EnergyMeter.EnergyMeter.CustInterrupts">
 <span class="sig-name descname"><span class="pre">CustInterrupts</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">float</span></em><a class="headerlink" href="#altdss.EnergyMeter.EnergyMeter.CustInterrupts" title="Link to this definition">#</a></dt>
 <dd><p>‘property(…)’</p>
+<p>(Read only) Makes Total Customer Interrupts value result available via return on query (? energymeter.myMeter.CustInterrupts.</p>
+<p>DSS property name: <code class="docutils literal notranslate"><span class="pre">CustInterrupts</span></code>, DSS property index: 24.</p>
 </dd></dl>
 
 <dl class="py attribute">
 <dt class="sig sig-object py" id="altdss.EnergyMeter.EnergyMeter.DisplayName">
 <span class="sig-name descname"><span class="pre">DisplayName</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">str</span></em><a class="headerlink" href="#altdss.EnergyMeter.EnergyMeter.DisplayName" title="Link to this definition">#</a></dt>
 <dd><p>‘property(…)’</p>
+<p>Display name of the object (not necessarily unique)</p>
+<p>Original COM help: <a class="reference external" href="https://opendss.epri.com/DisplayName.html">https://opendss.epri.com/DisplayName.html</a></p>
 </dd></dl>
 
 <dl class="py method">
@@ -967,18 +985,24 @@ for the meter to force some behavior on Load Allocation</p>
 <dt class="sig sig-object py" id="altdss.EnergyMeter.EnergyMeter.Element">
 <span class="sig-name descname"><span class="pre">Element</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><a class="reference internal" href="altdss.DSSObj.html#altdss.DSSObj.DSSObj" title="altdss.DSSObj.DSSObj"><span class="pre">altdss.DSSObj.DSSObj</span></a></em><a class="headerlink" href="#altdss.EnergyMeter.EnergyMeter.Element" title="Link to this definition">#</a></dt>
 <dd><p>‘property(…)’</p>
+<p>Name (Full Object name) of element to which the monitor is connected.</p>
+<p>DSS property name: <code class="docutils literal notranslate"><span class="pre">Element</span></code>, DSS property index: 1.</p>
 </dd></dl>
 
 <dl class="py attribute">
 <dt class="sig sig-object py" id="altdss.EnergyMeter.EnergyMeter.Element_str">
 <span class="sig-name descname"><span class="pre">Element_str</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">str</span></em><a class="headerlink" href="#altdss.EnergyMeter.EnergyMeter.Element_str" title="Link to this definition">#</a></dt>
 <dd><p>‘property(…)’</p>
+<p>Name (Full Object name) of element to which the monitor is connected.</p>
+<p>DSS property name: <code class="docutils literal notranslate"><span class="pre">Element</span></code>, DSS property index: 1.</p>
 </dd></dl>
 
 <dl class="py attribute">
 <dt class="sig sig-object py" id="altdss.EnergyMeter.EnergyMeter.Enabled">
 <span class="sig-name descname"><span class="pre">Enabled</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">bool</span></em><a class="headerlink" href="#altdss.EnergyMeter.EnergyMeter.Enabled" title="Link to this definition">#</a></dt>
 <dd><p>‘property(…)’</p>
+<p>{Yes|No or True|False} Indicates whether this element is enabled.</p>
+<p>DSS property name: <code class="docutils literal notranslate"><span class="pre">Enabled</span></code>, DSS property index: 26.</p>
 </dd></dl>
 
 <dl class="py attribute">
@@ -997,49 +1021,67 @@ for the meter to force some behavior on Load Allocation</p>
 <dt class="sig sig-object py" id="altdss.EnergyMeter.EnergyMeter.GUID">
 <span class="sig-name descname"><span class="pre">GUID</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">str</span></span></span><a class="headerlink" href="#altdss.EnergyMeter.EnergyMeter.GUID" title="Link to this definition">#</a></dt>
 <dd><p>Object’s GUID/UUID. Currently used only in the CIM-related methods.</p>
+<p>Original COM help: <a class="reference external" href="https://opendss.epri.com/GUID.html">https://opendss.epri.com/GUID.html</a></p>
 </dd></dl>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="altdss.EnergyMeter.EnergyMeter.Handle">
 <span class="sig-name descname"><span class="pre">Handle</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">int</span></span></span><a class="headerlink" href="#altdss.EnergyMeter.EnergyMeter.Handle" title="Link to this definition">#</a></dt>
-<dd></dd></dl>
+<dd><p>Index of this element into the circuit’s element list.</p>
+<p>Original COM help: <a class="reference external" href="https://opendss.epri.com/Handle.html">https://opendss.epri.com/Handle.html</a></p>
+</dd></dl>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="altdss.EnergyMeter.EnergyMeter.HasOCPDevice">
 <span class="sig-name descname"><span class="pre">HasOCPDevice</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">bool</span></span></span><a class="headerlink" href="#altdss.EnergyMeter.EnergyMeter.HasOCPDevice" title="Link to this definition">#</a></dt>
-<dd></dd></dl>
+<dd><p>Returns true if a recloser, relay, or fuse controlling the circuit element.</p>
+<p>OCP = Overcurrent Protection</p>
+<p>Original COM help: <a class="reference external" href="https://opendss.epri.com/HasOCPDevice.html">https://opendss.epri.com/HasOCPDevice.html</a></p>
+</dd></dl>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="altdss.EnergyMeter.EnergyMeter.HasSwitchControl">
 <span class="sig-name descname"><span class="pre">HasSwitchControl</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">bool</span></span></span><a class="headerlink" href="#altdss.EnergyMeter.EnergyMeter.HasSwitchControl" title="Link to this definition">#</a></dt>
-<dd></dd></dl>
+<dd><p>Returns true if the element has a SwtControl attached.</p>
+<p>Original COM help: <a class="reference external" href="https://opendss.epri.com/HasSwitchControl.html">https://opendss.epri.com/HasSwitchControl.html</a></p>
+</dd></dl>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="altdss.EnergyMeter.EnergyMeter.HasVoltControl">
 <span class="sig-name descname"><span class="pre">HasVoltControl</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">bool</span></span></span><a class="headerlink" href="#altdss.EnergyMeter.EnergyMeter.HasVoltControl" title="Link to this definition">#</a></dt>
-<dd></dd></dl>
+<dd><p>Returns true if the element has a CapControl or RegControl attached.</p>
+<p>Original COM help: <a class="reference external" href="https://opendss.epri.com/HasVoltControl.html">https://opendss.epri.com/HasVoltControl.html</a></p>
+</dd></dl>
 
 <dl class="py attribute">
 <dt class="sig sig-object py" id="altdss.EnergyMeter.EnergyMeter.Int_Duration">
 <span class="sig-name descname"><span class="pre">Int_Duration</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">float</span></em><a class="headerlink" href="#altdss.EnergyMeter.EnergyMeter.Int_Duration" title="Link to this definition">#</a></dt>
 <dd><p>‘property(…)’</p>
+<p>Average annual duration, in hr, of interruptions for head of the meter zone (source side of zone or feeder).</p>
+<p>DSS property name: <code class="docutils literal notranslate"><span class="pre">Int_Duration</span></code>, DSS property index: 19.</p>
 </dd></dl>
 
 <dl class="py attribute">
 <dt class="sig sig-object py" id="altdss.EnergyMeter.EnergyMeter.Int_Rate">
 <span class="sig-name descname"><span class="pre">Int_Rate</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">float</span></em><a class="headerlink" href="#altdss.EnergyMeter.EnergyMeter.Int_Rate" title="Link to this definition">#</a></dt>
 <dd><p>‘property(…)’</p>
+<p>Average number of annual interruptions for head of the meter zone (source side of zone or feeder).</p>
+<p>DSS property name: <code class="docutils literal notranslate"><span class="pre">Int_Rate</span></code>, DSS property index: 18.</p>
 </dd></dl>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="altdss.EnergyMeter.EnergyMeter.IsIsolated">
 <span class="sig-name descname"><span class="pre">IsIsolated</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">bool</span></span></span><a class="headerlink" href="#altdss.EnergyMeter.EnergyMeter.IsIsolated" title="Link to this definition">#</a></dt>
-<dd></dd></dl>
+<dd><p>Returns true if the element is isolated.
+Note that this only fetches the current value. See also the Topology interface.</p>
+</dd></dl>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="altdss.EnergyMeter.EnergyMeter.IsOpen">
 <span class="sig-name descname"><span class="pre">IsOpen</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">terminal</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">phase</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">bool</span></span></span><a class="headerlink" href="#altdss.EnergyMeter.EnergyMeter.IsOpen" title="Link to this definition">#</a></dt>
-<dd></dd></dl>
+<dd><p>Returns true if the specified terminal and phase are open.</p>
+<p>If the <code class="docutils literal notranslate"><span class="pre">phase</span></code> parameter is zero, returns if <strong>any</strong> conductor at the terminal is open.</p>
+</dd></dl>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="altdss.EnergyMeter.EnergyMeter.Like">
@@ -1053,6 +1095,8 @@ for the meter to force some behavior on Load Allocation</p>
 <dt class="sig sig-object py" id="altdss.EnergyMeter.EnergyMeter.LineLosses">
 <span class="sig-name descname"><span class="pre">LineLosses</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">bool</span></em><a class="headerlink" href="#altdss.EnergyMeter.EnergyMeter.LineLosses" title="Link to this definition">#</a></dt>
 <dd><p>‘property(…)’</p>
+<p>{Yes | No}  Default is YES. Compute Line losses. If NO, then none of the losses are computed.</p>
+<p>DSS property name: <code class="docutils literal notranslate"><span class="pre">LineLosses</span></code>, DSS property index: 12.</p>
 </dd></dl>
 
 <dl class="py method">
@@ -1068,18 +1112,24 @@ get a new batch from this function.</p>
 <dt class="sig sig-object py" id="altdss.EnergyMeter.EnergyMeter.LocalOnly">
 <span class="sig-name descname"><span class="pre">LocalOnly</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">bool</span></em><a class="headerlink" href="#altdss.EnergyMeter.EnergyMeter.LocalOnly" title="Link to this definition">#</a></dt>
 <dd><p>‘property(…)’</p>
+<p>{Yes | No}  Default is NO.  If Yes, meter considers only the monitored element for EEN and UE calcs.  Uses whole zone for losses.</p>
+<p>DSS property name: <code class="docutils literal notranslate"><span class="pre">LocalOnly</span></code>, DSS property index: 9.</p>
 </dd></dl>
 
 <dl class="py attribute">
 <dt class="sig sig-object py" id="altdss.EnergyMeter.EnergyMeter.Losses">
 <span class="sig-name descname"><span class="pre">Losses</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">bool</span></em><a class="headerlink" href="#altdss.EnergyMeter.EnergyMeter.Losses" title="Link to this definition">#</a></dt>
 <dd><p>‘property(…)’</p>
+<p>{Yes | No}  Default is YES. Compute Zone losses. If NO, then no losses at all are computed.</p>
+<p>DSS property name: <code class="docutils literal notranslate"><span class="pre">Losses</span></code>, DSS property index: 11.</p>
 </dd></dl>
 
 <dl class="py attribute">
 <dt class="sig sig-object py" id="altdss.EnergyMeter.EnergyMeter.Mask">
 <span class="sig-name descname"><span class="pre">Mask</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">altdss.types.Float64Array</span></em><a class="headerlink" href="#altdss.EnergyMeter.EnergyMeter.Mask" title="Link to this definition">#</a></dt>
 <dd><p>‘property(…)’</p>
+<p>Mask for adding registers whenever all meters are totalized.  Array of floating point numbers representing the multiplier to be used for summing each register from this meter. Default = (1, 1, 1, 1, … ).  You only have to enter as many as are changed (positional). Useful when two meters monitor same energy, etc.</p>
+<p>DSS property name: <code class="docutils literal notranslate"><span class="pre">Mask</span></code>, DSS property index: 10.</p>
 </dd></dl>
 
 <dl class="py method">
@@ -1097,22 +1147,30 @@ Use -1 as terminal to get the value across all terminals.</p>
 <dl class="py method">
 <dt class="sig sig-object py" id="altdss.EnergyMeter.EnergyMeter.NodeOrder">
 <span class="sig-name descname"><span class="pre">NodeOrder</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">altdss.types.Int32Array</span></span></span><a class="headerlink" href="#altdss.EnergyMeter.EnergyMeter.NodeOrder" title="Link to this definition">#</a></dt>
-<dd></dd></dl>
+<dd><p>Array of integer containing the node numbers (representing phases, for example) for each conductor of each terminal.</p>
+<p>Be sure to run a solution to initialize the values after the circuit is created or modified.</p>
+</dd></dl>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="altdss.EnergyMeter.EnergyMeter.NodeRef">
 <span class="sig-name descname"><span class="pre">NodeRef</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">altdss.types.Int32Array</span></span></span><a class="headerlink" href="#altdss.EnergyMeter.EnergyMeter.NodeRef" title="Link to this definition">#</a></dt>
-<dd></dd></dl>
+<dd><p>Array of integers, a copy of the internal NodeRef of the CktElement.</p>
+<p>Be sure to run a solution to initialize the values after the circuit is created or modified.</p>
+</dd></dl>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="altdss.EnergyMeter.EnergyMeter.NumConductors">
 <span class="sig-name descname"><span class="pre">NumConductors</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">int</span></span></span><a class="headerlink" href="#altdss.EnergyMeter.EnergyMeter.NumConductors" title="Link to this definition">#</a></dt>
-<dd></dd></dl>
+<dd><p>Number of conductors per terminal</p>
+<p>Original COM help: <a class="reference external" href="https://opendss.epri.com/NumConductors.html">https://opendss.epri.com/NumConductors.html</a></p>
+</dd></dl>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="altdss.EnergyMeter.EnergyMeter.NumControllers">
 <span class="sig-name descname"><span class="pre">NumControllers</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">int</span></span></span><a class="headerlink" href="#altdss.EnergyMeter.EnergyMeter.NumControllers" title="Link to this definition">#</a></dt>
-<dd></dd></dl>
+<dd><p>Number of controllers connected to this device.</p>
+<p>Original COM help: <a class="reference external" href="https://opendss.epri.com/NumControls.html">https://opendss.epri.com/NumControls.html</a></p>
+</dd></dl>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="altdss.EnergyMeter.EnergyMeter.NumEndElements">
@@ -1123,7 +1181,9 @@ Use -1 as terminal to get the value across all terminals.</p>
 <dl class="py method">
 <dt class="sig sig-object py" id="altdss.EnergyMeter.EnergyMeter.NumPhases">
 <span class="sig-name descname"><span class="pre">NumPhases</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">int</span></span></span><a class="headerlink" href="#altdss.EnergyMeter.EnergyMeter.NumPhases" title="Link to this definition">#</a></dt>
-<dd></dd></dl>
+<dd><p>Number of phases</p>
+<p>Original COM help: <a class="reference external" href="https://opendss.epri.com/NumPhases.html">https://opendss.epri.com/NumPhases.html</a></p>
+</dd></dl>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="altdss.EnergyMeter.EnergyMeter.NumSections">
@@ -1134,56 +1194,81 @@ Use -1 as terminal to get the value across all terminals.</p>
 <dl class="py method">
 <dt class="sig sig-object py" id="altdss.EnergyMeter.EnergyMeter.NumTerminals">
 <span class="sig-name descname"><span class="pre">NumTerminals</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">int</span></span></span><a class="headerlink" href="#altdss.EnergyMeter.EnergyMeter.NumTerminals" title="Link to this definition">#</a></dt>
-<dd></dd></dl>
+<dd><p>Number of terminals in this circuit element</p>
+<p>Original COM help: <a class="reference external" href="https://opendss.epri.com/NumTerminals.html">https://opendss.epri.com/NumTerminals.html</a></p>
+</dd></dl>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="altdss.EnergyMeter.EnergyMeter.OCPDevice">
 <span class="sig-name descname"><span class="pre">OCPDevice</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">Union</span><span class="p"><span class="pre">[</span></span><a class="reference internal" href="altdss.DSSObj.html#altdss.DSSObj.DSSObj" title="altdss.DSSObj.DSSObj"><span class="pre">altdss.DSSObj.DSSObj</span></a><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">None</span><span class="p"><span class="pre">]</span></span></span></span><a class="headerlink" href="#altdss.EnergyMeter.EnergyMeter.OCPDevice" title="Link to this definition">#</a></dt>
-<dd></dd></dl>
+<dd><p>Returns (as a Python object) the OCP device controlling this element, if any.</p>
+</dd></dl>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="altdss.EnergyMeter.EnergyMeter.OCPDeviceIndex">
 <span class="sig-name descname"><span class="pre">OCPDeviceIndex</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">int</span></span></span><a class="headerlink" href="#altdss.EnergyMeter.EnergyMeter.OCPDeviceIndex" title="Link to this definition">#</a></dt>
-<dd></dd></dl>
+<dd><p>Index into controller list of OCP Device controlling this circuit element</p>
+<p>Original COM help: <a class="reference external" href="https://opendss.epri.com/OCPDevIndex.html">https://opendss.epri.com/OCPDevIndex.html</a></p>
+</dd></dl>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="altdss.EnergyMeter.EnergyMeter.OCPDeviceType">
 <span class="sig-name descname"><span class="pre">OCPDeviceType</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">dss.enums.OCPDevType</span></span></span><a class="headerlink" href="#altdss.EnergyMeter.EnergyMeter.OCPDeviceType" title="Link to this definition">#</a></dt>
-<dd></dd></dl>
+<dd><p>Type of OCP controller device</p>
+<p>Original COM help: <a class="reference external" href="https://opendss.epri.com/OCPDevType.html">https://opendss.epri.com/OCPDevType.html</a></p>
+</dd></dl>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="altdss.EnergyMeter.EnergyMeter.Open">
 <span class="sig-name descname"><span class="pre">Open</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">terminal</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">phase</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span><a class="headerlink" href="#altdss.EnergyMeter.EnergyMeter.Open" title="Link to this definition">#</a></dt>
-<dd></dd></dl>
+<dd><p>Open the specified terminal and phase, if non-zero, or all conductors at the terminal.</p>
+<p>Original COM help: <a class="reference external" href="https://opendss.epri.com/Open1.html">https://opendss.epri.com/Open1.html</a></p>
+</dd></dl>
 
 <dl class="py attribute">
 <dt class="sig sig-object py" id="altdss.EnergyMeter.EnergyMeter.Option">
 <span class="sig-name descname"><span class="pre">Option</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">List</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">]</span></span></em><a class="headerlink" href="#altdss.EnergyMeter.EnergyMeter.Option" title="Link to this definition">#</a></dt>
 <dd><p>‘property(…)’</p>
+<p>Enter a string ARRAY of any combination of the following. Options processed left-to-right:</p>
+<p>(E)xcess : (default) UE/EEN is estimate of energy over capacity
+(T)otal : UE/EEN is total energy after capacity exceeded
+(R)adial : (default) Treats zone as a radial circuit
+(M)esh : Treats zone as meshed network (not radial).
+(C)ombined : (default) Load UE/EEN computed from combination of overload and undervoltage.
+(V)oltage : Load UE/EEN computed based on voltage only.</p>
+<p>Example: option=(E, R)</p>
+<p>DSS property name: <code class="docutils literal notranslate"><span class="pre">Option</span></code>, DSS property index: 4.</p>
 </dd></dl>
 
 <dl class="py attribute">
 <dt class="sig sig-object py" id="altdss.EnergyMeter.EnergyMeter.PeakCurrent">
 <span class="sig-name descname"><span class="pre">PeakCurrent</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">altdss.types.Float64Array</span></em><a class="headerlink" href="#altdss.EnergyMeter.EnergyMeter.PeakCurrent" title="Link to this definition">#</a></dt>
 <dd><p>‘property(…)’</p>
+<p>ARRAY of current magnitudes representing the peak currents measured at this location for the load allocation function.  Default is (400, 400, 400). Enter one current for each phase</p>
+<p>DSS property name: <code class="docutils literal notranslate"><span class="pre">PeakCurrent</span></code>, DSS property index: 7.</p>
 </dd></dl>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="altdss.EnergyMeter.EnergyMeter.PhaseLosses">
 <span class="sig-name descname"><span class="pre">PhaseLosses</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">altdss.types.ComplexArray</span></span></span><a class="headerlink" href="#altdss.EnergyMeter.EnergyMeter.PhaseLosses" title="Link to this definition">#</a></dt>
 <dd><p>Complex array of losses (kVA) by phase</p>
+<p>Original COM help: <a class="reference external" href="https://opendss.epri.com/PhaseLosses.html">https://opendss.epri.com/PhaseLosses.html</a></p>
 </dd></dl>
 
 <dl class="py attribute">
 <dt class="sig sig-object py" id="altdss.EnergyMeter.EnergyMeter.PhaseVoltageReport">
 <span class="sig-name descname"><span class="pre">PhaseVoltageReport</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">bool</span></em><a class="headerlink" href="#altdss.EnergyMeter.EnergyMeter.PhaseVoltageReport" title="Link to this definition">#</a></dt>
 <dd><p>‘property(…)’</p>
+<p>{Yes | No}  Default is NO.  Report min, max, and average phase voltages for the zone and tabulate by voltage base. Demand Intervals must be turned on (Set Demand=true) and voltage bases must be defined for this property to take effect. Result is in a separate report file.</p>
+<p>DSS property name: <code class="docutils literal notranslate"><span class="pre">PhaseVoltageReport</span></code>, DSS property index: 17.</p>
 </dd></dl>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="altdss.EnergyMeter.EnergyMeter.Powers">
 <span class="sig-name descname"><span class="pre">Powers</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">altdss.types.ComplexArray</span></span></span><a class="headerlink" href="#altdss.EnergyMeter.EnergyMeter.Powers" title="Link to this definition">#</a></dt>
-<dd></dd></dl>
+<dd><p>Complex array of powers (kVA) into each conductor of each terminal</p>
+<p>Original COM help: <a class="reference external" href="https://opendss.epri.com/Powers.html">https://opendss.epri.com/Powers.html</a></p>
+</dd></dl>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="altdss.EnergyMeter.EnergyMeter.Reduce">
@@ -1194,39 +1279,52 @@ Use -1 as terminal to get the value across all terminals.</p>
 <dl class="py method">
 <dt class="sig sig-object py" id="altdss.EnergyMeter.EnergyMeter.RegisterNames">
 <span class="sig-name descname"><span class="pre">RegisterNames</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">List</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">]</span></span></span></span><a class="headerlink" href="#altdss.EnergyMeter.EnergyMeter.RegisterNames" title="Link to this definition">#</a></dt>
-<dd></dd></dl>
+<dd><p>List of names of the energy meter registers for this element.</p>
+<p>See also the enums <code class="docutils literal notranslate"><span class="pre">EnergyMeterRegisters</span></code> and <code class="docutils literal notranslate"><span class="pre">GeneratorRegisters</span></code>.</p>
+</dd></dl>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="altdss.EnergyMeter.EnergyMeter.RegisterValues">
 <span class="sig-name descname"><span class="pre">RegisterValues</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">altdss.types.Float64Array</span></span></span><a class="headerlink" href="#altdss.EnergyMeter.EnergyMeter.RegisterValues" title="Link to this definition">#</a></dt>
-<dd></dd></dl>
+<dd><p>Array of values in this element’s energy meter registers.</p>
+<p>Original COM help: <a class="reference external" href="https://opendss.epri.com/RegisterValues.html">https://opendss.epri.com/RegisterValues.html</a></p>
+</dd></dl>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="altdss.EnergyMeter.EnergyMeter.RegistersDict">
 <span class="sig-name descname"><span class="pre">RegistersDict</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">Dict</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">float</span><span class="p"><span class="pre">]</span></span></span></span><a class="headerlink" href="#altdss.EnergyMeter.EnergyMeter.RegistersDict" title="Link to this definition">#</a></dt>
-<dd></dd></dl>
+<dd><p>Convenience function: returns a dict of the element’s energy meter register names mapping to their current values.</p>
+</dd></dl>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="altdss.EnergyMeter.EnergyMeter.Residuals">
 <span class="sig-name descname"><span class="pre">Residuals</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">altdss.types.Float64Array</span></span></span><a class="headerlink" href="#altdss.EnergyMeter.EnergyMeter.Residuals" title="Link to this definition">#</a></dt>
-<dd></dd></dl>
+<dd><p>Residual currents for each terminal: (magnitude, angle in degrees)</p>
+<p>Original COM help: <a class="reference external" href="https://opendss.epri.com/Residuals.html">https://opendss.epri.com/Residuals.html</a></p>
+</dd></dl>
 
 <dl class="py attribute">
 <dt class="sig sig-object py" id="altdss.EnergyMeter.EnergyMeter.SAIDI">
 <span class="sig-name descname"><span class="pre">SAIDI</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">float</span></em><a class="headerlink" href="#altdss.EnergyMeter.EnergyMeter.SAIDI" title="Link to this definition">#</a></dt>
 <dd><p>‘property(…)’</p>
+<p>(Read only) Makes SAIDI result available via return on query (? energymeter.myMeter.SAIDI.</p>
+<p>DSS property name: <code class="docutils literal notranslate"><span class="pre">SAIDI</span></code>, DSS property index: 22.</p>
 </dd></dl>
 
 <dl class="py attribute">
 <dt class="sig sig-object py" id="altdss.EnergyMeter.EnergyMeter.SAIFI">
 <span class="sig-name descname"><span class="pre">SAIFI</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">float</span></em><a class="headerlink" href="#altdss.EnergyMeter.EnergyMeter.SAIFI" title="Link to this definition">#</a></dt>
 <dd><p>‘property(…)’</p>
+<p>(Read only) Makes SAIFI result available via return on query (? energymeter.myMeter.SAIFI.</p>
+<p>DSS property name: <code class="docutils literal notranslate"><span class="pre">SAIFI</span></code>, DSS property index: 20.</p>
 </dd></dl>
 
 <dl class="py attribute">
 <dt class="sig sig-object py" id="altdss.EnergyMeter.EnergyMeter.SAIFIkW">
 <span class="sig-name descname"><span class="pre">SAIFIkW</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">float</span></em><a class="headerlink" href="#altdss.EnergyMeter.EnergyMeter.SAIFIkW" title="Link to this definition">#</a></dt>
 <dd><p>‘property(…)’</p>
+<p>(Read only) Makes SAIFIkW result available via return on query (? energymeter.myMeter.SAIFIkW.</p>
+<p>DSS property name: <code class="docutils literal notranslate"><span class="pre">SAIFIkW</span></code>, DSS property index: 21.</p>
 </dd></dl>
 
 <dl class="py method">
@@ -1250,23 +1348,31 @@ Use -1 as terminal to get the value across all terminals.</p>
 <dl class="py method">
 <dt class="sig sig-object py" id="altdss.EnergyMeter.EnergyMeter.SeqCurrents">
 <span class="sig-name descname"><span class="pre">SeqCurrents</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">altdss.types.Float64Array</span></span></span><a class="headerlink" href="#altdss.EnergyMeter.EnergyMeter.SeqCurrents" title="Link to this definition">#</a></dt>
-<dd></dd></dl>
+<dd><p>Array of symmetrical component currents (magnitudes only) into each 3-phase terminal</p>
+<p>Original COM help: <a class="reference external" href="https://opendss.epri.com/SeqCurrents.html">https://opendss.epri.com/SeqCurrents.html</a></p>
+</dd></dl>
 
 <dl class="py attribute">
 <dt class="sig sig-object py" id="altdss.EnergyMeter.EnergyMeter.SeqLosses">
 <span class="sig-name descname"><span class="pre">SeqLosses</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">bool</span></em><a class="headerlink" href="#altdss.EnergyMeter.EnergyMeter.SeqLosses" title="Link to this definition">#</a></dt>
 <dd><p>‘property(…)’</p>
+<p>{Yes | No}  Default is YES. Compute Sequence losses in lines and segregate by line mode losses and zero mode losses.</p>
+<p>DSS property name: <code class="docutils literal notranslate"><span class="pre">SeqLosses</span></code>, DSS property index: 14.</p>
 </dd></dl>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="altdss.EnergyMeter.EnergyMeter.SeqPowers">
 <span class="sig-name descname"><span class="pre">SeqPowers</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">altdss.types.ComplexArray</span></span></span><a class="headerlink" href="#altdss.EnergyMeter.EnergyMeter.SeqPowers" title="Link to this definition">#</a></dt>
-<dd></dd></dl>
+<dd><p>Complex array of sequence powers (kW, kvar) into each 3-phase terminal</p>
+<p>Original COM help: <a class="reference external" href="https://opendss.epri.com/SeqPowers.html">https://opendss.epri.com/SeqPowers.html</a></p>
+</dd></dl>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="altdss.EnergyMeter.EnergyMeter.SeqVoltages">
 <span class="sig-name descname"><span class="pre">SeqVoltages</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">altdss.types.Float64Array</span></span></span><a class="headerlink" href="#altdss.EnergyMeter.EnergyMeter.SeqVoltages" title="Link to this definition">#</a></dt>
-<dd></dd></dl>
+<dd><p>Double array of symmetrical component voltages (magnitudes only) at each 3-phase terminal</p>
+<p>Original COM help: <a class="reference external" href="https://opendss.epri.com/SeqVoltages1.html">https://opendss.epri.com/SeqVoltages1.html</a></p>
+</dd></dl>
 
 <dl class="py attribute">
 <dt class="sig sig-object py" id="altdss.EnergyMeter.EnergyMeter.Sequence">
@@ -1284,12 +1390,16 @@ Use -1 as terminal to get the value across all terminals.</p>
 <dt class="sig sig-object py" id="altdss.EnergyMeter.EnergyMeter.Terminal">
 <span class="sig-name descname"><span class="pre">Terminal</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">int</span></em><a class="headerlink" href="#altdss.EnergyMeter.EnergyMeter.Terminal" title="Link to this definition">#</a></dt>
 <dd><p>‘property(…)’</p>
+<p>Number of the terminal of the circuit element to which the monitor is connected. 1 or 2, typically.</p>
+<p>DSS property name: <code class="docutils literal notranslate"><span class="pre">Terminal</span></code>, DSS property index: 2.</p>
 </dd></dl>
 
 <dl class="py attribute">
 <dt class="sig sig-object py" id="altdss.EnergyMeter.EnergyMeter.ThreePhaseLosses">
 <span class="sig-name descname"><span class="pre">ThreePhaseLosses</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">bool</span></em><a class="headerlink" href="#altdss.EnergyMeter.EnergyMeter.ThreePhaseLosses" title="Link to this definition">#</a></dt>
 <dd><p>‘property(…)’</p>
+<p>{Yes | No}  Default is YES. Compute Line losses and segregate by 3-phase and other (1- and 2-phase) line losses.</p>
+<p>DSS property name: <code class="docutils literal notranslate"><span class="pre">3PhaseLosses</span></code>, DSS property index: 15.</p>
 </dd></dl>
 
 <dl class="py method">
@@ -1301,34 +1411,46 @@ Use -1 as terminal to get the value across all terminals.</p>
 <dl class="py method">
 <dt class="sig sig-object py" id="altdss.EnergyMeter.EnergyMeter.TotalPowers">
 <span class="sig-name descname"><span class="pre">TotalPowers</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">altdss.types.ComplexArray</span></span></span><a class="headerlink" href="#altdss.EnergyMeter.EnergyMeter.TotalPowers" title="Link to this definition">#</a></dt>
-<dd></dd></dl>
+<dd><p>Returns an array with the total powers (complex, kVA) at ALL terminals of the active circuit element.</p>
+<p>Original COM help: <a class="reference external" href="https://opendss.epri.com/TotalPowers.html">https://opendss.epri.com/TotalPowers.html</a></p>
+</dd></dl>
 
 <dl class="py attribute">
 <dt class="sig sig-object py" id="altdss.EnergyMeter.EnergyMeter.VBaseLosses">
 <span class="sig-name descname"><span class="pre">VBaseLosses</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">bool</span></em><a class="headerlink" href="#altdss.EnergyMeter.EnergyMeter.VBaseLosses" title="Link to this definition">#</a></dt>
 <dd><p>‘property(…)’</p>
+<p>{Yes | No}  Default is YES. Compute losses and segregate by voltage base. If NO, then voltage-based tabulation is not reported.</p>
+<p>DSS property name: <code class="docutils literal notranslate"><span class="pre">VBaseLosses</span></code>, DSS property index: 16.</p>
 </dd></dl>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="altdss.EnergyMeter.EnergyMeter.Voltages">
 <span class="sig-name descname"><span class="pre">Voltages</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">altdss.types.ComplexArray</span></span></span><a class="headerlink" href="#altdss.EnergyMeter.EnergyMeter.Voltages" title="Link to this definition">#</a></dt>
-<dd></dd></dl>
+<dd><p>Complex array of voltages at terminals</p>
+<p>Original COM help: <a class="reference external" href="https://opendss.epri.com/Voltages1.html">https://opendss.epri.com/Voltages1.html</a></p>
+</dd></dl>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="altdss.EnergyMeter.EnergyMeter.VoltagesMagAng">
 <span class="sig-name descname"><span class="pre">VoltagesMagAng</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">altdss.types.Float64Array</span></span></span><a class="headerlink" href="#altdss.EnergyMeter.EnergyMeter.VoltagesMagAng" title="Link to this definition">#</a></dt>
-<dd></dd></dl>
+<dd><p>Voltages at each conductor in magnitude, angle form as array of doubles.</p>
+<p>Original COM help: <a class="reference external" href="https://opendss.epri.com/VoltagesMagAng.html">https://opendss.epri.com/VoltagesMagAng.html</a></p>
+</dd></dl>
 
 <dl class="py attribute">
 <dt class="sig sig-object py" id="altdss.EnergyMeter.EnergyMeter.XfmrLosses">
 <span class="sig-name descname"><span class="pre">XfmrLosses</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">bool</span></em><a class="headerlink" href="#altdss.EnergyMeter.EnergyMeter.XfmrLosses" title="Link to this definition">#</a></dt>
 <dd><p>‘property(…)’</p>
+<p>{Yes | No}  Default is YES. Compute Transformer losses. If NO, transformers are ignored in loss calculations.</p>
+<p>DSS property name: <code class="docutils literal notranslate"><span class="pre">XfmrLosses</span></code>, DSS property index: 13.</p>
 </dd></dl>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="altdss.EnergyMeter.EnergyMeter.YPrim">
 <span class="sig-name descname"><span class="pre">YPrim</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">altdss.types.ComplexArray</span></span></span><a class="headerlink" href="#altdss.EnergyMeter.EnergyMeter.YPrim" title="Link to this definition">#</a></dt>
-<dd></dd></dl>
+<dd><p>YPrim matrix, column order, complex numbers</p>
+<p>Original COM help: <a class="reference external" href="https://opendss.epri.com/Yprim.html">https://opendss.epri.com/Yprim.html</a></p>
+</dd></dl>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="altdss.EnergyMeter.EnergyMeter.ZoneDump">
@@ -1340,6 +1462,10 @@ Use -1 as terminal to get the value across all terminals.</p>
 <dt class="sig sig-object py" id="altdss.EnergyMeter.EnergyMeter.ZoneList">
 <span class="sig-name descname"><span class="pre">ZoneList</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">List</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">]</span></span></em><a class="headerlink" href="#altdss.EnergyMeter.EnergyMeter.ZoneList" title="Link to this definition">#</a></dt>
 <dd><p>‘property(…)’</p>
+<p>ARRAY of full element names for this meter’s zone.  Default is for meter to find it’s own zone. If specified, DSS uses this list instead.  Can access the names in a single-column text file.  Examples:</p>
+<p>zonelist=[line.L1, transformer.T1, Line.L3]
+zonelist=(file=branchlist.txt)</p>
+<p>DSS property name: <code class="docutils literal notranslate"><span class="pre">ZoneList</span></code>, DSS property index: 8.</p>
 </dd></dl>
 
 <dl class="py attribute">
@@ -1376,8 +1502,8 @@ Use -1 as terminal to get the value across all terminals.</p>
 <dt class="sig sig-object py" id="altdss.EnergyMeter.EnergyMeter.begin_edit">
 <span class="sig-name descname"><span class="pre">begin_edit</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span><a class="headerlink" href="#altdss.EnergyMeter.EnergyMeter.begin_edit" title="Link to this definition">#</a></dt>
 <dd><p>Marks a DSS object for editing</p>
-<p>In the editing mode, some final side-effects of changing properties are post-poned
-until <code class="docutils literal notranslate"><span class="pre">_end_edit</span></code> is called. This side-effects can be somewhat costly, like updating
+<p>In the editing mode, some final side-effects of changing properties are postponed
+until <code class="docutils literal notranslate"><span class="pre">end_edit</span></code> is called. This side-effects can be somewhat costly, like updating
 the model parameters or internal matrices.</p>
 <p>If you don’t have any performance constraint, you may edit each property individually
 without worrying about using <code class="docutils literal notranslate"><span class="pre">begin_edit</span></code> and <code class="docutils literal notranslate"><span class="pre">end_edit</span></code>. For convenience, those are
@@ -1398,12 +1524,16 @@ the <code class="docutils literal notranslate"><span class="pre">Process</span><
 <dt class="sig sig-object py" id="altdss.EnergyMeter.EnergyMeter.kVAEmerg">
 <span class="sig-name descname"><span class="pre">kVAEmerg</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">float</span></em><a class="headerlink" href="#altdss.EnergyMeter.EnergyMeter.kVAEmerg" title="Link to this definition">#</a></dt>
 <dd><p>‘property(…)’</p>
+<p>Upper limit on kVA load in the zone, Emergency configuration. Default is 0.0 (ignored). Overrides limits on individual lines for overload UE. With “LocalOnly=Yes” option, uses only load in metered branch.</p>
+<p>DSS property name: <code class="docutils literal notranslate"><span class="pre">kVAEmerg</span></code>, DSS property index: 6.</p>
 </dd></dl>
 
 <dl class="py attribute">
 <dt class="sig sig-object py" id="altdss.EnergyMeter.EnergyMeter.kVANormal">
 <span class="sig-name descname"><span class="pre">kVANormal</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">float</span></em><a class="headerlink" href="#altdss.EnergyMeter.EnergyMeter.kVANormal" title="Link to this definition">#</a></dt>
 <dd><p>‘property(…)’</p>
+<p>Upper limit on kVA load in the zone, Normal configuration. Default is 0.0 (ignored). Overrides limits on individual lines for overload EEN. With “LocalOnly=Yes” option, uses only load in metered branch.</p>
+<p>DSS property name: <code class="docutils literal notranslate"><span class="pre">kVANormal</span></code>, DSS property index: 5.</p>
 </dd></dl>
 
 <dl class="py method">
@@ -1463,12 +1593,16 @@ File name is “Zone_metername.csv”.</p>
 <dt class="sig sig-object py" id="altdss.EnergyMeter.EnergyMeterBatch.BaseFreq">
 <span class="sig-name descname"><span class="pre">BaseFreq</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><a class="reference internal" href="altdss.ArrayProxy.html#altdss.ArrayProxy.BatchFloat64ArrayProxy" title="altdss.ArrayProxy.BatchFloat64ArrayProxy"><span class="pre">altdss.ArrayProxy.BatchFloat64ArrayProxy</span></a></em><a class="headerlink" href="#altdss.EnergyMeter.EnergyMeterBatch.BaseFreq" title="Link to this definition">#</a></dt>
 <dd><p>‘property(…)’</p>
+<p>Base Frequency for ratings.</p>
+<p>DSS property name: <code class="docutils literal notranslate"><span class="pre">BaseFreq</span></code>, DSS property index: 25.</p>
 </dd></dl>
 
 <dl class="py attribute">
 <dt class="sig sig-object py" id="altdss.EnergyMeter.EnergyMeterBatch.CAIDI">
 <span class="sig-name descname"><span class="pre">CAIDI</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><a class="reference internal" href="altdss.ArrayProxy.html#altdss.ArrayProxy.BatchFloat64ArrayProxy" title="altdss.ArrayProxy.BatchFloat64ArrayProxy"><span class="pre">altdss.ArrayProxy.BatchFloat64ArrayProxy</span></a></em><a class="headerlink" href="#altdss.EnergyMeter.EnergyMeterBatch.CAIDI" title="Link to this definition">#</a></dt>
 <dd><p>‘property(…)’</p>
+<p>(Read only) Makes CAIDI result available via return on query (? energymeter.myMeter.CAIDI.</p>
+<p>DSS property name: <code class="docutils literal notranslate"><span class="pre">CAIDI</span></code>, DSS property index: 23.</p>
 </dd></dl>
 
 <dl class="py method">
@@ -1480,27 +1614,37 @@ File name is “Zone_metername.csv”.</p>
 <dl class="py method">
 <dt class="sig sig-object py" id="altdss.EnergyMeter.EnergyMeterBatch.ComplexSeqCurrents">
 <span class="sig-name descname"><span class="pre">ComplexSeqCurrents</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">altdss.types.ComplexArray</span></span></span><a class="headerlink" href="#altdss.EnergyMeter.EnergyMeterBatch.ComplexSeqCurrents" title="Link to this definition">#</a></dt>
-<dd></dd></dl>
+<dd><p>Complex double array of Sequence Currents for all conductors of all terminals of active circuit element.</p>
+<p>Original COM help: <a class="reference external" href="https://opendss.epri.com/CplxSeqCurrents.html">https://opendss.epri.com/CplxSeqCurrents.html</a></p>
+</dd></dl>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="altdss.EnergyMeter.EnergyMeterBatch.ComplexSeqVoltages">
 <span class="sig-name descname"><span class="pre">ComplexSeqVoltages</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">altdss.types.ComplexArray</span></span></span><a class="headerlink" href="#altdss.EnergyMeter.EnergyMeterBatch.ComplexSeqVoltages" title="Link to this definition">#</a></dt>
-<dd></dd></dl>
+<dd><p>Complex double array of Sequence Voltage for all terminals of active circuit element.</p>
+<p>Original COM help: <a class="reference external" href="https://opendss.epri.com/CplxSeqVoltages1.html">https://opendss.epri.com/CplxSeqVoltages1.html</a></p>
+</dd></dl>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="altdss.EnergyMeter.EnergyMeterBatch.Currents">
 <span class="sig-name descname"><span class="pre">Currents</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">altdss.types.ComplexArray</span></span></span><a class="headerlink" href="#altdss.EnergyMeter.EnergyMeterBatch.Currents" title="Link to this definition">#</a></dt>
-<dd></dd></dl>
+<dd><p>Complex array of currents into each conductor of each terminal</p>
+<p>Original COM help: <a class="reference external" href="https://opendss.epri.com/Currents1.html">https://opendss.epri.com/Currents1.html</a></p>
+</dd></dl>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="altdss.EnergyMeter.EnergyMeterBatch.CurrentsMagAng">
 <span class="sig-name descname"><span class="pre">CurrentsMagAng</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">altdss.types.Float64Array</span></span></span><a class="headerlink" href="#altdss.EnergyMeter.EnergyMeterBatch.CurrentsMagAng" title="Link to this definition">#</a></dt>
-<dd></dd></dl>
+<dd><p>Currents in magnitude, angle (degrees) format as a array of doubles.</p>
+<p>Original COM help: <a class="reference external" href="https://opendss.epri.com/CurrentsMagAng.html">https://opendss.epri.com/CurrentsMagAng.html</a></p>
+</dd></dl>
 
 <dl class="py attribute">
 <dt class="sig sig-object py" id="altdss.EnergyMeter.EnergyMeterBatch.CustInterrupts">
 <span class="sig-name descname"><span class="pre">CustInterrupts</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><a class="reference internal" href="altdss.ArrayProxy.html#altdss.ArrayProxy.BatchFloat64ArrayProxy" title="altdss.ArrayProxy.BatchFloat64ArrayProxy"><span class="pre">altdss.ArrayProxy.BatchFloat64ArrayProxy</span></a></em><a class="headerlink" href="#altdss.EnergyMeter.EnergyMeterBatch.CustInterrupts" title="Link to this definition">#</a></dt>
 <dd><p>‘property(…)’</p>
+<p>(Read only) Makes Total Customer Interrupts value result available via return on query (? energymeter.myMeter.CustInterrupts.</p>
+<p>DSS property name: <code class="docutils literal notranslate"><span class="pre">CustInterrupts</span></code>, DSS property index: 24.</p>
 </dd></dl>
 
 <dl class="py method">
@@ -1513,18 +1657,24 @@ File name is “Zone_metername.csv”.</p>
 <dt class="sig sig-object py" id="altdss.EnergyMeter.EnergyMeterBatch.Element">
 <span class="sig-name descname"><span class="pre">Element</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">List</span><span class="p"><span class="pre">[</span></span><a class="reference internal" href="altdss.DSSObj.html#altdss.DSSObj.DSSObj" title="altdss.DSSObj.DSSObj"><span class="pre">altdss.DSSObj.DSSObj</span></a><span class="p"><span class="pre">]</span></span></em><a class="headerlink" href="#altdss.EnergyMeter.EnergyMeterBatch.Element" title="Link to this definition">#</a></dt>
 <dd><p>‘property(…)’</p>
+<p>Name (Full Object name) of element to which the monitor is connected.</p>
+<p>DSS property name: <code class="docutils literal notranslate"><span class="pre">Element</span></code>, DSS property index: 1.</p>
 </dd></dl>
 
 <dl class="py attribute">
 <dt class="sig sig-object py" id="altdss.EnergyMeter.EnergyMeterBatch.Element_str">
 <span class="sig-name descname"><span class="pre">Element_str</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">List</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">]</span></span></em><a class="headerlink" href="#altdss.EnergyMeter.EnergyMeterBatch.Element_str" title="Link to this definition">#</a></dt>
 <dd><p>‘property(…)’</p>
+<p>Name (Full Object name) of element to which the monitor is connected.</p>
+<p>DSS property name: <code class="docutils literal notranslate"><span class="pre">Element</span></code>, DSS property index: 1.</p>
 </dd></dl>
 
 <dl class="py attribute">
 <dt class="sig sig-object py" id="altdss.EnergyMeter.EnergyMeterBatch.Enabled">
 <span class="sig-name descname"><span class="pre">Enabled</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">List</span><span class="p"><span class="pre">[</span></span><span class="pre">bool</span><span class="p"><span class="pre">]</span></span></em><a class="headerlink" href="#altdss.EnergyMeter.EnergyMeterBatch.Enabled" title="Link to this definition">#</a></dt>
 <dd><p>‘property(…)’</p>
+<p>{Yes|No or True|False} Indicates whether this element is enabled.</p>
+<p>DSS property name: <code class="docutils literal notranslate"><span class="pre">Enabled</span></code>, DSS property index: 26.</p>
 </dd></dl>
 
 <dl class="py method">
@@ -1535,46 +1685,62 @@ File name is “Zone_metername.csv”.</p>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="altdss.EnergyMeter.EnergyMeterBatch.GUID">
-<span class="sig-name descname"><span class="pre">GUID</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">str</span></span></span><a class="headerlink" href="#altdss.EnergyMeter.EnergyMeterBatch.GUID" title="Link to this definition">#</a></dt>
+<span class="sig-name descname"><span class="pre">GUID</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">List</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">]</span></span></span></span><a class="headerlink" href="#altdss.EnergyMeter.EnergyMeterBatch.GUID" title="Link to this definition">#</a></dt>
 <dd><p>GUID/UUID for each object. Currently used only in the CIM-related methods.</p>
+<p>Original COM help: <a class="reference external" href="https://opendss.epri.com/GUID.html">https://opendss.epri.com/GUID.html</a></p>
 </dd></dl>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="altdss.EnergyMeter.EnergyMeterBatch.Handle">
 <span class="sig-name descname"><span class="pre">Handle</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">altdss.types.Int32Array</span></span></span><a class="headerlink" href="#altdss.EnergyMeter.EnergyMeterBatch.Handle" title="Link to this definition">#</a></dt>
-<dd></dd></dl>
+<dd><p>Index of each element into the circuit’s element list.</p>
+<p>Original COM help: <a class="reference external" href="https://opendss.epri.com/Handle.html">https://opendss.epri.com/Handle.html</a></p>
+</dd></dl>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="altdss.EnergyMeter.EnergyMeterBatch.HasOCPDevice">
-<span class="sig-name descname"><span class="pre">HasOCPDevice</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">bool</span></span></span><a class="headerlink" href="#altdss.EnergyMeter.EnergyMeterBatch.HasOCPDevice" title="Link to this definition">#</a></dt>
-<dd></dd></dl>
+<span class="sig-name descname"><span class="pre">HasOCPDevice</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">altdss.types.BoolArray</span></span></span><a class="headerlink" href="#altdss.EnergyMeter.EnergyMeterBatch.HasOCPDevice" title="Link to this definition">#</a></dt>
+<dd><p>For each element in the batch: returns true if a recloser, relay, or fuse controlling the circuit element.</p>
+<p>OCP = Overcurrent Protection</p>
+<p>Original COM help: <a class="reference external" href="https://opendss.epri.com/HasOCPDevice.html">https://opendss.epri.com/HasOCPDevice.html</a></p>
+</dd></dl>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="altdss.EnergyMeter.EnergyMeterBatch.HasSwitchControl">
-<span class="sig-name descname"><span class="pre">HasSwitchControl</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">bool</span></span></span><a class="headerlink" href="#altdss.EnergyMeter.EnergyMeterBatch.HasSwitchControl" title="Link to this definition">#</a></dt>
-<dd></dd></dl>
+<span class="sig-name descname"><span class="pre">HasSwitchControl</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">altdss.types.BoolArray</span></span></span><a class="headerlink" href="#altdss.EnergyMeter.EnergyMeterBatch.HasSwitchControl" title="Link to this definition">#</a></dt>
+<dd><p>For each element in the batch: returns true if the element has a SwtControl attached.</p>
+<p>Original COM help: <a class="reference external" href="https://opendss.epri.com/HasSwitchControl.html">https://opendss.epri.com/HasSwitchControl.html</a></p>
+</dd></dl>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="altdss.EnergyMeter.EnergyMeterBatch.HasVoltControl">
-<span class="sig-name descname"><span class="pre">HasVoltControl</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">bool</span></span></span><a class="headerlink" href="#altdss.EnergyMeter.EnergyMeterBatch.HasVoltControl" title="Link to this definition">#</a></dt>
-<dd></dd></dl>
+<span class="sig-name descname"><span class="pre">HasVoltControl</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">altdss.types.BoolArray</span></span></span><a class="headerlink" href="#altdss.EnergyMeter.EnergyMeterBatch.HasVoltControl" title="Link to this definition">#</a></dt>
+<dd><p>For each element in the batch: returns true if the element has a CapControl or RegControl attached.</p>
+<p>Original COM help: <a class="reference external" href="https://opendss.epri.com/HasVoltControl.html">https://opendss.epri.com/HasVoltControl.html</a></p>
+</dd></dl>
 
 <dl class="py attribute">
 <dt class="sig sig-object py" id="altdss.EnergyMeter.EnergyMeterBatch.Int_Duration">
 <span class="sig-name descname"><span class="pre">Int_Duration</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><a class="reference internal" href="altdss.ArrayProxy.html#altdss.ArrayProxy.BatchFloat64ArrayProxy" title="altdss.ArrayProxy.BatchFloat64ArrayProxy"><span class="pre">altdss.ArrayProxy.BatchFloat64ArrayProxy</span></a></em><a class="headerlink" href="#altdss.EnergyMeter.EnergyMeterBatch.Int_Duration" title="Link to this definition">#</a></dt>
 <dd><p>‘property(…)’</p>
+<p>Average annual duration, in hr, of interruptions for head of the meter zone (source side of zone or feeder).</p>
+<p>DSS property name: <code class="docutils literal notranslate"><span class="pre">Int_Duration</span></code>, DSS property index: 19.</p>
 </dd></dl>
 
 <dl class="py attribute">
 <dt class="sig sig-object py" id="altdss.EnergyMeter.EnergyMeterBatch.Int_Rate">
 <span class="sig-name descname"><span class="pre">Int_Rate</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><a class="reference internal" href="altdss.ArrayProxy.html#altdss.ArrayProxy.BatchFloat64ArrayProxy" title="altdss.ArrayProxy.BatchFloat64ArrayProxy"><span class="pre">altdss.ArrayProxy.BatchFloat64ArrayProxy</span></a></em><a class="headerlink" href="#altdss.EnergyMeter.EnergyMeterBatch.Int_Rate" title="Link to this definition">#</a></dt>
 <dd><p>‘property(…)’</p>
+<p>Average number of annual interruptions for head of the meter zone (source side of zone or feeder).</p>
+<p>DSS property name: <code class="docutils literal notranslate"><span class="pre">Int_Rate</span></code>, DSS property index: 18.</p>
 </dd></dl>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="altdss.EnergyMeter.EnergyMeterBatch.IsIsolated">
 <span class="sig-name descname"><span class="pre">IsIsolated</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">altdss.types.BoolArray</span></span></span><a class="headerlink" href="#altdss.EnergyMeter.EnergyMeterBatch.IsIsolated" title="Link to this definition">#</a></dt>
-<dd></dd></dl>
+<dd><p>For each element in the batch: returns true if the element is isolated.
+Note that this only fetches the current value. See also the Topology interface.</p>
+</dd></dl>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="altdss.EnergyMeter.EnergyMeterBatch.Like">
@@ -1588,30 +1754,38 @@ File name is “Zone_metername.csv”.</p>
 <dt class="sig sig-object py" id="altdss.EnergyMeter.EnergyMeterBatch.LineLosses">
 <span class="sig-name descname"><span class="pre">LineLosses</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">List</span><span class="p"><span class="pre">[</span></span><span class="pre">bool</span><span class="p"><span class="pre">]</span></span></em><a class="headerlink" href="#altdss.EnergyMeter.EnergyMeterBatch.LineLosses" title="Link to this definition">#</a></dt>
 <dd><p>‘property(…)’</p>
+<p>{Yes | No}  Default is YES. Compute Line losses. If NO, then none of the losses are computed.</p>
+<p>DSS property name: <code class="docutils literal notranslate"><span class="pre">LineLosses</span></code>, DSS property index: 12.</p>
 </dd></dl>
 
 <dl class="py attribute">
 <dt class="sig sig-object py" id="altdss.EnergyMeter.EnergyMeterBatch.LocalOnly">
 <span class="sig-name descname"><span class="pre">LocalOnly</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">List</span><span class="p"><span class="pre">[</span></span><span class="pre">bool</span><span class="p"><span class="pre">]</span></span></em><a class="headerlink" href="#altdss.EnergyMeter.EnergyMeterBatch.LocalOnly" title="Link to this definition">#</a></dt>
 <dd><p>‘property(…)’</p>
+<p>{Yes | No}  Default is NO.  If Yes, meter considers only the monitored element for EEN and UE calcs.  Uses whole zone for losses.</p>
+<p>DSS property name: <code class="docutils literal notranslate"><span class="pre">LocalOnly</span></code>, DSS property index: 9.</p>
 </dd></dl>
 
 <dl class="py attribute">
 <dt class="sig sig-object py" id="altdss.EnergyMeter.EnergyMeterBatch.Losses">
 <span class="sig-name descname"><span class="pre">Losses</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">List</span><span class="p"><span class="pre">[</span></span><span class="pre">bool</span><span class="p"><span class="pre">]</span></span></em><a class="headerlink" href="#altdss.EnergyMeter.EnergyMeterBatch.Losses" title="Link to this definition">#</a></dt>
 <dd><p>‘property(…)’</p>
+<p>{Yes | No}  Default is YES. Compute Zone losses. If NO, then no losses at all are computed.</p>
+<p>DSS property name: <code class="docutils literal notranslate"><span class="pre">Losses</span></code>, DSS property index: 11.</p>
 </dd></dl>
 
 <dl class="py attribute">
 <dt class="sig sig-object py" id="altdss.EnergyMeter.EnergyMeterBatch.Mask">
 <span class="sig-name descname"><span class="pre">Mask</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">List</span><span class="p"><span class="pre">[</span></span><span class="pre">altdss.types.Float64Array</span><span class="p"><span class="pre">]</span></span></em><a class="headerlink" href="#altdss.EnergyMeter.EnergyMeterBatch.Mask" title="Link to this definition">#</a></dt>
 <dd><p>‘property(…)’</p>
+<p>Mask for adding registers whenever all meters are totalized.  Array of floating point numbers representing the multiplier to be used for summing each register from this meter. Default = (1, 1, 1, 1, … ).  You only have to enter as many as are changed (positional). Useful when two meters monitor same energy, etc.</p>
+<p>DSS property name: <code class="docutils literal notranslate"><span class="pre">Mask</span></code>, DSS property index: 10.</p>
 </dd></dl>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="altdss.EnergyMeter.EnergyMeterBatch.MaxCurrent">
-<span class="sig-name descname"><span class="pre">MaxCurrent</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">terminal</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">float</span></span></span><a class="headerlink" href="#altdss.EnergyMeter.EnergyMeterBatch.MaxCurrent" title="Link to this definition">#</a></dt>
-<dd><p>Returns the maximum current (magnitude) at the specificed terminal for all elements in this batch.
+<span class="sig-name descname"><span class="pre">MaxCurrent</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">terminal</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">altdss.types.Float64Array</span></span></span><a class="headerlink" href="#altdss.EnergyMeter.EnergyMeterBatch.MaxCurrent" title="Link to this definition">#</a></dt>
+<dd><p>Returns the maximum current (magnitude) at the specified terminal for each element in this batch.
 Use -1 as terminal to get the value across all terminals.</p>
 </dd></dl>
 
@@ -1623,12 +1797,16 @@ Use -1 as terminal to get the value across all terminals.</p>
 <dl class="py method">
 <dt class="sig sig-object py" id="altdss.EnergyMeter.EnergyMeterBatch.NumConductors">
 <span class="sig-name descname"><span class="pre">NumConductors</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">altdss.types.Int32Array</span></span></span><a class="headerlink" href="#altdss.EnergyMeter.EnergyMeterBatch.NumConductors" title="Link to this definition">#</a></dt>
-<dd></dd></dl>
+<dd><p>Number of conductors per terminal for each element in the batch.</p>
+<p>Original COM help: <a class="reference external" href="https://opendss.epri.com/NumConductors.html">https://opendss.epri.com/NumConductors.html</a></p>
+</dd></dl>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="altdss.EnergyMeter.EnergyMeterBatch.NumControllers">
 <span class="sig-name descname"><span class="pre">NumControllers</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">altdss.types.Int32Array</span></span></span><a class="headerlink" href="#altdss.EnergyMeter.EnergyMeterBatch.NumControllers" title="Link to this definition">#</a></dt>
-<dd></dd></dl>
+<dd><p>Number of controllers connected to each device in the batch.</p>
+<p>Original COM help: <a class="reference external" href="https://opendss.epri.com/NumControls.html">https://opendss.epri.com/NumControls.html</a></p>
+</dd></dl>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="altdss.EnergyMeter.EnergyMeterBatch.NumEndElements">
@@ -1639,7 +1817,9 @@ Use -1 as terminal to get the value across all terminals.</p>
 <dl class="py method">
 <dt class="sig sig-object py" id="altdss.EnergyMeter.EnergyMeterBatch.NumPhases">
 <span class="sig-name descname"><span class="pre">NumPhases</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">altdss.types.Int32Array</span></span></span><a class="headerlink" href="#altdss.EnergyMeter.EnergyMeterBatch.NumPhases" title="Link to this definition">#</a></dt>
-<dd></dd></dl>
+<dd><p>Number of Phases for each element in this batch.</p>
+<p>Original COM help: <a class="reference external" href="https://opendss.epri.com/NumPhases.html">https://opendss.epri.com/NumPhases.html</a></p>
+</dd></dl>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="altdss.EnergyMeter.EnergyMeterBatch.NumSections">
@@ -1650,51 +1830,73 @@ Use -1 as terminal to get the value across all terminals.</p>
 <dl class="py method">
 <dt class="sig sig-object py" id="altdss.EnergyMeter.EnergyMeterBatch.NumTerminals">
 <span class="sig-name descname"><span class="pre">NumTerminals</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">altdss.types.Int32Array</span></span></span><a class="headerlink" href="#altdss.EnergyMeter.EnergyMeterBatch.NumTerminals" title="Link to this definition">#</a></dt>
-<dd></dd></dl>
+<dd><p>Number of terminals for each Circuit Element in the batch.</p>
+<p>Original COM help: <a class="reference external" href="https://opendss.epri.com/NumTerminals.html">https://opendss.epri.com/NumTerminals.html</a></p>
+</dd></dl>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="altdss.EnergyMeter.EnergyMeterBatch.OCPDevice">
 <span class="sig-name descname"><span class="pre">OCPDevice</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">List</span><span class="p"><span class="pre">[</span></span><span class="pre">Union</span><span class="p"><span class="pre">[</span></span><a class="reference internal" href="altdss.DSSObj.html#altdss.DSSObj.DSSObj" title="altdss.DSSObj.DSSObj"><span class="pre">altdss.DSSObj.DSSObj</span></a><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">None</span><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">]</span></span></span></span><a class="headerlink" href="#altdss.EnergyMeter.EnergyMeterBatch.OCPDevice" title="Link to this definition">#</a></dt>
-<dd></dd></dl>
+<dd><p>Returns (as a list of Python objects) the OCP device controlling each element.</p>
+</dd></dl>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="altdss.EnergyMeter.EnergyMeterBatch.OCPDeviceIndex">
 <span class="sig-name descname"><span class="pre">OCPDeviceIndex</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">altdss.types.Int32Array</span></span></span><a class="headerlink" href="#altdss.EnergyMeter.EnergyMeterBatch.OCPDeviceIndex" title="Link to this definition">#</a></dt>
-<dd></dd></dl>
+<dd><p>For each element in the batch: index into each controller list of the OCP Device controlling each circuit element</p>
+<p>Original COM help: <a class="reference external" href="https://opendss.epri.com/OCPDevIndex.html">https://opendss.epri.com/OCPDevIndex.html</a></p>
+</dd></dl>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="altdss.EnergyMeter.EnergyMeterBatch.OCPDeviceType">
-<span class="sig-name descname"><span class="pre">OCPDeviceType</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">dss.enums.OCPDevType</span></span></span><a class="headerlink" href="#altdss.EnergyMeter.EnergyMeterBatch.OCPDeviceType" title="Link to this definition">#</a></dt>
-<dd></dd></dl>
+<span class="sig-name descname"><span class="pre">OCPDeviceType</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">List</span><span class="p"><span class="pre">[</span></span><span class="pre">dss.enums.OCPDevType</span><span class="p"><span class="pre">]</span></span></span></span><a class="headerlink" href="#altdss.EnergyMeter.EnergyMeterBatch.OCPDeviceType" title="Link to this definition">#</a></dt>
+<dd><p>For each element in the batch: type of OCP controller device</p>
+<p>Original COM help: <a class="reference external" href="https://opendss.epri.com/OCPDevType.html">https://opendss.epri.com/OCPDevType.html</a></p>
+</dd></dl>
 
 <dl class="py attribute">
 <dt class="sig sig-object py" id="altdss.EnergyMeter.EnergyMeterBatch.Option">
 <span class="sig-name descname"><span class="pre">Option</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">List</span><span class="p"><span class="pre">[</span></span><span class="pre">List</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">]</span></span></em><a class="headerlink" href="#altdss.EnergyMeter.EnergyMeterBatch.Option" title="Link to this definition">#</a></dt>
 <dd><p>‘property(…)’</p>
+<p>Enter a string ARRAY of any combination of the following. Options processed left-to-right:</p>
+<p>(E)xcess : (default) UE/EEN is estimate of energy over capacity
+(T)otal : UE/EEN is total energy after capacity exceeded
+(R)adial : (default) Treats zone as a radial circuit
+(M)esh : Treats zone as meshed network (not radial).
+(C)ombined : (default) Load UE/EEN computed from combination of overload and undervoltage.
+(V)oltage : Load UE/EEN computed based on voltage only.</p>
+<p>Example: option=(E, R)</p>
+<p>DSS property name: <code class="docutils literal notranslate"><span class="pre">Option</span></code>, DSS property index: 4.</p>
 </dd></dl>
 
 <dl class="py attribute">
 <dt class="sig sig-object py" id="altdss.EnergyMeter.EnergyMeterBatch.PeakCurrent">
 <span class="sig-name descname"><span class="pre">PeakCurrent</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">List</span><span class="p"><span class="pre">[</span></span><span class="pre">altdss.types.Float64Array</span><span class="p"><span class="pre">]</span></span></em><a class="headerlink" href="#altdss.EnergyMeter.EnergyMeterBatch.PeakCurrent" title="Link to this definition">#</a></dt>
 <dd><p>‘property(…)’</p>
+<p>ARRAY of current magnitudes representing the peak currents measured at this location for the load allocation function.  Default is (400, 400, 400). Enter one current for each phase</p>
+<p>DSS property name: <code class="docutils literal notranslate"><span class="pre">PeakCurrent</span></code>, DSS property index: 7.</p>
 </dd></dl>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="altdss.EnergyMeter.EnergyMeterBatch.PhaseLosses">
 <span class="sig-name descname"><span class="pre">PhaseLosses</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">altdss.types.ComplexArray</span></span></span><a class="headerlink" href="#altdss.EnergyMeter.EnergyMeterBatch.PhaseLosses" title="Link to this definition">#</a></dt>
-<dd><p>Complex array of losses (kVA) by phase, for each element</p>
+<dd><p>Complex array of losses (kVA) by phase</p>
+<p>Original COM help: <a class="reference external" href="https://opendss.epri.com/PhaseLosses.html">https://opendss.epri.com/PhaseLosses.html</a></p>
 </dd></dl>
 
 <dl class="py attribute">
 <dt class="sig sig-object py" id="altdss.EnergyMeter.EnergyMeterBatch.PhaseVoltageReport">
 <span class="sig-name descname"><span class="pre">PhaseVoltageReport</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">List</span><span class="p"><span class="pre">[</span></span><span class="pre">bool</span><span class="p"><span class="pre">]</span></span></em><a class="headerlink" href="#altdss.EnergyMeter.EnergyMeterBatch.PhaseVoltageReport" title="Link to this definition">#</a></dt>
 <dd><p>‘property(…)’</p>
+<p>{Yes | No}  Default is NO.  Report min, max, and average phase voltages for the zone and tabulate by voltage base. Demand Intervals must be turned on (Set Demand=true) and voltage bases must be defined for this property to take effect. Result is in a separate report file.</p>
+<p>DSS property name: <code class="docutils literal notranslate"><span class="pre">PhaseVoltageReport</span></code>, DSS property index: 17.</p>
 </dd></dl>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="altdss.EnergyMeter.EnergyMeterBatch.Powers">
 <span class="sig-name descname"><span class="pre">Powers</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">altdss.types.ComplexArray</span></span></span><a class="headerlink" href="#altdss.EnergyMeter.EnergyMeterBatch.Powers" title="Link to this definition">#</a></dt>
 <dd><p>Complex array of powers (kVA) into each conductor of each terminal, of each element in the batch.</p>
+<p>Original COM help: <a class="reference external" href="https://opendss.epri.com/Powers.html">https://opendss.epri.com/Powers.html</a></p>
 </dd></dl>
 
 <dl class="py method">
@@ -1707,18 +1909,24 @@ Use -1 as terminal to get the value across all terminals.</p>
 <dt class="sig sig-object py" id="altdss.EnergyMeter.EnergyMeterBatch.SAIDI">
 <span class="sig-name descname"><span class="pre">SAIDI</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><a class="reference internal" href="altdss.ArrayProxy.html#altdss.ArrayProxy.BatchFloat64ArrayProxy" title="altdss.ArrayProxy.BatchFloat64ArrayProxy"><span class="pre">altdss.ArrayProxy.BatchFloat64ArrayProxy</span></a></em><a class="headerlink" href="#altdss.EnergyMeter.EnergyMeterBatch.SAIDI" title="Link to this definition">#</a></dt>
 <dd><p>‘property(…)’</p>
+<p>(Read only) Makes SAIDI result available via return on query (? energymeter.myMeter.SAIDI.</p>
+<p>DSS property name: <code class="docutils literal notranslate"><span class="pre">SAIDI</span></code>, DSS property index: 22.</p>
 </dd></dl>
 
 <dl class="py attribute">
 <dt class="sig sig-object py" id="altdss.EnergyMeter.EnergyMeterBatch.SAIFI">
 <span class="sig-name descname"><span class="pre">SAIFI</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><a class="reference internal" href="altdss.ArrayProxy.html#altdss.ArrayProxy.BatchFloat64ArrayProxy" title="altdss.ArrayProxy.BatchFloat64ArrayProxy"><span class="pre">altdss.ArrayProxy.BatchFloat64ArrayProxy</span></a></em><a class="headerlink" href="#altdss.EnergyMeter.EnergyMeterBatch.SAIFI" title="Link to this definition">#</a></dt>
 <dd><p>‘property(…)’</p>
+<p>(Read only) Makes SAIFI result available via return on query (? energymeter.myMeter.SAIFI.</p>
+<p>DSS property name: <code class="docutils literal notranslate"><span class="pre">SAIFI</span></code>, DSS property index: 20.</p>
 </dd></dl>
 
 <dl class="py attribute">
 <dt class="sig sig-object py" id="altdss.EnergyMeter.EnergyMeterBatch.SAIFIkW">
 <span class="sig-name descname"><span class="pre">SAIFIkW</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><a class="reference internal" href="altdss.ArrayProxy.html#altdss.ArrayProxy.BatchFloat64ArrayProxy" title="altdss.ArrayProxy.BatchFloat64ArrayProxy"><span class="pre">altdss.ArrayProxy.BatchFloat64ArrayProxy</span></a></em><a class="headerlink" href="#altdss.EnergyMeter.EnergyMeterBatch.SAIFIkW" title="Link to this definition">#</a></dt>
 <dd><p>‘property(…)’</p>
+<p>(Read only) Makes SAIFIkW result available via return on query (? energymeter.myMeter.SAIFIkW.</p>
+<p>DSS property name: <code class="docutils literal notranslate"><span class="pre">SAIFIkW</span></code>, DSS property index: 21.</p>
 </dd></dl>
 
 <dl class="py method">
@@ -1730,23 +1938,31 @@ Use -1 as terminal to get the value across all terminals.</p>
 <dl class="py method">
 <dt class="sig sig-object py" id="altdss.EnergyMeter.EnergyMeterBatch.SeqCurrents">
 <span class="sig-name descname"><span class="pre">SeqCurrents</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">altdss.types.Float64Array</span></span></span><a class="headerlink" href="#altdss.EnergyMeter.EnergyMeterBatch.SeqCurrents" title="Link to this definition">#</a></dt>
-<dd></dd></dl>
+<dd><p>Array of symmetrical component currents (magnitudes only) into each 3-phase terminal of each element</p>
+<p>Original COM help: <a class="reference external" href="https://opendss.epri.com/SeqCurrents.html">https://opendss.epri.com/SeqCurrents.html</a></p>
+</dd></dl>
 
 <dl class="py attribute">
 <dt class="sig sig-object py" id="altdss.EnergyMeter.EnergyMeterBatch.SeqLosses">
 <span class="sig-name descname"><span class="pre">SeqLosses</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">List</span><span class="p"><span class="pre">[</span></span><span class="pre">bool</span><span class="p"><span class="pre">]</span></span></em><a class="headerlink" href="#altdss.EnergyMeter.EnergyMeterBatch.SeqLosses" title="Link to this definition">#</a></dt>
 <dd><p>‘property(…)’</p>
+<p>{Yes | No}  Default is YES. Compute Sequence losses in lines and segregate by line mode losses and zero mode losses.</p>
+<p>DSS property name: <code class="docutils literal notranslate"><span class="pre">SeqLosses</span></code>, DSS property index: 14.</p>
 </dd></dl>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="altdss.EnergyMeter.EnergyMeterBatch.SeqPowers">
 <span class="sig-name descname"><span class="pre">SeqPowers</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">altdss.types.ComplexArray</span></span></span><a class="headerlink" href="#altdss.EnergyMeter.EnergyMeterBatch.SeqPowers" title="Link to this definition">#</a></dt>
-<dd></dd></dl>
+<dd><p>Complex array of sequence powers (kW, kvar) into each 3-phase terminal of each element</p>
+<p>Original COM help: <a class="reference external" href="https://opendss.epri.com/SeqPowers.html">https://opendss.epri.com/SeqPowers.html</a></p>
+</dd></dl>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="altdss.EnergyMeter.EnergyMeterBatch.SeqVoltages">
 <span class="sig-name descname"><span class="pre">SeqVoltages</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">altdss.types.Float64Array</span></span></span><a class="headerlink" href="#altdss.EnergyMeter.EnergyMeterBatch.SeqVoltages" title="Link to this definition">#</a></dt>
-<dd></dd></dl>
+<dd><p>Double array of symmetrical component voltages (magnitudes only) at each 3-phase terminal</p>
+<p>Original COM help: <a class="reference external" href="https://opendss.epri.com/SeqVoltages1.html">https://opendss.epri.com/SeqVoltages1.html</a></p>
+</dd></dl>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="altdss.EnergyMeter.EnergyMeterBatch.TakeSample">
@@ -1758,12 +1974,16 @@ Use -1 as terminal to get the value across all terminals.</p>
 <dt class="sig sig-object py" id="altdss.EnergyMeter.EnergyMeterBatch.Terminal">
 <span class="sig-name descname"><span class="pre">Terminal</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><a class="reference internal" href="altdss.ArrayProxy.html#altdss.ArrayProxy.BatchInt32ArrayProxy" title="altdss.ArrayProxy.BatchInt32ArrayProxy"><span class="pre">altdss.ArrayProxy.BatchInt32ArrayProxy</span></a></em><a class="headerlink" href="#altdss.EnergyMeter.EnergyMeterBatch.Terminal" title="Link to this definition">#</a></dt>
 <dd><p>‘property(…)’</p>
+<p>Number of the terminal of the circuit element to which the monitor is connected. 1 or 2, typically.</p>
+<p>DSS property name: <code class="docutils literal notranslate"><span class="pre">Terminal</span></code>, DSS property index: 2.</p>
 </dd></dl>
 
 <dl class="py attribute">
 <dt class="sig sig-object py" id="altdss.EnergyMeter.EnergyMeterBatch.ThreePhaseLosses">
 <span class="sig-name descname"><span class="pre">ThreePhaseLosses</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">List</span><span class="p"><span class="pre">[</span></span><span class="pre">bool</span><span class="p"><span class="pre">]</span></span></em><a class="headerlink" href="#altdss.EnergyMeter.EnergyMeterBatch.ThreePhaseLosses" title="Link to this definition">#</a></dt>
 <dd><p>‘property(…)’</p>
+<p>{Yes | No}  Default is YES. Compute Line losses and segregate by 3-phase and other (1- and 2-phase) line losses.</p>
+<p>DSS property name: <code class="docutils literal notranslate"><span class="pre">3PhaseLosses</span></code>, DSS property index: 15.</p>
 </dd></dl>
 
 <dl class="py method">
@@ -1783,22 +2003,30 @@ Use -1 as terminal to get the value across all terminals.</p>
 <dt class="sig sig-object py" id="altdss.EnergyMeter.EnergyMeterBatch.VBaseLosses">
 <span class="sig-name descname"><span class="pre">VBaseLosses</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">List</span><span class="p"><span class="pre">[</span></span><span class="pre">bool</span><span class="p"><span class="pre">]</span></span></em><a class="headerlink" href="#altdss.EnergyMeter.EnergyMeterBatch.VBaseLosses" title="Link to this definition">#</a></dt>
 <dd><p>‘property(…)’</p>
+<p>{Yes | No}  Default is YES. Compute losses and segregate by voltage base. If NO, then voltage-based tabulation is not reported.</p>
+<p>DSS property name: <code class="docutils literal notranslate"><span class="pre">VBaseLosses</span></code>, DSS property index: 16.</p>
 </dd></dl>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="altdss.EnergyMeter.EnergyMeterBatch.Voltages">
 <span class="sig-name descname"><span class="pre">Voltages</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">altdss.types.ComplexArray</span></span></span><a class="headerlink" href="#altdss.EnergyMeter.EnergyMeterBatch.Voltages" title="Link to this definition">#</a></dt>
-<dd></dd></dl>
+<dd><p>Complex array of voltages at terminals</p>
+<p>Original COM help: <a class="reference external" href="https://opendss.epri.com/Voltages1.html">https://opendss.epri.com/Voltages1.html</a></p>
+</dd></dl>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="altdss.EnergyMeter.EnergyMeterBatch.VoltagesMagAng">
 <span class="sig-name descname"><span class="pre">VoltagesMagAng</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">altdss.types.Float64Array</span></span></span><a class="headerlink" href="#altdss.EnergyMeter.EnergyMeterBatch.VoltagesMagAng" title="Link to this definition">#</a></dt>
-<dd></dd></dl>
+<dd><p>Voltages at each conductor in magnitude, angle form as array of doubles.</p>
+<p>Original COM help: <a class="reference external" href="https://opendss.epri.com/VoltagesMagAng.html">https://opendss.epri.com/VoltagesMagAng.html</a></p>
+</dd></dl>
 
 <dl class="py attribute">
 <dt class="sig sig-object py" id="altdss.EnergyMeter.EnergyMeterBatch.XfmrLosses">
 <span class="sig-name descname"><span class="pre">XfmrLosses</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">List</span><span class="p"><span class="pre">[</span></span><span class="pre">bool</span><span class="p"><span class="pre">]</span></span></em><a class="headerlink" href="#altdss.EnergyMeter.EnergyMeterBatch.XfmrLosses" title="Link to this definition">#</a></dt>
 <dd><p>‘property(…)’</p>
+<p>{Yes | No}  Default is YES. Compute Transformer losses. If NO, transformers are ignored in loss calculations.</p>
+<p>DSS property name: <code class="docutils literal notranslate"><span class="pre">XfmrLosses</span></code>, DSS property index: 13.</p>
 </dd></dl>
 
 <dl class="py method">
@@ -1811,6 +2039,10 @@ Use -1 as terminal to get the value across all terminals.</p>
 <dt class="sig sig-object py" id="altdss.EnergyMeter.EnergyMeterBatch.ZoneList">
 <span class="sig-name descname"><span class="pre">ZoneList</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">List</span><span class="p"><span class="pre">[</span></span><span class="pre">List</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">]</span></span></em><a class="headerlink" href="#altdss.EnergyMeter.EnergyMeterBatch.ZoneList" title="Link to this definition">#</a></dt>
 <dd><p>‘property(…)’</p>
+<p>ARRAY of full element names for this meter’s zone.  Default is for meter to find it’s own zone. If specified, DSS uses this list instead.  Can access the names in a single-column text file.  Examples:</p>
+<p>zonelist=[line.L1, transformer.T1, Line.L3]
+zonelist=(file=branchlist.txt)</p>
+<p>DSS property name: <code class="docutils literal notranslate"><span class="pre">ZoneList</span></code>, DSS property index: 8.</p>
 </dd></dl>
 
 <dl class="py method">
@@ -1840,11 +2072,29 @@ Use -1 as terminal to get the value across all terminals.</p>
 <dd></dd></dl>
 
 <dl class="py method">
+<dt class="sig sig-object py" id="altdss.EnergyMeter.EnergyMeterBatch.batch">
+<span class="sig-name descname"><span class="pre">batch</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference internal" href="altdss.Batch.html#altdss.Batch.DSSBatch" title="altdss.Batch.DSSBatch"><span class="pre">altdss.Batch.DSSBatch</span></a></span></span><a class="headerlink" href="#altdss.EnergyMeter.EnergyMeterBatch.batch" title="Link to this definition">#</a></dt>
+<dd><p>Filter a batch using integer or float DSS properties, returning a new batch.</p>
+<p>For integers, provide a single value to match.</p>
+<p>For floats, provide a range as a 2-valued tuple/list (min value, max value), or an exact value to value (not recommended).</p>
+<p>Multiple properties can be listed to allow filtering various conditions.</p>
+<p>Example for loads:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span>    <span class="c1"># Create an initial batch using a regular expression</span>
+    <span class="n">abc_loads</span> <span class="o">=</span> <span class="n">altdss</span><span class="o">.</span><span class="n">Load</span><span class="o">.</span><span class="n">batch</span><span class="p">(</span><span class="n">re</span><span class="o">=</span><span class="sa">r</span><span class="s1">&#39;^abc.*$&#39;</span><span class="p">)</span> <span class="c1"># a batch of all loads with names starting with &quot;abc&quot;</span>
+    <span class="n">abc_loads_filtered</span> <span class="o">=</span> <span class="n">abc_loads</span><span class="o">.</span><span class="n">batch</span><span class="p">(</span><span class="n">Class</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">Phases</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">kV</span><span class="o">=</span><span class="p">(</span><span class="mf">0.1</span><span class="p">,</span> <span class="mf">1.0</span><span class="p">))</span>
+
+    <span class="c1"># Create an initial batch, already filtered</span>
+    <span class="n">abc_loads_filtered</span> <span class="o">=</span> <span class="n">altdss</span><span class="o">.</span><span class="n">Load</span><span class="o">.</span><span class="n">batch</span><span class="p">(</span><span class="n">re</span><span class="o">=</span><span class="sa">r</span><span class="s1">&#39;^abc.*$&#39;</span><span class="p">,</span> <span class="n">Class</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">Phases</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">kV</span><span class="o">=</span><span class="p">(</span><span class="mf">0.1</span><span class="p">,</span> <span class="mf">1.0</span><span class="p">))</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="py method">
 <dt class="sig sig-object py" id="altdss.EnergyMeter.EnergyMeterBatch.begin_edit">
 <span class="sig-name descname"><span class="pre">begin_edit</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span><a class="headerlink" href="#altdss.EnergyMeter.EnergyMeterBatch.begin_edit" title="Link to this definition">#</a></dt>
 <dd><p>Marks for editing all DSS objects in the batch</p>
-<p>In the editing mode, some final side-effects of changing properties are post-poned
-until <code class="docutils literal notranslate"><span class="pre">_end_edit</span></code> is called. This side-effects can be somewhat costly, like updating
+<p>In the editing mode, some final side-effects of changing properties are postponed
+until <code class="docutils literal notranslate"><span class="pre">end_edit</span></code> is called. This side-effects can be somewhat costly, like updating
 the model parameters or internal matrices.</p>
 <p>If you don’t have any performance constraint, you may edit each property individually
 without worrying about using <code class="docutils literal notranslate"><span class="pre">begin_edit</span></code> and <code class="docutils literal notranslate"><span class="pre">end_edit</span></code>. For convenience, those are
@@ -1865,12 +2115,16 @@ the <code class="docutils literal notranslate"><span class="pre">Process</span><
 <dt class="sig sig-object py" id="altdss.EnergyMeter.EnergyMeterBatch.kVAEmerg">
 <span class="sig-name descname"><span class="pre">kVAEmerg</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><a class="reference internal" href="altdss.ArrayProxy.html#altdss.ArrayProxy.BatchFloat64ArrayProxy" title="altdss.ArrayProxy.BatchFloat64ArrayProxy"><span class="pre">altdss.ArrayProxy.BatchFloat64ArrayProxy</span></a></em><a class="headerlink" href="#altdss.EnergyMeter.EnergyMeterBatch.kVAEmerg" title="Link to this definition">#</a></dt>
 <dd><p>‘property(…)’</p>
+<p>Upper limit on kVA load in the zone, Emergency configuration. Default is 0.0 (ignored). Overrides limits on individual lines for overload UE. With “LocalOnly=Yes” option, uses only load in metered branch.</p>
+<p>DSS property name: <code class="docutils literal notranslate"><span class="pre">kVAEmerg</span></code>, DSS property index: 6.</p>
 </dd></dl>
 
 <dl class="py attribute">
 <dt class="sig sig-object py" id="altdss.EnergyMeter.EnergyMeterBatch.kVANormal">
 <span class="sig-name descname"><span class="pre">kVANormal</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><a class="reference internal" href="altdss.ArrayProxy.html#altdss.ArrayProxy.BatchFloat64ArrayProxy" title="altdss.ArrayProxy.BatchFloat64ArrayProxy"><span class="pre">altdss.ArrayProxy.BatchFloat64ArrayProxy</span></a></em><a class="headerlink" href="#altdss.EnergyMeter.EnergyMeterBatch.kVANormal" title="Link to this definition">#</a></dt>
 <dd><p>‘property(…)’</p>
+<p>Upper limit on kVA load in the zone, Normal configuration. Default is 0.0 (ignored). Overrides limits on individual lines for overload EEN. With “LocalOnly=Yes” option, uses only load in metered branch.</p>
+<p>DSS property name: <code class="docutils literal notranslate"><span class="pre">kVANormal</span></code>, DSS property index: 5.</p>
 </dd></dl>
 
 <dl class="py method">
@@ -2754,12 +3008,16 @@ File name is “Zone_metername.csv”.</p>
 <dt class="sig sig-object py" id="altdss.EnergyMeter.IEnergyMeter.BaseFreq">
 <span class="sig-name descname"><span class="pre">BaseFreq</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><a class="reference internal" href="altdss.ArrayProxy.html#altdss.ArrayProxy.BatchFloat64ArrayProxy" title="altdss.ArrayProxy.BatchFloat64ArrayProxy"><span class="pre">altdss.ArrayProxy.BatchFloat64ArrayProxy</span></a></em><a class="headerlink" href="#altdss.EnergyMeter.IEnergyMeter.BaseFreq" title="Link to this definition">#</a></dt>
 <dd><p>‘property(…)’</p>
+<p>Base Frequency for ratings.</p>
+<p>DSS property name: <code class="docutils literal notranslate"><span class="pre">BaseFreq</span></code>, DSS property index: 25.</p>
 </dd></dl>
 
 <dl class="py attribute">
 <dt class="sig sig-object py" id="altdss.EnergyMeter.IEnergyMeter.CAIDI">
 <span class="sig-name descname"><span class="pre">CAIDI</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><a class="reference internal" href="altdss.ArrayProxy.html#altdss.ArrayProxy.BatchFloat64ArrayProxy" title="altdss.ArrayProxy.BatchFloat64ArrayProxy"><span class="pre">altdss.ArrayProxy.BatchFloat64ArrayProxy</span></a></em><a class="headerlink" href="#altdss.EnergyMeter.IEnergyMeter.CAIDI" title="Link to this definition">#</a></dt>
 <dd><p>‘property(…)’</p>
+<p>(Read only) Makes CAIDI result available via return on query (? energymeter.myMeter.CAIDI.</p>
+<p>DSS property name: <code class="docutils literal notranslate"><span class="pre">CAIDI</span></code>, DSS property index: 23.</p>
 </dd></dl>
 
 <dl class="py method">
@@ -2779,27 +3037,37 @@ either using this function or the <code class="docutils literal notranslate"><sp
 <dl class="py method">
 <dt class="sig sig-object py" id="altdss.EnergyMeter.IEnergyMeter.ComplexSeqCurrents">
 <span class="sig-name descname"><span class="pre">ComplexSeqCurrents</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">altdss.types.ComplexArray</span></span></span><a class="headerlink" href="#altdss.EnergyMeter.IEnergyMeter.ComplexSeqCurrents" title="Link to this definition">#</a></dt>
-<dd></dd></dl>
+<dd><p>Complex double array of Sequence Currents for all conductors of all terminals of active circuit element.</p>
+<p>Original COM help: <a class="reference external" href="https://opendss.epri.com/CplxSeqCurrents.html">https://opendss.epri.com/CplxSeqCurrents.html</a></p>
+</dd></dl>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="altdss.EnergyMeter.IEnergyMeter.ComplexSeqVoltages">
 <span class="sig-name descname"><span class="pre">ComplexSeqVoltages</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">altdss.types.ComplexArray</span></span></span><a class="headerlink" href="#altdss.EnergyMeter.IEnergyMeter.ComplexSeqVoltages" title="Link to this definition">#</a></dt>
-<dd></dd></dl>
+<dd><p>Complex double array of Sequence Voltage for all terminals of active circuit element.</p>
+<p>Original COM help: <a class="reference external" href="https://opendss.epri.com/CplxSeqVoltages1.html">https://opendss.epri.com/CplxSeqVoltages1.html</a></p>
+</dd></dl>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="altdss.EnergyMeter.IEnergyMeter.Currents">
 <span class="sig-name descname"><span class="pre">Currents</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">altdss.types.ComplexArray</span></span></span><a class="headerlink" href="#altdss.EnergyMeter.IEnergyMeter.Currents" title="Link to this definition">#</a></dt>
-<dd></dd></dl>
+<dd><p>Complex array of currents into each conductor of each terminal</p>
+<p>Original COM help: <a class="reference external" href="https://opendss.epri.com/Currents1.html">https://opendss.epri.com/Currents1.html</a></p>
+</dd></dl>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="altdss.EnergyMeter.IEnergyMeter.CurrentsMagAng">
 <span class="sig-name descname"><span class="pre">CurrentsMagAng</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">altdss.types.Float64Array</span></span></span><a class="headerlink" href="#altdss.EnergyMeter.IEnergyMeter.CurrentsMagAng" title="Link to this definition">#</a></dt>
-<dd></dd></dl>
+<dd><p>Currents in magnitude, angle (degrees) format as a array of doubles.</p>
+<p>Original COM help: <a class="reference external" href="https://opendss.epri.com/CurrentsMagAng.html">https://opendss.epri.com/CurrentsMagAng.html</a></p>
+</dd></dl>
 
 <dl class="py attribute">
 <dt class="sig sig-object py" id="altdss.EnergyMeter.IEnergyMeter.CustInterrupts">
 <span class="sig-name descname"><span class="pre">CustInterrupts</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><a class="reference internal" href="altdss.ArrayProxy.html#altdss.ArrayProxy.BatchFloat64ArrayProxy" title="altdss.ArrayProxy.BatchFloat64ArrayProxy"><span class="pre">altdss.ArrayProxy.BatchFloat64ArrayProxy</span></a></em><a class="headerlink" href="#altdss.EnergyMeter.IEnergyMeter.CustInterrupts" title="Link to this definition">#</a></dt>
 <dd><p>‘property(…)’</p>
+<p>(Read only) Makes Total Customer Interrupts value result available via return on query (? energymeter.myMeter.CustInterrupts.</p>
+<p>DSS property name: <code class="docutils literal notranslate"><span class="pre">CustInterrupts</span></code>, DSS property index: 24.</p>
 </dd></dl>
 
 <dl class="py method">
@@ -2818,18 +3086,24 @@ either using this function or the <code class="docutils literal notranslate"><sp
 <dt class="sig sig-object py" id="altdss.EnergyMeter.IEnergyMeter.Element">
 <span class="sig-name descname"><span class="pre">Element</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">List</span><span class="p"><span class="pre">[</span></span><a class="reference internal" href="altdss.DSSObj.html#altdss.DSSObj.DSSObj" title="altdss.DSSObj.DSSObj"><span class="pre">altdss.DSSObj.DSSObj</span></a><span class="p"><span class="pre">]</span></span></em><a class="headerlink" href="#altdss.EnergyMeter.IEnergyMeter.Element" title="Link to this definition">#</a></dt>
 <dd><p>‘property(…)’</p>
+<p>Name (Full Object name) of element to which the monitor is connected.</p>
+<p>DSS property name: <code class="docutils literal notranslate"><span class="pre">Element</span></code>, DSS property index: 1.</p>
 </dd></dl>
 
 <dl class="py attribute">
 <dt class="sig sig-object py" id="altdss.EnergyMeter.IEnergyMeter.Element_str">
 <span class="sig-name descname"><span class="pre">Element_str</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">List</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">]</span></span></em><a class="headerlink" href="#altdss.EnergyMeter.IEnergyMeter.Element_str" title="Link to this definition">#</a></dt>
 <dd><p>‘property(…)’</p>
+<p>Name (Full Object name) of element to which the monitor is connected.</p>
+<p>DSS property name: <code class="docutils literal notranslate"><span class="pre">Element</span></code>, DSS property index: 1.</p>
 </dd></dl>
 
 <dl class="py attribute">
 <dt class="sig sig-object py" id="altdss.EnergyMeter.IEnergyMeter.Enabled">
 <span class="sig-name descname"><span class="pre">Enabled</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">List</span><span class="p"><span class="pre">[</span></span><span class="pre">bool</span><span class="p"><span class="pre">]</span></span></em><a class="headerlink" href="#altdss.EnergyMeter.IEnergyMeter.Enabled" title="Link to this definition">#</a></dt>
 <dd><p>‘property(…)’</p>
+<p>{Yes|No or True|False} Indicates whether this element is enabled.</p>
+<p>DSS property name: <code class="docutils literal notranslate"><span class="pre">Enabled</span></code>, DSS property index: 26.</p>
 </dd></dl>
 
 <dl class="py method">
@@ -2840,46 +3114,62 @@ either using this function or the <code class="docutils literal notranslate"><sp
 
 <dl class="py method">
 <dt class="sig sig-object py" id="altdss.EnergyMeter.IEnergyMeter.GUID">
-<span class="sig-name descname"><span class="pre">GUID</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">str</span></span></span><a class="headerlink" href="#altdss.EnergyMeter.IEnergyMeter.GUID" title="Link to this definition">#</a></dt>
+<span class="sig-name descname"><span class="pre">GUID</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">List</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">]</span></span></span></span><a class="headerlink" href="#altdss.EnergyMeter.IEnergyMeter.GUID" title="Link to this definition">#</a></dt>
 <dd><p>GUID/UUID for each object. Currently used only in the CIM-related methods.</p>
+<p>Original COM help: <a class="reference external" href="https://opendss.epri.com/GUID.html">https://opendss.epri.com/GUID.html</a></p>
 </dd></dl>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="altdss.EnergyMeter.IEnergyMeter.Handle">
 <span class="sig-name descname"><span class="pre">Handle</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">altdss.types.Int32Array</span></span></span><a class="headerlink" href="#altdss.EnergyMeter.IEnergyMeter.Handle" title="Link to this definition">#</a></dt>
-<dd></dd></dl>
+<dd><p>Index of each element into the circuit’s element list.</p>
+<p>Original COM help: <a class="reference external" href="https://opendss.epri.com/Handle.html">https://opendss.epri.com/Handle.html</a></p>
+</dd></dl>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="altdss.EnergyMeter.IEnergyMeter.HasOCPDevice">
-<span class="sig-name descname"><span class="pre">HasOCPDevice</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">bool</span></span></span><a class="headerlink" href="#altdss.EnergyMeter.IEnergyMeter.HasOCPDevice" title="Link to this definition">#</a></dt>
-<dd></dd></dl>
+<span class="sig-name descname"><span class="pre">HasOCPDevice</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">altdss.types.BoolArray</span></span></span><a class="headerlink" href="#altdss.EnergyMeter.IEnergyMeter.HasOCPDevice" title="Link to this definition">#</a></dt>
+<dd><p>For each element in the batch: returns true if a recloser, relay, or fuse controlling the circuit element.</p>
+<p>OCP = Overcurrent Protection</p>
+<p>Original COM help: <a class="reference external" href="https://opendss.epri.com/HasOCPDevice.html">https://opendss.epri.com/HasOCPDevice.html</a></p>
+</dd></dl>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="altdss.EnergyMeter.IEnergyMeter.HasSwitchControl">
-<span class="sig-name descname"><span class="pre">HasSwitchControl</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">bool</span></span></span><a class="headerlink" href="#altdss.EnergyMeter.IEnergyMeter.HasSwitchControl" title="Link to this definition">#</a></dt>
-<dd></dd></dl>
+<span class="sig-name descname"><span class="pre">HasSwitchControl</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">altdss.types.BoolArray</span></span></span><a class="headerlink" href="#altdss.EnergyMeter.IEnergyMeter.HasSwitchControl" title="Link to this definition">#</a></dt>
+<dd><p>For each element in the batch: returns true if the element has a SwtControl attached.</p>
+<p>Original COM help: <a class="reference external" href="https://opendss.epri.com/HasSwitchControl.html">https://opendss.epri.com/HasSwitchControl.html</a></p>
+</dd></dl>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="altdss.EnergyMeter.IEnergyMeter.HasVoltControl">
-<span class="sig-name descname"><span class="pre">HasVoltControl</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">bool</span></span></span><a class="headerlink" href="#altdss.EnergyMeter.IEnergyMeter.HasVoltControl" title="Link to this definition">#</a></dt>
-<dd></dd></dl>
+<span class="sig-name descname"><span class="pre">HasVoltControl</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">altdss.types.BoolArray</span></span></span><a class="headerlink" href="#altdss.EnergyMeter.IEnergyMeter.HasVoltControl" title="Link to this definition">#</a></dt>
+<dd><p>For each element in the batch: returns true if the element has a CapControl or RegControl attached.</p>
+<p>Original COM help: <a class="reference external" href="https://opendss.epri.com/HasVoltControl.html">https://opendss.epri.com/HasVoltControl.html</a></p>
+</dd></dl>
 
 <dl class="py attribute">
 <dt class="sig sig-object py" id="altdss.EnergyMeter.IEnergyMeter.Int_Duration">
 <span class="sig-name descname"><span class="pre">Int_Duration</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><a class="reference internal" href="altdss.ArrayProxy.html#altdss.ArrayProxy.BatchFloat64ArrayProxy" title="altdss.ArrayProxy.BatchFloat64ArrayProxy"><span class="pre">altdss.ArrayProxy.BatchFloat64ArrayProxy</span></a></em><a class="headerlink" href="#altdss.EnergyMeter.IEnergyMeter.Int_Duration" title="Link to this definition">#</a></dt>
 <dd><p>‘property(…)’</p>
+<p>Average annual duration, in hr, of interruptions for head of the meter zone (source side of zone or feeder).</p>
+<p>DSS property name: <code class="docutils literal notranslate"><span class="pre">Int_Duration</span></code>, DSS property index: 19.</p>
 </dd></dl>
 
 <dl class="py attribute">
 <dt class="sig sig-object py" id="altdss.EnergyMeter.IEnergyMeter.Int_Rate">
 <span class="sig-name descname"><span class="pre">Int_Rate</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><a class="reference internal" href="altdss.ArrayProxy.html#altdss.ArrayProxy.BatchFloat64ArrayProxy" title="altdss.ArrayProxy.BatchFloat64ArrayProxy"><span class="pre">altdss.ArrayProxy.BatchFloat64ArrayProxy</span></a></em><a class="headerlink" href="#altdss.EnergyMeter.IEnergyMeter.Int_Rate" title="Link to this definition">#</a></dt>
 <dd><p>‘property(…)’</p>
+<p>Average number of annual interruptions for head of the meter zone (source side of zone or feeder).</p>
+<p>DSS property name: <code class="docutils literal notranslate"><span class="pre">Int_Rate</span></code>, DSS property index: 18.</p>
 </dd></dl>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="altdss.EnergyMeter.IEnergyMeter.IsIsolated">
 <span class="sig-name descname"><span class="pre">IsIsolated</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">altdss.types.BoolArray</span></span></span><a class="headerlink" href="#altdss.EnergyMeter.IEnergyMeter.IsIsolated" title="Link to this definition">#</a></dt>
-<dd></dd></dl>
+<dd><p>For each element in the batch: returns true if the element is isolated.
+Note that this only fetches the current value. See also the Topology interface.</p>
+</dd></dl>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="altdss.EnergyMeter.IEnergyMeter.Like">
@@ -2893,30 +3183,38 @@ either using this function or the <code class="docutils literal notranslate"><sp
 <dt class="sig sig-object py" id="altdss.EnergyMeter.IEnergyMeter.LineLosses">
 <span class="sig-name descname"><span class="pre">LineLosses</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">List</span><span class="p"><span class="pre">[</span></span><span class="pre">bool</span><span class="p"><span class="pre">]</span></span></em><a class="headerlink" href="#altdss.EnergyMeter.IEnergyMeter.LineLosses" title="Link to this definition">#</a></dt>
 <dd><p>‘property(…)’</p>
+<p>{Yes | No}  Default is YES. Compute Line losses. If NO, then none of the losses are computed.</p>
+<p>DSS property name: <code class="docutils literal notranslate"><span class="pre">LineLosses</span></code>, DSS property index: 12.</p>
 </dd></dl>
 
 <dl class="py attribute">
 <dt class="sig sig-object py" id="altdss.EnergyMeter.IEnergyMeter.LocalOnly">
 <span class="sig-name descname"><span class="pre">LocalOnly</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">List</span><span class="p"><span class="pre">[</span></span><span class="pre">bool</span><span class="p"><span class="pre">]</span></span></em><a class="headerlink" href="#altdss.EnergyMeter.IEnergyMeter.LocalOnly" title="Link to this definition">#</a></dt>
 <dd><p>‘property(…)’</p>
+<p>{Yes | No}  Default is NO.  If Yes, meter considers only the monitored element for EEN and UE calcs.  Uses whole zone for losses.</p>
+<p>DSS property name: <code class="docutils literal notranslate"><span class="pre">LocalOnly</span></code>, DSS property index: 9.</p>
 </dd></dl>
 
 <dl class="py attribute">
 <dt class="sig sig-object py" id="altdss.EnergyMeter.IEnergyMeter.Losses">
 <span class="sig-name descname"><span class="pre">Losses</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">List</span><span class="p"><span class="pre">[</span></span><span class="pre">bool</span><span class="p"><span class="pre">]</span></span></em><a class="headerlink" href="#altdss.EnergyMeter.IEnergyMeter.Losses" title="Link to this definition">#</a></dt>
 <dd><p>‘property(…)’</p>
+<p>{Yes | No}  Default is YES. Compute Zone losses. If NO, then no losses at all are computed.</p>
+<p>DSS property name: <code class="docutils literal notranslate"><span class="pre">Losses</span></code>, DSS property index: 11.</p>
 </dd></dl>
 
 <dl class="py attribute">
 <dt class="sig sig-object py" id="altdss.EnergyMeter.IEnergyMeter.Mask">
 <span class="sig-name descname"><span class="pre">Mask</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">List</span><span class="p"><span class="pre">[</span></span><span class="pre">altdss.types.Float64Array</span><span class="p"><span class="pre">]</span></span></em><a class="headerlink" href="#altdss.EnergyMeter.IEnergyMeter.Mask" title="Link to this definition">#</a></dt>
 <dd><p>‘property(…)’</p>
+<p>Mask for adding registers whenever all meters are totalized.  Array of floating point numbers representing the multiplier to be used for summing each register from this meter. Default = (1, 1, 1, 1, … ).  You only have to enter as many as are changed (positional). Useful when two meters monitor same energy, etc.</p>
+<p>DSS property name: <code class="docutils literal notranslate"><span class="pre">Mask</span></code>, DSS property index: 10.</p>
 </dd></dl>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="altdss.EnergyMeter.IEnergyMeter.MaxCurrent">
-<span class="sig-name descname"><span class="pre">MaxCurrent</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">terminal</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">float</span></span></span><a class="headerlink" href="#altdss.EnergyMeter.IEnergyMeter.MaxCurrent" title="Link to this definition">#</a></dt>
-<dd><p>Returns the maximum current (magnitude) at the specificed terminal for all elements in this batch.
+<span class="sig-name descname"><span class="pre">MaxCurrent</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">terminal</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">altdss.types.Float64Array</span></span></span><a class="headerlink" href="#altdss.EnergyMeter.IEnergyMeter.MaxCurrent" title="Link to this definition">#</a></dt>
+<dd><p>Returns the maximum current (magnitude) at the specified terminal for each element in this batch.
 Use -1 as terminal to get the value across all terminals.</p>
 </dd></dl>
 
@@ -2928,12 +3226,16 @@ Use -1 as terminal to get the value across all terminals.</p>
 <dl class="py method">
 <dt class="sig sig-object py" id="altdss.EnergyMeter.IEnergyMeter.NumConductors">
 <span class="sig-name descname"><span class="pre">NumConductors</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">altdss.types.Int32Array</span></span></span><a class="headerlink" href="#altdss.EnergyMeter.IEnergyMeter.NumConductors" title="Link to this definition">#</a></dt>
-<dd></dd></dl>
+<dd><p>Number of conductors per terminal for each element in the batch.</p>
+<p>Original COM help: <a class="reference external" href="https://opendss.epri.com/NumConductors.html">https://opendss.epri.com/NumConductors.html</a></p>
+</dd></dl>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="altdss.EnergyMeter.IEnergyMeter.NumControllers">
 <span class="sig-name descname"><span class="pre">NumControllers</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">altdss.types.Int32Array</span></span></span><a class="headerlink" href="#altdss.EnergyMeter.IEnergyMeter.NumControllers" title="Link to this definition">#</a></dt>
-<dd></dd></dl>
+<dd><p>Number of controllers connected to each device in the batch.</p>
+<p>Original COM help: <a class="reference external" href="https://opendss.epri.com/NumControls.html">https://opendss.epri.com/NumControls.html</a></p>
+</dd></dl>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="altdss.EnergyMeter.IEnergyMeter.NumEndElements">
@@ -2944,7 +3246,9 @@ Use -1 as terminal to get the value across all terminals.</p>
 <dl class="py method">
 <dt class="sig sig-object py" id="altdss.EnergyMeter.IEnergyMeter.NumPhases">
 <span class="sig-name descname"><span class="pre">NumPhases</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">altdss.types.Int32Array</span></span></span><a class="headerlink" href="#altdss.EnergyMeter.IEnergyMeter.NumPhases" title="Link to this definition">#</a></dt>
-<dd></dd></dl>
+<dd><p>Number of Phases for each element in this batch.</p>
+<p>Original COM help: <a class="reference external" href="https://opendss.epri.com/NumPhases.html">https://opendss.epri.com/NumPhases.html</a></p>
+</dd></dl>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="altdss.EnergyMeter.IEnergyMeter.NumSections">
@@ -2955,22 +3259,29 @@ Use -1 as terminal to get the value across all terminals.</p>
 <dl class="py method">
 <dt class="sig sig-object py" id="altdss.EnergyMeter.IEnergyMeter.NumTerminals">
 <span class="sig-name descname"><span class="pre">NumTerminals</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">altdss.types.Int32Array</span></span></span><a class="headerlink" href="#altdss.EnergyMeter.IEnergyMeter.NumTerminals" title="Link to this definition">#</a></dt>
-<dd></dd></dl>
+<dd><p>Number of terminals for each Circuit Element in the batch.</p>
+<p>Original COM help: <a class="reference external" href="https://opendss.epri.com/NumTerminals.html">https://opendss.epri.com/NumTerminals.html</a></p>
+</dd></dl>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="altdss.EnergyMeter.IEnergyMeter.OCPDevice">
 <span class="sig-name descname"><span class="pre">OCPDevice</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">List</span><span class="p"><span class="pre">[</span></span><span class="pre">Union</span><span class="p"><span class="pre">[</span></span><a class="reference internal" href="altdss.DSSObj.html#altdss.DSSObj.DSSObj" title="altdss.DSSObj.DSSObj"><span class="pre">altdss.DSSObj.DSSObj</span></a><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">None</span><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">]</span></span></span></span><a class="headerlink" href="#altdss.EnergyMeter.IEnergyMeter.OCPDevice" title="Link to this definition">#</a></dt>
-<dd></dd></dl>
+<dd><p>Returns (as a list of Python objects) the OCP device controlling each element.</p>
+</dd></dl>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="altdss.EnergyMeter.IEnergyMeter.OCPDeviceIndex">
 <span class="sig-name descname"><span class="pre">OCPDeviceIndex</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">altdss.types.Int32Array</span></span></span><a class="headerlink" href="#altdss.EnergyMeter.IEnergyMeter.OCPDeviceIndex" title="Link to this definition">#</a></dt>
-<dd></dd></dl>
+<dd><p>For each element in the batch: index into each controller list of the OCP Device controlling each circuit element</p>
+<p>Original COM help: <a class="reference external" href="https://opendss.epri.com/OCPDevIndex.html">https://opendss.epri.com/OCPDevIndex.html</a></p>
+</dd></dl>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="altdss.EnergyMeter.IEnergyMeter.OCPDeviceType">
-<span class="sig-name descname"><span class="pre">OCPDeviceType</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">dss.enums.OCPDevType</span></span></span><a class="headerlink" href="#altdss.EnergyMeter.IEnergyMeter.OCPDeviceType" title="Link to this definition">#</a></dt>
-<dd></dd></dl>
+<span class="sig-name descname"><span class="pre">OCPDeviceType</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">List</span><span class="p"><span class="pre">[</span></span><span class="pre">dss.enums.OCPDevType</span><span class="p"><span class="pre">]</span></span></span></span><a class="headerlink" href="#altdss.EnergyMeter.IEnergyMeter.OCPDeviceType" title="Link to this definition">#</a></dt>
+<dd><p>For each element in the batch: type of OCP controller device</p>
+<p>Original COM help: <a class="reference external" href="https://opendss.epri.com/OCPDevType.html">https://opendss.epri.com/OCPDevType.html</a></p>
+</dd></dl>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="altdss.EnergyMeter.IEnergyMeter.OpenDIFiles">
@@ -2982,30 +3293,45 @@ Use -1 as terminal to get the value across all terminals.</p>
 <dt class="sig sig-object py" id="altdss.EnergyMeter.IEnergyMeter.Option">
 <span class="sig-name descname"><span class="pre">Option</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">List</span><span class="p"><span class="pre">[</span></span><span class="pre">List</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">]</span></span></em><a class="headerlink" href="#altdss.EnergyMeter.IEnergyMeter.Option" title="Link to this definition">#</a></dt>
 <dd><p>‘property(…)’</p>
+<p>Enter a string ARRAY of any combination of the following. Options processed left-to-right:</p>
+<p>(E)xcess : (default) UE/EEN is estimate of energy over capacity
+(T)otal : UE/EEN is total energy after capacity exceeded
+(R)adial : (default) Treats zone as a radial circuit
+(M)esh : Treats zone as meshed network (not radial).
+(C)ombined : (default) Load UE/EEN computed from combination of overload and undervoltage.
+(V)oltage : Load UE/EEN computed based on voltage only.</p>
+<p>Example: option=(E, R)</p>
+<p>DSS property name: <code class="docutils literal notranslate"><span class="pre">Option</span></code>, DSS property index: 4.</p>
 </dd></dl>
 
 <dl class="py attribute">
 <dt class="sig sig-object py" id="altdss.EnergyMeter.IEnergyMeter.PeakCurrent">
 <span class="sig-name descname"><span class="pre">PeakCurrent</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">List</span><span class="p"><span class="pre">[</span></span><span class="pre">altdss.types.Float64Array</span><span class="p"><span class="pre">]</span></span></em><a class="headerlink" href="#altdss.EnergyMeter.IEnergyMeter.PeakCurrent" title="Link to this definition">#</a></dt>
 <dd><p>‘property(…)’</p>
+<p>ARRAY of current magnitudes representing the peak currents measured at this location for the load allocation function.  Default is (400, 400, 400). Enter one current for each phase</p>
+<p>DSS property name: <code class="docutils literal notranslate"><span class="pre">PeakCurrent</span></code>, DSS property index: 7.</p>
 </dd></dl>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="altdss.EnergyMeter.IEnergyMeter.PhaseLosses">
 <span class="sig-name descname"><span class="pre">PhaseLosses</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">altdss.types.ComplexArray</span></span></span><a class="headerlink" href="#altdss.EnergyMeter.IEnergyMeter.PhaseLosses" title="Link to this definition">#</a></dt>
-<dd><p>Complex array of losses (kVA) by phase, for each element</p>
+<dd><p>Complex array of losses (kVA) by phase</p>
+<p>Original COM help: <a class="reference external" href="https://opendss.epri.com/PhaseLosses.html">https://opendss.epri.com/PhaseLosses.html</a></p>
 </dd></dl>
 
 <dl class="py attribute">
 <dt class="sig sig-object py" id="altdss.EnergyMeter.IEnergyMeter.PhaseVoltageReport">
 <span class="sig-name descname"><span class="pre">PhaseVoltageReport</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">List</span><span class="p"><span class="pre">[</span></span><span class="pre">bool</span><span class="p"><span class="pre">]</span></span></em><a class="headerlink" href="#altdss.EnergyMeter.IEnergyMeter.PhaseVoltageReport" title="Link to this definition">#</a></dt>
 <dd><p>‘property(…)’</p>
+<p>{Yes | No}  Default is NO.  Report min, max, and average phase voltages for the zone and tabulate by voltage base. Demand Intervals must be turned on (Set Demand=true) and voltage bases must be defined for this property to take effect. Result is in a separate report file.</p>
+<p>DSS property name: <code class="docutils literal notranslate"><span class="pre">PhaseVoltageReport</span></code>, DSS property index: 17.</p>
 </dd></dl>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="altdss.EnergyMeter.IEnergyMeter.Powers">
 <span class="sig-name descname"><span class="pre">Powers</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">altdss.types.ComplexArray</span></span></span><a class="headerlink" href="#altdss.EnergyMeter.IEnergyMeter.Powers" title="Link to this definition">#</a></dt>
 <dd><p>Complex array of powers (kVA) into each conductor of each terminal, of each element in the batch.</p>
+<p>Original COM help: <a class="reference external" href="https://opendss.epri.com/Powers.html">https://opendss.epri.com/Powers.html</a></p>
 </dd></dl>
 
 <dl class="py method">
@@ -3018,18 +3344,24 @@ Use -1 as terminal to get the value across all terminals.</p>
 <dt class="sig sig-object py" id="altdss.EnergyMeter.IEnergyMeter.SAIDI">
 <span class="sig-name descname"><span class="pre">SAIDI</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><a class="reference internal" href="altdss.ArrayProxy.html#altdss.ArrayProxy.BatchFloat64ArrayProxy" title="altdss.ArrayProxy.BatchFloat64ArrayProxy"><span class="pre">altdss.ArrayProxy.BatchFloat64ArrayProxy</span></a></em><a class="headerlink" href="#altdss.EnergyMeter.IEnergyMeter.SAIDI" title="Link to this definition">#</a></dt>
 <dd><p>‘property(…)’</p>
+<p>(Read only) Makes SAIDI result available via return on query (? energymeter.myMeter.SAIDI.</p>
+<p>DSS property name: <code class="docutils literal notranslate"><span class="pre">SAIDI</span></code>, DSS property index: 22.</p>
 </dd></dl>
 
 <dl class="py attribute">
 <dt class="sig sig-object py" id="altdss.EnergyMeter.IEnergyMeter.SAIFI">
 <span class="sig-name descname"><span class="pre">SAIFI</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><a class="reference internal" href="altdss.ArrayProxy.html#altdss.ArrayProxy.BatchFloat64ArrayProxy" title="altdss.ArrayProxy.BatchFloat64ArrayProxy"><span class="pre">altdss.ArrayProxy.BatchFloat64ArrayProxy</span></a></em><a class="headerlink" href="#altdss.EnergyMeter.IEnergyMeter.SAIFI" title="Link to this definition">#</a></dt>
 <dd><p>‘property(…)’</p>
+<p>(Read only) Makes SAIFI result available via return on query (? energymeter.myMeter.SAIFI.</p>
+<p>DSS property name: <code class="docutils literal notranslate"><span class="pre">SAIFI</span></code>, DSS property index: 20.</p>
 </dd></dl>
 
 <dl class="py attribute">
 <dt class="sig sig-object py" id="altdss.EnergyMeter.IEnergyMeter.SAIFIkW">
 <span class="sig-name descname"><span class="pre">SAIFIkW</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><a class="reference internal" href="altdss.ArrayProxy.html#altdss.ArrayProxy.BatchFloat64ArrayProxy" title="altdss.ArrayProxy.BatchFloat64ArrayProxy"><span class="pre">altdss.ArrayProxy.BatchFloat64ArrayProxy</span></a></em><a class="headerlink" href="#altdss.EnergyMeter.IEnergyMeter.SAIFIkW" title="Link to this definition">#</a></dt>
 <dd><p>‘property(…)’</p>
+<p>(Read only) Makes SAIFIkW result available via return on query (? energymeter.myMeter.SAIFIkW.</p>
+<p>DSS property name: <code class="docutils literal notranslate"><span class="pre">SAIFIkW</span></code>, DSS property index: 21.</p>
 </dd></dl>
 
 <dl class="py method">
@@ -3041,23 +3373,31 @@ Use -1 as terminal to get the value across all terminals.</p>
 <dl class="py method">
 <dt class="sig sig-object py" id="altdss.EnergyMeter.IEnergyMeter.SeqCurrents">
 <span class="sig-name descname"><span class="pre">SeqCurrents</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">altdss.types.Float64Array</span></span></span><a class="headerlink" href="#altdss.EnergyMeter.IEnergyMeter.SeqCurrents" title="Link to this definition">#</a></dt>
-<dd></dd></dl>
+<dd><p>Array of symmetrical component currents (magnitudes only) into each 3-phase terminal of each element</p>
+<p>Original COM help: <a class="reference external" href="https://opendss.epri.com/SeqCurrents.html">https://opendss.epri.com/SeqCurrents.html</a></p>
+</dd></dl>
 
 <dl class="py attribute">
 <dt class="sig sig-object py" id="altdss.EnergyMeter.IEnergyMeter.SeqLosses">
 <span class="sig-name descname"><span class="pre">SeqLosses</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">List</span><span class="p"><span class="pre">[</span></span><span class="pre">bool</span><span class="p"><span class="pre">]</span></span></em><a class="headerlink" href="#altdss.EnergyMeter.IEnergyMeter.SeqLosses" title="Link to this definition">#</a></dt>
 <dd><p>‘property(…)’</p>
+<p>{Yes | No}  Default is YES. Compute Sequence losses in lines and segregate by line mode losses and zero mode losses.</p>
+<p>DSS property name: <code class="docutils literal notranslate"><span class="pre">SeqLosses</span></code>, DSS property index: 14.</p>
 </dd></dl>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="altdss.EnergyMeter.IEnergyMeter.SeqPowers">
 <span class="sig-name descname"><span class="pre">SeqPowers</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">altdss.types.ComplexArray</span></span></span><a class="headerlink" href="#altdss.EnergyMeter.IEnergyMeter.SeqPowers" title="Link to this definition">#</a></dt>
-<dd></dd></dl>
+<dd><p>Complex array of sequence powers (kW, kvar) into each 3-phase terminal of each element</p>
+<p>Original COM help: <a class="reference external" href="https://opendss.epri.com/SeqPowers.html">https://opendss.epri.com/SeqPowers.html</a></p>
+</dd></dl>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="altdss.EnergyMeter.IEnergyMeter.SeqVoltages">
 <span class="sig-name descname"><span class="pre">SeqVoltages</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">altdss.types.Float64Array</span></span></span><a class="headerlink" href="#altdss.EnergyMeter.IEnergyMeter.SeqVoltages" title="Link to this definition">#</a></dt>
-<dd></dd></dl>
+<dd><p>Double array of symmetrical component voltages (magnitudes only) at each 3-phase terminal</p>
+<p>Original COM help: <a class="reference external" href="https://opendss.epri.com/SeqVoltages1.html">https://opendss.epri.com/SeqVoltages1.html</a></p>
+</dd></dl>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="altdss.EnergyMeter.IEnergyMeter.TakeSample">
@@ -3069,12 +3409,16 @@ Use -1 as terminal to get the value across all terminals.</p>
 <dt class="sig sig-object py" id="altdss.EnergyMeter.IEnergyMeter.Terminal">
 <span class="sig-name descname"><span class="pre">Terminal</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><a class="reference internal" href="altdss.ArrayProxy.html#altdss.ArrayProxy.BatchInt32ArrayProxy" title="altdss.ArrayProxy.BatchInt32ArrayProxy"><span class="pre">altdss.ArrayProxy.BatchInt32ArrayProxy</span></a></em><a class="headerlink" href="#altdss.EnergyMeter.IEnergyMeter.Terminal" title="Link to this definition">#</a></dt>
 <dd><p>‘property(…)’</p>
+<p>Number of the terminal of the circuit element to which the monitor is connected. 1 or 2, typically.</p>
+<p>DSS property name: <code class="docutils literal notranslate"><span class="pre">Terminal</span></code>, DSS property index: 2.</p>
 </dd></dl>
 
 <dl class="py attribute">
 <dt class="sig sig-object py" id="altdss.EnergyMeter.IEnergyMeter.ThreePhaseLosses">
 <span class="sig-name descname"><span class="pre">ThreePhaseLosses</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">List</span><span class="p"><span class="pre">[</span></span><span class="pre">bool</span><span class="p"><span class="pre">]</span></span></em><a class="headerlink" href="#altdss.EnergyMeter.IEnergyMeter.ThreePhaseLosses" title="Link to this definition">#</a></dt>
 <dd><p>‘property(…)’</p>
+<p>{Yes | No}  Default is YES. Compute Line losses and segregate by 3-phase and other (1- and 2-phase) line losses.</p>
+<p>DSS property name: <code class="docutils literal notranslate"><span class="pre">3PhaseLosses</span></code>, DSS property index: 15.</p>
 </dd></dl>
 
 <dl class="py method">
@@ -3100,22 +3444,30 @@ Use -1 as terminal to get the value across all terminals.</p>
 <dt class="sig sig-object py" id="altdss.EnergyMeter.IEnergyMeter.VBaseLosses">
 <span class="sig-name descname"><span class="pre">VBaseLosses</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">List</span><span class="p"><span class="pre">[</span></span><span class="pre">bool</span><span class="p"><span class="pre">]</span></span></em><a class="headerlink" href="#altdss.EnergyMeter.IEnergyMeter.VBaseLosses" title="Link to this definition">#</a></dt>
 <dd><p>‘property(…)’</p>
+<p>{Yes | No}  Default is YES. Compute losses and segregate by voltage base. If NO, then voltage-based tabulation is not reported.</p>
+<p>DSS property name: <code class="docutils literal notranslate"><span class="pre">VBaseLosses</span></code>, DSS property index: 16.</p>
 </dd></dl>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="altdss.EnergyMeter.IEnergyMeter.Voltages">
 <span class="sig-name descname"><span class="pre">Voltages</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">altdss.types.ComplexArray</span></span></span><a class="headerlink" href="#altdss.EnergyMeter.IEnergyMeter.Voltages" title="Link to this definition">#</a></dt>
-<dd></dd></dl>
+<dd><p>Complex array of voltages at terminals</p>
+<p>Original COM help: <a class="reference external" href="https://opendss.epri.com/Voltages1.html">https://opendss.epri.com/Voltages1.html</a></p>
+</dd></dl>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="altdss.EnergyMeter.IEnergyMeter.VoltagesMagAng">
 <span class="sig-name descname"><span class="pre">VoltagesMagAng</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">altdss.types.Float64Array</span></span></span><a class="headerlink" href="#altdss.EnergyMeter.IEnergyMeter.VoltagesMagAng" title="Link to this definition">#</a></dt>
-<dd></dd></dl>
+<dd><p>Voltages at each conductor in magnitude, angle form as array of doubles.</p>
+<p>Original COM help: <a class="reference external" href="https://opendss.epri.com/VoltagesMagAng.html">https://opendss.epri.com/VoltagesMagAng.html</a></p>
+</dd></dl>
 
 <dl class="py attribute">
 <dt class="sig sig-object py" id="altdss.EnergyMeter.IEnergyMeter.XfmrLosses">
 <span class="sig-name descname"><span class="pre">XfmrLosses</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">List</span><span class="p"><span class="pre">[</span></span><span class="pre">bool</span><span class="p"><span class="pre">]</span></span></em><a class="headerlink" href="#altdss.EnergyMeter.IEnergyMeter.XfmrLosses" title="Link to this definition">#</a></dt>
 <dd><p>‘property(…)’</p>
+<p>{Yes | No}  Default is YES. Compute Transformer losses. If NO, transformers are ignored in loss calculations.</p>
+<p>DSS property name: <code class="docutils literal notranslate"><span class="pre">XfmrLosses</span></code>, DSS property index: 13.</p>
 </dd></dl>
 
 <dl class="py method">
@@ -3128,6 +3480,10 @@ Use -1 as terminal to get the value across all terminals.</p>
 <dt class="sig sig-object py" id="altdss.EnergyMeter.IEnergyMeter.ZoneList">
 <span class="sig-name descname"><span class="pre">ZoneList</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">List</span><span class="p"><span class="pre">[</span></span><span class="pre">List</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">]</span></span></em><a class="headerlink" href="#altdss.EnergyMeter.IEnergyMeter.ZoneList" title="Link to this definition">#</a></dt>
 <dd><p>‘property(…)’</p>
+<p>ARRAY of full element names for this meter’s zone.  Default is for meter to find it’s own zone. If specified, DSS uses this list instead.  Can access the names in a single-column text file.  Examples:</p>
+<p>zonelist=[line.L1, transformer.T1, Line.L3]
+zonelist=(file=branchlist.txt)</p>
+<p>DSS property name: <code class="docutils literal notranslate"><span class="pre">ZoneList</span></code>, DSS property index: 8.</p>
 </dd></dl>
 
 <dl class="py method">
@@ -3177,8 +3533,8 @@ or “count” elements with a randomized prefix.</p>
 <dt class="sig sig-object py" id="altdss.EnergyMeter.IEnergyMeter.begin_edit">
 <span class="sig-name descname"><span class="pre">begin_edit</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span><a class="headerlink" href="#altdss.EnergyMeter.IEnergyMeter.begin_edit" title="Link to this definition">#</a></dt>
 <dd><p>Marks for editing all DSS objects in the batch</p>
-<p>In the editing mode, some final side-effects of changing properties are post-poned
-until <code class="docutils literal notranslate"><span class="pre">_end_edit</span></code> is called. This side-effects can be somewhat costly, like updating
+<p>In the editing mode, some final side-effects of changing properties are postponed
+until <code class="docutils literal notranslate"><span class="pre">end_edit</span></code> is called. This side-effects can be somewhat costly, like updating
 the model parameters or internal matrices.</p>
 <p>If you don’t have any performance constraint, you may edit each property individually
 without worrying about using <code class="docutils literal notranslate"><span class="pre">begin_edit</span></code> and <code class="docutils literal notranslate"><span class="pre">end_edit</span></code>. For convenience, those are
@@ -3205,12 +3561,16 @@ the <code class="docutils literal notranslate"><span class="pre">Process</span><
 <dt class="sig sig-object py" id="altdss.EnergyMeter.IEnergyMeter.kVAEmerg">
 <span class="sig-name descname"><span class="pre">kVAEmerg</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><a class="reference internal" href="altdss.ArrayProxy.html#altdss.ArrayProxy.BatchFloat64ArrayProxy" title="altdss.ArrayProxy.BatchFloat64ArrayProxy"><span class="pre">altdss.ArrayProxy.BatchFloat64ArrayProxy</span></a></em><a class="headerlink" href="#altdss.EnergyMeter.IEnergyMeter.kVAEmerg" title="Link to this definition">#</a></dt>
 <dd><p>‘property(…)’</p>
+<p>Upper limit on kVA load in the zone, Emergency configuration. Default is 0.0 (ignored). Overrides limits on individual lines for overload UE. With “LocalOnly=Yes” option, uses only load in metered branch.</p>
+<p>DSS property name: <code class="docutils literal notranslate"><span class="pre">kVAEmerg</span></code>, DSS property index: 6.</p>
 </dd></dl>
 
 <dl class="py attribute">
 <dt class="sig sig-object py" id="altdss.EnergyMeter.IEnergyMeter.kVANormal">
 <span class="sig-name descname"><span class="pre">kVANormal</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><a class="reference internal" href="altdss.ArrayProxy.html#altdss.ArrayProxy.BatchFloat64ArrayProxy" title="altdss.ArrayProxy.BatchFloat64ArrayProxy"><span class="pre">altdss.ArrayProxy.BatchFloat64ArrayProxy</span></a></em><a class="headerlink" href="#altdss.EnergyMeter.IEnergyMeter.kVANormal" title="Link to this definition">#</a></dt>
 <dd><p>‘property(…)’</p>
+<p>Upper limit on kVA load in the zone, Normal configuration. Default is 0.0 (ignored). Overrides limits on individual lines for overload EEN. With “LocalOnly=Yes” option, uses only load in metered branch.</p>
+<p>DSS property name: <code class="docutils literal notranslate"><span class="pre">kVANormal</span></code>, DSS property index: 5.</p>
 </dd></dl>
 
 <dl class="py method">
@@ -3451,6 +3811,7 @@ See <code class="docutils literal notranslate"><span class="pre">Obj_ToJSON</spa
 <li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#altdss.EnergyMeter.EnergyMeterBatch.__init__"><code class="docutils literal notranslate"><span class="pre">EnergyMeterBatch.__init__()</span></code></a></li>
 <li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#altdss.EnergyMeter.EnergyMeterBatch.__iter__"><code class="docutils literal notranslate"><span class="pre">EnergyMeterBatch.__iter__()</span></code></a></li>
 <li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#altdss.EnergyMeter.EnergyMeterBatch.__len__"><code class="docutils literal notranslate"><span class="pre">EnergyMeterBatch.__len__()</span></code></a></li>
+<li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#altdss.EnergyMeter.EnergyMeterBatch.batch"><code class="docutils literal notranslate"><span class="pre">EnergyMeterBatch.batch()</span></code></a></li>
 <li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#altdss.EnergyMeter.EnergyMeterBatch.begin_edit"><code class="docutils literal notranslate"><span class="pre">EnergyMeterBatch.begin_edit()</span></code></a></li>
 <li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#altdss.EnergyMeter.EnergyMeterBatch.end_edit"><code class="docutils literal notranslate"><span class="pre">EnergyMeterBatch.end_edit()</span></code></a></li>
 <li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#altdss.EnergyMeter.EnergyMeterBatch.kVAEmerg"><code class="docutils literal notranslate"><span class="pre">EnergyMeterBatch.kVAEmerg</span></code></a></li>

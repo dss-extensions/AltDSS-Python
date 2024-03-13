@@ -147,7 +147,7 @@ Bases: {py:obj}`altdss.DSSObj.IDSSObj`, {py:obj}`altdss.Monitor.MonitorBatch`
 
 ````
 
-````{py:method} GUID() -> str
+````{py:method} GUID() -> typing.List[str]
 :canonical: altdss.Monitor.IMonitor.GUID
 
 ```{autodoc2-docstring} altdss.Monitor.IMonitor.GUID
@@ -163,7 +163,7 @@ Bases: {py:obj}`altdss.DSSObj.IDSSObj`, {py:obj}`altdss.Monitor.MonitorBatch`
 
 ````
 
-````{py:method} HasOCPDevice() -> bool
+````{py:method} HasOCPDevice() -> altdss.types.BoolArray
 :canonical: altdss.Monitor.IMonitor.HasOCPDevice
 
 ```{autodoc2-docstring} altdss.Monitor.IMonitor.HasOCPDevice
@@ -171,7 +171,7 @@ Bases: {py:obj}`altdss.DSSObj.IDSSObj`, {py:obj}`altdss.Monitor.MonitorBatch`
 
 ````
 
-````{py:method} HasSwitchControl() -> bool
+````{py:method} HasSwitchControl() -> altdss.types.BoolArray
 :canonical: altdss.Monitor.IMonitor.HasSwitchControl
 
 ```{autodoc2-docstring} altdss.Monitor.IMonitor.HasSwitchControl
@@ -179,7 +179,7 @@ Bases: {py:obj}`altdss.DSSObj.IDSSObj`, {py:obj}`altdss.Monitor.MonitorBatch`
 
 ````
 
-````{py:method} HasVoltControl() -> bool
+````{py:method} HasVoltControl() -> altdss.types.BoolArray
 :canonical: altdss.Monitor.IMonitor.HasVoltControl
 
 ```{autodoc2-docstring} altdss.Monitor.IMonitor.HasVoltControl
@@ -211,7 +211,7 @@ Bases: {py:obj}`altdss.DSSObj.IDSSObj`, {py:obj}`altdss.Monitor.MonitorBatch`
 
 ````
 
-````{py:method} MaxCurrent(terminal: int) -> float
+````{py:method} MaxCurrent(terminal: int) -> altdss.types.Float64Array
 :canonical: altdss.Monitor.IMonitor.MaxCurrent
 
 ```{autodoc2-docstring} altdss.Monitor.IMonitor.MaxCurrent
@@ -287,7 +287,7 @@ Bases: {py:obj}`altdss.DSSObj.IDSSObj`, {py:obj}`altdss.Monitor.MonitorBatch`
 
 ````
 
-````{py:method} OCPDeviceType() -> dss.enums.OCPDevType
+````{py:method} OCPDeviceType() -> typing.List[dss.enums.OCPDevType]
 :canonical: altdss.Monitor.IMonitor.OCPDeviceType
 
 ```{autodoc2-docstring} altdss.Monitor.IMonitor.OCPDeviceType
@@ -1266,7 +1266,7 @@ Bases: {py:obj}`altdss.Batch.DSSBatch`, {py:obj}`altdss.CircuitElement.CircuitEl
 
 ````
 
-````{py:method} GUID() -> str
+````{py:method} GUID() -> typing.List[str]
 :canonical: altdss.Monitor.MonitorBatch.GUID
 
 ```{autodoc2-docstring} altdss.Monitor.MonitorBatch.GUID
@@ -1282,7 +1282,7 @@ Bases: {py:obj}`altdss.Batch.DSSBatch`, {py:obj}`altdss.CircuitElement.CircuitEl
 
 ````
 
-````{py:method} HasOCPDevice() -> bool
+````{py:method} HasOCPDevice() -> altdss.types.BoolArray
 :canonical: altdss.Monitor.MonitorBatch.HasOCPDevice
 
 ```{autodoc2-docstring} altdss.Monitor.MonitorBatch.HasOCPDevice
@@ -1290,7 +1290,7 @@ Bases: {py:obj}`altdss.Batch.DSSBatch`, {py:obj}`altdss.CircuitElement.CircuitEl
 
 ````
 
-````{py:method} HasSwitchControl() -> bool
+````{py:method} HasSwitchControl() -> altdss.types.BoolArray
 :canonical: altdss.Monitor.MonitorBatch.HasSwitchControl
 
 ```{autodoc2-docstring} altdss.Monitor.MonitorBatch.HasSwitchControl
@@ -1298,7 +1298,7 @@ Bases: {py:obj}`altdss.Batch.DSSBatch`, {py:obj}`altdss.CircuitElement.CircuitEl
 
 ````
 
-````{py:method} HasVoltControl() -> bool
+````{py:method} HasVoltControl() -> altdss.types.BoolArray
 :canonical: altdss.Monitor.MonitorBatch.HasVoltControl
 
 ```{autodoc2-docstring} altdss.Monitor.MonitorBatch.HasVoltControl
@@ -1330,7 +1330,7 @@ Bases: {py:obj}`altdss.Batch.DSSBatch`, {py:obj}`altdss.CircuitElement.CircuitEl
 
 ````
 
-````{py:method} MaxCurrent(terminal: int) -> float
+````{py:method} MaxCurrent(terminal: int) -> altdss.types.Float64Array
 :canonical: altdss.Monitor.MonitorBatch.MaxCurrent
 
 ```{autodoc2-docstring} altdss.Monitor.MonitorBatch.MaxCurrent
@@ -1406,7 +1406,7 @@ Bases: {py:obj}`altdss.Batch.DSSBatch`, {py:obj}`altdss.CircuitElement.CircuitEl
 
 ````
 
-````{py:method} OCPDeviceType() -> dss.enums.OCPDevType
+````{py:method} OCPDeviceType() -> typing.List[dss.enums.OCPDevType]
 :canonical: altdss.Monitor.MonitorBatch.OCPDeviceType
 
 ```{autodoc2-docstring} altdss.Monitor.MonitorBatch.OCPDeviceType
@@ -1590,6 +1590,14 @@ Bases: {py:obj}`altdss.Batch.DSSBatch`, {py:obj}`altdss.CircuitElement.CircuitEl
 :canonical: altdss.Monitor.MonitorBatch.__len__
 
 ```{autodoc2-docstring} altdss.Monitor.MonitorBatch.__len__
+```
+
+````
+
+````{py:method} batch(**kwargs) -> altdss.Batch.DSSBatch
+:canonical: altdss.Monitor.MonitorBatch.batch
+
+```{autodoc2-docstring} altdss.Monitor.MonitorBatch.batch
 ```
 
 ````

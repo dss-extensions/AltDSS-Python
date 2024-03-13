@@ -548,6 +548,14 @@ Bases: {py:obj}`altdss.Batch.DSSBatch`
 
 ````
 
+````{py:method} batch(**kwargs) -> altdss.Batch.DSSBatch
+:canonical: altdss.LineSpacing.LineSpacingBatch.batch
+
+```{autodoc2-docstring} altdss.LineSpacing.LineSpacingBatch.batch
+```
+
+````
+
 ````{py:method} begin_edit() -> None
 :canonical: altdss.LineSpacing.LineSpacingBatch.begin_edit
 

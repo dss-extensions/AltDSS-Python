@@ -120,7 +120,7 @@ Bases: {py:obj}`altdss.DSSObj.IDSSObj`, {py:obj}`altdss.Recloser.RecloserBatch`
 
 ````
 
-````{py:method} GUID() -> str
+````{py:method} GUID() -> typing.List[str]
 :canonical: altdss.Recloser.IRecloser.GUID
 
 ```{autodoc2-docstring} altdss.Recloser.IRecloser.GUID
@@ -202,7 +202,7 @@ Bases: {py:obj}`altdss.DSSObj.IDSSObj`, {py:obj}`altdss.Recloser.RecloserBatch`
 
 ````
 
-````{py:method} HasOCPDevice() -> bool
+````{py:method} HasOCPDevice() -> altdss.types.BoolArray
 :canonical: altdss.Recloser.IRecloser.HasOCPDevice
 
 ```{autodoc2-docstring} altdss.Recloser.IRecloser.HasOCPDevice
@@ -210,7 +210,7 @@ Bases: {py:obj}`altdss.DSSObj.IDSSObj`, {py:obj}`altdss.Recloser.RecloserBatch`
 
 ````
 
-````{py:method} HasSwitchControl() -> bool
+````{py:method} HasSwitchControl() -> altdss.types.BoolArray
 :canonical: altdss.Recloser.IRecloser.HasSwitchControl
 
 ```{autodoc2-docstring} altdss.Recloser.IRecloser.HasSwitchControl
@@ -218,7 +218,7 @@ Bases: {py:obj}`altdss.DSSObj.IDSSObj`, {py:obj}`altdss.Recloser.RecloserBatch`
 
 ````
 
-````{py:method} HasVoltControl() -> bool
+````{py:method} HasVoltControl() -> altdss.types.BoolArray
 :canonical: altdss.Recloser.IRecloser.HasVoltControl
 
 ```{autodoc2-docstring} altdss.Recloser.IRecloser.HasVoltControl
@@ -250,7 +250,7 @@ Bases: {py:obj}`altdss.DSSObj.IDSSObj`, {py:obj}`altdss.Recloser.RecloserBatch`
 
 ````
 
-````{py:method} MaxCurrent(terminal: int) -> float
+````{py:method} MaxCurrent(terminal: int) -> altdss.types.Float64Array
 :canonical: altdss.Recloser.IRecloser.MaxCurrent
 
 ```{autodoc2-docstring} altdss.Recloser.IRecloser.MaxCurrent
@@ -381,7 +381,7 @@ Bases: {py:obj}`altdss.DSSObj.IDSSObj`, {py:obj}`altdss.Recloser.RecloserBatch`
 
 ````
 
-````{py:method} OCPDeviceType() -> dss.enums.OCPDevType
+````{py:method} OCPDeviceType() -> typing.List[dss.enums.OCPDevType]
 :canonical: altdss.Recloser.IRecloser.OCPDeviceType
 
 ```{autodoc2-docstring} altdss.Recloser.IRecloser.OCPDeviceType
@@ -1575,7 +1575,7 @@ Bases: {py:obj}`altdss.Batch.DSSBatch`, {py:obj}`altdss.CircuitElement.CircuitEl
 
 ````
 
-````{py:method} GUID() -> str
+````{py:method} GUID() -> typing.List[str]
 :canonical: altdss.Recloser.RecloserBatch.GUID
 
 ```{autodoc2-docstring} altdss.Recloser.RecloserBatch.GUID
@@ -1657,7 +1657,7 @@ Bases: {py:obj}`altdss.Batch.DSSBatch`, {py:obj}`altdss.CircuitElement.CircuitEl
 
 ````
 
-````{py:method} HasOCPDevice() -> bool
+````{py:method} HasOCPDevice() -> altdss.types.BoolArray
 :canonical: altdss.Recloser.RecloserBatch.HasOCPDevice
 
 ```{autodoc2-docstring} altdss.Recloser.RecloserBatch.HasOCPDevice
@@ -1665,7 +1665,7 @@ Bases: {py:obj}`altdss.Batch.DSSBatch`, {py:obj}`altdss.CircuitElement.CircuitEl
 
 ````
 
-````{py:method} HasSwitchControl() -> bool
+````{py:method} HasSwitchControl() -> altdss.types.BoolArray
 :canonical: altdss.Recloser.RecloserBatch.HasSwitchControl
 
 ```{autodoc2-docstring} altdss.Recloser.RecloserBatch.HasSwitchControl
@@ -1673,7 +1673,7 @@ Bases: {py:obj}`altdss.Batch.DSSBatch`, {py:obj}`altdss.CircuitElement.CircuitEl
 
 ````
 
-````{py:method} HasVoltControl() -> bool
+````{py:method} HasVoltControl() -> altdss.types.BoolArray
 :canonical: altdss.Recloser.RecloserBatch.HasVoltControl
 
 ```{autodoc2-docstring} altdss.Recloser.RecloserBatch.HasVoltControl
@@ -1705,7 +1705,7 @@ Bases: {py:obj}`altdss.Batch.DSSBatch`, {py:obj}`altdss.CircuitElement.CircuitEl
 
 ````
 
-````{py:method} MaxCurrent(terminal: int) -> float
+````{py:method} MaxCurrent(terminal: int) -> altdss.types.Float64Array
 :canonical: altdss.Recloser.RecloserBatch.MaxCurrent
 
 ```{autodoc2-docstring} altdss.Recloser.RecloserBatch.MaxCurrent
@@ -1836,7 +1836,7 @@ Bases: {py:obj}`altdss.Batch.DSSBatch`, {py:obj}`altdss.CircuitElement.CircuitEl
 
 ````
 
-````{py:method} OCPDeviceType() -> dss.enums.OCPDevType
+````{py:method} OCPDeviceType() -> typing.List[dss.enums.OCPDevType]
 :canonical: altdss.Recloser.RecloserBatch.OCPDeviceType
 
 ```{autodoc2-docstring} altdss.Recloser.RecloserBatch.OCPDeviceType
@@ -2142,6 +2142,14 @@ Bases: {py:obj}`altdss.Batch.DSSBatch`, {py:obj}`altdss.CircuitElement.CircuitEl
 :canonical: altdss.Recloser.RecloserBatch.__len__
 
 ```{autodoc2-docstring} altdss.Recloser.RecloserBatch.__len__
+```
+
+````
+
+````{py:method} batch(**kwargs) -> altdss.Batch.DSSBatch
+:canonical: altdss.Recloser.RecloserBatch.batch
+
+```{autodoc2-docstring} altdss.Recloser.RecloserBatch.batch
 ```
 
 ````

@@ -207,7 +207,7 @@ Bases: {py:obj}`altdss.DSSObj.IDSSObj`, {py:obj}`altdss.Reactor.ReactorBatch`
 
 ````
 
-````{py:method} GUID() -> str
+````{py:method} GUID() -> typing.List[str]
 :canonical: altdss.Reactor.IReactor.GUID
 
 ```{autodoc2-docstring} altdss.Reactor.IReactor.GUID
@@ -223,7 +223,7 @@ Bases: {py:obj}`altdss.DSSObj.IDSSObj`, {py:obj}`altdss.Reactor.ReactorBatch`
 
 ````
 
-````{py:method} HasOCPDevice() -> bool
+````{py:method} HasOCPDevice() -> altdss.types.BoolArray
 :canonical: altdss.Reactor.IReactor.HasOCPDevice
 
 ```{autodoc2-docstring} altdss.Reactor.IReactor.HasOCPDevice
@@ -231,7 +231,7 @@ Bases: {py:obj}`altdss.DSSObj.IDSSObj`, {py:obj}`altdss.Reactor.ReactorBatch`
 
 ````
 
-````{py:method} HasSwitchControl() -> bool
+````{py:method} HasSwitchControl() -> altdss.types.BoolArray
 :canonical: altdss.Reactor.IReactor.HasSwitchControl
 
 ```{autodoc2-docstring} altdss.Reactor.IReactor.HasSwitchControl
@@ -239,7 +239,7 @@ Bases: {py:obj}`altdss.DSSObj.IDSSObj`, {py:obj}`altdss.Reactor.ReactorBatch`
 
 ````
 
-````{py:method} HasVoltControl() -> bool
+````{py:method} HasVoltControl() -> altdss.types.BoolArray
 :canonical: altdss.Reactor.IReactor.HasVoltControl
 
 ```{autodoc2-docstring} altdss.Reactor.IReactor.HasVoltControl
@@ -320,7 +320,7 @@ Bases: {py:obj}`altdss.DSSObj.IDSSObj`, {py:obj}`altdss.Reactor.ReactorBatch`
 
 ````
 
-````{py:method} MaxCurrent(terminal: int) -> float
+````{py:method} MaxCurrent(terminal: int) -> altdss.types.Float64Array
 :canonical: altdss.Reactor.IReactor.MaxCurrent
 
 ```{autodoc2-docstring} altdss.Reactor.IReactor.MaxCurrent
@@ -404,7 +404,7 @@ Bases: {py:obj}`altdss.DSSObj.IDSSObj`, {py:obj}`altdss.Reactor.ReactorBatch`
 
 ````
 
-````{py:method} OCPDeviceType() -> dss.enums.OCPDevType
+````{py:method} OCPDeviceType() -> typing.List[dss.enums.OCPDevType]
 :canonical: altdss.Reactor.IReactor.OCPDeviceType
 
 ```{autodoc2-docstring} altdss.Reactor.IReactor.OCPDeviceType
@@ -560,6 +560,14 @@ Bases: {py:obj}`altdss.DSSObj.IDSSObj`, {py:obj}`altdss.Reactor.ReactorBatch`
 :canonical: altdss.Reactor.IReactor.TotalCustomers
 
 ```{autodoc2-docstring} altdss.Reactor.IReactor.TotalCustomers
+```
+
+````
+
+````{py:method} TotalKilometers() -> altdss.types.Float64Array
+:canonical: altdss.Reactor.IReactor.TotalKilometers
+
+```{autodoc2-docstring} altdss.Reactor.IReactor.TotalKilometers
 ```
 
 ````
@@ -1768,7 +1776,7 @@ Bases: {py:obj}`altdss.Batch.DSSBatch`, {py:obj}`altdss.CircuitElement.CircuitEl
 
 ````
 
-````{py:method} GUID() -> str
+````{py:method} GUID() -> typing.List[str]
 :canonical: altdss.Reactor.ReactorBatch.GUID
 
 ```{autodoc2-docstring} altdss.Reactor.ReactorBatch.GUID
@@ -1784,7 +1792,7 @@ Bases: {py:obj}`altdss.Batch.DSSBatch`, {py:obj}`altdss.CircuitElement.CircuitEl
 
 ````
 
-````{py:method} HasOCPDevice() -> bool
+````{py:method} HasOCPDevice() -> altdss.types.BoolArray
 :canonical: altdss.Reactor.ReactorBatch.HasOCPDevice
 
 ```{autodoc2-docstring} altdss.Reactor.ReactorBatch.HasOCPDevice
@@ -1792,7 +1800,7 @@ Bases: {py:obj}`altdss.Batch.DSSBatch`, {py:obj}`altdss.CircuitElement.CircuitEl
 
 ````
 
-````{py:method} HasSwitchControl() -> bool
+````{py:method} HasSwitchControl() -> altdss.types.BoolArray
 :canonical: altdss.Reactor.ReactorBatch.HasSwitchControl
 
 ```{autodoc2-docstring} altdss.Reactor.ReactorBatch.HasSwitchControl
@@ -1800,7 +1808,7 @@ Bases: {py:obj}`altdss.Batch.DSSBatch`, {py:obj}`altdss.CircuitElement.CircuitEl
 
 ````
 
-````{py:method} HasVoltControl() -> bool
+````{py:method} HasVoltControl() -> altdss.types.BoolArray
 :canonical: altdss.Reactor.ReactorBatch.HasVoltControl
 
 ```{autodoc2-docstring} altdss.Reactor.ReactorBatch.HasVoltControl
@@ -1881,7 +1889,7 @@ Bases: {py:obj}`altdss.Batch.DSSBatch`, {py:obj}`altdss.CircuitElement.CircuitEl
 
 ````
 
-````{py:method} MaxCurrent(terminal: int) -> float
+````{py:method} MaxCurrent(terminal: int) -> altdss.types.Float64Array
 :canonical: altdss.Reactor.ReactorBatch.MaxCurrent
 
 ```{autodoc2-docstring} altdss.Reactor.ReactorBatch.MaxCurrent
@@ -1965,7 +1973,7 @@ Bases: {py:obj}`altdss.Batch.DSSBatch`, {py:obj}`altdss.CircuitElement.CircuitEl
 
 ````
 
-````{py:method} OCPDeviceType() -> dss.enums.OCPDevType
+````{py:method} OCPDeviceType() -> typing.List[dss.enums.OCPDevType]
 :canonical: altdss.Reactor.ReactorBatch.OCPDeviceType
 
 ```{autodoc2-docstring} altdss.Reactor.ReactorBatch.OCPDeviceType
@@ -2125,6 +2133,14 @@ Bases: {py:obj}`altdss.Batch.DSSBatch`, {py:obj}`altdss.CircuitElement.CircuitEl
 
 ````
 
+````{py:method} TotalKilometers() -> altdss.types.Float64Array
+:canonical: altdss.Reactor.ReactorBatch.TotalKilometers
+
+```{autodoc2-docstring} altdss.Reactor.ReactorBatch.TotalKilometers
+```
+
+````
+
 ````{py:method} TotalMiles() -> altdss.types.Float64Array
 :canonical: altdss.Reactor.ReactorBatch.TotalMiles
 
@@ -2248,6 +2264,14 @@ Bases: {py:obj}`altdss.Batch.DSSBatch`, {py:obj}`altdss.CircuitElement.CircuitEl
 :canonical: altdss.Reactor.ReactorBatch.__len__
 
 ```{autodoc2-docstring} altdss.Reactor.ReactorBatch.__len__
+```
+
+````
+
+````{py:method} batch(**kwargs) -> altdss.Batch.DSSBatch
+:canonical: altdss.Reactor.ReactorBatch.batch
+
+```{autodoc2-docstring} altdss.Reactor.ReactorBatch.batch
 ```
 
 ````

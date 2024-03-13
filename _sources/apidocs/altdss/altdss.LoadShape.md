@@ -1187,6 +1187,14 @@ Bases: {py:obj}`altdss.Batch.DSSBatch`, {py:obj}`altdss.LoadShapeExtras.LoadShap
 
 ````
 
+````{py:method} batch(**kwargs) -> altdss.Batch.DSSBatch
+:canonical: altdss.LoadShape.LoadShapeBatch.batch
+
+```{autodoc2-docstring} altdss.LoadShape.LoadShapeBatch.batch
+```
+
+````
+
 ````{py:method} begin_edit() -> None
 :canonical: altdss.LoadShape.LoadShapeBatch.begin_edit
 

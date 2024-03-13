@@ -8,7 +8,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
-    <title>altdss.LineSpacing &#8212; AltDSS-Python 0.2.0 documentation</title>
+    <title>altdss.LineSpacing &#8212; AltDSS-Python 0.2.2 documentation</title>
   
   
   
@@ -38,7 +38,7 @@
 <link rel="preload" as="script" href="../../_static/scripts/pydata-sphinx-theme.js?digest=8d27b9dea8ad943066ae" />
   <script src="../../_static/vendor/fontawesome/6.5.1/js/all.min.js?digest=8d27b9dea8ad943066ae"></script>
 
-    <script src="../../_static/documentation_options.js?v=7f7c277e"></script>
+    <script src="../../_static/documentation_options.js?v=d3f42505"></script>
     <script src="../../_static/doctools.js?v=888ff710"></script>
     <script src="../../_static/sphinx_highlight.js?v=dc90522c"></script>
     <script src="../../_static/scripts/sphinx-book-theme.js?v=efea14e4"></script>
@@ -137,8 +137,8 @@
       
     
     
-    <img src="../../_static/altdss-python.svg" class="logo__image only-light" alt="AltDSS-Python 0.2.0 documentation - Home"/>
-    <script>document.write(`<img src="../../_static/altdss-python-dark.svg" class="logo__image only-dark" alt="AltDSS-Python 0.2.0 documentation - Home"/>`);</script>
+    <img src="../../_static/altdss-python.svg" class="logo__image only-light" alt="AltDSS-Python 0.2.2 documentation - Home"/>
+    <script>document.write(`<img src="../../_static/altdss-python-dark.svg" class="logo__image only-dark" alt="AltDSS-Python 0.2.2 documentation - Home"/>`);</script>
   
   
 </a></div>
@@ -160,6 +160,7 @@
 <li class="toctree-l1"><a class="reference internal" href="../../index.html">AltDSS-Python</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../Architecture.html">Architecture details</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../examples/GettingStarted.html">Getting Started</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../examples/Batches.html">Batches</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../changelog.html">Changelog</a></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">API Reference</span></p>
@@ -467,6 +468,7 @@ document.write(`
 <li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#altdss.LineSpacing.LineSpacingBatch.__init__"><code class="docutils literal notranslate"><span class="pre">LineSpacingBatch.__init__()</span></code></a></li>
 <li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#altdss.LineSpacing.LineSpacingBatch.__iter__"><code class="docutils literal notranslate"><span class="pre">LineSpacingBatch.__iter__()</span></code></a></li>
 <li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#altdss.LineSpacing.LineSpacingBatch.__len__"><code class="docutils literal notranslate"><span class="pre">LineSpacingBatch.__len__()</span></code></a></li>
+<li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#altdss.LineSpacing.LineSpacingBatch.batch"><code class="docutils literal notranslate"><span class="pre">LineSpacingBatch.batch()</span></code></a></li>
 <li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#altdss.LineSpacing.LineSpacingBatch.begin_edit"><code class="docutils literal notranslate"><span class="pre">LineSpacingBatch.begin_edit()</span></code></a></li>
 <li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#altdss.LineSpacing.LineSpacingBatch.end_edit"><code class="docutils literal notranslate"><span class="pre">LineSpacingBatch.end_edit()</span></code></a></li>
 <li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#altdss.LineSpacing.LineSpacingBatch.to_json"><code class="docutils literal notranslate"><span class="pre">LineSpacingBatch.to_json()</span></code></a></li>
@@ -640,6 +642,8 @@ in the keyword argument list.  For example:  dict(one=1, two=2)</p></td>
 <dt class="sig sig-object py" id="altdss.LineSpacing.ILineSpacing.H">
 <span class="sig-name descname"><span class="pre">H</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">List</span><span class="p"><span class="pre">[</span></span><span class="pre">altdss.types.Float64Array</span><span class="p"><span class="pre">]</span></span></em><a class="headerlink" href="#altdss.LineSpacing.ILineSpacing.H" title="Link to this definition">#</a></dt>
 <dd><p>‘property(…)’</p>
+<p>Array of wire Heights.</p>
+<p>DSS property name: <code class="docutils literal notranslate"><span class="pre">H</span></code>, DSS property index: 4.</p>
 </dd></dl>
 
 <dl class="py method">
@@ -654,12 +658,16 @@ in the keyword argument list.  For example:  dict(one=1, two=2)</p></td>
 <dt class="sig sig-object py" id="altdss.LineSpacing.ILineSpacing.NConds">
 <span class="sig-name descname"><span class="pre">NConds</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><a class="reference internal" href="altdss.ArrayProxy.html#altdss.ArrayProxy.BatchInt32ArrayProxy" title="altdss.ArrayProxy.BatchInt32ArrayProxy"><span class="pre">altdss.ArrayProxy.BatchInt32ArrayProxy</span></a></em><a class="headerlink" href="#altdss.LineSpacing.ILineSpacing.NConds" title="Link to this definition">#</a></dt>
 <dd><p>‘property(…)’</p>
+<p>Number of wires in this geometry. Default is 3. Triggers memory allocations. Define first!</p>
+<p>DSS property name: <code class="docutils literal notranslate"><span class="pre">NConds</span></code>, DSS property index: 1.</p>
 </dd></dl>
 
 <dl class="py attribute">
 <dt class="sig sig-object py" id="altdss.LineSpacing.ILineSpacing.NPhases">
 <span class="sig-name descname"><span class="pre">NPhases</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><a class="reference internal" href="altdss.ArrayProxy.html#altdss.ArrayProxy.BatchInt32ArrayProxy" title="altdss.ArrayProxy.BatchInt32ArrayProxy"><span class="pre">altdss.ArrayProxy.BatchInt32ArrayProxy</span></a></em><a class="headerlink" href="#altdss.LineSpacing.ILineSpacing.NPhases" title="Link to this definition">#</a></dt>
 <dd><p>‘property(…)’</p>
+<p>Number of retained phase conductors. If less than the number of wires, list the retained phase coordinates first.</p>
+<p>DSS property name: <code class="docutils literal notranslate"><span class="pre">NPhases</span></code>, DSS property index: 2.</p>
 </dd></dl>
 
 <dl class="py property">
@@ -671,18 +679,24 @@ in the keyword argument list.  For example:  dict(one=1, two=2)</p></td>
 <dt class="sig sig-object py" id="altdss.LineSpacing.ILineSpacing.Units">
 <span class="sig-name descname"><span class="pre">Units</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><a class="reference internal" href="altdss.ArrayProxy.html#altdss.ArrayProxy.BatchInt32ArrayProxy" title="altdss.ArrayProxy.BatchInt32ArrayProxy"><span class="pre">altdss.ArrayProxy.BatchInt32ArrayProxy</span></a></em><a class="headerlink" href="#altdss.LineSpacing.ILineSpacing.Units" title="Link to this definition">#</a></dt>
 <dd><p>‘property(…)’</p>
+<p>Units for x and h: {mi|kft|km|m|Ft|in|cm } Initial default is “ft”, but defaults to last unit defined</p>
+<p>DSS property name: <code class="docutils literal notranslate"><span class="pre">Units</span></code>, DSS property index: 5.</p>
 </dd></dl>
 
 <dl class="py attribute">
 <dt class="sig sig-object py" id="altdss.LineSpacing.ILineSpacing.Units_str">
 <span class="sig-name descname"><span class="pre">Units_str</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">List</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">]</span></span></em><a class="headerlink" href="#altdss.LineSpacing.ILineSpacing.Units_str" title="Link to this definition">#</a></dt>
 <dd><p>‘property(…)’</p>
+<p>Units for x and h: {mi|kft|km|m|Ft|in|cm } Initial default is “ft”, but defaults to last unit defined</p>
+<p>DSS property name: <code class="docutils literal notranslate"><span class="pre">Units</span></code>, DSS property index: 5.</p>
 </dd></dl>
 
 <dl class="py attribute">
 <dt class="sig sig-object py" id="altdss.LineSpacing.ILineSpacing.X">
 <span class="sig-name descname"><span class="pre">X</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">List</span><span class="p"><span class="pre">[</span></span><span class="pre">altdss.types.Float64Array</span><span class="p"><span class="pre">]</span></span></em><a class="headerlink" href="#altdss.LineSpacing.ILineSpacing.X" title="Link to this definition">#</a></dt>
 <dd><p>‘property(…)’</p>
+<p>Array of wire X coordinates.</p>
+<p>DSS property name: <code class="docutils literal notranslate"><span class="pre">X</span></code>, DSS property index: 3.</p>
 </dd></dl>
 
 <dl class="py method">
@@ -732,8 +746,8 @@ or “count” elements with a randomized prefix.</p>
 <dt class="sig sig-object py" id="altdss.LineSpacing.ILineSpacing.begin_edit">
 <span class="sig-name descname"><span class="pre">begin_edit</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span><a class="headerlink" href="#altdss.LineSpacing.ILineSpacing.begin_edit" title="Link to this definition">#</a></dt>
 <dd><p>Marks for editing all DSS objects in the batch</p>
-<p>In the editing mode, some final side-effects of changing properties are post-poned
-until <code class="docutils literal notranslate"><span class="pre">_end_edit</span></code> is called. This side-effects can be somewhat costly, like updating
+<p>In the editing mode, some final side-effects of changing properties are postponed
+until <code class="docutils literal notranslate"><span class="pre">end_edit</span></code> is called. This side-effects can be somewhat costly, like updating
 the model parameters or internal matrices.</p>
 <p>If you don’t have any performance constraint, you may edit each property individually
 without worrying about using <code class="docutils literal notranslate"><span class="pre">begin_edit</span></code> and <code class="docutils literal notranslate"><span class="pre">end_edit</span></code>. For convenience, those are
@@ -790,6 +804,8 @@ See <code class="docutils literal notranslate"><span class="pre">Obj_ToJSON</spa
 <dt class="sig sig-object py" id="altdss.LineSpacing.LineSpacing.H">
 <span class="sig-name descname"><span class="pre">H</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">altdss.types.Float64Array</span></em><a class="headerlink" href="#altdss.LineSpacing.LineSpacing.H" title="Link to this definition">#</a></dt>
 <dd><p>‘property(…)’</p>
+<p>Array of wire Heights.</p>
+<p>DSS property name: <code class="docutils literal notranslate"><span class="pre">H</span></code>, DSS property index: 4.</p>
 </dd></dl>
 
 <dl class="py method">
@@ -804,12 +820,16 @@ See <code class="docutils literal notranslate"><span class="pre">Obj_ToJSON</spa
 <dt class="sig sig-object py" id="altdss.LineSpacing.LineSpacing.NConds">
 <span class="sig-name descname"><span class="pre">NConds</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">int</span></em><a class="headerlink" href="#altdss.LineSpacing.LineSpacing.NConds" title="Link to this definition">#</a></dt>
 <dd><p>‘property(…)’</p>
+<p>Number of wires in this geometry. Default is 3. Triggers memory allocations. Define first!</p>
+<p>DSS property name: <code class="docutils literal notranslate"><span class="pre">NConds</span></code>, DSS property index: 1.</p>
 </dd></dl>
 
 <dl class="py attribute">
 <dt class="sig sig-object py" id="altdss.LineSpacing.LineSpacing.NPhases">
 <span class="sig-name descname"><span class="pre">NPhases</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">int</span></em><a class="headerlink" href="#altdss.LineSpacing.LineSpacing.NPhases" title="Link to this definition">#</a></dt>
 <dd><p>‘property(…)’</p>
+<p>Number of retained phase conductors. If less than the number of wires, list the retained phase coordinates first.</p>
+<p>DSS property name: <code class="docutils literal notranslate"><span class="pre">NPhases</span></code>, DSS property index: 2.</p>
 </dd></dl>
 
 <dl class="py property">
@@ -821,18 +841,24 @@ See <code class="docutils literal notranslate"><span class="pre">Obj_ToJSON</spa
 <dt class="sig sig-object py" id="altdss.LineSpacing.LineSpacing.Units">
 <span class="sig-name descname"><span class="pre">Units</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><a class="reference internal" href="altdss.enums.html#altdss.enums.LengthUnit" title="altdss.enums.LengthUnit"><span class="pre">altdss.enums.LengthUnit</span></a></em><a class="headerlink" href="#altdss.LineSpacing.LineSpacing.Units" title="Link to this definition">#</a></dt>
 <dd><p>‘property(…)’</p>
+<p>Units for x and h: {mi|kft|km|m|Ft|in|cm } Initial default is “ft”, but defaults to last unit defined</p>
+<p>DSS property name: <code class="docutils literal notranslate"><span class="pre">Units</span></code>, DSS property index: 5.</p>
 </dd></dl>
 
 <dl class="py attribute">
 <dt class="sig sig-object py" id="altdss.LineSpacing.LineSpacing.Units_str">
 <span class="sig-name descname"><span class="pre">Units_str</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">str</span></em><a class="headerlink" href="#altdss.LineSpacing.LineSpacing.Units_str" title="Link to this definition">#</a></dt>
 <dd><p>‘property(…)’</p>
+<p>Units for x and h: {mi|kft|km|m|Ft|in|cm } Initial default is “ft”, but defaults to last unit defined</p>
+<p>DSS property name: <code class="docutils literal notranslate"><span class="pre">Units</span></code>, DSS property index: 5.</p>
 </dd></dl>
 
 <dl class="py attribute">
 <dt class="sig sig-object py" id="altdss.LineSpacing.LineSpacing.X">
 <span class="sig-name descname"><span class="pre">X</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">altdss.types.Float64Array</span></em><a class="headerlink" href="#altdss.LineSpacing.LineSpacing.X" title="Link to this definition">#</a></dt>
 <dd><p>‘property(…)’</p>
+<p>Array of wire X coordinates.</p>
+<p>DSS property name: <code class="docutils literal notranslate"><span class="pre">X</span></code>, DSS property index: 3.</p>
 </dd></dl>
 
 <dl class="py method">
@@ -862,8 +888,8 @@ See <code class="docutils literal notranslate"><span class="pre">Obj_ToJSON</spa
 <dt class="sig sig-object py" id="altdss.LineSpacing.LineSpacing.begin_edit">
 <span class="sig-name descname"><span class="pre">begin_edit</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span><a class="headerlink" href="#altdss.LineSpacing.LineSpacing.begin_edit" title="Link to this definition">#</a></dt>
 <dd><p>Marks a DSS object for editing</p>
-<p>In the editing mode, some final side-effects of changing properties are post-poned
-until <code class="docutils literal notranslate"><span class="pre">_end_edit</span></code> is called. This side-effects can be somewhat costly, like updating
+<p>In the editing mode, some final side-effects of changing properties are postponed
+until <code class="docutils literal notranslate"><span class="pre">end_edit</span></code> is called. This side-effects can be somewhat costly, like updating
 the model parameters or internal matrices.</p>
 <p>If you don’t have any performance constraint, you may edit each property individually
 without worrying about using <code class="docutils literal notranslate"><span class="pre">begin_edit</span></code> and <code class="docutils literal notranslate"><span class="pre">end_edit</span></code>. For convenience, those are
@@ -922,6 +948,8 @@ Values used by this function are:</p>
 <dt class="sig sig-object py" id="altdss.LineSpacing.LineSpacingBatch.H">
 <span class="sig-name descname"><span class="pre">H</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">List</span><span class="p"><span class="pre">[</span></span><span class="pre">altdss.types.Float64Array</span><span class="p"><span class="pre">]</span></span></em><a class="headerlink" href="#altdss.LineSpacing.LineSpacingBatch.H" title="Link to this definition">#</a></dt>
 <dd><p>‘property(…)’</p>
+<p>Array of wire Heights.</p>
+<p>DSS property name: <code class="docutils literal notranslate"><span class="pre">H</span></code>, DSS property index: 4.</p>
 </dd></dl>
 
 <dl class="py method">
@@ -936,12 +964,16 @@ Values used by this function are:</p>
 <dt class="sig sig-object py" id="altdss.LineSpacing.LineSpacingBatch.NConds">
 <span class="sig-name descname"><span class="pre">NConds</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><a class="reference internal" href="altdss.ArrayProxy.html#altdss.ArrayProxy.BatchInt32ArrayProxy" title="altdss.ArrayProxy.BatchInt32ArrayProxy"><span class="pre">altdss.ArrayProxy.BatchInt32ArrayProxy</span></a></em><a class="headerlink" href="#altdss.LineSpacing.LineSpacingBatch.NConds" title="Link to this definition">#</a></dt>
 <dd><p>‘property(…)’</p>
+<p>Number of wires in this geometry. Default is 3. Triggers memory allocations. Define first!</p>
+<p>DSS property name: <code class="docutils literal notranslate"><span class="pre">NConds</span></code>, DSS property index: 1.</p>
 </dd></dl>
 
 <dl class="py attribute">
 <dt class="sig sig-object py" id="altdss.LineSpacing.LineSpacingBatch.NPhases">
 <span class="sig-name descname"><span class="pre">NPhases</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><a class="reference internal" href="altdss.ArrayProxy.html#altdss.ArrayProxy.BatchInt32ArrayProxy" title="altdss.ArrayProxy.BatchInt32ArrayProxy"><span class="pre">altdss.ArrayProxy.BatchInt32ArrayProxy</span></a></em><a class="headerlink" href="#altdss.LineSpacing.LineSpacingBatch.NPhases" title="Link to this definition">#</a></dt>
 <dd><p>‘property(…)’</p>
+<p>Number of retained phase conductors. If less than the number of wires, list the retained phase coordinates first.</p>
+<p>DSS property name: <code class="docutils literal notranslate"><span class="pre">NPhases</span></code>, DSS property index: 2.</p>
 </dd></dl>
 
 <dl class="py property">
@@ -953,18 +985,24 @@ Values used by this function are:</p>
 <dt class="sig sig-object py" id="altdss.LineSpacing.LineSpacingBatch.Units">
 <span class="sig-name descname"><span class="pre">Units</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><a class="reference internal" href="altdss.ArrayProxy.html#altdss.ArrayProxy.BatchInt32ArrayProxy" title="altdss.ArrayProxy.BatchInt32ArrayProxy"><span class="pre">altdss.ArrayProxy.BatchInt32ArrayProxy</span></a></em><a class="headerlink" href="#altdss.LineSpacing.LineSpacingBatch.Units" title="Link to this definition">#</a></dt>
 <dd><p>‘property(…)’</p>
+<p>Units for x and h: {mi|kft|km|m|Ft|in|cm } Initial default is “ft”, but defaults to last unit defined</p>
+<p>DSS property name: <code class="docutils literal notranslate"><span class="pre">Units</span></code>, DSS property index: 5.</p>
 </dd></dl>
 
 <dl class="py attribute">
 <dt class="sig sig-object py" id="altdss.LineSpacing.LineSpacingBatch.Units_str">
 <span class="sig-name descname"><span class="pre">Units_str</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">List</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">]</span></span></em><a class="headerlink" href="#altdss.LineSpacing.LineSpacingBatch.Units_str" title="Link to this definition">#</a></dt>
 <dd><p>‘property(…)’</p>
+<p>Units for x and h: {mi|kft|km|m|Ft|in|cm } Initial default is “ft”, but defaults to last unit defined</p>
+<p>DSS property name: <code class="docutils literal notranslate"><span class="pre">Units</span></code>, DSS property index: 5.</p>
 </dd></dl>
 
 <dl class="py attribute">
 <dt class="sig sig-object py" id="altdss.LineSpacing.LineSpacingBatch.X">
 <span class="sig-name descname"><span class="pre">X</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">List</span><span class="p"><span class="pre">[</span></span><span class="pre">altdss.types.Float64Array</span><span class="p"><span class="pre">]</span></span></em><a class="headerlink" href="#altdss.LineSpacing.LineSpacingBatch.X" title="Link to this definition">#</a></dt>
 <dd><p>‘property(…)’</p>
+<p>Array of wire X coordinates.</p>
+<p>DSS property name: <code class="docutils literal notranslate"><span class="pre">X</span></code>, DSS property index: 3.</p>
 </dd></dl>
 
 <dl class="py method">
@@ -994,11 +1032,29 @@ Values used by this function are:</p>
 <dd></dd></dl>
 
 <dl class="py method">
+<dt class="sig sig-object py" id="altdss.LineSpacing.LineSpacingBatch.batch">
+<span class="sig-name descname"><span class="pre">batch</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference internal" href="altdss.Batch.html#altdss.Batch.DSSBatch" title="altdss.Batch.DSSBatch"><span class="pre">altdss.Batch.DSSBatch</span></a></span></span><a class="headerlink" href="#altdss.LineSpacing.LineSpacingBatch.batch" title="Link to this definition">#</a></dt>
+<dd><p>Filter a batch using integer or float DSS properties, returning a new batch.</p>
+<p>For integers, provide a single value to match.</p>
+<p>For floats, provide a range as a 2-valued tuple/list (min value, max value), or an exact value to value (not recommended).</p>
+<p>Multiple properties can be listed to allow filtering various conditions.</p>
+<p>Example for loads:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span>    <span class="c1"># Create an initial batch using a regular expression</span>
+    <span class="n">abc_loads</span> <span class="o">=</span> <span class="n">altdss</span><span class="o">.</span><span class="n">Load</span><span class="o">.</span><span class="n">batch</span><span class="p">(</span><span class="n">re</span><span class="o">=</span><span class="sa">r</span><span class="s1">&#39;^abc.*$&#39;</span><span class="p">)</span> <span class="c1"># a batch of all loads with names starting with &quot;abc&quot;</span>
+    <span class="n">abc_loads_filtered</span> <span class="o">=</span> <span class="n">abc_loads</span><span class="o">.</span><span class="n">batch</span><span class="p">(</span><span class="n">Class</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">Phases</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">kV</span><span class="o">=</span><span class="p">(</span><span class="mf">0.1</span><span class="p">,</span> <span class="mf">1.0</span><span class="p">))</span>
+
+    <span class="c1"># Create an initial batch, already filtered</span>
+    <span class="n">abc_loads_filtered</span> <span class="o">=</span> <span class="n">altdss</span><span class="o">.</span><span class="n">Load</span><span class="o">.</span><span class="n">batch</span><span class="p">(</span><span class="n">re</span><span class="o">=</span><span class="sa">r</span><span class="s1">&#39;^abc.*$&#39;</span><span class="p">,</span> <span class="n">Class</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">Phases</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">kV</span><span class="o">=</span><span class="p">(</span><span class="mf">0.1</span><span class="p">,</span> <span class="mf">1.0</span><span class="p">))</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="py method">
 <dt class="sig sig-object py" id="altdss.LineSpacing.LineSpacingBatch.begin_edit">
 <span class="sig-name descname"><span class="pre">begin_edit</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span><a class="headerlink" href="#altdss.LineSpacing.LineSpacingBatch.begin_edit" title="Link to this definition">#</a></dt>
 <dd><p>Marks for editing all DSS objects in the batch</p>
-<p>In the editing mode, some final side-effects of changing properties are post-poned
-until <code class="docutils literal notranslate"><span class="pre">_end_edit</span></code> is called. This side-effects can be somewhat costly, like updating
+<p>In the editing mode, some final side-effects of changing properties are postponed
+until <code class="docutils literal notranslate"><span class="pre">end_edit</span></code> is called. This side-effects can be somewhat costly, like updating
 the model parameters or internal matrices.</p>
 <p>If you don’t have any performance constraint, you may edit each property individually
 without worrying about using <code class="docutils literal notranslate"><span class="pre">begin_edit</span></code> and <code class="docutils literal notranslate"><span class="pre">end_edit</span></code>. For convenience, those are
@@ -1727,6 +1783,7 @@ In either case, this is followed by: for k in F:  D[k] = F[k]</p>
 <li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#altdss.LineSpacing.LineSpacingBatch.__init__"><code class="docutils literal notranslate"><span class="pre">LineSpacingBatch.__init__()</span></code></a></li>
 <li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#altdss.LineSpacing.LineSpacingBatch.__iter__"><code class="docutils literal notranslate"><span class="pre">LineSpacingBatch.__iter__()</span></code></a></li>
 <li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#altdss.LineSpacing.LineSpacingBatch.__len__"><code class="docutils literal notranslate"><span class="pre">LineSpacingBatch.__len__()</span></code></a></li>
+<li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#altdss.LineSpacing.LineSpacingBatch.batch"><code class="docutils literal notranslate"><span class="pre">LineSpacingBatch.batch()</span></code></a></li>
 <li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#altdss.LineSpacing.LineSpacingBatch.begin_edit"><code class="docutils literal notranslate"><span class="pre">LineSpacingBatch.begin_edit()</span></code></a></li>
 <li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#altdss.LineSpacing.LineSpacingBatch.end_edit"><code class="docutils literal notranslate"><span class="pre">LineSpacingBatch.end_edit()</span></code></a></li>
 <li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#altdss.LineSpacing.LineSpacingBatch.to_json"><code class="docutils literal notranslate"><span class="pre">LineSpacingBatch.to_json()</span></code></a></li>

@@ -745,7 +745,7 @@ Bases: {py:obj}`altdss.Batch.DSSBatch`, {py:obj}`altdss.CircuitElement.CircuitEl
 
 ````
 
-````{py:method} GUID() -> str
+````{py:method} GUID() -> typing.List[str]
 :canonical: altdss.GICsource.GICsourceBatch.GUID
 
 ```{autodoc2-docstring} altdss.GICsource.GICsourceBatch.GUID
@@ -761,7 +761,7 @@ Bases: {py:obj}`altdss.Batch.DSSBatch`, {py:obj}`altdss.CircuitElement.CircuitEl
 
 ````
 
-````{py:method} HasOCPDevice() -> bool
+````{py:method} HasOCPDevice() -> altdss.types.BoolArray
 :canonical: altdss.GICsource.GICsourceBatch.HasOCPDevice
 
 ```{autodoc2-docstring} altdss.GICsource.GICsourceBatch.HasOCPDevice
@@ -769,7 +769,7 @@ Bases: {py:obj}`altdss.Batch.DSSBatch`, {py:obj}`altdss.CircuitElement.CircuitEl
 
 ````
 
-````{py:method} HasSwitchControl() -> bool
+````{py:method} HasSwitchControl() -> altdss.types.BoolArray
 :canonical: altdss.GICsource.GICsourceBatch.HasSwitchControl
 
 ```{autodoc2-docstring} altdss.GICsource.GICsourceBatch.HasSwitchControl
@@ -777,7 +777,7 @@ Bases: {py:obj}`altdss.Batch.DSSBatch`, {py:obj}`altdss.CircuitElement.CircuitEl
 
 ````
 
-````{py:method} HasVoltControl() -> bool
+````{py:method} HasVoltControl() -> altdss.types.BoolArray
 :canonical: altdss.GICsource.GICsourceBatch.HasVoltControl
 
 ```{autodoc2-docstring} altdss.GICsource.GICsourceBatch.HasVoltControl
@@ -853,7 +853,7 @@ Bases: {py:obj}`altdss.Batch.DSSBatch`, {py:obj}`altdss.CircuitElement.CircuitEl
 
 ````
 
-````{py:method} MaxCurrent(terminal: int) -> float
+````{py:method} MaxCurrent(terminal: int) -> altdss.types.Float64Array
 :canonical: altdss.GICsource.GICsourceBatch.MaxCurrent
 
 ```{autodoc2-docstring} altdss.GICsource.GICsourceBatch.MaxCurrent
@@ -918,7 +918,7 @@ Bases: {py:obj}`altdss.Batch.DSSBatch`, {py:obj}`altdss.CircuitElement.CircuitEl
 
 ````
 
-````{py:method} OCPDeviceType() -> dss.enums.OCPDevType
+````{py:method} OCPDeviceType() -> typing.List[dss.enums.OCPDevType]
 :canonical: altdss.GICsource.GICsourceBatch.OCPDeviceType
 
 ```{autodoc2-docstring} altdss.GICsource.GICsourceBatch.OCPDeviceType
@@ -1070,6 +1070,14 @@ Bases: {py:obj}`altdss.Batch.DSSBatch`, {py:obj}`altdss.CircuitElement.CircuitEl
 :canonical: altdss.GICsource.GICsourceBatch.__len__
 
 ```{autodoc2-docstring} altdss.GICsource.GICsourceBatch.__len__
+```
+
+````
+
+````{py:method} batch(**kwargs) -> altdss.Batch.DSSBatch
+:canonical: altdss.GICsource.GICsourceBatch.batch
+
+```{autodoc2-docstring} altdss.GICsource.GICsourceBatch.batch
 ```
 
 ````
@@ -2174,7 +2182,7 @@ Bases: {py:obj}`altdss.DSSObj.IDSSObj`, {py:obj}`altdss.GICsource.GICsourceBatch
 
 ````
 
-````{py:method} GUID() -> str
+````{py:method} GUID() -> typing.List[str]
 :canonical: altdss.GICsource.IGICsource.GUID
 
 ```{autodoc2-docstring} altdss.GICsource.IGICsource.GUID
@@ -2190,7 +2198,7 @@ Bases: {py:obj}`altdss.DSSObj.IDSSObj`, {py:obj}`altdss.GICsource.GICsourceBatch
 
 ````
 
-````{py:method} HasOCPDevice() -> bool
+````{py:method} HasOCPDevice() -> altdss.types.BoolArray
 :canonical: altdss.GICsource.IGICsource.HasOCPDevice
 
 ```{autodoc2-docstring} altdss.GICsource.IGICsource.HasOCPDevice
@@ -2198,7 +2206,7 @@ Bases: {py:obj}`altdss.DSSObj.IDSSObj`, {py:obj}`altdss.GICsource.GICsourceBatch
 
 ````
 
-````{py:method} HasSwitchControl() -> bool
+````{py:method} HasSwitchControl() -> altdss.types.BoolArray
 :canonical: altdss.GICsource.IGICsource.HasSwitchControl
 
 ```{autodoc2-docstring} altdss.GICsource.IGICsource.HasSwitchControl
@@ -2206,7 +2214,7 @@ Bases: {py:obj}`altdss.DSSObj.IDSSObj`, {py:obj}`altdss.GICsource.GICsourceBatch
 
 ````
 
-````{py:method} HasVoltControl() -> bool
+````{py:method} HasVoltControl() -> altdss.types.BoolArray
 :canonical: altdss.GICsource.IGICsource.HasVoltControl
 
 ```{autodoc2-docstring} altdss.GICsource.IGICsource.HasVoltControl
@@ -2282,7 +2290,7 @@ Bases: {py:obj}`altdss.DSSObj.IDSSObj`, {py:obj}`altdss.GICsource.GICsourceBatch
 
 ````
 
-````{py:method} MaxCurrent(terminal: int) -> float
+````{py:method} MaxCurrent(terminal: int) -> altdss.types.Float64Array
 :canonical: altdss.GICsource.IGICsource.MaxCurrent
 
 ```{autodoc2-docstring} altdss.GICsource.IGICsource.MaxCurrent
@@ -2347,7 +2355,7 @@ Bases: {py:obj}`altdss.DSSObj.IDSSObj`, {py:obj}`altdss.GICsource.GICsourceBatch
 
 ````
 
-````{py:method} OCPDeviceType() -> dss.enums.OCPDevType
+````{py:method} OCPDeviceType() -> typing.List[dss.enums.OCPDevType]
 :canonical: altdss.GICsource.IGICsource.OCPDeviceType
 
 ```{autodoc2-docstring} altdss.GICsource.IGICsource.OCPDeviceType

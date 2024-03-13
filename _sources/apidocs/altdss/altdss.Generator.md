@@ -1382,7 +1382,7 @@ Bases: {py:obj}`altdss.Batch.DSSBatch`, {py:obj}`altdss.CircuitElement.CircuitEl
 
 ````
 
-````{py:method} GUID() -> str
+````{py:method} GUID() -> typing.List[str]
 :canonical: altdss.Generator.GeneratorBatch.GUID
 
 ```{autodoc2-docstring} altdss.Generator.GeneratorBatch.GUID
@@ -1409,7 +1409,7 @@ Bases: {py:obj}`altdss.Batch.DSSBatch`, {py:obj}`altdss.CircuitElement.CircuitEl
 
 ````
 
-````{py:method} HasOCPDevice() -> bool
+````{py:method} HasOCPDevice() -> altdss.types.BoolArray
 :canonical: altdss.Generator.GeneratorBatch.HasOCPDevice
 
 ```{autodoc2-docstring} altdss.Generator.GeneratorBatch.HasOCPDevice
@@ -1417,7 +1417,7 @@ Bases: {py:obj}`altdss.Batch.DSSBatch`, {py:obj}`altdss.CircuitElement.CircuitEl
 
 ````
 
-````{py:method} HasSwitchControl() -> bool
+````{py:method} HasSwitchControl() -> altdss.types.BoolArray
 :canonical: altdss.Generator.GeneratorBatch.HasSwitchControl
 
 ```{autodoc2-docstring} altdss.Generator.GeneratorBatch.HasSwitchControl
@@ -1425,7 +1425,7 @@ Bases: {py:obj}`altdss.Batch.DSSBatch`, {py:obj}`altdss.CircuitElement.CircuitEl
 
 ````
 
-````{py:method} HasVoltControl() -> bool
+````{py:method} HasVoltControl() -> altdss.types.BoolArray
 :canonical: altdss.Generator.GeneratorBatch.HasVoltControl
 
 ```{autodoc2-docstring} altdss.Generator.GeneratorBatch.HasVoltControl
@@ -1457,7 +1457,7 @@ Bases: {py:obj}`altdss.Batch.DSSBatch`, {py:obj}`altdss.CircuitElement.CircuitEl
 
 ````
 
-````{py:method} MaxCurrent(terminal: int) -> float
+````{py:method} MaxCurrent(terminal: int) -> altdss.types.Float64Array
 :canonical: altdss.Generator.GeneratorBatch.MaxCurrent
 
 ```{autodoc2-docstring} altdss.Generator.GeneratorBatch.MaxCurrent
@@ -1555,7 +1555,7 @@ Bases: {py:obj}`altdss.Batch.DSSBatch`, {py:obj}`altdss.CircuitElement.CircuitEl
 
 ````
 
-````{py:method} OCPDeviceType() -> dss.enums.OCPDevType
+````{py:method} OCPDeviceType() -> typing.List[dss.enums.OCPDevType]
 :canonical: altdss.Generator.GeneratorBatch.OCPDeviceType
 
 ```{autodoc2-docstring} altdss.Generator.GeneratorBatch.OCPDeviceType
@@ -1902,6 +1902,14 @@ Bases: {py:obj}`altdss.Batch.DSSBatch`, {py:obj}`altdss.CircuitElement.CircuitEl
 :canonical: altdss.Generator.GeneratorBatch.__len__
 
 ```{autodoc2-docstring} altdss.Generator.GeneratorBatch.__len__
+```
+
+````
+
+````{py:method} batch(**kwargs) -> altdss.Batch.DSSBatch
+:canonical: altdss.Generator.GeneratorBatch.batch
+
+```{autodoc2-docstring} altdss.Generator.GeneratorBatch.batch
 ```
 
 ````
@@ -3974,7 +3982,7 @@ Bases: {py:obj}`altdss.DSSObj.IDSSObj`, {py:obj}`altdss.Generator.GeneratorBatch
 
 ````
 
-````{py:method} GUID() -> str
+````{py:method} GUID() -> typing.List[str]
 :canonical: altdss.Generator.IGenerator.GUID
 
 ```{autodoc2-docstring} altdss.Generator.IGenerator.GUID
@@ -4001,7 +4009,7 @@ Bases: {py:obj}`altdss.DSSObj.IDSSObj`, {py:obj}`altdss.Generator.GeneratorBatch
 
 ````
 
-````{py:method} HasOCPDevice() -> bool
+````{py:method} HasOCPDevice() -> altdss.types.BoolArray
 :canonical: altdss.Generator.IGenerator.HasOCPDevice
 
 ```{autodoc2-docstring} altdss.Generator.IGenerator.HasOCPDevice
@@ -4009,7 +4017,7 @@ Bases: {py:obj}`altdss.DSSObj.IDSSObj`, {py:obj}`altdss.Generator.GeneratorBatch
 
 ````
 
-````{py:method} HasSwitchControl() -> bool
+````{py:method} HasSwitchControl() -> altdss.types.BoolArray
 :canonical: altdss.Generator.IGenerator.HasSwitchControl
 
 ```{autodoc2-docstring} altdss.Generator.IGenerator.HasSwitchControl
@@ -4017,7 +4025,7 @@ Bases: {py:obj}`altdss.DSSObj.IDSSObj`, {py:obj}`altdss.Generator.GeneratorBatch
 
 ````
 
-````{py:method} HasVoltControl() -> bool
+````{py:method} HasVoltControl() -> altdss.types.BoolArray
 :canonical: altdss.Generator.IGenerator.HasVoltControl
 
 ```{autodoc2-docstring} altdss.Generator.IGenerator.HasVoltControl
@@ -4049,7 +4057,7 @@ Bases: {py:obj}`altdss.DSSObj.IDSSObj`, {py:obj}`altdss.Generator.GeneratorBatch
 
 ````
 
-````{py:method} MaxCurrent(terminal: int) -> float
+````{py:method} MaxCurrent(terminal: int) -> altdss.types.Float64Array
 :canonical: altdss.Generator.IGenerator.MaxCurrent
 
 ```{autodoc2-docstring} altdss.Generator.IGenerator.MaxCurrent
@@ -4147,7 +4155,7 @@ Bases: {py:obj}`altdss.DSSObj.IDSSObj`, {py:obj}`altdss.Generator.GeneratorBatch
 
 ````
 
-````{py:method} OCPDeviceType() -> dss.enums.OCPDevType
+````{py:method} OCPDeviceType() -> typing.List[dss.enums.OCPDevType]
 :canonical: altdss.Generator.IGenerator.OCPDeviceType
 
 ```{autodoc2-docstring} altdss.Generator.IGenerator.OCPDeviceType

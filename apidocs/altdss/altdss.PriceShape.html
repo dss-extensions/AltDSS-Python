@@ -8,7 +8,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
-    <title>altdss.PriceShape &#8212; AltDSS-Python 0.2.0 documentation</title>
+    <title>altdss.PriceShape &#8212; AltDSS-Python 0.2.2 documentation</title>
   
   
   
@@ -38,7 +38,7 @@
 <link rel="preload" as="script" href="../../_static/scripts/pydata-sphinx-theme.js?digest=8d27b9dea8ad943066ae" />
   <script src="../../_static/vendor/fontawesome/6.5.1/js/all.min.js?digest=8d27b9dea8ad943066ae"></script>
 
-    <script src="../../_static/documentation_options.js?v=7f7c277e"></script>
+    <script src="../../_static/documentation_options.js?v=d3f42505"></script>
     <script src="../../_static/doctools.js?v=888ff710"></script>
     <script src="../../_static/sphinx_highlight.js?v=dc90522c"></script>
     <script src="../../_static/scripts/sphinx-book-theme.js?v=efea14e4"></script>
@@ -137,8 +137,8 @@
       
     
     
-    <img src="../../_static/altdss-python.svg" class="logo__image only-light" alt="AltDSS-Python 0.2.0 documentation - Home"/>
-    <script>document.write(`<img src="../../_static/altdss-python-dark.svg" class="logo__image only-dark" alt="AltDSS-Python 0.2.0 documentation - Home"/>`);</script>
+    <img src="../../_static/altdss-python.svg" class="logo__image only-light" alt="AltDSS-Python 0.2.2 documentation - Home"/>
+    <script>document.write(`<img src="../../_static/altdss-python-dark.svg" class="logo__image only-dark" alt="AltDSS-Python 0.2.2 documentation - Home"/>`);</script>
   
   
 </a></div>
@@ -160,6 +160,7 @@
 <li class="toctree-l1"><a class="reference internal" href="../../index.html">AltDSS-Python</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../Architecture.html">Architecture details</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../examples/GettingStarted.html">Getting Started</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../examples/Batches.html">Batches</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../changelog.html">Changelog</a></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">API Reference</span></p>
@@ -491,6 +492,7 @@ document.write(`
 <li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#altdss.PriceShape.PriceShapeBatch.__init__"><code class="docutils literal notranslate"><span class="pre">PriceShapeBatch.__init__()</span></code></a></li>
 <li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#altdss.PriceShape.PriceShapeBatch.__iter__"><code class="docutils literal notranslate"><span class="pre">PriceShapeBatch.__iter__()</span></code></a></li>
 <li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#altdss.PriceShape.PriceShapeBatch.__len__"><code class="docutils literal notranslate"><span class="pre">PriceShapeBatch.__len__()</span></code></a></li>
+<li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#altdss.PriceShape.PriceShapeBatch.batch"><code class="docutils literal notranslate"><span class="pre">PriceShapeBatch.batch()</span></code></a></li>
 <li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#altdss.PriceShape.PriceShapeBatch.begin_edit"><code class="docutils literal notranslate"><span class="pre">PriceShapeBatch.begin_edit()</span></code></a></li>
 <li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#altdss.PriceShape.PriceShapeBatch.end_edit"><code class="docutils literal notranslate"><span class="pre">PriceShapeBatch.end_edit()</span></code></a></li>
 <li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#altdss.PriceShape.PriceShapeBatch.to_json"><code class="docutils literal notranslate"><span class="pre">PriceShapeBatch.to_json()</span></code></a></li>
@@ -679,12 +681,16 @@ in the keyword argument list.  For example:  dict(one=1, two=2)</p></td>
 <dt class="sig sig-object py" id="altdss.PriceShape.IPriceShape.CSVFile">
 <span class="sig-name descname"><span class="pre">CSVFile</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">List</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">]</span></span></em><a class="headerlink" href="#altdss.PriceShape.IPriceShape.CSVFile" title="Link to this definition">#</a></dt>
 <dd><p>‘property(…)’</p>
+<p>Switch input of  Price curve data to a csv file containing (hour, Price) points, or simply (Price) values for fixed time interval data, one per line. NOTE: This action may reset the number of points to a lower value.</p>
+<p>DSS property name: <code class="docutils literal notranslate"><span class="pre">CSVFile</span></code>, DSS property index: 7.</p>
 </dd></dl>
 
 <dl class="py attribute">
 <dt class="sig sig-object py" id="altdss.PriceShape.IPriceShape.DblFile">
 <span class="sig-name descname"><span class="pre">DblFile</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">List</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">]</span></span></em><a class="headerlink" href="#altdss.PriceShape.IPriceShape.DblFile" title="Link to this definition">#</a></dt>
 <dd><p>‘property(…)’</p>
+<p>Switch input of  Price curve data to a binary file of doubles containing (hour, Price) points, or simply (Price) values for fixed time interval data, packed one after another. NOTE: This action may reset the number of points to a lower value.</p>
+<p>DSS property name: <code class="docutils literal notranslate"><span class="pre">DblFile</span></code>, DSS property index: 9.</p>
 </dd></dl>
 
 <dl class="py method">
@@ -703,12 +709,20 @@ in the keyword argument list.  For example:  dict(one=1, two=2)</p></td>
 <dt class="sig sig-object py" id="altdss.PriceShape.IPriceShape.Hour">
 <span class="sig-name descname"><span class="pre">Hour</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">List</span><span class="p"><span class="pre">[</span></span><span class="pre">altdss.types.Float64Array</span><span class="p"><span class="pre">]</span></span></em><a class="headerlink" href="#altdss.PriceShape.IPriceShape.Hour" title="Link to this definition">#</a></dt>
 <dd><p>‘property(…)’</p>
+<p>Array of hour values. Only necessary to define this property for variable interval data. If the data are fixed interval, do not use this property. You can also use the syntax:
+hour = (file=filename)     !for text file one value per line
+hour = (dblfile=filename)  !for packed file of doubles
+hour = (sngfile=filename)  !for packed file of singles</p>
+<p>DSS property name: <code class="docutils literal notranslate"><span class="pre">Hour</span></code>, DSS property index: 4.</p>
 </dd></dl>
 
 <dl class="py attribute">
 <dt class="sig sig-object py" id="altdss.PriceShape.IPriceShape.Interval">
 <span class="sig-name descname"><span class="pre">Interval</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><a class="reference internal" href="altdss.ArrayProxy.html#altdss.ArrayProxy.BatchFloat64ArrayProxy" title="altdss.ArrayProxy.BatchFloat64ArrayProxy"><span class="pre">altdss.ArrayProxy.BatchFloat64ArrayProxy</span></a></em><a class="headerlink" href="#altdss.PriceShape.IPriceShape.Interval" title="Link to this definition">#</a></dt>
 <dd><p>‘property(…)’</p>
+<p>Time interval for fixed interval data, hrs. Default = 1. If Interval = 0 then time data (in hours) may be at irregular intervals and time value must be specified using either the Hour property or input files. Then values are interpolated when Interval=0, but not for fixed interval data.</p>
+<p>See also “sinterval” and “minterval”.</p>
+<p>DSS property name: <code class="docutils literal notranslate"><span class="pre">Interval</span></code>, DSS property index: 2.</p>
 </dd></dl>
 
 <dl class="py method">
@@ -723,18 +737,24 @@ in the keyword argument list.  For example:  dict(one=1, two=2)</p></td>
 <dt class="sig sig-object py" id="altdss.PriceShape.IPriceShape.MInterval">
 <span class="sig-name descname"><span class="pre">MInterval</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><a class="reference internal" href="altdss.ArrayProxy.html#altdss.ArrayProxy.BatchFloat64ArrayProxy" title="altdss.ArrayProxy.BatchFloat64ArrayProxy"><span class="pre">altdss.ArrayProxy.BatchFloat64ArrayProxy</span></a></em><a class="headerlink" href="#altdss.PriceShape.IPriceShape.MInterval" title="Link to this definition">#</a></dt>
 <dd><p>‘property(…)’</p>
+<p>Specify fixed interval in MINUTES. Alternate way to specify Interval property.</p>
+<p>DSS property name: <code class="docutils literal notranslate"><span class="pre">MInterval</span></code>, DSS property index: 11.</p>
 </dd></dl>
 
 <dl class="py attribute">
 <dt class="sig sig-object py" id="altdss.PriceShape.IPriceShape.Mean">
 <span class="sig-name descname"><span class="pre">Mean</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><a class="reference internal" href="altdss.ArrayProxy.html#altdss.ArrayProxy.BatchFloat64ArrayProxy" title="altdss.ArrayProxy.BatchFloat64ArrayProxy"><span class="pre">altdss.ArrayProxy.BatchFloat64ArrayProxy</span></a></em><a class="headerlink" href="#altdss.PriceShape.IPriceShape.Mean" title="Link to this definition">#</a></dt>
 <dd><p>‘property(…)’</p>
+<p>Mean of the Price curve values.  This is computed on demand the first time a value is needed.  However, you may set it to another value independently. Used for Monte Carlo load simulations.</p>
+<p>DSS property name: <code class="docutils literal notranslate"><span class="pre">Mean</span></code>, DSS property index: 5.</p>
 </dd></dl>
 
 <dl class="py attribute">
 <dt class="sig sig-object py" id="altdss.PriceShape.IPriceShape.NPts">
 <span class="sig-name descname"><span class="pre">NPts</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><a class="reference internal" href="altdss.ArrayProxy.html#altdss.ArrayProxy.BatchInt32ArrayProxy" title="altdss.ArrayProxy.BatchInt32ArrayProxy"><span class="pre">altdss.ArrayProxy.BatchInt32ArrayProxy</span></a></em><a class="headerlink" href="#altdss.PriceShape.IPriceShape.NPts" title="Link to this definition">#</a></dt>
 <dd><p>‘property(…)’</p>
+<p>Max number of points to expect in price shape vectors. This gets reset to the number of Price values found if less than specified.</p>
+<p>DSS property name: <code class="docutils literal notranslate"><span class="pre">NPts</span></code>, DSS property index: 1.</p>
 </dd></dl>
 
 <dl class="py property">
@@ -746,18 +766,28 @@ in the keyword argument list.  For example:  dict(one=1, two=2)</p></td>
 <dt class="sig sig-object py" id="altdss.PriceShape.IPriceShape.Price">
 <span class="sig-name descname"><span class="pre">Price</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">List</span><span class="p"><span class="pre">[</span></span><span class="pre">altdss.types.Float64Array</span><span class="p"><span class="pre">]</span></span></em><a class="headerlink" href="#altdss.PriceShape.IPriceShape.Price" title="Link to this definition">#</a></dt>
 <dd><p>‘property(…)’</p>
+<p>Array of Price values.  Units should be compatible with the object using the data. You can also use the syntax:
+Price = (file=filename)     !for text file one value per line
+Price = (dblfile=filename)  !for packed file of doubles
+Price = (sngfile=filename)  !for packed file of singles</p>
+<p>Note: this property will reset Npts if the  number of values in the files are fewer.</p>
+<p>DSS property name: <code class="docutils literal notranslate"><span class="pre">Price</span></code>, DSS property index: 3.</p>
 </dd></dl>
 
 <dl class="py attribute">
 <dt class="sig sig-object py" id="altdss.PriceShape.IPriceShape.SInterval">
 <span class="sig-name descname"><span class="pre">SInterval</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><a class="reference internal" href="altdss.ArrayProxy.html#altdss.ArrayProxy.BatchFloat64ArrayProxy" title="altdss.ArrayProxy.BatchFloat64ArrayProxy"><span class="pre">altdss.ArrayProxy.BatchFloat64ArrayProxy</span></a></em><a class="headerlink" href="#altdss.PriceShape.IPriceShape.SInterval" title="Link to this definition">#</a></dt>
 <dd><p>‘property(…)’</p>
+<p>Specify fixed interval in SECONDS. Alternate way to specify Interval property.</p>
+<p>DSS property name: <code class="docutils literal notranslate"><span class="pre">SInterval</span></code>, DSS property index: 10.</p>
 </dd></dl>
 
 <dl class="py attribute">
 <dt class="sig sig-object py" id="altdss.PriceShape.IPriceShape.SngFile">
 <span class="sig-name descname"><span class="pre">SngFile</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">List</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">]</span></span></em><a class="headerlink" href="#altdss.PriceShape.IPriceShape.SngFile" title="Link to this definition">#</a></dt>
 <dd><p>‘property(…)’</p>
+<p>Switch input of  Price curve data to a binary file of singles containing (hour, Price) points, or simply (Price) values for fixed time interval data, packed one after another. NOTE: This action may reset the number of points to a lower value.</p>
+<p>DSS property name: <code class="docutils literal notranslate"><span class="pre">SngFile</span></code>, DSS property index: 8.</p>
 </dd></dl>
 
 <dl class="py method">
@@ -770,6 +800,9 @@ in the keyword argument list.  For example:  dict(one=1, two=2)</p></td>
 <dt class="sig sig-object py" id="altdss.PriceShape.IPriceShape.StdDev">
 <span class="sig-name descname"><span class="pre">StdDev</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><a class="reference internal" href="altdss.ArrayProxy.html#altdss.ArrayProxy.BatchFloat64ArrayProxy" title="altdss.ArrayProxy.BatchFloat64ArrayProxy"><span class="pre">altdss.ArrayProxy.BatchFloat64ArrayProxy</span></a></em><a class="headerlink" href="#altdss.PriceShape.IPriceShape.StdDev" title="Link to this definition">#</a></dt>
 <dd><p>‘property(…)’</p>
+<p>Standard deviation of the Prices.  This is computed on demand the first time a value is needed.  However, you may set it to another value independently.Is overwritten if you subsequently read in a curve</p>
+<p>Used for Monte Carlo load simulations.</p>
+<p>DSS property name: <code class="docutils literal notranslate"><span class="pre">StdDev</span></code>, DSS property index: 6.</p>
 </dd></dl>
 
 <dl class="py method">
@@ -819,8 +852,8 @@ or “count” elements with a randomized prefix.</p>
 <dt class="sig sig-object py" id="altdss.PriceShape.IPriceShape.begin_edit">
 <span class="sig-name descname"><span class="pre">begin_edit</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span><a class="headerlink" href="#altdss.PriceShape.IPriceShape.begin_edit" title="Link to this definition">#</a></dt>
 <dd><p>Marks for editing all DSS objects in the batch</p>
-<p>In the editing mode, some final side-effects of changing properties are post-poned
-until <code class="docutils literal notranslate"><span class="pre">_end_edit</span></code> is called. This side-effects can be somewhat costly, like updating
+<p>In the editing mode, some final side-effects of changing properties are postponed
+until <code class="docutils literal notranslate"><span class="pre">end_edit</span></code> is called. This side-effects can be somewhat costly, like updating
 the model parameters or internal matrices.</p>
 <p>If you don’t have any performance constraint, you may edit each property individually
 without worrying about using <code class="docutils literal notranslate"><span class="pre">begin_edit</span></code> and <code class="docutils literal notranslate"><span class="pre">end_edit</span></code>. For convenience, those are
@@ -879,12 +912,16 @@ See <code class="docutils literal notranslate"><span class="pre">Obj_ToJSON</spa
 <dt class="sig sig-object py" id="altdss.PriceShape.PriceShape.CSVFile">
 <span class="sig-name descname"><span class="pre">CSVFile</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">str</span></em><a class="headerlink" href="#altdss.PriceShape.PriceShape.CSVFile" title="Link to this definition">#</a></dt>
 <dd><p>‘property(…)’</p>
+<p>Switch input of  Price curve data to a csv file containing (hour, Price) points, or simply (Price) values for fixed time interval data, one per line. NOTE: This action may reset the number of points to a lower value.</p>
+<p>DSS property name: <code class="docutils literal notranslate"><span class="pre">CSVFile</span></code>, DSS property index: 7.</p>
 </dd></dl>
 
 <dl class="py attribute">
 <dt class="sig sig-object py" id="altdss.PriceShape.PriceShape.DblFile">
 <span class="sig-name descname"><span class="pre">DblFile</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">str</span></em><a class="headerlink" href="#altdss.PriceShape.PriceShape.DblFile" title="Link to this definition">#</a></dt>
 <dd><p>‘property(…)’</p>
+<p>Switch input of  Price curve data to a binary file of doubles containing (hour, Price) points, or simply (Price) values for fixed time interval data, packed one after another. NOTE: This action may reset the number of points to a lower value.</p>
+<p>DSS property name: <code class="docutils literal notranslate"><span class="pre">DblFile</span></code>, DSS property index: 9.</p>
 </dd></dl>
 
 <dl class="py method">
@@ -902,12 +939,20 @@ See <code class="docutils literal notranslate"><span class="pre">Obj_ToJSON</spa
 <dt class="sig sig-object py" id="altdss.PriceShape.PriceShape.Hour">
 <span class="sig-name descname"><span class="pre">Hour</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">altdss.types.Float64Array</span></em><a class="headerlink" href="#altdss.PriceShape.PriceShape.Hour" title="Link to this definition">#</a></dt>
 <dd><p>‘property(…)’</p>
+<p>Array of hour values. Only necessary to define this property for variable interval data. If the data are fixed interval, do not use this property. You can also use the syntax:
+hour = (file=filename)     !for text file one value per line
+hour = (dblfile=filename)  !for packed file of doubles
+hour = (sngfile=filename)  !for packed file of singles</p>
+<p>DSS property name: <code class="docutils literal notranslate"><span class="pre">Hour</span></code>, DSS property index: 4.</p>
 </dd></dl>
 
 <dl class="py attribute">
 <dt class="sig sig-object py" id="altdss.PriceShape.PriceShape.Interval">
 <span class="sig-name descname"><span class="pre">Interval</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">float</span></em><a class="headerlink" href="#altdss.PriceShape.PriceShape.Interval" title="Link to this definition">#</a></dt>
 <dd><p>‘property(…)’</p>
+<p>Time interval for fixed interval data, hrs. Default = 1. If Interval = 0 then time data (in hours) may be at irregular intervals and time value must be specified using either the Hour property or input files. Then values are interpolated when Interval=0, but not for fixed interval data.</p>
+<p>See also “sinterval” and “minterval”.</p>
+<p>DSS property name: <code class="docutils literal notranslate"><span class="pre">Interval</span></code>, DSS property index: 2.</p>
 </dd></dl>
 
 <dl class="py method">
@@ -922,18 +967,24 @@ See <code class="docutils literal notranslate"><span class="pre">Obj_ToJSON</spa
 <dt class="sig sig-object py" id="altdss.PriceShape.PriceShape.MInterval">
 <span class="sig-name descname"><span class="pre">MInterval</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">float</span></em><a class="headerlink" href="#altdss.PriceShape.PriceShape.MInterval" title="Link to this definition">#</a></dt>
 <dd><p>‘property(…)’</p>
+<p>Specify fixed interval in MINUTES. Alternate way to specify Interval property.</p>
+<p>DSS property name: <code class="docutils literal notranslate"><span class="pre">MInterval</span></code>, DSS property index: 11.</p>
 </dd></dl>
 
 <dl class="py attribute">
 <dt class="sig sig-object py" id="altdss.PriceShape.PriceShape.Mean">
 <span class="sig-name descname"><span class="pre">Mean</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">float</span></em><a class="headerlink" href="#altdss.PriceShape.PriceShape.Mean" title="Link to this definition">#</a></dt>
 <dd><p>‘property(…)’</p>
+<p>Mean of the Price curve values.  This is computed on demand the first time a value is needed.  However, you may set it to another value independently. Used for Monte Carlo load simulations.</p>
+<p>DSS property name: <code class="docutils literal notranslate"><span class="pre">Mean</span></code>, DSS property index: 5.</p>
 </dd></dl>
 
 <dl class="py attribute">
 <dt class="sig sig-object py" id="altdss.PriceShape.PriceShape.NPts">
 <span class="sig-name descname"><span class="pre">NPts</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">int</span></em><a class="headerlink" href="#altdss.PriceShape.PriceShape.NPts" title="Link to this definition">#</a></dt>
 <dd><p>‘property(…)’</p>
+<p>Max number of points to expect in price shape vectors. This gets reset to the number of Price values found if less than specified.</p>
+<p>DSS property name: <code class="docutils literal notranslate"><span class="pre">NPts</span></code>, DSS property index: 1.</p>
 </dd></dl>
 
 <dl class="py property">
@@ -945,18 +996,28 @@ See <code class="docutils literal notranslate"><span class="pre">Obj_ToJSON</spa
 <dt class="sig sig-object py" id="altdss.PriceShape.PriceShape.Price">
 <span class="sig-name descname"><span class="pre">Price</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">altdss.types.Float64Array</span></em><a class="headerlink" href="#altdss.PriceShape.PriceShape.Price" title="Link to this definition">#</a></dt>
 <dd><p>‘property(…)’</p>
+<p>Array of Price values.  Units should be compatible with the object using the data. You can also use the syntax:
+Price = (file=filename)     !for text file one value per line
+Price = (dblfile=filename)  !for packed file of doubles
+Price = (sngfile=filename)  !for packed file of singles</p>
+<p>Note: this property will reset Npts if the  number of values in the files are fewer.</p>
+<p>DSS property name: <code class="docutils literal notranslate"><span class="pre">Price</span></code>, DSS property index: 3.</p>
 </dd></dl>
 
 <dl class="py attribute">
 <dt class="sig sig-object py" id="altdss.PriceShape.PriceShape.SInterval">
 <span class="sig-name descname"><span class="pre">SInterval</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">float</span></em><a class="headerlink" href="#altdss.PriceShape.PriceShape.SInterval" title="Link to this definition">#</a></dt>
 <dd><p>‘property(…)’</p>
+<p>Specify fixed interval in SECONDS. Alternate way to specify Interval property.</p>
+<p>DSS property name: <code class="docutils literal notranslate"><span class="pre">SInterval</span></code>, DSS property index: 10.</p>
 </dd></dl>
 
 <dl class="py attribute">
 <dt class="sig sig-object py" id="altdss.PriceShape.PriceShape.SngFile">
 <span class="sig-name descname"><span class="pre">SngFile</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">str</span></em><a class="headerlink" href="#altdss.PriceShape.PriceShape.SngFile" title="Link to this definition">#</a></dt>
 <dd><p>‘property(…)’</p>
+<p>Switch input of  Price curve data to a binary file of singles containing (hour, Price) points, or simply (Price) values for fixed time interval data, packed one after another. NOTE: This action may reset the number of points to a lower value.</p>
+<p>DSS property name: <code class="docutils literal notranslate"><span class="pre">SngFile</span></code>, DSS property index: 8.</p>
 </dd></dl>
 
 <dl class="py method">
@@ -969,6 +1030,9 @@ See <code class="docutils literal notranslate"><span class="pre">Obj_ToJSON</spa
 <dt class="sig sig-object py" id="altdss.PriceShape.PriceShape.StdDev">
 <span class="sig-name descname"><span class="pre">StdDev</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">float</span></em><a class="headerlink" href="#altdss.PriceShape.PriceShape.StdDev" title="Link to this definition">#</a></dt>
 <dd><p>‘property(…)’</p>
+<p>Standard deviation of the Prices.  This is computed on demand the first time a value is needed.  However, you may set it to another value independently.Is overwritten if you subsequently read in a curve</p>
+<p>Used for Monte Carlo load simulations.</p>
+<p>DSS property name: <code class="docutils literal notranslate"><span class="pre">StdDev</span></code>, DSS property index: 6.</p>
 </dd></dl>
 
 <dl class="py method">
@@ -998,8 +1062,8 @@ See <code class="docutils literal notranslate"><span class="pre">Obj_ToJSON</spa
 <dt class="sig sig-object py" id="altdss.PriceShape.PriceShape.begin_edit">
 <span class="sig-name descname"><span class="pre">begin_edit</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span><a class="headerlink" href="#altdss.PriceShape.PriceShape.begin_edit" title="Link to this definition">#</a></dt>
 <dd><p>Marks a DSS object for editing</p>
-<p>In the editing mode, some final side-effects of changing properties are post-poned
-until <code class="docutils literal notranslate"><span class="pre">_end_edit</span></code> is called. This side-effects can be somewhat costly, like updating
+<p>In the editing mode, some final side-effects of changing properties are postponed
+until <code class="docutils literal notranslate"><span class="pre">end_edit</span></code> is called. This side-effects can be somewhat costly, like updating
 the model parameters or internal matrices.</p>
 <p>If you don’t have any performance constraint, you may edit each property individually
 without worrying about using <code class="docutils literal notranslate"><span class="pre">begin_edit</span></code> and <code class="docutils literal notranslate"><span class="pre">end_edit</span></code>. For convenience, those are
@@ -1059,12 +1123,16 @@ Values used by this function are:</p>
 <dt class="sig sig-object py" id="altdss.PriceShape.PriceShapeBatch.CSVFile">
 <span class="sig-name descname"><span class="pre">CSVFile</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">List</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">]</span></span></em><a class="headerlink" href="#altdss.PriceShape.PriceShapeBatch.CSVFile" title="Link to this definition">#</a></dt>
 <dd><p>‘property(…)’</p>
+<p>Switch input of  Price curve data to a csv file containing (hour, Price) points, or simply (Price) values for fixed time interval data, one per line. NOTE: This action may reset the number of points to a lower value.</p>
+<p>DSS property name: <code class="docutils literal notranslate"><span class="pre">CSVFile</span></code>, DSS property index: 7.</p>
 </dd></dl>
 
 <dl class="py attribute">
 <dt class="sig sig-object py" id="altdss.PriceShape.PriceShapeBatch.DblFile">
 <span class="sig-name descname"><span class="pre">DblFile</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">List</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">]</span></span></em><a class="headerlink" href="#altdss.PriceShape.PriceShapeBatch.DblFile" title="Link to this definition">#</a></dt>
 <dd><p>‘property(…)’</p>
+<p>Switch input of  Price curve data to a binary file of doubles containing (hour, Price) points, or simply (Price) values for fixed time interval data, packed one after another. NOTE: This action may reset the number of points to a lower value.</p>
+<p>DSS property name: <code class="docutils literal notranslate"><span class="pre">DblFile</span></code>, DSS property index: 9.</p>
 </dd></dl>
 
 <dl class="py method">
@@ -1083,12 +1151,20 @@ Values used by this function are:</p>
 <dt class="sig sig-object py" id="altdss.PriceShape.PriceShapeBatch.Hour">
 <span class="sig-name descname"><span class="pre">Hour</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">List</span><span class="p"><span class="pre">[</span></span><span class="pre">altdss.types.Float64Array</span><span class="p"><span class="pre">]</span></span></em><a class="headerlink" href="#altdss.PriceShape.PriceShapeBatch.Hour" title="Link to this definition">#</a></dt>
 <dd><p>‘property(…)’</p>
+<p>Array of hour values. Only necessary to define this property for variable interval data. If the data are fixed interval, do not use this property. You can also use the syntax:
+hour = (file=filename)     !for text file one value per line
+hour = (dblfile=filename)  !for packed file of doubles
+hour = (sngfile=filename)  !for packed file of singles</p>
+<p>DSS property name: <code class="docutils literal notranslate"><span class="pre">Hour</span></code>, DSS property index: 4.</p>
 </dd></dl>
 
 <dl class="py attribute">
 <dt class="sig sig-object py" id="altdss.PriceShape.PriceShapeBatch.Interval">
 <span class="sig-name descname"><span class="pre">Interval</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><a class="reference internal" href="altdss.ArrayProxy.html#altdss.ArrayProxy.BatchFloat64ArrayProxy" title="altdss.ArrayProxy.BatchFloat64ArrayProxy"><span class="pre">altdss.ArrayProxy.BatchFloat64ArrayProxy</span></a></em><a class="headerlink" href="#altdss.PriceShape.PriceShapeBatch.Interval" title="Link to this definition">#</a></dt>
 <dd><p>‘property(…)’</p>
+<p>Time interval for fixed interval data, hrs. Default = 1. If Interval = 0 then time data (in hours) may be at irregular intervals and time value must be specified using either the Hour property or input files. Then values are interpolated when Interval=0, but not for fixed interval data.</p>
+<p>See also “sinterval” and “minterval”.</p>
+<p>DSS property name: <code class="docutils literal notranslate"><span class="pre">Interval</span></code>, DSS property index: 2.</p>
 </dd></dl>
 
 <dl class="py method">
@@ -1103,18 +1179,24 @@ Values used by this function are:</p>
 <dt class="sig sig-object py" id="altdss.PriceShape.PriceShapeBatch.MInterval">
 <span class="sig-name descname"><span class="pre">MInterval</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><a class="reference internal" href="altdss.ArrayProxy.html#altdss.ArrayProxy.BatchFloat64ArrayProxy" title="altdss.ArrayProxy.BatchFloat64ArrayProxy"><span class="pre">altdss.ArrayProxy.BatchFloat64ArrayProxy</span></a></em><a class="headerlink" href="#altdss.PriceShape.PriceShapeBatch.MInterval" title="Link to this definition">#</a></dt>
 <dd><p>‘property(…)’</p>
+<p>Specify fixed interval in MINUTES. Alternate way to specify Interval property.</p>
+<p>DSS property name: <code class="docutils literal notranslate"><span class="pre">MInterval</span></code>, DSS property index: 11.</p>
 </dd></dl>
 
 <dl class="py attribute">
 <dt class="sig sig-object py" id="altdss.PriceShape.PriceShapeBatch.Mean">
 <span class="sig-name descname"><span class="pre">Mean</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><a class="reference internal" href="altdss.ArrayProxy.html#altdss.ArrayProxy.BatchFloat64ArrayProxy" title="altdss.ArrayProxy.BatchFloat64ArrayProxy"><span class="pre">altdss.ArrayProxy.BatchFloat64ArrayProxy</span></a></em><a class="headerlink" href="#altdss.PriceShape.PriceShapeBatch.Mean" title="Link to this definition">#</a></dt>
 <dd><p>‘property(…)’</p>
+<p>Mean of the Price curve values.  This is computed on demand the first time a value is needed.  However, you may set it to another value independently. Used for Monte Carlo load simulations.</p>
+<p>DSS property name: <code class="docutils literal notranslate"><span class="pre">Mean</span></code>, DSS property index: 5.</p>
 </dd></dl>
 
 <dl class="py attribute">
 <dt class="sig sig-object py" id="altdss.PriceShape.PriceShapeBatch.NPts">
 <span class="sig-name descname"><span class="pre">NPts</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><a class="reference internal" href="altdss.ArrayProxy.html#altdss.ArrayProxy.BatchInt32ArrayProxy" title="altdss.ArrayProxy.BatchInt32ArrayProxy"><span class="pre">altdss.ArrayProxy.BatchInt32ArrayProxy</span></a></em><a class="headerlink" href="#altdss.PriceShape.PriceShapeBatch.NPts" title="Link to this definition">#</a></dt>
 <dd><p>‘property(…)’</p>
+<p>Max number of points to expect in price shape vectors. This gets reset to the number of Price values found if less than specified.</p>
+<p>DSS property name: <code class="docutils literal notranslate"><span class="pre">NPts</span></code>, DSS property index: 1.</p>
 </dd></dl>
 
 <dl class="py property">
@@ -1126,18 +1208,28 @@ Values used by this function are:</p>
 <dt class="sig sig-object py" id="altdss.PriceShape.PriceShapeBatch.Price">
 <span class="sig-name descname"><span class="pre">Price</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">List</span><span class="p"><span class="pre">[</span></span><span class="pre">altdss.types.Float64Array</span><span class="p"><span class="pre">]</span></span></em><a class="headerlink" href="#altdss.PriceShape.PriceShapeBatch.Price" title="Link to this definition">#</a></dt>
 <dd><p>‘property(…)’</p>
+<p>Array of Price values.  Units should be compatible with the object using the data. You can also use the syntax:
+Price = (file=filename)     !for text file one value per line
+Price = (dblfile=filename)  !for packed file of doubles
+Price = (sngfile=filename)  !for packed file of singles</p>
+<p>Note: this property will reset Npts if the  number of values in the files are fewer.</p>
+<p>DSS property name: <code class="docutils literal notranslate"><span class="pre">Price</span></code>, DSS property index: 3.</p>
 </dd></dl>
 
 <dl class="py attribute">
 <dt class="sig sig-object py" id="altdss.PriceShape.PriceShapeBatch.SInterval">
 <span class="sig-name descname"><span class="pre">SInterval</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><a class="reference internal" href="altdss.ArrayProxy.html#altdss.ArrayProxy.BatchFloat64ArrayProxy" title="altdss.ArrayProxy.BatchFloat64ArrayProxy"><span class="pre">altdss.ArrayProxy.BatchFloat64ArrayProxy</span></a></em><a class="headerlink" href="#altdss.PriceShape.PriceShapeBatch.SInterval" title="Link to this definition">#</a></dt>
 <dd><p>‘property(…)’</p>
+<p>Specify fixed interval in SECONDS. Alternate way to specify Interval property.</p>
+<p>DSS property name: <code class="docutils literal notranslate"><span class="pre">SInterval</span></code>, DSS property index: 10.</p>
 </dd></dl>
 
 <dl class="py attribute">
 <dt class="sig sig-object py" id="altdss.PriceShape.PriceShapeBatch.SngFile">
 <span class="sig-name descname"><span class="pre">SngFile</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">List</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">]</span></span></em><a class="headerlink" href="#altdss.PriceShape.PriceShapeBatch.SngFile" title="Link to this definition">#</a></dt>
 <dd><p>‘property(…)’</p>
+<p>Switch input of  Price curve data to a binary file of singles containing (hour, Price) points, or simply (Price) values for fixed time interval data, packed one after another. NOTE: This action may reset the number of points to a lower value.</p>
+<p>DSS property name: <code class="docutils literal notranslate"><span class="pre">SngFile</span></code>, DSS property index: 8.</p>
 </dd></dl>
 
 <dl class="py method">
@@ -1150,6 +1242,9 @@ Values used by this function are:</p>
 <dt class="sig sig-object py" id="altdss.PriceShape.PriceShapeBatch.StdDev">
 <span class="sig-name descname"><span class="pre">StdDev</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><a class="reference internal" href="altdss.ArrayProxy.html#altdss.ArrayProxy.BatchFloat64ArrayProxy" title="altdss.ArrayProxy.BatchFloat64ArrayProxy"><span class="pre">altdss.ArrayProxy.BatchFloat64ArrayProxy</span></a></em><a class="headerlink" href="#altdss.PriceShape.PriceShapeBatch.StdDev" title="Link to this definition">#</a></dt>
 <dd><p>‘property(…)’</p>
+<p>Standard deviation of the Prices.  This is computed on demand the first time a value is needed.  However, you may set it to another value independently.Is overwritten if you subsequently read in a curve</p>
+<p>Used for Monte Carlo load simulations.</p>
+<p>DSS property name: <code class="docutils literal notranslate"><span class="pre">StdDev</span></code>, DSS property index: 6.</p>
 </dd></dl>
 
 <dl class="py method">
@@ -1179,11 +1274,29 @@ Values used by this function are:</p>
 <dd></dd></dl>
 
 <dl class="py method">
+<dt class="sig sig-object py" id="altdss.PriceShape.PriceShapeBatch.batch">
+<span class="sig-name descname"><span class="pre">batch</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference internal" href="altdss.Batch.html#altdss.Batch.DSSBatch" title="altdss.Batch.DSSBatch"><span class="pre">altdss.Batch.DSSBatch</span></a></span></span><a class="headerlink" href="#altdss.PriceShape.PriceShapeBatch.batch" title="Link to this definition">#</a></dt>
+<dd><p>Filter a batch using integer or float DSS properties, returning a new batch.</p>
+<p>For integers, provide a single value to match.</p>
+<p>For floats, provide a range as a 2-valued tuple/list (min value, max value), or an exact value to value (not recommended).</p>
+<p>Multiple properties can be listed to allow filtering various conditions.</p>
+<p>Example for loads:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span>    <span class="c1"># Create an initial batch using a regular expression</span>
+    <span class="n">abc_loads</span> <span class="o">=</span> <span class="n">altdss</span><span class="o">.</span><span class="n">Load</span><span class="o">.</span><span class="n">batch</span><span class="p">(</span><span class="n">re</span><span class="o">=</span><span class="sa">r</span><span class="s1">&#39;^abc.*$&#39;</span><span class="p">)</span> <span class="c1"># a batch of all loads with names starting with &quot;abc&quot;</span>
+    <span class="n">abc_loads_filtered</span> <span class="o">=</span> <span class="n">abc_loads</span><span class="o">.</span><span class="n">batch</span><span class="p">(</span><span class="n">Class</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">Phases</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">kV</span><span class="o">=</span><span class="p">(</span><span class="mf">0.1</span><span class="p">,</span> <span class="mf">1.0</span><span class="p">))</span>
+
+    <span class="c1"># Create an initial batch, already filtered</span>
+    <span class="n">abc_loads_filtered</span> <span class="o">=</span> <span class="n">altdss</span><span class="o">.</span><span class="n">Load</span><span class="o">.</span><span class="n">batch</span><span class="p">(</span><span class="n">re</span><span class="o">=</span><span class="sa">r</span><span class="s1">&#39;^abc.*$&#39;</span><span class="p">,</span> <span class="n">Class</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">Phases</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">kV</span><span class="o">=</span><span class="p">(</span><span class="mf">0.1</span><span class="p">,</span> <span class="mf">1.0</span><span class="p">))</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="py method">
 <dt class="sig sig-object py" id="altdss.PriceShape.PriceShapeBatch.begin_edit">
 <span class="sig-name descname"><span class="pre">begin_edit</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span><a class="headerlink" href="#altdss.PriceShape.PriceShapeBatch.begin_edit" title="Link to this definition">#</a></dt>
 <dd><p>Marks for editing all DSS objects in the batch</p>
-<p>In the editing mode, some final side-effects of changing properties are post-poned
-until <code class="docutils literal notranslate"><span class="pre">_end_edit</span></code> is called. This side-effects can be somewhat costly, like updating
+<p>In the editing mode, some final side-effects of changing properties are postponed
+until <code class="docutils literal notranslate"><span class="pre">end_edit</span></code> is called. This side-effects can be somewhat costly, like updating
 the model parameters or internal matrices.</p>
 <p>If you don’t have any performance constraint, you may edit each property individually
 without worrying about using <code class="docutils literal notranslate"><span class="pre">begin_edit</span></code> and <code class="docutils literal notranslate"><span class="pre">end_edit</span></code>. For convenience, those are
@@ -2020,6 +2133,7 @@ In either case, this is followed by: for k in F:  D[k] = F[k]</p>
 <li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#altdss.PriceShape.PriceShapeBatch.__init__"><code class="docutils literal notranslate"><span class="pre">PriceShapeBatch.__init__()</span></code></a></li>
 <li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#altdss.PriceShape.PriceShapeBatch.__iter__"><code class="docutils literal notranslate"><span class="pre">PriceShapeBatch.__iter__()</span></code></a></li>
 <li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#altdss.PriceShape.PriceShapeBatch.__len__"><code class="docutils literal notranslate"><span class="pre">PriceShapeBatch.__len__()</span></code></a></li>
+<li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#altdss.PriceShape.PriceShapeBatch.batch"><code class="docutils literal notranslate"><span class="pre">PriceShapeBatch.batch()</span></code></a></li>
 <li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#altdss.PriceShape.PriceShapeBatch.begin_edit"><code class="docutils literal notranslate"><span class="pre">PriceShapeBatch.begin_edit()</span></code></a></li>
 <li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#altdss.PriceShape.PriceShapeBatch.end_edit"><code class="docutils literal notranslate"><span class="pre">PriceShapeBatch.end_edit()</span></code></a></li>
 <li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#altdss.PriceShape.PriceShapeBatch.to_json"><code class="docutils literal notranslate"><span class="pre">PriceShapeBatch.to_json()</span></code></a></li>

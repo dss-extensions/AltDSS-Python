@@ -213,7 +213,7 @@ Bases: {py:obj}`altdss.DSSObj.IDSSObj`, {py:obj}`altdss.VCCS.VCCSBatch`
 
 ````
 
-````{py:method} GUID() -> str
+````{py:method} GUID() -> typing.List[str]
 :canonical: altdss.VCCS.IVCCS.GUID
 
 ```{autodoc2-docstring} altdss.VCCS.IVCCS.GUID
@@ -229,7 +229,7 @@ Bases: {py:obj}`altdss.DSSObj.IDSSObj`, {py:obj}`altdss.VCCS.VCCSBatch`
 
 ````
 
-````{py:method} HasOCPDevice() -> bool
+````{py:method} HasOCPDevice() -> altdss.types.BoolArray
 :canonical: altdss.VCCS.IVCCS.HasOCPDevice
 
 ```{autodoc2-docstring} altdss.VCCS.IVCCS.HasOCPDevice
@@ -237,7 +237,7 @@ Bases: {py:obj}`altdss.DSSObj.IDSSObj`, {py:obj}`altdss.VCCS.VCCSBatch`
 
 ````
 
-````{py:method} HasSwitchControl() -> bool
+````{py:method} HasSwitchControl() -> altdss.types.BoolArray
 :canonical: altdss.VCCS.IVCCS.HasSwitchControl
 
 ```{autodoc2-docstring} altdss.VCCS.IVCCS.HasSwitchControl
@@ -245,7 +245,7 @@ Bases: {py:obj}`altdss.DSSObj.IDSSObj`, {py:obj}`altdss.VCCS.VCCSBatch`
 
 ````
 
-````{py:method} HasVoltControl() -> bool
+````{py:method} HasVoltControl() -> altdss.types.BoolArray
 :canonical: altdss.VCCS.IVCCS.HasVoltControl
 
 ```{autodoc2-docstring} altdss.VCCS.IVCCS.HasVoltControl
@@ -299,7 +299,7 @@ Bases: {py:obj}`altdss.DSSObj.IDSSObj`, {py:obj}`altdss.VCCS.VCCSBatch`
 
 ````
 
-````{py:method} MaxCurrent(terminal: int) -> float
+````{py:method} MaxCurrent(terminal: int) -> altdss.types.Float64Array
 :canonical: altdss.VCCS.IVCCS.MaxCurrent
 
 ```{autodoc2-docstring} altdss.VCCS.IVCCS.MaxCurrent
@@ -364,7 +364,7 @@ Bases: {py:obj}`altdss.DSSObj.IDSSObj`, {py:obj}`altdss.VCCS.VCCSBatch`
 
 ````
 
-````{py:method} OCPDeviceType() -> dss.enums.OCPDevType
+````{py:method} OCPDeviceType() -> typing.List[dss.enums.OCPDevType]
 :canonical: altdss.VCCS.IVCCS.OCPDeviceType
 
 ```{autodoc2-docstring} altdss.VCCS.IVCCS.OCPDeviceType
@@ -1454,7 +1454,7 @@ Bases: {py:obj}`altdss.Batch.DSSBatch`, {py:obj}`altdss.CircuitElement.CircuitEl
 
 ````
 
-````{py:method} GUID() -> str
+````{py:method} GUID() -> typing.List[str]
 :canonical: altdss.VCCS.VCCSBatch.GUID
 
 ```{autodoc2-docstring} altdss.VCCS.VCCSBatch.GUID
@@ -1470,7 +1470,7 @@ Bases: {py:obj}`altdss.Batch.DSSBatch`, {py:obj}`altdss.CircuitElement.CircuitEl
 
 ````
 
-````{py:method} HasOCPDevice() -> bool
+````{py:method} HasOCPDevice() -> altdss.types.BoolArray
 :canonical: altdss.VCCS.VCCSBatch.HasOCPDevice
 
 ```{autodoc2-docstring} altdss.VCCS.VCCSBatch.HasOCPDevice
@@ -1478,7 +1478,7 @@ Bases: {py:obj}`altdss.Batch.DSSBatch`, {py:obj}`altdss.CircuitElement.CircuitEl
 
 ````
 
-````{py:method} HasSwitchControl() -> bool
+````{py:method} HasSwitchControl() -> altdss.types.BoolArray
 :canonical: altdss.VCCS.VCCSBatch.HasSwitchControl
 
 ```{autodoc2-docstring} altdss.VCCS.VCCSBatch.HasSwitchControl
@@ -1486,7 +1486,7 @@ Bases: {py:obj}`altdss.Batch.DSSBatch`, {py:obj}`altdss.CircuitElement.CircuitEl
 
 ````
 
-````{py:method} HasVoltControl() -> bool
+````{py:method} HasVoltControl() -> altdss.types.BoolArray
 :canonical: altdss.VCCS.VCCSBatch.HasVoltControl
 
 ```{autodoc2-docstring} altdss.VCCS.VCCSBatch.HasVoltControl
@@ -1540,7 +1540,7 @@ Bases: {py:obj}`altdss.Batch.DSSBatch`, {py:obj}`altdss.CircuitElement.CircuitEl
 
 ````
 
-````{py:method} MaxCurrent(terminal: int) -> float
+````{py:method} MaxCurrent(terminal: int) -> altdss.types.Float64Array
 :canonical: altdss.VCCS.VCCSBatch.MaxCurrent
 
 ```{autodoc2-docstring} altdss.VCCS.VCCSBatch.MaxCurrent
@@ -1605,7 +1605,7 @@ Bases: {py:obj}`altdss.Batch.DSSBatch`, {py:obj}`altdss.CircuitElement.CircuitEl
 
 ````
 
-````{py:method} OCPDeviceType() -> dss.enums.OCPDevType
+````{py:method} OCPDeviceType() -> typing.List[dss.enums.OCPDevType]
 :canonical: altdss.VCCS.VCCSBatch.OCPDeviceType
 
 ```{autodoc2-docstring} altdss.VCCS.VCCSBatch.OCPDeviceType
@@ -1801,6 +1801,14 @@ Bases: {py:obj}`altdss.Batch.DSSBatch`, {py:obj}`altdss.CircuitElement.CircuitEl
 :canonical: altdss.VCCS.VCCSBatch.__len__
 
 ```{autodoc2-docstring} altdss.VCCS.VCCSBatch.__len__
+```
+
+````
+
+````{py:method} batch(**kwargs) -> altdss.Batch.DSSBatch
+:canonical: altdss.VCCS.VCCSBatch.batch
+
+```{autodoc2-docstring} altdss.VCCS.VCCSBatch.batch
 ```
 
 ````

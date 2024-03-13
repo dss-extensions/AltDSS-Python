@@ -785,6 +785,14 @@ Bases: {py:obj}`altdss.Batch.DSSBatch`
 
 ````
 
+````{py:method} batch(**kwargs) -> altdss.Batch.DSSBatch
+:canonical: altdss.PriceShape.PriceShapeBatch.batch
+
+```{autodoc2-docstring} altdss.PriceShape.PriceShapeBatch.batch
+```
+
+````
+
 ````{py:method} begin_edit() -> None
 :canonical: altdss.PriceShape.PriceShapeBatch.begin_edit
 

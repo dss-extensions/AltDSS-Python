@@ -8,7 +8,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
-    <title>altdss.GrowthShape &#8212; AltDSS-Python 0.2.0 documentation</title>
+    <title>altdss.GrowthShape &#8212; AltDSS-Python 0.2.2 documentation</title>
   
   
   
@@ -38,7 +38,7 @@
 <link rel="preload" as="script" href="../../_static/scripts/pydata-sphinx-theme.js?digest=8d27b9dea8ad943066ae" />
   <script src="../../_static/vendor/fontawesome/6.5.1/js/all.min.js?digest=8d27b9dea8ad943066ae"></script>
 
-    <script src="../../_static/documentation_options.js?v=7f7c277e"></script>
+    <script src="../../_static/documentation_options.js?v=d3f42505"></script>
     <script src="../../_static/doctools.js?v=888ff710"></script>
     <script src="../../_static/sphinx_highlight.js?v=dc90522c"></script>
     <script src="../../_static/scripts/sphinx-book-theme.js?v=efea14e4"></script>
@@ -137,8 +137,8 @@
       
     
     
-    <img src="../../_static/altdss-python.svg" class="logo__image only-light" alt="AltDSS-Python 0.2.0 documentation - Home"/>
-    <script>document.write(`<img src="../../_static/altdss-python-dark.svg" class="logo__image only-dark" alt="AltDSS-Python 0.2.0 documentation - Home"/>`);</script>
+    <img src="../../_static/altdss-python.svg" class="logo__image only-light" alt="AltDSS-Python 0.2.2 documentation - Home"/>
+    <script>document.write(`<img src="../../_static/altdss-python-dark.svg" class="logo__image only-dark" alt="AltDSS-Python 0.2.2 documentation - Home"/>`);</script>
   
   
 </a></div>
@@ -160,6 +160,7 @@
 <li class="toctree-l1"><a class="reference internal" href="../../index.html">AltDSS-Python</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../Architecture.html">Architecture details</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../examples/GettingStarted.html">Getting Started</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../examples/Batches.html">Batches</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../changelog.html">Changelog</a></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">API Reference</span></p>
@@ -441,6 +442,7 @@ document.write(`
 <li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#altdss.GrowthShape.GrowthShapeBatch.__init__"><code class="docutils literal notranslate"><span class="pre">GrowthShapeBatch.__init__()</span></code></a></li>
 <li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#altdss.GrowthShape.GrowthShapeBatch.__iter__"><code class="docutils literal notranslate"><span class="pre">GrowthShapeBatch.__iter__()</span></code></a></li>
 <li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#altdss.GrowthShape.GrowthShapeBatch.__len__"><code class="docutils literal notranslate"><span class="pre">GrowthShapeBatch.__len__()</span></code></a></li>
+<li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#altdss.GrowthShape.GrowthShapeBatch.batch"><code class="docutils literal notranslate"><span class="pre">GrowthShapeBatch.batch()</span></code></a></li>
 <li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#altdss.GrowthShape.GrowthShapeBatch.begin_edit"><code class="docutils literal notranslate"><span class="pre">GrowthShapeBatch.begin_edit()</span></code></a></li>
 <li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#altdss.GrowthShape.GrowthShapeBatch.end_edit"><code class="docutils literal notranslate"><span class="pre">GrowthShapeBatch.end_edit()</span></code></a></li>
 <li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#altdss.GrowthShape.GrowthShapeBatch.to_json"><code class="docutils literal notranslate"><span class="pre">GrowthShapeBatch.to_json()</span></code></a></li>
@@ -636,12 +638,16 @@ in the keyword argument list.  For example:  dict(one=1, two=2)</p></td>
 <dt class="sig sig-object py" id="altdss.GrowthShape.GrowthShape.CSVFile">
 <span class="sig-name descname"><span class="pre">CSVFile</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">str</span></em><a class="headerlink" href="#altdss.GrowthShape.GrowthShape.CSVFile" title="Link to this definition">#</a></dt>
 <dd><p>‘property(…)’</p>
+<p>Switch input of growth curve data to a csv file containing (year, mult) points, one per line.</p>
+<p>DSS property name: <code class="docutils literal notranslate"><span class="pre">CSVFile</span></code>, DSS property index: 4.</p>
 </dd></dl>
 
 <dl class="py attribute">
 <dt class="sig sig-object py" id="altdss.GrowthShape.GrowthShape.DblFile">
 <span class="sig-name descname"><span class="pre">DblFile</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">str</span></em><a class="headerlink" href="#altdss.GrowthShape.GrowthShape.DblFile" title="Link to this definition">#</a></dt>
 <dd><p>‘property(…)’</p>
+<p>Switch input of growth curve data to a binary file of doubles containing (year, mult) points, packed one after another.</p>
+<p>DSS property name: <code class="docutils literal notranslate"><span class="pre">DblFile</span></code>, DSS property index: 6.</p>
 </dd></dl>
 
 <dl class="py method">
@@ -661,12 +667,20 @@ in the keyword argument list.  For example:  dict(one=1, two=2)</p></td>
 <dt class="sig sig-object py" id="altdss.GrowthShape.GrowthShape.Mult">
 <span class="sig-name descname"><span class="pre">Mult</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">altdss.types.Float64Array</span></em><a class="headerlink" href="#altdss.GrowthShape.GrowthShape.Mult" title="Link to this definition">#</a></dt>
 <dd><p>‘property(…)’</p>
+<p>Array of growth multiplier values, or a text file spec, corresponding to the year values. Enter the multiplier by which you would multiply the previous year’s load to get the present year’s.</p>
+<p>Examples:</p>
+<p>Year = [1, 2, 5]   Mult=[1.05, 1.025, 1.02].
+Year= (File=years.txt) Mult= (file=mults.txt).</p>
+<p>Text files contain one value per line.</p>
+<p>DSS property name: <code class="docutils literal notranslate"><span class="pre">Mult</span></code>, DSS property index: 3.</p>
 </dd></dl>
 
 <dl class="py attribute">
 <dt class="sig sig-object py" id="altdss.GrowthShape.GrowthShape.NPts">
 <span class="sig-name descname"><span class="pre">NPts</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">int</span></em><a class="headerlink" href="#altdss.GrowthShape.GrowthShape.NPts" title="Link to this definition">#</a></dt>
 <dd><p>‘property(…)’</p>
+<p>Number of points to expect in subsequent vector.</p>
+<p>DSS property name: <code class="docutils literal notranslate"><span class="pre">NPts</span></code>, DSS property index: 1.</p>
 </dd></dl>
 
 <dl class="py property">
@@ -678,12 +692,16 @@ in the keyword argument list.  For example:  dict(one=1, two=2)</p></td>
 <dt class="sig sig-object py" id="altdss.GrowthShape.GrowthShape.SngFile">
 <span class="sig-name descname"><span class="pre">SngFile</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">str</span></em><a class="headerlink" href="#altdss.GrowthShape.GrowthShape.SngFile" title="Link to this definition">#</a></dt>
 <dd><p>‘property(…)’</p>
+<p>Switch input of growth curve data to a binary file of singles containing (year, mult) points, packed one after another.</p>
+<p>DSS property name: <code class="docutils literal notranslate"><span class="pre">SngFile</span></code>, DSS property index: 5.</p>
 </dd></dl>
 
 <dl class="py attribute">
 <dt class="sig sig-object py" id="altdss.GrowthShape.GrowthShape.Year">
 <span class="sig-name descname"><span class="pre">Year</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">altdss.types.Float64Array</span></em><a class="headerlink" href="#altdss.GrowthShape.GrowthShape.Year" title="Link to this definition">#</a></dt>
 <dd><p>‘property(…)’</p>
+<p>Array of year values, or a text file spec, corresponding to the multipliers. Enter only those years where the growth changes. May be any integer sequence – just so it is consistent. See help on Mult.</p>
+<p>DSS property name: <code class="docutils literal notranslate"><span class="pre">Year</span></code>, DSS property index: 2.</p>
 </dd></dl>
 
 <dl class="py method">
@@ -713,8 +731,8 @@ in the keyword argument list.  For example:  dict(one=1, two=2)</p></td>
 <dt class="sig sig-object py" id="altdss.GrowthShape.GrowthShape.begin_edit">
 <span class="sig-name descname"><span class="pre">begin_edit</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span><a class="headerlink" href="#altdss.GrowthShape.GrowthShape.begin_edit" title="Link to this definition">#</a></dt>
 <dd><p>Marks a DSS object for editing</p>
-<p>In the editing mode, some final side-effects of changing properties are post-poned
-until <code class="docutils literal notranslate"><span class="pre">_end_edit</span></code> is called. This side-effects can be somewhat costly, like updating
+<p>In the editing mode, some final side-effects of changing properties are postponed
+until <code class="docutils literal notranslate"><span class="pre">end_edit</span></code> is called. This side-effects can be somewhat costly, like updating
 the model parameters or internal matrices.</p>
 <p>If you don’t have any performance constraint, you may edit each property individually
 without worrying about using <code class="docutils literal notranslate"><span class="pre">begin_edit</span></code> and <code class="docutils literal notranslate"><span class="pre">end_edit</span></code>. For convenience, those are
@@ -767,12 +785,16 @@ Values used by this function are:</p>
 <dt class="sig sig-object py" id="altdss.GrowthShape.GrowthShapeBatch.CSVFile">
 <span class="sig-name descname"><span class="pre">CSVFile</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">List</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">]</span></span></em><a class="headerlink" href="#altdss.GrowthShape.GrowthShapeBatch.CSVFile" title="Link to this definition">#</a></dt>
 <dd><p>‘property(…)’</p>
+<p>Switch input of growth curve data to a csv file containing (year, mult) points, one per line.</p>
+<p>DSS property name: <code class="docutils literal notranslate"><span class="pre">CSVFile</span></code>, DSS property index: 4.</p>
 </dd></dl>
 
 <dl class="py attribute">
 <dt class="sig sig-object py" id="altdss.GrowthShape.GrowthShapeBatch.DblFile">
 <span class="sig-name descname"><span class="pre">DblFile</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">List</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">]</span></span></em><a class="headerlink" href="#altdss.GrowthShape.GrowthShapeBatch.DblFile" title="Link to this definition">#</a></dt>
 <dd><p>‘property(…)’</p>
+<p>Switch input of growth curve data to a binary file of doubles containing (year, mult) points, packed one after another.</p>
+<p>DSS property name: <code class="docutils literal notranslate"><span class="pre">DblFile</span></code>, DSS property index: 6.</p>
 </dd></dl>
 
 <dl class="py method">
@@ -793,12 +815,20 @@ Values used by this function are:</p>
 <dt class="sig sig-object py" id="altdss.GrowthShape.GrowthShapeBatch.Mult">
 <span class="sig-name descname"><span class="pre">Mult</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">List</span><span class="p"><span class="pre">[</span></span><span class="pre">altdss.types.Float64Array</span><span class="p"><span class="pre">]</span></span></em><a class="headerlink" href="#altdss.GrowthShape.GrowthShapeBatch.Mult" title="Link to this definition">#</a></dt>
 <dd><p>‘property(…)’</p>
+<p>Array of growth multiplier values, or a text file spec, corresponding to the year values. Enter the multiplier by which you would multiply the previous year’s load to get the present year’s.</p>
+<p>Examples:</p>
+<p>Year = [1, 2, 5]   Mult=[1.05, 1.025, 1.02].
+Year= (File=years.txt) Mult= (file=mults.txt).</p>
+<p>Text files contain one value per line.</p>
+<p>DSS property name: <code class="docutils literal notranslate"><span class="pre">Mult</span></code>, DSS property index: 3.</p>
 </dd></dl>
 
 <dl class="py attribute">
 <dt class="sig sig-object py" id="altdss.GrowthShape.GrowthShapeBatch.NPts">
 <span class="sig-name descname"><span class="pre">NPts</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><a class="reference internal" href="altdss.ArrayProxy.html#altdss.ArrayProxy.BatchInt32ArrayProxy" title="altdss.ArrayProxy.BatchInt32ArrayProxy"><span class="pre">altdss.ArrayProxy.BatchInt32ArrayProxy</span></a></em><a class="headerlink" href="#altdss.GrowthShape.GrowthShapeBatch.NPts" title="Link to this definition">#</a></dt>
 <dd><p>‘property(…)’</p>
+<p>Number of points to expect in subsequent vector.</p>
+<p>DSS property name: <code class="docutils literal notranslate"><span class="pre">NPts</span></code>, DSS property index: 1.</p>
 </dd></dl>
 
 <dl class="py property">
@@ -810,12 +840,16 @@ Values used by this function are:</p>
 <dt class="sig sig-object py" id="altdss.GrowthShape.GrowthShapeBatch.SngFile">
 <span class="sig-name descname"><span class="pre">SngFile</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">List</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">]</span></span></em><a class="headerlink" href="#altdss.GrowthShape.GrowthShapeBatch.SngFile" title="Link to this definition">#</a></dt>
 <dd><p>‘property(…)’</p>
+<p>Switch input of growth curve data to a binary file of singles containing (year, mult) points, packed one after another.</p>
+<p>DSS property name: <code class="docutils literal notranslate"><span class="pre">SngFile</span></code>, DSS property index: 5.</p>
 </dd></dl>
 
 <dl class="py attribute">
 <dt class="sig sig-object py" id="altdss.GrowthShape.GrowthShapeBatch.Year">
 <span class="sig-name descname"><span class="pre">Year</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">List</span><span class="p"><span class="pre">[</span></span><span class="pre">altdss.types.Float64Array</span><span class="p"><span class="pre">]</span></span></em><a class="headerlink" href="#altdss.GrowthShape.GrowthShapeBatch.Year" title="Link to this definition">#</a></dt>
 <dd><p>‘property(…)’</p>
+<p>Array of year values, or a text file spec, corresponding to the multipliers. Enter only those years where the growth changes. May be any integer sequence – just so it is consistent. See help on Mult.</p>
+<p>DSS property name: <code class="docutils literal notranslate"><span class="pre">Year</span></code>, DSS property index: 2.</p>
 </dd></dl>
 
 <dl class="py method">
@@ -845,11 +879,29 @@ Values used by this function are:</p>
 <dd></dd></dl>
 
 <dl class="py method">
+<dt class="sig sig-object py" id="altdss.GrowthShape.GrowthShapeBatch.batch">
+<span class="sig-name descname"><span class="pre">batch</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference internal" href="altdss.Batch.html#altdss.Batch.DSSBatch" title="altdss.Batch.DSSBatch"><span class="pre">altdss.Batch.DSSBatch</span></a></span></span><a class="headerlink" href="#altdss.GrowthShape.GrowthShapeBatch.batch" title="Link to this definition">#</a></dt>
+<dd><p>Filter a batch using integer or float DSS properties, returning a new batch.</p>
+<p>For integers, provide a single value to match.</p>
+<p>For floats, provide a range as a 2-valued tuple/list (min value, max value), or an exact value to value (not recommended).</p>
+<p>Multiple properties can be listed to allow filtering various conditions.</p>
+<p>Example for loads:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span>    <span class="c1"># Create an initial batch using a regular expression</span>
+    <span class="n">abc_loads</span> <span class="o">=</span> <span class="n">altdss</span><span class="o">.</span><span class="n">Load</span><span class="o">.</span><span class="n">batch</span><span class="p">(</span><span class="n">re</span><span class="o">=</span><span class="sa">r</span><span class="s1">&#39;^abc.*$&#39;</span><span class="p">)</span> <span class="c1"># a batch of all loads with names starting with &quot;abc&quot;</span>
+    <span class="n">abc_loads_filtered</span> <span class="o">=</span> <span class="n">abc_loads</span><span class="o">.</span><span class="n">batch</span><span class="p">(</span><span class="n">Class</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">Phases</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">kV</span><span class="o">=</span><span class="p">(</span><span class="mf">0.1</span><span class="p">,</span> <span class="mf">1.0</span><span class="p">))</span>
+
+    <span class="c1"># Create an initial batch, already filtered</span>
+    <span class="n">abc_loads_filtered</span> <span class="o">=</span> <span class="n">altdss</span><span class="o">.</span><span class="n">Load</span><span class="o">.</span><span class="n">batch</span><span class="p">(</span><span class="n">re</span><span class="o">=</span><span class="sa">r</span><span class="s1">&#39;^abc.*$&#39;</span><span class="p">,</span> <span class="n">Class</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">Phases</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">kV</span><span class="o">=</span><span class="p">(</span><span class="mf">0.1</span><span class="p">,</span> <span class="mf">1.0</span><span class="p">))</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="py method">
 <dt class="sig sig-object py" id="altdss.GrowthShape.GrowthShapeBatch.begin_edit">
 <span class="sig-name descname"><span class="pre">begin_edit</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span><a class="headerlink" href="#altdss.GrowthShape.GrowthShapeBatch.begin_edit" title="Link to this definition">#</a></dt>
 <dd><p>Marks for editing all DSS objects in the batch</p>
-<p>In the editing mode, some final side-effects of changing properties are post-poned
-until <code class="docutils literal notranslate"><span class="pre">_end_edit</span></code> is called. This side-effects can be somewhat costly, like updating
+<p>In the editing mode, some final side-effects of changing properties are postponed
+until <code class="docutils literal notranslate"><span class="pre">end_edit</span></code> is called. This side-effects can be somewhat costly, like updating
 the model parameters or internal matrices.</p>
 <p>If you don’t have any performance constraint, you may edit each property individually
 without worrying about using <code class="docutils literal notranslate"><span class="pre">begin_edit</span></code> and <code class="docutils literal notranslate"><span class="pre">end_edit</span></code>. For convenience, those are
@@ -1486,12 +1538,16 @@ In either case, this is followed by: for k in F:  D[k] = F[k]</p>
 <dt class="sig sig-object py" id="altdss.GrowthShape.IGrowthShape.CSVFile">
 <span class="sig-name descname"><span class="pre">CSVFile</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">List</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">]</span></span></em><a class="headerlink" href="#altdss.GrowthShape.IGrowthShape.CSVFile" title="Link to this definition">#</a></dt>
 <dd><p>‘property(…)’</p>
+<p>Switch input of growth curve data to a csv file containing (year, mult) points, one per line.</p>
+<p>DSS property name: <code class="docutils literal notranslate"><span class="pre">CSVFile</span></code>, DSS property index: 4.</p>
 </dd></dl>
 
 <dl class="py attribute">
 <dt class="sig sig-object py" id="altdss.GrowthShape.IGrowthShape.DblFile">
 <span class="sig-name descname"><span class="pre">DblFile</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">List</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">]</span></span></em><a class="headerlink" href="#altdss.GrowthShape.IGrowthShape.DblFile" title="Link to this definition">#</a></dt>
 <dd><p>‘property(…)’</p>
+<p>Switch input of growth curve data to a binary file of doubles containing (year, mult) points, packed one after another.</p>
+<p>DSS property name: <code class="docutils literal notranslate"><span class="pre">DblFile</span></code>, DSS property index: 6.</p>
 </dd></dl>
 
 <dl class="py method">
@@ -1512,12 +1568,20 @@ In either case, this is followed by: for k in F:  D[k] = F[k]</p>
 <dt class="sig sig-object py" id="altdss.GrowthShape.IGrowthShape.Mult">
 <span class="sig-name descname"><span class="pre">Mult</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">List</span><span class="p"><span class="pre">[</span></span><span class="pre">altdss.types.Float64Array</span><span class="p"><span class="pre">]</span></span></em><a class="headerlink" href="#altdss.GrowthShape.IGrowthShape.Mult" title="Link to this definition">#</a></dt>
 <dd><p>‘property(…)’</p>
+<p>Array of growth multiplier values, or a text file spec, corresponding to the year values. Enter the multiplier by which you would multiply the previous year’s load to get the present year’s.</p>
+<p>Examples:</p>
+<p>Year = [1, 2, 5]   Mult=[1.05, 1.025, 1.02].
+Year= (File=years.txt) Mult= (file=mults.txt).</p>
+<p>Text files contain one value per line.</p>
+<p>DSS property name: <code class="docutils literal notranslate"><span class="pre">Mult</span></code>, DSS property index: 3.</p>
 </dd></dl>
 
 <dl class="py attribute">
 <dt class="sig sig-object py" id="altdss.GrowthShape.IGrowthShape.NPts">
 <span class="sig-name descname"><span class="pre">NPts</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><a class="reference internal" href="altdss.ArrayProxy.html#altdss.ArrayProxy.BatchInt32ArrayProxy" title="altdss.ArrayProxy.BatchInt32ArrayProxy"><span class="pre">altdss.ArrayProxy.BatchInt32ArrayProxy</span></a></em><a class="headerlink" href="#altdss.GrowthShape.IGrowthShape.NPts" title="Link to this definition">#</a></dt>
 <dd><p>‘property(…)’</p>
+<p>Number of points to expect in subsequent vector.</p>
+<p>DSS property name: <code class="docutils literal notranslate"><span class="pre">NPts</span></code>, DSS property index: 1.</p>
 </dd></dl>
 
 <dl class="py property">
@@ -1529,12 +1593,16 @@ In either case, this is followed by: for k in F:  D[k] = F[k]</p>
 <dt class="sig sig-object py" id="altdss.GrowthShape.IGrowthShape.SngFile">
 <span class="sig-name descname"><span class="pre">SngFile</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">List</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">]</span></span></em><a class="headerlink" href="#altdss.GrowthShape.IGrowthShape.SngFile" title="Link to this definition">#</a></dt>
 <dd><p>‘property(…)’</p>
+<p>Switch input of growth curve data to a binary file of singles containing (year, mult) points, packed one after another.</p>
+<p>DSS property name: <code class="docutils literal notranslate"><span class="pre">SngFile</span></code>, DSS property index: 5.</p>
 </dd></dl>
 
 <dl class="py attribute">
 <dt class="sig sig-object py" id="altdss.GrowthShape.IGrowthShape.Year">
 <span class="sig-name descname"><span class="pre">Year</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">List</span><span class="p"><span class="pre">[</span></span><span class="pre">altdss.types.Float64Array</span><span class="p"><span class="pre">]</span></span></em><a class="headerlink" href="#altdss.GrowthShape.IGrowthShape.Year" title="Link to this definition">#</a></dt>
 <dd><p>‘property(…)’</p>
+<p>Array of year values, or a text file spec, corresponding to the multipliers. Enter only those years where the growth changes. May be any integer sequence – just so it is consistent. See help on Mult.</p>
+<p>DSS property name: <code class="docutils literal notranslate"><span class="pre">Year</span></code>, DSS property index: 2.</p>
 </dd></dl>
 
 <dl class="py method">
@@ -1584,8 +1652,8 @@ or “count” elements with a randomized prefix.</p>
 <dt class="sig sig-object py" id="altdss.GrowthShape.IGrowthShape.begin_edit">
 <span class="sig-name descname"><span class="pre">begin_edit</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span><a class="headerlink" href="#altdss.GrowthShape.IGrowthShape.begin_edit" title="Link to this definition">#</a></dt>
 <dd><p>Marks for editing all DSS objects in the batch</p>
-<p>In the editing mode, some final side-effects of changing properties are post-poned
-until <code class="docutils literal notranslate"><span class="pre">_end_edit</span></code> is called. This side-effects can be somewhat costly, like updating
+<p>In the editing mode, some final side-effects of changing properties are postponed
+until <code class="docutils literal notranslate"><span class="pre">end_edit</span></code> is called. This side-effects can be somewhat costly, like updating
 the model parameters or internal matrices.</p>
 <p>If you don’t have any performance constraint, you may edit each property individually
 without worrying about using <code class="docutils literal notranslate"><span class="pre">begin_edit</span></code> and <code class="docutils literal notranslate"><span class="pre">end_edit</span></code>. For convenience, those are
@@ -1715,6 +1783,7 @@ See <code class="docutils literal notranslate"><span class="pre">Obj_ToJSON</spa
 <li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#altdss.GrowthShape.GrowthShapeBatch.__init__"><code class="docutils literal notranslate"><span class="pre">GrowthShapeBatch.__init__()</span></code></a></li>
 <li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#altdss.GrowthShape.GrowthShapeBatch.__iter__"><code class="docutils literal notranslate"><span class="pre">GrowthShapeBatch.__iter__()</span></code></a></li>
 <li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#altdss.GrowthShape.GrowthShapeBatch.__len__"><code class="docutils literal notranslate"><span class="pre">GrowthShapeBatch.__len__()</span></code></a></li>
+<li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#altdss.GrowthShape.GrowthShapeBatch.batch"><code class="docutils literal notranslate"><span class="pre">GrowthShapeBatch.batch()</span></code></a></li>
 <li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#altdss.GrowthShape.GrowthShapeBatch.begin_edit"><code class="docutils literal notranslate"><span class="pre">GrowthShapeBatch.begin_edit()</span></code></a></li>
 <li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#altdss.GrowthShape.GrowthShapeBatch.end_edit"><code class="docutils literal notranslate"><span class="pre">GrowthShapeBatch.end_edit()</span></code></a></li>
 <li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#altdss.GrowthShape.GrowthShapeBatch.to_json"><code class="docutils literal notranslate"><span class="pre">GrowthShapeBatch.to_json()</span></code></a></li>

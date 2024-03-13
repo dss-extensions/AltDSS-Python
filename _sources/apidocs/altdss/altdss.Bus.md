@@ -447,6 +447,14 @@ Bases: {py:obj}`altdss.common.Base`
 
 ````
 
+````{py:method} Name() -> typing.List[str]
+:canonical: altdss.Bus.BusBatch.Name
+
+```{autodoc2-docstring} altdss.Bus.BusBatch.Name
+```
+
+````
+
 ````{py:method} NumCustomers() -> altdss.types.Int32Array
 :canonical: altdss.Bus.BusBatch.NumCustomers
 
@@ -621,6 +629,14 @@ Bases: {py:obj}`altdss.Bus.BusBatch`
 :canonical: altdss.Bus.IBuses.Lambda
 
 ```{autodoc2-docstring} altdss.Bus.IBuses.Lambda
+```
+
+````
+
+````{py:method} Name() -> typing.List[str]
+:canonical: altdss.Bus.IBuses.Name
+
+```{autodoc2-docstring} altdss.Bus.IBuses.Name
 ```
 
 ````

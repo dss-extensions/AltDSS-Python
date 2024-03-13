@@ -136,7 +136,7 @@ Bases: {py:obj}`altdss.DSSObj.IDSSObj`, {py:obj}`altdss.VSConverter.VSConverterB
 
 ````
 
-````{py:method} GUID() -> str
+````{py:method} GUID() -> typing.List[str]
 :canonical: altdss.VSConverter.IVSConverter.GUID
 
 ```{autodoc2-docstring} altdss.VSConverter.IVSConverter.GUID
@@ -152,7 +152,7 @@ Bases: {py:obj}`altdss.DSSObj.IDSSObj`, {py:obj}`altdss.VSConverter.VSConverterB
 
 ````
 
-````{py:method} HasOCPDevice() -> bool
+````{py:method} HasOCPDevice() -> altdss.types.BoolArray
 :canonical: altdss.VSConverter.IVSConverter.HasOCPDevice
 
 ```{autodoc2-docstring} altdss.VSConverter.IVSConverter.HasOCPDevice
@@ -160,7 +160,7 @@ Bases: {py:obj}`altdss.DSSObj.IDSSObj`, {py:obj}`altdss.VSConverter.VSConverterB
 
 ````
 
-````{py:method} HasSwitchControl() -> bool
+````{py:method} HasSwitchControl() -> altdss.types.BoolArray
 :canonical: altdss.VSConverter.IVSConverter.HasSwitchControl
 
 ```{autodoc2-docstring} altdss.VSConverter.IVSConverter.HasSwitchControl
@@ -168,7 +168,7 @@ Bases: {py:obj}`altdss.DSSObj.IDSSObj`, {py:obj}`altdss.VSConverter.VSConverterB
 
 ````
 
-````{py:method} HasVoltControl() -> bool
+````{py:method} HasVoltControl() -> altdss.types.BoolArray
 :canonical: altdss.VSConverter.IVSConverter.HasVoltControl
 
 ```{autodoc2-docstring} altdss.VSConverter.IVSConverter.HasVoltControl
@@ -255,7 +255,7 @@ Bases: {py:obj}`altdss.DSSObj.IDSSObj`, {py:obj}`altdss.VSConverter.VSConverterB
 
 ````
 
-````{py:method} MaxCurrent(terminal: int) -> float
+````{py:method} MaxCurrent(terminal: int) -> altdss.types.Float64Array
 :canonical: altdss.VSConverter.IVSConverter.MaxCurrent
 
 ```{autodoc2-docstring} altdss.VSConverter.IVSConverter.MaxCurrent
@@ -331,7 +331,7 @@ Bases: {py:obj}`altdss.DSSObj.IDSSObj`, {py:obj}`altdss.VSConverter.VSConverterB
 
 ````
 
-````{py:method} OCPDeviceType() -> dss.enums.OCPDevType
+````{py:method} OCPDeviceType() -> typing.List[dss.enums.OCPDevType]
 :canonical: altdss.VSConverter.IVSConverter.OCPDeviceType
 
 ```{autodoc2-docstring} altdss.VSConverter.IVSConverter.OCPDeviceType
@@ -1465,7 +1465,7 @@ Bases: {py:obj}`altdss.Batch.DSSBatch`, {py:obj}`altdss.CircuitElement.CircuitEl
 
 ````
 
-````{py:method} GUID() -> str
+````{py:method} GUID() -> typing.List[str]
 :canonical: altdss.VSConverter.VSConverterBatch.GUID
 
 ```{autodoc2-docstring} altdss.VSConverter.VSConverterBatch.GUID
@@ -1481,7 +1481,7 @@ Bases: {py:obj}`altdss.Batch.DSSBatch`, {py:obj}`altdss.CircuitElement.CircuitEl
 
 ````
 
-````{py:method} HasOCPDevice() -> bool
+````{py:method} HasOCPDevice() -> altdss.types.BoolArray
 :canonical: altdss.VSConverter.VSConverterBatch.HasOCPDevice
 
 ```{autodoc2-docstring} altdss.VSConverter.VSConverterBatch.HasOCPDevice
@@ -1489,7 +1489,7 @@ Bases: {py:obj}`altdss.Batch.DSSBatch`, {py:obj}`altdss.CircuitElement.CircuitEl
 
 ````
 
-````{py:method} HasSwitchControl() -> bool
+````{py:method} HasSwitchControl() -> altdss.types.BoolArray
 :canonical: altdss.VSConverter.VSConverterBatch.HasSwitchControl
 
 ```{autodoc2-docstring} altdss.VSConverter.VSConverterBatch.HasSwitchControl
@@ -1497,7 +1497,7 @@ Bases: {py:obj}`altdss.Batch.DSSBatch`, {py:obj}`altdss.CircuitElement.CircuitEl
 
 ````
 
-````{py:method} HasVoltControl() -> bool
+````{py:method} HasVoltControl() -> altdss.types.BoolArray
 :canonical: altdss.VSConverter.VSConverterBatch.HasVoltControl
 
 ```{autodoc2-docstring} altdss.VSConverter.VSConverterBatch.HasVoltControl
@@ -1584,7 +1584,7 @@ Bases: {py:obj}`altdss.Batch.DSSBatch`, {py:obj}`altdss.CircuitElement.CircuitEl
 
 ````
 
-````{py:method} MaxCurrent(terminal: int) -> float
+````{py:method} MaxCurrent(terminal: int) -> altdss.types.Float64Array
 :canonical: altdss.VSConverter.VSConverterBatch.MaxCurrent
 
 ```{autodoc2-docstring} altdss.VSConverter.VSConverterBatch.MaxCurrent
@@ -1660,7 +1660,7 @@ Bases: {py:obj}`altdss.Batch.DSSBatch`, {py:obj}`altdss.CircuitElement.CircuitEl
 
 ````
 
-````{py:method} OCPDeviceType() -> dss.enums.OCPDevType
+````{py:method} OCPDeviceType() -> typing.List[dss.enums.OCPDevType]
 :canonical: altdss.VSConverter.VSConverterBatch.OCPDeviceType
 
 ```{autodoc2-docstring} altdss.VSConverter.VSConverterBatch.OCPDeviceType
@@ -1889,6 +1889,14 @@ Bases: {py:obj}`altdss.Batch.DSSBatch`, {py:obj}`altdss.CircuitElement.CircuitEl
 :canonical: altdss.VSConverter.VSConverterBatch.__len__
 
 ```{autodoc2-docstring} altdss.VSConverter.VSConverterBatch.__len__
+```
+
+````
+
+````{py:method} batch(**kwargs) -> altdss.Batch.DSSBatch
+:canonical: altdss.VSConverter.VSConverterBatch.batch
+
+```{autodoc2-docstring} altdss.VSConverter.VSConverterBatch.batch
 ```
 
 ````

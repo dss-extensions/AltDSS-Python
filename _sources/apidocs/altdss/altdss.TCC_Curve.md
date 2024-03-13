@@ -449,6 +449,14 @@ Bases: {py:obj}`altdss.Batch.DSSBatch`
 
 ````
 
+````{py:method} batch(**kwargs) -> altdss.Batch.DSSBatch
+:canonical: altdss.TCC_Curve.TCC_CurveBatch.batch
+
+```{autodoc2-docstring} altdss.TCC_Curve.TCC_CurveBatch.batch
+```
+
+````
+
 ````{py:method} begin_edit() -> None
 :canonical: altdss.TCC_Curve.TCC_CurveBatch.begin_edit
 

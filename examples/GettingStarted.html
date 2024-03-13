@@ -8,7 +8,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
-    <title>Getting Started &#8212; AltDSS-Python 0.2.0 documentation</title>
+    <title>Getting Started &#8212; AltDSS-Python 0.2.2 documentation</title>
   
   
   
@@ -38,7 +38,7 @@
 <link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=8d27b9dea8ad943066ae" />
   <script src="../_static/vendor/fontawesome/6.5.1/js/all.min.js?digest=8d27b9dea8ad943066ae"></script>
 
-    <script src="../_static/documentation_options.js?v=7f7c277e"></script>
+    <script src="../_static/documentation_options.js?v=d3f42505"></script>
     <script src="../_static/doctools.js?v=888ff710"></script>
     <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
     <script src="../_static/scripts/sphinx-book-theme.js?v=efea14e4"></script>
@@ -47,7 +47,7 @@
     <link rel="icon" href="../_static/dssx.png"/>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="AltDSS-Python changelog" href="../changelog.html" />
+    <link rel="next" title="Batches" href="Batches.html" />
     <link rel="prev" title="Architecture details" href="../Architecture.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
@@ -137,8 +137,8 @@
       
     
     
-    <img src="../_static/altdss-python.svg" class="logo__image only-light" alt="AltDSS-Python 0.2.0 documentation - Home"/>
-    <script>document.write(`<img src="../_static/altdss-python-dark.svg" class="logo__image only-dark" alt="AltDSS-Python 0.2.0 documentation - Home"/>`);</script>
+    <img src="../_static/altdss-python.svg" class="logo__image only-light" alt="AltDSS-Python 0.2.2 documentation - Home"/>
+    <script>document.write(`<img src="../_static/altdss-python-dark.svg" class="logo__image only-dark" alt="AltDSS-Python 0.2.2 documentation - Home"/>`);</script>
   
   
 </a></div>
@@ -160,6 +160,7 @@
 <li class="toctree-l1"><a class="reference internal" href="../index.html">AltDSS-Python</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../Architecture.html">Architecture details</a></li>
 <li class="toctree-l1 current active"><a class="current reference internal" href="#">Getting Started</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Batches.html">Batches</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../changelog.html">Changelog</a></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">API Reference</span></p>
@@ -452,9 +453,9 @@ document.write(`
 </div>
 </div>
 </div>
-<p>If you are reading this notebook online and would like to run in your local Python installation, you can download both the DSS-Python repository (which contains this notebook) and the sample circuits with <code class="docutils literal notranslate"><span class="pre">download_examples</span></code>.</p>
+<p>If you are reading this notebook online and would like to run in your local Python installation, you can download both the AltDSS-Python repository (which contains this notebook) and the sample circuits with <code class="docutils literal notranslate"><span class="pre">download_examples</span></code>.</p>
 <p>On Windows, run on a command prompt in your Python environment to install all optional dependencies:</p>
-<div class="highlight-batch notranslate"><div class="highlight"><pre><span></span>pip install dss-python[all]
+<div class="highlight-batch notranslate"><div class="highlight"><pre><span></span>pip install altdss[all]
 python -c <span class="s2">&quot;from dss.examples import download_examples; download_examples(r&#39;c:\temp&#39;, repo_name=&#39;AltDSS-Python&#39;)&quot;</span>
 <span class="k">cd</span> c:\temp\AltDSS-Python\docs\examples
 jupyter lab
@@ -487,19 +488,23 @@ jupyter lab
 <p>Some classes, properties and methods are still present. They may be adjusted for future versions, if required:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># This was AllBusVmag. The &quot;All&quot; was kinda redundant.</span>
-<span class="n">altdss</span><span class="o">.</span><span class="n">BusVmag</span><span class="p">()</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># This was AllBusVmag. The &quot;All&quot; was kinda redundant, capitalization was adjusted.</span>
+<span class="n">altdss</span><span class="o">.</span><span class="n">BusVMag</span><span class="p">()</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
-<span class="ne">AttributeError</span><span class="g g-Whitespace">                            </span>Traceback (most recent call last)
-<span class="n">Cell</span> <span class="n">In</span><span class="p">[</span><span class="mi">5</span><span class="p">],</span> <span class="n">line</span> <span class="mi">2</span>
-<span class="g g-Whitespace">      </span><span class="mi">1</span> <span class="c1"># This was AllBusVmag. The &quot;All&quot; was kinda redundant.</span>
-<span class="ne">----&gt; </span><span class="mi">2</span> <span class="n">altdss</span><span class="o">.</span><span class="n">BusVmag</span><span class="p">()</span>
-
-<span class="ne">AttributeError</span>: &#39;AltDSS&#39; object has no attribute &#39;BusVmag&#39;
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>array([66393.52539552, 66394.8697918 , 66391.9679481 ,  2401.56281971,
+        2401.70707917,  2401.61163242,  2536.35618639,  2491.56916753,
+        2536.39597012,  2428.91682366,  2466.67017218,  2405.47534155,
+         273.56904918,   279.46191055,   272.263543  ,  2360.45472436,
+        2498.51583289,  2317.41727729,  2449.16595034,  2407.23753262,
+        2445.04461469,  2402.35182009,  2317.4172594 ,  2360.45470186,
+        2498.51583016,  2344.78388971,  2504.17602597,  2312.77119003,
+        2307.69876166,  2342.53046877,  2411.44105223,  2478.32688291,
+        2377.14162241,  2436.22416628,  2471.29925961,  2411.83511918,
+        2360.45475448,  2498.51586854,  2317.41731041,  2355.83530743,
+        2312.54108638])
 </pre></div>
 </div>
 </div>
@@ -522,8 +527,8 @@ jupyter lab
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>DSS C-API Library version 0.14.2 revision 9fcf7ace747fdf21329b9c59fd07a89cc7b50849 based on OpenDSS SVN 3723 [FPC 3.2.2] (64-bit build) MVMULT INCREMENTAL_Y CONTEXT_API PM 20240226091209; License Status: Open 
-DSS-Python version: 0.15.3
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>DSS C-API Library version 0.14.3 revision eb03a63a86e287bc71312d7e50c30288ae946142 based on OpenDSS SVN 3723 [FPC 3.2.2] (64-bit build) MVMULT INCREMENTAL_Y CONTEXT_API PM 20240313054323; License Status: Open 
+DSS-Python version: 0.15.4
 </pre></div>
 </div>
 </div>
@@ -536,8 +541,8 @@ DSS-Python version: 0.15.3
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>DSS C-API Library version 0.14.2 revision 9fcf7ace747fdf21329b9c59fd07a89cc7b50849 based on OpenDSS SVN 3723 [FPC 3.2.2] (64-bit build) MVMULT INCREMENTAL_Y CONTEXT_API PM 20240226091209; License Status: Open 
-DSS-Python version: 0.15.3
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>DSS C-API Library version 0.14.3 revision eb03a63a86e287bc71312d7e50c30288ae946142 based on OpenDSS SVN 3723 [FPC 3.2.2] (64-bit build) MVMULT INCREMENTAL_Y CONTEXT_API PM 20240313054323; License Status: Open 
+DSS-Python version: 0.15.4
 OpenDSSDirect.py version: 0.9.1
 </pre></div>
 </div>
@@ -750,7 +755,7 @@ Sensor 0
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;altdss.Load.ILoad at 0x7fef4488a270&gt;
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;altdss.Load.ILoad at 0x7f07d2beb4d0&gt;
 </pre></div>
 </div>
 </div>
@@ -1018,7 +1023,7 @@ Sensor 0
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;altdss.ArrayProxy.BatchFloat64ArrayProxy at 0x7fef4454ab40&gt;
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;altdss.ArrayProxy.BatchFloat64ArrayProxy at 0x7f07d2a31a30&gt;
 </pre></div>
 </div>
 </div>
@@ -1067,7 +1072,7 @@ Sensor 0
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>103 µs ± 156 ns per loop (mean ± std. dev. of 7 runs, 10,000 loops each)
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>93.5 µs ± 227 ns per loop (mean ± std. dev. of 7 runs, 10,000 loops each)
 </pre></div>
 </div>
 </div>
@@ -1082,7 +1087,7 @@ Sensor 0
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>570 µs ± 4.24 µs per loop (mean ± std. dev. of 7 runs, 1,000 loops each)
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>519 µs ± 818 ns per loop (mean ± std. dev. of 7 runs, 1,000 loops each)
 </pre></div>
 </div>
 </div>
@@ -1247,15 +1252,9 @@ Sensor 0
 <span class="n">Cell</span> <span class="n">In</span><span class="p">[</span><span class="mi">51</span><span class="p">],</span> <span class="n">line</span> <span class="mi">1</span>
 <span class="ne">----&gt; </span><span class="mi">1</span> <span class="n">l</span><span class="o">.</span><span class="n">kW</span>
 
-<span class="nn">File /opt/python/lib/python3.12/site-packages/altdss/Load.py:127,</span> in <span class="ni">Load._get_kW</span><span class="nt">(self)</span>
-<span class="g g-Whitespace">    </span><span class="mi">114</span> <span class="k">def</span> <span class="nf">_get_kW</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">float</span><span class="p">:</span>
-<span class="g g-Whitespace">    </span><span class="mi">115</span><span class="w">     </span><span class="sd">&quot;&quot;&quot;</span>
-<span class="g g-Whitespace">    </span><span class="mi">116</span><span class="sd">     Total base kW for the load.  Normally, you would enter the maximum kW for the load for the first year and allow it to be adjusted by the load shapes, growth shapes, and global load multiplier.</span>
-<span class="g g-Whitespace">    </span><span class="mi">117</span><span class="sd"> </span>
-<span class="sd">   (...)</span>
-<span class="g g-Whitespace">    </span><span class="mi">125</span><span class="sd">     DSS property name: `kW`, DSS property index: 4.</span>
-<span class="g g-Whitespace">    </span><span class="mi">126</span><span class="sd">     &quot;&quot;&quot;</span>
-<span class="ne">--&gt; </span><span class="mi">127</span>     <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_lib</span><span class="o">.</span><span class="n">Obj_GetFloat64</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_ptr</span><span class="p">,</span> <span class="mi">4</span><span class="p">)</span>
+<span class="nn">File /opt/python/lib/python3.12/site-packages/altdss/Load.py:152,</span> in <span class="ni">Load._get_kW</span><span class="nt">(self)</span>
+<span class="g g-Whitespace">    </span><span class="mi">151</span> <span class="k">def</span> <span class="nf">_get_kW</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">float</span><span class="p">:</span>
+<span class="ne">--&gt; </span><span class="mi">152</span>     <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_lib</span><span class="o">.</span><span class="n">Obj_GetFloat64</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_ptr</span><span class="p">,</span> <span class="mi">4</span><span class="p">)</span>
 
 <span class="ne">TypeError</span>: initializer for ctype &#39;void *&#39; must be a cdata pointer, not InvalidatedDSSObject
 </pre></div>
@@ -1294,11 +1293,11 @@ Sensor 0
       </div>
     </a>
     <a class="right-next"
-       href="../changelog.html"
+       href="Batches.html"
        title="next page">
       <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title">AltDSS-Python changelog</p>
+        <p class="prev-next-title">Batches</p>
       </div>
       <i class="fa-solid fa-angle-right"></i>
     </a>
