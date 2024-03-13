@@ -83,6 +83,7 @@ The documentation pages are organized as follows. This is a new project and the 
 self
 Architecture
 examples/GettingStarted
+examples/Batches
 Changelog <changelog>
 ```
 

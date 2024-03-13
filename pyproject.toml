@@ -20,7 +20,7 @@ artifacts = ["altdss/_version.py"]
 name = "altdss"
 dynamic = ["version"]
 dependencies = [
-    "dss_python>=0.15.3,<0.16.0",
+    "dss_python>=0.15.4,<0.16.0",
     "dss_python_backend==0.14.3",
     "numpy>=1.21.0",
     "typing_extensions>=4.5,<5",
@@ -35,7 +35,7 @@ authors = [
 maintainers = [
     {name = "Paulo Meira", email = "pmeira@ieee.org"},
 ]
-description = "Modern, detailed Python bindings and tools based on the DSS C-API project, the alternative OpenDSS implementation from DSS-Extensions.org. Tries to expose all OpenDSS objects and many details which previously required using the Text interface, or just weren't available."
+description = "Modern, detailed Python interface/bindings and tools based on the AltDSS/DSS C-API project, the alternative OpenDSS implementation from DSS-Extensions.org. Tries to expose all OpenDSS objects, bulk operations and many details which previously required using the Text interface, or just weren't available."
 readme = "README.md"
 license = {file = "LICENSE"}
 keywords = ["opendss", "altdss", "electric power systems", "opendssdirect", "powerflow", "short-circuit", ]
@@ -69,5 +69,5 @@ test = [
   "pytest",
 ]
 all = [
-  "dss_python[all]>=0.15.3,<0.16.0",
+  "dss_python[all]>=0.15.4,<0.16.0",
 ]

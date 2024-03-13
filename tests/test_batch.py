@@ -102,6 +102,9 @@ def teardown_function():
 def create_ref_ckt13(ref):
     ref(f'redirect "{BASE_DIR}/Version8/Distrib/IEEETestCases/13Bus/IEEE13Nodeckt.dss"')
 
+def create_ref_ckt7(ref):
+    ref(f'redirect "{BASE_DIR}/Version8/Distrib/EPRITestCircuits/ckt7/Master_ckt7.dss"')
+
 def create_ckt13_batch_attr(dss: AltDSS):
     dss.ClearAll()
     dss('new circuit.IEEE13Nodeckt')
@@ -741,6 +744,43 @@ def test_batch_bus_elements():
         line = lines[10000]
 
 
+def test_batch_filter():
+    create_ref_ckt13(altdss)
+
+    lv_1ph_list = [l for l in altdss.Load if l.Phases == 1 and 0 <= l.kV <= 1]
+    hv_list = [l for l in altdss.Load if l.kV >= 1]
+
+    lv_1ph = altdss.Load.batch().batch(Phases=1, kV=[0, 1])
+    assert lv_1ph.to_list() == lv_1ph_list
+
+    lv_1ph = altdss.Load.batch(Phases=1, kV=[0, 1])
+    assert lv_1ph.to_list() == lv_1ph_list
+
+    lv_1ph = altdss.Load.batch(Phases=1, kV=[0, 1])
+    assert lv_1ph.to_list() == lv_1ph_list
+
+    lv_1ph = altdss.Load.batch(Phases=1, kV=[0, 1])
+    assert lv_1ph.to_list() == lv_1ph_list
+
+    lv_1ph = altdss.Load.batch(Phases=1).batch(kV=[0, 1])
+    assert lv_1ph.to_list() == lv_1ph_list
+    assert lv_1ph.to_list() != hv_list
+
+
+def test_ce_functions():
+    create_ref_ckt7(altdss)
+
+    dss = altdss.to_dss_python()
+    CE = dss.ActiveCircuit.ActiveCktElement
+    assert altdss.Load.TotalPowers().tolist() == [x.TotalPowers() for x in altdss.Load]
+    assert altdss.Load.TotalPowers().tolist() == [complex(*CE.TotalPowers) for _ in dss.ActiveCircuit.Loads]
+    assert altdss.Load.Powers().tolist() == np.concatenate([x.Powers() for x in altdss.Load]).ravel().tolist()
+    ce_powers = []
+    for _ in dss.ActiveCircuit.Loads:
+        ce_powers.extend(CE.Powers.view(dtype=complex))
+
+    assert altdss.Load.Powers().tolist() == ce_powers
+    
 
 if __name__ == '__main__':
     # Adjust for manually running a test-case

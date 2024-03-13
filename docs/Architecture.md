@@ -18,7 +18,7 @@ Most of the object lifetime rules also applies to buses, with the caveat that bu
 
 ## Batches
 
-Batches of DSS objects and buses generalize some aspects of the API to get or set values in bulk.
+Batches of DSS objects and buses generalize some aspects of the API to get or set values in bulk. Check the [Batches example](#examples/Batches) for a walk-through.
 
 ### Array proxies
 

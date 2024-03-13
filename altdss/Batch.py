@@ -1,3 +1,4 @@
+from __future__ import annotations
 import numpy as np
 from typing import Union, List, AnyStr, Optional, Iterator
 from dss.enums import DSSJSONFlags
@@ -131,15 +132,102 @@ class DSSBatch(Base, BatchCommon):
         '__weakref__',
     ]
 
+    def batch(self, **kwargs) -> DSSBatch:
+        '''
+        Filter a batch using integer or float DSS properties, returning a new batch.
+
+        For integers, provide a single value to match.
+
+        For floats, provide a range as a 2-valued tuple/list (min value, max value), or an exact value to value (not recommended).
+
+        Multiple properties can be listed to allow filtering various conditions.
+
+        Example for loads:
+
+        ```python
+            # Create an initial batch using a regular expression
+            abc_loads = altdss.Load.batch(re=r'^abc.*$') # a batch of all loads with names starting with "abc"
+            abc_loads_filtered = abc_loads.batch(Class=1, Phases=1, kV=(0.1, 1.0))
+
+            # Create an initial batch, already filtered
+            abc_loads_filtered = altdss.Load.batch(re=r'^abc.*$', Class=1, Phases=1, kV=(0.1, 1.0))
+        ```        
+        
+        '''
+        return self.__class__(self._api_util, _clone_from=self, **kwargs)
+
+    def _filter(self, _existing=True, **kwargs):
+        if not kwargs:
+            return
+            
+        batch_exists = _existing
+        while kwargs:
+            if batch_exists:
+                # If a batch already exists, get its info
+                prev_ptr, prev_count = self._get_ptr_cnt()
+
+            self._ptrptr = ptrptr = self._ffi.new('void***')
+            self._countptr = countptr = self._ffi.new('int32_t[4]')
+        
+            (prop_name, val) = kwargs.popitem()
+            prop_idx = self._obj_cls._cls_prop_idx.get(prop_name.lower())
+            if prop_idx is None:
+                raise ValueError(f'Invalid property name "{prop_name}"')
+            
+            if isinstance(val, int) and prop_idx in self._obj_cls._cls_int_idx:
+                # Single integer value for an integer property
+                if batch_exists:
+                    self._lib.Batch_FilterByInt32Property(ptrptr, countptr, prev_ptr, prev_count, prop_idx, val)
+                else:
+                    self._lib.Batch_CreateByInt32Property(ptrptr, countptr, self._cls_idx, prop_idx, val)
+
+                prop_name = None
+            elif prop_idx in self._obj_cls._cls_float_idx:
+                if isinstance(val, LIST_LIKE) and len(val) == 2 and isinstance(val[0], (int, float)):
+                    # Range of values for a float property
+                    if batch_exists:
+                        self._lib.Batch_FilterByFloat64PropertyRange(ptrptr, countptr, prev_ptr, prev_count, prop_idx, *val)
+                    else:
+                        self._lib.Batch_CreateByFloat64PropertyRange(ptrptr, countptr, self._cls_idx, prop_idx, *val)
+
+                    prop_name = None
+                elif isinstance(val, (int, float)):
+                    # Single value for a float property
+                    if batch_exists:
+                        self._lib.Batch_FilterByFloat64PropertyRange(ptrptr, countptr, prev_ptr, prev_count, prop_idx, val, val)
+                    else:
+                        self._lib.Batch_CreateByFloat64PropertyRange(ptrptr, countptr, self._cls_idx, prop_idx, val, val)
+
+                    prop_name = None
+
+            if prop_name is not None:
+                raise ValueError(f'Property "{prop_name}" cannot be used to create a filtered batch with value {repr(val)}.')
+
+            self._wrap_ptr(ptrptr, countptr)
+            self._check_for_error()
+            batch_exists = True
+
+        # Track it only once, the other batches are discarded if temporary, or already tracked somewhere else.
+        self._api_util.track_batch(self)
+
+
     def __init__(self, api_util, **kwargs):
         begin_edit = kwargs.pop('begin_edit', None)
         if begin_edit is None:
             begin_edit = True
 
-        if len(kwargs) > 1:
-            raise ValueError('Exactly one argument is expected.')
+        self._sync_cls_idx = kwargs.pop('sync_cls_idx', False)
 
-        self._sync_cls_idx = kwargs.get('sync_cls_idx', False)
+        new_batch_args = kwargs.keys() & {'new_names', 'new_count', }
+        existing_batch_args = kwargs.keys() & {'from_func', 'sync_cls_idx', 'idx', 're', '_clone_from'}
+        if len(new_batch_args) > 1:
+            raise ValueError("Multiple ways to create a batch of new elements were provided.")
+
+        if len(new_batch_args) > 0 and len(existing_batch_args):
+            raise ValueError("Mixed batch definitions found. Cannot create new elements and use existing elements at the same time.")
+        
+        if len(existing_batch_args) > 1:
+            raise ValueError("Multiple ways to create a batch of existing elements were provided.")
 
         if not self._sync_cls_idx:
             Base.__init__(self, api_util)
@@ -148,7 +236,33 @@ class DSSBatch(Base, BatchCommon):
         self._ptrptr = ptrptr = self._ffi.new('void***')
         self._countptr = countptr = self._ffi.new('int32_t[4]')
 
-        if len(kwargs) == 0 or (len(kwargs) == 1 and self._sync_cls_idx):
+        # Clone and filter?
+        clone_source = kwargs.pop('_clone_from', None)
+        if clone_source is not None:
+            self._pointer, self._count = clone_source._get_ptr_cnt()
+            self._filter(**kwargs)
+            return
+
+        # Create new elements?
+
+        new_names = kwargs.pop('new_names', None)
+        if new_names is not None:
+            names, names_ptr, names_count = self._prepare_string_array(new_names)
+            self._lib.Batch_CreateFromNew(ptrptr, countptr, self._cls_idx, names_ptr, names_count, begin_edit)
+            self._wrap_ptr(ptrptr, countptr)
+            self._check_for_error()
+            return
+
+        new_count = kwargs.pop('new_count', None)
+        if new_count is not None:
+            self._lib.Batch_CreateFromNew(ptrptr, countptr, self._cls_idx, self._ffi.NULL, new_count, begin_edit)
+            self._wrap_ptr(ptrptr, countptr)
+            self._check_for_error()
+            return
+
+        # Use a whole collection? Since no more kwargs, no filter is expected
+
+        if len(kwargs) == 0 or self._sync_cls_idx:
             if not self._sync_cls_idx:
                 self._lib.Batch_CreateByClass(ptrptr, countptr, self._cls_idx)
                 self._wrap_ptr(ptrptr, countptr)
@@ -161,31 +275,18 @@ class DSSBatch(Base, BatchCommon):
             self._check_for_error()
             return
 
-        api_util.track_batch(self)
-        from_func = kwargs.get('from_func')
+        # Create from specified function, regexp, or list of indices?
+
+        from_func = kwargs.pop('from_func', None)
         if from_func is not None:
             func, *func_args = from_func
             func(ptrptr, countptr, *func_args)
             self._wrap_ptr(ptrptr, countptr)
             self._check_for_error()
+            self._filter(**kwargs)
             return
 
-        new_names = kwargs.get('new_names')
-        if new_names is not None:
-            names, names_ptr, names_count = self._prepare_string_array(new_names)
-            self._lib.Batch_CreateFromNew(ptrptr, countptr, self._cls_idx, names_ptr, names_count, begin_edit)
-            self._wrap_ptr(ptrptr, countptr)
-            self._check_for_error()
-            return
-
-        new_count = kwargs.get('new_count')
-        if new_count is not None:
-            self._lib.Batch_CreateFromNew(ptrptr, countptr, self._cls_idx, self._ffi.NULL, new_count, begin_edit)
-            self._wrap_ptr(ptrptr, countptr)
-            self._check_for_error()
-            return
-
-        regexp = kwargs.get('re')
+        regexp = kwargs.pop('re', None)
         if regexp is not None:
             if not isinstance(regexp, bytes):
                 regexp = regexp.encode(self._api_util.codec)
@@ -193,40 +294,20 @@ class DSSBatch(Base, BatchCommon):
             self._lib.Batch_CreateByRegExp(ptrptr, countptr, self._cls_idx, regexp)
             self._wrap_ptr(ptrptr, countptr)
             self._check_for_error()
+            self._filter(**kwargs)
             return
 
-        idx = kwargs.get('idx')
+        idx = kwargs.pop('idx', None)
         if idx is not None:
             idx, idx_ptr, idx_cnt = self._prepare_int32_array(np.asarray(idx) + 1)
             self._lib.Batch_CreateByIndex(ptrptr, countptr, self._cls_idx, idx_ptr, idx_cnt)
             self._wrap_ptr(ptrptr, countptr)
             self._check_for_error()
+            self._filter(**kwargs)
             return
-
-        (prop_name, val), = kwargs.items()
-        prop_idx = self._obj_cls._cls_prop_idx.get(prop_name.lower())
-        if prop_idx is None:
-            raise ValueError(f'Invalid property name "{prop_name}"')
         
-        if isinstance(val, int) and prop_idx in self._obj_cls._cls_int_idx:
-            # Single integer value for an integer property
-            self._lib.Batch_CreateByInt32Property(ptrptr, countptr, self._cls_idx, prop_idx, val)
-            kwargs = None
-        elif prop_idx in self._obj_cls._cls_float_idx:
-            if isinstance(val, LIST_LIKE) and len(val) == 2 and isinstance(val[0], (int, float)):
-                # Range of values for a float property
-                self._lib.Batch_CreateByFloat64PropertyRange(ptrptr, countptr, self._cls_idx, prop_idx, *val)
-                kwargs = None
-            elif isinstance(val, (int, float)):
-                # Single value for a float property
-                self._lib.Batch_CreateByFloat64PropertyRange(ptrptr, countptr, self._cls_idx, prop_idx, val, val)
-                kwargs = None
-
-        if kwargs is not None:
-            raise ValueError(f'Property "{prop_name}" cannot be used to create a filtered batch with value {repr(val)}.')
-
-        self._wrap_ptr(ptrptr, countptr)
-        self._check_for_error()
+        # Apply filters on the base collection
+        self._filter(_existing=False, **kwargs)
 
     def begin_edit(self) -> None:
         '''
