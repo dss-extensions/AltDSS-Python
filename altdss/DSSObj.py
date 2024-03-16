@@ -367,6 +367,7 @@ class IDSSObj(Base):
 
 
     def new(self, name: str, begin_edit=True, activate=False):
+        _name = name
         if not isinstance(name, bytes):
             name = name.encode(self._api_util.codec)
 
@@ -379,7 +380,8 @@ class IDSSObj(Base):
         )
 
         if ptr == self._api_util.ffi.NULL:
-            raise ValueError('Could not create object "{}".'.format(name))
+            self._check_for_error()
+            raise ValueError('Could not create object "{}".'.format(_name))
 
         return self._obj_cls(self._api_util, ptr)
 
