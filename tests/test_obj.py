@@ -20,6 +20,7 @@ from altdss import (
     Vsource, Transformer, LineCode, Load, Line, Capacitor, 
     Connection as Conn, RegControl, LengthUnit as Units,
     LoadModel, Edit, AltDSS, altdss, LineGeometry, LineSpacing,
+    DSSException
 )    
 
 def create_ref_ckt13(ref):
@@ -798,6 +799,32 @@ def test_obj_setter():
     altdss.Load.Daily = [default_shape] * len(altdss.Load)
     assert all(l.Daily_str == 'default' for l in altdss.Load)
     assert all(l.Daily == default_shape for l in altdss.Load)
+
+
+def test_new():
+    altdss.Clear()
+    altdss('new circuit.test')
+    altdss('new transformer.A')
+    with pytest.raises(DSSException):
+        altdss('new transformer.A')
+
+    assert 'a' in altdss.Transformer.Name
+
+    with pytest.raises(DSSException):
+        altdss.Transformer.new('A')
+
+    with pytest.raises(DSSException):
+        altdss.Transformer.batch_new(['A'])
+
+    altdss.Transformer.new('B')
+    with pytest.raises(DSSException):
+        altdss('new transformer.B')
+
+    with pytest.raises(DSSException):
+        altdss.Transformer.new('B')
+
+    with pytest.raises(DSSException):
+        altdss.Transformer.batch_new(['B'])
 
 
 if __name__ == '__main__':
