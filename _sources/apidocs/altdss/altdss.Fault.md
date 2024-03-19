@@ -637,6 +637,14 @@ Bases: {py:obj}`altdss.DSSObj.DSSObj`, {py:obj}`altdss.CircuitElement.CircuitEle
 
 ````
 
+````{py:method} edit(**kwargs: typing_extensions.Unpack[altdss.Fault.FaultProperties]) -> altdss.Fault.Fault
+:canonical: altdss.Fault.Fault.edit
+
+```{autodoc2-docstring} altdss.Fault.Fault.edit
+```
+
+````
+
 ````{py:method} end_edit(num_changes: int = 1) -> None
 :canonical: altdss.Fault.Fault.end_edit
 
@@ -1244,6 +1252,14 @@ Bases: {py:obj}`altdss.Batch.DSSBatch`, {py:obj}`altdss.CircuitElement.CircuitEl
 :canonical: altdss.Fault.FaultBatch.begin_edit
 
 ```{autodoc2-docstring} altdss.Fault.FaultBatch.begin_edit
+```
+
+````
+
+````{py:method} edit(**kwargs: typing_extensions.Unpack[altdss.Fault.FaultBatchProperties]) -> altdss.Fault.FaultBatch
+:canonical: altdss.Fault.FaultBatch.edit
+
+```{autodoc2-docstring} altdss.Fault.FaultBatch.edit
 ```
 
 ````
@@ -2869,7 +2885,7 @@ Bases: {py:obj}`altdss.DSSObj.IDSSObj`, {py:obj}`altdss.Fault.FaultBatch`
 
 ````
 
-````{py:method} batch_new(names: typing.Optional[typing.List[typing.AnyStr]] = None, df=None, count: typing.Optional[int] = None, begin_edit=True, **kwargs: typing_extensions.Unpack[altdss.Fault.FaultBatchProperties]) -> altdss.Fault.FaultBatch
+````{py:method} batch_new(names: typing.Optional[typing.List[typing.AnyStr]] = None, *, df=None, count: typing.Optional[int] = None, begin_edit: typing.Optional[bool] = None, **kwargs: typing_extensions.Unpack[altdss.Fault.FaultBatchProperties]) -> altdss.Fault.FaultBatch
 :canonical: altdss.Fault.IFault.batch_new
 
 ```{autodoc2-docstring} altdss.Fault.IFault.batch_new
@@ -2881,6 +2897,14 @@ Bases: {py:obj}`altdss.DSSObj.IDSSObj`, {py:obj}`altdss.Fault.FaultBatch`
 :canonical: altdss.Fault.IFault.begin_edit
 
 ```{autodoc2-docstring} altdss.Fault.IFault.begin_edit
+```
+
+````
+
+````{py:method} edit(**kwargs: typing_extensions.Unpack[altdss.Fault.FaultBatchProperties]) -> altdss.Fault.FaultBatch
+:canonical: altdss.Fault.IFault.edit
+
+```{autodoc2-docstring} altdss.Fault.IFault.edit
 ```
 
 ````
@@ -2901,7 +2925,7 @@ Bases: {py:obj}`altdss.DSSObj.IDSSObj`, {py:obj}`altdss.Fault.FaultBatch`
 
 ````
 
-````{py:method} new(name: typing.AnyStr, begin_edit=True, activate=False, **kwargs: typing_extensions.Unpack[altdss.Fault.FaultProperties]) -> altdss.Fault.Fault
+````{py:method} new(name: typing.AnyStr, *, begin_edit: typing.Optional[bool] = None, activate=False, **kwargs: typing_extensions.Unpack[altdss.Fault.FaultProperties]) -> altdss.Fault.Fault
 :canonical: altdss.Fault.IFault.new
 
 ```{autodoc2-docstring} altdss.Fault.IFault.new

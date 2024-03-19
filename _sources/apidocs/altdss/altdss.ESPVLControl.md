@@ -530,6 +530,14 @@ Bases: {py:obj}`altdss.DSSObj.DSSObj`, {py:obj}`altdss.CircuitElement.CircuitEle
 
 ````
 
+````{py:method} edit(**kwargs: typing_extensions.Unpack[altdss.ESPVLControl.ESPVLControlProperties]) -> altdss.ESPVLControl.ESPVLControl
+:canonical: altdss.ESPVLControl.ESPVLControl.edit
+
+```{autodoc2-docstring} altdss.ESPVLControl.ESPVLControl.edit
+```
+
+````
+
 ````{py:method} end_edit(num_changes: int = 1) -> None
 :canonical: altdss.ESPVLControl.ESPVLControl.end_edit
 
@@ -1014,6 +1022,14 @@ Bases: {py:obj}`altdss.Batch.DSSBatch`, {py:obj}`altdss.CircuitElement.CircuitEl
 :canonical: altdss.ESPVLControl.ESPVLControlBatch.begin_edit
 
 ```{autodoc2-docstring} altdss.ESPVLControl.ESPVLControlBatch.begin_edit
+```
+
+````
+
+````{py:method} edit(**kwargs: typing_extensions.Unpack[altdss.ESPVLControl.ESPVLControlBatchProperties]) -> altdss.ESPVLControl.ESPVLControlBatch
+:canonical: altdss.ESPVLControl.ESPVLControlBatch.edit
+
+```{autodoc2-docstring} altdss.ESPVLControl.ESPVLControlBatch.edit
 ```
 
 ````
@@ -2450,7 +2466,7 @@ Bases: {py:obj}`altdss.DSSObj.IDSSObj`, {py:obj}`altdss.ESPVLControl.ESPVLContro
 
 ````
 
-````{py:method} batch_new(names: typing.Optional[typing.List[typing.AnyStr]] = None, df=None, count: typing.Optional[int] = None, begin_edit=True, **kwargs: typing_extensions.Unpack[altdss.ESPVLControl.ESPVLControlBatchProperties]) -> altdss.ESPVLControl.ESPVLControlBatch
+````{py:method} batch_new(names: typing.Optional[typing.List[typing.AnyStr]] = None, *, df=None, count: typing.Optional[int] = None, begin_edit: typing.Optional[bool] = None, **kwargs: typing_extensions.Unpack[altdss.ESPVLControl.ESPVLControlBatchProperties]) -> altdss.ESPVLControl.ESPVLControlBatch
 :canonical: altdss.ESPVLControl.IESPVLControl.batch_new
 
 ```{autodoc2-docstring} altdss.ESPVLControl.IESPVLControl.batch_new
@@ -2462,6 +2478,14 @@ Bases: {py:obj}`altdss.DSSObj.IDSSObj`, {py:obj}`altdss.ESPVLControl.ESPVLContro
 :canonical: altdss.ESPVLControl.IESPVLControl.begin_edit
 
 ```{autodoc2-docstring} altdss.ESPVLControl.IESPVLControl.begin_edit
+```
+
+````
+
+````{py:method} edit(**kwargs: typing_extensions.Unpack[altdss.ESPVLControl.ESPVLControlBatchProperties]) -> altdss.ESPVLControl.ESPVLControlBatch
+:canonical: altdss.ESPVLControl.IESPVLControl.edit
+
+```{autodoc2-docstring} altdss.ESPVLControl.IESPVLControl.edit
 ```
 
 ````
@@ -2504,7 +2528,7 @@ Bases: {py:obj}`altdss.DSSObj.IDSSObj`, {py:obj}`altdss.ESPVLControl.ESPVLContro
 
 ````
 
-````{py:method} new(name: typing.AnyStr, begin_edit=True, activate=False, **kwargs: typing_extensions.Unpack[altdss.ESPVLControl.ESPVLControlProperties]) -> altdss.ESPVLControl.ESPVLControl
+````{py:method} new(name: typing.AnyStr, *, begin_edit: typing.Optional[bool] = None, activate=False, **kwargs: typing_extensions.Unpack[altdss.ESPVLControl.ESPVLControlProperties]) -> altdss.ESPVLControl.ESPVLControl
 :canonical: altdss.ESPVLControl.IESPVLControl.new
 
 ```{autodoc2-docstring} altdss.ESPVLControl.IESPVLControl.new

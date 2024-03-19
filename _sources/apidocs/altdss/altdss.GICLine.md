@@ -652,6 +652,14 @@ Bases: {py:obj}`altdss.DSSObj.DSSObj`, {py:obj}`altdss.CircuitElement.CircuitEle
 
 ````
 
+````{py:method} edit(**kwargs: typing_extensions.Unpack[altdss.GICLine.GICLineProperties]) -> altdss.GICLine.GICLine
+:canonical: altdss.GICLine.GICLine.edit
+
+```{autodoc2-docstring} altdss.GICLine.GICLine.edit
+```
+
+````
+
 ````{py:method} end_edit(num_changes: int = 1) -> None
 :canonical: altdss.GICLine.GICLine.end_edit
 
@@ -1196,6 +1204,14 @@ Bases: {py:obj}`altdss.Batch.DSSBatch`, {py:obj}`altdss.CircuitElement.CircuitEl
 :canonical: altdss.GICLine.GICLineBatch.begin_edit
 
 ```{autodoc2-docstring} altdss.GICLine.GICLineBatch.begin_edit
+```
+
+````
+
+````{py:method} edit(**kwargs: typing_extensions.Unpack[altdss.GICLine.GICLineBatchProperties]) -> altdss.GICLine.GICLineBatch
+:canonical: altdss.GICLine.GICLineBatch.edit
+
+```{autodoc2-docstring} altdss.GICLine.GICLineBatch.edit
 ```
 
 ````
@@ -2802,7 +2818,7 @@ Bases: {py:obj}`altdss.DSSObj.IDSSObj`, {py:obj}`altdss.GICLine.GICLineBatch`
 
 ````
 
-````{py:method} batch_new(names: typing.Optional[typing.List[typing.AnyStr]] = None, df=None, count: typing.Optional[int] = None, begin_edit=True, **kwargs: typing_extensions.Unpack[altdss.GICLine.GICLineBatchProperties]) -> altdss.GICLine.GICLineBatch
+````{py:method} batch_new(names: typing.Optional[typing.List[typing.AnyStr]] = None, *, df=None, count: typing.Optional[int] = None, begin_edit: typing.Optional[bool] = None, **kwargs: typing_extensions.Unpack[altdss.GICLine.GICLineBatchProperties]) -> altdss.GICLine.GICLineBatch
 :canonical: altdss.GICLine.IGICLine.batch_new
 
 ```{autodoc2-docstring} altdss.GICLine.IGICLine.batch_new
@@ -2814,6 +2830,14 @@ Bases: {py:obj}`altdss.DSSObj.IDSSObj`, {py:obj}`altdss.GICLine.GICLineBatch`
 :canonical: altdss.GICLine.IGICLine.begin_edit
 
 ```{autodoc2-docstring} altdss.GICLine.IGICLine.begin_edit
+```
+
+````
+
+````{py:method} edit(**kwargs: typing_extensions.Unpack[altdss.GICLine.GICLineBatchProperties]) -> altdss.GICLine.GICLineBatch
+:canonical: altdss.GICLine.IGICLine.edit
+
+```{autodoc2-docstring} altdss.GICLine.IGICLine.edit
 ```
 
 ````
@@ -2834,7 +2858,7 @@ Bases: {py:obj}`altdss.DSSObj.IDSSObj`, {py:obj}`altdss.GICLine.GICLineBatch`
 
 ````
 
-````{py:method} new(name: typing.AnyStr, begin_edit=True, activate=False, **kwargs: typing_extensions.Unpack[altdss.GICLine.GICLineProperties]) -> altdss.GICLine.GICLine
+````{py:method} new(name: typing.AnyStr, *, begin_edit: typing.Optional[bool] = None, activate=False, **kwargs: typing_extensions.Unpack[altdss.GICLine.GICLineProperties]) -> altdss.GICLine.GICLine
 :canonical: altdss.GICLine.IGICLine.new
 
 ```{autodoc2-docstring} altdss.GICLine.IGICLine.new

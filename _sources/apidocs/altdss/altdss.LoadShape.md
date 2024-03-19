@@ -407,7 +407,7 @@ Bases: {py:obj}`altdss.DSSObj.IDSSObj`, {py:obj}`altdss.LoadShape.LoadShapeBatch
 
 ````
 
-````{py:method} batch_new(names: typing.Optional[typing.List[typing.AnyStr]] = None, df=None, count: typing.Optional[int] = None, begin_edit=True, **kwargs: typing_extensions.Unpack[altdss.LoadShape.LoadShapeBatchProperties]) -> altdss.LoadShape.LoadShapeBatch
+````{py:method} batch_new(names: typing.Optional[typing.List[typing.AnyStr]] = None, *, df=None, count: typing.Optional[int] = None, begin_edit: typing.Optional[bool] = None, **kwargs: typing_extensions.Unpack[altdss.LoadShape.LoadShapeBatchProperties]) -> altdss.LoadShape.LoadShapeBatch
 :canonical: altdss.LoadShape.ILoadShape.batch_new
 
 ```{autodoc2-docstring} altdss.LoadShape.ILoadShape.batch_new
@@ -419,6 +419,14 @@ Bases: {py:obj}`altdss.DSSObj.IDSSObj`, {py:obj}`altdss.LoadShape.LoadShapeBatch
 :canonical: altdss.LoadShape.ILoadShape.begin_edit
 
 ```{autodoc2-docstring} altdss.LoadShape.ILoadShape.begin_edit
+```
+
+````
+
+````{py:method} edit(**kwargs: typing_extensions.Unpack[altdss.LoadShape.LoadShapeBatchProperties]) -> altdss.LoadShape.LoadShapeBatch
+:canonical: altdss.LoadShape.ILoadShape.edit
+
+```{autodoc2-docstring} altdss.LoadShape.ILoadShape.edit
 ```
 
 ````
@@ -439,7 +447,7 @@ Bases: {py:obj}`altdss.DSSObj.IDSSObj`, {py:obj}`altdss.LoadShape.LoadShapeBatch
 
 ````
 
-````{py:method} new(name: typing.AnyStr, begin_edit=True, activate=False, **kwargs: typing_extensions.Unpack[altdss.LoadShape.LoadShapeProperties]) -> altdss.LoadShape.LoadShape
+````{py:method} new(name: typing.AnyStr, *, begin_edit: typing.Optional[bool] = None, activate=False, **kwargs: typing_extensions.Unpack[altdss.LoadShape.LoadShapeProperties]) -> altdss.LoadShape.LoadShape
 :canonical: altdss.LoadShape.ILoadShape.new
 
 ```{autodoc2-docstring} altdss.LoadShape.ILoadShape.new
@@ -813,6 +821,14 @@ Bases: {py:obj}`altdss.DSSObj.DSSObj`, {py:obj}`altdss.LoadShapeExtras.LoadShape
 :canonical: altdss.LoadShape.LoadShape.begin_edit
 
 ```{autodoc2-docstring} altdss.LoadShape.LoadShape.begin_edit
+```
+
+````
+
+````{py:method} edit(**kwargs: typing_extensions.Unpack[altdss.LoadShape.LoadShapeProperties]) -> altdss.LoadShape.LoadShape
+:canonical: altdss.LoadShape.LoadShape.edit
+
+```{autodoc2-docstring} altdss.LoadShape.LoadShape.edit
 ```
 
 ````
@@ -1199,6 +1215,14 @@ Bases: {py:obj}`altdss.Batch.DSSBatch`, {py:obj}`altdss.LoadShapeExtras.LoadShap
 :canonical: altdss.LoadShape.LoadShapeBatch.begin_edit
 
 ```{autodoc2-docstring} altdss.LoadShape.LoadShapeBatch.begin_edit
+```
+
+````
+
+````{py:method} edit(**kwargs: typing_extensions.Unpack[altdss.LoadShape.LoadShapeBatchProperties]) -> altdss.LoadShape.LoadShapeBatch
+:canonical: altdss.LoadShape.LoadShapeBatch.edit
+
+```{autodoc2-docstring} altdss.LoadShape.LoadShapeBatch.edit
 ```
 
 ````

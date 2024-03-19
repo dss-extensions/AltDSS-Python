@@ -172,7 +172,7 @@ Bases: {py:obj}`altdss.DSSObj.IDSSObj`, {py:obj}`altdss.Spectrum.SpectrumBatch`
 
 ````
 
-````{py:method} batch_new(names: typing.Optional[typing.List[typing.AnyStr]] = None, df=None, count: typing.Optional[int] = None, begin_edit=True, **kwargs: typing_extensions.Unpack[altdss.Spectrum.SpectrumBatchProperties]) -> altdss.Spectrum.SpectrumBatch
+````{py:method} batch_new(names: typing.Optional[typing.List[typing.AnyStr]] = None, *, df=None, count: typing.Optional[int] = None, begin_edit: typing.Optional[bool] = None, **kwargs: typing_extensions.Unpack[altdss.Spectrum.SpectrumBatchProperties]) -> altdss.Spectrum.SpectrumBatch
 :canonical: altdss.Spectrum.ISpectrum.batch_new
 
 ```{autodoc2-docstring} altdss.Spectrum.ISpectrum.batch_new
@@ -184,6 +184,14 @@ Bases: {py:obj}`altdss.DSSObj.IDSSObj`, {py:obj}`altdss.Spectrum.SpectrumBatch`
 :canonical: altdss.Spectrum.ISpectrum.begin_edit
 
 ```{autodoc2-docstring} altdss.Spectrum.ISpectrum.begin_edit
+```
+
+````
+
+````{py:method} edit(**kwargs: typing_extensions.Unpack[altdss.Spectrum.SpectrumBatchProperties]) -> altdss.Spectrum.SpectrumBatch
+:canonical: altdss.Spectrum.ISpectrum.edit
+
+```{autodoc2-docstring} altdss.Spectrum.ISpectrum.edit
 ```
 
 ````
@@ -204,7 +212,7 @@ Bases: {py:obj}`altdss.DSSObj.IDSSObj`, {py:obj}`altdss.Spectrum.SpectrumBatch`
 
 ````
 
-````{py:method} new(name: typing.AnyStr, begin_edit=True, activate=False, **kwargs: typing_extensions.Unpack[altdss.Spectrum.SpectrumProperties]) -> altdss.Spectrum.Spectrum
+````{py:method} new(name: typing.AnyStr, *, begin_edit: typing.Optional[bool] = None, activate=False, **kwargs: typing_extensions.Unpack[altdss.Spectrum.SpectrumProperties]) -> altdss.Spectrum.Spectrum
 :canonical: altdss.Spectrum.ISpectrum.new
 
 ```{autodoc2-docstring} altdss.Spectrum.ISpectrum.new
@@ -354,6 +362,14 @@ Bases: {py:obj}`altdss.DSSObj.DSSObj`
 :canonical: altdss.Spectrum.Spectrum.begin_edit
 
 ```{autodoc2-docstring} altdss.Spectrum.Spectrum.begin_edit
+```
+
+````
+
+````{py:method} edit(**kwargs: typing_extensions.Unpack[altdss.Spectrum.SpectrumProperties]) -> altdss.Spectrum.Spectrum
+:canonical: altdss.Spectrum.Spectrum.edit
+
+```{autodoc2-docstring} altdss.Spectrum.Spectrum.edit
 ```
 
 ````
@@ -516,6 +532,14 @@ Bases: {py:obj}`altdss.Batch.DSSBatch`
 :canonical: altdss.Spectrum.SpectrumBatch.begin_edit
 
 ```{autodoc2-docstring} altdss.Spectrum.SpectrumBatch.begin_edit
+```
+
+````
+
+````{py:method} edit(**kwargs: typing_extensions.Unpack[altdss.Spectrum.SpectrumBatchProperties]) -> altdss.Spectrum.SpectrumBatch
+:canonical: altdss.Spectrum.SpectrumBatch.edit
+
+```{autodoc2-docstring} altdss.Spectrum.SpectrumBatch.edit
 ```
 
 ````

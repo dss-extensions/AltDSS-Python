@@ -315,7 +315,7 @@ Bases: {py:obj}`altdss.DSSObj.IDSSObj`, {py:obj}`altdss.LineGeometry.LineGeometr
 
 ````
 
-````{py:method} batch_new(names: typing.Optional[typing.List[typing.AnyStr]] = None, df=None, count: typing.Optional[int] = None, begin_edit=True, **kwargs: typing_extensions.Unpack[altdss.LineGeometry.LineGeometryBatchProperties]) -> altdss.LineGeometry.LineGeometryBatch
+````{py:method} batch_new(names: typing.Optional[typing.List[typing.AnyStr]] = None, *, df=None, count: typing.Optional[int] = None, begin_edit: typing.Optional[bool] = None, **kwargs: typing_extensions.Unpack[altdss.LineGeometry.LineGeometryBatchProperties]) -> altdss.LineGeometry.LineGeometryBatch
 :canonical: altdss.LineGeometry.ILineGeometry.batch_new
 
 ```{autodoc2-docstring} altdss.LineGeometry.ILineGeometry.batch_new
@@ -327,6 +327,14 @@ Bases: {py:obj}`altdss.DSSObj.IDSSObj`, {py:obj}`altdss.LineGeometry.LineGeometr
 :canonical: altdss.LineGeometry.ILineGeometry.begin_edit
 
 ```{autodoc2-docstring} altdss.LineGeometry.ILineGeometry.begin_edit
+```
+
+````
+
+````{py:method} edit(**kwargs: typing_extensions.Unpack[altdss.LineGeometry.LineGeometryBatchProperties]) -> altdss.LineGeometry.LineGeometryBatch
+:canonical: altdss.LineGeometry.ILineGeometry.edit
+
+```{autodoc2-docstring} altdss.LineGeometry.ILineGeometry.edit
 ```
 
 ````
@@ -347,7 +355,7 @@ Bases: {py:obj}`altdss.DSSObj.IDSSObj`, {py:obj}`altdss.LineGeometry.LineGeometr
 
 ````
 
-````{py:method} new(name: typing.AnyStr, begin_edit=True, activate=False, **kwargs: typing_extensions.Unpack[altdss.LineGeometry.LineGeometryProperties]) -> altdss.LineGeometry.LineGeometry
+````{py:method} new(name: typing.AnyStr, *, begin_edit: typing.Optional[bool] = None, activate=False, **kwargs: typing_extensions.Unpack[altdss.LineGeometry.LineGeometryProperties]) -> altdss.LineGeometry.LineGeometry
 :canonical: altdss.LineGeometry.ILineGeometry.new
 
 ```{autodoc2-docstring} altdss.LineGeometry.ILineGeometry.new
@@ -629,6 +637,14 @@ Bases: {py:obj}`altdss.DSSObj.DSSObj`
 :canonical: altdss.LineGeometry.LineGeometry.begin_edit
 
 ```{autodoc2-docstring} altdss.LineGeometry.LineGeometry.begin_edit
+```
+
+````
+
+````{py:method} edit(**kwargs: typing_extensions.Unpack[altdss.LineGeometry.LineGeometryProperties]) -> altdss.LineGeometry.LineGeometry
+:canonical: altdss.LineGeometry.LineGeometry.edit
+
+```{autodoc2-docstring} altdss.LineGeometry.LineGeometry.edit
 ```
 
 ````
@@ -923,6 +939,14 @@ Bases: {py:obj}`altdss.Batch.DSSBatch`
 :canonical: altdss.LineGeometry.LineGeometryBatch.begin_edit
 
 ```{autodoc2-docstring} altdss.LineGeometry.LineGeometryBatch.begin_edit
+```
+
+````
+
+````{py:method} edit(**kwargs: typing_extensions.Unpack[altdss.LineGeometry.LineGeometryBatchProperties]) -> altdss.LineGeometry.LineGeometryBatch
+:canonical: altdss.LineGeometry.LineGeometryBatch.edit
+
+```{autodoc2-docstring} altdss.LineGeometry.LineGeometryBatch.edit
 ```
 
 ````

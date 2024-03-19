@@ -403,7 +403,7 @@ Bases: {py:obj}`altdss.DSSObj.IDSSObj`, {py:obj}`altdss.XfmrCode.XfmrCodeBatch`
 
 ````
 
-````{py:method} batch_new(names: typing.Optional[typing.List[typing.AnyStr]] = None, df=None, count: typing.Optional[int] = None, begin_edit=True, **kwargs: typing_extensions.Unpack[altdss.XfmrCode.XfmrCodeBatchProperties]) -> altdss.XfmrCode.XfmrCodeBatch
+````{py:method} batch_new(names: typing.Optional[typing.List[typing.AnyStr]] = None, *, df=None, count: typing.Optional[int] = None, begin_edit: typing.Optional[bool] = None, **kwargs: typing_extensions.Unpack[altdss.XfmrCode.XfmrCodeBatchProperties]) -> altdss.XfmrCode.XfmrCodeBatch
 :canonical: altdss.XfmrCode.IXfmrCode.batch_new
 
 ```{autodoc2-docstring} altdss.XfmrCode.IXfmrCode.batch_new
@@ -415,6 +415,14 @@ Bases: {py:obj}`altdss.DSSObj.IDSSObj`, {py:obj}`altdss.XfmrCode.XfmrCodeBatch`
 :canonical: altdss.XfmrCode.IXfmrCode.begin_edit
 
 ```{autodoc2-docstring} altdss.XfmrCode.IXfmrCode.begin_edit
+```
+
+````
+
+````{py:method} edit(**kwargs: typing_extensions.Unpack[altdss.XfmrCode.XfmrCodeBatchProperties]) -> altdss.XfmrCode.XfmrCodeBatch
+:canonical: altdss.XfmrCode.IXfmrCode.edit
+
+```{autodoc2-docstring} altdss.XfmrCode.IXfmrCode.edit
 ```
 
 ````
@@ -479,7 +487,7 @@ Bases: {py:obj}`altdss.DSSObj.IDSSObj`, {py:obj}`altdss.XfmrCode.XfmrCodeBatch`
 
 ````
 
-````{py:method} new(name: typing.AnyStr, begin_edit=True, activate=False, **kwargs: typing_extensions.Unpack[altdss.XfmrCode.XfmrCodeProperties]) -> altdss.XfmrCode.XfmrCode
+````{py:method} new(name: typing.AnyStr, *, begin_edit: typing.Optional[bool] = None, activate=False, **kwargs: typing_extensions.Unpack[altdss.XfmrCode.XfmrCodeProperties]) -> altdss.XfmrCode.XfmrCode
 :canonical: altdss.XfmrCode.IXfmrCode.new
 
 ```{autodoc2-docstring} altdss.XfmrCode.IXfmrCode.new
@@ -915,6 +923,14 @@ Bases: {py:obj}`altdss.DSSObj.DSSObj`
 :canonical: altdss.XfmrCode.XfmrCode.begin_edit
 
 ```{autodoc2-docstring} altdss.XfmrCode.XfmrCode.begin_edit
+```
+
+````
+
+````{py:method} edit(**kwargs: typing_extensions.Unpack[altdss.XfmrCode.XfmrCodeProperties]) -> altdss.XfmrCode.XfmrCode
+:canonical: altdss.XfmrCode.XfmrCode.edit
+
+```{autodoc2-docstring} altdss.XfmrCode.XfmrCode.edit
 ```
 
 ````
@@ -1407,6 +1423,14 @@ Bases: {py:obj}`altdss.Batch.DSSBatch`
 :canonical: altdss.XfmrCode.XfmrCodeBatch.begin_edit
 
 ```{autodoc2-docstring} altdss.XfmrCode.XfmrCodeBatch.begin_edit
+```
+
+````
+
+````{py:method} edit(**kwargs: typing_extensions.Unpack[altdss.XfmrCode.XfmrCodeBatchProperties]) -> altdss.XfmrCode.XfmrCodeBatch
+:canonical: altdss.XfmrCode.XfmrCodeBatch.edit
+
+```{autodoc2-docstring} altdss.XfmrCode.XfmrCodeBatch.edit
 ```
 
 ````

@@ -563,6 +563,14 @@ Bases: {py:obj}`altdss.DSSObj.DSSObj`, {py:obj}`altdss.CircuitElement.CircuitEle
 
 ````
 
+````{py:method} edit(**kwargs: typing_extensions.Unpack[altdss.ExpControl.ExpControlProperties]) -> altdss.ExpControl.ExpControl
+:canonical: altdss.ExpControl.ExpControl.edit
+
+```{autodoc2-docstring} altdss.ExpControl.ExpControl.edit
+```
+
+````
+
 ````{py:method} end_edit(num_changes: int = 1) -> None
 :canonical: altdss.ExpControl.ExpControl.end_edit
 
@@ -1058,6 +1066,14 @@ Bases: {py:obj}`altdss.Batch.DSSBatch`, {py:obj}`altdss.CircuitElement.CircuitEl
 :canonical: altdss.ExpControl.ExpControlBatch.begin_edit
 
 ```{autodoc2-docstring} altdss.ExpControl.ExpControlBatch.begin_edit
+```
+
+````
+
+````{py:method} edit(**kwargs: typing_extensions.Unpack[altdss.ExpControl.ExpControlBatchProperties]) -> altdss.ExpControl.ExpControlBatch
+:canonical: altdss.ExpControl.ExpControlBatch.edit
+
+```{autodoc2-docstring} altdss.ExpControl.ExpControlBatch.edit
 ```
 
 ````
@@ -2571,7 +2587,7 @@ Bases: {py:obj}`altdss.DSSObj.IDSSObj`, {py:obj}`altdss.ExpControl.ExpControlBat
 
 ````
 
-````{py:method} batch_new(names: typing.Optional[typing.List[typing.AnyStr]] = None, df=None, count: typing.Optional[int] = None, begin_edit=True, **kwargs: typing_extensions.Unpack[altdss.ExpControl.ExpControlBatchProperties]) -> altdss.ExpControl.ExpControlBatch
+````{py:method} batch_new(names: typing.Optional[typing.List[typing.AnyStr]] = None, *, df=None, count: typing.Optional[int] = None, begin_edit: typing.Optional[bool] = None, **kwargs: typing_extensions.Unpack[altdss.ExpControl.ExpControlBatchProperties]) -> altdss.ExpControl.ExpControlBatch
 :canonical: altdss.ExpControl.IExpControl.batch_new
 
 ```{autodoc2-docstring} altdss.ExpControl.IExpControl.batch_new
@@ -2583,6 +2599,14 @@ Bases: {py:obj}`altdss.DSSObj.IDSSObj`, {py:obj}`altdss.ExpControl.ExpControlBat
 :canonical: altdss.ExpControl.IExpControl.begin_edit
 
 ```{autodoc2-docstring} altdss.ExpControl.IExpControl.begin_edit
+```
+
+````
+
+````{py:method} edit(**kwargs: typing_extensions.Unpack[altdss.ExpControl.ExpControlBatchProperties]) -> altdss.ExpControl.ExpControlBatch
+:canonical: altdss.ExpControl.IExpControl.edit
+
+```{autodoc2-docstring} altdss.ExpControl.IExpControl.edit
 ```
 
 ````
@@ -2603,7 +2627,7 @@ Bases: {py:obj}`altdss.DSSObj.IDSSObj`, {py:obj}`altdss.ExpControl.ExpControlBat
 
 ````
 
-````{py:method} new(name: typing.AnyStr, begin_edit=True, activate=False, **kwargs: typing_extensions.Unpack[altdss.ExpControl.ExpControlProperties]) -> altdss.ExpControl.ExpControl
+````{py:method} new(name: typing.AnyStr, *, begin_edit: typing.Optional[bool] = None, activate=False, **kwargs: typing_extensions.Unpack[altdss.ExpControl.ExpControlProperties]) -> altdss.ExpControl.ExpControl
 :canonical: altdss.ExpControl.IExpControl.new
 
 ```{autodoc2-docstring} altdss.ExpControl.IExpControl.new

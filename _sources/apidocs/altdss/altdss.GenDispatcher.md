@@ -464,6 +464,14 @@ Bases: {py:obj}`altdss.DSSObj.DSSObj`, {py:obj}`altdss.CircuitElement.CircuitEle
 
 ````
 
+````{py:method} edit(**kwargs: typing_extensions.Unpack[altdss.GenDispatcher.GenDispatcherProperties]) -> altdss.GenDispatcher.GenDispatcher
+:canonical: altdss.GenDispatcher.GenDispatcher.edit
+
+```{autodoc2-docstring} altdss.GenDispatcher.GenDispatcher.edit
+```
+
+````
+
 ````{py:method} end_edit(num_changes: int = 1) -> None
 :canonical: altdss.GenDispatcher.GenDispatcher.end_edit
 
@@ -893,6 +901,14 @@ Bases: {py:obj}`altdss.Batch.DSSBatch`, {py:obj}`altdss.CircuitElement.CircuitEl
 :canonical: altdss.GenDispatcher.GenDispatcherBatch.begin_edit
 
 ```{autodoc2-docstring} altdss.GenDispatcher.GenDispatcherBatch.begin_edit
+```
+
+````
+
+````{py:method} edit(**kwargs: typing_extensions.Unpack[altdss.GenDispatcher.GenDispatcherBatchProperties]) -> altdss.GenDispatcher.GenDispatcherBatch
+:canonical: altdss.GenDispatcher.GenDispatcherBatch.edit
+
+```{autodoc2-docstring} altdss.GenDispatcher.GenDispatcherBatch.edit
 ```
 
 ````
@@ -2186,7 +2202,7 @@ Bases: {py:obj}`altdss.DSSObj.IDSSObj`, {py:obj}`altdss.GenDispatcher.GenDispatc
 
 ````
 
-````{py:method} batch_new(names: typing.Optional[typing.List[typing.AnyStr]] = None, df=None, count: typing.Optional[int] = None, begin_edit=True, **kwargs: typing_extensions.Unpack[altdss.GenDispatcher.GenDispatcherBatchProperties]) -> altdss.GenDispatcher.GenDispatcherBatch
+````{py:method} batch_new(names: typing.Optional[typing.List[typing.AnyStr]] = None, *, df=None, count: typing.Optional[int] = None, begin_edit: typing.Optional[bool] = None, **kwargs: typing_extensions.Unpack[altdss.GenDispatcher.GenDispatcherBatchProperties]) -> altdss.GenDispatcher.GenDispatcherBatch
 :canonical: altdss.GenDispatcher.IGenDispatcher.batch_new
 
 ```{autodoc2-docstring} altdss.GenDispatcher.IGenDispatcher.batch_new
@@ -2198,6 +2214,14 @@ Bases: {py:obj}`altdss.DSSObj.IDSSObj`, {py:obj}`altdss.GenDispatcher.GenDispatc
 :canonical: altdss.GenDispatcher.IGenDispatcher.begin_edit
 
 ```{autodoc2-docstring} altdss.GenDispatcher.IGenDispatcher.begin_edit
+```
+
+````
+
+````{py:method} edit(**kwargs: typing_extensions.Unpack[altdss.GenDispatcher.GenDispatcherBatchProperties]) -> altdss.GenDispatcher.GenDispatcherBatch
+:canonical: altdss.GenDispatcher.IGenDispatcher.edit
+
+```{autodoc2-docstring} altdss.GenDispatcher.IGenDispatcher.edit
 ```
 
 ````
@@ -2251,7 +2275,7 @@ Bases: {py:obj}`altdss.DSSObj.IDSSObj`, {py:obj}`altdss.GenDispatcher.GenDispatc
 
 ````
 
-````{py:method} new(name: typing.AnyStr, begin_edit=True, activate=False, **kwargs: typing_extensions.Unpack[altdss.GenDispatcher.GenDispatcherProperties]) -> altdss.GenDispatcher.GenDispatcher
+````{py:method} new(name: typing.AnyStr, *, begin_edit: typing.Optional[bool] = None, activate=False, **kwargs: typing_extensions.Unpack[altdss.GenDispatcher.GenDispatcherProperties]) -> altdss.GenDispatcher.GenDispatcher
 :canonical: altdss.GenDispatcher.IGenDispatcher.new
 
 ```{autodoc2-docstring} altdss.GenDispatcher.IGenDispatcher.new

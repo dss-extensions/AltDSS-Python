@@ -880,7 +880,7 @@ Bases: {py:obj}`altdss.DSSObj.IDSSObj`, {py:obj}`altdss.Line.LineBatch`
 
 ````
 
-````{py:method} batch_new(names: typing.Optional[typing.List[typing.AnyStr]] = None, df=None, count: typing.Optional[int] = None, begin_edit=True, **kwargs: typing_extensions.Unpack[altdss.Line.LineBatchProperties]) -> altdss.Line.LineBatch
+````{py:method} batch_new(names: typing.Optional[typing.List[typing.AnyStr]] = None, *, df=None, count: typing.Optional[int] = None, begin_edit: typing.Optional[bool] = None, **kwargs: typing_extensions.Unpack[altdss.Line.LineBatchProperties]) -> altdss.Line.LineBatch
 :canonical: altdss.Line.ILine.batch_new
 
 ```{autodoc2-docstring} altdss.Line.ILine.batch_new
@@ -892,6 +892,14 @@ Bases: {py:obj}`altdss.DSSObj.IDSSObj`, {py:obj}`altdss.Line.LineBatch`
 :canonical: altdss.Line.ILine.begin_edit
 
 ```{autodoc2-docstring} altdss.Line.ILine.begin_edit
+```
+
+````
+
+````{py:method} edit(**kwargs: typing_extensions.Unpack[altdss.Line.LineBatchProperties]) -> altdss.Line.LineBatch
+:canonical: altdss.Line.ILine.edit
+
+```{autodoc2-docstring} altdss.Line.ILine.edit
 ```
 
 ````
@@ -912,7 +920,7 @@ Bases: {py:obj}`altdss.DSSObj.IDSSObj`, {py:obj}`altdss.Line.LineBatch`
 
 ````
 
-````{py:method} new(name: typing.AnyStr, begin_edit=True, activate=False, **kwargs: typing_extensions.Unpack[altdss.Line.LineProperties]) -> altdss.Line.Line
+````{py:method} new(name: typing.AnyStr, *, begin_edit: typing.Optional[bool] = None, activate=False, **kwargs: typing_extensions.Unpack[altdss.Line.LineProperties]) -> altdss.Line.Line
 :canonical: altdss.Line.ILine.new
 
 ```{autodoc2-docstring} altdss.Line.ILine.new
@@ -1860,6 +1868,14 @@ Bases: {py:obj}`altdss.DSSObj.DSSObj`, {py:obj}`altdss.CircuitElement.CircuitEle
 
 ````
 
+````{py:method} edit(**kwargs: typing_extensions.Unpack[altdss.Line.LineProperties]) -> altdss.Line.Line
+:canonical: altdss.Line.Line.edit
+
+```{autodoc2-docstring} altdss.Line.Line.edit
+```
+
+````
+
 ````{py:method} end_edit(num_changes: int = 1) -> None
 :canonical: altdss.Line.Line.end_edit
 
@@ -2753,6 +2769,14 @@ Bases: {py:obj}`altdss.Batch.DSSBatch`, {py:obj}`altdss.CircuitElement.CircuitEl
 :canonical: altdss.Line.LineBatch.begin_edit
 
 ```{autodoc2-docstring} altdss.Line.LineBatch.begin_edit
+```
+
+````
+
+````{py:method} edit(**kwargs: typing_extensions.Unpack[altdss.Line.LineBatchProperties]) -> altdss.Line.LineBatch
+:canonical: altdss.Line.LineBatch.edit
+
+```{autodoc2-docstring} altdss.Line.LineBatch.edit
 ```
 
 ````

@@ -273,7 +273,7 @@ Bases: {py:obj}`altdss.DSSObj.IDSSObj`, {py:obj}`altdss.PriceShape.PriceShapeBat
 
 ````
 
-````{py:method} batch_new(names: typing.Optional[typing.List[typing.AnyStr]] = None, df=None, count: typing.Optional[int] = None, begin_edit=True, **kwargs: typing_extensions.Unpack[altdss.PriceShape.PriceShapeBatchProperties]) -> altdss.PriceShape.PriceShapeBatch
+````{py:method} batch_new(names: typing.Optional[typing.List[typing.AnyStr]] = None, *, df=None, count: typing.Optional[int] = None, begin_edit: typing.Optional[bool] = None, **kwargs: typing_extensions.Unpack[altdss.PriceShape.PriceShapeBatchProperties]) -> altdss.PriceShape.PriceShapeBatch
 :canonical: altdss.PriceShape.IPriceShape.batch_new
 
 ```{autodoc2-docstring} altdss.PriceShape.IPriceShape.batch_new
@@ -285,6 +285,14 @@ Bases: {py:obj}`altdss.DSSObj.IDSSObj`, {py:obj}`altdss.PriceShape.PriceShapeBat
 :canonical: altdss.PriceShape.IPriceShape.begin_edit
 
 ```{autodoc2-docstring} altdss.PriceShape.IPriceShape.begin_edit
+```
+
+````
+
+````{py:method} edit(**kwargs: typing_extensions.Unpack[altdss.PriceShape.PriceShapeBatchProperties]) -> altdss.PriceShape.PriceShapeBatch
+:canonical: altdss.PriceShape.IPriceShape.edit
+
+```{autodoc2-docstring} altdss.PriceShape.IPriceShape.edit
 ```
 
 ````
@@ -305,7 +313,7 @@ Bases: {py:obj}`altdss.DSSObj.IDSSObj`, {py:obj}`altdss.PriceShape.PriceShapeBat
 
 ````
 
-````{py:method} new(name: typing.AnyStr, begin_edit=True, activate=False, **kwargs: typing_extensions.Unpack[altdss.PriceShape.PriceShapeProperties]) -> altdss.PriceShape.PriceShape
+````{py:method} new(name: typing.AnyStr, *, begin_edit: typing.Optional[bool] = None, activate=False, **kwargs: typing_extensions.Unpack[altdss.PriceShape.PriceShapeProperties]) -> altdss.PriceShape.PriceShape
 :canonical: altdss.PriceShape.IPriceShape.new
 
 ```{autodoc2-docstring} altdss.PriceShape.IPriceShape.new
@@ -545,6 +553,14 @@ Bases: {py:obj}`altdss.DSSObj.DSSObj`
 :canonical: altdss.PriceShape.PriceShape.begin_edit
 
 ```{autodoc2-docstring} altdss.PriceShape.PriceShape.begin_edit
+```
+
+````
+
+````{py:method} edit(**kwargs: typing_extensions.Unpack[altdss.PriceShape.PriceShapeProperties]) -> altdss.PriceShape.PriceShape
+:canonical: altdss.PriceShape.PriceShape.edit
+
+```{autodoc2-docstring} altdss.PriceShape.PriceShape.edit
 ```
 
 ````
@@ -797,6 +813,14 @@ Bases: {py:obj}`altdss.Batch.DSSBatch`
 :canonical: altdss.PriceShape.PriceShapeBatch.begin_edit
 
 ```{autodoc2-docstring} altdss.PriceShape.PriceShapeBatch.begin_edit
+```
+
+````
+
+````{py:method} edit(**kwargs: typing_extensions.Unpack[altdss.PriceShape.PriceShapeBatchProperties]) -> altdss.PriceShape.PriceShapeBatch
+:canonical: altdss.PriceShape.PriceShapeBatch.edit
+
+```{autodoc2-docstring} altdss.PriceShape.PriceShapeBatch.edit
 ```
 
 ````

@@ -178,6 +178,14 @@ Bases: {py:obj}`altdss.DSSObj.DSSObj`
 
 ````
 
+````{py:method} edit(**kwargs: typing_extensions.Unpack[altdss.GrowthShape.GrowthShapeProperties]) -> altdss.GrowthShape.GrowthShape
+:canonical: altdss.GrowthShape.GrowthShape.edit
+
+```{autodoc2-docstring} altdss.GrowthShape.GrowthShape.edit
+```
+
+````
+
 ````{py:method} end_edit(num_changes: int = 1) -> None
 :canonical: altdss.GrowthShape.GrowthShape.end_edit
 
@@ -347,6 +355,14 @@ Bases: {py:obj}`altdss.Batch.DSSBatch`
 :canonical: altdss.GrowthShape.GrowthShapeBatch.begin_edit
 
 ```{autodoc2-docstring} altdss.GrowthShape.GrowthShapeBatch.begin_edit
+```
+
+````
+
+````{py:method} edit(**kwargs: typing_extensions.Unpack[altdss.GrowthShape.GrowthShapeBatchProperties]) -> altdss.GrowthShape.GrowthShapeBatch
+:canonical: altdss.GrowthShape.GrowthShapeBatch.edit
+
+```{autodoc2-docstring} altdss.GrowthShape.GrowthShapeBatch.edit
 ```
 
 ````
@@ -1314,7 +1330,7 @@ Bases: {py:obj}`altdss.DSSObj.IDSSObj`, {py:obj}`altdss.GrowthShape.GrowthShapeB
 
 ````
 
-````{py:method} batch_new(names: typing.Optional[typing.List[typing.AnyStr]] = None, df=None, count: typing.Optional[int] = None, begin_edit=True, **kwargs: typing_extensions.Unpack[altdss.GrowthShape.GrowthShapeBatchProperties]) -> altdss.GrowthShape.GrowthShapeBatch
+````{py:method} batch_new(names: typing.Optional[typing.List[typing.AnyStr]] = None, *, df=None, count: typing.Optional[int] = None, begin_edit: typing.Optional[bool] = None, **kwargs: typing_extensions.Unpack[altdss.GrowthShape.GrowthShapeBatchProperties]) -> altdss.GrowthShape.GrowthShapeBatch
 :canonical: altdss.GrowthShape.IGrowthShape.batch_new
 
 ```{autodoc2-docstring} altdss.GrowthShape.IGrowthShape.batch_new
@@ -1326,6 +1342,14 @@ Bases: {py:obj}`altdss.DSSObj.IDSSObj`, {py:obj}`altdss.GrowthShape.GrowthShapeB
 :canonical: altdss.GrowthShape.IGrowthShape.begin_edit
 
 ```{autodoc2-docstring} altdss.GrowthShape.IGrowthShape.begin_edit
+```
+
+````
+
+````{py:method} edit(**kwargs: typing_extensions.Unpack[altdss.GrowthShape.GrowthShapeBatchProperties]) -> altdss.GrowthShape.GrowthShapeBatch
+:canonical: altdss.GrowthShape.IGrowthShape.edit
+
+```{autodoc2-docstring} altdss.GrowthShape.IGrowthShape.edit
 ```
 
 ````
@@ -1346,7 +1370,7 @@ Bases: {py:obj}`altdss.DSSObj.IDSSObj`, {py:obj}`altdss.GrowthShape.GrowthShapeB
 
 ````
 
-````{py:method} new(name: typing.AnyStr, begin_edit=True, activate=False, **kwargs: typing_extensions.Unpack[altdss.GrowthShape.GrowthShapeProperties]) -> altdss.GrowthShape.GrowthShape
+````{py:method} new(name: typing.AnyStr, *, begin_edit: typing.Optional[bool] = None, activate=False, **kwargs: typing_extensions.Unpack[altdss.GrowthShape.GrowthShapeProperties]) -> altdss.GrowthShape.GrowthShape
 :canonical: altdss.GrowthShape.IGrowthShape.new
 
 ```{autodoc2-docstring} altdss.GrowthShape.IGrowthShape.new

@@ -692,6 +692,14 @@ Bases: {py:obj}`altdss.DSSObj.DSSObj`, {py:obj}`altdss.CircuitElement.CircuitEle
 
 ````
 
+````{py:method} edit(**kwargs: typing_extensions.Unpack[altdss.GICTransformer.GICTransformerProperties]) -> altdss.GICTransformer.GICTransformer
+:canonical: altdss.GICTransformer.GICTransformer.edit
+
+```{autodoc2-docstring} altdss.GICTransformer.GICTransformer.edit
+```
+
+````
+
 ````{py:method} end_edit(num_changes: int = 1) -> None
 :canonical: altdss.GICTransformer.GICTransformer.end_edit
 
@@ -1387,6 +1395,14 @@ Bases: {py:obj}`altdss.Batch.DSSBatch`, {py:obj}`altdss.CircuitElement.CircuitEl
 :canonical: altdss.GICTransformer.GICTransformerBatch.begin_edit
 
 ```{autodoc2-docstring} altdss.GICTransformer.GICTransformerBatch.begin_edit
+```
+
+````
+
+````{py:method} edit(**kwargs: typing_extensions.Unpack[altdss.GICTransformer.GICTransformerBatchProperties]) -> altdss.GICTransformer.GICTransformerBatch
+:canonical: altdss.GICTransformer.GICTransformerBatch.edit
+
+```{autodoc2-docstring} altdss.GICTransformer.GICTransformerBatch.edit
 ```
 
 ````
@@ -3232,7 +3248,7 @@ Bases: {py:obj}`altdss.DSSObj.IDSSObj`, {py:obj}`altdss.GICTransformer.GICTransf
 
 ````
 
-````{py:method} batch_new(names: typing.Optional[typing.List[typing.AnyStr]] = None, df=None, count: typing.Optional[int] = None, begin_edit=True, **kwargs: typing_extensions.Unpack[altdss.GICTransformer.GICTransformerBatchProperties]) -> altdss.GICTransformer.GICTransformerBatch
+````{py:method} batch_new(names: typing.Optional[typing.List[typing.AnyStr]] = None, *, df=None, count: typing.Optional[int] = None, begin_edit: typing.Optional[bool] = None, **kwargs: typing_extensions.Unpack[altdss.GICTransformer.GICTransformerBatchProperties]) -> altdss.GICTransformer.GICTransformerBatch
 :canonical: altdss.GICTransformer.IGICTransformer.batch_new
 
 ```{autodoc2-docstring} altdss.GICTransformer.IGICTransformer.batch_new
@@ -3244,6 +3260,14 @@ Bases: {py:obj}`altdss.DSSObj.IDSSObj`, {py:obj}`altdss.GICTransformer.GICTransf
 :canonical: altdss.GICTransformer.IGICTransformer.begin_edit
 
 ```{autodoc2-docstring} altdss.GICTransformer.IGICTransformer.begin_edit
+```
+
+````
+
+````{py:method} edit(**kwargs: typing_extensions.Unpack[altdss.GICTransformer.GICTransformerBatchProperties]) -> altdss.GICTransformer.GICTransformerBatch
+:canonical: altdss.GICTransformer.IGICTransformer.edit
+
+```{autodoc2-docstring} altdss.GICTransformer.IGICTransformer.edit
 ```
 
 ````
@@ -3286,7 +3310,7 @@ Bases: {py:obj}`altdss.DSSObj.IDSSObj`, {py:obj}`altdss.GICTransformer.GICTransf
 
 ````
 
-````{py:method} new(name: typing.AnyStr, begin_edit=True, activate=False, **kwargs: typing_extensions.Unpack[altdss.GICTransformer.GICTransformerProperties]) -> altdss.GICTransformer.GICTransformer
+````{py:method} new(name: typing.AnyStr, *, begin_edit: typing.Optional[bool] = None, activate=False, **kwargs: typing_extensions.Unpack[altdss.GICTransformer.GICTransformerProperties]) -> altdss.GICTransformer.GICTransformer
 :canonical: altdss.GICTransformer.IGICTransformer.new
 
 ```{autodoc2-docstring} altdss.GICTransformer.IGICTransformer.new

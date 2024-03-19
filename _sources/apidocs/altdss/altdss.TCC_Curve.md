@@ -161,7 +161,7 @@ Bases: {py:obj}`altdss.DSSObj.IDSSObj`, {py:obj}`altdss.TCC_Curve.TCC_CurveBatch
 
 ````
 
-````{py:method} batch_new(names: typing.Optional[typing.List[typing.AnyStr]] = None, df=None, count: typing.Optional[int] = None, begin_edit=True, **kwargs: typing_extensions.Unpack[altdss.TCC_Curve.TCC_CurveBatchProperties]) -> altdss.TCC_Curve.TCC_CurveBatch
+````{py:method} batch_new(names: typing.Optional[typing.List[typing.AnyStr]] = None, *, df=None, count: typing.Optional[int] = None, begin_edit: typing.Optional[bool] = None, **kwargs: typing_extensions.Unpack[altdss.TCC_Curve.TCC_CurveBatchProperties]) -> altdss.TCC_Curve.TCC_CurveBatch
 :canonical: altdss.TCC_Curve.ITCC_Curve.batch_new
 
 ```{autodoc2-docstring} altdss.TCC_Curve.ITCC_Curve.batch_new
@@ -173,6 +173,14 @@ Bases: {py:obj}`altdss.DSSObj.IDSSObj`, {py:obj}`altdss.TCC_Curve.TCC_CurveBatch
 :canonical: altdss.TCC_Curve.ITCC_Curve.begin_edit
 
 ```{autodoc2-docstring} altdss.TCC_Curve.ITCC_Curve.begin_edit
+```
+
+````
+
+````{py:method} edit(**kwargs: typing_extensions.Unpack[altdss.TCC_Curve.TCC_CurveBatchProperties]) -> altdss.TCC_Curve.TCC_CurveBatch
+:canonical: altdss.TCC_Curve.ITCC_Curve.edit
+
+```{autodoc2-docstring} altdss.TCC_Curve.ITCC_Curve.edit
 ```
 
 ````
@@ -193,7 +201,7 @@ Bases: {py:obj}`altdss.DSSObj.IDSSObj`, {py:obj}`altdss.TCC_Curve.TCC_CurveBatch
 
 ````
 
-````{py:method} new(name: typing.AnyStr, begin_edit=True, activate=False, **kwargs: typing_extensions.Unpack[altdss.TCC_Curve.TCC_CurveProperties]) -> altdss.TCC_Curve.TCC_Curve
+````{py:method} new(name: typing.AnyStr, *, begin_edit: typing.Optional[bool] = None, activate=False, **kwargs: typing_extensions.Unpack[altdss.TCC_Curve.TCC_CurveProperties]) -> altdss.TCC_Curve.TCC_Curve
 :canonical: altdss.TCC_Curve.ITCC_Curve.new
 
 ```{autodoc2-docstring} altdss.TCC_Curve.ITCC_Curve.new
@@ -321,6 +329,14 @@ Bases: {py:obj}`altdss.DSSObj.DSSObj`
 :canonical: altdss.TCC_Curve.TCC_Curve.begin_edit
 
 ```{autodoc2-docstring} altdss.TCC_Curve.TCC_Curve.begin_edit
+```
+
+````
+
+````{py:method} edit(**kwargs: typing_extensions.Unpack[altdss.TCC_Curve.TCC_CurveProperties]) -> altdss.TCC_Curve.TCC_Curve
+:canonical: altdss.TCC_Curve.TCC_Curve.edit
+
+```{autodoc2-docstring} altdss.TCC_Curve.TCC_Curve.edit
 ```
 
 ````
@@ -461,6 +477,14 @@ Bases: {py:obj}`altdss.Batch.DSSBatch`
 :canonical: altdss.TCC_Curve.TCC_CurveBatch.begin_edit
 
 ```{autodoc2-docstring} altdss.TCC_Curve.TCC_CurveBatch.begin_edit
+```
+
+````
+
+````{py:method} edit(**kwargs: typing_extensions.Unpack[altdss.TCC_Curve.TCC_CurveBatchProperties]) -> altdss.TCC_Curve.TCC_CurveBatch
+:canonical: altdss.TCC_Curve.TCC_CurveBatch.edit
+
+```{autodoc2-docstring} altdss.TCC_Curve.TCC_CurveBatch.edit
 ```
 
 ````

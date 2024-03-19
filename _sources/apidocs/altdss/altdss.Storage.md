@@ -899,7 +899,7 @@ Bases: {py:obj}`altdss.DSSObj.IDSSObj`, {py:obj}`altdss.Storage.StorageBatch`
 
 ````
 
-````{py:method} batch_new(names: typing.Optional[typing.List[typing.AnyStr]] = None, df=None, count: typing.Optional[int] = None, begin_edit=True, **kwargs: typing_extensions.Unpack[altdss.Storage.StorageBatchProperties]) -> altdss.Storage.StorageBatch
+````{py:method} batch_new(names: typing.Optional[typing.List[typing.AnyStr]] = None, *, df=None, count: typing.Optional[int] = None, begin_edit: typing.Optional[bool] = None, **kwargs: typing_extensions.Unpack[altdss.Storage.StorageBatchProperties]) -> altdss.Storage.StorageBatch
 :canonical: altdss.Storage.IStorage.batch_new
 
 ```{autodoc2-docstring} altdss.Storage.IStorage.batch_new
@@ -911,6 +911,14 @@ Bases: {py:obj}`altdss.DSSObj.IDSSObj`, {py:obj}`altdss.Storage.StorageBatch`
 :canonical: altdss.Storage.IStorage.begin_edit
 
 ```{autodoc2-docstring} altdss.Storage.IStorage.begin_edit
+```
+
+````
+
+````{py:method} edit(**kwargs: typing_extensions.Unpack[altdss.Storage.StorageBatchProperties]) -> altdss.Storage.StorageBatch
+:canonical: altdss.Storage.IStorage.edit
+
+```{autodoc2-docstring} altdss.Storage.IStorage.edit
 ```
 
 ````
@@ -1041,7 +1049,7 @@ Bases: {py:obj}`altdss.DSSObj.IDSSObj`, {py:obj}`altdss.Storage.StorageBatch`
 
 ````
 
-````{py:method} new(name: typing.AnyStr, begin_edit=True, activate=False, **kwargs: typing_extensions.Unpack[altdss.Storage.StorageProperties]) -> altdss.Storage.Storage
+````{py:method} new(name: typing.AnyStr, *, begin_edit: typing.Optional[bool] = None, activate=False, **kwargs: typing_extensions.Unpack[altdss.Storage.StorageProperties]) -> altdss.Storage.Storage
 :canonical: altdss.Storage.IStorage.new
 
 ```{autodoc2-docstring} altdss.Storage.IStorage.new
@@ -2188,6 +2196,14 @@ Bases: {py:obj}`altdss.DSSObj.DSSObj`, {py:obj}`altdss.CircuitElement.CircuitEle
 
 ````
 
+````{py:method} edit(**kwargs: typing_extensions.Unpack[altdss.Storage.StorageProperties]) -> altdss.Storage.Storage
+:canonical: altdss.Storage.Storage.edit
+
+```{autodoc2-docstring} altdss.Storage.Storage.edit
+```
+
+````
+
 ````{py:method} end_edit(num_changes: int = 1) -> None
 :canonical: altdss.Storage.Storage.end_edit
 
@@ -3326,6 +3342,14 @@ Bases: {py:obj}`altdss.Batch.DSSBatch`, {py:obj}`altdss.CircuitElement.CircuitEl
 :canonical: altdss.Storage.StorageBatch.begin_edit
 
 ```{autodoc2-docstring} altdss.Storage.StorageBatch.begin_edit
+```
+
+````
+
+````{py:method} edit(**kwargs: typing_extensions.Unpack[altdss.Storage.StorageBatchProperties]) -> altdss.Storage.StorageBatch
+:canonical: altdss.Storage.StorageBatch.edit
+
+```{autodoc2-docstring} altdss.Storage.StorageBatch.edit
 ```
 
 ````

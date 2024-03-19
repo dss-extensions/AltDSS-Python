@@ -870,6 +870,14 @@ Bases: {py:obj}`altdss.DSSObj.DSSObj`, {py:obj}`altdss.CircuitElement.CircuitEle
 
 ````
 
+````{py:method} edit(**kwargs: typing_extensions.Unpack[altdss.AutoTrans.AutoTransProperties]) -> altdss.AutoTrans.AutoTrans
+:canonical: altdss.AutoTrans.AutoTrans.edit
+
+```{autodoc2-docstring} altdss.AutoTrans.AutoTrans.edit
+```
+
+````
+
 ````{py:method} end_edit(num_changes: int = 1) -> None
 :canonical: altdss.AutoTrans.AutoTrans.end_edit
 
@@ -1785,6 +1793,14 @@ Bases: {py:obj}`altdss.Batch.DSSBatch`, {py:obj}`altdss.CircuitElement.CircuitEl
 :canonical: altdss.AutoTrans.AutoTransBatch.begin_edit
 
 ```{autodoc2-docstring} altdss.AutoTrans.AutoTransBatch.begin_edit
+```
+
+````
+
+````{py:method} edit(**kwargs: typing_extensions.Unpack[altdss.AutoTrans.AutoTransBatchProperties]) -> altdss.AutoTrans.AutoTransBatch
+:canonical: altdss.AutoTrans.AutoTransBatch.edit
+
+```{autodoc2-docstring} altdss.AutoTrans.AutoTransBatch.edit
 ```
 
 ````
@@ -4268,7 +4284,7 @@ Bases: {py:obj}`altdss.DSSObj.IDSSObj`, {py:obj}`altdss.AutoTrans.AutoTransBatch
 
 ````
 
-````{py:method} batch_new(names: typing.Optional[typing.List[typing.AnyStr]] = None, df=None, count: typing.Optional[int] = None, begin_edit=True, **kwargs: typing_extensions.Unpack[altdss.AutoTrans.AutoTransBatchProperties]) -> altdss.AutoTrans.AutoTransBatch
+````{py:method} batch_new(names: typing.Optional[typing.List[typing.AnyStr]] = None, *, df=None, count: typing.Optional[int] = None, begin_edit: typing.Optional[bool] = None, **kwargs: typing_extensions.Unpack[altdss.AutoTrans.AutoTransBatchProperties]) -> altdss.AutoTrans.AutoTransBatch
 :canonical: altdss.AutoTrans.IAutoTrans.batch_new
 
 ```{autodoc2-docstring} altdss.AutoTrans.IAutoTrans.batch_new
@@ -4280,6 +4296,14 @@ Bases: {py:obj}`altdss.DSSObj.IDSSObj`, {py:obj}`altdss.AutoTrans.AutoTransBatch
 :canonical: altdss.AutoTrans.IAutoTrans.begin_edit
 
 ```{autodoc2-docstring} altdss.AutoTrans.IAutoTrans.begin_edit
+```
+
+````
+
+````{py:method} edit(**kwargs: typing_extensions.Unpack[altdss.AutoTrans.AutoTransBatchProperties]) -> altdss.AutoTrans.AutoTransBatch
+:canonical: altdss.AutoTrans.IAutoTrans.edit
+
+```{autodoc2-docstring} altdss.AutoTrans.IAutoTrans.edit
 ```
 
 ````
@@ -4344,7 +4368,7 @@ Bases: {py:obj}`altdss.DSSObj.IDSSObj`, {py:obj}`altdss.AutoTrans.AutoTransBatch
 
 ````
 
-````{py:method} new(name: typing.AnyStr, begin_edit=True, activate=False, **kwargs: typing_extensions.Unpack[altdss.AutoTrans.AutoTransProperties]) -> altdss.AutoTrans.AutoTrans
+````{py:method} new(name: typing.AnyStr, *, begin_edit: typing.Optional[bool] = None, activate=False, **kwargs: typing_extensions.Unpack[altdss.AutoTrans.AutoTransProperties]) -> altdss.AutoTrans.AutoTrans
 :canonical: altdss.AutoTrans.IAutoTrans.new
 
 ```{autodoc2-docstring} altdss.AutoTrans.IAutoTrans.new

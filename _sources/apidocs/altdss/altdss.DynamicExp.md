@@ -189,6 +189,14 @@ Bases: {py:obj}`altdss.DSSObj.DSSObj`
 
 ````
 
+````{py:method} edit(**kwargs: typing_extensions.Unpack[altdss.DynamicExp.DynamicExpProperties]) -> altdss.DynamicExp.DynamicExp
+:canonical: altdss.DynamicExp.DynamicExp.edit
+
+```{autodoc2-docstring} altdss.DynamicExp.DynamicExp.edit
+```
+
+````
+
 ````{py:method} end_edit(num_changes: int = 1) -> None
 :canonical: altdss.DynamicExp.DynamicExp.end_edit
 
@@ -369,6 +377,14 @@ Bases: {py:obj}`altdss.Batch.DSSBatch`
 :canonical: altdss.DynamicExp.DynamicExpBatch.begin_edit
 
 ```{autodoc2-docstring} altdss.DynamicExp.DynamicExpBatch.begin_edit
+```
+
+````
+
+````{py:method} edit(**kwargs: typing_extensions.Unpack[altdss.DynamicExp.DynamicExpBatchProperties]) -> altdss.DynamicExp.DynamicExpBatch
+:canonical: altdss.DynamicExp.DynamicExpBatch.edit
+
+```{autodoc2-docstring} altdss.DynamicExp.DynamicExpBatch.edit
 ```
 
 ````
@@ -1347,7 +1363,7 @@ Bases: {py:obj}`altdss.DSSObj.IDSSObj`, {py:obj}`altdss.DynamicExp.DynamicExpBat
 
 ````
 
-````{py:method} batch_new(names: typing.Optional[typing.List[typing.AnyStr]] = None, df=None, count: typing.Optional[int] = None, begin_edit=True, **kwargs: typing_extensions.Unpack[altdss.DynamicExp.DynamicExpBatchProperties]) -> altdss.DynamicExp.DynamicExpBatch
+````{py:method} batch_new(names: typing.Optional[typing.List[typing.AnyStr]] = None, *, df=None, count: typing.Optional[int] = None, begin_edit: typing.Optional[bool] = None, **kwargs: typing_extensions.Unpack[altdss.DynamicExp.DynamicExpBatchProperties]) -> altdss.DynamicExp.DynamicExpBatch
 :canonical: altdss.DynamicExp.IDynamicExp.batch_new
 
 ```{autodoc2-docstring} altdss.DynamicExp.IDynamicExp.batch_new
@@ -1359,6 +1375,14 @@ Bases: {py:obj}`altdss.DSSObj.IDSSObj`, {py:obj}`altdss.DynamicExp.DynamicExpBat
 :canonical: altdss.DynamicExp.IDynamicExp.begin_edit
 
 ```{autodoc2-docstring} altdss.DynamicExp.IDynamicExp.begin_edit
+```
+
+````
+
+````{py:method} edit(**kwargs: typing_extensions.Unpack[altdss.DynamicExp.DynamicExpBatchProperties]) -> altdss.DynamicExp.DynamicExpBatch
+:canonical: altdss.DynamicExp.IDynamicExp.edit
+
+```{autodoc2-docstring} altdss.DynamicExp.IDynamicExp.edit
 ```
 
 ````
@@ -1379,7 +1403,7 @@ Bases: {py:obj}`altdss.DSSObj.IDSSObj`, {py:obj}`altdss.DynamicExp.DynamicExpBat
 
 ````
 
-````{py:method} new(name: typing.AnyStr, begin_edit=True, activate=False, **kwargs: typing_extensions.Unpack[altdss.DynamicExp.DynamicExpProperties]) -> altdss.DynamicExp.DynamicExp
+````{py:method} new(name: typing.AnyStr, *, begin_edit: typing.Optional[bool] = None, activate=False, **kwargs: typing_extensions.Unpack[altdss.DynamicExp.DynamicExpProperties]) -> altdss.DynamicExp.DynamicExp
 :canonical: altdss.DynamicExp.IDynamicExp.new
 
 ```{autodoc2-docstring} altdss.DynamicExp.IDynamicExp.new

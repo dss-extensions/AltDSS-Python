@@ -902,7 +902,7 @@ Bases: {py:obj}`altdss.DSSObj.IDSSObj`, {py:obj}`altdss.Transformer.TransformerB
 
 ````
 
-````{py:method} batch_new(names: typing.Optional[typing.List[typing.AnyStr]] = None, df=None, count: typing.Optional[int] = None, begin_edit=True, **kwargs: typing_extensions.Unpack[altdss.Transformer.TransformerBatchProperties]) -> altdss.Transformer.TransformerBatch
+````{py:method} batch_new(names: typing.Optional[typing.List[typing.AnyStr]] = None, *, df=None, count: typing.Optional[int] = None, begin_edit: typing.Optional[bool] = None, **kwargs: typing_extensions.Unpack[altdss.Transformer.TransformerBatchProperties]) -> altdss.Transformer.TransformerBatch
 :canonical: altdss.Transformer.ITransformer.batch_new
 
 ```{autodoc2-docstring} altdss.Transformer.ITransformer.batch_new
@@ -914,6 +914,14 @@ Bases: {py:obj}`altdss.DSSObj.IDSSObj`, {py:obj}`altdss.Transformer.TransformerB
 :canonical: altdss.Transformer.ITransformer.begin_edit
 
 ```{autodoc2-docstring} altdss.Transformer.ITransformer.begin_edit
+```
+
+````
+
+````{py:method} edit(**kwargs: typing_extensions.Unpack[altdss.Transformer.TransformerBatchProperties]) -> altdss.Transformer.TransformerBatch
+:canonical: altdss.Transformer.ITransformer.edit
+
+```{autodoc2-docstring} altdss.Transformer.ITransformer.edit
 ```
 
 ````
@@ -978,7 +986,7 @@ Bases: {py:obj}`altdss.DSSObj.IDSSObj`, {py:obj}`altdss.Transformer.TransformerB
 
 ````
 
-````{py:method} new(name: typing.AnyStr, begin_edit=True, activate=False, **kwargs: typing_extensions.Unpack[altdss.Transformer.TransformerProperties]) -> altdss.Transformer.Transformer
+````{py:method} new(name: typing.AnyStr, *, begin_edit: typing.Optional[bool] = None, activate=False, **kwargs: typing_extensions.Unpack[altdss.Transformer.TransformerProperties]) -> altdss.Transformer.Transformer
 :canonical: altdss.Transformer.ITransformer.new
 
 ```{autodoc2-docstring} altdss.Transformer.ITransformer.new
@@ -2027,6 +2035,14 @@ Bases: {py:obj}`altdss.DSSObj.DSSObj`, {py:obj}`altdss.CircuitElement.CircuitEle
 
 ````
 
+````{py:method} edit(**kwargs: typing_extensions.Unpack[altdss.Transformer.TransformerProperties]) -> altdss.Transformer.Transformer
+:canonical: altdss.Transformer.Transformer.edit
+
+```{autodoc2-docstring} altdss.Transformer.Transformer.edit
+```
+
+````
+
 ````{py:method} end_edit(num_changes: int = 1) -> None
 :canonical: altdss.Transformer.Transformer.end_edit
 
@@ -3041,6 +3057,14 @@ Bases: {py:obj}`altdss.Batch.DSSBatch`, {py:obj}`altdss.CircuitElement.CircuitEl
 :canonical: altdss.Transformer.TransformerBatch.begin_edit
 
 ```{autodoc2-docstring} altdss.Transformer.TransformerBatch.begin_edit
+```
+
+````
+
+````{py:method} edit(**kwargs: typing_extensions.Unpack[altdss.Transformer.TransformerBatchProperties]) -> altdss.Transformer.TransformerBatch
+:canonical: altdss.Transformer.TransformerBatch.edit
+
+```{autodoc2-docstring} altdss.Transformer.TransformerBatch.edit
 ```
 
 ````

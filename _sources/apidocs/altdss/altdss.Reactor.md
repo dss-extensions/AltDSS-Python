@@ -715,7 +715,7 @@ Bases: {py:obj}`altdss.DSSObj.IDSSObj`, {py:obj}`altdss.Reactor.ReactorBatch`
 
 ````
 
-````{py:method} batch_new(names: typing.Optional[typing.List[typing.AnyStr]] = None, df=None, count: typing.Optional[int] = None, begin_edit=True, **kwargs: typing_extensions.Unpack[altdss.Reactor.ReactorBatchProperties]) -> altdss.Reactor.ReactorBatch
+````{py:method} batch_new(names: typing.Optional[typing.List[typing.AnyStr]] = None, *, df=None, count: typing.Optional[int] = None, begin_edit: typing.Optional[bool] = None, **kwargs: typing_extensions.Unpack[altdss.Reactor.ReactorBatchProperties]) -> altdss.Reactor.ReactorBatch
 :canonical: altdss.Reactor.IReactor.batch_new
 
 ```{autodoc2-docstring} altdss.Reactor.IReactor.batch_new
@@ -727,6 +727,14 @@ Bases: {py:obj}`altdss.DSSObj.IDSSObj`, {py:obj}`altdss.Reactor.ReactorBatch`
 :canonical: altdss.Reactor.IReactor.begin_edit
 
 ```{autodoc2-docstring} altdss.Reactor.IReactor.begin_edit
+```
+
+````
+
+````{py:method} edit(**kwargs: typing_extensions.Unpack[altdss.Reactor.ReactorBatchProperties]) -> altdss.Reactor.ReactorBatch
+:canonical: altdss.Reactor.IReactor.edit
+
+```{autodoc2-docstring} altdss.Reactor.IReactor.edit
 ```
 
 ````
@@ -769,7 +777,7 @@ Bases: {py:obj}`altdss.DSSObj.IDSSObj`, {py:obj}`altdss.Reactor.ReactorBatch`
 
 ````
 
-````{py:method} new(name: typing.AnyStr, begin_edit=True, activate=False, **kwargs: typing_extensions.Unpack[altdss.Reactor.ReactorProperties]) -> altdss.Reactor.Reactor
+````{py:method} new(name: typing.AnyStr, *, begin_edit: typing.Optional[bool] = None, activate=False, **kwargs: typing_extensions.Unpack[altdss.Reactor.ReactorProperties]) -> altdss.Reactor.Reactor
 :canonical: altdss.Reactor.IReactor.new
 
 ```{autodoc2-docstring} altdss.Reactor.IReactor.new
@@ -1541,6 +1549,14 @@ Bases: {py:obj}`altdss.DSSObj.DSSObj`, {py:obj}`altdss.CircuitElement.CircuitEle
 
 ````
 
+````{py:method} edit(**kwargs: typing_extensions.Unpack[altdss.Reactor.ReactorProperties]) -> altdss.Reactor.Reactor
+:canonical: altdss.Reactor.Reactor.edit
+
+```{autodoc2-docstring} altdss.Reactor.Reactor.edit
+```
+
+````
+
 ````{py:method} end_edit(num_changes: int = 1) -> None
 :canonical: altdss.Reactor.Reactor.end_edit
 
@@ -2280,6 +2296,14 @@ Bases: {py:obj}`altdss.Batch.DSSBatch`, {py:obj}`altdss.CircuitElement.CircuitEl
 :canonical: altdss.Reactor.ReactorBatch.begin_edit
 
 ```{autodoc2-docstring} altdss.Reactor.ReactorBatch.begin_edit
+```
+
+````
+
+````{py:method} edit(**kwargs: typing_extensions.Unpack[altdss.Reactor.ReactorBatchProperties]) -> altdss.Reactor.ReactorBatch
+:canonical: altdss.Reactor.ReactorBatch.edit
+
+```{autodoc2-docstring} altdss.Reactor.ReactorBatch.edit
 ```
 
 ````

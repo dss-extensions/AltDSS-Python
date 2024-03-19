@@ -194,7 +194,7 @@ Bases: {py:obj}`altdss.DSSObj.IDSSObj`, {py:obj}`altdss.LineSpacing.LineSpacingB
 
 ````
 
-````{py:method} batch_new(names: typing.Optional[typing.List[typing.AnyStr]] = None, df=None, count: typing.Optional[int] = None, begin_edit=True, **kwargs: typing_extensions.Unpack[altdss.LineSpacing.LineSpacingBatchProperties]) -> altdss.LineSpacing.LineSpacingBatch
+````{py:method} batch_new(names: typing.Optional[typing.List[typing.AnyStr]] = None, *, df=None, count: typing.Optional[int] = None, begin_edit: typing.Optional[bool] = None, **kwargs: typing_extensions.Unpack[altdss.LineSpacing.LineSpacingBatchProperties]) -> altdss.LineSpacing.LineSpacingBatch
 :canonical: altdss.LineSpacing.ILineSpacing.batch_new
 
 ```{autodoc2-docstring} altdss.LineSpacing.ILineSpacing.batch_new
@@ -206,6 +206,14 @@ Bases: {py:obj}`altdss.DSSObj.IDSSObj`, {py:obj}`altdss.LineSpacing.LineSpacingB
 :canonical: altdss.LineSpacing.ILineSpacing.begin_edit
 
 ```{autodoc2-docstring} altdss.LineSpacing.ILineSpacing.begin_edit
+```
+
+````
+
+````{py:method} edit(**kwargs: typing_extensions.Unpack[altdss.LineSpacing.LineSpacingBatchProperties]) -> altdss.LineSpacing.LineSpacingBatch
+:canonical: altdss.LineSpacing.ILineSpacing.edit
+
+```{autodoc2-docstring} altdss.LineSpacing.ILineSpacing.edit
 ```
 
 ````
@@ -226,7 +234,7 @@ Bases: {py:obj}`altdss.DSSObj.IDSSObj`, {py:obj}`altdss.LineSpacing.LineSpacingB
 
 ````
 
-````{py:method} new(name: typing.AnyStr, begin_edit=True, activate=False, **kwargs: typing_extensions.Unpack[altdss.LineSpacing.LineSpacingProperties]) -> altdss.LineSpacing.LineSpacing
+````{py:method} new(name: typing.AnyStr, *, begin_edit: typing.Optional[bool] = None, activate=False, **kwargs: typing_extensions.Unpack[altdss.LineSpacing.LineSpacingProperties]) -> altdss.LineSpacing.LineSpacing
 :canonical: altdss.LineSpacing.ILineSpacing.new
 
 ```{autodoc2-docstring} altdss.LineSpacing.ILineSpacing.new
@@ -387,6 +395,14 @@ Bases: {py:obj}`altdss.DSSObj.DSSObj`
 :canonical: altdss.LineSpacing.LineSpacing.begin_edit
 
 ```{autodoc2-docstring} altdss.LineSpacing.LineSpacing.begin_edit
+```
+
+````
+
+````{py:method} edit(**kwargs: typing_extensions.Unpack[altdss.LineSpacing.LineSpacingProperties]) -> altdss.LineSpacing.LineSpacing
+:canonical: altdss.LineSpacing.LineSpacing.edit
+
+```{autodoc2-docstring} altdss.LineSpacing.LineSpacing.edit
 ```
 
 ````
@@ -560,6 +576,14 @@ Bases: {py:obj}`altdss.Batch.DSSBatch`
 :canonical: altdss.LineSpacing.LineSpacingBatch.begin_edit
 
 ```{autodoc2-docstring} altdss.LineSpacing.LineSpacingBatch.begin_edit
+```
+
+````
+
+````{py:method} edit(**kwargs: typing_extensions.Unpack[altdss.LineSpacing.LineSpacingBatchProperties]) -> altdss.LineSpacing.LineSpacingBatch
+:canonical: altdss.LineSpacing.LineSpacingBatch.edit
+
+```{autodoc2-docstring} altdss.LineSpacing.LineSpacingBatch.edit
 ```
 
 ````

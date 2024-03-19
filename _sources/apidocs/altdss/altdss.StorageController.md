@@ -685,7 +685,7 @@ Bases: {py:obj}`altdss.DSSObj.IDSSObj`, {py:obj}`altdss.StorageController.Storag
 
 ````
 
-````{py:method} batch_new(names: typing.Optional[typing.List[typing.AnyStr]] = None, df=None, count: typing.Optional[int] = None, begin_edit=True, **kwargs: typing_extensions.Unpack[altdss.StorageController.StorageControllerBatchProperties]) -> altdss.StorageController.StorageControllerBatch
+````{py:method} batch_new(names: typing.Optional[typing.List[typing.AnyStr]] = None, *, df=None, count: typing.Optional[int] = None, begin_edit: typing.Optional[bool] = None, **kwargs: typing_extensions.Unpack[altdss.StorageController.StorageControllerBatchProperties]) -> altdss.StorageController.StorageControllerBatch
 :canonical: altdss.StorageController.IStorageController.batch_new
 
 ```{autodoc2-docstring} altdss.StorageController.IStorageController.batch_new
@@ -697,6 +697,14 @@ Bases: {py:obj}`altdss.DSSObj.IDSSObj`, {py:obj}`altdss.StorageController.Storag
 :canonical: altdss.StorageController.IStorageController.begin_edit
 
 ```{autodoc2-docstring} altdss.StorageController.IStorageController.begin_edit
+```
+
+````
+
+````{py:method} edit(**kwargs: typing_extensions.Unpack[altdss.StorageController.StorageControllerBatchProperties]) -> altdss.StorageController.StorageControllerBatch
+:canonical: altdss.StorageController.IStorageController.edit
+
+```{autodoc2-docstring} altdss.StorageController.IStorageController.edit
 ```
 
 ````
@@ -827,7 +835,7 @@ Bases: {py:obj}`altdss.DSSObj.IDSSObj`, {py:obj}`altdss.StorageController.Storag
 
 ````
 
-````{py:method} new(name: typing.AnyStr, begin_edit=True, activate=False, **kwargs: typing_extensions.Unpack[altdss.StorageController.StorageControllerProperties]) -> altdss.StorageController.StorageController
+````{py:method} new(name: typing.AnyStr, *, begin_edit: typing.Optional[bool] = None, activate=False, **kwargs: typing_extensions.Unpack[altdss.StorageController.StorageControllerProperties]) -> altdss.StorageController.StorageController
 :canonical: altdss.StorageController.IStorageController.new
 
 ```{autodoc2-docstring} altdss.StorageController.IStorageController.new
@@ -1593,6 +1601,14 @@ Bases: {py:obj}`altdss.DSSObj.DSSObj`, {py:obj}`altdss.CircuitElement.CircuitEle
 :canonical: altdss.StorageController.StorageController.begin_edit
 
 ```{autodoc2-docstring} altdss.StorageController.StorageController.begin_edit
+```
+
+````
+
+````{py:method} edit(**kwargs: typing_extensions.Unpack[altdss.StorageController.StorageControllerProperties]) -> altdss.StorageController.StorageController
+:canonical: altdss.StorageController.StorageController.edit
+
+```{autodoc2-docstring} altdss.StorageController.StorageController.edit
 ```
 
 ````
@@ -2422,6 +2438,14 @@ Bases: {py:obj}`altdss.Batch.DSSBatch`, {py:obj}`altdss.CircuitElement.CircuitEl
 :canonical: altdss.StorageController.StorageControllerBatch.begin_edit
 
 ```{autodoc2-docstring} altdss.StorageController.StorageControllerBatch.begin_edit
+```
+
+````
+
+````{py:method} edit(**kwargs: typing_extensions.Unpack[altdss.StorageController.StorageControllerBatchProperties]) -> altdss.StorageController.StorageControllerBatch
+:canonical: altdss.StorageController.StorageControllerBatch.edit
+
+```{autodoc2-docstring} altdss.StorageController.StorageControllerBatch.edit
 ```
 
 ````

@@ -8,7 +8,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
-    <title>altdss.Line &#8212; AltDSS-Python 0.2.2 documentation</title>
+    <title>altdss.Line &#8212; AltDSS-Python 0.2.3 documentation</title>
   
   
   
@@ -38,7 +38,7 @@
 <link rel="preload" as="script" href="../../_static/scripts/pydata-sphinx-theme.js?digest=8d27b9dea8ad943066ae" />
   <script src="../../_static/vendor/fontawesome/6.5.1/js/all.min.js?digest=8d27b9dea8ad943066ae"></script>
 
-    <script src="../../_static/documentation_options.js?v=d3f42505"></script>
+    <script src="../../_static/documentation_options.js?v=6808a718"></script>
     <script src="../../_static/doctools.js?v=888ff710"></script>
     <script src="../../_static/sphinx_highlight.js?v=dc90522c"></script>
     <script src="../../_static/scripts/sphinx-book-theme.js?v=efea14e4"></script>
@@ -137,8 +137,8 @@
       
     
     
-    <img src="../../_static/altdss-python.svg" class="logo__image only-light" alt="AltDSS-Python 0.2.2 documentation - Home"/>
-    <script>document.write(`<img src="../../_static/altdss-python-dark.svg" class="logo__image only-dark" alt="AltDSS-Python 0.2.2 documentation - Home"/>`);</script>
+    <img src="../../_static/altdss-python.svg" class="logo__image only-light" alt="AltDSS-Python 0.2.3 documentation - Home"/>
+    <script>document.write(`<img src="../../_static/altdss-python-dark.svg" class="logo__image only-dark" alt="AltDSS-Python 0.2.3 documentation - Home"/>`);</script>
   
   
 </a></div>
@@ -500,6 +500,7 @@ document.write(`
 <li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#altdss.Line.ILine.batch"><code class="docutils literal notranslate"><span class="pre">ILine.batch()</span></code></a></li>
 <li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#altdss.Line.ILine.batch_new"><code class="docutils literal notranslate"><span class="pre">ILine.batch_new()</span></code></a></li>
 <li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#altdss.Line.ILine.begin_edit"><code class="docutils literal notranslate"><span class="pre">ILine.begin_edit()</span></code></a></li>
+<li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#altdss.Line.ILine.edit"><code class="docutils literal notranslate"><span class="pre">ILine.edit()</span></code></a></li>
 <li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#altdss.Line.ILine.end_edit"><code class="docutils literal notranslate"><span class="pre">ILine.end_edit()</span></code></a></li>
 <li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#altdss.Line.ILine.find"><code class="docutils literal notranslate"><span class="pre">ILine.find()</span></code></a></li>
 <li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#altdss.Line.ILine.new"><code class="docutils literal notranslate"><span class="pre">ILine.new()</span></code></a></li>
@@ -606,6 +607,7 @@ document.write(`
 <li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#altdss.Line.Line.__ne__"><code class="docutils literal notranslate"><span class="pre">Line.__ne__()</span></code></a></li>
 <li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#altdss.Line.Line.__repr__"><code class="docutils literal notranslate"><span class="pre">Line.__repr__()</span></code></a></li>
 <li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#altdss.Line.Line.begin_edit"><code class="docutils literal notranslate"><span class="pre">Line.begin_edit()</span></code></a></li>
+<li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#altdss.Line.Line.edit"><code class="docutils literal notranslate"><span class="pre">Line.edit()</span></code></a></li>
 <li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#altdss.Line.Line.end_edit"><code class="docutils literal notranslate"><span class="pre">Line.end_edit()</span></code></a></li>
 <li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#altdss.Line.Line.pctEmergency"><code class="docutils literal notranslate"><span class="pre">Line.pctEmergency()</span></code></a></li>
 <li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#altdss.Line.Line.pctNormal"><code class="docutils literal notranslate"><span class="pre">Line.pctNormal()</span></code></a></li>
@@ -704,6 +706,7 @@ document.write(`
 <li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#altdss.Line.LineBatch.__len__"><code class="docutils literal notranslate"><span class="pre">LineBatch.__len__()</span></code></a></li>
 <li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#altdss.Line.LineBatch.batch"><code class="docutils literal notranslate"><span class="pre">LineBatch.batch()</span></code></a></li>
 <li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#altdss.Line.LineBatch.begin_edit"><code class="docutils literal notranslate"><span class="pre">LineBatch.begin_edit()</span></code></a></li>
+<li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#altdss.Line.LineBatch.edit"><code class="docutils literal notranslate"><span class="pre">LineBatch.edit()</span></code></a></li>
 <li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#altdss.Line.LineBatch.end_edit"><code class="docutils literal notranslate"><span class="pre">LineBatch.end_edit()</span></code></a></li>
 <li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#altdss.Line.LineBatch.pctEmergency"><code class="docutils literal notranslate"><span class="pre">LineBatch.pctEmergency()</span></code></a></li>
 <li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#altdss.Line.LineBatch.pctNormal"><code class="docutils literal notranslate"><span class="pre">LineBatch.pctNormal()</span></code></a></li>
@@ -1608,9 +1611,24 @@ SIDE EFFECT: Sets r1 = 1.0; x1 = 1.0; r0 = 1.0; x0 = 1.0; c1 = 1.1 ; c0 = 1.0;  
 
 <dl class="py method">
 <dt class="sig sig-object py" id="altdss.Line.ILine.batch_new">
-<span class="sig-name descname"><span class="pre">batch_new</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">names</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Optional</span><span class="p"><span class="pre">[</span></span><span class="pre">List</span><span class="p"><span class="pre">[</span></span><span class="pre">AnyStr</span><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">]</span></span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">df</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">count</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Optional</span><span class="p"><span class="pre">[</span></span><span class="pre">int</span><span class="p"><span class="pre">]</span></span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">begin_edit</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">typing_extensions.Unpack</span><span class="p"><span class="pre">[</span></span><a class="reference internal" href="#altdss.Line.LineBatchProperties" title="altdss.Line.LineBatchProperties"><span class="pre">altdss.Line.LineBatchProperties</span></a><span class="p"><span class="pre">]</span></span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference internal" href="#altdss.Line.LineBatch" title="altdss.Line.LineBatch"><span class="pre">altdss.Line.LineBatch</span></a></span></span><a class="headerlink" href="#altdss.Line.ILine.batch_new" title="Link to this definition">#</a></dt>
-<dd><p>Creates a new batch handler of new objects, with the specified names,
-or “count” elements with a randomized prefix.</p>
+<span class="sig-name descname"><span class="pre">batch_new</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">names</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Optional</span><span class="p"><span class="pre">[</span></span><span class="pre">List</span><span class="p"><span class="pre">[</span></span><span class="pre">AnyStr</span><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">]</span></span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">*</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">df</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">count</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Optional</span><span class="p"><span class="pre">[</span></span><span class="pre">int</span><span class="p"><span class="pre">]</span></span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">begin_edit</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Optional</span><span class="p"><span class="pre">[</span></span><span class="pre">bool</span><span class="p"><span class="pre">]</span></span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">typing_extensions.Unpack</span><span class="p"><span class="pre">[</span></span><a class="reference internal" href="#altdss.Line.LineBatchProperties" title="altdss.Line.LineBatchProperties"><span class="pre">altdss.Line.LineBatchProperties</span></a><span class="p"><span class="pre">]</span></span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference internal" href="#altdss.Line.LineBatch" title="altdss.Line.LineBatch"><span class="pre">altdss.Line.LineBatch</span></a></span></span><a class="headerlink" href="#altdss.Line.ILine.batch_new" title="Link to this definition">#</a></dt>
+<dd><p>Creates a new batch of Line objects</p>
+<p>Either <code class="docutils literal notranslate"><span class="pre">names</span></code>, <code class="docutils literal notranslate"><span class="pre">count</span></code> or <code class="docutils literal notranslate"><span class="pre">df</span></code> is required.</p>
+<dl class="myst field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>begin_edit</strong> – The argument <code class="docutils literal notranslate"><span class="pre">begin_edit</span></code> indicates if the user want to leave the elements in the edit state, and requires a call to <code class="docutils literal notranslate"><span class="pre">end_edit()</span></code> or equivalent. The default <code class="docutils literal notranslate"><span class="pre">begin_edit</span></code> is set to <code class="docutils literal notranslate"><span class="pre">None</span></code>. With <code class="docutils literal notranslate"><span class="pre">None</span></code>, the behavior will be adjusted according the default of how the batch is created.</p></li>
+<li><p><strong>**kwargs</strong> – Pass keyword arguments equivalent to the DSS properties of the object.</p></li>
+<li><p><strong>names</strong> – When using a list of names, each new object will match the names from this list. <code class="docutils literal notranslate"><span class="pre">begin_edit</span></code> defaults to <code class="docutils literal notranslate"><span class="pre">True</span></code> if no arguments for properties were passed, <code class="docutils literal notranslate"><span class="pre">False</span></code> otherwise.</p></li>
+<li><p><strong>count</strong> – When using <code class="docutils literal notranslate"><span class="pre">count</span></code>, new objects will be created with based on a random prefix, with an increasing integer up to <code class="docutils literal notranslate"><span class="pre">count</span></code>. <code class="docutils literal notranslate"><span class="pre">begin_edit</span></code> defaults to <code class="docutils literal notranslate"><span class="pre">True</span></code> if no arguments for properties were passed, <code class="docutils literal notranslate"><span class="pre">False</span></code> otherwise.</p></li>
+<li><p><strong>df</strong> – Currently <strong>EXPERIMENTAL AND LIMITED</strong>, tries to get the columns from a dataframe to populate the names and the DSS properties. <code class="docutils literal notranslate"><span class="pre">begin_edit</span></code> defaults to <code class="docutils literal notranslate"><span class="pre">False</span></code>.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>Returns the new batch of DSS objects, wrapped in Python.</p>
+</dd>
+</dl>
+<p>Note that, to make it easier for new users where the edit context might not be too relevant, AltDSS automatically opens/closes edit contexts for single properties if the object is not in the edit state already.</p>
 </dd></dl>
 
 <dl class="py method">
@@ -1623,6 +1641,24 @@ the model parameters or internal matrices.</p>
 <p>If you don’t have any performance constraint, you may edit each property individually
 without worrying about using <code class="docutils literal notranslate"><span class="pre">begin_edit</span></code> and <code class="docutils literal notranslate"><span class="pre">end_edit</span></code>. For convenience, those are
 emitted automatically when editing single properties outside an edit block.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="altdss.Line.ILine.edit">
+<span class="sig-name descname"><span class="pre">edit</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">typing_extensions.Unpack</span><span class="p"><span class="pre">[</span></span><a class="reference internal" href="#altdss.Line.LineBatchProperties" title="altdss.Line.LineBatchProperties"><span class="pre">altdss.Line.LineBatchProperties</span></a><span class="p"><span class="pre">]</span></span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference internal" href="#altdss.Line.LineBatch" title="altdss.Line.LineBatch"><span class="pre">altdss.Line.LineBatch</span></a></span></span><a class="headerlink" href="#altdss.Line.ILine.edit" title="Link to this definition">#</a></dt>
+<dd><p>Edit this Line batch.</p>
+<p>This method will try to open a new edit context (if not already open),
+edit the properties, and finalize the edit context for objects in the batch.
+It can be seen as a shortcut to manually setting each property, or a Pythonic
+analogous (but extended) to the DSS <code class="docutils literal notranslate"><span class="pre">BatchEdit</span></code> command.</p>
+<dl class="myst field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>**kwargs</strong> – Pass keyword arguments equivalent to the DSS properties of the objects.</p>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>Returns itself to allow call chaining.</p>
+</dd>
+</dl>
 </dd></dl>
 
 <dl class="py method">
@@ -1643,8 +1679,33 @@ the <code class="docutils literal notranslate"><span class="pre">Process</span><
 
 <dl class="py method">
 <dt class="sig sig-object py" id="altdss.Line.ILine.new">
-<span class="sig-name descname"><span class="pre">new</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">name</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">AnyStr</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">begin_edit</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">activate</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">typing_extensions.Unpack</span><span class="p"><span class="pre">[</span></span><a class="reference internal" href="#altdss.Line.LineProperties" title="altdss.Line.LineProperties"><span class="pre">altdss.Line.LineProperties</span></a><span class="p"><span class="pre">]</span></span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference internal" href="#altdss.Line.Line" title="altdss.Line.Line"><span class="pre">altdss.Line.Line</span></a></span></span><a class="headerlink" href="#altdss.Line.ILine.new" title="Link to this definition">#</a></dt>
-<dd></dd></dl>
+<span class="sig-name descname"><span class="pre">new</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">name</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">AnyStr</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">*</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">begin_edit</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Optional</span><span class="p"><span class="pre">[</span></span><span class="pre">bool</span><span class="p"><span class="pre">]</span></span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">activate</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">typing_extensions.Unpack</span><span class="p"><span class="pre">[</span></span><a class="reference internal" href="#altdss.Line.LineProperties" title="altdss.Line.LineProperties"><span class="pre">altdss.Line.LineProperties</span></a><span class="p"><span class="pre">]</span></span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference internal" href="#altdss.Line.Line" title="altdss.Line.Line"><span class="pre">altdss.Line.Line</span></a></span></span><a class="headerlink" href="#altdss.Line.ILine.new" title="Link to this definition">#</a></dt>
+<dd><p>Creates a new Line.</p>
+<dl class="myst field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>name</strong> – The object’s name is a required positional argument.</p></li>
+<li><p><strong>activate</strong> – Activation (setting <code class="docutils literal notranslate"><span class="pre">activate</span></code> to true) is useful for integration with the classic API, and some internal OpenDSS commands.
+If you interact with this object only via the Alt API, no need to activate it (due to performance costs).</p></li>
+<li><p><strong>begin_edit</strong> – This controls how the edit context is left after the object creation:</p></li>
+</ul>
+</dd>
+</dl>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">True</span></code>: The object will be left in the edit state, requiring an <code class="docutils literal notranslate"><span class="pre">end_edit</span></code> call or equivalent.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">False</span></code>: No edit context is started.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">None</span></code>: If no properties are passed as keyword arguments, the object will be left in the edit state (assumes the user will fill the properties from Python attributes). Otherwise, the internal edit context will be finalized.</p></li>
+</ul>
+<dl class="myst field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>**kwargs</strong> – Pass keyword arguments equivalent to the DSS properties of the object.</p>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>Returns the new DSS object, wrapped in Python.</p>
+</dd>
+</dl>
+<p>Note that, to make it easier for new users where the edit context might not be too relevant, AltDSS automatically opens/closes edit contexts for single properties if the object is not in the edit state already.</p>
+</dd></dl>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="altdss.Line.ILine.pctEmergency">
@@ -2430,6 +2491,24 @@ emitted automatically when editing single properties outside an edit block.</p>
 </dd></dl>
 
 <dl class="py method">
+<dt class="sig sig-object py" id="altdss.Line.Line.edit">
+<span class="sig-name descname"><span class="pre">edit</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">typing_extensions.Unpack</span><span class="p"><span class="pre">[</span></span><a class="reference internal" href="#altdss.Line.LineProperties" title="altdss.Line.LineProperties"><span class="pre">altdss.Line.LineProperties</span></a><span class="p"><span class="pre">]</span></span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference internal" href="#altdss.Line.Line" title="altdss.Line.Line"><span class="pre">altdss.Line.Line</span></a></span></span><a class="headerlink" href="#altdss.Line.Line.edit" title="Link to this definition">#</a></dt>
+<dd><p>Edit this Line.</p>
+<p>This method will try to open a new edit context (if not already open),
+edit the properties, and finalize the edit context.
+It can be seen as a shortcut to manually setting each property, or a Pythonic
+analogous (but extended) to the DSS <code class="docutils literal notranslate"><span class="pre">Edit</span></code> command.</p>
+<dl class="myst field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>**kwargs</strong> – Pass keyword arguments equivalent to the DSS properties of the object.</p>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>Returns itself to allow call chaining.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
 <dt class="sig sig-object py" id="altdss.Line.Line.end_edit">
 <span class="sig-name descname"><span class="pre">end_edit</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">num_changes</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">1</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span><a class="headerlink" href="#altdss.Line.Line.end_edit" title="Link to this definition">#</a></dt>
 <dd><p>Leaves the editing state of a DSS object</p>
@@ -3203,6 +3282,24 @@ the model parameters or internal matrices.</p>
 <p>If you don’t have any performance constraint, you may edit each property individually
 without worrying about using <code class="docutils literal notranslate"><span class="pre">begin_edit</span></code> and <code class="docutils literal notranslate"><span class="pre">end_edit</span></code>. For convenience, those are
 emitted automatically when editing single properties outside an edit block.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="altdss.Line.LineBatch.edit">
+<span class="sig-name descname"><span class="pre">edit</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">typing_extensions.Unpack</span><span class="p"><span class="pre">[</span></span><a class="reference internal" href="#altdss.Line.LineBatchProperties" title="altdss.Line.LineBatchProperties"><span class="pre">altdss.Line.LineBatchProperties</span></a><span class="p"><span class="pre">]</span></span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference internal" href="#altdss.Line.LineBatch" title="altdss.Line.LineBatch"><span class="pre">altdss.Line.LineBatch</span></a></span></span><a class="headerlink" href="#altdss.Line.LineBatch.edit" title="Link to this definition">#</a></dt>
+<dd><p>Edit this Line batch.</p>
+<p>This method will try to open a new edit context (if not already open),
+edit the properties, and finalize the edit context for objects in the batch.
+It can be seen as a shortcut to manually setting each property, or a Pythonic
+analogous (but extended) to the DSS <code class="docutils literal notranslate"><span class="pre">BatchEdit</span></code> command.</p>
+<dl class="myst field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>**kwargs</strong> – Pass keyword arguments equivalent to the DSS properties of the objects.</p>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>Returns itself to allow call chaining.</p>
+</dd>
+</dl>
 </dd></dl>
 
 <dl class="py method">
@@ -4357,6 +4454,7 @@ In either case, this is followed by: for k in F:  D[k] = F[k]</p>
 <li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#altdss.Line.ILine.batch"><code class="docutils literal notranslate"><span class="pre">ILine.batch()</span></code></a></li>
 <li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#altdss.Line.ILine.batch_new"><code class="docutils literal notranslate"><span class="pre">ILine.batch_new()</span></code></a></li>
 <li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#altdss.Line.ILine.begin_edit"><code class="docutils literal notranslate"><span class="pre">ILine.begin_edit()</span></code></a></li>
+<li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#altdss.Line.ILine.edit"><code class="docutils literal notranslate"><span class="pre">ILine.edit()</span></code></a></li>
 <li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#altdss.Line.ILine.end_edit"><code class="docutils literal notranslate"><span class="pre">ILine.end_edit()</span></code></a></li>
 <li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#altdss.Line.ILine.find"><code class="docutils literal notranslate"><span class="pre">ILine.find()</span></code></a></li>
 <li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#altdss.Line.ILine.new"><code class="docutils literal notranslate"><span class="pre">ILine.new()</span></code></a></li>
@@ -4463,6 +4561,7 @@ In either case, this is followed by: for k in F:  D[k] = F[k]</p>
 <li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#altdss.Line.Line.__ne__"><code class="docutils literal notranslate"><span class="pre">Line.__ne__()</span></code></a></li>
 <li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#altdss.Line.Line.__repr__"><code class="docutils literal notranslate"><span class="pre">Line.__repr__()</span></code></a></li>
 <li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#altdss.Line.Line.begin_edit"><code class="docutils literal notranslate"><span class="pre">Line.begin_edit()</span></code></a></li>
+<li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#altdss.Line.Line.edit"><code class="docutils literal notranslate"><span class="pre">Line.edit()</span></code></a></li>
 <li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#altdss.Line.Line.end_edit"><code class="docutils literal notranslate"><span class="pre">Line.end_edit()</span></code></a></li>
 <li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#altdss.Line.Line.pctEmergency"><code class="docutils literal notranslate"><span class="pre">Line.pctEmergency()</span></code></a></li>
 <li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#altdss.Line.Line.pctNormal"><code class="docutils literal notranslate"><span class="pre">Line.pctNormal()</span></code></a></li>
@@ -4561,6 +4660,7 @@ In either case, this is followed by: for k in F:  D[k] = F[k]</p>
 <li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#altdss.Line.LineBatch.__len__"><code class="docutils literal notranslate"><span class="pre">LineBatch.__len__()</span></code></a></li>
 <li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#altdss.Line.LineBatch.batch"><code class="docutils literal notranslate"><span class="pre">LineBatch.batch()</span></code></a></li>
 <li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#altdss.Line.LineBatch.begin_edit"><code class="docutils literal notranslate"><span class="pre">LineBatch.begin_edit()</span></code></a></li>
+<li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#altdss.Line.LineBatch.edit"><code class="docutils literal notranslate"><span class="pre">LineBatch.edit()</span></code></a></li>
 <li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#altdss.Line.LineBatch.end_edit"><code class="docutils literal notranslate"><span class="pre">LineBatch.end_edit()</span></code></a></li>
 <li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#altdss.Line.LineBatch.pctEmergency"><code class="docutils literal notranslate"><span class="pre">LineBatch.pctEmergency()</span></code></a></li>
 <li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#altdss.Line.LineBatch.pctNormal"><code class="docutils literal notranslate"><span class="pre">LineBatch.pctNormal()</span></code></a></li>

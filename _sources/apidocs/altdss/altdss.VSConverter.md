@@ -580,7 +580,7 @@ Bases: {py:obj}`altdss.DSSObj.IDSSObj`, {py:obj}`altdss.VSConverter.VSConverterB
 
 ````
 
-````{py:method} batch_new(names: typing.Optional[typing.List[typing.AnyStr]] = None, df=None, count: typing.Optional[int] = None, begin_edit=True, **kwargs: typing_extensions.Unpack[altdss.VSConverter.VSConverterBatchProperties]) -> altdss.VSConverter.VSConverterBatch
+````{py:method} batch_new(names: typing.Optional[typing.List[typing.AnyStr]] = None, *, df=None, count: typing.Optional[int] = None, begin_edit: typing.Optional[bool] = None, **kwargs: typing_extensions.Unpack[altdss.VSConverter.VSConverterBatchProperties]) -> altdss.VSConverter.VSConverterBatch
 :canonical: altdss.VSConverter.IVSConverter.batch_new
 
 ```{autodoc2-docstring} altdss.VSConverter.IVSConverter.batch_new
@@ -603,6 +603,14 @@ Bases: {py:obj}`altdss.DSSObj.IDSSObj`, {py:obj}`altdss.VSConverter.VSConverterB
    'property(...)'
 
 ```{autodoc2-docstring} altdss.VSConverter.IVSConverter.d0
+```
+
+````
+
+````{py:method} edit(**kwargs: typing_extensions.Unpack[altdss.VSConverter.VSConverterBatchProperties]) -> altdss.VSConverter.VSConverterBatch
+:canonical: altdss.VSConverter.IVSConverter.edit
+
+```{autodoc2-docstring} altdss.VSConverter.IVSConverter.edit
 ```
 
 ````
@@ -656,7 +664,7 @@ Bases: {py:obj}`altdss.DSSObj.IDSSObj`, {py:obj}`altdss.VSConverter.VSConverterB
 
 ````
 
-````{py:method} new(name: typing.AnyStr, begin_edit=True, activate=False, **kwargs: typing_extensions.Unpack[altdss.VSConverter.VSConverterProperties]) -> altdss.VSConverter.VSConverter
+````{py:method} new(name: typing.AnyStr, *, begin_edit: typing.Optional[bool] = None, activate=False, **kwargs: typing_extensions.Unpack[altdss.VSConverter.VSConverterProperties]) -> altdss.VSConverter.VSConverter
 :canonical: altdss.VSConverter.IVSConverter.new
 
 ```{autodoc2-docstring} altdss.VSConverter.IVSConverter.new
@@ -1317,6 +1325,14 @@ Bases: {py:obj}`altdss.DSSObj.DSSObj`, {py:obj}`altdss.CircuitElement.CircuitEle
 
 ````
 
+````{py:method} edit(**kwargs: typing_extensions.Unpack[altdss.VSConverter.VSConverterProperties]) -> altdss.VSConverter.VSConverter
+:canonical: altdss.VSConverter.VSConverter.edit
+
+```{autodoc2-docstring} altdss.VSConverter.VSConverter.edit
+```
+
+````
+
 ````{py:method} end_edit(num_changes: int = 1) -> None
 :canonical: altdss.VSConverter.VSConverter.end_edit
 
@@ -1916,6 +1932,14 @@ Bases: {py:obj}`altdss.Batch.DSSBatch`, {py:obj}`altdss.CircuitElement.CircuitEl
    'property(...)'
 
 ```{autodoc2-docstring} altdss.VSConverter.VSConverterBatch.d0
+```
+
+````
+
+````{py:method} edit(**kwargs: typing_extensions.Unpack[altdss.VSConverter.VSConverterBatchProperties]) -> altdss.VSConverter.VSConverterBatch
+:canonical: altdss.VSConverter.VSConverterBatch.edit
+
+```{autodoc2-docstring} altdss.VSConverter.VSConverterBatch.edit
 ```
 
 ````

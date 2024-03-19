@@ -365,6 +365,14 @@ Bases: {py:obj}`altdss.DSSObj.DSSObj`
 
 ````
 
+````{py:method} edit(**kwargs: typing_extensions.Unpack[altdss.CNData.CNDataProperties]) -> altdss.CNData.CNData
+:canonical: altdss.CNData.CNData.edit
+
+```{autodoc2-docstring} altdss.CNData.CNData.edit
+```
+
+````
+
 ````{py:method} end_edit(num_changes: int = 1) -> None
 :canonical: altdss.CNData.CNData.end_edit
 
@@ -732,6 +740,14 @@ Bases: {py:obj}`altdss.Batch.DSSBatch`
 :canonical: altdss.CNData.CNDataBatch.begin_edit
 
 ```{autodoc2-docstring} altdss.CNData.CNDataBatch.begin_edit
+```
+
+````
+
+````{py:method} edit(**kwargs: typing_extensions.Unpack[altdss.CNData.CNDataBatchProperties]) -> altdss.CNData.CNDataBatch
+:canonical: altdss.CNData.CNDataBatch.edit
+
+```{autodoc2-docstring} altdss.CNData.CNDataBatch.edit
 ```
 
 ````
@@ -2227,7 +2243,7 @@ Bases: {py:obj}`altdss.DSSObj.IDSSObj`, {py:obj}`altdss.CNData.CNDataBatch`
 
 ````
 
-````{py:method} batch_new(names: typing.Optional[typing.List[typing.AnyStr]] = None, df=None, count: typing.Optional[int] = None, begin_edit=True, **kwargs: typing_extensions.Unpack[altdss.CNData.CNDataBatchProperties]) -> altdss.CNData.CNDataBatch
+````{py:method} batch_new(names: typing.Optional[typing.List[typing.AnyStr]] = None, *, df=None, count: typing.Optional[int] = None, begin_edit: typing.Optional[bool] = None, **kwargs: typing_extensions.Unpack[altdss.CNData.CNDataBatchProperties]) -> altdss.CNData.CNDataBatch
 :canonical: altdss.CNData.ICNData.batch_new
 
 ```{autodoc2-docstring} altdss.CNData.ICNData.batch_new
@@ -2239,6 +2255,14 @@ Bases: {py:obj}`altdss.DSSObj.IDSSObj`, {py:obj}`altdss.CNData.CNDataBatch`
 :canonical: altdss.CNData.ICNData.begin_edit
 
 ```{autodoc2-docstring} altdss.CNData.ICNData.begin_edit
+```
+
+````
+
+````{py:method} edit(**kwargs: typing_extensions.Unpack[altdss.CNData.CNDataBatchProperties]) -> altdss.CNData.CNDataBatch
+:canonical: altdss.CNData.ICNData.edit
+
+```{autodoc2-docstring} altdss.CNData.ICNData.edit
 ```
 
 ````
@@ -2270,7 +2294,7 @@ Bases: {py:obj}`altdss.DSSObj.IDSSObj`, {py:obj}`altdss.CNData.CNDataBatch`
 
 ````
 
-````{py:method} new(name: typing.AnyStr, begin_edit=True, activate=False, **kwargs: typing_extensions.Unpack[altdss.CNData.CNDataProperties]) -> altdss.CNData.CNData
+````{py:method} new(name: typing.AnyStr, *, begin_edit: typing.Optional[bool] = None, activate=False, **kwargs: typing_extensions.Unpack[altdss.CNData.CNDataProperties]) -> altdss.CNData.CNData
 :canonical: altdss.CNData.ICNData.new
 
 ```{autodoc2-docstring} altdss.CNData.ICNData.new

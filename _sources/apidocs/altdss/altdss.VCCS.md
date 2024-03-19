@@ -580,7 +580,7 @@ Bases: {py:obj}`altdss.DSSObj.IDSSObj`, {py:obj}`altdss.VCCS.VCCSBatch`
 
 ````
 
-````{py:method} batch_new(names: typing.Optional[typing.List[typing.AnyStr]] = None, df=None, count: typing.Optional[int] = None, begin_edit=True, **kwargs: typing_extensions.Unpack[altdss.VCCS.VCCSBatchProperties]) -> altdss.VCCS.VCCSBatch
+````{py:method} batch_new(names: typing.Optional[typing.List[typing.AnyStr]] = None, *, df=None, count: typing.Optional[int] = None, begin_edit: typing.Optional[bool] = None, **kwargs: typing_extensions.Unpack[altdss.VCCS.VCCSBatchProperties]) -> altdss.VCCS.VCCSBatch
 :canonical: altdss.VCCS.IVCCS.batch_new
 
 ```{autodoc2-docstring} altdss.VCCS.IVCCS.batch_new
@@ -592,6 +592,14 @@ Bases: {py:obj}`altdss.DSSObj.IDSSObj`, {py:obj}`altdss.VCCS.VCCSBatch`
 :canonical: altdss.VCCS.IVCCS.begin_edit
 
 ```{autodoc2-docstring} altdss.VCCS.IVCCS.begin_edit
+```
+
+````
+
+````{py:method} edit(**kwargs: typing_extensions.Unpack[altdss.VCCS.VCCSBatchProperties]) -> altdss.VCCS.VCCSBatch
+:canonical: altdss.VCCS.IVCCS.edit
+
+```{autodoc2-docstring} altdss.VCCS.IVCCS.edit
 ```
 
 ````
@@ -612,7 +620,7 @@ Bases: {py:obj}`altdss.DSSObj.IDSSObj`, {py:obj}`altdss.VCCS.VCCSBatch`
 
 ````
 
-````{py:method} new(name: typing.AnyStr, begin_edit=True, activate=False, **kwargs: typing_extensions.Unpack[altdss.VCCS.VCCSProperties]) -> altdss.VCCS.VCCS
+````{py:method} new(name: typing.AnyStr, *, begin_edit: typing.Optional[bool] = None, activate=False, **kwargs: typing_extensions.Unpack[altdss.VCCS.VCCSProperties]) -> altdss.VCCS.VCCS
 :canonical: altdss.VCCS.IVCCS.new
 
 ```{autodoc2-docstring} altdss.VCCS.IVCCS.new
@@ -1262,6 +1270,14 @@ Bases: {py:obj}`altdss.DSSObj.DSSObj`, {py:obj}`altdss.CircuitElement.CircuitEle
 
 ````
 
+````{py:method} edit(**kwargs: typing_extensions.Unpack[altdss.VCCS.VCCSProperties]) -> altdss.VCCS.VCCS
+:canonical: altdss.VCCS.VCCS.edit
+
+```{autodoc2-docstring} altdss.VCCS.VCCS.edit
+```
+
+````
+
 ````{py:method} end_edit(num_changes: int = 1) -> None
 :canonical: altdss.VCCS.VCCS.end_edit
 
@@ -1817,6 +1833,14 @@ Bases: {py:obj}`altdss.Batch.DSSBatch`, {py:obj}`altdss.CircuitElement.CircuitEl
 :canonical: altdss.VCCS.VCCSBatch.begin_edit
 
 ```{autodoc2-docstring} altdss.VCCS.VCCSBatch.begin_edit
+```
+
+````
+
+````{py:method} edit(**kwargs: typing_extensions.Unpack[altdss.VCCS.VCCSBatchProperties]) -> altdss.VCCS.VCCSBatch
+:canonical: altdss.VCCS.VCCSBatch.edit
+
+```{autodoc2-docstring} altdss.VCCS.VCCSBatch.edit
 ```
 
 ````

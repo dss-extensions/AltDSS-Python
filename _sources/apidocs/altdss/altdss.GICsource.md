@@ -597,6 +597,14 @@ Bases: {py:obj}`altdss.DSSObj.DSSObj`, {py:obj}`altdss.CircuitElement.CircuitEle
 
 ````
 
+````{py:method} edit(**kwargs: typing_extensions.Unpack[altdss.GICsource.GICsourceProperties]) -> altdss.GICsource.GICsource
+:canonical: altdss.GICsource.GICsource.edit
+
+```{autodoc2-docstring} altdss.GICsource.GICsource.edit
+```
+
+````
+
 ````{py:method} end_edit(num_changes: int = 1) -> None
 :canonical: altdss.GICsource.GICsource.end_edit
 
@@ -1086,6 +1094,14 @@ Bases: {py:obj}`altdss.Batch.DSSBatch`, {py:obj}`altdss.CircuitElement.CircuitEl
 :canonical: altdss.GICsource.GICsourceBatch.begin_edit
 
 ```{autodoc2-docstring} altdss.GICsource.GICsourceBatch.begin_edit
+```
+
+````
+
+````{py:method} edit(**kwargs: typing_extensions.Unpack[altdss.GICsource.GICsourceBatchProperties]) -> altdss.GICsource.GICsourceBatch
+:canonical: altdss.GICsource.GICsourceBatch.edit
+
+```{autodoc2-docstring} altdss.GICsource.GICsourceBatch.edit
 ```
 
 ````
@@ -2527,7 +2543,7 @@ Bases: {py:obj}`altdss.DSSObj.IDSSObj`, {py:obj}`altdss.GICsource.GICsourceBatch
 
 ````
 
-````{py:method} batch_new(names: typing.Optional[typing.List[typing.AnyStr]] = None, df=None, count: typing.Optional[int] = None, begin_edit=True, **kwargs: typing_extensions.Unpack[altdss.GICsource.GICsourceBatchProperties]) -> altdss.GICsource.GICsourceBatch
+````{py:method} batch_new(names: typing.Optional[typing.List[typing.AnyStr]] = None, *, df=None, count: typing.Optional[int] = None, begin_edit: typing.Optional[bool] = None, **kwargs: typing_extensions.Unpack[altdss.GICsource.GICsourceBatchProperties]) -> altdss.GICsource.GICsourceBatch
 :canonical: altdss.GICsource.IGICsource.batch_new
 
 ```{autodoc2-docstring} altdss.GICsource.IGICsource.batch_new
@@ -2539,6 +2555,14 @@ Bases: {py:obj}`altdss.DSSObj.IDSSObj`, {py:obj}`altdss.GICsource.GICsourceBatch
 :canonical: altdss.GICsource.IGICsource.begin_edit
 
 ```{autodoc2-docstring} altdss.GICsource.IGICsource.begin_edit
+```
+
+````
+
+````{py:method} edit(**kwargs: typing_extensions.Unpack[altdss.GICsource.GICsourceBatchProperties]) -> altdss.GICsource.GICsourceBatch
+:canonical: altdss.GICsource.IGICsource.edit
+
+```{autodoc2-docstring} altdss.GICsource.IGICsource.edit
 ```
 
 ````
@@ -2559,7 +2583,7 @@ Bases: {py:obj}`altdss.DSSObj.IDSSObj`, {py:obj}`altdss.GICsource.GICsourceBatch
 
 ````
 
-````{py:method} new(name: typing.AnyStr, begin_edit=True, activate=False, **kwargs: typing_extensions.Unpack[altdss.GICsource.GICsourceProperties]) -> altdss.GICsource.GICsource
+````{py:method} new(name: typing.AnyStr, *, begin_edit: typing.Optional[bool] = None, activate=False, **kwargs: typing_extensions.Unpack[altdss.GICsource.GICsourceProperties]) -> altdss.GICsource.GICsource
 :canonical: altdss.GICsource.IGICsource.new
 
 ```{autodoc2-docstring} altdss.GICsource.IGICsource.new

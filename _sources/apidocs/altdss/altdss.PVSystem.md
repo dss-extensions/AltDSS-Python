@@ -932,7 +932,7 @@ Bases: {py:obj}`altdss.DSSObj.IDSSObj`, {py:obj}`altdss.PVSystem.PVSystemBatch`
 
 ````
 
-````{py:method} batch_new(names: typing.Optional[typing.List[typing.AnyStr]] = None, df=None, count: typing.Optional[int] = None, begin_edit=True, **kwargs: typing_extensions.Unpack[altdss.PVSystem.PVSystemBatchProperties]) -> altdss.PVSystem.PVSystemBatch
+````{py:method} batch_new(names: typing.Optional[typing.List[typing.AnyStr]] = None, *, df=None, count: typing.Optional[int] = None, begin_edit: typing.Optional[bool] = None, **kwargs: typing_extensions.Unpack[altdss.PVSystem.PVSystemBatchProperties]) -> altdss.PVSystem.PVSystemBatch
 :canonical: altdss.PVSystem.IPVSystem.batch_new
 
 ```{autodoc2-docstring} altdss.PVSystem.IPVSystem.batch_new
@@ -944,6 +944,14 @@ Bases: {py:obj}`altdss.DSSObj.IDSSObj`, {py:obj}`altdss.PVSystem.PVSystemBatch`
 :canonical: altdss.PVSystem.IPVSystem.begin_edit
 
 ```{autodoc2-docstring} altdss.PVSystem.IPVSystem.begin_edit
+```
+
+````
+
+````{py:method} edit(**kwargs: typing_extensions.Unpack[altdss.PVSystem.PVSystemBatchProperties]) -> altdss.PVSystem.PVSystemBatch
+:canonical: altdss.PVSystem.IPVSystem.edit
+
+```{autodoc2-docstring} altdss.PVSystem.IPVSystem.edit
 ```
 
 ````
@@ -1030,7 +1038,7 @@ Bases: {py:obj}`altdss.DSSObj.IDSSObj`, {py:obj}`altdss.PVSystem.PVSystemBatch`
 
 ````
 
-````{py:method} new(name: typing.AnyStr, begin_edit=True, activate=False, **kwargs: typing_extensions.Unpack[altdss.PVSystem.PVSystemProperties]) -> altdss.PVSystem.PVSystem
+````{py:method} new(name: typing.AnyStr, *, begin_edit: typing.Optional[bool] = None, activate=False, **kwargs: typing_extensions.Unpack[altdss.PVSystem.PVSystemProperties]) -> altdss.PVSystem.PVSystem
 :canonical: altdss.PVSystem.IPVSystem.new
 
 ```{autodoc2-docstring} altdss.PVSystem.IPVSystem.new
@@ -2133,6 +2141,14 @@ Bases: {py:obj}`altdss.DSSObj.DSSObj`, {py:obj}`altdss.CircuitElement.CircuitEle
 
 ````
 
+````{py:method} edit(**kwargs: typing_extensions.Unpack[altdss.PVSystem.PVSystemProperties]) -> altdss.PVSystem.PVSystem
+:canonical: altdss.PVSystem.PVSystem.edit
+
+```{autodoc2-docstring} altdss.PVSystem.PVSystem.edit
+```
+
+````
+
 ````{py:method} end_edit(num_changes: int = 1) -> None
 :canonical: altdss.PVSystem.PVSystem.end_edit
 
@@ -3183,6 +3199,14 @@ Bases: {py:obj}`altdss.Batch.DSSBatch`, {py:obj}`altdss.CircuitElement.CircuitEl
 :canonical: altdss.PVSystem.PVSystemBatch.begin_edit
 
 ```{autodoc2-docstring} altdss.PVSystem.PVSystemBatch.begin_edit
+```
+
+````
+
+````{py:method} edit(**kwargs: typing_extensions.Unpack[altdss.PVSystem.PVSystemBatchProperties]) -> altdss.PVSystem.PVSystemBatch
+:canonical: altdss.PVSystem.PVSystemBatch.edit
+
+```{autodoc2-docstring} altdss.PVSystem.PVSystemBatch.edit
 ```
 
 ````

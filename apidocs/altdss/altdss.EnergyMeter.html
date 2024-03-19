@@ -8,7 +8,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
-    <title>altdss.EnergyMeter &#8212; AltDSS-Python 0.2.2 documentation</title>
+    <title>altdss.EnergyMeter &#8212; AltDSS-Python 0.2.3 documentation</title>
   
   
   
@@ -38,7 +38,7 @@
 <link rel="preload" as="script" href="../../_static/scripts/pydata-sphinx-theme.js?digest=8d27b9dea8ad943066ae" />
   <script src="../../_static/vendor/fontawesome/6.5.1/js/all.min.js?digest=8d27b9dea8ad943066ae"></script>
 
-    <script src="../../_static/documentation_options.js?v=d3f42505"></script>
+    <script src="../../_static/documentation_options.js?v=6808a718"></script>
     <script src="../../_static/doctools.js?v=888ff710"></script>
     <script src="../../_static/sphinx_highlight.js?v=dc90522c"></script>
     <script src="../../_static/scripts/sphinx-book-theme.js?v=efea14e4"></script>
@@ -137,8 +137,8 @@
       
     
     
-    <img src="../../_static/altdss-python.svg" class="logo__image only-light" alt="AltDSS-Python 0.2.2 documentation - Home"/>
-    <script>document.write(`<img src="../../_static/altdss-python-dark.svg" class="logo__image only-dark" alt="AltDSS-Python 0.2.2 documentation - Home"/>`);</script>
+    <img src="../../_static/altdss-python.svg" class="logo__image only-light" alt="AltDSS-Python 0.2.3 documentation - Home"/>
+    <script>document.write(`<img src="../../_static/altdss-python-dark.svg" class="logo__image only-dark" alt="AltDSS-Python 0.2.3 documentation - Home"/>`);</script>
   
   
 </a></div>
@@ -497,6 +497,7 @@ document.write(`
 <li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#altdss.EnergyMeter.EnergyMeter.__ne__"><code class="docutils literal notranslate"><span class="pre">EnergyMeter.__ne__()</span></code></a></li>
 <li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#altdss.EnergyMeter.EnergyMeter.__repr__"><code class="docutils literal notranslate"><span class="pre">EnergyMeter.__repr__()</span></code></a></li>
 <li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#altdss.EnergyMeter.EnergyMeter.begin_edit"><code class="docutils literal notranslate"><span class="pre">EnergyMeter.begin_edit()</span></code></a></li>
+<li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#altdss.EnergyMeter.EnergyMeter.edit"><code class="docutils literal notranslate"><span class="pre">EnergyMeter.edit()</span></code></a></li>
 <li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#altdss.EnergyMeter.EnergyMeter.end_edit"><code class="docutils literal notranslate"><span class="pre">EnergyMeter.end_edit()</span></code></a></li>
 <li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#altdss.EnergyMeter.EnergyMeter.kVAEmerg"><code class="docutils literal notranslate"><span class="pre">EnergyMeter.kVAEmerg</span></code></a></li>
 <li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#altdss.EnergyMeter.EnergyMeter.kVANormal"><code class="docutils literal notranslate"><span class="pre">EnergyMeter.kVANormal</span></code></a></li>
@@ -575,6 +576,7 @@ document.write(`
 <li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#altdss.EnergyMeter.EnergyMeterBatch.__len__"><code class="docutils literal notranslate"><span class="pre">EnergyMeterBatch.__len__()</span></code></a></li>
 <li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#altdss.EnergyMeter.EnergyMeterBatch.batch"><code class="docutils literal notranslate"><span class="pre">EnergyMeterBatch.batch()</span></code></a></li>
 <li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#altdss.EnergyMeter.EnergyMeterBatch.begin_edit"><code class="docutils literal notranslate"><span class="pre">EnergyMeterBatch.begin_edit()</span></code></a></li>
+<li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#altdss.EnergyMeter.EnergyMeterBatch.edit"><code class="docutils literal notranslate"><span class="pre">EnergyMeterBatch.edit()</span></code></a></li>
 <li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#altdss.EnergyMeter.EnergyMeterBatch.end_edit"><code class="docutils literal notranslate"><span class="pre">EnergyMeterBatch.end_edit()</span></code></a></li>
 <li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#altdss.EnergyMeter.EnergyMeterBatch.kVAEmerg"><code class="docutils literal notranslate"><span class="pre">EnergyMeterBatch.kVAEmerg</span></code></a></li>
 <li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#altdss.EnergyMeter.EnergyMeterBatch.kVANormal"><code class="docutils literal notranslate"><span class="pre">EnergyMeterBatch.kVANormal</span></code></a></li>
@@ -796,6 +798,7 @@ document.write(`
 <li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#altdss.EnergyMeter.IEnergyMeter.batch"><code class="docutils literal notranslate"><span class="pre">IEnergyMeter.batch()</span></code></a></li>
 <li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#altdss.EnergyMeter.IEnergyMeter.batch_new"><code class="docutils literal notranslate"><span class="pre">IEnergyMeter.batch_new()</span></code></a></li>
 <li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#altdss.EnergyMeter.IEnergyMeter.begin_edit"><code class="docutils literal notranslate"><span class="pre">IEnergyMeter.begin_edit()</span></code></a></li>
+<li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#altdss.EnergyMeter.IEnergyMeter.edit"><code class="docutils literal notranslate"><span class="pre">IEnergyMeter.edit()</span></code></a></li>
 <li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#altdss.EnergyMeter.IEnergyMeter.end_edit"><code class="docutils literal notranslate"><span class="pre">IEnergyMeter.end_edit()</span></code></a></li>
 <li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#altdss.EnergyMeter.IEnergyMeter.find"><code class="docutils literal notranslate"><span class="pre">IEnergyMeter.find()</span></code></a></li>
 <li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#altdss.EnergyMeter.IEnergyMeter.kVAEmerg"><code class="docutils literal notranslate"><span class="pre">IEnergyMeter.kVAEmerg</span></code></a></li>
@@ -1511,6 +1514,24 @@ emitted automatically when editing single properties outside an edit block.</p>
 </dd></dl>
 
 <dl class="py method">
+<dt class="sig sig-object py" id="altdss.EnergyMeter.EnergyMeter.edit">
+<span class="sig-name descname"><span class="pre">edit</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">typing_extensions.Unpack</span><span class="p"><span class="pre">[</span></span><a class="reference internal" href="#altdss.EnergyMeter.EnergyMeterProperties" title="altdss.EnergyMeter.EnergyMeterProperties"><span class="pre">altdss.EnergyMeter.EnergyMeterProperties</span></a><span class="p"><span class="pre">]</span></span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference internal" href="#altdss.EnergyMeter.EnergyMeter" title="altdss.EnergyMeter.EnergyMeter"><span class="pre">altdss.EnergyMeter.EnergyMeter</span></a></span></span><a class="headerlink" href="#altdss.EnergyMeter.EnergyMeter.edit" title="Link to this definition">#</a></dt>
+<dd><p>Edit this EnergyMeter.</p>
+<p>This method will try to open a new edit context (if not already open),
+edit the properties, and finalize the edit context.
+It can be seen as a shortcut to manually setting each property, or a Pythonic
+analogous (but extended) to the DSS <code class="docutils literal notranslate"><span class="pre">Edit</span></code> command.</p>
+<dl class="myst field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>**kwargs</strong> – Pass keyword arguments equivalent to the DSS properties of the object.</p>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>Returns itself to allow call chaining.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
 <dt class="sig sig-object py" id="altdss.EnergyMeter.EnergyMeter.end_edit">
 <span class="sig-name descname"><span class="pre">end_edit</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">num_changes</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">1</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span><a class="headerlink" href="#altdss.EnergyMeter.EnergyMeter.end_edit" title="Link to this definition">#</a></dt>
 <dd><p>Leaves the editing state of a DSS object</p>
@@ -2099,6 +2120,24 @@ the model parameters or internal matrices.</p>
 <p>If you don’t have any performance constraint, you may edit each property individually
 without worrying about using <code class="docutils literal notranslate"><span class="pre">begin_edit</span></code> and <code class="docutils literal notranslate"><span class="pre">end_edit</span></code>. For convenience, those are
 emitted automatically when editing single properties outside an edit block.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="altdss.EnergyMeter.EnergyMeterBatch.edit">
+<span class="sig-name descname"><span class="pre">edit</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">typing_extensions.Unpack</span><span class="p"><span class="pre">[</span></span><a class="reference internal" href="#altdss.EnergyMeter.EnergyMeterBatchProperties" title="altdss.EnergyMeter.EnergyMeterBatchProperties"><span class="pre">altdss.EnergyMeter.EnergyMeterBatchProperties</span></a><span class="p"><span class="pre">]</span></span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference internal" href="#altdss.EnergyMeter.EnergyMeterBatch" title="altdss.EnergyMeter.EnergyMeterBatch"><span class="pre">altdss.EnergyMeter.EnergyMeterBatch</span></a></span></span><a class="headerlink" href="#altdss.EnergyMeter.EnergyMeterBatch.edit" title="Link to this definition">#</a></dt>
+<dd><p>Edit this EnergyMeter batch.</p>
+<p>This method will try to open a new edit context (if not already open),
+edit the properties, and finalize the edit context for objects in the batch.
+It can be seen as a shortcut to manually setting each property, or a Pythonic
+analogous (but extended) to the DSS <code class="docutils literal notranslate"><span class="pre">BatchEdit</span></code> command.</p>
+<dl class="myst field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>**kwargs</strong> – Pass keyword arguments equivalent to the DSS properties of the objects.</p>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>Returns itself to allow call chaining.</p>
+</dd>
+</dl>
 </dd></dl>
 
 <dl class="py method">
@@ -3524,9 +3563,24 @@ zonelist=(file=branchlist.txt)</p>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="altdss.EnergyMeter.IEnergyMeter.batch_new">
-<span class="sig-name descname"><span class="pre">batch_new</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">names</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Optional</span><span class="p"><span class="pre">[</span></span><span class="pre">List</span><span class="p"><span class="pre">[</span></span><span class="pre">AnyStr</span><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">]</span></span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">df</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">count</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Optional</span><span class="p"><span class="pre">[</span></span><span class="pre">int</span><span class="p"><span class="pre">]</span></span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">begin_edit</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">typing_extensions.Unpack</span><span class="p"><span class="pre">[</span></span><a class="reference internal" href="#altdss.EnergyMeter.EnergyMeterBatchProperties" title="altdss.EnergyMeter.EnergyMeterBatchProperties"><span class="pre">altdss.EnergyMeter.EnergyMeterBatchProperties</span></a><span class="p"><span class="pre">]</span></span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference internal" href="#altdss.EnergyMeter.EnergyMeterBatch" title="altdss.EnergyMeter.EnergyMeterBatch"><span class="pre">altdss.EnergyMeter.EnergyMeterBatch</span></a></span></span><a class="headerlink" href="#altdss.EnergyMeter.IEnergyMeter.batch_new" title="Link to this definition">#</a></dt>
-<dd><p>Creates a new batch handler of new objects, with the specified names,
-or “count” elements with a randomized prefix.</p>
+<span class="sig-name descname"><span class="pre">batch_new</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">names</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Optional</span><span class="p"><span class="pre">[</span></span><span class="pre">List</span><span class="p"><span class="pre">[</span></span><span class="pre">AnyStr</span><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">]</span></span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">*</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">df</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">count</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Optional</span><span class="p"><span class="pre">[</span></span><span class="pre">int</span><span class="p"><span class="pre">]</span></span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">begin_edit</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Optional</span><span class="p"><span class="pre">[</span></span><span class="pre">bool</span><span class="p"><span class="pre">]</span></span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">typing_extensions.Unpack</span><span class="p"><span class="pre">[</span></span><a class="reference internal" href="#altdss.EnergyMeter.EnergyMeterBatchProperties" title="altdss.EnergyMeter.EnergyMeterBatchProperties"><span class="pre">altdss.EnergyMeter.EnergyMeterBatchProperties</span></a><span class="p"><span class="pre">]</span></span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference internal" href="#altdss.EnergyMeter.EnergyMeterBatch" title="altdss.EnergyMeter.EnergyMeterBatch"><span class="pre">altdss.EnergyMeter.EnergyMeterBatch</span></a></span></span><a class="headerlink" href="#altdss.EnergyMeter.IEnergyMeter.batch_new" title="Link to this definition">#</a></dt>
+<dd><p>Creates a new batch of EnergyMeter objects</p>
+<p>Either <code class="docutils literal notranslate"><span class="pre">names</span></code>, <code class="docutils literal notranslate"><span class="pre">count</span></code> or <code class="docutils literal notranslate"><span class="pre">df</span></code> is required.</p>
+<dl class="myst field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>begin_edit</strong> – The argument <code class="docutils literal notranslate"><span class="pre">begin_edit</span></code> indicates if the user want to leave the elements in the edit state, and requires a call to <code class="docutils literal notranslate"><span class="pre">end_edit()</span></code> or equivalent. The default <code class="docutils literal notranslate"><span class="pre">begin_edit</span></code> is set to <code class="docutils literal notranslate"><span class="pre">None</span></code>. With <code class="docutils literal notranslate"><span class="pre">None</span></code>, the behavior will be adjusted according the default of how the batch is created.</p></li>
+<li><p><strong>**kwargs</strong> – Pass keyword arguments equivalent to the DSS properties of the object.</p></li>
+<li><p><strong>names</strong> – When using a list of names, each new object will match the names from this list. <code class="docutils literal notranslate"><span class="pre">begin_edit</span></code> defaults to <code class="docutils literal notranslate"><span class="pre">True</span></code> if no arguments for properties were passed, <code class="docutils literal notranslate"><span class="pre">False</span></code> otherwise.</p></li>
+<li><p><strong>count</strong> – When using <code class="docutils literal notranslate"><span class="pre">count</span></code>, new objects will be created with based on a random prefix, with an increasing integer up to <code class="docutils literal notranslate"><span class="pre">count</span></code>. <code class="docutils literal notranslate"><span class="pre">begin_edit</span></code> defaults to <code class="docutils literal notranslate"><span class="pre">True</span></code> if no arguments for properties were passed, <code class="docutils literal notranslate"><span class="pre">False</span></code> otherwise.</p></li>
+<li><p><strong>df</strong> – Currently <strong>EXPERIMENTAL AND LIMITED</strong>, tries to get the columns from a dataframe to populate the names and the DSS properties. <code class="docutils literal notranslate"><span class="pre">begin_edit</span></code> defaults to <code class="docutils literal notranslate"><span class="pre">False</span></code>.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>Returns the new batch of DSS objects, wrapped in Python.</p>
+</dd>
+</dl>
+<p>Note that, to make it easier for new users where the edit context might not be too relevant, AltDSS automatically opens/closes edit contexts for single properties if the object is not in the edit state already.</p>
 </dd></dl>
 
 <dl class="py method">
@@ -3539,6 +3593,24 @@ the model parameters or internal matrices.</p>
 <p>If you don’t have any performance constraint, you may edit each property individually
 without worrying about using <code class="docutils literal notranslate"><span class="pre">begin_edit</span></code> and <code class="docutils literal notranslate"><span class="pre">end_edit</span></code>. For convenience, those are
 emitted automatically when editing single properties outside an edit block.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="altdss.EnergyMeter.IEnergyMeter.edit">
+<span class="sig-name descname"><span class="pre">edit</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">typing_extensions.Unpack</span><span class="p"><span class="pre">[</span></span><a class="reference internal" href="#altdss.EnergyMeter.EnergyMeterBatchProperties" title="altdss.EnergyMeter.EnergyMeterBatchProperties"><span class="pre">altdss.EnergyMeter.EnergyMeterBatchProperties</span></a><span class="p"><span class="pre">]</span></span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference internal" href="#altdss.EnergyMeter.EnergyMeterBatch" title="altdss.EnergyMeter.EnergyMeterBatch"><span class="pre">altdss.EnergyMeter.EnergyMeterBatch</span></a></span></span><a class="headerlink" href="#altdss.EnergyMeter.IEnergyMeter.edit" title="Link to this definition">#</a></dt>
+<dd><p>Edit this EnergyMeter batch.</p>
+<p>This method will try to open a new edit context (if not already open),
+edit the properties, and finalize the edit context for objects in the batch.
+It can be seen as a shortcut to manually setting each property, or a Pythonic
+analogous (but extended) to the DSS <code class="docutils literal notranslate"><span class="pre">BatchEdit</span></code> command.</p>
+<dl class="myst field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>**kwargs</strong> – Pass keyword arguments equivalent to the DSS properties of the objects.</p>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>Returns itself to allow call chaining.</p>
+</dd>
+</dl>
 </dd></dl>
 
 <dl class="py method">
@@ -3575,8 +3647,33 @@ the <code class="docutils literal notranslate"><span class="pre">Process</span><
 
 <dl class="py method">
 <dt class="sig sig-object py" id="altdss.EnergyMeter.IEnergyMeter.new">
-<span class="sig-name descname"><span class="pre">new</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">name</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">AnyStr</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">begin_edit</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">activate</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">typing_extensions.Unpack</span><span class="p"><span class="pre">[</span></span><a class="reference internal" href="#altdss.EnergyMeter.EnergyMeterProperties" title="altdss.EnergyMeter.EnergyMeterProperties"><span class="pre">altdss.EnergyMeter.EnergyMeterProperties</span></a><span class="p"><span class="pre">]</span></span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference internal" href="#altdss.EnergyMeter.EnergyMeter" title="altdss.EnergyMeter.EnergyMeter"><span class="pre">altdss.EnergyMeter.EnergyMeter</span></a></span></span><a class="headerlink" href="#altdss.EnergyMeter.IEnergyMeter.new" title="Link to this definition">#</a></dt>
-<dd></dd></dl>
+<span class="sig-name descname"><span class="pre">new</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">name</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">AnyStr</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">*</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">begin_edit</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Optional</span><span class="p"><span class="pre">[</span></span><span class="pre">bool</span><span class="p"><span class="pre">]</span></span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">activate</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">typing_extensions.Unpack</span><span class="p"><span class="pre">[</span></span><a class="reference internal" href="#altdss.EnergyMeter.EnergyMeterProperties" title="altdss.EnergyMeter.EnergyMeterProperties"><span class="pre">altdss.EnergyMeter.EnergyMeterProperties</span></a><span class="p"><span class="pre">]</span></span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference internal" href="#altdss.EnergyMeter.EnergyMeter" title="altdss.EnergyMeter.EnergyMeter"><span class="pre">altdss.EnergyMeter.EnergyMeter</span></a></span></span><a class="headerlink" href="#altdss.EnergyMeter.IEnergyMeter.new" title="Link to this definition">#</a></dt>
+<dd><p>Creates a new EnergyMeter.</p>
+<dl class="myst field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>name</strong> – The object’s name is a required positional argument.</p></li>
+<li><p><strong>activate</strong> – Activation (setting <code class="docutils literal notranslate"><span class="pre">activate</span></code> to true) is useful for integration with the classic API, and some internal OpenDSS commands.
+If you interact with this object only via the Alt API, no need to activate it (due to performance costs).</p></li>
+<li><p><strong>begin_edit</strong> – This controls how the edit context is left after the object creation:</p></li>
+</ul>
+</dd>
+</dl>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">True</span></code>: The object will be left in the edit state, requiring an <code class="docutils literal notranslate"><span class="pre">end_edit</span></code> call or equivalent.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">False</span></code>: No edit context is started.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">None</span></code>: If no properties are passed as keyword arguments, the object will be left in the edit state (assumes the user will fill the properties from Python attributes). Otherwise, the internal edit context will be finalized.</p></li>
+</ul>
+<dl class="myst field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>**kwargs</strong> – Pass keyword arguments equivalent to the DSS properties of the object.</p>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>Returns the new DSS object, wrapped in Python.</p>
+</dd>
+</dl>
+<p>Note that, to make it easier for new users where the edit context might not be too relevant, AltDSS automatically opens/closes edit contexts for single properties if the object is not in the edit state already.</p>
+</dd></dl>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="altdss.EnergyMeter.IEnergyMeter.to_json">
@@ -3735,6 +3832,7 @@ See <code class="docutils literal notranslate"><span class="pre">Obj_ToJSON</spa
 <li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#altdss.EnergyMeter.EnergyMeter.__ne__"><code class="docutils literal notranslate"><span class="pre">EnergyMeter.__ne__()</span></code></a></li>
 <li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#altdss.EnergyMeter.EnergyMeter.__repr__"><code class="docutils literal notranslate"><span class="pre">EnergyMeter.__repr__()</span></code></a></li>
 <li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#altdss.EnergyMeter.EnergyMeter.begin_edit"><code class="docutils literal notranslate"><span class="pre">EnergyMeter.begin_edit()</span></code></a></li>
+<li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#altdss.EnergyMeter.EnergyMeter.edit"><code class="docutils literal notranslate"><span class="pre">EnergyMeter.edit()</span></code></a></li>
 <li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#altdss.EnergyMeter.EnergyMeter.end_edit"><code class="docutils literal notranslate"><span class="pre">EnergyMeter.end_edit()</span></code></a></li>
 <li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#altdss.EnergyMeter.EnergyMeter.kVAEmerg"><code class="docutils literal notranslate"><span class="pre">EnergyMeter.kVAEmerg</span></code></a></li>
 <li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#altdss.EnergyMeter.EnergyMeter.kVANormal"><code class="docutils literal notranslate"><span class="pre">EnergyMeter.kVANormal</span></code></a></li>
@@ -3813,6 +3911,7 @@ See <code class="docutils literal notranslate"><span class="pre">Obj_ToJSON</spa
 <li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#altdss.EnergyMeter.EnergyMeterBatch.__len__"><code class="docutils literal notranslate"><span class="pre">EnergyMeterBatch.__len__()</span></code></a></li>
 <li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#altdss.EnergyMeter.EnergyMeterBatch.batch"><code class="docutils literal notranslate"><span class="pre">EnergyMeterBatch.batch()</span></code></a></li>
 <li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#altdss.EnergyMeter.EnergyMeterBatch.begin_edit"><code class="docutils literal notranslate"><span class="pre">EnergyMeterBatch.begin_edit()</span></code></a></li>
+<li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#altdss.EnergyMeter.EnergyMeterBatch.edit"><code class="docutils literal notranslate"><span class="pre">EnergyMeterBatch.edit()</span></code></a></li>
 <li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#altdss.EnergyMeter.EnergyMeterBatch.end_edit"><code class="docutils literal notranslate"><span class="pre">EnergyMeterBatch.end_edit()</span></code></a></li>
 <li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#altdss.EnergyMeter.EnergyMeterBatch.kVAEmerg"><code class="docutils literal notranslate"><span class="pre">EnergyMeterBatch.kVAEmerg</span></code></a></li>
 <li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#altdss.EnergyMeter.EnergyMeterBatch.kVANormal"><code class="docutils literal notranslate"><span class="pre">EnergyMeterBatch.kVANormal</span></code></a></li>
@@ -4034,6 +4133,7 @@ See <code class="docutils literal notranslate"><span class="pre">Obj_ToJSON</spa
 <li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#altdss.EnergyMeter.IEnergyMeter.batch"><code class="docutils literal notranslate"><span class="pre">IEnergyMeter.batch()</span></code></a></li>
 <li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#altdss.EnergyMeter.IEnergyMeter.batch_new"><code class="docutils literal notranslate"><span class="pre">IEnergyMeter.batch_new()</span></code></a></li>
 <li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#altdss.EnergyMeter.IEnergyMeter.begin_edit"><code class="docutils literal notranslate"><span class="pre">IEnergyMeter.begin_edit()</span></code></a></li>
+<li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#altdss.EnergyMeter.IEnergyMeter.edit"><code class="docutils literal notranslate"><span class="pre">IEnergyMeter.edit()</span></code></a></li>
 <li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#altdss.EnergyMeter.IEnergyMeter.end_edit"><code class="docutils literal notranslate"><span class="pre">IEnergyMeter.end_edit()</span></code></a></li>
 <li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#altdss.EnergyMeter.IEnergyMeter.find"><code class="docutils literal notranslate"><span class="pre">IEnergyMeter.find()</span></code></a></li>
 <li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#altdss.EnergyMeter.IEnergyMeter.kVAEmerg"><code class="docutils literal notranslate"><span class="pre">IEnergyMeter.kVAEmerg</span></code></a></li>

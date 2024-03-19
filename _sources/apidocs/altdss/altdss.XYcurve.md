@@ -260,7 +260,7 @@ Bases: {py:obj}`altdss.DSSObj.IDSSObj`, {py:obj}`altdss.XYcurve.XYcurveBatch`
 
 ````
 
-````{py:method} batch_new(names: typing.Optional[typing.List[typing.AnyStr]] = None, df=None, count: typing.Optional[int] = None, begin_edit=True, **kwargs: typing_extensions.Unpack[altdss.XYcurve.XYcurveBatchProperties]) -> altdss.XYcurve.XYcurveBatch
+````{py:method} batch_new(names: typing.Optional[typing.List[typing.AnyStr]] = None, *, df=None, count: typing.Optional[int] = None, begin_edit: typing.Optional[bool] = None, **kwargs: typing_extensions.Unpack[altdss.XYcurve.XYcurveBatchProperties]) -> altdss.XYcurve.XYcurveBatch
 :canonical: altdss.XYcurve.IXYcurve.batch_new
 
 ```{autodoc2-docstring} altdss.XYcurve.IXYcurve.batch_new
@@ -272,6 +272,14 @@ Bases: {py:obj}`altdss.DSSObj.IDSSObj`, {py:obj}`altdss.XYcurve.XYcurveBatch`
 :canonical: altdss.XYcurve.IXYcurve.begin_edit
 
 ```{autodoc2-docstring} altdss.XYcurve.IXYcurve.begin_edit
+```
+
+````
+
+````{py:method} edit(**kwargs: typing_extensions.Unpack[altdss.XYcurve.XYcurveBatchProperties]) -> altdss.XYcurve.XYcurveBatch
+:canonical: altdss.XYcurve.IXYcurve.edit
+
+```{autodoc2-docstring} altdss.XYcurve.IXYcurve.edit
 ```
 
 ````
@@ -292,7 +300,7 @@ Bases: {py:obj}`altdss.DSSObj.IDSSObj`, {py:obj}`altdss.XYcurve.XYcurveBatch`
 
 ````
 
-````{py:method} new(name: typing.AnyStr, begin_edit=True, activate=False, **kwargs: typing_extensions.Unpack[altdss.XYcurve.XYcurveProperties]) -> altdss.XYcurve.XYcurve
+````{py:method} new(name: typing.AnyStr, *, begin_edit: typing.Optional[bool] = None, activate=False, **kwargs: typing_extensions.Unpack[altdss.XYcurve.XYcurveProperties]) -> altdss.XYcurve.XYcurve
 :canonical: altdss.XYcurve.IXYcurve.new
 
 ```{autodoc2-docstring} altdss.XYcurve.IXYcurve.new
@@ -519,6 +527,14 @@ Bases: {py:obj}`altdss.DSSObj.DSSObj`
 :canonical: altdss.XYcurve.XYcurve.begin_edit
 
 ```{autodoc2-docstring} altdss.XYcurve.XYcurve.begin_edit
+```
+
+````
+
+````{py:method} edit(**kwargs: typing_extensions.Unpack[altdss.XYcurve.XYcurveProperties]) -> altdss.XYcurve.XYcurve
+:canonical: altdss.XYcurve.XYcurve.edit
+
+```{autodoc2-docstring} altdss.XYcurve.XYcurve.edit
 ```
 
 ````
@@ -758,6 +774,14 @@ Bases: {py:obj}`altdss.Batch.DSSBatch`
 :canonical: altdss.XYcurve.XYcurveBatch.begin_edit
 
 ```{autodoc2-docstring} altdss.XYcurve.XYcurveBatch.begin_edit
+```
+
+````
+
+````{py:method} edit(**kwargs: typing_extensions.Unpack[altdss.XYcurve.XYcurveBatchProperties]) -> altdss.XYcurve.XYcurveBatch
+:canonical: altdss.XYcurve.XYcurveBatch.edit
+
+```{autodoc2-docstring} altdss.XYcurve.XYcurveBatch.edit
 ```
 
 ````

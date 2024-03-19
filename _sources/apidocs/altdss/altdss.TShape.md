@@ -273,7 +273,7 @@ Bases: {py:obj}`altdss.DSSObj.IDSSObj`, {py:obj}`altdss.TShape.TShapeBatch`
 
 ````
 
-````{py:method} batch_new(names: typing.Optional[typing.List[typing.AnyStr]] = None, df=None, count: typing.Optional[int] = None, begin_edit=True, **kwargs: typing_extensions.Unpack[altdss.TShape.TShapeBatchProperties]) -> altdss.TShape.TShapeBatch
+````{py:method} batch_new(names: typing.Optional[typing.List[typing.AnyStr]] = None, *, df=None, count: typing.Optional[int] = None, begin_edit: typing.Optional[bool] = None, **kwargs: typing_extensions.Unpack[altdss.TShape.TShapeBatchProperties]) -> altdss.TShape.TShapeBatch
 :canonical: altdss.TShape.ITShape.batch_new
 
 ```{autodoc2-docstring} altdss.TShape.ITShape.batch_new
@@ -285,6 +285,14 @@ Bases: {py:obj}`altdss.DSSObj.IDSSObj`, {py:obj}`altdss.TShape.TShapeBatch`
 :canonical: altdss.TShape.ITShape.begin_edit
 
 ```{autodoc2-docstring} altdss.TShape.ITShape.begin_edit
+```
+
+````
+
+````{py:method} edit(**kwargs: typing_extensions.Unpack[altdss.TShape.TShapeBatchProperties]) -> altdss.TShape.TShapeBatch
+:canonical: altdss.TShape.ITShape.edit
+
+```{autodoc2-docstring} altdss.TShape.ITShape.edit
 ```
 
 ````
@@ -305,7 +313,7 @@ Bases: {py:obj}`altdss.DSSObj.IDSSObj`, {py:obj}`altdss.TShape.TShapeBatch`
 
 ````
 
-````{py:method} new(name: typing.AnyStr, begin_edit=True, activate=False, **kwargs: typing_extensions.Unpack[altdss.TShape.TShapeProperties]) -> altdss.TShape.TShape
+````{py:method} new(name: typing.AnyStr, *, begin_edit: typing.Optional[bool] = None, activate=False, **kwargs: typing_extensions.Unpack[altdss.TShape.TShapeProperties]) -> altdss.TShape.TShape
 :canonical: altdss.TShape.ITShape.new
 
 ```{autodoc2-docstring} altdss.TShape.ITShape.new
@@ -545,6 +553,14 @@ Bases: {py:obj}`altdss.DSSObj.DSSObj`
 :canonical: altdss.TShape.TShape.begin_edit
 
 ```{autodoc2-docstring} altdss.TShape.TShape.begin_edit
+```
+
+````
+
+````{py:method} edit(**kwargs: typing_extensions.Unpack[altdss.TShape.TShapeProperties]) -> altdss.TShape.TShape
+:canonical: altdss.TShape.TShape.edit
+
+```{autodoc2-docstring} altdss.TShape.TShape.edit
 ```
 
 ````
@@ -797,6 +813,14 @@ Bases: {py:obj}`altdss.Batch.DSSBatch`
 :canonical: altdss.TShape.TShapeBatch.begin_edit
 
 ```{autodoc2-docstring} altdss.TShape.TShapeBatch.begin_edit
+```
+
+````
+
+````{py:method} edit(**kwargs: typing_extensions.Unpack[altdss.TShape.TShapeBatchProperties]) -> altdss.TShape.TShapeBatch
+:canonical: altdss.TShape.TShapeBatch.edit
+
+```{autodoc2-docstring} altdss.TShape.TShapeBatch.edit
 ```
 
 ````

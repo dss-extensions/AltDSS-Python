@@ -579,6 +579,14 @@ Bases: {py:obj}`altdss.DSSObj.DSSObj`, {py:obj}`altdss.CircuitElement.CircuitEle
 
 ````
 
+````{py:method} edit(**kwargs: typing_extensions.Unpack[altdss.Fuse.FuseProperties]) -> altdss.Fuse.Fuse
+:canonical: altdss.Fuse.Fuse.edit
+
+```{autodoc2-docstring} altdss.Fuse.Fuse.edit
+```
+
+````
+
 ````{py:method} end_edit(num_changes: int = 1) -> None
 :canonical: altdss.Fuse.Fuse.end_edit
 
@@ -1098,6 +1106,14 @@ Bases: {py:obj}`altdss.Batch.DSSBatch`, {py:obj}`altdss.CircuitElement.CircuitEl
 :canonical: altdss.Fuse.FuseBatch.close
 
 ```{autodoc2-docstring} altdss.Fuse.FuseBatch.close
+```
+
+````
+
+````{py:method} edit(**kwargs: typing_extensions.Unpack[altdss.Fuse.FuseBatchProperties]) -> altdss.Fuse.FuseBatch
+:canonical: altdss.Fuse.FuseBatch.edit
+
+```{autodoc2-docstring} altdss.Fuse.FuseBatch.edit
 ```
 
 ````
@@ -2539,7 +2555,7 @@ Bases: {py:obj}`altdss.DSSObj.IDSSObj`, {py:obj}`altdss.Fuse.FuseBatch`
 
 ````
 
-````{py:method} batch_new(names: typing.Optional[typing.List[typing.AnyStr]] = None, df=None, count: typing.Optional[int] = None, begin_edit=True, **kwargs: typing_extensions.Unpack[altdss.Fuse.FuseBatchProperties]) -> altdss.Fuse.FuseBatch
+````{py:method} batch_new(names: typing.Optional[typing.List[typing.AnyStr]] = None, *, df=None, count: typing.Optional[int] = None, begin_edit: typing.Optional[bool] = None, **kwargs: typing_extensions.Unpack[altdss.Fuse.FuseBatchProperties]) -> altdss.Fuse.FuseBatch
 :canonical: altdss.Fuse.IFuse.batch_new
 
 ```{autodoc2-docstring} altdss.Fuse.IFuse.batch_new
@@ -2563,6 +2579,14 @@ Bases: {py:obj}`altdss.DSSObj.IDSSObj`, {py:obj}`altdss.Fuse.FuseBatch`
 
 ````
 
+````{py:method} edit(**kwargs: typing_extensions.Unpack[altdss.Fuse.FuseBatchProperties]) -> altdss.Fuse.FuseBatch
+:canonical: altdss.Fuse.IFuse.edit
+
+```{autodoc2-docstring} altdss.Fuse.IFuse.edit
+```
+
+````
+
 ````{py:method} end_edit(num_changes: int = 1) -> None
 :canonical: altdss.Fuse.IFuse.end_edit
 
@@ -2579,7 +2603,7 @@ Bases: {py:obj}`altdss.DSSObj.IDSSObj`, {py:obj}`altdss.Fuse.FuseBatch`
 
 ````
 
-````{py:method} new(name: typing.AnyStr, begin_edit=True, activate=False, **kwargs: typing_extensions.Unpack[altdss.Fuse.FuseProperties]) -> altdss.Fuse.Fuse
+````{py:method} new(name: typing.AnyStr, *, begin_edit: typing.Optional[bool] = None, activate=False, **kwargs: typing_extensions.Unpack[altdss.Fuse.FuseProperties]) -> altdss.Fuse.Fuse
 :canonical: altdss.Fuse.IFuse.new
 
 ```{autodoc2-docstring} altdss.Fuse.IFuse.new

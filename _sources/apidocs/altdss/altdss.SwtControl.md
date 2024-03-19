@@ -473,7 +473,7 @@ Bases: {py:obj}`altdss.DSSObj.IDSSObj`, {py:obj}`altdss.SwtControl.SwtControlBat
 
 ````
 
-````{py:method} batch_new(names: typing.Optional[typing.List[typing.AnyStr]] = None, df=None, count: typing.Optional[int] = None, begin_edit=True, **kwargs: typing_extensions.Unpack[altdss.SwtControl.SwtControlBatchProperties]) -> altdss.SwtControl.SwtControlBatch
+````{py:method} batch_new(names: typing.Optional[typing.List[typing.AnyStr]] = None, *, df=None, count: typing.Optional[int] = None, begin_edit: typing.Optional[bool] = None, **kwargs: typing_extensions.Unpack[altdss.SwtControl.SwtControlBatchProperties]) -> altdss.SwtControl.SwtControlBatch
 :canonical: altdss.SwtControl.ISwtControl.batch_new
 
 ```{autodoc2-docstring} altdss.SwtControl.ISwtControl.batch_new
@@ -485,6 +485,14 @@ Bases: {py:obj}`altdss.DSSObj.IDSSObj`, {py:obj}`altdss.SwtControl.SwtControlBat
 :canonical: altdss.SwtControl.ISwtControl.begin_edit
 
 ```{autodoc2-docstring} altdss.SwtControl.ISwtControl.begin_edit
+```
+
+````
+
+````{py:method} edit(**kwargs: typing_extensions.Unpack[altdss.SwtControl.SwtControlBatchProperties]) -> altdss.SwtControl.SwtControlBatch
+:canonical: altdss.SwtControl.ISwtControl.edit
+
+```{autodoc2-docstring} altdss.SwtControl.ISwtControl.edit
 ```
 
 ````
@@ -505,7 +513,7 @@ Bases: {py:obj}`altdss.DSSObj.IDSSObj`, {py:obj}`altdss.SwtControl.SwtControlBat
 
 ````
 
-````{py:method} new(name: typing.AnyStr, begin_edit=True, activate=False, **kwargs: typing_extensions.Unpack[altdss.SwtControl.SwtControlProperties]) -> altdss.SwtControl.SwtControl
+````{py:method} new(name: typing.AnyStr, *, begin_edit: typing.Optional[bool] = None, activate=False, **kwargs: typing_extensions.Unpack[altdss.SwtControl.SwtControlProperties]) -> altdss.SwtControl.SwtControl
 :canonical: altdss.SwtControl.ISwtControl.new
 
 ```{autodoc2-docstring} altdss.SwtControl.ISwtControl.new
@@ -1008,6 +1016,14 @@ Bases: {py:obj}`altdss.DSSObj.DSSObj`, {py:obj}`altdss.CircuitElement.CircuitEle
 
 ````
 
+````{py:method} edit(**kwargs: typing_extensions.Unpack[altdss.SwtControl.SwtControlProperties]) -> altdss.SwtControl.SwtControl
+:canonical: altdss.SwtControl.SwtControl.edit
+
+```{autodoc2-docstring} altdss.SwtControl.SwtControl.edit
+```
+
+````
+
 ````{py:method} end_edit(num_changes: int = 1) -> None
 :canonical: altdss.SwtControl.SwtControl.end_edit
 
@@ -1456,6 +1472,14 @@ Bases: {py:obj}`altdss.Batch.DSSBatch`, {py:obj}`altdss.CircuitElement.CircuitEl
 :canonical: altdss.SwtControl.SwtControlBatch.begin_edit
 
 ```{autodoc2-docstring} altdss.SwtControl.SwtControlBatch.begin_edit
+```
+
+````
+
+````{py:method} edit(**kwargs: typing_extensions.Unpack[altdss.SwtControl.SwtControlBatchProperties]) -> altdss.SwtControl.SwtControlBatch
+:canonical: altdss.SwtControl.SwtControlBatch.edit
+
+```{autodoc2-docstring} altdss.SwtControl.SwtControlBatch.edit
 ```
 
 ````

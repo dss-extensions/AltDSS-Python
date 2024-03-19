@@ -166,7 +166,7 @@ Bases: {py:obj}`altdss.common.Base`
 
 ````
 
-````{py:method} batch_new(names: typing.Optional[typing.List[typing.AnyStr]] = None, count: typing.Optional[int] = None, begin_edit=True)
+````{py:method} batch_new(names: typing.Optional[typing.List[typing.AnyStr]] = None, count: typing.Optional[int] = None, begin_edit=None)
 :canonical: altdss.DSSObj.IDSSObj.batch_new
 
 ```{autodoc2-docstring} altdss.DSSObj.IDSSObj.batch_new

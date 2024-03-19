@@ -841,6 +841,14 @@ Bases: {py:obj}`altdss.DSSObj.DSSObj`, {py:obj}`altdss.CircuitElement.CircuitEle
 
 ````
 
+````{py:method} edit(**kwargs: typing_extensions.Unpack[altdss.EnergyMeter.EnergyMeterProperties]) -> altdss.EnergyMeter.EnergyMeter
+:canonical: altdss.EnergyMeter.EnergyMeter.edit
+
+```{autodoc2-docstring} altdss.EnergyMeter.EnergyMeter.edit
+```
+
+````
+
 ````{py:method} end_edit(num_changes: int = 1) -> None
 :canonical: altdss.EnergyMeter.EnergyMeter.end_edit
 
@@ -1526,6 +1534,14 @@ Bases: {py:obj}`altdss.Batch.DSSBatch`, {py:obj}`altdss.CircuitElement.CircuitEl
 :canonical: altdss.EnergyMeter.EnergyMeterBatch.begin_edit
 
 ```{autodoc2-docstring} altdss.EnergyMeter.EnergyMeterBatch.begin_edit
+```
+
+````
+
+````{py:method} edit(**kwargs: typing_extensions.Unpack[altdss.EnergyMeter.EnergyMeterBatchProperties]) -> altdss.EnergyMeter.EnergyMeterBatch
+:canonical: altdss.EnergyMeter.EnergyMeterBatch.edit
+
+```{autodoc2-docstring} altdss.EnergyMeter.EnergyMeterBatch.edit
 ```
 
 ````
@@ -3481,7 +3497,7 @@ Bases: {py:obj}`altdss.DSSObj.IDSSObj`, {py:obj}`altdss.EnergyMeter.EnergyMeterB
 
 ````
 
-````{py:method} batch_new(names: typing.Optional[typing.List[typing.AnyStr]] = None, df=None, count: typing.Optional[int] = None, begin_edit=True, **kwargs: typing_extensions.Unpack[altdss.EnergyMeter.EnergyMeterBatchProperties]) -> altdss.EnergyMeter.EnergyMeterBatch
+````{py:method} batch_new(names: typing.Optional[typing.List[typing.AnyStr]] = None, *, df=None, count: typing.Optional[int] = None, begin_edit: typing.Optional[bool] = None, **kwargs: typing_extensions.Unpack[altdss.EnergyMeter.EnergyMeterBatchProperties]) -> altdss.EnergyMeter.EnergyMeterBatch
 :canonical: altdss.EnergyMeter.IEnergyMeter.batch_new
 
 ```{autodoc2-docstring} altdss.EnergyMeter.IEnergyMeter.batch_new
@@ -3493,6 +3509,14 @@ Bases: {py:obj}`altdss.DSSObj.IDSSObj`, {py:obj}`altdss.EnergyMeter.EnergyMeterB
 :canonical: altdss.EnergyMeter.IEnergyMeter.begin_edit
 
 ```{autodoc2-docstring} altdss.EnergyMeter.IEnergyMeter.begin_edit
+```
+
+````
+
+````{py:method} edit(**kwargs: typing_extensions.Unpack[altdss.EnergyMeter.EnergyMeterBatchProperties]) -> altdss.EnergyMeter.EnergyMeterBatch
+:canonical: altdss.EnergyMeter.IEnergyMeter.edit
+
+```{autodoc2-docstring} altdss.EnergyMeter.IEnergyMeter.edit
 ```
 
 ````
@@ -3535,7 +3559,7 @@ Bases: {py:obj}`altdss.DSSObj.IDSSObj`, {py:obj}`altdss.EnergyMeter.EnergyMeterB
 
 ````
 
-````{py:method} new(name: typing.AnyStr, begin_edit=True, activate=False, **kwargs: typing_extensions.Unpack[altdss.EnergyMeter.EnergyMeterProperties]) -> altdss.EnergyMeter.EnergyMeter
+````{py:method} new(name: typing.AnyStr, *, begin_edit: typing.Optional[bool] = None, activate=False, **kwargs: typing_extensions.Unpack[altdss.EnergyMeter.EnergyMeterProperties]) -> altdss.EnergyMeter.EnergyMeter
 :canonical: altdss.EnergyMeter.IEnergyMeter.new
 
 ```{autodoc2-docstring} altdss.EnergyMeter.IEnergyMeter.new

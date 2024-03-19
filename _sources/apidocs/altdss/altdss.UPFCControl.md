@@ -377,7 +377,7 @@ Bases: {py:obj}`altdss.DSSObj.IDSSObj`, {py:obj}`altdss.UPFCControl.UPFCControlB
 
 ````
 
-````{py:method} batch_new(names: typing.Optional[typing.List[typing.AnyStr]] = None, df=None, count: typing.Optional[int] = None, begin_edit=True, **kwargs: typing_extensions.Unpack[altdss.UPFCControl.UPFCControlBatchProperties]) -> altdss.UPFCControl.UPFCControlBatch
+````{py:method} batch_new(names: typing.Optional[typing.List[typing.AnyStr]] = None, *, df=None, count: typing.Optional[int] = None, begin_edit: typing.Optional[bool] = None, **kwargs: typing_extensions.Unpack[altdss.UPFCControl.UPFCControlBatchProperties]) -> altdss.UPFCControl.UPFCControlBatch
 :canonical: altdss.UPFCControl.IUPFCControl.batch_new
 
 ```{autodoc2-docstring} altdss.UPFCControl.IUPFCControl.batch_new
@@ -389,6 +389,14 @@ Bases: {py:obj}`altdss.DSSObj.IDSSObj`, {py:obj}`altdss.UPFCControl.UPFCControlB
 :canonical: altdss.UPFCControl.IUPFCControl.begin_edit
 
 ```{autodoc2-docstring} altdss.UPFCControl.IUPFCControl.begin_edit
+```
+
+````
+
+````{py:method} edit(**kwargs: typing_extensions.Unpack[altdss.UPFCControl.UPFCControlBatchProperties]) -> altdss.UPFCControl.UPFCControlBatch
+:canonical: altdss.UPFCControl.IUPFCControl.edit
+
+```{autodoc2-docstring} altdss.UPFCControl.IUPFCControl.edit
 ```
 
 ````
@@ -409,7 +417,7 @@ Bases: {py:obj}`altdss.DSSObj.IDSSObj`, {py:obj}`altdss.UPFCControl.UPFCControlB
 
 ````
 
-````{py:method} new(name: typing.AnyStr, begin_edit=True, activate=False, **kwargs: typing_extensions.Unpack[altdss.UPFCControl.UPFCControlProperties]) -> altdss.UPFCControl.UPFCControl
+````{py:method} new(name: typing.AnyStr, *, begin_edit: typing.Optional[bool] = None, activate=False, **kwargs: typing_extensions.Unpack[altdss.UPFCControl.UPFCControlProperties]) -> altdss.UPFCControl.UPFCControl
 :canonical: altdss.UPFCControl.IUPFCControl.new
 
 ```{autodoc2-docstring} altdss.UPFCControl.IUPFCControl.new
@@ -816,6 +824,14 @@ Bases: {py:obj}`altdss.DSSObj.DSSObj`, {py:obj}`altdss.CircuitElement.CircuitEle
 
 ````
 
+````{py:method} edit(**kwargs: typing_extensions.Unpack[altdss.UPFCControl.UPFCControlProperties]) -> altdss.UPFCControl.UPFCControl
+:canonical: altdss.UPFCControl.UPFCControl.edit
+
+```{autodoc2-docstring} altdss.UPFCControl.UPFCControl.edit
+```
+
+````
+
 ````{py:method} end_edit(num_changes: int = 1) -> None
 :canonical: altdss.UPFCControl.UPFCControl.end_edit
 
@@ -1168,6 +1184,14 @@ Bases: {py:obj}`altdss.Batch.DSSBatch`, {py:obj}`altdss.CircuitElement.CircuitEl
 :canonical: altdss.UPFCControl.UPFCControlBatch.begin_edit
 
 ```{autodoc2-docstring} altdss.UPFCControl.UPFCControlBatch.begin_edit
+```
+
+````
+
+````{py:method} edit(**kwargs: typing_extensions.Unpack[altdss.UPFCControl.UPFCControlBatchProperties]) -> altdss.UPFCControl.UPFCControlBatch
+:canonical: altdss.UPFCControl.UPFCControlBatch.edit
+
+```{autodoc2-docstring} altdss.UPFCControl.UPFCControlBatch.edit
 ```
 
 ````

@@ -304,7 +304,7 @@ Bases: {py:obj}`altdss.DSSObj.IDSSObj`, {py:obj}`altdss.WireData.WireDataBatch`
 
 ````
 
-````{py:method} batch_new(names: typing.Optional[typing.List[typing.AnyStr]] = None, df=None, count: typing.Optional[int] = None, begin_edit=True, **kwargs: typing_extensions.Unpack[altdss.WireData.WireDataBatchProperties]) -> altdss.WireData.WireDataBatch
+````{py:method} batch_new(names: typing.Optional[typing.List[typing.AnyStr]] = None, *, df=None, count: typing.Optional[int] = None, begin_edit: typing.Optional[bool] = None, **kwargs: typing_extensions.Unpack[altdss.WireData.WireDataBatchProperties]) -> altdss.WireData.WireDataBatch
 :canonical: altdss.WireData.IWireData.batch_new
 
 ```{autodoc2-docstring} altdss.WireData.IWireData.batch_new
@@ -316,6 +316,14 @@ Bases: {py:obj}`altdss.DSSObj.IDSSObj`, {py:obj}`altdss.WireData.WireDataBatch`
 :canonical: altdss.WireData.IWireData.begin_edit
 
 ```{autodoc2-docstring} altdss.WireData.IWireData.begin_edit
+```
+
+````
+
+````{py:method} edit(**kwargs: typing_extensions.Unpack[altdss.WireData.WireDataBatchProperties]) -> altdss.WireData.WireDataBatch
+:canonical: altdss.WireData.IWireData.edit
+
+```{autodoc2-docstring} altdss.WireData.IWireData.edit
 ```
 
 ````
@@ -336,7 +344,7 @@ Bases: {py:obj}`altdss.DSSObj.IDSSObj`, {py:obj}`altdss.WireData.WireDataBatch`
 
 ````
 
-````{py:method} new(name: typing.AnyStr, begin_edit=True, activate=False, **kwargs: typing_extensions.Unpack[altdss.WireData.WireDataProperties]) -> altdss.WireData.WireData
+````{py:method} new(name: typing.AnyStr, *, begin_edit: typing.Optional[bool] = None, activate=False, **kwargs: typing_extensions.Unpack[altdss.WireData.WireDataProperties]) -> altdss.WireData.WireData
 :canonical: altdss.WireData.IWireData.new
 
 ```{autodoc2-docstring} altdss.WireData.IWireData.new
@@ -607,6 +615,14 @@ Bases: {py:obj}`altdss.DSSObj.DSSObj`
 :canonical: altdss.WireData.WireData.begin_edit
 
 ```{autodoc2-docstring} altdss.WireData.WireData.begin_edit
+```
+
+````
+
+````{py:method} edit(**kwargs: typing_extensions.Unpack[altdss.WireData.WireDataProperties]) -> altdss.WireData.WireData
+:canonical: altdss.WireData.WireData.edit
+
+```{autodoc2-docstring} altdss.WireData.WireData.edit
 ```
 
 ````
@@ -890,6 +906,14 @@ Bases: {py:obj}`altdss.Batch.DSSBatch`
 :canonical: altdss.WireData.WireDataBatch.begin_edit
 
 ```{autodoc2-docstring} altdss.WireData.WireDataBatch.begin_edit
+```
+
+````
+
+````{py:method} edit(**kwargs: typing_extensions.Unpack[altdss.WireData.WireDataBatchProperties]) -> altdss.WireData.WireDataBatch
+:canonical: altdss.WireData.WireDataBatch.edit
+
+```{autodoc2-docstring} altdss.WireData.WireDataBatch.edit
 ```
 
 ````

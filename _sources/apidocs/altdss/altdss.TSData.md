@@ -381,7 +381,7 @@ Bases: {py:obj}`altdss.DSSObj.IDSSObj`, {py:obj}`altdss.TSData.TSDataBatch`
 
 ````
 
-````{py:method} batch_new(names: typing.Optional[typing.List[typing.AnyStr]] = None, df=None, count: typing.Optional[int] = None, begin_edit=True, **kwargs: typing_extensions.Unpack[altdss.TSData.TSDataBatchProperties]) -> altdss.TSData.TSDataBatch
+````{py:method} batch_new(names: typing.Optional[typing.List[typing.AnyStr]] = None, *, df=None, count: typing.Optional[int] = None, begin_edit: typing.Optional[bool] = None, **kwargs: typing_extensions.Unpack[altdss.TSData.TSDataBatchProperties]) -> altdss.TSData.TSDataBatch
 :canonical: altdss.TSData.ITSData.batch_new
 
 ```{autodoc2-docstring} altdss.TSData.ITSData.batch_new
@@ -393,6 +393,14 @@ Bases: {py:obj}`altdss.DSSObj.IDSSObj`, {py:obj}`altdss.TSData.TSDataBatch`
 :canonical: altdss.TSData.ITSData.begin_edit
 
 ```{autodoc2-docstring} altdss.TSData.ITSData.begin_edit
+```
+
+````
+
+````{py:method} edit(**kwargs: typing_extensions.Unpack[altdss.TSData.TSDataBatchProperties]) -> altdss.TSData.TSDataBatch
+:canonical: altdss.TSData.ITSData.edit
+
+```{autodoc2-docstring} altdss.TSData.ITSData.edit
 ```
 
 ````
@@ -413,7 +421,7 @@ Bases: {py:obj}`altdss.DSSObj.IDSSObj`, {py:obj}`altdss.TSData.TSDataBatch`
 
 ````
 
-````{py:method} new(name: typing.AnyStr, begin_edit=True, activate=False, **kwargs: typing_extensions.Unpack[altdss.TSData.TSDataProperties]) -> altdss.TSData.TSData
+````{py:method} new(name: typing.AnyStr, *, begin_edit: typing.Optional[bool] = None, activate=False, **kwargs: typing_extensions.Unpack[altdss.TSData.TSDataProperties]) -> altdss.TSData.TSData
 :canonical: altdss.TSData.ITSData.new
 
 ```{autodoc2-docstring} altdss.TSData.ITSData.new
@@ -761,6 +769,14 @@ Bases: {py:obj}`altdss.DSSObj.DSSObj`
 :canonical: altdss.TSData.TSData.begin_edit
 
 ```{autodoc2-docstring} altdss.TSData.TSData.begin_edit
+```
+
+````
+
+````{py:method} edit(**kwargs: typing_extensions.Unpack[altdss.TSData.TSDataProperties]) -> altdss.TSData.TSData
+:canonical: altdss.TSData.TSData.edit
+
+```{autodoc2-docstring} altdss.TSData.TSData.edit
 ```
 
 ````
@@ -1121,6 +1137,14 @@ Bases: {py:obj}`altdss.Batch.DSSBatch`
 :canonical: altdss.TSData.TSDataBatch.begin_edit
 
 ```{autodoc2-docstring} altdss.TSData.TSDataBatch.begin_edit
+```
+
+````
+
+````{py:method} edit(**kwargs: typing_extensions.Unpack[altdss.TSData.TSDataBatchProperties]) -> altdss.TSData.TSDataBatch
+:canonical: altdss.TSData.TSDataBatch.edit
+
+```{autodoc2-docstring} altdss.TSData.TSDataBatch.edit
 ```
 
 ````

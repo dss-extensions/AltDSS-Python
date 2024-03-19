@@ -681,6 +681,14 @@ Bases: {py:obj}`altdss.DSSObj.DSSObj`, {py:obj}`altdss.CircuitElement.CircuitEle
 
 ````
 
+````{py:method} edit(**kwargs: typing_extensions.Unpack[altdss.Capacitor.CapacitorProperties]) -> altdss.Capacitor.Capacitor
+:canonical: altdss.Capacitor.Capacitor.edit
+
+```{autodoc2-docstring} altdss.Capacitor.Capacitor.edit
+```
+
+````
+
 ````{py:method} end_edit(num_changes: int = 1) -> None
 :canonical: altdss.Capacitor.Capacitor.end_edit
 
@@ -1343,6 +1351,14 @@ Bases: {py:obj}`altdss.Batch.DSSBatch`, {py:obj}`altdss.CircuitElement.CircuitEl
 :canonical: altdss.Capacitor.CapacitorBatch.begin_edit
 
 ```{autodoc2-docstring} altdss.Capacitor.CapacitorBatch.begin_edit
+```
+
+````
+
+````{py:method} edit(**kwargs: typing_extensions.Unpack[altdss.Capacitor.CapacitorBatchProperties]) -> altdss.Capacitor.CapacitorBatch
+:canonical: altdss.Capacitor.CapacitorBatch.edit
+
+```{autodoc2-docstring} altdss.Capacitor.CapacitorBatch.edit
 ```
 
 ````
@@ -3111,7 +3127,7 @@ Bases: {py:obj}`altdss.DSSObj.IDSSObj`, {py:obj}`altdss.Capacitor.CapacitorBatch
 
 ````
 
-````{py:method} batch_new(names: typing.Optional[typing.List[typing.AnyStr]] = None, df=None, count: typing.Optional[int] = None, begin_edit=True, **kwargs: typing_extensions.Unpack[altdss.Capacitor.CapacitorBatchProperties]) -> altdss.Capacitor.CapacitorBatch
+````{py:method} batch_new(names: typing.Optional[typing.List[typing.AnyStr]] = None, *, df=None, count: typing.Optional[int] = None, begin_edit: typing.Optional[bool] = None, **kwargs: typing_extensions.Unpack[altdss.Capacitor.CapacitorBatchProperties]) -> altdss.Capacitor.CapacitorBatch
 :canonical: altdss.Capacitor.ICapacitor.batch_new
 
 ```{autodoc2-docstring} altdss.Capacitor.ICapacitor.batch_new
@@ -3123,6 +3139,14 @@ Bases: {py:obj}`altdss.DSSObj.IDSSObj`, {py:obj}`altdss.Capacitor.CapacitorBatch
 :canonical: altdss.Capacitor.ICapacitor.begin_edit
 
 ```{autodoc2-docstring} altdss.Capacitor.ICapacitor.begin_edit
+```
+
+````
+
+````{py:method} edit(**kwargs: typing_extensions.Unpack[altdss.Capacitor.CapacitorBatchProperties]) -> altdss.Capacitor.CapacitorBatch
+:canonical: altdss.Capacitor.ICapacitor.edit
+
+```{autodoc2-docstring} altdss.Capacitor.ICapacitor.edit
 ```
 
 ````
@@ -3165,7 +3189,7 @@ Bases: {py:obj}`altdss.DSSObj.IDSSObj`, {py:obj}`altdss.Capacitor.CapacitorBatch
 
 ````
 
-````{py:method} new(name: typing.AnyStr, begin_edit=True, activate=False, **kwargs: typing_extensions.Unpack[altdss.Capacitor.CapacitorProperties]) -> altdss.Capacitor.Capacitor
+````{py:method} new(name: typing.AnyStr, *, begin_edit: typing.Optional[bool] = None, activate=False, **kwargs: typing_extensions.Unpack[altdss.Capacitor.CapacitorProperties]) -> altdss.Capacitor.Capacitor
 :canonical: altdss.Capacitor.ICapacitor.new
 
 ```{autodoc2-docstring} altdss.Capacitor.ICapacitor.new

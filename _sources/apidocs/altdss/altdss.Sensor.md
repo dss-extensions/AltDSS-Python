@@ -454,7 +454,7 @@ Bases: {py:obj}`altdss.DSSObj.IDSSObj`, {py:obj}`altdss.Sensor.SensorBatch`
 
 ````
 
-````{py:method} batch_new(names: typing.Optional[typing.List[typing.AnyStr]] = None, df=None, count: typing.Optional[int] = None, begin_edit=True, **kwargs: typing_extensions.Unpack[altdss.Sensor.SensorBatchProperties]) -> altdss.Sensor.SensorBatch
+````{py:method} batch_new(names: typing.Optional[typing.List[typing.AnyStr]] = None, *, df=None, count: typing.Optional[int] = None, begin_edit: typing.Optional[bool] = None, **kwargs: typing_extensions.Unpack[altdss.Sensor.SensorBatchProperties]) -> altdss.Sensor.SensorBatch
 :canonical: altdss.Sensor.ISensor.batch_new
 
 ```{autodoc2-docstring} altdss.Sensor.ISensor.batch_new
@@ -466,6 +466,14 @@ Bases: {py:obj}`altdss.DSSObj.IDSSObj`, {py:obj}`altdss.Sensor.SensorBatch`
 :canonical: altdss.Sensor.ISensor.begin_edit
 
 ```{autodoc2-docstring} altdss.Sensor.ISensor.begin_edit
+```
+
+````
+
+````{py:method} edit(**kwargs: typing_extensions.Unpack[altdss.Sensor.SensorBatchProperties]) -> altdss.Sensor.SensorBatch
+:canonical: altdss.Sensor.ISensor.edit
+
+```{autodoc2-docstring} altdss.Sensor.ISensor.edit
 ```
 
 ````
@@ -530,7 +538,7 @@ Bases: {py:obj}`altdss.DSSObj.IDSSObj`, {py:obj}`altdss.Sensor.SensorBatch`
 
 ````
 
-````{py:method} new(name: typing.AnyStr, begin_edit=True, activate=False, **kwargs: typing_extensions.Unpack[altdss.Sensor.SensorProperties]) -> altdss.Sensor.Sensor
+````{py:method} new(name: typing.AnyStr, *, begin_edit: typing.Optional[bool] = None, activate=False, **kwargs: typing_extensions.Unpack[altdss.Sensor.SensorProperties]) -> altdss.Sensor.Sensor
 :canonical: altdss.Sensor.ISensor.new
 
 ```{autodoc2-docstring} altdss.Sensor.ISensor.new
@@ -1025,6 +1033,14 @@ Bases: {py:obj}`altdss.DSSObj.DSSObj`, {py:obj}`altdss.CircuitElement.CircuitEle
 
 ````
 
+````{py:method} edit(**kwargs: typing_extensions.Unpack[altdss.Sensor.SensorProperties]) -> altdss.Sensor.Sensor
+:canonical: altdss.Sensor.Sensor.edit
+
+```{autodoc2-docstring} altdss.Sensor.Sensor.edit
+```
+
+````
+
 ````{py:method} end_edit(num_changes: int = 1) -> None
 :canonical: altdss.Sensor.Sensor.end_edit
 
@@ -1509,6 +1525,14 @@ Bases: {py:obj}`altdss.Batch.DSSBatch`, {py:obj}`altdss.CircuitElement.CircuitEl
 :canonical: altdss.Sensor.SensorBatch.begin_edit
 
 ```{autodoc2-docstring} altdss.Sensor.SensorBatch.begin_edit
+```
+
+````
+
+````{py:method} edit(**kwargs: typing_extensions.Unpack[altdss.Sensor.SensorBatchProperties]) -> altdss.Sensor.SensorBatch
+:canonical: altdss.Sensor.SensorBatch.edit
+
+```{autodoc2-docstring} altdss.Sensor.SensorBatch.edit
 ```
 
 ````

@@ -433,7 +433,7 @@ Bases: {py:obj}`altdss.DSSObj.IDSSObj`, {py:obj}`altdss.LineCode.LineCodeBatch`
 
 ````
 
-````{py:method} batch_new(names: typing.Optional[typing.List[typing.AnyStr]] = None, df=None, count: typing.Optional[int] = None, begin_edit=True, **kwargs: typing_extensions.Unpack[altdss.LineCode.LineCodeBatchProperties]) -> altdss.LineCode.LineCodeBatch
+````{py:method} batch_new(names: typing.Optional[typing.List[typing.AnyStr]] = None, *, df=None, count: typing.Optional[int] = None, begin_edit: typing.Optional[bool] = None, **kwargs: typing_extensions.Unpack[altdss.LineCode.LineCodeBatchProperties]) -> altdss.LineCode.LineCodeBatch
 :canonical: altdss.LineCode.ILineCode.batch_new
 
 ```{autodoc2-docstring} altdss.LineCode.ILineCode.batch_new
@@ -445,6 +445,14 @@ Bases: {py:obj}`altdss.DSSObj.IDSSObj`, {py:obj}`altdss.LineCode.LineCodeBatch`
 :canonical: altdss.LineCode.ILineCode.begin_edit
 
 ```{autodoc2-docstring} altdss.LineCode.ILineCode.begin_edit
+```
+
+````
+
+````{py:method} edit(**kwargs: typing_extensions.Unpack[altdss.LineCode.LineCodeBatchProperties]) -> altdss.LineCode.LineCodeBatch
+:canonical: altdss.LineCode.ILineCode.edit
+
+```{autodoc2-docstring} altdss.LineCode.ILineCode.edit
 ```
 
 ````
@@ -465,7 +473,7 @@ Bases: {py:obj}`altdss.DSSObj.IDSSObj`, {py:obj}`altdss.LineCode.LineCodeBatch`
 
 ````
 
-````{py:method} new(name: typing.AnyStr, begin_edit=True, activate=False, **kwargs: typing_extensions.Unpack[altdss.LineCode.LineCodeProperties]) -> altdss.LineCode.LineCode
+````{py:method} new(name: typing.AnyStr, *, begin_edit: typing.Optional[bool] = None, activate=False, **kwargs: typing_extensions.Unpack[altdss.LineCode.LineCodeProperties]) -> altdss.LineCode.LineCode
 :canonical: altdss.LineCode.ILineCode.new
 
 ```{autodoc2-docstring} altdss.LineCode.ILineCode.new
@@ -876,6 +884,14 @@ Bases: {py:obj}`altdss.DSSObj.DSSObj`
 :canonical: altdss.LineCode.LineCode.begin_edit
 
 ```{autodoc2-docstring} altdss.LineCode.LineCode.begin_edit
+```
+
+````
+
+````{py:method} edit(**kwargs: typing_extensions.Unpack[altdss.LineCode.LineCodeProperties]) -> altdss.LineCode.LineCode
+:canonical: altdss.LineCode.LineCode.edit
+
+```{autodoc2-docstring} altdss.LineCode.LineCode.edit
 ```
 
 ````
@@ -1299,6 +1315,14 @@ Bases: {py:obj}`altdss.Batch.DSSBatch`
 :canonical: altdss.LineCode.LineCodeBatch.begin_edit
 
 ```{autodoc2-docstring} altdss.LineCode.LineCodeBatch.begin_edit
+```
+
+````
+
+````{py:method} edit(**kwargs: typing_extensions.Unpack[altdss.LineCode.LineCodeBatchProperties]) -> altdss.LineCode.LineCodeBatch
+:canonical: altdss.LineCode.LineCodeBatch.edit
+
+```{autodoc2-docstring} altdss.LineCode.LineCodeBatch.edit
 ```
 
 ````
