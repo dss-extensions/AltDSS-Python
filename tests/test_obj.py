@@ -438,7 +438,7 @@ def create_ckt13_verbose(altdss: AltDSS):
     altdss.Solution.Solve()
 
 
-def create_ckt13_shortcut(altdss: AltDSS):
+def create_ckt13_shortcut(altdss: AltDSS, use_edit_method: bool):
     altdss.ClearAll()
     altdss('new circuit.IEEE13Nodeckt')
     altdss.Settings.AdvancedTypes = True
@@ -451,15 +451,21 @@ def create_ckt13_shortcut(altdss: AltDSS):
     Capacitor = altdss.Capacitor
     RegControl = altdss.RegControl
 
-    src = altdss.Vsource[0]
-    with Edit(src):
-        src.BasekV = 115
-        src.pu = 1.0001
-        src.Phases = 3
-        src.Bus1 = 'SourceBus'
-        src.Angle = 30
-        src.MVASC3 = 20000
-        src.MVASC1 = 21000
+    if not use_edit_method:
+        src = altdss.Vsource[0]
+        with Edit(src):
+            src.BasekV = 115
+            src.pu = 1.0001
+            src.Phases = 3
+            src.Bus1 = 'SourceBus'
+            src.Angle = 30
+            src.MVASC3 = 20000
+            src.MVASC1 = 21000
+    else:
+        altdss.Vsource[0].edit(
+            BasekV=115, pu=1.0001, Phases=3, Bus1='SourceBus', Angle=30, MVASC3=20000, MVASC1=21000
+        )
+
 
     # Transformers and regulators
     Transformer.new('Sub', Phases=3, Windings=2, XHL=8 / 1000, Buses=['SourceBus', '650'], Conns=[Conn.delta, Conn.wye], kVs=[115, 4.16], kVAs=[5000, 5000], pctRs=[0.5 / 1000, 0.5 / 1000])
@@ -585,13 +591,13 @@ def test_create_ckt13_verbose():
     assert max(abs(ref.BusVolts() - altdss.BusVolts())) < 1e-12, 'Voltages after changing loads differ'
 
 
-def test_create_ckt13_shortcut():
+def _test_create_ckt13_shortcut(use_edit_method: bool):
     '''
     This is the more verbose version; we don't expect anyone to do this since
     the data is usually loaded from other sources... but we still need to test it.
     '''
 
-    create_ckt13_shortcut(altdss)
+    create_ckt13_shortcut(altdss, use_edit_method)
     ref: AltDSS = altdss.NewContext()
     create_ref_ckt13(ref)
 
@@ -631,6 +637,12 @@ def test_create_ckt13_shortcut():
 
     # Should also be the same result now
     assert max(abs(ref.BusVolts() - altdss.BusVolts())) < 1e-12, 'Voltages after changing loads differ'
+
+def test_create_ckt13_shortcut():
+    _test_create_ckt13_shortcut(False)
+
+def test_create_ckt13_shortcut_and_edit():
+    _test_create_ckt13_shortcut(True)
 
 def test_new_em():
     create_ref_ckt13(altdss)

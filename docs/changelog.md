@@ -3,6 +3,16 @@
 Remember that changes in our alternative OpenDSS engine, currently known as AltDSS/DSS C-API, are always
 relevant. See [AltDSS/DSS C-API's repository](https://github.com/dss-extensions/dss_capi/) for more information.
 
+## 0.2.3
+
+The engine was updated to AltDSS/DSS C-API 0.14.4 in order to implement some of changes below.
+
+- `new` and `batch_new`:
+    - Added docstrings.
+    - Adjust the engine implementation to check for existing elements to avoid accidentally creating elements with the same name (on user error).
+    - The default for the `begin_edit` keyword argument tweaked so most users don't need to worry about it. See the docs for details.
+- New functions `edit` for objects and batches. These are shorthands for the whole (`begin_edit`, set properties, `end_edit`) dance.
+
 ## 0.2.2
 
 This release includes a lot more tests, reaching 100% coverage of the *Python* code of several important modules, considering both the public and private tests. The engine was updated to AltDSS/DSS C-API 0.14.3 to include a couple of new features and fixes found during the tests.

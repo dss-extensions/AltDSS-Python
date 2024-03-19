@@ -212,10 +212,7 @@ class DSSBatch(Base, BatchCommon):
 
 
     def __init__(self, api_util, **kwargs):
-        begin_edit = kwargs.pop('begin_edit', None)
-        if begin_edit is None:
-            begin_edit = True
-
+        begin_edit = bool(kwargs.pop('begin_edit', None))
         self._sync_cls_idx = kwargs.pop('sync_cls_idx', False)
 
         new_batch_args = kwargs.keys() & {'new_names', 'new_count', }
@@ -667,6 +664,22 @@ class DSSBatch(Base, BatchCommon):
         #     # not usually in the hot path
         #     obj._ptr = ptr
         #     obj._set_obj_array(idx, other_objs)
+
+    def _edit(self, props):
+        ptr, cnt = self._get_ptr_cnt()
+        if cnt == 0:
+            return
+
+        if not (self._lib.Obj_GetFlags(ptr[0]) and self._lib.DSSObjectFlags_Editing):
+            self._lib.Batch_BeginEdit(ptr, cnt)
+
+        self._check_for_error()
+
+        for k, v in props.items():
+            setattr(self, k, v)
+
+        self._lib.Batch_EndEdit(ptr, cnt, len(props))
+        self._check_for_error()
 
 
 class NonUniformBatch(Base, BatchCommon):

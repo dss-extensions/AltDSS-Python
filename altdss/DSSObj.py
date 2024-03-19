@@ -283,6 +283,18 @@ class DSSObj(Base):
         self._lib.Obj_EndEdit(self._ptr, num_changes)
         self._check_for_error()
 
+    def _edit(self, props):
+        if not (self._lib.Obj_GetFlags(self._ptr) and self._lib.DSSObjectFlags_Editing):
+            self._lib.Obj_BeginEdit(self._ptr)
+
+        self._check_for_error()        
+
+        for k, v in props.items():
+            setattr(self, k, v)
+
+        self._lib.Obj_EndEdit(self._ptr, len(props))
+        self._check_for_error()
+
 
 class IDSSObj(Base):
     __slots__ = []
@@ -307,11 +319,14 @@ class IDSSObj(Base):
         '''
         return self._batch_cls(self._api_util, **kwargs)
 
-    def batch_new(self, names: Optional[List[AnyStr]] = None, count: Optional[int] = None, begin_edit=True):
+    def batch_new(self, names: Optional[List[AnyStr]] = None, count: Optional[int] = None, begin_edit=None):
         '''
         Creates a new batch handler of new objects, with the specified names, 
         or "count" elements with a randomized prefix.
         '''
+        if begin_edit is None:
+            begin_edit = True # Since we have no properties, assume the user wants to edit the objects
+
         if names is not None:
             if count is not None:
                 raise ValueError("Provide either names or count, not both")
@@ -323,7 +338,7 @@ class IDSSObj(Base):
 
         raise ValueError("Provide either names or count to create a new batch")
 
-    def _batch_new_aux(self, names: Optional[List[AnyStr]] = None, df = None, count: Optional[int] = None, begin_edit=True, props=None):
+    def _batch_new_aux(self, names: Optional[List[AnyStr]] = None, df = None, count: Optional[int] = None, begin_edit=None, props=None):
         '''
         Aux. function used by the descendant classes (which provide typing info) to create the batches.
         '''
@@ -340,16 +355,25 @@ class IDSSObj(Base):
                     names = df['names'].astype(str)
                     columns.remove('names')
 
+            if begin_edit is None:
+                # If we have no properties, assume the user wants to edit the objects outside
+                begin_edit = (len(columns) == 0)
+
             batch = IDSSObj.batch_new(self, names=names, begin_edit=True)
             try:
                 for k in columns:
                     setattr(batch, k, df[k])
             finally:
-                batch.end_edit()
+                if not begin_edit:
+                    batch.end_edit()
 
             return batch
 
         if props:
+            if begin_edit is None:
+                # If we have properties, assume the user doesn't want to edit the objects outside
+                begin_edit = False
+
             # Allow using name instead of names if passing kwargs for pre-filling
             if names is None and count is None and 'name' in props:
                 names = props.pop('name')
@@ -359,14 +383,15 @@ class IDSSObj(Base):
                 for k, v in props.items():
                     setattr(batch, k, v)
             finally:
-                batch.end_edit()
+                if not begin_edit:
+                    batch.end_edit()
 
             return batch
 
         return IDSSObj.batch_new(self, names, count, begin_edit)
 
 
-    def new(self, name: str, begin_edit=True, activate=False):
+    def new(self, name: str, begin_edit=True, activate=False): #TODO: rename/remove to avoid confusion
         _name = name
         if not isinstance(name, bytes):
             name = name.encode(self._api_util.codec)
@@ -386,9 +411,9 @@ class IDSSObj(Base):
         return self._obj_cls(self._api_util, ptr)
 
 
-    def _new(self, name: AnyStr, begin_edit=True, activate=False, props=None):
+    def _new(self, name: AnyStr, begin_edit=None, activate=False, props=None):
         '''
-        Aux. function used by the descendant classes (which provide typing info) to create the objects.
+        Internal/aux. function used by the descendant classes (which provide typing info) to create the objects.
         '''
         if props:
             obj = IDSSObj.new(self, name, True, activate)
@@ -396,9 +421,13 @@ class IDSSObj(Base):
                 for k, v in props.items():
                     setattr(obj, k, v)
             finally:
-                obj.end_edit()
+                if not begin_edit:
+                    obj.end_edit()
 
             return obj
+
+        if begin_edit is None:
+            begin_edit = True # Assumes the user wants to edit the properties outside.
 
         return IDSSObj.new(self, name, begin_edit, activate)
         

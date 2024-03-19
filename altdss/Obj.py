@@ -1,5 +1,6 @@
 # Copyright (c) 2021-2024 Paulo Meira
 # Copyright (c) 2021-2024 DSS-Extensions contributors
+from __future__ import annotations
 from .DSSObj import DSSObj
 from .common import Base
 

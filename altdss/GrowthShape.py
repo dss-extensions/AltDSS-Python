@@ -1,5 +1,6 @@
 # Copyright (c) 2021-2024 Paulo Meira
 # Copyright (c) 2021-2024 DSS-Extensions contributors
+from __future__ import annotations
 from typing import Union, List, AnyStr, Optional, Iterator, TYPE_CHECKING
 from typing_extensions import TypedDict, Unpack
 from .types import Float64Array, Int32Array
@@ -26,6 +27,23 @@ class GrowthShape(DSSObj):
         'dblfile': 6,
         'like': 7,
     }
+
+
+    def edit(self, **kwargs: Unpack[GrowthShapeProperties]) -> GrowthShape:
+        """
+        Edit this GrowthShape.
+
+        This method will try to open a new edit context (if not already open), 
+        edit the properties, and finalize the edit context. 
+        It can be seen as a shortcut to manually setting each property, or a Pythonic 
+        analogous (but extended) to the DSS `Edit` command.
+
+        :param **kwargs: Pass keyword arguments equivalent to the DSS properties of the object.
+        :return: Returns itself to allow call chaining.
+        """
+
+        self._edit(props=kwargs)
+        return self
 
 
     def _get_NPts(self) -> int:
@@ -138,6 +156,23 @@ class GrowthShapeBatch(DSSBatch):
     _obj_cls = GrowthShape
     _cls_idx = 6
     __slots__ = []
+
+
+    def edit(self, **kwargs: Unpack[GrowthShapeBatchProperties]) -> GrowthShapeBatch:
+        """
+        Edit this GrowthShape batch.
+
+        This method will try to open a new edit context (if not already open), 
+        edit the properties, and finalize the edit context for objects in the batch.
+        It can be seen as a shortcut to manually setting each property, or a Pythonic
+        analogous (but extended) to the DSS `BatchEdit` command.
+
+        :param **kwargs: Pass keyword arguments equivalent to the DSS properties of the objects.
+        :return: Returns itself to allow call chaining.
+        """
+
+        self._edit(props=kwargs)
+        return self
 
 
     if TYPE_CHECKING:
@@ -265,7 +300,7 @@ class IGrowthShape(IDSSObj, GrowthShapeBatch):
         def __getitem__(self, name_or_idx: Union[AnyStr, int]) -> GrowthShape:
             return self.find(name_or_idx)
 
-        def batch(self, **kwargs) -> GrowthShapeBatch:
+        def batch(self, **kwargs) -> GrowthShapeBatch: #TODO: add annotation to kwargs (specialized typed dict)
             """
             Creates a new batch handler of (existing) GrowthShape objects
             """
@@ -275,8 +310,40 @@ class IGrowthShape(IDSSObj, GrowthShapeBatch):
             yield from GrowthShapeBatch.__iter__(self)
 
         
-    def new(self, name: AnyStr, begin_edit=True, activate=False, **kwargs: Unpack[GrowthShapeProperties]) -> GrowthShape:
+    def new(self, name: AnyStr, *, begin_edit: Optional[bool] = None, activate=False, **kwargs: Unpack[GrowthShapeProperties]) -> GrowthShape:
+        """
+        Creates a new GrowthShape.
+
+        :param name: The object's name is a required positional argument.
+
+        :param activate: Activation (setting `activate` to true) is useful for integration with the classic API, and some internal OpenDSS commands.
+        If you interact with this object only via the Alt API, no need to activate it (due to performance costs).
+
+        :param begin_edit: This controls how the edit context is left after the object creation:
+        - `True`: The object will be left in the edit state, requiring an `end_edit` call or equivalent.
+        - `False`: No edit context is started.
+        - `None`: If no properties are passed as keyword arguments, the object will be left in the edit state (assumes the user will fill the properties from Python attributes). Otherwise, the internal edit context will be finalized.
+
+        :param **kwargs: Pass keyword arguments equivalent to the DSS properties of the object.
+        :return: Returns the new DSS object, wrapped in Python.
+
+        Note that, to make it easier for new users where the edit context might not be too relevant, AltDSS automatically opens/closes edit contexts for single properties if the object is not in the edit state already.
+        """
         return self._new(name, begin_edit=begin_edit, activate=activate, props=kwargs)
 
-    def batch_new(self, names: Optional[List[AnyStr]] = None, df = None, count: Optional[int] = None, begin_edit=True, **kwargs: Unpack[GrowthShapeBatchProperties]) -> GrowthShapeBatch:
+    def batch_new(self, names: Optional[List[AnyStr]] = None, *, df = None, count: Optional[int] = None, begin_edit: Optional[bool] = None, **kwargs: Unpack[GrowthShapeBatchProperties]) -> GrowthShapeBatch:
+        """
+        Creates a new batch of GrowthShape objects
+
+        Either `names`, `count` or `df` is required. 
+
+        :param begin_edit: The argument `begin_edit` indicates if the user want to leave the elements in the edit state, and requires a call to `end_edit()` or equivalent. The default `begin_edit` is set to `None`. With `None`, the behavior will be adjusted according the default of how the batch is created.
+        :param **kwargs: Pass keyword arguments equivalent to the DSS properties of the object.
+        :param names: When using a list of names, each new object will match the names from this list. `begin_edit` defaults to `True` if no arguments for properties were passed, `False` otherwise.
+        :param count: When using `count`, new objects will be created with based on a random prefix, with an increasing integer up to `count`. `begin_edit` defaults to `True` if no arguments for properties were passed, `False` otherwise.
+        :param df: Currently **EXPERIMENTAL AND LIMITED**, tries to get the columns from a dataframe to populate the names and the DSS properties. `begin_edit` defaults to `False`.
+        :return: Returns the new batch of DSS objects, wrapped in Python.
+
+        Note that, to make it easier for new users where the edit context might not be too relevant, AltDSS automatically opens/closes edit contexts for single properties if the object is not in the edit state already.
+        """
         return self._batch_new_aux(names=names, df=df, count=count, begin_edit=begin_edit, props=kwargs)

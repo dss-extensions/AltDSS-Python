@@ -275,6 +275,75 @@ def create_ckt13_batch_new(dss: AltDSS):
     dss('CalcV')
     dss.Solution.Solve()
 
+def create_ckt13_batch_new_with_edit(dss: AltDSS):
+    dss.ClearAll()
+    dss('new circuit.IEEE13Nodeckt')
+    dss.Settings.AdvancedTypes = True
+
+    # Get some local names for cleaner syntax
+    LineCode = dss.LineCode
+    Line = dss.Line
+    Load = dss.Load
+    Transformer = dss.Transformer
+    Capacitor = dss.Capacitor
+    RegControl = dss.RegControl
+
+    dss.Vsource[0].edit(
+        basekv=115, pu=1.0001, phases=3, bus1='SourceBus', angle=30, MVAsc3=20000, MVAsc1=21000,
+    )
+
+    # Transformers and regulators
+    Transformer.new('Sub', phases=3, windings=2, XHL=8 / 1000, buses=['SourceBus', '650'], conns=[Conn.delta, Conn.wye], kVs=[115, 4.16], kVAs=[5000, 5000], pctRs=[0.5 / 1000, 0.5 / 1000])
+    for i in (1, 2, 3):
+        tr = Transformer.new(f'Reg{i}', phases=1, bank='reg1', XHL=0.01, kVAs=[1666, 1666], buses=[f'650.{i}', f'RG60.{i}'], kVs=[2.4, 2.4], pctloadloss=0.01)
+        RegControl.new(f'Reg{i}', transformer=tr, winding=2, vreg=122, band=2, ptratio=20, CTprim=700, R=3, X=9)
+
+    Transformer.new('XFM1', phases=3, windings=2, XHL=2, buses=['633', '634'], conns=[Conn.wye, Conn.wye], kVs=[4.16, 0.480], kVAs=[500, 500], pctRs=[0.55, 0.55])
+
+    # Line codes
+    mtx601 = LineCode.new('mtx601', nphases=3, baseFreq=60,
+        rmatrix=[0.3465, 0.1560, 0.3375, 0.1580, 0.1535, 0.3414],
+        xmatrix=[1.0179, 0.5017, 1.0478, 0.4236, 0.3849, 1.0348],
+        units=Units.miles
+    )
+    mtx602 = LineCode.new('mtx602', nphases=3, baseFreq=60,
+        rmatrix=[[0.7526, 0.1580, 0.1560], [0.1580, 0.7475, 0.1535], [0.1560, 0.1535, 0.7436]],
+        xmatrix=(1.1814, 0.4236, 1.1983, 0.5017, 0.3849, 1.2112),
+        units=Units.miles
+    )
+    mtx603 = LineCode.new('mtx603', nphases=2, baseFreq=60,
+        rmatrix=[1.3238, 0.2066, 0.2066, 1.3294], xmatrix=[1.3569, 0.4591, 0.4591, 1.3471],
+        units=Units.miles
+    )
+    mtx604 = LineCode.new('mtx604', nphases=2, baseFreq=60,
+        rmatrix=(1.3238, 0.2066, 0.2066, 1.3294), xmatrix=(1.3569, 0.4591, 0.4591, 1.3471),
+        units=Units.miles)
+    mtx605 = LineCode.new('mtx605', nphases=1, baseFreq=60, rmatrix=[1.3292], xmatrix=[1.3475], units=Units.miles)
+    mtx606 = LineCode.new('mtx606', nphases=3, units=Units.miles,
+        rmatrix=[0.791721, 0.318476, 0.781649, 0.28345, 0.318476, 0.791721],
+        xmatrix=[0.438352, 0.0276838, 0.396697, -0.0184204, 0.0276838, 0.438352],
+        cmatrix=[383.948, 0, 383.948, 0, 0, 383.948]
+    )
+    mtx607 = LineCode.new('mtx607', nphases=1, baseFreq=60, rmatrix=(1.3425,), xmatrix=(0.5124,), cmatrix=[236], units=Units.miles)
+
+    # Loads
+    name, bus1, phases, conn, model, kV, kW, kvar = zip(*loads_data)
+    load_batch = Load.batch_new(name)
+    load_batch.edit(bus1=bus1, conn=conn, phases=phases, model=model, kV=kV, kW=kW, kvar=kvar)
+
+    # Capacitors
+    Capacitor.new('Cap1', bus1='675', phases=3, kvar=600, kv=4.16)
+    Capacitor.new('Cap2', bus1='611.3', phases=1, kvar=100, kv=2.4)
+
+    # Lines
+    Line.batch_new(**dict(zip(lines_cols, zip(*lines_data))))
+
+    # Switch
+    Line.new('671692', phases=3, bus1='671', bus2='692', Switch=True, r1=1e-4, r0=1e-4, x1=0.0, x0=0.0, C1=0.0, C0=0.0)
+
+    dss.Settings.VoltageBases = [115, 4.16, .48]
+    dss('CalcV')
+    dss.Solution.Solve()
 
 def create_ckt13_batch_df(dss: AltDSS):
     dss.ClearAll()
@@ -617,6 +686,8 @@ def _test_create_ckt13_batch(which):
         create_ckt13_batch_new(altdss)
     elif which == 3:
         create_ckt13_batch_df(altdss)
+    elif which == 4:
+        create_ckt13_batch_new_with_edit(altdss)
     # else:
     #     create_from_dump(altdss)
 
@@ -686,6 +757,9 @@ def test_create_ckt13_batch_attr():
 
 def test_create_ckt13_batch_new():
     _test_create_ckt13_batch(2)
+
+def test_create_ckt13_batch_new_with_edit():
+    _test_create_ckt13_batch(4)
 
 def test_create_ckt13_batch_df():
     _test_create_ckt13_batch(3)
