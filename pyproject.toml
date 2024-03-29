@@ -21,7 +21,7 @@ name = "altdss"
 dynamic = ["version"]
 dependencies = [
     "dss_python",
-    "dss_python_backend==0.14.4",
+    "dss_python_backend==0.14.5",
     "numpy>=1.21.0",
     "typing_extensions>=4.5,<5",
     "scipy",

@@ -562,7 +562,18 @@ class IBuses(BusBatch):
     def __len__(self) -> int:
         '''Total number of buses in the circuit.'''
         return self._lib.Circuit_Get_NumBuses()
-    
+
+    def __contains__(self, name_or_index: Union[int, str]) -> bool:
+        api_util = self._api_util
+        if isinstance(name_or_index, int):
+            return (api_util.lib_unpatched.Alt_Bus_GetByIndex(api_util.ctx, name_or_index) != api_util.ffi.NULL) 
+
+        if not isinstance(name_or_index, bytes):
+            name_or_index = name_or_index.encode(api_util.codec)
+
+        return (api_util.lib_unpatched.Alt_Bus_GetByName(api_util.ctx, name_or_index) != api_util.ffi.NULL)
+
+
     def find(self, index_or_name: Union[int, str]) -> Bus:
         '''
         Returns a bus object for the selected index or name.

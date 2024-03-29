@@ -3,6 +3,11 @@
 Remember that changes in our alternative OpenDSS engine, currently known as AltDSS/DSS C-API, are always
 relevant. See [AltDSS/DSS C-API's repository](https://github.com/dss-extensions/dss_capi/) for more information.
 
+## 0.2.4
+
+- `altdss.Bus`: the Bus collection now implements the `in` operator: `"some_name" in altdss.Bus` or `"some_name" in altdss.Bus`
+- The engine was updated to AltDSS/DSS C-API 0.14.5, but the changes there only affects the classic API.
+
 ## 0.2.3
 
 The engine was updated to AltDSS/DSS C-API 0.14.4 in order to implement some of changes below.
