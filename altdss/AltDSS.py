@@ -29,12 +29,12 @@ if TYPE_CHECKING:
     try:
         from dss import IDSS as DSSPython
     except:
-        DSSPython = None
+        pass
 
     try:
         from opendssdirect.OpenDSSDirect import OpenDSSDirect
     except:
-        OpenDSSDirect = None
+        pass
 
 
 class AltDSS(IObj):
@@ -99,6 +99,9 @@ class AltDSS(IObj):
         '''
         IObj.__init__(self, api_util)
         AltDSS._ctx_to_dss[api_util.ctx] = self
+        if api_util._altdss is None:
+            api_util._altdss = self
+
         self._ptr = api_util.ctx
 
         self.Bus = IBuses(self._api_util)
