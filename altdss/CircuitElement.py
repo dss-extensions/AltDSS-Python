@@ -142,7 +142,7 @@ class CircuitElementMixin:
         '''
         return self._lib.Alt_CE_Get_HasVoltControl(self._ptr) != 0
 
-    def IsOpen(self, terminal: int, phase: int) -> bool:
+    def IsOpen(self, terminal: int, phase: int = 0) -> bool:
         '''
         Returns true if the specified terminal and phase are open.
 
@@ -150,14 +150,14 @@ class CircuitElementMixin:
         '''
         return self._lib.Alt_CE_IsOpen(self._ptr, terminal, phase) != 0
 
-    def MaxCurrent(self, terminal: int) -> float:
+    def MaxCurrent(self, terminal: int = -1) -> float:
         '''
         Returns the maximum current (magnitude) at the specified terminal. 
         Use -1 as terminal to get the value across all terminals.
         '''
         return self._lib.Alt_CE_MaxCurrent(self._ptr, terminal)
 
-    def Open(self, terminal: int, phase: int) -> None:
+    def Open(self, terminal: int, phase: int = 0) -> None:
         '''
         Open the specified terminal and phase, if non-zero, or all conductors at the terminal.
 
@@ -165,7 +165,7 @@ class CircuitElementMixin:
         '''
         self._lib.Alt_CE_Open(self._ptr, terminal, phase)
 
-    def Close(self, terminal: int, phase: int) -> None:
+    def Close(self, terminal: int, phase: int = 0) -> None:
         '''
         Close the specified terminal and phase, if non-zero, or all conductors at the terminal.
 
@@ -385,7 +385,7 @@ class CircuitElementBatchMixin:
             OCPDevType(val) for val in self._get_batch_int32_func("Alt_CE_Get_OCPDeviceType")
         ]
 
-    def MaxCurrent(self, terminal: int) -> Float64Array:
+    def MaxCurrent(self, terminal: int = -1) -> Float64Array:
         '''
         Returns the maximum current (magnitude) at the specified terminal for each element in this batch. 
         Use -1 as terminal to get the value across all terminals.
