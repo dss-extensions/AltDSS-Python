@@ -3,7 +3,7 @@
 from typing import Union, Iterator, List
 from dss.enums import DSSJSONFlags
 from .types import Float64Array, Int32Array, ComplexArray
-from .common import Base, InvalidatedBus
+from .common import Base, InvalidatedBus, InvalidatedBusIterator
 from .PCElement import PCElementBatch
 from .PDElement import PDElementBatch
 from .Load import LoadBatch
@@ -20,6 +20,7 @@ class Bus:
         '_get_string',
         '_api_util',
         '__weakref__',
+        '_is_iterator',
     )
     
     def _invalidate_ptr(self):
@@ -34,10 +35,17 @@ class Bus:
         self._lib = api_util.lib
         self._ptr = ptr
         self._api_util = api_util
-        api_util.track_bus(self)
+        self._is_iterator = False
+        if ptr is not InvalidatedBusIterator:
+            api_util.track_bus(self)
+
 
     def __repr__(self):
-        return f'<Bus.{self.Name}>'
+        if not self._is_iterator:
+            return f'<Bus.{self.Name}>'
+        
+        return f'<(Iterator) Bus.{self.Name}>'
+
 
     def GetUniqueNodeNumber(self, startNumber: int) -> int:
         '''
@@ -526,9 +534,21 @@ class BusBatch(Base):
         '''Total number of buses in this batch.'''
         return self._cnt
     
+    def __repr__(self):
+        return f'<{self.__class__.__name__}: {len(self)} items>'
+
     def __iter__(self) -> Iterator[Bus]:
         for ptr in self._unpack():
             yield Bus(self._api_util, ptr)
+
+    def iterate(self) -> Iterator[Bus]:
+        it_obj = Bus(self._api_util, InvalidatedBusIterator)
+        it_obj._is_iterator = True
+        for ptr in self._unpack():
+            it_obj._ptr = ptr
+            yield it_obj
+
+        it_obj._ptr = InvalidatedBusIterator
 
     def to_json(self, options: Union[int, DSSJSONFlags] = 0):
         '''

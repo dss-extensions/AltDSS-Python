@@ -3,7 +3,7 @@ import numpy as np
 from typing import Union, List, AnyStr, Optional, Iterator
 from dss.enums import DSSJSONFlags
 from .enums import SetterFlags
-from .common import Base, LIST_LIKE, InvalidatedObject
+from .common import Base, LIST_LIKE, InvalidatedObject, InvalidatedObjectIterator
 from .types import Float64Array, Int32Array
 from .DSSObj import DSSObj
 from .ArrayProxy import BatchFloat64ArrayProxy, BatchInt32ArrayProxy
@@ -99,6 +99,9 @@ class BatchCommon:
             ]
 
         return res
+
+    def __repr__(self):
+        return f'<{self.__class__.__name__}: {len(self)} items>'
 
     def to_list(self):
         return self()
@@ -333,6 +336,7 @@ class DSSBatch(Base, BatchCommon):
         self._lib.Batch_EndEdit(*self._get_ptr_cnt(), num_changes)
         self._check_for_error()
 
+
     def _get_ptr_cnt(self):
         if self._sync_cls_idx:
             self._pointer = self._lib.Obj_GetListPointer(self._api_util.ctx, self._sync_cls_idx)
@@ -340,9 +344,21 @@ class DSSBatch(Base, BatchCommon):
 
         return (self._pointer, self._count)
 
+
     def __iter__(self):
         for ptr in self._unpack():
             yield self._obj_cls(self._api_util, ptr)
+
+
+    def iterate(self) -> Iterator[DSSObj]:
+        it_obj = self._obj_cls(self._api_util, InvalidatedObjectIterator)
+        it_obj._is_iterator = True
+        for ptr in self._unpack():
+            it_obj._ptr = ptr
+            yield it_obj
+
+        it_obj._ptr = InvalidatedObjectIterator
+
 
     def __getitem__(self, idx0) -> DSSObj:
         '''Get element at 0-based index of the batch pointer array'''
@@ -352,6 +368,7 @@ class DSSBatch(Base, BatchCommon):
         _pointer, _count = self._get_ptr_cnt()
         ptr = _pointer[idx0]
         return self._obj_cls(self._api_util, ptr)
+
 
     def _set_batch_float64_array(self, idx: int, value: Union[BatchFloat64ArrayProxy, float, List[float], Float64Array], flags: SetterFlags = 0):
         if isinstance(value, (BatchFloat64ArrayProxy, BatchInt32ArrayProxy)):

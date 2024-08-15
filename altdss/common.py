@@ -16,6 +16,18 @@ class InvalidatedDSSObject:
 
 InvalidatedObject = InvalidatedDSSObject()
 
+
+class InvalidatedDSSObjectIterator:
+    '''
+    If you see this class somewhere, such as a traceback, it means that the related 
+    iterator was invalidated and is out-of-scope. If you need to store the object
+    referenced by the iterator, use the Python `copy()` function.
+    '''
+    pass
+
+InvalidatedObjectIterator = InvalidatedDSSObjectIterator()
+
+
 class InvalidatedDSSBus:
     '''
     If you see this class somewhere, such as a traceback, it means that the related
@@ -26,6 +38,18 @@ class InvalidatedDSSBus:
     pass
 
 InvalidatedBus = InvalidatedDSSBus()
+
+
+class InvalidatedDSSBusIterator:
+    '''
+    If you see this class somewhere, such as a traceback, it means that the related
+    bus iterator was invalidated and is out-of-scope. If you need to store the object
+    referenced by the iterator, use the Python `copy()` function.
+    '''
+    pass
+
+InvalidatedBusIterator = InvalidatedDSSBusIterator()
+
 
 class Edit:
     '''

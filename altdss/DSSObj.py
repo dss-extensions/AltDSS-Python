@@ -2,7 +2,7 @@ from __future__ import annotations
 import numpy as np
 from dss.enums import DSSJSONFlags
 from .enums import SetterFlags
-from .common import Base, LIST_LIKE, InvalidatedObject
+from .common import Base, LIST_LIKE, InvalidatedObject, InvalidatedObjectIterator
 from .types import Float64Array, Int32Array
 from typing import Union, List, AnyStr, Optional
 import pandas as pd
@@ -19,6 +19,7 @@ class DSSObj(Base):
         '_ffi',
         '_get_int32_list',
         '__weakref__',
+        '_is_iterator',
     ]
     _extra_slots = []
 
@@ -27,7 +28,9 @@ class DSSObj(Base):
         self._ptr = ptr
         self._ffi = api_util.ffi
         self._get_int32_list = api_util.get_int32_array2
-        api_util.track_obj(self)
+        self._is_iterator = False
+        if ptr is not InvalidatedObjectIterator:
+            api_util.track_obj(self)
 
     def _invalidate_ptr(self):
         self._ptr = InvalidatedObject
@@ -99,7 +102,10 @@ class DSSObj(Base):
         #     if propseq:
         #         vals.append(f'{self._properties_by_idx[propidx][0]}={self[propidx]}')
 
-        return f'<{self._cls_name}.{self.Name}>'# {" ".join(vals)}'
+        if not self._is_iterator:
+            return f'<{self._cls_name}.{self.Name}>'# {" ".join(vals)}'
+        
+        return f'<(Iterator) {self._cls_name}.{self.Name}>'# {" ".join(vals)}'
 
     @property
     def Name(self) -> str:
