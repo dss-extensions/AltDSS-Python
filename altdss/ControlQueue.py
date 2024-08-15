@@ -20,7 +20,7 @@ class IControlQueue(Base):
     def ClearQueue(self):
         self._check_for_error(self._lib.CtrlQueue_ClearQueue())
 
-    def Delete(self, ActionHandle):
+    def Delete(self, ActionHandle: int):
         self._check_for_error(self._lib.CtrlQueue_Delete(ActionHandle))
 
     def DoAllQueue(self):
@@ -44,7 +44,7 @@ class IControlQueue(Base):
         '''Number of Actions on the current actionlist (that have been popped off the control queue by CheckControlActions)'''
         return self._check_for_error(self._lib.CtrlQueue_Get_NumActions())
 
-    def Push(self, Hour: int, Seconds: float, ActionCode: int, DeviceHandle: int):
+    def Push(self, Hour: int, Seconds: float, ActionCode: int, DeviceHandle: int) -> int:
         '''Push a control action onto the DSS control queue by time, action code, and device handle (user defined). Returns Control Queue handle.'''
         return self._check_for_error(self._lib.CtrlQueue_Push(Hour, Seconds, ActionCode, DeviceHandle))
 
