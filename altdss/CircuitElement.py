@@ -217,6 +217,14 @@ class CircuitElementMixin:
         '''
         return self._get_fcomplex128_array(self._lib.Alt_CE_Get_Currents, self._ptr)
 
+    def CurrentsMagAng(self) -> Float64Array:
+        '''
+        Currents in magnitude, angle (degrees) format as a array of doubles.
+
+        Original COM help: https://opendss.epri.com/CurrentsMagAng.html
+        '''
+        return self._get_float64_array(self._lib.Alt_CE_Get_CurrentsMagAng, self._ptr)
+
     def Voltages(self) -> ComplexArray:
         '''
         Complex array of voltages at terminals
