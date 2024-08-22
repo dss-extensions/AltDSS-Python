@@ -446,14 +446,14 @@ class IDSSObj(Base):
 
         if isinstance(name_or_idx, int):
             ptr = lib.Obj_GetHandleByIdx(self._api_util.ctx, self.cls_idx, name_or_idx + 1)
-            if ptr == self._api_util.ffi.NULL:
+            if not ptr:
                 raise ValueError('Could not find object by index "{}".'.format(name_or_idx))
         else:
             if not isinstance(name_or_idx, bytes):
                 name_or_idx = name_or_idx.encode(self._api_util.codec)
 
             ptr = lib.Obj_GetHandleByName(self._api_util.ctx, self.cls_idx, name_or_idx)
-            if ptr == self._api_util.ffi.NULL:
+            if not ptr:
                 raise ValueError('Could not find object by name "{}".'.format(name_or_idx))
 
         return self._obj_cls(self._api_util, ptr)

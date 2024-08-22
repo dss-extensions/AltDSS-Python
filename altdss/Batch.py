@@ -58,15 +58,18 @@ class BatchCommon:
         return self._ffi.unpack(*self._get_ptr_cnt())
 
     def _dispose_batch(self, batch_ptr):
-        if batch_ptr != self._ffi.NULL:
+        if batch_ptr:
             self._lib.Batch_Dispose(batch_ptr)
 
     def _invalidate_ptr(self):
         self._pointer = InvalidatedObject
 
-    def _wrap_ptr(self, ptrptr, countptr):
-        if ptrptr != self._ffi.NULL:
-            self._pointer = self._ffi.gc(ptrptr[0], self._dispose_batch)
+    def _wrap_ptr(self, ptrptr, countptr, api_dispose=True):
+        if ptrptr:
+            if api_dispose:
+                self._pointer = self._ffi.gc(ptrptr[0], self._dispose_batch)
+            else:
+                self._pointer = ptrptr[0]
         else:
             self._pointer = self._ffi.NULL
 
@@ -219,7 +222,7 @@ class DSSBatch(Base, BatchCommon):
         self._sync_cls_idx = kwargs.pop('sync_cls_idx', False)
 
         new_batch_args = kwargs.keys() & {'new_names', 'new_count', }
-        existing_batch_args = kwargs.keys() & {'from_func', 'sync_cls_idx', 'idx', 're', '_clone_from'}
+        existing_batch_args = kwargs.keys() & {'from_func', 'sync_cls_idx', 'idx', 're', '_clone_from', 'names', 'objs'}
         if len(new_batch_args) > 1:
             raise ValueError("Multiple ways to create a batch of new elements were provided.")
 
@@ -275,7 +278,7 @@ class DSSBatch(Base, BatchCommon):
             self._check_for_error()
             return
 
-        # Create from specified function, regexp, or list of indices?
+        # Create from specified function, regexp, or list of indices/names/objs?
 
         from_func = kwargs.pop('from_func', None)
         if from_func is not None:
@@ -305,7 +308,49 @@ class DSSBatch(Base, BatchCommon):
             self._check_for_error()
             self._filter(**kwargs)
             return
-        
+
+        names = kwargs.pop('names', None)
+        if names is not None:
+            names = tuple(names)
+            if not isinstance(names[0], (str, bytes)):
+                raise ValueError("A sequence of strings was expected in the `names` keyword argument.")
+            
+            obj_ptrs = []
+            codec = self._api_util.codec
+            ctx = self._api_util.ctx
+            for name in names:
+                if not isinstance(name, bytes):
+                    name = name.encode(codec)
+
+                ptr = self._lib.Obj_GetHandleByName(ctx, self._cls_idx, name)
+                if not ptr:
+                    raise ValueError('Could not find object by name "{}".'.format(name))
+                
+                obj_ptrs.append(ptr)
+
+            self._pointer = self._ffi.gc(self._ffi.new('void*[]', obj_ptrs), self._ffi.release)
+            self._count = len(obj_ptrs)
+            self._ptrptr[0] = self._pointer
+            self._countptr[0] = self._count
+            self._countptr[1] = self._count
+            return
+
+        objs = kwargs.pop('objs', None)
+        if objs is not None:
+            objs = tuple(objs)
+            if not isinstance(objs[0], DSSObj):
+                raise ValueError("A sequence of `DSSObj` was expected in the `objs` keyword argument.")
+            
+            if any(obj._cls_idx != self._cls_idx for obj in objs):
+                raise ValueError("A uniform sequence of objects (all of the same type) was expected. The type must also match with the Batch type.")
+
+            self._pointer = self._ffi.gc(self._ffi.new('void*[]', [obj._ptr for obj in objs]), self._ffi.release)
+            self._count = len(objs)
+            self._ptrptr[0] = self._pointer
+            self._countptr[0] = self._count
+            self._countptr[1] = self._count
+            return
+
         # Apply filters on the base collection
         self._filter(_existing=False, **kwargs)
 
