@@ -221,7 +221,7 @@ class AltDSS(IObj):
     @property
     def Name(self) -> str:
         '''Name of the active circuit.'''
-        return self._get_string(self._check_for_error(self._lib.Circuit_Get_Name()))
+        return self._lib.Circuit_Get_Name()
 
     @property
     def NumBuses(self) -> int:
@@ -365,7 +365,7 @@ class AltDSS(IObj):
         The `options` parameter contains bit-flags to toggle specific features.
         See `Obj_ToJSON` (C-API) for more, or `DSSObj.to_json` in Python.
         '''
-        return self._get_string(self._check_for_error(self._lib.Circuit_ToJSON(options)))
+        return self._lib.Circuit_ToJSON(options)
 
     def NewContext(self) -> AltDSS:
         '''
@@ -392,7 +392,7 @@ class AltDSS(IObj):
         Prefer using the `Commands` function or the call operator from this class.
         '''
         if value is None:
-            return self._get_string(self._check_for_error(self._lib.Text_Get_Command()))
+            return self._lib.Text_Get_Command()
 
         if not isinstance(value, bytes):
             value = value.encode(self._api_util.codec)
@@ -418,12 +418,12 @@ class AltDSS(IObj):
     @property
     def TextResult(self) -> str:
         """Result string for the last DSS command (classic `Text.Result`)."""
-        return self._get_string(self._check_for_error(self._lib.Text_Get_Result()))
+        return self._lib.Text_Get_Result()
     
 
     def Version(self) -> str:
         from . import __version__
-        return self._get_string(self._check_for_error(self._lib.DSS_Get_Version())) + f'\nAltDSS-Python version: {__version__}'
+        return self._lib.DSS_Get_Version() + f'\nAltDSS-Python version: {__version__}'
 
 
     def __call__(self, cmds: Union[AnyStr, List[AnyStr]]):
