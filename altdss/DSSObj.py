@@ -397,7 +397,7 @@ class IDSSObj(Base):
         return IDSSObj.batch_new(self, names, count, begin_edit)
 
 
-    def new(self, name: str, begin_edit=True, activate=False): #TODO: rename/remove to avoid confusion
+    def _create_new(self, name: str, begin_edit=True, activate=False):
         _name = name
         if not isinstance(name, bytes):
             name = name.encode(self._api_util.codec)
@@ -414,7 +414,11 @@ class IDSSObj(Base):
             self._check_for_error()
             raise ValueError('Could not create object "{}".'.format(_name))
 
-        return self._obj_cls(self._api_util, ptr)
+        mapper = self._api_util._map_objs
+        if mapper is True:
+            return self._obj_cls(self._api_util, ptr)
+        elif mapper:
+            return mapper._map_obj(self._obj_cls, ptr)
 
 
     def _new(self, name: AnyStr, begin_edit=None, activate=False, props=None):
@@ -422,7 +426,7 @@ class IDSSObj(Base):
         Internal/aux. function used by the descendant classes (which provide typing info) to create the objects.
         '''
         if props:
-            obj = IDSSObj.new(self, name, True, activate)
+            obj = IDSSObj._create_new(self, name, True, activate)
             try:
                 for k, v in props.items():
                     setattr(obj, k, v)
@@ -435,7 +439,7 @@ class IDSSObj(Base):
         if begin_edit is None:
             begin_edit = True # Assumes the user wants to edit the properties outside.
 
-        return IDSSObj.new(self, name, begin_edit, activate)
+        return IDSSObj._create_new(self, name, begin_edit, activate)
         
 
     def find(self, name_or_idx: Union[AnyStr, int]) -> DSSObj:
@@ -457,6 +461,7 @@ class IDSSObj(Base):
                 raise ValueError('Could not find object by name "{}".'.format(name_or_idx))
 
         return self._obj_cls(self._api_util, ptr)
+
 
     def __len__(self) -> int:
         return self._lib.Obj_GetCount(self._api_util.ctx, self.cls_idx)

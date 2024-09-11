@@ -1,9 +1,41 @@
 # Copyright (c) 2016-2024 Paulo Meira
 # Copyright (c) 2018-2024 DSS-Extensions contributors
-from .common import Base
+from .common import Base, InvalidatedObjectIterator
 from .types import Float64Array, Int32Array
 from typing import AnyStr
 from dss.enums import DSSPropertyNameStyle
+from .DSSObj import DSSObj
+
+class MapToIterators:
+    def __init__(self, settings):
+        self._api_util = settings._api_util
+        self._previous_state = None
+        self._tmp_it_objs = [None] * (self._api_util.lib.DSS_Get_NumClasses() + 1)
+
+    def __enter__(self):
+        self._previous_state = self._api_util._map_objs
+        self._api_util._map_objs = self
+
+    def _map_obj(self, obj_cls: int, ptr) -> DSSObj:
+        idx = obj_cls._cls_idx
+        it_obj = self._tmp_it_objs[idx]
+        if it_obj is None:
+            it_obj = obj_cls(self._api_util, InvalidatedObjectIterator)
+            it_obj._is_iterator = True
+            self._tmp_it_objs[idx] = it_obj
+
+        it_obj._ptr = ptr
+        return it_obj
+
+    def __exit__(self, exc_type, exc_val, exc_tb):
+        self._api_util._map_objs = self._previous_state
+        # Invalidate our temporary iterators
+        for it_obj in self._tmp_it_objs:
+            if it_obj is None:
+                continue
+
+            it_obj._ptr = InvalidatedObjectIterator
+
 
 class ISettings(Base):
     __slots__ = []
@@ -417,3 +449,23 @@ class ISettings(Base):
     @COMErrorResults.setter
     def COMErrorResults(self, Value: bool):
         self._check_for_error(self._lib.DSS_Set_COMErrorResults(Value))
+
+    def map_to_iterators(self):
+        '''
+        Returns a Python context manager that temporary disables mapping new DSS objects
+        to permanent Python objects; instead, use AltDSS object iterators where required. 
+
+        Use this to remove the extra Python overhead if you do not plan to interact 
+        with every single object in Python. The objects can always be accessed later
+        through the implicit collections (e.g. `altdss.Load` for load objects).
+
+        Alternatively, prefer the batch API to create objects in bulk, when possible.
+        Batches do not instantiate individual Python objects for each DSS object when 
+        they are created.
+
+        For advanced users.
+
+        **(API Extension)**
+        '''
+        return MapToIterators(self)
+
