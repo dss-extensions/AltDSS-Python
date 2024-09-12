@@ -606,4 +606,4 @@ class IBuses(BusBatch):
         '''
         Array of strings containing names of all buses in circuit.
         '''
-        return self._check_for_error(self._get_string_array(self._lib.Circuit_Get_AllBusNames))
+        return self._lib.Circuit_Get_AllBusNames()

@@ -18,7 +18,7 @@ class IError(Base):
 
         Original COM help: https://opendss.epri.com/Description1.html
         '''
-        return self._get_string(self._lib.Error_Get_Description())
+        return self._lib.Error_Get_Description()
 
     @property
     def Number(self) -> int:
@@ -34,9 +34,9 @@ class IError(Base):
         '''
         EarlyAbort controls whether all errors halts the DSS script processing (Compile/Redirect), defaults to True.
         
-        (API Extension)
+        **(API Extension)**
         '''
-        return self._lib.Error_Get_EarlyAbort() != 0
+        return self._lib.Error_Get_EarlyAbort()
         
     @EarlyAbort.setter
     def EarlyAbort(self, Value: bool):
@@ -63,9 +63,9 @@ class IError(Base):
         The current default state is ON. For compatibility, the user can turn it
         off to restore the previous behavior.
         
-        (API Extension)
+        **(API Extension)**
         '''
-        return self._lib.Error_Get_ExtendedErrors() != 0
+        return self._lib.Error_Get_ExtendedErrors()
         
     @ExtendedErrors.setter
     def ExtendedErrors(self, Value: bool):
@@ -89,10 +89,16 @@ class IError(Base):
         **WARNING:** This is a global setting, affects all DSS instances from DSS-Python,
         OpenDSSDirect.py and AltDSS.
 
-        (API Extension)
+        **(API Extension)**
         """
         return Base._use_exceptions
     
     @UseExceptions.setter
     def UseExceptions(self, value: bool):
         Base._enable_exceptions(value)
+        _UseExceptions = 1
+        if value:
+            self._api_util.settings_ptr[0] = self._api_util.settings_ptr[0] | _UseExceptions
+        else:
+            self._api_util.settings_ptr[0] = self._api_util.settings_ptr[0] & ~_UseExceptions
+
