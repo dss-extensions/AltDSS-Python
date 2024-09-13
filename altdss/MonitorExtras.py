@@ -9,37 +9,76 @@ class MonitorObjMixin:
     _extra_slots = []
 
     def Show(self):
+        '''
+        Convert the monitor data to text and displays it with the text editor.
+
+        Original COM help: https://opendss.epri.com/Show3.html
+        '''
         self._lib.Alt_Monitor_Show(self._ptr)
 
     def Header(self) -> List[str]:
+        '''
+        Array of strings containing channel names
+
+        Original COM help: https://opendss.epri.com/Header.html
+        '''
         return self._get_string_array(self._lib.Alt_Monitor_Get_Header, self._ptr)
 
     def ByteStream(self) -> Int8Array:
+        '''
+        Byte array containing the monitor's stream values. Make sure a "save" is done first (standard solution modes do this automatically)
+
+        Original COM help: https://opendss.epri.com/ByteStream.html
+        '''
         return self._get_int8_array(self._lib.Alt_Monitor_Get_ByteStream, self._ptr)
 
     def FileName(self) -> str:
+        '''
+        Name of CSV file associated with this monitor.
+
+        Original COM help: https://opendss.epri.com/FileName.html
+        '''
         return self._get_string(self._lib.Alt_Monitor_Get_FileName(self._ptr))
 
     def SampleCount(self) -> int:
+        '''
+        Number of samples in this monitor at present
+
+        Original COM help: https://opendss.epri.com/SampleCount.html
+        '''
         return self._lib.Alt_Monitor_Get_SampleCount(self._ptr)
 
     def NumChannels(self) -> int:
+        '''
+        Number of channels in this monitor
+
+        Original COM help: https://opendss.epri.com/NumChannels.html
+        '''
         return self._lib.Alt_Monitor_Get_NumChannels(self._ptr)
 
     def RecordSize(self) -> int:
+        '''
+        Size of each record in ByteStream. Same as `NumChannels`.
+
+        Original COM help: https://opendss.epri.com/RecordSize.html
+        '''
         return self._lib.Alt_Monitor_Get_RecordSize(self._ptr)
 
     def dblFreq(self) -> Float64Array:
         '''
         Frequency values for harmonics mode solutions.
-        Empty for time mode solutions (use dblHour instead).
+        Empty for time mode solutions (use `dblHour` instead).
+
+        Original COM help: https://opendss.epri.com/dblFreq.html
         '''
         return self._get_float64_array(self._lib.Alt_Monitor_Get_dblFreq, self._ptr)
 
     def dblHour(self) -> Float64Array:
         '''
         Time value in hours for time-sampled monitor values. 
-        Empty if frequency-sampled values for harmonics solution (use dblFreq instead).
+        Empty if frequency-sampled values for harmonics solution (use `dblFreq` instead).
+
+        Original COM help: https://opendss.epri.com/dblHour.html
         '''
         return self._get_float64_array(self._lib.Alt_Monitor_Get_dblHour, self._ptr)
 
