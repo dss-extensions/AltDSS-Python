@@ -32,19 +32,19 @@ class BatchCommon:
         self._check_for_error()
         return res
 
-    def _get_batch_float64_func(self, funcname):
+    def _get_batch_float64_func(self, funcname: str):
         func = self._ffi.addressof(self._api_util.lib_unpatched, funcname)
         res = self._get_float64_array(self._lib.Batch_GetFloat64FromFunc, *self._get_ptr_cnt(), func)
         self._check_for_error()
         return res
 
-    def _get_batch_float64_int32_func(self, funcname, funcArg: int):
+    def _get_batch_float64_int32_func(self, funcname: str, funcArg: int):
         func = self._ffi.addressof(self._api_util.lib_unpatched, funcname)
         res = self._get_float64_array(self._lib.Batch_GetFloat64FromFunc2, *self._get_ptr_cnt(), func, funcArg)
         self._check_for_error()
         return res
 
-    def _get_batch_int32_func(self, funcname):
+    def _get_batch_int32_func(self, funcname: str):
         func = self._ffi.addressof(self._api_util.lib_unpatched, funcname)
         res = self._get_int32_array(self._lib.Batch_GetInt32FromFunc, *self._get_ptr_cnt(), func)
         self._check_for_error()
