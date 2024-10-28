@@ -115,9 +115,9 @@ class Vsource(DSSObj, CircuitElementMixin, PCElementMixin):
     bus1=busname
     bus1=busname.1.2.3
 
-    The VSOURCE object is a two-terminal voltage source (thevenin equivalent). Bus2 defaults to Bus1 with all phases connected to ground (node 0) unless previously specified. This is a Yg connection. If you want something different, define the Bus2 property explicitly.
+    The VSOURCE object is a two-terminal voltage source (Thévenin equivalent). Bus2 defaults to Bus1 with all phases connected to ground (node 0) unless previously specified. This is a Yg connection. If you want something different, define the Bus2 property explicitly.
 
-    DSS property name: `Bus1`, DSS property index: 1.
+    Name: `Bus1`
     """
 
     def _get_BasekV(self) -> float:
@@ -128,9 +128,10 @@ class Vsource(DSSObj, CircuitElementMixin, PCElementMixin):
 
     BasekV = property(_get_BasekV, _set_BasekV) # type: float
     """
-    Base Source kV, usually phase-phase (L-L) unless you are making a positive-sequence model or 1-phase modelin which case, it will be phase-neutral (L-N) kV.
+    Base Source kV, usually phase-phase (L-L) unless you are making a positive-sequence model or 1-phase model in which case, it will be phase-neutral (L-N) kV.
 
-    DSS property name: `BasekV`, DSS property index: 2.
+    Name: `BasekV`
+    Default: 115.0
     """
 
     def _get_pu(self) -> float:
@@ -144,7 +145,8 @@ class Vsource(DSSObj, CircuitElementMixin, PCElementMixin):
     Per unit of the base voltage that the source is actually operating at.
     "pu=1.05"
 
-    DSS property name: `pu`, DSS property index: 3.
+    Name: `pu`
+    Default: 1.0
     """
 
     def _get_Angle(self) -> float:
@@ -157,7 +159,8 @@ class Vsource(DSSObj, CircuitElementMixin, PCElementMixin):
     """
     Phase angle in degrees of first phase: e.g.,Angle=10.3
 
-    DSS property name: `Angle`, DSS property index: 4.
+    Name: `Angle`
+    Default: 0.0
     """
 
     def _get_Frequency(self) -> float:
@@ -170,7 +173,8 @@ class Vsource(DSSObj, CircuitElementMixin, PCElementMixin):
     """
     Source frequency.  Defaults to system default base frequency.
 
-    DSS property name: `Frequency`, DSS property index: 5.
+    Name: `Frequency`
+    Units: Hz
     """
 
     def _get_Phases(self) -> int:
@@ -181,9 +185,10 @@ class Vsource(DSSObj, CircuitElementMixin, PCElementMixin):
 
     Phases = property(_get_Phases, _set_Phases) # type: int
     """
-    Number of phases.  Defaults to 3.
+    Number of phases.
 
-    DSS property name: `Phases`, DSS property index: 6.
+    Name: `Phases`
+    Default: 3
     """
 
     def _get_MVASC3(self) -> float:
@@ -194,9 +199,11 @@ class Vsource(DSSObj, CircuitElementMixin, PCElementMixin):
 
     MVASC3 = property(_get_MVASC3, _set_MVASC3) # type: float
     """
-    MVA Short circuit, 3-phase fault. Default = 2000. Z1 is determined by squaring the base kv and dividing by this value. For single-phase source, this value is not used.
+    MVA Short circuit, 3-phase fault. Z1 is determined by squaring the base kv and dividing by this value. For single-phase source, this value is not used.
 
-    DSS property name: `MVASC3`, DSS property index: 7.
+    Name: `MVASC3`
+    Units: MVA
+    Default: 2000.0
     """
 
     def _get_MVASC1(self) -> float:
@@ -207,9 +214,11 @@ class Vsource(DSSObj, CircuitElementMixin, PCElementMixin):
 
     MVASC1 = property(_get_MVASC1, _set_MVASC1) # type: float
     """
-    MVA Short Circuit, 1-phase fault. Default = 2100. The "single-phase impedance", Zs, is determined by squaring the base kV and dividing by this value. Then Z0 is determined by Z0 = 3Zs - 2Z1.  For 1-phase sources, Zs is used directly. Use X0R0 to define X/R ratio for 1-phase source.
+    MVA Short Circuit, 1-phase fault. The "single-phase impedance", Zs, is determined by squaring the base kV and dividing by this value. Then Z0 is determined by Z0 = 3Zs - 2Z1.  For 1-phase sources, Zs is used directly. Use X0R0 to define X/R ratio for 1-phase source.
 
-    DSS property name: `MVASC1`, DSS property index: 8.
+    Name: `MVASC1`
+    Units: MVA
+    Default: 2100.0
     """
 
     def _get_X1R1(self) -> float:
@@ -220,9 +229,10 @@ class Vsource(DSSObj, CircuitElementMixin, PCElementMixin):
 
     X1R1 = property(_get_X1R1, _set_X1R1) # type: float
     """
-    Positive-sequence  X/R ratio. Default = 4.
+    Positive-sequence X/R ratio.
 
-    DSS property name: `X1R1`, DSS property index: 9.
+    Name: `X1R1`
+    Default: 4.0
     """
 
     def _get_X0R0(self) -> float:
@@ -233,9 +243,10 @@ class Vsource(DSSObj, CircuitElementMixin, PCElementMixin):
 
     X0R0 = property(_get_X0R0, _set_X0R0) # type: float
     """
-    Zero-sequence X/R ratio.Default = 3.
+    Zero-sequence X/R ratio.
 
-    DSS property name: `X0R0`, DSS property index: 10.
+    Name: `X0R0`
+    Default: 3.0
     """
 
     def _get_Isc3(self) -> float:
@@ -247,9 +258,10 @@ class Vsource(DSSObj, CircuitElementMixin, PCElementMixin):
     Isc3 = property(_get_Isc3, _set_Isc3) # type: float
     """
     Alternate method of defining the source impedance. 
-    3-phase short circuit current, amps.  Default is 10000.
+    3-phase short circuit current.
 
-    DSS property name: `Isc3`, DSS property index: 11.
+    Name: `Isc3`
+    Units: A
     """
 
     def _get_Isc1(self) -> float:
@@ -261,9 +273,10 @@ class Vsource(DSSObj, CircuitElementMixin, PCElementMixin):
     Isc1 = property(_get_Isc1, _set_Isc1) # type: float
     """
     Alternate method of defining the source impedance. 
-    single-phase short circuit current, amps.  Default is 10500.
+    single-phase short circuit current.
 
-    DSS property name: `Isc1`, DSS property index: 12.
+    Name: `Isc1`
+    Units: A
     """
 
     def _get_R1(self) -> float:
@@ -275,9 +288,10 @@ class Vsource(DSSObj, CircuitElementMixin, PCElementMixin):
     R1 = property(_get_R1, _set_R1) # type: float
     """
     Alternate method of defining the source impedance. 
-    Positive-sequence resistance, ohms.  Default is 1.65.
+    Positive-sequence resistance.
 
-    DSS property name: `R1`, DSS property index: 13.
+    Name: `R1`
+    Units: Ω
     """
 
     def _get_X1(self) -> float:
@@ -289,9 +303,10 @@ class Vsource(DSSObj, CircuitElementMixin, PCElementMixin):
     X1 = property(_get_X1, _set_X1) # type: float
     """
     Alternate method of defining the source impedance. 
-    Positive-sequence reactance, ohms.  Default is 6.6.
+    Positive-sequence reactance.
 
-    DSS property name: `X1`, DSS property index: 14.
+    Name: `X1`
+    Units: Ω
     """
 
     def _get_R0(self) -> float:
@@ -303,9 +318,10 @@ class Vsource(DSSObj, CircuitElementMixin, PCElementMixin):
     R0 = property(_get_R0, _set_R0) # type: float
     """
     Alternate method of defining the source impedance. 
-    Zero-sequence resistance, ohms.  Default is 1.9.
+    Zero-sequence resistance.
 
-    DSS property name: `R0`, DSS property index: 15.
+    Name: `R0`
+    Units: Ω
     """
 
     def _get_X0(self) -> float:
@@ -317,9 +333,10 @@ class Vsource(DSSObj, CircuitElementMixin, PCElementMixin):
     X0 = property(_get_X0, _set_X0) # type: float
     """
     Alternate method of defining the source impedance. 
-    Zero-sequence reactance, ohms.  Default is 5.7.
+    Zero-sequence reactance.
 
-    DSS property name: `X0`, DSS property index: 16.
+    Name: `X0`
+    Units: Ω
     """
 
     def _get_ScanType(self) -> enums.ScanType:
@@ -333,9 +350,10 @@ class Vsource(DSSObj, CircuitElementMixin, PCElementMixin):
 
     ScanType = property(_get_ScanType, _set_ScanType) # type: enums.ScanType
     """
-    {pos*| zero | none} Maintain specified sequence for harmonic solution. Default is positive sequence. Otherwise, angle between phases rotates with harmonic.
+    Maintain specified sequence for harmonic solution. Default is positive sequence. Otherwise, angle between phases rotates with harmonic.
 
-    DSS property name: `ScanType`, DSS property index: 17.
+    Name: `ScanType`
+    Default: Positive
     """
 
     def _get_ScanType_str(self) -> str:
@@ -346,9 +364,10 @@ class Vsource(DSSObj, CircuitElementMixin, PCElementMixin):
 
     ScanType_str = property(_get_ScanType_str, _set_ScanType_str) # type: str
     """
-    {pos*| zero | none} Maintain specified sequence for harmonic solution. Default is positive sequence. Otherwise, angle between phases rotates with harmonic.
+    Maintain specified sequence for harmonic solution. Default is positive sequence. Otherwise, angle between phases rotates with harmonic.
 
-    DSS property name: `ScanType`, DSS property index: 17.
+    Name: `ScanType`
+    Default: Positive
     """
 
     def _get_Sequence(self) -> enums.SequenceType:
@@ -362,9 +381,10 @@ class Vsource(DSSObj, CircuitElementMixin, PCElementMixin):
 
     Sequence = property(_get_Sequence, _set_Sequence) # type: enums.SequenceType
     """
-    {pos*| neg | zero} Set the phase angles for the specified symmetrical component sequence for non-harmonic solution modes. Default is positive sequence. 
+    Set the phase angles for the specified symmetrical component sequence for non-harmonic solution modes.
 
-    DSS property name: `Sequence`, DSS property index: 18.
+    Name: `Sequence`
+    Default: Positive
     """
 
     def _get_Sequence_str(self) -> str:
@@ -375,9 +395,10 @@ class Vsource(DSSObj, CircuitElementMixin, PCElementMixin):
 
     Sequence_str = property(_get_Sequence_str, _set_Sequence_str) # type: str
     """
-    {pos*| neg | zero} Set the phase angles for the specified symmetrical component sequence for non-harmonic solution modes. Default is positive sequence. 
+    Set the phase angles for the specified symmetrical component sequence for non-harmonic solution modes.
 
-    DSS property name: `Sequence`, DSS property index: 18.
+    Name: `Sequence`
+    Default: Positive
     """
 
     def _get_Bus2(self) -> str:
@@ -394,7 +415,7 @@ class Vsource(DSSObj, CircuitElementMixin, PCElementMixin):
 
     Default is Bus1.0.0.0 (grounded wye connection)
 
-    DSS property name: `Bus2`, DSS property index: 19.
+    Name: `Bus2`
     """
 
     def _get_Z2(self) -> complex:
@@ -413,7 +434,9 @@ class Vsource(DSSObj, CircuitElementMixin, PCElementMixin):
 
     Note: Z2 defaults to Z1 if it is not specifically defined. If Z2 is not equal to Z1, the impedance matrix is asymmetrical.
 
-    DSS property name: `Z2`, DSS property index: 22.
+    Name: `Z2`
+    Units: Ω
+    Default: [1.6037668205527518, 6.415067282211007]
     """
 
     def _get_puZ1(self) -> complex:
@@ -426,7 +449,8 @@ class Vsource(DSSObj, CircuitElementMixin, PCElementMixin):
     """
     2-element array: e.g., [1  2]. An alternate way to specify Z1. See Z1 property. Per-unit positive-sequence impedance on base of Vsource BasekV and BaseMVA.
 
-    DSS property name: `puZ1`, DSS property index: 23.
+    Name: `puZ1`
+    Default: [0.012126781251816649, 0.048507125007266595]
     """
 
     def _get_puZ0(self) -> complex:
@@ -439,7 +463,8 @@ class Vsource(DSSObj, CircuitElementMixin, PCElementMixin):
     """
     2-element array: e.g., [1  2]. An alternate way to specify Z0. See Z0 property. Per-unit zero-sequence impedance on base of Vsource BasekV and BaseMVA.
 
-    DSS property name: `puZ0`, DSS property index: 24.
+    Name: `puZ0`
+    Default: [0.013580611191859016, 0.04074183357557704]
     """
 
     def _get_puZ2(self) -> complex:
@@ -452,7 +477,8 @@ class Vsource(DSSObj, CircuitElementMixin, PCElementMixin):
     """
     2-element array: e.g., [1  2]. An alternate way to specify Z2. See Z2 property. Per-unit negative-sequence impedance on base of Vsource BasekV and BaseMVA.
 
-    DSS property name: `puZ2`, DSS property index: 25.
+    Name: `puZ2`
+    Default: [0.012126781251816649, 0.048507125007266595]
     """
 
     def _get_BaseMVA(self) -> float:
@@ -465,7 +491,8 @@ class Vsource(DSSObj, CircuitElementMixin, PCElementMixin):
     """
     Default value is 100. Base used to convert values specified with puZ1, puZ0, and puZ2 properties to ohms on kV base specified by BasekV property.
 
-    DSS property name: `BaseMVA`, DSS property index: 26.
+    Name: `BaseMVA`
+    Default: 100.0
     """
 
     def _get_Yearly_str(self) -> str:
@@ -482,7 +509,7 @@ class Vsource(DSSObj, CircuitElementMixin, PCElementMixin):
 
     Is set to the Daily load shape when Daily is defined.  The daily load shape is repeated in this case. Set to NONE to reset to no loadshape for Yearly mode. The default is no variation.
 
-    DSS property name: `Yearly`, DSS property index: 27.
+    Name: `Yearly`
     """
 
     def _get_Yearly(self) -> LoadShape:
@@ -503,7 +530,7 @@ class Vsource(DSSObj, CircuitElementMixin, PCElementMixin):
 
     Is set to the Daily load shape when Daily is defined.  The daily load shape is repeated in this case. Set to NONE to reset to no loadshape for Yearly mode. The default is no variation.
 
-    DSS property name: `Yearly`, DSS property index: 27.
+    Name: `Yearly`
     """
 
     def _get_Daily_str(self) -> str:
@@ -520,7 +547,7 @@ class Vsource(DSSObj, CircuitElementMixin, PCElementMixin):
 
     Sets Yearly curve if it is not already defined.   Set to NONE to reset to no loadshape for Yearly mode. The default is no variation.
 
-    DSS property name: `Daily`, DSS property index: 28.
+    Name: `Daily`
     """
 
     def _get_Daily(self) -> LoadShape:
@@ -541,7 +568,7 @@ class Vsource(DSSObj, CircuitElementMixin, PCElementMixin):
 
     Sets Yearly curve if it is not already defined.   Set to NONE to reset to no loadshape for Yearly mode. The default is no variation.
 
-    DSS property name: `Daily`, DSS property index: 28.
+    Name: `Daily`
     """
 
     def _get_Duty_str(self) -> str:
@@ -558,7 +585,7 @@ class Vsource(DSSObj, CircuitElementMixin, PCElementMixin):
 
     Defaults to Daily load shape when Daily is defined.   Set to NONE to reset to no loadshape for Yearly mode. The default is no variation.
 
-    DSS property name: `Duty`, DSS property index: 29.
+    Name: `Duty`
     """
 
     def _get_Duty(self) -> LoadShape:
@@ -579,7 +606,7 @@ class Vsource(DSSObj, CircuitElementMixin, PCElementMixin):
 
     Defaults to Daily load shape when Daily is defined.   Set to NONE to reset to no loadshape for Yearly mode. The default is no variation.
 
-    DSS property name: `Duty`, DSS property index: 29.
+    Name: `Duty`
     """
 
     def _get_Model(self) -> enums.VSourceModel:
@@ -593,9 +620,10 @@ class Vsource(DSSObj, CircuitElementMixin, PCElementMixin):
 
     Model = property(_get_Model, _set_Model) # type: enums.VSourceModel
     """
-    {Thevenin* | Ideal}  Specifies whether the Vsource is to be considered a Thevenin short circuit model or a quasi-ideal voltage source. If Thevenin, the Vsource uses the impedances defined for all calculations. If "Ideal", the model uses a small impedance on the diagonal of the impedance matrix for the fundamental base frequency power flow only. Then switches to actual Thevenin model for other frequencies. 
+    Specifies whether the Vsource is to be considered a Thévenin short circuit model or a quasi-ideal voltage source. If Thévenin, the Vsource uses the impedances defined for all calculations. If "Ideal", the model uses a small impedance on the diagonal of the impedance matrix for the fundamental base frequency power flow only. Then switches to actual Thévenin model for other frequencies. 
 
-    DSS property name: `Model`, DSS property index: 30.
+    Name: `Model`
+    Default: Thevenin
     """
 
     def _get_Model_str(self) -> str:
@@ -606,9 +634,10 @@ class Vsource(DSSObj, CircuitElementMixin, PCElementMixin):
 
     Model_str = property(_get_Model_str, _set_Model_str) # type: str
     """
-    {Thevenin* | Ideal}  Specifies whether the Vsource is to be considered a Thevenin short circuit model or a quasi-ideal voltage source. If Thevenin, the Vsource uses the impedances defined for all calculations. If "Ideal", the model uses a small impedance on the diagonal of the impedance matrix for the fundamental base frequency power flow only. Then switches to actual Thevenin model for other frequencies. 
+    Specifies whether the Vsource is to be considered a Thévenin short circuit model or a quasi-ideal voltage source. If Thévenin, the Vsource uses the impedances defined for all calculations. If "Ideal", the model uses a small impedance on the diagonal of the impedance matrix for the fundamental base frequency power flow only. Then switches to actual Thévenin model for other frequencies. 
 
-    DSS property name: `Model`, DSS property index: 30.
+    Name: `Model`
+    Default: Thevenin
     """
 
     def _get_puZIdeal(self) -> complex:
@@ -621,7 +650,8 @@ class Vsource(DSSObj, CircuitElementMixin, PCElementMixin):
     """
     2-element array: e.g., [1  2]. The pu impedance to use for the quasi-ideal voltage source model. Should be a very small impedances. Default is [1e-6, 0.001]. Per-unit impedance on base of Vsource BasekV and BaseMVA. If too small, solution may not work. Be sure to check the voltage values and powers.
 
-    DSS property name: `puZIdeal`, DSS property index: 31.
+    Name: `puZIdeal`
+    Default: [1e-06, 0.001]
     """
 
     def _get_Spectrum_str(self) -> str:
@@ -632,9 +662,10 @@ class Vsource(DSSObj, CircuitElementMixin, PCElementMixin):
 
     Spectrum_str = property(_get_Spectrum_str, _set_Spectrum_str) # type: str
     """
-    Name of harmonic spectrum for this source.  Default is "defaultvsource", which is defined when the DSS starts.
+    Name of harmonic spectrum for this source.
 
-    DSS property name: `Spectrum`, DSS property index: 32.
+    Name: `Spectrum`
+    Default: defaultvsource
     """
 
     def _get_Spectrum(self) -> SpectrumObj:
@@ -649,9 +680,10 @@ class Vsource(DSSObj, CircuitElementMixin, PCElementMixin):
 
     Spectrum = property(_get_Spectrum, _set_Spectrum) # type: SpectrumObj
     """
-    Name of harmonic spectrum for this source.  Default is "defaultvsource", which is defined when the DSS starts.
+    Name of harmonic spectrum for this source.
 
-    DSS property name: `Spectrum`, DSS property index: 32.
+    Name: `Spectrum`
+    Default: defaultvsource
     """
 
     def _get_BaseFreq(self) -> float:
@@ -664,7 +696,8 @@ class Vsource(DSSObj, CircuitElementMixin, PCElementMixin):
     """
     Base Frequency for ratings.
 
-    DSS property name: `BaseFreq`, DSS property index: 33.
+    Name: `BaseFreq`
+    Units: Hz
     """
 
     def _get_Enabled(self) -> bool:
@@ -675,9 +708,10 @@ class Vsource(DSSObj, CircuitElementMixin, PCElementMixin):
 
     Enabled = property(_get_Enabled, _set_Enabled) # type: bool
     """
-    {Yes|No or True|False} Indicates whether this element is enabled.
+    Indicates whether this element is enabled.
 
-    DSS property name: `Enabled`, DSS property index: 34.
+    Name: `Enabled`
+    Default: True
     """
 
     def Like(self, value: AnyStr):
@@ -686,7 +720,9 @@ class Vsource(DSSObj, CircuitElementMixin, PCElementMixin):
 
         New Capacitor.C2 like=c1  ...
 
-        DSS property name: `Like`, DSS property index: 35.
+        **Deprecated:** `Like` has been deprecated since at least 2021, see https://sourceforge.net/p/electricdss/discussion/861977/thread/8b59d21eb6/#b57c/f668
+
+        Name: `Like`
         """
         self._set_string_o(35, value)
 
@@ -770,9 +806,9 @@ class VsourceBatch(DSSBatch, CircuitElementBatchMixin, PCElementBatchMixin):
     bus1=busname
     bus1=busname.1.2.3
 
-    The VSOURCE object is a two-terminal voltage source (thevenin equivalent). Bus2 defaults to Bus1 with all phases connected to ground (node 0) unless previously specified. This is a Yg connection. If you want something different, define the Bus2 property explicitly.
+    The VSOURCE object is a two-terminal voltage source (Thévenin equivalent). Bus2 defaults to Bus1 with all phases connected to ground (node 0) unless previously specified. This is a Yg connection. If you want something different, define the Bus2 property explicitly.
 
-    DSS property name: `Bus1`, DSS property index: 1.
+    Name: `Bus1`
     """
 
     def _get_BasekV(self) -> BatchFloat64ArrayProxy:
@@ -783,9 +819,10 @@ class VsourceBatch(DSSBatch, CircuitElementBatchMixin, PCElementBatchMixin):
 
     BasekV = property(_get_BasekV, _set_BasekV) # type: BatchFloat64ArrayProxy
     """
-    Base Source kV, usually phase-phase (L-L) unless you are making a positive-sequence model or 1-phase modelin which case, it will be phase-neutral (L-N) kV.
+    Base Source kV, usually phase-phase (L-L) unless you are making a positive-sequence model or 1-phase model in which case, it will be phase-neutral (L-N) kV.
 
-    DSS property name: `BasekV`, DSS property index: 2.
+    Name: `BasekV`
+    Default: 115.0
     """
 
     def _get_pu(self) -> BatchFloat64ArrayProxy:
@@ -799,7 +836,8 @@ class VsourceBatch(DSSBatch, CircuitElementBatchMixin, PCElementBatchMixin):
     Per unit of the base voltage that the source is actually operating at.
     "pu=1.05"
 
-    DSS property name: `pu`, DSS property index: 3.
+    Name: `pu`
+    Default: 1.0
     """
 
     def _get_Angle(self) -> BatchFloat64ArrayProxy:
@@ -812,7 +850,8 @@ class VsourceBatch(DSSBatch, CircuitElementBatchMixin, PCElementBatchMixin):
     """
     Phase angle in degrees of first phase: e.g.,Angle=10.3
 
-    DSS property name: `Angle`, DSS property index: 4.
+    Name: `Angle`
+    Default: 0.0
     """
 
     def _get_Frequency(self) -> BatchFloat64ArrayProxy:
@@ -825,7 +864,8 @@ class VsourceBatch(DSSBatch, CircuitElementBatchMixin, PCElementBatchMixin):
     """
     Source frequency.  Defaults to system default base frequency.
 
-    DSS property name: `Frequency`, DSS property index: 5.
+    Name: `Frequency`
+    Units: Hz
     """
 
     def _get_Phases(self) -> BatchInt32ArrayProxy:
@@ -836,9 +876,10 @@ class VsourceBatch(DSSBatch, CircuitElementBatchMixin, PCElementBatchMixin):
 
     Phases = property(_get_Phases, _set_Phases) # type: BatchInt32ArrayProxy
     """
-    Number of phases.  Defaults to 3.
+    Number of phases.
 
-    DSS property name: `Phases`, DSS property index: 6.
+    Name: `Phases`
+    Default: 3
     """
 
     def _get_MVASC3(self) -> BatchFloat64ArrayProxy:
@@ -849,9 +890,11 @@ class VsourceBatch(DSSBatch, CircuitElementBatchMixin, PCElementBatchMixin):
 
     MVASC3 = property(_get_MVASC3, _set_MVASC3) # type: BatchFloat64ArrayProxy
     """
-    MVA Short circuit, 3-phase fault. Default = 2000. Z1 is determined by squaring the base kv and dividing by this value. For single-phase source, this value is not used.
+    MVA Short circuit, 3-phase fault. Z1 is determined by squaring the base kv and dividing by this value. For single-phase source, this value is not used.
 
-    DSS property name: `MVASC3`, DSS property index: 7.
+    Name: `MVASC3`
+    Units: MVA
+    Default: 2000.0
     """
 
     def _get_MVASC1(self) -> BatchFloat64ArrayProxy:
@@ -862,9 +905,11 @@ class VsourceBatch(DSSBatch, CircuitElementBatchMixin, PCElementBatchMixin):
 
     MVASC1 = property(_get_MVASC1, _set_MVASC1) # type: BatchFloat64ArrayProxy
     """
-    MVA Short Circuit, 1-phase fault. Default = 2100. The "single-phase impedance", Zs, is determined by squaring the base kV and dividing by this value. Then Z0 is determined by Z0 = 3Zs - 2Z1.  For 1-phase sources, Zs is used directly. Use X0R0 to define X/R ratio for 1-phase source.
+    MVA Short Circuit, 1-phase fault. The "single-phase impedance", Zs, is determined by squaring the base kV and dividing by this value. Then Z0 is determined by Z0 = 3Zs - 2Z1.  For 1-phase sources, Zs is used directly. Use X0R0 to define X/R ratio for 1-phase source.
 
-    DSS property name: `MVASC1`, DSS property index: 8.
+    Name: `MVASC1`
+    Units: MVA
+    Default: 2100.0
     """
 
     def _get_X1R1(self) -> BatchFloat64ArrayProxy:
@@ -875,9 +920,10 @@ class VsourceBatch(DSSBatch, CircuitElementBatchMixin, PCElementBatchMixin):
 
     X1R1 = property(_get_X1R1, _set_X1R1) # type: BatchFloat64ArrayProxy
     """
-    Positive-sequence  X/R ratio. Default = 4.
+    Positive-sequence X/R ratio.
 
-    DSS property name: `X1R1`, DSS property index: 9.
+    Name: `X1R1`
+    Default: 4.0
     """
 
     def _get_X0R0(self) -> BatchFloat64ArrayProxy:
@@ -888,9 +934,10 @@ class VsourceBatch(DSSBatch, CircuitElementBatchMixin, PCElementBatchMixin):
 
     X0R0 = property(_get_X0R0, _set_X0R0) # type: BatchFloat64ArrayProxy
     """
-    Zero-sequence X/R ratio.Default = 3.
+    Zero-sequence X/R ratio.
 
-    DSS property name: `X0R0`, DSS property index: 10.
+    Name: `X0R0`
+    Default: 3.0
     """
 
     def _get_Isc3(self) -> BatchFloat64ArrayProxy:
@@ -902,9 +949,10 @@ class VsourceBatch(DSSBatch, CircuitElementBatchMixin, PCElementBatchMixin):
     Isc3 = property(_get_Isc3, _set_Isc3) # type: BatchFloat64ArrayProxy
     """
     Alternate method of defining the source impedance. 
-    3-phase short circuit current, amps.  Default is 10000.
+    3-phase short circuit current.
 
-    DSS property name: `Isc3`, DSS property index: 11.
+    Name: `Isc3`
+    Units: A
     """
 
     def _get_Isc1(self) -> BatchFloat64ArrayProxy:
@@ -916,9 +964,10 @@ class VsourceBatch(DSSBatch, CircuitElementBatchMixin, PCElementBatchMixin):
     Isc1 = property(_get_Isc1, _set_Isc1) # type: BatchFloat64ArrayProxy
     """
     Alternate method of defining the source impedance. 
-    single-phase short circuit current, amps.  Default is 10500.
+    single-phase short circuit current.
 
-    DSS property name: `Isc1`, DSS property index: 12.
+    Name: `Isc1`
+    Units: A
     """
 
     def _get_R1(self) -> BatchFloat64ArrayProxy:
@@ -930,9 +979,10 @@ class VsourceBatch(DSSBatch, CircuitElementBatchMixin, PCElementBatchMixin):
     R1 = property(_get_R1, _set_R1) # type: BatchFloat64ArrayProxy
     """
     Alternate method of defining the source impedance. 
-    Positive-sequence resistance, ohms.  Default is 1.65.
+    Positive-sequence resistance.
 
-    DSS property name: `R1`, DSS property index: 13.
+    Name: `R1`
+    Units: Ω
     """
 
     def _get_X1(self) -> BatchFloat64ArrayProxy:
@@ -944,9 +994,10 @@ class VsourceBatch(DSSBatch, CircuitElementBatchMixin, PCElementBatchMixin):
     X1 = property(_get_X1, _set_X1) # type: BatchFloat64ArrayProxy
     """
     Alternate method of defining the source impedance. 
-    Positive-sequence reactance, ohms.  Default is 6.6.
+    Positive-sequence reactance.
 
-    DSS property name: `X1`, DSS property index: 14.
+    Name: `X1`
+    Units: Ω
     """
 
     def _get_R0(self) -> BatchFloat64ArrayProxy:
@@ -958,9 +1009,10 @@ class VsourceBatch(DSSBatch, CircuitElementBatchMixin, PCElementBatchMixin):
     R0 = property(_get_R0, _set_R0) # type: BatchFloat64ArrayProxy
     """
     Alternate method of defining the source impedance. 
-    Zero-sequence resistance, ohms.  Default is 1.9.
+    Zero-sequence resistance.
 
-    DSS property name: `R0`, DSS property index: 15.
+    Name: `R0`
+    Units: Ω
     """
 
     def _get_X0(self) -> BatchFloat64ArrayProxy:
@@ -972,9 +1024,10 @@ class VsourceBatch(DSSBatch, CircuitElementBatchMixin, PCElementBatchMixin):
     X0 = property(_get_X0, _set_X0) # type: BatchFloat64ArrayProxy
     """
     Alternate method of defining the source impedance. 
-    Zero-sequence reactance, ohms.  Default is 5.7.
+    Zero-sequence reactance.
 
-    DSS property name: `X0`, DSS property index: 16.
+    Name: `X0`
+    Units: Ω
     """
 
     def _get_ScanType(self) -> BatchInt32ArrayProxy:
@@ -989,9 +1042,10 @@ class VsourceBatch(DSSBatch, CircuitElementBatchMixin, PCElementBatchMixin):
 
     ScanType = property(_get_ScanType, _set_ScanType) # type: BatchInt32ArrayProxy
     """
-    {pos*| zero | none} Maintain specified sequence for harmonic solution. Default is positive sequence. Otherwise, angle between phases rotates with harmonic.
+    Maintain specified sequence for harmonic solution. Default is positive sequence. Otherwise, angle between phases rotates with harmonic.
 
-    DSS property name: `ScanType`, DSS property index: 17.
+    Name: `ScanType`
+    Default: Positive
     """
 
     def _get_ScanType_str(self) -> List[str]:
@@ -1002,9 +1056,10 @@ class VsourceBatch(DSSBatch, CircuitElementBatchMixin, PCElementBatchMixin):
 
     ScanType_str = property(_get_ScanType_str, _set_ScanType_str) # type: List[str]
     """
-    {pos*| zero | none} Maintain specified sequence for harmonic solution. Default is positive sequence. Otherwise, angle between phases rotates with harmonic.
+    Maintain specified sequence for harmonic solution. Default is positive sequence. Otherwise, angle between phases rotates with harmonic.
 
-    DSS property name: `ScanType`, DSS property index: 17.
+    Name: `ScanType`
+    Default: Positive
     """
 
     def _get_Sequence(self) -> BatchInt32ArrayProxy:
@@ -1019,9 +1074,10 @@ class VsourceBatch(DSSBatch, CircuitElementBatchMixin, PCElementBatchMixin):
 
     Sequence = property(_get_Sequence, _set_Sequence) # type: BatchInt32ArrayProxy
     """
-    {pos*| neg | zero} Set the phase angles for the specified symmetrical component sequence for non-harmonic solution modes. Default is positive sequence. 
+    Set the phase angles for the specified symmetrical component sequence for non-harmonic solution modes.
 
-    DSS property name: `Sequence`, DSS property index: 18.
+    Name: `Sequence`
+    Default: Positive
     """
 
     def _get_Sequence_str(self) -> List[str]:
@@ -1032,9 +1088,10 @@ class VsourceBatch(DSSBatch, CircuitElementBatchMixin, PCElementBatchMixin):
 
     Sequence_str = property(_get_Sequence_str, _set_Sequence_str) # type: List[str]
     """
-    {pos*| neg | zero} Set the phase angles for the specified symmetrical component sequence for non-harmonic solution modes. Default is positive sequence. 
+    Set the phase angles for the specified symmetrical component sequence for non-harmonic solution modes.
 
-    DSS property name: `Sequence`, DSS property index: 18.
+    Name: `Sequence`
+    Default: Positive
     """
 
     def _get_Bus2(self) -> List[str]:
@@ -1051,7 +1108,7 @@ class VsourceBatch(DSSBatch, CircuitElementBatchMixin, PCElementBatchMixin):
 
     Default is Bus1.0.0.0 (grounded wye connection)
 
-    DSS property name: `Bus2`, DSS property index: 19.
+    Name: `Bus2`
     """
 
     def _get_Z2(self) -> List[complex]:
@@ -1091,7 +1148,9 @@ class VsourceBatch(DSSBatch, CircuitElementBatchMixin, PCElementBatchMixin):
 
     Note: Z2 defaults to Z1 if it is not specifically defined. If Z2 is not equal to Z1, the impedance matrix is asymmetrical.
 
-    DSS property name: `Z2`, DSS property index: 22.
+    Name: `Z2`
+    Units: Ω
+    Default: [1.6037668205527518, 6.415067282211007]
     """
 
     def _get_puZ1(self) -> List[complex]:
@@ -1125,7 +1184,8 @@ class VsourceBatch(DSSBatch, CircuitElementBatchMixin, PCElementBatchMixin):
     """
     2-element array: e.g., [1  2]. An alternate way to specify Z1. See Z1 property. Per-unit positive-sequence impedance on base of Vsource BasekV and BaseMVA.
 
-    DSS property name: `puZ1`, DSS property index: 23.
+    Name: `puZ1`
+    Default: [0.012126781251816649, 0.048507125007266595]
     """
 
     def _get_puZ0(self) -> List[complex]:
@@ -1159,7 +1219,8 @@ class VsourceBatch(DSSBatch, CircuitElementBatchMixin, PCElementBatchMixin):
     """
     2-element array: e.g., [1  2]. An alternate way to specify Z0. See Z0 property. Per-unit zero-sequence impedance on base of Vsource BasekV and BaseMVA.
 
-    DSS property name: `puZ0`, DSS property index: 24.
+    Name: `puZ0`
+    Default: [0.013580611191859016, 0.04074183357557704]
     """
 
     def _get_puZ2(self) -> List[complex]:
@@ -1193,7 +1254,8 @@ class VsourceBatch(DSSBatch, CircuitElementBatchMixin, PCElementBatchMixin):
     """
     2-element array: e.g., [1  2]. An alternate way to specify Z2. See Z2 property. Per-unit negative-sequence impedance on base of Vsource BasekV and BaseMVA.
 
-    DSS property name: `puZ2`, DSS property index: 25.
+    Name: `puZ2`
+    Default: [0.012126781251816649, 0.048507125007266595]
     """
 
     def _get_BaseMVA(self) -> BatchFloat64ArrayProxy:
@@ -1206,7 +1268,8 @@ class VsourceBatch(DSSBatch, CircuitElementBatchMixin, PCElementBatchMixin):
     """
     Default value is 100. Base used to convert values specified with puZ1, puZ0, and puZ2 properties to ohms on kV base specified by BasekV property.
 
-    DSS property name: `BaseMVA`, DSS property index: 26.
+    Name: `BaseMVA`
+    Default: 100.0
     """
 
     def _get_Yearly_str(self) -> List[str]:
@@ -1223,7 +1286,7 @@ class VsourceBatch(DSSBatch, CircuitElementBatchMixin, PCElementBatchMixin):
 
     Is set to the Daily load shape when Daily is defined.  The daily load shape is repeated in this case. Set to NONE to reset to no loadshape for Yearly mode. The default is no variation.
 
-    DSS property name: `Yearly`, DSS property index: 27.
+    Name: `Yearly`
     """
 
     def _get_Yearly(self) -> List[LoadShape]:
@@ -1240,7 +1303,7 @@ class VsourceBatch(DSSBatch, CircuitElementBatchMixin, PCElementBatchMixin):
 
     Is set to the Daily load shape when Daily is defined.  The daily load shape is repeated in this case. Set to NONE to reset to no loadshape for Yearly mode. The default is no variation.
 
-    DSS property name: `Yearly`, DSS property index: 27.
+    Name: `Yearly`
     """
 
     def _get_Daily_str(self) -> List[str]:
@@ -1257,7 +1320,7 @@ class VsourceBatch(DSSBatch, CircuitElementBatchMixin, PCElementBatchMixin):
 
     Sets Yearly curve if it is not already defined.   Set to NONE to reset to no loadshape for Yearly mode. The default is no variation.
 
-    DSS property name: `Daily`, DSS property index: 28.
+    Name: `Daily`
     """
 
     def _get_Daily(self) -> List[LoadShape]:
@@ -1274,7 +1337,7 @@ class VsourceBatch(DSSBatch, CircuitElementBatchMixin, PCElementBatchMixin):
 
     Sets Yearly curve if it is not already defined.   Set to NONE to reset to no loadshape for Yearly mode. The default is no variation.
 
-    DSS property name: `Daily`, DSS property index: 28.
+    Name: `Daily`
     """
 
     def _get_Duty_str(self) -> List[str]:
@@ -1291,7 +1354,7 @@ class VsourceBatch(DSSBatch, CircuitElementBatchMixin, PCElementBatchMixin):
 
     Defaults to Daily load shape when Daily is defined.   Set to NONE to reset to no loadshape for Yearly mode. The default is no variation.
 
-    DSS property name: `Duty`, DSS property index: 29.
+    Name: `Duty`
     """
 
     def _get_Duty(self) -> List[LoadShape]:
@@ -1308,7 +1371,7 @@ class VsourceBatch(DSSBatch, CircuitElementBatchMixin, PCElementBatchMixin):
 
     Defaults to Daily load shape when Daily is defined.   Set to NONE to reset to no loadshape for Yearly mode. The default is no variation.
 
-    DSS property name: `Duty`, DSS property index: 29.
+    Name: `Duty`
     """
 
     def _get_Model(self) -> BatchInt32ArrayProxy:
@@ -1323,9 +1386,10 @@ class VsourceBatch(DSSBatch, CircuitElementBatchMixin, PCElementBatchMixin):
 
     Model = property(_get_Model, _set_Model) # type: BatchInt32ArrayProxy
     """
-    {Thevenin* | Ideal}  Specifies whether the Vsource is to be considered a Thevenin short circuit model or a quasi-ideal voltage source. If Thevenin, the Vsource uses the impedances defined for all calculations. If "Ideal", the model uses a small impedance on the diagonal of the impedance matrix for the fundamental base frequency power flow only. Then switches to actual Thevenin model for other frequencies. 
+    Specifies whether the Vsource is to be considered a Thévenin short circuit model or a quasi-ideal voltage source. If Thévenin, the Vsource uses the impedances defined for all calculations. If "Ideal", the model uses a small impedance on the diagonal of the impedance matrix for the fundamental base frequency power flow only. Then switches to actual Thévenin model for other frequencies. 
 
-    DSS property name: `Model`, DSS property index: 30.
+    Name: `Model`
+    Default: Thevenin
     """
 
     def _get_Model_str(self) -> List[str]:
@@ -1336,9 +1400,10 @@ class VsourceBatch(DSSBatch, CircuitElementBatchMixin, PCElementBatchMixin):
 
     Model_str = property(_get_Model_str, _set_Model_str) # type: List[str]
     """
-    {Thevenin* | Ideal}  Specifies whether the Vsource is to be considered a Thevenin short circuit model or a quasi-ideal voltage source. If Thevenin, the Vsource uses the impedances defined for all calculations. If "Ideal", the model uses a small impedance on the diagonal of the impedance matrix for the fundamental base frequency power flow only. Then switches to actual Thevenin model for other frequencies. 
+    Specifies whether the Vsource is to be considered a Thévenin short circuit model or a quasi-ideal voltage source. If Thévenin, the Vsource uses the impedances defined for all calculations. If "Ideal", the model uses a small impedance on the diagonal of the impedance matrix for the fundamental base frequency power flow only. Then switches to actual Thévenin model for other frequencies. 
 
-    DSS property name: `Model`, DSS property index: 30.
+    Name: `Model`
+    Default: Thevenin
     """
 
     def _get_puZIdeal(self) -> List[complex]:
@@ -1372,7 +1437,8 @@ class VsourceBatch(DSSBatch, CircuitElementBatchMixin, PCElementBatchMixin):
     """
     2-element array: e.g., [1  2]. The pu impedance to use for the quasi-ideal voltage source model. Should be a very small impedances. Default is [1e-6, 0.001]. Per-unit impedance on base of Vsource BasekV and BaseMVA. If too small, solution may not work. Be sure to check the voltage values and powers.
 
-    DSS property name: `puZIdeal`, DSS property index: 31.
+    Name: `puZIdeal`
+    Default: [1e-06, 0.001]
     """
 
     def _get_Spectrum_str(self) -> List[str]:
@@ -1383,9 +1449,10 @@ class VsourceBatch(DSSBatch, CircuitElementBatchMixin, PCElementBatchMixin):
 
     Spectrum_str = property(_get_Spectrum_str, _set_Spectrum_str) # type: List[str]
     """
-    Name of harmonic spectrum for this source.  Default is "defaultvsource", which is defined when the DSS starts.
+    Name of harmonic spectrum for this source.
 
-    DSS property name: `Spectrum`, DSS property index: 32.
+    Name: `Spectrum`
+    Default: defaultvsource
     """
 
     def _get_Spectrum(self) -> List[SpectrumObj]:
@@ -1396,9 +1463,10 @@ class VsourceBatch(DSSBatch, CircuitElementBatchMixin, PCElementBatchMixin):
 
     Spectrum = property(_get_Spectrum, _set_Spectrum) # type: List[SpectrumObj]
     """
-    Name of harmonic spectrum for this source.  Default is "defaultvsource", which is defined when the DSS starts.
+    Name of harmonic spectrum for this source.
 
-    DSS property name: `Spectrum`, DSS property index: 32.
+    Name: `Spectrum`
+    Default: defaultvsource
     """
 
     def _get_BaseFreq(self) -> BatchFloat64ArrayProxy:
@@ -1411,7 +1479,8 @@ class VsourceBatch(DSSBatch, CircuitElementBatchMixin, PCElementBatchMixin):
     """
     Base Frequency for ratings.
 
-    DSS property name: `BaseFreq`, DSS property index: 33.
+    Name: `BaseFreq`
+    Units: Hz
     """
 
     def _get_Enabled(self) -> List[bool]:
@@ -1424,9 +1493,10 @@ class VsourceBatch(DSSBatch, CircuitElementBatchMixin, PCElementBatchMixin):
 
     Enabled = property(_get_Enabled, _set_Enabled) # type: List[bool]
     """
-    {Yes|No or True|False} Indicates whether this element is enabled.
+    Indicates whether this element is enabled.
 
-    DSS property name: `Enabled`, DSS property index: 34.
+    Name: `Enabled`
+    Default: True
     """
 
     def Like(self, value: AnyStr, flags: enums.SetterFlags = 0):
@@ -1435,7 +1505,9 @@ class VsourceBatch(DSSBatch, CircuitElementBatchMixin, PCElementBatchMixin):
 
         New Capacitor.C2 like=c1  ...
 
-        DSS property name: `Like`, DSS property index: 35.
+        **Deprecated:** `Like` has been deprecated since at least 2021, see https://sourceforge.net/p/electricdss/discussion/861977/thread/8b59d21eb6/#b57c/f668
+
+        Name: `Like`
         """
         self._set_batch_string(35, value, flags)
 

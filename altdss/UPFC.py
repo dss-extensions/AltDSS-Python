@@ -29,7 +29,7 @@ from .XYcurve import XYcurve
 class UPFC(DSSObj, CircuitElementMixin, PCElementMixin):
     __slots__ = DSSObj._extra_slots + CircuitElementMixin._extra_slots + PCElementMixin._extra_slots
     _cls_name = 'UPFC'
-    _cls_idx = 36
+    _cls_idx = 37
     _cls_int_idx = {
         6,
         9,
@@ -107,7 +107,7 @@ class UPFC(DSSObj, CircuitElementMixin, PCElementMixin):
     bus1=busname.1.3
     bus1=busname.1.2.3
 
-    DSS property name: `Bus1`, DSS property index: 1.
+    Name: `Bus1`
     """
 
     def _get_Bus2(self) -> str:
@@ -122,7 +122,7 @@ class UPFC(DSSObj, CircuitElementMixin, PCElementMixin):
     bus2=busname.1.2
     bus2=busname.1.2.3
 
-    DSS property name: `Bus2`, DSS property index: 2.
+    Name: `Bus2`
     """
 
     def _get_RefkV(self) -> float:
@@ -137,7 +137,8 @@ class UPFC(DSSObj, CircuitElementMixin, PCElementMixin):
 
     "refkv=0.24"
 
-    DSS property name: `RefkV`, DSS property index: 3.
+    Name: `RefkV`
+    Default: 0.24
     """
 
     def _get_PF(self) -> float:
@@ -150,7 +151,8 @@ class UPFC(DSSObj, CircuitElementMixin, PCElementMixin):
     """
     Power factor target at the input terminal.
 
-    DSS property name: `PF`, DSS property index: 4.
+    Name: `PF`
+    Default: 1.0
     """
 
     def _get_Frequency(self) -> float:
@@ -163,7 +165,8 @@ class UPFC(DSSObj, CircuitElementMixin, PCElementMixin):
     """
     UPFC working frequency.  Defaults to system default base frequency.
 
-    DSS property name: `Frequency`, DSS property index: 5.
+    Name: `Frequency`
+    Units: Hz
     """
 
     def _get_Phases(self) -> int:
@@ -176,7 +179,8 @@ class UPFC(DSSObj, CircuitElementMixin, PCElementMixin):
     """
     Number of phases.  Defaults to 1 phase (2 terminals, 1 conductor per terminal).
 
-    DSS property name: `Phases`, DSS property index: 6.
+    Name: `Phases`
+    Default: 1
     """
 
     def _get_Xs(self) -> float:
@@ -189,7 +193,8 @@ class UPFC(DSSObj, CircuitElementMixin, PCElementMixin):
     """
     Reactance of the series transformer of the UPFC, ohms (default=0.7540 ... 2 mH)
 
-    DSS property name: `Xs`, DSS property index: 7.
+    Name: `Xs`
+    Default: 0.754
     """
 
     def _get_Tol1(self) -> float:
@@ -203,7 +208,8 @@ class UPFC(DSSObj, CircuitElementMixin, PCElementMixin):
     Tolerance in pu for the series PI controller
     Tol1=0.02 is the format used to define 2% tolerance (Default=2%)
 
-    DSS property name: `Tol1`, DSS property index: 8.
+    Name: `Tol1`
+    Default: 0.02
     """
 
     def _get_Mode(self) -> enums.UPFCMode:
@@ -223,7 +229,8 @@ class UPFC(DSSObj, CircuitElementMixin, PCElementMixin):
     4 = It is a control mode where the user can set two different set points to create a secure GAP, these references must be defined in the parameters RefkV and RefkV2. The only restriction when setting these values is that RefkV must be higher than RefkV2. 
     5 = In this mode the user can define the same GAP using two set points as in control mode 4. The only difference between mode 5 and mode 4 is that in mode 5, the UPFC controller performs dual control actions just as in control mode 3
 
-    DSS property name: `Mode`, DSS property index: 9.
+    Name: `Mode`
+    Default: 1
     """
 
     def _get_VpqMax(self) -> float:
@@ -236,7 +243,8 @@ class UPFC(DSSObj, CircuitElementMixin, PCElementMixin):
     """
     Maximum voltage (in volts) delivered by the series voltage source (Default = 24 V)
 
-    DSS property name: `VpqMax`, DSS property index: 10.
+    Name: `VpqMax`
+    Default: 24.0
     """
 
     def _get_LossCurve_str(self) -> str:
@@ -249,7 +257,7 @@ class UPFC(DSSObj, CircuitElementMixin, PCElementMixin):
     """
     Name of the XYCurve for describing the losses behavior as a function of the voltage at the input of the UPFC
 
-    DSS property name: `LossCurve`, DSS property index: 11.
+    Name: `LossCurve`
     """
 
     def _get_LossCurve(self) -> XYcurve:
@@ -266,7 +274,7 @@ class UPFC(DSSObj, CircuitElementMixin, PCElementMixin):
     """
     Name of the XYCurve for describing the losses behavior as a function of the voltage at the input of the UPFC
 
-    DSS property name: `LossCurve`, DSS property index: 11.
+    Name: `LossCurve`
     """
 
     def _get_VHLimit(self) -> float:
@@ -279,7 +287,8 @@ class UPFC(DSSObj, CircuitElementMixin, PCElementMixin):
     """
     High limit for the voltage at the input of the UPFC, if the voltage is above this value the UPFC turns off. This value is specified in Volts (default 300 V)
 
-    DSS property name: `VHLimit`, DSS property index: 12.
+    Name: `VHLimit`
+    Default: 300.0
     """
 
     def _get_VLLimit(self) -> float:
@@ -292,7 +301,8 @@ class UPFC(DSSObj, CircuitElementMixin, PCElementMixin):
     """
     low limit for the voltage at the input of the UPFC, if voltage is below this value the UPFC turns off. This value is specified in Volts (default 125 V)
 
-    DSS property name: `VLLimit`, DSS property index: 13.
+    Name: `VLLimit`
+    Default: 125.0
     """
 
     def _get_CLimit(self) -> float:
@@ -305,7 +315,8 @@ class UPFC(DSSObj, CircuitElementMixin, PCElementMixin):
     """
     Current Limit for the UPFC, if the current passing through the UPFC is higher than this value the UPFC turns off. This value is specified in Amps (Default 265 A)
 
-    DSS property name: `CLimit`, DSS property index: 14.
+    Name: `CLimit`
+    Default: 265.0
     """
 
     def _get_refkV2(self) -> float:
@@ -320,7 +331,8 @@ class UPFC(DSSObj, CircuitElementMixin, PCElementMixin):
 
     This reference must be lower than refkv, see control modes 4 and 5 for details
 
-    DSS property name: `refkV2`, DSS property index: 15.
+    Name: `refkV2`
+    Default: 0.0
     """
 
     def _get_kvarLimit(self) -> float:
@@ -331,9 +343,11 @@ class UPFC(DSSObj, CircuitElementMixin, PCElementMixin):
 
     kvarLimit = property(_get_kvarLimit, _set_kvarLimit) # type: float
     """
-    Maximum amount of reactive power (kvar) that can be absorbed by the UPFC (Default = 5)
+    Maximum amount of reactive power that can be absorbed by the UPFC.
 
-    DSS property name: `kvarLimit`, DSS property index: 16.
+    Name: `kvarLimit`
+    Units: kvar
+    Default: 5.0
     """
 
     def _get_Element_str(self) -> str:
@@ -346,7 +360,7 @@ class UPFC(DSSObj, CircuitElementMixin, PCElementMixin):
     """
     The name of the PD element monitored when operating with reactive power compensation. Normally, it should be the PD element immediately upstream the UPFC. The element must be defined including the class, e.g. Line.myline.
 
-    DSS property name: `Element`, DSS property index: 17.
+    Name: `Element`
     """
 
     def _get_Element(self) -> PDElement:
@@ -363,7 +377,7 @@ class UPFC(DSSObj, CircuitElementMixin, PCElementMixin):
     """
     The name of the PD element monitored when operating with reactive power compensation. Normally, it should be the PD element immediately upstream the UPFC. The element must be defined including the class, e.g. Line.myline.
 
-    DSS property name: `Element`, DSS property index: 17.
+    Name: `Element`
     """
 
     def _get_Spectrum_str(self) -> str:
@@ -374,9 +388,10 @@ class UPFC(DSSObj, CircuitElementMixin, PCElementMixin):
 
     Spectrum_str = property(_get_Spectrum_str, _set_Spectrum_str) # type: str
     """
-    Name of harmonic spectrum for this source.  Default is "defaultUPFC", which is defined when the DSS starts.
+    Name of harmonic spectrum for this source.
 
-    DSS property name: `Spectrum`, DSS property index: 18.
+    Name: `Spectrum`
+    Default: default
     """
 
     def _get_Spectrum(self) -> SpectrumObj:
@@ -391,9 +406,10 @@ class UPFC(DSSObj, CircuitElementMixin, PCElementMixin):
 
     Spectrum = property(_get_Spectrum, _set_Spectrum) # type: SpectrumObj
     """
-    Name of harmonic spectrum for this source.  Default is "defaultUPFC", which is defined when the DSS starts.
+    Name of harmonic spectrum for this source.
 
-    DSS property name: `Spectrum`, DSS property index: 18.
+    Name: `Spectrum`
+    Default: default
     """
 
     def _get_BaseFreq(self) -> float:
@@ -406,7 +422,8 @@ class UPFC(DSSObj, CircuitElementMixin, PCElementMixin):
     """
     Base Frequency for ratings.
 
-    DSS property name: `BaseFreq`, DSS property index: 19.
+    Name: `BaseFreq`
+    Units: Hz
     """
 
     def _get_Enabled(self) -> bool:
@@ -417,9 +434,10 @@ class UPFC(DSSObj, CircuitElementMixin, PCElementMixin):
 
     Enabled = property(_get_Enabled, _set_Enabled) # type: bool
     """
-    {Yes|No or True|False} Indicates whether this element is enabled.
+    Indicates whether this element is enabled.
 
-    DSS property name: `Enabled`, DSS property index: 20.
+    Name: `Enabled`
+    Default: True
     """
 
     def Like(self, value: AnyStr):
@@ -428,7 +446,9 @@ class UPFC(DSSObj, CircuitElementMixin, PCElementMixin):
 
         New Capacitor.C2 like=c1  ...
 
-        DSS property name: `Like`, DSS property index: 21.
+        **Deprecated:** `Like` has been deprecated since at least 2021, see https://sourceforge.net/p/electricdss/discussion/861977/thread/8b59d21eb6/#b57c/f668
+
+        Name: `Like`
         """
         self._set_string_o(21, value)
 
@@ -459,7 +479,7 @@ class UPFCProperties(TypedDict):
 class UPFCBatch(DSSBatch, CircuitElementBatchMixin, PCElementBatchMixin):
     _cls_name = 'UPFC'
     _obj_cls = UPFC
-    _cls_idx = 36
+    _cls_idx = 37
     __slots__ = []
 
     def __init__(self, api_util, **kwargs):
@@ -500,7 +520,7 @@ class UPFCBatch(DSSBatch, CircuitElementBatchMixin, PCElementBatchMixin):
     bus1=busname.1.3
     bus1=busname.1.2.3
 
-    DSS property name: `Bus1`, DSS property index: 1.
+    Name: `Bus1`
     """
 
     def _get_Bus2(self) -> List[str]:
@@ -515,7 +535,7 @@ class UPFCBatch(DSSBatch, CircuitElementBatchMixin, PCElementBatchMixin):
     bus2=busname.1.2
     bus2=busname.1.2.3
 
-    DSS property name: `Bus2`, DSS property index: 2.
+    Name: `Bus2`
     """
 
     def _get_RefkV(self) -> BatchFloat64ArrayProxy:
@@ -530,7 +550,8 @@ class UPFCBatch(DSSBatch, CircuitElementBatchMixin, PCElementBatchMixin):
 
     "refkv=0.24"
 
-    DSS property name: `RefkV`, DSS property index: 3.
+    Name: `RefkV`
+    Default: 0.24
     """
 
     def _get_PF(self) -> BatchFloat64ArrayProxy:
@@ -543,7 +564,8 @@ class UPFCBatch(DSSBatch, CircuitElementBatchMixin, PCElementBatchMixin):
     """
     Power factor target at the input terminal.
 
-    DSS property name: `PF`, DSS property index: 4.
+    Name: `PF`
+    Default: 1.0
     """
 
     def _get_Frequency(self) -> BatchFloat64ArrayProxy:
@@ -556,7 +578,8 @@ class UPFCBatch(DSSBatch, CircuitElementBatchMixin, PCElementBatchMixin):
     """
     UPFC working frequency.  Defaults to system default base frequency.
 
-    DSS property name: `Frequency`, DSS property index: 5.
+    Name: `Frequency`
+    Units: Hz
     """
 
     def _get_Phases(self) -> BatchInt32ArrayProxy:
@@ -569,7 +592,8 @@ class UPFCBatch(DSSBatch, CircuitElementBatchMixin, PCElementBatchMixin):
     """
     Number of phases.  Defaults to 1 phase (2 terminals, 1 conductor per terminal).
 
-    DSS property name: `Phases`, DSS property index: 6.
+    Name: `Phases`
+    Default: 1
     """
 
     def _get_Xs(self) -> BatchFloat64ArrayProxy:
@@ -582,7 +606,8 @@ class UPFCBatch(DSSBatch, CircuitElementBatchMixin, PCElementBatchMixin):
     """
     Reactance of the series transformer of the UPFC, ohms (default=0.7540 ... 2 mH)
 
-    DSS property name: `Xs`, DSS property index: 7.
+    Name: `Xs`
+    Default: 0.754
     """
 
     def _get_Tol1(self) -> BatchFloat64ArrayProxy:
@@ -596,7 +621,8 @@ class UPFCBatch(DSSBatch, CircuitElementBatchMixin, PCElementBatchMixin):
     Tolerance in pu for the series PI controller
     Tol1=0.02 is the format used to define 2% tolerance (Default=2%)
 
-    DSS property name: `Tol1`, DSS property index: 8.
+    Name: `Tol1`
+    Default: 0.02
     """
 
     def _get_Mode(self) -> BatchInt32ArrayProxy:
@@ -616,7 +642,8 @@ class UPFCBatch(DSSBatch, CircuitElementBatchMixin, PCElementBatchMixin):
     4 = It is a control mode where the user can set two different set points to create a secure GAP, these references must be defined in the parameters RefkV and RefkV2. The only restriction when setting these values is that RefkV must be higher than RefkV2. 
     5 = In this mode the user can define the same GAP using two set points as in control mode 4. The only difference between mode 5 and mode 4 is that in mode 5, the UPFC controller performs dual control actions just as in control mode 3
 
-    DSS property name: `Mode`, DSS property index: 9.
+    Name: `Mode`
+    Default: 1
     """
 
     def _get_VpqMax(self) -> BatchFloat64ArrayProxy:
@@ -629,7 +656,8 @@ class UPFCBatch(DSSBatch, CircuitElementBatchMixin, PCElementBatchMixin):
     """
     Maximum voltage (in volts) delivered by the series voltage source (Default = 24 V)
 
-    DSS property name: `VpqMax`, DSS property index: 10.
+    Name: `VpqMax`
+    Default: 24.0
     """
 
     def _get_LossCurve_str(self) -> List[str]:
@@ -642,7 +670,7 @@ class UPFCBatch(DSSBatch, CircuitElementBatchMixin, PCElementBatchMixin):
     """
     Name of the XYCurve for describing the losses behavior as a function of the voltage at the input of the UPFC
 
-    DSS property name: `LossCurve`, DSS property index: 11.
+    Name: `LossCurve`
     """
 
     def _get_LossCurve(self) -> List[XYcurve]:
@@ -655,7 +683,7 @@ class UPFCBatch(DSSBatch, CircuitElementBatchMixin, PCElementBatchMixin):
     """
     Name of the XYCurve for describing the losses behavior as a function of the voltage at the input of the UPFC
 
-    DSS property name: `LossCurve`, DSS property index: 11.
+    Name: `LossCurve`
     """
 
     def _get_VHLimit(self) -> BatchFloat64ArrayProxy:
@@ -668,7 +696,8 @@ class UPFCBatch(DSSBatch, CircuitElementBatchMixin, PCElementBatchMixin):
     """
     High limit for the voltage at the input of the UPFC, if the voltage is above this value the UPFC turns off. This value is specified in Volts (default 300 V)
 
-    DSS property name: `VHLimit`, DSS property index: 12.
+    Name: `VHLimit`
+    Default: 300.0
     """
 
     def _get_VLLimit(self) -> BatchFloat64ArrayProxy:
@@ -681,7 +710,8 @@ class UPFCBatch(DSSBatch, CircuitElementBatchMixin, PCElementBatchMixin):
     """
     low limit for the voltage at the input of the UPFC, if voltage is below this value the UPFC turns off. This value is specified in Volts (default 125 V)
 
-    DSS property name: `VLLimit`, DSS property index: 13.
+    Name: `VLLimit`
+    Default: 125.0
     """
 
     def _get_CLimit(self) -> BatchFloat64ArrayProxy:
@@ -694,7 +724,8 @@ class UPFCBatch(DSSBatch, CircuitElementBatchMixin, PCElementBatchMixin):
     """
     Current Limit for the UPFC, if the current passing through the UPFC is higher than this value the UPFC turns off. This value is specified in Amps (Default 265 A)
 
-    DSS property name: `CLimit`, DSS property index: 14.
+    Name: `CLimit`
+    Default: 265.0
     """
 
     def _get_refkV2(self) -> BatchFloat64ArrayProxy:
@@ -709,7 +740,8 @@ class UPFCBatch(DSSBatch, CircuitElementBatchMixin, PCElementBatchMixin):
 
     This reference must be lower than refkv, see control modes 4 and 5 for details
 
-    DSS property name: `refkV2`, DSS property index: 15.
+    Name: `refkV2`
+    Default: 0.0
     """
 
     def _get_kvarLimit(self) -> BatchFloat64ArrayProxy:
@@ -720,9 +752,11 @@ class UPFCBatch(DSSBatch, CircuitElementBatchMixin, PCElementBatchMixin):
 
     kvarLimit = property(_get_kvarLimit, _set_kvarLimit) # type: BatchFloat64ArrayProxy
     """
-    Maximum amount of reactive power (kvar) that can be absorbed by the UPFC (Default = 5)
+    Maximum amount of reactive power that can be absorbed by the UPFC.
 
-    DSS property name: `kvarLimit`, DSS property index: 16.
+    Name: `kvarLimit`
+    Units: kvar
+    Default: 5.0
     """
 
     def _get_Element_str(self) -> List[str]:
@@ -735,7 +769,7 @@ class UPFCBatch(DSSBatch, CircuitElementBatchMixin, PCElementBatchMixin):
     """
     The name of the PD element monitored when operating with reactive power compensation. Normally, it should be the PD element immediately upstream the UPFC. The element must be defined including the class, e.g. Line.myline.
 
-    DSS property name: `Element`, DSS property index: 17.
+    Name: `Element`
     """
 
     def _get_Element(self) -> List[PDElement]:
@@ -748,7 +782,7 @@ class UPFCBatch(DSSBatch, CircuitElementBatchMixin, PCElementBatchMixin):
     """
     The name of the PD element monitored when operating with reactive power compensation. Normally, it should be the PD element immediately upstream the UPFC. The element must be defined including the class, e.g. Line.myline.
 
-    DSS property name: `Element`, DSS property index: 17.
+    Name: `Element`
     """
 
     def _get_Spectrum_str(self) -> List[str]:
@@ -759,9 +793,10 @@ class UPFCBatch(DSSBatch, CircuitElementBatchMixin, PCElementBatchMixin):
 
     Spectrum_str = property(_get_Spectrum_str, _set_Spectrum_str) # type: List[str]
     """
-    Name of harmonic spectrum for this source.  Default is "defaultUPFC", which is defined when the DSS starts.
+    Name of harmonic spectrum for this source.
 
-    DSS property name: `Spectrum`, DSS property index: 18.
+    Name: `Spectrum`
+    Default: default
     """
 
     def _get_Spectrum(self) -> List[SpectrumObj]:
@@ -772,9 +807,10 @@ class UPFCBatch(DSSBatch, CircuitElementBatchMixin, PCElementBatchMixin):
 
     Spectrum = property(_get_Spectrum, _set_Spectrum) # type: List[SpectrumObj]
     """
-    Name of harmonic spectrum for this source.  Default is "defaultUPFC", which is defined when the DSS starts.
+    Name of harmonic spectrum for this source.
 
-    DSS property name: `Spectrum`, DSS property index: 18.
+    Name: `Spectrum`
+    Default: default
     """
 
     def _get_BaseFreq(self) -> BatchFloat64ArrayProxy:
@@ -787,7 +823,8 @@ class UPFCBatch(DSSBatch, CircuitElementBatchMixin, PCElementBatchMixin):
     """
     Base Frequency for ratings.
 
-    DSS property name: `BaseFreq`, DSS property index: 19.
+    Name: `BaseFreq`
+    Units: Hz
     """
 
     def _get_Enabled(self) -> List[bool]:
@@ -800,9 +837,10 @@ class UPFCBatch(DSSBatch, CircuitElementBatchMixin, PCElementBatchMixin):
 
     Enabled = property(_get_Enabled, _set_Enabled) # type: List[bool]
     """
-    {Yes|No or True|False} Indicates whether this element is enabled.
+    Indicates whether this element is enabled.
 
-    DSS property name: `Enabled`, DSS property index: 20.
+    Name: `Enabled`
+    Default: True
     """
 
     def Like(self, value: AnyStr, flags: enums.SetterFlags = 0):
@@ -811,7 +849,9 @@ class UPFCBatch(DSSBatch, CircuitElementBatchMixin, PCElementBatchMixin):
 
         New Capacitor.C2 like=c1  ...
 
-        DSS property name: `Like`, DSS property index: 21.
+        **Deprecated:** `Like` has been deprecated since at least 2021, see https://sourceforge.net/p/electricdss/discussion/861977/thread/8b59d21eb6/#b57c/f668
+
+        Name: `Like`
         """
         self._set_batch_string(21, value, flags)
 

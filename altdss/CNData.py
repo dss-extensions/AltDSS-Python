@@ -89,9 +89,10 @@ class CNData(DSSObj):
 
     k = property(_get_k, _set_k) # type: int
     """
-    Number of concentric neutral strands; default is 2
+    Number of concentric neutral strands
 
-    DSS property name: `k`, DSS property index: 1.
+    Name: `k`
+    Default: 2
     """
 
     def _get_DiaStrand(self) -> float:
@@ -102,9 +103,9 @@ class CNData(DSSObj):
 
     DiaStrand = property(_get_DiaStrand, _set_DiaStrand) # type: float
     """
-    Diameter of a concentric neutral strand; same units as core conductor radius; no default.
+    Diameter of a concentric neutral strand; same units as core conductor radius.
 
-    DSS property name: `DiaStrand`, DSS property index: 2.
+    Name: `DiaStrand`
     """
 
     def _get_GMRStrand(self) -> float:
@@ -115,9 +116,9 @@ class CNData(DSSObj):
 
     GMRStrand = property(_get_GMRStrand, _set_GMRStrand) # type: float
     """
-    Geometric mean radius of a concentric neutral strand; same units as core conductor GMR; defaults to 0.7788 * CN strand radius.
+    Geometric mean radius of a concentric neutral strand; same units as core conductor GMR; defaults to $0.7788 × DiaStrand$.
 
-    DSS property name: `GMRStrand`, DSS property index: 3.
+    Name: `GMRStrand`
     """
 
     def _get_RStrand(self) -> float:
@@ -128,9 +129,10 @@ class CNData(DSSObj):
 
     RStrand = property(_get_RStrand, _set_RStrand) # type: float
     """
-    AC resistance of a concentric neutral strand; same units as core conductor resistance; no default.
+    AC resistance of a concentric neutral strand; same units as core conductor resistance.
 
-    DSS property name: `RStrand`, DSS property index: 4.
+    Name: `RStrand`
+    Units: Ω/[length_unit]
     """
 
     def _get_EpsR(self) -> float:
@@ -141,9 +143,10 @@ class CNData(DSSObj):
 
     EpsR = property(_get_EpsR, _set_EpsR) # type: float
     """
-    Insulation layer relative permittivity; default is 2.3.
+    Insulation layer relative permittivity.
 
-    DSS property name: `EpsR`, DSS property index: 5.
+    Name: `EpsR`
+    Default: 2.3
     """
 
     def _get_InsLayer(self) -> float:
@@ -154,9 +157,9 @@ class CNData(DSSObj):
 
     InsLayer = property(_get_InsLayer, _set_InsLayer) # type: float
     """
-    Insulation layer thickness; same units as radius; no default. With DiaIns, establishes inner radius for capacitance calculation.
+    Insulation layer thickness; same units as radius. With DiaIns, establishes inner radius for capacitance calculation.
 
-    DSS property name: `InsLayer`, DSS property index: 6.
+    Name: `InsLayer`
     """
 
     def _get_DiaIns(self) -> float:
@@ -167,9 +170,9 @@ class CNData(DSSObj):
 
     DiaIns = property(_get_DiaIns, _set_DiaIns) # type: float
     """
-    Diameter over insulation layer; same units as radius; no default. Establishes outer radius for capacitance calculation.
+    Diameter over insulation layer; same units as radius. Establishes outer radius for capacitance calculation.
 
-    DSS property name: `DiaIns`, DSS property index: 7.
+    Name: `DiaIns`
     """
 
     def _get_DiaCable(self) -> float:
@@ -180,9 +183,9 @@ class CNData(DSSObj):
 
     DiaCable = property(_get_DiaCable, _set_DiaCable) # type: float
     """
-    Diameter over cable; same units as radius; no default.
+    Diameter over cable; same units as radius.
 
-    DSS property name: `DiaCable`, DSS property index: 8.
+    Name: `DiaCable`
     """
 
     def _get_RDC(self) -> float:
@@ -193,9 +196,10 @@ class CNData(DSSObj):
 
     RDC = property(_get_RDC, _set_RDC) # type: float
     """
-    dc Resistance, ohms per unit length (see Runits). Defaults to Rac/1.02 if not specified.
+    DC resistance, ohms per unit length (see `Runits`). Defaults to $Rac/1.02$ if not specified.
 
-    DSS property name: `RDC`, DSS property index: 9.
+    Name: `RDC`
+    Units: Ω/[length_unit]
     """
 
     def _get_RAC(self) -> float:
@@ -206,9 +210,9 @@ class CNData(DSSObj):
 
     RAC = property(_get_RAC, _set_RAC) # type: float
     """
-    Resistance at 60 Hz per unit length. Defaults to 1.02*Rdc if not specified.
+    Resistance at 60 Hz per unit length. Defaults to $1.02 × Rdc$ if not specified.
 
-    DSS property name: `RAC`, DSS property index: 10.
+    Name: `RAC`
     """
 
     def _get_RUnits(self) -> enums.LengthUnit:
@@ -224,7 +228,8 @@ class CNData(DSSObj):
     """
     Length units for resistance: ohms per {mi|kft|km|m|Ft|in|cm|mm} Default=none.
 
-    DSS property name: `RUnits`, DSS property index: 11.
+    Name: `RUnits`
+    Default: none
     """
 
     def _get_RUnits_str(self) -> str:
@@ -237,7 +242,8 @@ class CNData(DSSObj):
     """
     Length units for resistance: ohms per {mi|kft|km|m|Ft|in|cm|mm} Default=none.
 
-    DSS property name: `RUnits`, DSS property index: 11.
+    Name: `RUnits`
+    Default: none
     """
 
     def _get_GMRAC(self) -> float:
@@ -248,9 +254,9 @@ class CNData(DSSObj):
 
     GMRAC = property(_get_GMRAC, _set_GMRAC) # type: float
     """
-    GMR at 60 Hz. Defaults to .7788*radius if not specified.
+    GMR at 60 Hz. Defaults to $0.7788 × radius$ if not specified.
 
-    DSS property name: `GMRAC`, DSS property index: 12.
+    Name: `GMRAC`
     """
 
     def _get_GMRUnits(self) -> enums.LengthUnit:
@@ -264,9 +270,10 @@ class CNData(DSSObj):
 
     GMRUnits = property(_get_GMRUnits, _set_GMRUnits) # type: enums.LengthUnit
     """
-    Units for GMR: {mi|kft|km|m|Ft|in|cm|mm} Default=none.
+    Units for GMR.
 
-    DSS property name: `GMRUnits`, DSS property index: 13.
+    Name: `GMRUnits`
+    Default: none
     """
 
     def _get_GMRUnits_str(self) -> str:
@@ -277,9 +284,10 @@ class CNData(DSSObj):
 
     GMRUnits_str = property(_get_GMRUnits_str, _set_GMRUnits_str) # type: str
     """
-    Units for GMR: {mi|kft|km|m|Ft|in|cm|mm} Default=none.
+    Units for GMR.
 
-    DSS property name: `GMRUnits`, DSS property index: 13.
+    Name: `GMRUnits`
+    Default: none
     """
 
     def _get_Radius(self) -> float:
@@ -292,7 +300,7 @@ class CNData(DSSObj):
     """
     Outside radius of conductor. Defaults to GMR/0.7788 if not specified.
 
-    DSS property name: `Radius`, DSS property index: 14.
+    Name: `Radius`
     """
 
     def _get_RadUnits(self) -> enums.LengthUnit:
@@ -306,9 +314,10 @@ class CNData(DSSObj):
 
     RadUnits = property(_get_RadUnits, _set_RadUnits) # type: enums.LengthUnit
     """
-    Units for outside radius: {mi|kft|km|m|Ft|in|cm|mm} Default=none.
+    Units for outside radius.
 
-    DSS property name: `RadUnits`, DSS property index: 15.
+    Name: `RadUnits`
+    Default: none
     """
 
     def _get_RadUnits_str(self) -> str:
@@ -319,9 +328,10 @@ class CNData(DSSObj):
 
     RadUnits_str = property(_get_RadUnits_str, _set_RadUnits_str) # type: str
     """
-    Units for outside radius: {mi|kft|km|m|Ft|in|cm|mm} Default=none.
+    Units for outside radius.
 
-    DSS property name: `RadUnits`, DSS property index: 15.
+    Name: `RadUnits`
+    Default: none
     """
 
     def _get_NormAmps(self) -> float:
@@ -332,9 +342,9 @@ class CNData(DSSObj):
 
     NormAmps = property(_get_NormAmps, _set_NormAmps) # type: float
     """
-    Normal ampacity, amperes. Defaults to Emergency amps/1.5 if not specified.
+    Normal ampacity, amperes. Defaults to $EmergAmps / 1.5$ if not specified.
 
-    DSS property name: `NormAmps`, DSS property index: 16.
+    Name: `NormAmps`
     """
 
     def _get_EmergAmps(self) -> float:
@@ -345,9 +355,9 @@ class CNData(DSSObj):
 
     EmergAmps = property(_get_EmergAmps, _set_EmergAmps) # type: float
     """
-    Emergency ampacity, amperes. Defaults to 1.5 * Normal Amps if not specified.
+    Emergency ampacity, amperes. Defaults to $1.5 × NormAmps$ if not specified.
 
-    DSS property name: `EmergAmps`, DSS property index: 17.
+    Name: `EmergAmps`
     """
 
     def _get_Diam(self) -> float:
@@ -360,7 +370,7 @@ class CNData(DSSObj):
     """
     Diameter; Alternative method for entering radius.
 
-    DSS property name: `Diam`, DSS property index: 18.
+    Name: `Diam`
     """
 
     def _get_Seasons(self) -> int:
@@ -373,7 +383,7 @@ class CNData(DSSObj):
     """
     Defines the number of ratings to be defined for the wire, to be used only when defining seasonal ratings using the "Ratings" property.
 
-    DSS property name: `Seasons`, DSS property index: 19.
+    Name: `Seasons`
     """
 
     def _get_Ratings(self) -> Float64Array:
@@ -387,7 +397,8 @@ class CNData(DSSObj):
     An array of ratings to be used when the seasonal ratings flag is True. It can be used to insert
     multiple ratings to change during a QSTS simulation to evaluate different ratings in lines.
 
-    DSS property name: `Ratings`, DSS property index: 20.
+    Name: `Ratings`
+    Default: [-1.0]
     """
 
     def _get_CapRadius(self) -> float:
@@ -400,7 +411,7 @@ class CNData(DSSObj):
     """
     Equivalent conductor radius for capacitance calcs. Specify this for bundled conductors. Defaults to same value as radius. Define Diam or Radius property first.
 
-    DSS property name: `CapRadius`, DSS property index: 21.
+    Name: `CapRadius`
     """
 
     def Like(self, value: AnyStr):
@@ -409,7 +420,9 @@ class CNData(DSSObj):
 
         New Capacitor.C2 like=c1  ...
 
-        DSS property name: `Like`, DSS property index: 22.
+        **Deprecated:** `Like` has been deprecated since at least 2021, see https://sourceforge.net/p/electricdss/discussion/861977/thread/8b59d21eb6/#b57c/f668
+
+        Name: `Like`
         """
         self._set_string_o(22, value)
 
@@ -474,9 +487,10 @@ class CNDataBatch(DSSBatch):
 
     k = property(_get_k, _set_k) # type: BatchInt32ArrayProxy
     """
-    Number of concentric neutral strands; default is 2
+    Number of concentric neutral strands
 
-    DSS property name: `k`, DSS property index: 1.
+    Name: `k`
+    Default: 2
     """
 
     def _get_DiaStrand(self) -> BatchFloat64ArrayProxy:
@@ -487,9 +501,9 @@ class CNDataBatch(DSSBatch):
 
     DiaStrand = property(_get_DiaStrand, _set_DiaStrand) # type: BatchFloat64ArrayProxy
     """
-    Diameter of a concentric neutral strand; same units as core conductor radius; no default.
+    Diameter of a concentric neutral strand; same units as core conductor radius.
 
-    DSS property name: `DiaStrand`, DSS property index: 2.
+    Name: `DiaStrand`
     """
 
     def _get_GMRStrand(self) -> BatchFloat64ArrayProxy:
@@ -500,9 +514,9 @@ class CNDataBatch(DSSBatch):
 
     GMRStrand = property(_get_GMRStrand, _set_GMRStrand) # type: BatchFloat64ArrayProxy
     """
-    Geometric mean radius of a concentric neutral strand; same units as core conductor GMR; defaults to 0.7788 * CN strand radius.
+    Geometric mean radius of a concentric neutral strand; same units as core conductor GMR; defaults to $0.7788 × DiaStrand$.
 
-    DSS property name: `GMRStrand`, DSS property index: 3.
+    Name: `GMRStrand`
     """
 
     def _get_RStrand(self) -> BatchFloat64ArrayProxy:
@@ -513,9 +527,10 @@ class CNDataBatch(DSSBatch):
 
     RStrand = property(_get_RStrand, _set_RStrand) # type: BatchFloat64ArrayProxy
     """
-    AC resistance of a concentric neutral strand; same units as core conductor resistance; no default.
+    AC resistance of a concentric neutral strand; same units as core conductor resistance.
 
-    DSS property name: `RStrand`, DSS property index: 4.
+    Name: `RStrand`
+    Units: Ω/[length_unit]
     """
 
     def _get_EpsR(self) -> BatchFloat64ArrayProxy:
@@ -526,9 +541,10 @@ class CNDataBatch(DSSBatch):
 
     EpsR = property(_get_EpsR, _set_EpsR) # type: BatchFloat64ArrayProxy
     """
-    Insulation layer relative permittivity; default is 2.3.
+    Insulation layer relative permittivity.
 
-    DSS property name: `EpsR`, DSS property index: 5.
+    Name: `EpsR`
+    Default: 2.3
     """
 
     def _get_InsLayer(self) -> BatchFloat64ArrayProxy:
@@ -539,9 +555,9 @@ class CNDataBatch(DSSBatch):
 
     InsLayer = property(_get_InsLayer, _set_InsLayer) # type: BatchFloat64ArrayProxy
     """
-    Insulation layer thickness; same units as radius; no default. With DiaIns, establishes inner radius for capacitance calculation.
+    Insulation layer thickness; same units as radius. With DiaIns, establishes inner radius for capacitance calculation.
 
-    DSS property name: `InsLayer`, DSS property index: 6.
+    Name: `InsLayer`
     """
 
     def _get_DiaIns(self) -> BatchFloat64ArrayProxy:
@@ -552,9 +568,9 @@ class CNDataBatch(DSSBatch):
 
     DiaIns = property(_get_DiaIns, _set_DiaIns) # type: BatchFloat64ArrayProxy
     """
-    Diameter over insulation layer; same units as radius; no default. Establishes outer radius for capacitance calculation.
+    Diameter over insulation layer; same units as radius. Establishes outer radius for capacitance calculation.
 
-    DSS property name: `DiaIns`, DSS property index: 7.
+    Name: `DiaIns`
     """
 
     def _get_DiaCable(self) -> BatchFloat64ArrayProxy:
@@ -565,9 +581,9 @@ class CNDataBatch(DSSBatch):
 
     DiaCable = property(_get_DiaCable, _set_DiaCable) # type: BatchFloat64ArrayProxy
     """
-    Diameter over cable; same units as radius; no default.
+    Diameter over cable; same units as radius.
 
-    DSS property name: `DiaCable`, DSS property index: 8.
+    Name: `DiaCable`
     """
 
     def _get_RDC(self) -> BatchFloat64ArrayProxy:
@@ -578,9 +594,10 @@ class CNDataBatch(DSSBatch):
 
     RDC = property(_get_RDC, _set_RDC) # type: BatchFloat64ArrayProxy
     """
-    dc Resistance, ohms per unit length (see Runits). Defaults to Rac/1.02 if not specified.
+    DC resistance, ohms per unit length (see `Runits`). Defaults to $Rac/1.02$ if not specified.
 
-    DSS property name: `RDC`, DSS property index: 9.
+    Name: `RDC`
+    Units: Ω/[length_unit]
     """
 
     def _get_RAC(self) -> BatchFloat64ArrayProxy:
@@ -591,9 +608,9 @@ class CNDataBatch(DSSBatch):
 
     RAC = property(_get_RAC, _set_RAC) # type: BatchFloat64ArrayProxy
     """
-    Resistance at 60 Hz per unit length. Defaults to 1.02*Rdc if not specified.
+    Resistance at 60 Hz per unit length. Defaults to $1.02 × Rdc$ if not specified.
 
-    DSS property name: `RAC`, DSS property index: 10.
+    Name: `RAC`
     """
 
     def _get_RUnits(self) -> BatchInt32ArrayProxy:
@@ -610,7 +627,8 @@ class CNDataBatch(DSSBatch):
     """
     Length units for resistance: ohms per {mi|kft|km|m|Ft|in|cm|mm} Default=none.
 
-    DSS property name: `RUnits`, DSS property index: 11.
+    Name: `RUnits`
+    Default: none
     """
 
     def _get_RUnits_str(self) -> List[str]:
@@ -623,7 +641,8 @@ class CNDataBatch(DSSBatch):
     """
     Length units for resistance: ohms per {mi|kft|km|m|Ft|in|cm|mm} Default=none.
 
-    DSS property name: `RUnits`, DSS property index: 11.
+    Name: `RUnits`
+    Default: none
     """
 
     def _get_GMRAC(self) -> BatchFloat64ArrayProxy:
@@ -634,9 +653,9 @@ class CNDataBatch(DSSBatch):
 
     GMRAC = property(_get_GMRAC, _set_GMRAC) # type: BatchFloat64ArrayProxy
     """
-    GMR at 60 Hz. Defaults to .7788*radius if not specified.
+    GMR at 60 Hz. Defaults to $0.7788 × radius$ if not specified.
 
-    DSS property name: `GMRAC`, DSS property index: 12.
+    Name: `GMRAC`
     """
 
     def _get_GMRUnits(self) -> BatchInt32ArrayProxy:
@@ -651,9 +670,10 @@ class CNDataBatch(DSSBatch):
 
     GMRUnits = property(_get_GMRUnits, _set_GMRUnits) # type: BatchInt32ArrayProxy
     """
-    Units for GMR: {mi|kft|km|m|Ft|in|cm|mm} Default=none.
+    Units for GMR.
 
-    DSS property name: `GMRUnits`, DSS property index: 13.
+    Name: `GMRUnits`
+    Default: none
     """
 
     def _get_GMRUnits_str(self) -> List[str]:
@@ -664,9 +684,10 @@ class CNDataBatch(DSSBatch):
 
     GMRUnits_str = property(_get_GMRUnits_str, _set_GMRUnits_str) # type: List[str]
     """
-    Units for GMR: {mi|kft|km|m|Ft|in|cm|mm} Default=none.
+    Units for GMR.
 
-    DSS property name: `GMRUnits`, DSS property index: 13.
+    Name: `GMRUnits`
+    Default: none
     """
 
     def _get_Radius(self) -> BatchFloat64ArrayProxy:
@@ -679,7 +700,7 @@ class CNDataBatch(DSSBatch):
     """
     Outside radius of conductor. Defaults to GMR/0.7788 if not specified.
 
-    DSS property name: `Radius`, DSS property index: 14.
+    Name: `Radius`
     """
 
     def _get_RadUnits(self) -> BatchInt32ArrayProxy:
@@ -694,9 +715,10 @@ class CNDataBatch(DSSBatch):
 
     RadUnits = property(_get_RadUnits, _set_RadUnits) # type: BatchInt32ArrayProxy
     """
-    Units for outside radius: {mi|kft|km|m|Ft|in|cm|mm} Default=none.
+    Units for outside radius.
 
-    DSS property name: `RadUnits`, DSS property index: 15.
+    Name: `RadUnits`
+    Default: none
     """
 
     def _get_RadUnits_str(self) -> List[str]:
@@ -707,9 +729,10 @@ class CNDataBatch(DSSBatch):
 
     RadUnits_str = property(_get_RadUnits_str, _set_RadUnits_str) # type: List[str]
     """
-    Units for outside radius: {mi|kft|km|m|Ft|in|cm|mm} Default=none.
+    Units for outside radius.
 
-    DSS property name: `RadUnits`, DSS property index: 15.
+    Name: `RadUnits`
+    Default: none
     """
 
     def _get_NormAmps(self) -> BatchFloat64ArrayProxy:
@@ -720,9 +743,9 @@ class CNDataBatch(DSSBatch):
 
     NormAmps = property(_get_NormAmps, _set_NormAmps) # type: BatchFloat64ArrayProxy
     """
-    Normal ampacity, amperes. Defaults to Emergency amps/1.5 if not specified.
+    Normal ampacity, amperes. Defaults to $EmergAmps / 1.5$ if not specified.
 
-    DSS property name: `NormAmps`, DSS property index: 16.
+    Name: `NormAmps`
     """
 
     def _get_EmergAmps(self) -> BatchFloat64ArrayProxy:
@@ -733,9 +756,9 @@ class CNDataBatch(DSSBatch):
 
     EmergAmps = property(_get_EmergAmps, _set_EmergAmps) # type: BatchFloat64ArrayProxy
     """
-    Emergency ampacity, amperes. Defaults to 1.5 * Normal Amps if not specified.
+    Emergency ampacity, amperes. Defaults to $1.5 × NormAmps$ if not specified.
 
-    DSS property name: `EmergAmps`, DSS property index: 17.
+    Name: `EmergAmps`
     """
 
     def _get_Diam(self) -> BatchFloat64ArrayProxy:
@@ -748,7 +771,7 @@ class CNDataBatch(DSSBatch):
     """
     Diameter; Alternative method for entering radius.
 
-    DSS property name: `Diam`, DSS property index: 18.
+    Name: `Diam`
     """
 
     def _get_Seasons(self) -> BatchInt32ArrayProxy:
@@ -761,7 +784,7 @@ class CNDataBatch(DSSBatch):
     """
     Defines the number of ratings to be defined for the wire, to be used only when defining seasonal ratings using the "Ratings" property.
 
-    DSS property name: `Seasons`, DSS property index: 19.
+    Name: `Seasons`
     """
 
     def _get_Ratings(self) -> List[Float64Array]:
@@ -778,7 +801,8 @@ class CNDataBatch(DSSBatch):
     An array of ratings to be used when the seasonal ratings flag is True. It can be used to insert
     multiple ratings to change during a QSTS simulation to evaluate different ratings in lines.
 
-    DSS property name: `Ratings`, DSS property index: 20.
+    Name: `Ratings`
+    Default: [-1.0]
     """
 
     def _get_CapRadius(self) -> BatchFloat64ArrayProxy:
@@ -791,7 +815,7 @@ class CNDataBatch(DSSBatch):
     """
     Equivalent conductor radius for capacitance calcs. Specify this for bundled conductors. Defaults to same value as radius. Define Diam or Radius property first.
 
-    DSS property name: `CapRadius`, DSS property index: 21.
+    Name: `CapRadius`
     """
 
     def Like(self, value: AnyStr, flags: enums.SetterFlags = 0):
@@ -800,7 +824,9 @@ class CNDataBatch(DSSBatch):
 
         New Capacitor.C2 like=c1  ...
 
-        DSS property name: `Like`, DSS property index: 22.
+        **Deprecated:** `Like` has been deprecated since at least 2021, see https://sourceforge.net/p/electricdss/discussion/861977/thread/8b59d21eb6/#b57c/f668
+
+        Name: `Like`
         """
         self._set_batch_string(22, value, flags)
 

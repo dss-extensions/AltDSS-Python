@@ -53,7 +53,7 @@ class TCC_Curve(DSSObj):
     """
     Number of points to expect in time-current arrays.
 
-    DSS property name: `NPts`, DSS property index: 1.
+    Name: `NPts`
     """
 
     def _get_C_Array(self) -> Float64Array:
@@ -66,7 +66,7 @@ class TCC_Curve(DSSObj):
     """
     Array of current (or voltage) values corresponding to time values (see help on T_Array).
 
-    DSS property name: `C_Array`, DSS property index: 2.
+    Name: `C_Array`
     """
 
     def _get_T_Array(self) -> Float64Array:
@@ -85,7 +85,7 @@ class TCC_Curve(DSSObj):
 
     The specified file has one value per line.
 
-    DSS property name: `T_Array`, DSS property index: 3.
+    Name: `T_Array`
     """
 
     def Like(self, value: AnyStr):
@@ -94,7 +94,9 @@ class TCC_Curve(DSSObj):
 
         New Capacitor.C2 like=c1  ...
 
-        DSS property name: `Like`, DSS property index: 4.
+        **Deprecated:** `Like` has been deprecated since at least 2021, see https://sourceforge.net/p/electricdss/discussion/861977/thread/8b59d21eb6/#b57c/f668
+
+        Name: `Like`
         """
         self._set_string_o(4, value)
 
@@ -143,7 +145,7 @@ class TCC_CurveBatch(DSSBatch):
     """
     Number of points to expect in time-current arrays.
 
-    DSS property name: `NPts`, DSS property index: 1.
+    Name: `NPts`
     """
 
     def _get_C_Array(self) -> List[Float64Array]:
@@ -159,7 +161,7 @@ class TCC_CurveBatch(DSSBatch):
     """
     Array of current (or voltage) values corresponding to time values (see help on T_Array).
 
-    DSS property name: `C_Array`, DSS property index: 2.
+    Name: `C_Array`
     """
 
     def _get_T_Array(self) -> List[Float64Array]:
@@ -181,7 +183,7 @@ class TCC_CurveBatch(DSSBatch):
 
     The specified file has one value per line.
 
-    DSS property name: `T_Array`, DSS property index: 3.
+    Name: `T_Array`
     """
 
     def Like(self, value: AnyStr, flags: enums.SetterFlags = 0):
@@ -190,7 +192,9 @@ class TCC_CurveBatch(DSSBatch):
 
         New Capacitor.C2 like=c1  ...
 
-        DSS property name: `Like`, DSS property index: 4.
+        **Deprecated:** `Like` has been deprecated since at least 2021, see https://sourceforge.net/p/electricdss/discussion/861977/thread/8b59d21eb6/#b57c/f668
+
+        Name: `Like`
         """
         self._set_batch_string(4, value, flags)
 

@@ -122,9 +122,10 @@ class XfmrCode(DSSObj):
 
     Phases = property(_get_Phases, _set_Phases) # type: int
     """
-    Number of phases this transformer. Default is 3.
+    Number of phases this transformer.
 
-    DSS property name: `Phases`, DSS property index: 1.
+    Name: `Phases`
+    Default: 3
     """
 
     def _get_Windings(self) -> int:
@@ -137,7 +138,7 @@ class XfmrCode(DSSObj):
     """
     Number of windings, this transformers. (Also is the number of terminals) Default is 2. This property triggers memory allocation for the Transformer and will cause other properties to revert to default values.
 
-    DSS property name: `Windings`, DSS property index: 2.
+    Name: `Windings`
     """
 
     def _get_pctR(self) -> Float64Array:
@@ -150,7 +151,8 @@ class XfmrCode(DSSObj):
     """
     Percent resistance this winding.  (half of total for a 2-winding).
 
-    DSS property name: `%R`, DSS property index: 8.
+    Name: `%R`
+    Default: [0.2, 0.2]
     """
 
     def _get_RNeut(self) -> Float64Array:
@@ -161,9 +163,11 @@ class XfmrCode(DSSObj):
 
     RNeut = property(_get_RNeut, _set_RNeut) # type: Float64Array
     """
-    Default = -1. Neutral resistance of wye (star)-connected winding in actual ohms.If entered as a negative value, the neutral is assumed to be open, or floating.
+    Neutral resistance of wye (star)-connected winding in actual ohms. If entered as a negative value, the neutral is assumed to be open, or floating.
 
-    DSS property name: `RNeut`, DSS property index: 9.
+    Name: `RNeut`
+    Units: Ω
+    Default: [-1.0, -1.0]
     """
 
     def _get_XNeut(self) -> Float64Array:
@@ -174,9 +178,11 @@ class XfmrCode(DSSObj):
 
     XNeut = property(_get_XNeut, _set_XNeut) # type: Float64Array
     """
-    Neutral reactance of wye(star)-connected winding in actual ohms.  May be + or -.
+    Neutral reactance of wye(star)-connected winding in actual ohms. May be positive or negative.
 
-    DSS property name: `XNeut`, DSS property index: 10.
+    Name: `XNeut`
+    Units: Ω
+    Default: [0.0, 0.0]
     """
 
     def _get_Conns(self) -> List[enums.Connection]:
@@ -195,7 +201,8 @@ class XfmrCode(DSSObj):
     New Transformer.T1 buses="Hibus, lowbus"
     ~ conns=(delta, wye)
 
-    DSS property name: `Conns`, DSS property index: 11.
+    Name: `Conns`
+    Default: ['Wye', 'Wye']
     """
 
     def _get_Conns_str(self) -> List[str]:
@@ -211,7 +218,8 @@ class XfmrCode(DSSObj):
     New Transformer.T1 buses="Hibus, lowbus"
     ~ conns=(delta, wye)
 
-    DSS property name: `Conns`, DSS property index: 11.
+    Name: `Conns`
+    Default: ['Wye', 'Wye']
     """
 
     def _get_kVs(self) -> Float64Array:
@@ -230,7 +238,8 @@ class XfmrCode(DSSObj):
 
     See kV= property for voltage rules.
 
-    DSS property name: `kVs`, DSS property index: 12.
+    Name: `kVs`
+    Default: [12.47, 12.47]
     """
 
     def _get_kVAs(self) -> Float64Array:
@@ -243,7 +252,8 @@ class XfmrCode(DSSObj):
     """
     Use this to specify the kVA ratings of all windings at once using an array.
 
-    DSS property name: `kVAs`, DSS property index: 13.
+    Name: `kVAs`
+    Default: [1000.0, 1000.0]
     """
 
     def _get_Taps(self) -> Float64Array:
@@ -256,7 +266,8 @@ class XfmrCode(DSSObj):
     """
     Use this to specify the normal p.u. tap of all windings at once using an array.
 
-    DSS property name: `Taps`, DSS property index: 14.
+    Name: `Taps`
+    Default: [1.0, 1.0]
     """
 
     def _get_XHL(self) -> float:
@@ -269,7 +280,7 @@ class XfmrCode(DSSObj):
     """
     Use this to specify the percent reactance, H-L (winding 1 to winding 2).  Use for 2- or 3-winding transformers. On the kva base of winding 1.
 
-    DSS property name: `XHL`, DSS property index: 15.
+    Name: `XHL`
     """
 
     def _get_XHT(self) -> float:
@@ -282,7 +293,7 @@ class XfmrCode(DSSObj):
     """
     Use this to specify the percent reactance, H-T (winding 1 to winding 3).  Use for 3-winding transformers only. On the kVA base of winding 1.
 
-    DSS property name: `XHT`, DSS property index: 16.
+    Name: `XHT`
     """
 
     def _get_XLT(self) -> float:
@@ -295,7 +306,7 @@ class XfmrCode(DSSObj):
     """
     Use this to specify the percent reactance, L-T (winding 2 to winding 3).  Use for 3-winding transformers only. On the kVA base of winding 1.
 
-    DSS property name: `XLT`, DSS property index: 17.
+    Name: `XLT`
     """
 
     def _get_XSCArray(self) -> Float64Array:
@@ -312,7 +323,7 @@ class XfmrCode(DSSObj):
 
     There will be n(n-1)/2 values, where n=number of windings.
 
-    DSS property name: `XSCArray`, DSS property index: 18.
+    Name: `XSCArray`
     """
 
     def _get_Thermal(self) -> float:
@@ -323,9 +334,13 @@ class XfmrCode(DSSObj):
 
     Thermal = property(_get_Thermal, _set_Thermal) # type: float
     """
-    Thermal time constant of the transformer in hours.  Typically about 2.
+    Thermal time constant of the transformer. Typically about 2.
 
-    DSS property name: `Thermal`, DSS property index: 19.
+    **Unused** (unused internally by the models, but can be used to transport data)
+
+    Name: `Thermal`
+    Units: hour
+    Default: 2.0
     """
 
     def _get_n(self) -> float:
@@ -338,7 +353,10 @@ class XfmrCode(DSSObj):
     """
     n Exponent for thermal properties in IEEE C57.  Typically 0.8.
 
-    DSS property name: `n`, DSS property index: 20.
+    **Unused** (unused internally by the models, but can be used to transport data)
+
+    Name: `n`
+    Default: 0.8
     """
 
     def _get_m(self) -> float:
@@ -351,7 +369,10 @@ class XfmrCode(DSSObj):
     """
     m Exponent for thermal properties in IEEE C57.  Typically 0.9 - 1.0
 
-    DSS property name: `m`, DSS property index: 21.
+    **Unused** (unused internally by the models, but can be used to transport data)
+
+    Name: `m`
+    Default: 0.8
     """
 
     def _get_FLRise(self) -> float:
@@ -362,9 +383,13 @@ class XfmrCode(DSSObj):
 
     FLRise = property(_get_FLRise, _set_FLRise) # type: float
     """
-    Temperature rise, deg C, for full load.  Default is 65.
+    Temperature rise for full load.
 
-    DSS property name: `FLRise`, DSS property index: 22.
+    **Unused** (unused internally by the models, but can be used to transport data)
+
+    Name: `FLRise`
+    Units: °C
+    Default: 65.0
     """
 
     def _get_HSRise(self) -> float:
@@ -375,9 +400,13 @@ class XfmrCode(DSSObj):
 
     HSRise = property(_get_HSRise, _set_HSRise) # type: float
     """
-    Hot spot temperature rise, deg C.  Default is 15.
+    Hot spot temperature rise.
 
-    DSS property name: `HSRise`, DSS property index: 23.
+    **Unused** (unused internally by the models, but can be used to transport data)
+
+    Name: `HSRise`
+    Units: °C
+    Default: 15.0
     """
 
     def _get_pctLoadLoss(self) -> float:
@@ -390,7 +419,8 @@ class XfmrCode(DSSObj):
     """
     Percent load loss at full load. The %R of the High and Low windings (1 and 2) are adjusted to agree at rated kVA loading.
 
-    DSS property name: `%LoadLoss`, DSS property index: 24.
+    Name: `%LoadLoss`
+    Default: 0.4
     """
 
     def _get_pctNoLoadLoss(self) -> float:
@@ -403,7 +433,8 @@ class XfmrCode(DSSObj):
     """
     Percent no load losses at rated excitation voltage. Default is 0. Converts to a resistance in parallel with the magnetizing impedance in each winding.
 
-    DSS property name: `%NoLoadLoss`, DSS property index: 25.
+    Name: `%NoLoadLoss`
+    Default: 0.0
     """
 
     def _get_NormHkVA(self) -> float:
@@ -416,7 +447,8 @@ class XfmrCode(DSSObj):
     """
     Normal maximum kVA rating of H winding (winding 1).  Usually 100% - 110% of maximum nameplate rating, depending on load shape. Defaults to 110% of kVA rating of Winding 1.
 
-    DSS property name: `NormHkVA`, DSS property index: 26.
+    Name: `NormHkVA`
+    Units: kVA
     """
 
     def _get_EmergHkVA(self) -> float:
@@ -429,7 +461,8 @@ class XfmrCode(DSSObj):
     """
     Emergency (contingency)  kVA rating of H winding (winding 1).  Usually 140% - 150% of maximum nameplate rating, depending on load shape. Defaults to 150% of kVA rating of Winding 1.
 
-    DSS property name: `EmergHkVA`, DSS property index: 27.
+    Name: `EmergHkVA`
+    Units: kVA
     """
 
     def _get_MaxTap(self) -> Float64Array:
@@ -440,9 +473,10 @@ class XfmrCode(DSSObj):
 
     MaxTap = property(_get_MaxTap, _set_MaxTap) # type: Float64Array
     """
-    Max per unit tap for the active winding.  Default is 1.10
+    Max per unit tap for the active winding.
 
-    DSS property name: `MaxTap`, DSS property index: 28.
+    Name: `MaxTap`
+    Default: [1.1, 1.1]
     """
 
     def _get_MinTap(self) -> Float64Array:
@@ -453,9 +487,10 @@ class XfmrCode(DSSObj):
 
     MinTap = property(_get_MinTap, _set_MinTap) # type: Float64Array
     """
-    Min per unit tap for the active winding.  Default is 0.90
+    Min per unit tap for the active winding.
 
-    DSS property name: `MinTap`, DSS property index: 29.
+    Name: `MinTap`
+    Default: [0.9, 0.9]
     """
 
     def _get_NumTaps(self) -> Int32Array:
@@ -468,7 +503,8 @@ class XfmrCode(DSSObj):
     """
     Total number of taps between min and max tap.  Default is 32.
 
-    DSS property name: `NumTaps`, DSS property index: 30.
+    Name: `NumTaps`
+    Default: [32, 32]
     """
 
     def _get_pctIMag(self) -> float:
@@ -479,9 +515,10 @@ class XfmrCode(DSSObj):
 
     pctIMag = property(_get_pctIMag, _set_pctIMag) # type: float
     """
-    Percent magnetizing current. Default=0.0. Magnetizing branch is in parallel with windings in each phase. Also, see "ppm_antifloat".
+    Percent magnetizing current. Magnetizing branch is in parallel with windings in each phase. Also, see "ppm_antifloat".
 
-    DSS property name: `%IMag`, DSS property index: 31.
+    Name: `%IMag`
+    Default: 0.0
     """
 
     def _get_ppm_Antifloat(self) -> float:
@@ -494,7 +531,8 @@ class XfmrCode(DSSObj):
     """
     Default=1 ppm.  Parts per million of transformer winding VA rating connected to ground to protect against accidentally floating a winding without a reference. If positive then the effect is adding a very large reactance to ground.  If negative, then a capacitor.
 
-    DSS property name: `ppm_Antifloat`, DSS property index: 32.
+    Name: `ppm_Antifloat`
+    Default: 1.0
     """
 
     def _get_pctRs(self) -> Float64Array:
@@ -509,7 +547,8 @@ class XfmrCode(DSSObj):
 
     New Transformer.T1 buses="Hibus, lowbus" ~ %Rs=(0.2  0.3)
 
-    DSS property name: `%Rs`, DSS property index: 33.
+    Name: `%Rs`
+    Default: [0.2, 0.2]
     """
 
     def _get_X12(self) -> float:
@@ -522,7 +561,8 @@ class XfmrCode(DSSObj):
     """
     Alternative to XHL for specifying the percent reactance from winding 1 to winding 2.  Use for 2- or 3-winding transformers. Percent on the kVA base of winding 1. 
 
-    DSS property name: `X12`, DSS property index: 34.
+    Name: `X12`
+    Default: 7.000000000000001
     """
 
     def _get_X13(self) -> float:
@@ -535,7 +575,8 @@ class XfmrCode(DSSObj):
     """
     Alternative to XHT for specifying the percent reactance from winding 1 to winding 3.  Use for 3-winding transformers only. Percent on the kVA base of winding 1. 
 
-    DSS property name: `X13`, DSS property index: 35.
+    Name: `X13`
+    Default: 35.0
     """
 
     def _get_X23(self) -> float:
@@ -548,7 +589,8 @@ class XfmrCode(DSSObj):
     """
     Alternative to XLT for specifying the percent reactance from winding 2 to winding 3.Use for 3-winding transformers only. Percent on the kVA base of winding 1.  
 
-    DSS property name: `X23`, DSS property index: 36.
+    Name: `X23`
+    Default: 30.0
     """
 
     def _get_RDCOhms(self) -> Float64Array:
@@ -561,7 +603,8 @@ class XfmrCode(DSSObj):
     """
     Winding dc resistance in OHMS. Useful for GIC analysis. From transformer test report. Defaults to 85% of %R property
 
-    DSS property name: `RDCOhms`, DSS property index: 37.
+    Name: `RDCOhms`
+    Default: [0.26435153000000006, 0.26435153000000006]
     """
 
     def _get_Seasons(self) -> int:
@@ -572,9 +615,9 @@ class XfmrCode(DSSObj):
 
     Seasons = property(_get_Seasons, _set_Seasons) # type: int
     """
-    Defines the number of ratings to be defined for the transfomer, to be used only when defining seasonal ratings using the "Ratings" property.
+    Defines the number of ratings to be defined for the transformer, to be used only when defining seasonal ratings using the "Ratings" property.
 
-    DSS property name: `Seasons`, DSS property index: 38.
+    Name: `Seasons`
     """
 
     def _get_Ratings(self) -> Float64Array:
@@ -588,7 +631,8 @@ class XfmrCode(DSSObj):
     An array of ratings to be used when the seasonal ratings flag is True. It can be used to insert
     multiple ratings to change during a QSTS simulation to evaluate different ratings in transformers.
 
-    DSS property name: `Ratings`, DSS property index: 39.
+    Name: `Ratings`
+    Default: [600.0]
     """
 
     def Like(self, value: AnyStr):
@@ -597,7 +641,9 @@ class XfmrCode(DSSObj):
 
         New Capacitor.C2 like=c1  ...
 
-        DSS property name: `Like`, DSS property index: 40.
+        **Deprecated:** `Like` has been deprecated since at least 2021, see https://sourceforge.net/p/electricdss/discussion/861977/thread/8b59d21eb6/#b57c/f668
+
+        Name: `Like`
         """
         self._set_string_o(40, value)
 
@@ -675,9 +721,10 @@ class XfmrCodeBatch(DSSBatch):
 
     Phases = property(_get_Phases, _set_Phases) # type: BatchInt32ArrayProxy
     """
-    Number of phases this transformer. Default is 3.
+    Number of phases this transformer.
 
-    DSS property name: `Phases`, DSS property index: 1.
+    Name: `Phases`
+    Default: 3
     """
 
     def _get_Windings(self) -> BatchInt32ArrayProxy:
@@ -690,7 +737,7 @@ class XfmrCodeBatch(DSSBatch):
     """
     Number of windings, this transformers. (Also is the number of terminals) Default is 2. This property triggers memory allocation for the Transformer and will cause other properties to revert to default values.
 
-    DSS property name: `Windings`, DSS property index: 2.
+    Name: `Windings`
     """
 
     def _get_pctR(self) -> List[Float64Array]:
@@ -706,7 +753,8 @@ class XfmrCodeBatch(DSSBatch):
     """
     Percent resistance this winding.  (half of total for a 2-winding).
 
-    DSS property name: `%R`, DSS property index: 8.
+    Name: `%R`
+    Default: [0.2, 0.2]
     """
 
     def _get_RNeut(self) -> List[Float64Array]:
@@ -720,9 +768,11 @@ class XfmrCodeBatch(DSSBatch):
 
     RNeut = property(_get_RNeut, _set_RNeut) # type: List[Float64Array]
     """
-    Default = -1. Neutral resistance of wye (star)-connected winding in actual ohms.If entered as a negative value, the neutral is assumed to be open, or floating.
+    Neutral resistance of wye (star)-connected winding in actual ohms. If entered as a negative value, the neutral is assumed to be open, or floating.
 
-    DSS property name: `RNeut`, DSS property index: 9.
+    Name: `RNeut`
+    Units: Ω
+    Default: [-1.0, -1.0]
     """
 
     def _get_XNeut(self) -> List[Float64Array]:
@@ -736,9 +786,11 @@ class XfmrCodeBatch(DSSBatch):
 
     XNeut = property(_get_XNeut, _set_XNeut) # type: List[Float64Array]
     """
-    Neutral reactance of wye(star)-connected winding in actual ohms.  May be + or -.
+    Neutral reactance of wye(star)-connected winding in actual ohms. May be positive or negative.
 
-    DSS property name: `XNeut`, DSS property index: 10.
+    Name: `XNeut`
+    Units: Ω
+    Default: [0.0, 0.0]
     """
 
     def _get_Conns(self) -> List[Int32Array]:
@@ -765,7 +817,8 @@ class XfmrCodeBatch(DSSBatch):
     New Transformer.T1 buses="Hibus, lowbus"
     ~ conns=(delta, wye)
 
-    DSS property name: `Conns`, DSS property index: 11.
+    Name: `Conns`
+    Default: ['Wye', 'Wye']
     """
 
     def _get_Conns_str(self) -> List[List[str]]:
@@ -781,7 +834,8 @@ class XfmrCodeBatch(DSSBatch):
     New Transformer.T1 buses="Hibus, lowbus"
     ~ conns=(delta, wye)
 
-    DSS property name: `Conns`, DSS property index: 11.
+    Name: `Conns`
+    Default: ['Wye', 'Wye']
     """
 
     def _get_kVs(self) -> List[Float64Array]:
@@ -803,7 +857,8 @@ class XfmrCodeBatch(DSSBatch):
 
     See kV= property for voltage rules.
 
-    DSS property name: `kVs`, DSS property index: 12.
+    Name: `kVs`
+    Default: [12.47, 12.47]
     """
 
     def _get_kVAs(self) -> List[Float64Array]:
@@ -819,7 +874,8 @@ class XfmrCodeBatch(DSSBatch):
     """
     Use this to specify the kVA ratings of all windings at once using an array.
 
-    DSS property name: `kVAs`, DSS property index: 13.
+    Name: `kVAs`
+    Default: [1000.0, 1000.0]
     """
 
     def _get_Taps(self) -> List[Float64Array]:
@@ -835,7 +891,8 @@ class XfmrCodeBatch(DSSBatch):
     """
     Use this to specify the normal p.u. tap of all windings at once using an array.
 
-    DSS property name: `Taps`, DSS property index: 14.
+    Name: `Taps`
+    Default: [1.0, 1.0]
     """
 
     def _get_XHL(self) -> BatchFloat64ArrayProxy:
@@ -848,7 +905,7 @@ class XfmrCodeBatch(DSSBatch):
     """
     Use this to specify the percent reactance, H-L (winding 1 to winding 2).  Use for 2- or 3-winding transformers. On the kva base of winding 1.
 
-    DSS property name: `XHL`, DSS property index: 15.
+    Name: `XHL`
     """
 
     def _get_XHT(self) -> BatchFloat64ArrayProxy:
@@ -861,7 +918,7 @@ class XfmrCodeBatch(DSSBatch):
     """
     Use this to specify the percent reactance, H-T (winding 1 to winding 3).  Use for 3-winding transformers only. On the kVA base of winding 1.
 
-    DSS property name: `XHT`, DSS property index: 16.
+    Name: `XHT`
     """
 
     def _get_XLT(self) -> BatchFloat64ArrayProxy:
@@ -874,7 +931,7 @@ class XfmrCodeBatch(DSSBatch):
     """
     Use this to specify the percent reactance, L-T (winding 2 to winding 3).  Use for 3-winding transformers only. On the kVA base of winding 1.
 
-    DSS property name: `XLT`, DSS property index: 17.
+    Name: `XLT`
     """
 
     def _get_XSCArray(self) -> List[Float64Array]:
@@ -894,7 +951,7 @@ class XfmrCodeBatch(DSSBatch):
 
     There will be n(n-1)/2 values, where n=number of windings.
 
-    DSS property name: `XSCArray`, DSS property index: 18.
+    Name: `XSCArray`
     """
 
     def _get_Thermal(self) -> BatchFloat64ArrayProxy:
@@ -905,9 +962,13 @@ class XfmrCodeBatch(DSSBatch):
 
     Thermal = property(_get_Thermal, _set_Thermal) # type: BatchFloat64ArrayProxy
     """
-    Thermal time constant of the transformer in hours.  Typically about 2.
+    Thermal time constant of the transformer. Typically about 2.
 
-    DSS property name: `Thermal`, DSS property index: 19.
+    **Unused** (unused internally by the models, but can be used to transport data)
+
+    Name: `Thermal`
+    Units: hour
+    Default: 2.0
     """
 
     def _get_n(self) -> BatchFloat64ArrayProxy:
@@ -920,7 +981,10 @@ class XfmrCodeBatch(DSSBatch):
     """
     n Exponent for thermal properties in IEEE C57.  Typically 0.8.
 
-    DSS property name: `n`, DSS property index: 20.
+    **Unused** (unused internally by the models, but can be used to transport data)
+
+    Name: `n`
+    Default: 0.8
     """
 
     def _get_m(self) -> BatchFloat64ArrayProxy:
@@ -933,7 +997,10 @@ class XfmrCodeBatch(DSSBatch):
     """
     m Exponent for thermal properties in IEEE C57.  Typically 0.9 - 1.0
 
-    DSS property name: `m`, DSS property index: 21.
+    **Unused** (unused internally by the models, but can be used to transport data)
+
+    Name: `m`
+    Default: 0.8
     """
 
     def _get_FLRise(self) -> BatchFloat64ArrayProxy:
@@ -944,9 +1011,13 @@ class XfmrCodeBatch(DSSBatch):
 
     FLRise = property(_get_FLRise, _set_FLRise) # type: BatchFloat64ArrayProxy
     """
-    Temperature rise, deg C, for full load.  Default is 65.
+    Temperature rise for full load.
 
-    DSS property name: `FLRise`, DSS property index: 22.
+    **Unused** (unused internally by the models, but can be used to transport data)
+
+    Name: `FLRise`
+    Units: °C
+    Default: 65.0
     """
 
     def _get_HSRise(self) -> BatchFloat64ArrayProxy:
@@ -957,9 +1028,13 @@ class XfmrCodeBatch(DSSBatch):
 
     HSRise = property(_get_HSRise, _set_HSRise) # type: BatchFloat64ArrayProxy
     """
-    Hot spot temperature rise, deg C.  Default is 15.
+    Hot spot temperature rise.
 
-    DSS property name: `HSRise`, DSS property index: 23.
+    **Unused** (unused internally by the models, but can be used to transport data)
+
+    Name: `HSRise`
+    Units: °C
+    Default: 15.0
     """
 
     def _get_pctLoadLoss(self) -> BatchFloat64ArrayProxy:
@@ -972,7 +1047,8 @@ class XfmrCodeBatch(DSSBatch):
     """
     Percent load loss at full load. The %R of the High and Low windings (1 and 2) are adjusted to agree at rated kVA loading.
 
-    DSS property name: `%LoadLoss`, DSS property index: 24.
+    Name: `%LoadLoss`
+    Default: 0.4
     """
 
     def _get_pctNoLoadLoss(self) -> BatchFloat64ArrayProxy:
@@ -985,7 +1061,8 @@ class XfmrCodeBatch(DSSBatch):
     """
     Percent no load losses at rated excitation voltage. Default is 0. Converts to a resistance in parallel with the magnetizing impedance in each winding.
 
-    DSS property name: `%NoLoadLoss`, DSS property index: 25.
+    Name: `%NoLoadLoss`
+    Default: 0.0
     """
 
     def _get_NormHkVA(self) -> BatchFloat64ArrayProxy:
@@ -998,7 +1075,8 @@ class XfmrCodeBatch(DSSBatch):
     """
     Normal maximum kVA rating of H winding (winding 1).  Usually 100% - 110% of maximum nameplate rating, depending on load shape. Defaults to 110% of kVA rating of Winding 1.
 
-    DSS property name: `NormHkVA`, DSS property index: 26.
+    Name: `NormHkVA`
+    Units: kVA
     """
 
     def _get_EmergHkVA(self) -> BatchFloat64ArrayProxy:
@@ -1011,7 +1089,8 @@ class XfmrCodeBatch(DSSBatch):
     """
     Emergency (contingency)  kVA rating of H winding (winding 1).  Usually 140% - 150% of maximum nameplate rating, depending on load shape. Defaults to 150% of kVA rating of Winding 1.
 
-    DSS property name: `EmergHkVA`, DSS property index: 27.
+    Name: `EmergHkVA`
+    Units: kVA
     """
 
     def _get_MaxTap(self) -> List[Float64Array]:
@@ -1025,9 +1104,10 @@ class XfmrCodeBatch(DSSBatch):
 
     MaxTap = property(_get_MaxTap, _set_MaxTap) # type: List[Float64Array]
     """
-    Max per unit tap for the active winding.  Default is 1.10
+    Max per unit tap for the active winding.
 
-    DSS property name: `MaxTap`, DSS property index: 28.
+    Name: `MaxTap`
+    Default: [1.1, 1.1]
     """
 
     def _get_MinTap(self) -> List[Float64Array]:
@@ -1041,9 +1121,10 @@ class XfmrCodeBatch(DSSBatch):
 
     MinTap = property(_get_MinTap, _set_MinTap) # type: List[Float64Array]
     """
-    Min per unit tap for the active winding.  Default is 0.90
+    Min per unit tap for the active winding.
 
-    DSS property name: `MinTap`, DSS property index: 29.
+    Name: `MinTap`
+    Default: [0.9, 0.9]
     """
 
     def _get_NumTaps(self) -> List[Int32Array]:
@@ -1059,7 +1140,8 @@ class XfmrCodeBatch(DSSBatch):
     """
     Total number of taps between min and max tap.  Default is 32.
 
-    DSS property name: `NumTaps`, DSS property index: 30.
+    Name: `NumTaps`
+    Default: [32, 32]
     """
 
     def _get_pctIMag(self) -> BatchFloat64ArrayProxy:
@@ -1070,9 +1152,10 @@ class XfmrCodeBatch(DSSBatch):
 
     pctIMag = property(_get_pctIMag, _set_pctIMag) # type: BatchFloat64ArrayProxy
     """
-    Percent magnetizing current. Default=0.0. Magnetizing branch is in parallel with windings in each phase. Also, see "ppm_antifloat".
+    Percent magnetizing current. Magnetizing branch is in parallel with windings in each phase. Also, see "ppm_antifloat".
 
-    DSS property name: `%IMag`, DSS property index: 31.
+    Name: `%IMag`
+    Default: 0.0
     """
 
     def _get_ppm_Antifloat(self) -> BatchFloat64ArrayProxy:
@@ -1085,7 +1168,8 @@ class XfmrCodeBatch(DSSBatch):
     """
     Default=1 ppm.  Parts per million of transformer winding VA rating connected to ground to protect against accidentally floating a winding without a reference. If positive then the effect is adding a very large reactance to ground.  If negative, then a capacitor.
 
-    DSS property name: `ppm_Antifloat`, DSS property index: 32.
+    Name: `ppm_Antifloat`
+    Default: 1.0
     """
 
     def _get_pctRs(self) -> List[Float64Array]:
@@ -1103,7 +1187,8 @@ class XfmrCodeBatch(DSSBatch):
 
     New Transformer.T1 buses="Hibus, lowbus" ~ %Rs=(0.2  0.3)
 
-    DSS property name: `%Rs`, DSS property index: 33.
+    Name: `%Rs`
+    Default: [0.2, 0.2]
     """
 
     def _get_X12(self) -> BatchFloat64ArrayProxy:
@@ -1116,7 +1201,8 @@ class XfmrCodeBatch(DSSBatch):
     """
     Alternative to XHL for specifying the percent reactance from winding 1 to winding 2.  Use for 2- or 3-winding transformers. Percent on the kVA base of winding 1. 
 
-    DSS property name: `X12`, DSS property index: 34.
+    Name: `X12`
+    Default: 7.000000000000001
     """
 
     def _get_X13(self) -> BatchFloat64ArrayProxy:
@@ -1129,7 +1215,8 @@ class XfmrCodeBatch(DSSBatch):
     """
     Alternative to XHT for specifying the percent reactance from winding 1 to winding 3.  Use for 3-winding transformers only. Percent on the kVA base of winding 1. 
 
-    DSS property name: `X13`, DSS property index: 35.
+    Name: `X13`
+    Default: 35.0
     """
 
     def _get_X23(self) -> BatchFloat64ArrayProxy:
@@ -1142,7 +1229,8 @@ class XfmrCodeBatch(DSSBatch):
     """
     Alternative to XLT for specifying the percent reactance from winding 2 to winding 3.Use for 3-winding transformers only. Percent on the kVA base of winding 1.  
 
-    DSS property name: `X23`, DSS property index: 36.
+    Name: `X23`
+    Default: 30.0
     """
 
     def _get_RDCOhms(self) -> List[Float64Array]:
@@ -1158,7 +1246,8 @@ class XfmrCodeBatch(DSSBatch):
     """
     Winding dc resistance in OHMS. Useful for GIC analysis. From transformer test report. Defaults to 85% of %R property
 
-    DSS property name: `RDCOhms`, DSS property index: 37.
+    Name: `RDCOhms`
+    Default: [0.26435153000000006, 0.26435153000000006]
     """
 
     def _get_Seasons(self) -> BatchInt32ArrayProxy:
@@ -1169,9 +1258,9 @@ class XfmrCodeBatch(DSSBatch):
 
     Seasons = property(_get_Seasons, _set_Seasons) # type: BatchInt32ArrayProxy
     """
-    Defines the number of ratings to be defined for the transfomer, to be used only when defining seasonal ratings using the "Ratings" property.
+    Defines the number of ratings to be defined for the transformer, to be used only when defining seasonal ratings using the "Ratings" property.
 
-    DSS property name: `Seasons`, DSS property index: 38.
+    Name: `Seasons`
     """
 
     def _get_Ratings(self) -> List[Float64Array]:
@@ -1188,7 +1277,8 @@ class XfmrCodeBatch(DSSBatch):
     An array of ratings to be used when the seasonal ratings flag is True. It can be used to insert
     multiple ratings to change during a QSTS simulation to evaluate different ratings in transformers.
 
-    DSS property name: `Ratings`, DSS property index: 39.
+    Name: `Ratings`
+    Default: [600.0]
     """
 
     def Like(self, value: AnyStr, flags: enums.SetterFlags = 0):
@@ -1197,7 +1287,9 @@ class XfmrCodeBatch(DSSBatch):
 
         New Capacitor.C2 like=c1  ...
 
-        DSS property name: `Like`, DSS property index: 40.
+        **Deprecated:** `Like` has been deprecated since at least 2021, see https://sourceforge.net/p/electricdss/discussion/861977/thread/8b59d21eb6/#b57c/f668
+
+        Name: `Like`
         """
         self._set_batch_string(40, value, flags)
 

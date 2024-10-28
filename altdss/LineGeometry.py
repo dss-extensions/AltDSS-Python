@@ -83,9 +83,10 @@ class LineGeometry(DSSObj):
 
     NConds = property(_get_NConds, _set_NConds) # type: int
     """
-    Number of conductors in this geometry. Default is 3. Triggers memory allocations. Define first!
+    Number of conductors in this geometry. Triggers memory allocations. Define first!
 
-    DSS property name: `NConds`, DSS property index: 1.
+    Name: `NConds`
+    Default: 0
     """
 
     def _get_NPhases(self) -> int:
@@ -96,9 +97,10 @@ class LineGeometry(DSSObj):
 
     NPhases = property(_get_NPhases, _set_NPhases) # type: int
     """
-    Number of phases. Default =3; All other conductors are considered neutrals and might be reduced out.
+    Number of phases. All other conductors are considered neutrals and might be reduced out.
 
-    DSS property name: `NPhases`, DSS property index: 2.
+    Name: `NPhases`
+    Default: 0
     """
 
     def _get_Conductors_str(self) -> List[str]:
@@ -113,7 +115,7 @@ class LineGeometry(DSSObj):
     Specifies use of Overhead Line parameter calculation,
     Unless Tape Shield cable previously assigned to phases, and this wire is a neutral.
 
-    DSS property name: `Wire`, DSS property index: 4.
+    Name: `Wire`
     """
 
     def _get_Conductors(self) -> List[Union[WireData, CNData, TSData]]:
@@ -132,7 +134,7 @@ class LineGeometry(DSSObj):
     Specifies use of Overhead Line parameter calculation,
     Unless Tape Shield cable previously assigned to phases, and this wire is a neutral.
 
-    DSS property name: `Wire`, DSS property index: 4.
+    Name: `Wire`
     """
 
     def _get_X(self) -> Float64Array:
@@ -145,7 +147,7 @@ class LineGeometry(DSSObj):
     """
     x coordinate.
 
-    DSS property name: `X`, DSS property index: 5.
+    Name: `X`
     """
 
     def _get_H(self) -> Float64Array:
@@ -158,7 +160,7 @@ class LineGeometry(DSSObj):
     """
     Height of conductor.
 
-    DSS property name: `H`, DSS property index: 6.
+    Name: `H`
     """
 
     def _get_Units(self) -> enums.LengthUnit:
@@ -172,9 +174,9 @@ class LineGeometry(DSSObj):
 
     Units = property(_get_Units, _set_Units) # type: enums.LengthUnit
     """
-    Units for x and h: {mi|kft|km|m|Ft|in|cm } Initial default is "ft", but defaults to last unit defined
+    Units for x and h. Initial default is "ft", but defaults to last unit defined
 
-    DSS property name: `Units`, DSS property index: 7.
+    Name: `Units`
     """
 
     def _get_Units_str(self) -> str:
@@ -185,9 +187,9 @@ class LineGeometry(DSSObj):
 
     Units_str = property(_get_Units_str, _set_Units_str) # type: str
     """
-    Units for x and h: {mi|kft|km|m|Ft|in|cm } Initial default is "ft", but defaults to last unit defined
+    Units for x and h. Initial default is "ft", but defaults to last unit defined
 
-    DSS property name: `Units`, DSS property index: 7.
+    Name: `Units`
     """
 
     def _get_NormAmps(self) -> float:
@@ -200,7 +202,8 @@ class LineGeometry(DSSObj):
     """
     Normal ampacity, amperes for the line. Defaults to first conductor if not specified.
 
-    DSS property name: `NormAmps`, DSS property index: 8.
+    Name: `NormAmps`
+    Default: 0.0
     """
 
     def _get_EmergAmps(self) -> float:
@@ -213,7 +216,8 @@ class LineGeometry(DSSObj):
     """
     Emergency ampacity, amperes. Defaults to first conductor if not specified.
 
-    DSS property name: `EmergAmps`, DSS property index: 9.
+    Name: `EmergAmps`
+    Default: 0.0
     """
 
     def _get_Reduce(self) -> bool:
@@ -224,9 +228,10 @@ class LineGeometry(DSSObj):
 
     Reduce = property(_get_Reduce, _set_Reduce) # type: bool
     """
-    {Yes | No} Default = no. Reduce to Nphases (Kron Reduction). Reduce out neutrals.
+    Reduce to Nphases (Kron Reduction). Reduce out neutrals.
 
-    DSS property name: `Reduce`, DSS property index: 10.
+    Name: `Reduce`
+    Default: False
     """
 
     def _get_Spacing_str(self) -> str:
@@ -242,7 +247,7 @@ class LineGeometry(DSSObj):
     Must match "nconds" as previously defined for this geometry.
     Must be used in conjunction with the Wires property.
 
-    DSS property name: `Spacing`, DSS property index: 11.
+    Name: `Spacing`
     """
 
     def _get_Spacing(self) -> LineSpacing:
@@ -262,7 +267,7 @@ class LineGeometry(DSSObj):
     Must match "nconds" as previously defined for this geometry.
     Must be used in conjunction with the Wires property.
 
-    DSS property name: `Spacing`, DSS property index: 11.
+    Name: `Spacing`
     """
 
     def _get_Seasons(self) -> int:
@@ -275,7 +280,7 @@ class LineGeometry(DSSObj):
     """
     Defines the number of ratings to be defined for the wire, to be used only when defining seasonal ratings using the "Ratings" property. Defaults to first conductor if not specified.
 
-    DSS property name: `Seasons`, DSS property index: 17.
+    Name: `Seasons`
     """
 
     def _get_Ratings(self) -> Float64Array:
@@ -287,9 +292,10 @@ class LineGeometry(DSSObj):
     Ratings = property(_get_Ratings, _set_Ratings) # type: Float64Array
     """
     An array of ratings to be used when the seasonal ratings flag is True. It can be used to insert
-    multiple ratings to change during a QSTS simulation to evaluate different ratings in lines.Defaults to first conductor if not specified.
+    multiple ratings to change during a QSTS simulation to evaluate different ratings in lines. Defaults to first conductor if not specified.
 
-    DSS property name: `Ratings`, DSS property index: 18.
+    Name: `Ratings`
+    Default: [0.0]
     """
 
     def _get_LineType(self) -> enums.LineType:
@@ -303,12 +309,11 @@ class LineGeometry(DSSObj):
 
     LineType = property(_get_LineType, _set_LineType) # type: enums.LineType
     """
-    Code designating the type of line. 
-    One of: OH, UG, UG_TS, UG_CN, SWT_LDBRK, SWT_FUSE, SWT_SECT, SWT_REC, SWT_DISC, SWT_BRK, SWT_ELBOW, BUSBAR
+    Code designating the type of line.
+    OpenDSS currently does not use this internally. For whatever purpose the user defines.
 
-    OpenDSS currently does not use this internally. For whatever purpose the user defines. Default is OH.
-
-    DSS property name: `LineType`, DSS property index: 19.
+    Name: `LineType`
+    Default: oh
     """
 
     def _get_LineType_str(self) -> str:
@@ -319,12 +324,11 @@ class LineGeometry(DSSObj):
 
     LineType_str = property(_get_LineType_str, _set_LineType_str) # type: str
     """
-    Code designating the type of line. 
-    One of: OH, UG, UG_TS, UG_CN, SWT_LDBRK, SWT_FUSE, SWT_SECT, SWT_REC, SWT_DISC, SWT_BRK, SWT_ELBOW, BUSBAR
+    Code designating the type of line.
+    OpenDSS currently does not use this internally. For whatever purpose the user defines.
 
-    OpenDSS currently does not use this internally. For whatever purpose the user defines. Default is OH.
-
-    DSS property name: `LineType`, DSS property index: 19.
+    Name: `LineType`
+    Default: oh
     """
 
     def Like(self, value: AnyStr):
@@ -333,7 +337,9 @@ class LineGeometry(DSSObj):
 
         New Capacitor.C2 like=c1  ...
 
-        DSS property name: `Like`, DSS property index: 20.
+        **Deprecated:** `Like` has been deprecated since at least 2021, see https://sourceforge.net/p/electricdss/discussion/861977/thread/8b59d21eb6/#b57c/f668
+
+        Name: `Like`
         """
         self._set_string_o(20, value)
 
@@ -390,9 +396,10 @@ class LineGeometryBatch(DSSBatch):
 
     NConds = property(_get_NConds, _set_NConds) # type: BatchInt32ArrayProxy
     """
-    Number of conductors in this geometry. Default is 3. Triggers memory allocations. Define first!
+    Number of conductors in this geometry. Triggers memory allocations. Define first!
 
-    DSS property name: `NConds`, DSS property index: 1.
+    Name: `NConds`
+    Default: 0
     """
 
     def _get_NPhases(self) -> BatchInt32ArrayProxy:
@@ -403,9 +410,10 @@ class LineGeometryBatch(DSSBatch):
 
     NPhases = property(_get_NPhases, _set_NPhases) # type: BatchInt32ArrayProxy
     """
-    Number of phases. Default =3; All other conductors are considered neutrals and might be reduced out.
+    Number of phases. All other conductors are considered neutrals and might be reduced out.
 
-    DSS property name: `NPhases`, DSS property index: 2.
+    Name: `NPhases`
+    Default: 0
     """
 
     def _get_Conductors_str(self) -> List[List[str]]:
@@ -420,7 +428,7 @@ class LineGeometryBatch(DSSBatch):
     Specifies use of Overhead Line parameter calculation,
     Unless Tape Shield cable previously assigned to phases, and this wire is a neutral.
 
-    DSS property name: `Wire`, DSS property index: 4.
+    Name: `Wire`
     """
 
     def _get_Conductors(self) -> List[List[Union[WireData, CNData, TSData]]]:
@@ -439,7 +447,7 @@ class LineGeometryBatch(DSSBatch):
     Specifies use of Overhead Line parameter calculation,
     Unless Tape Shield cable previously assigned to phases, and this wire is a neutral.
 
-    DSS property name: `Wire`, DSS property index: 4.
+    Name: `Wire`
     """
 
     def _get_X(self) -> List[Float64Array]:
@@ -455,7 +463,7 @@ class LineGeometryBatch(DSSBatch):
     """
     x coordinate.
 
-    DSS property name: `X`, DSS property index: 5.
+    Name: `X`
     """
 
     def _get_H(self) -> List[Float64Array]:
@@ -471,7 +479,7 @@ class LineGeometryBatch(DSSBatch):
     """
     Height of conductor.
 
-    DSS property name: `H`, DSS property index: 6.
+    Name: `H`
     """
 
     def _get_Units(self) -> BatchInt32ArrayProxy:
@@ -486,9 +494,9 @@ class LineGeometryBatch(DSSBatch):
 
     Units = property(_get_Units, _set_Units) # type: BatchInt32ArrayProxy
     """
-    Units for x and h: {mi|kft|km|m|Ft|in|cm } Initial default is "ft", but defaults to last unit defined
+    Units for x and h. Initial default is "ft", but defaults to last unit defined
 
-    DSS property name: `Units`, DSS property index: 7.
+    Name: `Units`
     """
 
     def _get_Units_str(self) -> List[str]:
@@ -499,9 +507,9 @@ class LineGeometryBatch(DSSBatch):
 
     Units_str = property(_get_Units_str, _set_Units_str) # type: List[str]
     """
-    Units for x and h: {mi|kft|km|m|Ft|in|cm } Initial default is "ft", but defaults to last unit defined
+    Units for x and h. Initial default is "ft", but defaults to last unit defined
 
-    DSS property name: `Units`, DSS property index: 7.
+    Name: `Units`
     """
 
     def _get_NormAmps(self) -> BatchFloat64ArrayProxy:
@@ -514,7 +522,8 @@ class LineGeometryBatch(DSSBatch):
     """
     Normal ampacity, amperes for the line. Defaults to first conductor if not specified.
 
-    DSS property name: `NormAmps`, DSS property index: 8.
+    Name: `NormAmps`
+    Default: 0.0
     """
 
     def _get_EmergAmps(self) -> BatchFloat64ArrayProxy:
@@ -527,7 +536,8 @@ class LineGeometryBatch(DSSBatch):
     """
     Emergency ampacity, amperes. Defaults to first conductor if not specified.
 
-    DSS property name: `EmergAmps`, DSS property index: 9.
+    Name: `EmergAmps`
+    Default: 0.0
     """
 
     def _get_Reduce(self) -> List[bool]:
@@ -540,9 +550,10 @@ class LineGeometryBatch(DSSBatch):
 
     Reduce = property(_get_Reduce, _set_Reduce) # type: List[bool]
     """
-    {Yes | No} Default = no. Reduce to Nphases (Kron Reduction). Reduce out neutrals.
+    Reduce to Nphases (Kron Reduction). Reduce out neutrals.
 
-    DSS property name: `Reduce`, DSS property index: 10.
+    Name: `Reduce`
+    Default: False
     """
 
     def _get_Spacing_str(self) -> List[str]:
@@ -558,7 +569,7 @@ class LineGeometryBatch(DSSBatch):
     Must match "nconds" as previously defined for this geometry.
     Must be used in conjunction with the Wires property.
 
-    DSS property name: `Spacing`, DSS property index: 11.
+    Name: `Spacing`
     """
 
     def _get_Spacing(self) -> List[LineSpacing]:
@@ -574,7 +585,7 @@ class LineGeometryBatch(DSSBatch):
     Must match "nconds" as previously defined for this geometry.
     Must be used in conjunction with the Wires property.
 
-    DSS property name: `Spacing`, DSS property index: 11.
+    Name: `Spacing`
     """
 
     def _get_Seasons(self) -> BatchInt32ArrayProxy:
@@ -587,7 +598,7 @@ class LineGeometryBatch(DSSBatch):
     """
     Defines the number of ratings to be defined for the wire, to be used only when defining seasonal ratings using the "Ratings" property. Defaults to first conductor if not specified.
 
-    DSS property name: `Seasons`, DSS property index: 17.
+    Name: `Seasons`
     """
 
     def _get_Ratings(self) -> List[Float64Array]:
@@ -602,9 +613,10 @@ class LineGeometryBatch(DSSBatch):
     Ratings = property(_get_Ratings, _set_Ratings) # type: List[Float64Array]
     """
     An array of ratings to be used when the seasonal ratings flag is True. It can be used to insert
-    multiple ratings to change during a QSTS simulation to evaluate different ratings in lines.Defaults to first conductor if not specified.
+    multiple ratings to change during a QSTS simulation to evaluate different ratings in lines. Defaults to first conductor if not specified.
 
-    DSS property name: `Ratings`, DSS property index: 18.
+    Name: `Ratings`
+    Default: [0.0]
     """
 
     def _get_LineType(self) -> BatchInt32ArrayProxy:
@@ -619,12 +631,11 @@ class LineGeometryBatch(DSSBatch):
 
     LineType = property(_get_LineType, _set_LineType) # type: BatchInt32ArrayProxy
     """
-    Code designating the type of line. 
-    One of: OH, UG, UG_TS, UG_CN, SWT_LDBRK, SWT_FUSE, SWT_SECT, SWT_REC, SWT_DISC, SWT_BRK, SWT_ELBOW, BUSBAR
+    Code designating the type of line.
+    OpenDSS currently does not use this internally. For whatever purpose the user defines.
 
-    OpenDSS currently does not use this internally. For whatever purpose the user defines. Default is OH.
-
-    DSS property name: `LineType`, DSS property index: 19.
+    Name: `LineType`
+    Default: oh
     """
 
     def _get_LineType_str(self) -> List[str]:
@@ -635,12 +646,11 @@ class LineGeometryBatch(DSSBatch):
 
     LineType_str = property(_get_LineType_str, _set_LineType_str) # type: List[str]
     """
-    Code designating the type of line. 
-    One of: OH, UG, UG_TS, UG_CN, SWT_LDBRK, SWT_FUSE, SWT_SECT, SWT_REC, SWT_DISC, SWT_BRK, SWT_ELBOW, BUSBAR
+    Code designating the type of line.
+    OpenDSS currently does not use this internally. For whatever purpose the user defines.
 
-    OpenDSS currently does not use this internally. For whatever purpose the user defines. Default is OH.
-
-    DSS property name: `LineType`, DSS property index: 19.
+    Name: `LineType`
+    Default: oh
     """
 
     def Like(self, value: AnyStr, flags: enums.SetterFlags = 0):
@@ -649,7 +659,9 @@ class LineGeometryBatch(DSSBatch):
 
         New Capacitor.C2 like=c1  ...
 
-        DSS property name: `Like`, DSS property index: 20.
+        **Deprecated:** `Like` has been deprecated since at least 2021, see https://sourceforge.net/p/electricdss/discussion/861977/thread/8b59d21eb6/#b57c/f668
+
+        Name: `Like`
         """
         self._set_batch_string(20, value, flags)
 

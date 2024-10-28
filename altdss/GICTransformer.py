@@ -16,7 +16,7 @@ from .XYcurve import XYcurve
 class GICTransformer(DSSObj, CircuitElementMixin, PDElementMixin):
     __slots__ = DSSObj._extra_slots + CircuitElementMixin._extra_slots + PDElementMixin._extra_slots
     _cls_name = 'GICTransformer'
-    _cls_idx = 45
+    _cls_idx = 46
     _cls_int_idx = {
         5,
         6,
@@ -100,7 +100,7 @@ class GICTransformer(DSSObj, CircuitElementMixin, PDElementMixin):
     BusH=busname
     BusH=busname.1.2.3
 
-    DSS property name: `BusH`, DSS property index: 1.
+    Name: `BusH`
     """
 
     def _get_BusNH(self) -> str:
@@ -113,7 +113,7 @@ class GICTransformer(DSSObj, CircuitElementMixin, PDElementMixin):
     """
     Name of Neutral bus for H, or first, winding. Defaults to all phases connected to H-side bus, node 0, if not specified and transformer type is either GSU or YY. (Shunt Wye Connection to ground reference)For Auto, this is automatically set to the X bus.
 
-    DSS property name: `BusNH`, DSS property index: 2.
+    Name: `BusNH`
     """
 
     def _get_BusX(self) -> str:
@@ -126,7 +126,7 @@ class GICTransformer(DSSObj, CircuitElementMixin, PDElementMixin):
     """
     Name of Low-side(X) bus, if type=Auto or YY. 
 
-    DSS property name: `BusX`, DSS property index: 3.
+    Name: `BusX`
     """
 
     def _get_BusNX(self) -> str:
@@ -139,7 +139,7 @@ class GICTransformer(DSSObj, CircuitElementMixin, PDElementMixin):
     """
     Name of Neutral bus for X, or Second, winding. Defaults to all phases connected to X-side bus, node 0, if not specified. (Shunt Wye Connection to ground reference)
 
-    DSS property name: `BusNX`, DSS property index: 4.
+    Name: `BusNX`
     """
 
     def _get_Phases(self) -> int:
@@ -150,9 +150,10 @@ class GICTransformer(DSSObj, CircuitElementMixin, PDElementMixin):
 
     Phases = property(_get_Phases, _set_Phases) # type: int
     """
-    Number of Phases. Default is 3.
+    Number of Phases.
 
-    DSS property name: `Phases`, DSS property index: 5.
+    Name: `Phases`
+    Default: 3
     """
 
     def _get_Type(self) -> enums.GICTransformerType:
@@ -166,9 +167,10 @@ class GICTransformer(DSSObj, CircuitElementMixin, PDElementMixin):
 
     Type = property(_get_Type, _set_Type) # type: enums.GICTransformerType
     """
-    Type of transformer: {GSU* | Auto | YY}. Default is GSU.
+    Type of transformer.
 
-    DSS property name: `Type`, DSS property index: 6.
+    Name: `Type`
+    Default: GSU
     """
 
     def _get_Type_str(self) -> str:
@@ -179,9 +181,10 @@ class GICTransformer(DSSObj, CircuitElementMixin, PDElementMixin):
 
     Type_str = property(_get_Type_str, _set_Type_str) # type: str
     """
-    Type of transformer: {GSU* | Auto | YY}. Default is GSU.
+    Type of transformer.
 
-    DSS property name: `Type`, DSS property index: 6.
+    Name: `Type`
+    Default: GSU
     """
 
     def _get_R1(self) -> float:
@@ -192,9 +195,11 @@ class GICTransformer(DSSObj, CircuitElementMixin, PDElementMixin):
 
     R1 = property(_get_R1, _set_R1) # type: float
     """
-    Resistance, each phase, ohms for H winding, (Series winding, if Auto). Default is 0.0001. If 
+    Resistance, each phase, for H winding, (Series winding, if Auto).
 
-    DSS property name: `R1`, DSS property index: 7.
+    Name: `R1`
+    Units: Ω
+    Default: 5.0
     """
 
     def _get_R2(self) -> float:
@@ -205,9 +210,11 @@ class GICTransformer(DSSObj, CircuitElementMixin, PDElementMixin):
 
     R2 = property(_get_R2, _set_R2) # type: float
     """
-    Resistance, each phase, ohms for X winding, (Common winding, if Auto). Default is 0.0001. 
+    Resistance, each phase, ohms for X winding, (Common winding, if Auto).
 
-    DSS property name: `R2`, DSS property index: 8.
+    Name: `R2`
+    Units: Ω
+    Default: 0.38088000000000005
     """
 
     def _get_kVLL1(self) -> float:
@@ -218,9 +225,11 @@ class GICTransformer(DSSObj, CircuitElementMixin, PDElementMixin):
 
     kVLL1 = property(_get_kVLL1, _set_kVLL1) # type: float
     """
-    Optional. kV LL rating for H winding (winding 1). Default is 500. Required if you are going to export vars for power flow analysis or enter winding resistances in percent.
+    Optional. Voltage LL rating for H winding (winding 1). Required if you are going to export vars for power flow analysis or enter winding resistances in percent.
 
-    DSS property name: `kVLL1`, DSS property index: 9.
+    Name: `kVLL1`
+    Units: kV
+    Default: 500.0
     """
 
     def _get_kVLL2(self) -> float:
@@ -231,9 +240,11 @@ class GICTransformer(DSSObj, CircuitElementMixin, PDElementMixin):
 
     kVLL2 = property(_get_kVLL2, _set_kVLL2) # type: float
     """
-    Optional. kV LL rating for X winding (winding 2). Default is 138. Required if you are going to export vars for power flow analysis or enter winding resistances in percent..
+    Optional. Voltage LL rating for X winding (winding 2). Required if you are going to export vars for power flow analysis or enter winding resistances in percent..
 
-    DSS property name: `kVLL2`, DSS property index: 10.
+    Name: `kVLL2`
+    Units: kV
+    Default: 138.0
     """
 
     def _get_MVA(self) -> float:
@@ -244,9 +255,11 @@ class GICTransformer(DSSObj, CircuitElementMixin, PDElementMixin):
 
     MVA = property(_get_MVA, _set_MVA) # type: float
     """
-    Optional. MVA Rating assumed Transformer. Default is 100. Used for computing vars due to GIC and winding resistances if kV and MVA ratings are specified.
+    Optional. MVA Rating assumed Transformer. Used for computing vars due to GIC and winding resistances if kV and MVA ratings are specified.
 
-    DSS property name: `MVA`, DSS property index: 11.
+    Name: `MVA`
+    Units: MVA
+    Default: 100.0
     """
 
     def _get_VarCurve_str(self) -> str:
@@ -259,7 +272,7 @@ class GICTransformer(DSSObj, CircuitElementMixin, PDElementMixin):
     """
     Optional. XYCurve object name. Curve is expected as TOTAL pu vars vs pu GIC amps/phase. Vars are in pu of the MVA property. No Default value. Required only if you are going to export vars for power flow analysis. See K property.
 
-    DSS property name: `VarCurve`, DSS property index: 12.
+    Name: `VarCurve`
     """
 
     def _get_VarCurve(self) -> XYcurve:
@@ -276,7 +289,7 @@ class GICTransformer(DSSObj, CircuitElementMixin, PDElementMixin):
     """
     Optional. XYCurve object name. Curve is expected as TOTAL pu vars vs pu GIC amps/phase. Vars are in pu of the MVA property. No Default value. Required only if you are going to export vars for power flow analysis. See K property.
 
-    DSS property name: `VarCurve`, DSS property index: 12.
+    Name: `VarCurve`
     """
 
     def _get_pctR1(self) -> float:
@@ -287,11 +300,11 @@ class GICTransformer(DSSObj, CircuitElementMixin, PDElementMixin):
 
     pctR1 = property(_get_pctR1, _set_pctR1) # type: float
     """
-    Optional. Percent Resistance, each phase, for H winding (1), (Series winding, if Auto). Default is 0.2. 
+    Optional. Percent Resistance, each phase, for H winding (1), (Series winding, if Auto).
 
     Alternative way to enter R1 value. It is the actual resistances in ohmns that matter. MVA and kV should be specified.
 
-    DSS property name: `%R1`, DSS property index: 13.
+    Name: `%R1`
     """
 
     def _get_pctR2(self) -> float:
@@ -302,11 +315,11 @@ class GICTransformer(DSSObj, CircuitElementMixin, PDElementMixin):
 
     pctR2 = property(_get_pctR2, _set_pctR2) # type: float
     """
-    Optional. Percent Resistance, each phase, for X winding (2), (Common winding, if Auto). Default is 0.2. 
+    Optional. Percent Resistance, each phase, for X winding (2), (Common winding, if Auto).
 
     Alternative way to enter R2 value. It is the actual resistances in ohms that matter. MVA and kV should be specified.
 
-    DSS property name: `%R2`, DSS property index: 14.
+    Name: `%R2`
     """
 
     def _get_K(self) -> float:
@@ -317,13 +330,14 @@ class GICTransformer(DSSObj, CircuitElementMixin, PDElementMixin):
 
     K = property(_get_K, _set_K) # type: float
     """
-    Mvar K factor. Default way to convert GIC Amps in H winding (winding 1) to Mvar. Default is 2.2. Commonly-used simple multiplier for estimating Mvar losses for power flow analysis. 
+    Mvar K factor. Default way to convert GIC Amps in H winding (winding 1) to Mvar. Commonly-used simple multiplier for estimating Mvar losses for power flow analysis. 
 
-    Mvar = K * kvLL * GIC per phase / 1000 
+    Mvar = K × kvLL × (GIC per phase) / 1000 
 
     Mutually exclusive with using the VarCurve property and pu curves.If you specify this (default), VarCurve is ignored.
 
-    DSS property name: `K`, DSS property index: 15.
+    Name: `K`
+    Default: 2.2
     """
 
     def _get_NormAmps(self) -> float:
@@ -336,7 +350,8 @@ class GICTransformer(DSSObj, CircuitElementMixin, PDElementMixin):
     """
     Normal rated current.
 
-    DSS property name: `NormAmps`, DSS property index: 16.
+    Name: `NormAmps`
+    Default: 0.0
     """
 
     def _get_EmergAmps(self) -> float:
@@ -347,9 +362,10 @@ class GICTransformer(DSSObj, CircuitElementMixin, PDElementMixin):
 
     EmergAmps = property(_get_EmergAmps, _set_EmergAmps) # type: float
     """
-    Maximum or emerg current.
+    Maximum or emergency current rating.
 
-    DSS property name: `EmergAmps`, DSS property index: 17.
+    Name: `EmergAmps`
+    Default: 0.0
     """
 
     def _get_FaultRate(self) -> float:
@@ -362,7 +378,8 @@ class GICTransformer(DSSObj, CircuitElementMixin, PDElementMixin):
     """
     Failure rate per year.
 
-    DSS property name: `FaultRate`, DSS property index: 18.
+    Name: `FaultRate`
+    Default: 0.0
     """
 
     def _get_pctPerm(self) -> float:
@@ -375,7 +392,8 @@ class GICTransformer(DSSObj, CircuitElementMixin, PDElementMixin):
     """
     Percent of failures that become permanent.
 
-    DSS property name: `pctPerm`, DSS property index: 19.
+    Name: `pctPerm`
+    Default: 100.0
     """
 
     def _get_Repair(self) -> float:
@@ -388,7 +406,8 @@ class GICTransformer(DSSObj, CircuitElementMixin, PDElementMixin):
     """
     Hours to repair.
 
-    DSS property name: `Repair`, DSS property index: 20.
+    Name: `Repair`
+    Default: 0.0
     """
 
     def _get_BaseFreq(self) -> float:
@@ -401,7 +420,8 @@ class GICTransformer(DSSObj, CircuitElementMixin, PDElementMixin):
     """
     Base Frequency for ratings.
 
-    DSS property name: `BaseFreq`, DSS property index: 21.
+    Name: `BaseFreq`
+    Units: Hz
     """
 
     def _get_Enabled(self) -> bool:
@@ -412,9 +432,10 @@ class GICTransformer(DSSObj, CircuitElementMixin, PDElementMixin):
 
     Enabled = property(_get_Enabled, _set_Enabled) # type: bool
     """
-    {Yes|No or True|False} Indicates whether this element is enabled.
+    Indicates whether this element is enabled.
 
-    DSS property name: `Enabled`, DSS property index: 22.
+    Name: `Enabled`
+    Default: True
     """
 
     def Like(self, value: AnyStr):
@@ -423,7 +444,9 @@ class GICTransformer(DSSObj, CircuitElementMixin, PDElementMixin):
 
         New Capacitor.C2 like=c1  ...
 
-        DSS property name: `Like`, DSS property index: 23.
+        **Deprecated:** `Like` has been deprecated since at least 2021, see https://sourceforge.net/p/electricdss/discussion/861977/thread/8b59d21eb6/#b57c/f668
+
+        Name: `Like`
         """
         self._set_string_o(23, value)
 
@@ -456,7 +479,7 @@ class GICTransformerProperties(TypedDict):
 class GICTransformerBatch(DSSBatch, CircuitElementBatchMixin, PDElementBatchMixin):
     _cls_name = 'GICTransformer'
     _obj_cls = GICTransformer
-    _cls_idx = 45
+    _cls_idx = 46
     __slots__ = []
 
     def __init__(self, api_util, **kwargs):
@@ -497,7 +520,7 @@ class GICTransformerBatch(DSSBatch, CircuitElementBatchMixin, PDElementBatchMixi
     BusH=busname
     BusH=busname.1.2.3
 
-    DSS property name: `BusH`, DSS property index: 1.
+    Name: `BusH`
     """
 
     def _get_BusNH(self) -> List[str]:
@@ -510,7 +533,7 @@ class GICTransformerBatch(DSSBatch, CircuitElementBatchMixin, PDElementBatchMixi
     """
     Name of Neutral bus for H, or first, winding. Defaults to all phases connected to H-side bus, node 0, if not specified and transformer type is either GSU or YY. (Shunt Wye Connection to ground reference)For Auto, this is automatically set to the X bus.
 
-    DSS property name: `BusNH`, DSS property index: 2.
+    Name: `BusNH`
     """
 
     def _get_BusX(self) -> List[str]:
@@ -523,7 +546,7 @@ class GICTransformerBatch(DSSBatch, CircuitElementBatchMixin, PDElementBatchMixi
     """
     Name of Low-side(X) bus, if type=Auto or YY. 
 
-    DSS property name: `BusX`, DSS property index: 3.
+    Name: `BusX`
     """
 
     def _get_BusNX(self) -> List[str]:
@@ -536,7 +559,7 @@ class GICTransformerBatch(DSSBatch, CircuitElementBatchMixin, PDElementBatchMixi
     """
     Name of Neutral bus for X, or Second, winding. Defaults to all phases connected to X-side bus, node 0, if not specified. (Shunt Wye Connection to ground reference)
 
-    DSS property name: `BusNX`, DSS property index: 4.
+    Name: `BusNX`
     """
 
     def _get_Phases(self) -> BatchInt32ArrayProxy:
@@ -547,9 +570,10 @@ class GICTransformerBatch(DSSBatch, CircuitElementBatchMixin, PDElementBatchMixi
 
     Phases = property(_get_Phases, _set_Phases) # type: BatchInt32ArrayProxy
     """
-    Number of Phases. Default is 3.
+    Number of Phases.
 
-    DSS property name: `Phases`, DSS property index: 5.
+    Name: `Phases`
+    Default: 3
     """
 
     def _get_Type(self) -> BatchInt32ArrayProxy:
@@ -564,9 +588,10 @@ class GICTransformerBatch(DSSBatch, CircuitElementBatchMixin, PDElementBatchMixi
 
     Type = property(_get_Type, _set_Type) # type: BatchInt32ArrayProxy
     """
-    Type of transformer: {GSU* | Auto | YY}. Default is GSU.
+    Type of transformer.
 
-    DSS property name: `Type`, DSS property index: 6.
+    Name: `Type`
+    Default: GSU
     """
 
     def _get_Type_str(self) -> List[str]:
@@ -577,9 +602,10 @@ class GICTransformerBatch(DSSBatch, CircuitElementBatchMixin, PDElementBatchMixi
 
     Type_str = property(_get_Type_str, _set_Type_str) # type: List[str]
     """
-    Type of transformer: {GSU* | Auto | YY}. Default is GSU.
+    Type of transformer.
 
-    DSS property name: `Type`, DSS property index: 6.
+    Name: `Type`
+    Default: GSU
     """
 
     def _get_R1(self) -> BatchFloat64ArrayProxy:
@@ -590,9 +616,11 @@ class GICTransformerBatch(DSSBatch, CircuitElementBatchMixin, PDElementBatchMixi
 
     R1 = property(_get_R1, _set_R1) # type: BatchFloat64ArrayProxy
     """
-    Resistance, each phase, ohms for H winding, (Series winding, if Auto). Default is 0.0001. If 
+    Resistance, each phase, for H winding, (Series winding, if Auto).
 
-    DSS property name: `R1`, DSS property index: 7.
+    Name: `R1`
+    Units: Ω
+    Default: 5.0
     """
 
     def _get_R2(self) -> BatchFloat64ArrayProxy:
@@ -603,9 +631,11 @@ class GICTransformerBatch(DSSBatch, CircuitElementBatchMixin, PDElementBatchMixi
 
     R2 = property(_get_R2, _set_R2) # type: BatchFloat64ArrayProxy
     """
-    Resistance, each phase, ohms for X winding, (Common winding, if Auto). Default is 0.0001. 
+    Resistance, each phase, ohms for X winding, (Common winding, if Auto).
 
-    DSS property name: `R2`, DSS property index: 8.
+    Name: `R2`
+    Units: Ω
+    Default: 0.38088000000000005
     """
 
     def _get_kVLL1(self) -> BatchFloat64ArrayProxy:
@@ -616,9 +646,11 @@ class GICTransformerBatch(DSSBatch, CircuitElementBatchMixin, PDElementBatchMixi
 
     kVLL1 = property(_get_kVLL1, _set_kVLL1) # type: BatchFloat64ArrayProxy
     """
-    Optional. kV LL rating for H winding (winding 1). Default is 500. Required if you are going to export vars for power flow analysis or enter winding resistances in percent.
+    Optional. Voltage LL rating for H winding (winding 1). Required if you are going to export vars for power flow analysis or enter winding resistances in percent.
 
-    DSS property name: `kVLL1`, DSS property index: 9.
+    Name: `kVLL1`
+    Units: kV
+    Default: 500.0
     """
 
     def _get_kVLL2(self) -> BatchFloat64ArrayProxy:
@@ -629,9 +661,11 @@ class GICTransformerBatch(DSSBatch, CircuitElementBatchMixin, PDElementBatchMixi
 
     kVLL2 = property(_get_kVLL2, _set_kVLL2) # type: BatchFloat64ArrayProxy
     """
-    Optional. kV LL rating for X winding (winding 2). Default is 138. Required if you are going to export vars for power flow analysis or enter winding resistances in percent..
+    Optional. Voltage LL rating for X winding (winding 2). Required if you are going to export vars for power flow analysis or enter winding resistances in percent..
 
-    DSS property name: `kVLL2`, DSS property index: 10.
+    Name: `kVLL2`
+    Units: kV
+    Default: 138.0
     """
 
     def _get_MVA(self) -> BatchFloat64ArrayProxy:
@@ -642,9 +676,11 @@ class GICTransformerBatch(DSSBatch, CircuitElementBatchMixin, PDElementBatchMixi
 
     MVA = property(_get_MVA, _set_MVA) # type: BatchFloat64ArrayProxy
     """
-    Optional. MVA Rating assumed Transformer. Default is 100. Used for computing vars due to GIC and winding resistances if kV and MVA ratings are specified.
+    Optional. MVA Rating assumed Transformer. Used for computing vars due to GIC and winding resistances if kV and MVA ratings are specified.
 
-    DSS property name: `MVA`, DSS property index: 11.
+    Name: `MVA`
+    Units: MVA
+    Default: 100.0
     """
 
     def _get_VarCurve_str(self) -> List[str]:
@@ -657,7 +693,7 @@ class GICTransformerBatch(DSSBatch, CircuitElementBatchMixin, PDElementBatchMixi
     """
     Optional. XYCurve object name. Curve is expected as TOTAL pu vars vs pu GIC amps/phase. Vars are in pu of the MVA property. No Default value. Required only if you are going to export vars for power flow analysis. See K property.
 
-    DSS property name: `VarCurve`, DSS property index: 12.
+    Name: `VarCurve`
     """
 
     def _get_VarCurve(self) -> List[XYcurve]:
@@ -670,7 +706,7 @@ class GICTransformerBatch(DSSBatch, CircuitElementBatchMixin, PDElementBatchMixi
     """
     Optional. XYCurve object name. Curve is expected as TOTAL pu vars vs pu GIC amps/phase. Vars are in pu of the MVA property. No Default value. Required only if you are going to export vars for power flow analysis. See K property.
 
-    DSS property name: `VarCurve`, DSS property index: 12.
+    Name: `VarCurve`
     """
 
     def _get_pctR1(self) -> BatchFloat64ArrayProxy:
@@ -681,11 +717,11 @@ class GICTransformerBatch(DSSBatch, CircuitElementBatchMixin, PDElementBatchMixi
 
     pctR1 = property(_get_pctR1, _set_pctR1) # type: BatchFloat64ArrayProxy
     """
-    Optional. Percent Resistance, each phase, for H winding (1), (Series winding, if Auto). Default is 0.2. 
+    Optional. Percent Resistance, each phase, for H winding (1), (Series winding, if Auto).
 
     Alternative way to enter R1 value. It is the actual resistances in ohmns that matter. MVA and kV should be specified.
 
-    DSS property name: `%R1`, DSS property index: 13.
+    Name: `%R1`
     """
 
     def _get_pctR2(self) -> BatchFloat64ArrayProxy:
@@ -696,11 +732,11 @@ class GICTransformerBatch(DSSBatch, CircuitElementBatchMixin, PDElementBatchMixi
 
     pctR2 = property(_get_pctR2, _set_pctR2) # type: BatchFloat64ArrayProxy
     """
-    Optional. Percent Resistance, each phase, for X winding (2), (Common winding, if Auto). Default is 0.2. 
+    Optional. Percent Resistance, each phase, for X winding (2), (Common winding, if Auto).
 
     Alternative way to enter R2 value. It is the actual resistances in ohms that matter. MVA and kV should be specified.
 
-    DSS property name: `%R2`, DSS property index: 14.
+    Name: `%R2`
     """
 
     def _get_K(self) -> BatchFloat64ArrayProxy:
@@ -711,13 +747,14 @@ class GICTransformerBatch(DSSBatch, CircuitElementBatchMixin, PDElementBatchMixi
 
     K = property(_get_K, _set_K) # type: BatchFloat64ArrayProxy
     """
-    Mvar K factor. Default way to convert GIC Amps in H winding (winding 1) to Mvar. Default is 2.2. Commonly-used simple multiplier for estimating Mvar losses for power flow analysis. 
+    Mvar K factor. Default way to convert GIC Amps in H winding (winding 1) to Mvar. Commonly-used simple multiplier for estimating Mvar losses for power flow analysis. 
 
-    Mvar = K * kvLL * GIC per phase / 1000 
+    Mvar = K × kvLL × (GIC per phase) / 1000 
 
     Mutually exclusive with using the VarCurve property and pu curves.If you specify this (default), VarCurve is ignored.
 
-    DSS property name: `K`, DSS property index: 15.
+    Name: `K`
+    Default: 2.2
     """
 
     def _get_NormAmps(self) -> BatchFloat64ArrayProxy:
@@ -730,7 +767,8 @@ class GICTransformerBatch(DSSBatch, CircuitElementBatchMixin, PDElementBatchMixi
     """
     Normal rated current.
 
-    DSS property name: `NormAmps`, DSS property index: 16.
+    Name: `NormAmps`
+    Default: 0.0
     """
 
     def _get_EmergAmps(self) -> BatchFloat64ArrayProxy:
@@ -741,9 +779,10 @@ class GICTransformerBatch(DSSBatch, CircuitElementBatchMixin, PDElementBatchMixi
 
     EmergAmps = property(_get_EmergAmps, _set_EmergAmps) # type: BatchFloat64ArrayProxy
     """
-    Maximum or emerg current.
+    Maximum or emergency current rating.
 
-    DSS property name: `EmergAmps`, DSS property index: 17.
+    Name: `EmergAmps`
+    Default: 0.0
     """
 
     def _get_FaultRate(self) -> BatchFloat64ArrayProxy:
@@ -756,7 +795,8 @@ class GICTransformerBatch(DSSBatch, CircuitElementBatchMixin, PDElementBatchMixi
     """
     Failure rate per year.
 
-    DSS property name: `FaultRate`, DSS property index: 18.
+    Name: `FaultRate`
+    Default: 0.0
     """
 
     def _get_pctPerm(self) -> BatchFloat64ArrayProxy:
@@ -769,7 +809,8 @@ class GICTransformerBatch(DSSBatch, CircuitElementBatchMixin, PDElementBatchMixi
     """
     Percent of failures that become permanent.
 
-    DSS property name: `pctPerm`, DSS property index: 19.
+    Name: `pctPerm`
+    Default: 100.0
     """
 
     def _get_Repair(self) -> BatchFloat64ArrayProxy:
@@ -782,7 +823,8 @@ class GICTransformerBatch(DSSBatch, CircuitElementBatchMixin, PDElementBatchMixi
     """
     Hours to repair.
 
-    DSS property name: `Repair`, DSS property index: 20.
+    Name: `Repair`
+    Default: 0.0
     """
 
     def _get_BaseFreq(self) -> BatchFloat64ArrayProxy:
@@ -795,7 +837,8 @@ class GICTransformerBatch(DSSBatch, CircuitElementBatchMixin, PDElementBatchMixi
     """
     Base Frequency for ratings.
 
-    DSS property name: `BaseFreq`, DSS property index: 21.
+    Name: `BaseFreq`
+    Units: Hz
     """
 
     def _get_Enabled(self) -> List[bool]:
@@ -808,9 +851,10 @@ class GICTransformerBatch(DSSBatch, CircuitElementBatchMixin, PDElementBatchMixi
 
     Enabled = property(_get_Enabled, _set_Enabled) # type: List[bool]
     """
-    {Yes|No or True|False} Indicates whether this element is enabled.
+    Indicates whether this element is enabled.
 
-    DSS property name: `Enabled`, DSS property index: 22.
+    Name: `Enabled`
+    Default: True
     """
 
     def Like(self, value: AnyStr, flags: enums.SetterFlags = 0):
@@ -819,7 +863,9 @@ class GICTransformerBatch(DSSBatch, CircuitElementBatchMixin, PDElementBatchMixi
 
         New Capacitor.C2 like=c1  ...
 
-        DSS property name: `Like`, DSS property index: 23.
+        **Deprecated:** `Like` has been deprecated since at least 2021, see https://sourceforge.net/p/electricdss/discussion/861977/thread/8b59d21eb6/#b57c/f668
+
+        Name: `Like`
         """
         self._set_batch_string(23, value, flags)
 

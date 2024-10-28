@@ -16,7 +16,7 @@ from .Spectrum import Spectrum as SpectrumObj
 class VSConverter(DSSObj, CircuitElementMixin, PCElementMixin):
     __slots__ = DSSObj._extra_slots + CircuitElementMixin._extra_slots + PCElementMixin._extra_slots
     _cls_name = 'VSConverter'
-    _cls_idx = 46
+    _cls_idx = 47
     _cls_int_idx = {
         1,
         6,
@@ -97,9 +97,10 @@ class VSConverter(DSSObj, CircuitElementMixin, PCElementMixin):
 
     Phases = property(_get_Phases, _set_Phases) # type: int
     """
-    Number of AC plus DC conductors. Default is 4. AC phases numbered before DC conductors.
+    Number of AC plus DC conductors. AC phases numbered before DC conductors.
 
-    DSS property name: `Phases`, DSS property index: 1.
+    Name: `Phases`
+    Default: 4
     """
 
     def _get_Bus1(self) -> str:
@@ -112,7 +113,7 @@ class VSConverter(DSSObj, CircuitElementMixin, PCElementMixin):
     """
     Name of converter bus, containing both AC and DC conductors. Bus2 is always ground.
 
-    DSS property name: `Bus1`, DSS property index: 2.
+    Name: `Bus1`
     """
 
     def _get_kVAC(self) -> float:
@@ -125,7 +126,8 @@ class VSConverter(DSSObj, CircuitElementMixin, PCElementMixin):
     """
     Nominal AC line-neutral voltage in kV. Must be specified > 0.
 
-    DSS property name: `kVAC`, DSS property index: 3.
+    Name: `kVAC`
+    Default: 1.0
     """
 
     def _get_kVDC(self) -> float:
@@ -138,7 +140,8 @@ class VSConverter(DSSObj, CircuitElementMixin, PCElementMixin):
     """
     Nominal DC voltage in kV. Must be specified > 0.
 
-    DSS property name: `kVDC`, DSS property index: 4.
+    Name: `kVDC`
+    Default: 1.0
     """
 
     def _get_kW(self) -> float:
@@ -151,7 +154,8 @@ class VSConverter(DSSObj, CircuitElementMixin, PCElementMixin):
     """
     Nominal converter power in kW. Must be specified > 0.
 
-    DSS property name: `kW`, DSS property index: 5.
+    Name: `kW`
+    Default: 1.0
     """
 
     def _get_NDC(self) -> int:
@@ -162,9 +166,10 @@ class VSConverter(DSSObj, CircuitElementMixin, PCElementMixin):
 
     NDC = property(_get_NDC, _set_NDC) # type: int
     """
-    Number of DC conductors. Default is 1. DC conductors numbered after AC phases.
+    Number of DC conductors. DC conductors numbered after AC phases.
 
-    DSS property name: `NDC`, DSS property index: 6.
+    Name: `NDC`
+    Default: 1
     """
 
     def _get_RAC(self) -> float:
@@ -175,10 +180,12 @@ class VSConverter(DSSObj, CircuitElementMixin, PCElementMixin):
 
     RAC = property(_get_RAC, _set_RAC) # type: float
     """
-    AC resistance (ohms) for the converter transformer, plus any series reactors. Default is 0.
+    AC resistance for the converter transformer, plus any series reactors.
     Must be 0 for Vac control mode.
 
-    DSS property name: `RAC`, DSS property index: 7.
+    Name: `RAC`
+    Units: Ω
+    Default: 1e-12
     """
 
     def _get_XAC(self) -> float:
@@ -189,10 +196,12 @@ class VSConverter(DSSObj, CircuitElementMixin, PCElementMixin):
 
     XAC = property(_get_XAC, _set_XAC) # type: float
     """
-    AC reactance (ohms) for the converter transformer, plus any series reactors. Default is 0.
+    AC reactance for the converter transformer, plus any series reactors.
     Must be 0 for Vac control mode. Must be >0 for PacVac, PacQac or VacVdc control mode.
 
-    DSS property name: `XAC`, DSS property index: 8.
+    Name: `XAC`
+    Units: Ω
+    Default: 0.0
     """
 
     def _get_M0(self) -> float:
@@ -203,9 +212,10 @@ class VSConverter(DSSObj, CircuitElementMixin, PCElementMixin):
 
     M0 = property(_get_M0, _set_M0) # type: float
     """
-    Fixed or initial value of the modulation index. Default is 0.5.
+    Fixed or initial value of the modulation index.
 
-    DSS property name: `M0`, DSS property index: 9.
+    Name: `M0`
+    Default: 0.5
     """
 
     def _get_d0(self) -> float:
@@ -216,9 +226,10 @@ class VSConverter(DSSObj, CircuitElementMixin, PCElementMixin):
 
     d0 = property(_get_d0, _set_d0) # type: float
     """
-    Fixed or initial value of the power angle in degrees. Default is 0.
+    Fixed or initial value of the power angle in degrees.
 
-    DSS property name: `d0`, DSS property index: 10.
+    Name: `d0`
+    Default: 0.0
     """
 
     def _get_MMin(self) -> float:
@@ -229,9 +240,10 @@ class VSConverter(DSSObj, CircuitElementMixin, PCElementMixin):
 
     MMin = property(_get_MMin, _set_MMin) # type: float
     """
-    Minimum value of modulation index. Default is 0.1.
+    Minimum value of modulation index.
 
-    DSS property name: `MMin`, DSS property index: 11.
+    Name: `MMin`
+    Default: 0.1
     """
 
     def _get_MMax(self) -> float:
@@ -242,9 +254,10 @@ class VSConverter(DSSObj, CircuitElementMixin, PCElementMixin):
 
     MMax = property(_get_MMax, _set_MMax) # type: float
     """
-    Maximum value of modulation index. Default is 0.9.
+    Maximum value of modulation index.
 
-    DSS property name: `MMax`, DSS property index: 12.
+    Name: `MMax`
+    Default: 0.9
     """
 
     def _get_IACMax(self) -> float:
@@ -255,9 +268,10 @@ class VSConverter(DSSObj, CircuitElementMixin, PCElementMixin):
 
     IACMax = property(_get_IACMax, _set_IACMax) # type: float
     """
-    Maximum value of AC line current, per-unit of nominal. Default is 2.
+    Maximum value of AC line current, per-unit of nominal.
 
-    DSS property name: `IACMax`, DSS property index: 13.
+    Name: `IACMax`
+    Default: 2.0
     """
 
     def _get_IDCMax(self) -> float:
@@ -268,9 +282,10 @@ class VSConverter(DSSObj, CircuitElementMixin, PCElementMixin):
 
     IDCMax = property(_get_IDCMax, _set_IDCMax) # type: float
     """
-    Maximum value of DC current, per-unit of nominal. Default is 2.
+    Maximum value of DC current, per-unit of nominal.
 
-    DSS property name: `IDCMax`, DSS property index: 14.
+    Name: `IDCMax`
+    Default: 2.0
     """
 
     def _get_VACRef(self) -> float:
@@ -281,10 +296,11 @@ class VSConverter(DSSObj, CircuitElementMixin, PCElementMixin):
 
     VACRef = property(_get_VACRef, _set_VACRef) # type: float
     """
-    Reference AC line-to-neutral voltage, RMS Volts. Default is 0.
+    Reference AC line-to-neutral voltage, RMS Volts.
     Applies to PacVac and VdcVac control modes, influencing m.
 
-    DSS property name: `VACRef`, DSS property index: 15.
+    Name: `VACRef`
+    Default: 0.0
     """
 
     def _get_PACRef(self) -> float:
@@ -295,10 +311,11 @@ class VSConverter(DSSObj, CircuitElementMixin, PCElementMixin):
 
     PACRef = property(_get_PACRef, _set_PACRef) # type: float
     """
-    Reference total AC real power, Watts. Default is 0.
+    Reference total AC real power, Watts.
     Applies to PacVac and PacQac control modes, influencing d.
 
-    DSS property name: `PACRef`, DSS property index: 16.
+    Name: `PACRef`
+    Default: 0.0
     """
 
     def _get_QACRef(self) -> float:
@@ -309,10 +326,11 @@ class VSConverter(DSSObj, CircuitElementMixin, PCElementMixin):
 
     QACRef = property(_get_QACRef, _set_QACRef) # type: float
     """
-    Reference total AC reactive power, Vars. Default is 0.
+    Reference total AC reactive power, Vars.
     Applies to PacQac and VdcQac control modes, influencing m.
 
-    DSS property name: `QACRef`, DSS property index: 17.
+    Name: `QACRef`
+    Default: 0.0
     """
 
     def _get_VDCRef(self) -> float:
@@ -323,10 +341,11 @@ class VSConverter(DSSObj, CircuitElementMixin, PCElementMixin):
 
     VDCRef = property(_get_VDCRef, _set_VDCRef) # type: float
     """
-    Reference DC voltage, Volts. Default is 0.
+    Reference DC voltage, Volts.
     Applies to VdcVac control mode, influencing d.
 
-    DSS property name: `VDCRef`, DSS property index: 18.
+    Name: `VDCRef`
+    Default: 0.0
     """
 
     def _get_VSCMode(self) -> enums.VSConverterControlMode:
@@ -340,9 +359,10 @@ class VSConverter(DSSObj, CircuitElementMixin, PCElementMixin):
 
     VSCMode = property(_get_VSCMode, _set_VSCMode) # type: enums.VSConverterControlMode
     """
-    Control Mode (Fixed|PacVac|PacQac|VdcVac|VdcQac). Default is Fixed.
+    Control Mode
 
-    DSS property name: `VSCMode`, DSS property index: 19.
+    Name: `VSCMode`
+    Default: Fixed
     """
 
     def _get_VSCMode_str(self) -> str:
@@ -353,9 +373,10 @@ class VSConverter(DSSObj, CircuitElementMixin, PCElementMixin):
 
     VSCMode_str = property(_get_VSCMode_str, _set_VSCMode_str) # type: str
     """
-    Control Mode (Fixed|PacVac|PacQac|VdcVac|VdcQac). Default is Fixed.
+    Control Mode
 
-    DSS property name: `VSCMode`, DSS property index: 19.
+    Name: `VSCMode`
+    Default: Fixed
     """
 
     def _get_Spectrum_str(self) -> str:
@@ -368,7 +389,8 @@ class VSConverter(DSSObj, CircuitElementMixin, PCElementMixin):
     """
     Name of harmonic spectrum for this device.
 
-    DSS property name: `Spectrum`, DSS property index: 20.
+    Name: `Spectrum`
+    Default: default
     """
 
     def _get_Spectrum(self) -> SpectrumObj:
@@ -385,7 +407,8 @@ class VSConverter(DSSObj, CircuitElementMixin, PCElementMixin):
     """
     Name of harmonic spectrum for this device.
 
-    DSS property name: `Spectrum`, DSS property index: 20.
+    Name: `Spectrum`
+    Default: default
     """
 
     def _get_BaseFreq(self) -> float:
@@ -398,7 +421,8 @@ class VSConverter(DSSObj, CircuitElementMixin, PCElementMixin):
     """
     Base Frequency for ratings.
 
-    DSS property name: `BaseFreq`, DSS property index: 21.
+    Name: `BaseFreq`
+    Units: Hz
     """
 
     def _get_Enabled(self) -> bool:
@@ -409,9 +433,10 @@ class VSConverter(DSSObj, CircuitElementMixin, PCElementMixin):
 
     Enabled = property(_get_Enabled, _set_Enabled) # type: bool
     """
-    {Yes|No or True|False} Indicates whether this element is enabled.
+    Indicates whether this element is enabled.
 
-    DSS property name: `Enabled`, DSS property index: 22.
+    Name: `Enabled`
+    Default: True
     """
 
     def Like(self, value: AnyStr):
@@ -420,7 +445,9 @@ class VSConverter(DSSObj, CircuitElementMixin, PCElementMixin):
 
         New Capacitor.C2 like=c1  ...
 
-        DSS property name: `Like`, DSS property index: 23.
+        **Deprecated:** `Like` has been deprecated since at least 2021, see https://sourceforge.net/p/electricdss/discussion/861977/thread/8b59d21eb6/#b57c/f668
+
+        Name: `Like`
         """
         self._set_string_o(23, value)
 
@@ -453,7 +480,7 @@ class VSConverterProperties(TypedDict):
 class VSConverterBatch(DSSBatch, CircuitElementBatchMixin, PCElementBatchMixin):
     _cls_name = 'VSConverter'
     _obj_cls = VSConverter
-    _cls_idx = 46
+    _cls_idx = 47
     __slots__ = []
 
     def __init__(self, api_util, **kwargs):
@@ -490,9 +517,10 @@ class VSConverterBatch(DSSBatch, CircuitElementBatchMixin, PCElementBatchMixin):
 
     Phases = property(_get_Phases, _set_Phases) # type: BatchInt32ArrayProxy
     """
-    Number of AC plus DC conductors. Default is 4. AC phases numbered before DC conductors.
+    Number of AC plus DC conductors. AC phases numbered before DC conductors.
 
-    DSS property name: `Phases`, DSS property index: 1.
+    Name: `Phases`
+    Default: 4
     """
 
     def _get_Bus1(self) -> List[str]:
@@ -505,7 +533,7 @@ class VSConverterBatch(DSSBatch, CircuitElementBatchMixin, PCElementBatchMixin):
     """
     Name of converter bus, containing both AC and DC conductors. Bus2 is always ground.
 
-    DSS property name: `Bus1`, DSS property index: 2.
+    Name: `Bus1`
     """
 
     def _get_kVAC(self) -> BatchFloat64ArrayProxy:
@@ -518,7 +546,8 @@ class VSConverterBatch(DSSBatch, CircuitElementBatchMixin, PCElementBatchMixin):
     """
     Nominal AC line-neutral voltage in kV. Must be specified > 0.
 
-    DSS property name: `kVAC`, DSS property index: 3.
+    Name: `kVAC`
+    Default: 1.0
     """
 
     def _get_kVDC(self) -> BatchFloat64ArrayProxy:
@@ -531,7 +560,8 @@ class VSConverterBatch(DSSBatch, CircuitElementBatchMixin, PCElementBatchMixin):
     """
     Nominal DC voltage in kV. Must be specified > 0.
 
-    DSS property name: `kVDC`, DSS property index: 4.
+    Name: `kVDC`
+    Default: 1.0
     """
 
     def _get_kW(self) -> BatchFloat64ArrayProxy:
@@ -544,7 +574,8 @@ class VSConverterBatch(DSSBatch, CircuitElementBatchMixin, PCElementBatchMixin):
     """
     Nominal converter power in kW. Must be specified > 0.
 
-    DSS property name: `kW`, DSS property index: 5.
+    Name: `kW`
+    Default: 1.0
     """
 
     def _get_NDC(self) -> BatchInt32ArrayProxy:
@@ -555,9 +586,10 @@ class VSConverterBatch(DSSBatch, CircuitElementBatchMixin, PCElementBatchMixin):
 
     NDC = property(_get_NDC, _set_NDC) # type: BatchInt32ArrayProxy
     """
-    Number of DC conductors. Default is 1. DC conductors numbered after AC phases.
+    Number of DC conductors. DC conductors numbered after AC phases.
 
-    DSS property name: `NDC`, DSS property index: 6.
+    Name: `NDC`
+    Default: 1
     """
 
     def _get_RAC(self) -> BatchFloat64ArrayProxy:
@@ -568,10 +600,12 @@ class VSConverterBatch(DSSBatch, CircuitElementBatchMixin, PCElementBatchMixin):
 
     RAC = property(_get_RAC, _set_RAC) # type: BatchFloat64ArrayProxy
     """
-    AC resistance (ohms) for the converter transformer, plus any series reactors. Default is 0.
+    AC resistance for the converter transformer, plus any series reactors.
     Must be 0 for Vac control mode.
 
-    DSS property name: `RAC`, DSS property index: 7.
+    Name: `RAC`
+    Units: Ω
+    Default: 1e-12
     """
 
     def _get_XAC(self) -> BatchFloat64ArrayProxy:
@@ -582,10 +616,12 @@ class VSConverterBatch(DSSBatch, CircuitElementBatchMixin, PCElementBatchMixin):
 
     XAC = property(_get_XAC, _set_XAC) # type: BatchFloat64ArrayProxy
     """
-    AC reactance (ohms) for the converter transformer, plus any series reactors. Default is 0.
+    AC reactance for the converter transformer, plus any series reactors.
     Must be 0 for Vac control mode. Must be >0 for PacVac, PacQac or VacVdc control mode.
 
-    DSS property name: `XAC`, DSS property index: 8.
+    Name: `XAC`
+    Units: Ω
+    Default: 0.0
     """
 
     def _get_M0(self) -> BatchFloat64ArrayProxy:
@@ -596,9 +632,10 @@ class VSConverterBatch(DSSBatch, CircuitElementBatchMixin, PCElementBatchMixin):
 
     M0 = property(_get_M0, _set_M0) # type: BatchFloat64ArrayProxy
     """
-    Fixed or initial value of the modulation index. Default is 0.5.
+    Fixed or initial value of the modulation index.
 
-    DSS property name: `M0`, DSS property index: 9.
+    Name: `M0`
+    Default: 0.5
     """
 
     def _get_d0(self) -> BatchFloat64ArrayProxy:
@@ -609,9 +646,10 @@ class VSConverterBatch(DSSBatch, CircuitElementBatchMixin, PCElementBatchMixin):
 
     d0 = property(_get_d0, _set_d0) # type: BatchFloat64ArrayProxy
     """
-    Fixed or initial value of the power angle in degrees. Default is 0.
+    Fixed or initial value of the power angle in degrees.
 
-    DSS property name: `d0`, DSS property index: 10.
+    Name: `d0`
+    Default: 0.0
     """
 
     def _get_MMin(self) -> BatchFloat64ArrayProxy:
@@ -622,9 +660,10 @@ class VSConverterBatch(DSSBatch, CircuitElementBatchMixin, PCElementBatchMixin):
 
     MMin = property(_get_MMin, _set_MMin) # type: BatchFloat64ArrayProxy
     """
-    Minimum value of modulation index. Default is 0.1.
+    Minimum value of modulation index.
 
-    DSS property name: `MMin`, DSS property index: 11.
+    Name: `MMin`
+    Default: 0.1
     """
 
     def _get_MMax(self) -> BatchFloat64ArrayProxy:
@@ -635,9 +674,10 @@ class VSConverterBatch(DSSBatch, CircuitElementBatchMixin, PCElementBatchMixin):
 
     MMax = property(_get_MMax, _set_MMax) # type: BatchFloat64ArrayProxy
     """
-    Maximum value of modulation index. Default is 0.9.
+    Maximum value of modulation index.
 
-    DSS property name: `MMax`, DSS property index: 12.
+    Name: `MMax`
+    Default: 0.9
     """
 
     def _get_IACMax(self) -> BatchFloat64ArrayProxy:
@@ -648,9 +688,10 @@ class VSConverterBatch(DSSBatch, CircuitElementBatchMixin, PCElementBatchMixin):
 
     IACMax = property(_get_IACMax, _set_IACMax) # type: BatchFloat64ArrayProxy
     """
-    Maximum value of AC line current, per-unit of nominal. Default is 2.
+    Maximum value of AC line current, per-unit of nominal.
 
-    DSS property name: `IACMax`, DSS property index: 13.
+    Name: `IACMax`
+    Default: 2.0
     """
 
     def _get_IDCMax(self) -> BatchFloat64ArrayProxy:
@@ -661,9 +702,10 @@ class VSConverterBatch(DSSBatch, CircuitElementBatchMixin, PCElementBatchMixin):
 
     IDCMax = property(_get_IDCMax, _set_IDCMax) # type: BatchFloat64ArrayProxy
     """
-    Maximum value of DC current, per-unit of nominal. Default is 2.
+    Maximum value of DC current, per-unit of nominal.
 
-    DSS property name: `IDCMax`, DSS property index: 14.
+    Name: `IDCMax`
+    Default: 2.0
     """
 
     def _get_VACRef(self) -> BatchFloat64ArrayProxy:
@@ -674,10 +716,11 @@ class VSConverterBatch(DSSBatch, CircuitElementBatchMixin, PCElementBatchMixin):
 
     VACRef = property(_get_VACRef, _set_VACRef) # type: BatchFloat64ArrayProxy
     """
-    Reference AC line-to-neutral voltage, RMS Volts. Default is 0.
+    Reference AC line-to-neutral voltage, RMS Volts.
     Applies to PacVac and VdcVac control modes, influencing m.
 
-    DSS property name: `VACRef`, DSS property index: 15.
+    Name: `VACRef`
+    Default: 0.0
     """
 
     def _get_PACRef(self) -> BatchFloat64ArrayProxy:
@@ -688,10 +731,11 @@ class VSConverterBatch(DSSBatch, CircuitElementBatchMixin, PCElementBatchMixin):
 
     PACRef = property(_get_PACRef, _set_PACRef) # type: BatchFloat64ArrayProxy
     """
-    Reference total AC real power, Watts. Default is 0.
+    Reference total AC real power, Watts.
     Applies to PacVac and PacQac control modes, influencing d.
 
-    DSS property name: `PACRef`, DSS property index: 16.
+    Name: `PACRef`
+    Default: 0.0
     """
 
     def _get_QACRef(self) -> BatchFloat64ArrayProxy:
@@ -702,10 +746,11 @@ class VSConverterBatch(DSSBatch, CircuitElementBatchMixin, PCElementBatchMixin):
 
     QACRef = property(_get_QACRef, _set_QACRef) # type: BatchFloat64ArrayProxy
     """
-    Reference total AC reactive power, Vars. Default is 0.
+    Reference total AC reactive power, Vars.
     Applies to PacQac and VdcQac control modes, influencing m.
 
-    DSS property name: `QACRef`, DSS property index: 17.
+    Name: `QACRef`
+    Default: 0.0
     """
 
     def _get_VDCRef(self) -> BatchFloat64ArrayProxy:
@@ -716,10 +761,11 @@ class VSConverterBatch(DSSBatch, CircuitElementBatchMixin, PCElementBatchMixin):
 
     VDCRef = property(_get_VDCRef, _set_VDCRef) # type: BatchFloat64ArrayProxy
     """
-    Reference DC voltage, Volts. Default is 0.
+    Reference DC voltage, Volts.
     Applies to VdcVac control mode, influencing d.
 
-    DSS property name: `VDCRef`, DSS property index: 18.
+    Name: `VDCRef`
+    Default: 0.0
     """
 
     def _get_VSCMode(self) -> BatchInt32ArrayProxy:
@@ -734,9 +780,10 @@ class VSConverterBatch(DSSBatch, CircuitElementBatchMixin, PCElementBatchMixin):
 
     VSCMode = property(_get_VSCMode, _set_VSCMode) # type: BatchInt32ArrayProxy
     """
-    Control Mode (Fixed|PacVac|PacQac|VdcVac|VdcQac). Default is Fixed.
+    Control Mode
 
-    DSS property name: `VSCMode`, DSS property index: 19.
+    Name: `VSCMode`
+    Default: Fixed
     """
 
     def _get_VSCMode_str(self) -> List[str]:
@@ -747,9 +794,10 @@ class VSConverterBatch(DSSBatch, CircuitElementBatchMixin, PCElementBatchMixin):
 
     VSCMode_str = property(_get_VSCMode_str, _set_VSCMode_str) # type: List[str]
     """
-    Control Mode (Fixed|PacVac|PacQac|VdcVac|VdcQac). Default is Fixed.
+    Control Mode
 
-    DSS property name: `VSCMode`, DSS property index: 19.
+    Name: `VSCMode`
+    Default: Fixed
     """
 
     def _get_Spectrum_str(self) -> List[str]:
@@ -762,7 +810,8 @@ class VSConverterBatch(DSSBatch, CircuitElementBatchMixin, PCElementBatchMixin):
     """
     Name of harmonic spectrum for this device.
 
-    DSS property name: `Spectrum`, DSS property index: 20.
+    Name: `Spectrum`
+    Default: default
     """
 
     def _get_Spectrum(self) -> List[SpectrumObj]:
@@ -775,7 +824,8 @@ class VSConverterBatch(DSSBatch, CircuitElementBatchMixin, PCElementBatchMixin):
     """
     Name of harmonic spectrum for this device.
 
-    DSS property name: `Spectrum`, DSS property index: 20.
+    Name: `Spectrum`
+    Default: default
     """
 
     def _get_BaseFreq(self) -> BatchFloat64ArrayProxy:
@@ -788,7 +838,8 @@ class VSConverterBatch(DSSBatch, CircuitElementBatchMixin, PCElementBatchMixin):
     """
     Base Frequency for ratings.
 
-    DSS property name: `BaseFreq`, DSS property index: 21.
+    Name: `BaseFreq`
+    Units: Hz
     """
 
     def _get_Enabled(self) -> List[bool]:
@@ -801,9 +852,10 @@ class VSConverterBatch(DSSBatch, CircuitElementBatchMixin, PCElementBatchMixin):
 
     Enabled = property(_get_Enabled, _set_Enabled) # type: List[bool]
     """
-    {Yes|No or True|False} Indicates whether this element is enabled.
+    Indicates whether this element is enabled.
 
-    DSS property name: `Enabled`, DSS property index: 22.
+    Name: `Enabled`
+    Default: True
     """
 
     def Like(self, value: AnyStr, flags: enums.SetterFlags = 0):
@@ -812,7 +864,9 @@ class VSConverterBatch(DSSBatch, CircuitElementBatchMixin, PCElementBatchMixin):
 
         New Capacitor.C2 like=c1  ...
 
-        DSS property name: `Like`, DSS property index: 23.
+        **Deprecated:** `Like` has been deprecated since at least 2021, see https://sourceforge.net/p/electricdss/discussion/861977/thread/8b59d21eb6/#b57c/f668
+
+        Name: `Like`
         """
         self._set_batch_string(23, value, flags)
 

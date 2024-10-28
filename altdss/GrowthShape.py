@@ -56,7 +56,7 @@ class GrowthShape(DSSObj):
     """
     Number of points to expect in subsequent vector.
 
-    DSS property name: `NPts`, DSS property index: 1.
+    Name: `NPts`
     """
 
     def _get_Year(self) -> Float64Array:
@@ -69,7 +69,7 @@ class GrowthShape(DSSObj):
     """
     Array of year values, or a text file spec, corresponding to the multipliers. Enter only those years where the growth changes. May be any integer sequence -- just so it is consistent. See help on Mult.
 
-    DSS property name: `Year`, DSS property index: 2.
+    Name: `Year`
     """
 
     def _get_Mult(self) -> Float64Array:
@@ -89,7 +89,7 @@ class GrowthShape(DSSObj):
 
     Text files contain one value per line.
 
-    DSS property name: `Mult`, DSS property index: 3.
+    Name: `Mult`
     """
 
     def _get_CSVFile(self) -> str:
@@ -102,7 +102,7 @@ class GrowthShape(DSSObj):
     """
     Switch input of growth curve data to a csv file containing (year, mult) points, one per line.
 
-    DSS property name: `CSVFile`, DSS property index: 4.
+    Name: `CSVFile`
     """
 
     def _get_SngFile(self) -> str:
@@ -115,7 +115,7 @@ class GrowthShape(DSSObj):
     """
     Switch input of growth curve data to a binary file of singles containing (year, mult) points, packed one after another.
 
-    DSS property name: `SngFile`, DSS property index: 5.
+    Name: `SngFile`
     """
 
     def _get_DblFile(self) -> str:
@@ -128,7 +128,7 @@ class GrowthShape(DSSObj):
     """
     Switch input of growth curve data to a binary file of doubles containing (year, mult) points, packed one after another.
 
-    DSS property name: `DblFile`, DSS property index: 6.
+    Name: `DblFile`
     """
 
     def Like(self, value: AnyStr):
@@ -137,7 +137,9 @@ class GrowthShape(DSSObj):
 
         New Capacitor.C2 like=c1  ...
 
-        DSS property name: `Like`, DSS property index: 7.
+        **Deprecated:** `Like` has been deprecated since at least 2021, see https://sourceforge.net/p/electricdss/discussion/861977/thread/8b59d21eb6/#b57c/f668
+
+        Name: `Like`
         """
         self._set_string_o(7, value)
 
@@ -189,7 +191,7 @@ class GrowthShapeBatch(DSSBatch):
     """
     Number of points to expect in subsequent vector.
 
-    DSS property name: `NPts`, DSS property index: 1.
+    Name: `NPts`
     """
 
     def _get_Year(self) -> List[Float64Array]:
@@ -205,7 +207,7 @@ class GrowthShapeBatch(DSSBatch):
     """
     Array of year values, or a text file spec, corresponding to the multipliers. Enter only those years where the growth changes. May be any integer sequence -- just so it is consistent. See help on Mult.
 
-    DSS property name: `Year`, DSS property index: 2.
+    Name: `Year`
     """
 
     def _get_Mult(self) -> List[Float64Array]:
@@ -228,7 +230,7 @@ class GrowthShapeBatch(DSSBatch):
 
     Text files contain one value per line.
 
-    DSS property name: `Mult`, DSS property index: 3.
+    Name: `Mult`
     """
 
     def _get_CSVFile(self) -> List[str]:
@@ -241,7 +243,7 @@ class GrowthShapeBatch(DSSBatch):
     """
     Switch input of growth curve data to a csv file containing (year, mult) points, one per line.
 
-    DSS property name: `CSVFile`, DSS property index: 4.
+    Name: `CSVFile`
     """
 
     def _get_SngFile(self) -> List[str]:
@@ -254,7 +256,7 @@ class GrowthShapeBatch(DSSBatch):
     """
     Switch input of growth curve data to a binary file of singles containing (year, mult) points, packed one after another.
 
-    DSS property name: `SngFile`, DSS property index: 5.
+    Name: `SngFile`
     """
 
     def _get_DblFile(self) -> List[str]:
@@ -267,7 +269,7 @@ class GrowthShapeBatch(DSSBatch):
     """
     Switch input of growth curve data to a binary file of doubles containing (year, mult) points, packed one after another.
 
-    DSS property name: `DblFile`, DSS property index: 6.
+    Name: `DblFile`
     """
 
     def Like(self, value: AnyStr, flags: enums.SetterFlags = 0):
@@ -276,7 +278,9 @@ class GrowthShapeBatch(DSSBatch):
 
         New Capacitor.C2 like=c1  ...
 
-        DSS property name: `Like`, DSS property index: 7.
+        **Deprecated:** `Like` has been deprecated since at least 2021, see https://sourceforge.net/p/electricdss/discussion/861977/thread/8b59d21eb6/#b57c/f668
+
+        Name: `Like`
         """
         self._set_batch_string(7, value, flags)
 

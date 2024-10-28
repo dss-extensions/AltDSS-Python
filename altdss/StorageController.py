@@ -15,7 +15,7 @@ from .LoadShape import LoadShape
 class StorageController(DSSObj, CircuitElementMixin):
     __slots__ = DSSObj._extra_slots + CircuitElementMixin._extra_slots
     _cls_name = 'StorageController'
-    _cls_idx = 30
+    _cls_idx = 31
     _cls_int_idx = {
         2,
         3,
@@ -130,7 +130,7 @@ class StorageController(DSSObj, CircuitElementMixin):
     """
     Full object name of the circuit element, typically a line or transformer, which the control is monitoring. There is no default; Must be specified.In "Local" control mode, is the name of the load that will be managed by the storage device, which should be installed at the same bus.
 
-    DSS property name: `Element`, DSS property index: 1.
+    Name: `Element`
     """
 
     def _get_Element(self) -> DSSObj:
@@ -147,7 +147,7 @@ class StorageController(DSSObj, CircuitElementMixin):
     """
     Full object name of the circuit element, typically a line or transformer, which the control is monitoring. There is no default; Must be specified.In "Local" control mode, is the name of the load that will be managed by the storage device, which should be installed at the same bus.
 
-    DSS property name: `Element`, DSS property index: 1.
+    Name: `Element`
     """
 
     def _get_Terminal(self) -> int:
@@ -160,7 +160,8 @@ class StorageController(DSSObj, CircuitElementMixin):
     """
     Number of the terminal of the circuit element to which the StorageController control is connected. 1 or 2, typically.  Default is 1. Make sure to select the proper direction on the power for the respective dispatch mode.
 
-    DSS property name: `Terminal`, DSS property index: 2.
+    Name: `Terminal`
+    Default: 1
     """
 
     def _get_MonPhase(self) -> Union[enums.MonitoredPhase, int]:
@@ -180,7 +181,8 @@ class StorageController(DSSObj, CircuitElementMixin):
     """
     Number of the phase being monitored or one of {AVG | MAX | MIN} for all phases. Default=MAX. Must be less than the number of phases. Used in PeakShave, Follow, Support and I-PeakShave discharging modes and in PeakShaveLow, I-PeakShaveLow charging modes. For modes based on active power measurements, the value used by the control is the monitored one multiplied by the number of phases of the monitored element.
 
-    DSS property name: `MonPhase`, DSS property index: 3.
+    Name: `MonPhase`
+    Default: max
     """
 
     def _get_MonPhase_str(self) -> str:
@@ -193,7 +195,8 @@ class StorageController(DSSObj, CircuitElementMixin):
     """
     Number of the phase being monitored or one of {AVG | MAX | MIN} for all phases. Default=MAX. Must be less than the number of phases. Used in PeakShave, Follow, Support and I-PeakShave discharging modes and in PeakShaveLow, I-PeakShaveLow charging modes. For modes based on active power measurements, the value used by the control is the monitored one multiplied by the number of phases of the monitored element.
 
-    DSS property name: `MonPhase`, DSS property index: 3.
+    Name: `MonPhase`
+    Default: max
     """
 
     def _get_kWTarget(self) -> float:
@@ -206,7 +209,9 @@ class StorageController(DSSObj, CircuitElementMixin):
     """
     kW/kamps target for Discharging. The Storage element fleet is dispatched to try to hold the power/current in band at least until the Storage is depleted. The selection of power or current depends on the Discharge mode (PeakShave->kW, I-PeakShave->kamps).
 
-    DSS property name: `kWTarget`, DSS property index: 4.
+    Name: `kWTarget`
+    Units: kW
+    Default: 8000.0
     """
 
     def _get_kWTargetLow(self) -> float:
@@ -219,7 +224,9 @@ class StorageController(DSSObj, CircuitElementMixin):
     """
     kW/kamps target for Charging. The Storage element fleet is dispatched to try to hold the power/current in band at least until the Storage is fully charged. The selection of power or current depends on the charge mode (PeakShavelow->kW, I-PeakShavelow->kamps).
 
-    DSS property name: `kWTargetLow`, DSS property index: 5.
+    Name: `kWTargetLow`
+    Units: kW
+    Default: 4000.0
     """
 
     def _get_pctkWBand(self) -> float:
@@ -232,7 +239,8 @@ class StorageController(DSSObj, CircuitElementMixin):
     """
     Bandwidth (% of Target kW/kamps) of the dead band around the kW/kamps target value. Default is 2% (+/-1%).No dispatch changes are attempted if the power in the monitored terminal stays within this band.
 
-    DSS property name: `%kWBand`, DSS property index: 6.
+    Name: `%kWBand`
+    Default: 2.0
     """
 
     def _get_kWBand(self) -> float:
@@ -245,7 +253,8 @@ class StorageController(DSSObj, CircuitElementMixin):
     """
     Alternative way of specifying the bandwidth. (kW/kamps) of the dead band around the kW/kamps target value. Default is 2% of kWTarget (+/-1%).No dispatch changes are attempted if the power in the monitored terminal stays within this band.
 
-    DSS property name: `kWBand`, DSS property index: 7.
+    Name: `kWBand`
+    Units: kW
     """
 
     def _get_pctkWBandLow(self) -> float:
@@ -258,7 +267,8 @@ class StorageController(DSSObj, CircuitElementMixin):
     """
     Bandwidth (% of kWTargetLow) of the dead band around the kW/kamps low target value. Default is 2% (+/-1%).No charging is attempted if the power in the monitored terminal stays within this band.
 
-    DSS property name: `%kWBandLow`, DSS property index: 8.
+    Name: `%kWBandLow`
+    Default: 2.0
     """
 
     def _get_kWBandLow(self) -> float:
@@ -271,7 +281,8 @@ class StorageController(DSSObj, CircuitElementMixin):
     """
     Alternative way of specifying the bandwidth. (kW/kamps) of the dead band around the kW/kamps low target value. Default is 2% of kWTargetLow (+/-1%).No charging is attempted if the power in the monitored terminal stays within this band.
 
-    DSS property name: `kWBandLow`, DSS property index: 9.
+    Name: `kWBandLow`
+    Units: kW
     """
 
     def _get_ElementList(self) -> List[str]:
@@ -286,7 +297,7 @@ class StorageController(DSSObj, CircuitElementMixin):
     """
     Array list of Storage elements to be controlled.  If not specified, all Storage elements in the circuit not presently dispatched by another controller are assumed dispatched by this controller.
 
-    DSS property name: `ElementList`, DSS property index: 10.
+    Name: `ElementList`
     """
 
     def _get_Weights(self) -> Float64Array:
@@ -299,7 +310,7 @@ class StorageController(DSSObj, CircuitElementMixin):
     """
     Array of proportional weights corresponding to each Storage element in the ElementList. The needed kW or kvar to get back to center band is dispatched to each Storage element according to these weights. Default is to set all weights to 1.0.
 
-    DSS property name: `Weights`, DSS property index: 11.
+    Name: `Weights`
     """
 
     def _get_ModeDischarge(self) -> enums.StorageControllerDischargeMode:
@@ -313,7 +324,7 @@ class StorageController(DSSObj, CircuitElementMixin):
 
     ModeDischarge = property(_get_ModeDischarge, _set_ModeDischarge) # type: enums.StorageControllerDischargeMode
     """
-    {PeakShave* | Follow | Support | Loadshape | Time | Schedule | I-PeakShave} Mode of operation for the DISCHARGE FUNCTION of this controller. 
+    Mode of operation for the DISCHARGE FUNCTION of this controller. 
 
     In PeakShave mode (Default), the control attempts to discharge Storage to keep power in the monitored element below the kWTarget. 
 
@@ -329,7 +340,8 @@ class StorageController(DSSObj, CircuitElementMixin):
 
     In I-PeakShave mode, the control attempts to discharge Storage to keep current in the monitored element below the target given in k-amps (thousands of amps), when this control mode is active, the property kWTarget will be expressed in k-amps. 
 
-    DSS property name: `ModeDischarge`, DSS property index: 12.
+    Name: `ModeDischarge`
+    Default: PeakShave
     """
 
     def _get_ModeDischarge_str(self) -> str:
@@ -340,7 +352,7 @@ class StorageController(DSSObj, CircuitElementMixin):
 
     ModeDischarge_str = property(_get_ModeDischarge_str, _set_ModeDischarge_str) # type: str
     """
-    {PeakShave* | Follow | Support | Loadshape | Time | Schedule | I-PeakShave} Mode of operation for the DISCHARGE FUNCTION of this controller. 
+    Mode of operation for the DISCHARGE FUNCTION of this controller. 
 
     In PeakShave mode (Default), the control attempts to discharge Storage to keep power in the monitored element below the kWTarget. 
 
@@ -356,7 +368,8 @@ class StorageController(DSSObj, CircuitElementMixin):
 
     In I-PeakShave mode, the control attempts to discharge Storage to keep current in the monitored element below the target given in k-amps (thousands of amps), when this control mode is active, the property kWTarget will be expressed in k-amps. 
 
-    DSS property name: `ModeDischarge`, DSS property index: 12.
+    Name: `ModeDischarge`
+    Default: PeakShave
     """
 
     def _get_ModeCharge(self) -> enums.StorageControllerChargeMode:
@@ -370,17 +383,18 @@ class StorageController(DSSObj, CircuitElementMixin):
 
     ModeCharge = property(_get_ModeCharge, _set_ModeCharge) # type: enums.StorageControllerChargeMode
     """
-    {Loadshape | Time* | PeakShaveLow | I-PeakShaveLow} Mode of operation for the CHARGE FUNCTION of this controller. 
+    Mode of operation for the CHARGE FUNCTION of this controller. 
 
     In Loadshape mode, both charging and discharging precisely follows the per unit loadshape. Storage is charged when the loadshape value is negative. 
 
     In Time mode, the Storage charging FUNCTION is triggered at the specified %RateCharge at the specified charge trigger time in fractional hours.
 
-    In PeakShaveLow mode, the charging operation will charge the Storage fleet when the power at a monitored element is below a specified KW target (kWTarget_low). The Storage will charge as much power as necessary to keep the power within the deadband around kWTarget_low.
+    In PeakShaveLow mode, the charging operation will charge the Storage fleet when the power at a monitored element is below a specified kW target (kWTarget_low). The Storage will charge as much power as necessary to keep the power within the deadband around kWTarget_low.
 
     In I-PeakShaveLow mode, the charging operation will charge the Storage fleet when the current (Amps) at a monitored element is below a specified amps target (kWTarget_low). The Storage will charge as much power as necessary to keep the amps within the deadband around kWTarget_low. When this control mode is active, the property kWTarget_low will be expressed in k-amps and all the other parameters will be adjusted to match the amps (current) control criteria.
 
-    DSS property name: `ModeCharge`, DSS property index: 13.
+    Name: `ModeCharge`
+    Default: Time
     """
 
     def _get_ModeCharge_str(self) -> str:
@@ -391,17 +405,18 @@ class StorageController(DSSObj, CircuitElementMixin):
 
     ModeCharge_str = property(_get_ModeCharge_str, _set_ModeCharge_str) # type: str
     """
-    {Loadshape | Time* | PeakShaveLow | I-PeakShaveLow} Mode of operation for the CHARGE FUNCTION of this controller. 
+    Mode of operation for the CHARGE FUNCTION of this controller. 
 
     In Loadshape mode, both charging and discharging precisely follows the per unit loadshape. Storage is charged when the loadshape value is negative. 
 
     In Time mode, the Storage charging FUNCTION is triggered at the specified %RateCharge at the specified charge trigger time in fractional hours.
 
-    In PeakShaveLow mode, the charging operation will charge the Storage fleet when the power at a monitored element is below a specified KW target (kWTarget_low). The Storage will charge as much power as necessary to keep the power within the deadband around kWTarget_low.
+    In PeakShaveLow mode, the charging operation will charge the Storage fleet when the power at a monitored element is below a specified kW target (kWTarget_low). The Storage will charge as much power as necessary to keep the power within the deadband around kWTarget_low.
 
     In I-PeakShaveLow mode, the charging operation will charge the Storage fleet when the current (Amps) at a monitored element is below a specified amps target (kWTarget_low). The Storage will charge as much power as necessary to keep the amps within the deadband around kWTarget_low. When this control mode is active, the property kWTarget_low will be expressed in k-amps and all the other parameters will be adjusted to match the amps (current) control criteria.
 
-    DSS property name: `ModeCharge`, DSS property index: 13.
+    Name: `ModeCharge`
+    Default: Time
     """
 
     def _get_TimeDischargeTrigger(self) -> float:
@@ -414,7 +429,9 @@ class StorageController(DSSObj, CircuitElementMixin):
     """
     Default time of day (hr) for initiating Discharging of the fleet. During Follow or Time mode discharging is triggered at a fixed time each day at this hour. If Follow mode, Storage will be discharged to attempt to hold the load at or below the power level at the time of triggering. In Time mode, the discharge is based on the %RatekW property value. Set this to a negative value to ignore. Default is 12.0 for Follow mode; otherwise it is -1 (ignored). 
 
-    DSS property name: `TimeDischargeTrigger`, DSS property index: 14.
+    Name: `TimeDischargeTrigger`
+    Units: hour (0-24)
+    Default: -1.0
     """
 
     def _get_TimeChargeTrigger(self) -> float:
@@ -427,7 +444,9 @@ class StorageController(DSSObj, CircuitElementMixin):
     """
     Default time of day (hr) for initiating charging in Time control mode. Set this to a negative value to ignore. Default is 2.0.  (0200).When this value is >0 the Storage fleet is set to charging at this time regardless of other control criteria to make sure Storage is topped off for the next discharge cycle.
 
-    DSS property name: `TimeChargeTrigger`, DSS property index: 15.
+    Name: `TimeChargeTrigger`
+    Units: hour (0-24)
+    Default: 2.0
     """
 
     def _get_pctRatekW(self) -> float:
@@ -440,7 +459,8 @@ class StorageController(DSSObj, CircuitElementMixin):
     """
     Sets the kW discharge rate in % of rated capacity for each element of the fleet. Applies to TIME control mode, SCHEDULE mode, or anytime discharging is triggered by time.
 
-    DSS property name: `%RatekW`, DSS property index: 16.
+    Name: `%RatekW`
+    Default: 20.0
     """
 
     def _get_pctRateCharge(self) -> float:
@@ -453,7 +473,8 @@ class StorageController(DSSObj, CircuitElementMixin):
     """
     Sets the kW charging rate in % of rated capacity for each element of the fleet. Applies to TIME control mode and anytime charging mode is entered due to a time trigger.
 
-    DSS property name: `%RateCharge`, DSS property index: 17.
+    Name: `%RateCharge`
+    Default: 20.0
     """
 
     def _get_pctReserve(self) -> float:
@@ -466,7 +487,8 @@ class StorageController(DSSObj, CircuitElementMixin):
     """
     Use this property to change the % reserve for each Storage element under control of this controller. This might be used, for example, to allow deeper discharges of Storage or in case of emergency operation to use the remainder of the Storage element.
 
-    DSS property name: `%Reserve`, DSS property index: 18.
+    Name: `%Reserve`
+    Default: 25.0
     """
 
     def _get_kWhTotal(self) -> float:
@@ -477,9 +499,11 @@ class StorageController(DSSObj, CircuitElementMixin):
 
     kWhTotal = property(_get_kWhTotal, _set_kWhTotal) # type: float
     """
-    (Read only). Total rated kWh energy Storage capacity of Storage elements controlled by this controller.
+    Total rated kWh energy Storage capacity of Storage elements controlled by this controller.
 
-    DSS property name: `kWhTotal`, DSS property index: 19.
+    **Read-only**
+
+    Name: `kWhTotal`
     """
 
     def _get_kWTotal(self) -> float:
@@ -490,9 +514,11 @@ class StorageController(DSSObj, CircuitElementMixin):
 
     kWTotal = property(_get_kWTotal, _set_kWTotal) # type: float
     """
-    (Read only). Total rated kW power capacity of Storage elements controlled by this controller.
+    Total rated kW power capacity of Storage elements controlled by this controller.
 
-    DSS property name: `kWTotal`, DSS property index: 20.
+    **Read-only**
+
+    Name: `kWTotal`
     """
 
     def _get_kWhActual(self) -> float:
@@ -503,9 +529,11 @@ class StorageController(DSSObj, CircuitElementMixin):
 
     kWhActual = property(_get_kWhActual, _set_kWhActual) # type: float
     """
-    (Read only). Actual kWh stored of all controlled Storage elements. 
+    Actual kWh stored of all controlled Storage elements. 
 
-    DSS property name: `kWhActual`, DSS property index: 21.
+    **Read-only**
+
+    Name: `kWhActual`
     """
 
     def _get_kWActual(self) -> float:
@@ -516,9 +544,11 @@ class StorageController(DSSObj, CircuitElementMixin):
 
     kWActual = property(_get_kWActual, _set_kWActual) # type: float
     """
-    (Read only). Actual kW output of all controlled Storage elements. 
+    Actual kW output of all controlled Storage elements. 
 
-    DSS property name: `kWActual`, DSS property index: 22.
+    **Read-only**
+
+    Name: `kWActual`
     """
 
     def _get_kWNeed(self) -> float:
@@ -529,9 +559,12 @@ class StorageController(DSSObj, CircuitElementMixin):
 
     kWNeed = property(_get_kWNeed, _set_kWNeed) # type: float
     """
-    (Read only). KW needed to meet target.
+    kW needed to meet target.
 
-    DSS property name: `kWNeed`, DSS property index: 23.
+    **Read-only**
+
+    Name: `kWNeed`
+    Units: kW
     """
 
     def _get_Yearly_str(self) -> str:
@@ -544,7 +577,7 @@ class StorageController(DSSObj, CircuitElementMixin):
     """
     Dispatch loadshape object, If any, for Yearly solution Mode.
 
-    DSS property name: `Yearly`, DSS property index: 24.
+    Name: `Yearly`
     """
 
     def _get_Yearly(self) -> LoadShape:
@@ -561,7 +594,7 @@ class StorageController(DSSObj, CircuitElementMixin):
     """
     Dispatch loadshape object, If any, for Yearly solution Mode.
 
-    DSS property name: `Yearly`, DSS property index: 24.
+    Name: `Yearly`
     """
 
     def _get_Daily_str(self) -> str:
@@ -574,7 +607,7 @@ class StorageController(DSSObj, CircuitElementMixin):
     """
     Dispatch loadshape object, If any, for Daily solution mode.
 
-    DSS property name: `Daily`, DSS property index: 25.
+    Name: `Daily`
     """
 
     def _get_Daily(self) -> LoadShape:
@@ -591,7 +624,7 @@ class StorageController(DSSObj, CircuitElementMixin):
     """
     Dispatch loadshape object, If any, for Daily solution mode.
 
-    DSS property name: `Daily`, DSS property index: 25.
+    Name: `Daily`
     """
 
     def _get_Duty_str(self) -> str:
@@ -604,7 +637,7 @@ class StorageController(DSSObj, CircuitElementMixin):
     """
     Dispatch loadshape object, If any, for Dutycycle solution mode.
 
-    DSS property name: `Duty`, DSS property index: 26.
+    Name: `Duty`
     """
 
     def _get_Duty(self) -> LoadShape:
@@ -621,7 +654,7 @@ class StorageController(DSSObj, CircuitElementMixin):
     """
     Dispatch loadshape object, If any, for Dutycycle solution mode.
 
-    DSS property name: `Duty`, DSS property index: 26.
+    Name: `Duty`
     """
 
     def _get_EventLog(self) -> bool:
@@ -632,9 +665,10 @@ class StorageController(DSSObj, CircuitElementMixin):
 
     EventLog = property(_get_EventLog, _set_EventLog) # type: bool
     """
-    {Yes/True | No/False} Default is No. Log control actions to Eventlog.
+    Log control actions to Eventlog.
 
-    DSS property name: `EventLog`, DSS property index: 27.
+    Name: `EventLog`
+    Default: False
     """
 
     def _get_InhibitTime(self) -> int:
@@ -645,9 +679,11 @@ class StorageController(DSSObj, CircuitElementMixin):
 
     InhibitTime = property(_get_InhibitTime, _set_InhibitTime) # type: int
     """
-    Hours (integer) to inhibit Discharging after going into Charge mode. Default is 5.
+    Hours (integer) to inhibit Discharging after going into Charge mode.
 
-    DSS property name: `InhibitTime`, DSS property index: 28.
+    Name: `InhibitTime`
+    Units: hour
+    Default: 5
     """
 
     def _get_TUp(self) -> float:
@@ -658,9 +694,11 @@ class StorageController(DSSObj, CircuitElementMixin):
 
     TUp = property(_get_TUp, _set_TUp) # type: float
     """
-    Duration, hrs, of upramp part for SCHEDULE mode. Default is 0.25.
+    Duration of upramp part for SCHEDULE mode.
 
-    DSS property name: `TUp`, DSS property index: 29.
+    Name: `TUp`
+    Units: hour
+    Default: 0.25
     """
 
     def _get_TFlat(self) -> float:
@@ -671,9 +709,11 @@ class StorageController(DSSObj, CircuitElementMixin):
 
     TFlat = property(_get_TFlat, _set_TFlat) # type: float
     """
-    Duration, hrs, of flat part for SCHEDULE mode. Default is 2.0.
+    Duration of flat part for SCHEDULE mode.
 
-    DSS property name: `TFlat`, DSS property index: 30.
+    Name: `TFlat`
+    Units: hour
+    Default: 2.0
     """
 
     def _get_TDn(self) -> float:
@@ -684,9 +724,11 @@ class StorageController(DSSObj, CircuitElementMixin):
 
     TDn = property(_get_TDn, _set_TDn) # type: float
     """
-    Duration, hrs, of downramp part for SCHEDULE mode. Default is 0.25.
+    Duration of downramp part for SCHEDULE mode.
 
-    DSS property name: `TDn`, DSS property index: 31.
+    Name: `TDn`
+    Units: hour
+    Default: 0.25
     """
 
     def _get_kWThreshold(self) -> float:
@@ -699,7 +741,8 @@ class StorageController(DSSObj, CircuitElementMixin):
     """
     Threshold, kW, for Follow mode. kW has to be above this value for the Storage element to be dispatched on. Defaults to 75% of the kWTarget value. Must reset this property after setting kWTarget if you want a different value.
 
-    DSS property name: `kWThreshold`, DSS property index: 32.
+    Name: `kWThreshold`
+    Units: kW
     """
 
     def _get_DispFactor(self) -> float:
@@ -714,7 +757,8 @@ class StorageController(DSSObj, CircuitElementMixin):
 
     Use this parameter to reduce the amount of power requested by the controller in each control iteration. It can be useful when maximum control iterations are exceeded due to numerical instability such as fleet being set to charging and idling in subsequent control iterations (check the Eventlog). 
 
-    DSS property name: `DispFactor`, DSS property index: 33.
+    Name: `DispFactor`
+    Default: 1.0
     """
 
     def _get_ResetLevel(self) -> float:
@@ -727,7 +771,8 @@ class StorageController(DSSObj, CircuitElementMixin):
     """
     The level of charge required for allowing the storage to discharge again after reaching the reserve storage level. After reaching this level, the storage control  will not allow the storage device to discharge, forcing the storage to charge. Once the storage reaches this level, the storage will be able to discharge again. This value is a number between 0.2 and 1
 
-    DSS property name: `ResetLevel`, DSS property index: 34.
+    Name: `ResetLevel`
+    Default: 0.8
     """
 
     def _get_Seasons(self) -> int:
@@ -740,7 +785,7 @@ class StorageController(DSSObj, CircuitElementMixin):
     """
     With this property the user can specify the number of targets to be used by the controller using the list given at "SeasonTargets"/"SeasonTargetsLow", which can be used to dynamically adjust the storage controller during a QSTS simulation. The default value is 1. This property needs to be defined before defining SeasonTargets/SeasonTargetsLow.
 
-    DSS property name: `Seasons`, DSS property index: 35.
+    Name: `Seasons`
     """
 
     def _get_SeasonTargets(self) -> Float64Array:
@@ -753,7 +798,8 @@ class StorageController(DSSObj, CircuitElementMixin):
     """
     An array of doubles specifying the targets to be used during a QSTS simulation. These targets will take effect only if SeasonRating=true. The number of targets cannot exceed the number of seasons defined at the SeasonSignal.The difference between the targets defined at SeasonTargets and SeasonTargetsLow is that SeasonTargets applies to discharging modes, while SeasonTargetsLow applies to charging modes.
 
-    DSS property name: `SeasonTargets`, DSS property index: 36.
+    Name: `SeasonTargets`
+    Default: [8000.0]
     """
 
     def _get_SeasonTargetsLow(self) -> Float64Array:
@@ -766,7 +812,8 @@ class StorageController(DSSObj, CircuitElementMixin):
     """
     An array of doubles specifying the targets to be used during a QSTS simulation. These targets will take effect only if SeasonRating=true. The number of targets cannot exceed the number of seasons defined at the SeasonSignal.The difference between the targets defined at SeasonTargets and SeasonTargetsLow is that SeasonTargets applies to discharging modes, while SeasonTargetsLow applies to charging modes.
 
-    DSS property name: `SeasonTargetsLow`, DSS property index: 37.
+    Name: `SeasonTargetsLow`
+    Default: [4000.0]
     """
 
     def _get_BaseFreq(self) -> float:
@@ -779,7 +826,8 @@ class StorageController(DSSObj, CircuitElementMixin):
     """
     Base Frequency for ratings.
 
-    DSS property name: `BaseFreq`, DSS property index: 38.
+    Name: `BaseFreq`
+    Units: Hz
     """
 
     def _get_Enabled(self) -> bool:
@@ -790,9 +838,10 @@ class StorageController(DSSObj, CircuitElementMixin):
 
     Enabled = property(_get_Enabled, _set_Enabled) # type: bool
     """
-    {Yes|No or True|False} Indicates whether this element is enabled.
+    Indicates whether this element is enabled.
 
-    DSS property name: `Enabled`, DSS property index: 39.
+    Name: `Enabled`
+    Default: True
     """
 
     def Like(self, value: AnyStr):
@@ -801,7 +850,9 @@ class StorageController(DSSObj, CircuitElementMixin):
 
         New Capacitor.C2 like=c1  ...
 
-        DSS property name: `Like`, DSS property index: 40.
+        **Deprecated:** `Like` has been deprecated since at least 2021, see https://sourceforge.net/p/electricdss/discussion/861977/thread/8b59d21eb6/#b57c/f668
+
+        Name: `Like`
         """
         self._set_string_o(40, value)
 
@@ -851,7 +902,7 @@ class StorageControllerProperties(TypedDict):
 class StorageControllerBatch(DSSBatch, CircuitElementBatchMixin):
     _cls_name = 'StorageController'
     _obj_cls = StorageController
-    _cls_idx = 30
+    _cls_idx = 31
     __slots__ = []
 
     def __init__(self, api_util, **kwargs):
@@ -889,7 +940,7 @@ class StorageControllerBatch(DSSBatch, CircuitElementBatchMixin):
     """
     Full object name of the circuit element, typically a line or transformer, which the control is monitoring. There is no default; Must be specified.In "Local" control mode, is the name of the load that will be managed by the storage device, which should be installed at the same bus.
 
-    DSS property name: `Element`, DSS property index: 1.
+    Name: `Element`
     """
 
     def _get_Element(self) -> List[DSSObj]:
@@ -902,7 +953,7 @@ class StorageControllerBatch(DSSBatch, CircuitElementBatchMixin):
     """
     Full object name of the circuit element, typically a line or transformer, which the control is monitoring. There is no default; Must be specified.In "Local" control mode, is the name of the load that will be managed by the storage device, which should be installed at the same bus.
 
-    DSS property name: `Element`, DSS property index: 1.
+    Name: `Element`
     """
 
     def _get_Terminal(self) -> BatchInt32ArrayProxy:
@@ -915,7 +966,8 @@ class StorageControllerBatch(DSSBatch, CircuitElementBatchMixin):
     """
     Number of the terminal of the circuit element to which the StorageController control is connected. 1 or 2, typically.  Default is 1. Make sure to select the proper direction on the power for the respective dispatch mode.
 
-    DSS property name: `Terminal`, DSS property index: 2.
+    Name: `Terminal`
+    Default: 1
     """
 
     def _get_MonPhase(self) -> BatchInt32ArrayProxy:
@@ -932,7 +984,8 @@ class StorageControllerBatch(DSSBatch, CircuitElementBatchMixin):
     """
     Number of the phase being monitored or one of {AVG | MAX | MIN} for all phases. Default=MAX. Must be less than the number of phases. Used in PeakShave, Follow, Support and I-PeakShave discharging modes and in PeakShaveLow, I-PeakShaveLow charging modes. For modes based on active power measurements, the value used by the control is the monitored one multiplied by the number of phases of the monitored element.
 
-    DSS property name: `MonPhase`, DSS property index: 3.
+    Name: `MonPhase`
+    Default: max
     """
 
     def _get_MonPhase_str(self) -> List[str]:
@@ -945,7 +998,8 @@ class StorageControllerBatch(DSSBatch, CircuitElementBatchMixin):
     """
     Number of the phase being monitored or one of {AVG | MAX | MIN} for all phases. Default=MAX. Must be less than the number of phases. Used in PeakShave, Follow, Support and I-PeakShave discharging modes and in PeakShaveLow, I-PeakShaveLow charging modes. For modes based on active power measurements, the value used by the control is the monitored one multiplied by the number of phases of the monitored element.
 
-    DSS property name: `MonPhase`, DSS property index: 3.
+    Name: `MonPhase`
+    Default: max
     """
 
     def _get_kWTarget(self) -> BatchFloat64ArrayProxy:
@@ -958,7 +1012,9 @@ class StorageControllerBatch(DSSBatch, CircuitElementBatchMixin):
     """
     kW/kamps target for Discharging. The Storage element fleet is dispatched to try to hold the power/current in band at least until the Storage is depleted. The selection of power or current depends on the Discharge mode (PeakShave->kW, I-PeakShave->kamps).
 
-    DSS property name: `kWTarget`, DSS property index: 4.
+    Name: `kWTarget`
+    Units: kW
+    Default: 8000.0
     """
 
     def _get_kWTargetLow(self) -> BatchFloat64ArrayProxy:
@@ -971,7 +1027,9 @@ class StorageControllerBatch(DSSBatch, CircuitElementBatchMixin):
     """
     kW/kamps target for Charging. The Storage element fleet is dispatched to try to hold the power/current in band at least until the Storage is fully charged. The selection of power or current depends on the charge mode (PeakShavelow->kW, I-PeakShavelow->kamps).
 
-    DSS property name: `kWTargetLow`, DSS property index: 5.
+    Name: `kWTargetLow`
+    Units: kW
+    Default: 4000.0
     """
 
     def _get_pctkWBand(self) -> BatchFloat64ArrayProxy:
@@ -984,7 +1042,8 @@ class StorageControllerBatch(DSSBatch, CircuitElementBatchMixin):
     """
     Bandwidth (% of Target kW/kamps) of the dead band around the kW/kamps target value. Default is 2% (+/-1%).No dispatch changes are attempted if the power in the monitored terminal stays within this band.
 
-    DSS property name: `%kWBand`, DSS property index: 6.
+    Name: `%kWBand`
+    Default: 2.0
     """
 
     def _get_kWBand(self) -> BatchFloat64ArrayProxy:
@@ -997,7 +1056,8 @@ class StorageControllerBatch(DSSBatch, CircuitElementBatchMixin):
     """
     Alternative way of specifying the bandwidth. (kW/kamps) of the dead band around the kW/kamps target value. Default is 2% of kWTarget (+/-1%).No dispatch changes are attempted if the power in the monitored terminal stays within this band.
 
-    DSS property name: `kWBand`, DSS property index: 7.
+    Name: `kWBand`
+    Units: kW
     """
 
     def _get_pctkWBandLow(self) -> BatchFloat64ArrayProxy:
@@ -1010,7 +1070,8 @@ class StorageControllerBatch(DSSBatch, CircuitElementBatchMixin):
     """
     Bandwidth (% of kWTargetLow) of the dead band around the kW/kamps low target value. Default is 2% (+/-1%).No charging is attempted if the power in the monitored terminal stays within this band.
 
-    DSS property name: `%kWBandLow`, DSS property index: 8.
+    Name: `%kWBandLow`
+    Default: 2.0
     """
 
     def _get_kWBandLow(self) -> BatchFloat64ArrayProxy:
@@ -1023,7 +1084,8 @@ class StorageControllerBatch(DSSBatch, CircuitElementBatchMixin):
     """
     Alternative way of specifying the bandwidth. (kW/kamps) of the dead band around the kW/kamps low target value. Default is 2% of kWTargetLow (+/-1%).No charging is attempted if the power in the monitored terminal stays within this band.
 
-    DSS property name: `kWBandLow`, DSS property index: 9.
+    Name: `kWBandLow`
+    Units: kW
     """
 
     def _get_ElementList(self) -> List[List[str]]:
@@ -1040,7 +1102,7 @@ class StorageControllerBatch(DSSBatch, CircuitElementBatchMixin):
     """
     Array list of Storage elements to be controlled.  If not specified, all Storage elements in the circuit not presently dispatched by another controller are assumed dispatched by this controller.
 
-    DSS property name: `ElementList`, DSS property index: 10.
+    Name: `ElementList`
     """
 
     def _get_Weights(self) -> List[Float64Array]:
@@ -1056,7 +1118,7 @@ class StorageControllerBatch(DSSBatch, CircuitElementBatchMixin):
     """
     Array of proportional weights corresponding to each Storage element in the ElementList. The needed kW or kvar to get back to center band is dispatched to each Storage element according to these weights. Default is to set all weights to 1.0.
 
-    DSS property name: `Weights`, DSS property index: 11.
+    Name: `Weights`
     """
 
     def _get_ModeDischarge(self) -> BatchInt32ArrayProxy:
@@ -1071,7 +1133,7 @@ class StorageControllerBatch(DSSBatch, CircuitElementBatchMixin):
 
     ModeDischarge = property(_get_ModeDischarge, _set_ModeDischarge) # type: BatchInt32ArrayProxy
     """
-    {PeakShave* | Follow | Support | Loadshape | Time | Schedule | I-PeakShave} Mode of operation for the DISCHARGE FUNCTION of this controller. 
+    Mode of operation for the DISCHARGE FUNCTION of this controller. 
 
     In PeakShave mode (Default), the control attempts to discharge Storage to keep power in the monitored element below the kWTarget. 
 
@@ -1087,7 +1149,8 @@ class StorageControllerBatch(DSSBatch, CircuitElementBatchMixin):
 
     In I-PeakShave mode, the control attempts to discharge Storage to keep current in the monitored element below the target given in k-amps (thousands of amps), when this control mode is active, the property kWTarget will be expressed in k-amps. 
 
-    DSS property name: `ModeDischarge`, DSS property index: 12.
+    Name: `ModeDischarge`
+    Default: PeakShave
     """
 
     def _get_ModeDischarge_str(self) -> List[str]:
@@ -1098,7 +1161,7 @@ class StorageControllerBatch(DSSBatch, CircuitElementBatchMixin):
 
     ModeDischarge_str = property(_get_ModeDischarge_str, _set_ModeDischarge_str) # type: List[str]
     """
-    {PeakShave* | Follow | Support | Loadshape | Time | Schedule | I-PeakShave} Mode of operation for the DISCHARGE FUNCTION of this controller. 
+    Mode of operation for the DISCHARGE FUNCTION of this controller. 
 
     In PeakShave mode (Default), the control attempts to discharge Storage to keep power in the monitored element below the kWTarget. 
 
@@ -1114,7 +1177,8 @@ class StorageControllerBatch(DSSBatch, CircuitElementBatchMixin):
 
     In I-PeakShave mode, the control attempts to discharge Storage to keep current in the monitored element below the target given in k-amps (thousands of amps), when this control mode is active, the property kWTarget will be expressed in k-amps. 
 
-    DSS property name: `ModeDischarge`, DSS property index: 12.
+    Name: `ModeDischarge`
+    Default: PeakShave
     """
 
     def _get_ModeCharge(self) -> BatchInt32ArrayProxy:
@@ -1129,17 +1193,18 @@ class StorageControllerBatch(DSSBatch, CircuitElementBatchMixin):
 
     ModeCharge = property(_get_ModeCharge, _set_ModeCharge) # type: BatchInt32ArrayProxy
     """
-    {Loadshape | Time* | PeakShaveLow | I-PeakShaveLow} Mode of operation for the CHARGE FUNCTION of this controller. 
+    Mode of operation for the CHARGE FUNCTION of this controller. 
 
     In Loadshape mode, both charging and discharging precisely follows the per unit loadshape. Storage is charged when the loadshape value is negative. 
 
     In Time mode, the Storage charging FUNCTION is triggered at the specified %RateCharge at the specified charge trigger time in fractional hours.
 
-    In PeakShaveLow mode, the charging operation will charge the Storage fleet when the power at a monitored element is below a specified KW target (kWTarget_low). The Storage will charge as much power as necessary to keep the power within the deadband around kWTarget_low.
+    In PeakShaveLow mode, the charging operation will charge the Storage fleet when the power at a monitored element is below a specified kW target (kWTarget_low). The Storage will charge as much power as necessary to keep the power within the deadband around kWTarget_low.
 
     In I-PeakShaveLow mode, the charging operation will charge the Storage fleet when the current (Amps) at a monitored element is below a specified amps target (kWTarget_low). The Storage will charge as much power as necessary to keep the amps within the deadband around kWTarget_low. When this control mode is active, the property kWTarget_low will be expressed in k-amps and all the other parameters will be adjusted to match the amps (current) control criteria.
 
-    DSS property name: `ModeCharge`, DSS property index: 13.
+    Name: `ModeCharge`
+    Default: Time
     """
 
     def _get_ModeCharge_str(self) -> List[str]:
@@ -1150,17 +1215,18 @@ class StorageControllerBatch(DSSBatch, CircuitElementBatchMixin):
 
     ModeCharge_str = property(_get_ModeCharge_str, _set_ModeCharge_str) # type: List[str]
     """
-    {Loadshape | Time* | PeakShaveLow | I-PeakShaveLow} Mode of operation for the CHARGE FUNCTION of this controller. 
+    Mode of operation for the CHARGE FUNCTION of this controller. 
 
     In Loadshape mode, both charging and discharging precisely follows the per unit loadshape. Storage is charged when the loadshape value is negative. 
 
     In Time mode, the Storage charging FUNCTION is triggered at the specified %RateCharge at the specified charge trigger time in fractional hours.
 
-    In PeakShaveLow mode, the charging operation will charge the Storage fleet when the power at a monitored element is below a specified KW target (kWTarget_low). The Storage will charge as much power as necessary to keep the power within the deadband around kWTarget_low.
+    In PeakShaveLow mode, the charging operation will charge the Storage fleet when the power at a monitored element is below a specified kW target (kWTarget_low). The Storage will charge as much power as necessary to keep the power within the deadband around kWTarget_low.
 
     In I-PeakShaveLow mode, the charging operation will charge the Storage fleet when the current (Amps) at a monitored element is below a specified amps target (kWTarget_low). The Storage will charge as much power as necessary to keep the amps within the deadband around kWTarget_low. When this control mode is active, the property kWTarget_low will be expressed in k-amps and all the other parameters will be adjusted to match the amps (current) control criteria.
 
-    DSS property name: `ModeCharge`, DSS property index: 13.
+    Name: `ModeCharge`
+    Default: Time
     """
 
     def _get_TimeDischargeTrigger(self) -> BatchFloat64ArrayProxy:
@@ -1173,7 +1239,9 @@ class StorageControllerBatch(DSSBatch, CircuitElementBatchMixin):
     """
     Default time of day (hr) for initiating Discharging of the fleet. During Follow or Time mode discharging is triggered at a fixed time each day at this hour. If Follow mode, Storage will be discharged to attempt to hold the load at or below the power level at the time of triggering. In Time mode, the discharge is based on the %RatekW property value. Set this to a negative value to ignore. Default is 12.0 for Follow mode; otherwise it is -1 (ignored). 
 
-    DSS property name: `TimeDischargeTrigger`, DSS property index: 14.
+    Name: `TimeDischargeTrigger`
+    Units: hour (0-24)
+    Default: -1.0
     """
 
     def _get_TimeChargeTrigger(self) -> BatchFloat64ArrayProxy:
@@ -1186,7 +1254,9 @@ class StorageControllerBatch(DSSBatch, CircuitElementBatchMixin):
     """
     Default time of day (hr) for initiating charging in Time control mode. Set this to a negative value to ignore. Default is 2.0.  (0200).When this value is >0 the Storage fleet is set to charging at this time regardless of other control criteria to make sure Storage is topped off for the next discharge cycle.
 
-    DSS property name: `TimeChargeTrigger`, DSS property index: 15.
+    Name: `TimeChargeTrigger`
+    Units: hour (0-24)
+    Default: 2.0
     """
 
     def _get_pctRatekW(self) -> BatchFloat64ArrayProxy:
@@ -1199,7 +1269,8 @@ class StorageControllerBatch(DSSBatch, CircuitElementBatchMixin):
     """
     Sets the kW discharge rate in % of rated capacity for each element of the fleet. Applies to TIME control mode, SCHEDULE mode, or anytime discharging is triggered by time.
 
-    DSS property name: `%RatekW`, DSS property index: 16.
+    Name: `%RatekW`
+    Default: 20.0
     """
 
     def _get_pctRateCharge(self) -> BatchFloat64ArrayProxy:
@@ -1212,7 +1283,8 @@ class StorageControllerBatch(DSSBatch, CircuitElementBatchMixin):
     """
     Sets the kW charging rate in % of rated capacity for each element of the fleet. Applies to TIME control mode and anytime charging mode is entered due to a time trigger.
 
-    DSS property name: `%RateCharge`, DSS property index: 17.
+    Name: `%RateCharge`
+    Default: 20.0
     """
 
     def _get_pctReserve(self) -> BatchFloat64ArrayProxy:
@@ -1225,7 +1297,8 @@ class StorageControllerBatch(DSSBatch, CircuitElementBatchMixin):
     """
     Use this property to change the % reserve for each Storage element under control of this controller. This might be used, for example, to allow deeper discharges of Storage or in case of emergency operation to use the remainder of the Storage element.
 
-    DSS property name: `%Reserve`, DSS property index: 18.
+    Name: `%Reserve`
+    Default: 25.0
     """
 
     def _get_kWhTotal(self) -> BatchFloat64ArrayProxy:
@@ -1236,9 +1309,11 @@ class StorageControllerBatch(DSSBatch, CircuitElementBatchMixin):
 
     kWhTotal = property(_get_kWhTotal, _set_kWhTotal) # type: BatchFloat64ArrayProxy
     """
-    (Read only). Total rated kWh energy Storage capacity of Storage elements controlled by this controller.
+    Total rated kWh energy Storage capacity of Storage elements controlled by this controller.
 
-    DSS property name: `kWhTotal`, DSS property index: 19.
+    **Read-only**
+
+    Name: `kWhTotal`
     """
 
     def _get_kWTotal(self) -> BatchFloat64ArrayProxy:
@@ -1249,9 +1324,11 @@ class StorageControllerBatch(DSSBatch, CircuitElementBatchMixin):
 
     kWTotal = property(_get_kWTotal, _set_kWTotal) # type: BatchFloat64ArrayProxy
     """
-    (Read only). Total rated kW power capacity of Storage elements controlled by this controller.
+    Total rated kW power capacity of Storage elements controlled by this controller.
 
-    DSS property name: `kWTotal`, DSS property index: 20.
+    **Read-only**
+
+    Name: `kWTotal`
     """
 
     def _get_kWhActual(self) -> BatchFloat64ArrayProxy:
@@ -1262,9 +1339,11 @@ class StorageControllerBatch(DSSBatch, CircuitElementBatchMixin):
 
     kWhActual = property(_get_kWhActual, _set_kWhActual) # type: BatchFloat64ArrayProxy
     """
-    (Read only). Actual kWh stored of all controlled Storage elements. 
+    Actual kWh stored of all controlled Storage elements. 
 
-    DSS property name: `kWhActual`, DSS property index: 21.
+    **Read-only**
+
+    Name: `kWhActual`
     """
 
     def _get_kWActual(self) -> BatchFloat64ArrayProxy:
@@ -1275,9 +1354,11 @@ class StorageControllerBatch(DSSBatch, CircuitElementBatchMixin):
 
     kWActual = property(_get_kWActual, _set_kWActual) # type: BatchFloat64ArrayProxy
     """
-    (Read only). Actual kW output of all controlled Storage elements. 
+    Actual kW output of all controlled Storage elements. 
 
-    DSS property name: `kWActual`, DSS property index: 22.
+    **Read-only**
+
+    Name: `kWActual`
     """
 
     def _get_kWNeed(self) -> BatchFloat64ArrayProxy:
@@ -1288,9 +1369,12 @@ class StorageControllerBatch(DSSBatch, CircuitElementBatchMixin):
 
     kWNeed = property(_get_kWNeed, _set_kWNeed) # type: BatchFloat64ArrayProxy
     """
-    (Read only). KW needed to meet target.
+    kW needed to meet target.
 
-    DSS property name: `kWNeed`, DSS property index: 23.
+    **Read-only**
+
+    Name: `kWNeed`
+    Units: kW
     """
 
     def _get_Yearly_str(self) -> List[str]:
@@ -1303,7 +1387,7 @@ class StorageControllerBatch(DSSBatch, CircuitElementBatchMixin):
     """
     Dispatch loadshape object, If any, for Yearly solution Mode.
 
-    DSS property name: `Yearly`, DSS property index: 24.
+    Name: `Yearly`
     """
 
     def _get_Yearly(self) -> List[LoadShape]:
@@ -1316,7 +1400,7 @@ class StorageControllerBatch(DSSBatch, CircuitElementBatchMixin):
     """
     Dispatch loadshape object, If any, for Yearly solution Mode.
 
-    DSS property name: `Yearly`, DSS property index: 24.
+    Name: `Yearly`
     """
 
     def _get_Daily_str(self) -> List[str]:
@@ -1329,7 +1413,7 @@ class StorageControllerBatch(DSSBatch, CircuitElementBatchMixin):
     """
     Dispatch loadshape object, If any, for Daily solution mode.
 
-    DSS property name: `Daily`, DSS property index: 25.
+    Name: `Daily`
     """
 
     def _get_Daily(self) -> List[LoadShape]:
@@ -1342,7 +1426,7 @@ class StorageControllerBatch(DSSBatch, CircuitElementBatchMixin):
     """
     Dispatch loadshape object, If any, for Daily solution mode.
 
-    DSS property name: `Daily`, DSS property index: 25.
+    Name: `Daily`
     """
 
     def _get_Duty_str(self) -> List[str]:
@@ -1355,7 +1439,7 @@ class StorageControllerBatch(DSSBatch, CircuitElementBatchMixin):
     """
     Dispatch loadshape object, If any, for Dutycycle solution mode.
 
-    DSS property name: `Duty`, DSS property index: 26.
+    Name: `Duty`
     """
 
     def _get_Duty(self) -> List[LoadShape]:
@@ -1368,7 +1452,7 @@ class StorageControllerBatch(DSSBatch, CircuitElementBatchMixin):
     """
     Dispatch loadshape object, If any, for Dutycycle solution mode.
 
-    DSS property name: `Duty`, DSS property index: 26.
+    Name: `Duty`
     """
 
     def _get_EventLog(self) -> List[bool]:
@@ -1381,9 +1465,10 @@ class StorageControllerBatch(DSSBatch, CircuitElementBatchMixin):
 
     EventLog = property(_get_EventLog, _set_EventLog) # type: List[bool]
     """
-    {Yes/True | No/False} Default is No. Log control actions to Eventlog.
+    Log control actions to Eventlog.
 
-    DSS property name: `EventLog`, DSS property index: 27.
+    Name: `EventLog`
+    Default: False
     """
 
     def _get_InhibitTime(self) -> BatchInt32ArrayProxy:
@@ -1394,9 +1479,11 @@ class StorageControllerBatch(DSSBatch, CircuitElementBatchMixin):
 
     InhibitTime = property(_get_InhibitTime, _set_InhibitTime) # type: BatchInt32ArrayProxy
     """
-    Hours (integer) to inhibit Discharging after going into Charge mode. Default is 5.
+    Hours (integer) to inhibit Discharging after going into Charge mode.
 
-    DSS property name: `InhibitTime`, DSS property index: 28.
+    Name: `InhibitTime`
+    Units: hour
+    Default: 5
     """
 
     def _get_TUp(self) -> BatchFloat64ArrayProxy:
@@ -1407,9 +1494,11 @@ class StorageControllerBatch(DSSBatch, CircuitElementBatchMixin):
 
     TUp = property(_get_TUp, _set_TUp) # type: BatchFloat64ArrayProxy
     """
-    Duration, hrs, of upramp part for SCHEDULE mode. Default is 0.25.
+    Duration of upramp part for SCHEDULE mode.
 
-    DSS property name: `TUp`, DSS property index: 29.
+    Name: `TUp`
+    Units: hour
+    Default: 0.25
     """
 
     def _get_TFlat(self) -> BatchFloat64ArrayProxy:
@@ -1420,9 +1509,11 @@ class StorageControllerBatch(DSSBatch, CircuitElementBatchMixin):
 
     TFlat = property(_get_TFlat, _set_TFlat) # type: BatchFloat64ArrayProxy
     """
-    Duration, hrs, of flat part for SCHEDULE mode. Default is 2.0.
+    Duration of flat part for SCHEDULE mode.
 
-    DSS property name: `TFlat`, DSS property index: 30.
+    Name: `TFlat`
+    Units: hour
+    Default: 2.0
     """
 
     def _get_TDn(self) -> BatchFloat64ArrayProxy:
@@ -1433,9 +1524,11 @@ class StorageControllerBatch(DSSBatch, CircuitElementBatchMixin):
 
     TDn = property(_get_TDn, _set_TDn) # type: BatchFloat64ArrayProxy
     """
-    Duration, hrs, of downramp part for SCHEDULE mode. Default is 0.25.
+    Duration of downramp part for SCHEDULE mode.
 
-    DSS property name: `TDn`, DSS property index: 31.
+    Name: `TDn`
+    Units: hour
+    Default: 0.25
     """
 
     def _get_kWThreshold(self) -> BatchFloat64ArrayProxy:
@@ -1448,7 +1541,8 @@ class StorageControllerBatch(DSSBatch, CircuitElementBatchMixin):
     """
     Threshold, kW, for Follow mode. kW has to be above this value for the Storage element to be dispatched on. Defaults to 75% of the kWTarget value. Must reset this property after setting kWTarget if you want a different value.
 
-    DSS property name: `kWThreshold`, DSS property index: 32.
+    Name: `kWThreshold`
+    Units: kW
     """
 
     def _get_DispFactor(self) -> BatchFloat64ArrayProxy:
@@ -1463,7 +1557,8 @@ class StorageControllerBatch(DSSBatch, CircuitElementBatchMixin):
 
     Use this parameter to reduce the amount of power requested by the controller in each control iteration. It can be useful when maximum control iterations are exceeded due to numerical instability such as fleet being set to charging and idling in subsequent control iterations (check the Eventlog). 
 
-    DSS property name: `DispFactor`, DSS property index: 33.
+    Name: `DispFactor`
+    Default: 1.0
     """
 
     def _get_ResetLevel(self) -> BatchFloat64ArrayProxy:
@@ -1476,7 +1571,8 @@ class StorageControllerBatch(DSSBatch, CircuitElementBatchMixin):
     """
     The level of charge required for allowing the storage to discharge again after reaching the reserve storage level. After reaching this level, the storage control  will not allow the storage device to discharge, forcing the storage to charge. Once the storage reaches this level, the storage will be able to discharge again. This value is a number between 0.2 and 1
 
-    DSS property name: `ResetLevel`, DSS property index: 34.
+    Name: `ResetLevel`
+    Default: 0.8
     """
 
     def _get_Seasons(self) -> BatchInt32ArrayProxy:
@@ -1489,7 +1585,7 @@ class StorageControllerBatch(DSSBatch, CircuitElementBatchMixin):
     """
     With this property the user can specify the number of targets to be used by the controller using the list given at "SeasonTargets"/"SeasonTargetsLow", which can be used to dynamically adjust the storage controller during a QSTS simulation. The default value is 1. This property needs to be defined before defining SeasonTargets/SeasonTargetsLow.
 
-    DSS property name: `Seasons`, DSS property index: 35.
+    Name: `Seasons`
     """
 
     def _get_SeasonTargets(self) -> List[Float64Array]:
@@ -1505,7 +1601,8 @@ class StorageControllerBatch(DSSBatch, CircuitElementBatchMixin):
     """
     An array of doubles specifying the targets to be used during a QSTS simulation. These targets will take effect only if SeasonRating=true. The number of targets cannot exceed the number of seasons defined at the SeasonSignal.The difference between the targets defined at SeasonTargets and SeasonTargetsLow is that SeasonTargets applies to discharging modes, while SeasonTargetsLow applies to charging modes.
 
-    DSS property name: `SeasonTargets`, DSS property index: 36.
+    Name: `SeasonTargets`
+    Default: [8000.0]
     """
 
     def _get_SeasonTargetsLow(self) -> List[Float64Array]:
@@ -1521,7 +1618,8 @@ class StorageControllerBatch(DSSBatch, CircuitElementBatchMixin):
     """
     An array of doubles specifying the targets to be used during a QSTS simulation. These targets will take effect only if SeasonRating=true. The number of targets cannot exceed the number of seasons defined at the SeasonSignal.The difference between the targets defined at SeasonTargets and SeasonTargetsLow is that SeasonTargets applies to discharging modes, while SeasonTargetsLow applies to charging modes.
 
-    DSS property name: `SeasonTargetsLow`, DSS property index: 37.
+    Name: `SeasonTargetsLow`
+    Default: [4000.0]
     """
 
     def _get_BaseFreq(self) -> BatchFloat64ArrayProxy:
@@ -1534,7 +1632,8 @@ class StorageControllerBatch(DSSBatch, CircuitElementBatchMixin):
     """
     Base Frequency for ratings.
 
-    DSS property name: `BaseFreq`, DSS property index: 38.
+    Name: `BaseFreq`
+    Units: Hz
     """
 
     def _get_Enabled(self) -> List[bool]:
@@ -1547,9 +1646,10 @@ class StorageControllerBatch(DSSBatch, CircuitElementBatchMixin):
 
     Enabled = property(_get_Enabled, _set_Enabled) # type: List[bool]
     """
-    {Yes|No or True|False} Indicates whether this element is enabled.
+    Indicates whether this element is enabled.
 
-    DSS property name: `Enabled`, DSS property index: 39.
+    Name: `Enabled`
+    Default: True
     """
 
     def Like(self, value: AnyStr, flags: enums.SetterFlags = 0):
@@ -1558,7 +1658,9 @@ class StorageControllerBatch(DSSBatch, CircuitElementBatchMixin):
 
         New Capacitor.C2 like=c1  ...
 
-        DSS property name: `Like`, DSS property index: 40.
+        **Deprecated:** `Like` has been deprecated since at least 2021, see https://sourceforge.net/p/electricdss/discussion/861977/thread/8b59d21eb6/#b57c/f668
+
+        Name: `Like`
         """
         self._set_batch_string(40, value, flags)
 

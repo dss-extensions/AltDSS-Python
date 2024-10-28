@@ -15,7 +15,7 @@ from .XYcurve import XYcurve
 class InvControl(DSSObj, CircuitElementMixin):
     __slots__ = DSSObj._extra_slots + CircuitElementMixin._extra_slots
     _cls_name = 'InvControl'
-    _cls_idx = 42
+    _cls_idx = 43
     _cls_int_idx = {
         2,
         3,
@@ -121,7 +121,7 @@ class InvControl(DSSObj, CircuitElementMixin):
 
     No capability of hierarchical control between two controls for a single element is implemented at this time.
 
-    DSS property name: `DERList`, DSS property index: 1.
+    Name: `DERList`
     """
 
     def _get_Mode(self) -> enums.InvControlControlMode:
@@ -155,7 +155,8 @@ class InvControl(DSSObj, CircuitElementMixin):
 
     NO DEFAULT
 
-    DSS property name: `Mode`, DSS property index: 2.
+    Name: `Mode`
+    Default: None
     """
 
     def _get_Mode_str(self) -> str:
@@ -186,7 +187,8 @@ class InvControl(DSSObj, CircuitElementMixin):
 
     NO DEFAULT
 
-    DSS property name: `Mode`, DSS property index: 2.
+    Name: `Mode`
+    Default: None
     """
 
     def _get_CombiMode(self) -> enums.InvControlCombiMode:
@@ -209,7 +211,8 @@ class InvControl(DSSObj, CircuitElementMixin):
 
     In combined VV_DRC, both the volt-var and the dynamic reactive current modes are simultaneously active.
 
-    DSS property name: `CombiMode`, DSS property index: 3.
+    Name: `CombiMode`
+    Default: None
     """
 
     def _get_CombiMode_str(self) -> str:
@@ -229,7 +232,8 @@ class InvControl(DSSObj, CircuitElementMixin):
 
     In combined VV_DRC, both the volt-var and the dynamic reactive current modes are simultaneously active.
 
-    DSS property name: `CombiMode`, DSS property index: 3.
+    Name: `CombiMode`
+    Default: None
     """
 
     def _get_VVC_Curve1_str(self) -> str:
@@ -247,7 +251,7 @@ class InvControl(DSSObj, CircuitElementMixin):
 
     Units for the x-axis are per-unit voltage, which may be in per unit of the rated voltage for the PVSystem/Storage, or may be in per unit of the average voltage at the terminals over a user-defined number of prior solutions. 
 
-    DSS property name: `VVC_Curve1`, DSS property index: 4.
+    Name: `VVC_Curve1`
     """
 
     def _get_VVC_Curve1(self) -> XYcurve:
@@ -269,7 +273,7 @@ class InvControl(DSSObj, CircuitElementMixin):
 
     Units for the x-axis are per-unit voltage, which may be in per unit of the rated voltage for the PVSystem/Storage, or may be in per unit of the average voltage at the terminals over a user-defined number of prior solutions. 
 
-    DSS property name: `VVC_Curve1`, DSS property index: 4.
+    Name: `VVC_Curve1`
     """
 
     def _get_Hysteresis_Offset(self) -> float:
@@ -280,7 +284,7 @@ class InvControl(DSSObj, CircuitElementMixin):
 
     Hysteresis_Offset = property(_get_Hysteresis_Offset, _set_Hysteresis_Offset) # type: float
     """
-    Required for VOLTVAR mode, and defaults to 0. 
+    Required for VOLTVAR mode.
 
     for the times when the terminal voltage is decreasing, this is the off-set in per-unit voltage of a curve whose shape is the same as vvc_curve. It is offset by a certain negative value of per-unit voltage, which is defined by the base quantity for the x-axis of the volt-var curve (see help for voltage_curvex_ref)
 
@@ -292,7 +296,8 @@ class InvControl(DSSObj, CircuitElementMixin):
 
     if the terminal voltage has been decreasing and changes directions and begins to increase , then move from utilizing the offset curve, back to the vvc_curve1 for volt-var response, but stay at the same per-unit available vars output level.
 
-    DSS property name: `Hysteresis_Offset`, DSS property index: 5.
+    Name: `Hysteresis_Offset`
+    Default: 0.0
     """
 
     def _get_Voltage_CurveX_Ref(self) -> enums.InvControlVoltageCurveXRef:
@@ -318,7 +323,8 @@ class InvControl(DSSObj, CircuitElementMixin):
 
     ravg. Same as avg, with the exception that the avgerage terminal voltage is divided by the rated voltage.
 
-    DSS property name: `Voltage_CurveX_Ref`, DSS property index: 6.
+    Name: `Voltage_CurveX_Ref`
+    Default: Rated
     """
 
     def _get_Voltage_CurveX_Ref_str(self) -> str:
@@ -341,7 +347,8 @@ class InvControl(DSSObj, CircuitElementMixin):
 
     ravg. Same as avg, with the exception that the avgerage terminal voltage is divided by the rated voltage.
 
-    DSS property name: `Voltage_CurveX_Ref`, DSS property index: 6.
+    Name: `Voltage_CurveX_Ref`
+    Default: Rated
     """
 
     def _get_AvgWindowLen(self) -> int:
@@ -362,7 +369,8 @@ class InvControl(DSSObj, CircuitElementMixin):
 
     Note, if the solution stepsize is larger than the window length, then the voltage will be assumed to have been constant over the time-frame specified by the window length.
 
-    DSS property name: `AvgWindowLen`, DSS property index: 7.
+    Name: `AvgWindowLen`
+    Default: 1
     """
 
     def _get_VoltWatt_Curve_str(self) -> str:
@@ -381,7 +389,7 @@ class InvControl(DSSObj, CircuitElementMixin):
 
     Units for the y-axis are either in one of the options described in the VoltwattYAxis property. 
 
-    DSS property name: `VoltWatt_Curve`, DSS property index: 8.
+    Name: `VoltWatt_Curve`
     """
 
     def _get_VoltWatt_Curve(self) -> XYcurve:
@@ -404,7 +412,7 @@ class InvControl(DSSObj, CircuitElementMixin):
 
     Units for the y-axis are either in one of the options described in the VoltwattYAxis property. 
 
-    DSS property name: `VoltWatt_Curve`, DSS property index: 8.
+    Name: `VoltWatt_Curve`
     """
 
     def _get_DbVMin(self) -> float:
@@ -419,7 +427,8 @@ class InvControl(DSSObj, CircuitElementMixin):
 
     This parameter is the minimum voltage that defines the voltage dead-band within which no reactive power is allowed to be generated. 
 
-    DSS property name: `DbVMin`, DSS property index: 9.
+    Name: `DbVMin`
+    Default: 0.95
     """
 
     def _get_DbVMax(self) -> float:
@@ -434,7 +443,8 @@ class InvControl(DSSObj, CircuitElementMixin):
 
     This parameter is the maximum voltage that defines the voltage dead-band within which no reactive power is allowed to be generated. 
 
-    DSS property name: `DbVMax`, DSS property index: 10.
+    Name: `DbVMax`
+    Default: 1.05
     """
 
     def _get_ArGraLowV(self) -> float:
@@ -453,7 +463,8 @@ class InvControl(DSSObj, CircuitElementMixin):
 
     Note, the moving average voltage for the dynamic reactive current mode is different than the moving average voltage for the volt-watt and volt-var modes.
 
-    DSS property name: `ArGraLowV`, DSS property index: 11.
+    Name: `ArGraLowV`
+    Default: 0.1
     """
 
     def _get_ArGraHiV(self) -> float:
@@ -472,7 +483,8 @@ class InvControl(DSSObj, CircuitElementMixin):
 
     Note, the moving average voltage for the dynamic reactive current mode is different than the mmoving average voltage for the volt-watt and volt-var modes.
 
-    DSS property name: `ArGraHiV`, DSS property index: 12.
+    Name: `ArGraHiV`
+    Default: 0.1
     """
 
     def _get_DynReacAvgWindowLen(self) -> int:
@@ -493,7 +505,8 @@ class InvControl(DSSObj, CircuitElementMixin):
 
     The averaging window will calculate the average PVSystem/Storage terminal voltage over the specified period of time, up to and including the last power flow solution.  Note, if the solution stepsize is larger than the window length, then the voltage will be assumed to have been constant over the time-frame specified by the window length.
 
-    DSS property name: `DynReacAvgWindowLen`, DSS property index: 13.
+    Name: `DynReacAvgWindowLen`
+    Default: 1
     """
 
     def _get_DeltaQ_Factor(self) -> float:
@@ -517,7 +530,8 @@ class InvControl(DSSObj, CircuitElementMixin):
 
     When operating the controller using exponential control model (see CtrlModel), this parameter represents the sampling time gain of the controller, which is used for accelrating the controller response in terms of control iterations required.
 
-    DSS property name: `DeltaQ_Factor`, DSS property index: 14.
+    Name: `DeltaQ_Factor`
+    Default: -1.0
     """
 
     def _get_VoltageChangeTolerance(self) -> float:
@@ -536,7 +550,8 @@ class InvControl(DSSObj, CircuitElementMixin):
 
     If an InvControl is controlling more than one PVSystem/Storage, each PVSystem/Storage has this quantity calculated independently, and so an individual PVSystem/Storage may reach the tolerance within different numbers of control iterations.
 
-    DSS property name: `VoltageChangeTolerance`, DSS property index: 15.
+    Name: `VoltageChangeTolerance`
+    Default: 0.0001
     """
 
     def _get_VarChangeTolerance(self) -> float:
@@ -555,7 +570,8 @@ class InvControl(DSSObj, CircuitElementMixin):
 
     If an InvControl is controlling more than one PVSystem/Storage, each PVSystem/Storage has this quantity calculated independently, and so an individual PVSystem/Storage may reach the tolerance within different numbers of control iterations.
 
-    DSS property name: `VarChangeTolerance`, DSS property index: 16.
+    Name: `VarChangeTolerance`
+    Default: 0.025
     """
 
     def _get_VoltWattYAxis(self) -> enums.InvControlVoltWattYAxis:
@@ -569,7 +585,7 @@ class InvControl(DSSObj, CircuitElementMixin):
 
     VoltWattYAxis = property(_get_VoltWattYAxis, _set_VoltWattYAxis) # type: enums.InvControlVoltWattYAxis
     """
-    Required for VOLTWATT mode.  Must be one of: {PMPPPU* | PAVAILABLEPU| PCTPMPPPU | KVARATINGPU}.  The default is PMPPPU.  
+    Required for VOLTWATT mode.
 
     Units for the y-axis of the volt-watt curve while in volt-watt mode. 
 
@@ -581,7 +597,8 @@ class InvControl(DSSObj, CircuitElementMixin):
 
     When set to KVARATINGPU. The y-axis corresponds to the value in pu of the kVA property of the PVSystem.
 
-    DSS property name: `VoltWattYAxis`, DSS property index: 17.
+    Name: `VoltWattYAxis`
+    Default: PMPPPU
     """
 
     def _get_VoltWattYAxis_str(self) -> str:
@@ -592,7 +609,7 @@ class InvControl(DSSObj, CircuitElementMixin):
 
     VoltWattYAxis_str = property(_get_VoltWattYAxis_str, _set_VoltWattYAxis_str) # type: str
     """
-    Required for VOLTWATT mode.  Must be one of: {PMPPPU* | PAVAILABLEPU| PCTPMPPPU | KVARATINGPU}.  The default is PMPPPU.  
+    Required for VOLTWATT mode.
 
     Units for the y-axis of the volt-watt curve while in volt-watt mode. 
 
@@ -604,7 +621,8 @@ class InvControl(DSSObj, CircuitElementMixin):
 
     When set to KVARATINGPU. The y-axis corresponds to the value in pu of the kVA property of the PVSystem.
 
-    DSS property name: `VoltWattYAxis`, DSS property index: 17.
+    Name: `VoltWattYAxis`
+    Default: PMPPPU
     """
 
     def _get_RateOfChangeMode(self) -> enums.InvControlRateOfChangeMode:
@@ -618,7 +636,7 @@ class InvControl(DSSObj, CircuitElementMixin):
 
     RateOfChangeMode = property(_get_RateOfChangeMode, _set_RateOfChangeMode) # type: enums.InvControlRateOfChangeMode
     """
-    Required for VOLTWATT and VOLTVAR mode.  Must be one of: {INACTIVE* | LPF | RISEFALL }.  The default is INACTIVE.  
+    Required for VOLTWATT and VOLTVAR mode.
 
     Auxiliary option that aims to limit the changes of the desired reactive power and the active power limit between time steps, the alternatives are listed below: 
 
@@ -628,7 +646,8 @@ class InvControl(DSSObj, CircuitElementMixin):
 
     RISEFALL. A rise and fall limit in the change of active and/or reactive power expressed in terms of pu power per second, defined in the RiseFallLimit, is applied to the desired reactive power and/or the active power limit. 
 
-    DSS property name: `RateOfChangeMode`, DSS property index: 18.
+    Name: `RateOfChangeMode`
+    Default: Inactive
     """
 
     def _get_RateOfChangeMode_str(self) -> str:
@@ -639,7 +658,7 @@ class InvControl(DSSObj, CircuitElementMixin):
 
     RateOfChangeMode_str = property(_get_RateOfChangeMode_str, _set_RateOfChangeMode_str) # type: str
     """
-    Required for VOLTWATT and VOLTVAR mode.  Must be one of: {INACTIVE* | LPF | RISEFALL }.  The default is INACTIVE.  
+    Required for VOLTWATT and VOLTVAR mode.
 
     Auxiliary option that aims to limit the changes of the desired reactive power and the active power limit between time steps, the alternatives are listed below: 
 
@@ -649,7 +668,8 @@ class InvControl(DSSObj, CircuitElementMixin):
 
     RISEFALL. A rise and fall limit in the change of active and/or reactive power expressed in terms of pu power per second, defined in the RiseFallLimit, is applied to the desired reactive power and/or the active power limit. 
 
-    DSS property name: `RateOfChangeMode`, DSS property index: 18.
+    Name: `RateOfChangeMode`
+    Default: Inactive
     """
 
     def _get_LPFTau(self) -> float:
@@ -664,7 +684,9 @@ class InvControl(DSSObj, CircuitElementMixin):
 
     Filter time constant of the LPF option of the RateofChangeMode property. The time constant will cause the low-pass filter to achieve 95% of the target value in 3 time constants.
 
-    DSS property name: `LPFTau`, DSS property index: 19.
+    Name: `LPFTau`
+    Units: s
+    Default: 0.001
     """
 
     def _get_RiseFallLimit(self) -> float:
@@ -679,7 +701,8 @@ class InvControl(DSSObj, CircuitElementMixin):
 
     Limit in power in pu per second used by the RISEFALL option of the RateofChangeMode property.The base value for this ramp is defined in the RefReactivePower property and/or in VoltwattYAxis.
 
-    DSS property name: `RiseFallLimit`, DSS property index: 20.
+    Name: `RiseFallLimit`
+    Default: 0.001
     """
 
     def _get_DeltaP_Factor(self) -> float:
@@ -701,7 +724,8 @@ class InvControl(DSSObj, CircuitElementMixin):
 
     If the maximum control iterations are exceeded, and no numerical instability is seen in the EventLog of via monitors, then try increasing the value of this parameter to reduce the number of control iterations needed to achieve the control criteria, and move to the power flow solution.
 
-    DSS property name: `DeltaP_Factor`, DSS property index: 21.
+    Name: `DeltaP_Factor`
+    Default: -1.0
     """
 
     def _get_EventLog(self) -> bool:
@@ -712,9 +736,10 @@ class InvControl(DSSObj, CircuitElementMixin):
 
     EventLog = property(_get_EventLog, _set_EventLog) # type: bool
     """
-    {Yes/True | No/False*} Default is NO for InvControl. Log control actions to Eventlog.
+    Log control actions to Eventlog.
 
-    DSS property name: `EventLog`, DSS property index: 22.
+    Name: `EventLog`
+    Default: False
     """
 
     def _get_RefReactivePower(self) -> enums.InvControlReactivePowerReference:
@@ -736,7 +761,8 @@ class InvControl(DSSObj, CircuitElementMixin):
 
     VARMAX: The base values of the provided and absorbed reactive power are equal to the value defined in the kvarMax and kvarMaxAbs properties, respectively.
 
-    DSS property name: `RefReactivePower`, DSS property index: 23.
+    Name: `RefReactivePower`
+    Default: VARAVAL
     """
 
     def _get_RefReactivePower_str(self) -> str:
@@ -755,7 +781,8 @@ class InvControl(DSSObj, CircuitElementMixin):
 
     VARMAX: The base values of the provided and absorbed reactive power are equal to the value defined in the kvarMax and kvarMaxAbs properties, respectively.
 
-    DSS property name: `RefReactivePower`, DSS property index: 23.
+    Name: `RefReactivePower`
+    Default: VARAVAL
     """
 
     def _get_ActivePChangeTolerance(self) -> float:
@@ -774,7 +801,8 @@ class InvControl(DSSObj, CircuitElementMixin):
 
     If an InvControl is controlling more than one PVSystem/Storage, each PVSystem/Storage has this quantity calculated independently, and so an individual PVSystem/Storage may reach the tolerance within different numbers of control iterations.
 
-    DSS property name: `ActivePChangeTolerance`, DSS property index: 24.
+    Name: `ActivePChangeTolerance`
+    Default: 0.01
     """
 
     def _get_MonVoltageCalc(self) -> Union[enums.MonitoredPhase, int]:
@@ -794,7 +822,8 @@ class InvControl(DSSObj, CircuitElementMixin):
     """
     Number of the phase being monitored or one of {AVG | MAX | MIN} for all phases. Default=AVG. 
 
-    DSS property name: `MonVoltageCalc`, DSS property index: 25.
+    Name: `MonVoltageCalc`
+    Default: avg
     """
 
     def _get_MonVoltageCalc_str(self) -> str:
@@ -807,7 +836,8 @@ class InvControl(DSSObj, CircuitElementMixin):
     """
     Number of the phase being monitored or one of {AVG | MAX | MIN} for all phases. Default=AVG. 
 
-    DSS property name: `MonVoltageCalc`, DSS property index: 25.
+    Name: `MonVoltageCalc`
+    Default: avg
     """
 
     def _get_MonBus(self) -> List[str]:
@@ -822,7 +852,7 @@ class InvControl(DSSObj, CircuitElementMixin):
     """
     Name of monitored bus used by the voltage-dependent control modes. Default is bus of the controlled PVSystem/Storage or Storage.
 
-    DSS property name: `MonBus`, DSS property index: 26.
+    Name: `MonBus`
     """
 
     def _get_MonBusesVBase(self) -> Float64Array:
@@ -835,7 +865,7 @@ class InvControl(DSSObj, CircuitElementMixin):
     """
     Array list of rated voltages of the buses and their nodes presented in the monBus property. This list may have different line-to-line and/or line-to-ground voltages.
 
-    DSS property name: `MonBusesVBase`, DSS property index: 27.
+    Name: `MonBusesVBase`
     """
 
     def _get_VoltWattCH_Curve_str(self) -> str:
@@ -856,7 +886,7 @@ class InvControl(DSSObj, CircuitElementMixin):
 
     No default -- must be specified for VOLTWATT mode for Storage element in CHARGING state.
 
-    DSS property name: `VoltWattCH_Curve`, DSS property index: 28.
+    Name: `VoltWattCH_Curve`
     """
 
     def _get_VoltWattCH_Curve(self) -> XYcurve:
@@ -881,7 +911,7 @@ class InvControl(DSSObj, CircuitElementMixin):
 
     No default -- must be specified for VOLTWATT mode for Storage element in CHARGING state.
 
-    DSS property name: `VoltWattCH_Curve`, DSS property index: 28.
+    Name: `VoltWattCH_Curve`
     """
 
     def _get_WattPF_Curve_str(self) -> str:
@@ -907,7 +937,7 @@ class InvControl(DSSObj, CircuitElementMixin):
     Try to plot them considering the y-axis reference equal to 0 power factor.
     The discontinuity in 0.35pu is not a problem since var is zero for either power factor equal to 1 or -1.
 
-    DSS property name: `WattPF_Curve`, DSS property index: 29.
+    Name: `WattPF_Curve`
     """
 
     def _get_WattPF_Curve(self) -> XYcurve:
@@ -937,7 +967,7 @@ class InvControl(DSSObj, CircuitElementMixin):
     Try to plot them considering the y-axis reference equal to 0 power factor.
     The discontinuity in 0.35pu is not a problem since var is zero for either power factor equal to 1 or -1.
 
-    DSS property name: `WattPF_Curve`, DSS property index: 29.
+    Name: `WattPF_Curve`
     """
 
     def _get_WattVar_Curve_str(self) -> str:
@@ -955,7 +985,7 @@ class InvControl(DSSObj, CircuitElementMixin):
 
     Units for the x-axis are per-unit output active power, and the base active power is the Pmpp for PVSystem and kWrated for Storage.
 
-    DSS property name: `WattVar_Curve`, DSS property index: 30.
+    Name: `WattVar_Curve`
     """
 
     def _get_WattVar_Curve(self) -> XYcurve:
@@ -977,7 +1007,7 @@ class InvControl(DSSObj, CircuitElementMixin):
 
     Units for the x-axis are per-unit output active power, and the base active power is the Pmpp for PVSystem and kWrated for Storage.
 
-    DSS property name: `WattVar_Curve`, DSS property index: 30.
+    Name: `WattVar_Curve`
     """
 
     def _get_VSetPoint(self) -> float:
@@ -990,7 +1020,8 @@ class InvControl(DSSObj, CircuitElementMixin):
     """
     Required for Active Voltage Regulation (AVR).
 
-    DSS property name: `VSetPoint`, DSS property index: 33.
+    Name: `VSetPoint`
+    Default: 1.0
     """
 
     def _get_ControlModel(self) -> enums.InvControlControlModel:
@@ -1009,7 +1040,8 @@ class InvControl(DSSObj, CircuitElementMixin):
     Use this property for better tunning your controller and improve the controller response in terms of control iterations needed to reach the target.
     This property alters the meaning of deltaQ_factor and deltaP_factor properties according to its value (Check help). The method can also be combined with the controller tolerance for improving performance.
 
-    DSS property name: `ControlModel`, DSS property index: 34.
+    Name: `ControlModel`
+    Default: 0
     """
 
     def _get_BaseFreq(self) -> float:
@@ -1022,7 +1054,8 @@ class InvControl(DSSObj, CircuitElementMixin):
     """
     Base Frequency for ratings.
 
-    DSS property name: `BaseFreq`, DSS property index: 35.
+    Name: `BaseFreq`
+    Units: Hz
     """
 
     def _get_Enabled(self) -> bool:
@@ -1033,9 +1066,10 @@ class InvControl(DSSObj, CircuitElementMixin):
 
     Enabled = property(_get_Enabled, _set_Enabled) # type: bool
     """
-    {Yes|No or True|False} Indicates whether this element is enabled.
+    Indicates whether this element is enabled.
 
-    DSS property name: `Enabled`, DSS property index: 36.
+    Name: `Enabled`
+    Default: True
     """
 
     def Like(self, value: AnyStr):
@@ -1044,7 +1078,9 @@ class InvControl(DSSObj, CircuitElementMixin):
 
         New Capacitor.C2 like=c1  ...
 
-        DSS property name: `Like`, DSS property index: 37.
+        **Deprecated:** `Like` has been deprecated since at least 2021, see https://sourceforge.net/p/electricdss/discussion/861977/thread/8b59d21eb6/#b57c/f668
+
+        Name: `Like`
         """
         self._set_string_o(37, value)
 
@@ -1089,7 +1125,7 @@ class InvControlProperties(TypedDict):
 class InvControlBatch(DSSBatch, CircuitElementBatchMixin):
     _cls_name = 'InvControl'
     _obj_cls = InvControl
-    _cls_idx = 42
+    _cls_idx = 43
     __slots__ = []
 
     def __init__(self, api_util, **kwargs):
@@ -1133,7 +1169,7 @@ class InvControlBatch(DSSBatch, CircuitElementBatchMixin):
 
     No capability of hierarchical control between two controls for a single element is implemented at this time.
 
-    DSS property name: `DERList`, DSS property index: 1.
+    Name: `DERList`
     """
 
     def _get_Mode(self) -> BatchInt32ArrayProxy:
@@ -1168,7 +1204,8 @@ class InvControlBatch(DSSBatch, CircuitElementBatchMixin):
 
     NO DEFAULT
 
-    DSS property name: `Mode`, DSS property index: 2.
+    Name: `Mode`
+    Default: None
     """
 
     def _get_Mode_str(self) -> List[str]:
@@ -1199,7 +1236,8 @@ class InvControlBatch(DSSBatch, CircuitElementBatchMixin):
 
     NO DEFAULT
 
-    DSS property name: `Mode`, DSS property index: 2.
+    Name: `Mode`
+    Default: None
     """
 
     def _get_CombiMode(self) -> BatchInt32ArrayProxy:
@@ -1223,7 +1261,8 @@ class InvControlBatch(DSSBatch, CircuitElementBatchMixin):
 
     In combined VV_DRC, both the volt-var and the dynamic reactive current modes are simultaneously active.
 
-    DSS property name: `CombiMode`, DSS property index: 3.
+    Name: `CombiMode`
+    Default: None
     """
 
     def _get_CombiMode_str(self) -> List[str]:
@@ -1243,7 +1282,8 @@ class InvControlBatch(DSSBatch, CircuitElementBatchMixin):
 
     In combined VV_DRC, both the volt-var and the dynamic reactive current modes are simultaneously active.
 
-    DSS property name: `CombiMode`, DSS property index: 3.
+    Name: `CombiMode`
+    Default: None
     """
 
     def _get_VVC_Curve1_str(self) -> List[str]:
@@ -1261,7 +1301,7 @@ class InvControlBatch(DSSBatch, CircuitElementBatchMixin):
 
     Units for the x-axis are per-unit voltage, which may be in per unit of the rated voltage for the PVSystem/Storage, or may be in per unit of the average voltage at the terminals over a user-defined number of prior solutions. 
 
-    DSS property name: `VVC_Curve1`, DSS property index: 4.
+    Name: `VVC_Curve1`
     """
 
     def _get_VVC_Curve1(self) -> List[XYcurve]:
@@ -1279,7 +1319,7 @@ class InvControlBatch(DSSBatch, CircuitElementBatchMixin):
 
     Units for the x-axis are per-unit voltage, which may be in per unit of the rated voltage for the PVSystem/Storage, or may be in per unit of the average voltage at the terminals over a user-defined number of prior solutions. 
 
-    DSS property name: `VVC_Curve1`, DSS property index: 4.
+    Name: `VVC_Curve1`
     """
 
     def _get_Hysteresis_Offset(self) -> BatchFloat64ArrayProxy:
@@ -1290,7 +1330,7 @@ class InvControlBatch(DSSBatch, CircuitElementBatchMixin):
 
     Hysteresis_Offset = property(_get_Hysteresis_Offset, _set_Hysteresis_Offset) # type: BatchFloat64ArrayProxy
     """
-    Required for VOLTVAR mode, and defaults to 0. 
+    Required for VOLTVAR mode.
 
     for the times when the terminal voltage is decreasing, this is the off-set in per-unit voltage of a curve whose shape is the same as vvc_curve. It is offset by a certain negative value of per-unit voltage, which is defined by the base quantity for the x-axis of the volt-var curve (see help for voltage_curvex_ref)
 
@@ -1302,7 +1342,8 @@ class InvControlBatch(DSSBatch, CircuitElementBatchMixin):
 
     if the terminal voltage has been decreasing and changes directions and begins to increase , then move from utilizing the offset curve, back to the vvc_curve1 for volt-var response, but stay at the same per-unit available vars output level.
 
-    DSS property name: `Hysteresis_Offset`, DSS property index: 5.
+    Name: `Hysteresis_Offset`
+    Default: 0.0
     """
 
     def _get_Voltage_CurveX_Ref(self) -> BatchInt32ArrayProxy:
@@ -1329,7 +1370,8 @@ class InvControlBatch(DSSBatch, CircuitElementBatchMixin):
 
     ravg. Same as avg, with the exception that the avgerage terminal voltage is divided by the rated voltage.
 
-    DSS property name: `Voltage_CurveX_Ref`, DSS property index: 6.
+    Name: `Voltage_CurveX_Ref`
+    Default: Rated
     """
 
     def _get_Voltage_CurveX_Ref_str(self) -> List[str]:
@@ -1352,7 +1394,8 @@ class InvControlBatch(DSSBatch, CircuitElementBatchMixin):
 
     ravg. Same as avg, with the exception that the avgerage terminal voltage is divided by the rated voltage.
 
-    DSS property name: `Voltage_CurveX_Ref`, DSS property index: 6.
+    Name: `Voltage_CurveX_Ref`
+    Default: Rated
     """
 
     def _get_AvgWindowLen(self) -> BatchInt32ArrayProxy:
@@ -1373,7 +1416,8 @@ class InvControlBatch(DSSBatch, CircuitElementBatchMixin):
 
     Note, if the solution stepsize is larger than the window length, then the voltage will be assumed to have been constant over the time-frame specified by the window length.
 
-    DSS property name: `AvgWindowLen`, DSS property index: 7.
+    Name: `AvgWindowLen`
+    Default: 1
     """
 
     def _get_VoltWatt_Curve_str(self) -> List[str]:
@@ -1392,7 +1436,7 @@ class InvControlBatch(DSSBatch, CircuitElementBatchMixin):
 
     Units for the y-axis are either in one of the options described in the VoltwattYAxis property. 
 
-    DSS property name: `VoltWatt_Curve`, DSS property index: 8.
+    Name: `VoltWatt_Curve`
     """
 
     def _get_VoltWatt_Curve(self) -> List[XYcurve]:
@@ -1411,7 +1455,7 @@ class InvControlBatch(DSSBatch, CircuitElementBatchMixin):
 
     Units for the y-axis are either in one of the options described in the VoltwattYAxis property. 
 
-    DSS property name: `VoltWatt_Curve`, DSS property index: 8.
+    Name: `VoltWatt_Curve`
     """
 
     def _get_DbVMin(self) -> BatchFloat64ArrayProxy:
@@ -1426,7 +1470,8 @@ class InvControlBatch(DSSBatch, CircuitElementBatchMixin):
 
     This parameter is the minimum voltage that defines the voltage dead-band within which no reactive power is allowed to be generated. 
 
-    DSS property name: `DbVMin`, DSS property index: 9.
+    Name: `DbVMin`
+    Default: 0.95
     """
 
     def _get_DbVMax(self) -> BatchFloat64ArrayProxy:
@@ -1441,7 +1486,8 @@ class InvControlBatch(DSSBatch, CircuitElementBatchMixin):
 
     This parameter is the maximum voltage that defines the voltage dead-band within which no reactive power is allowed to be generated. 
 
-    DSS property name: `DbVMax`, DSS property index: 10.
+    Name: `DbVMax`
+    Default: 1.05
     """
 
     def _get_ArGraLowV(self) -> BatchFloat64ArrayProxy:
@@ -1460,7 +1506,8 @@ class InvControlBatch(DSSBatch, CircuitElementBatchMixin):
 
     Note, the moving average voltage for the dynamic reactive current mode is different than the moving average voltage for the volt-watt and volt-var modes.
 
-    DSS property name: `ArGraLowV`, DSS property index: 11.
+    Name: `ArGraLowV`
+    Default: 0.1
     """
 
     def _get_ArGraHiV(self) -> BatchFloat64ArrayProxy:
@@ -1479,7 +1526,8 @@ class InvControlBatch(DSSBatch, CircuitElementBatchMixin):
 
     Note, the moving average voltage for the dynamic reactive current mode is different than the mmoving average voltage for the volt-watt and volt-var modes.
 
-    DSS property name: `ArGraHiV`, DSS property index: 12.
+    Name: `ArGraHiV`
+    Default: 0.1
     """
 
     def _get_DynReacAvgWindowLen(self) -> BatchInt32ArrayProxy:
@@ -1500,7 +1548,8 @@ class InvControlBatch(DSSBatch, CircuitElementBatchMixin):
 
     The averaging window will calculate the average PVSystem/Storage terminal voltage over the specified period of time, up to and including the last power flow solution.  Note, if the solution stepsize is larger than the window length, then the voltage will be assumed to have been constant over the time-frame specified by the window length.
 
-    DSS property name: `DynReacAvgWindowLen`, DSS property index: 13.
+    Name: `DynReacAvgWindowLen`
+    Default: 1
     """
 
     def _get_DeltaQ_Factor(self) -> BatchFloat64ArrayProxy:
@@ -1524,7 +1573,8 @@ class InvControlBatch(DSSBatch, CircuitElementBatchMixin):
 
     When operating the controller using exponential control model (see CtrlModel), this parameter represents the sampling time gain of the controller, which is used for accelrating the controller response in terms of control iterations required.
 
-    DSS property name: `DeltaQ_Factor`, DSS property index: 14.
+    Name: `DeltaQ_Factor`
+    Default: -1.0
     """
 
     def _get_VoltageChangeTolerance(self) -> BatchFloat64ArrayProxy:
@@ -1543,7 +1593,8 @@ class InvControlBatch(DSSBatch, CircuitElementBatchMixin):
 
     If an InvControl is controlling more than one PVSystem/Storage, each PVSystem/Storage has this quantity calculated independently, and so an individual PVSystem/Storage may reach the tolerance within different numbers of control iterations.
 
-    DSS property name: `VoltageChangeTolerance`, DSS property index: 15.
+    Name: `VoltageChangeTolerance`
+    Default: 0.0001
     """
 
     def _get_VarChangeTolerance(self) -> BatchFloat64ArrayProxy:
@@ -1562,7 +1613,8 @@ class InvControlBatch(DSSBatch, CircuitElementBatchMixin):
 
     If an InvControl is controlling more than one PVSystem/Storage, each PVSystem/Storage has this quantity calculated independently, and so an individual PVSystem/Storage may reach the tolerance within different numbers of control iterations.
 
-    DSS property name: `VarChangeTolerance`, DSS property index: 16.
+    Name: `VarChangeTolerance`
+    Default: 0.025
     """
 
     def _get_VoltWattYAxis(self) -> BatchInt32ArrayProxy:
@@ -1577,7 +1629,7 @@ class InvControlBatch(DSSBatch, CircuitElementBatchMixin):
 
     VoltWattYAxis = property(_get_VoltWattYAxis, _set_VoltWattYAxis) # type: BatchInt32ArrayProxy
     """
-    Required for VOLTWATT mode.  Must be one of: {PMPPPU* | PAVAILABLEPU| PCTPMPPPU | KVARATINGPU}.  The default is PMPPPU.  
+    Required for VOLTWATT mode.
 
     Units for the y-axis of the volt-watt curve while in volt-watt mode. 
 
@@ -1589,7 +1641,8 @@ class InvControlBatch(DSSBatch, CircuitElementBatchMixin):
 
     When set to KVARATINGPU. The y-axis corresponds to the value in pu of the kVA property of the PVSystem.
 
-    DSS property name: `VoltWattYAxis`, DSS property index: 17.
+    Name: `VoltWattYAxis`
+    Default: PMPPPU
     """
 
     def _get_VoltWattYAxis_str(self) -> List[str]:
@@ -1600,7 +1653,7 @@ class InvControlBatch(DSSBatch, CircuitElementBatchMixin):
 
     VoltWattYAxis_str = property(_get_VoltWattYAxis_str, _set_VoltWattYAxis_str) # type: List[str]
     """
-    Required for VOLTWATT mode.  Must be one of: {PMPPPU* | PAVAILABLEPU| PCTPMPPPU | KVARATINGPU}.  The default is PMPPPU.  
+    Required for VOLTWATT mode.
 
     Units for the y-axis of the volt-watt curve while in volt-watt mode. 
 
@@ -1612,7 +1665,8 @@ class InvControlBatch(DSSBatch, CircuitElementBatchMixin):
 
     When set to KVARATINGPU. The y-axis corresponds to the value in pu of the kVA property of the PVSystem.
 
-    DSS property name: `VoltWattYAxis`, DSS property index: 17.
+    Name: `VoltWattYAxis`
+    Default: PMPPPU
     """
 
     def _get_RateOfChangeMode(self) -> BatchInt32ArrayProxy:
@@ -1627,7 +1681,7 @@ class InvControlBatch(DSSBatch, CircuitElementBatchMixin):
 
     RateOfChangeMode = property(_get_RateOfChangeMode, _set_RateOfChangeMode) # type: BatchInt32ArrayProxy
     """
-    Required for VOLTWATT and VOLTVAR mode.  Must be one of: {INACTIVE* | LPF | RISEFALL }.  The default is INACTIVE.  
+    Required for VOLTWATT and VOLTVAR mode.
 
     Auxiliary option that aims to limit the changes of the desired reactive power and the active power limit between time steps, the alternatives are listed below: 
 
@@ -1637,7 +1691,8 @@ class InvControlBatch(DSSBatch, CircuitElementBatchMixin):
 
     RISEFALL. A rise and fall limit in the change of active and/or reactive power expressed in terms of pu power per second, defined in the RiseFallLimit, is applied to the desired reactive power and/or the active power limit. 
 
-    DSS property name: `RateOfChangeMode`, DSS property index: 18.
+    Name: `RateOfChangeMode`
+    Default: Inactive
     """
 
     def _get_RateOfChangeMode_str(self) -> List[str]:
@@ -1648,7 +1703,7 @@ class InvControlBatch(DSSBatch, CircuitElementBatchMixin):
 
     RateOfChangeMode_str = property(_get_RateOfChangeMode_str, _set_RateOfChangeMode_str) # type: List[str]
     """
-    Required for VOLTWATT and VOLTVAR mode.  Must be one of: {INACTIVE* | LPF | RISEFALL }.  The default is INACTIVE.  
+    Required for VOLTWATT and VOLTVAR mode.
 
     Auxiliary option that aims to limit the changes of the desired reactive power and the active power limit between time steps, the alternatives are listed below: 
 
@@ -1658,7 +1713,8 @@ class InvControlBatch(DSSBatch, CircuitElementBatchMixin):
 
     RISEFALL. A rise and fall limit in the change of active and/or reactive power expressed in terms of pu power per second, defined in the RiseFallLimit, is applied to the desired reactive power and/or the active power limit. 
 
-    DSS property name: `RateOfChangeMode`, DSS property index: 18.
+    Name: `RateOfChangeMode`
+    Default: Inactive
     """
 
     def _get_LPFTau(self) -> BatchFloat64ArrayProxy:
@@ -1673,7 +1729,9 @@ class InvControlBatch(DSSBatch, CircuitElementBatchMixin):
 
     Filter time constant of the LPF option of the RateofChangeMode property. The time constant will cause the low-pass filter to achieve 95% of the target value in 3 time constants.
 
-    DSS property name: `LPFTau`, DSS property index: 19.
+    Name: `LPFTau`
+    Units: s
+    Default: 0.001
     """
 
     def _get_RiseFallLimit(self) -> BatchFloat64ArrayProxy:
@@ -1688,7 +1746,8 @@ class InvControlBatch(DSSBatch, CircuitElementBatchMixin):
 
     Limit in power in pu per second used by the RISEFALL option of the RateofChangeMode property.The base value for this ramp is defined in the RefReactivePower property and/or in VoltwattYAxis.
 
-    DSS property name: `RiseFallLimit`, DSS property index: 20.
+    Name: `RiseFallLimit`
+    Default: 0.001
     """
 
     def _get_DeltaP_Factor(self) -> BatchFloat64ArrayProxy:
@@ -1710,7 +1769,8 @@ class InvControlBatch(DSSBatch, CircuitElementBatchMixin):
 
     If the maximum control iterations are exceeded, and no numerical instability is seen in the EventLog of via monitors, then try increasing the value of this parameter to reduce the number of control iterations needed to achieve the control criteria, and move to the power flow solution.
 
-    DSS property name: `DeltaP_Factor`, DSS property index: 21.
+    Name: `DeltaP_Factor`
+    Default: -1.0
     """
 
     def _get_EventLog(self) -> List[bool]:
@@ -1723,9 +1783,10 @@ class InvControlBatch(DSSBatch, CircuitElementBatchMixin):
 
     EventLog = property(_get_EventLog, _set_EventLog) # type: List[bool]
     """
-    {Yes/True | No/False*} Default is NO for InvControl. Log control actions to Eventlog.
+    Log control actions to Eventlog.
 
-    DSS property name: `EventLog`, DSS property index: 22.
+    Name: `EventLog`
+    Default: False
     """
 
     def _get_RefReactivePower(self) -> BatchInt32ArrayProxy:
@@ -1748,7 +1809,8 @@ class InvControlBatch(DSSBatch, CircuitElementBatchMixin):
 
     VARMAX: The base values of the provided and absorbed reactive power are equal to the value defined in the kvarMax and kvarMaxAbs properties, respectively.
 
-    DSS property name: `RefReactivePower`, DSS property index: 23.
+    Name: `RefReactivePower`
+    Default: VARAVAL
     """
 
     def _get_RefReactivePower_str(self) -> List[str]:
@@ -1767,7 +1829,8 @@ class InvControlBatch(DSSBatch, CircuitElementBatchMixin):
 
     VARMAX: The base values of the provided and absorbed reactive power are equal to the value defined in the kvarMax and kvarMaxAbs properties, respectively.
 
-    DSS property name: `RefReactivePower`, DSS property index: 23.
+    Name: `RefReactivePower`
+    Default: VARAVAL
     """
 
     def _get_ActivePChangeTolerance(self) -> BatchFloat64ArrayProxy:
@@ -1786,7 +1849,8 @@ class InvControlBatch(DSSBatch, CircuitElementBatchMixin):
 
     If an InvControl is controlling more than one PVSystem/Storage, each PVSystem/Storage has this quantity calculated independently, and so an individual PVSystem/Storage may reach the tolerance within different numbers of control iterations.
 
-    DSS property name: `ActivePChangeTolerance`, DSS property index: 24.
+    Name: `ActivePChangeTolerance`
+    Default: 0.01
     """
 
     def _get_MonVoltageCalc(self) -> BatchInt32ArrayProxy:
@@ -1803,7 +1867,8 @@ class InvControlBatch(DSSBatch, CircuitElementBatchMixin):
     """
     Number of the phase being monitored or one of {AVG | MAX | MIN} for all phases. Default=AVG. 
 
-    DSS property name: `MonVoltageCalc`, DSS property index: 25.
+    Name: `MonVoltageCalc`
+    Default: avg
     """
 
     def _get_MonVoltageCalc_str(self) -> List[str]:
@@ -1816,7 +1881,8 @@ class InvControlBatch(DSSBatch, CircuitElementBatchMixin):
     """
     Number of the phase being monitored or one of {AVG | MAX | MIN} for all phases. Default=AVG. 
 
-    DSS property name: `MonVoltageCalc`, DSS property index: 25.
+    Name: `MonVoltageCalc`
+    Default: avg
     """
 
     def _get_MonBus(self) -> List[List[str]]:
@@ -1833,7 +1899,7 @@ class InvControlBatch(DSSBatch, CircuitElementBatchMixin):
     """
     Name of monitored bus used by the voltage-dependent control modes. Default is bus of the controlled PVSystem/Storage or Storage.
 
-    DSS property name: `MonBus`, DSS property index: 26.
+    Name: `MonBus`
     """
 
     def _get_MonBusesVBase(self) -> List[Float64Array]:
@@ -1849,7 +1915,7 @@ class InvControlBatch(DSSBatch, CircuitElementBatchMixin):
     """
     Array list of rated voltages of the buses and their nodes presented in the monBus property. This list may have different line-to-line and/or line-to-ground voltages.
 
-    DSS property name: `MonBusesVBase`, DSS property index: 27.
+    Name: `MonBusesVBase`
     """
 
     def _get_VoltWattCH_Curve_str(self) -> List[str]:
@@ -1870,7 +1936,7 @@ class InvControlBatch(DSSBatch, CircuitElementBatchMixin):
 
     No default -- must be specified for VOLTWATT mode for Storage element in CHARGING state.
 
-    DSS property name: `VoltWattCH_Curve`, DSS property index: 28.
+    Name: `VoltWattCH_Curve`
     """
 
     def _get_VoltWattCH_Curve(self) -> List[XYcurve]:
@@ -1891,7 +1957,7 @@ class InvControlBatch(DSSBatch, CircuitElementBatchMixin):
 
     No default -- must be specified for VOLTWATT mode for Storage element in CHARGING state.
 
-    DSS property name: `VoltWattCH_Curve`, DSS property index: 28.
+    Name: `VoltWattCH_Curve`
     """
 
     def _get_WattPF_Curve_str(self) -> List[str]:
@@ -1917,7 +1983,7 @@ class InvControlBatch(DSSBatch, CircuitElementBatchMixin):
     Try to plot them considering the y-axis reference equal to 0 power factor.
     The discontinuity in 0.35pu is not a problem since var is zero for either power factor equal to 1 or -1.
 
-    DSS property name: `WattPF_Curve`, DSS property index: 29.
+    Name: `WattPF_Curve`
     """
 
     def _get_WattPF_Curve(self) -> List[XYcurve]:
@@ -1943,7 +2009,7 @@ class InvControlBatch(DSSBatch, CircuitElementBatchMixin):
     Try to plot them considering the y-axis reference equal to 0 power factor.
     The discontinuity in 0.35pu is not a problem since var is zero for either power factor equal to 1 or -1.
 
-    DSS property name: `WattPF_Curve`, DSS property index: 29.
+    Name: `WattPF_Curve`
     """
 
     def _get_WattVar_Curve_str(self) -> List[str]:
@@ -1961,7 +2027,7 @@ class InvControlBatch(DSSBatch, CircuitElementBatchMixin):
 
     Units for the x-axis are per-unit output active power, and the base active power is the Pmpp for PVSystem and kWrated for Storage.
 
-    DSS property name: `WattVar_Curve`, DSS property index: 30.
+    Name: `WattVar_Curve`
     """
 
     def _get_WattVar_Curve(self) -> List[XYcurve]:
@@ -1979,7 +2045,7 @@ class InvControlBatch(DSSBatch, CircuitElementBatchMixin):
 
     Units for the x-axis are per-unit output active power, and the base active power is the Pmpp for PVSystem and kWrated for Storage.
 
-    DSS property name: `WattVar_Curve`, DSS property index: 30.
+    Name: `WattVar_Curve`
     """
 
     def _get_VSetPoint(self) -> BatchFloat64ArrayProxy:
@@ -1992,7 +2058,8 @@ class InvControlBatch(DSSBatch, CircuitElementBatchMixin):
     """
     Required for Active Voltage Regulation (AVR).
 
-    DSS property name: `VSetPoint`, DSS property index: 33.
+    Name: `VSetPoint`
+    Default: 1.0
     """
 
     def _get_ControlModel(self) -> BatchInt32ArrayProxy:
@@ -2011,7 +2078,8 @@ class InvControlBatch(DSSBatch, CircuitElementBatchMixin):
     Use this property for better tunning your controller and improve the controller response in terms of control iterations needed to reach the target.
     This property alters the meaning of deltaQ_factor and deltaP_factor properties according to its value (Check help). The method can also be combined with the controller tolerance for improving performance.
 
-    DSS property name: `ControlModel`, DSS property index: 34.
+    Name: `ControlModel`
+    Default: 0
     """
 
     def _get_BaseFreq(self) -> BatchFloat64ArrayProxy:
@@ -2024,7 +2092,8 @@ class InvControlBatch(DSSBatch, CircuitElementBatchMixin):
     """
     Base Frequency for ratings.
 
-    DSS property name: `BaseFreq`, DSS property index: 35.
+    Name: `BaseFreq`
+    Units: Hz
     """
 
     def _get_Enabled(self) -> List[bool]:
@@ -2037,9 +2106,10 @@ class InvControlBatch(DSSBatch, CircuitElementBatchMixin):
 
     Enabled = property(_get_Enabled, _set_Enabled) # type: List[bool]
     """
-    {Yes|No or True|False} Indicates whether this element is enabled.
+    Indicates whether this element is enabled.
 
-    DSS property name: `Enabled`, DSS property index: 36.
+    Name: `Enabled`
+    Default: True
     """
 
     def Like(self, value: AnyStr, flags: enums.SetterFlags = 0):
@@ -2048,7 +2118,9 @@ class InvControlBatch(DSSBatch, CircuitElementBatchMixin):
 
         New Capacitor.C2 like=c1  ...
 
-        DSS property name: `Like`, DSS property index: 37.
+        **Deprecated:** `Like` has been deprecated since at least 2021, see https://sourceforge.net/p/electricdss/discussion/861977/thread/8b59d21eb6/#b57c/f668
+
+        Name: `Like`
         """
         self._set_batch_string(37, value, flags)
 

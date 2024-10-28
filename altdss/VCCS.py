@@ -86,7 +86,7 @@ class VCCS(DSSObj, CircuitElementMixin, PCElementMixin):
     bus1=busname
     bus1=busname.1.2.3
 
-    DSS property name: `Bus1`, DSS property index: 1.
+    Name: `Bus1`
     """
 
     def _get_Phases(self) -> int:
@@ -97,9 +97,10 @@ class VCCS(DSSObj, CircuitElementMixin, PCElementMixin):
 
     Phases = property(_get_Phases, _set_Phases) # type: int
     """
-    Number of phases.  Defaults to 1.
+    Number of phases.
 
-    DSS property name: `Phases`, DSS property index: 2.
+    Name: `Phases`
+    Default: 1
     """
 
     def _get_PRated(self) -> float:
@@ -110,9 +111,11 @@ class VCCS(DSSObj, CircuitElementMixin, PCElementMixin):
 
     PRated = property(_get_PRated, _set_PRated) # type: float
     """
-    Total rated power, in Watts.
+    Total rated power.
 
-    DSS property name: `PRated`, DSS property index: 3.
+    Name: `PRated`
+    Units: kW
+    Default: 250.0
     """
 
     def _get_VRated(self) -> float:
@@ -123,9 +126,11 @@ class VCCS(DSSObj, CircuitElementMixin, PCElementMixin):
 
     VRated = property(_get_VRated, _set_VRated) # type: float
     """
-    Rated line-to-line voltage, in Volts
+    Rated line-to-line voltage.
 
-    DSS property name: `VRated`, DSS property index: 4.
+    Name: `VRated`
+    Units: V
+    Default: 208.0
     """
 
     def _get_Ppct(self) -> float:
@@ -138,7 +143,8 @@ class VCCS(DSSObj, CircuitElementMixin, PCElementMixin):
     """
     Steady-state operating output, in percent of rated.
 
-    DSS property name: `Ppct`, DSS property index: 5.
+    Name: `Ppct`
+    Default: 100.0
     """
 
     def _get_BP1_str(self) -> str:
@@ -151,7 +157,7 @@ class VCCS(DSSObj, CircuitElementMixin, PCElementMixin):
     """
     XYCurve defining the input piece-wise linear block.
 
-    DSS property name: `BP1`, DSS property index: 6.
+    Name: `BP1`
     """
 
     def _get_BP1(self) -> XYcurve:
@@ -168,7 +174,7 @@ class VCCS(DSSObj, CircuitElementMixin, PCElementMixin):
     """
     XYCurve defining the input piece-wise linear block.
 
-    DSS property name: `BP1`, DSS property index: 6.
+    Name: `BP1`
     """
 
     def _get_BP2_str(self) -> str:
@@ -181,7 +187,7 @@ class VCCS(DSSObj, CircuitElementMixin, PCElementMixin):
     """
     XYCurve defining the output piece-wise linear block.
 
-    DSS property name: `BP2`, DSS property index: 7.
+    Name: `BP2`
     """
 
     def _get_BP2(self) -> XYcurve:
@@ -198,7 +204,7 @@ class VCCS(DSSObj, CircuitElementMixin, PCElementMixin):
     """
     XYCurve defining the output piece-wise linear block.
 
-    DSS property name: `BP2`, DSS property index: 7.
+    Name: `BP2`
     """
 
     def _get_Filter_str(self) -> str:
@@ -211,7 +217,7 @@ class VCCS(DSSObj, CircuitElementMixin, PCElementMixin):
     """
     XYCurve defining the digital filter coefficients (x numerator, y denominator).
 
-    DSS property name: `Filter`, DSS property index: 8.
+    Name: `Filter`
     """
 
     def _get_Filter(self) -> XYcurve:
@@ -228,7 +234,7 @@ class VCCS(DSSObj, CircuitElementMixin, PCElementMixin):
     """
     XYCurve defining the digital filter coefficients (x numerator, y denominator).
 
-    DSS property name: `Filter`, DSS property index: 8.
+    Name: `Filter`
     """
 
     def _get_FSample(self) -> float:
@@ -239,9 +245,11 @@ class VCCS(DSSObj, CircuitElementMixin, PCElementMixin):
 
     FSample = property(_get_FSample, _set_FSample) # type: float
     """
-    Sample frequency [Hz} for the digital filter.
+    Sample frequency for the digital filter.
 
-    DSS property name: `FSample`, DSS property index: 9.
+    Name: `FSample`
+    Units: Hz
+    Default: 5000.0
     """
 
     def _get_RMSMode(self) -> bool:
@@ -252,9 +260,10 @@ class VCCS(DSSObj, CircuitElementMixin, PCElementMixin):
 
     RMSMode = property(_get_RMSMode, _set_RMSMode) # type: bool
     """
-    True if only Hz is used to represent a phase-locked loop (PLL), ignoring the BP1, BP2 and time-domain transformations. Default is no.
+    True if only Hz is used to represent a phase-locked loop (PLL), ignoring the BP1, BP2 and time-domain transformations.
 
-    DSS property name: `RMSMode`, DSS property index: 10.
+    Name: `RMSMode`
+    Default: False
     """
 
     def _get_IMaxpu(self) -> float:
@@ -265,9 +274,10 @@ class VCCS(DSSObj, CircuitElementMixin, PCElementMixin):
 
     IMaxpu = property(_get_IMaxpu, _set_IMaxpu) # type: float
     """
-    Maximum output current in per-unit of rated; defaults to 1.1
+    Maximum output current in per-unit of rated.
 
-    DSS property name: `IMaxpu`, DSS property index: 11.
+    Name: `IMaxpu`
+    Default: 1.1
     """
 
     def _get_VRMSTau(self) -> float:
@@ -278,9 +288,10 @@ class VCCS(DSSObj, CircuitElementMixin, PCElementMixin):
 
     VRMSTau = property(_get_VRMSTau, _set_VRMSTau) # type: float
     """
-    Time constant in sensing Vrms for the PLL; defaults to 0.0015
+    Time constant in sensing Vrms for the PLL.
 
-    DSS property name: `VRMSTau`, DSS property index: 12.
+    Name: `VRMSTau`
+    Default: 0.0015
     """
 
     def _get_IRMSTau(self) -> float:
@@ -291,9 +302,10 @@ class VCCS(DSSObj, CircuitElementMixin, PCElementMixin):
 
     IRMSTau = property(_get_IRMSTau, _set_IRMSTau) # type: float
     """
-    Time constant in producing Irms from the PLL; defaults to 0.0015
+    Time constant in producing Irms from the PLL.
 
-    DSS property name: `IRMSTau`, DSS property index: 13.
+    Name: `IRMSTau`
+    Default: 0.0015
     """
 
     def _get_Spectrum_str(self) -> str:
@@ -304,9 +316,10 @@ class VCCS(DSSObj, CircuitElementMixin, PCElementMixin):
 
     Spectrum_str = property(_get_Spectrum_str, _set_Spectrum_str) # type: str
     """
-    Harmonic spectrum assumed for this source.  Default is "default".
+    Harmonic spectrum assumed for this source.
 
-    DSS property name: `Spectrum`, DSS property index: 14.
+    Name: `Spectrum`
+    Default: default
     """
 
     def _get_Spectrum(self) -> SpectrumObj:
@@ -321,9 +334,10 @@ class VCCS(DSSObj, CircuitElementMixin, PCElementMixin):
 
     Spectrum = property(_get_Spectrum, _set_Spectrum) # type: SpectrumObj
     """
-    Harmonic spectrum assumed for this source.  Default is "default".
+    Harmonic spectrum assumed for this source.
 
-    DSS property name: `Spectrum`, DSS property index: 14.
+    Name: `Spectrum`
+    Default: default
     """
 
     def _get_BaseFreq(self) -> float:
@@ -336,7 +350,8 @@ class VCCS(DSSObj, CircuitElementMixin, PCElementMixin):
     """
     Base Frequency for ratings.
 
-    DSS property name: `BaseFreq`, DSS property index: 15.
+    Name: `BaseFreq`
+    Units: Hz
     """
 
     def _get_Enabled(self) -> bool:
@@ -347,9 +362,10 @@ class VCCS(DSSObj, CircuitElementMixin, PCElementMixin):
 
     Enabled = property(_get_Enabled, _set_Enabled) # type: bool
     """
-    {Yes|No or True|False} Indicates whether this element is enabled.
+    Indicates whether this element is enabled.
 
-    DSS property name: `Enabled`, DSS property index: 16.
+    Name: `Enabled`
+    Default: True
     """
 
     def Like(self, value: AnyStr):
@@ -358,7 +374,9 @@ class VCCS(DSSObj, CircuitElementMixin, PCElementMixin):
 
         New Capacitor.C2 like=c1  ...
 
-        DSS property name: `Like`, DSS property index: 17.
+        **Deprecated:** `Like` has been deprecated since at least 2021, see https://sourceforge.net/p/electricdss/discussion/861977/thread/8b59d21eb6/#b57c/f668
+
+        Name: `Like`
         """
         self._set_string_o(17, value)
 
@@ -426,7 +444,7 @@ class VCCSBatch(DSSBatch, CircuitElementBatchMixin, PCElementBatchMixin):
     bus1=busname
     bus1=busname.1.2.3
 
-    DSS property name: `Bus1`, DSS property index: 1.
+    Name: `Bus1`
     """
 
     def _get_Phases(self) -> BatchInt32ArrayProxy:
@@ -437,9 +455,10 @@ class VCCSBatch(DSSBatch, CircuitElementBatchMixin, PCElementBatchMixin):
 
     Phases = property(_get_Phases, _set_Phases) # type: BatchInt32ArrayProxy
     """
-    Number of phases.  Defaults to 1.
+    Number of phases.
 
-    DSS property name: `Phases`, DSS property index: 2.
+    Name: `Phases`
+    Default: 1
     """
 
     def _get_PRated(self) -> BatchFloat64ArrayProxy:
@@ -450,9 +469,11 @@ class VCCSBatch(DSSBatch, CircuitElementBatchMixin, PCElementBatchMixin):
 
     PRated = property(_get_PRated, _set_PRated) # type: BatchFloat64ArrayProxy
     """
-    Total rated power, in Watts.
+    Total rated power.
 
-    DSS property name: `PRated`, DSS property index: 3.
+    Name: `PRated`
+    Units: kW
+    Default: 250.0
     """
 
     def _get_VRated(self) -> BatchFloat64ArrayProxy:
@@ -463,9 +484,11 @@ class VCCSBatch(DSSBatch, CircuitElementBatchMixin, PCElementBatchMixin):
 
     VRated = property(_get_VRated, _set_VRated) # type: BatchFloat64ArrayProxy
     """
-    Rated line-to-line voltage, in Volts
+    Rated line-to-line voltage.
 
-    DSS property name: `VRated`, DSS property index: 4.
+    Name: `VRated`
+    Units: V
+    Default: 208.0
     """
 
     def _get_Ppct(self) -> BatchFloat64ArrayProxy:
@@ -478,7 +501,8 @@ class VCCSBatch(DSSBatch, CircuitElementBatchMixin, PCElementBatchMixin):
     """
     Steady-state operating output, in percent of rated.
 
-    DSS property name: `Ppct`, DSS property index: 5.
+    Name: `Ppct`
+    Default: 100.0
     """
 
     def _get_BP1_str(self) -> List[str]:
@@ -491,7 +515,7 @@ class VCCSBatch(DSSBatch, CircuitElementBatchMixin, PCElementBatchMixin):
     """
     XYCurve defining the input piece-wise linear block.
 
-    DSS property name: `BP1`, DSS property index: 6.
+    Name: `BP1`
     """
 
     def _get_BP1(self) -> List[XYcurve]:
@@ -504,7 +528,7 @@ class VCCSBatch(DSSBatch, CircuitElementBatchMixin, PCElementBatchMixin):
     """
     XYCurve defining the input piece-wise linear block.
 
-    DSS property name: `BP1`, DSS property index: 6.
+    Name: `BP1`
     """
 
     def _get_BP2_str(self) -> List[str]:
@@ -517,7 +541,7 @@ class VCCSBatch(DSSBatch, CircuitElementBatchMixin, PCElementBatchMixin):
     """
     XYCurve defining the output piece-wise linear block.
 
-    DSS property name: `BP2`, DSS property index: 7.
+    Name: `BP2`
     """
 
     def _get_BP2(self) -> List[XYcurve]:
@@ -530,7 +554,7 @@ class VCCSBatch(DSSBatch, CircuitElementBatchMixin, PCElementBatchMixin):
     """
     XYCurve defining the output piece-wise linear block.
 
-    DSS property name: `BP2`, DSS property index: 7.
+    Name: `BP2`
     """
 
     def _get_Filter_str(self) -> List[str]:
@@ -543,7 +567,7 @@ class VCCSBatch(DSSBatch, CircuitElementBatchMixin, PCElementBatchMixin):
     """
     XYCurve defining the digital filter coefficients (x numerator, y denominator).
 
-    DSS property name: `Filter`, DSS property index: 8.
+    Name: `Filter`
     """
 
     def _get_Filter(self) -> List[XYcurve]:
@@ -556,7 +580,7 @@ class VCCSBatch(DSSBatch, CircuitElementBatchMixin, PCElementBatchMixin):
     """
     XYCurve defining the digital filter coefficients (x numerator, y denominator).
 
-    DSS property name: `Filter`, DSS property index: 8.
+    Name: `Filter`
     """
 
     def _get_FSample(self) -> BatchFloat64ArrayProxy:
@@ -567,9 +591,11 @@ class VCCSBatch(DSSBatch, CircuitElementBatchMixin, PCElementBatchMixin):
 
     FSample = property(_get_FSample, _set_FSample) # type: BatchFloat64ArrayProxy
     """
-    Sample frequency [Hz} for the digital filter.
+    Sample frequency for the digital filter.
 
-    DSS property name: `FSample`, DSS property index: 9.
+    Name: `FSample`
+    Units: Hz
+    Default: 5000.0
     """
 
     def _get_RMSMode(self) -> List[bool]:
@@ -582,9 +608,10 @@ class VCCSBatch(DSSBatch, CircuitElementBatchMixin, PCElementBatchMixin):
 
     RMSMode = property(_get_RMSMode, _set_RMSMode) # type: List[bool]
     """
-    True if only Hz is used to represent a phase-locked loop (PLL), ignoring the BP1, BP2 and time-domain transformations. Default is no.
+    True if only Hz is used to represent a phase-locked loop (PLL), ignoring the BP1, BP2 and time-domain transformations.
 
-    DSS property name: `RMSMode`, DSS property index: 10.
+    Name: `RMSMode`
+    Default: False
     """
 
     def _get_IMaxpu(self) -> BatchFloat64ArrayProxy:
@@ -595,9 +622,10 @@ class VCCSBatch(DSSBatch, CircuitElementBatchMixin, PCElementBatchMixin):
 
     IMaxpu = property(_get_IMaxpu, _set_IMaxpu) # type: BatchFloat64ArrayProxy
     """
-    Maximum output current in per-unit of rated; defaults to 1.1
+    Maximum output current in per-unit of rated.
 
-    DSS property name: `IMaxpu`, DSS property index: 11.
+    Name: `IMaxpu`
+    Default: 1.1
     """
 
     def _get_VRMSTau(self) -> BatchFloat64ArrayProxy:
@@ -608,9 +636,10 @@ class VCCSBatch(DSSBatch, CircuitElementBatchMixin, PCElementBatchMixin):
 
     VRMSTau = property(_get_VRMSTau, _set_VRMSTau) # type: BatchFloat64ArrayProxy
     """
-    Time constant in sensing Vrms for the PLL; defaults to 0.0015
+    Time constant in sensing Vrms for the PLL.
 
-    DSS property name: `VRMSTau`, DSS property index: 12.
+    Name: `VRMSTau`
+    Default: 0.0015
     """
 
     def _get_IRMSTau(self) -> BatchFloat64ArrayProxy:
@@ -621,9 +650,10 @@ class VCCSBatch(DSSBatch, CircuitElementBatchMixin, PCElementBatchMixin):
 
     IRMSTau = property(_get_IRMSTau, _set_IRMSTau) # type: BatchFloat64ArrayProxy
     """
-    Time constant in producing Irms from the PLL; defaults to 0.0015
+    Time constant in producing Irms from the PLL.
 
-    DSS property name: `IRMSTau`, DSS property index: 13.
+    Name: `IRMSTau`
+    Default: 0.0015
     """
 
     def _get_Spectrum_str(self) -> List[str]:
@@ -634,9 +664,10 @@ class VCCSBatch(DSSBatch, CircuitElementBatchMixin, PCElementBatchMixin):
 
     Spectrum_str = property(_get_Spectrum_str, _set_Spectrum_str) # type: List[str]
     """
-    Harmonic spectrum assumed for this source.  Default is "default".
+    Harmonic spectrum assumed for this source.
 
-    DSS property name: `Spectrum`, DSS property index: 14.
+    Name: `Spectrum`
+    Default: default
     """
 
     def _get_Spectrum(self) -> List[SpectrumObj]:
@@ -647,9 +678,10 @@ class VCCSBatch(DSSBatch, CircuitElementBatchMixin, PCElementBatchMixin):
 
     Spectrum = property(_get_Spectrum, _set_Spectrum) # type: List[SpectrumObj]
     """
-    Harmonic spectrum assumed for this source.  Default is "default".
+    Harmonic spectrum assumed for this source.
 
-    DSS property name: `Spectrum`, DSS property index: 14.
+    Name: `Spectrum`
+    Default: default
     """
 
     def _get_BaseFreq(self) -> BatchFloat64ArrayProxy:
@@ -662,7 +694,8 @@ class VCCSBatch(DSSBatch, CircuitElementBatchMixin, PCElementBatchMixin):
     """
     Base Frequency for ratings.
 
-    DSS property name: `BaseFreq`, DSS property index: 15.
+    Name: `BaseFreq`
+    Units: Hz
     """
 
     def _get_Enabled(self) -> List[bool]:
@@ -675,9 +708,10 @@ class VCCSBatch(DSSBatch, CircuitElementBatchMixin, PCElementBatchMixin):
 
     Enabled = property(_get_Enabled, _set_Enabled) # type: List[bool]
     """
-    {Yes|No or True|False} Indicates whether this element is enabled.
+    Indicates whether this element is enabled.
 
-    DSS property name: `Enabled`, DSS property index: 16.
+    Name: `Enabled`
+    Default: True
     """
 
     def Like(self, value: AnyStr, flags: enums.SetterFlags = 0):
@@ -686,7 +720,9 @@ class VCCSBatch(DSSBatch, CircuitElementBatchMixin, PCElementBatchMixin):
 
         New Capacitor.C2 like=c1  ...
 
-        DSS property name: `Like`, DSS property index: 17.
+        **Deprecated:** `Like` has been deprecated since at least 2021, see https://sourceforge.net/p/electricdss/discussion/861977/thread/8b59d21eb6/#b57c/f668
+
+        Name: `Like`
         """
         self._set_batch_string(17, value, flags)
 

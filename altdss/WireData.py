@@ -73,9 +73,10 @@ class WireData(DSSObj):
 
     RDC = property(_get_RDC, _set_RDC) # type: float
     """
-    dc Resistance, ohms per unit length (see Runits). Defaults to Rac/1.02 if not specified.
+    DC resistance, ohms per unit length (see `Runits`). Defaults to $Rac/1.02$ if not specified.
 
-    DSS property name: `RDC`, DSS property index: 1.
+    Name: `RDC`
+    Units: Ω/[length_unit]
     """
 
     def _get_RAC(self) -> float:
@@ -86,9 +87,9 @@ class WireData(DSSObj):
 
     RAC = property(_get_RAC, _set_RAC) # type: float
     """
-    Resistance at 60 Hz per unit length. Defaults to 1.02*Rdc if not specified.
+    Resistance at 60 Hz per unit length. Defaults to $1.02 × Rdc$ if not specified.
 
-    DSS property name: `RAC`, DSS property index: 2.
+    Name: `RAC`
     """
 
     def _get_RUnits(self) -> enums.LengthUnit:
@@ -104,7 +105,8 @@ class WireData(DSSObj):
     """
     Length units for resistance: ohms per {mi|kft|km|m|Ft|in|cm|mm} Default=none.
 
-    DSS property name: `RUnits`, DSS property index: 3.
+    Name: `RUnits`
+    Default: none
     """
 
     def _get_RUnits_str(self) -> str:
@@ -117,7 +119,8 @@ class WireData(DSSObj):
     """
     Length units for resistance: ohms per {mi|kft|km|m|Ft|in|cm|mm} Default=none.
 
-    DSS property name: `RUnits`, DSS property index: 3.
+    Name: `RUnits`
+    Default: none
     """
 
     def _get_GMRAC(self) -> float:
@@ -128,9 +131,9 @@ class WireData(DSSObj):
 
     GMRAC = property(_get_GMRAC, _set_GMRAC) # type: float
     """
-    GMR at 60 Hz. Defaults to .7788*radius if not specified.
+    GMR at 60 Hz. Defaults to $0.7788 × radius$ if not specified.
 
-    DSS property name: `GMRAC`, DSS property index: 4.
+    Name: `GMRAC`
     """
 
     def _get_GMRUnits(self) -> enums.LengthUnit:
@@ -144,9 +147,10 @@ class WireData(DSSObj):
 
     GMRUnits = property(_get_GMRUnits, _set_GMRUnits) # type: enums.LengthUnit
     """
-    Units for GMR: {mi|kft|km|m|Ft|in|cm|mm} Default=none.
+    Units for GMR.
 
-    DSS property name: `GMRUnits`, DSS property index: 5.
+    Name: `GMRUnits`
+    Default: none
     """
 
     def _get_GMRUnits_str(self) -> str:
@@ -157,9 +161,10 @@ class WireData(DSSObj):
 
     GMRUnits_str = property(_get_GMRUnits_str, _set_GMRUnits_str) # type: str
     """
-    Units for GMR: {mi|kft|km|m|Ft|in|cm|mm} Default=none.
+    Units for GMR.
 
-    DSS property name: `GMRUnits`, DSS property index: 5.
+    Name: `GMRUnits`
+    Default: none
     """
 
     def _get_Radius(self) -> float:
@@ -172,7 +177,7 @@ class WireData(DSSObj):
     """
     Outside radius of conductor. Defaults to GMR/0.7788 if not specified.
 
-    DSS property name: `Radius`, DSS property index: 6.
+    Name: `Radius`
     """
 
     def _get_RadUnits(self) -> enums.LengthUnit:
@@ -186,9 +191,10 @@ class WireData(DSSObj):
 
     RadUnits = property(_get_RadUnits, _set_RadUnits) # type: enums.LengthUnit
     """
-    Units for outside radius: {mi|kft|km|m|Ft|in|cm|mm} Default=none.
+    Units for outside radius.
 
-    DSS property name: `RadUnits`, DSS property index: 7.
+    Name: `RadUnits`
+    Default: none
     """
 
     def _get_RadUnits_str(self) -> str:
@@ -199,9 +205,10 @@ class WireData(DSSObj):
 
     RadUnits_str = property(_get_RadUnits_str, _set_RadUnits_str) # type: str
     """
-    Units for outside radius: {mi|kft|km|m|Ft|in|cm|mm} Default=none.
+    Units for outside radius.
 
-    DSS property name: `RadUnits`, DSS property index: 7.
+    Name: `RadUnits`
+    Default: none
     """
 
     def _get_NormAmps(self) -> float:
@@ -212,9 +219,9 @@ class WireData(DSSObj):
 
     NormAmps = property(_get_NormAmps, _set_NormAmps) # type: float
     """
-    Normal ampacity, amperes. Defaults to Emergency amps/1.5 if not specified.
+    Normal ampacity, amperes. Defaults to $EmergAmps / 1.5$ if not specified.
 
-    DSS property name: `NormAmps`, DSS property index: 8.
+    Name: `NormAmps`
     """
 
     def _get_EmergAmps(self) -> float:
@@ -225,9 +232,9 @@ class WireData(DSSObj):
 
     EmergAmps = property(_get_EmergAmps, _set_EmergAmps) # type: float
     """
-    Emergency ampacity, amperes. Defaults to 1.5 * Normal Amps if not specified.
+    Emergency ampacity, amperes. Defaults to $1.5 × NormAmps$ if not specified.
 
-    DSS property name: `EmergAmps`, DSS property index: 9.
+    Name: `EmergAmps`
     """
 
     def _get_Diam(self) -> float:
@@ -240,7 +247,7 @@ class WireData(DSSObj):
     """
     Diameter; Alternative method for entering radius.
 
-    DSS property name: `Diam`, DSS property index: 10.
+    Name: `Diam`
     """
 
     def _get_Seasons(self) -> int:
@@ -253,7 +260,7 @@ class WireData(DSSObj):
     """
     Defines the number of ratings to be defined for the wire, to be used only when defining seasonal ratings using the "Ratings" property.
 
-    DSS property name: `Seasons`, DSS property index: 11.
+    Name: `Seasons`
     """
 
     def _get_Ratings(self) -> Float64Array:
@@ -267,7 +274,8 @@ class WireData(DSSObj):
     An array of ratings to be used when the seasonal ratings flag is True. It can be used to insert
     multiple ratings to change during a QSTS simulation to evaluate different ratings in lines.
 
-    DSS property name: `Ratings`, DSS property index: 12.
+    Name: `Ratings`
+    Default: [-1.0]
     """
 
     def _get_CapRadius(self) -> float:
@@ -280,7 +288,7 @@ class WireData(DSSObj):
     """
     Equivalent conductor radius for capacitance calcs. Specify this for bundled conductors. Defaults to same value as radius. Define Diam or Radius property first.
 
-    DSS property name: `CapRadius`, DSS property index: 13.
+    Name: `CapRadius`
     """
 
     def Like(self, value: AnyStr):
@@ -289,7 +297,9 @@ class WireData(DSSObj):
 
         New Capacitor.C2 like=c1  ...
 
-        DSS property name: `Like`, DSS property index: 14.
+        **Deprecated:** `Like` has been deprecated since at least 2021, see https://sourceforge.net/p/electricdss/discussion/861977/thread/8b59d21eb6/#b57c/f668
+
+        Name: `Like`
         """
         self._set_string_o(14, value)
 
@@ -346,9 +356,10 @@ class WireDataBatch(DSSBatch):
 
     RDC = property(_get_RDC, _set_RDC) # type: BatchFloat64ArrayProxy
     """
-    dc Resistance, ohms per unit length (see Runits). Defaults to Rac/1.02 if not specified.
+    DC resistance, ohms per unit length (see `Runits`). Defaults to $Rac/1.02$ if not specified.
 
-    DSS property name: `RDC`, DSS property index: 1.
+    Name: `RDC`
+    Units: Ω/[length_unit]
     """
 
     def _get_RAC(self) -> BatchFloat64ArrayProxy:
@@ -359,9 +370,9 @@ class WireDataBatch(DSSBatch):
 
     RAC = property(_get_RAC, _set_RAC) # type: BatchFloat64ArrayProxy
     """
-    Resistance at 60 Hz per unit length. Defaults to 1.02*Rdc if not specified.
+    Resistance at 60 Hz per unit length. Defaults to $1.02 × Rdc$ if not specified.
 
-    DSS property name: `RAC`, DSS property index: 2.
+    Name: `RAC`
     """
 
     def _get_RUnits(self) -> BatchInt32ArrayProxy:
@@ -378,7 +389,8 @@ class WireDataBatch(DSSBatch):
     """
     Length units for resistance: ohms per {mi|kft|km|m|Ft|in|cm|mm} Default=none.
 
-    DSS property name: `RUnits`, DSS property index: 3.
+    Name: `RUnits`
+    Default: none
     """
 
     def _get_RUnits_str(self) -> List[str]:
@@ -391,7 +403,8 @@ class WireDataBatch(DSSBatch):
     """
     Length units for resistance: ohms per {mi|kft|km|m|Ft|in|cm|mm} Default=none.
 
-    DSS property name: `RUnits`, DSS property index: 3.
+    Name: `RUnits`
+    Default: none
     """
 
     def _get_GMRAC(self) -> BatchFloat64ArrayProxy:
@@ -402,9 +415,9 @@ class WireDataBatch(DSSBatch):
 
     GMRAC = property(_get_GMRAC, _set_GMRAC) # type: BatchFloat64ArrayProxy
     """
-    GMR at 60 Hz. Defaults to .7788*radius if not specified.
+    GMR at 60 Hz. Defaults to $0.7788 × radius$ if not specified.
 
-    DSS property name: `GMRAC`, DSS property index: 4.
+    Name: `GMRAC`
     """
 
     def _get_GMRUnits(self) -> BatchInt32ArrayProxy:
@@ -419,9 +432,10 @@ class WireDataBatch(DSSBatch):
 
     GMRUnits = property(_get_GMRUnits, _set_GMRUnits) # type: BatchInt32ArrayProxy
     """
-    Units for GMR: {mi|kft|km|m|Ft|in|cm|mm} Default=none.
+    Units for GMR.
 
-    DSS property name: `GMRUnits`, DSS property index: 5.
+    Name: `GMRUnits`
+    Default: none
     """
 
     def _get_GMRUnits_str(self) -> List[str]:
@@ -432,9 +446,10 @@ class WireDataBatch(DSSBatch):
 
     GMRUnits_str = property(_get_GMRUnits_str, _set_GMRUnits_str) # type: List[str]
     """
-    Units for GMR: {mi|kft|km|m|Ft|in|cm|mm} Default=none.
+    Units for GMR.
 
-    DSS property name: `GMRUnits`, DSS property index: 5.
+    Name: `GMRUnits`
+    Default: none
     """
 
     def _get_Radius(self) -> BatchFloat64ArrayProxy:
@@ -447,7 +462,7 @@ class WireDataBatch(DSSBatch):
     """
     Outside radius of conductor. Defaults to GMR/0.7788 if not specified.
 
-    DSS property name: `Radius`, DSS property index: 6.
+    Name: `Radius`
     """
 
     def _get_RadUnits(self) -> BatchInt32ArrayProxy:
@@ -462,9 +477,10 @@ class WireDataBatch(DSSBatch):
 
     RadUnits = property(_get_RadUnits, _set_RadUnits) # type: BatchInt32ArrayProxy
     """
-    Units for outside radius: {mi|kft|km|m|Ft|in|cm|mm} Default=none.
+    Units for outside radius.
 
-    DSS property name: `RadUnits`, DSS property index: 7.
+    Name: `RadUnits`
+    Default: none
     """
 
     def _get_RadUnits_str(self) -> List[str]:
@@ -475,9 +491,10 @@ class WireDataBatch(DSSBatch):
 
     RadUnits_str = property(_get_RadUnits_str, _set_RadUnits_str) # type: List[str]
     """
-    Units for outside radius: {mi|kft|km|m|Ft|in|cm|mm} Default=none.
+    Units for outside radius.
 
-    DSS property name: `RadUnits`, DSS property index: 7.
+    Name: `RadUnits`
+    Default: none
     """
 
     def _get_NormAmps(self) -> BatchFloat64ArrayProxy:
@@ -488,9 +505,9 @@ class WireDataBatch(DSSBatch):
 
     NormAmps = property(_get_NormAmps, _set_NormAmps) # type: BatchFloat64ArrayProxy
     """
-    Normal ampacity, amperes. Defaults to Emergency amps/1.5 if not specified.
+    Normal ampacity, amperes. Defaults to $EmergAmps / 1.5$ if not specified.
 
-    DSS property name: `NormAmps`, DSS property index: 8.
+    Name: `NormAmps`
     """
 
     def _get_EmergAmps(self) -> BatchFloat64ArrayProxy:
@@ -501,9 +518,9 @@ class WireDataBatch(DSSBatch):
 
     EmergAmps = property(_get_EmergAmps, _set_EmergAmps) # type: BatchFloat64ArrayProxy
     """
-    Emergency ampacity, amperes. Defaults to 1.5 * Normal Amps if not specified.
+    Emergency ampacity, amperes. Defaults to $1.5 × NormAmps$ if not specified.
 
-    DSS property name: `EmergAmps`, DSS property index: 9.
+    Name: `EmergAmps`
     """
 
     def _get_Diam(self) -> BatchFloat64ArrayProxy:
@@ -516,7 +533,7 @@ class WireDataBatch(DSSBatch):
     """
     Diameter; Alternative method for entering radius.
 
-    DSS property name: `Diam`, DSS property index: 10.
+    Name: `Diam`
     """
 
     def _get_Seasons(self) -> BatchInt32ArrayProxy:
@@ -529,7 +546,7 @@ class WireDataBatch(DSSBatch):
     """
     Defines the number of ratings to be defined for the wire, to be used only when defining seasonal ratings using the "Ratings" property.
 
-    DSS property name: `Seasons`, DSS property index: 11.
+    Name: `Seasons`
     """
 
     def _get_Ratings(self) -> List[Float64Array]:
@@ -546,7 +563,8 @@ class WireDataBatch(DSSBatch):
     An array of ratings to be used when the seasonal ratings flag is True. It can be used to insert
     multiple ratings to change during a QSTS simulation to evaluate different ratings in lines.
 
-    DSS property name: `Ratings`, DSS property index: 12.
+    Name: `Ratings`
+    Default: [-1.0]
     """
 
     def _get_CapRadius(self) -> BatchFloat64ArrayProxy:
@@ -559,7 +577,7 @@ class WireDataBatch(DSSBatch):
     """
     Equivalent conductor radius for capacitance calcs. Specify this for bundled conductors. Defaults to same value as radius. Define Diam or Radius property first.
 
-    DSS property name: `CapRadius`, DSS property index: 13.
+    Name: `CapRadius`
     """
 
     def Like(self, value: AnyStr, flags: enums.SetterFlags = 0):
@@ -568,7 +586,9 @@ class WireDataBatch(DSSBatch):
 
         New Capacitor.C2 like=c1  ...
 
-        DSS property name: `Like`, DSS property index: 14.
+        **Deprecated:** `Like` has been deprecated since at least 2021, see https://sourceforge.net/p/electricdss/discussion/861977/thread/8b59d21eb6/#b57c/f668
+
+        Name: `Like`
         """
         self._set_batch_string(14, value, flags)
 

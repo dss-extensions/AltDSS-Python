@@ -20,7 +20,7 @@ from .XYcurve import XYcurve
 class PVSystem(DSSObj, CircuitElementMixin, PCElementMixin, ElementHasRegistersMixin):
     __slots__ = DSSObj._extra_slots + CircuitElementMixin._extra_slots + PCElementMixin._extra_slots + ElementHasRegistersMixin._extra_slots
     _cls_name = 'PVSystem'
-    _cls_idx = 35
+    _cls_idx = 36
     _cls_int_idx = {
         1,
         9,
@@ -163,7 +163,8 @@ class PVSystem(DSSObj, CircuitElementMixin, PCElementMixin, ElementHasRegistersM
     """
     Number of Phases, this PVSystem element.  Power is evenly divided among phases.
 
-    DSS property name: `Phases`, DSS property index: 1.
+    Name: `Phases`
+    Default: 3
     """
 
     def _get_Bus1(self) -> str:
@@ -176,7 +177,7 @@ class PVSystem(DSSObj, CircuitElementMixin, PCElementMixin, ElementHasRegistersM
     """
     Bus to which the PVSystem element is connected.  May include specific node specification.
 
-    DSS property name: `Bus1`, DSS property index: 2.
+    Name: `Bus1`
     """
 
     def _get_kV(self) -> float:
@@ -189,7 +190,9 @@ class PVSystem(DSSObj, CircuitElementMixin, PCElementMixin, ElementHasRegistersM
     """
     Nominal rated (1.0 per unit) voltage, kV, for PVSystem element. For 2- and 3-phase PVSystem elements, specify phase-phase kV. Otherwise, specify actual kV across each branch of the PVSystem element. If 1-phase wye (star or LN), specify phase-neutral kV. If 1-phase delta or phase-phase connected, specify phase-phase kV.
 
-    DSS property name: `kV`, DSS property index: 3.
+    Name: `kV`
+    Units: kV
+    Default: 12.47
     """
 
     def _get_Irradiance(self) -> float:
@@ -202,7 +205,8 @@ class PVSystem(DSSObj, CircuitElementMixin, PCElementMixin, ElementHasRegistersM
     """
     Get/set the present irradiance value in kW/sq-m. Used as base value for shape multipliers. Generally entered as peak value for the time period of interest and the yearly, daily, and duty load shape objects are defined as per unit multipliers (just like Loads/Generators).
 
-    DSS property name: `Irradiance`, DSS property index: 4.
+    Name: `Irradiance`
+    Default: 1.0
     """
 
     def _get_Pmpp(self) -> float:
@@ -215,7 +219,8 @@ class PVSystem(DSSObj, CircuitElementMixin, PCElementMixin, ElementHasRegistersM
     """
     Get/set the rated max power of the PV array for 1.0 kW/sq-m irradiance and a user-selected array temperature. The P-TCurve should be defined relative to the selected array temperature.
 
-    DSS property name: `Pmpp`, DSS property index: 5.
+    Name: `Pmpp`
+    Default: 500.0
     """
 
     def _get_pctPmpp(self) -> float:
@@ -228,7 +233,8 @@ class PVSystem(DSSObj, CircuitElementMixin, PCElementMixin, ElementHasRegistersM
     """
     Upper limit on active power as a percentage of Pmpp.
 
-    DSS property name: `%Pmpp`, DSS property index: 6.
+    Name: `%Pmpp`
+    Default: 100.0
     """
 
     def _get_Temperature(self) -> float:
@@ -241,7 +247,8 @@ class PVSystem(DSSObj, CircuitElementMixin, PCElementMixin, ElementHasRegistersM
     """
     Get/set the present Temperature. Used as fixed value corresponding to PTCurve property. A multiplier is obtained from the Pmpp-Temp curve and applied to the nominal Pmpp from the irradiance to determine the net array output.
 
-    DSS property name: `Temperature`, DSS property index: 7.
+    Name: `Temperature`
+    Default: 25.0
     """
 
     def _get_PF(self) -> float:
@@ -252,11 +259,12 @@ class PVSystem(DSSObj, CircuitElementMixin, PCElementMixin, ElementHasRegistersM
 
     PF = property(_get_PF, _set_PF) # type: float
     """
-    Nominally, the power factor for the output power. Default is 1.0. Setting this property will cause the inverter to operate in constant power factor mode.Enter negative when kW and kvar have opposite signs.
+    Nominally, the power factor for the output power. Setting this property will cause the inverter to operate in constant power factor mode.Enter negative when kW and kvar have opposite signs.
     A positive power factor signifies that the PVSystem element produces vars 
     as is typical for a generator.  
 
-    DSS property name: `PF`, DSS property index: 8.
+    Name: `PF`
+    Default: 1.0
     """
 
     def _get_Conn(self) -> enums.Connection:
@@ -272,7 +280,8 @@ class PVSystem(DSSObj, CircuitElementMixin, PCElementMixin, ElementHasRegistersM
     """
     ={wye|LN|delta|LL}.  Default is wye.
 
-    DSS property name: `Conn`, DSS property index: 9.
+    Name: `Conn`
+    Default: Wye
     """
 
     def _get_Conn_str(self) -> str:
@@ -285,7 +294,8 @@ class PVSystem(DSSObj, CircuitElementMixin, PCElementMixin, ElementHasRegistersM
     """
     ={wye|LN|delta|LL}.  Default is wye.
 
-    DSS property name: `Conn`, DSS property index: 9.
+    Name: `Conn`
+    Default: Wye
     """
 
     def _get_kvar(self) -> float:
@@ -298,7 +308,8 @@ class PVSystem(DSSObj, CircuitElementMixin, PCElementMixin, ElementHasRegistersM
     """
     Get/set the present kvar value.  Setting this property forces the inverter to operate in constant kvar mode.
 
-    DSS property name: `kvar`, DSS property index: 10.
+    Name: `kvar`
+    Units: kvar
     """
 
     def _get_kVA(self) -> float:
@@ -311,7 +322,8 @@ class PVSystem(DSSObj, CircuitElementMixin, PCElementMixin, ElementHasRegistersM
     """
     kVA rating of inverter. Used as the base for Dynamics mode and Harmonics mode values.
 
-    DSS property name: `kVA`, DSS property index: 11.
+    Name: `kVA`
+    Default: 500.0
     """
 
     def _get_pctCutIn(self) -> float:
@@ -324,7 +336,8 @@ class PVSystem(DSSObj, CircuitElementMixin, PCElementMixin, ElementHasRegistersM
     """
     % cut-in power -- % of kVA rating of inverter. When the inverter is OFF, the power from the array must be greater than this for the inverter to turn on.
 
-    DSS property name: `%CutIn`, DSS property index: 12.
+    Name: `%CutIn`
+    Default: 20.0
     """
 
     def _get_pctCutOut(self) -> float:
@@ -337,7 +350,8 @@ class PVSystem(DSSObj, CircuitElementMixin, PCElementMixin, ElementHasRegistersM
     """
     % cut-out power -- % of kVA rating of inverter. When the inverter is ON, the inverter turns OFF when the power from the array drops below this value.
 
-    DSS property name: `%CutOut`, DSS property index: 13.
+    Name: `%CutOut`
+    Default: 20.0
     """
 
     def _get_EffCurve_str(self) -> str:
@@ -350,7 +364,7 @@ class PVSystem(DSSObj, CircuitElementMixin, PCElementMixin, ElementHasRegistersM
     """
     An XYCurve object, previously defined, that describes the PER UNIT efficiency vs PER UNIT of rated kVA for the inverter. Inverter output power is discounted by the multiplier obtained from this curve.
 
-    DSS property name: `EffCurve`, DSS property index: 14.
+    Name: `EffCurve`
     """
 
     def _get_EffCurve(self) -> XYcurve:
@@ -367,7 +381,7 @@ class PVSystem(DSSObj, CircuitElementMixin, PCElementMixin, ElementHasRegistersM
     """
     An XYCurve object, previously defined, that describes the PER UNIT efficiency vs PER UNIT of rated kVA for the inverter. Inverter output power is discounted by the multiplier obtained from this curve.
 
-    DSS property name: `EffCurve`, DSS property index: 14.
+    Name: `EffCurve`
     """
 
     def _get_PTCurve_str(self) -> str:
@@ -380,7 +394,7 @@ class PVSystem(DSSObj, CircuitElementMixin, PCElementMixin, ElementHasRegistersM
     """
     An XYCurve object, previously defined, that describes the PV array PER UNIT Pmpp vs Temperature curve. Temperature units must agree with the Temperature property and the Temperature shapes used for simulations. The Pmpp values are specified in per unit of the Pmpp value for 1 kW/sq-m irradiance. The value for the temperature at which Pmpp is defined should be 1.0. The net array power is determined by the irradiance * Pmpp * f(Temperature)
 
-    DSS property name: `P-TCurve`, DSS property index: 15.
+    Name: `P-TCurve`
     """
 
     def _get_PTCurve(self) -> XYcurve:
@@ -397,7 +411,7 @@ class PVSystem(DSSObj, CircuitElementMixin, PCElementMixin, ElementHasRegistersM
     """
     An XYCurve object, previously defined, that describes the PV array PER UNIT Pmpp vs Temperature curve. Temperature units must agree with the Temperature property and the Temperature shapes used for simulations. The Pmpp values are specified in per unit of the Pmpp value for 1 kW/sq-m irradiance. The value for the temperature at which Pmpp is defined should be 1.0. The net array power is determined by the irradiance * Pmpp * f(Temperature)
 
-    DSS property name: `P-TCurve`, DSS property index: 15.
+    Name: `P-TCurve`
     """
 
     def _get_pctR(self) -> float:
@@ -408,9 +422,10 @@ class PVSystem(DSSObj, CircuitElementMixin, PCElementMixin, ElementHasRegistersM
 
     pctR = property(_get_pctR, _set_pctR) # type: float
     """
-    Equivalent percent internal resistance, ohms. Default is 50%. Placed in series with internal voltage source for harmonics and dynamics modes. (Limits fault current to about 2 pu if not current limited -- see LimitCurrent) 
+    Equivalent percent internal resistance, ohms. Placed in series with internal voltage source for harmonics and dynamics modes. (Limits fault current to about 2 pu if not current limited -- see LimitCurrent) 
 
-    DSS property name: `%R`, DSS property index: 16.
+    Name: `%R`
+    Default: 50.0
     """
 
     def _get_pctX(self) -> float:
@@ -421,9 +436,10 @@ class PVSystem(DSSObj, CircuitElementMixin, PCElementMixin, ElementHasRegistersM
 
     pctX = property(_get_pctX, _set_pctX) # type: float
     """
-    Equivalent percent internal reactance, ohms. Default is 0%. Placed in series with internal voltage source for harmonics and dynamics modes. 
+    Equivalent percent internal reactance, ohms. Placed in series with internal voltage source for harmonics and dynamics modes.
 
-    DSS property name: `%X`, DSS property index: 17.
+    Name: `%X`
+    Default: 0.0
     """
 
     def _get_Model(self) -> enums.PVSystemModel:
@@ -440,7 +456,8 @@ class PVSystem(DSSObj, CircuitElementMixin, PCElementMixin, ElementHasRegistersM
     2:PVSystem element is modeled as a CONSTANT ADMITTANCE.
     3:Compute load injection from User-written Model.
 
-    DSS property name: `Model`, DSS property index: 18.
+    Name: `Model`
+    Default: 1
     """
 
     def _get_VMinpu(self) -> float:
@@ -451,9 +468,10 @@ class PVSystem(DSSObj, CircuitElementMixin, PCElementMixin, ElementHasRegistersM
 
     VMinpu = property(_get_VMinpu, _set_VMinpu) # type: float
     """
-    Default = 0.90.  Minimum per unit voltage for which the Model is assumed to apply. Below this value, the load model reverts to a constant impedance model except for Dynamics model. In Dynamics mode, the current magnitude is limited to the value the power flow would compute for this voltage.
+    Minimum per unit voltage for which the Model is assumed to apply. Below this value, the load model reverts to a constant impedance model except for Dynamics model. In Dynamics mode, the current magnitude is limited to the value the power flow would compute for this voltage.
 
-    DSS property name: `VMinpu`, DSS property index: 19.
+    Name: `VMinpu`
+    Default: 0.9
     """
 
     def _get_VMaxpu(self) -> float:
@@ -464,9 +482,10 @@ class PVSystem(DSSObj, CircuitElementMixin, PCElementMixin, ElementHasRegistersM
 
     VMaxpu = property(_get_VMaxpu, _set_VMaxpu) # type: float
     """
-    Default = 1.10.  Maximum per unit voltage for which the Model is assumed to apply. Above this value, the load model reverts to a constant impedance model.
+    Maximum per unit voltage for which the Model is assumed to apply. Above this value, the load model reverts to a constant impedance model.
 
-    DSS property name: `VMaxpu`, DSS property index: 20.
+    Name: `VMaxpu`
+    Default: 1.1
     """
 
     def _get_Balanced(self) -> bool:
@@ -477,9 +496,10 @@ class PVSystem(DSSObj, CircuitElementMixin, PCElementMixin, ElementHasRegistersM
 
     Balanced = property(_get_Balanced, _set_Balanced) # type: bool
     """
-    {Yes | No*} Default is No.  Force balanced current only for 3-phase PVSystems. Forces zero- and negative-sequence to zero. 
+    Force balanced current only for 3-phase PVSystems. Forces zero- and negative-sequence to zero. 
 
-    DSS property name: `Balanced`, DSS property index: 21.
+    Name: `Balanced`
+    Default: False
     """
 
     def _get_LimitCurrent(self) -> bool:
@@ -492,7 +512,8 @@ class PVSystem(DSSObj, CircuitElementMixin, PCElementMixin, ElementHasRegistersM
     """
     Limits current magnitude to Vminpu value for both 1-phase and 3-phase PVSystems similar to Generator Model 7. For 3-phase, limits the positive-sequence current but not the negative-sequence.
 
-    DSS property name: `LimitCurrent`, DSS property index: 22.
+    Name: `LimitCurrent`
+    Default: False
     """
 
     def _get_Yearly_str(self) -> str:
@@ -505,7 +526,7 @@ class PVSystem(DSSObj, CircuitElementMixin, PCElementMixin, ElementHasRegistersM
     """
     Dispatch shape to use for yearly simulations.  Must be previously defined as a Loadshape object. If this is not specified, the Daily dispatch shape, if any, is repeated during Yearly solution modes. In the default dispatch mode, the PVSystem element uses this loadshape to trigger State changes.
 
-    DSS property name: `Yearly`, DSS property index: 23.
+    Name: `Yearly`
     """
 
     def _get_Yearly(self) -> LoadShape:
@@ -522,7 +543,7 @@ class PVSystem(DSSObj, CircuitElementMixin, PCElementMixin, ElementHasRegistersM
     """
     Dispatch shape to use for yearly simulations.  Must be previously defined as a Loadshape object. If this is not specified, the Daily dispatch shape, if any, is repeated during Yearly solution modes. In the default dispatch mode, the PVSystem element uses this loadshape to trigger State changes.
 
-    DSS property name: `Yearly`, DSS property index: 23.
+    Name: `Yearly`
     """
 
     def _get_Daily_str(self) -> str:
@@ -535,7 +556,7 @@ class PVSystem(DSSObj, CircuitElementMixin, PCElementMixin, ElementHasRegistersM
     """
     Dispatch shape to use for daily simulations.  Must be previously defined as a Loadshape object of 24 hrs, typically.  In the default dispatch mode, the PVSystem element uses this loadshape to trigger State changes.
 
-    DSS property name: `Daily`, DSS property index: 24.
+    Name: `Daily`
     """
 
     def _get_Daily(self) -> LoadShape:
@@ -552,7 +573,7 @@ class PVSystem(DSSObj, CircuitElementMixin, PCElementMixin, ElementHasRegistersM
     """
     Dispatch shape to use for daily simulations.  Must be previously defined as a Loadshape object of 24 hrs, typically.  In the default dispatch mode, the PVSystem element uses this loadshape to trigger State changes.
 
-    DSS property name: `Daily`, DSS property index: 24.
+    Name: `Daily`
     """
 
     def _get_Duty_str(self) -> str:
@@ -565,7 +586,7 @@ class PVSystem(DSSObj, CircuitElementMixin, PCElementMixin, ElementHasRegistersM
     """
     Load shape to use for duty cycle dispatch simulations such as for solar ramp rate studies. Must be previously defined as a Loadshape object. Typically would have time intervals of 1-5 seconds. Designate the number of points to solve using the Set Number=xxxx command. If there are fewer points in the actual shape, the shape is assumed to repeat.
 
-    DSS property name: `Duty`, DSS property index: 25.
+    Name: `Duty`
     """
 
     def _get_Duty(self) -> LoadShape:
@@ -582,7 +603,7 @@ class PVSystem(DSSObj, CircuitElementMixin, PCElementMixin, ElementHasRegistersM
     """
     Load shape to use for duty cycle dispatch simulations such as for solar ramp rate studies. Must be previously defined as a Loadshape object. Typically would have time intervals of 1-5 seconds. Designate the number of points to solve using the Set Number=xxxx command. If there are fewer points in the actual shape, the shape is assumed to repeat.
 
-    DSS property name: `Duty`, DSS property index: 25.
+    Name: `Duty`
     """
 
     def _get_TYearly_str(self) -> str:
@@ -595,7 +616,7 @@ class PVSystem(DSSObj, CircuitElementMixin, PCElementMixin, ElementHasRegistersM
     """
     Temperature shape to use for yearly simulations.  Must be previously defined as a TShape object. If this is not specified, the Daily dispatch shape, if any, is repeated during Yearly solution modes. The PVSystem element uses this TShape to determine the Pmpp from the Pmpp vs T curve. Units must agree with the Pmpp vs T curve.
 
-    DSS property name: `TYearly`, DSS property index: 26.
+    Name: `TYearly`
     """
 
     def _get_TYearly(self) -> TShape:
@@ -612,7 +633,7 @@ class PVSystem(DSSObj, CircuitElementMixin, PCElementMixin, ElementHasRegistersM
     """
     Temperature shape to use for yearly simulations.  Must be previously defined as a TShape object. If this is not specified, the Daily dispatch shape, if any, is repeated during Yearly solution modes. The PVSystem element uses this TShape to determine the Pmpp from the Pmpp vs T curve. Units must agree with the Pmpp vs T curve.
 
-    DSS property name: `TYearly`, DSS property index: 26.
+    Name: `TYearly`
     """
 
     def _get_TDaily_str(self) -> str:
@@ -625,7 +646,7 @@ class PVSystem(DSSObj, CircuitElementMixin, PCElementMixin, ElementHasRegistersM
     """
     Temperature shape to use for daily simulations.  Must be previously defined as a TShape object of 24 hrs, typically.  The PVSystem element uses this TShape to determine the Pmpp from the Pmpp vs T curve. Units must agree with the Pmpp vs T curve.
 
-    DSS property name: `TDaily`, DSS property index: 27.
+    Name: `TDaily`
     """
 
     def _get_TDaily(self) -> TShape:
@@ -642,7 +663,7 @@ class PVSystem(DSSObj, CircuitElementMixin, PCElementMixin, ElementHasRegistersM
     """
     Temperature shape to use for daily simulations.  Must be previously defined as a TShape object of 24 hrs, typically.  The PVSystem element uses this TShape to determine the Pmpp from the Pmpp vs T curve. Units must agree with the Pmpp vs T curve.
 
-    DSS property name: `TDaily`, DSS property index: 27.
+    Name: `TDaily`
     """
 
     def _get_TDuty_str(self) -> str:
@@ -655,7 +676,7 @@ class PVSystem(DSSObj, CircuitElementMixin, PCElementMixin, ElementHasRegistersM
     """
     Temperature shape to use for duty cycle dispatch simulations such as for solar ramp rate studies. Must be previously defined as a TShape object. Typically would have time intervals of 1-5 seconds. Designate the number of points to solve using the Set Number=xxxx command. If there are fewer points in the actual shape, the shape is assumed to repeat. The PVSystem model uses this TShape to determine the Pmpp from the Pmpp vs T curve. Units must agree with the Pmpp vs T curve.
 
-    DSS property name: `TDuty`, DSS property index: 28.
+    Name: `TDuty`
     """
 
     def _get_TDuty(self) -> TShape:
@@ -672,7 +693,7 @@ class PVSystem(DSSObj, CircuitElementMixin, PCElementMixin, ElementHasRegistersM
     """
     Temperature shape to use for duty cycle dispatch simulations such as for solar ramp rate studies. Must be previously defined as a TShape object. Typically would have time intervals of 1-5 seconds. Designate the number of points to solve using the Set Number=xxxx command. If there are fewer points in the actual shape, the shape is assumed to repeat. The PVSystem model uses this TShape to determine the Pmpp from the Pmpp vs T curve. Units must agree with the Pmpp vs T curve.
 
-    DSS property name: `TDuty`, DSS property index: 28.
+    Name: `TDuty`
     """
 
     def _get_Class(self) -> int:
@@ -685,7 +706,8 @@ class PVSystem(DSSObj, CircuitElementMixin, PCElementMixin, ElementHasRegistersM
     """
     An arbitrary integer number representing the class of PVSystem element so that PVSystem values may be segregated by class.
 
-    DSS property name: `Class`, DSS property index: 29.
+    Name: `Class`
+    Default: 1
     """
 
     def _get_UserModel(self) -> str:
@@ -698,7 +720,7 @@ class PVSystem(DSSObj, CircuitElementMixin, PCElementMixin, ElementHasRegistersM
     """
     Name of DLL containing user-written model, which computes the terminal currents for Dynamics studies, overriding the default model.  Set to "none" to negate previous setting.
 
-    DSS property name: `UserModel`, DSS property index: 30.
+    Name: `UserModel`
     """
 
     def _get_UserData(self) -> str:
@@ -711,7 +733,7 @@ class PVSystem(DSSObj, CircuitElementMixin, PCElementMixin, ElementHasRegistersM
     """
     String (in quotes or parentheses) that gets passed to user-written model for defining the data required for that model.
 
-    DSS property name: `UserData`, DSS property index: 31.
+    Name: `UserData`
     """
 
     def _get_DebugTrace(self) -> bool:
@@ -722,9 +744,10 @@ class PVSystem(DSSObj, CircuitElementMixin, PCElementMixin, ElementHasRegistersM
 
     DebugTrace = property(_get_DebugTrace, _set_DebugTrace) # type: bool
     """
-    {Yes | No }  Default is no.  Turn this on to capture the progress of the PVSystem model for each iteration.  Creates a separate file for each PVSystem element named "PVSystem_name.csv".
+    Turn this on to capture the progress of the PVSystem model for each iteration.  Creates a separate file for each PVSystem element named "PVSystem_name.csv".
 
-    DSS property name: `DebugTrace`, DSS property index: 32.
+    Name: `DebugTrace`
+    Default: False
     """
 
     def _get_VarFollowInverter(self) -> bool:
@@ -735,9 +758,10 @@ class PVSystem(DSSObj, CircuitElementMixin, PCElementMixin, ElementHasRegistersM
 
     VarFollowInverter = property(_get_VarFollowInverter, _set_VarFollowInverter) # type: bool
     """
-    Boolean variable (Yes|No) or (True|False). Defaults to False which indicates that the reactive power generation/absorption does not respect the inverter status.When set to True, the PVSystem reactive power generation/absorption will cease when the inverter status is off, due to panel kW dropping below %Cutout.  The reactive power generation/absorption will begin again when the panel kW is above %Cutin.  When set to False, the PVSystem will generate/absorb reactive power regardless of the status of the inverter.
+    Defaults to False which indicates that the reactive power generation/absorption does not respect the inverter status.When set to True, the PVSystem reactive power generation/absorption will cease when the inverter status is off, due to panel kW dropping below %Cutout.  The reactive power generation/absorption will begin again when the panel kW is above %Cutin.  When set to False, the PVSystem will generate/absorb reactive power regardless of the status of the inverter.
 
-    DSS property name: `VarFollowInverter`, DSS property index: 33.
+    Name: `VarFollowInverter`
+    Default: False
     """
 
     def _get_DutyStart(self) -> float:
@@ -748,9 +772,11 @@ class PVSystem(DSSObj, CircuitElementMixin, PCElementMixin, ElementHasRegistersM
 
     DutyStart = property(_get_DutyStart, _set_DutyStart) # type: float
     """
-    Starting time offset [hours] into the duty cycle shape for this PVSystem, defaults to 0
+    Starting time offset into the duty cycle shape for this PVSystem.
 
-    DSS property name: `DutyStart`, DSS property index: 34.
+    Name: `DutyStart`
+    Units: hour
+    Default: 0.0
     """
 
     def _get_WattPriority(self) -> bool:
@@ -761,9 +787,10 @@ class PVSystem(DSSObj, CircuitElementMixin, PCElementMixin, ElementHasRegistersM
 
     WattPriority = property(_get_WattPriority, _set_WattPriority) # type: bool
     """
-    {Yes/No*/True/False} Set inverter to watt priority instead of the default var priority
+    Set inverter to watt priority instead of the default var priority
 
-    DSS property name: `WattPriority`, DSS property index: 35.
+    Name: `WattPriority`
+    Default: False
     """
 
     def _get_PFPriority(self) -> bool:
@@ -774,9 +801,10 @@ class PVSystem(DSSObj, CircuitElementMixin, PCElementMixin, ElementHasRegistersM
 
     PFPriority = property(_get_PFPriority, _set_PFPriority) # type: bool
     """
-    {Yes/No*/True/False} Set inverter to operate with PF priority when in constant PF mode. If "Yes", value assigned to "WattPriority" is neglected. If controlled by an InvControl with either Volt-Var or DRC or both functions activated, PF priority is neglected and "WattPriority" is considered. Default = No.
+    Set inverter to operate with PF priority when in constant PF mode. If "Yes", value assigned to "WattPriority" is neglected. If controlled by an InvControl with either Volt-Var or DRC or both functions activated, PF priority is neglected and "WattPriority" is considered. Default = No.
 
-    DSS property name: `PFPriority`, DSS property index: 36.
+    Name: `PFPriority`
+    Default: False
     """
 
     def _get_pctPMinNoVars(self) -> float:
@@ -789,7 +817,8 @@ class PVSystem(DSSObj, CircuitElementMixin, PCElementMixin, ElementHasRegistersM
     """
     Minimum active power as percentage of Pmpp under which there is no vars production/absorption.
 
-    DSS property name: `%PMinNoVars`, DSS property index: 37.
+    Name: `%PMinNoVars`
+    Default: 0.0
     """
 
     def _get_pctPMinkvarMax(self) -> float:
@@ -802,7 +831,8 @@ class PVSystem(DSSObj, CircuitElementMixin, PCElementMixin, ElementHasRegistersM
     """
     Minimum active power as percentage of Pmpp that allows the inverter to produce/absorb reactive power up to its kvarMax or kvarMaxAbs.
 
-    DSS property name: `%PMinkvarMax`, DSS property index: 38.
+    Name: `%PMinkvarMax`
+    Default: 0.0
     """
 
     def _get_kvarMax(self) -> float:
@@ -815,7 +845,7 @@ class PVSystem(DSSObj, CircuitElementMixin, PCElementMixin, ElementHasRegistersM
     """
     Indicates the maximum reactive power GENERATION (un-signed numerical variable in kvar) for the inverter (as an un-signed value). Defaults to kVA rating of the inverter.
 
-    DSS property name: `kvarMax`, DSS property index: 39.
+    Name: `kvarMax`
     """
 
     def _get_kvarMaxAbs(self) -> float:
@@ -828,7 +858,7 @@ class PVSystem(DSSObj, CircuitElementMixin, PCElementMixin, ElementHasRegistersM
     """
     Indicates the maximum reactive power ABSORPTION (un-signed numerical variable in kvar) for the inverter (as an un-signed value). Defaults to kVA rating of the inverter.
 
-    DSS property name: `kvarMaxAbs`, DSS property index: 40.
+    Name: `kvarMaxAbs`
     """
 
     def _get_kVDC(self) -> float:
@@ -841,7 +871,8 @@ class PVSystem(DSSObj, CircuitElementMixin, PCElementMixin, ElementHasRegistersM
     """
     Indicates the rated voltage (kV) at the input of the inverter at the peak of PV energy production. The value is normally greater or equal to the kV base of the PV system. It is used for dynamics simulation ONLY.
 
-    DSS property name: `kVDC`, DSS property index: 41.
+    Name: `kVDC`
+    Default: 8.0
     """
 
     def _get_Kp(self) -> float:
@@ -854,7 +885,8 @@ class PVSystem(DSSObj, CircuitElementMixin, PCElementMixin, ElementHasRegistersM
     """
     It is the proportional gain for the PI controller within the inverter. Use it to modify the controller response in dynamics simulation mode.
 
-    DSS property name: `Kp`, DSS property index: 42.
+    Name: `Kp`
+    Default: 0.01
     """
 
     def _get_PITol(self) -> float:
@@ -867,7 +899,8 @@ class PVSystem(DSSObj, CircuitElementMixin, PCElementMixin, ElementHasRegistersM
     """
     It is the tolerance (%) for the closed loop controller of the inverter. For dynamics simulation mode.
 
-    DSS property name: `PITol`, DSS property index: 43.
+    Name: `PITol`
+    Default: 0.0
     """
 
     def _get_SafeVoltage(self) -> float:
@@ -880,7 +913,8 @@ class PVSystem(DSSObj, CircuitElementMixin, PCElementMixin, ElementHasRegistersM
     """
     Indicates the voltage level (%) respect to the base voltage level for which the Inverter will operate. If this threshold is violated, the Inverter will enter safe mode (OFF). For dynamic simulation. By default is 80%
 
-    DSS property name: `SafeVoltage`, DSS property index: 44.
+    Name: `SafeVoltage`
+    Default: 80.0
     """
 
     def _get_SafeMode(self) -> bool:
@@ -891,9 +925,11 @@ class PVSystem(DSSObj, CircuitElementMixin, PCElementMixin, ElementHasRegistersM
 
     SafeMode = property(_get_SafeMode, _set_SafeMode) # type: bool
     """
-    (Read only) Indicates whether the inverter entered (Yes) or not (No) into Safe Mode.
+    Indicates whether the inverter entered or not into Safe Mode.
 
-    DSS property name: `SafeMode`, DSS property index: 45.
+    **Read-only**
+
+    Name: `SafeMode`
     """
 
     def _get_DynamicEq_str(self) -> str:
@@ -906,7 +942,7 @@ class PVSystem(DSSObj, CircuitElementMixin, PCElementMixin, ElementHasRegistersM
     """
     The name of the dynamic equation (DynamicExp) that will be used for defining the dynamic behavior of the generator. If not defined, the generator dynamics will follow the built-in dynamic equation.
 
-    DSS property name: `DynamicEq`, DSS property index: 46.
+    Name: `DynamicEq`
     """
 
     def _get_DynamicEq(self) -> DynamicExp:
@@ -923,7 +959,7 @@ class PVSystem(DSSObj, CircuitElementMixin, PCElementMixin, ElementHasRegistersM
     """
     The name of the dynamic equation (DynamicExp) that will be used for defining the dynamic behavior of the generator. If not defined, the generator dynamics will follow the built-in dynamic equation.
 
-    DSS property name: `DynamicEq`, DSS property index: 46.
+    Name: `DynamicEq`
     """
 
     def _get_DynOut(self) -> List[str]:
@@ -942,7 +978,7 @@ class PVSystem(DSSObj, CircuitElementMixin, PCElementMixin, ElementHasRegistersM
 
     The output variables need to be defined in the same order.
 
-    DSS property name: `DynOut`, DSS property index: 47.
+    Name: `DynOut`
     """
 
     def _get_ControlMode(self) -> enums.InverterControlMode:
@@ -956,11 +992,12 @@ class PVSystem(DSSObj, CircuitElementMixin, PCElementMixin, ElementHasRegistersM
 
     ControlMode = property(_get_ControlMode, _set_ControlMode) # type: enums.InverterControlMode
     """
-    Defines the control mode for the inverter. It can be one of {GFM | GFL*}. By default it is GFL (Grid Following Inverter). Use GFM (Grid Forming Inverter) for energizing islanded microgrids, but, if the device is connected to the grid, it is highly recommended to use GFL.
+    Defines the control mode for the inverter. By default it is GFL (Grid Following Inverter). Use GFM (Grid Forming Inverter) for energizing islanded microgrids, but, if the device is connected to the grid, it is highly recommended to use GFL.
 
     GFM control mode disables any control action set by the InvControl device.
 
-    DSS property name: `ControlMode`, DSS property index: 48.
+    Name: `ControlMode`
+    Default: GFL
     """
 
     def _get_ControlMode_str(self) -> str:
@@ -971,11 +1008,12 @@ class PVSystem(DSSObj, CircuitElementMixin, PCElementMixin, ElementHasRegistersM
 
     ControlMode_str = property(_get_ControlMode_str, _set_ControlMode_str) # type: str
     """
-    Defines the control mode for the inverter. It can be one of {GFM | GFL*}. By default it is GFL (Grid Following Inverter). Use GFM (Grid Forming Inverter) for energizing islanded microgrids, but, if the device is connected to the grid, it is highly recommended to use GFL.
+    Defines the control mode for the inverter. By default it is GFL (Grid Following Inverter). Use GFM (Grid Forming Inverter) for energizing islanded microgrids, but, if the device is connected to the grid, it is highly recommended to use GFL.
 
     GFM control mode disables any control action set by the InvControl device.
 
-    DSS property name: `ControlMode`, DSS property index: 48.
+    Name: `ControlMode`
+    Default: GFL
     """
 
     def _get_AmpLimit(self) -> float:
@@ -989,7 +1027,7 @@ class PVSystem(DSSObj, CircuitElementMixin, PCElementMixin, ElementHasRegistersM
     The current limiter per phase for the IBR when operating in GFM mode. This limit is imposed to prevent the IBR to enter into Safe Mode when reaching the IBR power ratings.
     Once the IBR reaches this value, it remains there without moving into Safe Mode. This value needs to be set lower than the IBR Amps rating.
 
-    DSS property name: `AmpLimit`, DSS property index: 49.
+    Name: `AmpLimit`
     """
 
     def _get_AmpLimitGain(self) -> float:
@@ -1002,7 +1040,8 @@ class PVSystem(DSSObj, CircuitElementMixin, PCElementMixin, ElementHasRegistersM
     """
     Use it for fine tunning the current limiter when active, by default is 0.8, it has to be a value between 0.1 and 1. This value allows users to fine tune the IBRs current limiter to match with the user requirements.
 
-    DSS property name: `AmpLimitGain`, DSS property index: 50.
+    Name: `AmpLimitGain`
+    Default: 0.8
     """
 
     def _get_Spectrum_str(self) -> str:
@@ -1013,9 +1052,9 @@ class PVSystem(DSSObj, CircuitElementMixin, PCElementMixin, ElementHasRegistersM
 
     Spectrum_str = property(_get_Spectrum_str, _set_Spectrum_str) # type: str
     """
-    Name of harmonic voltage or current spectrum for this PVSystem element. A harmonic voltage source is assumed for the inverter. Default value is "default", which is defined when the DSS starts.
+    Name of harmonic voltage or current spectrum for this PVSystem element. A harmonic voltage source is assumed for the inverter.
 
-    DSS property name: `Spectrum`, DSS property index: 51.
+    Name: `Spectrum`
     """
 
     def _get_Spectrum(self) -> SpectrumObj:
@@ -1030,9 +1069,9 @@ class PVSystem(DSSObj, CircuitElementMixin, PCElementMixin, ElementHasRegistersM
 
     Spectrum = property(_get_Spectrum, _set_Spectrum) # type: SpectrumObj
     """
-    Name of harmonic voltage or current spectrum for this PVSystem element. A harmonic voltage source is assumed for the inverter. Default value is "default", which is defined when the DSS starts.
+    Name of harmonic voltage or current spectrum for this PVSystem element. A harmonic voltage source is assumed for the inverter.
 
-    DSS property name: `Spectrum`, DSS property index: 51.
+    Name: `Spectrum`
     """
 
     def _get_BaseFreq(self) -> float:
@@ -1045,7 +1084,8 @@ class PVSystem(DSSObj, CircuitElementMixin, PCElementMixin, ElementHasRegistersM
     """
     Base Frequency for ratings.
 
-    DSS property name: `BaseFreq`, DSS property index: 52.
+    Name: `BaseFreq`
+    Units: Hz
     """
 
     def _get_Enabled(self) -> bool:
@@ -1056,9 +1096,10 @@ class PVSystem(DSSObj, CircuitElementMixin, PCElementMixin, ElementHasRegistersM
 
     Enabled = property(_get_Enabled, _set_Enabled) # type: bool
     """
-    {Yes|No or True|False} Indicates whether this element is enabled.
+    Indicates whether this element is enabled.
 
-    DSS property name: `Enabled`, DSS property index: 53.
+    Name: `Enabled`
+    Default: True
     """
 
     def Like(self, value: AnyStr):
@@ -1067,7 +1108,9 @@ class PVSystem(DSSObj, CircuitElementMixin, PCElementMixin, ElementHasRegistersM
 
         New Capacitor.C2 like=c1  ...
 
-        DSS property name: `Like`, DSS property index: 54.
+        **Deprecated:** `Like` has been deprecated since at least 2021, see https://sourceforge.net/p/electricdss/discussion/861977/thread/8b59d21eb6/#b57c/f668
+
+        Name: `Like`
         """
         self._set_string_o(54, value)
 
@@ -1131,7 +1174,7 @@ class PVSystemProperties(TypedDict):
 class PVSystemBatch(DSSBatch, CircuitElementBatchMixin, PCElementBatchMixin):
     _cls_name = 'PVSystem'
     _obj_cls = PVSystem
-    _cls_idx = 35
+    _cls_idx = 36
     __slots__ = []
 
     def __init__(self, api_util, **kwargs):
@@ -1170,7 +1213,8 @@ class PVSystemBatch(DSSBatch, CircuitElementBatchMixin, PCElementBatchMixin):
     """
     Number of Phases, this PVSystem element.  Power is evenly divided among phases.
 
-    DSS property name: `Phases`, DSS property index: 1.
+    Name: `Phases`
+    Default: 3
     """
 
     def _get_Bus1(self) -> List[str]:
@@ -1183,7 +1227,7 @@ class PVSystemBatch(DSSBatch, CircuitElementBatchMixin, PCElementBatchMixin):
     """
     Bus to which the PVSystem element is connected.  May include specific node specification.
 
-    DSS property name: `Bus1`, DSS property index: 2.
+    Name: `Bus1`
     """
 
     def _get_kV(self) -> BatchFloat64ArrayProxy:
@@ -1196,7 +1240,9 @@ class PVSystemBatch(DSSBatch, CircuitElementBatchMixin, PCElementBatchMixin):
     """
     Nominal rated (1.0 per unit) voltage, kV, for PVSystem element. For 2- and 3-phase PVSystem elements, specify phase-phase kV. Otherwise, specify actual kV across each branch of the PVSystem element. If 1-phase wye (star or LN), specify phase-neutral kV. If 1-phase delta or phase-phase connected, specify phase-phase kV.
 
-    DSS property name: `kV`, DSS property index: 3.
+    Name: `kV`
+    Units: kV
+    Default: 12.47
     """
 
     def _get_Irradiance(self) -> BatchFloat64ArrayProxy:
@@ -1209,7 +1255,8 @@ class PVSystemBatch(DSSBatch, CircuitElementBatchMixin, PCElementBatchMixin):
     """
     Get/set the present irradiance value in kW/sq-m. Used as base value for shape multipliers. Generally entered as peak value for the time period of interest and the yearly, daily, and duty load shape objects are defined as per unit multipliers (just like Loads/Generators).
 
-    DSS property name: `Irradiance`, DSS property index: 4.
+    Name: `Irradiance`
+    Default: 1.0
     """
 
     def _get_Pmpp(self) -> BatchFloat64ArrayProxy:
@@ -1222,7 +1269,8 @@ class PVSystemBatch(DSSBatch, CircuitElementBatchMixin, PCElementBatchMixin):
     """
     Get/set the rated max power of the PV array for 1.0 kW/sq-m irradiance and a user-selected array temperature. The P-TCurve should be defined relative to the selected array temperature.
 
-    DSS property name: `Pmpp`, DSS property index: 5.
+    Name: `Pmpp`
+    Default: 500.0
     """
 
     def _get_pctPmpp(self) -> BatchFloat64ArrayProxy:
@@ -1235,7 +1283,8 @@ class PVSystemBatch(DSSBatch, CircuitElementBatchMixin, PCElementBatchMixin):
     """
     Upper limit on active power as a percentage of Pmpp.
 
-    DSS property name: `%Pmpp`, DSS property index: 6.
+    Name: `%Pmpp`
+    Default: 100.0
     """
 
     def _get_Temperature(self) -> BatchFloat64ArrayProxy:
@@ -1248,7 +1297,8 @@ class PVSystemBatch(DSSBatch, CircuitElementBatchMixin, PCElementBatchMixin):
     """
     Get/set the present Temperature. Used as fixed value corresponding to PTCurve property. A multiplier is obtained from the Pmpp-Temp curve and applied to the nominal Pmpp from the irradiance to determine the net array output.
 
-    DSS property name: `Temperature`, DSS property index: 7.
+    Name: `Temperature`
+    Default: 25.0
     """
 
     def _get_PF(self) -> BatchFloat64ArrayProxy:
@@ -1259,11 +1309,12 @@ class PVSystemBatch(DSSBatch, CircuitElementBatchMixin, PCElementBatchMixin):
 
     PF = property(_get_PF, _set_PF) # type: BatchFloat64ArrayProxy
     """
-    Nominally, the power factor for the output power. Default is 1.0. Setting this property will cause the inverter to operate in constant power factor mode.Enter negative when kW and kvar have opposite signs.
+    Nominally, the power factor for the output power. Setting this property will cause the inverter to operate in constant power factor mode.Enter negative when kW and kvar have opposite signs.
     A positive power factor signifies that the PVSystem element produces vars 
     as is typical for a generator.  
 
-    DSS property name: `PF`, DSS property index: 8.
+    Name: `PF`
+    Default: 1.0
     """
 
     def _get_Conn(self) -> BatchInt32ArrayProxy:
@@ -1280,7 +1331,8 @@ class PVSystemBatch(DSSBatch, CircuitElementBatchMixin, PCElementBatchMixin):
     """
     ={wye|LN|delta|LL}.  Default is wye.
 
-    DSS property name: `Conn`, DSS property index: 9.
+    Name: `Conn`
+    Default: Wye
     """
 
     def _get_Conn_str(self) -> List[str]:
@@ -1293,7 +1345,8 @@ class PVSystemBatch(DSSBatch, CircuitElementBatchMixin, PCElementBatchMixin):
     """
     ={wye|LN|delta|LL}.  Default is wye.
 
-    DSS property name: `Conn`, DSS property index: 9.
+    Name: `Conn`
+    Default: Wye
     """
 
     def _get_kvar(self) -> BatchFloat64ArrayProxy:
@@ -1306,7 +1359,8 @@ class PVSystemBatch(DSSBatch, CircuitElementBatchMixin, PCElementBatchMixin):
     """
     Get/set the present kvar value.  Setting this property forces the inverter to operate in constant kvar mode.
 
-    DSS property name: `kvar`, DSS property index: 10.
+    Name: `kvar`
+    Units: kvar
     """
 
     def _get_kVA(self) -> BatchFloat64ArrayProxy:
@@ -1319,7 +1373,8 @@ class PVSystemBatch(DSSBatch, CircuitElementBatchMixin, PCElementBatchMixin):
     """
     kVA rating of inverter. Used as the base for Dynamics mode and Harmonics mode values.
 
-    DSS property name: `kVA`, DSS property index: 11.
+    Name: `kVA`
+    Default: 500.0
     """
 
     def _get_pctCutIn(self) -> BatchFloat64ArrayProxy:
@@ -1332,7 +1387,8 @@ class PVSystemBatch(DSSBatch, CircuitElementBatchMixin, PCElementBatchMixin):
     """
     % cut-in power -- % of kVA rating of inverter. When the inverter is OFF, the power from the array must be greater than this for the inverter to turn on.
 
-    DSS property name: `%CutIn`, DSS property index: 12.
+    Name: `%CutIn`
+    Default: 20.0
     """
 
     def _get_pctCutOut(self) -> BatchFloat64ArrayProxy:
@@ -1345,7 +1401,8 @@ class PVSystemBatch(DSSBatch, CircuitElementBatchMixin, PCElementBatchMixin):
     """
     % cut-out power -- % of kVA rating of inverter. When the inverter is ON, the inverter turns OFF when the power from the array drops below this value.
 
-    DSS property name: `%CutOut`, DSS property index: 13.
+    Name: `%CutOut`
+    Default: 20.0
     """
 
     def _get_EffCurve_str(self) -> List[str]:
@@ -1358,7 +1415,7 @@ class PVSystemBatch(DSSBatch, CircuitElementBatchMixin, PCElementBatchMixin):
     """
     An XYCurve object, previously defined, that describes the PER UNIT efficiency vs PER UNIT of rated kVA for the inverter. Inverter output power is discounted by the multiplier obtained from this curve.
 
-    DSS property name: `EffCurve`, DSS property index: 14.
+    Name: `EffCurve`
     """
 
     def _get_EffCurve(self) -> List[XYcurve]:
@@ -1371,7 +1428,7 @@ class PVSystemBatch(DSSBatch, CircuitElementBatchMixin, PCElementBatchMixin):
     """
     An XYCurve object, previously defined, that describes the PER UNIT efficiency vs PER UNIT of rated kVA for the inverter. Inverter output power is discounted by the multiplier obtained from this curve.
 
-    DSS property name: `EffCurve`, DSS property index: 14.
+    Name: `EffCurve`
     """
 
     def _get_PTCurve_str(self) -> List[str]:
@@ -1384,7 +1441,7 @@ class PVSystemBatch(DSSBatch, CircuitElementBatchMixin, PCElementBatchMixin):
     """
     An XYCurve object, previously defined, that describes the PV array PER UNIT Pmpp vs Temperature curve. Temperature units must agree with the Temperature property and the Temperature shapes used for simulations. The Pmpp values are specified in per unit of the Pmpp value for 1 kW/sq-m irradiance. The value for the temperature at which Pmpp is defined should be 1.0. The net array power is determined by the irradiance * Pmpp * f(Temperature)
 
-    DSS property name: `P-TCurve`, DSS property index: 15.
+    Name: `P-TCurve`
     """
 
     def _get_PTCurve(self) -> List[XYcurve]:
@@ -1397,7 +1454,7 @@ class PVSystemBatch(DSSBatch, CircuitElementBatchMixin, PCElementBatchMixin):
     """
     An XYCurve object, previously defined, that describes the PV array PER UNIT Pmpp vs Temperature curve. Temperature units must agree with the Temperature property and the Temperature shapes used for simulations. The Pmpp values are specified in per unit of the Pmpp value for 1 kW/sq-m irradiance. The value for the temperature at which Pmpp is defined should be 1.0. The net array power is determined by the irradiance * Pmpp * f(Temperature)
 
-    DSS property name: `P-TCurve`, DSS property index: 15.
+    Name: `P-TCurve`
     """
 
     def _get_pctR(self) -> BatchFloat64ArrayProxy:
@@ -1408,9 +1465,10 @@ class PVSystemBatch(DSSBatch, CircuitElementBatchMixin, PCElementBatchMixin):
 
     pctR = property(_get_pctR, _set_pctR) # type: BatchFloat64ArrayProxy
     """
-    Equivalent percent internal resistance, ohms. Default is 50%. Placed in series with internal voltage source for harmonics and dynamics modes. (Limits fault current to about 2 pu if not current limited -- see LimitCurrent) 
+    Equivalent percent internal resistance, ohms. Placed in series with internal voltage source for harmonics and dynamics modes. (Limits fault current to about 2 pu if not current limited -- see LimitCurrent) 
 
-    DSS property name: `%R`, DSS property index: 16.
+    Name: `%R`
+    Default: 50.0
     """
 
     def _get_pctX(self) -> BatchFloat64ArrayProxy:
@@ -1421,9 +1479,10 @@ class PVSystemBatch(DSSBatch, CircuitElementBatchMixin, PCElementBatchMixin):
 
     pctX = property(_get_pctX, _set_pctX) # type: BatchFloat64ArrayProxy
     """
-    Equivalent percent internal reactance, ohms. Default is 0%. Placed in series with internal voltage source for harmonics and dynamics modes. 
+    Equivalent percent internal reactance, ohms. Placed in series with internal voltage source for harmonics and dynamics modes.
 
-    DSS property name: `%X`, DSS property index: 17.
+    Name: `%X`
+    Default: 0.0
     """
 
     def _get_Model(self) -> BatchInt32ArrayProxy:
@@ -1440,7 +1499,8 @@ class PVSystemBatch(DSSBatch, CircuitElementBatchMixin, PCElementBatchMixin):
     2:PVSystem element is modeled as a CONSTANT ADMITTANCE.
     3:Compute load injection from User-written Model.
 
-    DSS property name: `Model`, DSS property index: 18.
+    Name: `Model`
+    Default: 1
     """
 
     def _get_VMinpu(self) -> BatchFloat64ArrayProxy:
@@ -1451,9 +1511,10 @@ class PVSystemBatch(DSSBatch, CircuitElementBatchMixin, PCElementBatchMixin):
 
     VMinpu = property(_get_VMinpu, _set_VMinpu) # type: BatchFloat64ArrayProxy
     """
-    Default = 0.90.  Minimum per unit voltage for which the Model is assumed to apply. Below this value, the load model reverts to a constant impedance model except for Dynamics model. In Dynamics mode, the current magnitude is limited to the value the power flow would compute for this voltage.
+    Minimum per unit voltage for which the Model is assumed to apply. Below this value, the load model reverts to a constant impedance model except for Dynamics model. In Dynamics mode, the current magnitude is limited to the value the power flow would compute for this voltage.
 
-    DSS property name: `VMinpu`, DSS property index: 19.
+    Name: `VMinpu`
+    Default: 0.9
     """
 
     def _get_VMaxpu(self) -> BatchFloat64ArrayProxy:
@@ -1464,9 +1525,10 @@ class PVSystemBatch(DSSBatch, CircuitElementBatchMixin, PCElementBatchMixin):
 
     VMaxpu = property(_get_VMaxpu, _set_VMaxpu) # type: BatchFloat64ArrayProxy
     """
-    Default = 1.10.  Maximum per unit voltage for which the Model is assumed to apply. Above this value, the load model reverts to a constant impedance model.
+    Maximum per unit voltage for which the Model is assumed to apply. Above this value, the load model reverts to a constant impedance model.
 
-    DSS property name: `VMaxpu`, DSS property index: 20.
+    Name: `VMaxpu`
+    Default: 1.1
     """
 
     def _get_Balanced(self) -> List[bool]:
@@ -1479,9 +1541,10 @@ class PVSystemBatch(DSSBatch, CircuitElementBatchMixin, PCElementBatchMixin):
 
     Balanced = property(_get_Balanced, _set_Balanced) # type: List[bool]
     """
-    {Yes | No*} Default is No.  Force balanced current only for 3-phase PVSystems. Forces zero- and negative-sequence to zero. 
+    Force balanced current only for 3-phase PVSystems. Forces zero- and negative-sequence to zero. 
 
-    DSS property name: `Balanced`, DSS property index: 21.
+    Name: `Balanced`
+    Default: False
     """
 
     def _get_LimitCurrent(self) -> List[bool]:
@@ -1496,7 +1559,8 @@ class PVSystemBatch(DSSBatch, CircuitElementBatchMixin, PCElementBatchMixin):
     """
     Limits current magnitude to Vminpu value for both 1-phase and 3-phase PVSystems similar to Generator Model 7. For 3-phase, limits the positive-sequence current but not the negative-sequence.
 
-    DSS property name: `LimitCurrent`, DSS property index: 22.
+    Name: `LimitCurrent`
+    Default: False
     """
 
     def _get_Yearly_str(self) -> List[str]:
@@ -1509,7 +1573,7 @@ class PVSystemBatch(DSSBatch, CircuitElementBatchMixin, PCElementBatchMixin):
     """
     Dispatch shape to use for yearly simulations.  Must be previously defined as a Loadshape object. If this is not specified, the Daily dispatch shape, if any, is repeated during Yearly solution modes. In the default dispatch mode, the PVSystem element uses this loadshape to trigger State changes.
 
-    DSS property name: `Yearly`, DSS property index: 23.
+    Name: `Yearly`
     """
 
     def _get_Yearly(self) -> List[LoadShape]:
@@ -1522,7 +1586,7 @@ class PVSystemBatch(DSSBatch, CircuitElementBatchMixin, PCElementBatchMixin):
     """
     Dispatch shape to use for yearly simulations.  Must be previously defined as a Loadshape object. If this is not specified, the Daily dispatch shape, if any, is repeated during Yearly solution modes. In the default dispatch mode, the PVSystem element uses this loadshape to trigger State changes.
 
-    DSS property name: `Yearly`, DSS property index: 23.
+    Name: `Yearly`
     """
 
     def _get_Daily_str(self) -> List[str]:
@@ -1535,7 +1599,7 @@ class PVSystemBatch(DSSBatch, CircuitElementBatchMixin, PCElementBatchMixin):
     """
     Dispatch shape to use for daily simulations.  Must be previously defined as a Loadshape object of 24 hrs, typically.  In the default dispatch mode, the PVSystem element uses this loadshape to trigger State changes.
 
-    DSS property name: `Daily`, DSS property index: 24.
+    Name: `Daily`
     """
 
     def _get_Daily(self) -> List[LoadShape]:
@@ -1548,7 +1612,7 @@ class PVSystemBatch(DSSBatch, CircuitElementBatchMixin, PCElementBatchMixin):
     """
     Dispatch shape to use for daily simulations.  Must be previously defined as a Loadshape object of 24 hrs, typically.  In the default dispatch mode, the PVSystem element uses this loadshape to trigger State changes.
 
-    DSS property name: `Daily`, DSS property index: 24.
+    Name: `Daily`
     """
 
     def _get_Duty_str(self) -> List[str]:
@@ -1561,7 +1625,7 @@ class PVSystemBatch(DSSBatch, CircuitElementBatchMixin, PCElementBatchMixin):
     """
     Load shape to use for duty cycle dispatch simulations such as for solar ramp rate studies. Must be previously defined as a Loadshape object. Typically would have time intervals of 1-5 seconds. Designate the number of points to solve using the Set Number=xxxx command. If there are fewer points in the actual shape, the shape is assumed to repeat.
 
-    DSS property name: `Duty`, DSS property index: 25.
+    Name: `Duty`
     """
 
     def _get_Duty(self) -> List[LoadShape]:
@@ -1574,7 +1638,7 @@ class PVSystemBatch(DSSBatch, CircuitElementBatchMixin, PCElementBatchMixin):
     """
     Load shape to use for duty cycle dispatch simulations such as for solar ramp rate studies. Must be previously defined as a Loadshape object. Typically would have time intervals of 1-5 seconds. Designate the number of points to solve using the Set Number=xxxx command. If there are fewer points in the actual shape, the shape is assumed to repeat.
 
-    DSS property name: `Duty`, DSS property index: 25.
+    Name: `Duty`
     """
 
     def _get_TYearly_str(self) -> List[str]:
@@ -1587,7 +1651,7 @@ class PVSystemBatch(DSSBatch, CircuitElementBatchMixin, PCElementBatchMixin):
     """
     Temperature shape to use for yearly simulations.  Must be previously defined as a TShape object. If this is not specified, the Daily dispatch shape, if any, is repeated during Yearly solution modes. The PVSystem element uses this TShape to determine the Pmpp from the Pmpp vs T curve. Units must agree with the Pmpp vs T curve.
 
-    DSS property name: `TYearly`, DSS property index: 26.
+    Name: `TYearly`
     """
 
     def _get_TYearly(self) -> List[TShape]:
@@ -1600,7 +1664,7 @@ class PVSystemBatch(DSSBatch, CircuitElementBatchMixin, PCElementBatchMixin):
     """
     Temperature shape to use for yearly simulations.  Must be previously defined as a TShape object. If this is not specified, the Daily dispatch shape, if any, is repeated during Yearly solution modes. The PVSystem element uses this TShape to determine the Pmpp from the Pmpp vs T curve. Units must agree with the Pmpp vs T curve.
 
-    DSS property name: `TYearly`, DSS property index: 26.
+    Name: `TYearly`
     """
 
     def _get_TDaily_str(self) -> List[str]:
@@ -1613,7 +1677,7 @@ class PVSystemBatch(DSSBatch, CircuitElementBatchMixin, PCElementBatchMixin):
     """
     Temperature shape to use for daily simulations.  Must be previously defined as a TShape object of 24 hrs, typically.  The PVSystem element uses this TShape to determine the Pmpp from the Pmpp vs T curve. Units must agree with the Pmpp vs T curve.
 
-    DSS property name: `TDaily`, DSS property index: 27.
+    Name: `TDaily`
     """
 
     def _get_TDaily(self) -> List[TShape]:
@@ -1626,7 +1690,7 @@ class PVSystemBatch(DSSBatch, CircuitElementBatchMixin, PCElementBatchMixin):
     """
     Temperature shape to use for daily simulations.  Must be previously defined as a TShape object of 24 hrs, typically.  The PVSystem element uses this TShape to determine the Pmpp from the Pmpp vs T curve. Units must agree with the Pmpp vs T curve.
 
-    DSS property name: `TDaily`, DSS property index: 27.
+    Name: `TDaily`
     """
 
     def _get_TDuty_str(self) -> List[str]:
@@ -1639,7 +1703,7 @@ class PVSystemBatch(DSSBatch, CircuitElementBatchMixin, PCElementBatchMixin):
     """
     Temperature shape to use for duty cycle dispatch simulations such as for solar ramp rate studies. Must be previously defined as a TShape object. Typically would have time intervals of 1-5 seconds. Designate the number of points to solve using the Set Number=xxxx command. If there are fewer points in the actual shape, the shape is assumed to repeat. The PVSystem model uses this TShape to determine the Pmpp from the Pmpp vs T curve. Units must agree with the Pmpp vs T curve.
 
-    DSS property name: `TDuty`, DSS property index: 28.
+    Name: `TDuty`
     """
 
     def _get_TDuty(self) -> List[TShape]:
@@ -1652,7 +1716,7 @@ class PVSystemBatch(DSSBatch, CircuitElementBatchMixin, PCElementBatchMixin):
     """
     Temperature shape to use for duty cycle dispatch simulations such as for solar ramp rate studies. Must be previously defined as a TShape object. Typically would have time intervals of 1-5 seconds. Designate the number of points to solve using the Set Number=xxxx command. If there are fewer points in the actual shape, the shape is assumed to repeat. The PVSystem model uses this TShape to determine the Pmpp from the Pmpp vs T curve. Units must agree with the Pmpp vs T curve.
 
-    DSS property name: `TDuty`, DSS property index: 28.
+    Name: `TDuty`
     """
 
     def _get_Class(self) -> BatchInt32ArrayProxy:
@@ -1665,7 +1729,8 @@ class PVSystemBatch(DSSBatch, CircuitElementBatchMixin, PCElementBatchMixin):
     """
     An arbitrary integer number representing the class of PVSystem element so that PVSystem values may be segregated by class.
 
-    DSS property name: `Class`, DSS property index: 29.
+    Name: `Class`
+    Default: 1
     """
 
     def _get_UserModel(self) -> List[str]:
@@ -1678,7 +1743,7 @@ class PVSystemBatch(DSSBatch, CircuitElementBatchMixin, PCElementBatchMixin):
     """
     Name of DLL containing user-written model, which computes the terminal currents for Dynamics studies, overriding the default model.  Set to "none" to negate previous setting.
 
-    DSS property name: `UserModel`, DSS property index: 30.
+    Name: `UserModel`
     """
 
     def _get_UserData(self) -> List[str]:
@@ -1691,7 +1756,7 @@ class PVSystemBatch(DSSBatch, CircuitElementBatchMixin, PCElementBatchMixin):
     """
     String (in quotes or parentheses) that gets passed to user-written model for defining the data required for that model.
 
-    DSS property name: `UserData`, DSS property index: 31.
+    Name: `UserData`
     """
 
     def _get_DebugTrace(self) -> List[bool]:
@@ -1704,9 +1769,10 @@ class PVSystemBatch(DSSBatch, CircuitElementBatchMixin, PCElementBatchMixin):
 
     DebugTrace = property(_get_DebugTrace, _set_DebugTrace) # type: List[bool]
     """
-    {Yes | No }  Default is no.  Turn this on to capture the progress of the PVSystem model for each iteration.  Creates a separate file for each PVSystem element named "PVSystem_name.csv".
+    Turn this on to capture the progress of the PVSystem model for each iteration.  Creates a separate file for each PVSystem element named "PVSystem_name.csv".
 
-    DSS property name: `DebugTrace`, DSS property index: 32.
+    Name: `DebugTrace`
+    Default: False
     """
 
     def _get_VarFollowInverter(self) -> List[bool]:
@@ -1719,9 +1785,10 @@ class PVSystemBatch(DSSBatch, CircuitElementBatchMixin, PCElementBatchMixin):
 
     VarFollowInverter = property(_get_VarFollowInverter, _set_VarFollowInverter) # type: List[bool]
     """
-    Boolean variable (Yes|No) or (True|False). Defaults to False which indicates that the reactive power generation/absorption does not respect the inverter status.When set to True, the PVSystem reactive power generation/absorption will cease when the inverter status is off, due to panel kW dropping below %Cutout.  The reactive power generation/absorption will begin again when the panel kW is above %Cutin.  When set to False, the PVSystem will generate/absorb reactive power regardless of the status of the inverter.
+    Defaults to False which indicates that the reactive power generation/absorption does not respect the inverter status.When set to True, the PVSystem reactive power generation/absorption will cease when the inverter status is off, due to panel kW dropping below %Cutout.  The reactive power generation/absorption will begin again when the panel kW is above %Cutin.  When set to False, the PVSystem will generate/absorb reactive power regardless of the status of the inverter.
 
-    DSS property name: `VarFollowInverter`, DSS property index: 33.
+    Name: `VarFollowInverter`
+    Default: False
     """
 
     def _get_DutyStart(self) -> BatchFloat64ArrayProxy:
@@ -1732,9 +1799,11 @@ class PVSystemBatch(DSSBatch, CircuitElementBatchMixin, PCElementBatchMixin):
 
     DutyStart = property(_get_DutyStart, _set_DutyStart) # type: BatchFloat64ArrayProxy
     """
-    Starting time offset [hours] into the duty cycle shape for this PVSystem, defaults to 0
+    Starting time offset into the duty cycle shape for this PVSystem.
 
-    DSS property name: `DutyStart`, DSS property index: 34.
+    Name: `DutyStart`
+    Units: hour
+    Default: 0.0
     """
 
     def _get_WattPriority(self) -> List[bool]:
@@ -1747,9 +1816,10 @@ class PVSystemBatch(DSSBatch, CircuitElementBatchMixin, PCElementBatchMixin):
 
     WattPriority = property(_get_WattPriority, _set_WattPriority) # type: List[bool]
     """
-    {Yes/No*/True/False} Set inverter to watt priority instead of the default var priority
+    Set inverter to watt priority instead of the default var priority
 
-    DSS property name: `WattPriority`, DSS property index: 35.
+    Name: `WattPriority`
+    Default: False
     """
 
     def _get_PFPriority(self) -> List[bool]:
@@ -1762,9 +1832,10 @@ class PVSystemBatch(DSSBatch, CircuitElementBatchMixin, PCElementBatchMixin):
 
     PFPriority = property(_get_PFPriority, _set_PFPriority) # type: List[bool]
     """
-    {Yes/No*/True/False} Set inverter to operate with PF priority when in constant PF mode. If "Yes", value assigned to "WattPriority" is neglected. If controlled by an InvControl with either Volt-Var or DRC or both functions activated, PF priority is neglected and "WattPriority" is considered. Default = No.
+    Set inverter to operate with PF priority when in constant PF mode. If "Yes", value assigned to "WattPriority" is neglected. If controlled by an InvControl with either Volt-Var or DRC or both functions activated, PF priority is neglected and "WattPriority" is considered. Default = No.
 
-    DSS property name: `PFPriority`, DSS property index: 36.
+    Name: `PFPriority`
+    Default: False
     """
 
     def _get_pctPMinNoVars(self) -> BatchFloat64ArrayProxy:
@@ -1777,7 +1848,8 @@ class PVSystemBatch(DSSBatch, CircuitElementBatchMixin, PCElementBatchMixin):
     """
     Minimum active power as percentage of Pmpp under which there is no vars production/absorption.
 
-    DSS property name: `%PMinNoVars`, DSS property index: 37.
+    Name: `%PMinNoVars`
+    Default: 0.0
     """
 
     def _get_pctPMinkvarMax(self) -> BatchFloat64ArrayProxy:
@@ -1790,7 +1862,8 @@ class PVSystemBatch(DSSBatch, CircuitElementBatchMixin, PCElementBatchMixin):
     """
     Minimum active power as percentage of Pmpp that allows the inverter to produce/absorb reactive power up to its kvarMax or kvarMaxAbs.
 
-    DSS property name: `%PMinkvarMax`, DSS property index: 38.
+    Name: `%PMinkvarMax`
+    Default: 0.0
     """
 
     def _get_kvarMax(self) -> BatchFloat64ArrayProxy:
@@ -1803,7 +1876,7 @@ class PVSystemBatch(DSSBatch, CircuitElementBatchMixin, PCElementBatchMixin):
     """
     Indicates the maximum reactive power GENERATION (un-signed numerical variable in kvar) for the inverter (as an un-signed value). Defaults to kVA rating of the inverter.
 
-    DSS property name: `kvarMax`, DSS property index: 39.
+    Name: `kvarMax`
     """
 
     def _get_kvarMaxAbs(self) -> BatchFloat64ArrayProxy:
@@ -1816,7 +1889,7 @@ class PVSystemBatch(DSSBatch, CircuitElementBatchMixin, PCElementBatchMixin):
     """
     Indicates the maximum reactive power ABSORPTION (un-signed numerical variable in kvar) for the inverter (as an un-signed value). Defaults to kVA rating of the inverter.
 
-    DSS property name: `kvarMaxAbs`, DSS property index: 40.
+    Name: `kvarMaxAbs`
     """
 
     def _get_kVDC(self) -> BatchFloat64ArrayProxy:
@@ -1829,7 +1902,8 @@ class PVSystemBatch(DSSBatch, CircuitElementBatchMixin, PCElementBatchMixin):
     """
     Indicates the rated voltage (kV) at the input of the inverter at the peak of PV energy production. The value is normally greater or equal to the kV base of the PV system. It is used for dynamics simulation ONLY.
 
-    DSS property name: `kVDC`, DSS property index: 41.
+    Name: `kVDC`
+    Default: 8.0
     """
 
     def _get_Kp(self) -> BatchFloat64ArrayProxy:
@@ -1842,7 +1916,8 @@ class PVSystemBatch(DSSBatch, CircuitElementBatchMixin, PCElementBatchMixin):
     """
     It is the proportional gain for the PI controller within the inverter. Use it to modify the controller response in dynamics simulation mode.
 
-    DSS property name: `Kp`, DSS property index: 42.
+    Name: `Kp`
+    Default: 0.01
     """
 
     def _get_PITol(self) -> BatchFloat64ArrayProxy:
@@ -1855,7 +1930,8 @@ class PVSystemBatch(DSSBatch, CircuitElementBatchMixin, PCElementBatchMixin):
     """
     It is the tolerance (%) for the closed loop controller of the inverter. For dynamics simulation mode.
 
-    DSS property name: `PITol`, DSS property index: 43.
+    Name: `PITol`
+    Default: 0.0
     """
 
     def _get_SafeVoltage(self) -> BatchFloat64ArrayProxy:
@@ -1868,7 +1944,8 @@ class PVSystemBatch(DSSBatch, CircuitElementBatchMixin, PCElementBatchMixin):
     """
     Indicates the voltage level (%) respect to the base voltage level for which the Inverter will operate. If this threshold is violated, the Inverter will enter safe mode (OFF). For dynamic simulation. By default is 80%
 
-    DSS property name: `SafeVoltage`, DSS property index: 44.
+    Name: `SafeVoltage`
+    Default: 80.0
     """
 
     def _get_SafeMode(self) -> List[bool]:
@@ -1881,9 +1958,11 @@ class PVSystemBatch(DSSBatch, CircuitElementBatchMixin, PCElementBatchMixin):
 
     SafeMode = property(_get_SafeMode, _set_SafeMode) # type: List[bool]
     """
-    (Read only) Indicates whether the inverter entered (Yes) or not (No) into Safe Mode.
+    Indicates whether the inverter entered or not into Safe Mode.
 
-    DSS property name: `SafeMode`, DSS property index: 45.
+    **Read-only**
+
+    Name: `SafeMode`
     """
 
     def _get_DynamicEq_str(self) -> List[str]:
@@ -1896,7 +1975,7 @@ class PVSystemBatch(DSSBatch, CircuitElementBatchMixin, PCElementBatchMixin):
     """
     The name of the dynamic equation (DynamicExp) that will be used for defining the dynamic behavior of the generator. If not defined, the generator dynamics will follow the built-in dynamic equation.
 
-    DSS property name: `DynamicEq`, DSS property index: 46.
+    Name: `DynamicEq`
     """
 
     def _get_DynamicEq(self) -> List[DynamicExp]:
@@ -1909,7 +1988,7 @@ class PVSystemBatch(DSSBatch, CircuitElementBatchMixin, PCElementBatchMixin):
     """
     The name of the dynamic equation (DynamicExp) that will be used for defining the dynamic behavior of the generator. If not defined, the generator dynamics will follow the built-in dynamic equation.
 
-    DSS property name: `DynamicEq`, DSS property index: 46.
+    Name: `DynamicEq`
     """
 
     def _get_DynOut(self) -> List[List[str]]:
@@ -1930,7 +2009,7 @@ class PVSystemBatch(DSSBatch, CircuitElementBatchMixin, PCElementBatchMixin):
 
     The output variables need to be defined in the same order.
 
-    DSS property name: `DynOut`, DSS property index: 47.
+    Name: `DynOut`
     """
 
     def _get_ControlMode(self) -> BatchInt32ArrayProxy:
@@ -1945,11 +2024,12 @@ class PVSystemBatch(DSSBatch, CircuitElementBatchMixin, PCElementBatchMixin):
 
     ControlMode = property(_get_ControlMode, _set_ControlMode) # type: BatchInt32ArrayProxy
     """
-    Defines the control mode for the inverter. It can be one of {GFM | GFL*}. By default it is GFL (Grid Following Inverter). Use GFM (Grid Forming Inverter) for energizing islanded microgrids, but, if the device is connected to the grid, it is highly recommended to use GFL.
+    Defines the control mode for the inverter. By default it is GFL (Grid Following Inverter). Use GFM (Grid Forming Inverter) for energizing islanded microgrids, but, if the device is connected to the grid, it is highly recommended to use GFL.
 
     GFM control mode disables any control action set by the InvControl device.
 
-    DSS property name: `ControlMode`, DSS property index: 48.
+    Name: `ControlMode`
+    Default: GFL
     """
 
     def _get_ControlMode_str(self) -> List[str]:
@@ -1960,11 +2040,12 @@ class PVSystemBatch(DSSBatch, CircuitElementBatchMixin, PCElementBatchMixin):
 
     ControlMode_str = property(_get_ControlMode_str, _set_ControlMode_str) # type: List[str]
     """
-    Defines the control mode for the inverter. It can be one of {GFM | GFL*}. By default it is GFL (Grid Following Inverter). Use GFM (Grid Forming Inverter) for energizing islanded microgrids, but, if the device is connected to the grid, it is highly recommended to use GFL.
+    Defines the control mode for the inverter. By default it is GFL (Grid Following Inverter). Use GFM (Grid Forming Inverter) for energizing islanded microgrids, but, if the device is connected to the grid, it is highly recommended to use GFL.
 
     GFM control mode disables any control action set by the InvControl device.
 
-    DSS property name: `ControlMode`, DSS property index: 48.
+    Name: `ControlMode`
+    Default: GFL
     """
 
     def _get_AmpLimit(self) -> BatchFloat64ArrayProxy:
@@ -1978,7 +2059,7 @@ class PVSystemBatch(DSSBatch, CircuitElementBatchMixin, PCElementBatchMixin):
     The current limiter per phase for the IBR when operating in GFM mode. This limit is imposed to prevent the IBR to enter into Safe Mode when reaching the IBR power ratings.
     Once the IBR reaches this value, it remains there without moving into Safe Mode. This value needs to be set lower than the IBR Amps rating.
 
-    DSS property name: `AmpLimit`, DSS property index: 49.
+    Name: `AmpLimit`
     """
 
     def _get_AmpLimitGain(self) -> BatchFloat64ArrayProxy:
@@ -1991,7 +2072,8 @@ class PVSystemBatch(DSSBatch, CircuitElementBatchMixin, PCElementBatchMixin):
     """
     Use it for fine tunning the current limiter when active, by default is 0.8, it has to be a value between 0.1 and 1. This value allows users to fine tune the IBRs current limiter to match with the user requirements.
 
-    DSS property name: `AmpLimitGain`, DSS property index: 50.
+    Name: `AmpLimitGain`
+    Default: 0.8
     """
 
     def _get_Spectrum_str(self) -> List[str]:
@@ -2002,9 +2084,9 @@ class PVSystemBatch(DSSBatch, CircuitElementBatchMixin, PCElementBatchMixin):
 
     Spectrum_str = property(_get_Spectrum_str, _set_Spectrum_str) # type: List[str]
     """
-    Name of harmonic voltage or current spectrum for this PVSystem element. A harmonic voltage source is assumed for the inverter. Default value is "default", which is defined when the DSS starts.
+    Name of harmonic voltage or current spectrum for this PVSystem element. A harmonic voltage source is assumed for the inverter.
 
-    DSS property name: `Spectrum`, DSS property index: 51.
+    Name: `Spectrum`
     """
 
     def _get_Spectrum(self) -> List[SpectrumObj]:
@@ -2015,9 +2097,9 @@ class PVSystemBatch(DSSBatch, CircuitElementBatchMixin, PCElementBatchMixin):
 
     Spectrum = property(_get_Spectrum, _set_Spectrum) # type: List[SpectrumObj]
     """
-    Name of harmonic voltage or current spectrum for this PVSystem element. A harmonic voltage source is assumed for the inverter. Default value is "default", which is defined when the DSS starts.
+    Name of harmonic voltage or current spectrum for this PVSystem element. A harmonic voltage source is assumed for the inverter.
 
-    DSS property name: `Spectrum`, DSS property index: 51.
+    Name: `Spectrum`
     """
 
     def _get_BaseFreq(self) -> BatchFloat64ArrayProxy:
@@ -2030,7 +2112,8 @@ class PVSystemBatch(DSSBatch, CircuitElementBatchMixin, PCElementBatchMixin):
     """
     Base Frequency for ratings.
 
-    DSS property name: `BaseFreq`, DSS property index: 52.
+    Name: `BaseFreq`
+    Units: Hz
     """
 
     def _get_Enabled(self) -> List[bool]:
@@ -2043,9 +2126,10 @@ class PVSystemBatch(DSSBatch, CircuitElementBatchMixin, PCElementBatchMixin):
 
     Enabled = property(_get_Enabled, _set_Enabled) # type: List[bool]
     """
-    {Yes|No or True|False} Indicates whether this element is enabled.
+    Indicates whether this element is enabled.
 
-    DSS property name: `Enabled`, DSS property index: 53.
+    Name: `Enabled`
+    Default: True
     """
 
     def Like(self, value: AnyStr, flags: enums.SetterFlags = 0):
@@ -2054,7 +2138,9 @@ class PVSystemBatch(DSSBatch, CircuitElementBatchMixin, PCElementBatchMixin):
 
         New Capacitor.C2 like=c1  ...
 
-        DSS property name: `Like`, DSS property index: 54.
+        **Deprecated:** `Like` has been deprecated since at least 2021, see https://sourceforge.net/p/electricdss/discussion/861977/thread/8b59d21eb6/#b57c/f668
+
+        Name: `Like`
         """
         self._set_batch_string(54, value, flags)
 

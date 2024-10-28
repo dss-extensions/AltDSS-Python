@@ -56,7 +56,7 @@ class Spectrum(DSSObj):
     """
     Number of frequencies in this spectrum. (See CSVFile)
 
-    DSS property name: `NumHarm`, DSS property index: 1.
+    Name: `NumHarm`
     """
 
     def _get_Harmonic(self) -> Float64Array:
@@ -72,7 +72,7 @@ class Spectrum(DSSObj):
     harmonic = (dblfile=filename)  !for packed file of doubles
     harmonic = (sngfile=filename)  !for packed file of singles 
 
-    DSS property name: `Harmonic`, DSS property index: 2.
+    Name: `Harmonic`
     """
 
     def _get_pctMag(self) -> Float64Array:
@@ -88,7 +88,7 @@ class Spectrum(DSSObj):
     %mag = (dblfile=filename)  !for packed file of doubles
     %mag = (sngfile=filename)  !for packed file of singles 
 
-    DSS property name: `%Mag`, DSS property index: 3.
+    Name: `%Mag`
     """
 
     def _get_Angle(self) -> Float64Array:
@@ -104,7 +104,7 @@ class Spectrum(DSSObj):
     angle = (dblfile=filename)  !for packed file of doubles
     angle = (sngfile=filename)  !for packed file of singles 
 
-    DSS property name: `Angle`, DSS property index: 4.
+    Name: `Angle`
     """
 
     def _get_CSVFile(self) -> str:
@@ -117,7 +117,7 @@ class Spectrum(DSSObj):
     """
     File of spectrum points with (harmonic, magnitude-percent, angle-degrees) values, one set of 3 per line, in CSV format. If fewer than NUMHARM frequencies found in the file, NUMHARM is set to the smaller value.
 
-    DSS property name: `CSVFile`, DSS property index: 5.
+    Name: `CSVFile`
     """
 
     def Like(self, value: AnyStr):
@@ -126,7 +126,9 @@ class Spectrum(DSSObj):
 
         New Capacitor.C2 like=c1  ...
 
-        DSS property name: `Like`, DSS property index: 6.
+        **Deprecated:** `Like` has been deprecated since at least 2021, see https://sourceforge.net/p/electricdss/discussion/861977/thread/8b59d21eb6/#b57c/f668
+
+        Name: `Like`
         """
         self._set_string_o(6, value)
 
@@ -177,7 +179,7 @@ class SpectrumBatch(DSSBatch):
     """
     Number of frequencies in this spectrum. (See CSVFile)
 
-    DSS property name: `NumHarm`, DSS property index: 1.
+    Name: `NumHarm`
     """
 
     def _get_Harmonic(self) -> List[Float64Array]:
@@ -196,7 +198,7 @@ class SpectrumBatch(DSSBatch):
     harmonic = (dblfile=filename)  !for packed file of doubles
     harmonic = (sngfile=filename)  !for packed file of singles 
 
-    DSS property name: `Harmonic`, DSS property index: 2.
+    Name: `Harmonic`
     """
 
     def _get_pctMag(self) -> List[Float64Array]:
@@ -215,7 +217,7 @@ class SpectrumBatch(DSSBatch):
     %mag = (dblfile=filename)  !for packed file of doubles
     %mag = (sngfile=filename)  !for packed file of singles 
 
-    DSS property name: `%Mag`, DSS property index: 3.
+    Name: `%Mag`
     """
 
     def _get_Angle(self) -> List[Float64Array]:
@@ -234,7 +236,7 @@ class SpectrumBatch(DSSBatch):
     angle = (dblfile=filename)  !for packed file of doubles
     angle = (sngfile=filename)  !for packed file of singles 
 
-    DSS property name: `Angle`, DSS property index: 4.
+    Name: `Angle`
     """
 
     def _get_CSVFile(self) -> List[str]:
@@ -247,7 +249,7 @@ class SpectrumBatch(DSSBatch):
     """
     File of spectrum points with (harmonic, magnitude-percent, angle-degrees) values, one set of 3 per line, in CSV format. If fewer than NUMHARM frequencies found in the file, NUMHARM is set to the smaller value.
 
-    DSS property name: `CSVFile`, DSS property index: 5.
+    Name: `CSVFile`
     """
 
     def Like(self, value: AnyStr, flags: enums.SetterFlags = 0):
@@ -256,7 +258,9 @@ class SpectrumBatch(DSSBatch):
 
         New Capacitor.C2 like=c1  ...
 
-        DSS property name: `Like`, DSS property index: 6.
+        **Deprecated:** `Like` has been deprecated since at least 2021, see https://sourceforge.net/p/electricdss/discussion/861977/thread/8b59d21eb6/#b57c/f668
+
+        Name: `Like`
         """
         self._set_batch_string(6, value, flags)
 

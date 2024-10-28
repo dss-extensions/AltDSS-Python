@@ -137,7 +137,8 @@ class Load(DSSObj, CircuitElementMixin, PCElementMixin):
     """
     Number of Phases, this load.  Load is evenly divided among phases.
 
-    DSS property name: `Phases`, DSS property index: 1.
+    Name: `Phases`
+    Default: 3
     """
 
     def _get_Bus1(self) -> str:
@@ -150,7 +151,7 @@ class Load(DSSObj, CircuitElementMixin, PCElementMixin):
     """
     Bus to which the load is connected.  May include specific node specification.
 
-    DSS property name: `Bus1`, DSS property index: 2.
+    Name: `Bus1`
     """
 
     def _get_kV(self) -> float:
@@ -163,7 +164,9 @@ class Load(DSSObj, CircuitElementMixin, PCElementMixin):
     """
     Nominal rated (1.0 per unit) voltage, kV, for load. For 2- and 3-phase loads, specify phase-phase kV. Otherwise, specify actual kV across each branch of the load. If wye (star), specify phase-neutral kV. If delta or phase-phase connected, specify phase-phase kV.
 
-    DSS property name: `kV`, DSS property index: 3.
+    Name: `kV`
+    Units: kV
+    Default: 12.47
     """
 
     def _get_kW(self) -> float:
@@ -180,10 +183,12 @@ class Load(DSSObj, CircuitElementMixin, PCElementMixin):
     kW, PF
     kW, kvar
     kVA, PF
-    XFKVA * Allocationfactor, PF
-    kWh/(kWhdays*24) * Cfactor, PF
+    XFKVA × Allocationfactor, PF
+    kWh / (kWhdays × 24) × Cfactor, PF
 
-    DSS property name: `kW`, DSS property index: 4.
+    Name: `kW`
+    Units: kW
+    Default: 10.0
     """
 
     def _get_PF(self) -> float:
@@ -196,7 +201,8 @@ class Load(DSSObj, CircuitElementMixin, PCElementMixin):
     """
     Load power factor.  Enter negative for leading powerfactor (when kW and kvar have opposite signs.)
 
-    DSS property name: `PF`, DSS property index: 5.
+    Name: `PF`
+    Default: 0.88
     """
 
     def _get_Model(self) -> enums.LoadModel:
@@ -209,18 +215,19 @@ class Load(DSSObj, CircuitElementMixin, PCElementMixin):
     """
     Integer code for the model to use for load variation with voltage. Valid values are:
 
-    1:Standard constant P+jQ load. (Default)
-    2:Constant impedance load. 
-    3:Const P, Quadratic Q (like a motor).
-    4:Nominal Linear P, Quadratic Q (feeder mix). Use this with CVRfactor.
-    5:Constant Current Magnitude
-    6:Const P, Fixed Q
-    7:Const P, Fixed Impedance Q
-    8:ZIPV (7 values)
+    - 1: Standard constant P+jQ load. (Default)
+    - 2: Constant impedance load. 
+    - 3: Const P, Quadratic Q (like a motor).
+    - 4: Nominal Linear P, Quadratic Q (feeder mix). Use this with CVRfactor.
+    - 5: Constant Current Magnitude
+    - 6: Const P, Fixed Q
+    - 7: Const P, Fixed Impedance Q
+    - 8: ZIPV (7 values)
 
     For Types 6 and 7, only the P is modified by load multipliers.
 
-    DSS property name: `Model`, DSS property index: 6.
+    Name: `Model`
+    Default: 1
     """
 
     def _get_Yearly_str(self) -> str:
@@ -233,7 +240,7 @@ class Load(DSSObj, CircuitElementMixin, PCElementMixin):
     """
     LOADSHAPE object to use for yearly simulations.  Must be previously defined as a Loadshape object. Is set to the Daily load shape  when Daily is defined.  The daily load shape is repeated in this case. Set Status=Fixed to ignore Loadshape designation. Set to NONE to reset to no loadshape. The default is no variation.
 
-    DSS property name: `Yearly`, DSS property index: 7.
+    Name: `Yearly`
     """
 
     def _get_Yearly(self) -> LoadShape:
@@ -250,7 +257,7 @@ class Load(DSSObj, CircuitElementMixin, PCElementMixin):
     """
     LOADSHAPE object to use for yearly simulations.  Must be previously defined as a Loadshape object. Is set to the Daily load shape  when Daily is defined.  The daily load shape is repeated in this case. Set Status=Fixed to ignore Loadshape designation. Set to NONE to reset to no loadshape. The default is no variation.
 
-    DSS property name: `Yearly`, DSS property index: 7.
+    Name: `Yearly`
     """
 
     def _get_Daily_str(self) -> str:
@@ -263,7 +270,7 @@ class Load(DSSObj, CircuitElementMixin, PCElementMixin):
     """
     LOADSHAPE object to use for daily simulations.  Must be previously defined as a Loadshape object of 24 hrs, typically. Set Status=Fixed to ignore Loadshape designation. Set to NONE to reset to no loadshape. Default is no variation (constant) if not defined. Side effect: Sets Yearly load shape if not already defined.
 
-    DSS property name: `Daily`, DSS property index: 8.
+    Name: `Daily`
     """
 
     def _get_Daily(self) -> LoadShape:
@@ -280,7 +287,7 @@ class Load(DSSObj, CircuitElementMixin, PCElementMixin):
     """
     LOADSHAPE object to use for daily simulations.  Must be previously defined as a Loadshape object of 24 hrs, typically. Set Status=Fixed to ignore Loadshape designation. Set to NONE to reset to no loadshape. Default is no variation (constant) if not defined. Side effect: Sets Yearly load shape if not already defined.
 
-    DSS property name: `Daily`, DSS property index: 8.
+    Name: `Daily`
     """
 
     def _get_Duty_str(self) -> str:
@@ -293,7 +300,7 @@ class Load(DSSObj, CircuitElementMixin, PCElementMixin):
     """
     LOADSHAPE object to use for duty cycle simulations.  Must be previously defined as a Loadshape object.  Typically would have time intervals less than 1 hr. Designate the number of points to solve using the Set Number=xxxx command. If there are fewer points in the actual shape, the shape is assumed to repeat.Set to NONE to reset to no loadshape. Set Status=Fixed to ignore Loadshape designation.  Defaults to Daily curve If not specified.
 
-    DSS property name: `Duty`, DSS property index: 9.
+    Name: `Duty`
     """
 
     def _get_Duty(self) -> LoadShape:
@@ -310,7 +317,7 @@ class Load(DSSObj, CircuitElementMixin, PCElementMixin):
     """
     LOADSHAPE object to use for duty cycle simulations.  Must be previously defined as a Loadshape object.  Typically would have time intervals less than 1 hr. Designate the number of points to solve using the Set Number=xxxx command. If there are fewer points in the actual shape, the shape is assumed to repeat.Set to NONE to reset to no loadshape. Set Status=Fixed to ignore Loadshape designation.  Defaults to Daily curve If not specified.
 
-    DSS property name: `Duty`, DSS property index: 9.
+    Name: `Duty`
     """
 
     def _get_Growth_str(self) -> str:
@@ -323,7 +330,7 @@ class Load(DSSObj, CircuitElementMixin, PCElementMixin):
     """
     Characteristic  to use for growth factors by years.  Must be previously defined as a Growthshape object. Defaults to circuit default growth factor (see Set Growth command).
 
-    DSS property name: `Growth`, DSS property index: 10.
+    Name: `Growth`
     """
 
     def _get_Growth(self) -> GrowthShape:
@@ -340,7 +347,7 @@ class Load(DSSObj, CircuitElementMixin, PCElementMixin):
     """
     Characteristic  to use for growth factors by years.  Must be previously defined as a Growthshape object. Defaults to circuit default growth factor (see Set Growth command).
 
-    DSS property name: `Growth`, DSS property index: 10.
+    Name: `Growth`
     """
 
     def _get_Conn(self) -> enums.Connection:
@@ -356,7 +363,8 @@ class Load(DSSObj, CircuitElementMixin, PCElementMixin):
     """
     ={wye or LN | delta or LL}.  Default is wye.
 
-    DSS property name: `Conn`, DSS property index: 11.
+    Name: `Conn`
+    Default: Wye
     """
 
     def _get_Conn_str(self) -> str:
@@ -369,7 +377,8 @@ class Load(DSSObj, CircuitElementMixin, PCElementMixin):
     """
     ={wye or LN | delta or LL}.  Default is wye.
 
-    DSS property name: `Conn`, DSS property index: 11.
+    Name: `Conn`
+    Default: Wye
     """
 
     def _get_kvar(self) -> float:
@@ -382,7 +391,8 @@ class Load(DSSObj, CircuitElementMixin, PCElementMixin):
     """
     Specify the base kvar for specifying load as kW & kvar.  Assumes kW has been already defined.  Alternative to specifying the power factor.  Side effect:  the power factor and kVA is altered to agree.
 
-    DSS property name: `kvar`, DSS property index: 12.
+    Name: `kvar`
+    Units: kvar
     """
 
     def _get_RNeut(self) -> float:
@@ -393,9 +403,11 @@ class Load(DSSObj, CircuitElementMixin, PCElementMixin):
 
     RNeut = property(_get_RNeut, _set_RNeut) # type: float
     """
-    Default is -1. Neutral resistance of wye (star)-connected load in actual ohms. If entered as a negative value, the neutral can be open, or floating, or it can be connected to node 0 (ground), which is the usual default. If >=0 be sure to explicitly specify the node connection for the neutral, or last, conductor. Otherwise, the neutral impedance will be shorted to ground.
+    Neutral resistance of wye (star)-connected load in actual ohms. If entered as a negative value, the neutral can be open, or floating, or it can be connected to node 0 (ground), which is the usual default. If >=0 be sure to explicitly specify the node connection for the neutral, or last, conductor. Otherwise, the neutral impedance will be shorted to ground.
 
-    DSS property name: `RNeut`, DSS property index: 13.
+    Name: `RNeut`
+    Units: Ω
+    Default: -1.0
     """
 
     def _get_XNeut(self) -> float:
@@ -406,9 +418,11 @@ class Load(DSSObj, CircuitElementMixin, PCElementMixin):
 
     XNeut = property(_get_XNeut, _set_XNeut) # type: float
     """
-    Neutral reactance of wye(star)-connected load in actual ohms.  May be + or -.
+    Neutral reactance of wye(star)-connected load in actual ohms. May be positive or negative.
 
-    DSS property name: `XNeut`, DSS property index: 14.
+    Name: `XNeut`
+    Units: Ω
+    Default: 0.0
     """
 
     def _get_Status(self) -> enums.LoadStatus:
@@ -424,7 +438,8 @@ class Load(DSSObj, CircuitElementMixin, PCElementMixin):
     """
     ={Variable | Fixed | Exempt}.  Default is variable. If Fixed, no load multipliers apply;  however, growth multipliers do apply.  All multipliers apply to Variable loads.  Exempt loads are not modified by the global load multiplier, such as in load duration curves, etc.  Daily multipliers do apply, so setting this property to Exempt is a good way to represent industrial load that stays the same day-after-day for the period study.
 
-    DSS property name: `Status`, DSS property index: 15.
+    Name: `Status`
+    Default: Variable
     """
 
     def _get_Status_str(self) -> str:
@@ -437,7 +452,8 @@ class Load(DSSObj, CircuitElementMixin, PCElementMixin):
     """
     ={Variable | Fixed | Exempt}.  Default is variable. If Fixed, no load multipliers apply;  however, growth multipliers do apply.  All multipliers apply to Variable loads.  Exempt loads are not modified by the global load multiplier, such as in load duration curves, etc.  Daily multipliers do apply, so setting this property to Exempt is a good way to represent industrial load that stays the same day-after-day for the period study.
 
-    DSS property name: `Status`, DSS property index: 15.
+    Name: `Status`
+    Default: Variable
     """
 
     def _get_Class(self) -> int:
@@ -450,7 +466,8 @@ class Load(DSSObj, CircuitElementMixin, PCElementMixin):
     """
     An arbitrary integer number representing the class of load so that load values may be segregated by load value. Default is 1; not used internally.
 
-    DSS property name: `Class`, DSS property index: 16.
+    Name: `Class`
+    Default: 1
     """
 
     def _get_VMinpu(self) -> float:
@@ -463,7 +480,8 @@ class Load(DSSObj, CircuitElementMixin, PCElementMixin):
     """
     Default = 0.95.  Minimum per unit voltage for which the MODEL is assumed to apply. Lower end of normal voltage range.Below this value, the load model reverts to a constant impedance model that matches the model at the transition voltage. See also "Vlowpu" which causes the model to match Model=2 below the transition voltage.
 
-    DSS property name: `VMinpu`, DSS property index: 17.
+    Name: `VMinpu`
+    Default: 0.95
     """
 
     def _get_VMaxpu(self) -> float:
@@ -476,7 +494,8 @@ class Load(DSSObj, CircuitElementMixin, PCElementMixin):
     """
     Default = 1.05.  Maximum per unit voltage for which the MODEL is assumed to apply. Above this value, the load model reverts to a constant impedance model.
 
-    DSS property name: `VMaxpu`, DSS property index: 18.
+    Name: `VMaxpu`
+    Default: 1.05
     """
 
     def _get_VMinNorm(self) -> float:
@@ -489,7 +508,8 @@ class Load(DSSObj, CircuitElementMixin, PCElementMixin):
     """
     Minimum per unit voltage for load EEN evaluations, Normal limit.  Default = 0, which defaults to system "vminnorm" property (see Set Command under Executive).  If this property is specified, it ALWAYS overrides the system specification. This allows you to have different criteria for different loads. Set to zero to revert to the default system value.
 
-    DSS property name: `VMinNorm`, DSS property index: 19.
+    Name: `VMinNorm`
+    Default: 0.0
     """
 
     def _get_VMinEmerg(self) -> float:
@@ -502,7 +522,8 @@ class Load(DSSObj, CircuitElementMixin, PCElementMixin):
     """
     Minimum per unit voltage for load UE evaluations, Emergency limit.  Default = 0, which defaults to system "vminemerg" property (see Set Command under Executive).  If this property is specified, it ALWAYS overrides the system specification. This allows you to have different criteria for different loads. Set to zero to revert to the default system value.
 
-    DSS property name: `VMinEmerg`, DSS property index: 20.
+    Name: `VMinEmerg`
+    Default: 0.0
     """
 
     def _get_XfkVA(self) -> float:
@@ -515,7 +536,9 @@ class Load(DSSObj, CircuitElementMixin, PCElementMixin):
     """
     Default = 0.0.  Rated kVA of service transformer for allocating loads based on connected kVA at a bus. Side effect:  kW, PF, and kvar are modified. See help on kVA.
 
-    DSS property name: `XfkVA`, DSS property index: 21.
+    Name: `XfkVA`
+    Units: kVA
+    Default: 0.0
     """
 
     def _get_AllocationFactor(self) -> float:
@@ -528,7 +551,8 @@ class Load(DSSObj, CircuitElementMixin, PCElementMixin):
     """
     Default = 0.5.  Allocation factor for allocating loads based on connected kVA at a bus. Side effect:  kW, PF, and kvar are modified by multiplying this factor times the XFKVA (if > 0).
 
-    DSS property name: `AllocationFactor`, DSS property index: 22.
+    Name: `AllocationFactor`
+    Default: 0.5
     """
 
     def _get_kVA(self) -> float:
@@ -545,10 +569,11 @@ class Load(DSSObj, CircuitElementMixin, PCElementMixin):
     kW, PF
     kW, kvar
     kVA, PF
-    XFKVA * Allocationfactor, PF
-    kWh/(kWhdays*24) * Cfactor, PF
+    XFKVA × Allocationfactor, PF
+    kWh / (kWhdays × 24) × Cfactor, PF
 
-    DSS property name: `kVA`, DSS property index: 23.
+    Name: `kVA`
+    Units: kVA
     """
 
     def _get_pctMean(self) -> float:
@@ -559,9 +584,10 @@ class Load(DSSObj, CircuitElementMixin, PCElementMixin):
 
     pctMean = property(_get_pctMean, _set_pctMean) # type: float
     """
-    Percent mean value for load to use for monte carlo studies if no loadshape is assigned to this load. Default is 50.
+    Percent mean value for load to use for monte carlo studies if no loadshape is assigned to this load.
 
-    DSS property name: `%Mean`, DSS property index: 24.
+    Name: `%Mean`
+    Default: 50.0
     """
 
     def _get_pctStdDev(self) -> float:
@@ -572,9 +598,10 @@ class Load(DSSObj, CircuitElementMixin, PCElementMixin):
 
     pctStdDev = property(_get_pctStdDev, _set_pctStdDev) # type: float
     """
-    Percent Std deviation value for load to use for monte carlo studies if no loadshape is assigned to this load. Default is 10.
+    Percent Std deviation value for load to use for monte carlo studies if no loadshape is assigned to this load.
 
-    DSS property name: `%StdDev`, DSS property index: 25.
+    Name: `%StdDev`
+    Default: 10.0
     """
 
     def _get_CVRWatts(self) -> float:
@@ -585,11 +612,12 @@ class Load(DSSObj, CircuitElementMixin, PCElementMixin):
 
     CVRWatts = property(_get_CVRWatts, _set_CVRWatts) # type: float
     """
-    Percent reduction in active power (watts) per 1% reduction in voltage from 100% rated. Default=1. 
+    Percent reduction in active power (watts) per 1% reduction in voltage from 100% rated.
      Typical values range from 0.4 to 0.8. Applies to Model=4 only.
      Intended to represent conservation voltage reduction or voltage optimization measures.
 
-    DSS property name: `CVRWatts`, DSS property index: 26.
+    Name: `CVRWatts`
+    Default: 1.0
     """
 
     def _get_CVRVars(self) -> float:
@@ -600,11 +628,12 @@ class Load(DSSObj, CircuitElementMixin, PCElementMixin):
 
     CVRVars = property(_get_CVRVars, _set_CVRVars) # type: float
     """
-    Percent reduction in reactive power (vars) per 1% reduction in voltage from 100% rated. Default=2. 
+    Percent reduction in reactive power (vars) per 1% reduction in voltage from 100% rated. 
      Typical values range from 2 to 3. Applies to Model=4 only.
      Intended to represent conservation voltage reduction or voltage optimization measures.
 
-    DSS property name: `CVRVars`, DSS property index: 27.
+    Name: `CVRVars`
+    Default: 2.0
     """
 
     def _get_kWh(self) -> float:
@@ -615,9 +644,11 @@ class Load(DSSObj, CircuitElementMixin, PCElementMixin):
 
     kWh = property(_get_kWh, _set_kWh) # type: float
     """
-    kWh billed for this period. Default is 0. See help on kVA and Cfactor and kWhDays.
+    kWh billed for this period. See help on kVA and Cfactor and kWhDays.
 
-    DSS property name: `kWh`, DSS property index: 28.
+    Name: `kWh`
+    Units: kWh
+    Default: 0.0
     """
 
     def _get_kWhDays(self) -> float:
@@ -628,9 +659,10 @@ class Load(DSSObj, CircuitElementMixin, PCElementMixin):
 
     kWhDays = property(_get_kWhDays, _set_kWhDays) # type: float
     """
-    Length of kWh billing period in days (24 hr days). Default is 30. Average demand is computed using this value.
+    Length of kWh billing period in days (24 hr days). Average demand is computed using this value.
 
-    DSS property name: `kWhDays`, DSS property index: 29.
+    Name: `kWhDays`
+    Default: 30.0
     """
 
     def _get_CFactor(self) -> float:
@@ -641,9 +673,10 @@ class Load(DSSObj, CircuitElementMixin, PCElementMixin):
 
     CFactor = property(_get_CFactor, _set_CFactor) # type: float
     """
-    Factor relating average kW to peak kW. Default is 4.0. See kWh and kWhdays. See kVA.
+    Factor relating average kW to peak kW. See kWh and kWhdays. See kVA.
 
-    DSS property name: `CFactor`, DSS property index: 30.
+    Name: `CFactor`
+    Default: 4.0
     """
 
     def _get_CVRCurve_str(self) -> str:
@@ -656,7 +689,7 @@ class Load(DSSObj, CircuitElementMixin, PCElementMixin):
     """
     Default is NONE. Curve describing both watt and var factors as a function of time. Refers to a LoadShape object with both Mult and Qmult defined. Define a Loadshape to agree with yearly or daily curve according to the type of analysis being done. If NONE, the CVRwatts and CVRvars factors are used and assumed constant.
 
-    DSS property name: `CVRCurve`, DSS property index: 31.
+    Name: `CVRCurve`
     """
 
     def _get_CVRCurve(self) -> LoadShape:
@@ -673,7 +706,7 @@ class Load(DSSObj, CircuitElementMixin, PCElementMixin):
     """
     Default is NONE. Curve describing both watt and var factors as a function of time. Refers to a LoadShape object with both Mult and Qmult defined. Define a Loadshape to agree with yearly or daily curve according to the type of analysis being done. If NONE, the CVRwatts and CVRvars factors are used and assumed constant.
 
-    DSS property name: `CVRCurve`, DSS property index: 31.
+    Name: `CVRCurve`
     """
 
     def _get_NumCust(self) -> int:
@@ -684,9 +717,10 @@ class Load(DSSObj, CircuitElementMixin, PCElementMixin):
 
     NumCust = property(_get_NumCust, _set_NumCust) # type: int
     """
-    Number of customers, this load. Default is 1.
+    Number of customers, this load.
 
-    DSS property name: `NumCust`, DSS property index: 32.
+    Name: `NumCust`
+    Default: 1
     """
 
     def _get_ZIPV(self) -> Float64Array:
@@ -704,7 +738,7 @@ class Load(DSSObj, CircuitElementMixin, PCElementMixin):
      Last 1 is cut-off voltage in p.u. of base kV; load is 0 below this cut-off
      No defaults; all coefficients must be specified if using model=8.
 
-    DSS property name: `ZIPV`, DSS property index: 33.
+    Name: `ZIPV`
     """
 
     def _get_pctSeriesRL(self) -> float:
@@ -715,9 +749,10 @@ class Load(DSSObj, CircuitElementMixin, PCElementMixin):
 
     pctSeriesRL = property(_get_pctSeriesRL, _set_pctSeriesRL) # type: float
     """
-    Percent of load that is series R-L for Harmonic studies. Default is 50. Remainder is assumed to be parallel R and L. This can have a significant impact on the amount of damping observed in Harmonics solutions.
+    Percent of load that is series R-L for Harmonic studies. Remainder is assumed to be parallel R and L. This can have a significant impact on the amount of damping observed in Harmonics solutions.
 
-    DSS property name: `%SeriesRL`, DSS property index: 34.
+    Name: `%SeriesRL`
+    Default: 50.0
     """
 
     def _get_RelWeight(self) -> float:
@@ -728,11 +763,12 @@ class Load(DSSObj, CircuitElementMixin, PCElementMixin):
 
     RelWeight = property(_get_RelWeight, _set_RelWeight) # type: float
     """
-    Relative weighting factor for reliability calcs. Default = 1. Used to designate high priority loads such as hospitals, etc. 
+    Relative weighting factor for reliability calcs. Used to designate high priority loads such as hospitals, etc. 
 
     Is multiplied by number of customers and load kW during reliability calcs.
 
-    DSS property name: `RelWeight`, DSS property index: 35.
+    Name: `RelWeight`
+    Default: 1.0
     """
 
     def _get_VLowpu(self) -> float:
@@ -743,9 +779,10 @@ class Load(DSSObj, CircuitElementMixin, PCElementMixin):
 
     VLowpu = property(_get_VLowpu, _set_VLowpu) # type: float
     """
-    Default = 0.50.  Per unit voltage at which the model switches to same as constant Z model (model=2). This allows more consistent convergence at very low voltaes due to opening switches or solving for fault situations.
+    Per unit voltage at which the model switches to same as constant Z model (model=2). This allows more consistent convergence at very low voltaes due to opening switches or solving for fault situations.
 
-    DSS property name: `VLowpu`, DSS property index: 36.
+    Name: `VLowpu`
+    Default: 0.5
     """
 
     def _get_puXHarm(self) -> float:
@@ -760,9 +797,9 @@ class Load(DSSObj, CircuitElementMixin, PCElementMixin):
 
     Applies to load model in HARMONICS mode only.
 
-    A typical value would be approximately 0.20 pu based on kVA * %SeriesRL / 100.0.
+    A typical value would be approximately 0.20 pu based on kVA × %SeriesRL / 100.0.
 
-    DSS property name: `puXHarm`, DSS property index: 37.
+    Name: `puXHarm`
     """
 
     def _get_XRHarm(self) -> float:
@@ -773,9 +810,10 @@ class Load(DSSObj, CircuitElementMixin, PCElementMixin):
 
     XRHarm = property(_get_XRHarm, _set_XRHarm) # type: float
     """
-    X/R ratio of the special harmonics mode reactance specified by the puXHARM property at fundamental frequency. Default is 6. 
+    X/R ratio of the special harmonics mode reactance specified by the puXHARM property at fundamental frequency.
 
-    DSS property name: `XRHarm`, DSS property index: 38.
+    Name: `XRHarm`
+    Default: 6.0
     """
 
     def _get_Spectrum_str(self) -> str:
@@ -786,9 +824,10 @@ class Load(DSSObj, CircuitElementMixin, PCElementMixin):
 
     Spectrum_str = property(_get_Spectrum_str, _set_Spectrum_str) # type: str
     """
-    Name of harmonic current spectrum for this load.  Default is "defaultload", which is defined when the DSS starts.
+    Name of harmonic current spectrum for this load.
 
-    DSS property name: `Spectrum`, DSS property index: 39.
+    Name: `Spectrum`
+    Default: defaultload
     """
 
     def _get_Spectrum(self) -> SpectrumObj:
@@ -803,9 +842,10 @@ class Load(DSSObj, CircuitElementMixin, PCElementMixin):
 
     Spectrum = property(_get_Spectrum, _set_Spectrum) # type: SpectrumObj
     """
-    Name of harmonic current spectrum for this load.  Default is "defaultload", which is defined when the DSS starts.
+    Name of harmonic current spectrum for this load.
 
-    DSS property name: `Spectrum`, DSS property index: 39.
+    Name: `Spectrum`
+    Default: defaultload
     """
 
     def _get_BaseFreq(self) -> float:
@@ -818,7 +858,8 @@ class Load(DSSObj, CircuitElementMixin, PCElementMixin):
     """
     Base Frequency for ratings.
 
-    DSS property name: `BaseFreq`, DSS property index: 40.
+    Name: `BaseFreq`
+    Units: Hz
     """
 
     def _get_Enabled(self) -> bool:
@@ -829,9 +870,10 @@ class Load(DSSObj, CircuitElementMixin, PCElementMixin):
 
     Enabled = property(_get_Enabled, _set_Enabled) # type: bool
     """
-    {Yes|No or True|False} Indicates whether this element is enabled.
+    Indicates whether this element is enabled.
 
-    DSS property name: `Enabled`, DSS property index: 41.
+    Name: `Enabled`
+    Default: True
     """
 
     def Like(self, value: AnyStr):
@@ -840,7 +882,9 @@ class Load(DSSObj, CircuitElementMixin, PCElementMixin):
 
         New Capacitor.C2 like=c1  ...
 
-        DSS property name: `Like`, DSS property index: 42.
+        **Deprecated:** `Like` has been deprecated since at least 2021, see https://sourceforge.net/p/electricdss/discussion/861977/thread/8b59d21eb6/#b57c/f668
+
+        Name: `Like`
         """
         self._set_string_o(42, value)
 
@@ -931,7 +975,8 @@ class LoadBatch(DSSBatch, CircuitElementBatchMixin, PCElementBatchMixin):
     """
     Number of Phases, this load.  Load is evenly divided among phases.
 
-    DSS property name: `Phases`, DSS property index: 1.
+    Name: `Phases`
+    Default: 3
     """
 
     def _get_Bus1(self) -> List[str]:
@@ -944,7 +989,7 @@ class LoadBatch(DSSBatch, CircuitElementBatchMixin, PCElementBatchMixin):
     """
     Bus to which the load is connected.  May include specific node specification.
 
-    DSS property name: `Bus1`, DSS property index: 2.
+    Name: `Bus1`
     """
 
     def _get_kV(self) -> BatchFloat64ArrayProxy:
@@ -957,7 +1002,9 @@ class LoadBatch(DSSBatch, CircuitElementBatchMixin, PCElementBatchMixin):
     """
     Nominal rated (1.0 per unit) voltage, kV, for load. For 2- and 3-phase loads, specify phase-phase kV. Otherwise, specify actual kV across each branch of the load. If wye (star), specify phase-neutral kV. If delta or phase-phase connected, specify phase-phase kV.
 
-    DSS property name: `kV`, DSS property index: 3.
+    Name: `kV`
+    Units: kV
+    Default: 12.47
     """
 
     def _get_kW(self) -> BatchFloat64ArrayProxy:
@@ -974,10 +1021,12 @@ class LoadBatch(DSSBatch, CircuitElementBatchMixin, PCElementBatchMixin):
     kW, PF
     kW, kvar
     kVA, PF
-    XFKVA * Allocationfactor, PF
-    kWh/(kWhdays*24) * Cfactor, PF
+    XFKVA × Allocationfactor, PF
+    kWh / (kWhdays × 24) × Cfactor, PF
 
-    DSS property name: `kW`, DSS property index: 4.
+    Name: `kW`
+    Units: kW
+    Default: 10.0
     """
 
     def _get_PF(self) -> BatchFloat64ArrayProxy:
@@ -990,7 +1039,8 @@ class LoadBatch(DSSBatch, CircuitElementBatchMixin, PCElementBatchMixin):
     """
     Load power factor.  Enter negative for leading powerfactor (when kW and kvar have opposite signs.)
 
-    DSS property name: `PF`, DSS property index: 5.
+    Name: `PF`
+    Default: 0.88
     """
 
     def _get_Model(self) -> BatchInt32ArrayProxy:
@@ -1003,18 +1053,19 @@ class LoadBatch(DSSBatch, CircuitElementBatchMixin, PCElementBatchMixin):
     """
     Integer code for the model to use for load variation with voltage. Valid values are:
 
-    1:Standard constant P+jQ load. (Default)
-    2:Constant impedance load. 
-    3:Const P, Quadratic Q (like a motor).
-    4:Nominal Linear P, Quadratic Q (feeder mix). Use this with CVRfactor.
-    5:Constant Current Magnitude
-    6:Const P, Fixed Q
-    7:Const P, Fixed Impedance Q
-    8:ZIPV (7 values)
+    - 1: Standard constant P+jQ load. (Default)
+    - 2: Constant impedance load. 
+    - 3: Const P, Quadratic Q (like a motor).
+    - 4: Nominal Linear P, Quadratic Q (feeder mix). Use this with CVRfactor.
+    - 5: Constant Current Magnitude
+    - 6: Const P, Fixed Q
+    - 7: Const P, Fixed Impedance Q
+    - 8: ZIPV (7 values)
 
     For Types 6 and 7, only the P is modified by load multipliers.
 
-    DSS property name: `Model`, DSS property index: 6.
+    Name: `Model`
+    Default: 1
     """
 
     def _get_Yearly_str(self) -> List[str]:
@@ -1027,7 +1078,7 @@ class LoadBatch(DSSBatch, CircuitElementBatchMixin, PCElementBatchMixin):
     """
     LOADSHAPE object to use for yearly simulations.  Must be previously defined as a Loadshape object. Is set to the Daily load shape  when Daily is defined.  The daily load shape is repeated in this case. Set Status=Fixed to ignore Loadshape designation. Set to NONE to reset to no loadshape. The default is no variation.
 
-    DSS property name: `Yearly`, DSS property index: 7.
+    Name: `Yearly`
     """
 
     def _get_Yearly(self) -> List[LoadShape]:
@@ -1040,7 +1091,7 @@ class LoadBatch(DSSBatch, CircuitElementBatchMixin, PCElementBatchMixin):
     """
     LOADSHAPE object to use for yearly simulations.  Must be previously defined as a Loadshape object. Is set to the Daily load shape  when Daily is defined.  The daily load shape is repeated in this case. Set Status=Fixed to ignore Loadshape designation. Set to NONE to reset to no loadshape. The default is no variation.
 
-    DSS property name: `Yearly`, DSS property index: 7.
+    Name: `Yearly`
     """
 
     def _get_Daily_str(self) -> List[str]:
@@ -1053,7 +1104,7 @@ class LoadBatch(DSSBatch, CircuitElementBatchMixin, PCElementBatchMixin):
     """
     LOADSHAPE object to use for daily simulations.  Must be previously defined as a Loadshape object of 24 hrs, typically. Set Status=Fixed to ignore Loadshape designation. Set to NONE to reset to no loadshape. Default is no variation (constant) if not defined. Side effect: Sets Yearly load shape if not already defined.
 
-    DSS property name: `Daily`, DSS property index: 8.
+    Name: `Daily`
     """
 
     def _get_Daily(self) -> List[LoadShape]:
@@ -1066,7 +1117,7 @@ class LoadBatch(DSSBatch, CircuitElementBatchMixin, PCElementBatchMixin):
     """
     LOADSHAPE object to use for daily simulations.  Must be previously defined as a Loadshape object of 24 hrs, typically. Set Status=Fixed to ignore Loadshape designation. Set to NONE to reset to no loadshape. Default is no variation (constant) if not defined. Side effect: Sets Yearly load shape if not already defined.
 
-    DSS property name: `Daily`, DSS property index: 8.
+    Name: `Daily`
     """
 
     def _get_Duty_str(self) -> List[str]:
@@ -1079,7 +1130,7 @@ class LoadBatch(DSSBatch, CircuitElementBatchMixin, PCElementBatchMixin):
     """
     LOADSHAPE object to use for duty cycle simulations.  Must be previously defined as a Loadshape object.  Typically would have time intervals less than 1 hr. Designate the number of points to solve using the Set Number=xxxx command. If there are fewer points in the actual shape, the shape is assumed to repeat.Set to NONE to reset to no loadshape. Set Status=Fixed to ignore Loadshape designation.  Defaults to Daily curve If not specified.
 
-    DSS property name: `Duty`, DSS property index: 9.
+    Name: `Duty`
     """
 
     def _get_Duty(self) -> List[LoadShape]:
@@ -1092,7 +1143,7 @@ class LoadBatch(DSSBatch, CircuitElementBatchMixin, PCElementBatchMixin):
     """
     LOADSHAPE object to use for duty cycle simulations.  Must be previously defined as a Loadshape object.  Typically would have time intervals less than 1 hr. Designate the number of points to solve using the Set Number=xxxx command. If there are fewer points in the actual shape, the shape is assumed to repeat.Set to NONE to reset to no loadshape. Set Status=Fixed to ignore Loadshape designation.  Defaults to Daily curve If not specified.
 
-    DSS property name: `Duty`, DSS property index: 9.
+    Name: `Duty`
     """
 
     def _get_Growth_str(self) -> List[str]:
@@ -1105,7 +1156,7 @@ class LoadBatch(DSSBatch, CircuitElementBatchMixin, PCElementBatchMixin):
     """
     Characteristic  to use for growth factors by years.  Must be previously defined as a Growthshape object. Defaults to circuit default growth factor (see Set Growth command).
 
-    DSS property name: `Growth`, DSS property index: 10.
+    Name: `Growth`
     """
 
     def _get_Growth(self) -> List[GrowthShape]:
@@ -1118,7 +1169,7 @@ class LoadBatch(DSSBatch, CircuitElementBatchMixin, PCElementBatchMixin):
     """
     Characteristic  to use for growth factors by years.  Must be previously defined as a Growthshape object. Defaults to circuit default growth factor (see Set Growth command).
 
-    DSS property name: `Growth`, DSS property index: 10.
+    Name: `Growth`
     """
 
     def _get_Conn(self) -> BatchInt32ArrayProxy:
@@ -1135,7 +1186,8 @@ class LoadBatch(DSSBatch, CircuitElementBatchMixin, PCElementBatchMixin):
     """
     ={wye or LN | delta or LL}.  Default is wye.
 
-    DSS property name: `Conn`, DSS property index: 11.
+    Name: `Conn`
+    Default: Wye
     """
 
     def _get_Conn_str(self) -> List[str]:
@@ -1148,7 +1200,8 @@ class LoadBatch(DSSBatch, CircuitElementBatchMixin, PCElementBatchMixin):
     """
     ={wye or LN | delta or LL}.  Default is wye.
 
-    DSS property name: `Conn`, DSS property index: 11.
+    Name: `Conn`
+    Default: Wye
     """
 
     def _get_kvar(self) -> BatchFloat64ArrayProxy:
@@ -1161,7 +1214,8 @@ class LoadBatch(DSSBatch, CircuitElementBatchMixin, PCElementBatchMixin):
     """
     Specify the base kvar for specifying load as kW & kvar.  Assumes kW has been already defined.  Alternative to specifying the power factor.  Side effect:  the power factor and kVA is altered to agree.
 
-    DSS property name: `kvar`, DSS property index: 12.
+    Name: `kvar`
+    Units: kvar
     """
 
     def _get_RNeut(self) -> BatchFloat64ArrayProxy:
@@ -1172,9 +1226,11 @@ class LoadBatch(DSSBatch, CircuitElementBatchMixin, PCElementBatchMixin):
 
     RNeut = property(_get_RNeut, _set_RNeut) # type: BatchFloat64ArrayProxy
     """
-    Default is -1. Neutral resistance of wye (star)-connected load in actual ohms. If entered as a negative value, the neutral can be open, or floating, or it can be connected to node 0 (ground), which is the usual default. If >=0 be sure to explicitly specify the node connection for the neutral, or last, conductor. Otherwise, the neutral impedance will be shorted to ground.
+    Neutral resistance of wye (star)-connected load in actual ohms. If entered as a negative value, the neutral can be open, or floating, or it can be connected to node 0 (ground), which is the usual default. If >=0 be sure to explicitly specify the node connection for the neutral, or last, conductor. Otherwise, the neutral impedance will be shorted to ground.
 
-    DSS property name: `RNeut`, DSS property index: 13.
+    Name: `RNeut`
+    Units: Ω
+    Default: -1.0
     """
 
     def _get_XNeut(self) -> BatchFloat64ArrayProxy:
@@ -1185,9 +1241,11 @@ class LoadBatch(DSSBatch, CircuitElementBatchMixin, PCElementBatchMixin):
 
     XNeut = property(_get_XNeut, _set_XNeut) # type: BatchFloat64ArrayProxy
     """
-    Neutral reactance of wye(star)-connected load in actual ohms.  May be + or -.
+    Neutral reactance of wye(star)-connected load in actual ohms. May be positive or negative.
 
-    DSS property name: `XNeut`, DSS property index: 14.
+    Name: `XNeut`
+    Units: Ω
+    Default: 0.0
     """
 
     def _get_Status(self) -> BatchInt32ArrayProxy:
@@ -1204,7 +1262,8 @@ class LoadBatch(DSSBatch, CircuitElementBatchMixin, PCElementBatchMixin):
     """
     ={Variable | Fixed | Exempt}.  Default is variable. If Fixed, no load multipliers apply;  however, growth multipliers do apply.  All multipliers apply to Variable loads.  Exempt loads are not modified by the global load multiplier, such as in load duration curves, etc.  Daily multipliers do apply, so setting this property to Exempt is a good way to represent industrial load that stays the same day-after-day for the period study.
 
-    DSS property name: `Status`, DSS property index: 15.
+    Name: `Status`
+    Default: Variable
     """
 
     def _get_Status_str(self) -> List[str]:
@@ -1217,7 +1276,8 @@ class LoadBatch(DSSBatch, CircuitElementBatchMixin, PCElementBatchMixin):
     """
     ={Variable | Fixed | Exempt}.  Default is variable. If Fixed, no load multipliers apply;  however, growth multipliers do apply.  All multipliers apply to Variable loads.  Exempt loads are not modified by the global load multiplier, such as in load duration curves, etc.  Daily multipliers do apply, so setting this property to Exempt is a good way to represent industrial load that stays the same day-after-day for the period study.
 
-    DSS property name: `Status`, DSS property index: 15.
+    Name: `Status`
+    Default: Variable
     """
 
     def _get_Class(self) -> BatchInt32ArrayProxy:
@@ -1230,7 +1290,8 @@ class LoadBatch(DSSBatch, CircuitElementBatchMixin, PCElementBatchMixin):
     """
     An arbitrary integer number representing the class of load so that load values may be segregated by load value. Default is 1; not used internally.
 
-    DSS property name: `Class`, DSS property index: 16.
+    Name: `Class`
+    Default: 1
     """
 
     def _get_VMinpu(self) -> BatchFloat64ArrayProxy:
@@ -1243,7 +1304,8 @@ class LoadBatch(DSSBatch, CircuitElementBatchMixin, PCElementBatchMixin):
     """
     Default = 0.95.  Minimum per unit voltage for which the MODEL is assumed to apply. Lower end of normal voltage range.Below this value, the load model reverts to a constant impedance model that matches the model at the transition voltage. See also "Vlowpu" which causes the model to match Model=2 below the transition voltage.
 
-    DSS property name: `VMinpu`, DSS property index: 17.
+    Name: `VMinpu`
+    Default: 0.95
     """
 
     def _get_VMaxpu(self) -> BatchFloat64ArrayProxy:
@@ -1256,7 +1318,8 @@ class LoadBatch(DSSBatch, CircuitElementBatchMixin, PCElementBatchMixin):
     """
     Default = 1.05.  Maximum per unit voltage for which the MODEL is assumed to apply. Above this value, the load model reverts to a constant impedance model.
 
-    DSS property name: `VMaxpu`, DSS property index: 18.
+    Name: `VMaxpu`
+    Default: 1.05
     """
 
     def _get_VMinNorm(self) -> BatchFloat64ArrayProxy:
@@ -1269,7 +1332,8 @@ class LoadBatch(DSSBatch, CircuitElementBatchMixin, PCElementBatchMixin):
     """
     Minimum per unit voltage for load EEN evaluations, Normal limit.  Default = 0, which defaults to system "vminnorm" property (see Set Command under Executive).  If this property is specified, it ALWAYS overrides the system specification. This allows you to have different criteria for different loads. Set to zero to revert to the default system value.
 
-    DSS property name: `VMinNorm`, DSS property index: 19.
+    Name: `VMinNorm`
+    Default: 0.0
     """
 
     def _get_VMinEmerg(self) -> BatchFloat64ArrayProxy:
@@ -1282,7 +1346,8 @@ class LoadBatch(DSSBatch, CircuitElementBatchMixin, PCElementBatchMixin):
     """
     Minimum per unit voltage for load UE evaluations, Emergency limit.  Default = 0, which defaults to system "vminemerg" property (see Set Command under Executive).  If this property is specified, it ALWAYS overrides the system specification. This allows you to have different criteria for different loads. Set to zero to revert to the default system value.
 
-    DSS property name: `VMinEmerg`, DSS property index: 20.
+    Name: `VMinEmerg`
+    Default: 0.0
     """
 
     def _get_XfkVA(self) -> BatchFloat64ArrayProxy:
@@ -1295,7 +1360,9 @@ class LoadBatch(DSSBatch, CircuitElementBatchMixin, PCElementBatchMixin):
     """
     Default = 0.0.  Rated kVA of service transformer for allocating loads based on connected kVA at a bus. Side effect:  kW, PF, and kvar are modified. See help on kVA.
 
-    DSS property name: `XfkVA`, DSS property index: 21.
+    Name: `XfkVA`
+    Units: kVA
+    Default: 0.0
     """
 
     def _get_AllocationFactor(self) -> BatchFloat64ArrayProxy:
@@ -1308,7 +1375,8 @@ class LoadBatch(DSSBatch, CircuitElementBatchMixin, PCElementBatchMixin):
     """
     Default = 0.5.  Allocation factor for allocating loads based on connected kVA at a bus. Side effect:  kW, PF, and kvar are modified by multiplying this factor times the XFKVA (if > 0).
 
-    DSS property name: `AllocationFactor`, DSS property index: 22.
+    Name: `AllocationFactor`
+    Default: 0.5
     """
 
     def _get_kVA(self) -> BatchFloat64ArrayProxy:
@@ -1325,10 +1393,11 @@ class LoadBatch(DSSBatch, CircuitElementBatchMixin, PCElementBatchMixin):
     kW, PF
     kW, kvar
     kVA, PF
-    XFKVA * Allocationfactor, PF
-    kWh/(kWhdays*24) * Cfactor, PF
+    XFKVA × Allocationfactor, PF
+    kWh / (kWhdays × 24) × Cfactor, PF
 
-    DSS property name: `kVA`, DSS property index: 23.
+    Name: `kVA`
+    Units: kVA
     """
 
     def _get_pctMean(self) -> BatchFloat64ArrayProxy:
@@ -1339,9 +1408,10 @@ class LoadBatch(DSSBatch, CircuitElementBatchMixin, PCElementBatchMixin):
 
     pctMean = property(_get_pctMean, _set_pctMean) # type: BatchFloat64ArrayProxy
     """
-    Percent mean value for load to use for monte carlo studies if no loadshape is assigned to this load. Default is 50.
+    Percent mean value for load to use for monte carlo studies if no loadshape is assigned to this load.
 
-    DSS property name: `%Mean`, DSS property index: 24.
+    Name: `%Mean`
+    Default: 50.0
     """
 
     def _get_pctStdDev(self) -> BatchFloat64ArrayProxy:
@@ -1352,9 +1422,10 @@ class LoadBatch(DSSBatch, CircuitElementBatchMixin, PCElementBatchMixin):
 
     pctStdDev = property(_get_pctStdDev, _set_pctStdDev) # type: BatchFloat64ArrayProxy
     """
-    Percent Std deviation value for load to use for monte carlo studies if no loadshape is assigned to this load. Default is 10.
+    Percent Std deviation value for load to use for monte carlo studies if no loadshape is assigned to this load.
 
-    DSS property name: `%StdDev`, DSS property index: 25.
+    Name: `%StdDev`
+    Default: 10.0
     """
 
     def _get_CVRWatts(self) -> BatchFloat64ArrayProxy:
@@ -1365,11 +1436,12 @@ class LoadBatch(DSSBatch, CircuitElementBatchMixin, PCElementBatchMixin):
 
     CVRWatts = property(_get_CVRWatts, _set_CVRWatts) # type: BatchFloat64ArrayProxy
     """
-    Percent reduction in active power (watts) per 1% reduction in voltage from 100% rated. Default=1. 
+    Percent reduction in active power (watts) per 1% reduction in voltage from 100% rated.
      Typical values range from 0.4 to 0.8. Applies to Model=4 only.
      Intended to represent conservation voltage reduction or voltage optimization measures.
 
-    DSS property name: `CVRWatts`, DSS property index: 26.
+    Name: `CVRWatts`
+    Default: 1.0
     """
 
     def _get_CVRVars(self) -> BatchFloat64ArrayProxy:
@@ -1380,11 +1452,12 @@ class LoadBatch(DSSBatch, CircuitElementBatchMixin, PCElementBatchMixin):
 
     CVRVars = property(_get_CVRVars, _set_CVRVars) # type: BatchFloat64ArrayProxy
     """
-    Percent reduction in reactive power (vars) per 1% reduction in voltage from 100% rated. Default=2. 
+    Percent reduction in reactive power (vars) per 1% reduction in voltage from 100% rated. 
      Typical values range from 2 to 3. Applies to Model=4 only.
      Intended to represent conservation voltage reduction or voltage optimization measures.
 
-    DSS property name: `CVRVars`, DSS property index: 27.
+    Name: `CVRVars`
+    Default: 2.0
     """
 
     def _get_kWh(self) -> BatchFloat64ArrayProxy:
@@ -1395,9 +1468,11 @@ class LoadBatch(DSSBatch, CircuitElementBatchMixin, PCElementBatchMixin):
 
     kWh = property(_get_kWh, _set_kWh) # type: BatchFloat64ArrayProxy
     """
-    kWh billed for this period. Default is 0. See help on kVA and Cfactor and kWhDays.
+    kWh billed for this period. See help on kVA and Cfactor and kWhDays.
 
-    DSS property name: `kWh`, DSS property index: 28.
+    Name: `kWh`
+    Units: kWh
+    Default: 0.0
     """
 
     def _get_kWhDays(self) -> BatchFloat64ArrayProxy:
@@ -1408,9 +1483,10 @@ class LoadBatch(DSSBatch, CircuitElementBatchMixin, PCElementBatchMixin):
 
     kWhDays = property(_get_kWhDays, _set_kWhDays) # type: BatchFloat64ArrayProxy
     """
-    Length of kWh billing period in days (24 hr days). Default is 30. Average demand is computed using this value.
+    Length of kWh billing period in days (24 hr days). Average demand is computed using this value.
 
-    DSS property name: `kWhDays`, DSS property index: 29.
+    Name: `kWhDays`
+    Default: 30.0
     """
 
     def _get_CFactor(self) -> BatchFloat64ArrayProxy:
@@ -1421,9 +1497,10 @@ class LoadBatch(DSSBatch, CircuitElementBatchMixin, PCElementBatchMixin):
 
     CFactor = property(_get_CFactor, _set_CFactor) # type: BatchFloat64ArrayProxy
     """
-    Factor relating average kW to peak kW. Default is 4.0. See kWh and kWhdays. See kVA.
+    Factor relating average kW to peak kW. See kWh and kWhdays. See kVA.
 
-    DSS property name: `CFactor`, DSS property index: 30.
+    Name: `CFactor`
+    Default: 4.0
     """
 
     def _get_CVRCurve_str(self) -> List[str]:
@@ -1436,7 +1513,7 @@ class LoadBatch(DSSBatch, CircuitElementBatchMixin, PCElementBatchMixin):
     """
     Default is NONE. Curve describing both watt and var factors as a function of time. Refers to a LoadShape object with both Mult and Qmult defined. Define a Loadshape to agree with yearly or daily curve according to the type of analysis being done. If NONE, the CVRwatts and CVRvars factors are used and assumed constant.
 
-    DSS property name: `CVRCurve`, DSS property index: 31.
+    Name: `CVRCurve`
     """
 
     def _get_CVRCurve(self) -> List[LoadShape]:
@@ -1449,7 +1526,7 @@ class LoadBatch(DSSBatch, CircuitElementBatchMixin, PCElementBatchMixin):
     """
     Default is NONE. Curve describing both watt and var factors as a function of time. Refers to a LoadShape object with both Mult and Qmult defined. Define a Loadshape to agree with yearly or daily curve according to the type of analysis being done. If NONE, the CVRwatts and CVRvars factors are used and assumed constant.
 
-    DSS property name: `CVRCurve`, DSS property index: 31.
+    Name: `CVRCurve`
     """
 
     def _get_NumCust(self) -> BatchInt32ArrayProxy:
@@ -1460,9 +1537,10 @@ class LoadBatch(DSSBatch, CircuitElementBatchMixin, PCElementBatchMixin):
 
     NumCust = property(_get_NumCust, _set_NumCust) # type: BatchInt32ArrayProxy
     """
-    Number of customers, this load. Default is 1.
+    Number of customers, this load.
 
-    DSS property name: `NumCust`, DSS property index: 32.
+    Name: `NumCust`
+    Default: 1
     """
 
     def _get_ZIPV(self) -> List[Float64Array]:
@@ -1483,7 +1561,7 @@ class LoadBatch(DSSBatch, CircuitElementBatchMixin, PCElementBatchMixin):
      Last 1 is cut-off voltage in p.u. of base kV; load is 0 below this cut-off
      No defaults; all coefficients must be specified if using model=8.
 
-    DSS property name: `ZIPV`, DSS property index: 33.
+    Name: `ZIPV`
     """
 
     def _get_pctSeriesRL(self) -> BatchFloat64ArrayProxy:
@@ -1494,9 +1572,10 @@ class LoadBatch(DSSBatch, CircuitElementBatchMixin, PCElementBatchMixin):
 
     pctSeriesRL = property(_get_pctSeriesRL, _set_pctSeriesRL) # type: BatchFloat64ArrayProxy
     """
-    Percent of load that is series R-L for Harmonic studies. Default is 50. Remainder is assumed to be parallel R and L. This can have a significant impact on the amount of damping observed in Harmonics solutions.
+    Percent of load that is series R-L for Harmonic studies. Remainder is assumed to be parallel R and L. This can have a significant impact on the amount of damping observed in Harmonics solutions.
 
-    DSS property name: `%SeriesRL`, DSS property index: 34.
+    Name: `%SeriesRL`
+    Default: 50.0
     """
 
     def _get_RelWeight(self) -> BatchFloat64ArrayProxy:
@@ -1507,11 +1586,12 @@ class LoadBatch(DSSBatch, CircuitElementBatchMixin, PCElementBatchMixin):
 
     RelWeight = property(_get_RelWeight, _set_RelWeight) # type: BatchFloat64ArrayProxy
     """
-    Relative weighting factor for reliability calcs. Default = 1. Used to designate high priority loads such as hospitals, etc. 
+    Relative weighting factor for reliability calcs. Used to designate high priority loads such as hospitals, etc. 
 
     Is multiplied by number of customers and load kW during reliability calcs.
 
-    DSS property name: `RelWeight`, DSS property index: 35.
+    Name: `RelWeight`
+    Default: 1.0
     """
 
     def _get_VLowpu(self) -> BatchFloat64ArrayProxy:
@@ -1522,9 +1602,10 @@ class LoadBatch(DSSBatch, CircuitElementBatchMixin, PCElementBatchMixin):
 
     VLowpu = property(_get_VLowpu, _set_VLowpu) # type: BatchFloat64ArrayProxy
     """
-    Default = 0.50.  Per unit voltage at which the model switches to same as constant Z model (model=2). This allows more consistent convergence at very low voltaes due to opening switches or solving for fault situations.
+    Per unit voltage at which the model switches to same as constant Z model (model=2). This allows more consistent convergence at very low voltaes due to opening switches or solving for fault situations.
 
-    DSS property name: `VLowpu`, DSS property index: 36.
+    Name: `VLowpu`
+    Default: 0.5
     """
 
     def _get_puXHarm(self) -> BatchFloat64ArrayProxy:
@@ -1539,9 +1620,9 @@ class LoadBatch(DSSBatch, CircuitElementBatchMixin, PCElementBatchMixin):
 
     Applies to load model in HARMONICS mode only.
 
-    A typical value would be approximately 0.20 pu based on kVA * %SeriesRL / 100.0.
+    A typical value would be approximately 0.20 pu based on kVA × %SeriesRL / 100.0.
 
-    DSS property name: `puXHarm`, DSS property index: 37.
+    Name: `puXHarm`
     """
 
     def _get_XRHarm(self) -> BatchFloat64ArrayProxy:
@@ -1552,9 +1633,10 @@ class LoadBatch(DSSBatch, CircuitElementBatchMixin, PCElementBatchMixin):
 
     XRHarm = property(_get_XRHarm, _set_XRHarm) # type: BatchFloat64ArrayProxy
     """
-    X/R ratio of the special harmonics mode reactance specified by the puXHARM property at fundamental frequency. Default is 6. 
+    X/R ratio of the special harmonics mode reactance specified by the puXHARM property at fundamental frequency.
 
-    DSS property name: `XRHarm`, DSS property index: 38.
+    Name: `XRHarm`
+    Default: 6.0
     """
 
     def _get_Spectrum_str(self) -> List[str]:
@@ -1565,9 +1647,10 @@ class LoadBatch(DSSBatch, CircuitElementBatchMixin, PCElementBatchMixin):
 
     Spectrum_str = property(_get_Spectrum_str, _set_Spectrum_str) # type: List[str]
     """
-    Name of harmonic current spectrum for this load.  Default is "defaultload", which is defined when the DSS starts.
+    Name of harmonic current spectrum for this load.
 
-    DSS property name: `Spectrum`, DSS property index: 39.
+    Name: `Spectrum`
+    Default: defaultload
     """
 
     def _get_Spectrum(self) -> List[SpectrumObj]:
@@ -1578,9 +1661,10 @@ class LoadBatch(DSSBatch, CircuitElementBatchMixin, PCElementBatchMixin):
 
     Spectrum = property(_get_Spectrum, _set_Spectrum) # type: List[SpectrumObj]
     """
-    Name of harmonic current spectrum for this load.  Default is "defaultload", which is defined when the DSS starts.
+    Name of harmonic current spectrum for this load.
 
-    DSS property name: `Spectrum`, DSS property index: 39.
+    Name: `Spectrum`
+    Default: defaultload
     """
 
     def _get_BaseFreq(self) -> BatchFloat64ArrayProxy:
@@ -1593,7 +1677,8 @@ class LoadBatch(DSSBatch, CircuitElementBatchMixin, PCElementBatchMixin):
     """
     Base Frequency for ratings.
 
-    DSS property name: `BaseFreq`, DSS property index: 40.
+    Name: `BaseFreq`
+    Units: Hz
     """
 
     def _get_Enabled(self) -> List[bool]:
@@ -1606,9 +1691,10 @@ class LoadBatch(DSSBatch, CircuitElementBatchMixin, PCElementBatchMixin):
 
     Enabled = property(_get_Enabled, _set_Enabled) # type: List[bool]
     """
-    {Yes|No or True|False} Indicates whether this element is enabled.
+    Indicates whether this element is enabled.
 
-    DSS property name: `Enabled`, DSS property index: 41.
+    Name: `Enabled`
+    Default: True
     """
 
     def Like(self, value: AnyStr, flags: enums.SetterFlags = 0):
@@ -1617,7 +1703,9 @@ class LoadBatch(DSSBatch, CircuitElementBatchMixin, PCElementBatchMixin):
 
         New Capacitor.C2 like=c1  ...
 
-        DSS property name: `Like`, DSS property index: 42.
+        **Deprecated:** `Like` has been deprecated since at least 2021, see https://sourceforge.net/p/electricdss/discussion/861977/thread/8b59d21eb6/#b57c/f668
+
+        Name: `Like`
         """
         self._set_batch_string(42, value, flags)
 

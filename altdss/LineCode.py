@@ -99,7 +99,8 @@ class LineCode(DSSObj):
     """
     Number of phases in the line this line code data represents.  Setting this property reinitializes the line code.  Impedance matrix is reset for default symmetrical component.
 
-    DSS property name: `NPhases`, DSS property index: 1.
+    Name: `NPhases`
+    Default: 3
     """
 
     def _get_R1(self) -> float:
@@ -110,9 +111,11 @@ class LineCode(DSSObj):
 
     R1 = property(_get_R1, _set_R1) # type: float
     """
-    Positive-sequence Resistance, ohms per unit length. Setting any of R1, R0, X1, X0, C1, C0 forces the program to use the symmetrical component line definition. See also Rmatrix.
+    Positive-sequence Resistance. Setting any of R1, R0, X1, X0, C1, C0 forces the program to use the symmetrical component line definition. See also Rmatrix.
 
-    DSS property name: `R1`, DSS property index: 2.
+    Name: `R1`
+    Units: Ω/[length_unit]
+    Default: 0.058
     """
 
     def _get_X1(self) -> float:
@@ -123,9 +126,11 @@ class LineCode(DSSObj):
 
     X1 = property(_get_X1, _set_X1) # type: float
     """
-    Positive-sequence Reactance, ohms per unit length. Setting any of R1, R0, X1, X0, C1, C0 forces the program to use the symmetrical component line definition. See also Xmatrix
+    Positive-sequence Reactance. Setting any of R1, R0, X1, X0, C1, C0 forces the program to use the symmetrical component line definition. See also Xmatrix
 
-    DSS property name: `X1`, DSS property index: 3.
+    Name: `X1`
+    Units: Ω/[length_unit]
+    Default: 0.1206
     """
 
     def _get_R0(self) -> float:
@@ -136,9 +141,11 @@ class LineCode(DSSObj):
 
     R0 = property(_get_R0, _set_R0) # type: float
     """
-    Zero-sequence Resistance, ohms per unit length. Setting any of R1, R0, X1, X0, C1, C0 forces the program to use the symmetrical component line definition.
+    Zero-sequence Resistance. Setting any of R1, R0, X1, X0, C1, C0 forces the program to use the symmetrical component line definition.
 
-    DSS property name: `R0`, DSS property index: 4.
+    Name: `R0`
+    Units: Ω/[length_unit]
+    Default: 0.1784
     """
 
     def _get_X0(self) -> float:
@@ -149,9 +156,11 @@ class LineCode(DSSObj):
 
     X0 = property(_get_X0, _set_X0) # type: float
     """
-    Zero-sequence Reactance, ohms per unit length. Setting any of R1, R0, X1, X0, C1, C0 forces the program to use the symmetrical component line definition.
+    Zero-sequence Reactance. Setting any of R1, R0, X1, X0, C1, C0 forces the program to use the symmetrical component line definition.
 
-    DSS property name: `X0`, DSS property index: 5.
+    Name: `X0`
+    Units: Ω/[length_unit]
+    Default: 0.4047
     """
 
     def _get_C1(self) -> float:
@@ -162,9 +171,11 @@ class LineCode(DSSObj):
 
     C1 = property(_get_C1, _set_C1) # type: float
     """
-    Positive-sequence capacitance, nf per unit length. Setting any of R1, R0, X1, X0, C1, C0 forces the program to use the symmetrical component line definition. See also Cmatrix and B1.
+    Positive-sequence capacitance. Setting any of R1, R0, X1, X0, C1, C0 forces the program to use the symmetrical component line definition. See also Cmatrix and B1.
 
-    DSS property name: `C1`, DSS property index: 6.
+    Name: `C1`
+    Units: nF/[length_unit]
+    Default: 3.3999999999999995
     """
 
     def _get_C0(self) -> float:
@@ -175,9 +186,11 @@ class LineCode(DSSObj):
 
     C0 = property(_get_C0, _set_C0) # type: float
     """
-    Zero-sequence capacitance, nf per unit length. Setting any of R1, R0, X1, X0, C1, C0 forces the program to use the symmetrical component line definition. See also B0.
+    Zero-sequence capacitance. Setting any of R1, R0, X1, X0, C1, C0 forces the program to use the symmetrical component line definition. See also B0.
 
-    DSS property name: `C0`, DSS property index: 7.
+    Name: `C0`
+    Units: nF/[length_unit]
+    Default: 1.5999999999999999
     """
 
     def _get_Units(self) -> enums.LengthUnit:
@@ -191,9 +204,10 @@ class LineCode(DSSObj):
 
     Units = property(_get_Units, _set_Units) # type: enums.LengthUnit
     """
-    One of (ohms per ...) {none|mi|km|kft|m|me|ft|in|cm}.  Default is none; assumes units agree with length units given in Line object
+    One of (ohms per ...). Assumes units agree with length units given in Line object.
 
-    DSS property name: `Units`, DSS property index: 8.
+    Name: `Units`
+    Default: none
     """
 
     def _get_Units_str(self) -> str:
@@ -204,9 +218,10 @@ class LineCode(DSSObj):
 
     Units_str = property(_get_Units_str, _set_Units_str) # type: str
     """
-    One of (ohms per ...) {none|mi|km|kft|m|me|ft|in|cm}.  Default is none; assumes units agree with length units given in Line object
+    One of (ohms per ...). Assumes units agree with length units given in Line object.
 
-    DSS property name: `Units`, DSS property index: 8.
+    Name: `Units`
+    Default: none
     """
 
     def _get_RMatrix(self) -> Float64Array:
@@ -217,9 +232,11 @@ class LineCode(DSSObj):
 
     RMatrix = property(_get_RMatrix, _set_RMatrix) # type: Float64Array
     """
-    Resistance matrix, lower triangle, ohms per unit length. Order of the matrix is the number of phases. May be used to specify the impedance of any line configuration.  For balanced line models, you may use the standard symmetrical component data definition instead.
+    Resistance matrix, lower triangle. Order of the matrix is the number of phases. May be used to specify the impedance of any line configuration.  For balanced line models, you may use the standard symmetrical component data definition instead.
 
-    DSS property name: `RMatrix`, DSS property index: 9.
+    Name: `RMatrix`
+    Units: Ω/[length_unit]
+    Default: [[0.09813333333333332, 0.04013333333333333, 0.04013333333333333], [0.04013333333333333, 0.09813333333333332, 0.04013333333333333], [0.04013333333333333, 0.04013333333333333, 0.09813333333333332]]
     """
 
     def _get_XMatrix(self) -> Float64Array:
@@ -230,9 +247,11 @@ class LineCode(DSSObj):
 
     XMatrix = property(_get_XMatrix, _set_XMatrix) # type: Float64Array
     """
-    Reactance matrix, lower triangle, ohms per unit length. Order of the matrix is the number of phases. May be used to specify the impedance of any line configuration.  For balanced line models, you may use the standard symmetrical component data definition instead.
+    Reactance matrix, lower triangle. Order of the matrix is the number of phases. May be used to specify the impedance of any line configuration.  For balanced line models, you may use the standard symmetrical component data definition instead.
 
-    DSS property name: `XMatrix`, DSS property index: 10.
+    Name: `XMatrix`
+    Units: Ω/[length_unit]
+    Default: [[0.2153, 0.0947, 0.0947], [0.0947, 0.2153, 0.0947], [0.0947, 0.0947, 0.2153]]
     """
 
     def _get_CMatrix(self) -> Float64Array:
@@ -243,9 +262,11 @@ class LineCode(DSSObj):
 
     CMatrix = property(_get_CMatrix, _set_CMatrix) # type: Float64Array
     """
-    Nodal Capacitance matrix, lower triangle, nf per unit length.Order of the matrix is the number of phases. May be used to specify the shunt capacitance of any line configuration.  For balanced line models, you may use the standard symmetrical component data definition instead.
+    Nodal Capacitance matrix, lower triangle. Order of the matrix is the number of phases. May be used to specify the shunt capacitance of any line configuration.  For balanced line models, you may use the standard symmetrical component data definition instead.
 
-    DSS property name: `CMatrix`, DSS property index: 11.
+    Name: `CMatrix`
+    Units: nF/[length_unit]
+    Default: [[2.8, -0.5999999999999999, -0.5999999999999999], [-0.5999999999999999, 2.8, -0.5999999999999999], [-0.5999999999999999, -0.5999999999999999, 2.8]]
     """
 
     def _get_BaseFreq(self) -> float:
@@ -258,7 +279,8 @@ class LineCode(DSSObj):
     """
     Frequency at which impedances are specified.
 
-    DSS property name: `BaseFreq`, DSS property index: 12.
+    Name: `BaseFreq`
+    Units: Hz
     """
 
     def _get_NormAmps(self) -> float:
@@ -271,7 +293,8 @@ class LineCode(DSSObj):
     """
     Normal ampere limit on line.  This is the so-called Planning Limit. It may also be the value above which load will have to be dropped in a contingency.  Usually about 75% - 80% of the emergency (one-hour) rating.
 
-    DSS property name: `NormAmps`, DSS property index: 13.
+    Name: `NormAmps`
+    Default: 400.0
     """
 
     def _get_EmergAmps(self) -> float:
@@ -284,7 +307,8 @@ class LineCode(DSSObj):
     """
     Emergency ampere limit on line (usually one-hour rating).
 
-    DSS property name: `EmergAmps`, DSS property index: 14.
+    Name: `EmergAmps`
+    Default: 600.0
     """
 
     def _get_FaultRate(self) -> float:
@@ -297,7 +321,11 @@ class LineCode(DSSObj):
     """
     Number of faults per unit length per year.
 
-    DSS property name: `FaultRate`, DSS property index: 15.
+    **Unused** (unused internally by the models, but can be used to transport data)
+    **Deprecated:** In LineCode objects, "FaultRate" is not used in the DSS engine since 2014. Be sure to fill the values in each Line individually since they are not propagated from the LineCode!
+
+    Name: `FaultRate`
+    Default: 0.1
     """
 
     def _get_PctPerm(self) -> float:
@@ -310,7 +338,11 @@ class LineCode(DSSObj):
     """
     Percentage of the faults that become permanent.
 
-    DSS property name: `PctPerm`, DSS property index: 16.
+    **Unused** (unused internally by the models, but can be used to transport data)
+    **Deprecated:** In LineCode objects, "PctPerm" is not used in the DSS engine since 2014. Be sure to fill the values in each Line individually since they are not propagated from the LineCode!
+
+    Name: `PctPerm`
+    Default: 20.0
     """
 
     def _get_Repair(self) -> float:
@@ -323,14 +355,19 @@ class LineCode(DSSObj):
     """
     Hours to repair.
 
-    DSS property name: `Repair`, DSS property index: 17.
+    **Unused** (unused internally by the models, but can be used to transport data)
+    **Deprecated:** In LineCode objects, "Repair" is not used in the DSS engine since 2014. Be sure to fill the values in each Line individually since they are not propagated from the LineCode!
+
+    Name: `Repair`
+    Default: 3.0
     """
 
     def Kron(self, value: bool = True, flags: enums.SetterFlags = 0):
         """
-        Kron = Y/N. Default=N.  Perform Kron reduction on the impedance matrix after it is formed, reducing order by 1. Eliminates the conductor designated by the "Neutral=" property. Do this after the R, X, and C matrices are defined. Ignored for symmetrical components. May be issued more than once to eliminate more than one conductor by resetting the Neutral property after the previous invoking of this property. Generally, you do not want to do a Kron reduction on the matrix if you intend to solve at a frequency other than the base frequency and exploit the Rg and Xg values.
+        Perform Kron reduction on the impedance matrix after it is formed, reducing order by 1. Eliminates the conductor designated by the "Neutral=" property. Do this after the R, X, and C matrices are defined. Ignored for symmetrical components. May be issued more than once to eliminate more than one conductor by resetting the Neutral property after the previous invoking of this property. Generally, you do not want to do a Kron reduction on the matrix if you intend to solve at a frequency other than the base frequency and exploit the Rg and Xg values.
 
-        DSS property name: `Kron`, DSS property index: 18.
+        Name: `Kron`
+        Default: False
         """
         self._lib.Obj_SetInt32(self._ptr, 18, value, flags)
 
@@ -344,7 +381,9 @@ class LineCode(DSSObj):
     """
     Carson earth return resistance per unit length used to compute impedance values at base frequency.  For making better frequency adjustments. Default is 0.01805 = 60 Hz value in ohms per kft (matches default line impedances). This value is required for harmonic solutions if you wish to adjust the earth return impedances for frequency. If not, set both Rg and Xg = 0.
 
-    DSS property name: `Rg`, DSS property index: 19.
+    Name: `Rg`
+    Units: Ω/[length_unit]
+    Default: 0.01805
     """
 
     def _get_Xg(self) -> float:
@@ -357,7 +396,9 @@ class LineCode(DSSObj):
     """
     Carson earth return reactance per unit length used to compute impedance values at base frequency.  For making better frequency adjustments. Default value is 0.155081 = 60 Hz value in ohms per kft (matches default line impedances). This value is required for harmonic solutions if you wish to adjust the earth return impedances for frequency. If not, set both Rg and Xg = 0.
 
-    DSS property name: `Xg`, DSS property index: 20.
+    Name: `Xg`
+    Units: Ω/[length_unit]
+    Default: 0.155081
     """
 
     def _get_rho(self) -> float:
@@ -368,9 +409,11 @@ class LineCode(DSSObj):
 
     rho = property(_get_rho, _set_rho) # type: float
     """
-    Default=100 meter ohms.  Earth resitivity used to compute earth correction factor.
+    Earth resistivity used to compute earth correction factor.
 
-    DSS property name: `rho`, DSS property index: 21.
+    Name: `rho`
+    Units: Ωm
+    Default: 100.0
     """
 
     def _get_Neutral(self) -> int:
@@ -383,7 +426,8 @@ class LineCode(DSSObj):
     """
     Designates which conductor is the "neutral" conductor that will be eliminated by Kron reduction. Default is the last conductor (nphases value). After Kron reduction is set to 0. Subsequent issuing of Kron=Yes will not do anything until this property is set to a legal value. Applies only to LineCodes defined by R, X, and C matrix.
 
-    DSS property name: `Neutral`, DSS property index: 22.
+    Name: `Neutral`
+    Default: 3
     """
 
     def _get_B1(self) -> float:
@@ -394,9 +438,10 @@ class LineCode(DSSObj):
 
     B1 = property(_get_B1, _set_B1) # type: float
     """
-    Alternate way to specify C1. MicroS per unit length
+    Alternate way to specify C1.
 
-    DSS property name: `B1`, DSS property index: 23.
+    Name: `B1`
+    Units: μS/[length_unit]
     """
 
     def _get_B0(self) -> float:
@@ -407,9 +452,10 @@ class LineCode(DSSObj):
 
     B0 = property(_get_B0, _set_B0) # type: float
     """
-    Alternate way to specify C0. MicroS per unit length
+    Alternate way to specify C0.
 
-    DSS property name: `B0`, DSS property index: 24.
+    Name: `B0`
+    Units: μS/[length_unit]
     """
 
     def _get_Seasons(self) -> int:
@@ -422,7 +468,7 @@ class LineCode(DSSObj):
     """
     Defines the number of ratings to be defined for the wire, to be used only when defining seasonal ratings using the "Ratings" property.
 
-    DSS property name: `Seasons`, DSS property index: 25.
+    Name: `Seasons`
     """
 
     def _get_Ratings(self) -> Float64Array:
@@ -436,7 +482,8 @@ class LineCode(DSSObj):
     An array of ratings to be used when the seasonal ratings flag is True. It can be used to insert
     multiple ratings to change during a QSTS simulation to evaluate different ratings in lines.
 
-    DSS property name: `Ratings`, DSS property index: 26.
+    Name: `Ratings`
+    Default: [400.0]
     """
 
     def _get_LineType(self) -> enums.LineType:
@@ -450,12 +497,11 @@ class LineCode(DSSObj):
 
     LineType = property(_get_LineType, _set_LineType) # type: enums.LineType
     """
-    Code designating the type of line. 
-    One of: OH, UG, UG_TS, UG_CN, SWT_LDBRK, SWT_FUSE, SWT_SECT, SWT_REC, SWT_DISC, SWT_BRK, SWT_ELBOW, BUSBAR
+    Code designating the type of line.
+    OpenDSS currently does not use this internally. For whatever purpose the user defines.
 
-    OpenDSS currently does not use this internally. For whatever purpose the user defines. Default is OH.
-
-    DSS property name: `LineType`, DSS property index: 27.
+    Name: `LineType`
+    Default: oh
     """
 
     def _get_LineType_str(self) -> str:
@@ -466,12 +512,11 @@ class LineCode(DSSObj):
 
     LineType_str = property(_get_LineType_str, _set_LineType_str) # type: str
     """
-    Code designating the type of line. 
-    One of: OH, UG, UG_TS, UG_CN, SWT_LDBRK, SWT_FUSE, SWT_SECT, SWT_REC, SWT_DISC, SWT_BRK, SWT_ELBOW, BUSBAR
+    Code designating the type of line.
+    OpenDSS currently does not use this internally. For whatever purpose the user defines.
 
-    OpenDSS currently does not use this internally. For whatever purpose the user defines. Default is OH.
-
-    DSS property name: `LineType`, DSS property index: 27.
+    Name: `LineType`
+    Default: oh
     """
 
     def Like(self, value: AnyStr):
@@ -480,7 +525,9 @@ class LineCode(DSSObj):
 
         New Capacitor.C2 like=c1  ...
 
-        DSS property name: `Like`, DSS property index: 28.
+        **Deprecated:** `Like` has been deprecated since at least 2021, see https://sourceforge.net/p/electricdss/discussion/861977/thread/8b59d21eb6/#b57c/f668
+
+        Name: `Like`
         """
         self._set_string_o(28, value)
 
@@ -553,7 +600,8 @@ class LineCodeBatch(DSSBatch):
     """
     Number of phases in the line this line code data represents.  Setting this property reinitializes the line code.  Impedance matrix is reset for default symmetrical component.
 
-    DSS property name: `NPhases`, DSS property index: 1.
+    Name: `NPhases`
+    Default: 3
     """
 
     def _get_R1(self) -> BatchFloat64ArrayProxy:
@@ -564,9 +612,11 @@ class LineCodeBatch(DSSBatch):
 
     R1 = property(_get_R1, _set_R1) # type: BatchFloat64ArrayProxy
     """
-    Positive-sequence Resistance, ohms per unit length. Setting any of R1, R0, X1, X0, C1, C0 forces the program to use the symmetrical component line definition. See also Rmatrix.
+    Positive-sequence Resistance. Setting any of R1, R0, X1, X0, C1, C0 forces the program to use the symmetrical component line definition. See also Rmatrix.
 
-    DSS property name: `R1`, DSS property index: 2.
+    Name: `R1`
+    Units: Ω/[length_unit]
+    Default: 0.058
     """
 
     def _get_X1(self) -> BatchFloat64ArrayProxy:
@@ -577,9 +627,11 @@ class LineCodeBatch(DSSBatch):
 
     X1 = property(_get_X1, _set_X1) # type: BatchFloat64ArrayProxy
     """
-    Positive-sequence Reactance, ohms per unit length. Setting any of R1, R0, X1, X0, C1, C0 forces the program to use the symmetrical component line definition. See also Xmatrix
+    Positive-sequence Reactance. Setting any of R1, R0, X1, X0, C1, C0 forces the program to use the symmetrical component line definition. See also Xmatrix
 
-    DSS property name: `X1`, DSS property index: 3.
+    Name: `X1`
+    Units: Ω/[length_unit]
+    Default: 0.1206
     """
 
     def _get_R0(self) -> BatchFloat64ArrayProxy:
@@ -590,9 +642,11 @@ class LineCodeBatch(DSSBatch):
 
     R0 = property(_get_R0, _set_R0) # type: BatchFloat64ArrayProxy
     """
-    Zero-sequence Resistance, ohms per unit length. Setting any of R1, R0, X1, X0, C1, C0 forces the program to use the symmetrical component line definition.
+    Zero-sequence Resistance. Setting any of R1, R0, X1, X0, C1, C0 forces the program to use the symmetrical component line definition.
 
-    DSS property name: `R0`, DSS property index: 4.
+    Name: `R0`
+    Units: Ω/[length_unit]
+    Default: 0.1784
     """
 
     def _get_X0(self) -> BatchFloat64ArrayProxy:
@@ -603,9 +657,11 @@ class LineCodeBatch(DSSBatch):
 
     X0 = property(_get_X0, _set_X0) # type: BatchFloat64ArrayProxy
     """
-    Zero-sequence Reactance, ohms per unit length. Setting any of R1, R0, X1, X0, C1, C0 forces the program to use the symmetrical component line definition.
+    Zero-sequence Reactance. Setting any of R1, R0, X1, X0, C1, C0 forces the program to use the symmetrical component line definition.
 
-    DSS property name: `X0`, DSS property index: 5.
+    Name: `X0`
+    Units: Ω/[length_unit]
+    Default: 0.4047
     """
 
     def _get_C1(self) -> BatchFloat64ArrayProxy:
@@ -616,9 +672,11 @@ class LineCodeBatch(DSSBatch):
 
     C1 = property(_get_C1, _set_C1) # type: BatchFloat64ArrayProxy
     """
-    Positive-sequence capacitance, nf per unit length. Setting any of R1, R0, X1, X0, C1, C0 forces the program to use the symmetrical component line definition. See also Cmatrix and B1.
+    Positive-sequence capacitance. Setting any of R1, R0, X1, X0, C1, C0 forces the program to use the symmetrical component line definition. See also Cmatrix and B1.
 
-    DSS property name: `C1`, DSS property index: 6.
+    Name: `C1`
+    Units: nF/[length_unit]
+    Default: 3.3999999999999995
     """
 
     def _get_C0(self) -> BatchFloat64ArrayProxy:
@@ -629,9 +687,11 @@ class LineCodeBatch(DSSBatch):
 
     C0 = property(_get_C0, _set_C0) # type: BatchFloat64ArrayProxy
     """
-    Zero-sequence capacitance, nf per unit length. Setting any of R1, R0, X1, X0, C1, C0 forces the program to use the symmetrical component line definition. See also B0.
+    Zero-sequence capacitance. Setting any of R1, R0, X1, X0, C1, C0 forces the program to use the symmetrical component line definition. See also B0.
 
-    DSS property name: `C0`, DSS property index: 7.
+    Name: `C0`
+    Units: nF/[length_unit]
+    Default: 1.5999999999999999
     """
 
     def _get_Units(self) -> BatchInt32ArrayProxy:
@@ -646,9 +706,10 @@ class LineCodeBatch(DSSBatch):
 
     Units = property(_get_Units, _set_Units) # type: BatchInt32ArrayProxy
     """
-    One of (ohms per ...) {none|mi|km|kft|m|me|ft|in|cm}.  Default is none; assumes units agree with length units given in Line object
+    One of (ohms per ...). Assumes units agree with length units given in Line object.
 
-    DSS property name: `Units`, DSS property index: 8.
+    Name: `Units`
+    Default: none
     """
 
     def _get_Units_str(self) -> List[str]:
@@ -659,9 +720,10 @@ class LineCodeBatch(DSSBatch):
 
     Units_str = property(_get_Units_str, _set_Units_str) # type: List[str]
     """
-    One of (ohms per ...) {none|mi|km|kft|m|me|ft|in|cm}.  Default is none; assumes units agree with length units given in Line object
+    One of (ohms per ...). Assumes units agree with length units given in Line object.
 
-    DSS property name: `Units`, DSS property index: 8.
+    Name: `Units`
+    Default: none
     """
 
     def _get_RMatrix(self) -> List[Float64Array]:
@@ -675,9 +737,11 @@ class LineCodeBatch(DSSBatch):
 
     RMatrix = property(_get_RMatrix, _set_RMatrix) # type: List[Float64Array]
     """
-    Resistance matrix, lower triangle, ohms per unit length. Order of the matrix is the number of phases. May be used to specify the impedance of any line configuration.  For balanced line models, you may use the standard symmetrical component data definition instead.
+    Resistance matrix, lower triangle. Order of the matrix is the number of phases. May be used to specify the impedance of any line configuration.  For balanced line models, you may use the standard symmetrical component data definition instead.
 
-    DSS property name: `RMatrix`, DSS property index: 9.
+    Name: `RMatrix`
+    Units: Ω/[length_unit]
+    Default: [[0.09813333333333332, 0.04013333333333333, 0.04013333333333333], [0.04013333333333333, 0.09813333333333332, 0.04013333333333333], [0.04013333333333333, 0.04013333333333333, 0.09813333333333332]]
     """
 
     def _get_XMatrix(self) -> List[Float64Array]:
@@ -691,9 +755,11 @@ class LineCodeBatch(DSSBatch):
 
     XMatrix = property(_get_XMatrix, _set_XMatrix) # type: List[Float64Array]
     """
-    Reactance matrix, lower triangle, ohms per unit length. Order of the matrix is the number of phases. May be used to specify the impedance of any line configuration.  For balanced line models, you may use the standard symmetrical component data definition instead.
+    Reactance matrix, lower triangle. Order of the matrix is the number of phases. May be used to specify the impedance of any line configuration.  For balanced line models, you may use the standard symmetrical component data definition instead.
 
-    DSS property name: `XMatrix`, DSS property index: 10.
+    Name: `XMatrix`
+    Units: Ω/[length_unit]
+    Default: [[0.2153, 0.0947, 0.0947], [0.0947, 0.2153, 0.0947], [0.0947, 0.0947, 0.2153]]
     """
 
     def _get_CMatrix(self) -> List[Float64Array]:
@@ -707,9 +773,11 @@ class LineCodeBatch(DSSBatch):
 
     CMatrix = property(_get_CMatrix, _set_CMatrix) # type: List[Float64Array]
     """
-    Nodal Capacitance matrix, lower triangle, nf per unit length.Order of the matrix is the number of phases. May be used to specify the shunt capacitance of any line configuration.  For balanced line models, you may use the standard symmetrical component data definition instead.
+    Nodal Capacitance matrix, lower triangle. Order of the matrix is the number of phases. May be used to specify the shunt capacitance of any line configuration.  For balanced line models, you may use the standard symmetrical component data definition instead.
 
-    DSS property name: `CMatrix`, DSS property index: 11.
+    Name: `CMatrix`
+    Units: nF/[length_unit]
+    Default: [[2.8, -0.5999999999999999, -0.5999999999999999], [-0.5999999999999999, 2.8, -0.5999999999999999], [-0.5999999999999999, -0.5999999999999999, 2.8]]
     """
 
     def _get_BaseFreq(self) -> BatchFloat64ArrayProxy:
@@ -722,7 +790,8 @@ class LineCodeBatch(DSSBatch):
     """
     Frequency at which impedances are specified.
 
-    DSS property name: `BaseFreq`, DSS property index: 12.
+    Name: `BaseFreq`
+    Units: Hz
     """
 
     def _get_NormAmps(self) -> BatchFloat64ArrayProxy:
@@ -735,7 +804,8 @@ class LineCodeBatch(DSSBatch):
     """
     Normal ampere limit on line.  This is the so-called Planning Limit. It may also be the value above which load will have to be dropped in a contingency.  Usually about 75% - 80% of the emergency (one-hour) rating.
 
-    DSS property name: `NormAmps`, DSS property index: 13.
+    Name: `NormAmps`
+    Default: 400.0
     """
 
     def _get_EmergAmps(self) -> BatchFloat64ArrayProxy:
@@ -748,7 +818,8 @@ class LineCodeBatch(DSSBatch):
     """
     Emergency ampere limit on line (usually one-hour rating).
 
-    DSS property name: `EmergAmps`, DSS property index: 14.
+    Name: `EmergAmps`
+    Default: 600.0
     """
 
     def _get_FaultRate(self) -> BatchFloat64ArrayProxy:
@@ -761,7 +832,11 @@ class LineCodeBatch(DSSBatch):
     """
     Number of faults per unit length per year.
 
-    DSS property name: `FaultRate`, DSS property index: 15.
+    **Unused** (unused internally by the models, but can be used to transport data)
+    **Deprecated:** In LineCode objects, "FaultRate" is not used in the DSS engine since 2014. Be sure to fill the values in each Line individually since they are not propagated from the LineCode!
+
+    Name: `FaultRate`
+    Default: 0.1
     """
 
     def _get_PctPerm(self) -> BatchFloat64ArrayProxy:
@@ -774,7 +849,11 @@ class LineCodeBatch(DSSBatch):
     """
     Percentage of the faults that become permanent.
 
-    DSS property name: `PctPerm`, DSS property index: 16.
+    **Unused** (unused internally by the models, but can be used to transport data)
+    **Deprecated:** In LineCode objects, "PctPerm" is not used in the DSS engine since 2014. Be sure to fill the values in each Line individually since they are not propagated from the LineCode!
+
+    Name: `PctPerm`
+    Default: 20.0
     """
 
     def _get_Repair(self) -> BatchFloat64ArrayProxy:
@@ -787,14 +866,19 @@ class LineCodeBatch(DSSBatch):
     """
     Hours to repair.
 
-    DSS property name: `Repair`, DSS property index: 17.
+    **Unused** (unused internally by the models, but can be used to transport data)
+    **Deprecated:** In LineCode objects, "Repair" is not used in the DSS engine since 2014. Be sure to fill the values in each Line individually since they are not propagated from the LineCode!
+
+    Name: `Repair`
+    Default: 3.0
     """
 
     def Kron(self, value: Union[bool, List[bool]] = True, flags: enums.SetterFlags = 0):
         """
-        Kron = Y/N. Default=N.  Perform Kron reduction on the impedance matrix after it is formed, reducing order by 1. Eliminates the conductor designated by the "Neutral=" property. Do this after the R, X, and C matrices are defined. Ignored for symmetrical components. May be issued more than once to eliminate more than one conductor by resetting the Neutral property after the previous invoking of this property. Generally, you do not want to do a Kron reduction on the matrix if you intend to solve at a frequency other than the base frequency and exploit the Rg and Xg values.
+        Perform Kron reduction on the impedance matrix after it is formed, reducing order by 1. Eliminates the conductor designated by the "Neutral=" property. Do this after the R, X, and C matrices are defined. Ignored for symmetrical components. May be issued more than once to eliminate more than one conductor by resetting the Neutral property after the previous invoking of this property. Generally, you do not want to do a Kron reduction on the matrix if you intend to solve at a frequency other than the base frequency and exploit the Rg and Xg values.
 
-        DSS property name: `Kron`, DSS property index: 18.
+        Name: `Kron`
+        Default: False
         """
         self._set_batch_int32_array(18, value, flags)
 
@@ -808,7 +892,9 @@ class LineCodeBatch(DSSBatch):
     """
     Carson earth return resistance per unit length used to compute impedance values at base frequency.  For making better frequency adjustments. Default is 0.01805 = 60 Hz value in ohms per kft (matches default line impedances). This value is required for harmonic solutions if you wish to adjust the earth return impedances for frequency. If not, set both Rg and Xg = 0.
 
-    DSS property name: `Rg`, DSS property index: 19.
+    Name: `Rg`
+    Units: Ω/[length_unit]
+    Default: 0.01805
     """
 
     def _get_Xg(self) -> BatchFloat64ArrayProxy:
@@ -821,7 +907,9 @@ class LineCodeBatch(DSSBatch):
     """
     Carson earth return reactance per unit length used to compute impedance values at base frequency.  For making better frequency adjustments. Default value is 0.155081 = 60 Hz value in ohms per kft (matches default line impedances). This value is required for harmonic solutions if you wish to adjust the earth return impedances for frequency. If not, set both Rg and Xg = 0.
 
-    DSS property name: `Xg`, DSS property index: 20.
+    Name: `Xg`
+    Units: Ω/[length_unit]
+    Default: 0.155081
     """
 
     def _get_rho(self) -> BatchFloat64ArrayProxy:
@@ -832,9 +920,11 @@ class LineCodeBatch(DSSBatch):
 
     rho = property(_get_rho, _set_rho) # type: BatchFloat64ArrayProxy
     """
-    Default=100 meter ohms.  Earth resitivity used to compute earth correction factor.
+    Earth resistivity used to compute earth correction factor.
 
-    DSS property name: `rho`, DSS property index: 21.
+    Name: `rho`
+    Units: Ωm
+    Default: 100.0
     """
 
     def _get_Neutral(self) -> BatchInt32ArrayProxy:
@@ -847,7 +937,8 @@ class LineCodeBatch(DSSBatch):
     """
     Designates which conductor is the "neutral" conductor that will be eliminated by Kron reduction. Default is the last conductor (nphases value). After Kron reduction is set to 0. Subsequent issuing of Kron=Yes will not do anything until this property is set to a legal value. Applies only to LineCodes defined by R, X, and C matrix.
 
-    DSS property name: `Neutral`, DSS property index: 22.
+    Name: `Neutral`
+    Default: 3
     """
 
     def _get_B1(self) -> BatchFloat64ArrayProxy:
@@ -858,9 +949,10 @@ class LineCodeBatch(DSSBatch):
 
     B1 = property(_get_B1, _set_B1) # type: BatchFloat64ArrayProxy
     """
-    Alternate way to specify C1. MicroS per unit length
+    Alternate way to specify C1.
 
-    DSS property name: `B1`, DSS property index: 23.
+    Name: `B1`
+    Units: μS/[length_unit]
     """
 
     def _get_B0(self) -> BatchFloat64ArrayProxy:
@@ -871,9 +963,10 @@ class LineCodeBatch(DSSBatch):
 
     B0 = property(_get_B0, _set_B0) # type: BatchFloat64ArrayProxy
     """
-    Alternate way to specify C0. MicroS per unit length
+    Alternate way to specify C0.
 
-    DSS property name: `B0`, DSS property index: 24.
+    Name: `B0`
+    Units: μS/[length_unit]
     """
 
     def _get_Seasons(self) -> BatchInt32ArrayProxy:
@@ -886,7 +979,7 @@ class LineCodeBatch(DSSBatch):
     """
     Defines the number of ratings to be defined for the wire, to be used only when defining seasonal ratings using the "Ratings" property.
 
-    DSS property name: `Seasons`, DSS property index: 25.
+    Name: `Seasons`
     """
 
     def _get_Ratings(self) -> List[Float64Array]:
@@ -903,7 +996,8 @@ class LineCodeBatch(DSSBatch):
     An array of ratings to be used when the seasonal ratings flag is True. It can be used to insert
     multiple ratings to change during a QSTS simulation to evaluate different ratings in lines.
 
-    DSS property name: `Ratings`, DSS property index: 26.
+    Name: `Ratings`
+    Default: [400.0]
     """
 
     def _get_LineType(self) -> BatchInt32ArrayProxy:
@@ -918,12 +1012,11 @@ class LineCodeBatch(DSSBatch):
 
     LineType = property(_get_LineType, _set_LineType) # type: BatchInt32ArrayProxy
     """
-    Code designating the type of line. 
-    One of: OH, UG, UG_TS, UG_CN, SWT_LDBRK, SWT_FUSE, SWT_SECT, SWT_REC, SWT_DISC, SWT_BRK, SWT_ELBOW, BUSBAR
+    Code designating the type of line.
+    OpenDSS currently does not use this internally. For whatever purpose the user defines.
 
-    OpenDSS currently does not use this internally. For whatever purpose the user defines. Default is OH.
-
-    DSS property name: `LineType`, DSS property index: 27.
+    Name: `LineType`
+    Default: oh
     """
 
     def _get_LineType_str(self) -> List[str]:
@@ -934,12 +1027,11 @@ class LineCodeBatch(DSSBatch):
 
     LineType_str = property(_get_LineType_str, _set_LineType_str) # type: List[str]
     """
-    Code designating the type of line. 
-    One of: OH, UG, UG_TS, UG_CN, SWT_LDBRK, SWT_FUSE, SWT_SECT, SWT_REC, SWT_DISC, SWT_BRK, SWT_ELBOW, BUSBAR
+    Code designating the type of line.
+    OpenDSS currently does not use this internally. For whatever purpose the user defines.
 
-    OpenDSS currently does not use this internally. For whatever purpose the user defines. Default is OH.
-
-    DSS property name: `LineType`, DSS property index: 27.
+    Name: `LineType`
+    Default: oh
     """
 
     def Like(self, value: AnyStr, flags: enums.SetterFlags = 0):
@@ -948,7 +1040,9 @@ class LineCodeBatch(DSSBatch):
 
         New Capacitor.C2 like=c1  ...
 
-        DSS property name: `Like`, DSS property index: 28.
+        **Deprecated:** `Like` has been deprecated since at least 2021, see https://sourceforge.net/p/electricdss/discussion/861977/thread/8b59d21eb6/#b57c/f668
+
+        Name: `Like`
         """
         self._set_batch_string(28, value, flags)
 

@@ -56,9 +56,9 @@ class LineSpacing(DSSObj):
 
     NConds = property(_get_NConds, _set_NConds) # type: int
     """
-    Number of wires in this geometry. Default is 3. Triggers memory allocations. Define first!
+    Number of wires in this geometry. Triggers memory allocations. Define first!
 
-    DSS property name: `NConds`, DSS property index: 1.
+    Name: `NConds`
     """
 
     def _get_NPhases(self) -> int:
@@ -71,7 +71,8 @@ class LineSpacing(DSSObj):
     """
     Number of retained phase conductors. If less than the number of wires, list the retained phase coordinates first.
 
-    DSS property name: `NPhases`, DSS property index: 2.
+    Name: `NPhases`
+    Default: 3
     """
 
     def _get_X(self) -> Float64Array:
@@ -84,7 +85,8 @@ class LineSpacing(DSSObj):
     """
     Array of wire X coordinates.
 
-    DSS property name: `X`, DSS property index: 3.
+    Name: `X`
+    Default: [0.0, 0.0, 0.0]
     """
 
     def _get_H(self) -> Float64Array:
@@ -97,7 +99,8 @@ class LineSpacing(DSSObj):
     """
     Array of wire Heights.
 
-    DSS property name: `H`, DSS property index: 4.
+    Name: `H`
+    Default: [0.0, 0.0, 0.0]
     """
 
     def _get_Units(self) -> enums.LengthUnit:
@@ -111,9 +114,10 @@ class LineSpacing(DSSObj):
 
     Units = property(_get_Units, _set_Units) # type: enums.LengthUnit
     """
-    Units for x and h: {mi|kft|km|m|Ft|in|cm } Initial default is "ft", but defaults to last unit defined
+    Units for x and h. Initial default is "ft", but defaults to last unit defined
 
-    DSS property name: `Units`, DSS property index: 5.
+    Name: `Units`
+    Default: ft
     """
 
     def _get_Units_str(self) -> str:
@@ -124,9 +128,10 @@ class LineSpacing(DSSObj):
 
     Units_str = property(_get_Units_str, _set_Units_str) # type: str
     """
-    Units for x and h: {mi|kft|km|m|Ft|in|cm } Initial default is "ft", but defaults to last unit defined
+    Units for x and h. Initial default is "ft", but defaults to last unit defined
 
-    DSS property name: `Units`, DSS property index: 5.
+    Name: `Units`
+    Default: ft
     """
 
     def Like(self, value: AnyStr):
@@ -135,7 +140,9 @@ class LineSpacing(DSSObj):
 
         New Capacitor.C2 like=c1  ...
 
-        DSS property name: `Like`, DSS property index: 6.
+        **Deprecated:** `Like` has been deprecated since at least 2021, see https://sourceforge.net/p/electricdss/discussion/861977/thread/8b59d21eb6/#b57c/f668
+
+        Name: `Like`
         """
         self._set_string_o(6, value)
 
@@ -184,9 +191,9 @@ class LineSpacingBatch(DSSBatch):
 
     NConds = property(_get_NConds, _set_NConds) # type: BatchInt32ArrayProxy
     """
-    Number of wires in this geometry. Default is 3. Triggers memory allocations. Define first!
+    Number of wires in this geometry. Triggers memory allocations. Define first!
 
-    DSS property name: `NConds`, DSS property index: 1.
+    Name: `NConds`
     """
 
     def _get_NPhases(self) -> BatchInt32ArrayProxy:
@@ -199,7 +206,8 @@ class LineSpacingBatch(DSSBatch):
     """
     Number of retained phase conductors. If less than the number of wires, list the retained phase coordinates first.
 
-    DSS property name: `NPhases`, DSS property index: 2.
+    Name: `NPhases`
+    Default: 3
     """
 
     def _get_X(self) -> List[Float64Array]:
@@ -215,7 +223,8 @@ class LineSpacingBatch(DSSBatch):
     """
     Array of wire X coordinates.
 
-    DSS property name: `X`, DSS property index: 3.
+    Name: `X`
+    Default: [0.0, 0.0, 0.0]
     """
 
     def _get_H(self) -> List[Float64Array]:
@@ -231,7 +240,8 @@ class LineSpacingBatch(DSSBatch):
     """
     Array of wire Heights.
 
-    DSS property name: `H`, DSS property index: 4.
+    Name: `H`
+    Default: [0.0, 0.0, 0.0]
     """
 
     def _get_Units(self) -> BatchInt32ArrayProxy:
@@ -246,9 +256,10 @@ class LineSpacingBatch(DSSBatch):
 
     Units = property(_get_Units, _set_Units) # type: BatchInt32ArrayProxy
     """
-    Units for x and h: {mi|kft|km|m|Ft|in|cm } Initial default is "ft", but defaults to last unit defined
+    Units for x and h. Initial default is "ft", but defaults to last unit defined
 
-    DSS property name: `Units`, DSS property index: 5.
+    Name: `Units`
+    Default: ft
     """
 
     def _get_Units_str(self) -> List[str]:
@@ -259,9 +270,10 @@ class LineSpacingBatch(DSSBatch):
 
     Units_str = property(_get_Units_str, _set_Units_str) # type: List[str]
     """
-    Units for x and h: {mi|kft|km|m|Ft|in|cm } Initial default is "ft", but defaults to last unit defined
+    Units for x and h. Initial default is "ft", but defaults to last unit defined
 
-    DSS property name: `Units`, DSS property index: 5.
+    Name: `Units`
+    Default: ft
     """
 
     def Like(self, value: AnyStr, flags: enums.SetterFlags = 0):
@@ -270,7 +282,9 @@ class LineSpacingBatch(DSSBatch):
 
         New Capacitor.C2 like=c1  ...
 
-        DSS property name: `Like`, DSS property index: 6.
+        **Deprecated:** `Like` has been deprecated since at least 2021, see https://sourceforge.net/p/electricdss/discussion/861977/thread/8b59d21eb6/#b57c/f668
+
+        Name: `Like`
         """
         self._set_batch_string(6, value, flags)
 

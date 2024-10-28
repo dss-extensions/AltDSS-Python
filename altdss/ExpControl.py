@@ -13,7 +13,7 @@ from .CircuitElement import CircuitElementBatchMixin, CircuitElementMixin
 class ExpControl(DSSObj, CircuitElementMixin):
     __slots__ = DSSObj._extra_slots + CircuitElementMixin._extra_slots
     _cls_name = 'ExpControl'
-    _cls_idx = 43
+    _cls_idx = 44
     _cls_int_idx = {
         10,
         12,
@@ -87,7 +87,7 @@ class ExpControl(DSSObj, CircuitElementMixin):
 
     If not specified, all PVSystems in the circuit are assumed to be controlled by this ExpControl.
 
-    DSS property name: `PVSystemList`, DSS property index: 1.
+    Name: `PVSystemList`
     """
 
     def _get_VReg(self) -> float:
@@ -98,11 +98,12 @@ class ExpControl(DSSObj, CircuitElementMixin):
 
     VReg = property(_get_VReg, _set_VReg) # type: float
     """
-    Per-unit voltage at which reactive power is zero; defaults to 1.0.
+    Per-unit voltage at which reactive power is zero.
 
     This may dynamically self-adjust when VregTau > 0, limited by VregMin and VregMax.If input as 0, Vreg will be initialized from a snapshot solution with no inverter Q.The equilibrium point of reactive power is also affected by Qbias
 
-    DSS property name: `VReg`, DSS property index: 2.
+    Name: `VReg`
+    Default: 1.0
     """
 
     def _get_Slope(self) -> float:
@@ -113,11 +114,12 @@ class ExpControl(DSSObj, CircuitElementMixin):
 
     Slope = property(_get_Slope, _set_Slope) # type: float
     """
-    Per-unit reactive power injection / per-unit voltage deviation from Vreg; defaults to 50.
+    Per-unit reactive power injection / per-unit voltage deviation from Vreg.
 
     Unlike InvControl, base reactive power is constant at the inverter kva rating.
 
-    DSS property name: `Slope`, DSS property index: 3.
+    Name: `Slope`
+    Default: 50.0
     """
 
     def _get_VRegTau(self) -> float:
@@ -128,11 +130,13 @@ class ExpControl(DSSObj, CircuitElementMixin):
 
     VRegTau = property(_get_VRegTau, _set_VRegTau) # type: float
     """
-    Time constant for adaptive Vreg. Defaults to 1200 seconds.
+    Time constant for adaptive Vreg.
 
     When the control injects or absorbs reactive power due to a voltage deviation from the Q=0 crossing of the volt-var curve, the Q=0 crossing will move toward the actual terminal voltage with this time constant. Over time, the effect is to gradually bring inverter reactive power to zero as the grid voltage changes due to non-solar effects. If zero, then Vreg stays fixed. IEEE1547-2018 requires adjustability from 300s to 5000s
 
-    DSS property name: `VRegTau`, DSS property index: 4.
+    Name: `VRegTau`
+    Units: s
+    Default: 1200.0
     """
 
     def _get_QBias(self) -> float:
@@ -147,7 +151,8 @@ class ExpControl(DSSObj, CircuitElementMixin):
 
     Enter > 0 for lagging (capacitive) bias, < 0 for leading (inductive) bias.
 
-    DSS property name: `QBias`, DSS property index: 5.
+    Name: `QBias`
+    Default: 0.0
     """
 
     def _get_VRegMin(self) -> float:
@@ -160,7 +165,8 @@ class ExpControl(DSSObj, CircuitElementMixin):
     """
     Lower limit on adaptive Vreg; defaults to 0.95 per-unit
 
-    DSS property name: `VRegMin`, DSS property index: 6.
+    Name: `VRegMin`
+    Default: 0.95
     """
 
     def _get_VRegMax(self) -> float:
@@ -173,7 +179,8 @@ class ExpControl(DSSObj, CircuitElementMixin):
     """
     Upper limit on adaptive Vreg; defaults to 1.05 per-unit
 
-    DSS property name: `VRegMax`, DSS property index: 7.
+    Name: `VRegMax`
+    Default: 1.05
     """
 
     def _get_QMaxLead(self) -> float:
@@ -188,7 +195,8 @@ class ExpControl(DSSObj, CircuitElementMixin):
 
     Regardless of QmaxLead, the reactive power injection is still limited by dynamic headroom when actual real power output exceeds 0%
 
-    DSS property name: `QMaxLead`, DSS property index: 8.
+    Name: `QMaxLead`
+    Default: 0.44
     """
 
     def _get_QMaxLag(self) -> float:
@@ -203,7 +211,8 @@ class ExpControl(DSSObj, CircuitElementMixin):
 
     For Category A inverters per P1547/D7, set this value to 0.25.Regardless of QmaxLag, the reactive power injection is still limited by dynamic headroom when actual real power output exceeds 0%
 
-    DSS property name: `QMaxLag`, DSS property index: 9.
+    Name: `QMaxLag`
+    Default: 0.44
     """
 
     def _get_EventLog(self) -> bool:
@@ -214,9 +223,10 @@ class ExpControl(DSSObj, CircuitElementMixin):
 
     EventLog = property(_get_EventLog, _set_EventLog) # type: bool
     """
-    {Yes/True* | No/False} Default is No for ExpControl. Log control actions to Eventlog.
+    Log control actions to Eventlog.
 
-    DSS property name: `EventLog`, DSS property index: 10.
+    Name: `EventLog`
+    Default: False
     """
 
     def _get_DeltaQ_Factor(self) -> float:
@@ -231,7 +241,8 @@ class ExpControl(DSSObj, CircuitElementMixin):
 
     Sets the maximum change (in per unit) from the prior var output level to the desired var output level during each control iteration. If numerical instability is noticed in solutions such as var sign changing from one control iteration to the next and voltages oscillating between two values with some separation, this is an indication of numerical instability (use the EventLog to diagnose). If the maximum control iterations are exceeded, and no numerical instability is seen in the EventLog of via monitors, then try increasing the value of this parameter to reduce the number of control iterations needed to achieve the control criteria, and move to the power flow solution.
 
-    DSS property name: `DeltaQ_Factor`, DSS property index: 11.
+    Name: `DeltaQ_Factor`
+    Default: 0.7
     """
 
     def _get_PreferQ(self) -> bool:
@@ -242,11 +253,10 @@ class ExpControl(DSSObj, CircuitElementMixin):
 
     PreferQ = property(_get_PreferQ, _set_PreferQ) # type: bool
     """
-    {Yes/True* | No/False} Default is No for ExpControl.
-
     Curtails real power output as needed to meet the reactive power requirement. IEEE1547-2018 requires Yes, but the default is No for backward compatibility of OpenDSS models.
 
-    DSS property name: `PreferQ`, DSS property index: 12.
+    Name: `PreferQ`
+    Default: False
     """
 
     def _get_TResponse(self) -> float:
@@ -261,7 +271,8 @@ class ExpControl(DSSObj, CircuitElementMixin):
 
     The value of Q reaches 90% of the target change within Tresponse, which corresponds to a low-pass filter having tau = Tresponse / 2.3026. The behavior is similar to LPFTAU in InvControl, but here the response time is input instead of the time constant. IEEE1547-2018 default is 10s for Category A and 5s for Category B, adjustable from 1s to 90s for both categories. However, the default is 0 for backward compatibility of OpenDSS models.
 
-    DSS property name: `TResponse`, DSS property index: 13.
+    Name: `TResponse`
+    Default: 0.0
     """
 
     def _get_DERList(self) -> List[str]:
@@ -278,7 +289,7 @@ class ExpControl(DSSObj, CircuitElementMixin):
 
     However, storage is not actually implemented yet. Use fully qualified PVSystem names.
 
-    DSS property name: `DERList`, DSS property index: 14.
+    Name: `DERList`
     """
 
     def _get_BaseFreq(self) -> float:
@@ -291,7 +302,8 @@ class ExpControl(DSSObj, CircuitElementMixin):
     """
     Base Frequency for ratings.
 
-    DSS property name: `BaseFreq`, DSS property index: 15.
+    Name: `BaseFreq`
+    Units: Hz
     """
 
     def _get_Enabled(self) -> bool:
@@ -302,9 +314,10 @@ class ExpControl(DSSObj, CircuitElementMixin):
 
     Enabled = property(_get_Enabled, _set_Enabled) # type: bool
     """
-    {Yes|No or True|False} Indicates whether this element is enabled.
+    Indicates whether this element is enabled.
 
-    DSS property name: `Enabled`, DSS property index: 16.
+    Name: `Enabled`
+    Default: True
     """
 
     def Like(self, value: AnyStr):
@@ -313,7 +326,9 @@ class ExpControl(DSSObj, CircuitElementMixin):
 
         New Capacitor.C2 like=c1  ...
 
-        DSS property name: `Like`, DSS property index: 17.
+        **Deprecated:** `Like` has been deprecated since at least 2021, see https://sourceforge.net/p/electricdss/discussion/861977/thread/8b59d21eb6/#b57c/f668
+
+        Name: `Like`
         """
         self._set_string_o(17, value)
 
@@ -340,7 +355,7 @@ class ExpControlProperties(TypedDict):
 class ExpControlBatch(DSSBatch, CircuitElementBatchMixin):
     _cls_name = 'ExpControl'
     _obj_cls = ExpControl
-    _cls_idx = 43
+    _cls_idx = 44
     __slots__ = []
 
     def __init__(self, api_util, **kwargs):
@@ -384,7 +399,7 @@ class ExpControlBatch(DSSBatch, CircuitElementBatchMixin):
 
     If not specified, all PVSystems in the circuit are assumed to be controlled by this ExpControl.
 
-    DSS property name: `PVSystemList`, DSS property index: 1.
+    Name: `PVSystemList`
     """
 
     def _get_VReg(self) -> BatchFloat64ArrayProxy:
@@ -395,11 +410,12 @@ class ExpControlBatch(DSSBatch, CircuitElementBatchMixin):
 
     VReg = property(_get_VReg, _set_VReg) # type: BatchFloat64ArrayProxy
     """
-    Per-unit voltage at which reactive power is zero; defaults to 1.0.
+    Per-unit voltage at which reactive power is zero.
 
     This may dynamically self-adjust when VregTau > 0, limited by VregMin and VregMax.If input as 0, Vreg will be initialized from a snapshot solution with no inverter Q.The equilibrium point of reactive power is also affected by Qbias
 
-    DSS property name: `VReg`, DSS property index: 2.
+    Name: `VReg`
+    Default: 1.0
     """
 
     def _get_Slope(self) -> BatchFloat64ArrayProxy:
@@ -410,11 +426,12 @@ class ExpControlBatch(DSSBatch, CircuitElementBatchMixin):
 
     Slope = property(_get_Slope, _set_Slope) # type: BatchFloat64ArrayProxy
     """
-    Per-unit reactive power injection / per-unit voltage deviation from Vreg; defaults to 50.
+    Per-unit reactive power injection / per-unit voltage deviation from Vreg.
 
     Unlike InvControl, base reactive power is constant at the inverter kva rating.
 
-    DSS property name: `Slope`, DSS property index: 3.
+    Name: `Slope`
+    Default: 50.0
     """
 
     def _get_VRegTau(self) -> BatchFloat64ArrayProxy:
@@ -425,11 +442,13 @@ class ExpControlBatch(DSSBatch, CircuitElementBatchMixin):
 
     VRegTau = property(_get_VRegTau, _set_VRegTau) # type: BatchFloat64ArrayProxy
     """
-    Time constant for adaptive Vreg. Defaults to 1200 seconds.
+    Time constant for adaptive Vreg.
 
     When the control injects or absorbs reactive power due to a voltage deviation from the Q=0 crossing of the volt-var curve, the Q=0 crossing will move toward the actual terminal voltage with this time constant. Over time, the effect is to gradually bring inverter reactive power to zero as the grid voltage changes due to non-solar effects. If zero, then Vreg stays fixed. IEEE1547-2018 requires adjustability from 300s to 5000s
 
-    DSS property name: `VRegTau`, DSS property index: 4.
+    Name: `VRegTau`
+    Units: s
+    Default: 1200.0
     """
 
     def _get_QBias(self) -> BatchFloat64ArrayProxy:
@@ -444,7 +463,8 @@ class ExpControlBatch(DSSBatch, CircuitElementBatchMixin):
 
     Enter > 0 for lagging (capacitive) bias, < 0 for leading (inductive) bias.
 
-    DSS property name: `QBias`, DSS property index: 5.
+    Name: `QBias`
+    Default: 0.0
     """
 
     def _get_VRegMin(self) -> BatchFloat64ArrayProxy:
@@ -457,7 +477,8 @@ class ExpControlBatch(DSSBatch, CircuitElementBatchMixin):
     """
     Lower limit on adaptive Vreg; defaults to 0.95 per-unit
 
-    DSS property name: `VRegMin`, DSS property index: 6.
+    Name: `VRegMin`
+    Default: 0.95
     """
 
     def _get_VRegMax(self) -> BatchFloat64ArrayProxy:
@@ -470,7 +491,8 @@ class ExpControlBatch(DSSBatch, CircuitElementBatchMixin):
     """
     Upper limit on adaptive Vreg; defaults to 1.05 per-unit
 
-    DSS property name: `VRegMax`, DSS property index: 7.
+    Name: `VRegMax`
+    Default: 1.05
     """
 
     def _get_QMaxLead(self) -> BatchFloat64ArrayProxy:
@@ -485,7 +507,8 @@ class ExpControlBatch(DSSBatch, CircuitElementBatchMixin):
 
     Regardless of QmaxLead, the reactive power injection is still limited by dynamic headroom when actual real power output exceeds 0%
 
-    DSS property name: `QMaxLead`, DSS property index: 8.
+    Name: `QMaxLead`
+    Default: 0.44
     """
 
     def _get_QMaxLag(self) -> BatchFloat64ArrayProxy:
@@ -500,7 +523,8 @@ class ExpControlBatch(DSSBatch, CircuitElementBatchMixin):
 
     For Category A inverters per P1547/D7, set this value to 0.25.Regardless of QmaxLag, the reactive power injection is still limited by dynamic headroom when actual real power output exceeds 0%
 
-    DSS property name: `QMaxLag`, DSS property index: 9.
+    Name: `QMaxLag`
+    Default: 0.44
     """
 
     def _get_EventLog(self) -> List[bool]:
@@ -513,9 +537,10 @@ class ExpControlBatch(DSSBatch, CircuitElementBatchMixin):
 
     EventLog = property(_get_EventLog, _set_EventLog) # type: List[bool]
     """
-    {Yes/True* | No/False} Default is No for ExpControl. Log control actions to Eventlog.
+    Log control actions to Eventlog.
 
-    DSS property name: `EventLog`, DSS property index: 10.
+    Name: `EventLog`
+    Default: False
     """
 
     def _get_DeltaQ_Factor(self) -> BatchFloat64ArrayProxy:
@@ -530,7 +555,8 @@ class ExpControlBatch(DSSBatch, CircuitElementBatchMixin):
 
     Sets the maximum change (in per unit) from the prior var output level to the desired var output level during each control iteration. If numerical instability is noticed in solutions such as var sign changing from one control iteration to the next and voltages oscillating between two values with some separation, this is an indication of numerical instability (use the EventLog to diagnose). If the maximum control iterations are exceeded, and no numerical instability is seen in the EventLog of via monitors, then try increasing the value of this parameter to reduce the number of control iterations needed to achieve the control criteria, and move to the power flow solution.
 
-    DSS property name: `DeltaQ_Factor`, DSS property index: 11.
+    Name: `DeltaQ_Factor`
+    Default: 0.7
     """
 
     def _get_PreferQ(self) -> List[bool]:
@@ -543,11 +569,10 @@ class ExpControlBatch(DSSBatch, CircuitElementBatchMixin):
 
     PreferQ = property(_get_PreferQ, _set_PreferQ) # type: List[bool]
     """
-    {Yes/True* | No/False} Default is No for ExpControl.
-
     Curtails real power output as needed to meet the reactive power requirement. IEEE1547-2018 requires Yes, but the default is No for backward compatibility of OpenDSS models.
 
-    DSS property name: `PreferQ`, DSS property index: 12.
+    Name: `PreferQ`
+    Default: False
     """
 
     def _get_TResponse(self) -> BatchFloat64ArrayProxy:
@@ -562,7 +587,8 @@ class ExpControlBatch(DSSBatch, CircuitElementBatchMixin):
 
     The value of Q reaches 90% of the target change within Tresponse, which corresponds to a low-pass filter having tau = Tresponse / 2.3026. The behavior is similar to LPFTAU in InvControl, but here the response time is input instead of the time constant. IEEE1547-2018 default is 10s for Category A and 5s for Category B, adjustable from 1s to 90s for both categories. However, the default is 0 for backward compatibility of OpenDSS models.
 
-    DSS property name: `TResponse`, DSS property index: 13.
+    Name: `TResponse`
+    Default: 0.0
     """
 
     def _get_DERList(self) -> List[List[str]]:
@@ -581,7 +607,7 @@ class ExpControlBatch(DSSBatch, CircuitElementBatchMixin):
 
     However, storage is not actually implemented yet. Use fully qualified PVSystem names.
 
-    DSS property name: `DERList`, DSS property index: 14.
+    Name: `DERList`
     """
 
     def _get_BaseFreq(self) -> BatchFloat64ArrayProxy:
@@ -594,7 +620,8 @@ class ExpControlBatch(DSSBatch, CircuitElementBatchMixin):
     """
     Base Frequency for ratings.
 
-    DSS property name: `BaseFreq`, DSS property index: 15.
+    Name: `BaseFreq`
+    Units: Hz
     """
 
     def _get_Enabled(self) -> List[bool]:
@@ -607,9 +634,10 @@ class ExpControlBatch(DSSBatch, CircuitElementBatchMixin):
 
     Enabled = property(_get_Enabled, _set_Enabled) # type: List[bool]
     """
-    {Yes|No or True|False} Indicates whether this element is enabled.
+    Indicates whether this element is enabled.
 
-    DSS property name: `Enabled`, DSS property index: 16.
+    Name: `Enabled`
+    Default: True
     """
 
     def Like(self, value: AnyStr, flags: enums.SetterFlags = 0):
@@ -618,7 +646,9 @@ class ExpControlBatch(DSSBatch, CircuitElementBatchMixin):
 
         New Capacitor.C2 like=c1  ...
 
-        DSS property name: `Like`, DSS property index: 17.
+        **Deprecated:** `Like` has been deprecated since at least 2021, see https://sourceforge.net/p/electricdss/discussion/861977/thread/8b59d21eb6/#b57c/f668
+
+        Name: `Like`
         """
         self._set_batch_string(17, value, flags)
 

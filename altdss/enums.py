@@ -177,6 +177,7 @@ class SolutionAlgorithm(IntEnum):
     """Solution Algorithm (DSS enumeration)"""
     Normal = 0 # Normal
     Newton = 1 # Newton
+    NCIM = 2 # NCIM
 
 
 class CircuitModel(IntEnum):
@@ -256,8 +257,8 @@ class LoadModel(IntEnum):
     Motor = 3 # Motor (constant P, quadratic Q)
     CVR = 4 # CVR (linear P, quadratic Q)
     ConstantI = 5 # Constant I
-    ConstantP_fixedQ = 6 # Constant P, fixed Q
-    ConstantP_fixedX = 7 # Constant P, fixed X
+    ConstantP_FixedQ = 6 # Constant P, fixed Q
+    ConstantP_FixedX = 7 # Constant P, fixed X
     ZIPV = 8 # ZIPV
 
 class LoadStatus(IntEnum):
@@ -288,10 +289,10 @@ class GeneratorModel(IntEnum):
     ConstantPQ = 1 # Constant PQ
     ConstantZ = 2 # Constant Z
     ConstantPV = 3 # Constant P|V|
-    ConstantP_fixedQ = 4 # Constant P, fixed Q
-    ConstantP_fixedX = 5 # Constant P, fixed X
-    Usermodel = 6 # User model
-    Approximateinvertermodel = 7 # Approximate inverter model
+    ConstantP_FixedQ = 4 # Constant P, Fixed Q
+    ConstantP_FixedX = 5 # Constant P, Fixed X
+    UserModel = 6 # User Model
+    ApproxInverter = 7 # Approximate Inverter Model
 
 class GeneratorDispatchMode(IntEnum):
     """Generator: Dispatch Mode (DSS enumeration)"""
@@ -303,6 +304,20 @@ class GeneratorStatus(IntEnum):
     """Generator: Status (DSS enumeration)"""
     Variable = 0 # Variable
     Fixed = 1 # Fixed
+
+
+class WindGenModel(IntEnum):
+    """WindGen: Model (DSS enumeration)"""
+    ConstantPQ = 1 # Constant PQ
+    ConstantZ = 2 # Constant Z
+    ConstantP_FixedQ = 4 # Constant P, fixed Q
+    ConstantP_FixedX = 5 # Constant P, fixed X
+
+class WindGenQMode(IntEnum):
+    """WindGen: Q Mode (DSS enumeration)"""
+    Q = 0 # Q
+    PF = 1 # PF
+    VoltVar = 2 # VoltVar
 
 
 class StorageState(IntEnum):
@@ -322,20 +337,20 @@ class StorageDispatchMode(IntEnum):
 
 class StorageControllerDischargeMode(IntEnum):
     """StorageController: Discharge Mode (DSS enumeration)"""
-    Peakshave = 5 # Peakshave
+    PeakShave = 5 # PeakShave
     Follow = 1 # Follow
     Support = 3 # Support
-    Loadshape = 2 # Loadshape
+    LoadShape = 2 # LoadShape
     Time = 4 # Time
     Schedule = 6 # Schedule
-    I_Peakshave = 8 # I-Peakshave
+    IPeakShave = 8 # I-PeakShave
 
 class StorageControllerChargeMode(IntEnum):
     """StorageController: Charge Mode (DSS enumeration)"""
-    Loadshape = 2 # Loadshape
+    LoadShape = 2 # LoadShape
     Time = 4 # Time
-    PeakshaveLow = 7 # PeakshaveLow
-    I_PeakshaveLow = 9 # I-PeakshaveLow
+    PeakShaveLow = 7 # PeakShaveLow
+    IPeakShaveLow = 9 # I-PeakShaveLow
 
 
 class RelayType(IntEnum):
@@ -343,8 +358,8 @@ class RelayType(IntEnum):
     Current = 0 # Current
     Voltage = 1 # Voltage
     ReversePower = 3 # ReversePower
-    relay46 = 4 # 46
-    relay47 = 5 # 47
+    F46 = 4 # 46
+    F47 = 5 # 47
     Generic = 6 # Generic
     Distance = 7 # Distance
     TD21 = 8 # TD21
@@ -402,7 +417,7 @@ class PVSystemModel(IntEnum):
     """PVSystem: Model (DSS enumeration)"""
     ConstantP_PF = 1 # Constant P, PF
     ConstantY = 2 # Constant Y
-    Usermodel = 3 # User model
+    UserModel = 3 # User model
 
 
 class UPFCMode(IntEnum):
@@ -429,12 +444,9 @@ class IndMach012SlipOption(IntEnum):
 
 class AutoTransConnection(IntEnum):
     """AutoTrans: Connection (DSS enumeration)"""
-    wye = 0 # wye
-    delta = 1 # delta
-    series = 2 # series
-    y = 0 # y
-    ln = 0 # ln
-    ll = 1 # ll
+    Wye = 0 # wye
+    Delta = 1 # delta
+    Series = 2 # series
 
 
 class RegControlPhaseSelection(IntEnum):
@@ -521,5 +533,11 @@ class EnergyMeterAction(IntEnum):
     Save = 3 # Save
     TakeSample = 4 # TakeSample
     ZoneDump = 5 # ZoneDump
+
+
+class FMonitorAction(IntEnum):
+    """FMonitor: Action (DSS enumeration)"""
+    Clear = 0 # Clear
+    Reset = 0 # Reset
 
 

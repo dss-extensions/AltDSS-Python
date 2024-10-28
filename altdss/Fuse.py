@@ -15,7 +15,7 @@ from .TCC_Curve import TCC_Curve
 class Fuse(DSSObj, CircuitElementMixin):
     __slots__ = DSSObj._extra_slots + CircuitElementMixin._extra_slots
     _cls_name = 'Fuse'
-    _cls_idx = 33
+    _cls_idx = 34
     _cls_int_idx = {
         2,
         4,
@@ -73,7 +73,7 @@ class Fuse(DSSObj, CircuitElementMixin):
     """
     Full object name of the circuit element, typically a line, transformer, load, or generator, to which the Fuse is connected. This is the "monitored" element. There is no default; must be specified.
 
-    DSS property name: `MonitoredObj`, DSS property index: 1.
+    Name: `MonitoredObj`
     """
 
     def _get_MonitoredObj(self) -> DSSObj:
@@ -90,7 +90,7 @@ class Fuse(DSSObj, CircuitElementMixin):
     """
     Full object name of the circuit element, typically a line, transformer, load, or generator, to which the Fuse is connected. This is the "monitored" element. There is no default; must be specified.
 
-    DSS property name: `MonitoredObj`, DSS property index: 1.
+    Name: `MonitoredObj`
     """
 
     def _get_MonitoredTerm(self) -> int:
@@ -101,9 +101,10 @@ class Fuse(DSSObj, CircuitElementMixin):
 
     MonitoredTerm = property(_get_MonitoredTerm, _set_MonitoredTerm) # type: int
     """
-    Number of the terminal of the circuit element to which the Fuse is connected. 1 or 2, typically.  Default is 1.
+    Number of the terminal of the circuit element to which the Fuse is connected. 1 or 2, typically.
 
-    DSS property name: `MonitoredTerm`, DSS property index: 2.
+    Name: `MonitoredTerm`
+    Default: 1
     """
 
     def _get_SwitchedObj_str(self) -> str:
@@ -114,9 +115,9 @@ class Fuse(DSSObj, CircuitElementMixin):
 
     SwitchedObj_str = property(_get_SwitchedObj_str, _set_SwitchedObj_str) # type: str
     """
-    Name of circuit element switch that the Fuse controls. Specify the full object name.Defaults to the same as the Monitored element. This is the "controlled" element.
+    Name of circuit element switch that the Fuse controls. Specify the full object name. Defaults to the same as the Monitored element. This is the "controlled" element.
 
-    DSS property name: `SwitchedObj`, DSS property index: 3.
+    Name: `SwitchedObj`
     """
 
     def _get_SwitchedObj(self) -> DSSObj:
@@ -131,9 +132,9 @@ class Fuse(DSSObj, CircuitElementMixin):
 
     SwitchedObj = property(_get_SwitchedObj, _set_SwitchedObj) # type: DSSObj
     """
-    Name of circuit element switch that the Fuse controls. Specify the full object name.Defaults to the same as the Monitored element. This is the "controlled" element.
+    Name of circuit element switch that the Fuse controls. Specify the full object name. Defaults to the same as the Monitored element. This is the "controlled" element.
 
-    DSS property name: `SwitchedObj`, DSS property index: 3.
+    Name: `SwitchedObj`
     """
 
     def _get_SwitchedTerm(self) -> int:
@@ -146,7 +147,8 @@ class Fuse(DSSObj, CircuitElementMixin):
     """
     Number of the terminal of the controlled element in which the switch is controlled by the Fuse. 1 or 2, typically.  Default is 1.  Assumes all phases of the element have a fuse of this type.
 
-    DSS property name: `SwitchedTerm`, DSS property index: 4.
+    Name: `SwitchedTerm`
+    Default: 1
     """
 
     def _get_FuseCurve_str(self) -> str:
@@ -159,7 +161,8 @@ class Fuse(DSSObj, CircuitElementMixin):
     """
     Name of the TCC Curve object that determines the fuse blowing.  Must have been previously defined as a TCC_Curve object. Default is "Tlink". Multiplying the current values in the curve by the "RatedCurrent" value gives the actual current.
 
-    DSS property name: `FuseCurve`, DSS property index: 5.
+    Name: `FuseCurve`
+    Default: tlink
     """
 
     def _get_FuseCurve(self) -> TCC_Curve:
@@ -176,7 +179,8 @@ class Fuse(DSSObj, CircuitElementMixin):
     """
     Name of the TCC Curve object that determines the fuse blowing.  Must have been previously defined as a TCC_Curve object. Default is "Tlink". Multiplying the current values in the curve by the "RatedCurrent" value gives the actual current.
 
-    DSS property name: `FuseCurve`, DSS property index: 5.
+    Name: `FuseCurve`
+    Default: tlink
     """
 
     def _get_RatedCurrent(self) -> float:
@@ -187,9 +191,10 @@ class Fuse(DSSObj, CircuitElementMixin):
 
     RatedCurrent = property(_get_RatedCurrent, _set_RatedCurrent) # type: float
     """
-    Multiplier or actual phase amps for the phase TCC curve.  Defaults to 1.0.
+    Multiplier or actual phase amps for the phase TCC curve.
 
-    DSS property name: `RatedCurrent`, DSS property index: 6.
+    Name: `RatedCurrent`
+    Default: 1.0
     """
 
     def _get_Delay(self) -> float:
@@ -200,16 +205,20 @@ class Fuse(DSSObj, CircuitElementMixin):
 
     Delay = property(_get_Delay, _set_Delay) # type: float
     """
-    Fixed delay time (sec) added to Fuse blowing time determined from the TCC curve. Default is 0.0. Used to represent fuse clearing time or any other delay.
+    Fixed delay time added to Fuse blowing time determined from the TCC curve. Used to represent fuse clearing time or any other delay.
 
-    DSS property name: `Delay`, DSS property index: 7.
+    Name: `Delay`
+    Units: s
+    Default: 0.0
     """
 
     def Action(self, value: Union[AnyStr, int, enums.FuseAction], flags: enums.SetterFlags = 0):
         """
         DEPRECATED. See "State" property.
 
-        DSS property name: `Action`, DSS property index: 8.
+        **Deprecated:** Use "State" property instead.
+
+        Name: `Action`
         """
         if isinstance(value, int):
             self._lib.Obj_SetInt32(self._ptr, 8, value, flags)
@@ -238,7 +247,7 @@ class Fuse(DSSObj, CircuitElementMixin):
     """
     ARRAY of strings {Open | Closed} representing the Normal state of the fuse in each phase of the controlled element. The fuse reverts to this state for reset, change of mode, etc. Defaults to "State" if not specifically declared.
 
-    DSS property name: `Normal`, DSS property index: 9.
+    Name: `Normal`
     """
 
     def _get_Normal_str(self) -> List[str]:
@@ -251,7 +260,7 @@ class Fuse(DSSObj, CircuitElementMixin):
     """
     ARRAY of strings {Open | Closed} representing the Normal state of the fuse in each phase of the controlled element. The fuse reverts to this state for reset, change of mode, etc. Defaults to "State" if not specifically declared.
 
-    DSS property name: `Normal`, DSS property index: 9.
+    Name: `Normal`
     """
 
     def _get_State(self) -> List[enums.FuseState]:
@@ -267,7 +276,8 @@ class Fuse(DSSObj, CircuitElementMixin):
     """
     ARRAY of strings {Open | Closed} representing the Actual state of the fuse in each phase of the controlled element. Upon setting, immediately forces state of fuse(s). Simulates manual control on Fuse. Defaults to Closed for all phases.
 
-    DSS property name: `State`, DSS property index: 10.
+    Name: `State`
+    Default: ['closed', 'closed', 'closed']
     """
 
     def _get_State_str(self) -> List[str]:
@@ -280,7 +290,8 @@ class Fuse(DSSObj, CircuitElementMixin):
     """
     ARRAY of strings {Open | Closed} representing the Actual state of the fuse in each phase of the controlled element. Upon setting, immediately forces state of fuse(s). Simulates manual control on Fuse. Defaults to Closed for all phases.
 
-    DSS property name: `State`, DSS property index: 10.
+    Name: `State`
+    Default: ['closed', 'closed', 'closed']
     """
 
     def _get_BaseFreq(self) -> float:
@@ -293,7 +304,8 @@ class Fuse(DSSObj, CircuitElementMixin):
     """
     Base Frequency for ratings.
 
-    DSS property name: `BaseFreq`, DSS property index: 11.
+    Name: `BaseFreq`
+    Units: Hz
     """
 
     def _get_Enabled(self) -> bool:
@@ -304,9 +316,10 @@ class Fuse(DSSObj, CircuitElementMixin):
 
     Enabled = property(_get_Enabled, _set_Enabled) # type: bool
     """
-    {Yes|No or True|False} Indicates whether this element is enabled.
+    Indicates whether this element is enabled.
 
-    DSS property name: `Enabled`, DSS property index: 12.
+    Name: `Enabled`
+    Default: True
     """
 
     def Like(self, value: AnyStr):
@@ -315,7 +328,9 @@ class Fuse(DSSObj, CircuitElementMixin):
 
         New Capacitor.C2 like=c1  ...
 
-        DSS property name: `Like`, DSS property index: 13.
+        **Deprecated:** `Like` has been deprecated since at least 2021, see https://sourceforge.net/p/electricdss/discussion/861977/thread/8b59d21eb6/#b57c/f668
+
+        Name: `Like`
         """
         self._set_string_o(13, value)
 
@@ -338,7 +353,7 @@ class FuseProperties(TypedDict):
 class FuseBatch(DSSBatch, CircuitElementBatchMixin):
     _cls_name = 'Fuse'
     _obj_cls = Fuse
-    _cls_idx = 33
+    _cls_idx = 34
     __slots__ = []
 
     def __init__(self, api_util, **kwargs):
@@ -376,7 +391,7 @@ class FuseBatch(DSSBatch, CircuitElementBatchMixin):
     """
     Full object name of the circuit element, typically a line, transformer, load, or generator, to which the Fuse is connected. This is the "monitored" element. There is no default; must be specified.
 
-    DSS property name: `MonitoredObj`, DSS property index: 1.
+    Name: `MonitoredObj`
     """
 
     def _get_MonitoredObj(self) -> List[DSSObj]:
@@ -389,7 +404,7 @@ class FuseBatch(DSSBatch, CircuitElementBatchMixin):
     """
     Full object name of the circuit element, typically a line, transformer, load, or generator, to which the Fuse is connected. This is the "monitored" element. There is no default; must be specified.
 
-    DSS property name: `MonitoredObj`, DSS property index: 1.
+    Name: `MonitoredObj`
     """
 
     def _get_MonitoredTerm(self) -> BatchInt32ArrayProxy:
@@ -400,9 +415,10 @@ class FuseBatch(DSSBatch, CircuitElementBatchMixin):
 
     MonitoredTerm = property(_get_MonitoredTerm, _set_MonitoredTerm) # type: BatchInt32ArrayProxy
     """
-    Number of the terminal of the circuit element to which the Fuse is connected. 1 or 2, typically.  Default is 1.
+    Number of the terminal of the circuit element to which the Fuse is connected. 1 or 2, typically.
 
-    DSS property name: `MonitoredTerm`, DSS property index: 2.
+    Name: `MonitoredTerm`
+    Default: 1
     """
 
     def _get_SwitchedObj_str(self) -> List[str]:
@@ -413,9 +429,9 @@ class FuseBatch(DSSBatch, CircuitElementBatchMixin):
 
     SwitchedObj_str = property(_get_SwitchedObj_str, _set_SwitchedObj_str) # type: List[str]
     """
-    Name of circuit element switch that the Fuse controls. Specify the full object name.Defaults to the same as the Monitored element. This is the "controlled" element.
+    Name of circuit element switch that the Fuse controls. Specify the full object name. Defaults to the same as the Monitored element. This is the "controlled" element.
 
-    DSS property name: `SwitchedObj`, DSS property index: 3.
+    Name: `SwitchedObj`
     """
 
     def _get_SwitchedObj(self) -> List[DSSObj]:
@@ -426,9 +442,9 @@ class FuseBatch(DSSBatch, CircuitElementBatchMixin):
 
     SwitchedObj = property(_get_SwitchedObj, _set_SwitchedObj) # type: List[DSSObj]
     """
-    Name of circuit element switch that the Fuse controls. Specify the full object name.Defaults to the same as the Monitored element. This is the "controlled" element.
+    Name of circuit element switch that the Fuse controls. Specify the full object name. Defaults to the same as the Monitored element. This is the "controlled" element.
 
-    DSS property name: `SwitchedObj`, DSS property index: 3.
+    Name: `SwitchedObj`
     """
 
     def _get_SwitchedTerm(self) -> BatchInt32ArrayProxy:
@@ -441,7 +457,8 @@ class FuseBatch(DSSBatch, CircuitElementBatchMixin):
     """
     Number of the terminal of the controlled element in which the switch is controlled by the Fuse. 1 or 2, typically.  Default is 1.  Assumes all phases of the element have a fuse of this type.
 
-    DSS property name: `SwitchedTerm`, DSS property index: 4.
+    Name: `SwitchedTerm`
+    Default: 1
     """
 
     def _get_FuseCurve_str(self) -> List[str]:
@@ -454,7 +471,8 @@ class FuseBatch(DSSBatch, CircuitElementBatchMixin):
     """
     Name of the TCC Curve object that determines the fuse blowing.  Must have been previously defined as a TCC_Curve object. Default is "Tlink". Multiplying the current values in the curve by the "RatedCurrent" value gives the actual current.
 
-    DSS property name: `FuseCurve`, DSS property index: 5.
+    Name: `FuseCurve`
+    Default: tlink
     """
 
     def _get_FuseCurve(self) -> List[TCC_Curve]:
@@ -467,7 +485,8 @@ class FuseBatch(DSSBatch, CircuitElementBatchMixin):
     """
     Name of the TCC Curve object that determines the fuse blowing.  Must have been previously defined as a TCC_Curve object. Default is "Tlink". Multiplying the current values in the curve by the "RatedCurrent" value gives the actual current.
 
-    DSS property name: `FuseCurve`, DSS property index: 5.
+    Name: `FuseCurve`
+    Default: tlink
     """
 
     def _get_RatedCurrent(self) -> BatchFloat64ArrayProxy:
@@ -478,9 +497,10 @@ class FuseBatch(DSSBatch, CircuitElementBatchMixin):
 
     RatedCurrent = property(_get_RatedCurrent, _set_RatedCurrent) # type: BatchFloat64ArrayProxy
     """
-    Multiplier or actual phase amps for the phase TCC curve.  Defaults to 1.0.
+    Multiplier or actual phase amps for the phase TCC curve.
 
-    DSS property name: `RatedCurrent`, DSS property index: 6.
+    Name: `RatedCurrent`
+    Default: 1.0
     """
 
     def _get_Delay(self) -> BatchFloat64ArrayProxy:
@@ -491,16 +511,20 @@ class FuseBatch(DSSBatch, CircuitElementBatchMixin):
 
     Delay = property(_get_Delay, _set_Delay) # type: BatchFloat64ArrayProxy
     """
-    Fixed delay time (sec) added to Fuse blowing time determined from the TCC curve. Default is 0.0. Used to represent fuse clearing time or any other delay.
+    Fixed delay time added to Fuse blowing time determined from the TCC curve. Used to represent fuse clearing time or any other delay.
 
-    DSS property name: `Delay`, DSS property index: 7.
+    Name: `Delay`
+    Units: s
+    Default: 0.0
     """
 
     def Action(self, value: Union[AnyStr, int, enums.FuseAction], flags: enums.SetterFlags = 0):
         """
         DEPRECATED. See "State" property.
 
-        DSS property name: `Action`, DSS property index: 8.
+        **Deprecated:** Use "State" property instead.
+
+        Name: `Action`
         """
         if isinstance(value, (bytes, str)) or (isinstance(value, LIST_LIKE) and len(value) > 0 and isinstance(value[0], (bytes, str))):
             self._set_batch_string(8, value, flags)
@@ -536,7 +560,7 @@ class FuseBatch(DSSBatch, CircuitElementBatchMixin):
     """
     ARRAY of strings {Open | Closed} representing the Normal state of the fuse in each phase of the controlled element. The fuse reverts to this state for reset, change of mode, etc. Defaults to "State" if not specifically declared.
 
-    DSS property name: `Normal`, DSS property index: 9.
+    Name: `Normal`
     """
 
     def _get_Normal_str(self) -> List[List[str]]:
@@ -549,7 +573,7 @@ class FuseBatch(DSSBatch, CircuitElementBatchMixin):
     """
     ARRAY of strings {Open | Closed} representing the Normal state of the fuse in each phase of the controlled element. The fuse reverts to this state for reset, change of mode, etc. Defaults to "State" if not specifically declared.
 
-    DSS property name: `Normal`, DSS property index: 9.
+    Name: `Normal`
     """
 
     def _get_State(self) -> List[Int32Array]:
@@ -573,7 +597,8 @@ class FuseBatch(DSSBatch, CircuitElementBatchMixin):
     """
     ARRAY of strings {Open | Closed} representing the Actual state of the fuse in each phase of the controlled element. Upon setting, immediately forces state of fuse(s). Simulates manual control on Fuse. Defaults to Closed for all phases.
 
-    DSS property name: `State`, DSS property index: 10.
+    Name: `State`
+    Default: ['closed', 'closed', 'closed']
     """
 
     def _get_State_str(self) -> List[List[str]]:
@@ -586,7 +611,8 @@ class FuseBatch(DSSBatch, CircuitElementBatchMixin):
     """
     ARRAY of strings {Open | Closed} representing the Actual state of the fuse in each phase of the controlled element. Upon setting, immediately forces state of fuse(s). Simulates manual control on Fuse. Defaults to Closed for all phases.
 
-    DSS property name: `State`, DSS property index: 10.
+    Name: `State`
+    Default: ['closed', 'closed', 'closed']
     """
 
     def _get_BaseFreq(self) -> BatchFloat64ArrayProxy:
@@ -599,7 +625,8 @@ class FuseBatch(DSSBatch, CircuitElementBatchMixin):
     """
     Base Frequency for ratings.
 
-    DSS property name: `BaseFreq`, DSS property index: 11.
+    Name: `BaseFreq`
+    Units: Hz
     """
 
     def _get_Enabled(self) -> List[bool]:
@@ -612,9 +639,10 @@ class FuseBatch(DSSBatch, CircuitElementBatchMixin):
 
     Enabled = property(_get_Enabled, _set_Enabled) # type: List[bool]
     """
-    {Yes|No or True|False} Indicates whether this element is enabled.
+    Indicates whether this element is enabled.
 
-    DSS property name: `Enabled`, DSS property index: 12.
+    Name: `Enabled`
+    Default: True
     """
 
     def Like(self, value: AnyStr, flags: enums.SetterFlags = 0):
@@ -623,7 +651,9 @@ class FuseBatch(DSSBatch, CircuitElementBatchMixin):
 
         New Capacitor.C2 like=c1  ...
 
-        DSS property name: `Like`, DSS property index: 13.
+        **Deprecated:** `Like` has been deprecated since at least 2021, see https://sourceforge.net/p/electricdss/discussion/861977/thread/8b59d21eb6/#b57c/f668
+
+        Name: `Like`
         """
         self._set_batch_string(13, value, flags)
 

@@ -13,7 +13,7 @@ from .CircuitElement import CircuitElementBatchMixin, CircuitElementMixin
 class UPFCControl(DSSObj, CircuitElementMixin):
     __slots__ = DSSObj._extra_slots + CircuitElementMixin._extra_slots
     _cls_name = 'UPFCControl'
-    _cls_idx = 37
+    _cls_idx = 38
     _cls_int_idx = {
         3,
     }
@@ -60,7 +60,7 @@ class UPFCControl(DSSObj, CircuitElementMixin):
     """
     The list of all the UPFC devices to be controlled by this controller, If left empty, this control will apply for all UPFCs in the model.
 
-    DSS property name: `UPFCList`, DSS property index: 1.
+    Name: `UPFCList`
     """
 
     def _get_BaseFreq(self) -> float:
@@ -73,7 +73,8 @@ class UPFCControl(DSSObj, CircuitElementMixin):
     """
     Base Frequency for ratings.
 
-    DSS property name: `BaseFreq`, DSS property index: 2.
+    Name: `BaseFreq`
+    Units: Hz
     """
 
     def _get_Enabled(self) -> bool:
@@ -84,9 +85,10 @@ class UPFCControl(DSSObj, CircuitElementMixin):
 
     Enabled = property(_get_Enabled, _set_Enabled) # type: bool
     """
-    {Yes|No or True|False} Indicates whether this element is enabled.
+    Indicates whether this element is enabled.
 
-    DSS property name: `Enabled`, DSS property index: 3.
+    Name: `Enabled`
+    Default: True
     """
 
     def Like(self, value: AnyStr):
@@ -95,7 +97,9 @@ class UPFCControl(DSSObj, CircuitElementMixin):
 
         New Capacitor.C2 like=c1  ...
 
-        DSS property name: `Like`, DSS property index: 4.
+        **Deprecated:** `Like` has been deprecated since at least 2021, see https://sourceforge.net/p/electricdss/discussion/861977/thread/8b59d21eb6/#b57c/f668
+
+        Name: `Like`
         """
         self._set_string_o(4, value)
 
@@ -109,7 +113,7 @@ class UPFCControlProperties(TypedDict):
 class UPFCControlBatch(DSSBatch, CircuitElementBatchMixin):
     _cls_name = 'UPFCControl'
     _obj_cls = UPFCControl
-    _cls_idx = 37
+    _cls_idx = 38
     __slots__ = []
 
     def __init__(self, api_util, **kwargs):
@@ -151,7 +155,7 @@ class UPFCControlBatch(DSSBatch, CircuitElementBatchMixin):
     """
     The list of all the UPFC devices to be controlled by this controller, If left empty, this control will apply for all UPFCs in the model.
 
-    DSS property name: `UPFCList`, DSS property index: 1.
+    Name: `UPFCList`
     """
 
     def _get_BaseFreq(self) -> BatchFloat64ArrayProxy:
@@ -164,7 +168,8 @@ class UPFCControlBatch(DSSBatch, CircuitElementBatchMixin):
     """
     Base Frequency for ratings.
 
-    DSS property name: `BaseFreq`, DSS property index: 2.
+    Name: `BaseFreq`
+    Units: Hz
     """
 
     def _get_Enabled(self) -> List[bool]:
@@ -177,9 +182,10 @@ class UPFCControlBatch(DSSBatch, CircuitElementBatchMixin):
 
     Enabled = property(_get_Enabled, _set_Enabled) # type: List[bool]
     """
-    {Yes|No or True|False} Indicates whether this element is enabled.
+    Indicates whether this element is enabled.
 
-    DSS property name: `Enabled`, DSS property index: 3.
+    Name: `Enabled`
+    Default: True
     """
 
     def Like(self, value: AnyStr, flags: enums.SetterFlags = 0):
@@ -188,7 +194,9 @@ class UPFCControlBatch(DSSBatch, CircuitElementBatchMixin):
 
         New Capacitor.C2 like=c1  ...
 
-        DSS property name: `Like`, DSS property index: 4.
+        **Deprecated:** `Like` has been deprecated since at least 2021, see https://sourceforge.net/p/electricdss/discussion/861977/thread/8b59d21eb6/#b57c/f668
+
+        Name: `Like`
         """
         self._set_batch_string(4, value, flags)
 

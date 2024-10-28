@@ -17,7 +17,7 @@ from .Spectrum import Spectrum as SpectrumObj
 class IndMach012(DSSObj, CircuitElementMixin, PCElementMixin):
     __slots__ = DSSObj._extra_slots + CircuitElementMixin._extra_slots + PCElementMixin._extra_slots
     _cls_name = 'IndMach012'
-    _cls_idx = 39
+    _cls_idx = 40
     _cls_int_idx = {
         1,
         6,
@@ -101,7 +101,8 @@ class IndMach012(DSSObj, CircuitElementMixin, PCElementMixin):
     """
     Number of Phases, this Induction Machine.  
 
-    DSS property name: `Phases`, DSS property index: 1.
+    Name: `Phases`
+    Default: 3
     """
 
     def _get_Bus1(self) -> str:
@@ -114,7 +115,7 @@ class IndMach012(DSSObj, CircuitElementMixin, PCElementMixin):
     """
     Bus to which the Induction Machine is connected.  May include specific node specification.
 
-    DSS property name: `Bus1`, DSS property index: 2.
+    Name: `Bus1`
     """
 
     def _get_kV(self) -> float:
@@ -127,7 +128,9 @@ class IndMach012(DSSObj, CircuitElementMixin, PCElementMixin):
     """
     Nominal rated (1.0 per unit) voltage, kV. For 2- and 3-phase machines, specify phase-phase kV. Otherwise, specify actual kV across each branch of the machine. If wye (star), specify phase-neutral kV. If delta or phase-phase connected, specify phase-phase kV.
 
-    DSS property name: `kV`, DSS property index: 3.
+    Name: `kV`
+    Units: kV
+    Default: 12.47
     """
 
     def _get_kW(self) -> float:
@@ -141,7 +144,8 @@ class IndMach012(DSSObj, CircuitElementMixin, PCElementMixin):
     Shaft Power, kW, for the Induction Machine.  A positive value denotes power for a load. 
     Negative value denotes an induction generator. 
 
-    DSS property name: `kW`, DSS property index: 4.
+    Name: `kW`
+    Default: 1000.0
     """
 
     def _get_PF(self) -> float:
@@ -152,9 +156,11 @@ class IndMach012(DSSObj, CircuitElementMixin, PCElementMixin):
 
     PF = property(_get_PF, _set_PF) # type: float
     """
-    [Read Only] Present power factor for the machine. 
+    Present power factor for the machine. 
 
-    DSS property name: `PF`, DSS property index: 5.
+    **Read-only**
+
+    Name: `PF`
     """
 
     def _get_Conn(self) -> enums.Connection:
@@ -170,7 +176,8 @@ class IndMach012(DSSObj, CircuitElementMixin, PCElementMixin):
     """
     Connection of stator: Delta or Wye. Default is Delta.
 
-    DSS property name: `Conn`, DSS property index: 6.
+    Name: `Conn`
+    Default: Delta
     """
 
     def _get_Conn_str(self) -> str:
@@ -183,7 +190,8 @@ class IndMach012(DSSObj, CircuitElementMixin, PCElementMixin):
     """
     Connection of stator: Delta or Wye. Default is Delta.
 
-    DSS property name: `Conn`, DSS property index: 6.
+    Name: `Conn`
+    Default: Delta
     """
 
     def _get_kVA(self) -> float:
@@ -196,7 +204,8 @@ class IndMach012(DSSObj, CircuitElementMixin, PCElementMixin):
     """
     Rated kVA for the machine.
 
-    DSS property name: `kVA`, DSS property index: 7.
+    Name: `kVA`
+    Default: 1200.0
     """
 
     def _get_H(self) -> float:
@@ -207,9 +216,10 @@ class IndMach012(DSSObj, CircuitElementMixin, PCElementMixin):
 
     H = property(_get_H, _set_H) # type: float
     """
-    Per unit mass constant of the machine.  MW-sec/MVA.  Default is 1.0.
+    Per unit mass constant of the machine.  MW-sec/MVA.
 
-    DSS property name: `H`, DSS property index: 8.
+    Name: `H`
+    Default: 1.0
     """
 
     def _get_D(self) -> float:
@@ -220,9 +230,10 @@ class IndMach012(DSSObj, CircuitElementMixin, PCElementMixin):
 
     D = property(_get_D, _set_D) # type: float
     """
-    Damping constant.  Usual range is 0 to 4. Default is 1.0.  Adjust to get damping in Dynamics mode,
+    Damping constant. Usual range is 0 to 4. Adjust to get damping in Dynamics mode,
 
-    DSS property name: `D`, DSS property index: 9.
+    Name: `D`
+    Default: 1.0
     """
 
     def _get_puRs(self) -> float:
@@ -233,9 +244,10 @@ class IndMach012(DSSObj, CircuitElementMixin, PCElementMixin):
 
     puRs = property(_get_puRs, _set_puRs) # type: float
     """
-    Per unit stator resistance. Default is 0.0053.
+    Per unit stator resistance.
 
-    DSS property name: `puRs`, DSS property index: 10.
+    Name: `puRs`
+    Default: 0.0053
     """
 
     def _get_puXs(self) -> float:
@@ -246,9 +258,10 @@ class IndMach012(DSSObj, CircuitElementMixin, PCElementMixin):
 
     puXs = property(_get_puXs, _set_puXs) # type: float
     """
-    Per unit stator leakage reactance. Default is 0.106.
+    Per unit stator leakage reactance.
 
-    DSS property name: `puXs`, DSS property index: 11.
+    Name: `puXs`
+    Default: 0.106
     """
 
     def _get_puRr(self) -> float:
@@ -259,9 +272,10 @@ class IndMach012(DSSObj, CircuitElementMixin, PCElementMixin):
 
     puRr = property(_get_puRr, _set_puRr) # type: float
     """
-    Per unit rotor  resistance. Default is 0.007.
+    Per unit rotor  resistance.
 
-    DSS property name: `puRr`, DSS property index: 12.
+    Name: `puRr`
+    Default: 0.007
     """
 
     def _get_puXr(self) -> float:
@@ -272,9 +286,10 @@ class IndMach012(DSSObj, CircuitElementMixin, PCElementMixin):
 
     puXr = property(_get_puXr, _set_puXr) # type: float
     """
-    Per unit rotor leakage reactance. Default is 0.12.
+    Per unit rotor leakage reactance.
 
-    DSS property name: `puXr`, DSS property index: 13.
+    Name: `puXr`
+    Default: 0.12
     """
 
     def _get_puXm(self) -> float:
@@ -285,9 +300,10 @@ class IndMach012(DSSObj, CircuitElementMixin, PCElementMixin):
 
     puXm = property(_get_puXm, _set_puXm) # type: float
     """
-    Per unit magnetizing reactance.Default is 4.0.
+    Per unit magnetizing reactance.
 
-    DSS property name: `puXm`, DSS property index: 14.
+    Name: `puXm`
+    Default: 4.0
     """
 
     def _get_Slip(self) -> float:
@@ -298,9 +314,10 @@ class IndMach012(DSSObj, CircuitElementMixin, PCElementMixin):
 
     Slip = property(_get_Slip, _set_Slip) # type: float
     """
-    Initial slip value. Default is 0.007
+    Initial slip value.
 
-    DSS property name: `Slip`, DSS property index: 15.
+    Name: `Slip`
+    Default: 0.007
     """
 
     def _get_MaxSlip(self) -> float:
@@ -311,9 +328,10 @@ class IndMach012(DSSObj, CircuitElementMixin, PCElementMixin):
 
     MaxSlip = property(_get_MaxSlip, _set_MaxSlip) # type: float
     """
-    Max slip value to allow. Default is 0.1. Set this before setting slip.
+    Max slip value to allow. Set this before setting slip.
 
-    DSS property name: `MaxSlip`, DSS property index: 16.
+    Name: `MaxSlip`
+    Default: 0.1
     """
 
     def _get_SlipOption(self) -> enums.IndMach012SlipOption:
@@ -327,9 +345,10 @@ class IndMach012(DSSObj, CircuitElementMixin, PCElementMixin):
 
     SlipOption = property(_get_SlipOption, _set_SlipOption) # type: enums.IndMach012SlipOption
     """
-    Option for slip model. One of {fixedslip | variableslip*  }
+    Option for slip model.
 
-    DSS property name: `SlipOption`, DSS property index: 17.
+    Name: `SlipOption`
+    Default: VariableSlip
     """
 
     def _get_SlipOption_str(self) -> str:
@@ -340,9 +359,10 @@ class IndMach012(DSSObj, CircuitElementMixin, PCElementMixin):
 
     SlipOption_str = property(_get_SlipOption_str, _set_SlipOption_str) # type: str
     """
-    Option for slip model. One of {fixedslip | variableslip*  }
+    Option for slip model.
 
-    DSS property name: `SlipOption`, DSS property index: 17.
+    Name: `SlipOption`
+    Default: VariableSlip
     """
 
     def _get_Yearly_str(self) -> str:
@@ -355,7 +375,7 @@ class IndMach012(DSSObj, CircuitElementMixin, PCElementMixin):
     """
     LOADSHAPE object to use for yearly simulations.  Must be previously defined as a Loadshape object. Is set to the Daily load shape  when Daily is defined.  The daily load shape is repeated in this case. Set Status=Fixed to ignore Loadshape designation. Set to NONE to reset to no loadshape. The default is no variation.
 
-    DSS property name: `Yearly`, DSS property index: 18.
+    Name: `Yearly`
     """
 
     def _get_Yearly(self) -> LoadShape:
@@ -372,7 +392,7 @@ class IndMach012(DSSObj, CircuitElementMixin, PCElementMixin):
     """
     LOADSHAPE object to use for yearly simulations.  Must be previously defined as a Loadshape object. Is set to the Daily load shape  when Daily is defined.  The daily load shape is repeated in this case. Set Status=Fixed to ignore Loadshape designation. Set to NONE to reset to no loadshape. The default is no variation.
 
-    DSS property name: `Yearly`, DSS property index: 18.
+    Name: `Yearly`
     """
 
     def _get_Daily_str(self) -> str:
@@ -385,7 +405,7 @@ class IndMach012(DSSObj, CircuitElementMixin, PCElementMixin):
     """
     LOADSHAPE object to use for daily simulations.  Must be previously defined as a Loadshape object of 24 hrs, typically. Set Status=Fixed to ignore Loadshape designation. Set to NONE to reset to no loadshape. Default is no variation (constant) if not defined. Side effect: Sets Yearly load shape if not already defined.
 
-    DSS property name: `Daily`, DSS property index: 19.
+    Name: `Daily`
     """
 
     def _get_Daily(self) -> LoadShape:
@@ -402,7 +422,7 @@ class IndMach012(DSSObj, CircuitElementMixin, PCElementMixin):
     """
     LOADSHAPE object to use for daily simulations.  Must be previously defined as a Loadshape object of 24 hrs, typically. Set Status=Fixed to ignore Loadshape designation. Set to NONE to reset to no loadshape. Default is no variation (constant) if not defined. Side effect: Sets Yearly load shape if not already defined.
 
-    DSS property name: `Daily`, DSS property index: 19.
+    Name: `Daily`
     """
 
     def _get_Duty_str(self) -> str:
@@ -415,7 +435,7 @@ class IndMach012(DSSObj, CircuitElementMixin, PCElementMixin):
     """
     LOADSHAPE object to use for duty cycle simulations.  Must be previously defined as a Loadshape object.  Typically would have time intervals less than 1 hr. Designate the number of points to solve using the Set Number=xxxx command. If there are fewer points in the actual shape, the shape is assumed to repeat.Set to NONE to reset to no loadshape. Set Status=Fixed to ignore Loadshape designation.  Defaults to Daily curve If not specified.
 
-    DSS property name: `Duty`, DSS property index: 20.
+    Name: `Duty`
     """
 
     def _get_Duty(self) -> LoadShape:
@@ -432,7 +452,7 @@ class IndMach012(DSSObj, CircuitElementMixin, PCElementMixin):
     """
     LOADSHAPE object to use for duty cycle simulations.  Must be previously defined as a Loadshape object.  Typically would have time intervals less than 1 hr. Designate the number of points to solve using the Set Number=xxxx command. If there are fewer points in the actual shape, the shape is assumed to repeat.Set to NONE to reset to no loadshape. Set Status=Fixed to ignore Loadshape designation.  Defaults to Daily curve If not specified.
 
-    DSS property name: `Duty`, DSS property index: 20.
+    Name: `Duty`
     """
 
     def _get_DebugTrace(self) -> bool:
@@ -443,9 +463,10 @@ class IndMach012(DSSObj, CircuitElementMixin, PCElementMixin):
 
     DebugTrace = property(_get_DebugTrace, _set_DebugTrace) # type: bool
     """
-    [Yes | No*] Write DebugTrace file.
+    Write DebugTrace file.
 
-    DSS property name: `DebugTrace`, DSS property index: 21.
+    Name: `DebugTrace`
+    Default: False
     """
 
     def _get_Spectrum_str(self) -> str:
@@ -456,9 +477,10 @@ class IndMach012(DSSObj, CircuitElementMixin, PCElementMixin):
 
     Spectrum_str = property(_get_Spectrum_str, _set_Spectrum_str) # type: str
     """
-    Name of harmonic voltage or current spectrum for this IndMach012. Voltage behind Xd" for machine - default. Current injection for inverter. Default value is "default", which is defined when the DSS starts.
+    Name of harmonic voltage or current spectrum for this IndMach012. Voltage behind Xd" for machine - default.
 
-    DSS property name: `Spectrum`, DSS property index: 22.
+    Name: `Spectrum`
+    Default: default
     """
 
     def _get_Spectrum(self) -> SpectrumObj:
@@ -473,9 +495,10 @@ class IndMach012(DSSObj, CircuitElementMixin, PCElementMixin):
 
     Spectrum = property(_get_Spectrum, _set_Spectrum) # type: SpectrumObj
     """
-    Name of harmonic voltage or current spectrum for this IndMach012. Voltage behind Xd" for machine - default. Current injection for inverter. Default value is "default", which is defined when the DSS starts.
+    Name of harmonic voltage or current spectrum for this IndMach012. Voltage behind Xd" for machine - default.
 
-    DSS property name: `Spectrum`, DSS property index: 22.
+    Name: `Spectrum`
+    Default: default
     """
 
     def _get_BaseFreq(self) -> float:
@@ -488,7 +511,8 @@ class IndMach012(DSSObj, CircuitElementMixin, PCElementMixin):
     """
     Base Frequency for ratings.
 
-    DSS property name: `BaseFreq`, DSS property index: 23.
+    Name: `BaseFreq`
+    Units: Hz
     """
 
     def _get_Enabled(self) -> bool:
@@ -499,9 +523,10 @@ class IndMach012(DSSObj, CircuitElementMixin, PCElementMixin):
 
     Enabled = property(_get_Enabled, _set_Enabled) # type: bool
     """
-    {Yes|No or True|False} Indicates whether this element is enabled.
+    Indicates whether this element is enabled.
 
-    DSS property name: `Enabled`, DSS property index: 24.
+    Name: `Enabled`
+    Default: True
     """
 
     def Like(self, value: AnyStr):
@@ -510,7 +535,9 @@ class IndMach012(DSSObj, CircuitElementMixin, PCElementMixin):
 
         New Capacitor.C2 like=c1  ...
 
-        DSS property name: `Like`, DSS property index: 25.
+        **Deprecated:** `Like` has been deprecated since at least 2021, see https://sourceforge.net/p/electricdss/discussion/861977/thread/8b59d21eb6/#b57c/f668
+
+        Name: `Like`
         """
         self._set_string_o(25, value)
 
@@ -545,7 +572,7 @@ class IndMach012Properties(TypedDict):
 class IndMach012Batch(DSSBatch, CircuitElementBatchMixin, PCElementBatchMixin):
     _cls_name = 'IndMach012'
     _obj_cls = IndMach012
-    _cls_idx = 39
+    _cls_idx = 40
     __slots__ = []
 
     def __init__(self, api_util, **kwargs):
@@ -584,7 +611,8 @@ class IndMach012Batch(DSSBatch, CircuitElementBatchMixin, PCElementBatchMixin):
     """
     Number of Phases, this Induction Machine.  
 
-    DSS property name: `Phases`, DSS property index: 1.
+    Name: `Phases`
+    Default: 3
     """
 
     def _get_Bus1(self) -> List[str]:
@@ -597,7 +625,7 @@ class IndMach012Batch(DSSBatch, CircuitElementBatchMixin, PCElementBatchMixin):
     """
     Bus to which the Induction Machine is connected.  May include specific node specification.
 
-    DSS property name: `Bus1`, DSS property index: 2.
+    Name: `Bus1`
     """
 
     def _get_kV(self) -> BatchFloat64ArrayProxy:
@@ -610,7 +638,9 @@ class IndMach012Batch(DSSBatch, CircuitElementBatchMixin, PCElementBatchMixin):
     """
     Nominal rated (1.0 per unit) voltage, kV. For 2- and 3-phase machines, specify phase-phase kV. Otherwise, specify actual kV across each branch of the machine. If wye (star), specify phase-neutral kV. If delta or phase-phase connected, specify phase-phase kV.
 
-    DSS property name: `kV`, DSS property index: 3.
+    Name: `kV`
+    Units: kV
+    Default: 12.47
     """
 
     def _get_kW(self) -> BatchFloat64ArrayProxy:
@@ -624,7 +654,8 @@ class IndMach012Batch(DSSBatch, CircuitElementBatchMixin, PCElementBatchMixin):
     Shaft Power, kW, for the Induction Machine.  A positive value denotes power for a load. 
     Negative value denotes an induction generator. 
 
-    DSS property name: `kW`, DSS property index: 4.
+    Name: `kW`
+    Default: 1000.0
     """
 
     def _get_PF(self) -> BatchFloat64ArrayProxy:
@@ -635,9 +666,11 @@ class IndMach012Batch(DSSBatch, CircuitElementBatchMixin, PCElementBatchMixin):
 
     PF = property(_get_PF, _set_PF) # type: BatchFloat64ArrayProxy
     """
-    [Read Only] Present power factor for the machine. 
+    Present power factor for the machine. 
 
-    DSS property name: `PF`, DSS property index: 5.
+    **Read-only**
+
+    Name: `PF`
     """
 
     def _get_Conn(self) -> BatchInt32ArrayProxy:
@@ -654,7 +687,8 @@ class IndMach012Batch(DSSBatch, CircuitElementBatchMixin, PCElementBatchMixin):
     """
     Connection of stator: Delta or Wye. Default is Delta.
 
-    DSS property name: `Conn`, DSS property index: 6.
+    Name: `Conn`
+    Default: Delta
     """
 
     def _get_Conn_str(self) -> List[str]:
@@ -667,7 +701,8 @@ class IndMach012Batch(DSSBatch, CircuitElementBatchMixin, PCElementBatchMixin):
     """
     Connection of stator: Delta or Wye. Default is Delta.
 
-    DSS property name: `Conn`, DSS property index: 6.
+    Name: `Conn`
+    Default: Delta
     """
 
     def _get_kVA(self) -> BatchFloat64ArrayProxy:
@@ -680,7 +715,8 @@ class IndMach012Batch(DSSBatch, CircuitElementBatchMixin, PCElementBatchMixin):
     """
     Rated kVA for the machine.
 
-    DSS property name: `kVA`, DSS property index: 7.
+    Name: `kVA`
+    Default: 1200.0
     """
 
     def _get_H(self) -> BatchFloat64ArrayProxy:
@@ -691,9 +727,10 @@ class IndMach012Batch(DSSBatch, CircuitElementBatchMixin, PCElementBatchMixin):
 
     H = property(_get_H, _set_H) # type: BatchFloat64ArrayProxy
     """
-    Per unit mass constant of the machine.  MW-sec/MVA.  Default is 1.0.
+    Per unit mass constant of the machine.  MW-sec/MVA.
 
-    DSS property name: `H`, DSS property index: 8.
+    Name: `H`
+    Default: 1.0
     """
 
     def _get_D(self) -> BatchFloat64ArrayProxy:
@@ -704,9 +741,10 @@ class IndMach012Batch(DSSBatch, CircuitElementBatchMixin, PCElementBatchMixin):
 
     D = property(_get_D, _set_D) # type: BatchFloat64ArrayProxy
     """
-    Damping constant.  Usual range is 0 to 4. Default is 1.0.  Adjust to get damping in Dynamics mode,
+    Damping constant. Usual range is 0 to 4. Adjust to get damping in Dynamics mode,
 
-    DSS property name: `D`, DSS property index: 9.
+    Name: `D`
+    Default: 1.0
     """
 
     def _get_puRs(self) -> BatchFloat64ArrayProxy:
@@ -717,9 +755,10 @@ class IndMach012Batch(DSSBatch, CircuitElementBatchMixin, PCElementBatchMixin):
 
     puRs = property(_get_puRs, _set_puRs) # type: BatchFloat64ArrayProxy
     """
-    Per unit stator resistance. Default is 0.0053.
+    Per unit stator resistance.
 
-    DSS property name: `puRs`, DSS property index: 10.
+    Name: `puRs`
+    Default: 0.0053
     """
 
     def _get_puXs(self) -> BatchFloat64ArrayProxy:
@@ -730,9 +769,10 @@ class IndMach012Batch(DSSBatch, CircuitElementBatchMixin, PCElementBatchMixin):
 
     puXs = property(_get_puXs, _set_puXs) # type: BatchFloat64ArrayProxy
     """
-    Per unit stator leakage reactance. Default is 0.106.
+    Per unit stator leakage reactance.
 
-    DSS property name: `puXs`, DSS property index: 11.
+    Name: `puXs`
+    Default: 0.106
     """
 
     def _get_puRr(self) -> BatchFloat64ArrayProxy:
@@ -743,9 +783,10 @@ class IndMach012Batch(DSSBatch, CircuitElementBatchMixin, PCElementBatchMixin):
 
     puRr = property(_get_puRr, _set_puRr) # type: BatchFloat64ArrayProxy
     """
-    Per unit rotor  resistance. Default is 0.007.
+    Per unit rotor  resistance.
 
-    DSS property name: `puRr`, DSS property index: 12.
+    Name: `puRr`
+    Default: 0.007
     """
 
     def _get_puXr(self) -> BatchFloat64ArrayProxy:
@@ -756,9 +797,10 @@ class IndMach012Batch(DSSBatch, CircuitElementBatchMixin, PCElementBatchMixin):
 
     puXr = property(_get_puXr, _set_puXr) # type: BatchFloat64ArrayProxy
     """
-    Per unit rotor leakage reactance. Default is 0.12.
+    Per unit rotor leakage reactance.
 
-    DSS property name: `puXr`, DSS property index: 13.
+    Name: `puXr`
+    Default: 0.12
     """
 
     def _get_puXm(self) -> BatchFloat64ArrayProxy:
@@ -769,9 +811,10 @@ class IndMach012Batch(DSSBatch, CircuitElementBatchMixin, PCElementBatchMixin):
 
     puXm = property(_get_puXm, _set_puXm) # type: BatchFloat64ArrayProxy
     """
-    Per unit magnetizing reactance.Default is 4.0.
+    Per unit magnetizing reactance.
 
-    DSS property name: `puXm`, DSS property index: 14.
+    Name: `puXm`
+    Default: 4.0
     """
 
     def _get_Slip(self) -> BatchFloat64ArrayProxy:
@@ -782,9 +825,10 @@ class IndMach012Batch(DSSBatch, CircuitElementBatchMixin, PCElementBatchMixin):
 
     Slip = property(_get_Slip, _set_Slip) # type: BatchFloat64ArrayProxy
     """
-    Initial slip value. Default is 0.007
+    Initial slip value.
 
-    DSS property name: `Slip`, DSS property index: 15.
+    Name: `Slip`
+    Default: 0.007
     """
 
     def _get_MaxSlip(self) -> BatchFloat64ArrayProxy:
@@ -795,9 +839,10 @@ class IndMach012Batch(DSSBatch, CircuitElementBatchMixin, PCElementBatchMixin):
 
     MaxSlip = property(_get_MaxSlip, _set_MaxSlip) # type: BatchFloat64ArrayProxy
     """
-    Max slip value to allow. Default is 0.1. Set this before setting slip.
+    Max slip value to allow. Set this before setting slip.
 
-    DSS property name: `MaxSlip`, DSS property index: 16.
+    Name: `MaxSlip`
+    Default: 0.1
     """
 
     def _get_SlipOption(self) -> BatchInt32ArrayProxy:
@@ -812,9 +857,10 @@ class IndMach012Batch(DSSBatch, CircuitElementBatchMixin, PCElementBatchMixin):
 
     SlipOption = property(_get_SlipOption, _set_SlipOption) # type: BatchInt32ArrayProxy
     """
-    Option for slip model. One of {fixedslip | variableslip*  }
+    Option for slip model.
 
-    DSS property name: `SlipOption`, DSS property index: 17.
+    Name: `SlipOption`
+    Default: VariableSlip
     """
 
     def _get_SlipOption_str(self) -> List[str]:
@@ -825,9 +871,10 @@ class IndMach012Batch(DSSBatch, CircuitElementBatchMixin, PCElementBatchMixin):
 
     SlipOption_str = property(_get_SlipOption_str, _set_SlipOption_str) # type: List[str]
     """
-    Option for slip model. One of {fixedslip | variableslip*  }
+    Option for slip model.
 
-    DSS property name: `SlipOption`, DSS property index: 17.
+    Name: `SlipOption`
+    Default: VariableSlip
     """
 
     def _get_Yearly_str(self) -> List[str]:
@@ -840,7 +887,7 @@ class IndMach012Batch(DSSBatch, CircuitElementBatchMixin, PCElementBatchMixin):
     """
     LOADSHAPE object to use for yearly simulations.  Must be previously defined as a Loadshape object. Is set to the Daily load shape  when Daily is defined.  The daily load shape is repeated in this case. Set Status=Fixed to ignore Loadshape designation. Set to NONE to reset to no loadshape. The default is no variation.
 
-    DSS property name: `Yearly`, DSS property index: 18.
+    Name: `Yearly`
     """
 
     def _get_Yearly(self) -> List[LoadShape]:
@@ -853,7 +900,7 @@ class IndMach012Batch(DSSBatch, CircuitElementBatchMixin, PCElementBatchMixin):
     """
     LOADSHAPE object to use for yearly simulations.  Must be previously defined as a Loadshape object. Is set to the Daily load shape  when Daily is defined.  The daily load shape is repeated in this case. Set Status=Fixed to ignore Loadshape designation. Set to NONE to reset to no loadshape. The default is no variation.
 
-    DSS property name: `Yearly`, DSS property index: 18.
+    Name: `Yearly`
     """
 
     def _get_Daily_str(self) -> List[str]:
@@ -866,7 +913,7 @@ class IndMach012Batch(DSSBatch, CircuitElementBatchMixin, PCElementBatchMixin):
     """
     LOADSHAPE object to use for daily simulations.  Must be previously defined as a Loadshape object of 24 hrs, typically. Set Status=Fixed to ignore Loadshape designation. Set to NONE to reset to no loadshape. Default is no variation (constant) if not defined. Side effect: Sets Yearly load shape if not already defined.
 
-    DSS property name: `Daily`, DSS property index: 19.
+    Name: `Daily`
     """
 
     def _get_Daily(self) -> List[LoadShape]:
@@ -879,7 +926,7 @@ class IndMach012Batch(DSSBatch, CircuitElementBatchMixin, PCElementBatchMixin):
     """
     LOADSHAPE object to use for daily simulations.  Must be previously defined as a Loadshape object of 24 hrs, typically. Set Status=Fixed to ignore Loadshape designation. Set to NONE to reset to no loadshape. Default is no variation (constant) if not defined. Side effect: Sets Yearly load shape if not already defined.
 
-    DSS property name: `Daily`, DSS property index: 19.
+    Name: `Daily`
     """
 
     def _get_Duty_str(self) -> List[str]:
@@ -892,7 +939,7 @@ class IndMach012Batch(DSSBatch, CircuitElementBatchMixin, PCElementBatchMixin):
     """
     LOADSHAPE object to use for duty cycle simulations.  Must be previously defined as a Loadshape object.  Typically would have time intervals less than 1 hr. Designate the number of points to solve using the Set Number=xxxx command. If there are fewer points in the actual shape, the shape is assumed to repeat.Set to NONE to reset to no loadshape. Set Status=Fixed to ignore Loadshape designation.  Defaults to Daily curve If not specified.
 
-    DSS property name: `Duty`, DSS property index: 20.
+    Name: `Duty`
     """
 
     def _get_Duty(self) -> List[LoadShape]:
@@ -905,7 +952,7 @@ class IndMach012Batch(DSSBatch, CircuitElementBatchMixin, PCElementBatchMixin):
     """
     LOADSHAPE object to use for duty cycle simulations.  Must be previously defined as a Loadshape object.  Typically would have time intervals less than 1 hr. Designate the number of points to solve using the Set Number=xxxx command. If there are fewer points in the actual shape, the shape is assumed to repeat.Set to NONE to reset to no loadshape. Set Status=Fixed to ignore Loadshape designation.  Defaults to Daily curve If not specified.
 
-    DSS property name: `Duty`, DSS property index: 20.
+    Name: `Duty`
     """
 
     def _get_DebugTrace(self) -> List[bool]:
@@ -918,9 +965,10 @@ class IndMach012Batch(DSSBatch, CircuitElementBatchMixin, PCElementBatchMixin):
 
     DebugTrace = property(_get_DebugTrace, _set_DebugTrace) # type: List[bool]
     """
-    [Yes | No*] Write DebugTrace file.
+    Write DebugTrace file.
 
-    DSS property name: `DebugTrace`, DSS property index: 21.
+    Name: `DebugTrace`
+    Default: False
     """
 
     def _get_Spectrum_str(self) -> List[str]:
@@ -931,9 +979,10 @@ class IndMach012Batch(DSSBatch, CircuitElementBatchMixin, PCElementBatchMixin):
 
     Spectrum_str = property(_get_Spectrum_str, _set_Spectrum_str) # type: List[str]
     """
-    Name of harmonic voltage or current spectrum for this IndMach012. Voltage behind Xd" for machine - default. Current injection for inverter. Default value is "default", which is defined when the DSS starts.
+    Name of harmonic voltage or current spectrum for this IndMach012. Voltage behind Xd" for machine - default.
 
-    DSS property name: `Spectrum`, DSS property index: 22.
+    Name: `Spectrum`
+    Default: default
     """
 
     def _get_Spectrum(self) -> List[SpectrumObj]:
@@ -944,9 +993,10 @@ class IndMach012Batch(DSSBatch, CircuitElementBatchMixin, PCElementBatchMixin):
 
     Spectrum = property(_get_Spectrum, _set_Spectrum) # type: List[SpectrumObj]
     """
-    Name of harmonic voltage or current spectrum for this IndMach012. Voltage behind Xd" for machine - default. Current injection for inverter. Default value is "default", which is defined when the DSS starts.
+    Name of harmonic voltage or current spectrum for this IndMach012. Voltage behind Xd" for machine - default.
 
-    DSS property name: `Spectrum`, DSS property index: 22.
+    Name: `Spectrum`
+    Default: default
     """
 
     def _get_BaseFreq(self) -> BatchFloat64ArrayProxy:
@@ -959,7 +1009,8 @@ class IndMach012Batch(DSSBatch, CircuitElementBatchMixin, PCElementBatchMixin):
     """
     Base Frequency for ratings.
 
-    DSS property name: `BaseFreq`, DSS property index: 23.
+    Name: `BaseFreq`
+    Units: Hz
     """
 
     def _get_Enabled(self) -> List[bool]:
@@ -972,9 +1023,10 @@ class IndMach012Batch(DSSBatch, CircuitElementBatchMixin, PCElementBatchMixin):
 
     Enabled = property(_get_Enabled, _set_Enabled) # type: List[bool]
     """
-    {Yes|No or True|False} Indicates whether this element is enabled.
+    Indicates whether this element is enabled.
 
-    DSS property name: `Enabled`, DSS property index: 24.
+    Name: `Enabled`
+    Default: True
     """
 
     def Like(self, value: AnyStr, flags: enums.SetterFlags = 0):
@@ -983,7 +1035,9 @@ class IndMach012Batch(DSSBatch, CircuitElementBatchMixin, PCElementBatchMixin):
 
         New Capacitor.C2 like=c1  ...
 
-        DSS property name: `Like`, DSS property index: 25.
+        **Deprecated:** `Like` has been deprecated since at least 2021, see https://sourceforge.net/p/electricdss/discussion/861977/thread/8b59d21eb6/#b57c/f668
+
+        Name: `Like`
         """
         self._set_batch_string(25, value, flags)
 

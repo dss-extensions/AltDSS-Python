@@ -88,9 +88,9 @@ class Fault(DSSObj, CircuitElementMixin, PDElementMixin):
     bus1=busname
     bus1=busname.1.2.3
 
-    Bus2 automatically defaults to busname.0,0,0 unless it was previously defined. 
+    Bus2 automatically defaults to busname.0.0.0 unless it was previously defined. 
 
-    DSS property name: `Bus1`, DSS property index: 1.
+    Name: `Bus1`
     """
 
     def _get_Bus2(self) -> str:
@@ -105,7 +105,7 @@ class Fault(DSSObj, CircuitElementMixin, PDElementMixin):
 
     That is, the Fault defaults to a ground fault unless otherwise specified.
 
-    DSS property name: `Bus2`, DSS property index: 2.
+    Name: `Bus2`
     """
 
     def _get_Phases(self) -> int:
@@ -116,9 +116,10 @@ class Fault(DSSObj, CircuitElementMixin, PDElementMixin):
 
     Phases = property(_get_Phases, _set_Phases) # type: int
     """
-    Number of Phases. Default is 1.
+    Number of Phases.
 
-    DSS property name: `Phases`, DSS property index: 3.
+    Name: `Phases`
+    Default: 1
     """
 
     def _get_R(self) -> float:
@@ -129,9 +130,11 @@ class Fault(DSSObj, CircuitElementMixin, PDElementMixin):
 
     R = property(_get_R, _set_R) # type: float
     """
-    Resistance, each phase, ohms. Default is 0.0001. Assumed to be Mean value if gaussian random mode.Max value if uniform mode.  A Fault is actually a series resistance that defaults to a wye connection to ground on the second terminal.  You may reconnect the 2nd terminal to achieve whatever connection.  Use the Gmatrix property to specify an arbitrary conductance matrix.
+    Resistance for each phase. Assumed to be Mean value if gaussian random mode.Max value if uniform mode.  A Fault is actually a series resistance that defaults to a wye connection to ground on the second terminal.  You may reconnect the 2nd terminal to achieve whatever connection.  Use the Gmatrix property to specify an arbitrary conductance matrix.
 
-    DSS property name: `R`, DSS property index: 4.
+    Name: `R`
+    Units: Ω
+    Default: 0.0001
     """
 
     def _get_pctStdDev(self) -> float:
@@ -144,7 +147,8 @@ class Fault(DSSObj, CircuitElementMixin, PDElementMixin):
     """
     Percent standard deviation in resistance to assume for Monte Carlo fault (MF) solution mode for GAUSSIAN distribution. Default is 0 (no variation from mean).
 
-    DSS property name: `%StdDev`, DSS property index: 5.
+    Name: `%StdDev`
+    Default: 0.0
     """
 
     def _get_GMatrix(self) -> Float64Array:
@@ -157,7 +161,7 @@ class Fault(DSSObj, CircuitElementMixin, PDElementMixin):
     """
     Use this to specify a nodal conductance (G) matrix to represent some arbitrary resistance network. Specify in lower triangle form as usual for DSS matrices.
 
-    DSS property name: `GMatrix`, DSS property index: 6.
+    Name: `GMatrix`
     """
 
     def _get_OnTime(self) -> float:
@@ -168,9 +172,11 @@ class Fault(DSSObj, CircuitElementMixin, PDElementMixin):
 
     OnTime = property(_get_OnTime, _set_OnTime) # type: float
     """
-    Time (sec) at which the fault is established for time varying simulations. Default is 0.0 (on at the beginning of the simulation)
+    Time at which the fault is established for time varying simulations. Default is 0 s, on at the beginning of the simulation.
 
-    DSS property name: `OnTime`, DSS property index: 7.
+    Name: `OnTime`
+    Units: s
+    Default: 0.0
     """
 
     def _get_Temporary(self) -> bool:
@@ -181,9 +187,10 @@ class Fault(DSSObj, CircuitElementMixin, PDElementMixin):
 
     Temporary = property(_get_Temporary, _set_Temporary) # type: bool
     """
-    {Yes | No} Default is No.  Designate whether the fault is temporary.  For Time-varying simulations, the fault will be removed if the current through the fault drops below the MINAMPS criteria.
+    Designate whether the fault is temporary.  For Time-varying simulations, the fault will be removed if the current through the fault drops below the MINAMPS criteria.
 
-    DSS property name: `Temporary`, DSS property index: 8.
+    Name: `Temporary`
+    Default: False
     """
 
     def _get_MinAmps(self) -> float:
@@ -194,9 +201,11 @@ class Fault(DSSObj, CircuitElementMixin, PDElementMixin):
 
     MinAmps = property(_get_MinAmps, _set_MinAmps) # type: float
     """
-    Minimum amps that can sustain a temporary fault. Default is 5.
+    Minimum current that can sustain a temporary fault.
 
-    DSS property name: `MinAmps`, DSS property index: 9.
+    Name: `MinAmps`
+    Units: A
+    Default: 5.0
     """
 
     def _get_NormAmps(self) -> float:
@@ -209,7 +218,7 @@ class Fault(DSSObj, CircuitElementMixin, PDElementMixin):
     """
     Normal rated current.
 
-    DSS property name: `NormAmps`, DSS property index: 10.
+    Name: `NormAmps`
     """
 
     def _get_EmergAmps(self) -> float:
@@ -220,9 +229,9 @@ class Fault(DSSObj, CircuitElementMixin, PDElementMixin):
 
     EmergAmps = property(_get_EmergAmps, _set_EmergAmps) # type: float
     """
-    Maximum or emerg current.
+    Maximum or emergency current rating.
 
-    DSS property name: `EmergAmps`, DSS property index: 11.
+    Name: `EmergAmps`
     """
 
     def _get_FaultRate(self) -> float:
@@ -235,7 +244,8 @@ class Fault(DSSObj, CircuitElementMixin, PDElementMixin):
     """
     Failure rate per year.
 
-    DSS property name: `FaultRate`, DSS property index: 12.
+    Name: `FaultRate`
+    Default: 0.0
     """
 
     def _get_pctPerm(self) -> float:
@@ -248,7 +258,8 @@ class Fault(DSSObj, CircuitElementMixin, PDElementMixin):
     """
     Percent of failures that become permanent.
 
-    DSS property name: `pctPerm`, DSS property index: 13.
+    Name: `pctPerm`
+    Default: 100.0
     """
 
     def _get_Repair(self) -> float:
@@ -261,7 +272,8 @@ class Fault(DSSObj, CircuitElementMixin, PDElementMixin):
     """
     Hours to repair.
 
-    DSS property name: `Repair`, DSS property index: 14.
+    Name: `Repair`
+    Default: 0.0
     """
 
     def _get_BaseFreq(self) -> float:
@@ -274,7 +286,8 @@ class Fault(DSSObj, CircuitElementMixin, PDElementMixin):
     """
     Base Frequency for ratings.
 
-    DSS property name: `BaseFreq`, DSS property index: 15.
+    Name: `BaseFreq`
+    Units: Hz
     """
 
     def _get_Enabled(self) -> bool:
@@ -285,9 +298,10 @@ class Fault(DSSObj, CircuitElementMixin, PDElementMixin):
 
     Enabled = property(_get_Enabled, _set_Enabled) # type: bool
     """
-    {Yes|No or True|False} Indicates whether this element is enabled.
+    Indicates whether this element is enabled.
 
-    DSS property name: `Enabled`, DSS property index: 16.
+    Name: `Enabled`
+    Default: True
     """
 
     def Like(self, value: AnyStr):
@@ -296,7 +310,9 @@ class Fault(DSSObj, CircuitElementMixin, PDElementMixin):
 
         New Capacitor.C2 like=c1  ...
 
-        DSS property name: `Like`, DSS property index: 17.
+        **Deprecated:** `Like` has been deprecated since at least 2021, see https://sourceforge.net/p/electricdss/discussion/861977/thread/8b59d21eb6/#b57c/f668
+
+        Name: `Like`
         """
         self._set_string_o(17, value)
 
@@ -365,9 +381,9 @@ class FaultBatch(DSSBatch, CircuitElementBatchMixin, PDElementBatchMixin):
     bus1=busname
     bus1=busname.1.2.3
 
-    Bus2 automatically defaults to busname.0,0,0 unless it was previously defined. 
+    Bus2 automatically defaults to busname.0.0.0 unless it was previously defined. 
 
-    DSS property name: `Bus1`, DSS property index: 1.
+    Name: `Bus1`
     """
 
     def _get_Bus2(self) -> List[str]:
@@ -382,7 +398,7 @@ class FaultBatch(DSSBatch, CircuitElementBatchMixin, PDElementBatchMixin):
 
     That is, the Fault defaults to a ground fault unless otherwise specified.
 
-    DSS property name: `Bus2`, DSS property index: 2.
+    Name: `Bus2`
     """
 
     def _get_Phases(self) -> BatchInt32ArrayProxy:
@@ -393,9 +409,10 @@ class FaultBatch(DSSBatch, CircuitElementBatchMixin, PDElementBatchMixin):
 
     Phases = property(_get_Phases, _set_Phases) # type: BatchInt32ArrayProxy
     """
-    Number of Phases. Default is 1.
+    Number of Phases.
 
-    DSS property name: `Phases`, DSS property index: 3.
+    Name: `Phases`
+    Default: 1
     """
 
     def _get_R(self) -> BatchFloat64ArrayProxy:
@@ -406,9 +423,11 @@ class FaultBatch(DSSBatch, CircuitElementBatchMixin, PDElementBatchMixin):
 
     R = property(_get_R, _set_R) # type: BatchFloat64ArrayProxy
     """
-    Resistance, each phase, ohms. Default is 0.0001. Assumed to be Mean value if gaussian random mode.Max value if uniform mode.  A Fault is actually a series resistance that defaults to a wye connection to ground on the second terminal.  You may reconnect the 2nd terminal to achieve whatever connection.  Use the Gmatrix property to specify an arbitrary conductance matrix.
+    Resistance for each phase. Assumed to be Mean value if gaussian random mode.Max value if uniform mode.  A Fault is actually a series resistance that defaults to a wye connection to ground on the second terminal.  You may reconnect the 2nd terminal to achieve whatever connection.  Use the Gmatrix property to specify an arbitrary conductance matrix.
 
-    DSS property name: `R`, DSS property index: 4.
+    Name: `R`
+    Units: Ω
+    Default: 0.0001
     """
 
     def _get_pctStdDev(self) -> BatchFloat64ArrayProxy:
@@ -421,7 +440,8 @@ class FaultBatch(DSSBatch, CircuitElementBatchMixin, PDElementBatchMixin):
     """
     Percent standard deviation in resistance to assume for Monte Carlo fault (MF) solution mode for GAUSSIAN distribution. Default is 0 (no variation from mean).
 
-    DSS property name: `%StdDev`, DSS property index: 5.
+    Name: `%StdDev`
+    Default: 0.0
     """
 
     def _get_GMatrix(self) -> List[Float64Array]:
@@ -437,7 +457,7 @@ class FaultBatch(DSSBatch, CircuitElementBatchMixin, PDElementBatchMixin):
     """
     Use this to specify a nodal conductance (G) matrix to represent some arbitrary resistance network. Specify in lower triangle form as usual for DSS matrices.
 
-    DSS property name: `GMatrix`, DSS property index: 6.
+    Name: `GMatrix`
     """
 
     def _get_OnTime(self) -> BatchFloat64ArrayProxy:
@@ -448,9 +468,11 @@ class FaultBatch(DSSBatch, CircuitElementBatchMixin, PDElementBatchMixin):
 
     OnTime = property(_get_OnTime, _set_OnTime) # type: BatchFloat64ArrayProxy
     """
-    Time (sec) at which the fault is established for time varying simulations. Default is 0.0 (on at the beginning of the simulation)
+    Time at which the fault is established for time varying simulations. Default is 0 s, on at the beginning of the simulation.
 
-    DSS property name: `OnTime`, DSS property index: 7.
+    Name: `OnTime`
+    Units: s
+    Default: 0.0
     """
 
     def _get_Temporary(self) -> List[bool]:
@@ -463,9 +485,10 @@ class FaultBatch(DSSBatch, CircuitElementBatchMixin, PDElementBatchMixin):
 
     Temporary = property(_get_Temporary, _set_Temporary) # type: List[bool]
     """
-    {Yes | No} Default is No.  Designate whether the fault is temporary.  For Time-varying simulations, the fault will be removed if the current through the fault drops below the MINAMPS criteria.
+    Designate whether the fault is temporary.  For Time-varying simulations, the fault will be removed if the current through the fault drops below the MINAMPS criteria.
 
-    DSS property name: `Temporary`, DSS property index: 8.
+    Name: `Temporary`
+    Default: False
     """
 
     def _get_MinAmps(self) -> BatchFloat64ArrayProxy:
@@ -476,9 +499,11 @@ class FaultBatch(DSSBatch, CircuitElementBatchMixin, PDElementBatchMixin):
 
     MinAmps = property(_get_MinAmps, _set_MinAmps) # type: BatchFloat64ArrayProxy
     """
-    Minimum amps that can sustain a temporary fault. Default is 5.
+    Minimum current that can sustain a temporary fault.
 
-    DSS property name: `MinAmps`, DSS property index: 9.
+    Name: `MinAmps`
+    Units: A
+    Default: 5.0
     """
 
     def _get_NormAmps(self) -> BatchFloat64ArrayProxy:
@@ -491,7 +516,7 @@ class FaultBatch(DSSBatch, CircuitElementBatchMixin, PDElementBatchMixin):
     """
     Normal rated current.
 
-    DSS property name: `NormAmps`, DSS property index: 10.
+    Name: `NormAmps`
     """
 
     def _get_EmergAmps(self) -> BatchFloat64ArrayProxy:
@@ -502,9 +527,9 @@ class FaultBatch(DSSBatch, CircuitElementBatchMixin, PDElementBatchMixin):
 
     EmergAmps = property(_get_EmergAmps, _set_EmergAmps) # type: BatchFloat64ArrayProxy
     """
-    Maximum or emerg current.
+    Maximum or emergency current rating.
 
-    DSS property name: `EmergAmps`, DSS property index: 11.
+    Name: `EmergAmps`
     """
 
     def _get_FaultRate(self) -> BatchFloat64ArrayProxy:
@@ -517,7 +542,8 @@ class FaultBatch(DSSBatch, CircuitElementBatchMixin, PDElementBatchMixin):
     """
     Failure rate per year.
 
-    DSS property name: `FaultRate`, DSS property index: 12.
+    Name: `FaultRate`
+    Default: 0.0
     """
 
     def _get_pctPerm(self) -> BatchFloat64ArrayProxy:
@@ -530,7 +556,8 @@ class FaultBatch(DSSBatch, CircuitElementBatchMixin, PDElementBatchMixin):
     """
     Percent of failures that become permanent.
 
-    DSS property name: `pctPerm`, DSS property index: 13.
+    Name: `pctPerm`
+    Default: 100.0
     """
 
     def _get_Repair(self) -> BatchFloat64ArrayProxy:
@@ -543,7 +570,8 @@ class FaultBatch(DSSBatch, CircuitElementBatchMixin, PDElementBatchMixin):
     """
     Hours to repair.
 
-    DSS property name: `Repair`, DSS property index: 14.
+    Name: `Repair`
+    Default: 0.0
     """
 
     def _get_BaseFreq(self) -> BatchFloat64ArrayProxy:
@@ -556,7 +584,8 @@ class FaultBatch(DSSBatch, CircuitElementBatchMixin, PDElementBatchMixin):
     """
     Base Frequency for ratings.
 
-    DSS property name: `BaseFreq`, DSS property index: 15.
+    Name: `BaseFreq`
+    Units: Hz
     """
 
     def _get_Enabled(self) -> List[bool]:
@@ -569,9 +598,10 @@ class FaultBatch(DSSBatch, CircuitElementBatchMixin, PDElementBatchMixin):
 
     Enabled = property(_get_Enabled, _set_Enabled) # type: List[bool]
     """
-    {Yes|No or True|False} Indicates whether this element is enabled.
+    Indicates whether this element is enabled.
 
-    DSS property name: `Enabled`, DSS property index: 16.
+    Name: `Enabled`
+    Default: True
     """
 
     def Like(self, value: AnyStr, flags: enums.SetterFlags = 0):
@@ -580,7 +610,9 @@ class FaultBatch(DSSBatch, CircuitElementBatchMixin, PDElementBatchMixin):
 
         New Capacitor.C2 like=c1  ...
 
-        DSS property name: `Like`, DSS property index: 17.
+        **Deprecated:** `Like` has been deprecated since at least 2021, see https://sourceforge.net/p/electricdss/discussion/861977/thread/8b59d21eb6/#b57c/f668
+
+        Name: `Like`
         """
         self._set_batch_string(17, value, flags)
 

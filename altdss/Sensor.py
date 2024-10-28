@@ -14,7 +14,7 @@ from .CircuitElement import CircuitElementBatchMixin, CircuitElementMixin
 class Sensor(DSSObj, CircuitElementMixin):
     __slots__ = DSSObj._extra_slots + CircuitElementMixin._extra_slots
     _cls_name = 'Sensor'
-    _cls_idx = 49
+    _cls_idx = 50
     _cls_int_idx = {
         2,
         9,
@@ -77,7 +77,7 @@ class Sensor(DSSObj, CircuitElementMixin):
     """
     Name (Full Object name) of element to which the Sensor is connected.
 
-    DSS property name: `Element`, DSS property index: 1.
+    Name: `Element`
     """
 
     def _get_Element(self) -> DSSObj:
@@ -94,7 +94,7 @@ class Sensor(DSSObj, CircuitElementMixin):
     """
     Name (Full Object name) of element to which the Sensor is connected.
 
-    DSS property name: `Element`, DSS property index: 1.
+    Name: `Element`
     """
 
     def _get_Terminal(self) -> int:
@@ -105,9 +105,10 @@ class Sensor(DSSObj, CircuitElementMixin):
 
     Terminal = property(_get_Terminal, _set_Terminal) # type: int
     """
-    Number of the terminal of the circuit element to which the Sensor is connected. 1 or 2, typically. Default is 1.
+    Number of the terminal of the circuit element to which the Sensor is connected. 1 or 2, typically.
 
-    DSS property name: `Terminal`, DSS property index: 2.
+    Name: `Terminal`
+    Default: 1
     """
 
     def _get_kVBase(self) -> float:
@@ -119,16 +120,19 @@ class Sensor(DSSObj, CircuitElementMixin):
     kVBase = property(_get_kVBase, _set_kVBase) # type: float
     """
     Voltage base for the sensor, in kV. If connected to a 2- or 3-phase terminal, 
-    specify L-L voltage. For 1-phase devices specify L-N or actual 1-phase voltage. Like many other DSS devices, default is 12.47kV.
+    specify L-L voltage. For 1-phase devices specify L-N or actual 1-phase voltage.
 
-    DSS property name: `kVBase`, DSS property index: 3.
+    Name: `kVBase`
+    Units: kV
+    Default: 12.47
     """
 
     def Clear(self, value: bool = True, flags: enums.SetterFlags = 0):
         """
-        { Yes | No }. Clear=Yes clears sensor values. Should be issued before putting in a new set of measurements.
+        Clear=Yes clears sensor values. Should be issued before putting in a new set of measurements.
 
-        DSS property name: `Clear`, DSS property index: 4.
+        Name: `Clear`
+        Default: False
         """
         self._lib.Obj_SetInt32(self._ptr, 4, value, flags)
 
@@ -142,7 +146,7 @@ class Sensor(DSSObj, CircuitElementMixin):
     """
     Array of Voltages (kV) measured by the voltage sensor. For Delta-connected sensors, Line-Line voltages are expected. For Wye, Line-Neutral are expected.
 
-    DSS property name: `kVs`, DSS property index: 5.
+    Name: `kVs`
     """
 
     def _get_Currents(self) -> Float64Array:
@@ -155,7 +159,7 @@ class Sensor(DSSObj, CircuitElementMixin):
     """
     Array of Currents (amps) measured by the current sensor. Specify this or power quantities; not both.
 
-    DSS property name: `Currents`, DSS property index: 6.
+    Name: `Currents`
     """
 
     def _get_kWs(self) -> Float64Array:
@@ -169,7 +173,7 @@ class Sensor(DSSObj, CircuitElementMixin):
     Array of Active power (kW) measurements at the sensor. Is converted into Currents along with q=[...]
     Will override any currents=[...] specification.
 
-    DSS property name: `kWs`, DSS property index: 7.
+    Name: `kWs`
     """
 
     def _get_kvars(self) -> Float64Array:
@@ -182,7 +186,7 @@ class Sensor(DSSObj, CircuitElementMixin):
     """
     Array of Reactive power (kvar) measurements at the sensor. Is converted into Currents along with p=[...]
 
-    DSS property name: `kvars`, DSS property index: 8.
+    Name: `kvars`
     """
 
     def _get_Conn(self) -> enums.Connection:
@@ -196,11 +200,12 @@ class Sensor(DSSObj, CircuitElementMixin):
 
     Conn = property(_get_Conn, _set_Conn) # type: enums.Connection
     """
-    Voltage sensor Connection: { wye | delta | LN | LL }.  Default is wye. Applies to voltage measurement only. 
+    Voltage sensor connection. Applies to voltage measurement only. 
     Currents are always assumed to be line currents.
     If wye or LN, voltage is assumed measured line-neutral; otherwise, line-line.
 
-    DSS property name: `Conn`, DSS property index: 9.
+    Name: `Conn`
+    Default: Wye
     """
 
     def _get_Conn_str(self) -> str:
@@ -211,11 +216,12 @@ class Sensor(DSSObj, CircuitElementMixin):
 
     Conn_str = property(_get_Conn_str, _set_Conn_str) # type: str
     """
-    Voltage sensor Connection: { wye | delta | LN | LL }.  Default is wye. Applies to voltage measurement only. 
+    Voltage sensor connection. Applies to voltage measurement only. 
     Currents are always assumed to be line currents.
     If wye or LN, voltage is assumed measured line-neutral; otherwise, line-line.
 
-    DSS property name: `Conn`, DSS property index: 9.
+    Name: `Conn`
+    Default: Wye
     """
 
     def _get_DeltaDirection(self) -> int:
@@ -226,9 +232,10 @@ class Sensor(DSSObj, CircuitElementMixin):
 
     DeltaDirection = property(_get_DeltaDirection, _set_DeltaDirection) # type: int
     """
-    {1 or -1}  Default is 1:  1-2, 2-3, 3-1.  For reverse rotation, enter -1. Any positive or negative entry will suffice.
+    Default is 1: 1-2, 2-3, 3-1. For reverse rotation, enter -1.
 
-    DSS property name: `DeltaDirection`, DSS property index: 10.
+    Name: `DeltaDirection`
+    Default: 1
     """
 
     def _get_pctError(self) -> float:
@@ -239,9 +246,10 @@ class Sensor(DSSObj, CircuitElementMixin):
 
     pctError = property(_get_pctError, _set_pctError) # type: float
     """
-    Assumed percent error in the measurement. Default is 1.
+    Assumed percent error in the measurement.
 
-    DSS property name: `%Error`, DSS property index: 11.
+    Name: `%Error`
+    Default: 1.0
     """
 
     def _get_Weight(self) -> float:
@@ -252,9 +260,10 @@ class Sensor(DSSObj, CircuitElementMixin):
 
     Weight = property(_get_Weight, _set_Weight) # type: float
     """
-    Weighting factor: Default is 1.
+    Weighting factor.
 
-    DSS property name: `Weight`, DSS property index: 12.
+    Name: `Weight`
+    Default: 1.0
     """
 
     def _get_BaseFreq(self) -> float:
@@ -267,7 +276,8 @@ class Sensor(DSSObj, CircuitElementMixin):
     """
     Base Frequency for ratings.
 
-    DSS property name: `BaseFreq`, DSS property index: 13.
+    Name: `BaseFreq`
+    Units: Hz
     """
 
     def _get_Enabled(self) -> bool:
@@ -278,9 +288,10 @@ class Sensor(DSSObj, CircuitElementMixin):
 
     Enabled = property(_get_Enabled, _set_Enabled) # type: bool
     """
-    {Yes|No or True|False} Indicates whether this element is enabled.
+    Indicates whether this element is enabled.
 
-    DSS property name: `Enabled`, DSS property index: 14.
+    Name: `Enabled`
+    Default: True
     """
 
     def Like(self, value: AnyStr):
@@ -289,7 +300,9 @@ class Sensor(DSSObj, CircuitElementMixin):
 
         New Capacitor.C2 like=c1  ...
 
-        DSS property name: `Like`, DSS property index: 15.
+        **Deprecated:** `Like` has been deprecated since at least 2021, see https://sourceforge.net/p/electricdss/discussion/861977/thread/8b59d21eb6/#b57c/f668
+
+        Name: `Like`
         """
         self._set_string_o(15, value)
 
@@ -314,7 +327,7 @@ class SensorProperties(TypedDict):
 class SensorBatch(DSSBatch, CircuitElementBatchMixin):
     _cls_name = 'Sensor'
     _obj_cls = Sensor
-    _cls_idx = 49
+    _cls_idx = 50
     __slots__ = []
 
     def __init__(self, api_util, **kwargs):
@@ -352,7 +365,7 @@ class SensorBatch(DSSBatch, CircuitElementBatchMixin):
     """
     Name (Full Object name) of element to which the Sensor is connected.
 
-    DSS property name: `Element`, DSS property index: 1.
+    Name: `Element`
     """
 
     def _get_Element(self) -> List[DSSObj]:
@@ -365,7 +378,7 @@ class SensorBatch(DSSBatch, CircuitElementBatchMixin):
     """
     Name (Full Object name) of element to which the Sensor is connected.
 
-    DSS property name: `Element`, DSS property index: 1.
+    Name: `Element`
     """
 
     def _get_Terminal(self) -> BatchInt32ArrayProxy:
@@ -376,9 +389,10 @@ class SensorBatch(DSSBatch, CircuitElementBatchMixin):
 
     Terminal = property(_get_Terminal, _set_Terminal) # type: BatchInt32ArrayProxy
     """
-    Number of the terminal of the circuit element to which the Sensor is connected. 1 or 2, typically. Default is 1.
+    Number of the terminal of the circuit element to which the Sensor is connected. 1 or 2, typically.
 
-    DSS property name: `Terminal`, DSS property index: 2.
+    Name: `Terminal`
+    Default: 1
     """
 
     def _get_kVBase(self) -> BatchFloat64ArrayProxy:
@@ -390,16 +404,19 @@ class SensorBatch(DSSBatch, CircuitElementBatchMixin):
     kVBase = property(_get_kVBase, _set_kVBase) # type: BatchFloat64ArrayProxy
     """
     Voltage base for the sensor, in kV. If connected to a 2- or 3-phase terminal, 
-    specify L-L voltage. For 1-phase devices specify L-N or actual 1-phase voltage. Like many other DSS devices, default is 12.47kV.
+    specify L-L voltage. For 1-phase devices specify L-N or actual 1-phase voltage.
 
-    DSS property name: `kVBase`, DSS property index: 3.
+    Name: `kVBase`
+    Units: kV
+    Default: 12.47
     """
 
     def Clear(self, value: Union[bool, List[bool]] = True, flags: enums.SetterFlags = 0):
         """
-        { Yes | No }. Clear=Yes clears sensor values. Should be issued before putting in a new set of measurements.
+        Clear=Yes clears sensor values. Should be issued before putting in a new set of measurements.
 
-        DSS property name: `Clear`, DSS property index: 4.
+        Name: `Clear`
+        Default: False
         """
         self._set_batch_int32_array(4, value, flags)
 
@@ -416,7 +433,7 @@ class SensorBatch(DSSBatch, CircuitElementBatchMixin):
     """
     Array of Voltages (kV) measured by the voltage sensor. For Delta-connected sensors, Line-Line voltages are expected. For Wye, Line-Neutral are expected.
 
-    DSS property name: `kVs`, DSS property index: 5.
+    Name: `kVs`
     """
 
     def _get_Currents(self) -> List[Float64Array]:
@@ -432,7 +449,7 @@ class SensorBatch(DSSBatch, CircuitElementBatchMixin):
     """
     Array of Currents (amps) measured by the current sensor. Specify this or power quantities; not both.
 
-    DSS property name: `Currents`, DSS property index: 6.
+    Name: `Currents`
     """
 
     def _get_kWs(self) -> List[Float64Array]:
@@ -449,7 +466,7 @@ class SensorBatch(DSSBatch, CircuitElementBatchMixin):
     Array of Active power (kW) measurements at the sensor. Is converted into Currents along with q=[...]
     Will override any currents=[...] specification.
 
-    DSS property name: `kWs`, DSS property index: 7.
+    Name: `kWs`
     """
 
     def _get_kvars(self) -> List[Float64Array]:
@@ -465,7 +482,7 @@ class SensorBatch(DSSBatch, CircuitElementBatchMixin):
     """
     Array of Reactive power (kvar) measurements at the sensor. Is converted into Currents along with p=[...]
 
-    DSS property name: `kvars`, DSS property index: 8.
+    Name: `kvars`
     """
 
     def _get_Conn(self) -> BatchInt32ArrayProxy:
@@ -480,11 +497,12 @@ class SensorBatch(DSSBatch, CircuitElementBatchMixin):
 
     Conn = property(_get_Conn, _set_Conn) # type: BatchInt32ArrayProxy
     """
-    Voltage sensor Connection: { wye | delta | LN | LL }.  Default is wye. Applies to voltage measurement only. 
+    Voltage sensor connection. Applies to voltage measurement only. 
     Currents are always assumed to be line currents.
     If wye or LN, voltage is assumed measured line-neutral; otherwise, line-line.
 
-    DSS property name: `Conn`, DSS property index: 9.
+    Name: `Conn`
+    Default: Wye
     """
 
     def _get_Conn_str(self) -> List[str]:
@@ -495,11 +513,12 @@ class SensorBatch(DSSBatch, CircuitElementBatchMixin):
 
     Conn_str = property(_get_Conn_str, _set_Conn_str) # type: List[str]
     """
-    Voltage sensor Connection: { wye | delta | LN | LL }.  Default is wye. Applies to voltage measurement only. 
+    Voltage sensor connection. Applies to voltage measurement only. 
     Currents are always assumed to be line currents.
     If wye or LN, voltage is assumed measured line-neutral; otherwise, line-line.
 
-    DSS property name: `Conn`, DSS property index: 9.
+    Name: `Conn`
+    Default: Wye
     """
 
     def _get_DeltaDirection(self) -> BatchInt32ArrayProxy:
@@ -510,9 +529,10 @@ class SensorBatch(DSSBatch, CircuitElementBatchMixin):
 
     DeltaDirection = property(_get_DeltaDirection, _set_DeltaDirection) # type: BatchInt32ArrayProxy
     """
-    {1 or -1}  Default is 1:  1-2, 2-3, 3-1.  For reverse rotation, enter -1. Any positive or negative entry will suffice.
+    Default is 1: 1-2, 2-3, 3-1. For reverse rotation, enter -1.
 
-    DSS property name: `DeltaDirection`, DSS property index: 10.
+    Name: `DeltaDirection`
+    Default: 1
     """
 
     def _get_pctError(self) -> BatchFloat64ArrayProxy:
@@ -523,9 +543,10 @@ class SensorBatch(DSSBatch, CircuitElementBatchMixin):
 
     pctError = property(_get_pctError, _set_pctError) # type: BatchFloat64ArrayProxy
     """
-    Assumed percent error in the measurement. Default is 1.
+    Assumed percent error in the measurement.
 
-    DSS property name: `%Error`, DSS property index: 11.
+    Name: `%Error`
+    Default: 1.0
     """
 
     def _get_Weight(self) -> BatchFloat64ArrayProxy:
@@ -536,9 +557,10 @@ class SensorBatch(DSSBatch, CircuitElementBatchMixin):
 
     Weight = property(_get_Weight, _set_Weight) # type: BatchFloat64ArrayProxy
     """
-    Weighting factor: Default is 1.
+    Weighting factor.
 
-    DSS property name: `Weight`, DSS property index: 12.
+    Name: `Weight`
+    Default: 1.0
     """
 
     def _get_BaseFreq(self) -> BatchFloat64ArrayProxy:
@@ -551,7 +573,8 @@ class SensorBatch(DSSBatch, CircuitElementBatchMixin):
     """
     Base Frequency for ratings.
 
-    DSS property name: `BaseFreq`, DSS property index: 13.
+    Name: `BaseFreq`
+    Units: Hz
     """
 
     def _get_Enabled(self) -> List[bool]:
@@ -564,9 +587,10 @@ class SensorBatch(DSSBatch, CircuitElementBatchMixin):
 
     Enabled = property(_get_Enabled, _set_Enabled) # type: List[bool]
     """
-    {Yes|No or True|False} Indicates whether this element is enabled.
+    Indicates whether this element is enabled.
 
-    DSS property name: `Enabled`, DSS property index: 14.
+    Name: `Enabled`
+    Default: True
     """
 
     def Like(self, value: AnyStr, flags: enums.SetterFlags = 0):
@@ -575,7 +599,9 @@ class SensorBatch(DSSBatch, CircuitElementBatchMixin):
 
         New Capacitor.C2 like=c1  ...
 
-        DSS property name: `Like`, DSS property index: 15.
+        **Deprecated:** `Like` has been deprecated since at least 2021, see https://sourceforge.net/p/electricdss/discussion/861977/thread/8b59d21eb6/#b57c/f668
+
+        Name: `Like`
         """
         self._set_batch_string(15, value, flags)
 
@@ -595,8 +621,6 @@ class SensorBatchProperties(TypedDict):
     BaseFreq: Union[float, Float64Array]
     Enabled: bool
     Like: AnyStr
-
-#TODO: warn that begin_edit=False with extra params will be ignored?
 
 class ISensor(IDSSObj, SensorBatch):
     __slots__ = IDSSObj._extra_slots

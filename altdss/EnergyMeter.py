@@ -16,7 +16,7 @@ from .PCElement import ElementHasRegistersMixin
 class EnergyMeter(DSSObj, CircuitElementMixin, EnergyMeterObjMixin, ElementHasRegistersMixin):
     __slots__ = DSSObj._extra_slots + CircuitElementMixin._extra_slots + EnergyMeterObjMixin._extra_slots + ElementHasRegistersMixin._extra_slots
     _cls_name = 'EnergyMeter'
-    _cls_idx = 48
+    _cls_idx = 49
     _cls_int_idx = {
         2,
         9,
@@ -105,7 +105,8 @@ class EnergyMeter(DSSObj, CircuitElementMixin, EnergyMeterObjMixin, ElementHasRe
     """
     Name (Full Object name) of element to which the monitor is connected.
 
-    DSS property name: `Element`, DSS property index: 1.
+    Name: `Element`
+    Default: Vsource.source
     """
 
     def _get_Element(self) -> DSSObj:
@@ -122,7 +123,8 @@ class EnergyMeter(DSSObj, CircuitElementMixin, EnergyMeterObjMixin, ElementHasRe
     """
     Name (Full Object name) of element to which the monitor is connected.
 
-    DSS property name: `Element`, DSS property index: 1.
+    Name: `Element`
+    Default: Vsource.source
     """
 
     def _get_Terminal(self) -> int:
@@ -135,7 +137,8 @@ class EnergyMeter(DSSObj, CircuitElementMixin, EnergyMeterObjMixin, ElementHasRe
     """
     Number of the terminal of the circuit element to which the monitor is connected. 1 or 2, typically.
 
-    DSS property name: `Terminal`, DSS property index: 2.
+    Name: `Terminal`
+    Default: 1
     """
 
     def Action(self, value: Union[AnyStr, int, enums.EnergyMeterAction], flags: enums.SetterFlags = 0):
@@ -151,7 +154,7 @@ class EnergyMeter(DSSObj, CircuitElementMixin, EnergyMeterObjMixin, ElementHasRe
         (Z)onedump = Dump names of elements in meter zone to a file
            File name is "Zone_metername.csv".
 
-        DSS property name: `Action`, DSS property index: 3.
+        Name: `Action`
         """
         if isinstance(value, int):
             self._lib.Obj_SetInt32(self._ptr, 3, value, flags)
@@ -195,16 +198,17 @@ class EnergyMeter(DSSObj, CircuitElementMixin, EnergyMeterObjMixin, ElementHasRe
     """
     Enter a string ARRAY of any combination of the following. Options processed left-to-right:
 
-    (E)xcess : (default) UE/EEN is estimate of energy over capacity 
+    (E)xcess : UE/EEN is estimate of energy over capacity 
     (T)otal : UE/EEN is total energy after capacity exceeded
-    (R)adial : (default) Treats zone as a radial circuit
+    (R)adial : Treats zone as a radial circuit
     (M)esh : Treats zone as meshed network (not radial).
-    (C)ombined : (default) Load UE/EEN computed from combination of overload and undervoltage.
+    (C)ombined : Load UE/EEN computed from combination of overload and undervoltage.
     (V)oltage : Load UE/EEN computed based on voltage only.
 
     Example: option=(E, R)
 
-    DSS property name: `Option`, DSS property index: 4.
+    Name: `Option`
+    Default: ['E', 'R', 'C']
     """
 
     def _get_kVANormal(self) -> float:
@@ -217,7 +221,8 @@ class EnergyMeter(DSSObj, CircuitElementMixin, EnergyMeterObjMixin, ElementHasRe
     """
     Upper limit on kVA load in the zone, Normal configuration. Default is 0.0 (ignored). Overrides limits on individual lines for overload EEN. With "LocalOnly=Yes" option, uses only load in metered branch.
 
-    DSS property name: `kVANormal`, DSS property index: 5.
+    Name: `kVANormal`
+    Default: 0.0
     """
 
     def _get_kVAEmerg(self) -> float:
@@ -230,7 +235,8 @@ class EnergyMeter(DSSObj, CircuitElementMixin, EnergyMeterObjMixin, ElementHasRe
     """
     Upper limit on kVA load in the zone, Emergency configuration. Default is 0.0 (ignored). Overrides limits on individual lines for overload UE. With "LocalOnly=Yes" option, uses only load in metered branch.
 
-    DSS property name: `kVAEmerg`, DSS property index: 6.
+    Name: `kVAEmerg`
+    Default: 0.0
     """
 
     def _get_PeakCurrent(self) -> Float64Array:
@@ -241,9 +247,10 @@ class EnergyMeter(DSSObj, CircuitElementMixin, EnergyMeterObjMixin, ElementHasRe
 
     PeakCurrent = property(_get_PeakCurrent, _set_PeakCurrent) # type: Float64Array
     """
-    ARRAY of current magnitudes representing the peak currents measured at this location for the load allocation function.  Default is (400, 400, 400). Enter one current for each phase
+    ARRAY of current magnitudes representing the peak currents measured at this location for the load allocation function. Enter one current for each phase
 
-    DSS property name: `PeakCurrent`, DSS property index: 7.
+    Name: `PeakCurrent`
+    Default: [400.0, 400.0, 400.0]
     """
 
     def _get_ZoneList(self) -> List[str]:
@@ -256,12 +263,12 @@ class EnergyMeter(DSSObj, CircuitElementMixin, EnergyMeterObjMixin, ElementHasRe
 
     ZoneList = property(_get_ZoneList, _set_ZoneList) # type: List[str]
     """
-    ARRAY of full element names for this meter's zone.  Default is for meter to find it's own zone. If specified, DSS uses this list instead.  Can access the names in a single-column text file.  Examples: 
+    ARRAY of full element names for this meter's zone. Default is for meter to find its own zone. If specified, DSS uses this list instead.  Can access the names in a single-column text file.  Examples: 
 
     zonelist=[line.L1, transformer.T1, Line.L3] 
     zonelist=(file=branchlist.txt)
 
-    DSS property name: `ZoneList`, DSS property index: 8.
+    Name: `ZoneList`
     """
 
     def _get_LocalOnly(self) -> bool:
@@ -272,9 +279,10 @@ class EnergyMeter(DSSObj, CircuitElementMixin, EnergyMeterObjMixin, ElementHasRe
 
     LocalOnly = property(_get_LocalOnly, _set_LocalOnly) # type: bool
     """
-    {Yes | No}  Default is NO.  If Yes, meter considers only the monitored element for EEN and UE calcs.  Uses whole zone for losses.
+    If Yes, meter considers only the monitored element for EEN and UE calcs.  Uses whole zone for losses.
 
-    DSS property name: `LocalOnly`, DSS property index: 9.
+    Name: `LocalOnly`
+    Default: False
     """
 
     def _get_Mask(self) -> Float64Array:
@@ -287,7 +295,8 @@ class EnergyMeter(DSSObj, CircuitElementMixin, EnergyMeterObjMixin, ElementHasRe
     """
     Mask for adding registers whenever all meters are totalized.  Array of floating point numbers representing the multiplier to be used for summing each register from this meter. Default = (1, 1, 1, 1, ... ).  You only have to enter as many as are changed (positional). Useful when two meters monitor same energy, etc.
 
-    DSS property name: `Mask`, DSS property index: 10.
+    Name: `Mask`
+    Default: [1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0]
     """
 
     def _get_Losses(self) -> bool:
@@ -298,9 +307,10 @@ class EnergyMeter(DSSObj, CircuitElementMixin, EnergyMeterObjMixin, ElementHasRe
 
     Losses = property(_get_Losses, _set_Losses) # type: bool
     """
-    {Yes | No}  Default is YES. Compute Zone losses. If NO, then no losses at all are computed.
+    Compute Zone losses. If NO, then no losses at all are computed.
 
-    DSS property name: `Losses`, DSS property index: 11.
+    Name: `Losses`
+    Default: True
     """
 
     def _get_LineLosses(self) -> bool:
@@ -311,9 +321,10 @@ class EnergyMeter(DSSObj, CircuitElementMixin, EnergyMeterObjMixin, ElementHasRe
 
     LineLosses = property(_get_LineLosses, _set_LineLosses) # type: bool
     """
-    {Yes | No}  Default is YES. Compute Line losses. If NO, then none of the losses are computed.
+    Compute Line losses. If NO, then none of the losses are computed.
 
-    DSS property name: `LineLosses`, DSS property index: 12.
+    Name: `LineLosses`
+    Default: True
     """
 
     def _get_XfmrLosses(self) -> bool:
@@ -324,9 +335,10 @@ class EnergyMeter(DSSObj, CircuitElementMixin, EnergyMeterObjMixin, ElementHasRe
 
     XfmrLosses = property(_get_XfmrLosses, _set_XfmrLosses) # type: bool
     """
-    {Yes | No}  Default is YES. Compute Transformer losses. If NO, transformers are ignored in loss calculations.
+    Compute Transformer losses. If NO, transformers are ignored in loss calculations.
 
-    DSS property name: `XfmrLosses`, DSS property index: 13.
+    Name: `XfmrLosses`
+    Default: True
     """
 
     def _get_SeqLosses(self) -> bool:
@@ -337,9 +349,10 @@ class EnergyMeter(DSSObj, CircuitElementMixin, EnergyMeterObjMixin, ElementHasRe
 
     SeqLosses = property(_get_SeqLosses, _set_SeqLosses) # type: bool
     """
-    {Yes | No}  Default is YES. Compute Sequence losses in lines and segregate by line mode losses and zero mode losses.
+    Compute Sequence losses in lines and segregate by line mode losses and zero mode losses.
 
-    DSS property name: `SeqLosses`, DSS property index: 14.
+    Name: `SeqLosses`
+    Default: True
     """
 
     def _get_ThreePhaseLosses(self) -> bool:
@@ -350,9 +363,10 @@ class EnergyMeter(DSSObj, CircuitElementMixin, EnergyMeterObjMixin, ElementHasRe
 
     ThreePhaseLosses = property(_get_ThreePhaseLosses, _set_ThreePhaseLosses) # type: bool
     """
-    {Yes | No}  Default is YES. Compute Line losses and segregate by 3-phase and other (1- and 2-phase) line losses. 
+    Compute Line losses and segregate by 3-phase and other (1- and 2-phase) line losses. 
 
-    DSS property name: `3PhaseLosses`, DSS property index: 15.
+    Name: `3PhaseLosses`
+    Default: True
     """
 
     def _get_VBaseLosses(self) -> bool:
@@ -363,9 +377,10 @@ class EnergyMeter(DSSObj, CircuitElementMixin, EnergyMeterObjMixin, ElementHasRe
 
     VBaseLosses = property(_get_VBaseLosses, _set_VBaseLosses) # type: bool
     """
-    {Yes | No}  Default is YES. Compute losses and segregate by voltage base. If NO, then voltage-based tabulation is not reported.
+    Compute losses and segregate by voltage base. If NO, then voltage-based tabulation is not reported.
 
-    DSS property name: `VBaseLosses`, DSS property index: 16.
+    Name: `VBaseLosses`
+    Default: True
     """
 
     def _get_PhaseVoltageReport(self) -> bool:
@@ -376,9 +391,10 @@ class EnergyMeter(DSSObj, CircuitElementMixin, EnergyMeterObjMixin, ElementHasRe
 
     PhaseVoltageReport = property(_get_PhaseVoltageReport, _set_PhaseVoltageReport) # type: bool
     """
-    {Yes | No}  Default is NO.  Report min, max, and average phase voltages for the zone and tabulate by voltage base. Demand Intervals must be turned on (Set Demand=true) and voltage bases must be defined for this property to take effect. Result is in a separate report file.
+    Report min, max, and average phase voltages for the zone and tabulate by voltage base. Demand Intervals must be turned on (Set Demand=true) and voltage bases must be defined for this property to take effect. Result is in a separate report file.
 
-    DSS property name: `PhaseVoltageReport`, DSS property index: 17.
+    Name: `PhaseVoltageReport`
+    Default: False
     """
 
     def _get_Int_Rate(self) -> float:
@@ -391,7 +407,8 @@ class EnergyMeter(DSSObj, CircuitElementMixin, EnergyMeterObjMixin, ElementHasRe
     """
     Average number of annual interruptions for head of the meter zone (source side of zone or feeder).
 
-    DSS property name: `Int_Rate`, DSS property index: 18.
+    Name: `Int_Rate`
+    Default: 0.0
     """
 
     def _get_Int_Duration(self) -> float:
@@ -404,7 +421,8 @@ class EnergyMeter(DSSObj, CircuitElementMixin, EnergyMeterObjMixin, ElementHasRe
     """
     Average annual duration, in hr, of interruptions for head of the meter zone (source side of zone or feeder).
 
-    DSS property name: `Int_Duration`, DSS property index: 19.
+    Name: `Int_Duration`
+    Default: 0.0
     """
 
     def _get_SAIFI(self) -> float:
@@ -415,9 +433,11 @@ class EnergyMeter(DSSObj, CircuitElementMixin, EnergyMeterObjMixin, ElementHasRe
 
     SAIFI = property(_get_SAIFI, _set_SAIFI) # type: float
     """
-    (Read only) Makes SAIFI result available via return on query (? energymeter.myMeter.SAIFI.
+    Makes SAIFI result available via return on query (? energymeter.myMeter.SAIFI.
 
-    DSS property name: `SAIFI`, DSS property index: 20.
+    **Read-only**
+
+    Name: `SAIFI`
     """
 
     def _get_SAIFIkW(self) -> float:
@@ -428,9 +448,11 @@ class EnergyMeter(DSSObj, CircuitElementMixin, EnergyMeterObjMixin, ElementHasRe
 
     SAIFIkW = property(_get_SAIFIkW, _set_SAIFIkW) # type: float
     """
-    (Read only) Makes SAIFIkW result available via return on query (? energymeter.myMeter.SAIFIkW.
+    Makes SAIFIkW result available via return on query (? energymeter.myMeter.SAIFIkW.
 
-    DSS property name: `SAIFIkW`, DSS property index: 21.
+    **Read-only**
+
+    Name: `SAIFIkW`
     """
 
     def _get_SAIDI(self) -> float:
@@ -441,9 +463,11 @@ class EnergyMeter(DSSObj, CircuitElementMixin, EnergyMeterObjMixin, ElementHasRe
 
     SAIDI = property(_get_SAIDI, _set_SAIDI) # type: float
     """
-    (Read only) Makes SAIDI result available via return on query (? energymeter.myMeter.SAIDI.
+    Makes SAIDI result available via return on query (? energymeter.myMeter.SAIDI.
 
-    DSS property name: `SAIDI`, DSS property index: 22.
+    **Read-only**
+
+    Name: `SAIDI`
     """
 
     def _get_CAIDI(self) -> float:
@@ -454,9 +478,11 @@ class EnergyMeter(DSSObj, CircuitElementMixin, EnergyMeterObjMixin, ElementHasRe
 
     CAIDI = property(_get_CAIDI, _set_CAIDI) # type: float
     """
-    (Read only) Makes CAIDI result available via return on query (? energymeter.myMeter.CAIDI.
+    Makes CAIDI result available via return on query (? energymeter.myMeter.CAIDI.
 
-    DSS property name: `CAIDI`, DSS property index: 23.
+    **Read-only**
+
+    Name: `CAIDI`
     """
 
     def _get_CustInterrupts(self) -> float:
@@ -467,9 +493,11 @@ class EnergyMeter(DSSObj, CircuitElementMixin, EnergyMeterObjMixin, ElementHasRe
 
     CustInterrupts = property(_get_CustInterrupts, _set_CustInterrupts) # type: float
     """
-    (Read only) Makes Total Customer Interrupts value result available via return on query (? energymeter.myMeter.CustInterrupts.
+    Makes Total Customer Interrupts value result available via return on query (? energymeter.myMeter.CustInterrupts.
 
-    DSS property name: `CustInterrupts`, DSS property index: 24.
+    **Read-only**
+
+    Name: `CustInterrupts`
     """
 
     def _get_BaseFreq(self) -> float:
@@ -482,7 +510,8 @@ class EnergyMeter(DSSObj, CircuitElementMixin, EnergyMeterObjMixin, ElementHasRe
     """
     Base Frequency for ratings.
 
-    DSS property name: `BaseFreq`, DSS property index: 25.
+    Name: `BaseFreq`
+    Units: Hz
     """
 
     def _get_Enabled(self) -> bool:
@@ -493,9 +522,10 @@ class EnergyMeter(DSSObj, CircuitElementMixin, EnergyMeterObjMixin, ElementHasRe
 
     Enabled = property(_get_Enabled, _set_Enabled) # type: bool
     """
-    {Yes|No or True|False} Indicates whether this element is enabled.
+    Indicates whether this element is enabled.
 
-    DSS property name: `Enabled`, DSS property index: 26.
+    Name: `Enabled`
+    Default: True
     """
 
     def Like(self, value: AnyStr):
@@ -504,7 +534,9 @@ class EnergyMeter(DSSObj, CircuitElementMixin, EnergyMeterObjMixin, ElementHasRe
 
         New Capacitor.C2 like=c1  ...
 
-        DSS property name: `Like`, DSS property index: 27.
+        **Deprecated:** `Like` has been deprecated since at least 2021, see https://sourceforge.net/p/electricdss/discussion/861977/thread/8b59d21eb6/#b57c/f668
+
+        Name: `Like`
         """
         self._set_string_o(27, value)
 
@@ -541,7 +573,7 @@ class EnergyMeterProperties(TypedDict):
 class EnergyMeterBatch(DSSBatch, CircuitElementBatchMixin, EnergyMeterBatchMixin):
     _cls_name = 'EnergyMeter'
     _obj_cls = EnergyMeter
-    _cls_idx = 48
+    _cls_idx = 49
     __slots__ = []
 
     def __init__(self, api_util, **kwargs):
@@ -580,7 +612,8 @@ class EnergyMeterBatch(DSSBatch, CircuitElementBatchMixin, EnergyMeterBatchMixin
     """
     Name (Full Object name) of element to which the monitor is connected.
 
-    DSS property name: `Element`, DSS property index: 1.
+    Name: `Element`
+    Default: Vsource.source
     """
 
     def _get_Element(self) -> List[DSSObj]:
@@ -593,7 +626,8 @@ class EnergyMeterBatch(DSSBatch, CircuitElementBatchMixin, EnergyMeterBatchMixin
     """
     Name (Full Object name) of element to which the monitor is connected.
 
-    DSS property name: `Element`, DSS property index: 1.
+    Name: `Element`
+    Default: Vsource.source
     """
 
     def _get_Terminal(self) -> BatchInt32ArrayProxy:
@@ -606,7 +640,8 @@ class EnergyMeterBatch(DSSBatch, CircuitElementBatchMixin, EnergyMeterBatchMixin
     """
     Number of the terminal of the circuit element to which the monitor is connected. 1 or 2, typically.
 
-    DSS property name: `Terminal`, DSS property index: 2.
+    Name: `Terminal`
+    Default: 1
     """
 
     def Action(self, value: Union[AnyStr, int, enums.EnergyMeterAction], flags: enums.SetterFlags = 0):
@@ -622,7 +657,7 @@ class EnergyMeterBatch(DSSBatch, CircuitElementBatchMixin, EnergyMeterBatchMixin
         (Z)onedump = Dump names of elements in meter zone to a file
            File name is "Zone_metername.csv".
 
-        DSS property name: `Action`, DSS property index: 3.
+        Name: `Action`
         """
         if isinstance(value, (bytes, str)) or (isinstance(value, LIST_LIKE) and len(value) > 0 and isinstance(value[0], (bytes, str))):
             self._set_batch_string(3, value, flags)
@@ -667,16 +702,17 @@ class EnergyMeterBatch(DSSBatch, CircuitElementBatchMixin, EnergyMeterBatchMixin
     """
     Enter a string ARRAY of any combination of the following. Options processed left-to-right:
 
-    (E)xcess : (default) UE/EEN is estimate of energy over capacity 
+    (E)xcess : UE/EEN is estimate of energy over capacity 
     (T)otal : UE/EEN is total energy after capacity exceeded
-    (R)adial : (default) Treats zone as a radial circuit
+    (R)adial : Treats zone as a radial circuit
     (M)esh : Treats zone as meshed network (not radial).
-    (C)ombined : (default) Load UE/EEN computed from combination of overload and undervoltage.
+    (C)ombined : Load UE/EEN computed from combination of overload and undervoltage.
     (V)oltage : Load UE/EEN computed based on voltage only.
 
     Example: option=(E, R)
 
-    DSS property name: `Option`, DSS property index: 4.
+    Name: `Option`
+    Default: ['E', 'R', 'C']
     """
 
     def _get_kVANormal(self) -> BatchFloat64ArrayProxy:
@@ -689,7 +725,8 @@ class EnergyMeterBatch(DSSBatch, CircuitElementBatchMixin, EnergyMeterBatchMixin
     """
     Upper limit on kVA load in the zone, Normal configuration. Default is 0.0 (ignored). Overrides limits on individual lines for overload EEN. With "LocalOnly=Yes" option, uses only load in metered branch.
 
-    DSS property name: `kVANormal`, DSS property index: 5.
+    Name: `kVANormal`
+    Default: 0.0
     """
 
     def _get_kVAEmerg(self) -> BatchFloat64ArrayProxy:
@@ -702,7 +739,8 @@ class EnergyMeterBatch(DSSBatch, CircuitElementBatchMixin, EnergyMeterBatchMixin
     """
     Upper limit on kVA load in the zone, Emergency configuration. Default is 0.0 (ignored). Overrides limits on individual lines for overload UE. With "LocalOnly=Yes" option, uses only load in metered branch.
 
-    DSS property name: `kVAEmerg`, DSS property index: 6.
+    Name: `kVAEmerg`
+    Default: 0.0
     """
 
     def _get_PeakCurrent(self) -> List[Float64Array]:
@@ -716,9 +754,10 @@ class EnergyMeterBatch(DSSBatch, CircuitElementBatchMixin, EnergyMeterBatchMixin
 
     PeakCurrent = property(_get_PeakCurrent, _set_PeakCurrent) # type: List[Float64Array]
     """
-    ARRAY of current magnitudes representing the peak currents measured at this location for the load allocation function.  Default is (400, 400, 400). Enter one current for each phase
+    ARRAY of current magnitudes representing the peak currents measured at this location for the load allocation function. Enter one current for each phase
 
-    DSS property name: `PeakCurrent`, DSS property index: 7.
+    Name: `PeakCurrent`
+    Default: [400.0, 400.0, 400.0]
     """
 
     def _get_ZoneList(self) -> List[List[str]]:
@@ -733,12 +772,12 @@ class EnergyMeterBatch(DSSBatch, CircuitElementBatchMixin, EnergyMeterBatchMixin
 
     ZoneList = property(_get_ZoneList, _set_ZoneList) # type: List[List[str]]
     """
-    ARRAY of full element names for this meter's zone.  Default is for meter to find it's own zone. If specified, DSS uses this list instead.  Can access the names in a single-column text file.  Examples: 
+    ARRAY of full element names for this meter's zone. Default is for meter to find its own zone. If specified, DSS uses this list instead.  Can access the names in a single-column text file.  Examples: 
 
     zonelist=[line.L1, transformer.T1, Line.L3] 
     zonelist=(file=branchlist.txt)
 
-    DSS property name: `ZoneList`, DSS property index: 8.
+    Name: `ZoneList`
     """
 
     def _get_LocalOnly(self) -> List[bool]:
@@ -751,9 +790,10 @@ class EnergyMeterBatch(DSSBatch, CircuitElementBatchMixin, EnergyMeterBatchMixin
 
     LocalOnly = property(_get_LocalOnly, _set_LocalOnly) # type: List[bool]
     """
-    {Yes | No}  Default is NO.  If Yes, meter considers only the monitored element for EEN and UE calcs.  Uses whole zone for losses.
+    If Yes, meter considers only the monitored element for EEN and UE calcs.  Uses whole zone for losses.
 
-    DSS property name: `LocalOnly`, DSS property index: 9.
+    Name: `LocalOnly`
+    Default: False
     """
 
     def _get_Mask(self) -> List[Float64Array]:
@@ -769,7 +809,8 @@ class EnergyMeterBatch(DSSBatch, CircuitElementBatchMixin, EnergyMeterBatchMixin
     """
     Mask for adding registers whenever all meters are totalized.  Array of floating point numbers representing the multiplier to be used for summing each register from this meter. Default = (1, 1, 1, 1, ... ).  You only have to enter as many as are changed (positional). Useful when two meters monitor same energy, etc.
 
-    DSS property name: `Mask`, DSS property index: 10.
+    Name: `Mask`
+    Default: [1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0]
     """
 
     def _get_Losses(self) -> List[bool]:
@@ -782,9 +823,10 @@ class EnergyMeterBatch(DSSBatch, CircuitElementBatchMixin, EnergyMeterBatchMixin
 
     Losses = property(_get_Losses, _set_Losses) # type: List[bool]
     """
-    {Yes | No}  Default is YES. Compute Zone losses. If NO, then no losses at all are computed.
+    Compute Zone losses. If NO, then no losses at all are computed.
 
-    DSS property name: `Losses`, DSS property index: 11.
+    Name: `Losses`
+    Default: True
     """
 
     def _get_LineLosses(self) -> List[bool]:
@@ -797,9 +839,10 @@ class EnergyMeterBatch(DSSBatch, CircuitElementBatchMixin, EnergyMeterBatchMixin
 
     LineLosses = property(_get_LineLosses, _set_LineLosses) # type: List[bool]
     """
-    {Yes | No}  Default is YES. Compute Line losses. If NO, then none of the losses are computed.
+    Compute Line losses. If NO, then none of the losses are computed.
 
-    DSS property name: `LineLosses`, DSS property index: 12.
+    Name: `LineLosses`
+    Default: True
     """
 
     def _get_XfmrLosses(self) -> List[bool]:
@@ -812,9 +855,10 @@ class EnergyMeterBatch(DSSBatch, CircuitElementBatchMixin, EnergyMeterBatchMixin
 
     XfmrLosses = property(_get_XfmrLosses, _set_XfmrLosses) # type: List[bool]
     """
-    {Yes | No}  Default is YES. Compute Transformer losses. If NO, transformers are ignored in loss calculations.
+    Compute Transformer losses. If NO, transformers are ignored in loss calculations.
 
-    DSS property name: `XfmrLosses`, DSS property index: 13.
+    Name: `XfmrLosses`
+    Default: True
     """
 
     def _get_SeqLosses(self) -> List[bool]:
@@ -827,9 +871,10 @@ class EnergyMeterBatch(DSSBatch, CircuitElementBatchMixin, EnergyMeterBatchMixin
 
     SeqLosses = property(_get_SeqLosses, _set_SeqLosses) # type: List[bool]
     """
-    {Yes | No}  Default is YES. Compute Sequence losses in lines and segregate by line mode losses and zero mode losses.
+    Compute Sequence losses in lines and segregate by line mode losses and zero mode losses.
 
-    DSS property name: `SeqLosses`, DSS property index: 14.
+    Name: `SeqLosses`
+    Default: True
     """
 
     def _get_ThreePhaseLosses(self) -> List[bool]:
@@ -842,9 +887,10 @@ class EnergyMeterBatch(DSSBatch, CircuitElementBatchMixin, EnergyMeterBatchMixin
 
     ThreePhaseLosses = property(_get_ThreePhaseLosses, _set_ThreePhaseLosses) # type: List[bool]
     """
-    {Yes | No}  Default is YES. Compute Line losses and segregate by 3-phase and other (1- and 2-phase) line losses. 
+    Compute Line losses and segregate by 3-phase and other (1- and 2-phase) line losses. 
 
-    DSS property name: `3PhaseLosses`, DSS property index: 15.
+    Name: `3PhaseLosses`
+    Default: True
     """
 
     def _get_VBaseLosses(self) -> List[bool]:
@@ -857,9 +903,10 @@ class EnergyMeterBatch(DSSBatch, CircuitElementBatchMixin, EnergyMeterBatchMixin
 
     VBaseLosses = property(_get_VBaseLosses, _set_VBaseLosses) # type: List[bool]
     """
-    {Yes | No}  Default is YES. Compute losses and segregate by voltage base. If NO, then voltage-based tabulation is not reported.
+    Compute losses and segregate by voltage base. If NO, then voltage-based tabulation is not reported.
 
-    DSS property name: `VBaseLosses`, DSS property index: 16.
+    Name: `VBaseLosses`
+    Default: True
     """
 
     def _get_PhaseVoltageReport(self) -> List[bool]:
@@ -872,9 +919,10 @@ class EnergyMeterBatch(DSSBatch, CircuitElementBatchMixin, EnergyMeterBatchMixin
 
     PhaseVoltageReport = property(_get_PhaseVoltageReport, _set_PhaseVoltageReport) # type: List[bool]
     """
-    {Yes | No}  Default is NO.  Report min, max, and average phase voltages for the zone and tabulate by voltage base. Demand Intervals must be turned on (Set Demand=true) and voltage bases must be defined for this property to take effect. Result is in a separate report file.
+    Report min, max, and average phase voltages for the zone and tabulate by voltage base. Demand Intervals must be turned on (Set Demand=true) and voltage bases must be defined for this property to take effect. Result is in a separate report file.
 
-    DSS property name: `PhaseVoltageReport`, DSS property index: 17.
+    Name: `PhaseVoltageReport`
+    Default: False
     """
 
     def _get_Int_Rate(self) -> BatchFloat64ArrayProxy:
@@ -887,7 +935,8 @@ class EnergyMeterBatch(DSSBatch, CircuitElementBatchMixin, EnergyMeterBatchMixin
     """
     Average number of annual interruptions for head of the meter zone (source side of zone or feeder).
 
-    DSS property name: `Int_Rate`, DSS property index: 18.
+    Name: `Int_Rate`
+    Default: 0.0
     """
 
     def _get_Int_Duration(self) -> BatchFloat64ArrayProxy:
@@ -900,7 +949,8 @@ class EnergyMeterBatch(DSSBatch, CircuitElementBatchMixin, EnergyMeterBatchMixin
     """
     Average annual duration, in hr, of interruptions for head of the meter zone (source side of zone or feeder).
 
-    DSS property name: `Int_Duration`, DSS property index: 19.
+    Name: `Int_Duration`
+    Default: 0.0
     """
 
     def _get_SAIFI(self) -> BatchFloat64ArrayProxy:
@@ -911,9 +961,11 @@ class EnergyMeterBatch(DSSBatch, CircuitElementBatchMixin, EnergyMeterBatchMixin
 
     SAIFI = property(_get_SAIFI, _set_SAIFI) # type: BatchFloat64ArrayProxy
     """
-    (Read only) Makes SAIFI result available via return on query (? energymeter.myMeter.SAIFI.
+    Makes SAIFI result available via return on query (? energymeter.myMeter.SAIFI.
 
-    DSS property name: `SAIFI`, DSS property index: 20.
+    **Read-only**
+
+    Name: `SAIFI`
     """
 
     def _get_SAIFIkW(self) -> BatchFloat64ArrayProxy:
@@ -924,9 +976,11 @@ class EnergyMeterBatch(DSSBatch, CircuitElementBatchMixin, EnergyMeterBatchMixin
 
     SAIFIkW = property(_get_SAIFIkW, _set_SAIFIkW) # type: BatchFloat64ArrayProxy
     """
-    (Read only) Makes SAIFIkW result available via return on query (? energymeter.myMeter.SAIFIkW.
+    Makes SAIFIkW result available via return on query (? energymeter.myMeter.SAIFIkW.
 
-    DSS property name: `SAIFIkW`, DSS property index: 21.
+    **Read-only**
+
+    Name: `SAIFIkW`
     """
 
     def _get_SAIDI(self) -> BatchFloat64ArrayProxy:
@@ -937,9 +991,11 @@ class EnergyMeterBatch(DSSBatch, CircuitElementBatchMixin, EnergyMeterBatchMixin
 
     SAIDI = property(_get_SAIDI, _set_SAIDI) # type: BatchFloat64ArrayProxy
     """
-    (Read only) Makes SAIDI result available via return on query (? energymeter.myMeter.SAIDI.
+    Makes SAIDI result available via return on query (? energymeter.myMeter.SAIDI.
 
-    DSS property name: `SAIDI`, DSS property index: 22.
+    **Read-only**
+
+    Name: `SAIDI`
     """
 
     def _get_CAIDI(self) -> BatchFloat64ArrayProxy:
@@ -950,9 +1006,11 @@ class EnergyMeterBatch(DSSBatch, CircuitElementBatchMixin, EnergyMeterBatchMixin
 
     CAIDI = property(_get_CAIDI, _set_CAIDI) # type: BatchFloat64ArrayProxy
     """
-    (Read only) Makes CAIDI result available via return on query (? energymeter.myMeter.CAIDI.
+    Makes CAIDI result available via return on query (? energymeter.myMeter.CAIDI.
 
-    DSS property name: `CAIDI`, DSS property index: 23.
+    **Read-only**
+
+    Name: `CAIDI`
     """
 
     def _get_CustInterrupts(self) -> BatchFloat64ArrayProxy:
@@ -963,9 +1021,11 @@ class EnergyMeterBatch(DSSBatch, CircuitElementBatchMixin, EnergyMeterBatchMixin
 
     CustInterrupts = property(_get_CustInterrupts, _set_CustInterrupts) # type: BatchFloat64ArrayProxy
     """
-    (Read only) Makes Total Customer Interrupts value result available via return on query (? energymeter.myMeter.CustInterrupts.
+    Makes Total Customer Interrupts value result available via return on query (? energymeter.myMeter.CustInterrupts.
 
-    DSS property name: `CustInterrupts`, DSS property index: 24.
+    **Read-only**
+
+    Name: `CustInterrupts`
     """
 
     def _get_BaseFreq(self) -> BatchFloat64ArrayProxy:
@@ -978,7 +1038,8 @@ class EnergyMeterBatch(DSSBatch, CircuitElementBatchMixin, EnergyMeterBatchMixin
     """
     Base Frequency for ratings.
 
-    DSS property name: `BaseFreq`, DSS property index: 25.
+    Name: `BaseFreq`
+    Units: Hz
     """
 
     def _get_Enabled(self) -> List[bool]:
@@ -991,9 +1052,10 @@ class EnergyMeterBatch(DSSBatch, CircuitElementBatchMixin, EnergyMeterBatchMixin
 
     Enabled = property(_get_Enabled, _set_Enabled) # type: List[bool]
     """
-    {Yes|No or True|False} Indicates whether this element is enabled.
+    Indicates whether this element is enabled.
 
-    DSS property name: `Enabled`, DSS property index: 26.
+    Name: `Enabled`
+    Default: True
     """
 
     def Like(self, value: AnyStr, flags: enums.SetterFlags = 0):
@@ -1002,7 +1064,9 @@ class EnergyMeterBatch(DSSBatch, CircuitElementBatchMixin, EnergyMeterBatchMixin
 
         New Capacitor.C2 like=c1  ...
 
-        DSS property name: `Like`, DSS property index: 27.
+        **Deprecated:** `Like` has been deprecated since at least 2021, see https://sourceforge.net/p/electricdss/discussion/861977/thread/8b59d21eb6/#b57c/f668
+
+        Name: `Like`
         """
         self._set_batch_string(27, value, flags)
 
