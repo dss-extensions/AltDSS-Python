@@ -405,12 +405,24 @@ class Bus:
         '''Batch of line objects connected to this bus.'''
         return LineBatch(self._api_util, from_func=(self._lib.Alt_Bus_Get_Lines, self._ptr))
 
-    def PCElements(self) -> PCElementBatch:
-        '''Batch of all PC elements connected to this bus.'''
-        return PCElementBatch(self._lib.Alt_Bus_Get_PCElements, self, copy_safe=True)
+    def PCElements(self) -> CircuitElementBatch:
+        '''
+        Batch of all power conversion (PC) elements connected to this bus.
+
+        This also includes shunt Capacitors/Reactors.
+
+        Original COM help: https://opendss.epri.com/AllPCEatBus.html
+        '''
+        return CircuitElementBatch(self._lib.Alt_Bus_Get_PCElements, self, copy_safe=True)
 
     def PDElements(self) -> PDElementBatch:
-        '''Batch of all PD elements connected to this bus.'''
+        '''
+        Batch of all power delivery (PD) elements connected to this bus.
+
+        This excludes shunt Capacitors/Reactors.
+
+        Original COM help: https://opendss.epri.com/AllPDEatBus1.html
+        '''
         return PDElementBatch(self._lib.Alt_Bus_Get_PDElements, self, copy_safe=True)
 
     def to_json(self, options: Union[int, DSSJSONFlags] = 0):
