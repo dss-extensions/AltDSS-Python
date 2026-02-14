@@ -1,5 +1,5 @@
-# Copyright (c) 2021-2024 Paulo Meira
-# Copyright (c) 2021-2024 DSS-Extensions contributors
+# Copyright (c) 2021-2026 Paulo Meira
+# Copyright (c) 2021-2026 DSS-Extensions contributors
 from __future__ import annotations
 from typing import Union, List, AnyStr, Optional, Iterator, TYPE_CHECKING
 from typing_extensions import TypedDict, Unpack
@@ -149,7 +149,7 @@ class SwtControl(DSSObj, CircuitElementMixin):
     Normal state of the switch. If not Locked, the switch reverts to this state for reset, change of mode, etc. Defaults to first Action or State specified if not specifically declared.
 
     Name: `Normal`
-    Default: closed
+    Default: None
     """
 
     def _get_Normal_str(self) -> str:
@@ -163,7 +163,7 @@ class SwtControl(DSSObj, CircuitElementMixin):
     Normal state of the switch. If not Locked, the switch reverts to this state for reset, change of mode, etc. Defaults to first Action or State specified if not specifically declared.
 
     Name: `Normal`
-    Default: closed
+    Default: None
     """
 
     def _get_State(self) -> enums.SwtControlState:
@@ -376,7 +376,7 @@ class SwtControlBatch(DSSBatch, CircuitElementBatchMixin):
     Normal state of the switch. If not Locked, the switch reverts to this state for reset, change of mode, etc. Defaults to first Action or State specified if not specifically declared.
 
     Name: `Normal`
-    Default: closed
+    Default: None
     """
 
     def _get_Normal_str(self) -> List[str]:
@@ -390,7 +390,7 @@ class SwtControlBatch(DSSBatch, CircuitElementBatchMixin):
     Normal state of the switch. If not Locked, the switch reverts to this state for reset, change of mode, etc. Defaults to first Action or State specified if not specifically declared.
 
     Name: `Normal`
-    Default: closed
+    Default: None
     """
 
     def _get_State(self) -> BatchInt32ArrayProxy:

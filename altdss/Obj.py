@@ -1,5 +1,5 @@
-# Copyright (c) 2021-2024 Paulo Meira
-# Copyright (c) 2021-2024 DSS-Extensions contributors
+# Copyright (c) 2021-2026 Paulo Meira
+# Copyright (c) 2021-2026 DSS-Extensions contributors
 from __future__ import annotations
 from .DSSObj import DSSObj
 from .common import Base
@@ -252,6 +252,7 @@ __all__ = [
     "LoadShapeClass",
     "MonitoredPhase",
     "PlotProfilePhases",
+    "AltDSSComplatFlags",
     "LoadShapeAction",
     "LoadShapeInterpolation",
     "TShapeAction",

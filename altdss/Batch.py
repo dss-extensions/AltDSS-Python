@@ -2,7 +2,7 @@ from __future__ import annotations
 import numpy as np
 from typing import Union, List, AnyStr, Optional, Iterator
 from dss.enums import DSSJSONFlags
-from .enums import SetterFlags
+from .enums import SetterFlags, BatchOperation, DSSObjectFlags
 from .common import Base, LIST_LIKE, InvalidatedObject, InvalidatedObjectIterator
 from .types import Float64Array, Int32Array
 from .DSSObj import DSSObj
@@ -33,19 +33,19 @@ class BatchCommon:
         return res
 
     def _get_batch_float64_func(self, funcname: str):
-        func = self._ffi.addressof(self._api_util.lib_unpatched, funcname)
+        func = getattr(self._api_util.lib_unpatched, funcname)
         res = self._get_float64_array(self._lib.Batch_GetFloat64FromFunc, *self._get_ptr_cnt(), func)
         self._check_for_error()
         return res
 
     def _get_batch_float64_int32_func(self, funcname: str, funcArg: int):
-        func = self._ffi.addressof(self._api_util.lib_unpatched, funcname)
+        func = getattr(self._api_util.lib_unpatched, funcname)
         res = self._get_float64_array(self._lib.Batch_GetFloat64FromFunc2, *self._get_ptr_cnt(), func, funcArg)
         self._check_for_error()
         return res
 
     def _get_batch_int32_func(self, funcname: str):
-        func = self._ffi.addressof(self._api_util.lib_unpatched, funcname)
+        func = getattr(self._api_util.lib_unpatched, funcname)
         res = self._get_int32_array(self._lib.Batch_GetInt32FromFunc, *self._get_ptr_cnt(), func)
         self._check_for_error()
         return res
@@ -428,7 +428,7 @@ class DSSBatch(Base, BatchCommon):
             self._lib.Batch_Float64(
                 *ptr_cnt,
                 idx,
-                self._lib.BatchOperation_Set,
+                BatchOperation.Set,
                 value,
                 flags
             )
@@ -441,7 +441,7 @@ class DSSBatch(Base, BatchCommon):
         self._lib.Batch_Float64Array(
             *ptr_cnt,
             idx,
-            self._lib.BatchOperation_Set,
+            BatchOperation.Set,
             data_ptr,
             flags
         )
@@ -460,7 +460,7 @@ class DSSBatch(Base, BatchCommon):
             self._lib.Batch_Int32(
                 *ptr_cnt,
                 idx,
-                self._lib.BatchOperation_Set,
+                BatchOperation.Set,
                 value,
                 flags
             )
@@ -473,7 +473,7 @@ class DSSBatch(Base, BatchCommon):
         self._lib.Batch_Int32Array(
             *ptr_cnt,
             idx,
-            self._lib.BatchOperation_Set,
+            BatchOperation.Set,
             data_ptr,
             flags
         )
@@ -502,13 +502,13 @@ class DSSBatch(Base, BatchCommon):
         return self._get_float64_array(self._lib.Batch_GetFloat64, *self._get_ptr_cnt(), index)
 
     def _get_batch_float_prop_as_list(self, index):
-        return self._api_util.get_float64_array2(self._lib.Batch_GetFloat64, *self._get_ptr_cnt(), index)
+        return self._lib.get_float64_array2(self._lib.Batch_GetFloat64, *self._get_ptr_cnt(), index)
 
     def _get_batch_int32_prop(self, index):
         return self._get_int32_array(self._lib.Batch_GetInt32, *self._get_ptr_cnt(), index)
 
     def _get_batch_int32_prop_as_list(self, index):
-        return self._api_util.get_int32_array2(self._lib.Batch_GetInt32, *self._get_ptr_cnt(), index)
+        return self._lib.get_int32_array2(self._lib.Batch_GetInt32, *self._get_ptr_cnt(), index)
 
     def _get_batch_str_prop(self, index):
         return self._get_string_array(self._lib.Batch_GetString, *self._get_ptr_cnt(), index)
@@ -732,7 +732,7 @@ class DSSBatch(Base, BatchCommon):
         if cnt == 0:
             return
 
-        if not (self._lib.Obj_GetFlags(ptr[0]) and self._lib.DSSObjectFlags_Editing):
+        if not (self._lib.Obj_GetFlags(ptr[0]) and DSSObjectFlags.Editing):
             self._lib.Batch_BeginEdit(ptr, cnt)
 
         self._check_for_error()

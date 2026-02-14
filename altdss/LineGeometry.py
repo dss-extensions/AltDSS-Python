@@ -1,5 +1,5 @@
-# Copyright (c) 2021-2024 Paulo Meira
-# Copyright (c) 2021-2024 DSS-Extensions contributors
+# Copyright (c) 2021-2026 Paulo Meira
+# Copyright (c) 2021-2026 DSS-Extensions contributors
 from __future__ import annotations
 from typing import Union, List, AnyStr, Optional, Iterator, TYPE_CHECKING
 from typing_extensions import TypedDict, Unpack
@@ -13,6 +13,8 @@ from .CNData import CNData
 from .LineSpacing import LineSpacing
 from .TSData import TSData
 from .WireData import WireData
+
+Conductor = Union[WireData, CNData, TSData]
 
 class LineGeometry(DSSObj):
     __slots__ = DSSObj._extra_slots
@@ -46,7 +48,6 @@ class LineGeometry(DSSObj):
         'reduce': 10,
         'spacing': 11,
         'wires': 12,
-        'conductors': 12,
         'cncable': 13,
         'tscable': 14,
         'cncables': 15,
@@ -54,7 +55,8 @@ class LineGeometry(DSSObj):
         'seasons': 17,
         'ratings': 18,
         'linetype': 19,
-        'like': 20,
+        'conductors': 20,
+        'like': 21,
     }
 
 
@@ -103,40 +105,6 @@ class LineGeometry(DSSObj):
     Default: 0
     """
 
-    def _get_Conductors_str(self) -> List[str]:
-        return self._get_string_array(self._lib.Obj_GetStringArray, self._ptr, 12)
-
-    def _set_Conductors_str(self, value: List[AnyStr], flags: enums.SetterFlags = 0):
-        self._set_string_array_o(12, value, flags | enums.SetterFlags.AllowAllConductors)
-
-    Conductors_str = property(_get_Conductors_str, _set_Conductors_str) # type: List[str]
-    """
-    Code from WireData. MUST BE PREVIOUSLY DEFINED. no default.
-    Specifies use of Overhead Line parameter calculation,
-    Unless Tape Shield cable previously assigned to phases, and this wire is a neutral.
-
-    Name: `Wire`
-    """
-
-    def _get_Conductors(self) -> List[Union[WireData, CNData, TSData]]:
-        return self._get_obj_array(12, None)
-
-    def _set_Conductors(self, value: List[Union[AnyStr, Union[WireData, CNData, TSData]]], flags: enums.SetterFlags = 0):
-        if value is None or len(value) == 0 or not isinstance(value[0], DSSObj):
-            self._set_string_array_o(12, value, flags | enums.SetterFlags.AllowAllConductors)
-            return
-
-        self._set_obj_array(12, value, flags | enums.SetterFlags.AllowAllConductors)
-
-    Conductors = property(_get_Conductors, _set_Conductors) # type: List[Union[WireData, CNData, TSData]]
-    """
-    Code from WireData. MUST BE PREVIOUSLY DEFINED. no default.
-    Specifies use of Overhead Line parameter calculation,
-    Unless Tape Shield cable previously assigned to phases, and this wire is a neutral.
-
-    Name: `Wire`
-    """
-
     def _get_X(self) -> Float64Array:
         return self._get_float64_array(self._lib.Obj_GetFloat64Array, self._ptr, 5)
 
@@ -163,14 +131,23 @@ class LineGeometry(DSSObj):
     Name: `H`
     """
 
-    def _get_Units(self) -> enums.LengthUnit:
-        return enums.LengthUnit(self._lib.Obj_GetInt32(self._ptr, 7))
+    def _get_Units(self) -> List[enums.LengthUnit]:
+        return [enums.LengthUnit(val) for val in self._get_int32_list(self._lib.Obj_GetInt32Array, self._ptr, 7)]
 
-    def _set_Units(self, value: Union[AnyStr, int, enums.LengthUnit], flags: enums.SetterFlags = 0):
-        if not isinstance(value, int):
+    def _set_Units(self, value: Union[List[Union[int, enums.LengthUnit]], List[AnyStr], int, enums.LengthUnit, AnyStr], flags: enums.SetterFlags = 0):
+        flags |= enums.SetterFlags.Broadcast
+        if isinstance(value, (str, bytes)):
             self._set_string_o(7, value, flags)
             return
-        self._lib.Obj_SetInt32(self._ptr, 7, value, flags)
+
+        if isinstance(value, int):
+            self._lib.Obj_SetInt32(self._ptr, 7, value, flags)
+            return
+
+        if len(value) and not isinstance(value[0], int):
+            self._set_string_array_o(7, value, flags)
+            return
+        self._set_int32_array_o(7, value, flags)
 
     Units = property(_get_Units, _set_Units) # type: enums.LengthUnit
     """
@@ -179,13 +156,13 @@ class LineGeometry(DSSObj):
     Name: `Units`
     """
 
-    def _get_Units_str(self) -> str:
-        return self._get_prop_string(7)
+    def _get_Units_str(self) -> List[str]:
+        return self._get_string_array(self._lib.Obj_GetStringArray, self._ptr, 7)
 
-    def _set_Units_str(self, value: AnyStr, flags: enums.SetterFlags = 0):
+    def _set_Units_str(self, value: Union[List[AnyStr], AnyStr], flags: enums.SetterFlags = 0):
         self._set_Units(value, flags)
 
-    Units_str = property(_get_Units_str, _set_Units_str) # type: str
+    Units_str = property(_get_Units_str, _set_Units_str) # type: List[str]
     """
     Units for x and h. Initial default is "ft", but defaults to last unit defined
 
@@ -331,6 +308,44 @@ class LineGeometry(DSSObj):
     Default: oh
     """
 
+    def _get_Conductors_str(self) -> List[str]:
+        return self._get_string_array(self._lib.Obj_GetStringArray, self._ptr, 20)
+
+    def _set_Conductors_str(self, value: List[AnyStr], flags: enums.SetterFlags = 0):
+        self._set_string_array_o(20, value, flags)
+
+    Conductors_str = property(_get_Conductors_str, _set_Conductors_str) # type: List[str]
+    """
+    Array of conductor names for use in line constants calculation.
+    Must be used in conjunction with the Spacing property.
+    Specify the Spacing first, and `ncond` wires.
+    Specify the conductor type followed by the conductor name. e.g., "conductors=[cndata.cncablename, tsdata.tscablename, wiredata.wirename]"
+    If a given position in the spacing is not to be used in the line, use "none" in the entry of the conductors array.
+
+    Name: `Conductors`
+    """
+
+    def _get_Conductors(self) -> List[Conductor]:
+        return self._get_obj_array(20, None)
+
+    def _set_Conductors(self, value: Union[List[AnyStr], List[Conductor]], flags: enums.SetterFlags = 0):
+        if value is None or len(value) == 0 or not isinstance(value[0], DSSObj):
+            self._set_string_array_o(20, value, flags)
+            return
+
+        self._set_obj_array(20, value, flags)
+
+    Conductors = property(_get_Conductors, _set_Conductors) # type: List[Conductor]
+    """
+    Array of conductor names for use in line constants calculation.
+    Must be used in conjunction with the Spacing property.
+    Specify the Spacing first, and `ncond` wires.
+    Specify the conductor type followed by the conductor name. e.g., "conductors=[cndata.cncablename, tsdata.tscablename, wiredata.wirename]"
+    If a given position in the spacing is not to be used in the line, use "none" in the entry of the conductors array.
+
+    Name: `Conductors`
+    """
+
     def Like(self, value: AnyStr):
         """
         Make like another object, e.g.:
@@ -341,16 +356,15 @@ class LineGeometry(DSSObj):
 
         Name: `Like`
         """
-        self._set_string_o(20, value)
+        self._set_string_o(21, value)
 
 
 class LineGeometryProperties(TypedDict):
     NConds: int
     NPhases: int
-    Conductors: List[Union[AnyStr, Union[WireData, CNData, TSData]]]
     X: Float64Array
     H: Float64Array
-    Units: Union[AnyStr, int, enums.LengthUnit]
+    Units: Union[List[Union[int, enums.LengthUnit]], List[AnyStr]]
     NormAmps: float
     EmergAmps: float
     Reduce: bool
@@ -358,6 +372,7 @@ class LineGeometryProperties(TypedDict):
     Seasons: int
     Ratings: Float64Array
     LineType: Union[AnyStr, int, enums.LineType]
+    Conductors: Union[List[AnyStr], List[Conductor]]
     Like: AnyStr
 
 class LineGeometryBatch(DSSBatch):
@@ -416,40 +431,6 @@ class LineGeometryBatch(DSSBatch):
     Default: 0
     """
 
-    def _get_Conductors_str(self) -> List[List[str]]:
-        return self._get_string_ll(12)
-
-    def _set_Conductors_str(self, value: List[AnyStr], flags: enums.SetterFlags = 0):
-        self._set_batch_stringlist_prop(12, value, flags | enums.SetterFlags.AllowAllConductors)
-
-    Conductors_str = property(_get_Conductors_str, _set_Conductors_str) # type: List[List[str]]
-    """
-    Code from WireData. MUST BE PREVIOUSLY DEFINED. no default.
-    Specifies use of Overhead Line parameter calculation,
-    Unless Tape Shield cable previously assigned to phases, and this wire is a neutral.
-
-    Name: `Wire`
-    """
-
-    def _get_Conductors(self) -> List[List[Union[WireData, CNData, TSData]]]:
-        return self._get_obj_ll(12, None)
-
-    def _set_Conductors(self, value: Union[List[AnyStr], List[Union[WireData, CNData, TSData]]], flags: enums.SetterFlags = 0):
-        if (not len(value)) or isinstance(value[0], (bytes, str)) or (len(value[0]) and isinstance(value[0][0], (bytes, str))):
-            self._set_batch_stringlist_prop(12, value, flags | enums.SetterFlags.AllowAllConductors)
-            return
-
-        self._set_batch_objlist_prop(12, value, flags | enums.SetterFlags.AllowAllConductors)
-
-    Conductors = property(_get_Conductors, _set_Conductors) # type: List[List[Union[WireData, CNData, TSData]]]
-    """
-    Code from WireData. MUST BE PREVIOUSLY DEFINED. no default.
-    Specifies use of Overhead Line parameter calculation,
-    Unless Tape Shield cable previously assigned to phases, and this wire is a neutral.
-
-    Name: `Wire`
-    """
-
     def _get_X(self) -> List[Float64Array]:
         return [
             self._get_float64_array(self._lib.Obj_GetFloat64Array, x, 5)
@@ -482,30 +463,42 @@ class LineGeometryBatch(DSSBatch):
     Name: `H`
     """
 
-    def _get_Units(self) -> BatchInt32ArrayProxy:
-        return BatchInt32ArrayProxy(self, 7)
+    def _get_Units(self) -> List[Int32Array]:
+        return [
+            self._get_int32_array(self._lib.Obj_GetInt32Array, x, 7)
+            for x in self._unpack()
+        ]
 
-    def _set_Units(self, value: Union[AnyStr, int, enums.LengthUnit, List[AnyStr], List[int], List[enums.LengthUnit], Int32Array], flags: enums.SetterFlags = 0):
-        if isinstance(value, (str, bytes)) or (isinstance(value, LIST_LIKE) and isinstance(value[0], (str, bytes))):
+    def _set_Units(self, value: Union[List[Union[int, enums.LengthUnit]], List[AnyStr], int, enums.LengthUnit, AnyStr], flags: enums.SetterFlags = 0): #TODO: list of lists
+        flags |= enums.SetterFlags.Broadcast
+        if isinstance(value, (str, bytes)):
             self._set_batch_string(7, value, flags)
+            return
+
+        if len(value) and not isinstance(value[0], int):
+            value, value_ptr, value_count = self._prepare_string_array(value)
+            for x in self._unpack():
+                self._lib.Obj_SetStringArray(x, 7, value_ptr, value_count, flags)
+
+            self._check_for_error()
             return
 
         self._set_batch_int32_array(7, value, flags)
 
-    Units = property(_get_Units, _set_Units) # type: BatchInt32ArrayProxy
+    Units = property(_get_Units, _set_Units) # type: List[Int32Array]
     """
     Units for x and h. Initial default is "ft", but defaults to last unit defined
 
     Name: `Units`
     """
 
-    def _get_Units_str(self) -> List[str]:
-        return self._get_batch_str_prop(7)
+    def _get_Units_str(self) -> List[List[str]]:
+        return self._get_string_ll(7)
 
     def _set_Units_str(self, value: AnyStr, flags: enums.SetterFlags = 0):
         self._set_Units(value, flags)
 
-    Units_str = property(_get_Units_str, _set_Units_str) # type: List[str]
+    Units_str = property(_get_Units_str, _set_Units_str) # type: List[List[str]]
     """
     Units for x and h. Initial default is "ft", but defaults to last unit defined
 
@@ -653,6 +646,44 @@ class LineGeometryBatch(DSSBatch):
     Default: oh
     """
 
+    def _get_Conductors_str(self) -> List[List[str]]:
+        return self._get_string_ll(20)
+
+    def _set_Conductors_str(self, value: List[AnyStr], flags: enums.SetterFlags = 0):
+        self._set_batch_stringlist_prop(20, value, flags)
+
+    Conductors_str = property(_get_Conductors_str, _set_Conductors_str) # type: List[List[str]]
+    """
+    Array of conductor names for use in line constants calculation.
+    Must be used in conjunction with the Spacing property.
+    Specify the Spacing first, and `ncond` wires.
+    Specify the conductor type followed by the conductor name. e.g., "conductors=[cndata.cncablename, tsdata.tscablename, wiredata.wirename]"
+    If a given position in the spacing is not to be used in the line, use "none" in the entry of the conductors array.
+
+    Name: `Conductors`
+    """
+
+    def _get_Conductors(self) -> List[List[Conductor]]:
+        return self._get_obj_ll(20, None)
+
+    def _set_Conductors(self, value: Union[List[AnyStr], List[Conductor]], flags: enums.SetterFlags = 0):
+        if (not len(value)) or isinstance(value[0], (bytes, str)) or (len(value[0]) and isinstance(value[0][0], (bytes, str))):
+            self._set_batch_stringlist_prop(20, value, flags)
+            return
+
+        self._set_batch_objlist_prop(20, value, flags)
+
+    Conductors = property(_get_Conductors, _set_Conductors) # type: List[List[Conductor]]
+    """
+    Array of conductor names for use in line constants calculation.
+    Must be used in conjunction with the Spacing property.
+    Specify the Spacing first, and `ncond` wires.
+    Specify the conductor type followed by the conductor name. e.g., "conductors=[cndata.cncablename, tsdata.tscablename, wiredata.wirename]"
+    If a given position in the spacing is not to be used in the line, use "none" in the entry of the conductors array.
+
+    Name: `Conductors`
+    """
+
     def Like(self, value: AnyStr, flags: enums.SetterFlags = 0):
         """
         Make like another object, e.g.:
@@ -663,15 +694,14 @@ class LineGeometryBatch(DSSBatch):
 
         Name: `Like`
         """
-        self._set_batch_string(20, value, flags)
+        self._set_batch_string(21, value, flags)
 
 class LineGeometryBatchProperties(TypedDict):
     NConds: Union[int, Int32Array]
     NPhases: Union[int, Int32Array]
-    Conductors: Union[List[AnyStr], List[Union[WireData, CNData, TSData]]]
     X: Float64Array
     H: Float64Array
-    Units: Union[AnyStr, int, enums.LengthUnit, List[AnyStr], List[int], List[enums.LengthUnit], Int32Array]
+    Units: Union[List[Union[int, enums.LengthUnit]], List[AnyStr], int, enums.LengthUnit, AnyStr]
     NormAmps: Union[float, Float64Array]
     EmergAmps: Union[float, Float64Array]
     Reduce: bool
@@ -679,6 +709,7 @@ class LineGeometryBatchProperties(TypedDict):
     Seasons: Union[int, Int32Array]
     Ratings: Float64Array
     LineType: Union[AnyStr, int, enums.LineType, List[AnyStr], List[int], List[enums.LineType], Int32Array]
+    Conductors: Union[List[AnyStr], List[Conductor]]
     Like: AnyStr
 
 class ILineGeometry(IDSSObj, LineGeometryBatch):

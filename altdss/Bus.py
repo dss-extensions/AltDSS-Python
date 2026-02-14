@@ -1,9 +1,10 @@
-# Copyright (c) 2023-2024 Paulo Meira
-# Copyright (c) 2023-2024 DSS-Extensions contributors
+# Copyright (c) 2023-2026 Paulo Meira
+# Copyright (c) 2023-2026 DSS-Extensions contributors
 from typing import Union, Iterator, List
 from dss.enums import DSSJSONFlags
 from .types import Float64Array, Int32Array, ComplexArray
 from .common import Base, InvalidatedBus, InvalidatedBusIterator
+from .CircuitElement import CircuitElementBatch
 from .PCElement import PCElementBatch
 from .PDElement import PDElementBatch
 from .Load import LoadBatch
@@ -27,14 +28,15 @@ class Bus:
         self._ptr = InvalidatedBus
 
     def __init__(self, api_util, ptr):
-        self._get_float64_array = api_util.get_float64_array
-        self._get_fcomplex128_array = api_util.get_fcomplex128_array
-        self._get_fcomplex128_simple = api_util.get_fcomplex128_simple
-        self._get_int32_array = api_util.get_int32_array
-        self._get_string = api_util.get_string
-        self._lib = api_util.lib
+        lib = self._lib = api_util.lib
         self._ptr = ptr
         self._api_util = api_util
+
+        self._get_float64_array = lib.get_float64_array
+        self._get_fcomplex128_array = lib.get_fcomplex128_array
+        self._get_fcomplex128_simple = lib.get_fcomplex128_simple
+        self._get_int32_array = lib.get_int32_array
+        self._get_string = api_util.get_string
         self._is_iterator = False
         if ptr is not InvalidatedBusIterator:
             api_util.track_bus(self)
@@ -464,14 +466,14 @@ class BusBatch(Base):
         return self._get_float64_array(
             self._lib.Alt_BusBatch_GetFloat64FromFunc, 
             *self._get_ptr_cnt(),
-            self._api_util.ffi.addressof(self._api_util.lib_unpatched, fname)
+            getattr(self._api_util.lib_unpatched, fname)
         )
 
     def _busbatch_int32(self, fname: str):
         return self._get_int32_array(
             self._lib.Alt_BusBatch_GetInt32FromFunc, 
             *self._get_ptr_cnt(),
-            self._api_util.ffi.addressof(self._api_util.lib_unpatched, fname)
+            getattr(self._api_util.lib_unpatched, fname)
         )
 
     def X(self) -> Float64Array:

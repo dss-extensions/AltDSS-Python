@@ -1,5 +1,5 @@
-# Copyright (c) 2021-2024 Paulo Meira
-# Copyright (c) 2021-2024 DSS-Extensions contributors
+# Copyright (c) 2021-2026 Paulo Meira
+# Copyright (c) 2021-2026 DSS-Extensions contributors
 from __future__ import annotations
 from typing import Union, List, AnyStr, Optional, Iterator, TYPE_CHECKING
 from typing_extensions import TypedDict, Unpack
@@ -844,7 +844,7 @@ class Relay(DSSObj, CircuitElementMixin):
     {Open | Closed} Normal state of the relay. The relay reverts to this state for reset, change of mode, etc. Defaults to "State" if not specifically declared.
 
     Name: `Normal`
-    Default: closed
+    Default: Closed
     """
 
     def _get_Normal_str(self) -> str:
@@ -858,7 +858,7 @@ class Relay(DSSObj, CircuitElementMixin):
     {Open | Closed} Normal state of the relay. The relay reverts to this state for reset, change of mode, etc. Defaults to "State" if not specifically declared.
 
     Name: `Normal`
-    Default: closed
+    Default: Closed
     """
 
     def _get_State(self) -> enums.RelayState:
@@ -875,7 +875,7 @@ class Relay(DSSObj, CircuitElementMixin):
     {Open | Closed} Actual state of the relay. Upon setting, immediately forces state of the relay, overriding the Relay control. Simulates manual control on relay. Defaults to Closed. "Open" causes the controlled element to open and lock out. "Closed" causes the controlled element to close and the relay to reset to its first operation.
 
     Name: `State`
-    Default: closed
+    Default: Closed
     """
 
     def _get_State_str(self) -> str:
@@ -889,7 +889,7 @@ class Relay(DSSObj, CircuitElementMixin):
     {Open | Closed} Actual state of the relay. Upon setting, immediately forces state of the relay, overriding the Relay control. Simulates manual control on relay. Defaults to Closed. "Open" causes the controlled element to open and lock out. "Closed" causes the controlled element to close and the relay to reset to its first operation.
 
     Name: `State`
-    Default: closed
+    Default: Closed
     """
 
     def _get_DOC_TiltAngleLow(self) -> float:
@@ -1859,7 +1859,7 @@ class RelayBatch(DSSBatch, CircuitElementBatchMixin):
     {Open | Closed} Normal state of the relay. The relay reverts to this state for reset, change of mode, etc. Defaults to "State" if not specifically declared.
 
     Name: `Normal`
-    Default: closed
+    Default: Closed
     """
 
     def _get_Normal_str(self) -> List[str]:
@@ -1873,7 +1873,7 @@ class RelayBatch(DSSBatch, CircuitElementBatchMixin):
     {Open | Closed} Normal state of the relay. The relay reverts to this state for reset, change of mode, etc. Defaults to "State" if not specifically declared.
 
     Name: `Normal`
-    Default: closed
+    Default: Closed
     """
 
     def _get_State(self) -> BatchInt32ArrayProxy:
@@ -1891,7 +1891,7 @@ class RelayBatch(DSSBatch, CircuitElementBatchMixin):
     {Open | Closed} Actual state of the relay. Upon setting, immediately forces state of the relay, overriding the Relay control. Simulates manual control on relay. Defaults to Closed. "Open" causes the controlled element to open and lock out. "Closed" causes the controlled element to close and the relay to reset to its first operation.
 
     Name: `State`
-    Default: closed
+    Default: Closed
     """
 
     def _get_State_str(self) -> List[str]:
@@ -1905,7 +1905,7 @@ class RelayBatch(DSSBatch, CircuitElementBatchMixin):
     {Open | Closed} Actual state of the relay. Upon setting, immediately forces state of the relay, overriding the Relay control. Simulates manual control on relay. Defaults to Closed. "Open" causes the controlled element to open and lock out. "Closed" causes the controlled element to close and the relay to reset to its first operation.
 
     Name: `State`
-    Default: closed
+    Default: Closed
     """
 
     def _get_DOC_TiltAngleLow(self) -> BatchFloat64ArrayProxy:

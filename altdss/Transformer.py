@@ -1,5 +1,5 @@
-# Copyright (c) 2021-2024 Paulo Meira
-# Copyright (c) 2021-2024 DSS-Extensions contributors
+# Copyright (c) 2021-2026 Paulo Meira
+# Copyright (c) 2021-2026 DSS-Extensions contributors
 from __future__ import annotations
 from typing import Union, List, AnyStr, Optional, Iterator, TYPE_CHECKING
 from typing_extensions import TypedDict, Unpack
@@ -28,7 +28,8 @@ class Transformer(DSSObj, CircuitElementMixin, PDElementMixin, TransformerObjMix
         44,
         46,
         48,
-        56,
+        50,
+        59,
     }
     _cls_float_idx = {
         6,
@@ -57,12 +58,12 @@ class Transformer(DSSObj, CircuitElementMixin, PDElementMixin, TransformerObjMix
         42,
         43,
         47,
-        50,
-        51,
-        52,
         53,
         54,
         55,
+        56,
+        57,
+        58,
     }
     _cls_prop_idx = {
         'phases': 1,
@@ -119,14 +120,17 @@ class Transformer(DSSObj, CircuitElementMixin, PDElementMixin, TransformerObjMix
         'rdcohms': 47,
         'seasons': 48,
         'ratings': 49,
-        'normamps': 50,
-        'emergamps': 51,
-        'faultrate': 52,
-        'pctperm': 53,
-        'repair': 54,
-        'basefreq': 55,
-        'enabled': 56,
-        'like': 57,
+        'bhpoints': 50,
+        'bhcurrent': 51,
+        'bhflux': 52,
+        'normamps': 53,
+        'emergamps': 54,
+        'faultrate': 55,
+        'pctperm': 56,
+        'repair': 57,
+        'basefreq': 58,
+        'enabled': 59,
+        'like': 60,
     }
 
     def __init__(self, api_util, ptr):
@@ -262,7 +266,7 @@ class Transformer(DSSObj, CircuitElementMixin, PDElementMixin, TransformerObjMix
     def _get_Conns_str(self) -> List[str]:
         return self._get_string_array(self._lib.Obj_GetStringArray, self._ptr, 13)
 
-    def _set_Conns_str(self, value: AnyStr, flags: enums.SetterFlags = 0):
+    def _set_Conns_str(self, value: List[AnyStr], flags: enums.SetterFlags = 0):
         self._set_Conns(value, flags)
 
     Conns_str = property(_get_Conns_str, _set_Conns_str) # type: List[str]
@@ -829,21 +833,67 @@ class Transformer(DSSObj, CircuitElementMixin, PDElementMixin, TransformerObjMix
     Ratings = property(_get_Ratings, _set_Ratings) # type: Float64Array
     """
     An array of ratings to be used when the seasonal ratings flag is True. It can be used to insert
-    multiple ratings to change during a QSTS simulation to evaluate different ratings in transformers. Is given in kVA
+    multiple ratings to change during a QSTS simulation to evaluate different ratings in transformers. It is given in kVA
 
     Name: `Ratings`
     Default: [1100.0]
     """
 
+    def _get_BHPoints(self) -> int:
+        return self._lib.Obj_GetInt32(self._ptr, 50)
+
+    def _set_BHPoints(self, value: int, flags: enums.SetterFlags = 0):
+        self._lib.Obj_SetInt32(self._ptr, 50, value, flags)
+
+    BHPoints = property(_get_BHPoints, _set_BHPoints) # type: int
+    """
+    Number of points in BH curve expected from `BHCurrent` and `BHFlux` arrays. Informational only, used for GIC analysis.
+
+    **Unused** (unused internally by the models, but can be used to transport data)
+
+    Name: `BHPoints`
+    Default: 0
+    """
+
+    def _get_BHCurrent(self) -> Float64Array:
+        return self._get_float64_array(self._lib.Obj_GetFloat64Array, self._ptr, 51)
+
+    def _set_BHCurrent(self, value: Float64Array, flags: enums.SetterFlags = 0):
+        self._set_float64_array_o(51, value, flags)
+
+    BHCurrent = property(_get_BHCurrent, _set_BHCurrent) # type: Float64Array
+    """
+    Array of current values in per-unit. The array is expected to have the number of entries defined by `BHPoints`. Together with `BHFlux`, they form the BH curve of the transformer. Informational only, used for GIC analysis.
+
+    **Unused** (unused internally by the models, but can be used to transport data)
+
+    Name: `BHCurrent`
+    """
+
+    def _get_BHFlux(self) -> Float64Array:
+        return self._get_float64_array(self._lib.Obj_GetFloat64Array, self._ptr, 52)
+
+    def _set_BHFlux(self, value: Float64Array, flags: enums.SetterFlags = 0):
+        self._set_float64_array_o(52, value, flags)
+
+    BHFlux = property(_get_BHFlux, _set_BHFlux) # type: Float64Array
+    """
+    Array of flux values in per-unit. The array is expected to have the number of entries defined by `BHPoints`. Together with `BHCurrent`, they form the BH curve of the transformer. Informational only, used for GIC analysis.
+
+    **Unused** (unused internally by the models, but can be used to transport data)
+
+    Name: `BHFlux`
+    """
+
     def _get_NormAmps(self) -> float:
-        return self._lib.Obj_GetFloat64(self._ptr, 50)
+        return self._lib.Obj_GetFloat64(self._ptr, 53)
 
     def _set_NormAmps(self, value: float, flags: enums.SetterFlags = 0):
-        self._lib.Obj_SetFloat64(self._ptr, 50, value, flags)
+        self._lib.Obj_SetFloat64(self._ptr, 53, value, flags)
 
     NormAmps = property(_get_NormAmps, _set_NormAmps) # type: float
     """
-    Normal rated current. For transformers, this is a read-only value, calculated from the kVA rating of the first winding.
+    Normal rated current. Use `NormHkVA` to specify the normal rating for the transformer.
 
     **Read-only**
 
@@ -851,14 +901,14 @@ class Transformer(DSSObj, CircuitElementMixin, PDElementMixin, TransformerObjMix
     """
 
     def _get_EmergAmps(self) -> float:
-        return self._lib.Obj_GetFloat64(self._ptr, 51)
+        return self._lib.Obj_GetFloat64(self._ptr, 54)
 
     def _set_EmergAmps(self, value: float, flags: enums.SetterFlags = 0):
-        self._lib.Obj_SetFloat64(self._ptr, 51, value, flags)
+        self._lib.Obj_SetFloat64(self._ptr, 54, value, flags)
 
     EmergAmps = property(_get_EmergAmps, _set_EmergAmps) # type: float
     """
-    Maximum or emergency current. For transformers, this is a read-only value, calculated from the kVA rating of the first winding.
+    Maximum or emergency current. Use `EmergHkVA` to specify the normal rating for the transformer.
 
     **Read-only**
 
@@ -866,10 +916,10 @@ class Transformer(DSSObj, CircuitElementMixin, PDElementMixin, TransformerObjMix
     """
 
     def _get_FaultRate(self) -> float:
-        return self._lib.Obj_GetFloat64(self._ptr, 52)
+        return self._lib.Obj_GetFloat64(self._ptr, 55)
 
     def _set_FaultRate(self, value: float, flags: enums.SetterFlags = 0):
-        self._lib.Obj_SetFloat64(self._ptr, 52, value, flags)
+        self._lib.Obj_SetFloat64(self._ptr, 55, value, flags)
 
     FaultRate = property(_get_FaultRate, _set_FaultRate) # type: float
     """
@@ -880,10 +930,10 @@ class Transformer(DSSObj, CircuitElementMixin, PDElementMixin, TransformerObjMix
     """
 
     def _get_pctPerm(self) -> float:
-        return self._lib.Obj_GetFloat64(self._ptr, 53)
+        return self._lib.Obj_GetFloat64(self._ptr, 56)
 
     def _set_pctPerm(self, value: float, flags: enums.SetterFlags = 0):
-        self._lib.Obj_SetFloat64(self._ptr, 53, value, flags)
+        self._lib.Obj_SetFloat64(self._ptr, 56, value, flags)
 
     pctPerm = property(_get_pctPerm, _set_pctPerm) # type: float
     """
@@ -894,10 +944,10 @@ class Transformer(DSSObj, CircuitElementMixin, PDElementMixin, TransformerObjMix
     """
 
     def _get_Repair(self) -> float:
-        return self._lib.Obj_GetFloat64(self._ptr, 54)
+        return self._lib.Obj_GetFloat64(self._ptr, 57)
 
     def _set_Repair(self, value: float, flags: enums.SetterFlags = 0):
-        self._lib.Obj_SetFloat64(self._ptr, 54, value, flags)
+        self._lib.Obj_SetFloat64(self._ptr, 57, value, flags)
 
     Repair = property(_get_Repair, _set_Repair) # type: float
     """
@@ -908,10 +958,10 @@ class Transformer(DSSObj, CircuitElementMixin, PDElementMixin, TransformerObjMix
     """
 
     def _get_BaseFreq(self) -> float:
-        return self._lib.Obj_GetFloat64(self._ptr, 55)
+        return self._lib.Obj_GetFloat64(self._ptr, 58)
 
     def _set_BaseFreq(self, value: float, flags: enums.SetterFlags = 0):
-        self._lib.Obj_SetFloat64(self._ptr, 55, value, flags)
+        self._lib.Obj_SetFloat64(self._ptr, 58, value, flags)
 
     BaseFreq = property(_get_BaseFreq, _set_BaseFreq) # type: float
     """
@@ -922,10 +972,10 @@ class Transformer(DSSObj, CircuitElementMixin, PDElementMixin, TransformerObjMix
     """
 
     def _get_Enabled(self) -> bool:
-        return self._lib.Obj_GetInt32(self._ptr, 56) != 0
+        return self._lib.Obj_GetInt32(self._ptr, 59) != 0
 
     def _set_Enabled(self, value: bool, flags: enums.SetterFlags = 0):
-        self._lib.Obj_SetInt32(self._ptr, 56, value, flags)
+        self._lib.Obj_SetInt32(self._ptr, 59, value, flags)
 
     Enabled = property(_get_Enabled, _set_Enabled) # type: bool
     """
@@ -945,7 +995,7 @@ class Transformer(DSSObj, CircuitElementMixin, PDElementMixin, TransformerObjMix
 
         Name: `Like`
         """
-        self._set_string_o(57, value)
+        self._set_string_o(60, value)
 
 
 class TransformerProperties(TypedDict):
@@ -991,6 +1041,9 @@ class TransformerProperties(TypedDict):
     RDCOhms: Float64Array
     Seasons: int
     Ratings: Float64Array
+    BHPoints: int
+    BHCurrent: Float64Array
+    BHFlux: Float64Array
     NormAmps: float
     EmergAmps: float
     FaultRate: float
@@ -1760,21 +1813,73 @@ class TransformerBatch(DSSBatch, CircuitElementBatchMixin, PDElementBatchMixin):
     Ratings = property(_get_Ratings, _set_Ratings) # type: List[Float64Array]
     """
     An array of ratings to be used when the seasonal ratings flag is True. It can be used to insert
-    multiple ratings to change during a QSTS simulation to evaluate different ratings in transformers. Is given in kVA
+    multiple ratings to change during a QSTS simulation to evaluate different ratings in transformers. It is given in kVA
 
     Name: `Ratings`
     Default: [1100.0]
     """
 
+    def _get_BHPoints(self) -> BatchInt32ArrayProxy:
+        return BatchInt32ArrayProxy(self, 50)
+
+    def _set_BHPoints(self, value: Union[int, Int32Array], flags: enums.SetterFlags = 0):
+        self._set_batch_int32_array(50, value, flags)
+
+    BHPoints = property(_get_BHPoints, _set_BHPoints) # type: BatchInt32ArrayProxy
+    """
+    Number of points in BH curve expected from `BHCurrent` and `BHFlux` arrays. Informational only, used for GIC analysis.
+
+    **Unused** (unused internally by the models, but can be used to transport data)
+
+    Name: `BHPoints`
+    Default: 0
+    """
+
+    def _get_BHCurrent(self) -> List[Float64Array]:
+        return [
+            self._get_float64_array(self._lib.Obj_GetFloat64Array, x, 51)
+            for x in self._unpack()
+        ]
+
+    def _set_BHCurrent(self, value: Union[Float64Array, List[Float64Array]], flags: enums.SetterFlags = 0):
+        self._set_batch_float64_array_prop(51, value, flags)
+
+    BHCurrent = property(_get_BHCurrent, _set_BHCurrent) # type: List[Float64Array]
+    """
+    Array of current values in per-unit. The array is expected to have the number of entries defined by `BHPoints`. Together with `BHFlux`, they form the BH curve of the transformer. Informational only, used for GIC analysis.
+
+    **Unused** (unused internally by the models, but can be used to transport data)
+
+    Name: `BHCurrent`
+    """
+
+    def _get_BHFlux(self) -> List[Float64Array]:
+        return [
+            self._get_float64_array(self._lib.Obj_GetFloat64Array, x, 52)
+            for x in self._unpack()
+        ]
+
+    def _set_BHFlux(self, value: Union[Float64Array, List[Float64Array]], flags: enums.SetterFlags = 0):
+        self._set_batch_float64_array_prop(52, value, flags)
+
+    BHFlux = property(_get_BHFlux, _set_BHFlux) # type: List[Float64Array]
+    """
+    Array of flux values in per-unit. The array is expected to have the number of entries defined by `BHPoints`. Together with `BHCurrent`, they form the BH curve of the transformer. Informational only, used for GIC analysis.
+
+    **Unused** (unused internally by the models, but can be used to transport data)
+
+    Name: `BHFlux`
+    """
+
     def _get_NormAmps(self) -> BatchFloat64ArrayProxy:
-        return BatchFloat64ArrayProxy(self, 50)
+        return BatchFloat64ArrayProxy(self, 53)
 
     def _set_NormAmps(self, value: Union[float, Float64Array], flags: enums.SetterFlags = 0):
-        self._set_batch_float64_array(50, value, flags)
+        self._set_batch_float64_array(53, value, flags)
 
     NormAmps = property(_get_NormAmps, _set_NormAmps) # type: BatchFloat64ArrayProxy
     """
-    Normal rated current. For transformers, this is a read-only value, calculated from the kVA rating of the first winding.
+    Normal rated current. Use `NormHkVA` to specify the normal rating for the transformer.
 
     **Read-only**
 
@@ -1782,14 +1887,14 @@ class TransformerBatch(DSSBatch, CircuitElementBatchMixin, PDElementBatchMixin):
     """
 
     def _get_EmergAmps(self) -> BatchFloat64ArrayProxy:
-        return BatchFloat64ArrayProxy(self, 51)
+        return BatchFloat64ArrayProxy(self, 54)
 
     def _set_EmergAmps(self, value: Union[float, Float64Array], flags: enums.SetterFlags = 0):
-        self._set_batch_float64_array(51, value, flags)
+        self._set_batch_float64_array(54, value, flags)
 
     EmergAmps = property(_get_EmergAmps, _set_EmergAmps) # type: BatchFloat64ArrayProxy
     """
-    Maximum or emergency current. For transformers, this is a read-only value, calculated from the kVA rating of the first winding.
+    Maximum or emergency current. Use `EmergHkVA` to specify the normal rating for the transformer.
 
     **Read-only**
 
@@ -1797,10 +1902,10 @@ class TransformerBatch(DSSBatch, CircuitElementBatchMixin, PDElementBatchMixin):
     """
 
     def _get_FaultRate(self) -> BatchFloat64ArrayProxy:
-        return BatchFloat64ArrayProxy(self, 52)
+        return BatchFloat64ArrayProxy(self, 55)
 
     def _set_FaultRate(self, value: Union[float, Float64Array], flags: enums.SetterFlags = 0):
-        self._set_batch_float64_array(52, value, flags)
+        self._set_batch_float64_array(55, value, flags)
 
     FaultRate = property(_get_FaultRate, _set_FaultRate) # type: BatchFloat64ArrayProxy
     """
@@ -1811,10 +1916,10 @@ class TransformerBatch(DSSBatch, CircuitElementBatchMixin, PDElementBatchMixin):
     """
 
     def _get_pctPerm(self) -> BatchFloat64ArrayProxy:
-        return BatchFloat64ArrayProxy(self, 53)
+        return BatchFloat64ArrayProxy(self, 56)
 
     def _set_pctPerm(self, value: Union[float, Float64Array], flags: enums.SetterFlags = 0):
-        self._set_batch_float64_array(53, value, flags)
+        self._set_batch_float64_array(56, value, flags)
 
     pctPerm = property(_get_pctPerm, _set_pctPerm) # type: BatchFloat64ArrayProxy
     """
@@ -1825,10 +1930,10 @@ class TransformerBatch(DSSBatch, CircuitElementBatchMixin, PDElementBatchMixin):
     """
 
     def _get_Repair(self) -> BatchFloat64ArrayProxy:
-        return BatchFloat64ArrayProxy(self, 54)
+        return BatchFloat64ArrayProxy(self, 57)
 
     def _set_Repair(self, value: Union[float, Float64Array], flags: enums.SetterFlags = 0):
-        self._set_batch_float64_array(54, value, flags)
+        self._set_batch_float64_array(57, value, flags)
 
     Repair = property(_get_Repair, _set_Repair) # type: BatchFloat64ArrayProxy
     """
@@ -1839,10 +1944,10 @@ class TransformerBatch(DSSBatch, CircuitElementBatchMixin, PDElementBatchMixin):
     """
 
     def _get_BaseFreq(self) -> BatchFloat64ArrayProxy:
-        return BatchFloat64ArrayProxy(self, 55)
+        return BatchFloat64ArrayProxy(self, 58)
 
     def _set_BaseFreq(self, value: Union[float, Float64Array], flags: enums.SetterFlags = 0):
-        self._set_batch_float64_array(55, value, flags)
+        self._set_batch_float64_array(58, value, flags)
 
     BaseFreq = property(_get_BaseFreq, _set_BaseFreq) # type: BatchFloat64ArrayProxy
     """
@@ -1854,11 +1959,11 @@ class TransformerBatch(DSSBatch, CircuitElementBatchMixin, PDElementBatchMixin):
 
     def _get_Enabled(self) -> List[bool]:
         return [v != 0 for v in
-            self._get_batch_int32_prop(56)
+            self._get_batch_int32_prop(59)
         ]
 
     def _set_Enabled(self, value: bool, flags: enums.SetterFlags = 0):
-        self._set_batch_int32_array(56, value, flags)
+        self._set_batch_int32_array(59, value, flags)
 
     Enabled = property(_get_Enabled, _set_Enabled) # type: List[bool]
     """
@@ -1878,7 +1983,7 @@ class TransformerBatch(DSSBatch, CircuitElementBatchMixin, PDElementBatchMixin):
 
         Name: `Like`
         """
-        self._set_batch_string(57, value, flags)
+        self._set_batch_string(60, value, flags)
 
 class TransformerBatchProperties(TypedDict):
     Phases: Union[int, Int32Array]
@@ -1923,6 +2028,9 @@ class TransformerBatchProperties(TypedDict):
     RDCOhms: Float64Array
     Seasons: Union[int, Int32Array]
     Ratings: Float64Array
+    BHPoints: Union[int, Int32Array]
+    BHCurrent: Float64Array
+    BHFlux: Float64Array
     NormAmps: Union[float, Float64Array]
     EmergAmps: Union[float, Float64Array]
     FaultRate: Union[float, Float64Array]

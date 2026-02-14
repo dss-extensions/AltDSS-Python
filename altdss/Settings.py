@@ -359,8 +359,7 @@ class ISettings(Base):
         - **Per DSS Context:** Complex arrays and complex numbers can be returned and consumed by the Python API.
         - **Global effect:** The low-level API provides matrix dimensions when available (`EnableArrayDimensions` is enabled).
         
-        As a result, for example, `DSS.ActiveCircuit.ActiveCktElement.Yprim` is returned as a complex matrix instead
-        of a plain array.
+        As a result, for example, a `YPrim` matrix is returned as a complex matrix instead of a plain array.
         
         When disabled, the legacy plain arrays are used and complex numbers cannot be consumed by the Python API.
 
@@ -368,12 +367,11 @@ class ISettings(Base):
         
         **(API Extension)**
         '''
-        return self._api_util._advanced_types
+        return self._lib.advanced_types
 
     @AdvancedTypes.setter
     def AdvancedTypes(self, Value: bool):
-        self._api_util._advanced_types = bool(Value)
-
+        self._lib.advanced_types = bool(Value)
     @property
     def CompatFlags(self) -> int:
         '''

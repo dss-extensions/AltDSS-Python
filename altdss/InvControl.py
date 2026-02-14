@@ -1,5 +1,5 @@
-# Copyright (c) 2021-2024 Paulo Meira
-# Copyright (c) 2021-2024 DSS-Extensions contributors
+# Copyright (c) 2021-2026 Paulo Meira
+# Copyright (c) 2021-2026 DSS-Extensions contributors
 from __future__ import annotations
 from typing import Union, List, AnyStr, Optional, Iterator, TYPE_CHECKING
 from typing_extensions import TypedDict, Unpack
@@ -27,8 +27,8 @@ class InvControl(DSSObj, CircuitElementMixin):
         22,
         23,
         25,
-        34,
-        36,
+        33,
+        35,
     }
     _cls_float_idx = {
         5,
@@ -43,8 +43,8 @@ class InvControl(DSSObj, CircuitElementMixin):
         20,
         21,
         24,
-        33,
-        35,
+        32,
+        34,
     }
     _cls_prop_idx = {
         'derlist': 1,
@@ -77,13 +77,12 @@ class InvControl(DSSObj, CircuitElementMixin):
         'voltwattch_curve': 28,
         'wattpf_curve': 29,
         'wattvar_curve': 30,
-        'vv_refreactivepower': 31,
-        'pvsystemlist': 32,
-        'vsetpoint': 33,
-        'controlmodel': 34,
-        'basefreq': 35,
-        'enabled': 36,
-        'like': 37,
+        'pvsystemlist': 31,
+        'vsetpoint': 32,
+        'controlmodel': 33,
+        'basefreq': 34,
+        'enabled': 35,
+        'like': 36,
     }
 
     def __init__(self, api_util, ptr):
@@ -120,6 +119,8 @@ class InvControl(DSSObj, CircuitElementMixin):
     Array list of PVSystem and/or Storage elements to be controlled. If not specified, all PVSystem and Storage in the circuit are assumed to be controlled by this control. 
 
     No capability of hierarchical control between two controls for a single element is implemented at this time.
+
+    For DSS scripts, provide the full names, e.g. `DERList=[PVSystem.pv1, Storage.bat1]`.
 
     Name: `DERList`
     """
@@ -1011,10 +1012,10 @@ class InvControl(DSSObj, CircuitElementMixin):
     """
 
     def _get_VSetPoint(self) -> float:
-        return self._lib.Obj_GetFloat64(self._ptr, 33)
+        return self._lib.Obj_GetFloat64(self._ptr, 32)
 
     def _set_VSetPoint(self, value: float, flags: enums.SetterFlags = 0):
-        self._lib.Obj_SetFloat64(self._ptr, 33, value, flags)
+        self._lib.Obj_SetFloat64(self._ptr, 32, value, flags)
 
     VSetPoint = property(_get_VSetPoint, _set_VSetPoint) # type: float
     """
@@ -1025,10 +1026,10 @@ class InvControl(DSSObj, CircuitElementMixin):
     """
 
     def _get_ControlModel(self) -> enums.InvControlControlModel:
-        return enums.InvControlControlModel(self._lib.Obj_GetInt32(self._ptr, 34))
+        return enums.InvControlControlModel(self._lib.Obj_GetInt32(self._ptr, 33))
 
     def _set_ControlModel(self, value: Union[int, enums.InvControlControlModel], flags: enums.SetterFlags = 0):
-        self._lib.Obj_SetInt32(self._ptr, 34, value, flags)
+        self._lib.Obj_SetInt32(self._ptr, 33, value, flags)
 
     ControlModel = property(_get_ControlModel, _set_ControlModel) # type: enums.InvControlControlModel
     """
@@ -1045,10 +1046,10 @@ class InvControl(DSSObj, CircuitElementMixin):
     """
 
     def _get_BaseFreq(self) -> float:
-        return self._lib.Obj_GetFloat64(self._ptr, 35)
+        return self._lib.Obj_GetFloat64(self._ptr, 34)
 
     def _set_BaseFreq(self, value: float, flags: enums.SetterFlags = 0):
-        self._lib.Obj_SetFloat64(self._ptr, 35, value, flags)
+        self._lib.Obj_SetFloat64(self._ptr, 34, value, flags)
 
     BaseFreq = property(_get_BaseFreq, _set_BaseFreq) # type: float
     """
@@ -1059,10 +1060,10 @@ class InvControl(DSSObj, CircuitElementMixin):
     """
 
     def _get_Enabled(self) -> bool:
-        return self._lib.Obj_GetInt32(self._ptr, 36) != 0
+        return self._lib.Obj_GetInt32(self._ptr, 35) != 0
 
     def _set_Enabled(self, value: bool, flags: enums.SetterFlags = 0):
-        self._lib.Obj_SetInt32(self._ptr, 36, value, flags)
+        self._lib.Obj_SetInt32(self._ptr, 35, value, flags)
 
     Enabled = property(_get_Enabled, _set_Enabled) # type: bool
     """
@@ -1082,7 +1083,7 @@ class InvControl(DSSObj, CircuitElementMixin):
 
         Name: `Like`
         """
-        self._set_string_o(37, value)
+        self._set_string_o(36, value)
 
 
 class InvControlProperties(TypedDict):
@@ -1168,6 +1169,8 @@ class InvControlBatch(DSSBatch, CircuitElementBatchMixin):
     Array list of PVSystem and/or Storage elements to be controlled. If not specified, all PVSystem and Storage in the circuit are assumed to be controlled by this control. 
 
     No capability of hierarchical control between two controls for a single element is implemented at this time.
+
+    For DSS scripts, provide the full names, e.g. `DERList=[PVSystem.pv1, Storage.bat1]`.
 
     Name: `DERList`
     """
@@ -2049,10 +2052,10 @@ class InvControlBatch(DSSBatch, CircuitElementBatchMixin):
     """
 
     def _get_VSetPoint(self) -> BatchFloat64ArrayProxy:
-        return BatchFloat64ArrayProxy(self, 33)
+        return BatchFloat64ArrayProxy(self, 32)
 
     def _set_VSetPoint(self, value: Union[float, Float64Array], flags: enums.SetterFlags = 0):
-        self._set_batch_float64_array(33, value, flags)
+        self._set_batch_float64_array(32, value, flags)
 
     VSetPoint = property(_get_VSetPoint, _set_VSetPoint) # type: BatchFloat64ArrayProxy
     """
@@ -2063,10 +2066,10 @@ class InvControlBatch(DSSBatch, CircuitElementBatchMixin):
     """
 
     def _get_ControlModel(self) -> BatchInt32ArrayProxy:
-        return BatchInt32ArrayProxy(self, 34)
+        return BatchInt32ArrayProxy(self, 33)
 
     def _set_ControlModel(self, value: Union[int, enums.InvControlControlModel, Int32Array], flags: enums.SetterFlags = 0):
-        self._set_batch_int32_array(34, value, flags)
+        self._set_batch_int32_array(33, value, flags)
 
     ControlModel = property(_get_ControlModel, _set_ControlModel) # type: BatchInt32ArrayProxy
     """
@@ -2083,10 +2086,10 @@ class InvControlBatch(DSSBatch, CircuitElementBatchMixin):
     """
 
     def _get_BaseFreq(self) -> BatchFloat64ArrayProxy:
-        return BatchFloat64ArrayProxy(self, 35)
+        return BatchFloat64ArrayProxy(self, 34)
 
     def _set_BaseFreq(self, value: Union[float, Float64Array], flags: enums.SetterFlags = 0):
-        self._set_batch_float64_array(35, value, flags)
+        self._set_batch_float64_array(34, value, flags)
 
     BaseFreq = property(_get_BaseFreq, _set_BaseFreq) # type: BatchFloat64ArrayProxy
     """
@@ -2098,11 +2101,11 @@ class InvControlBatch(DSSBatch, CircuitElementBatchMixin):
 
     def _get_Enabled(self) -> List[bool]:
         return [v != 0 for v in
-            self._get_batch_int32_prop(36)
+            self._get_batch_int32_prop(35)
         ]
 
     def _set_Enabled(self, value: bool, flags: enums.SetterFlags = 0):
-        self._set_batch_int32_array(36, value, flags)
+        self._set_batch_int32_array(35, value, flags)
 
     Enabled = property(_get_Enabled, _set_Enabled) # type: List[bool]
     """
@@ -2122,7 +2125,7 @@ class InvControlBatch(DSSBatch, CircuitElementBatchMixin):
 
         Name: `Like`
         """
-        self._set_batch_string(37, value, flags)
+        self._set_batch_string(36, value, flags)
 
 class InvControlBatchProperties(TypedDict):
     DERList: List[AnyStr]

@@ -20,7 +20,7 @@ from altdss import (
     Vsource, Transformer, LineCode, Load, Line, Capacitor, 
     Connection as Conn, RegControl, LengthUnit as Units,
     LoadModel, Edit, AltDSS, altdss, LineGeometry, LineSpacing,
-    DSSException
+    Fuse, FuseState, DSSException
 )    
 
 def create_ref_ckt13(ref):
@@ -1284,7 +1284,9 @@ def test_line_linegeo_conductors():
     lg: LineGeometry = altdss.LineGeometry.new('606')
     lg.NPhases = 3
     lg.NConds = 3
-    lg.Units = Units.ft
+    lg.Units = Units.ft # Using broadcast to set all units at once
+    assert lg.Units == [Units.ft, Units.ft, Units.ft]
+
     print([cn.FullName()] * 3)
     lg.Conductors = [cn, cn, cn]
     lg.X = [-0.5, 0, 0.5]
@@ -1300,6 +1302,45 @@ def test_line_linegeo_conductors():
 
     print(len(altdss.LineGeometry))
 
+def test_broadcast_linegeometry():
+    lg: LineGeometry = altdss.LineGeometry.new('test_linegeo')
+    lg.NPhases = 3
+    lg.NConds = 3
+    lg.Units = Units.ft
+
+    lg.Units = Units.ft
+    assert lg.Units == [Units.ft, Units.ft, Units.ft]
+    lg.Units = Units.cm
+    assert lg.Units == [Units.cm, Units.cm, Units.cm]
+    lg.Units = [Units.ft, Units.cm, Units.ft]
+    assert lg.Units == [Units.ft, Units.cm, Units.ft]
+    lg.Units = [Units.ft] * 3
+    assert lg.Units == [Units.ft, Units.ft, Units.ft]
+
+    # TODO: implement simple ArrayProxy (like we use in batches) to allow this to work
+    # lg.Units[1] = Units.m
+    # assert lg.Units == [Units.ft, Units.m, Units.ft]
+    # lg.Units[1] = Units.inch
+    # assert lg.Units == [Units.inch, Units.inch, Units.inch]
+
+
+def test_broadcast_fuse():
+    create_ref_ckt13(altdss)
+
+    fuse: Fuse = altdss.Fuse.new('test_fuse')
+    fuse.MonitoredObj = altdss.Line[0]
+    fuse.MonitoredTerm = 1
+    fuse.Normal = FuseState.Open
+
+    fuse.State = FuseState.Closed
+    assert fuse.State == [FuseState.Closed] * 3
+    fuse.State = [FuseState.Closed, FuseState.Open, FuseState.Closed]
+    assert fuse.State == [FuseState.Closed, FuseState.Open, FuseState.Closed]
+    
+    assert fuse.Normal == [FuseState.Open, FuseState.Open, FuseState.Open]
+    fuse.Normal = FuseState.Closed
+    assert fuse.Normal == [FuseState.Closed] * 3
+    
 
 def test_no_new_attr():
     create_ref_ckt13(altdss)

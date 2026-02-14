@@ -11,7 +11,7 @@ from .ReduceCkt import IReduceCkt
 from .Topology import ITopology
 from .YMatrix import IYMatrix
 
-from .common import CffiApiUtil
+from .common import AltDSSAPIUtil
 from dss.enums import DSSJSONFlags
 from .enums import *
 from .Bus import IBuses
@@ -73,7 +73,7 @@ class AltDSS(IObj):
     ZIP: IZIP
 
     @classmethod
-    def _get_instance(cls: AltDSS, api_util: CffiApiUtil = None, ctx=None) -> AltDSS:
+    def _get_instance(cls: AltDSS, api_util: AltDSSAPIUtil = None, ctx=None) -> AltDSS:
         '''
         If there is an existing AltDSS instance for a context, return it.
         Otherwise, try to wrap the context into a new AltDSS API instance.
@@ -81,7 +81,7 @@ class AltDSS(IObj):
         if api_util is None:
             # If none exists, something is probably wrong elsewhere,
             # so let's allow the IndexError to propagate
-            api_util = CffiApiUtil._ctx_to_util[ctx]
+            api_util = AltDSSAPIUtil._ctx_to_util[ctx]
 
         dss = cls._ctx_to_dss.get(api_util.ctx)
         if dss is None:
@@ -186,7 +186,7 @@ class AltDSS(IObj):
 
         Original COM help: https://opendss.epri.com/AllBusVolts.html
         '''
-        self._check_for_error(self._api_util.lib_unpatched.Circuit_Get_AllBusVolts_GR())
+        self._check_for_error(self._api_util.lib_unpatched.Circuit_Get_AllBusVolts_GR(self._api_util.ctx))
         return self._get_fcomplex128_gr_array()
 
     def NodeDistances(self) -> Float64Array:
@@ -211,7 +211,7 @@ class AltDSS(IObj):
 
         Original COM help: https://opendss.epri.com/LineLosses.html
         '''
-        self._check_for_error(self._api_util.lib_unpatched.Circuit_Get_LineLosses_GR())
+        self._check_for_error(self._api_util.lib_unpatched.Circuit_Get_LineLosses_GR(self._api_util.ctx))
         return self._get_fcomplex128_gr_simple()
 
     def Losses(self) -> complex:
@@ -220,7 +220,7 @@ class AltDSS(IObj):
 
         Original COM help: https://opendss.epri.com/Losses.html
         '''
-        self._check_for_error(self._api_util.lib_unpatched.Circuit_Get_Losses_GR())
+        self._check_for_error(self._api_util.lib_unpatched.Circuit_Get_Losses_GR(self._api_util.ctx))
         return self._get_fcomplex128_gr_simple()
 
     @property
@@ -262,7 +262,7 @@ class AltDSS(IObj):
 
         Original COM help: https://opendss.epri.com/SubstationLosses.html
         '''
-        self._check_for_error(self._api_util.lib_unpatched.Circuit_Get_SubstationLosses_GR())
+        self._check_for_error(self._api_util.lib_unpatched.Circuit_Get_SubstationLosses_GR(self._api_util.ctx))
         return self._get_fcomplex128_gr_simple()
 
     def SystemY(self, dense=False) -> ComplexArray:
@@ -291,7 +291,7 @@ class AltDSS(IObj):
         RowIdxPtr = ffi.new('int32_t**')
         cValsPtr = ffi.new('double**')
 
-        lib.YMatrix_GetCompressedYMatrix(True, nBus, nNz, ColPtr, RowIdxPtr, cValsPtr)
+        lib.YMatrix_GetCompressedYMatrix(self._api_util.ctx, True, nBus, nNz, ColPtr, RowIdxPtr, cValsPtr)
 
         if not nBus[0] or not nNz[0]:
             res = None
@@ -319,7 +319,7 @@ class AltDSS(IObj):
 
         Original COM help: https://opendss.epri.com/TotalPower.html
         '''
-        self._check_for_error(self._api_util.lib_unpatched.Circuit_Get_TotalPower_GR())
+        self._check_for_error(self._api_util.lib_unpatched.Circuit_Get_TotalPower_GR(self._api_util.ctx))
         return self._get_fcomplex128_gr_simple()
 
     def YCurrents(self) -> ComplexArray:
@@ -328,7 +328,7 @@ class AltDSS(IObj):
 
         Original COM help: https://opendss.epri.com/YCurrents.html
         '''
-        self._check_for_error(self._api_util.lib_unpatched.Circuit_Get_YCurrents_GR())
+        self._check_for_error(self._api_util.lib_unpatched.Circuit_Get_YCurrents_GR(self._api_util.ctx))
         return self._get_fcomplex128_gr_array()
 
     def YNodeOrder(self) -> List[str]:
@@ -345,7 +345,7 @@ class AltDSS(IObj):
 
         Original COM help: https://opendss.epri.com/YNodeVarray.html
         '''
-        self._check_for_error(self._api_util.lib_unpatched.Circuit_Get_YNodeVarray_GR())
+        self._check_for_error(self._api_util.lib_unpatched.Circuit_Get_YNodeVarray_GR(self._api_util.ctx))
         return self._get_fcomplex128_gr_array()
 
     def Capacity(self, Start: float, Increment: float) -> float:
@@ -419,8 +419,7 @@ class AltDSS(IObj):
         ffi = self._api_util.ffi
         lib = self._api_util.lib_unpatched
         new_ctx = ffi.gc(lib.ctx_New(), lib.ctx_Dispose)
-        new_api_util = CffiApiUtil(ffi, lib, new_ctx)
-        new_api_util._allow_complex = self._api_util._allow_complex
+        new_api_util = AltDSSAPIUtil(ffi, lib, new_ctx, parent=self._api_util)
         return type(self)(new_api_util)
 
 

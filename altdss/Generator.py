@@ -1,5 +1,5 @@
-# Copyright (c) 2021-2024 Paulo Meira
-# Copyright (c) 2021-2024 DSS-Extensions contributors
+# Copyright (c) 2021-2026 Paulo Meira
+# Copyright (c) 2021-2026 DSS-Extensions contributors
 from __future__ import annotations
 from typing import Union, List, AnyStr, Optional, Iterator, TYPE_CHECKING
 from typing_extensions import TypedDict, Unpack
@@ -566,6 +566,7 @@ class Generator(DSSObj, CircuitElementMixin, PCElementMixin, ElementHasRegisters
     kVA rating of electrical machine. Defaults to 1.2 × kW if not specified. Applied to machine or inverter definition for Dynamics mode solutions. 
 
     Name: `kVA`
+    Units: kVA
     """
 
     def _get_Xd(self) -> float:
@@ -1440,6 +1441,7 @@ class GeneratorBatch(DSSBatch, CircuitElementBatchMixin, PCElementBatchMixin):
     kVA rating of electrical machine. Defaults to 1.2 × kW if not specified. Applied to machine or inverter definition for Dynamics mode solutions. 
 
     Name: `kVA`
+    Units: kVA
     """
 
     def _get_Xd(self) -> BatchFloat64ArrayProxy:

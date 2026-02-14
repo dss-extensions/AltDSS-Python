@@ -1,7 +1,7 @@
 from __future__ import annotations
 import numpy as np
 from dss.enums import DSSJSONFlags
-from .enums import SetterFlags
+from .enums import SetterFlags, DSSObjectFlags
 from .common import Base, LIST_LIKE, InvalidatedObject, InvalidatedObjectIterator
 from .types import Float64Array, Int32Array
 from typing import Union, List, AnyStr, Optional
@@ -27,7 +27,7 @@ class DSSObj(Base):
         Base.__init__(self, api_util)
         self._ptr = ptr
         self._ffi = api_util.ffi
-        self._get_int32_list = api_util.get_int32_array2
+        self._get_int32_list = self._lib.get_int32_array2
         self._is_iterator = False
         if ptr is not InvalidatedObjectIterator:
             api_util.track_obj(self)
@@ -290,7 +290,7 @@ class DSSObj(Base):
         self._check_for_error()
 
     def _edit(self, props):
-        if not (self._lib.Obj_GetFlags(self._ptr) and self._lib.DSSObjectFlags_Editing):
+        if not (self._lib.Obj_GetFlags(self._ptr) and DSSObjectFlags.Editing):
             self._lib.Obj_BeginEdit(self._ptr)
 
         self._check_for_error()        

@@ -1,5 +1,5 @@
-# Copyright (c) 2021-2024 Paulo Meira
-# Copyright (c) 2021-2024 DSS-Extensions contributors
+# Copyright (c) 2021-2026 Paulo Meira
+# Copyright (c) 2021-2026 DSS-Extensions contributors
 from __future__ import annotations
 from typing import Union, List, AnyStr, Optional, Iterator, TYPE_CHECKING
 from typing_extensions import TypedDict, Unpack
@@ -364,7 +364,7 @@ class UPFC(DSSObj, CircuitElementMixin, PCElementMixin):
     """
 
     def _get_Element(self) -> PDElement:
-        return self._get_obj(17, PDElement)
+        return self._get_obj(17, None)
 
     def _set_Element(self, value: Union[AnyStr, PDElement], flags: enums.SetterFlags = 0):
         if isinstance(value, DSSObj) or value is None:

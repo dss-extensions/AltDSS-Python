@@ -1,5 +1,5 @@
-# Copyright (c) 2021-2024 Paulo Meira
-# Copyright (c) 2021-2024 DSS-Extensions contributors
+# Copyright (c) 2021-2026 Paulo Meira
+# Copyright (c) 2021-2026 DSS-Extensions contributors
 from __future__ import annotations
 from typing import Union, List, AnyStr, Optional, Iterator, TYPE_CHECKING
 from typing_extensions import TypedDict, Unpack
@@ -18,6 +18,8 @@ from .LineSpacing import LineSpacing
 from .TSData import TSData
 from .WireData import WireData
 
+Conductor = Union[WireData, CNData, TSData]
+
 class Line(DSSObj, CircuitElementMixin, PDElementMixin):
     __slots__ = DSSObj._extra_slots + CircuitElementMixin._extra_slots + PDElementMixin._extra_slots
     _cls_name = 'Line'
@@ -29,7 +31,8 @@ class Line(DSSObj, CircuitElementMixin, PDElementMixin):
         23,
         28,
         30,
-        37,
+        33,
+        41,
     }
     _cls_float_idx = {
         4,
@@ -46,10 +49,12 @@ class Line(DSSObj, CircuitElementMixin, PDElementMixin):
         27,
         31,
         32,
-        33,
-        34,
         35,
         36,
+        37,
+        38,
+        39,
+        40,
     }
     _cls_prop_idx = {
         'bus1': 1,
@@ -74,7 +79,6 @@ class Line(DSSObj, CircuitElementMixin, PDElementMixin):
         'units': 20,
         'spacing': 21,
         'wires': 22,
-        'conductors': 22,
         'earthmodel': 23,
         'cncables': 24,
         'tscables': 25,
@@ -83,14 +87,18 @@ class Line(DSSObj, CircuitElementMixin, PDElementMixin):
         'seasons': 28,
         'ratings': 29,
         'linetype': 30,
-        'normamps': 31,
-        'emergamps': 32,
-        'faultrate': 33,
-        'pctperm': 34,
-        'repair': 35,
-        'basefreq': 36,
-        'enabled': 37,
-        'like': 38,
+        'epsrmedium': 31,
+        'heightoffset': 32,
+        'heightunit': 33,
+        'conductors': 34,
+        'normamps': 35,
+        'emergamps': 36,
+        'faultrate': 37,
+        'pctperm': 38,
+        'repair': 39,
+        'basefreq': 40,
+        'enabled': 41,
+        'like': 42,
     }
 
     def __init__(self, api_util, ptr):
@@ -439,6 +447,7 @@ class Line(DSSObj, CircuitElementMixin, PDElementMixin):
     Units = property(_get_Units, _set_Units) # type: enums.LengthUnit
     """
     Length Units. Default is None - assumes length units match impedance units.
+    This property is reset to its default value when impedances are specified or edited. Make sure to specify desired value after specifying or editing any impedance property.
 
     Name: `Units`
     Default: none
@@ -453,6 +462,7 @@ class Line(DSSObj, CircuitElementMixin, PDElementMixin):
     Units_str = property(_get_Units_str, _set_Units_str) # type: str
     """
     Length Units. Default is None - assumes length units match impedance units.
+    This property is reset to its default value when impedances are specified or edited. Make sure to specify desired value after specifying or editing any impedance property.
 
     Name: `Units`
     Default: none
@@ -490,42 +500,6 @@ class Line(DSSObj, CircuitElementMixin, PDElementMixin):
     Specify this before the wires property.
 
     Name: `Spacing`
-    """
-
-    def _get_Conductors_str(self) -> List[str]:
-        return self._get_string_array(self._lib.Obj_GetStringArray, self._ptr, 22)
-
-    def _set_Conductors_str(self, value: List[AnyStr], flags: enums.SetterFlags = 0):
-        self._set_string_array_o(22, value, flags | enums.SetterFlags.AllowAllConductors)
-
-    Conductors_str = property(_get_Conductors_str, _set_Conductors_str) # type: List[str]
-    """
-    Array of WireData names for use in an overhead line constants calculation.
-    Must be used in conjunction with the Spacing property.
-    Specify the Spacing first, and "ncond" wires.
-    May also be used to specify bare neutrals with cables, using "ncond-nphase" wires.
-
-    Name: `Wires`
-    """
-
-    def _get_Conductors(self) -> List[Union[WireData, CNData, TSData]]:
-        return self._get_obj_array(22, None)
-
-    def _set_Conductors(self, value: List[Union[AnyStr, Union[WireData, CNData, TSData]]], flags: enums.SetterFlags = 0):
-        if value is None or len(value) == 0 or not isinstance(value[0], DSSObj):
-            self._set_string_array_o(22, value, flags | enums.SetterFlags.AllowAllConductors)
-            return
-
-        self._set_obj_array(22, value, flags | enums.SetterFlags.AllowAllConductors)
-
-    Conductors = property(_get_Conductors, _set_Conductors) # type: List[Union[WireData, CNData, TSData]]
-    """
-    Array of WireData names for use in an overhead line constants calculation.
-    Must be used in conjunction with the Spacing property.
-    Specify the Spacing first, and "ncond" wires.
-    May also be used to specify bare neutrals with cables, using "ncond-nphase" wires.
-
-    Name: `Wires`
     """
 
     def _get_EarthModel(self) -> enums.EarthModel:
@@ -648,11 +622,110 @@ class Line(DSSObj, CircuitElementMixin, PDElementMixin):
     Default: oh
     """
 
-    def _get_NormAmps(self) -> float:
+    def _get_EpsRMedium(self) -> float:
         return self._lib.Obj_GetFloat64(self._ptr, 31)
 
-    def _set_NormAmps(self, value: float, flags: enums.SetterFlags = 0):
+    def _set_EpsRMedium(self, value: float, flags: enums.SetterFlags = 0):
         self._lib.Obj_SetFloat64(self._ptr, 31, value, flags)
+
+    EpsRMedium = property(_get_EpsRMedium, _set_EpsRMedium) # type: float
+    """
+    Relative permittivity of the medium. Used by lines with a geometry definition.
+    Defaults to 1.0 for air.
+
+    Name: `EpsRMedium`
+    Default: 1.0
+    """
+
+    def _get_HeightOffset(self) -> float:
+        return self._lib.Obj_GetFloat64(self._ptr, 32)
+
+    def _set_HeightOffset(self, value: float, flags: enums.SetterFlags = 0):
+        self._lib.Obj_SetFloat64(self._ptr, 32, value, flags)
+
+    HeightOffset = property(_get_HeightOffset, _set_HeightOffset) # type: float
+    """
+    Average Height (or depth) offset to be applied on top of coordinates of geometry or spacing.
+    Use negative value for depth in underground lines.
+
+    Name: `HeightOffset`
+    Default: 0.0
+    """
+
+    def _get_HeightUnit(self) -> enums.LengthUnit:
+        return enums.LengthUnit(self._lib.Obj_GetInt32(self._ptr, 33))
+
+    def _set_HeightUnit(self, value: Union[AnyStr, int, enums.LengthUnit], flags: enums.SetterFlags = 0):
+        if not isinstance(value, int):
+            self._set_string_o(33, value, flags)
+            return
+        self._lib.Obj_SetInt32(self._ptr, 33, value, flags)
+
+    HeightUnit = property(_get_HeightUnit, _set_HeightUnit) # type: enums.LengthUnit
+    """
+    Height offset units. If none is detected, meters is assumed.
+
+    Name: `HeightUnit`
+    Default: m
+    """
+
+    def _get_HeightUnit_str(self) -> str:
+        return self._get_prop_string(33)
+
+    def _set_HeightUnit_str(self, value: AnyStr, flags: enums.SetterFlags = 0):
+        self._set_HeightUnit(value, flags)
+
+    HeightUnit_str = property(_get_HeightUnit_str, _set_HeightUnit_str) # type: str
+    """
+    Height offset units. If none is detected, meters is assumed.
+
+    Name: `HeightUnit`
+    Default: m
+    """
+
+    def _get_Conductors_str(self) -> List[str]:
+        return self._get_string_array(self._lib.Obj_GetStringArray, self._ptr, 34)
+
+    def _set_Conductors_str(self, value: List[AnyStr], flags: enums.SetterFlags = 0):
+        self._set_string_array_o(34, value, flags)
+
+    Conductors_str = property(_get_Conductors_str, _set_Conductors_str) # type: List[str]
+    """
+    Array of conductor names for use in line constants calculation.
+    Must be used in conjunction with the "Spacing" property.
+    Specify the Spacing first, and "NCond" wires.
+    Specify the conductor type followed by the conductor name. e.g., "conductors=[CNData.cncablename, TSData.tscablename, WireData.wirename]"
+    If a given position in the spacing is not to be used in the line, use "none" in the entry of the conductors array.
+
+    Name: `Conductors`
+    """
+
+    def _get_Conductors(self) -> List[Conductor]:
+        return self._get_obj_array(34, None)
+
+    def _set_Conductors(self, value: Union[List[AnyStr], List[Conductor]], flags: enums.SetterFlags = 0):
+        if value is None or len(value) == 0 or not isinstance(value[0], DSSObj):
+            self._set_string_array_o(34, value, flags)
+            return
+
+        self._set_obj_array(34, value, flags)
+
+    Conductors = property(_get_Conductors, _set_Conductors) # type: List[Conductor]
+    """
+    Array of conductor names for use in line constants calculation.
+    Must be used in conjunction with the "Spacing" property.
+    Specify the Spacing first, and "NCond" wires.
+    Specify the conductor type followed by the conductor name. e.g., "conductors=[CNData.cncablename, TSData.tscablename, WireData.wirename]"
+    If a given position in the spacing is not to be used in the line, use "none" in the entry of the conductors array.
+
+    Name: `Conductors`
+    """
+
+    def _get_NormAmps(self) -> float:
+        return self._lib.Obj_GetFloat64(self._ptr, 35)
+
+    def _set_NormAmps(self, value: float, flags: enums.SetterFlags = 0):
+        self._lib.Obj_SetFloat64(self._ptr, 35, value, flags)
 
     NormAmps = property(_get_NormAmps, _set_NormAmps) # type: float
     """
@@ -663,10 +736,10 @@ class Line(DSSObj, CircuitElementMixin, PDElementMixin):
     """
 
     def _get_EmergAmps(self) -> float:
-        return self._lib.Obj_GetFloat64(self._ptr, 32)
+        return self._lib.Obj_GetFloat64(self._ptr, 36)
 
     def _set_EmergAmps(self, value: float, flags: enums.SetterFlags = 0):
-        self._lib.Obj_SetFloat64(self._ptr, 32, value, flags)
+        self._lib.Obj_SetFloat64(self._ptr, 36, value, flags)
 
     EmergAmps = property(_get_EmergAmps, _set_EmergAmps) # type: float
     """
@@ -677,10 +750,10 @@ class Line(DSSObj, CircuitElementMixin, PDElementMixin):
     """
 
     def _get_FaultRate(self) -> float:
-        return self._lib.Obj_GetFloat64(self._ptr, 33)
+        return self._lib.Obj_GetFloat64(self._ptr, 37)
 
     def _set_FaultRate(self, value: float, flags: enums.SetterFlags = 0):
-        self._lib.Obj_SetFloat64(self._ptr, 33, value, flags)
+        self._lib.Obj_SetFloat64(self._ptr, 37, value, flags)
 
     FaultRate = property(_get_FaultRate, _set_FaultRate) # type: float
     """
@@ -691,10 +764,10 @@ class Line(DSSObj, CircuitElementMixin, PDElementMixin):
     """
 
     def _get_pctPerm(self) -> float:
-        return self._lib.Obj_GetFloat64(self._ptr, 34)
+        return self._lib.Obj_GetFloat64(self._ptr, 38)
 
     def _set_pctPerm(self, value: float, flags: enums.SetterFlags = 0):
-        self._lib.Obj_SetFloat64(self._ptr, 34, value, flags)
+        self._lib.Obj_SetFloat64(self._ptr, 38, value, flags)
 
     pctPerm = property(_get_pctPerm, _set_pctPerm) # type: float
     """
@@ -705,10 +778,10 @@ class Line(DSSObj, CircuitElementMixin, PDElementMixin):
     """
 
     def _get_Repair(self) -> float:
-        return self._lib.Obj_GetFloat64(self._ptr, 35)
+        return self._lib.Obj_GetFloat64(self._ptr, 39)
 
     def _set_Repair(self, value: float, flags: enums.SetterFlags = 0):
-        self._lib.Obj_SetFloat64(self._ptr, 35, value, flags)
+        self._lib.Obj_SetFloat64(self._ptr, 39, value, flags)
 
     Repair = property(_get_Repair, _set_Repair) # type: float
     """
@@ -719,10 +792,10 @@ class Line(DSSObj, CircuitElementMixin, PDElementMixin):
     """
 
     def _get_BaseFreq(self) -> float:
-        return self._lib.Obj_GetFloat64(self._ptr, 36)
+        return self._lib.Obj_GetFloat64(self._ptr, 40)
 
     def _set_BaseFreq(self, value: float, flags: enums.SetterFlags = 0):
-        self._lib.Obj_SetFloat64(self._ptr, 36, value, flags)
+        self._lib.Obj_SetFloat64(self._ptr, 40, value, flags)
 
     BaseFreq = property(_get_BaseFreq, _set_BaseFreq) # type: float
     """
@@ -733,10 +806,10 @@ class Line(DSSObj, CircuitElementMixin, PDElementMixin):
     """
 
     def _get_Enabled(self) -> bool:
-        return self._lib.Obj_GetInt32(self._ptr, 37) != 0
+        return self._lib.Obj_GetInt32(self._ptr, 41) != 0
 
     def _set_Enabled(self, value: bool, flags: enums.SetterFlags = 0):
-        self._lib.Obj_SetInt32(self._ptr, 37, value, flags)
+        self._lib.Obj_SetInt32(self._ptr, 41, value, flags)
 
     Enabled = property(_get_Enabled, _set_Enabled) # type: bool
     """
@@ -756,7 +829,7 @@ class Line(DSSObj, CircuitElementMixin, PDElementMixin):
 
         Name: `Like`
         """
-        self._set_string_o(38, value)
+        self._set_string_o(42, value)
 
 
 class LineProperties(TypedDict):
@@ -781,13 +854,16 @@ class LineProperties(TypedDict):
     Geometry: Union[AnyStr, LineGeometry]
     Units: Union[AnyStr, int, enums.LengthUnit]
     Spacing: Union[AnyStr, LineSpacing]
-    Conductors: List[Union[AnyStr, Union[WireData, CNData, TSData]]]
     EarthModel: Union[AnyStr, int, enums.EarthModel]
     B1: float
     B0: float
     Seasons: int
     Ratings: Float64Array
     LineType: Union[AnyStr, int, enums.LineType]
+    EpsRMedium: float
+    HeightOffset: float
+    HeightUnit: Union[AnyStr, int, enums.LengthUnit]
+    Conductors: Union[List[AnyStr], List[Conductor]]
     NormAmps: float
     EmergAmps: float
     FaultRate: float
@@ -1157,6 +1233,7 @@ class LineBatch(DSSBatch, CircuitElementBatchMixin, PDElementBatchMixin):
     Units = property(_get_Units, _set_Units) # type: BatchInt32ArrayProxy
     """
     Length Units. Default is None - assumes length units match impedance units.
+    This property is reset to its default value when impedances are specified or edited. Make sure to specify desired value after specifying or editing any impedance property.
 
     Name: `Units`
     Default: none
@@ -1171,6 +1248,7 @@ class LineBatch(DSSBatch, CircuitElementBatchMixin, PDElementBatchMixin):
     Units_str = property(_get_Units_str, _set_Units_str) # type: List[str]
     """
     Length Units. Default is None - assumes length units match impedance units.
+    This property is reset to its default value when impedances are specified or edited. Make sure to specify desired value after specifying or editing any impedance property.
 
     Name: `Units`
     Default: none
@@ -1204,42 +1282,6 @@ class LineBatch(DSSBatch, CircuitElementBatchMixin, PDElementBatchMixin):
     Specify this before the wires property.
 
     Name: `Spacing`
-    """
-
-    def _get_Conductors_str(self) -> List[List[str]]:
-        return self._get_string_ll(22)
-
-    def _set_Conductors_str(self, value: List[AnyStr], flags: enums.SetterFlags = 0):
-        self._set_batch_stringlist_prop(22, value, flags | enums.SetterFlags.AllowAllConductors)
-
-    Conductors_str = property(_get_Conductors_str, _set_Conductors_str) # type: List[List[str]]
-    """
-    Array of WireData names for use in an overhead line constants calculation.
-    Must be used in conjunction with the Spacing property.
-    Specify the Spacing first, and "ncond" wires.
-    May also be used to specify bare neutrals with cables, using "ncond-nphase" wires.
-
-    Name: `Wires`
-    """
-
-    def _get_Conductors(self) -> List[List[Union[WireData, CNData, TSData]]]:
-        return self._get_obj_ll(22, None)
-
-    def _set_Conductors(self, value: Union[List[AnyStr], List[Union[WireData, CNData, TSData]]], flags: enums.SetterFlags = 0):
-        if (not len(value)) or isinstance(value[0], (bytes, str)) or (len(value[0]) and isinstance(value[0][0], (bytes, str))):
-            self._set_batch_stringlist_prop(22, value, flags | enums.SetterFlags.AllowAllConductors)
-            return
-
-        self._set_batch_objlist_prop(22, value, flags | enums.SetterFlags.AllowAllConductors)
-
-    Conductors = property(_get_Conductors, _set_Conductors) # type: List[List[Union[WireData, CNData, TSData]]]
-    """
-    Array of WireData names for use in an overhead line constants calculation.
-    Must be used in conjunction with the Spacing property.
-    Specify the Spacing first, and "ncond" wires.
-    May also be used to specify bare neutrals with cables, using "ncond-nphase" wires.
-
-    Name: `Wires`
     """
 
     def _get_EarthModel(self) -> BatchInt32ArrayProxy:
@@ -1367,11 +1409,111 @@ class LineBatch(DSSBatch, CircuitElementBatchMixin, PDElementBatchMixin):
     Default: oh
     """
 
-    def _get_NormAmps(self) -> BatchFloat64ArrayProxy:
+    def _get_EpsRMedium(self) -> BatchFloat64ArrayProxy:
         return BatchFloat64ArrayProxy(self, 31)
 
-    def _set_NormAmps(self, value: Union[float, Float64Array], flags: enums.SetterFlags = 0):
+    def _set_EpsRMedium(self, value: Union[float, Float64Array], flags: enums.SetterFlags = 0):
         self._set_batch_float64_array(31, value, flags)
+
+    EpsRMedium = property(_get_EpsRMedium, _set_EpsRMedium) # type: BatchFloat64ArrayProxy
+    """
+    Relative permittivity of the medium. Used by lines with a geometry definition.
+    Defaults to 1.0 for air.
+
+    Name: `EpsRMedium`
+    Default: 1.0
+    """
+
+    def _get_HeightOffset(self) -> BatchFloat64ArrayProxy:
+        return BatchFloat64ArrayProxy(self, 32)
+
+    def _set_HeightOffset(self, value: Union[float, Float64Array], flags: enums.SetterFlags = 0):
+        self._set_batch_float64_array(32, value, flags)
+
+    HeightOffset = property(_get_HeightOffset, _set_HeightOffset) # type: BatchFloat64ArrayProxy
+    """
+    Average Height (or depth) offset to be applied on top of coordinates of geometry or spacing.
+    Use negative value for depth in underground lines.
+
+    Name: `HeightOffset`
+    Default: 0.0
+    """
+
+    def _get_HeightUnit(self) -> BatchInt32ArrayProxy:
+        return BatchInt32ArrayProxy(self, 33)
+
+    def _set_HeightUnit(self, value: Union[AnyStr, int, enums.LengthUnit, List[AnyStr], List[int], List[enums.LengthUnit], Int32Array], flags: enums.SetterFlags = 0):
+        if isinstance(value, (str, bytes)) or (isinstance(value, LIST_LIKE) and isinstance(value[0], (str, bytes))):
+            self._set_batch_string(33, value, flags)
+            return
+
+        self._set_batch_int32_array(33, value, flags)
+
+    HeightUnit = property(_get_HeightUnit, _set_HeightUnit) # type: BatchInt32ArrayProxy
+    """
+    Height offset units. If none is detected, meters is assumed.
+
+    Name: `HeightUnit`
+    Default: m
+    """
+
+    def _get_HeightUnit_str(self) -> List[str]:
+        return self._get_batch_str_prop(33)
+
+    def _set_HeightUnit_str(self, value: AnyStr, flags: enums.SetterFlags = 0):
+        self._set_HeightUnit(value, flags)
+
+    HeightUnit_str = property(_get_HeightUnit_str, _set_HeightUnit_str) # type: List[str]
+    """
+    Height offset units. If none is detected, meters is assumed.
+
+    Name: `HeightUnit`
+    Default: m
+    """
+
+    def _get_Conductors_str(self) -> List[List[str]]:
+        return self._get_string_ll(34)
+
+    def _set_Conductors_str(self, value: List[AnyStr], flags: enums.SetterFlags = 0):
+        self._set_batch_stringlist_prop(34, value, flags)
+
+    Conductors_str = property(_get_Conductors_str, _set_Conductors_str) # type: List[List[str]]
+    """
+    Array of conductor names for use in line constants calculation.
+    Must be used in conjunction with the "Spacing" property.
+    Specify the Spacing first, and "NCond" wires.
+    Specify the conductor type followed by the conductor name. e.g., "conductors=[CNData.cncablename, TSData.tscablename, WireData.wirename]"
+    If a given position in the spacing is not to be used in the line, use "none" in the entry of the conductors array.
+
+    Name: `Conductors`
+    """
+
+    def _get_Conductors(self) -> List[List[Conductor]]:
+        return self._get_obj_ll(34, None)
+
+    def _set_Conductors(self, value: Union[List[AnyStr], List[Conductor]], flags: enums.SetterFlags = 0):
+        if (not len(value)) or isinstance(value[0], (bytes, str)) or (len(value[0]) and isinstance(value[0][0], (bytes, str))):
+            self._set_batch_stringlist_prop(34, value, flags)
+            return
+
+        self._set_batch_objlist_prop(34, value, flags)
+
+    Conductors = property(_get_Conductors, _set_Conductors) # type: List[List[Conductor]]
+    """
+    Array of conductor names for use in line constants calculation.
+    Must be used in conjunction with the "Spacing" property.
+    Specify the Spacing first, and "NCond" wires.
+    Specify the conductor type followed by the conductor name. e.g., "conductors=[CNData.cncablename, TSData.tscablename, WireData.wirename]"
+    If a given position in the spacing is not to be used in the line, use "none" in the entry of the conductors array.
+
+    Name: `Conductors`
+    """
+
+    def _get_NormAmps(self) -> BatchFloat64ArrayProxy:
+        return BatchFloat64ArrayProxy(self, 35)
+
+    def _set_NormAmps(self, value: Union[float, Float64Array], flags: enums.SetterFlags = 0):
+        self._set_batch_float64_array(35, value, flags)
 
     NormAmps = property(_get_NormAmps, _set_NormAmps) # type: BatchFloat64ArrayProxy
     """
@@ -1382,10 +1524,10 @@ class LineBatch(DSSBatch, CircuitElementBatchMixin, PDElementBatchMixin):
     """
 
     def _get_EmergAmps(self) -> BatchFloat64ArrayProxy:
-        return BatchFloat64ArrayProxy(self, 32)
+        return BatchFloat64ArrayProxy(self, 36)
 
     def _set_EmergAmps(self, value: Union[float, Float64Array], flags: enums.SetterFlags = 0):
-        self._set_batch_float64_array(32, value, flags)
+        self._set_batch_float64_array(36, value, flags)
 
     EmergAmps = property(_get_EmergAmps, _set_EmergAmps) # type: BatchFloat64ArrayProxy
     """
@@ -1396,10 +1538,10 @@ class LineBatch(DSSBatch, CircuitElementBatchMixin, PDElementBatchMixin):
     """
 
     def _get_FaultRate(self) -> BatchFloat64ArrayProxy:
-        return BatchFloat64ArrayProxy(self, 33)
+        return BatchFloat64ArrayProxy(self, 37)
 
     def _set_FaultRate(self, value: Union[float, Float64Array], flags: enums.SetterFlags = 0):
-        self._set_batch_float64_array(33, value, flags)
+        self._set_batch_float64_array(37, value, flags)
 
     FaultRate = property(_get_FaultRate, _set_FaultRate) # type: BatchFloat64ArrayProxy
     """
@@ -1410,10 +1552,10 @@ class LineBatch(DSSBatch, CircuitElementBatchMixin, PDElementBatchMixin):
     """
 
     def _get_pctPerm(self) -> BatchFloat64ArrayProxy:
-        return BatchFloat64ArrayProxy(self, 34)
+        return BatchFloat64ArrayProxy(self, 38)
 
     def _set_pctPerm(self, value: Union[float, Float64Array], flags: enums.SetterFlags = 0):
-        self._set_batch_float64_array(34, value, flags)
+        self._set_batch_float64_array(38, value, flags)
 
     pctPerm = property(_get_pctPerm, _set_pctPerm) # type: BatchFloat64ArrayProxy
     """
@@ -1424,10 +1566,10 @@ class LineBatch(DSSBatch, CircuitElementBatchMixin, PDElementBatchMixin):
     """
 
     def _get_Repair(self) -> BatchFloat64ArrayProxy:
-        return BatchFloat64ArrayProxy(self, 35)
+        return BatchFloat64ArrayProxy(self, 39)
 
     def _set_Repair(self, value: Union[float, Float64Array], flags: enums.SetterFlags = 0):
-        self._set_batch_float64_array(35, value, flags)
+        self._set_batch_float64_array(39, value, flags)
 
     Repair = property(_get_Repair, _set_Repair) # type: BatchFloat64ArrayProxy
     """
@@ -1438,10 +1580,10 @@ class LineBatch(DSSBatch, CircuitElementBatchMixin, PDElementBatchMixin):
     """
 
     def _get_BaseFreq(self) -> BatchFloat64ArrayProxy:
-        return BatchFloat64ArrayProxy(self, 36)
+        return BatchFloat64ArrayProxy(self, 40)
 
     def _set_BaseFreq(self, value: Union[float, Float64Array], flags: enums.SetterFlags = 0):
-        self._set_batch_float64_array(36, value, flags)
+        self._set_batch_float64_array(40, value, flags)
 
     BaseFreq = property(_get_BaseFreq, _set_BaseFreq) # type: BatchFloat64ArrayProxy
     """
@@ -1453,11 +1595,11 @@ class LineBatch(DSSBatch, CircuitElementBatchMixin, PDElementBatchMixin):
 
     def _get_Enabled(self) -> List[bool]:
         return [v != 0 for v in
-            self._get_batch_int32_prop(37)
+            self._get_batch_int32_prop(41)
         ]
 
     def _set_Enabled(self, value: bool, flags: enums.SetterFlags = 0):
-        self._set_batch_int32_array(37, value, flags)
+        self._set_batch_int32_array(41, value, flags)
 
     Enabled = property(_get_Enabled, _set_Enabled) # type: List[bool]
     """
@@ -1477,7 +1619,7 @@ class LineBatch(DSSBatch, CircuitElementBatchMixin, PDElementBatchMixin):
 
         Name: `Like`
         """
-        self._set_batch_string(38, value, flags)
+        self._set_batch_string(42, value, flags)
 
 class LineBatchProperties(TypedDict):
     Bus1: Union[AnyStr, List[AnyStr]]
@@ -1501,13 +1643,16 @@ class LineBatchProperties(TypedDict):
     Geometry: Union[AnyStr, LineGeometry, List[AnyStr], List[LineGeometry]]
     Units: Union[AnyStr, int, enums.LengthUnit, List[AnyStr], List[int], List[enums.LengthUnit], Int32Array]
     Spacing: Union[AnyStr, LineSpacing, List[AnyStr], List[LineSpacing]]
-    Conductors: Union[List[AnyStr], List[Union[WireData, CNData, TSData]]]
     EarthModel: Union[AnyStr, int, enums.EarthModel, List[AnyStr], List[int], List[enums.EarthModel], Int32Array]
     B1: Union[float, Float64Array]
     B0: Union[float, Float64Array]
     Seasons: Union[int, Int32Array]
     Ratings: Float64Array
     LineType: Union[AnyStr, int, enums.LineType, List[AnyStr], List[int], List[enums.LineType], Int32Array]
+    EpsRMedium: Union[float, Float64Array]
+    HeightOffset: Union[float, Float64Array]
+    HeightUnit: Union[AnyStr, int, enums.LengthUnit, List[AnyStr], List[int], List[enums.LengthUnit], Int32Array]
+    Conductors: Union[List[AnyStr], List[Conductor]]
     NormAmps: Union[float, Float64Array]
     EmergAmps: Union[float, Float64Array]
     FaultRate: Union[float, Float64Array]

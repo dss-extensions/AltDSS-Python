@@ -1,5 +1,5 @@
-# Copyright (c) 2021-2024 Paulo Meira
-# Copyright (c) 2021-2024 DSS-Extensions contributors
+# Copyright (c) 2021-2026 Paulo Meira
+# Copyright (c) 2021-2026 DSS-Extensions contributors
 from __future__ import annotations
 from typing import Union, List, AnyStr, Optional, Iterator, TYPE_CHECKING
 from typing_extensions import TypedDict, Unpack
@@ -453,6 +453,7 @@ class WindGen(DSSObj, CircuitElementMixin, PCElementMixin):
     kVA rating of electrical machine. Defaults to 1.2 times "kW" if not specified. Applied to machine or inverter definition for Dynamics mode solutions. 
 
     Name: `kVA`
+    Units: kVA
     """
 
     def _get_MVA(self) -> float:
@@ -466,6 +467,7 @@ class WindGen(DSSObj, CircuitElementMixin, PCElementMixin):
     MVA rating of electrical machine. Alternative to using the "kVA" property.
 
     Name: `MVA`
+    Units: MVA
     """
 
     def _get_DutyStart(self) -> float:
@@ -1342,6 +1344,7 @@ class WindGenBatch(DSSBatch, CircuitElementBatchMixin, PCElementBatchMixin):
     kVA rating of electrical machine. Defaults to 1.2 times "kW" if not specified. Applied to machine or inverter definition for Dynamics mode solutions. 
 
     Name: `kVA`
+    Units: kVA
     """
 
     def _get_MVA(self) -> BatchFloat64ArrayProxy:
@@ -1355,6 +1358,7 @@ class WindGenBatch(DSSBatch, CircuitElementBatchMixin, PCElementBatchMixin):
     MVA rating of electrical machine. Alternative to using the "kVA" property.
 
     Name: `MVA`
+    Units: MVA
     """
 
     def _get_DutyStart(self) -> BatchFloat64ArrayProxy:

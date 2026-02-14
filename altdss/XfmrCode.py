@@ -1,5 +1,5 @@
-# Copyright (c) 2021-2024 Paulo Meira
-# Copyright (c) 2021-2024 DSS-Extensions contributors
+# Copyright (c) 2021-2026 Paulo Meira
+# Copyright (c) 2021-2026 DSS-Extensions contributors
 from __future__ import annotations
 from typing import Union, List, AnyStr, Optional, Iterator, TYPE_CHECKING
 from typing_extensions import TypedDict, Unpack
@@ -208,7 +208,7 @@ class XfmrCode(DSSObj):
     def _get_Conns_str(self) -> List[str]:
         return self._get_string_array(self._lib.Obj_GetStringArray, self._ptr, 11)
 
-    def _set_Conns_str(self, value: AnyStr, flags: enums.SetterFlags = 0):
+    def _set_Conns_str(self, value: List[AnyStr], flags: enums.SetterFlags = 0):
         self._set_Conns(value, flags)
 
     Conns_str = property(_get_Conns_str, _set_Conns_str) # type: List[str]

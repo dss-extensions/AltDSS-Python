@@ -1,5 +1,5 @@
-# Copyright (c) 2021-2024 Paulo Meira
-# Copyright (c) 2021-2024 DSS-Extensions contributors
+# Copyright (c) 2021-2026 Paulo Meira
+# Copyright (c) 2021-2026 DSS-Extensions contributors
 from __future__ import annotations
 from typing import Union, List, AnyStr, Optional, Iterator, TYPE_CHECKING
 from typing_extensions import TypedDict, Unpack
@@ -500,7 +500,7 @@ class Recloser(DSSObj, CircuitElementMixin):
     Normal state of the recloser. The recloser reverts to this state for reset, change of mode, etc. Defaults to "State" if not specifically declared.
 
     Name: `Normal`
-    Default: closed
+    Default: Closed
     """
 
     def _get_Normal_str(self) -> str:
@@ -514,7 +514,7 @@ class Recloser(DSSObj, CircuitElementMixin):
     Normal state of the recloser. The recloser reverts to this state for reset, change of mode, etc. Defaults to "State" if not specifically declared.
 
     Name: `Normal`
-    Default: closed
+    Default: Closed
     """
 
     def _get_State(self) -> enums.RecloserState:
@@ -531,7 +531,7 @@ class Recloser(DSSObj, CircuitElementMixin):
     Actual state of the recloser. Upon setting, immediately forces state of the recloser, overriding the Recloser control. Simulates manual control on recloser. Defaults to Closed. "Open" causes the controlled element to open and lock out. "Closed" causes the controlled element to close and the recloser to reset to its first operation.
 
     Name: `State`
-    Default: closed
+    Default: Closed
     """
 
     def _get_State_str(self) -> str:
@@ -545,7 +545,7 @@ class Recloser(DSSObj, CircuitElementMixin):
     Actual state of the recloser. Upon setting, immediately forces state of the recloser, overriding the Recloser control. Simulates manual control on recloser. Defaults to Closed. "Open" causes the controlled element to open and lock out. "Closed" causes the controlled element to close and the recloser to reset to its first operation.
 
     Name: `State`
-    Default: closed
+    Default: Closed
     """
 
     def _get_BaseFreq(self) -> float:
@@ -1038,7 +1038,7 @@ class RecloserBatch(DSSBatch, CircuitElementBatchMixin):
     Normal state of the recloser. The recloser reverts to this state for reset, change of mode, etc. Defaults to "State" if not specifically declared.
 
     Name: `Normal`
-    Default: closed
+    Default: Closed
     """
 
     def _get_Normal_str(self) -> List[str]:
@@ -1052,7 +1052,7 @@ class RecloserBatch(DSSBatch, CircuitElementBatchMixin):
     Normal state of the recloser. The recloser reverts to this state for reset, change of mode, etc. Defaults to "State" if not specifically declared.
 
     Name: `Normal`
-    Default: closed
+    Default: Closed
     """
 
     def _get_State(self) -> BatchInt32ArrayProxy:
@@ -1070,7 +1070,7 @@ class RecloserBatch(DSSBatch, CircuitElementBatchMixin):
     Actual state of the recloser. Upon setting, immediately forces state of the recloser, overriding the Recloser control. Simulates manual control on recloser. Defaults to Closed. "Open" causes the controlled element to open and lock out. "Closed" causes the controlled element to close and the recloser to reset to its first operation.
 
     Name: `State`
-    Default: closed
+    Default: Closed
     """
 
     def _get_State_str(self) -> List[str]:
@@ -1084,7 +1084,7 @@ class RecloserBatch(DSSBatch, CircuitElementBatchMixin):
     Actual state of the recloser. Upon setting, immediately forces state of the recloser, overriding the Recloser control. Simulates manual control on recloser. Defaults to Closed. "Open" causes the controlled element to open and lock out. "Closed" causes the controlled element to close and the recloser to reset to its first operation.
 
     Name: `State`
-    Default: closed
+    Default: Closed
     """
 
     def _get_BaseFreq(self) -> BatchFloat64ArrayProxy:

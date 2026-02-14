@@ -59,7 +59,7 @@ class IZIP(Base):
         if not isinstance(FileName, bytes):
             FileName = FileName.encode(api_util.codec)
 
-        api_util.lib_unpatched.ZIP_Extract_GR(FileName)
+        api_util.lib_unpatched.ZIP_Extract_GR(self._api_util.ctx, FileName)
         api_util._check_for_error()
         ptr, cnt = api_util.gr_int8_pointers
         return bytes(api_util.ffi.buffer(ptr[0], cnt[0]))

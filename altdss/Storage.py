@@ -1,5 +1,5 @@
-# Copyright (c) 2021-2024 Paulo Meira
-# Copyright (c) 2021-2024 DSS-Extensions contributors
+# Copyright (c) 2021-2026 Paulo Meira
+# Copyright (c) 2021-2026 DSS-Extensions contributors
 from __future__ import annotations
 from typing import Union, List, AnyStr, Optional, Iterator, TYPE_CHECKING
 from typing_extensions import TypedDict, Unpack
@@ -282,11 +282,15 @@ class Storage(DSSObj, CircuitElementMixin, PCElementMixin, ElementHasRegistersMi
 
     kvar = property(_get_kvar, _set_kvar) # type: float
     """
-    Get/set the requested kvar value. Final kvar is subjected to the inverter ratings. Sets inverter to operate in constant kvar mode.
+    **Set:** write the **requested** kvar value.
+    **Get:** read the **adjusted** kvar value, subject to limits and modes.
+
+    The final kvar is subjected to the inverter ratings.
+    Setting a new value updates the inverter to operate in constant kvar mode.
 
     Name: `kvar`
     Units: kvar
-    Default: -0.0
+    Default: 0.0
     """
 
     def _get_PF(self) -> float:
@@ -1497,11 +1501,15 @@ class StorageBatch(DSSBatch, CircuitElementBatchMixin, PCElementBatchMixin):
 
     kvar = property(_get_kvar, _set_kvar) # type: BatchFloat64ArrayProxy
     """
-    Get/set the requested kvar value. Final kvar is subjected to the inverter ratings. Sets inverter to operate in constant kvar mode.
+    **Set:** write the **requested** kvar value.
+    **Get:** read the **adjusted** kvar value, subject to limits and modes.
+
+    The final kvar is subjected to the inverter ratings.
+    Setting a new value updates the inverter to operate in constant kvar mode.
 
     Name: `kvar`
     Units: kvar
-    Default: -0.0
+    Default: 0.0
     """
 
     def _get_PF(self) -> BatchFloat64ArrayProxy:

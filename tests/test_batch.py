@@ -595,7 +595,7 @@ def test_loads_float_na():
 
     # Generate some test data -- half the loads are multiplied by 1.1
     mults = np.asarray([1.1] * len(alt1.Load))
-    mults[0:len(alt1.Load) // 2] = np.NaN
+    mults[0:len(alt1.Load) // 2] = np.nan
     kWs = alt1.Load.kW * mults
 
     for kW, load in zip(kWs, alt1.Load):

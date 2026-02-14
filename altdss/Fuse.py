@@ -1,5 +1,5 @@
-# Copyright (c) 2021-2024 Paulo Meira
-# Copyright (c) 2021-2024 DSS-Extensions contributors
+# Copyright (c) 2021-2026 Paulo Meira
+# Copyright (c) 2021-2026 DSS-Extensions contributors
 from __future__ import annotations
 from typing import Union, List, AnyStr, Optional, Iterator, TYPE_CHECKING
 from typing_extensions import TypedDict, Unpack
@@ -214,7 +214,7 @@ class Fuse(DSSObj, CircuitElementMixin):
 
     def Action(self, value: Union[AnyStr, int, enums.FuseAction], flags: enums.SetterFlags = 0):
         """
-        DEPRECATED. See "State" property.
+        DEPRECATED. See `State` property.
 
         **Deprecated:** Use "State" property instead.
 
@@ -226,18 +226,27 @@ class Fuse(DSSObj, CircuitElementMixin):
 
         self._set_string_o(8, value)
 
-    def close(self, flags: enums.SetterFlags = 0):
-        '''Shortcut to Action(FuseAction.close)'''
-        self._lib.Obj_SetInt32(self._ptr, 8, enums.FuseAction.close, flags)
+    def Close(self, flags: enums.SetterFlags = 0):
+        '''Shortcut to Action(FuseAction.Close)'''
+        self._lib.Obj_SetInt32(self._ptr, 8, enums.FuseAction.Close, flags)
 
-    def open(self, flags: enums.SetterFlags = 0):
-        '''Shortcut to Action(FuseAction.open)'''
-        self._lib.Obj_SetInt32(self._ptr, 8, enums.FuseAction.open, flags)
+    def Open(self, flags: enums.SetterFlags = 0):
+        '''Shortcut to Action(FuseAction.Open)'''
+        self._lib.Obj_SetInt32(self._ptr, 8, enums.FuseAction.Open, flags)
 
     def _get_Normal(self) -> List[enums.FuseState]:
         return [enums.FuseState(val) for val in self._get_int32_list(self._lib.Obj_GetInt32Array, self._ptr, 9)]
 
-    def _set_Normal(self, value: Union[List[Union[int, enums.FuseState]], List[AnyStr]], flags: enums.SetterFlags = 0):
+    def _set_Normal(self, value: Union[List[Union[int, enums.FuseState]], List[AnyStr], int, enums.FuseState, AnyStr], flags: enums.SetterFlags = 0):
+        flags |= enums.SetterFlags.Broadcast
+        if isinstance(value, (str, bytes)):
+            self._set_string_o(9, value, flags)
+            return
+
+        if isinstance(value, int):
+            self._lib.Obj_SetInt32(self._ptr, 9, value, flags)
+            return
+
         if len(value) and not isinstance(value[0], int):
             self._set_string_array_o(9, value, flags)
             return
@@ -245,7 +254,7 @@ class Fuse(DSSObj, CircuitElementMixin):
 
     Normal = property(_get_Normal, _set_Normal) # type: enums.FuseState
     """
-    ARRAY of strings {Open | Closed} representing the Normal state of the fuse in each phase of the controlled element. The fuse reverts to this state for reset, change of mode, etc. Defaults to "State" if not specifically declared.
+    ARRAY of strings {Open | Closed} representing the Normal state of the fuse in each phase of the controlled element. The fuse reverts to this state for reset, change of mode, etc. Defaults to `State` if not specifically declared.
 
     Name: `Normal`
     """
@@ -253,12 +262,12 @@ class Fuse(DSSObj, CircuitElementMixin):
     def _get_Normal_str(self) -> List[str]:
         return self._get_string_array(self._lib.Obj_GetStringArray, self._ptr, 9)
 
-    def _set_Normal_str(self, value: AnyStr, flags: enums.SetterFlags = 0):
+    def _set_Normal_str(self, value: Union[List[AnyStr], AnyStr], flags: enums.SetterFlags = 0):
         self._set_Normal(value, flags)
 
     Normal_str = property(_get_Normal_str, _set_Normal_str) # type: List[str]
     """
-    ARRAY of strings {Open | Closed} representing the Normal state of the fuse in each phase of the controlled element. The fuse reverts to this state for reset, change of mode, etc. Defaults to "State" if not specifically declared.
+    ARRAY of strings {Open | Closed} representing the Normal state of the fuse in each phase of the controlled element. The fuse reverts to this state for reset, change of mode, etc. Defaults to `State` if not specifically declared.
 
     Name: `Normal`
     """
@@ -266,7 +275,16 @@ class Fuse(DSSObj, CircuitElementMixin):
     def _get_State(self) -> List[enums.FuseState]:
         return [enums.FuseState(val) for val in self._get_int32_list(self._lib.Obj_GetInt32Array, self._ptr, 10)]
 
-    def _set_State(self, value: Union[List[Union[int, enums.FuseState]], List[AnyStr]], flags: enums.SetterFlags = 0):
+    def _set_State(self, value: Union[List[Union[int, enums.FuseState]], List[AnyStr], int, enums.FuseState, AnyStr], flags: enums.SetterFlags = 0):
+        flags |= enums.SetterFlags.Broadcast
+        if isinstance(value, (str, bytes)):
+            self._set_string_o(10, value, flags)
+            return
+
+        if isinstance(value, int):
+            self._lib.Obj_SetInt32(self._ptr, 10, value, flags)
+            return
+
         if len(value) and not isinstance(value[0], int):
             self._set_string_array_o(10, value, flags)
             return
@@ -277,13 +295,13 @@ class Fuse(DSSObj, CircuitElementMixin):
     ARRAY of strings {Open | Closed} representing the Actual state of the fuse in each phase of the controlled element. Upon setting, immediately forces state of fuse(s). Simulates manual control on Fuse. Defaults to Closed for all phases.
 
     Name: `State`
-    Default: ['closed', 'closed', 'closed']
+    Default: ['Closed', 'Closed', 'Closed']
     """
 
     def _get_State_str(self) -> List[str]:
         return self._get_string_array(self._lib.Obj_GetStringArray, self._ptr, 10)
 
-    def _set_State_str(self, value: AnyStr, flags: enums.SetterFlags = 0):
+    def _set_State_str(self, value: Union[List[AnyStr], AnyStr], flags: enums.SetterFlags = 0):
         self._set_State(value, flags)
 
     State_str = property(_get_State_str, _set_State_str) # type: List[str]
@@ -291,7 +309,7 @@ class Fuse(DSSObj, CircuitElementMixin):
     ARRAY of strings {Open | Closed} representing the Actual state of the fuse in each phase of the controlled element. Upon setting, immediately forces state of fuse(s). Simulates manual control on Fuse. Defaults to Closed for all phases.
 
     Name: `State`
-    Default: ['closed', 'closed', 'closed']
+    Default: ['Closed', 'Closed', 'Closed']
     """
 
     def _get_BaseFreq(self) -> float:
@@ -520,7 +538,7 @@ class FuseBatch(DSSBatch, CircuitElementBatchMixin):
 
     def Action(self, value: Union[AnyStr, int, enums.FuseAction], flags: enums.SetterFlags = 0):
         """
-        DEPRECATED. See "State" property.
+        DEPRECATED. See `State` property.
 
         **Deprecated:** Use "State" property instead.
 
@@ -531,13 +549,13 @@ class FuseBatch(DSSBatch, CircuitElementBatchMixin):
         else:
             self._set_batch_int32_array(8, value, flags)
 
-    def close(self, flags: enums.SetterFlags = 0):
-        '''Shortcut to Action(FuseAction.close)'''
-        self._set_batch_int32_array(8, enums.FuseAction.close, flags)
+    def Close(self, flags: enums.SetterFlags = 0):
+        '''Shortcut to Action(FuseAction.Close)'''
+        self._set_batch_int32_array(8, enums.FuseAction.Close, flags)
 
-    def open(self, flags: enums.SetterFlags = 0):
-        '''Shortcut to Action(FuseAction.open)'''
-        self._set_batch_int32_array(8, enums.FuseAction.open, flags)
+    def Open(self, flags: enums.SetterFlags = 0):
+        '''Shortcut to Action(FuseAction.Open)'''
+        self._set_batch_int32_array(8, enums.FuseAction.Open, flags)
 
     def _get_Normal(self) -> List[Int32Array]:
         return [
@@ -545,7 +563,12 @@ class FuseBatch(DSSBatch, CircuitElementBatchMixin):
             for x in self._unpack()
         ]
 
-    def _set_Normal(self, value: Union[List[Union[int, enums.FuseState]], List[AnyStr]], flags: enums.SetterFlags = 0): #TODO: list of lists
+    def _set_Normal(self, value: Union[List[Union[int, enums.FuseState]], List[AnyStr], int, enums.FuseState, AnyStr], flags: enums.SetterFlags = 0): #TODO: list of lists
+        flags |= enums.SetterFlags.Broadcast
+        if isinstance(value, (str, bytes)):
+            self._set_batch_string(9, value, flags)
+            return
+
         if len(value) and not isinstance(value[0], int):
             value, value_ptr, value_count = self._prepare_string_array(value)
             for x in self._unpack():
@@ -558,7 +581,7 @@ class FuseBatch(DSSBatch, CircuitElementBatchMixin):
 
     Normal = property(_get_Normal, _set_Normal) # type: List[Int32Array]
     """
-    ARRAY of strings {Open | Closed} representing the Normal state of the fuse in each phase of the controlled element. The fuse reverts to this state for reset, change of mode, etc. Defaults to "State" if not specifically declared.
+    ARRAY of strings {Open | Closed} representing the Normal state of the fuse in each phase of the controlled element. The fuse reverts to this state for reset, change of mode, etc. Defaults to `State` if not specifically declared.
 
     Name: `Normal`
     """
@@ -571,7 +594,7 @@ class FuseBatch(DSSBatch, CircuitElementBatchMixin):
 
     Normal_str = property(_get_Normal_str, _set_Normal_str) # type: List[List[str]]
     """
-    ARRAY of strings {Open | Closed} representing the Normal state of the fuse in each phase of the controlled element. The fuse reverts to this state for reset, change of mode, etc. Defaults to "State" if not specifically declared.
+    ARRAY of strings {Open | Closed} representing the Normal state of the fuse in each phase of the controlled element. The fuse reverts to this state for reset, change of mode, etc. Defaults to `State` if not specifically declared.
 
     Name: `Normal`
     """
@@ -582,7 +605,12 @@ class FuseBatch(DSSBatch, CircuitElementBatchMixin):
             for x in self._unpack()
         ]
 
-    def _set_State(self, value: Union[List[Union[int, enums.FuseState]], List[AnyStr]], flags: enums.SetterFlags = 0): #TODO: list of lists
+    def _set_State(self, value: Union[List[Union[int, enums.FuseState]], List[AnyStr], int, enums.FuseState, AnyStr], flags: enums.SetterFlags = 0): #TODO: list of lists
+        flags |= enums.SetterFlags.Broadcast
+        if isinstance(value, (str, bytes)):
+            self._set_batch_string(10, value, flags)
+            return
+
         if len(value) and not isinstance(value[0], int):
             value, value_ptr, value_count = self._prepare_string_array(value)
             for x in self._unpack():
@@ -598,7 +626,7 @@ class FuseBatch(DSSBatch, CircuitElementBatchMixin):
     ARRAY of strings {Open | Closed} representing the Actual state of the fuse in each phase of the controlled element. Upon setting, immediately forces state of fuse(s). Simulates manual control on Fuse. Defaults to Closed for all phases.
 
     Name: `State`
-    Default: ['closed', 'closed', 'closed']
+    Default: ['Closed', 'Closed', 'Closed']
     """
 
     def _get_State_str(self) -> List[List[str]]:
@@ -612,7 +640,7 @@ class FuseBatch(DSSBatch, CircuitElementBatchMixin):
     ARRAY of strings {Open | Closed} representing the Actual state of the fuse in each phase of the controlled element. Upon setting, immediately forces state of fuse(s). Simulates manual control on Fuse. Defaults to Closed for all phases.
 
     Name: `State`
-    Default: ['closed', 'closed', 'closed']
+    Default: ['Closed', 'Closed', 'Closed']
     """
 
     def _get_BaseFreq(self) -> BatchFloat64ArrayProxy:
@@ -666,8 +694,8 @@ class FuseBatchProperties(TypedDict):
     RatedCurrent: Union[float, Float64Array]
     Delay: Union[float, Float64Array]
     Action: Union[AnyStr, int, enums.FuseAction]
-    Normal: Union[List[Union[int, enums.FuseState]], List[AnyStr]]
-    State: Union[List[Union[int, enums.FuseState]], List[AnyStr]]
+    Normal: Union[List[Union[int, enums.FuseState]], List[AnyStr], int, enums.FuseState, AnyStr]
+    State: Union[List[Union[int, enums.FuseState]], List[AnyStr], int, enums.FuseState, AnyStr]
     BaseFreq: Union[float, Float64Array]
     Enabled: bool
     Like: AnyStr

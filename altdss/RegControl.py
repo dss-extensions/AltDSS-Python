@@ -1,5 +1,5 @@
-# Copyright (c) 2021-2024 Paulo Meira
-# Copyright (c) 2021-2024 DSS-Extensions contributors
+# Copyright (c) 2021-2026 Paulo Meira
+# Copyright (c) 2021-2026 DSS-Extensions contributors
 from __future__ import annotations
 from typing import Union, List, AnyStr, Optional, Iterator, TYPE_CHECKING
 from typing_extensions import TypedDict, Unpack
@@ -29,7 +29,10 @@ class RegControl(DSSObj, CircuitElementMixin):
         26,
         28,
         32,
+        33,
         34,
+        35,
+        38,
     }
     _cls_float_idx = {
         3,
@@ -50,7 +53,8 @@ class RegControl(DSSObj, CircuitElementMixin):
         27,
         30,
         31,
-        33,
+        36,
+        37,
     }
     _cls_prop_idx = {
         'transformer': 1,
@@ -85,9 +89,13 @@ class RegControl(DSSObj, CircuitElementMixin):
         'ldc_z': 30,
         'rev_z': 31,
         'cogen': 32,
-        'basefreq': 33,
-        'enabled': 34,
-        'like': 35,
+        'idle': 33,
+        'idlereverse': 34,
+        'idleforward': 35,
+        'fwdthreshold': 36,
+        'basefreq': 37,
+        'enabled': 38,
+        'like': 39,
     }
 
     def __init__(self, api_util, ptr):
@@ -281,7 +289,16 @@ class RegControl(DSSObj, CircuitElementMixin):
 
     Reversible = property(_get_Reversible, _set_Reversible) # type: bool
     """
-    Indicates whether or not the regulator can be switched to regulate in the reverse direction. Typically applies only to line regulators and not to LTC on a substation transformer.
+    Indicates whether the regulator has a reverse operation mode (associated settings must be defined).
+    Default is `No`, which means the regulator forward settings apply for both forward and reverse power flow.
+    Typically applies only to line regulators and not to LTC on a substation transformer.
+
+    Use the `RevNeutral`, `Idle`, `IdleReverse` and `IdleForward` properties to define the desired operating mode:
+    - Bidirectional: `Reversible=yes`,`Idle=yes/no` (idling in the "no-load region" depends on the controller and is a functionality typically described in its datasheet)
+    - Locked Forward: `Reversible=yes`, `IdleReverse=yes`
+    - Reverse Idle: `Reversible=yes`, `Idle=yes`, `IdleReverse=yes`
+    - Locked Reverse: `Reversible=yes`, `IdleForward=yes`
+    - Neutral Idle: `Reversible=yes`, `RevNeutral=yes`, `Idle=yes/no` (idling in the "no-load region" depends on the controller and is a functionality typically described in its datasheet)
 
     Name: `Reversible`
     Default: False
@@ -477,9 +494,13 @@ class RegControl(DSSObj, CircuitElementMixin):
     """
     kW reverse power threshold for reversing the direction of the regulator.
 
+    Defines a no-load band between `-RevThreshold` and `+RevThreshold`.
+
+    **Important**: If an uneven band is desired, set `RevThreshold` to the desired lower bound (negative values allowed) and reset the upper bound using `FwdThreshold` right after.
+
     Name: `RevThreshold`
     Units: kW
-    Default: 100.0
+    Default: -100.0
     """
 
     def _get_RevDelay(self) -> float:
@@ -597,17 +618,80 @@ class RegControl(DSSObj, CircuitElementMixin):
 
     Cogen = property(_get_Cogen, _set_Cogen) # type: bool
     """
-    The Cogen feature is activated. Continues looking forward if power reverses, but switches to reverse-mode LDC, vreg and band values.
+    Cogen feature. When enabled, continues looking forward if power reverses, but switches to reverse-mode LDC, vreg and band values.
+    Optionally, use the `Idle` property to specify if the regulator should idle in the "no-load region" (functionality typically described in the controller datasheet).
 
     Name: `Cogen`
     Default: False
     """
 
+    def _get_Idle(self) -> bool:
+        return self._lib.Obj_GetInt32(self._ptr, 33) != 0
+
+    def _set_Idle(self, value: bool, flags: enums.SetterFlags = 0):
+        self._lib.Obj_SetInt32(self._ptr, 33, value, flags)
+
+    Idle = property(_get_Idle, _set_Idle) # type: bool
+    """
+    Enabling this property only has an effect when reversible or cogen properties are set to `yes`/`true`. For the "no-load region" where active power flow lies between `-revThreshold` and `+revThreshold`, the regulator will lock taps in the position it had before entering that region. Voltage override (`VLimit`) takes priority.
+
+    Name: `Idle`
+    Default: False
+    """
+
+    def _get_IdleReverse(self) -> bool:
+        return self._lib.Obj_GetInt32(self._ptr, 34) != 0
+
+    def _set_IdleReverse(self, value: bool, flags: enums.SetterFlags = 0):
+        self._lib.Obj_SetInt32(self._ptr, 34, value, flags)
+
+    IdleReverse = property(_get_IdleReverse, _set_IdleReverse) # type: bool
+    """
+    Similar to the `Idle` property but applicable only when `Reversible=Yes` (not for cogen mode) AND `RevNeutral=No`. When enabled, the regulator will lock taps in the position it had before entering the reverse flow zone.
+    Voltage override (Vlimit) takes priority.
+
+    Name: `IdleReverse`
+    Default: False
+    """
+
+    def _get_IdleForward(self) -> bool:
+        return self._lib.Obj_GetInt32(self._ptr, 35) != 0
+
+    def _set_IdleForward(self, value: bool, flags: enums.SetterFlags = 0):
+        self._lib.Obj_SetInt32(self._ptr, 35, value, flags)
+
+    IdleForward = property(_get_IdleForward, _set_IdleForward) # type: bool
+    """
+    Similar to the `Idle` property but applicable only when `Reversible=Yes` (not for cogen mode). When enabled, the regulator will lock taps in the position it had before entering the forward flow zone.
+    Voltage override (`VLimit`) takes priority.
+
+    Name: `IdleForward`
+    Default: False
+    """
+
+    def _get_FwdThreshold(self) -> float:
+        return self._lib.Obj_GetFloat64(self._ptr, 36)
+
+    def _set_FwdThreshold(self, value: float, flags: enums.SetterFlags = 0):
+        self._lib.Obj_SetFloat64(self._ptr, 36, value, flags)
+
+    FwdThreshold = property(_get_FwdThreshold, _set_FwdThreshold) # type: float
+    """
+    kW forward power threshold to use in tandem with `RevTheshold`.
+    If `RevThreshold` is defined, the value of `FwdThreshold` is also updated for an even no-load band.
+
+    If you require an uneven no-load zone band, set `FwdThreshold` after setting `RevThreshold`, or in the same DSS command (edit context).
+
+    Name: `FwdThreshold`
+    Units: kW
+    Default: 100.0
+    """
+
     def _get_BaseFreq(self) -> float:
-        return self._lib.Obj_GetFloat64(self._ptr, 33)
+        return self._lib.Obj_GetFloat64(self._ptr, 37)
 
     def _set_BaseFreq(self, value: float, flags: enums.SetterFlags = 0):
-        self._lib.Obj_SetFloat64(self._ptr, 33, value, flags)
+        self._lib.Obj_SetFloat64(self._ptr, 37, value, flags)
 
     BaseFreq = property(_get_BaseFreq, _set_BaseFreq) # type: float
     """
@@ -618,10 +702,10 @@ class RegControl(DSSObj, CircuitElementMixin):
     """
 
     def _get_Enabled(self) -> bool:
-        return self._lib.Obj_GetInt32(self._ptr, 34) != 0
+        return self._lib.Obj_GetInt32(self._ptr, 38) != 0
 
     def _set_Enabled(self, value: bool, flags: enums.SetterFlags = 0):
-        self._lib.Obj_SetInt32(self._ptr, 34, value, flags)
+        self._lib.Obj_SetInt32(self._ptr, 38, value, flags)
 
     Enabled = property(_get_Enabled, _set_Enabled) # type: bool
     """
@@ -641,7 +725,7 @@ class RegControl(DSSObj, CircuitElementMixin):
 
         Name: `Like`
         """
-        self._set_string_o(35, value)
+        self._set_string_o(39, value)
 
 
 class RegControlProperties(TypedDict):
@@ -677,6 +761,10 @@ class RegControlProperties(TypedDict):
     LDC_Z: float
     Rev_Z: float
     Cogen: bool
+    Idle: bool
+    IdleReverse: bool
+    IdleForward: bool
+    FwdThreshold: float
     BaseFreq: float
     Enabled: bool
     Like: AnyStr
@@ -880,7 +968,16 @@ class RegControlBatch(DSSBatch, CircuitElementBatchMixin):
 
     Reversible = property(_get_Reversible, _set_Reversible) # type: List[bool]
     """
-    Indicates whether or not the regulator can be switched to regulate in the reverse direction. Typically applies only to line regulators and not to LTC on a substation transformer.
+    Indicates whether the regulator has a reverse operation mode (associated settings must be defined).
+    Default is `No`, which means the regulator forward settings apply for both forward and reverse power flow.
+    Typically applies only to line regulators and not to LTC on a substation transformer.
+
+    Use the `RevNeutral`, `Idle`, `IdleReverse` and `IdleForward` properties to define the desired operating mode:
+    - Bidirectional: `Reversible=yes`,`Idle=yes/no` (idling in the "no-load region" depends on the controller and is a functionality typically described in its datasheet)
+    - Locked Forward: `Reversible=yes`, `IdleReverse=yes`
+    - Reverse Idle: `Reversible=yes`, `Idle=yes`, `IdleReverse=yes`
+    - Locked Reverse: `Reversible=yes`, `IdleForward=yes`
+    - Neutral Idle: `Reversible=yes`, `RevNeutral=yes`, `Idle=yes/no` (idling in the "no-load region" depends on the controller and is a functionality typically described in its datasheet)
 
     Name: `Reversible`
     Default: False
@@ -1077,9 +1174,13 @@ class RegControlBatch(DSSBatch, CircuitElementBatchMixin):
     """
     kW reverse power threshold for reversing the direction of the regulator.
 
+    Defines a no-load band between `-RevThreshold` and `+RevThreshold`.
+
+    **Important**: If an uneven band is desired, set `RevThreshold` to the desired lower bound (negative values allowed) and reset the upper bound using `FwdThreshold` right after.
+
     Name: `RevThreshold`
     Units: kW
-    Default: 100.0
+    Default: -100.0
     """
 
     def _get_RevDelay(self) -> BatchFloat64ArrayProxy:
@@ -1203,17 +1304,86 @@ class RegControlBatch(DSSBatch, CircuitElementBatchMixin):
 
     Cogen = property(_get_Cogen, _set_Cogen) # type: List[bool]
     """
-    The Cogen feature is activated. Continues looking forward if power reverses, but switches to reverse-mode LDC, vreg and band values.
+    Cogen feature. When enabled, continues looking forward if power reverses, but switches to reverse-mode LDC, vreg and band values.
+    Optionally, use the `Idle` property to specify if the regulator should idle in the "no-load region" (functionality typically described in the controller datasheet).
 
     Name: `Cogen`
     Default: False
     """
 
+    def _get_Idle(self) -> List[bool]:
+        return [v != 0 for v in
+            self._get_batch_int32_prop(33)
+        ]
+
+    def _set_Idle(self, value: bool, flags: enums.SetterFlags = 0):
+        self._set_batch_int32_array(33, value, flags)
+
+    Idle = property(_get_Idle, _set_Idle) # type: List[bool]
+    """
+    Enabling this property only has an effect when reversible or cogen properties are set to `yes`/`true`. For the "no-load region" where active power flow lies between `-revThreshold` and `+revThreshold`, the regulator will lock taps in the position it had before entering that region. Voltage override (`VLimit`) takes priority.
+
+    Name: `Idle`
+    Default: False
+    """
+
+    def _get_IdleReverse(self) -> List[bool]:
+        return [v != 0 for v in
+            self._get_batch_int32_prop(34)
+        ]
+
+    def _set_IdleReverse(self, value: bool, flags: enums.SetterFlags = 0):
+        self._set_batch_int32_array(34, value, flags)
+
+    IdleReverse = property(_get_IdleReverse, _set_IdleReverse) # type: List[bool]
+    """
+    Similar to the `Idle` property but applicable only when `Reversible=Yes` (not for cogen mode) AND `RevNeutral=No`. When enabled, the regulator will lock taps in the position it had before entering the reverse flow zone.
+    Voltage override (Vlimit) takes priority.
+
+    Name: `IdleReverse`
+    Default: False
+    """
+
+    def _get_IdleForward(self) -> List[bool]:
+        return [v != 0 for v in
+            self._get_batch_int32_prop(35)
+        ]
+
+    def _set_IdleForward(self, value: bool, flags: enums.SetterFlags = 0):
+        self._set_batch_int32_array(35, value, flags)
+
+    IdleForward = property(_get_IdleForward, _set_IdleForward) # type: List[bool]
+    """
+    Similar to the `Idle` property but applicable only when `Reversible=Yes` (not for cogen mode). When enabled, the regulator will lock taps in the position it had before entering the forward flow zone.
+    Voltage override (`VLimit`) takes priority.
+
+    Name: `IdleForward`
+    Default: False
+    """
+
+    def _get_FwdThreshold(self) -> BatchFloat64ArrayProxy:
+        return BatchFloat64ArrayProxy(self, 36)
+
+    def _set_FwdThreshold(self, value: Union[float, Float64Array], flags: enums.SetterFlags = 0):
+        self._set_batch_float64_array(36, value, flags)
+
+    FwdThreshold = property(_get_FwdThreshold, _set_FwdThreshold) # type: BatchFloat64ArrayProxy
+    """
+    kW forward power threshold to use in tandem with `RevTheshold`.
+    If `RevThreshold` is defined, the value of `FwdThreshold` is also updated for an even no-load band.
+
+    If you require an uneven no-load zone band, set `FwdThreshold` after setting `RevThreshold`, or in the same DSS command (edit context).
+
+    Name: `FwdThreshold`
+    Units: kW
+    Default: 100.0
+    """
+
     def _get_BaseFreq(self) -> BatchFloat64ArrayProxy:
-        return BatchFloat64ArrayProxy(self, 33)
+        return BatchFloat64ArrayProxy(self, 37)
 
     def _set_BaseFreq(self, value: Union[float, Float64Array], flags: enums.SetterFlags = 0):
-        self._set_batch_float64_array(33, value, flags)
+        self._set_batch_float64_array(37, value, flags)
 
     BaseFreq = property(_get_BaseFreq, _set_BaseFreq) # type: BatchFloat64ArrayProxy
     """
@@ -1225,11 +1395,11 @@ class RegControlBatch(DSSBatch, CircuitElementBatchMixin):
 
     def _get_Enabled(self) -> List[bool]:
         return [v != 0 for v in
-            self._get_batch_int32_prop(34)
+            self._get_batch_int32_prop(38)
         ]
 
     def _set_Enabled(self, value: bool, flags: enums.SetterFlags = 0):
-        self._set_batch_int32_array(34, value, flags)
+        self._set_batch_int32_array(38, value, flags)
 
     Enabled = property(_get_Enabled, _set_Enabled) # type: List[bool]
     """
@@ -1249,7 +1419,7 @@ class RegControlBatch(DSSBatch, CircuitElementBatchMixin):
 
         Name: `Like`
         """
-        self._set_batch_string(35, value, flags)
+        self._set_batch_string(39, value, flags)
 
 class RegControlBatchProperties(TypedDict):
     Transformer: Union[AnyStr, TransformerObj, AutoTrans, List[AnyStr], List[Union[TransformerObj, AutoTrans]]]
@@ -1284,6 +1454,10 @@ class RegControlBatchProperties(TypedDict):
     LDC_Z: Union[float, Float64Array]
     Rev_Z: Union[float, Float64Array]
     Cogen: bool
+    Idle: bool
+    IdleReverse: bool
+    IdleForward: bool
+    FwdThreshold: Union[float, Float64Array]
     BaseFreq: Union[float, Float64Array]
     Enabled: bool
     Like: AnyStr

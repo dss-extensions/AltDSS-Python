@@ -1,5 +1,5 @@
-# Copyright (c) 2021-2024 Paulo Meira
-# Copyright (c) 2021-2024 DSS-Extensions contributors
+# Copyright (c) 2021-2026 Paulo Meira
+# Copyright (c) 2021-2026 DSS-Extensions contributors
 from __future__ import annotations
 from typing import Union, List, AnyStr, Optional, Iterator, TYPE_CHECKING
 from typing_extensions import TypedDict, Unpack
@@ -323,6 +323,7 @@ class PVSystem(DSSObj, CircuitElementMixin, PCElementMixin, ElementHasRegistersM
     kVA rating of inverter. Used as the base for Dynamics mode and Harmonics mode values.
 
     Name: `kVA`
+    Units: kVA
     Default: 500.0
     """
 
@@ -1374,6 +1375,7 @@ class PVSystemBatch(DSSBatch, CircuitElementBatchMixin, PCElementBatchMixin):
     kVA rating of inverter. Used as the base for Dynamics mode and Harmonics mode values.
 
     Name: `kVA`
+    Units: kVA
     Default: 500.0
     """
 

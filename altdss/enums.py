@@ -1,8 +1,8 @@
-# Copyright (c) 2021-2024 Paulo Meira
-# Copyright (c) 2021-2024 DSS-Extensions contributors
+# Copyright (c) 2021-2026 Paulo Meira
+# Copyright (c) 2021-2026 DSS-Extensions contributors
 from __future__ import annotations
 from enum import IntEnum, IntFlag
-from dss_python_backend.enums import SetterFlags
+from dss_python_backend.enums import SetterFlags, DSSObjectFlags, BatchOperation
 # Global enumerations
 
 
@@ -217,6 +217,21 @@ class PlotProfilePhases(IntEnum):
     LLPrimary = -6 # LLPrimary
 
 
+class AltDSSComplatFlags(IntEnum):
+    """AltDSSComplatFlags (DSS enumeration)"""
+    NoSolverFloatChecks = 1 # NoSolverFloatChecks
+    BadPrecision = 2 # BadPrecision
+    InvControl9611 = 4 # InvControl9611
+    SaveCalcVoltageBases = 8 # SaveCalcVoltageBases
+    ActiveLine = 16 # ActiveLine
+    NoPropertyTracking = 32 # NoPropertyTracking
+    SkipSideEffects = 64 # SkipSideEffects
+    MonitorHeader = 128 # MonitorHeader
+    InvControlDeltaV = 256 # InvControlDeltaV
+    PermissiveProperties = 512 # PermissiveProperties
+    LegacySMARTDS = 2048 # LegacySMARTDS
+
+
 
 # Class-specific enumerations
 
@@ -367,50 +382,50 @@ class RelayType(IntEnum):
 
 class RelayAction(IntEnum):
     """Relay: Action (DSS enumeration)"""
-    close = 2 # close
-    open = 1 # open
-    trip = 1 # trip
+    Close = 2 # Close
+    Open = 1 # Open
+    Trip = 1 # Trip
 
 class RelayState(IntEnum):
     """Relay: State (DSS enumeration)"""
-    closed = 2 # closed
-    open = 1 # open
-    trip = 1 # trip
+    Closed = 2 # Closed
+    Open = 1 # Open
+    Trip = 1 # Trip
 
 
 class RecloserAction(IntEnum):
     """Recloser: Action (DSS enumeration)"""
-    close = 2 # close
-    open = 1 # open
-    trip = 1 # trip
+    Close = 2 # Close
+    Open = 1 # Open
+    Trip = 1 # Trip
 
 class RecloserState(IntEnum):
     """Recloser: State (DSS enumeration)"""
-    closed = 2 # closed
-    open = 1 # open
-    trip = 1 # trip
+    Closed = 2 # Closed
+    Open = 1 # Open
+    Trip = 1 # Trip
 
 
 class FuseAction(IntEnum):
     """Fuse: Action (DSS enumeration)"""
-    close = 2 # close
-    open = 1 # open
+    Close = 2 # Close
+    Open = 1 # Open
 
 class FuseState(IntEnum):
     """Fuse: State (DSS enumeration)"""
-    closed = 2 # closed
-    open = 1 # open
+    Closed = 2 # Closed
+    Open = 1 # Open
 
 
 class SwtControlAction(IntEnum):
     """SwtControl: Action (DSS enumeration)"""
-    close = 2 # close
-    open = 1 # open
+    Close = 2 # Close
+    Open = 1 # Open
 
 class SwtControlState(IntEnum):
     """SwtControl: State (DSS enumeration)"""
-    closed = 2 # closed
-    open = 1 # open
+    Closed = 2 # Closed
+    Open = 1 # Open
 
 
 class PVSystemModel(IntEnum):

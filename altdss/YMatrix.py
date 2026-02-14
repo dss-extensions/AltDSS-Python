@@ -32,17 +32,18 @@ class IYMatrix(Base):
         cValsPtr = ffi.new('double**')
 
         lib = self._api_util.lib_unpatched # use the raw CFFI version
-        lib.YMatrix_GetCompressedYMatrix(True, nBus, nNz, ColPtr, RowIdxPtr, cValsPtr)
+        lib.YMatrix_GetCompressedYMatrix(self._api_util.ctx, True, nBus, nNz, ColPtr, RowIdxPtr, cValsPtr)
 
         if not nBus[0] or not nNz[0]:
             res = None
         else:
             # return as (data, indices, indptr) that can fed into scipy.sparse.csc_matrix
-            res = (
+            from scipy.sparse import csc_matrix
+            return csc_matrix((
                 np.frombuffer(ffi.buffer(cValsPtr[0], nNz[0] * 16), dtype=complex).copy(),
                 np.frombuffer(ffi.buffer(RowIdxPtr[0], nNz[0] * 4), dtype=np.int32).copy(),
                 np.frombuffer(ffi.buffer(ColPtr[0], (nBus[0] + 1) * 4), dtype=np.int32).copy()
-            )
+            ))
 
         lib.DSS_Dispose_PInteger(ColPtr)
         lib.DSS_Dispose_PInteger(RowIdxPtr)

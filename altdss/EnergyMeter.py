@@ -1,5 +1,5 @@
-# Copyright (c) 2021-2024 Paulo Meira
-# Copyright (c) 2021-2024 DSS-Extensions contributors
+# Copyright (c) 2021-2026 Paulo Meira
+# Copyright (c) 2021-2026 DSS-Extensions contributors
 from __future__ import annotations
 from typing import Union, List, AnyStr, Optional, Iterator, TYPE_CHECKING
 from typing_extensions import TypedDict, Unpack
@@ -12,6 +12,19 @@ from .common import LIST_LIKE
 from .EnergyMeterExtras import EnergyMeterBatchMixin, IEnergyMeterMixin, EnergyMeterObjMixin
 from .CircuitElement import CircuitElementBatchMixin, CircuitElementMixin
 from .PCElement import ElementHasRegistersMixin
+
+from .AutoTrans import AutoTrans
+from .Capacitor import Capacitor
+from .Line import Line
+from .Reactor import Reactor
+from .Transformer import Transformer
+PDElement = Union[
+    AutoTrans,
+    Capacitor,
+    Line,
+    Reactor,
+    Transformer,
+]
 
 class EnergyMeter(DSSObj, CircuitElementMixin, EnergyMeterObjMixin, ElementHasRegistersMixin):
     __slots__ = DSSObj._extra_slots + CircuitElementMixin._extra_slots + EnergyMeterObjMixin._extra_slots + ElementHasRegistersMixin._extra_slots
@@ -109,17 +122,17 @@ class EnergyMeter(DSSObj, CircuitElementMixin, EnergyMeterObjMixin, ElementHasRe
     Default: Vsource.source
     """
 
-    def _get_Element(self) -> DSSObj:
+    def _get_Element(self) -> PDElement:
         return self._get_obj(1, None)
 
-    def _set_Element(self, value: Union[AnyStr, DSSObj], flags: enums.SetterFlags = 0):
+    def _set_Element(self, value: Union[AnyStr, PDElement], flags: enums.SetterFlags = 0):
         if isinstance(value, DSSObj) or value is None:
             self._set_obj(1, value, flags)
             return
 
         self._set_string_o(1, value, flags)
 
-    Element = property(_get_Element, _set_Element) # type: DSSObj
+    Element = property(_get_Element, _set_Element) # type: PDElement
     """
     Name (Full Object name) of element to which the monitor is connected.
 
@@ -542,7 +555,7 @@ class EnergyMeter(DSSObj, CircuitElementMixin, EnergyMeterObjMixin, ElementHasRe
 
 
 class EnergyMeterProperties(TypedDict):
-    Element: Union[AnyStr, DSSObj]
+    Element: Union[AnyStr, PDElement]
     Terminal: int
     Action: Union[AnyStr, int, enums.EnergyMeterAction]
     Option: List[AnyStr]
@@ -616,13 +629,13 @@ class EnergyMeterBatch(DSSBatch, CircuitElementBatchMixin, EnergyMeterBatchMixin
     Default: Vsource.source
     """
 
-    def _get_Element(self) -> List[DSSObj]:
+    def _get_Element(self) -> List[PDElement]:
         return self._get_batch_obj_prop(1)
 
-    def _set_Element(self, value: Union[AnyStr, DSSObj, List[AnyStr], List[DSSObj]], flags: enums.SetterFlags = 0):
+    def _set_Element(self, value: Union[AnyStr, PDElement, List[AnyStr], List[PDElement]], flags: enums.SetterFlags = 0):
         self._set_batch_obj_prop(1, value, flags)
 
-    Element = property(_get_Element, _set_Element) # type: List[DSSObj]
+    Element = property(_get_Element, _set_Element) # type: List[PDElement]
     """
     Name (Full Object name) of element to which the monitor is connected.
 
@@ -1071,7 +1084,7 @@ class EnergyMeterBatch(DSSBatch, CircuitElementBatchMixin, EnergyMeterBatchMixin
         self._set_batch_string(27, value, flags)
 
 class EnergyMeterBatchProperties(TypedDict):
-    Element: Union[AnyStr, DSSObj, List[AnyStr], List[DSSObj]]
+    Element: Union[AnyStr, PDElement, List[AnyStr], List[PDElement]]
     Terminal: Union[int, Int32Array]
     Action: Union[AnyStr, int, enums.EnergyMeterAction]
     Option: List[AnyStr]
