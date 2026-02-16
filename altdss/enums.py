@@ -380,17 +380,25 @@ class RelayType(IntEnum):
     TD21 = 8 # TD21
     DOC = 9 # DOC
 
+
 class RelayAction(IntEnum):
     """Relay: Action (DSS enumeration)"""
     Close = 2 # Close
     Open = 1 # Open
     Trip = 1 # Trip
+    close = 2 # Close -- **deprecated synonym**
+    open = 1 # Open -- **deprecated synonym**
+    trip = 1 # Trip -- **deprecated synonym**
+
 
 class RelayState(IntEnum):
     """Relay: State (DSS enumeration)"""
     Closed = 2 # Closed
     Open = 1 # Open
     Trip = 1 # Trip
+    closed = 2 # Closed -- **deprecated synonym**
+    open = 1 # Open -- **deprecated synonym**
+    trip = 1 # Trip -- **deprecated synonym**
 
 
 class RecloserAction(IntEnum):
@@ -398,34 +406,51 @@ class RecloserAction(IntEnum):
     Close = 2 # Close
     Open = 1 # Open
     Trip = 1 # Trip
+    close = 2 # Close -- **deprecated synonym**
+    open = 1 # Open -- **deprecated synonym**
+    trip = 1 # Trip -- **deprecated synonym**
+
 
 class RecloserState(IntEnum):
     """Recloser: State (DSS enumeration)"""
     Closed = 2 # Closed
     Open = 1 # Open
     Trip = 1 # Trip
+    closed = 2 # Closed -- **deprecated synonym**
+    open = 1 # Open -- **deprecated synonym**
+    trip = 1 # Trip -- **deprecated synonym**
 
 
 class FuseAction(IntEnum):
     """Fuse: Action (DSS enumeration)"""
     Close = 2 # Close
     Open = 1 # Open
+    close = 2 # Close -- **deprecated synonym**
+    open = 1 # Open -- **deprecated synonym**
+
 
 class FuseState(IntEnum):
     """Fuse: State (DSS enumeration)"""
     Closed = 2 # Closed
     Open = 1 # Open
+    closed = 2 # Closed -- **deprecated synonym**
+    open = 1 # Open -- **deprecated synonym**
 
 
 class SwtControlAction(IntEnum):
     """SwtControl: Action (DSS enumeration)"""
     Close = 2 # Close
     Open = 1 # Open
+    close = 2 # Close -- **deprecated synonym**
+    open = 1 # Open -- **deprecated synonym**
+
 
 class SwtControlState(IntEnum):
     """SwtControl: State (DSS enumeration)"""
     Closed = 2 # Closed
     Open = 1 # Open
+    closed = 2 # Closed -- **deprecated synonym**
+    open = 1 # Open -- **deprecated synonym**
 
 
 class PVSystemModel(IntEnum):

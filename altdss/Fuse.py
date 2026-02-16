@@ -234,6 +234,16 @@ class Fuse(DSSObj, CircuitElementMixin):
         '''Shortcut to Action(FuseAction.Open)'''
         self._lib.Obj_SetInt32(self._ptr, 8, enums.FuseAction.Open, flags)
 
+    def close(self, flags: enums.SetterFlags = 0):
+        '''Shortcut to Action(FuseAction.Close)'''
+        warnings.warn('Deprecated: use "Close" instead.', DeprecationWarning, stacklevel=2)
+        self._lib.Obj_SetInt32(self._ptr, 8, enums.FuseAction.Close, flags)
+
+    def open(self, flags: enums.SetterFlags = 0):
+        '''Shortcut to Action(FuseAction.Open)'''
+        warnings.warn('Deprecated: use "Open" instead.', DeprecationWarning, stacklevel=2)
+        self._lib.Obj_SetInt32(self._ptr, 8, enums.FuseAction.Open, flags)
+
     def _get_Normal(self) -> List[enums.FuseState]:
         return [enums.FuseState(val) for val in self._get_int32_list(self._lib.Obj_GetInt32Array, self._ptr, 9)]
 
@@ -555,6 +565,16 @@ class FuseBatch(DSSBatch, CircuitElementBatchMixin):
 
     def Open(self, flags: enums.SetterFlags = 0):
         '''Shortcut to Action(FuseAction.Open)'''
+        self._set_batch_int32_array(8, enums.FuseAction.Open, flags)
+
+    def close(self, flags: enums.SetterFlags = 0):
+        '''Shortcut to Action(FuseAction.Close)'''
+        warnings.warn('Deprecated: use "Close" instead.', DeprecationWarning, stacklevel=2)
+        self._set_batch_int32_array(8, enums.FuseAction.Close, flags)
+
+    def open(self, flags: enums.SetterFlags = 0):
+        '''Shortcut to Action(FuseAction.Open)'''
+        warnings.warn('Deprecated: use "Open" instead.', DeprecationWarning, stacklevel=2)
         self._set_batch_int32_array(8, enums.FuseAction.Open, flags)
 
     def _get_Normal(self) -> List[Int32Array]:
