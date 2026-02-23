@@ -555,7 +555,7 @@ class CNDataBatch(DSSBatch):
             self._get_batch_int32_prop(5)
         ]
 
-    def _set_SemiconLayer(self, value: bool, flags: enums.SetterFlags = 0):
+    def _set_SemiconLayer(self, value: Union[bool, List[bool]], flags: enums.SetterFlags = 0):
         self._set_batch_int32_array(5, value, flags)
 
     SemiconLayer = property(_get_SemiconLayer, _set_SemiconLayer) # type: List[bool]

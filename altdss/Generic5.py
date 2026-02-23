@@ -1402,7 +1402,7 @@ class Generic5Batch(DSSBatch, CircuitElementBatchMixin, PCElementBatchMixin):
             self._get_batch_int32_prop(37)
         ]
 
-    def _set_CC_Switch(self, value: bool, flags: enums.SetterFlags = 0):
+    def _set_CC_Switch(self, value: Union[bool, List[bool]], flags: enums.SetterFlags = 0):
         self._set_batch_int32_array(37, value, flags)
 
     CC_Switch = property(_get_CC_Switch, _set_CC_Switch) # type: List[bool]
@@ -1504,7 +1504,7 @@ class Generic5Batch(DSSBatch, CircuitElementBatchMixin, PCElementBatchMixin):
             self._get_batch_int32_prop(43)
         ]
 
-    def _set_Enabled(self, value: bool, flags: enums.SetterFlags = 0):
+    def _set_Enabled(self, value: Union[bool, List[bool]], flags: enums.SetterFlags = 0):
         self._set_batch_int32_array(43, value, flags)
 
     Enabled = property(_get_Enabled, _set_Enabled) # type: List[bool]

@@ -1538,7 +1538,7 @@ class PVSystemBatch(DSSBatch, CircuitElementBatchMixin, PCElementBatchMixin):
             self._get_batch_int32_prop(21)
         ]
 
-    def _set_Balanced(self, value: bool, flags: enums.SetterFlags = 0):
+    def _set_Balanced(self, value: Union[bool, List[bool]], flags: enums.SetterFlags = 0):
         self._set_batch_int32_array(21, value, flags)
 
     Balanced = property(_get_Balanced, _set_Balanced) # type: List[bool]
@@ -1554,7 +1554,7 @@ class PVSystemBatch(DSSBatch, CircuitElementBatchMixin, PCElementBatchMixin):
             self._get_batch_int32_prop(22)
         ]
 
-    def _set_LimitCurrent(self, value: bool, flags: enums.SetterFlags = 0):
+    def _set_LimitCurrent(self, value: Union[bool, List[bool]], flags: enums.SetterFlags = 0):
         self._set_batch_int32_array(22, value, flags)
 
     LimitCurrent = property(_get_LimitCurrent, _set_LimitCurrent) # type: List[bool]
@@ -1766,7 +1766,7 @@ class PVSystemBatch(DSSBatch, CircuitElementBatchMixin, PCElementBatchMixin):
             self._get_batch_int32_prop(32)
         ]
 
-    def _set_DebugTrace(self, value: bool, flags: enums.SetterFlags = 0):
+    def _set_DebugTrace(self, value: Union[bool, List[bool]], flags: enums.SetterFlags = 0):
         self._set_batch_int32_array(32, value, flags)
 
     DebugTrace = property(_get_DebugTrace, _set_DebugTrace) # type: List[bool]
@@ -1782,7 +1782,7 @@ class PVSystemBatch(DSSBatch, CircuitElementBatchMixin, PCElementBatchMixin):
             self._get_batch_int32_prop(33)
         ]
 
-    def _set_VarFollowInverter(self, value: bool, flags: enums.SetterFlags = 0):
+    def _set_VarFollowInverter(self, value: Union[bool, List[bool]], flags: enums.SetterFlags = 0):
         self._set_batch_int32_array(33, value, flags)
 
     VarFollowInverter = property(_get_VarFollowInverter, _set_VarFollowInverter) # type: List[bool]
@@ -1813,7 +1813,7 @@ class PVSystemBatch(DSSBatch, CircuitElementBatchMixin, PCElementBatchMixin):
             self._get_batch_int32_prop(35)
         ]
 
-    def _set_WattPriority(self, value: bool, flags: enums.SetterFlags = 0):
+    def _set_WattPriority(self, value: Union[bool, List[bool]], flags: enums.SetterFlags = 0):
         self._set_batch_int32_array(35, value, flags)
 
     WattPriority = property(_get_WattPriority, _set_WattPriority) # type: List[bool]
@@ -1829,7 +1829,7 @@ class PVSystemBatch(DSSBatch, CircuitElementBatchMixin, PCElementBatchMixin):
             self._get_batch_int32_prop(36)
         ]
 
-    def _set_PFPriority(self, value: bool, flags: enums.SetterFlags = 0):
+    def _set_PFPriority(self, value: Union[bool, List[bool]], flags: enums.SetterFlags = 0):
         self._set_batch_int32_array(36, value, flags)
 
     PFPriority = property(_get_PFPriority, _set_PFPriority) # type: List[bool]
@@ -1955,7 +1955,7 @@ class PVSystemBatch(DSSBatch, CircuitElementBatchMixin, PCElementBatchMixin):
             self._get_batch_int32_prop(45)
         ]
 
-    def _set_SafeMode(self, value: bool, flags: enums.SetterFlags = 0):
+    def _set_SafeMode(self, value: Union[bool, List[bool]], flags: enums.SetterFlags = 0):
         self._set_batch_int32_array(45, value, flags)
 
     SafeMode = property(_get_SafeMode, _set_SafeMode) # type: List[bool]
@@ -2123,7 +2123,7 @@ class PVSystemBatch(DSSBatch, CircuitElementBatchMixin, PCElementBatchMixin):
             self._get_batch_int32_prop(53)
         ]
 
-    def _set_Enabled(self, value: bool, flags: enums.SetterFlags = 0):
+    def _set_Enabled(self, value: Union[bool, List[bool]], flags: enums.SetterFlags = 0):
         self._set_batch_int32_array(53, value, flags)
 
     Enabled = property(_get_Enabled, _set_Enabled) # type: List[bool]

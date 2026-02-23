@@ -480,7 +480,7 @@ class FaultBatch(DSSBatch, CircuitElementBatchMixin, PDElementBatchMixin):
             self._get_batch_int32_prop(8)
         ]
 
-    def _set_Temporary(self, value: bool, flags: enums.SetterFlags = 0):
+    def _set_Temporary(self, value: Union[bool, List[bool]], flags: enums.SetterFlags = 0):
         self._set_batch_int32_array(8, value, flags)
 
     Temporary = property(_get_Temporary, _set_Temporary) # type: List[bool]
@@ -593,7 +593,7 @@ class FaultBatch(DSSBatch, CircuitElementBatchMixin, PDElementBatchMixin):
             self._get_batch_int32_prop(16)
         ]
 
-    def _set_Enabled(self, value: bool, flags: enums.SetterFlags = 0):
+    def _set_Enabled(self, value: Union[bool, List[bool]], flags: enums.SetterFlags = 0):
         self._set_batch_int32_array(16, value, flags)
 
     Enabled = property(_get_Enabled, _set_Enabled) # type: List[bool]

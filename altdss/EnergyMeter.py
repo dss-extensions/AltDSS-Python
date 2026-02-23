@@ -798,7 +798,7 @@ class EnergyMeterBatch(DSSBatch, CircuitElementBatchMixin, EnergyMeterBatchMixin
             self._get_batch_int32_prop(9)
         ]
 
-    def _set_LocalOnly(self, value: bool, flags: enums.SetterFlags = 0):
+    def _set_LocalOnly(self, value: Union[bool, List[bool]], flags: enums.SetterFlags = 0):
         self._set_batch_int32_array(9, value, flags)
 
     LocalOnly = property(_get_LocalOnly, _set_LocalOnly) # type: List[bool]
@@ -831,7 +831,7 @@ class EnergyMeterBatch(DSSBatch, CircuitElementBatchMixin, EnergyMeterBatchMixin
             self._get_batch_int32_prop(11)
         ]
 
-    def _set_Losses(self, value: bool, flags: enums.SetterFlags = 0):
+    def _set_Losses(self, value: Union[bool, List[bool]], flags: enums.SetterFlags = 0):
         self._set_batch_int32_array(11, value, flags)
 
     Losses = property(_get_Losses, _set_Losses) # type: List[bool]
@@ -847,7 +847,7 @@ class EnergyMeterBatch(DSSBatch, CircuitElementBatchMixin, EnergyMeterBatchMixin
             self._get_batch_int32_prop(12)
         ]
 
-    def _set_LineLosses(self, value: bool, flags: enums.SetterFlags = 0):
+    def _set_LineLosses(self, value: Union[bool, List[bool]], flags: enums.SetterFlags = 0):
         self._set_batch_int32_array(12, value, flags)
 
     LineLosses = property(_get_LineLosses, _set_LineLosses) # type: List[bool]
@@ -863,7 +863,7 @@ class EnergyMeterBatch(DSSBatch, CircuitElementBatchMixin, EnergyMeterBatchMixin
             self._get_batch_int32_prop(13)
         ]
 
-    def _set_XfmrLosses(self, value: bool, flags: enums.SetterFlags = 0):
+    def _set_XfmrLosses(self, value: Union[bool, List[bool]], flags: enums.SetterFlags = 0):
         self._set_batch_int32_array(13, value, flags)
 
     XfmrLosses = property(_get_XfmrLosses, _set_XfmrLosses) # type: List[bool]
@@ -879,7 +879,7 @@ class EnergyMeterBatch(DSSBatch, CircuitElementBatchMixin, EnergyMeterBatchMixin
             self._get_batch_int32_prop(14)
         ]
 
-    def _set_SeqLosses(self, value: bool, flags: enums.SetterFlags = 0):
+    def _set_SeqLosses(self, value: Union[bool, List[bool]], flags: enums.SetterFlags = 0):
         self._set_batch_int32_array(14, value, flags)
 
     SeqLosses = property(_get_SeqLosses, _set_SeqLosses) # type: List[bool]
@@ -895,7 +895,7 @@ class EnergyMeterBatch(DSSBatch, CircuitElementBatchMixin, EnergyMeterBatchMixin
             self._get_batch_int32_prop(15)
         ]
 
-    def _set_ThreePhaseLosses(self, value: bool, flags: enums.SetterFlags = 0):
+    def _set_ThreePhaseLosses(self, value: Union[bool, List[bool]], flags: enums.SetterFlags = 0):
         self._set_batch_int32_array(15, value, flags)
 
     ThreePhaseLosses = property(_get_ThreePhaseLosses, _set_ThreePhaseLosses) # type: List[bool]
@@ -911,7 +911,7 @@ class EnergyMeterBatch(DSSBatch, CircuitElementBatchMixin, EnergyMeterBatchMixin
             self._get_batch_int32_prop(16)
         ]
 
-    def _set_VBaseLosses(self, value: bool, flags: enums.SetterFlags = 0):
+    def _set_VBaseLosses(self, value: Union[bool, List[bool]], flags: enums.SetterFlags = 0):
         self._set_batch_int32_array(16, value, flags)
 
     VBaseLosses = property(_get_VBaseLosses, _set_VBaseLosses) # type: List[bool]
@@ -927,7 +927,7 @@ class EnergyMeterBatch(DSSBatch, CircuitElementBatchMixin, EnergyMeterBatchMixin
             self._get_batch_int32_prop(17)
         ]
 
-    def _set_PhaseVoltageReport(self, value: bool, flags: enums.SetterFlags = 0):
+    def _set_PhaseVoltageReport(self, value: Union[bool, List[bool]], flags: enums.SetterFlags = 0):
         self._set_batch_int32_array(17, value, flags)
 
     PhaseVoltageReport = property(_get_PhaseVoltageReport, _set_PhaseVoltageReport) # type: List[bool]
@@ -1060,7 +1060,7 @@ class EnergyMeterBatch(DSSBatch, CircuitElementBatchMixin, EnergyMeterBatchMixin
             self._get_batch_int32_prop(26)
         ]
 
-    def _set_Enabled(self, value: bool, flags: enums.SetterFlags = 0):
+    def _set_Enabled(self, value: Union[bool, List[bool]], flags: enums.SetterFlags = 0):
         self._set_batch_int32_array(26, value, flags)
 
     Enabled = property(_get_Enabled, _set_Enabled) # type: List[bool]

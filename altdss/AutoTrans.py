@@ -1356,7 +1356,7 @@ class AutoTransBatch(DSSBatch, CircuitElementBatchMixin, PDElementBatchMixin):
             self._get_batch_int32_prop(30)
         ]
 
-    def _set_Sub(self, value: bool, flags: enums.SetterFlags = 0):
+    def _set_Sub(self, value: Union[bool, List[bool]], flags: enums.SetterFlags = 0):
         self._set_batch_int32_array(30, value, flags)
 
     Sub = property(_get_Sub, _set_Sub) # type: List[bool]
@@ -1498,7 +1498,7 @@ class AutoTransBatch(DSSBatch, CircuitElementBatchMixin, PDElementBatchMixin):
             self._get_batch_int32_prop(39)
         ]
 
-    def _set_XRConst(self, value: bool, flags: enums.SetterFlags = 0):
+    def _set_XRConst(self, value: Union[bool, List[bool]], flags: enums.SetterFlags = 0):
         self._set_batch_int32_array(39, value, flags)
 
     XRConst = property(_get_XRConst, _set_XRConst) # type: List[bool]
@@ -1684,7 +1684,7 @@ class AutoTransBatch(DSSBatch, CircuitElementBatchMixin, PDElementBatchMixin):
             self._get_batch_int32_prop(51)
         ]
 
-    def _set_Enabled(self, value: bool, flags: enums.SetterFlags = 0):
+    def _set_Enabled(self, value: Union[bool, List[bool]], flags: enums.SetterFlags = 0):
         self._set_batch_int32_array(51, value, flags)
 
     Enabled = property(_get_Enabled, _set_Enabled) # type: List[bool]

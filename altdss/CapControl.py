@@ -815,7 +815,7 @@ class CapControlBatch(DSSBatch, CircuitElementBatchMixin):
             self._get_batch_int32_prop(10)
         ]
 
-    def _set_VoltOverride(self, value: bool, flags: enums.SetterFlags = 0):
+    def _set_VoltOverride(self, value: Union[bool, List[bool]], flags: enums.SetterFlags = 0):
         self._set_batch_int32_array(10, value, flags)
 
     VoltOverride = property(_get_VoltOverride, _set_VoltOverride) # type: List[bool]
@@ -968,7 +968,7 @@ class CapControlBatch(DSSBatch, CircuitElementBatchMixin):
             self._get_batch_int32_prop(18)
         ]
 
-    def _set_EventLog(self, value: bool, flags: enums.SetterFlags = 0):
+    def _set_EventLog(self, value: Union[bool, List[bool]], flags: enums.SetterFlags = 0):
         self._set_batch_int32_array(18, value, flags)
 
     EventLog = property(_get_EventLog, _set_EventLog) # type: List[bool]
@@ -1073,7 +1073,7 @@ class CapControlBatch(DSSBatch, CircuitElementBatchMixin):
             self._get_batch_int32_prop(25)
         ]
 
-    def _set_Enabled(self, value: bool, flags: enums.SetterFlags = 0):
+    def _set_Enabled(self, value: Union[bool, List[bool]], flags: enums.SetterFlags = 0):
         self._set_batch_int32_array(25, value, flags)
 
     Enabled = property(_get_Enabled, _set_Enabled) # type: List[bool]

@@ -791,7 +791,7 @@ class FMonitorBatch(DSSBatch, CircuitElementBatchMixin):
             self._get_batch_int32_prop(15)
         ]
 
-    def _set_b_Curt_Ctrl(self, value: bool, flags: enums.SetterFlags = 0):
+    def _set_b_Curt_Ctrl(self, value: Union[bool, List[bool]], flags: enums.SetterFlags = 0):
         self._set_batch_int32_array(15, value, flags)
 
     b_Curt_Ctrl = property(_get_b_Curt_Ctrl, _set_b_Curt_Ctrl) # type: List[bool]
@@ -930,7 +930,7 @@ class FMonitorBatch(DSSBatch, CircuitElementBatchMixin):
             self._get_batch_int32_prop(23)
         ]
 
-    def _set_Enabled(self, value: bool, flags: enums.SetterFlags = 0):
+    def _set_Enabled(self, value: Union[bool, List[bool]], flags: enums.SetterFlags = 0):
         self._set_batch_int32_array(23, value, flags)
 
     Enabled = property(_get_Enabled, _set_Enabled) # type: List[bool]

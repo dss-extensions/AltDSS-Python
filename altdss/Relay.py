@@ -1801,7 +1801,7 @@ class RelayBatch(DSSBatch, CircuitElementBatchMixin):
             self._get_batch_int32_prop(36)
         ]
 
-    def _set_EventLog(self, value: bool, flags: enums.SetterFlags = 0):
+    def _set_EventLog(self, value: Union[bool, List[bool]], flags: enums.SetterFlags = 0):
         self._set_batch_int32_array(36, value, flags)
 
     EventLog = property(_get_EventLog, _set_EventLog) # type: List[bool]
@@ -1817,7 +1817,7 @@ class RelayBatch(DSSBatch, CircuitElementBatchMixin):
             self._get_batch_int32_prop(37)
         ]
 
-    def _set_DebugTrace(self, value: bool, flags: enums.SetterFlags = 0):
+    def _set_DebugTrace(self, value: Union[bool, List[bool]], flags: enums.SetterFlags = 0):
         self._set_batch_int32_array(37, value, flags)
 
     DebugTrace = property(_get_DebugTrace, _set_DebugTrace) # type: List[bool]
@@ -1833,7 +1833,7 @@ class RelayBatch(DSSBatch, CircuitElementBatchMixin):
             self._get_batch_int32_prop(38)
         ]
 
-    def _set_DistReverse(self, value: bool, flags: enums.SetterFlags = 0):
+    def _set_DistReverse(self, value: Union[bool, List[bool]], flags: enums.SetterFlags = 0):
         self._set_batch_int32_array(38, value, flags)
 
     DistReverse = property(_get_DistReverse, _set_DistReverse) # type: List[bool]
@@ -2051,7 +2051,7 @@ class RelayBatch(DSSBatch, CircuitElementBatchMixin):
             self._get_batch_int32_prop(50)
         ]
 
-    def _set_DOC_P1Blocking(self, value: bool, flags: enums.SetterFlags = 0):
+    def _set_DOC_P1Blocking(self, value: Union[bool, List[bool]], flags: enums.SetterFlags = 0):
         self._set_batch_int32_array(50, value, flags)
 
     DOC_P1Blocking = property(_get_DOC_P1Blocking, _set_DOC_P1Blocking) # type: List[bool]
@@ -2081,7 +2081,7 @@ class RelayBatch(DSSBatch, CircuitElementBatchMixin):
             self._get_batch_int32_prop(52)
         ]
 
-    def _set_Enabled(self, value: bool, flags: enums.SetterFlags = 0):
+    def _set_Enabled(self, value: Union[bool, List[bool]], flags: enums.SetterFlags = 0):
         self._set_batch_int32_array(52, value, flags)
 
     Enabled = property(_get_Enabled, _set_Enabled) # type: List[bool]

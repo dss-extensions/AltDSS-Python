@@ -963,7 +963,7 @@ class RegControlBatch(DSSBatch, CircuitElementBatchMixin):
             self._get_batch_int32_prop(11)
         ]
 
-    def _set_Reversible(self, value: bool, flags: enums.SetterFlags = 0):
+    def _set_Reversible(self, value: Union[bool, List[bool]], flags: enums.SetterFlags = 0):
         self._set_batch_int32_array(11, value, flags)
 
     Reversible = property(_get_Reversible, _set_Reversible) # type: List[bool]
@@ -1059,7 +1059,7 @@ class RegControlBatch(DSSBatch, CircuitElementBatchMixin):
             self._get_batch_int32_prop(17)
         ]
 
-    def _set_DebugTrace(self, value: bool, flags: enums.SetterFlags = 0):
+    def _set_DebugTrace(self, value: Union[bool, List[bool]], flags: enums.SetterFlags = 0):
         self._set_batch_int32_array(17, value, flags)
 
     DebugTrace = property(_get_DebugTrace, _set_DebugTrace) # type: List[bool]
@@ -1093,7 +1093,7 @@ class RegControlBatch(DSSBatch, CircuitElementBatchMixin):
             self._get_batch_int32_prop(19)
         ]
 
-    def _set_InverseTime(self, value: bool, flags: enums.SetterFlags = 0):
+    def _set_InverseTime(self, value: Union[bool, List[bool]], flags: enums.SetterFlags = 0):
         self._set_batch_int32_array(19, value, flags)
 
     InverseTime = property(_get_InverseTime, _set_InverseTime) # type: List[bool]
@@ -1203,7 +1203,7 @@ class RegControlBatch(DSSBatch, CircuitElementBatchMixin):
             self._get_batch_int32_prop(25)
         ]
 
-    def _set_RevNeutral(self, value: bool, flags: enums.SetterFlags = 0):
+    def _set_RevNeutral(self, value: Union[bool, List[bool]], flags: enums.SetterFlags = 0):
         self._set_batch_int32_array(25, value, flags)
 
     RevNeutral = property(_get_RevNeutral, _set_RevNeutral) # type: List[bool]
@@ -1219,7 +1219,7 @@ class RegControlBatch(DSSBatch, CircuitElementBatchMixin):
             self._get_batch_int32_prop(26)
         ]
 
-    def _set_EventLog(self, value: bool, flags: enums.SetterFlags = 0):
+    def _set_EventLog(self, value: Union[bool, List[bool]], flags: enums.SetterFlags = 0):
         self._set_batch_int32_array(26, value, flags)
 
     EventLog = property(_get_EventLog, _set_EventLog) # type: List[bool]
@@ -1299,7 +1299,7 @@ class RegControlBatch(DSSBatch, CircuitElementBatchMixin):
             self._get_batch_int32_prop(32)
         ]
 
-    def _set_Cogen(self, value: bool, flags: enums.SetterFlags = 0):
+    def _set_Cogen(self, value: Union[bool, List[bool]], flags: enums.SetterFlags = 0):
         self._set_batch_int32_array(32, value, flags)
 
     Cogen = property(_get_Cogen, _set_Cogen) # type: List[bool]
@@ -1316,7 +1316,7 @@ class RegControlBatch(DSSBatch, CircuitElementBatchMixin):
             self._get_batch_int32_prop(33)
         ]
 
-    def _set_Idle(self, value: bool, flags: enums.SetterFlags = 0):
+    def _set_Idle(self, value: Union[bool, List[bool]], flags: enums.SetterFlags = 0):
         self._set_batch_int32_array(33, value, flags)
 
     Idle = property(_get_Idle, _set_Idle) # type: List[bool]
@@ -1332,7 +1332,7 @@ class RegControlBatch(DSSBatch, CircuitElementBatchMixin):
             self._get_batch_int32_prop(34)
         ]
 
-    def _set_IdleReverse(self, value: bool, flags: enums.SetterFlags = 0):
+    def _set_IdleReverse(self, value: Union[bool, List[bool]], flags: enums.SetterFlags = 0):
         self._set_batch_int32_array(34, value, flags)
 
     IdleReverse = property(_get_IdleReverse, _set_IdleReverse) # type: List[bool]
@@ -1349,7 +1349,7 @@ class RegControlBatch(DSSBatch, CircuitElementBatchMixin):
             self._get_batch_int32_prop(35)
         ]
 
-    def _set_IdleForward(self, value: bool, flags: enums.SetterFlags = 0):
+    def _set_IdleForward(self, value: Union[bool, List[bool]], flags: enums.SetterFlags = 0):
         self._set_batch_int32_array(35, value, flags)
 
     IdleForward = property(_get_IdleForward, _set_IdleForward) # type: List[bool]
@@ -1398,7 +1398,7 @@ class RegControlBatch(DSSBatch, CircuitElementBatchMixin):
             self._get_batch_int32_prop(38)
         ]
 
-    def _set_Enabled(self, value: bool, flags: enums.SetterFlags = 0):
+    def _set_Enabled(self, value: Union[bool, List[bool]], flags: enums.SetterFlags = 0):
         self._set_batch_int32_array(38, value, flags)
 
     Enabled = property(_get_Enabled, _set_Enabled) # type: List[bool]

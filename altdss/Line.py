@@ -1137,7 +1137,7 @@ class LineBatch(DSSBatch, CircuitElementBatchMixin, PDElementBatchMixin):
             self._get_batch_int32_prop(15)
         ]
 
-    def _set_Switch(self, value: bool, flags: enums.SetterFlags = 0):
+    def _set_Switch(self, value: Union[bool, List[bool]], flags: enums.SetterFlags = 0):
         self._set_batch_int32_array(15, value, flags)
 
     Switch = property(_get_Switch, _set_Switch) # type: List[bool]
@@ -1598,7 +1598,7 @@ class LineBatch(DSSBatch, CircuitElementBatchMixin, PDElementBatchMixin):
             self._get_batch_int32_prop(41)
         ]
 
-    def _set_Enabled(self, value: bool, flags: enums.SetterFlags = 0):
+    def _set_Enabled(self, value: Union[bool, List[bool]], flags: enums.SetterFlags = 0):
         self._set_batch_int32_array(41, value, flags)
 
     Enabled = property(_get_Enabled, _set_Enabled) # type: List[bool]

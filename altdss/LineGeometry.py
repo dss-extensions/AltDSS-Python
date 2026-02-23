@@ -538,7 +538,7 @@ class LineGeometryBatch(DSSBatch):
             self._get_batch_int32_prop(10)
         ]
 
-    def _set_Reduce(self, value: bool, flags: enums.SetterFlags = 0):
+    def _set_Reduce(self, value: Union[bool, List[bool]], flags: enums.SetterFlags = 0):
         self._set_batch_int32_array(10, value, flags)
 
     Reduce = property(_get_Reduce, _set_Reduce) # type: List[bool]

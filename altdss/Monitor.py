@@ -438,7 +438,7 @@ class MonitorBatch(DSSBatch, CircuitElementBatchMixin):
             self._get_batch_int32_prop(5)
         ]
 
-    def _set_Residual(self, value: bool, flags: enums.SetterFlags = 0):
+    def _set_Residual(self, value: Union[bool, List[bool]], flags: enums.SetterFlags = 0):
         self._set_batch_int32_array(5, value, flags)
 
     Residual = property(_get_Residual, _set_Residual) # type: List[bool]
@@ -454,7 +454,7 @@ class MonitorBatch(DSSBatch, CircuitElementBatchMixin):
             self._get_batch_int32_prop(6)
         ]
 
-    def _set_VIPolar(self, value: bool, flags: enums.SetterFlags = 0):
+    def _set_VIPolar(self, value: Union[bool, List[bool]], flags: enums.SetterFlags = 0):
         self._set_batch_int32_array(6, value, flags)
 
     VIPolar = property(_get_VIPolar, _set_VIPolar) # type: List[bool]
@@ -470,7 +470,7 @@ class MonitorBatch(DSSBatch, CircuitElementBatchMixin):
             self._get_batch_int32_prop(7)
         ]
 
-    def _set_PPolar(self, value: bool, flags: enums.SetterFlags = 0):
+    def _set_PPolar(self, value: Union[bool, List[bool]], flags: enums.SetterFlags = 0):
         self._set_batch_int32_array(7, value, flags)
 
     PPolar = property(_get_PPolar, _set_PPolar) # type: List[bool]
@@ -500,7 +500,7 @@ class MonitorBatch(DSSBatch, CircuitElementBatchMixin):
             self._get_batch_int32_prop(9)
         ]
 
-    def _set_Enabled(self, value: bool, flags: enums.SetterFlags = 0):
+    def _set_Enabled(self, value: Union[bool, List[bool]], flags: enums.SetterFlags = 0):
         self._set_batch_int32_array(9, value, flags)
 
     Enabled = property(_get_Enabled, _set_Enabled) # type: List[bool]

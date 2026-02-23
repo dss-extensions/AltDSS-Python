@@ -366,7 +366,7 @@ class LineSpacingBatch(DSSBatch):
             self._get_batch_int32_prop(6)
         ]
 
-    def _set_Detailed(self, value: bool, flags: enums.SetterFlags = 0):
+    def _set_Detailed(self, value: Union[bool, List[bool]], flags: enums.SetterFlags = 0):
         self._set_batch_int32_array(6, value, flags)
 
     Detailed = property(_get_Detailed, _set_Detailed) # type: List[bool]

@@ -1419,7 +1419,7 @@ class GeneratorBatch(DSSBatch, CircuitElementBatchMixin, PCElementBatchMixin):
             self._get_batch_int32_prop(22)
         ]
 
-    def _set_ForceOn(self, value: bool, flags: enums.SetterFlags = 0):
+    def _set_ForceOn(self, value: Union[bool, List[bool]], flags: enums.SetterFlags = 0):
         self._set_batch_int32_array(22, value, flags)
 
     ForceOn = property(_get_ForceOn, _set_ForceOn) # type: List[bool]
@@ -1586,7 +1586,7 @@ class GeneratorBatch(DSSBatch, CircuitElementBatchMixin, PCElementBatchMixin):
             self._get_batch_int32_prop(35)
         ]
 
-    def _set_DebugTrace(self, value: bool, flags: enums.SetterFlags = 0):
+    def _set_DebugTrace(self, value: Union[bool, List[bool]], flags: enums.SetterFlags = 0):
         self._set_batch_int32_array(35, value, flags)
 
     DebugTrace = property(_get_DebugTrace, _set_DebugTrace) # type: List[bool]
@@ -1602,7 +1602,7 @@ class GeneratorBatch(DSSBatch, CircuitElementBatchMixin, PCElementBatchMixin):
             self._get_batch_int32_prop(36)
         ]
 
-    def _set_Balanced(self, value: bool, flags: enums.SetterFlags = 0):
+    def _set_Balanced(self, value: Union[bool, List[bool]], flags: enums.SetterFlags = 0):
         self._set_batch_int32_array(36, value, flags)
 
     Balanced = property(_get_Balanced, _set_Balanced) # type: List[bool]
@@ -1632,7 +1632,7 @@ class GeneratorBatch(DSSBatch, CircuitElementBatchMixin, PCElementBatchMixin):
             self._get_batch_int32_prop(38)
         ]
 
-    def _set_UseFuel(self, value: bool, flags: enums.SetterFlags = 0):
+    def _set_UseFuel(self, value: Union[bool, List[bool]], flags: enums.SetterFlags = 0):
         self._set_batch_int32_array(38, value, flags)
 
     UseFuel = property(_get_UseFuel, _set_UseFuel) # type: List[bool]
@@ -1789,7 +1789,7 @@ class GeneratorBatch(DSSBatch, CircuitElementBatchMixin, PCElementBatchMixin):
             self._get_batch_int32_prop(47)
         ]
 
-    def _set_Enabled(self, value: bool, flags: enums.SetterFlags = 0):
+    def _set_Enabled(self, value: Union[bool, List[bool]], flags: enums.SetterFlags = 0):
         self._set_batch_int32_array(47, value, flags)
 
     Enabled = property(_get_Enabled, _set_Enabled) # type: List[bool]

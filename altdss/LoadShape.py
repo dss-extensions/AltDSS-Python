@@ -650,7 +650,7 @@ class LoadShapeBatch(DSSBatch, LoadShapeBatchMixin):
             self._get_batch_int32_prop(12)
         ]
 
-    def _set_UseActual(self, value: bool, flags: enums.SetterFlags = 0):
+    def _set_UseActual(self, value: Union[bool, List[bool]], flags: enums.SetterFlags = 0):
         self._set_batch_int32_array(12, value, flags)
 
     UseActual = property(_get_UseActual, _set_UseActual) # type: List[bool]
@@ -784,7 +784,7 @@ class LoadShapeBatch(DSSBatch, LoadShapeBatchMixin):
             self._get_batch_int32_prop(21)
         ]
 
-    def _set_MemoryMapping(self, value: bool, flags: enums.SetterFlags = 0):
+    def _set_MemoryMapping(self, value: Union[bool, List[bool]], flags: enums.SetterFlags = 0):
         self._set_batch_int32_array(21, value, flags)
 
     MemoryMapping = property(_get_MemoryMapping, _set_MemoryMapping) # type: List[bool]

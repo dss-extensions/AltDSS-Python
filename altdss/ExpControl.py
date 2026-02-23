@@ -532,7 +532,7 @@ class ExpControlBatch(DSSBatch, CircuitElementBatchMixin):
             self._get_batch_int32_prop(10)
         ]
 
-    def _set_EventLog(self, value: bool, flags: enums.SetterFlags = 0):
+    def _set_EventLog(self, value: Union[bool, List[bool]], flags: enums.SetterFlags = 0):
         self._set_batch_int32_array(10, value, flags)
 
     EventLog = property(_get_EventLog, _set_EventLog) # type: List[bool]
@@ -564,7 +564,7 @@ class ExpControlBatch(DSSBatch, CircuitElementBatchMixin):
             self._get_batch_int32_prop(12)
         ]
 
-    def _set_PreferQ(self, value: bool, flags: enums.SetterFlags = 0):
+    def _set_PreferQ(self, value: Union[bool, List[bool]], flags: enums.SetterFlags = 0):
         self._set_batch_int32_array(12, value, flags)
 
     PreferQ = property(_get_PreferQ, _set_PreferQ) # type: List[bool]
@@ -629,7 +629,7 @@ class ExpControlBatch(DSSBatch, CircuitElementBatchMixin):
             self._get_batch_int32_prop(16)
         ]
 
-    def _set_Enabled(self, value: bool, flags: enums.SetterFlags = 0):
+    def _set_Enabled(self, value: Union[bool, List[bool]], flags: enums.SetterFlags = 0):
         self._set_batch_int32_array(16, value, flags)
 
     Enabled = property(_get_Enabled, _set_Enabled) # type: List[bool]

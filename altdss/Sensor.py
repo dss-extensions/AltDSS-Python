@@ -582,7 +582,7 @@ class SensorBatch(DSSBatch, CircuitElementBatchMixin):
             self._get_batch_int32_prop(14)
         ]
 
-    def _set_Enabled(self, value: bool, flags: enums.SetterFlags = 0):
+    def _set_Enabled(self, value: Union[bool, List[bool]], flags: enums.SetterFlags = 0):
         self._set_batch_int32_array(14, value, flags)
 
     Enabled = property(_get_Enabled, _set_Enabled) # type: List[bool]

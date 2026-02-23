@@ -603,7 +603,7 @@ class VCCSBatch(DSSBatch, CircuitElementBatchMixin, PCElementBatchMixin):
             self._get_batch_int32_prop(10)
         ]
 
-    def _set_RMSMode(self, value: bool, flags: enums.SetterFlags = 0):
+    def _set_RMSMode(self, value: Union[bool, List[bool]], flags: enums.SetterFlags = 0):
         self._set_batch_int32_array(10, value, flags)
 
     RMSMode = property(_get_RMSMode, _set_RMSMode) # type: List[bool]
@@ -703,7 +703,7 @@ class VCCSBatch(DSSBatch, CircuitElementBatchMixin, PCElementBatchMixin):
             self._get_batch_int32_prop(16)
         ]
 
-    def _set_Enabled(self, value: bool, flags: enums.SetterFlags = 0):
+    def _set_Enabled(self, value: Union[bool, List[bool]], flags: enums.SetterFlags = 0):
         self._set_batch_int32_array(16, value, flags)
 
     Enabled = property(_get_Enabled, _set_Enabled) # type: List[bool]

@@ -335,7 +335,7 @@ class SwtControlBatch(DSSBatch, CircuitElementBatchMixin):
             self._get_batch_int32_prop(4)
         ]
 
-    def _set_Lock(self, value: bool, flags: enums.SetterFlags = 0):
+    def _set_Lock(self, value: Union[bool, List[bool]], flags: enums.SetterFlags = 0):
         self._set_batch_int32_array(4, value, flags)
 
     Lock = property(_get_Lock, _set_Lock) # type: List[bool]
@@ -453,7 +453,7 @@ class SwtControlBatch(DSSBatch, CircuitElementBatchMixin):
             self._get_batch_int32_prop(10)
         ]
 
-    def _set_Enabled(self, value: bool, flags: enums.SetterFlags = 0):
+    def _set_Enabled(self, value: Union[bool, List[bool]], flags: enums.SetterFlags = 0):
         self._set_batch_int32_array(10, value, flags)
 
     Enabled = property(_get_Enabled, _set_Enabled) # type: List[bool]
