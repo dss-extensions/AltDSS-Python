@@ -1,4 +1,5 @@
 from __future__ import annotations
+from collections.abc import Sequence as PySequence, Iterable as PyIterable
 import numpy as np
 from typing import Union, List, AnyStr, Optional, Iterator
 from dss.enums import DSSJSONFlags
@@ -336,16 +337,42 @@ class DSSBatch(Base, BatchCommon):
             return
 
         objs = kwargs.pop('objs', None)
-        if objs is not None:
+        if objs is not None and isinstance(objs, PySequence):
             objs = tuple(objs)
             if not isinstance(objs[0], DSSObj):
-                raise ValueError("A sequence of `DSSObj` was expected in the `objs` keyword argument.")
+                raise ValueError("A sequence or iterator of `DSSObj` was expected in the `objs` keyword argument.")
             
             if any(obj._cls_idx != self._cls_idx for obj in objs):
                 raise ValueError("A uniform sequence of objects (all of the same type) was expected. The type must also match with the Batch type.")
 
             self._pointer = self._ffi.gc(self._ffi.new('void*[]', [obj._ptr for obj in objs]), self._ffi.release)
             self._count = len(objs)
+            self._ptrptr[0] = self._pointer
+            self._countptr[0] = self._count
+            self._countptr[1] = self._count
+            return
+
+        if objs is not None and isinstance(objs, PyIterable):
+            # For iterables, we only grab the pointers, no need to convert to objects
+            obj_ptrs = []
+            it_objs = iter(objs)
+
+            while True:
+                try:
+                    obj = next(it_objs)
+                    if not isinstance(obj, DSSObj):
+                        raise ValueError("A sequence or iterator of `DSSObj` was expected in the `objs` keyword argument.")
+
+                    if obj._cls_idx != self._cls_idx:
+                        raise ValueError("A uniform sequence of objects (all of the same type) was expected. The type must also match with the Batch type.")
+
+                    obj_ptrs.append(obj._ptr)
+
+                except StopIteration:
+                    break
+            
+            self._pointer = self._ffi.gc(self._ffi.new('void*[]', obj_ptrs), self._ffi.release)
+            self._count = len(obj_ptrs)
             self._ptrptr[0] = self._pointer
             self._countptr[0] = self._count
             self._countptr[1] = self._count

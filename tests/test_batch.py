@@ -854,7 +854,17 @@ def test_ce_functions():
         ce_powers.extend(CE.Powers.view(dtype=complex))
 
     assert altdss.Load.Powers().tolist() == ce_powers
-    
+
+
+def test_batch_from_iter():
+    create_ref_ckt7(altdss)
+
+    b1 = altdss.Load.batch(objs=[x for x in altdss.Load if x.Name.endswith('c2')])
+    b2 = altdss.Load.batch(objs=(x for x in altdss.Load.iterate() if x.Name.endswith('c2')))
+
+    assert len(b1) == len(b2)
+    assert b1.to_list() == b2.to_list()
+
 
 if __name__ == '__main__':
     # Adjust for manually running a test-case
