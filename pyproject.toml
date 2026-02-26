@@ -20,7 +20,7 @@ artifacts = ["altdss/_version.py"]
 name = "altdss"
 dynamic = ["version"]
 dependencies = [
-    "dss_python",
+    "dss_python>=0.16.0b2,<0.17",
     "dss_python_backend==0.15.0b4",
     "numpy>=2,<3",
     "typing_extensions>=4.5,<5",
@@ -67,5 +67,6 @@ test = [
   "pytest",
 ]
 all = [
+  "opendssdirect.py>=0.10.0b1,<0.11", # temporary, for the beta
   "dss_python[all]",
 ]
