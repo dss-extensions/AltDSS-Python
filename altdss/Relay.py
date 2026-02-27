@@ -1,5 +1,5 @@
-# Copyright (c) 2021-2024 Paulo Meira
-# Copyright (c) 2021-2024 DSS-Extensions contributors
+# Copyright (c) 2021-2026 Paulo Meira
+# Copyright (c) 2021-2026 DSS-Extensions contributors
 from __future__ import annotations
 from typing import Union, List, AnyStr, Optional, Iterator, TYPE_CHECKING
 from typing_extensions import TypedDict, Unpack
@@ -15,7 +15,7 @@ from .TCC_Curve import TCC_Curve
 class Relay(DSSObj, CircuitElementMixin):
     __slots__ = DSSObj._extra_slots + CircuitElementMixin._extra_slots
     _cls_name = 'Relay'
-    _cls_idx = 31
+    _cls_idx = 32
     _cls_int_idx = {
         2,
         4,
@@ -158,7 +158,7 @@ class Relay(DSSObj, CircuitElementMixin):
     """
     Full object name of the circuit element, typically a line, transformer, load, or generator, to which the relay's PT and/or CT are connected. This is the "monitored" element. There is no default; must be specified.
 
-    DSS property name: `MonitoredObj`, DSS property index: 1.
+    Name: `MonitoredObj`
     """
 
     def _get_MonitoredObj(self) -> DSSObj:
@@ -175,7 +175,7 @@ class Relay(DSSObj, CircuitElementMixin):
     """
     Full object name of the circuit element, typically a line, transformer, load, or generator, to which the relay's PT and/or CT are connected. This is the "monitored" element. There is no default; must be specified.
 
-    DSS property name: `MonitoredObj`, DSS property index: 1.
+    Name: `MonitoredObj`
     """
 
     def _get_MonitoredTerm(self) -> int:
@@ -186,9 +186,10 @@ class Relay(DSSObj, CircuitElementMixin):
 
     MonitoredTerm = property(_get_MonitoredTerm, _set_MonitoredTerm) # type: int
     """
-    Number of the terminal of the circuit element to which the Relay is connected. 1 or 2, typically.  Default is 1.
+    Number of the terminal of the circuit element to which the Relay is connected. 1 or 2, typically.
 
-    DSS property name: `MonitoredTerm`, DSS property index: 2.
+    Name: `MonitoredTerm`
+    Default: 1
     """
 
     def _get_SwitchedObj_str(self) -> str:
@@ -199,9 +200,9 @@ class Relay(DSSObj, CircuitElementMixin):
 
     SwitchedObj_str = property(_get_SwitchedObj_str, _set_SwitchedObj_str) # type: str
     """
-    Name of circuit element switch that the Relay controls. Specify the full object name.Defaults to the same as the Monitored element. This is the "controlled" element.
+    Name of circuit element switch that the Relay controls. Specify the full object name. Defaults to the same as the Monitored element. This is the "controlled" element.
 
-    DSS property name: `SwitchedObj`, DSS property index: 3.
+    Name: `SwitchedObj`
     """
 
     def _get_SwitchedObj(self) -> DSSObj:
@@ -216,9 +217,9 @@ class Relay(DSSObj, CircuitElementMixin):
 
     SwitchedObj = property(_get_SwitchedObj, _set_SwitchedObj) # type: DSSObj
     """
-    Name of circuit element switch that the Relay controls. Specify the full object name.Defaults to the same as the Monitored element. This is the "controlled" element.
+    Name of circuit element switch that the Relay controls. Specify the full object name. Defaults to the same as the Monitored element. This is the "controlled" element.
 
-    DSS property name: `SwitchedObj`, DSS property index: 3.
+    Name: `SwitchedObj`
     """
 
     def _get_SwitchedTerm(self) -> int:
@@ -229,9 +230,10 @@ class Relay(DSSObj, CircuitElementMixin):
 
     SwitchedTerm = property(_get_SwitchedTerm, _set_SwitchedTerm) # type: int
     """
-    Number of the terminal of the controlled element in which the switch is controlled by the Relay. 1 or 2, typically.  Default is 1.
+    Number of the terminal of the controlled element in which the switch is controlled by the Relay. 1 or 2, typically.
 
-    DSS property name: `SwitchedTerm`, DSS property index: 4.
+    Name: `SwitchedTerm`
+    Default: 1
     """
 
     def _get_Type(self) -> enums.RelayType:
@@ -258,7 +260,8 @@ class Relay(DSSObj, CircuitElementMixin):
 
     Default is overcurrent relay (Current) Specify the curve and pickup settings appropriate for each type. Generic relays monitor PC Element Control variables and trip on out of over/under range in definite time.
 
-    DSS property name: `Type`, DSS property index: 5.
+    Name: `Type`
+    Default: Current
     """
 
     def _get_Type_str(self) -> str:
@@ -282,7 +285,8 @@ class Relay(DSSObj, CircuitElementMixin):
 
     Default is overcurrent relay (Current) Specify the curve and pickup settings appropriate for each type. Generic relays monitor PC Element Control variables and trip on out of over/under range in definite time.
 
-    DSS property name: `Type`, DSS property index: 5.
+    Name: `Type`
+    Default: Current
     """
 
     def _get_PhaseCurve_str(self) -> str:
@@ -295,7 +299,7 @@ class Relay(DSSObj, CircuitElementMixin):
     """
     Name of the TCC Curve object that determines the phase trip.  Must have been previously defined as a TCC_Curve object. Default is none (ignored). For overcurrent relay, multiplying the current values in the curve by the "phasetrip" value gives the actual current.
 
-    DSS property name: `PhaseCurve`, DSS property index: 6.
+    Name: `PhaseCurve`
     """
 
     def _get_PhaseCurve(self) -> TCC_Curve:
@@ -312,7 +316,7 @@ class Relay(DSSObj, CircuitElementMixin):
     """
     Name of the TCC Curve object that determines the phase trip.  Must have been previously defined as a TCC_Curve object. Default is none (ignored). For overcurrent relay, multiplying the current values in the curve by the "phasetrip" value gives the actual current.
 
-    DSS property name: `PhaseCurve`, DSS property index: 6.
+    Name: `PhaseCurve`
     """
 
     def _get_GroundCurve_str(self) -> str:
@@ -325,7 +329,7 @@ class Relay(DSSObj, CircuitElementMixin):
     """
     Name of the TCC Curve object that determines the ground trip.  Must have been previously defined as a TCC_Curve object. Default is none (ignored).For overcurrent relay, multiplying the current values in the curve by the "groundtrip" valuw gives the actual current.
 
-    DSS property name: `GroundCurve`, DSS property index: 7.
+    Name: `GroundCurve`
     """
 
     def _get_GroundCurve(self) -> TCC_Curve:
@@ -342,7 +346,7 @@ class Relay(DSSObj, CircuitElementMixin):
     """
     Name of the TCC Curve object that determines the ground trip.  Must have been previously defined as a TCC_Curve object. Default is none (ignored).For overcurrent relay, multiplying the current values in the curve by the "groundtrip" valuw gives the actual current.
 
-    DSS property name: `GroundCurve`, DSS property index: 7.
+    Name: `GroundCurve`
     """
 
     def _get_PhaseTrip(self) -> float:
@@ -353,9 +357,10 @@ class Relay(DSSObj, CircuitElementMixin):
 
     PhaseTrip = property(_get_PhaseTrip, _set_PhaseTrip) # type: float
     """
-    Multiplier or actual phase amps for the phase TCC curve.  Defaults to 1.0.
+    Multiplier or actual phase amps for the phase TCC curve.
 
-    DSS property name: `PhaseTrip`, DSS property index: 8.
+    Name: `PhaseTrip`
+    Default: 1.0
     """
 
     def _get_GroundTrip(self) -> float:
@@ -366,9 +371,10 @@ class Relay(DSSObj, CircuitElementMixin):
 
     GroundTrip = property(_get_GroundTrip, _set_GroundTrip) # type: float
     """
-    Multiplier or actual ground amps (3I0) for the ground TCC curve.  Defaults to 1.0.
+    Multiplier or actual ground amps (3I0) for the ground TCC curve.
 
-    DSS property name: `GroundTrip`, DSS property index: 9.
+    Name: `GroundTrip`
+    Default: 1.0
     """
 
     def _get_TDPhase(self) -> float:
@@ -379,9 +385,10 @@ class Relay(DSSObj, CircuitElementMixin):
 
     TDPhase = property(_get_TDPhase, _set_TDPhase) # type: float
     """
-    Time dial for Phase trip curve. Multiplier on time axis of specified curve. Default=1.0.
+    Time dial for Phase trip curve. Multiplier on time axis of specified curve.
 
-    DSS property name: `TDPhase`, DSS property index: 10.
+    Name: `TDPhase`
+    Default: 1.0
     """
 
     def _get_TDGround(self) -> float:
@@ -392,9 +399,10 @@ class Relay(DSSObj, CircuitElementMixin):
 
     TDGround = property(_get_TDGround, _set_TDGround) # type: float
     """
-    Time dial for Ground trip curve. Multiplier on time axis of specified curve. Default=1.0.
+    Time dial for Ground trip curve. Multiplier on time axis of specified curve.
 
-    DSS property name: `TDGround`, DSS property index: 11.
+    Name: `TDGround`
+    Default: 1.0
     """
 
     def _get_PhaseInst(self) -> float:
@@ -405,9 +413,10 @@ class Relay(DSSObj, CircuitElementMixin):
 
     PhaseInst = property(_get_PhaseInst, _set_PhaseInst) # type: float
     """
-    Actual  amps (Current relay) or kW (reverse power relay) for instantaneous phase trip which is assumed to happen in 0.01 sec + Delay Time. Default is 0.0, which signifies no inst trip. Use this value for specifying the Reverse Power threshold (kW) for reverse power relays.
+    Actual amps (Current relay) or kW (reverse power relay) for instantaneous phase trip which is assumed to happen in 0.01 sec + Delay Time. Default is 0.0, which signifies no inst trip. Use this value for specifying the Reverse Power threshold (kW) for reverse power relays.
 
-    DSS property name: `PhaseInst`, DSS property index: 12.
+    Name: `PhaseInst`
+    Default: 0.0
     """
 
     def _get_GroundInst(self) -> float:
@@ -418,9 +427,11 @@ class Relay(DSSObj, CircuitElementMixin):
 
     GroundInst = property(_get_GroundInst, _set_GroundInst) # type: float
     """
-    Actual  amps for instantaneous ground trip which is assumed to happen in 0.01 sec + Delay Time.Default is 0.0, which signifies no inst trip.
+    Actual amps for instantaneous ground trip which is assumed to happen in 0.01 sec + Delay Time. Default is 0, which signifies no inst trip.
 
-    DSS property name: `GroundInst`, DSS property index: 13.
+    Name: `GroundInst`
+    Units: A
+    Default: 0.0
     """
 
     def _get_Reset(self) -> float:
@@ -431,9 +442,11 @@ class Relay(DSSObj, CircuitElementMixin):
 
     Reset = property(_get_Reset, _set_Reset) # type: float
     """
-    Reset time in sec for relay.  Default is 15. If this much time passes between the last pickup event, and the relay has not locked out, the operation counter resets.
+    Reset time for relay. If this much time passes between the last pickup event, and the relay has not locked out, the operation counter resets.
 
-    DSS property name: `Reset`, DSS property index: 14.
+    Name: `Reset`
+    Units: s
+    Default: 15.0
     """
 
     def _get_Shots(self) -> int:
@@ -444,9 +457,10 @@ class Relay(DSSObj, CircuitElementMixin):
 
     Shots = property(_get_Shots, _set_Shots) # type: int
     """
-    Number of shots to lockout.  Default is 4. This is one more than the number of reclose intervals.
+    Number of shots to lockout. This is one more than the number of reclose intervals.
 
-    DSS property name: `Shots`, DSS property index: 15.
+    Name: `Shots`
+    Default: 4
     """
 
     def _get_RecloseIntervals(self) -> Float64Array:
@@ -459,7 +473,8 @@ class Relay(DSSObj, CircuitElementMixin):
     """
     Array of reclose intervals. If none, specify "NONE". Default for overcurrent relay is (0.5, 2.0, 2.0) seconds. Default for a voltage relay is (5.0). In a voltage relay, this is  seconds after restoration of voltage that the reclose occurs. Reverse power relay is one shot to lockout, so this is ignored.  A locked out relay must be closed manually (set action=close).
 
-    DSS property name: `RecloseIntervals`, DSS property index: 16.
+    Name: `RecloseIntervals`
+    Default: [0.5, 2.0, 2.0]
     """
 
     def _get_Delay(self) -> float:
@@ -470,9 +485,9 @@ class Relay(DSSObj, CircuitElementMixin):
 
     Delay = property(_get_Delay, _set_Delay) # type: float
     """
-    Trip time delay (sec) for DEFINITE TIME relays. Default is 0.0 for current, voltage and DOC relays. If >0 then this value is used instead of curves. Used by Generic, RevPower, 46 and 47 relays. Defaults to 0.1 s for these relays.
+    Trip time delay (sec) for DEFINITE TIME relays. Default is 0 for current, voltage and DOC relays. If >0 then this value is used instead of curves. Used by Generic, RevPower, 46 and 47 relays. Defaults to 0.1 s for these relays.
 
-    DSS property name: `Delay`, DSS property index: 17.
+    Name: `Delay`
     """
 
     def _get_OvervoltCurve_str(self) -> str:
@@ -483,9 +498,9 @@ class Relay(DSSObj, CircuitElementMixin):
 
     OvervoltCurve_str = property(_get_OvervoltCurve_str, _set_OvervoltCurve_str) # type: str
     """
-    TCC Curve object to use for overvoltage relay.  Curve is assumed to be defined with per unit voltage values. Voltage base should be defined for the relay. Default is none (ignored).
+    TCC Curve object to use for overvoltage relay. Curve is assumed to be defined with per unit voltage values. Voltage base should be defined for the relay. Default is none (ignored).
 
-    DSS property name: `OvervoltCurve`, DSS property index: 18.
+    Name: `OvervoltCurve`
     """
 
     def _get_OvervoltCurve(self) -> TCC_Curve:
@@ -500,9 +515,9 @@ class Relay(DSSObj, CircuitElementMixin):
 
     OvervoltCurve = property(_get_OvervoltCurve, _set_OvervoltCurve) # type: TCC_Curve
     """
-    TCC Curve object to use for overvoltage relay.  Curve is assumed to be defined with per unit voltage values. Voltage base should be defined for the relay. Default is none (ignored).
+    TCC Curve object to use for overvoltage relay. Curve is assumed to be defined with per unit voltage values. Voltage base should be defined for the relay. Default is none (ignored).
 
-    DSS property name: `OvervoltCurve`, DSS property index: 18.
+    Name: `OvervoltCurve`
     """
 
     def _get_UndervoltCurve_str(self) -> str:
@@ -513,9 +528,9 @@ class Relay(DSSObj, CircuitElementMixin):
 
     UndervoltCurve_str = property(_get_UndervoltCurve_str, _set_UndervoltCurve_str) # type: str
     """
-    TCC Curve object to use for undervoltage relay.  Curve is assumed to be defined with per unit voltage values. Voltage base should be defined for the relay. Default is none (ignored).
+    TCC Curve object to use for undervoltage relay. Curve is assumed to be defined with per unit voltage values. Voltage base should be defined for the relay. Default is none (ignored).
 
-    DSS property name: `UndervoltCurve`, DSS property index: 19.
+    Name: `UndervoltCurve`
     """
 
     def _get_UndervoltCurve(self) -> TCC_Curve:
@@ -530,9 +545,9 @@ class Relay(DSSObj, CircuitElementMixin):
 
     UndervoltCurve = property(_get_UndervoltCurve, _set_UndervoltCurve) # type: TCC_Curve
     """
-    TCC Curve object to use for undervoltage relay.  Curve is assumed to be defined with per unit voltage values. Voltage base should be defined for the relay. Default is none (ignored).
+    TCC Curve object to use for undervoltage relay. Curve is assumed to be defined with per unit voltage values. Voltage base should be defined for the relay. Default is none (ignored).
 
-    DSS property name: `UndervoltCurve`, DSS property index: 19.
+    Name: `UndervoltCurve`
     """
 
     def _get_kVBase(self) -> float:
@@ -545,7 +560,8 @@ class Relay(DSSObj, CircuitElementMixin):
     """
     Voltage base (kV) for the relay. Specify line-line for 3 phase devices); line-neutral for 1-phase devices.  Relay assumes the number of phases of the monitored element.  Default is 0.0, which results in assuming the voltage values in the "TCC" curve are specified in actual line-to-neutral volts.
 
-    DSS property name: `kVBase`, DSS property index: 20.
+    Name: `kVBase`
+    Default: 0.0
     """
 
     def _get_F47pctPickup(self) -> float:
@@ -558,7 +574,8 @@ class Relay(DSSObj, CircuitElementMixin):
     """
     Percent voltage pickup for 47 relay (Neg seq voltage). Default is 2. Specify also base voltage (kvbase) and delay time value.   
 
-    DSS property name: `47%Pickup`, DSS property index: 21.
+    Name: `47%Pickup`
+    Default: 2.0
     """
 
     def _get_F46BaseAmps(self) -> float:
@@ -569,9 +586,10 @@ class Relay(DSSObj, CircuitElementMixin):
 
     F46BaseAmps = property(_get_F46BaseAmps, _set_F46BaseAmps) # type: float
     """
-    Base current, Amps, for 46 relay (neg seq current).  Used for establishing pickup and per unit I-squared-t.
+    Base current, Amps, for 46 relay (neg seq current). Used for establishing pickup and per unit I-squared-t.
 
-    DSS property name: `46BaseAmps`, DSS property index: 22.
+    Name: `46BaseAmps`
+    Default: 100.0
     """
 
     def _get_F46pctPickup(self) -> float:
@@ -582,9 +600,10 @@ class Relay(DSSObj, CircuitElementMixin):
 
     F46pctPickup = property(_get_F46pctPickup, _set_F46pctPickup) # type: float
     """
-    Percent pickup current for 46 relay (neg seq current).  Default is 20.0.   When current exceeds this value * BaseAmps, I-squared-t calc starts.
+    Percent pickup current for 46 relay (neg seq current). Default is 20.  When current exceeds this value × BaseAmps, I-squared-t calc starts.
 
-    DSS property name: `46%Pickup`, DSS property index: 23.
+    Name: `46%Pickup`
+    Default: 20.0
     """
 
     def _get_F46isqt(self) -> float:
@@ -597,7 +616,8 @@ class Relay(DSSObj, CircuitElementMixin):
     """
     Negative Sequence I-squared-t trip value for 46 relay (neg seq current).  Default is 1 (trips in 1 sec for 1 per unit neg seq current).  Should be 1 to 99.
 
-    DSS property name: `46isqt`, DSS property index: 24.
+    Name: `46isqt`
+    Default: 1.0
     """
 
     def _get_Variable(self) -> str:
@@ -610,7 +630,7 @@ class Relay(DSSObj, CircuitElementMixin):
     """
     Name of variable in PC Elements being monitored.  Only applies to Generic relay.
 
-    DSS property name: `Variable`, DSS property index: 25.
+    Name: `Variable`
     """
 
     def _get_Overtrip(self) -> float:
@@ -623,7 +643,8 @@ class Relay(DSSObj, CircuitElementMixin):
     """
     Trip setting (high value) for Generic relay variable.  Relay trips in definite time if value of variable exceeds this value.
 
-    DSS property name: `Overtrip`, DSS property index: 26.
+    Name: `Overtrip`
+    Default: 1.2
     """
 
     def _get_Undertrip(self) -> float:
@@ -636,7 +657,8 @@ class Relay(DSSObj, CircuitElementMixin):
     """
     Trip setting (low value) for Generic relay variable.  Relay trips in definite time if value of variable is less than this value.
 
-    DSS property name: `Undertrip`, DSS property index: 27.
+    Name: `Undertrip`
+    Default: 0.8
     """
 
     def _get_BreakerTime(self) -> float:
@@ -647,9 +669,10 @@ class Relay(DSSObj, CircuitElementMixin):
 
     BreakerTime = property(_get_BreakerTime, _set_BreakerTime) # type: float
     """
-    Fixed delay time (sec) added to relay time. Default is 0.0. Designed to represent breaker time or some other delay after a trip decision is made.Use Delay property for setting a fixed trip time delay.Added to trip time of current and voltage relays. Could use in combination with inst trip value to obtain a definite time overcurrent relay.
+    Fixed delay time (sec) added to relay time. Designed to represent breaker time or some other delay after a trip decision is made.Use Delay property for setting a fixed trip time delay.Added to trip time of current and voltage relays. Could use in combination with inst trip value to obtain a definite time overcurrent relay.
 
-    DSS property name: `BreakerTime`, DSS property index: 28.
+    Name: `BreakerTime`
+    Default: 0.0
     """
 
     def _get_Action(self) -> enums.RelayAction:
@@ -665,7 +688,7 @@ class Relay(DSSObj, CircuitElementMixin):
     """
     DEPRECATED. See "State" property
 
-    DSS property name: `Action`, DSS property index: 29.
+    Name: `Action`
     """
 
     def _get_Action_str(self) -> str:
@@ -678,7 +701,7 @@ class Relay(DSSObj, CircuitElementMixin):
     """
     DEPRECATED. See "State" property
 
-    DSS property name: `Action`, DSS property index: 29.
+    Name: `Action`
     """
 
     def _get_Z1Mag(self) -> float:
@@ -689,9 +712,10 @@ class Relay(DSSObj, CircuitElementMixin):
 
     Z1Mag = property(_get_Z1Mag, _set_Z1Mag) # type: float
     """
-    Positive sequence reach impedance in primary ohms for Distance and TD21 functions. Default=0.7
+    Positive sequence reach impedance in primary ohms for Distance and TD21 functions.
 
-    DSS property name: `Z1Mag`, DSS property index: 30.
+    Name: `Z1Mag`
+    Default: 0.7
     """
 
     def _get_Z1Ang(self) -> float:
@@ -702,9 +726,10 @@ class Relay(DSSObj, CircuitElementMixin):
 
     Z1Ang = property(_get_Z1Ang, _set_Z1Ang) # type: float
     """
-    Positive sequence reach impedance angle in degrees for Distance and TD21 functions. Default=64.0
+    Positive sequence reach impedance angle in degrees for Distance and TD21 functions.
 
-    DSS property name: `Z1Ang`, DSS property index: 31.
+    Name: `Z1Ang`
+    Default: 64.0
     """
 
     def _get_Z0Mag(self) -> float:
@@ -715,9 +740,10 @@ class Relay(DSSObj, CircuitElementMixin):
 
     Z0Mag = property(_get_Z0Mag, _set_Z0Mag) # type: float
     """
-    Zero sequence reach impedance in primary ohms for Distance and TD21 functions. Default=2.1
+    Zero sequence reach impedance in primary ohms for Distance and TD21 functions.
 
-    DSS property name: `Z0Mag`, DSS property index: 32.
+    Name: `Z0Mag`
+    Default: 2.1
     """
 
     def _get_Z0Ang(self) -> float:
@@ -728,9 +754,10 @@ class Relay(DSSObj, CircuitElementMixin):
 
     Z0Ang = property(_get_Z0Ang, _set_Z0Ang) # type: float
     """
-    Zero sequence reach impedance angle in degrees for Distance and TD21 functions. Default=68.0
+    Zero sequence reach impedance angle in degrees for Distance and TD21 functions.
 
-    DSS property name: `Z0Ang`, DSS property index: 33.
+    Name: `Z0Ang`
+    Default: 68.0
     """
 
     def _get_MPhase(self) -> float:
@@ -741,9 +768,10 @@ class Relay(DSSObj, CircuitElementMixin):
 
     MPhase = property(_get_MPhase, _set_MPhase) # type: float
     """
-    Phase reach multiplier in per-unit for Distance and TD21 functions. Default=0.7
+    Phase reach multiplier in per-unit for Distance and TD21 functions.
 
-    DSS property name: `MPhase`, DSS property index: 34.
+    Name: `MPhase`
+    Default: 0.7
     """
 
     def _get_MGround(self) -> float:
@@ -754,9 +782,10 @@ class Relay(DSSObj, CircuitElementMixin):
 
     MGround = property(_get_MGround, _set_MGround) # type: float
     """
-    Ground reach multiplier in per-unit for Distance and TD21 functions. Default=0.7
+    Ground reach multiplier in per-unit for Distance and TD21 functions.
 
-    DSS property name: `MGround`, DSS property index: 35.
+    Name: `MGround`
+    Default: 0.7
     """
 
     def _get_EventLog(self) -> bool:
@@ -767,9 +796,10 @@ class Relay(DSSObj, CircuitElementMixin):
 
     EventLog = property(_get_EventLog, _set_EventLog) # type: bool
     """
-    {Yes/True | No/False* } Default is No for Relay. Write trips, reclose and reset events to EventLog.
+    Write trips, reclose and reset events to EventLog.
 
-    DSS property name: `EventLog`, DSS property index: 36.
+    Name: `EventLog`
+    Default: False
     """
 
     def _get_DebugTrace(self) -> bool:
@@ -780,9 +810,10 @@ class Relay(DSSObj, CircuitElementMixin):
 
     DebugTrace = property(_get_DebugTrace, _set_DebugTrace) # type: bool
     """
-    {Yes/True* | No/False* } Default is No for Relay. Write extra details to Eventlog.
+    Write extra details to Eventlog.
 
-    DSS property name: `DebugTrace`, DSS property index: 37.
+    Name: `DebugTrace`
+    Default: False
     """
 
     def _get_DistReverse(self) -> bool:
@@ -793,9 +824,10 @@ class Relay(DSSObj, CircuitElementMixin):
 
     DistReverse = property(_get_DistReverse, _set_DistReverse) # type: bool
     """
-    {Yes/True* | No/False} Default is No; reverse direction for distance and td21 types.
+    Reverse direction for distance and td21 types.
 
-    DSS property name: `DistReverse`, DSS property index: 38.
+    Name: `DistReverse`
+    Default: False
     """
 
     def _get_Normal(self) -> enums.RelayState:
@@ -811,7 +843,8 @@ class Relay(DSSObj, CircuitElementMixin):
     """
     {Open | Closed} Normal state of the relay. The relay reverts to this state for reset, change of mode, etc. Defaults to "State" if not specifically declared.
 
-    DSS property name: `Normal`, DSS property index: 39.
+    Name: `Normal`
+    Default: Closed
     """
 
     def _get_Normal_str(self) -> str:
@@ -824,7 +857,8 @@ class Relay(DSSObj, CircuitElementMixin):
     """
     {Open | Closed} Normal state of the relay. The relay reverts to this state for reset, change of mode, etc. Defaults to "State" if not specifically declared.
 
-    DSS property name: `Normal`, DSS property index: 39.
+    Name: `Normal`
+    Default: Closed
     """
 
     def _get_State(self) -> enums.RelayState:
@@ -840,7 +874,8 @@ class Relay(DSSObj, CircuitElementMixin):
     """
     {Open | Closed} Actual state of the relay. Upon setting, immediately forces state of the relay, overriding the Relay control. Simulates manual control on relay. Defaults to Closed. "Open" causes the controlled element to open and lock out. "Closed" causes the controlled element to close and the relay to reset to its first operation.
 
-    DSS property name: `State`, DSS property index: 40.
+    Name: `State`
+    Default: Closed
     """
 
     def _get_State_str(self) -> str:
@@ -853,7 +888,8 @@ class Relay(DSSObj, CircuitElementMixin):
     """
     {Open | Closed} Actual state of the relay. Upon setting, immediately forces state of the relay, overriding the Relay control. Simulates manual control on relay. Defaults to Closed. "Open" causes the controlled element to open and lock out. "Closed" causes the controlled element to close and the relay to reset to its first operation.
 
-    DSS property name: `State`, DSS property index: 40.
+    Name: `State`
+    Default: Closed
     """
 
     def _get_DOC_TiltAngleLow(self) -> float:
@@ -864,9 +900,10 @@ class Relay(DSSObj, CircuitElementMixin):
 
     DOC_TiltAngleLow = property(_get_DOC_TiltAngleLow, _set_DOC_TiltAngleLow) # type: float
     """
-    Tilt angle for low-current trip line. Default is 90.
+    Tilt angle for low-current trip line.
 
-    DSS property name: `DOC_TiltAngleLow`, DSS property index: 41.
+    Name: `DOC_TiltAngleLow`
+    Default: 90.0
     """
 
     def _get_DOC_TiltAngleHigh(self) -> float:
@@ -877,9 +914,10 @@ class Relay(DSSObj, CircuitElementMixin):
 
     DOC_TiltAngleHigh = property(_get_DOC_TiltAngleHigh, _set_DOC_TiltAngleHigh) # type: float
     """
-    Tilt angle for high-current trip line. Default is 90.
+    Tilt angle for high-current trip line.
 
-    DSS property name: `DOC_TiltAngleHigh`, DSS property index: 42.
+    Name: `DOC_TiltAngleHigh`
+    Default: 90.0
     """
 
     def _get_DOC_TripSettingLow(self) -> float:
@@ -890,9 +928,10 @@ class Relay(DSSObj, CircuitElementMixin):
 
     DOC_TripSettingLow = property(_get_DOC_TripSettingLow, _set_DOC_TripSettingLow) # type: float
     """
-    Resistive trip setting for low-current line. Default is 0.
+    Resistive trip setting for low-current line.
 
-    DSS property name: `DOC_TripSettingLow`, DSS property index: 43.
+    Name: `DOC_TripSettingLow`
+    Default: 0.0
     """
 
     def _get_DOC_TripSettingHigh(self) -> float:
@@ -905,7 +944,8 @@ class Relay(DSSObj, CircuitElementMixin):
     """
     Resistive trip setting for high-current line.  Default is -1 (deactivated). To activate, set a positive value. Must be greater than "DOC_TripSettingLow".
 
-    DSS property name: `DOC_TripSettingHigh`, DSS property index: 44.
+    Name: `DOC_TripSettingHigh`
+    Default: -1.0
     """
 
     def _get_DOC_TripSettingMag(self) -> float:
@@ -918,7 +958,8 @@ class Relay(DSSObj, CircuitElementMixin):
     """
     Trip setting for current magnitude (defines a circle in the relay characteristics). Default is -1 (deactivated). To activate, set a positive value.
 
-    DSS property name: `DOC_TripSettingMag`, DSS property index: 45.
+    Name: `DOC_TripSettingMag`
+    Default: -1.0
     """
 
     def _get_DOC_DelayInner(self) -> float:
@@ -931,7 +972,8 @@ class Relay(DSSObj, CircuitElementMixin):
     """
     Trip time delay (sec) for operation in inner region for DOC relay, defined when "DOC_TripSettingMag" or "DOC_TripSettingHigh" are activate. Default is -1.0 (deactivated), meaning that the relay characteristic is insensitive in the inner region (no trip). Set to 0 for instantaneous trip and >0 for a definite time delay. If "DOC_PhaseCurveInner" is specified, time delay from curve is utilized instead.
 
-    DSS property name: `DOC_DelayInner`, DSS property index: 46.
+    Name: `DOC_DelayInner`
+    Default: -1.0
     """
 
     def _get_DOC_PhaseCurveInner_str(self) -> str:
@@ -944,7 +986,7 @@ class Relay(DSSObj, CircuitElementMixin):
     """
     Name of the TCC Curve object that determines the phase trip for operation in inner region for DOC relay. Must have been previously defined as a TCC_Curve object. Default is none (ignored). Multiplying the current values in the curve by the "DOC_PhaseTripInner" value gives the actual current.
 
-    DSS property name: `DOC_PhaseCurveInner`, DSS property index: 47.
+    Name: `DOC_PhaseCurveInner`
     """
 
     def _get_DOC_PhaseCurveInner(self) -> TCC_Curve:
@@ -961,7 +1003,7 @@ class Relay(DSSObj, CircuitElementMixin):
     """
     Name of the TCC Curve object that determines the phase trip for operation in inner region for DOC relay. Must have been previously defined as a TCC_Curve object. Default is none (ignored). Multiplying the current values in the curve by the "DOC_PhaseTripInner" value gives the actual current.
 
-    DSS property name: `DOC_PhaseCurveInner`, DSS property index: 47.
+    Name: `DOC_PhaseCurveInner`
     """
 
     def _get_DOC_PhaseTripInner(self) -> float:
@@ -972,9 +1014,10 @@ class Relay(DSSObj, CircuitElementMixin):
 
     DOC_PhaseTripInner = property(_get_DOC_PhaseTripInner, _set_DOC_PhaseTripInner) # type: float
     """
-    Multiplier for the "DOC_PhaseCurveInner" TCC curve.  Defaults to 1.0.
+    Multiplier for the "DOC_PhaseCurveInner" TCC curve.
 
-    DSS property name: `DOC_PhaseTripInner`, DSS property index: 48.
+    Name: `DOC_PhaseTripInner`
+    Default: 1.0
     """
 
     def _get_DOC_TDPhaseInner(self) -> float:
@@ -985,9 +1028,10 @@ class Relay(DSSObj, CircuitElementMixin):
 
     DOC_TDPhaseInner = property(_get_DOC_TDPhaseInner, _set_DOC_TDPhaseInner) # type: float
     """
-    Time dial for "DOC_PhaseCurveInner" TCC curve. Multiplier on time axis of specified curve. Default=1.0.
+    Time dial for "DOC_PhaseCurveInner" TCC curve. Multiplier on time axis of specified curve.
 
-    DSS property name: `DOC_TDPhaseInner`, DSS property index: 49.
+    Name: `DOC_TDPhaseInner`
+    Default: 1.0
     """
 
     def _get_DOC_P1Blocking(self) -> bool:
@@ -998,9 +1042,10 @@ class Relay(DSSObj, CircuitElementMixin):
 
     DOC_P1Blocking = property(_get_DOC_P1Blocking, _set_DOC_P1Blocking) # type: bool
     """
-    {Yes/True* | No/False} Blocking element that impedes relay from tripping if balanced net three-phase active power is in the forward direction (i.e., flowing into the monitored terminal). For a delayed trip, if at any given time the reverse power flow condition stops, the tripping is reset. Default=True.
+    Blocking element that impedes relay from tripping if balanced net three-phase active power is in the forward direction (i.e., flowing into the monitored terminal). For a delayed trip, if at any given time the reverse power flow condition stops, the tripping is reset. Default=True.
 
-    DSS property name: `DOC_P1Blocking`, DSS property index: 50.
+    Name: `DOC_P1Blocking`
+    Default: True
     """
 
     def _get_BaseFreq(self) -> float:
@@ -1013,7 +1058,8 @@ class Relay(DSSObj, CircuitElementMixin):
     """
     Base Frequency for ratings.
 
-    DSS property name: `BaseFreq`, DSS property index: 51.
+    Name: `BaseFreq`
+    Units: Hz
     """
 
     def _get_Enabled(self) -> bool:
@@ -1024,9 +1070,10 @@ class Relay(DSSObj, CircuitElementMixin):
 
     Enabled = property(_get_Enabled, _set_Enabled) # type: bool
     """
-    {Yes|No or True|False} Indicates whether this element is enabled.
+    Indicates whether this element is enabled.
 
-    DSS property name: `Enabled`, DSS property index: 52.
+    Name: `Enabled`
+    Default: True
     """
 
     def Like(self, value: AnyStr):
@@ -1035,7 +1082,9 @@ class Relay(DSSObj, CircuitElementMixin):
 
         New Capacitor.C2 like=c1  ...
 
-        DSS property name: `Like`, DSS property index: 53.
+        **Deprecated:** `Like` has been deprecated since at least 2021, see https://sourceforge.net/p/electricdss/discussion/861977/thread/8b59d21eb6/#b57c/f668
+
+        Name: `Like`
         """
         self._set_string_o(53, value)
 
@@ -1098,7 +1147,7 @@ class RelayProperties(TypedDict):
 class RelayBatch(DSSBatch, CircuitElementBatchMixin):
     _cls_name = 'Relay'
     _obj_cls = Relay
-    _cls_idx = 31
+    _cls_idx = 32
     __slots__ = []
 
     def __init__(self, api_util, **kwargs):
@@ -1136,7 +1185,7 @@ class RelayBatch(DSSBatch, CircuitElementBatchMixin):
     """
     Full object name of the circuit element, typically a line, transformer, load, or generator, to which the relay's PT and/or CT are connected. This is the "monitored" element. There is no default; must be specified.
 
-    DSS property name: `MonitoredObj`, DSS property index: 1.
+    Name: `MonitoredObj`
     """
 
     def _get_MonitoredObj(self) -> List[DSSObj]:
@@ -1149,7 +1198,7 @@ class RelayBatch(DSSBatch, CircuitElementBatchMixin):
     """
     Full object name of the circuit element, typically a line, transformer, load, or generator, to which the relay's PT and/or CT are connected. This is the "monitored" element. There is no default; must be specified.
 
-    DSS property name: `MonitoredObj`, DSS property index: 1.
+    Name: `MonitoredObj`
     """
 
     def _get_MonitoredTerm(self) -> BatchInt32ArrayProxy:
@@ -1160,9 +1209,10 @@ class RelayBatch(DSSBatch, CircuitElementBatchMixin):
 
     MonitoredTerm = property(_get_MonitoredTerm, _set_MonitoredTerm) # type: BatchInt32ArrayProxy
     """
-    Number of the terminal of the circuit element to which the Relay is connected. 1 or 2, typically.  Default is 1.
+    Number of the terminal of the circuit element to which the Relay is connected. 1 or 2, typically.
 
-    DSS property name: `MonitoredTerm`, DSS property index: 2.
+    Name: `MonitoredTerm`
+    Default: 1
     """
 
     def _get_SwitchedObj_str(self) -> List[str]:
@@ -1173,9 +1223,9 @@ class RelayBatch(DSSBatch, CircuitElementBatchMixin):
 
     SwitchedObj_str = property(_get_SwitchedObj_str, _set_SwitchedObj_str) # type: List[str]
     """
-    Name of circuit element switch that the Relay controls. Specify the full object name.Defaults to the same as the Monitored element. This is the "controlled" element.
+    Name of circuit element switch that the Relay controls. Specify the full object name. Defaults to the same as the Monitored element. This is the "controlled" element.
 
-    DSS property name: `SwitchedObj`, DSS property index: 3.
+    Name: `SwitchedObj`
     """
 
     def _get_SwitchedObj(self) -> List[DSSObj]:
@@ -1186,9 +1236,9 @@ class RelayBatch(DSSBatch, CircuitElementBatchMixin):
 
     SwitchedObj = property(_get_SwitchedObj, _set_SwitchedObj) # type: List[DSSObj]
     """
-    Name of circuit element switch that the Relay controls. Specify the full object name.Defaults to the same as the Monitored element. This is the "controlled" element.
+    Name of circuit element switch that the Relay controls. Specify the full object name. Defaults to the same as the Monitored element. This is the "controlled" element.
 
-    DSS property name: `SwitchedObj`, DSS property index: 3.
+    Name: `SwitchedObj`
     """
 
     def _get_SwitchedTerm(self) -> BatchInt32ArrayProxy:
@@ -1199,9 +1249,10 @@ class RelayBatch(DSSBatch, CircuitElementBatchMixin):
 
     SwitchedTerm = property(_get_SwitchedTerm, _set_SwitchedTerm) # type: BatchInt32ArrayProxy
     """
-    Number of the terminal of the controlled element in which the switch is controlled by the Relay. 1 or 2, typically.  Default is 1.
+    Number of the terminal of the controlled element in which the switch is controlled by the Relay. 1 or 2, typically.
 
-    DSS property name: `SwitchedTerm`, DSS property index: 4.
+    Name: `SwitchedTerm`
+    Default: 1
     """
 
     def _get_Type(self) -> BatchInt32ArrayProxy:
@@ -1229,7 +1280,8 @@ class RelayBatch(DSSBatch, CircuitElementBatchMixin):
 
     Default is overcurrent relay (Current) Specify the curve and pickup settings appropriate for each type. Generic relays monitor PC Element Control variables and trip on out of over/under range in definite time.
 
-    DSS property name: `Type`, DSS property index: 5.
+    Name: `Type`
+    Default: Current
     """
 
     def _get_Type_str(self) -> List[str]:
@@ -1253,7 +1305,8 @@ class RelayBatch(DSSBatch, CircuitElementBatchMixin):
 
     Default is overcurrent relay (Current) Specify the curve and pickup settings appropriate for each type. Generic relays monitor PC Element Control variables and trip on out of over/under range in definite time.
 
-    DSS property name: `Type`, DSS property index: 5.
+    Name: `Type`
+    Default: Current
     """
 
     def _get_PhaseCurve_str(self) -> List[str]:
@@ -1266,7 +1319,7 @@ class RelayBatch(DSSBatch, CircuitElementBatchMixin):
     """
     Name of the TCC Curve object that determines the phase trip.  Must have been previously defined as a TCC_Curve object. Default is none (ignored). For overcurrent relay, multiplying the current values in the curve by the "phasetrip" value gives the actual current.
 
-    DSS property name: `PhaseCurve`, DSS property index: 6.
+    Name: `PhaseCurve`
     """
 
     def _get_PhaseCurve(self) -> List[TCC_Curve]:
@@ -1279,7 +1332,7 @@ class RelayBatch(DSSBatch, CircuitElementBatchMixin):
     """
     Name of the TCC Curve object that determines the phase trip.  Must have been previously defined as a TCC_Curve object. Default is none (ignored). For overcurrent relay, multiplying the current values in the curve by the "phasetrip" value gives the actual current.
 
-    DSS property name: `PhaseCurve`, DSS property index: 6.
+    Name: `PhaseCurve`
     """
 
     def _get_GroundCurve_str(self) -> List[str]:
@@ -1292,7 +1345,7 @@ class RelayBatch(DSSBatch, CircuitElementBatchMixin):
     """
     Name of the TCC Curve object that determines the ground trip.  Must have been previously defined as a TCC_Curve object. Default is none (ignored).For overcurrent relay, multiplying the current values in the curve by the "groundtrip" valuw gives the actual current.
 
-    DSS property name: `GroundCurve`, DSS property index: 7.
+    Name: `GroundCurve`
     """
 
     def _get_GroundCurve(self) -> List[TCC_Curve]:
@@ -1305,7 +1358,7 @@ class RelayBatch(DSSBatch, CircuitElementBatchMixin):
     """
     Name of the TCC Curve object that determines the ground trip.  Must have been previously defined as a TCC_Curve object. Default is none (ignored).For overcurrent relay, multiplying the current values in the curve by the "groundtrip" valuw gives the actual current.
 
-    DSS property name: `GroundCurve`, DSS property index: 7.
+    Name: `GroundCurve`
     """
 
     def _get_PhaseTrip(self) -> BatchFloat64ArrayProxy:
@@ -1316,9 +1369,10 @@ class RelayBatch(DSSBatch, CircuitElementBatchMixin):
 
     PhaseTrip = property(_get_PhaseTrip, _set_PhaseTrip) # type: BatchFloat64ArrayProxy
     """
-    Multiplier or actual phase amps for the phase TCC curve.  Defaults to 1.0.
+    Multiplier or actual phase amps for the phase TCC curve.
 
-    DSS property name: `PhaseTrip`, DSS property index: 8.
+    Name: `PhaseTrip`
+    Default: 1.0
     """
 
     def _get_GroundTrip(self) -> BatchFloat64ArrayProxy:
@@ -1329,9 +1383,10 @@ class RelayBatch(DSSBatch, CircuitElementBatchMixin):
 
     GroundTrip = property(_get_GroundTrip, _set_GroundTrip) # type: BatchFloat64ArrayProxy
     """
-    Multiplier or actual ground amps (3I0) for the ground TCC curve.  Defaults to 1.0.
+    Multiplier or actual ground amps (3I0) for the ground TCC curve.
 
-    DSS property name: `GroundTrip`, DSS property index: 9.
+    Name: `GroundTrip`
+    Default: 1.0
     """
 
     def _get_TDPhase(self) -> BatchFloat64ArrayProxy:
@@ -1342,9 +1397,10 @@ class RelayBatch(DSSBatch, CircuitElementBatchMixin):
 
     TDPhase = property(_get_TDPhase, _set_TDPhase) # type: BatchFloat64ArrayProxy
     """
-    Time dial for Phase trip curve. Multiplier on time axis of specified curve. Default=1.0.
+    Time dial for Phase trip curve. Multiplier on time axis of specified curve.
 
-    DSS property name: `TDPhase`, DSS property index: 10.
+    Name: `TDPhase`
+    Default: 1.0
     """
 
     def _get_TDGround(self) -> BatchFloat64ArrayProxy:
@@ -1355,9 +1411,10 @@ class RelayBatch(DSSBatch, CircuitElementBatchMixin):
 
     TDGround = property(_get_TDGround, _set_TDGround) # type: BatchFloat64ArrayProxy
     """
-    Time dial for Ground trip curve. Multiplier on time axis of specified curve. Default=1.0.
+    Time dial for Ground trip curve. Multiplier on time axis of specified curve.
 
-    DSS property name: `TDGround`, DSS property index: 11.
+    Name: `TDGround`
+    Default: 1.0
     """
 
     def _get_PhaseInst(self) -> BatchFloat64ArrayProxy:
@@ -1368,9 +1425,10 @@ class RelayBatch(DSSBatch, CircuitElementBatchMixin):
 
     PhaseInst = property(_get_PhaseInst, _set_PhaseInst) # type: BatchFloat64ArrayProxy
     """
-    Actual  amps (Current relay) or kW (reverse power relay) for instantaneous phase trip which is assumed to happen in 0.01 sec + Delay Time. Default is 0.0, which signifies no inst trip. Use this value for specifying the Reverse Power threshold (kW) for reverse power relays.
+    Actual amps (Current relay) or kW (reverse power relay) for instantaneous phase trip which is assumed to happen in 0.01 sec + Delay Time. Default is 0.0, which signifies no inst trip. Use this value for specifying the Reverse Power threshold (kW) for reverse power relays.
 
-    DSS property name: `PhaseInst`, DSS property index: 12.
+    Name: `PhaseInst`
+    Default: 0.0
     """
 
     def _get_GroundInst(self) -> BatchFloat64ArrayProxy:
@@ -1381,9 +1439,11 @@ class RelayBatch(DSSBatch, CircuitElementBatchMixin):
 
     GroundInst = property(_get_GroundInst, _set_GroundInst) # type: BatchFloat64ArrayProxy
     """
-    Actual  amps for instantaneous ground trip which is assumed to happen in 0.01 sec + Delay Time.Default is 0.0, which signifies no inst trip.
+    Actual amps for instantaneous ground trip which is assumed to happen in 0.01 sec + Delay Time. Default is 0, which signifies no inst trip.
 
-    DSS property name: `GroundInst`, DSS property index: 13.
+    Name: `GroundInst`
+    Units: A
+    Default: 0.0
     """
 
     def _get_Reset(self) -> BatchFloat64ArrayProxy:
@@ -1394,9 +1454,11 @@ class RelayBatch(DSSBatch, CircuitElementBatchMixin):
 
     Reset = property(_get_Reset, _set_Reset) # type: BatchFloat64ArrayProxy
     """
-    Reset time in sec for relay.  Default is 15. If this much time passes between the last pickup event, and the relay has not locked out, the operation counter resets.
+    Reset time for relay. If this much time passes between the last pickup event, and the relay has not locked out, the operation counter resets.
 
-    DSS property name: `Reset`, DSS property index: 14.
+    Name: `Reset`
+    Units: s
+    Default: 15.0
     """
 
     def _get_Shots(self) -> BatchInt32ArrayProxy:
@@ -1407,9 +1469,10 @@ class RelayBatch(DSSBatch, CircuitElementBatchMixin):
 
     Shots = property(_get_Shots, _set_Shots) # type: BatchInt32ArrayProxy
     """
-    Number of shots to lockout.  Default is 4. This is one more than the number of reclose intervals.
+    Number of shots to lockout. This is one more than the number of reclose intervals.
 
-    DSS property name: `Shots`, DSS property index: 15.
+    Name: `Shots`
+    Default: 4
     """
 
     def _get_RecloseIntervals(self) -> List[Float64Array]:
@@ -1425,7 +1488,8 @@ class RelayBatch(DSSBatch, CircuitElementBatchMixin):
     """
     Array of reclose intervals. If none, specify "NONE". Default for overcurrent relay is (0.5, 2.0, 2.0) seconds. Default for a voltage relay is (5.0). In a voltage relay, this is  seconds after restoration of voltage that the reclose occurs. Reverse power relay is one shot to lockout, so this is ignored.  A locked out relay must be closed manually (set action=close).
 
-    DSS property name: `RecloseIntervals`, DSS property index: 16.
+    Name: `RecloseIntervals`
+    Default: [0.5, 2.0, 2.0]
     """
 
     def _get_Delay(self) -> BatchFloat64ArrayProxy:
@@ -1436,9 +1500,9 @@ class RelayBatch(DSSBatch, CircuitElementBatchMixin):
 
     Delay = property(_get_Delay, _set_Delay) # type: BatchFloat64ArrayProxy
     """
-    Trip time delay (sec) for DEFINITE TIME relays. Default is 0.0 for current, voltage and DOC relays. If >0 then this value is used instead of curves. Used by Generic, RevPower, 46 and 47 relays. Defaults to 0.1 s for these relays.
+    Trip time delay (sec) for DEFINITE TIME relays. Default is 0 for current, voltage and DOC relays. If >0 then this value is used instead of curves. Used by Generic, RevPower, 46 and 47 relays. Defaults to 0.1 s for these relays.
 
-    DSS property name: `Delay`, DSS property index: 17.
+    Name: `Delay`
     """
 
     def _get_OvervoltCurve_str(self) -> List[str]:
@@ -1449,9 +1513,9 @@ class RelayBatch(DSSBatch, CircuitElementBatchMixin):
 
     OvervoltCurve_str = property(_get_OvervoltCurve_str, _set_OvervoltCurve_str) # type: List[str]
     """
-    TCC Curve object to use for overvoltage relay.  Curve is assumed to be defined with per unit voltage values. Voltage base should be defined for the relay. Default is none (ignored).
+    TCC Curve object to use for overvoltage relay. Curve is assumed to be defined with per unit voltage values. Voltage base should be defined for the relay. Default is none (ignored).
 
-    DSS property name: `OvervoltCurve`, DSS property index: 18.
+    Name: `OvervoltCurve`
     """
 
     def _get_OvervoltCurve(self) -> List[TCC_Curve]:
@@ -1462,9 +1526,9 @@ class RelayBatch(DSSBatch, CircuitElementBatchMixin):
 
     OvervoltCurve = property(_get_OvervoltCurve, _set_OvervoltCurve) # type: List[TCC_Curve]
     """
-    TCC Curve object to use for overvoltage relay.  Curve is assumed to be defined with per unit voltage values. Voltage base should be defined for the relay. Default is none (ignored).
+    TCC Curve object to use for overvoltage relay. Curve is assumed to be defined with per unit voltage values. Voltage base should be defined for the relay. Default is none (ignored).
 
-    DSS property name: `OvervoltCurve`, DSS property index: 18.
+    Name: `OvervoltCurve`
     """
 
     def _get_UndervoltCurve_str(self) -> List[str]:
@@ -1475,9 +1539,9 @@ class RelayBatch(DSSBatch, CircuitElementBatchMixin):
 
     UndervoltCurve_str = property(_get_UndervoltCurve_str, _set_UndervoltCurve_str) # type: List[str]
     """
-    TCC Curve object to use for undervoltage relay.  Curve is assumed to be defined with per unit voltage values. Voltage base should be defined for the relay. Default is none (ignored).
+    TCC Curve object to use for undervoltage relay. Curve is assumed to be defined with per unit voltage values. Voltage base should be defined for the relay. Default is none (ignored).
 
-    DSS property name: `UndervoltCurve`, DSS property index: 19.
+    Name: `UndervoltCurve`
     """
 
     def _get_UndervoltCurve(self) -> List[TCC_Curve]:
@@ -1488,9 +1552,9 @@ class RelayBatch(DSSBatch, CircuitElementBatchMixin):
 
     UndervoltCurve = property(_get_UndervoltCurve, _set_UndervoltCurve) # type: List[TCC_Curve]
     """
-    TCC Curve object to use for undervoltage relay.  Curve is assumed to be defined with per unit voltage values. Voltage base should be defined for the relay. Default is none (ignored).
+    TCC Curve object to use for undervoltage relay. Curve is assumed to be defined with per unit voltage values. Voltage base should be defined for the relay. Default is none (ignored).
 
-    DSS property name: `UndervoltCurve`, DSS property index: 19.
+    Name: `UndervoltCurve`
     """
 
     def _get_kVBase(self) -> BatchFloat64ArrayProxy:
@@ -1503,7 +1567,8 @@ class RelayBatch(DSSBatch, CircuitElementBatchMixin):
     """
     Voltage base (kV) for the relay. Specify line-line for 3 phase devices); line-neutral for 1-phase devices.  Relay assumes the number of phases of the monitored element.  Default is 0.0, which results in assuming the voltage values in the "TCC" curve are specified in actual line-to-neutral volts.
 
-    DSS property name: `kVBase`, DSS property index: 20.
+    Name: `kVBase`
+    Default: 0.0
     """
 
     def _get_F47pctPickup(self) -> BatchFloat64ArrayProxy:
@@ -1516,7 +1581,8 @@ class RelayBatch(DSSBatch, CircuitElementBatchMixin):
     """
     Percent voltage pickup for 47 relay (Neg seq voltage). Default is 2. Specify also base voltage (kvbase) and delay time value.   
 
-    DSS property name: `47%Pickup`, DSS property index: 21.
+    Name: `47%Pickup`
+    Default: 2.0
     """
 
     def _get_F46BaseAmps(self) -> BatchFloat64ArrayProxy:
@@ -1527,9 +1593,10 @@ class RelayBatch(DSSBatch, CircuitElementBatchMixin):
 
     F46BaseAmps = property(_get_F46BaseAmps, _set_F46BaseAmps) # type: BatchFloat64ArrayProxy
     """
-    Base current, Amps, for 46 relay (neg seq current).  Used for establishing pickup and per unit I-squared-t.
+    Base current, Amps, for 46 relay (neg seq current). Used for establishing pickup and per unit I-squared-t.
 
-    DSS property name: `46BaseAmps`, DSS property index: 22.
+    Name: `46BaseAmps`
+    Default: 100.0
     """
 
     def _get_F46pctPickup(self) -> BatchFloat64ArrayProxy:
@@ -1540,9 +1607,10 @@ class RelayBatch(DSSBatch, CircuitElementBatchMixin):
 
     F46pctPickup = property(_get_F46pctPickup, _set_F46pctPickup) # type: BatchFloat64ArrayProxy
     """
-    Percent pickup current for 46 relay (neg seq current).  Default is 20.0.   When current exceeds this value * BaseAmps, I-squared-t calc starts.
+    Percent pickup current for 46 relay (neg seq current). Default is 20.  When current exceeds this value × BaseAmps, I-squared-t calc starts.
 
-    DSS property name: `46%Pickup`, DSS property index: 23.
+    Name: `46%Pickup`
+    Default: 20.0
     """
 
     def _get_F46isqt(self) -> BatchFloat64ArrayProxy:
@@ -1555,7 +1623,8 @@ class RelayBatch(DSSBatch, CircuitElementBatchMixin):
     """
     Negative Sequence I-squared-t trip value for 46 relay (neg seq current).  Default is 1 (trips in 1 sec for 1 per unit neg seq current).  Should be 1 to 99.
 
-    DSS property name: `46isqt`, DSS property index: 24.
+    Name: `46isqt`
+    Default: 1.0
     """
 
     def _get_Variable(self) -> List[str]:
@@ -1568,7 +1637,7 @@ class RelayBatch(DSSBatch, CircuitElementBatchMixin):
     """
     Name of variable in PC Elements being monitored.  Only applies to Generic relay.
 
-    DSS property name: `Variable`, DSS property index: 25.
+    Name: `Variable`
     """
 
     def _get_Overtrip(self) -> BatchFloat64ArrayProxy:
@@ -1581,7 +1650,8 @@ class RelayBatch(DSSBatch, CircuitElementBatchMixin):
     """
     Trip setting (high value) for Generic relay variable.  Relay trips in definite time if value of variable exceeds this value.
 
-    DSS property name: `Overtrip`, DSS property index: 26.
+    Name: `Overtrip`
+    Default: 1.2
     """
 
     def _get_Undertrip(self) -> BatchFloat64ArrayProxy:
@@ -1594,7 +1664,8 @@ class RelayBatch(DSSBatch, CircuitElementBatchMixin):
     """
     Trip setting (low value) for Generic relay variable.  Relay trips in definite time if value of variable is less than this value.
 
-    DSS property name: `Undertrip`, DSS property index: 27.
+    Name: `Undertrip`
+    Default: 0.8
     """
 
     def _get_BreakerTime(self) -> BatchFloat64ArrayProxy:
@@ -1605,9 +1676,10 @@ class RelayBatch(DSSBatch, CircuitElementBatchMixin):
 
     BreakerTime = property(_get_BreakerTime, _set_BreakerTime) # type: BatchFloat64ArrayProxy
     """
-    Fixed delay time (sec) added to relay time. Default is 0.0. Designed to represent breaker time or some other delay after a trip decision is made.Use Delay property for setting a fixed trip time delay.Added to trip time of current and voltage relays. Could use in combination with inst trip value to obtain a definite time overcurrent relay.
+    Fixed delay time (sec) added to relay time. Designed to represent breaker time or some other delay after a trip decision is made.Use Delay property for setting a fixed trip time delay.Added to trip time of current and voltage relays. Could use in combination with inst trip value to obtain a definite time overcurrent relay.
 
-    DSS property name: `BreakerTime`, DSS property index: 28.
+    Name: `BreakerTime`
+    Default: 0.0
     """
 
     def _get_Action(self) -> BatchInt32ArrayProxy:
@@ -1624,7 +1696,7 @@ class RelayBatch(DSSBatch, CircuitElementBatchMixin):
     """
     DEPRECATED. See "State" property
 
-    DSS property name: `Action`, DSS property index: 29.
+    Name: `Action`
     """
 
     def _get_Action_str(self) -> List[str]:
@@ -1637,7 +1709,7 @@ class RelayBatch(DSSBatch, CircuitElementBatchMixin):
     """
     DEPRECATED. See "State" property
 
-    DSS property name: `Action`, DSS property index: 29.
+    Name: `Action`
     """
 
     def _get_Z1Mag(self) -> BatchFloat64ArrayProxy:
@@ -1648,9 +1720,10 @@ class RelayBatch(DSSBatch, CircuitElementBatchMixin):
 
     Z1Mag = property(_get_Z1Mag, _set_Z1Mag) # type: BatchFloat64ArrayProxy
     """
-    Positive sequence reach impedance in primary ohms for Distance and TD21 functions. Default=0.7
+    Positive sequence reach impedance in primary ohms for Distance and TD21 functions.
 
-    DSS property name: `Z1Mag`, DSS property index: 30.
+    Name: `Z1Mag`
+    Default: 0.7
     """
 
     def _get_Z1Ang(self) -> BatchFloat64ArrayProxy:
@@ -1661,9 +1734,10 @@ class RelayBatch(DSSBatch, CircuitElementBatchMixin):
 
     Z1Ang = property(_get_Z1Ang, _set_Z1Ang) # type: BatchFloat64ArrayProxy
     """
-    Positive sequence reach impedance angle in degrees for Distance and TD21 functions. Default=64.0
+    Positive sequence reach impedance angle in degrees for Distance and TD21 functions.
 
-    DSS property name: `Z1Ang`, DSS property index: 31.
+    Name: `Z1Ang`
+    Default: 64.0
     """
 
     def _get_Z0Mag(self) -> BatchFloat64ArrayProxy:
@@ -1674,9 +1748,10 @@ class RelayBatch(DSSBatch, CircuitElementBatchMixin):
 
     Z0Mag = property(_get_Z0Mag, _set_Z0Mag) # type: BatchFloat64ArrayProxy
     """
-    Zero sequence reach impedance in primary ohms for Distance and TD21 functions. Default=2.1
+    Zero sequence reach impedance in primary ohms for Distance and TD21 functions.
 
-    DSS property name: `Z0Mag`, DSS property index: 32.
+    Name: `Z0Mag`
+    Default: 2.1
     """
 
     def _get_Z0Ang(self) -> BatchFloat64ArrayProxy:
@@ -1687,9 +1762,10 @@ class RelayBatch(DSSBatch, CircuitElementBatchMixin):
 
     Z0Ang = property(_get_Z0Ang, _set_Z0Ang) # type: BatchFloat64ArrayProxy
     """
-    Zero sequence reach impedance angle in degrees for Distance and TD21 functions. Default=68.0
+    Zero sequence reach impedance angle in degrees for Distance and TD21 functions.
 
-    DSS property name: `Z0Ang`, DSS property index: 33.
+    Name: `Z0Ang`
+    Default: 68.0
     """
 
     def _get_MPhase(self) -> BatchFloat64ArrayProxy:
@@ -1700,9 +1776,10 @@ class RelayBatch(DSSBatch, CircuitElementBatchMixin):
 
     MPhase = property(_get_MPhase, _set_MPhase) # type: BatchFloat64ArrayProxy
     """
-    Phase reach multiplier in per-unit for Distance and TD21 functions. Default=0.7
+    Phase reach multiplier in per-unit for Distance and TD21 functions.
 
-    DSS property name: `MPhase`, DSS property index: 34.
+    Name: `MPhase`
+    Default: 0.7
     """
 
     def _get_MGround(self) -> BatchFloat64ArrayProxy:
@@ -1713,9 +1790,10 @@ class RelayBatch(DSSBatch, CircuitElementBatchMixin):
 
     MGround = property(_get_MGround, _set_MGround) # type: BatchFloat64ArrayProxy
     """
-    Ground reach multiplier in per-unit for Distance and TD21 functions. Default=0.7
+    Ground reach multiplier in per-unit for Distance and TD21 functions.
 
-    DSS property name: `MGround`, DSS property index: 35.
+    Name: `MGround`
+    Default: 0.7
     """
 
     def _get_EventLog(self) -> List[bool]:
@@ -1723,14 +1801,15 @@ class RelayBatch(DSSBatch, CircuitElementBatchMixin):
             self._get_batch_int32_prop(36)
         ]
 
-    def _set_EventLog(self, value: bool, flags: enums.SetterFlags = 0):
+    def _set_EventLog(self, value: Union[bool, List[bool]], flags: enums.SetterFlags = 0):
         self._set_batch_int32_array(36, value, flags)
 
     EventLog = property(_get_EventLog, _set_EventLog) # type: List[bool]
     """
-    {Yes/True | No/False* } Default is No for Relay. Write trips, reclose and reset events to EventLog.
+    Write trips, reclose and reset events to EventLog.
 
-    DSS property name: `EventLog`, DSS property index: 36.
+    Name: `EventLog`
+    Default: False
     """
 
     def _get_DebugTrace(self) -> List[bool]:
@@ -1738,14 +1817,15 @@ class RelayBatch(DSSBatch, CircuitElementBatchMixin):
             self._get_batch_int32_prop(37)
         ]
 
-    def _set_DebugTrace(self, value: bool, flags: enums.SetterFlags = 0):
+    def _set_DebugTrace(self, value: Union[bool, List[bool]], flags: enums.SetterFlags = 0):
         self._set_batch_int32_array(37, value, flags)
 
     DebugTrace = property(_get_DebugTrace, _set_DebugTrace) # type: List[bool]
     """
-    {Yes/True* | No/False* } Default is No for Relay. Write extra details to Eventlog.
+    Write extra details to Eventlog.
 
-    DSS property name: `DebugTrace`, DSS property index: 37.
+    Name: `DebugTrace`
+    Default: False
     """
 
     def _get_DistReverse(self) -> List[bool]:
@@ -1753,14 +1833,15 @@ class RelayBatch(DSSBatch, CircuitElementBatchMixin):
             self._get_batch_int32_prop(38)
         ]
 
-    def _set_DistReverse(self, value: bool, flags: enums.SetterFlags = 0):
+    def _set_DistReverse(self, value: Union[bool, List[bool]], flags: enums.SetterFlags = 0):
         self._set_batch_int32_array(38, value, flags)
 
     DistReverse = property(_get_DistReverse, _set_DistReverse) # type: List[bool]
     """
-    {Yes/True* | No/False} Default is No; reverse direction for distance and td21 types.
+    Reverse direction for distance and td21 types.
 
-    DSS property name: `DistReverse`, DSS property index: 38.
+    Name: `DistReverse`
+    Default: False
     """
 
     def _get_Normal(self) -> BatchInt32ArrayProxy:
@@ -1777,7 +1858,8 @@ class RelayBatch(DSSBatch, CircuitElementBatchMixin):
     """
     {Open | Closed} Normal state of the relay. The relay reverts to this state for reset, change of mode, etc. Defaults to "State" if not specifically declared.
 
-    DSS property name: `Normal`, DSS property index: 39.
+    Name: `Normal`
+    Default: Closed
     """
 
     def _get_Normal_str(self) -> List[str]:
@@ -1790,7 +1872,8 @@ class RelayBatch(DSSBatch, CircuitElementBatchMixin):
     """
     {Open | Closed} Normal state of the relay. The relay reverts to this state for reset, change of mode, etc. Defaults to "State" if not specifically declared.
 
-    DSS property name: `Normal`, DSS property index: 39.
+    Name: `Normal`
+    Default: Closed
     """
 
     def _get_State(self) -> BatchInt32ArrayProxy:
@@ -1807,7 +1890,8 @@ class RelayBatch(DSSBatch, CircuitElementBatchMixin):
     """
     {Open | Closed} Actual state of the relay. Upon setting, immediately forces state of the relay, overriding the Relay control. Simulates manual control on relay. Defaults to Closed. "Open" causes the controlled element to open and lock out. "Closed" causes the controlled element to close and the relay to reset to its first operation.
 
-    DSS property name: `State`, DSS property index: 40.
+    Name: `State`
+    Default: Closed
     """
 
     def _get_State_str(self) -> List[str]:
@@ -1820,7 +1904,8 @@ class RelayBatch(DSSBatch, CircuitElementBatchMixin):
     """
     {Open | Closed} Actual state of the relay. Upon setting, immediately forces state of the relay, overriding the Relay control. Simulates manual control on relay. Defaults to Closed. "Open" causes the controlled element to open and lock out. "Closed" causes the controlled element to close and the relay to reset to its first operation.
 
-    DSS property name: `State`, DSS property index: 40.
+    Name: `State`
+    Default: Closed
     """
 
     def _get_DOC_TiltAngleLow(self) -> BatchFloat64ArrayProxy:
@@ -1831,9 +1916,10 @@ class RelayBatch(DSSBatch, CircuitElementBatchMixin):
 
     DOC_TiltAngleLow = property(_get_DOC_TiltAngleLow, _set_DOC_TiltAngleLow) # type: BatchFloat64ArrayProxy
     """
-    Tilt angle for low-current trip line. Default is 90.
+    Tilt angle for low-current trip line.
 
-    DSS property name: `DOC_TiltAngleLow`, DSS property index: 41.
+    Name: `DOC_TiltAngleLow`
+    Default: 90.0
     """
 
     def _get_DOC_TiltAngleHigh(self) -> BatchFloat64ArrayProxy:
@@ -1844,9 +1930,10 @@ class RelayBatch(DSSBatch, CircuitElementBatchMixin):
 
     DOC_TiltAngleHigh = property(_get_DOC_TiltAngleHigh, _set_DOC_TiltAngleHigh) # type: BatchFloat64ArrayProxy
     """
-    Tilt angle for high-current trip line. Default is 90.
+    Tilt angle for high-current trip line.
 
-    DSS property name: `DOC_TiltAngleHigh`, DSS property index: 42.
+    Name: `DOC_TiltAngleHigh`
+    Default: 90.0
     """
 
     def _get_DOC_TripSettingLow(self) -> BatchFloat64ArrayProxy:
@@ -1857,9 +1944,10 @@ class RelayBatch(DSSBatch, CircuitElementBatchMixin):
 
     DOC_TripSettingLow = property(_get_DOC_TripSettingLow, _set_DOC_TripSettingLow) # type: BatchFloat64ArrayProxy
     """
-    Resistive trip setting for low-current line. Default is 0.
+    Resistive trip setting for low-current line.
 
-    DSS property name: `DOC_TripSettingLow`, DSS property index: 43.
+    Name: `DOC_TripSettingLow`
+    Default: 0.0
     """
 
     def _get_DOC_TripSettingHigh(self) -> BatchFloat64ArrayProxy:
@@ -1872,7 +1960,8 @@ class RelayBatch(DSSBatch, CircuitElementBatchMixin):
     """
     Resistive trip setting for high-current line.  Default is -1 (deactivated). To activate, set a positive value. Must be greater than "DOC_TripSettingLow".
 
-    DSS property name: `DOC_TripSettingHigh`, DSS property index: 44.
+    Name: `DOC_TripSettingHigh`
+    Default: -1.0
     """
 
     def _get_DOC_TripSettingMag(self) -> BatchFloat64ArrayProxy:
@@ -1885,7 +1974,8 @@ class RelayBatch(DSSBatch, CircuitElementBatchMixin):
     """
     Trip setting for current magnitude (defines a circle in the relay characteristics). Default is -1 (deactivated). To activate, set a positive value.
 
-    DSS property name: `DOC_TripSettingMag`, DSS property index: 45.
+    Name: `DOC_TripSettingMag`
+    Default: -1.0
     """
 
     def _get_DOC_DelayInner(self) -> BatchFloat64ArrayProxy:
@@ -1898,7 +1988,8 @@ class RelayBatch(DSSBatch, CircuitElementBatchMixin):
     """
     Trip time delay (sec) for operation in inner region for DOC relay, defined when "DOC_TripSettingMag" or "DOC_TripSettingHigh" are activate. Default is -1.0 (deactivated), meaning that the relay characteristic is insensitive in the inner region (no trip). Set to 0 for instantaneous trip and >0 for a definite time delay. If "DOC_PhaseCurveInner" is specified, time delay from curve is utilized instead.
 
-    DSS property name: `DOC_DelayInner`, DSS property index: 46.
+    Name: `DOC_DelayInner`
+    Default: -1.0
     """
 
     def _get_DOC_PhaseCurveInner_str(self) -> List[str]:
@@ -1911,7 +2002,7 @@ class RelayBatch(DSSBatch, CircuitElementBatchMixin):
     """
     Name of the TCC Curve object that determines the phase trip for operation in inner region for DOC relay. Must have been previously defined as a TCC_Curve object. Default is none (ignored). Multiplying the current values in the curve by the "DOC_PhaseTripInner" value gives the actual current.
 
-    DSS property name: `DOC_PhaseCurveInner`, DSS property index: 47.
+    Name: `DOC_PhaseCurveInner`
     """
 
     def _get_DOC_PhaseCurveInner(self) -> List[TCC_Curve]:
@@ -1924,7 +2015,7 @@ class RelayBatch(DSSBatch, CircuitElementBatchMixin):
     """
     Name of the TCC Curve object that determines the phase trip for operation in inner region for DOC relay. Must have been previously defined as a TCC_Curve object. Default is none (ignored). Multiplying the current values in the curve by the "DOC_PhaseTripInner" value gives the actual current.
 
-    DSS property name: `DOC_PhaseCurveInner`, DSS property index: 47.
+    Name: `DOC_PhaseCurveInner`
     """
 
     def _get_DOC_PhaseTripInner(self) -> BatchFloat64ArrayProxy:
@@ -1935,9 +2026,10 @@ class RelayBatch(DSSBatch, CircuitElementBatchMixin):
 
     DOC_PhaseTripInner = property(_get_DOC_PhaseTripInner, _set_DOC_PhaseTripInner) # type: BatchFloat64ArrayProxy
     """
-    Multiplier for the "DOC_PhaseCurveInner" TCC curve.  Defaults to 1.0.
+    Multiplier for the "DOC_PhaseCurveInner" TCC curve.
 
-    DSS property name: `DOC_PhaseTripInner`, DSS property index: 48.
+    Name: `DOC_PhaseTripInner`
+    Default: 1.0
     """
 
     def _get_DOC_TDPhaseInner(self) -> BatchFloat64ArrayProxy:
@@ -1948,9 +2040,10 @@ class RelayBatch(DSSBatch, CircuitElementBatchMixin):
 
     DOC_TDPhaseInner = property(_get_DOC_TDPhaseInner, _set_DOC_TDPhaseInner) # type: BatchFloat64ArrayProxy
     """
-    Time dial for "DOC_PhaseCurveInner" TCC curve. Multiplier on time axis of specified curve. Default=1.0.
+    Time dial for "DOC_PhaseCurveInner" TCC curve. Multiplier on time axis of specified curve.
 
-    DSS property name: `DOC_TDPhaseInner`, DSS property index: 49.
+    Name: `DOC_TDPhaseInner`
+    Default: 1.0
     """
 
     def _get_DOC_P1Blocking(self) -> List[bool]:
@@ -1958,14 +2051,15 @@ class RelayBatch(DSSBatch, CircuitElementBatchMixin):
             self._get_batch_int32_prop(50)
         ]
 
-    def _set_DOC_P1Blocking(self, value: bool, flags: enums.SetterFlags = 0):
+    def _set_DOC_P1Blocking(self, value: Union[bool, List[bool]], flags: enums.SetterFlags = 0):
         self._set_batch_int32_array(50, value, flags)
 
     DOC_P1Blocking = property(_get_DOC_P1Blocking, _set_DOC_P1Blocking) # type: List[bool]
     """
-    {Yes/True* | No/False} Blocking element that impedes relay from tripping if balanced net three-phase active power is in the forward direction (i.e., flowing into the monitored terminal). For a delayed trip, if at any given time the reverse power flow condition stops, the tripping is reset. Default=True.
+    Blocking element that impedes relay from tripping if balanced net three-phase active power is in the forward direction (i.e., flowing into the monitored terminal). For a delayed trip, if at any given time the reverse power flow condition stops, the tripping is reset. Default=True.
 
-    DSS property name: `DOC_P1Blocking`, DSS property index: 50.
+    Name: `DOC_P1Blocking`
+    Default: True
     """
 
     def _get_BaseFreq(self) -> BatchFloat64ArrayProxy:
@@ -1978,7 +2072,8 @@ class RelayBatch(DSSBatch, CircuitElementBatchMixin):
     """
     Base Frequency for ratings.
 
-    DSS property name: `BaseFreq`, DSS property index: 51.
+    Name: `BaseFreq`
+    Units: Hz
     """
 
     def _get_Enabled(self) -> List[bool]:
@@ -1986,14 +2081,15 @@ class RelayBatch(DSSBatch, CircuitElementBatchMixin):
             self._get_batch_int32_prop(52)
         ]
 
-    def _set_Enabled(self, value: bool, flags: enums.SetterFlags = 0):
+    def _set_Enabled(self, value: Union[bool, List[bool]], flags: enums.SetterFlags = 0):
         self._set_batch_int32_array(52, value, flags)
 
     Enabled = property(_get_Enabled, _set_Enabled) # type: List[bool]
     """
-    {Yes|No or True|False} Indicates whether this element is enabled.
+    Indicates whether this element is enabled.
 
-    DSS property name: `Enabled`, DSS property index: 52.
+    Name: `Enabled`
+    Default: True
     """
 
     def Like(self, value: AnyStr, flags: enums.SetterFlags = 0):
@@ -2002,7 +2098,9 @@ class RelayBatch(DSSBatch, CircuitElementBatchMixin):
 
         New Capacitor.C2 like=c1  ...
 
-        DSS property name: `Like`, DSS property index: 53.
+        **Deprecated:** `Like` has been deprecated since at least 2021, see https://sourceforge.net/p/electricdss/discussion/861977/thread/8b59d21eb6/#b57c/f668
+
+        Name: `Like`
         """
         self._set_batch_string(53, value, flags)
 

@@ -251,7 +251,7 @@ def test_ymatrix_csc():
     altdss(f'redirect "{BASE_DIR}/Version8/Distrib/IEEETestCases/13Bus/IEEE13Nodeckt.dss"')
     altdss.Solution.Solve()
     altdss.Settings.AdvancedTypes = True
-    assert np.all(altdss.SystemY(dense=True) == sp.csc_matrix(altdss.YMatrix.GetCompressedYMatrix()))
+    assert np.all(altdss.SystemY(dense=True) == altdss.YMatrix.GetCompressedYMatrix())
     y_sparse1 = altdss.SystemY(dense=False)
     y_sparse2 = sp.csc_matrix(altdss.YMatrix.GetCompressedYMatrix())
     np.testing.assert_array_equal(y_sparse1.toarray(), y_sparse2.toarray())

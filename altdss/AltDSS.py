@@ -11,7 +11,7 @@ from .ReduceCkt import IReduceCkt
 from .Topology import ITopology
 from .YMatrix import IYMatrix
 
-from .common import CffiApiUtil
+from .common import AltDSSAPIUtil
 from dss.enums import DSSJSONFlags
 from .enums import *
 from .Bus import IBuses
@@ -29,12 +29,12 @@ if TYPE_CHECKING:
     try:
         from dss import IDSS as DSSPython
     except:
-        DSSPython = None
+        pass
 
     try:
         from opendssdirect.OpenDSSDirect import OpenDSSDirect
     except:
-        OpenDSSDirect = None
+        pass
 
 
 class AltDSS(IObj):
@@ -73,7 +73,7 @@ class AltDSS(IObj):
     ZIP: IZIP
 
     @classmethod
-    def _get_instance(cls: AltDSS, api_util: CffiApiUtil = None, ctx=None) -> AltDSS:
+    def _get_instance(cls: AltDSS, api_util: AltDSSAPIUtil = None, ctx=None) -> AltDSS:
         '''
         If there is an existing AltDSS instance for a context, return it.
         Otherwise, try to wrap the context into a new AltDSS API instance.
@@ -81,7 +81,7 @@ class AltDSS(IObj):
         if api_util is None:
             # If none exists, something is probably wrong elsewhere,
             # so let's allow the IndexError to propagate
-            api_util = CffiApiUtil._ctx_to_util[ctx]
+            api_util = AltDSSAPIUtil._ctx_to_util[ctx]
 
         dss = cls._ctx_to_dss.get(api_util.ctx)
         if dss is None:
@@ -99,6 +99,9 @@ class AltDSS(IObj):
         '''
         IObj.__init__(self, api_util)
         AltDSS._ctx_to_dss[api_util.ctx] = self
+        if api_util._altdss is None:
+            api_util._altdss = self
+
         self._ptr = api_util.ctx
 
         self.Bus = IBuses(self._api_util)
@@ -120,125 +123,146 @@ class AltDSS(IObj):
     def DisableElement(self, name: AnyStr):
         '''
         Disable a circuit element by name (removes from circuit but leave in database).
-        '''
-        if not isinstance(name, bytes):
-            name = name.encode(self._api_util.codec)
 
-        self._check_for_error(self._lib.Circuit_Disable(name))
+        Original COM help: https://opendss.epri.com/Disable.html
+        '''
+        self._lib.Circuit_Disable(name)
 
     def EnableElement(self, name: AnyStr):
         '''
         Enable a circuit element by name
-        '''
-        if not isinstance(name, bytes):
-            name = name.encode(self._api_util.codec)
 
-        self._check_for_error(self._lib.Circuit_Enable(name))
+        Original COM help: https://opendss.epri.com/Enable.html
+        '''
+        self._lib.Circuit_Enable(name)
 
     def NodeDistancesByPhase(self, Phase: int) -> Float64Array:
         '''Returns an array of doubles representing the distances to parent EnergyMeter. Sequence of array corresponds to other node ByPhase properties.'''
-        self._check_for_error(self._lib.Circuit_Get_AllNodeDistancesByPhase_GR(Phase))
-        return self._get_float64_gr_array()
+        return self._lib.Circuit_Get_AllNodeDistancesByPhase_GR(Phase)
 
     def NodeNamesByPhase(self, Phase: int) -> List[str]:
         '''Return array of strings of the node names for the By Phase criteria. Sequence corresponds to other ByPhase properties.'''
-        return self._check_for_error(self._get_string_array(self._lib.Circuit_Get_AllNodeNamesByPhase, Phase))
+        return self._lib.Circuit_Get_AllNodeNamesByPhase(Phase)
 
     def NodeVMagByPhase(self, Phase: int) -> Float64Array:
         '''Returns Array of doubles represent voltage magnitudes for nodes on the specified phase.'''
-        self._check_for_error(self._lib.Circuit_Get_AllNodeVmagByPhase_GR(Phase))
-        return self._get_float64_gr_array()
+        return self._lib.Circuit_Get_AllNodeVmagByPhase_GR(Phase)
 
     def NodeVMagPUByPhase(self, Phase: int) -> Float64Array:
         '''Returns array of per unit voltage magnitudes for each node by phase'''
-        self._check_for_error(self._lib.Circuit_Get_AllNodeVmagPUByPhase_GR(Phase))
-        return self._get_float64_gr_array()
+        return self._lib.Circuit_Get_AllNodeVmagPUByPhase_GR(Phase)
 
     def BusDistances(self) -> Float64Array:
         '''
         Returns distance from each bus to parent EnergyMeter. Corresponds to sequence in AllBusNames.
         '''
-        self._check_for_error(self._lib.Circuit_Get_AllBusDistances_GR())
-        return self._get_float64_gr_array()
+        return self._lib.Circuit_Get_AllBusDistances_GR()
 
     def BusNames(self) -> List[str]:
         '''
         Array of strings containing names of all buses in circuit (see AllNodeNames).
         '''
-        return self._check_for_error(self._get_string_array(self._lib.Circuit_Get_AllBusNames))
+        return self._lib.Circuit_Get_AllBusNames()
 
     def BusVMag(self) -> Float64Array:
         '''
         Array of magnitudes (doubles) of voltages at all buses
+
+        Original COM help: https://opendss.epri.com/AllBusVmag.html
         '''
-        self._check_for_error(self._lib.Circuit_Get_AllBusVmag_GR())
-        return self._get_float64_gr_array()
+        return self._lib.Circuit_Get_AllBusVmag_GR()
 
     def BusVMagPU(self) -> Float64Array:
         '''
         Array of all bus voltages (each node) magnitudes in Per unit
+
+        Original COM help: https://opendss.epri.com/AllBusVmagPu.html
         '''
-        self._check_for_error(self._lib.Circuit_Get_AllBusVmagPu_GR())
-        return self._get_float64_gr_array()
+        return self._lib.Circuit_Get_AllBusVmagPu_GR()
 
     def BusVolts(self) -> ComplexArray:
         '''
         Complex array of all bus, node voltages from most recent solution
+
+        Original COM help: https://opendss.epri.com/AllBusVolts.html
         '''
-        self._check_for_error(self._lib.Circuit_Get_AllBusVolts_GR())
+        self._check_for_error(self._api_util.lib_unpatched.Circuit_Get_AllBusVolts_GR(self._api_util.ctx))
         return self._get_fcomplex128_gr_array()
 
     def NodeDistances(self) -> Float64Array:
         '''
         Returns an array of distances from parent EnergyMeter for each Node. Corresponds to AllBusVMag sequence.
+
+        Original COM help: https://opendss.epri.com/AllNodeDistances.html
         '''
-        self._check_for_error(self._lib.Circuit_Get_AllNodeDistances_GR())
-        return self._get_float64_gr_array()
+        return self._lib.Circuit_Get_AllNodeDistances_GR()
 
     def NodeNames(self) -> List[str]:
         '''
         Array of strings containing full name of each node in system in same order as returned by AllBusVolts, etc.
+
+        Original COM help: https://opendss.epri.com/AllNodeNames.html
         '''
-        return self._check_for_error(self._get_string_array(self._lib.Circuit_Get_AllNodeNames))
+        return self._lib.Circuit_Get_AllNodeNames()
 
     def LineLosses(self) -> complex:
         '''
         Complex total line losses in the circuit
+
+        Original COM help: https://opendss.epri.com/LineLosses.html
         '''
-        self._check_for_error(self._lib.Circuit_Get_LineLosses_GR())
+        self._check_for_error(self._api_util.lib_unpatched.Circuit_Get_LineLosses_GR(self._api_util.ctx))
         return self._get_fcomplex128_gr_simple()
 
     def Losses(self) -> complex:
         '''
         Total losses in active circuit, complex number (two-element array of double).
+
+        Original COM help: https://opendss.epri.com/Losses.html
         '''
-        self._check_for_error(self._lib.Circuit_Get_Losses_GR())
+        self._check_for_error(self._api_util.lib_unpatched.Circuit_Get_Losses_GR(self._api_util.ctx))
         return self._get_fcomplex128_gr_simple()
 
     @property
     def Name(self) -> str:
         '''Name of the active circuit.'''
-        return self._get_string(self._check_for_error(self._lib.Circuit_Get_Name()))
+        return self._lib.Circuit_Get_Name()
 
     @property
     def NumBuses(self) -> int:
-        '''Total number of Buses in the circuit.'''
-        return self._check_for_error(self._lib.Circuit_Get_NumBuses())
+        '''
+        Total number of Buses in the circuit.
+
+        Original COM help: https://opendss.epri.com/NumBuses.html
+        '''
+        return self._lib.Circuit_Get_NumBuses()
 
     @property
     def NumCircuitElements(self) -> int:
-        '''Number of CircuitElements in the circuit.'''
-        return self._check_for_error(self._lib.Circuit_Get_NumCktElements())
+        '''
+        Number of CktElements in the circuit.
+
+        Original COM help: https://opendss.epri.com/NumCktElements.html
+        '''
+        return self._lib.Circuit_Get_NumCktElements()
 
     @property
     def NumNodes(self) -> int:
-        '''Total number of nodes in the circuit.'''
-        return self._check_for_error(self._lib.Circuit_Get_NumNodes())
+        '''
+        Total number of nodes in the circuit.
+
+        Original COM help: https://opendss.epri.com/NumNodes1.html
+        '''
+        return self._lib.Circuit_Get_NumNodes()
 
     @property
     def SubstationLosses(self) -> complex: 
-        '''Complex losses in all transformers designated to substations.'''
-        self._check_for_error(self._lib.Circuit_Get_SubstationLosses_GR())
+        '''
+        Complex losses in all transformers designated to substations.
+
+        Original COM help: https://opendss.epri.com/SubstationLosses.html
+        '''
+        self._check_for_error(self._api_util.lib_unpatched.Circuit_Get_SubstationLosses_GR(self._api_util.ctx))
         return self._get_fcomplex128_gr_simple()
 
     def SystemY(self, dense=False) -> ComplexArray:
@@ -253,10 +277,10 @@ class AltDSS(IObj):
         matrices for small systems.
         '''
         if dense:
-            self._check_for_error(self._lib.Circuit_Get_SystemY_GR())
-            return self._get_fcomplex128_gr_array()
+            return self._lib.Circuit_Get_SystemY_GR()
 
         ffi = self._api_util.ffi
+        lib = self._api_util.lib_unpatched
         
         nBus = ffi.new('uint32_t*')
         nBus[0] = 0
@@ -267,7 +291,7 @@ class AltDSS(IObj):
         RowIdxPtr = ffi.new('int32_t**')
         cValsPtr = ffi.new('double**')
 
-        self._lib.YMatrix_GetCompressedYMatrix(True, nBus, nNz, ColPtr, RowIdxPtr, cValsPtr)
+        lib.YMatrix_GetCompressedYMatrix(self._api_util.ctx, True, nBus, nNz, ColPtr, RowIdxPtr, cValsPtr)
 
         if not nBus[0] or not nNz[0]:
             res = None
@@ -280,9 +304,9 @@ class AltDSS(IObj):
                 np.frombuffer(ffi.buffer(ColPtr[0], (nBus[0] + 1) * 4), dtype=np.int32).copy()
             ))
 
-        self._lib.DSS_Dispose_PInteger(ColPtr)
-        self._lib.DSS_Dispose_PInteger(RowIdxPtr)
-        self._lib.DSS_Dispose_PDouble(cValsPtr)
+        lib.DSS_Dispose_PInteger(ColPtr)
+        lib.DSS_Dispose_PInteger(RowIdxPtr)
+        lib.DSS_Dispose_PDouble(cValsPtr)
         
         self._check_for_error()
 
@@ -290,22 +314,38 @@ class AltDSS(IObj):
 
 
     def TotalPower(self) -> complex:
-        '''Total power (complex), kVA delivered to the circuit'''
-        self._check_for_error(self._lib.Circuit_Get_TotalPower_GR())
+        '''
+        Total power (complex), kVA delivered to the circuit
+
+        Original COM help: https://opendss.epri.com/TotalPower.html
+        '''
+        self._check_for_error(self._api_util.lib_unpatched.Circuit_Get_TotalPower_GR(self._api_util.ctx))
         return self._get_fcomplex128_gr_simple()
 
     def YCurrents(self) -> ComplexArray:
-        '''Array of doubles containing complex injection currents for the present solution. It is the "I" vector of I=YV'''
-        self._check_for_error(self._lib.Circuit_Get_YCurrents_GR())
+        '''
+        Array of the complex injection currents for the present solution. It is the "I" vector of I=YV
+
+        Original COM help: https://opendss.epri.com/YCurrents.html
+        '''
+        self._check_for_error(self._api_util.lib_unpatched.Circuit_Get_YCurrents_GR(self._api_util.ctx))
         return self._get_fcomplex128_gr_array()
 
     def YNodeOrder(self) -> List[str]:
-        '''Array of strings containing the names of the nodes in the same order as the Y matrix'''
-        return self._check_for_error(self._get_string_array(self._lib.Circuit_Get_YNodeOrder))
+        '''
+        Array of strings containing the names of the nodes in the same order as the Y matrix
+
+        Original COM help: https://opendss.epri.com/YNodeOrder.html
+        '''
+        return self._lib.Circuit_Get_YNodeOrder()
 
     def YNodeVarray(self) -> ComplexArray:
-        '''Complex array of actual node voltages in same order as SystemY matrix.'''
-        self._check_for_error(self._lib.Circuit_Get_YNodeVarray_GR())
+        '''
+        Complex array of actual node voltages in same order as SystemY matrix.
+
+        Original COM help: https://opendss.epri.com/YNodeVarray.html
+        '''
+        self._check_for_error(self._api_util.lib_unpatched.Circuit_Get_YNodeVarray_GR(self._api_util.ctx))
         return self._get_fcomplex128_gr_array()
 
     def Capacity(self, Start: float, Increment: float) -> float:
@@ -324,19 +364,23 @@ class AltDSS(IObj):
 
         Original COM help: https://opendss.epri.com/Capacity1.html
         '''
-        return self._check_for_error(self._lib.Circuit_Capacity(Start, Increment))
+        return self._lib.Circuit_Capacity(Start, Increment)
 
     def TakeSample(self):
         '''
         Force all Meters and Monitors to take a sample.
+
+        Original COM help: https://opendss.epri.com/Sample.html
         '''
-        self._check_for_error(self._lib.Circuit_Sample())
+        self._lib.Circuit_Sample()
 
     def SaveSample(self):
         '''
         Force all meters and monitors to save their current buffers.
+
+        Original COM help: https://opendss.epri.com/SaveSample.html
         '''
-        self._check_for_error(self._lib.Circuit_SaveSample())
+        self._lib.Circuit_SaveSample()
 
     def UpdateStorage(self):
         '''
@@ -346,13 +390,13 @@ class AltDSS(IObj):
 
         Original COM help: https://opendss.epri.com/UpdateStorage.html
         '''
-        self._check_for_error(self._lib.Circuit_UpdateStorage()) #TODO: move to the dedicated class/API
+        self._lib.Circuit_UpdateStorage() #TODO: move to the dedicated class/API
 
     def Clear(self):
         self('clear')
 
     def ClearAll(self):
-        self._check_for_error(self._lib.DSS_ClearAll())
+        self._lib.DSS_ClearAll()
 
     def to_json(self, options: DSSJSONFlags = 0) -> str:
         '''
@@ -362,7 +406,7 @@ class AltDSS(IObj):
         The `options` parameter contains bit-flags to toggle specific features.
         See `Obj_ToJSON` (C-API) for more, or `DSSObj.to_json` in Python.
         '''
-        return self._get_string(self._check_for_error(self._lib.Circuit_ToJSON(options)))
+        return self._lib.Circuit_ToJSON(options)
 
     def NewContext(self) -> AltDSS:
         '''
@@ -375,12 +419,11 @@ class AltDSS(IObj):
         ffi = self._api_util.ffi
         lib = self._api_util.lib_unpatched
         new_ctx = ffi.gc(lib.ctx_New(), lib.ctx_Dispose)
-        new_api_util = CffiApiUtil(ffi, lib, new_ctx)
-        new_api_util._allow_complex = self._api_util._allow_complex
+        new_api_util = AltDSSAPIUtil(ffi, lib, new_ctx, parent=self._api_util)
         return type(self)(new_api_util)
 
 
-    def Command(self, value: Optional[AnyStr]) -> Optional[str]:
+    def Command(self, value: Optional[AnyStr] = None) -> Optional[str]:
         '''
         Input command **string** for the DSS engine.
         
@@ -389,12 +432,9 @@ class AltDSS(IObj):
         Prefer using the `Commands` function or the call operator from this class.
         '''
         if value is None:
-            return self._get_string(self._check_for_error(self._lib.Text_Get_Command()))
+            return self._lib.Text_Get_Command()
 
-        if not isinstance(value, bytes):
-            value = value.encode(self._api_util.codec)
-
-        self._check_for_error(self._lib.Text_Set_Command(value))
+        self._lib.Text_Set_Command(value)
 
 
     def Commands(self, Value: Union[AnyStr, List[AnyStr]]):
@@ -405,22 +445,23 @@ class AltDSS(IObj):
         Value can be a list of strings, or a single large string (usually faster, but varies).
         '''
         if isinstance(Value, str) or isinstance(Value, bytes):
-            if not isinstance(Value, bytes):
-                Value = Value.encode(self._api_util.codec)
-            
-            self._check_for_error(self._lib.Text_CommandBlock(Value))
+            self._lib.Text_CommandBlock(Value)
         else:
-            self._check_for_error(self._set_string_array(self._lib.Text_CommandArray, Value))
+            self._set_string_array(self._lib.Text_CommandArray, Value)
 
     @property
     def TextResult(self) -> str:
-        """Result string for the last DSS command (classic `Text.Result`)."""
-        return self._get_string(self._check_for_error(self._lib.Text_Get_Result()))
+        """
+        Result string for the last DSS command (classic `Text.Result`).
+
+        Original COM help: https://opendss.epri.com/Result.html
+        """
+        return self._lib.Text_Get_Result()
     
 
     def Version(self) -> str:
         from . import __version__
-        return self._get_string(self._check_for_error(self._lib.DSS_Get_Version())) + f'\nAltDSS-Python version: {__version__}'
+        return self._lib.DSS_Get_Version() + f'\nAltDSS-Python version: {__version__}'
 
 
     def __call__(self, cmds: Union[AnyStr, List[AnyStr]]):

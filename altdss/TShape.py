@@ -68,7 +68,7 @@ class TShape(DSSObj):
     """
     Max number of points to expect in temperature shape vectors. This gets reset to the number of Temperature values found if less than specified.
 
-    DSS property name: `NPts`, DSS property index: 1.
+    Name: `NPts`
     """
 
     def _get_Interval(self) -> float:
@@ -83,7 +83,8 @@ class TShape(DSSObj):
 
     See also "sinterval" and "minterval".
 
-    DSS property name: `Interval`, DSS property index: 2.
+    Name: `Interval`
+    Default: 1.0
     """
 
     def _get_Temp(self) -> Float64Array:
@@ -101,7 +102,7 @@ class TShape(DSSObj):
 
     Note: this property will reset Npts if the  number of values in the files are fewer.
 
-    DSS property name: `Temp`, DSS property index: 3.
+    Name: `Temp`
     """
 
     def _get_Hour(self) -> Float64Array:
@@ -117,7 +118,7 @@ class TShape(DSSObj):
     hour = (dblfile=filename)  !for packed file of doubles
     hour = (sngfile=filename)  !for packed file of singles 
 
-    DSS property name: `Hour`, DSS property index: 4.
+    Name: `Hour`
     """
 
     def _get_Mean(self) -> float:
@@ -130,7 +131,7 @@ class TShape(DSSObj):
     """
     Mean of the temperature curve values.  This is computed on demand the first time a value is needed.  However, you may set it to another value independently. Used for Monte Carlo load simulations.
 
-    DSS property name: `Mean`, DSS property index: 5.
+    Name: `Mean`
     """
 
     def _get_StdDev(self) -> float:
@@ -145,7 +146,7 @@ class TShape(DSSObj):
 
     Used for Monte Carlo load simulations.
 
-    DSS property name: `StdDev`, DSS property index: 6.
+    Name: `StdDev`
     """
 
     def _get_CSVFile(self) -> str:
@@ -158,7 +159,7 @@ class TShape(DSSObj):
     """
     Switch input of  temperature curve data to a csv file containing (hour, Temp) points, or simply (Temp) values for fixed time interval data, one per line. NOTE: This action may reset the number of points to a lower value.
 
-    DSS property name: `CSVFile`, DSS property index: 7.
+    Name: `CSVFile`
     """
 
     def _get_SngFile(self) -> str:
@@ -171,7 +172,7 @@ class TShape(DSSObj):
     """
     Switch input of  temperature curve data to a binary file of singles containing (hour, Temp) points, or simply (Temp) values for fixed time interval data, packed one after another. NOTE: This action may reset the number of points to a lower value.
 
-    DSS property name: `SngFile`, DSS property index: 8.
+    Name: `SngFile`
     """
 
     def _get_DblFile(self) -> str:
@@ -184,7 +185,7 @@ class TShape(DSSObj):
     """
     Switch input of  temperature curve data to a binary file of doubles containing (hour, Temp) points, or simply (Temp) values for fixed time interval data, packed one after another. NOTE: This action may reset the number of points to a lower value.
 
-    DSS property name: `DblFile`, DSS property index: 9.
+    Name: `DblFile`
     """
 
     def _get_SInterval(self) -> float:
@@ -197,7 +198,7 @@ class TShape(DSSObj):
     """
     Specify fixed interval in SECONDS. Alternate way to specify Interval property.
 
-    DSS property name: `SInterval`, DSS property index: 10.
+    Name: `SInterval`
     """
 
     def _get_MInterval(self) -> float:
@@ -210,14 +211,14 @@ class TShape(DSSObj):
     """
     Specify fixed interval in MINUTES. Alternate way to specify Interval property.
 
-    DSS property name: `MInterval`, DSS property index: 11.
+    Name: `MInterval`
     """
 
     def Action(self, value: Union[AnyStr, int, enums.TShapeAction], flags: enums.SetterFlags = 0):
         """
         {DblSave | SngSave} After defining temperature curve data... Setting action=DblSave or SngSave will cause the present "Temp" values to be written to either a packed file of double or single. The filename is the Tshape name. 
 
-        DSS property name: `Action`, DSS property index: 12.
+        Name: `Action`
         """
         if isinstance(value, int):
             self._lib.Obj_SetInt32(self._ptr, 12, value, flags)
@@ -239,7 +240,9 @@ class TShape(DSSObj):
 
         New Capacitor.C2 like=c1  ...
 
-        DSS property name: `Like`, DSS property index: 13.
+        **Deprecated:** `Like` has been deprecated since at least 2021, see https://sourceforge.net/p/electricdss/discussion/861977/thread/8b59d21eb6/#b57c/f668
+
+        Name: `Like`
         """
         self._set_string_o(13, value)
 
@@ -297,7 +300,7 @@ class TShapeBatch(DSSBatch):
     """
     Max number of points to expect in temperature shape vectors. This gets reset to the number of Temperature values found if less than specified.
 
-    DSS property name: `NPts`, DSS property index: 1.
+    Name: `NPts`
     """
 
     def _get_Interval(self) -> BatchFloat64ArrayProxy:
@@ -312,7 +315,8 @@ class TShapeBatch(DSSBatch):
 
     See also "sinterval" and "minterval".
 
-    DSS property name: `Interval`, DSS property index: 2.
+    Name: `Interval`
+    Default: 1.0
     """
 
     def _get_Temp(self) -> List[Float64Array]:
@@ -333,7 +337,7 @@ class TShapeBatch(DSSBatch):
 
     Note: this property will reset Npts if the  number of values in the files are fewer.
 
-    DSS property name: `Temp`, DSS property index: 3.
+    Name: `Temp`
     """
 
     def _get_Hour(self) -> List[Float64Array]:
@@ -352,7 +356,7 @@ class TShapeBatch(DSSBatch):
     hour = (dblfile=filename)  !for packed file of doubles
     hour = (sngfile=filename)  !for packed file of singles 
 
-    DSS property name: `Hour`, DSS property index: 4.
+    Name: `Hour`
     """
 
     def _get_Mean(self) -> BatchFloat64ArrayProxy:
@@ -365,7 +369,7 @@ class TShapeBatch(DSSBatch):
     """
     Mean of the temperature curve values.  This is computed on demand the first time a value is needed.  However, you may set it to another value independently. Used for Monte Carlo load simulations.
 
-    DSS property name: `Mean`, DSS property index: 5.
+    Name: `Mean`
     """
 
     def _get_StdDev(self) -> BatchFloat64ArrayProxy:
@@ -380,7 +384,7 @@ class TShapeBatch(DSSBatch):
 
     Used for Monte Carlo load simulations.
 
-    DSS property name: `StdDev`, DSS property index: 6.
+    Name: `StdDev`
     """
 
     def _get_CSVFile(self) -> List[str]:
@@ -393,7 +397,7 @@ class TShapeBatch(DSSBatch):
     """
     Switch input of  temperature curve data to a csv file containing (hour, Temp) points, or simply (Temp) values for fixed time interval data, one per line. NOTE: This action may reset the number of points to a lower value.
 
-    DSS property name: `CSVFile`, DSS property index: 7.
+    Name: `CSVFile`
     """
 
     def _get_SngFile(self) -> List[str]:
@@ -406,7 +410,7 @@ class TShapeBatch(DSSBatch):
     """
     Switch input of  temperature curve data to a binary file of singles containing (hour, Temp) points, or simply (Temp) values for fixed time interval data, packed one after another. NOTE: This action may reset the number of points to a lower value.
 
-    DSS property name: `SngFile`, DSS property index: 8.
+    Name: `SngFile`
     """
 
     def _get_DblFile(self) -> List[str]:
@@ -419,7 +423,7 @@ class TShapeBatch(DSSBatch):
     """
     Switch input of  temperature curve data to a binary file of doubles containing (hour, Temp) points, or simply (Temp) values for fixed time interval data, packed one after another. NOTE: This action may reset the number of points to a lower value.
 
-    DSS property name: `DblFile`, DSS property index: 9.
+    Name: `DblFile`
     """
 
     def _get_SInterval(self) -> BatchFloat64ArrayProxy:
@@ -432,7 +436,7 @@ class TShapeBatch(DSSBatch):
     """
     Specify fixed interval in SECONDS. Alternate way to specify Interval property.
 
-    DSS property name: `SInterval`, DSS property index: 10.
+    Name: `SInterval`
     """
 
     def _get_MInterval(self) -> BatchFloat64ArrayProxy:
@@ -445,14 +449,14 @@ class TShapeBatch(DSSBatch):
     """
     Specify fixed interval in MINUTES. Alternate way to specify Interval property.
 
-    DSS property name: `MInterval`, DSS property index: 11.
+    Name: `MInterval`
     """
 
     def Action(self, value: Union[AnyStr, int, enums.TShapeAction], flags: enums.SetterFlags = 0):
         """
         {DblSave | SngSave} After defining temperature curve data... Setting action=DblSave or SngSave will cause the present "Temp" values to be written to either a packed file of double or single. The filename is the Tshape name. 
 
-        DSS property name: `Action`, DSS property index: 12.
+        Name: `Action`
         """
         if isinstance(value, (bytes, str)) or (isinstance(value, LIST_LIKE) and len(value) > 0 and isinstance(value[0], (bytes, str))):
             self._set_batch_string(12, value, flags)
@@ -473,7 +477,9 @@ class TShapeBatch(DSSBatch):
 
         New Capacitor.C2 like=c1  ...
 
-        DSS property name: `Like`, DSS property index: 13.
+        **Deprecated:** `Like` has been deprecated since at least 2021, see https://sourceforge.net/p/electricdss/discussion/861977/thread/8b59d21eb6/#b57c/f668
+
+        Name: `Like`
         """
         self._set_batch_string(13, value, flags)
 

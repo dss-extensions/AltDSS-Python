@@ -25,7 +25,7 @@ class ITopology(Base):
 
         Original COM help: https://opendss.epri.com/ActiveBranch.html
         '''
-        return self._check_for_error(self._lib.Topology_Get_ActiveBranch())
+        return self._lib.Topology_Get_ActiveBranch()
 
     @property
     def ActiveLevel(self) -> int:
@@ -34,7 +34,7 @@ class ITopology(Base):
 
         Original COM help: https://opendss.epri.com/ActiveLevel.html
         '''
-        return self._check_for_error(self._lib.Topology_Get_ActiveLevel())
+        return self._lib.Topology_Get_ActiveLevel()
 
     @property
     def AllIsolatedBranches(self) -> List[str]:
@@ -43,7 +43,7 @@ class ITopology(Base):
 
         Original COM help: https://opendss.epri.com/AllIsolatedBranches.html
         '''
-        return self._check_for_error(self._get_string_array(self._lib.Topology_Get_AllIsolatedBranches))
+        return self._lib.Topology_Get_AllIsolatedBranches()
 
     @property
     def AllIsolatedLoads(self) -> List[str]:
@@ -52,7 +52,7 @@ class ITopology(Base):
 
         Original COM help: https://opendss.epri.com/AllIsolatedLoads.html
         '''
-        return self._check_for_error(self._get_string_array(self._lib.Topology_Get_AllIsolatedLoads))
+        return self._lib.Topology_Get_AllIsolatedLoads()
 
     @property
     def AllLoopedPairs(self) -> List[str]:
@@ -61,7 +61,7 @@ class ITopology(Base):
 
         Original COM help: https://opendss.epri.com/AllLoopedPairs.html
         '''
-        return self._check_for_error(self._get_string_array(self._lib.Topology_Get_AllLoopedPairs))
+        return self._lib.Topology_Get_AllLoopedPairs()
 
     @property
     def BackwardBranch(self) -> int:
@@ -70,7 +70,7 @@ class ITopology(Base):
 
         Original COM help: https://opendss.epri.com/BackwardBranch.html
         '''
-        return self._check_for_error(self._lib.Topology_Get_BackwardBranch())
+        return self._lib.Topology_Get_BackwardBranch()
 
     @property
     def BranchName(self) -> str:
@@ -79,14 +79,11 @@ class ITopology(Base):
 
         Original COM help: https://opendss.epri.com/BranchName.html
         '''
-        return self._get_string(self._check_for_error(self._lib.Topology_Get_BranchName()))
+        return self._lib.Topology_Get_BranchName()
 
     @BranchName.setter
     def BranchName(self, Value: AnyStr):
-        if type(Value) is not bytes:
-            Value = Value.encode(self._api_util.codec)
-
-        self._check_for_error(self._lib.Topology_Set_BranchName(Value))
+        self._lib.Topology_Set_BranchName(Value)
 
     @property
     def BusName(self) -> str:
@@ -95,14 +92,11 @@ class ITopology(Base):
 
         Original COM help: https://opendss.epri.com/BusName.html
         '''
-        return self._get_string(self._check_for_error(self._lib.Topology_Get_BusName()))
+        return self._lib.Topology_Get_BusName()
 
     @BusName.setter
     def BusName(self, Value: AnyStr):
-        if type(Value) is not bytes:
-            Value = Value.encode(self._api_util.codec)
-
-        self._check_for_error(self._lib.Topology_Set_BusName(Value))
+        self._lib.Topology_Set_BusName(Value)
 
     @property
     def First(self) -> int:
@@ -111,7 +105,7 @@ class ITopology(Base):
 
         Original COM help: https://opendss.epri.com/First19.html
         '''
-        return self._check_for_error(self._lib.Topology_Get_First())
+        return self._lib.Topology_Get_First()
 
     @property
     def FirstLoad(self) -> int:
@@ -120,7 +114,7 @@ class ITopology(Base):
 
         Original COM help: https://opendss.epri.com/FirstLoad.html
         '''
-        return self._check_for_error(self._lib.Topology_Get_FirstLoad())
+        return self._lib.Topology_Get_FirstLoad()
 
     @property
     def ForwardBranch(self) -> int:
@@ -129,7 +123,7 @@ class ITopology(Base):
 
         Original COM help: https://opendss.epri.com/ForwardBranch.html
         '''
-        return self._check_for_error(self._lib.Topology_Get_ForwardBranch())
+        return self._lib.Topology_Get_ForwardBranch()
 
     @property
     def LoopedBranch(self) -> int:
@@ -138,7 +132,7 @@ class ITopology(Base):
 
         Original COM help: https://opendss.epri.com/LoopedBranch.html
         '''
-        return self._check_for_error(self._lib.Topology_Get_LoopedBranch())
+        return self._lib.Topology_Get_LoopedBranch()
 
     @property
     def Next(self) -> int:
@@ -147,7 +141,7 @@ class ITopology(Base):
 
         Original COM help: https://opendss.epri.com/Next18.html
         '''
-        return self._check_for_error(self._lib.Topology_Get_Next())
+        return self._lib.Topology_Get_Next()
 
     @property
     def NextLoad(self) -> int:
@@ -156,7 +150,7 @@ class ITopology(Base):
 
         Original COM help: https://opendss.epri.com/NextLoad.html
         '''
-        return self._check_for_error(self._lib.Topology_Get_NextLoad())
+        return self._lib.Topology_Get_NextLoad()
 
     @property
     def NumIsolatedBranches(self) -> int:
@@ -165,7 +159,7 @@ class ITopology(Base):
 
         Original COM help: https://opendss.epri.com/NumIsolatedBranches.html
         '''
-        return self._check_for_error(self._lib.Topology_Get_NumIsolatedBranches())
+        return self._lib.Topology_Get_NumIsolatedBranches()
 
     @property
     def NumIsolatedLoads(self) -> int:
@@ -174,7 +168,7 @@ class ITopology(Base):
 
         Original COM help: https://opendss.epri.com/NumIsolatedLoads.html
         '''
-        return self._check_for_error(self._lib.Topology_Get_NumIsolatedLoads())
+        return self._lib.Topology_Get_NumIsolatedLoads()
 
     @property
     def NumLoops(self) -> int:
@@ -183,7 +177,7 @@ class ITopology(Base):
 
         Original COM help: https://opendss.epri.com/NumLoops.html
         '''
-        return self._check_for_error(self._lib.Topology_Get_NumLoops())
+        return self._lib.Topology_Get_NumLoops()
 
     @property
     def ParallelBranch(self) -> int:
@@ -192,5 +186,5 @@ class ITopology(Base):
 
         Original COM help: https://opendss.epri.com/ParallelBranch.html
         '''
-        return self._check_for_error(self._lib.Topology_Get_ParallelBranch())
+        return self._lib.Topology_Get_ParallelBranch()
 

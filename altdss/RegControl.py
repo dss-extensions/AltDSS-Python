@@ -1,5 +1,5 @@
-# Copyright (c) 2021-2024 Paulo Meira
-# Copyright (c) 2021-2024 DSS-Extensions contributors
+# Copyright (c) 2021-2026 Paulo Meira
+# Copyright (c) 2021-2026 DSS-Extensions contributors
 from __future__ import annotations
 from typing import Union, List, AnyStr, Optional, Iterator, TYPE_CHECKING
 from typing_extensions import TypedDict, Unpack
@@ -29,7 +29,10 @@ class RegControl(DSSObj, CircuitElementMixin):
         26,
         28,
         32,
+        33,
         34,
+        35,
+        38,
     }
     _cls_float_idx = {
         3,
@@ -50,7 +53,8 @@ class RegControl(DSSObj, CircuitElementMixin):
         27,
         30,
         31,
-        33,
+        36,
+        37,
     }
     _cls_prop_idx = {
         'transformer': 1,
@@ -85,9 +89,13 @@ class RegControl(DSSObj, CircuitElementMixin):
         'ldc_z': 30,
         'rev_z': 31,
         'cogen': 32,
-        'basefreq': 33,
-        'enabled': 34,
-        'like': 35,
+        'idle': 33,
+        'idlereverse': 34,
+        'idleforward': 35,
+        'fwdthreshold': 36,
+        'basefreq': 37,
+        'enabled': 38,
+        'like': 39,
     }
 
     def __init__(self, api_util, ptr):
@@ -123,7 +131,7 @@ class RegControl(DSSObj, CircuitElementMixin):
 
     Transformer=Xfmr1
 
-    DSS property name: `Transformer`, DSS property index: 1.
+    Name: `Transformer`
     """
 
     def _get_Transformer(self) -> Union[TransformerObj, AutoTrans]:
@@ -142,7 +150,7 @@ class RegControl(DSSObj, CircuitElementMixin):
 
     Transformer=Xfmr1
 
-    DSS property name: `Transformer`, DSS property index: 1.
+    Name: `Transformer`
     """
 
     def _get_Winding(self) -> int:
@@ -155,7 +163,8 @@ class RegControl(DSSObj, CircuitElementMixin):
     """
     Number of the winding of the transformer element that the RegControl is monitoring. 1 or 2, typically.  Side Effect: Sets TAPWINDING property to the same winding.
 
-    DSS property name: `Winding`, DSS property index: 2.
+    Name: `Winding`
+    Default: 1
     """
 
     def _get_VReg(self) -> float:
@@ -166,9 +175,11 @@ class RegControl(DSSObj, CircuitElementMixin):
 
     VReg = property(_get_VReg, _set_VReg) # type: float
     """
-    Voltage regulator setting, in VOLTS, for the winding being controlled.  Multiplying this value times the ptratio should yield the voltage across the WINDING of the controlled transformer. Default is 120.0
+    Voltage regulator setting for the winding being controlled.  Multiplying this value times the ptratio should yield the voltage across the WINDING of the controlled transformer.
 
-    DSS property name: `VReg`, DSS property index: 3.
+    Name: `VReg`
+    Units: V
+    Default: 120.0
     """
 
     def _get_Band(self) -> float:
@@ -179,9 +190,10 @@ class RegControl(DSSObj, CircuitElementMixin):
 
     Band = property(_get_Band, _set_Band) # type: float
     """
-    Bandwidth in VOLTS for the controlled bus (see help for ptratio property).  Default is 3.0
+    Bandwidth in VOLTS for the controlled bus (see help for ptratio property).
 
-    DSS property name: `Band`, DSS property index: 4.
+    Name: `Band`
+    Default: 3.0
     """
 
     def _get_PTRatio(self) -> float:
@@ -192,9 +204,10 @@ class RegControl(DSSObj, CircuitElementMixin):
 
     PTRatio = property(_get_PTRatio, _set_PTRatio) # type: float
     """
-    Ratio of the PT that converts the controlled winding voltage to the regulator control voltage. Default is 60.  If the winding is Wye, the line-to-neutral voltage is used.  Else, the line-to-line voltage is used. SIDE EFFECT: Also sets RemotePTRatio property.
+    Ratio of the PT that converts the controlled winding voltage to the regulator control voltage. If the winding is Wye, the line-to-neutral voltage is used.  Else, the line-to-line voltage is used. SIDE EFFECT: Also sets RemotePTRatio property.
 
-    DSS property name: `PTRatio`, DSS property index: 5.
+    Name: `PTRatio`
+    Default: 60.0
     """
 
     def _get_CTPrim(self) -> float:
@@ -205,9 +218,11 @@ class RegControl(DSSObj, CircuitElementMixin):
 
     CTPrim = property(_get_CTPrim, _set_CTPrim) # type: float
     """
-    Rating, in Amperes, of the primary CT rating for which the line amps convert to control rated amps.The typical default secondary ampere rating is 0.2 Amps (check with manufacturer specs). Current at which the LDC voltages match the R and X settings.
+    Rating of the primary CT rating for which the line amps convert to control rated amps. The typical default secondary ampere rating is 0.2 Amps (check with manufacturer specs). Current at which the LDC voltages match the R and X settings.
 
-    DSS property name: `CTPrim`, DSS property index: 6.
+    Name: `CTPrim`
+    Units: A
+    Default: 300.0
     """
 
     def _get_R(self) -> float:
@@ -220,7 +235,8 @@ class RegControl(DSSObj, CircuitElementMixin):
     """
     R setting on the line drop compensator in the regulator, expressed in VOLTS.
 
-    DSS property name: `R`, DSS property index: 7.
+    Name: `R`
+    Default: 0.0
     """
 
     def _get_X(self) -> float:
@@ -233,7 +249,8 @@ class RegControl(DSSObj, CircuitElementMixin):
     """
     X setting on the line drop compensator in the regulator, expressed in VOLTS.
 
-    DSS property name: `X`, DSS property index: 8.
+    Name: `X`
+    Default: 0.0
     """
 
     def _get_Bus(self) -> str:
@@ -246,7 +263,7 @@ class RegControl(DSSObj, CircuitElementMixin):
     """
     Name of a bus (busname.nodename) in the system to use as the controlled bus instead of the bus to which the transformer winding is connected or the R and X line drop compensator settings.  Do not specify this value if you wish to use the line drop compensator settings.  Default is null string. Assumes the base voltage for this bus is the same as the transformer winding base specified above. Note: This bus (1-phase) WILL BE CREATED by the regulator control upon SOLVE if not defined by some other device. You can specify the node of the bus you wish to sample (defaults to 1). If specified, the RegControl is redefined as a 1-phase device since only one voltage is used.
 
-    DSS property name: `Bus`, DSS property index: 9.
+    Name: `Bus`
     """
 
     def _get_Delay(self) -> float:
@@ -257,9 +274,11 @@ class RegControl(DSSObj, CircuitElementMixin):
 
     Delay = property(_get_Delay, _set_Delay) # type: float
     """
-    Time delay, in seconds, from when the voltage goes out of band to when the tap changing begins. This is used to determine which regulator control will act first. Default is 15.  You may specify any floating point number to achieve a model of whatever condition is necessary.
+    Time delay from when the voltage goes out of band to when the tap changing begins. This is used to determine which regulator control will act first. You may specify any floating point number to achieve a model of whatever condition is necessary.
 
-    DSS property name: `Delay`, DSS property index: 10.
+    Name: `Delay`
+    Units: s
+    Default: 15.0
     """
 
     def _get_Reversible(self) -> bool:
@@ -270,9 +289,19 @@ class RegControl(DSSObj, CircuitElementMixin):
 
     Reversible = property(_get_Reversible, _set_Reversible) # type: bool
     """
-    {Yes |No*} Indicates whether or not the regulator can be switched to regulate in the reverse direction. Default is No.Typically applies only to line regulators and not to LTC on a substation transformer.
+    Indicates whether the regulator has a reverse operation mode (associated settings must be defined).
+    Default is `No`, which means the regulator forward settings apply for both forward and reverse power flow.
+    Typically applies only to line regulators and not to LTC on a substation transformer.
 
-    DSS property name: `Reversible`, DSS property index: 11.
+    Use the `RevNeutral`, `Idle`, `IdleReverse` and `IdleForward` properties to define the desired operating mode:
+    - Bidirectional: `Reversible=yes`,`Idle=yes/no` (idling in the "no-load region" depends on the controller and is a functionality typically described in its datasheet)
+    - Locked Forward: `Reversible=yes`, `IdleReverse=yes`
+    - Reverse Idle: `Reversible=yes`, `Idle=yes`, `IdleReverse=yes`
+    - Locked Reverse: `Reversible=yes`, `IdleForward=yes`
+    - Neutral Idle: `Reversible=yes`, `RevNeutral=yes`, `Idle=yes/no` (idling in the "no-load region" depends on the controller and is a functionality typically described in its datasheet)
+
+    Name: `Reversible`
+    Default: False
     """
 
     def _get_RevVReg(self) -> float:
@@ -285,7 +314,8 @@ class RegControl(DSSObj, CircuitElementMixin):
     """
     Voltage setting in volts for operation in the reverse direction.
 
-    DSS property name: `RevVReg`, DSS property index: 12.
+    Name: `RevVReg`
+    Default: 120.0
     """
 
     def _get_RevBand(self) -> float:
@@ -298,7 +328,8 @@ class RegControl(DSSObj, CircuitElementMixin):
     """
     Bandwidth for operating in the reverse direction.
 
-    DSS property name: `RevBand`, DSS property index: 13.
+    Name: `RevBand`
+    Default: 3.0
     """
 
     def _get_RevR(self) -> float:
@@ -311,7 +342,8 @@ class RegControl(DSSObj, CircuitElementMixin):
     """
     R line drop compensator setting for reverse direction.
 
-    DSS property name: `RevR`, DSS property index: 14.
+    Name: `RevR`
+    Default: 0.0
     """
 
     def _get_RevX(self) -> float:
@@ -324,7 +356,8 @@ class RegControl(DSSObj, CircuitElementMixin):
     """
     X line drop compensator setting for reverse direction.
 
-    DSS property name: `RevX`, DSS property index: 15.
+    Name: `RevX`
+    Default: 0.0
     """
 
     def _get_TapDelay(self) -> float:
@@ -335,9 +368,11 @@ class RegControl(DSSObj, CircuitElementMixin):
 
     TapDelay = property(_get_TapDelay, _set_TapDelay) # type: float
     """
-    Delay in sec between tap changes. Default is 2. This is how long it takes between changes after the first change.
+    Delay between tap changes. This is how long it takes between changes after the first change.
 
-    DSS property name: `TapDelay`, DSS property index: 16.
+    Name: `TapDelay`
+    Units: s
+    Default: 2.0
     """
 
     def _get_DebugTrace(self) -> bool:
@@ -348,9 +383,10 @@ class RegControl(DSSObj, CircuitElementMixin):
 
     DebugTrace = property(_get_DebugTrace, _set_DebugTrace) # type: bool
     """
-    {Yes | No* }  Default is no.  Turn this on to capture the progress of the regulator model for each control iteration.  Creates a separate file for each RegControl named "REG_name.csv".
+    Turn this on to capture the progress of the regulator model for each control iteration.  Creates a separate file for each RegControl named "REG_name.csv".
 
-    DSS property name: `DebugTrace`, DSS property index: 17.
+    Name: `DebugTrace`
+    Default: False
     """
 
     def _get_MaxTapChange(self) -> int:
@@ -361,13 +397,14 @@ class RegControl(DSSObj, CircuitElementMixin):
 
     MaxTapChange = property(_get_MaxTapChange, _set_MaxTapChange) # type: int
     """
-    Maximum allowable tap change per control iteration in STATIC control mode.  Default is 16. 
+    Maximum allowable tap change per control iteration in STATIC control mode.
 
     Set this to 1 to better approximate actual control action. 
 
     Set this to 0 to fix the tap in the current position.
 
-    DSS property name: `MaxTapChange`, DSS property index: 18.
+    Name: `MaxTapChange`
+    Default: 16
     """
 
     def _get_InverseTime(self) -> bool:
@@ -378,9 +415,10 @@ class RegControl(DSSObj, CircuitElementMixin):
 
     InverseTime = property(_get_InverseTime, _set_InverseTime) # type: bool
     """
-    {Yes | No* } Default is no.  The time delay is adjusted inversely proportional to the amount the voltage is outside the band down to 10%.
+    The time delay is adjusted inversely proportional to the amount the voltage is outside the band down to 10%.
 
-    DSS property name: `InverseTime`, DSS property index: 19.
+    Name: `InverseTime`
+    Default: False
     """
 
     def _get_TapWinding(self) -> int:
@@ -393,7 +431,7 @@ class RegControl(DSSObj, CircuitElementMixin):
     """
     Winding containing the actual taps, if different than the WINDING property. Defaults to the same winding as specified by the WINDING property.
 
-    DSS property name: `TapWinding`, DSS property index: 20.
+    Name: `TapWinding`
     """
 
     def _get_VLimit(self) -> float:
@@ -404,9 +442,11 @@ class RegControl(DSSObj, CircuitElementMixin):
 
     VLimit = property(_get_VLimit, _set_VLimit) # type: float
     """
-    Voltage Limit for bus to which regulated winding is connected (e.g. first customer). Default is 0.0. Set to a value greater then zero to activate this function.
+    Voltage Limit for bus to which regulated winding is connected (e.g. first customer). Set to a value greater then zero to activate this function.
 
-    DSS property name: `VLimit`, DSS property index: 21.
+    Name: `VLimit`
+    Units: V
+    Default: 0.0
     """
 
     def _get_PTPhase(self) -> Union[enums.RegControlPhaseSelection, int]:
@@ -424,9 +464,10 @@ class RegControl(DSSObj, CircuitElementMixin):
 
     PTPhase = property(_get_PTPhase, _set_PTPhase) # type: enums.RegControlPhaseSelection
     """
-    For multi-phase transformers, the number of the phase being monitored or one of { MAX | MIN} for all phases. Default=1. Must be less than or equal to the number of phases. Ignored for regulated bus.
+    For multi-phase transformers, the number of the phase being monitored or one of { MAX | MIN} for all phases. Must be less than or equal to the number of phases. Ignored for regulated bus.
 
-    DSS property name: `PTPhase`, DSS property index: 22.
+    Name: `PTPhase`
+    Default: 1
     """
 
     def _get_PTPhase_str(self) -> str:
@@ -437,9 +478,10 @@ class RegControl(DSSObj, CircuitElementMixin):
 
     PTPhase_str = property(_get_PTPhase_str, _set_PTPhase_str) # type: str
     """
-    For multi-phase transformers, the number of the phase being monitored or one of { MAX | MIN} for all phases. Default=1. Must be less than or equal to the number of phases. Ignored for regulated bus.
+    For multi-phase transformers, the number of the phase being monitored or one of { MAX | MIN} for all phases. Must be less than or equal to the number of phases. Ignored for regulated bus.
 
-    DSS property name: `PTPhase`, DSS property index: 22.
+    Name: `PTPhase`
+    Default: 1
     """
 
     def _get_RevThreshold(self) -> float:
@@ -450,9 +492,15 @@ class RegControl(DSSObj, CircuitElementMixin):
 
     RevThreshold = property(_get_RevThreshold, _set_RevThreshold) # type: float
     """
-    kW reverse power threshold for reversing the direction of the regulator. Default is 100.0 kw.
+    kW reverse power threshold for reversing the direction of the regulator.
 
-    DSS property name: `RevThreshold`, DSS property index: 23.
+    Defines a no-load band between `-RevThreshold` and `+RevThreshold`.
+
+    **Important**: If an uneven band is desired, set `RevThreshold` to the desired lower bound (negative values allowed) and reset the upper bound using `FwdThreshold` right after.
+
+    Name: `RevThreshold`
+    Units: kW
+    Default: -100.0
     """
 
     def _get_RevDelay(self) -> float:
@@ -463,9 +511,11 @@ class RegControl(DSSObj, CircuitElementMixin):
 
     RevDelay = property(_get_RevDelay, _set_RevDelay) # type: float
     """
-    Time Delay in seconds (s) for executing the reversing action once the threshold for reversing has been exceeded. Default is 60 s.
+    Time Delay for executing the reversing action once the threshold for reversing has been exceeded.
 
-    DSS property name: `RevDelay`, DSS property index: 24.
+    Name: `RevDelay`
+    Units: s
+    Default: 60.0
     """
 
     def _get_RevNeutral(self) -> bool:
@@ -476,9 +526,10 @@ class RegControl(DSSObj, CircuitElementMixin):
 
     RevNeutral = property(_get_RevNeutral, _set_RevNeutral) # type: bool
     """
-    {Yes | No*} Default is no. Set this to Yes if you want the regulator to go to neutral in the reverse direction or in cogen operation.
+    Set this to Yes if you want the regulator to go to neutral in the reverse direction or in cogen operation.
 
-    DSS property name: `RevNeutral`, DSS property index: 25.
+    Name: `RevNeutral`
+    Default: False
     """
 
     def _get_EventLog(self) -> bool:
@@ -489,9 +540,10 @@ class RegControl(DSSObj, CircuitElementMixin):
 
     EventLog = property(_get_EventLog, _set_EventLog) # type: bool
     """
-    {Yes/True | No/False*} Default is NO for regulator control. Log control actions to Eventlog.
+    Log control actions to Eventlog.
 
-    DSS property name: `EventLog`, DSS property index: 26.
+    Name: `EventLog`
+    Default: False
     """
 
     def _get_RemotePTRatio(self) -> float:
@@ -504,7 +556,7 @@ class RegControl(DSSObj, CircuitElementMixin):
     """
     When regulating a bus (the Bus= property is set), the PT ratio required to convert actual voltage at the remote bus to control voltage. Is initialized to PTratio property. Set this property after setting PTratio.
 
-    DSS property name: `RemotePTRatio`, DSS property index: 27.
+    Name: `RemotePTRatio`
     """
 
     def _get_TapNum(self) -> int:
@@ -517,14 +569,16 @@ class RegControl(DSSObj, CircuitElementMixin):
     """
     An integer number indicating the tap position that the controlled transformer winding tap position is currently at, or is being set to.  If being set, and the value is outside the range of the transformer min or max tap, then set to the min or max tap position as appropriate. Default is 0
 
-    DSS property name: `TapNum`, DSS property index: 28.
+    Name: `TapNum`
+    Default: 0
     """
 
     def Reset(self, value: bool = True, flags: enums.SetterFlags = 0):
         """
-        {Yes | No} If Yes, forces Reset of this RegControl.
+        If Yes, forces Reset of this RegControl.
 
-        DSS property name: `Reset`, DSS property index: 29.
+        Name: `Reset`
+        Default: False
         """
         self._lib.Obj_SetInt32(self._ptr, 29, value, flags)
 
@@ -538,7 +592,8 @@ class RegControl(DSSObj, CircuitElementMixin):
     """
     Z value for Beckwith LDC_Z control option. Volts adjustment at rated control current.
 
-    DSS property name: `LDC_Z`, DSS property index: 30.
+    Name: `LDC_Z`
+    Default: 0.0
     """
 
     def _get_Rev_Z(self) -> float:
@@ -551,7 +606,8 @@ class RegControl(DSSObj, CircuitElementMixin):
     """
     Reverse Z value for Beckwith LDC_Z control option.
 
-    DSS property name: `Rev_Z`, DSS property index: 31.
+    Name: `Rev_Z`
+    Default: 0.0
     """
 
     def _get_Cogen(self) -> bool:
@@ -562,35 +618,101 @@ class RegControl(DSSObj, CircuitElementMixin):
 
     Cogen = property(_get_Cogen, _set_Cogen) # type: bool
     """
-    {Yes|No*} Default is No. The Cogen feature is activated. Continues looking forward if power reverses, but switches to reverse-mode LDC, vreg and band values.
+    Cogen feature. When enabled, continues looking forward if power reverses, but switches to reverse-mode LDC, vreg and band values.
+    Optionally, use the `Idle` property to specify if the regulator should idle in the "no-load region" (functionality typically described in the controller datasheet).
 
-    DSS property name: `Cogen`, DSS property index: 32.
+    Name: `Cogen`
+    Default: False
+    """
+
+    def _get_Idle(self) -> bool:
+        return self._lib.Obj_GetInt32(self._ptr, 33) != 0
+
+    def _set_Idle(self, value: bool, flags: enums.SetterFlags = 0):
+        self._lib.Obj_SetInt32(self._ptr, 33, value, flags)
+
+    Idle = property(_get_Idle, _set_Idle) # type: bool
+    """
+    Enabling this property only has an effect when reversible or cogen properties are set to `yes`/`true`. For the "no-load region" where active power flow lies between `-revThreshold` and `+revThreshold`, the regulator will lock taps in the position it had before entering that region. Voltage override (`VLimit`) takes priority.
+
+    Name: `Idle`
+    Default: False
+    """
+
+    def _get_IdleReverse(self) -> bool:
+        return self._lib.Obj_GetInt32(self._ptr, 34) != 0
+
+    def _set_IdleReverse(self, value: bool, flags: enums.SetterFlags = 0):
+        self._lib.Obj_SetInt32(self._ptr, 34, value, flags)
+
+    IdleReverse = property(_get_IdleReverse, _set_IdleReverse) # type: bool
+    """
+    Similar to the `Idle` property but applicable only when `Reversible=Yes` (not for cogen mode) AND `RevNeutral=No`. When enabled, the regulator will lock taps in the position it had before entering the reverse flow zone.
+    Voltage override (Vlimit) takes priority.
+
+    Name: `IdleReverse`
+    Default: False
+    """
+
+    def _get_IdleForward(self) -> bool:
+        return self._lib.Obj_GetInt32(self._ptr, 35) != 0
+
+    def _set_IdleForward(self, value: bool, flags: enums.SetterFlags = 0):
+        self._lib.Obj_SetInt32(self._ptr, 35, value, flags)
+
+    IdleForward = property(_get_IdleForward, _set_IdleForward) # type: bool
+    """
+    Similar to the `Idle` property but applicable only when `Reversible=Yes` (not for cogen mode). When enabled, the regulator will lock taps in the position it had before entering the forward flow zone.
+    Voltage override (`VLimit`) takes priority.
+
+    Name: `IdleForward`
+    Default: False
+    """
+
+    def _get_FwdThreshold(self) -> float:
+        return self._lib.Obj_GetFloat64(self._ptr, 36)
+
+    def _set_FwdThreshold(self, value: float, flags: enums.SetterFlags = 0):
+        self._lib.Obj_SetFloat64(self._ptr, 36, value, flags)
+
+    FwdThreshold = property(_get_FwdThreshold, _set_FwdThreshold) # type: float
+    """
+    kW forward power threshold to use in tandem with `RevTheshold`.
+    If `RevThreshold` is defined, the value of `FwdThreshold` is also updated for an even no-load band.
+
+    If you require an uneven no-load zone band, set `FwdThreshold` after setting `RevThreshold`, or in the same DSS command (edit context).
+
+    Name: `FwdThreshold`
+    Units: kW
+    Default: 100.0
     """
 
     def _get_BaseFreq(self) -> float:
-        return self._lib.Obj_GetFloat64(self._ptr, 33)
+        return self._lib.Obj_GetFloat64(self._ptr, 37)
 
     def _set_BaseFreq(self, value: float, flags: enums.SetterFlags = 0):
-        self._lib.Obj_SetFloat64(self._ptr, 33, value, flags)
+        self._lib.Obj_SetFloat64(self._ptr, 37, value, flags)
 
     BaseFreq = property(_get_BaseFreq, _set_BaseFreq) # type: float
     """
     Base Frequency for ratings.
 
-    DSS property name: `BaseFreq`, DSS property index: 33.
+    Name: `BaseFreq`
+    Units: Hz
     """
 
     def _get_Enabled(self) -> bool:
-        return self._lib.Obj_GetInt32(self._ptr, 34) != 0
+        return self._lib.Obj_GetInt32(self._ptr, 38) != 0
 
     def _set_Enabled(self, value: bool, flags: enums.SetterFlags = 0):
-        self._lib.Obj_SetInt32(self._ptr, 34, value, flags)
+        self._lib.Obj_SetInt32(self._ptr, 38, value, flags)
 
     Enabled = property(_get_Enabled, _set_Enabled) # type: bool
     """
-    {Yes|No or True|False} Indicates whether this element is enabled.
+    Indicates whether this element is enabled.
 
-    DSS property name: `Enabled`, DSS property index: 34.
+    Name: `Enabled`
+    Default: True
     """
 
     def Like(self, value: AnyStr):
@@ -599,9 +721,11 @@ class RegControl(DSSObj, CircuitElementMixin):
 
         New Capacitor.C2 like=c1  ...
 
-        DSS property name: `Like`, DSS property index: 35.
+        **Deprecated:** `Like` has been deprecated since at least 2021, see https://sourceforge.net/p/electricdss/discussion/861977/thread/8b59d21eb6/#b57c/f668
+
+        Name: `Like`
         """
-        self._set_string_o(35, value)
+        self._set_string_o(39, value)
 
 
 class RegControlProperties(TypedDict):
@@ -637,6 +761,10 @@ class RegControlProperties(TypedDict):
     LDC_Z: float
     Rev_Z: float
     Cogen: bool
+    Idle: bool
+    IdleReverse: bool
+    IdleForward: bool
+    FwdThreshold: float
     BaseFreq: float
     Enabled: bool
     Like: AnyStr
@@ -684,7 +812,7 @@ class RegControlBatch(DSSBatch, CircuitElementBatchMixin):
 
     Transformer=Xfmr1
 
-    DSS property name: `Transformer`, DSS property index: 1.
+    Name: `Transformer`
     """
 
     def _get_Transformer(self) -> List[Union[TransformerObj, AutoTrans]]:
@@ -699,7 +827,7 @@ class RegControlBatch(DSSBatch, CircuitElementBatchMixin):
 
     Transformer=Xfmr1
 
-    DSS property name: `Transformer`, DSS property index: 1.
+    Name: `Transformer`
     """
 
     def _get_Winding(self) -> BatchInt32ArrayProxy:
@@ -712,7 +840,8 @@ class RegControlBatch(DSSBatch, CircuitElementBatchMixin):
     """
     Number of the winding of the transformer element that the RegControl is monitoring. 1 or 2, typically.  Side Effect: Sets TAPWINDING property to the same winding.
 
-    DSS property name: `Winding`, DSS property index: 2.
+    Name: `Winding`
+    Default: 1
     """
 
     def _get_VReg(self) -> BatchFloat64ArrayProxy:
@@ -723,9 +852,11 @@ class RegControlBatch(DSSBatch, CircuitElementBatchMixin):
 
     VReg = property(_get_VReg, _set_VReg) # type: BatchFloat64ArrayProxy
     """
-    Voltage regulator setting, in VOLTS, for the winding being controlled.  Multiplying this value times the ptratio should yield the voltage across the WINDING of the controlled transformer. Default is 120.0
+    Voltage regulator setting for the winding being controlled.  Multiplying this value times the ptratio should yield the voltage across the WINDING of the controlled transformer.
 
-    DSS property name: `VReg`, DSS property index: 3.
+    Name: `VReg`
+    Units: V
+    Default: 120.0
     """
 
     def _get_Band(self) -> BatchFloat64ArrayProxy:
@@ -736,9 +867,10 @@ class RegControlBatch(DSSBatch, CircuitElementBatchMixin):
 
     Band = property(_get_Band, _set_Band) # type: BatchFloat64ArrayProxy
     """
-    Bandwidth in VOLTS for the controlled bus (see help for ptratio property).  Default is 3.0
+    Bandwidth in VOLTS for the controlled bus (see help for ptratio property).
 
-    DSS property name: `Band`, DSS property index: 4.
+    Name: `Band`
+    Default: 3.0
     """
 
     def _get_PTRatio(self) -> BatchFloat64ArrayProxy:
@@ -749,9 +881,10 @@ class RegControlBatch(DSSBatch, CircuitElementBatchMixin):
 
     PTRatio = property(_get_PTRatio, _set_PTRatio) # type: BatchFloat64ArrayProxy
     """
-    Ratio of the PT that converts the controlled winding voltage to the regulator control voltage. Default is 60.  If the winding is Wye, the line-to-neutral voltage is used.  Else, the line-to-line voltage is used. SIDE EFFECT: Also sets RemotePTRatio property.
+    Ratio of the PT that converts the controlled winding voltage to the regulator control voltage. If the winding is Wye, the line-to-neutral voltage is used.  Else, the line-to-line voltage is used. SIDE EFFECT: Also sets RemotePTRatio property.
 
-    DSS property name: `PTRatio`, DSS property index: 5.
+    Name: `PTRatio`
+    Default: 60.0
     """
 
     def _get_CTPrim(self) -> BatchFloat64ArrayProxy:
@@ -762,9 +895,11 @@ class RegControlBatch(DSSBatch, CircuitElementBatchMixin):
 
     CTPrim = property(_get_CTPrim, _set_CTPrim) # type: BatchFloat64ArrayProxy
     """
-    Rating, in Amperes, of the primary CT rating for which the line amps convert to control rated amps.The typical default secondary ampere rating is 0.2 Amps (check with manufacturer specs). Current at which the LDC voltages match the R and X settings.
+    Rating of the primary CT rating for which the line amps convert to control rated amps. The typical default secondary ampere rating is 0.2 Amps (check with manufacturer specs). Current at which the LDC voltages match the R and X settings.
 
-    DSS property name: `CTPrim`, DSS property index: 6.
+    Name: `CTPrim`
+    Units: A
+    Default: 300.0
     """
 
     def _get_R(self) -> BatchFloat64ArrayProxy:
@@ -777,7 +912,8 @@ class RegControlBatch(DSSBatch, CircuitElementBatchMixin):
     """
     R setting on the line drop compensator in the regulator, expressed in VOLTS.
 
-    DSS property name: `R`, DSS property index: 7.
+    Name: `R`
+    Default: 0.0
     """
 
     def _get_X(self) -> BatchFloat64ArrayProxy:
@@ -790,7 +926,8 @@ class RegControlBatch(DSSBatch, CircuitElementBatchMixin):
     """
     X setting on the line drop compensator in the regulator, expressed in VOLTS.
 
-    DSS property name: `X`, DSS property index: 8.
+    Name: `X`
+    Default: 0.0
     """
 
     def _get_Bus(self) -> List[str]:
@@ -803,7 +940,7 @@ class RegControlBatch(DSSBatch, CircuitElementBatchMixin):
     """
     Name of a bus (busname.nodename) in the system to use as the controlled bus instead of the bus to which the transformer winding is connected or the R and X line drop compensator settings.  Do not specify this value if you wish to use the line drop compensator settings.  Default is null string. Assumes the base voltage for this bus is the same as the transformer winding base specified above. Note: This bus (1-phase) WILL BE CREATED by the regulator control upon SOLVE if not defined by some other device. You can specify the node of the bus you wish to sample (defaults to 1). If specified, the RegControl is redefined as a 1-phase device since only one voltage is used.
 
-    DSS property name: `Bus`, DSS property index: 9.
+    Name: `Bus`
     """
 
     def _get_Delay(self) -> BatchFloat64ArrayProxy:
@@ -814,9 +951,11 @@ class RegControlBatch(DSSBatch, CircuitElementBatchMixin):
 
     Delay = property(_get_Delay, _set_Delay) # type: BatchFloat64ArrayProxy
     """
-    Time delay, in seconds, from when the voltage goes out of band to when the tap changing begins. This is used to determine which regulator control will act first. Default is 15.  You may specify any floating point number to achieve a model of whatever condition is necessary.
+    Time delay from when the voltage goes out of band to when the tap changing begins. This is used to determine which regulator control will act first. You may specify any floating point number to achieve a model of whatever condition is necessary.
 
-    DSS property name: `Delay`, DSS property index: 10.
+    Name: `Delay`
+    Units: s
+    Default: 15.0
     """
 
     def _get_Reversible(self) -> List[bool]:
@@ -824,14 +963,24 @@ class RegControlBatch(DSSBatch, CircuitElementBatchMixin):
             self._get_batch_int32_prop(11)
         ]
 
-    def _set_Reversible(self, value: bool, flags: enums.SetterFlags = 0):
+    def _set_Reversible(self, value: Union[bool, List[bool]], flags: enums.SetterFlags = 0):
         self._set_batch_int32_array(11, value, flags)
 
     Reversible = property(_get_Reversible, _set_Reversible) # type: List[bool]
     """
-    {Yes |No*} Indicates whether or not the regulator can be switched to regulate in the reverse direction. Default is No.Typically applies only to line regulators and not to LTC on a substation transformer.
+    Indicates whether the regulator has a reverse operation mode (associated settings must be defined).
+    Default is `No`, which means the regulator forward settings apply for both forward and reverse power flow.
+    Typically applies only to line regulators and not to LTC on a substation transformer.
 
-    DSS property name: `Reversible`, DSS property index: 11.
+    Use the `RevNeutral`, `Idle`, `IdleReverse` and `IdleForward` properties to define the desired operating mode:
+    - Bidirectional: `Reversible=yes`,`Idle=yes/no` (idling in the "no-load region" depends on the controller and is a functionality typically described in its datasheet)
+    - Locked Forward: `Reversible=yes`, `IdleReverse=yes`
+    - Reverse Idle: `Reversible=yes`, `Idle=yes`, `IdleReverse=yes`
+    - Locked Reverse: `Reversible=yes`, `IdleForward=yes`
+    - Neutral Idle: `Reversible=yes`, `RevNeutral=yes`, `Idle=yes/no` (idling in the "no-load region" depends on the controller and is a functionality typically described in its datasheet)
+
+    Name: `Reversible`
+    Default: False
     """
 
     def _get_RevVReg(self) -> BatchFloat64ArrayProxy:
@@ -844,7 +993,8 @@ class RegControlBatch(DSSBatch, CircuitElementBatchMixin):
     """
     Voltage setting in volts for operation in the reverse direction.
 
-    DSS property name: `RevVReg`, DSS property index: 12.
+    Name: `RevVReg`
+    Default: 120.0
     """
 
     def _get_RevBand(self) -> BatchFloat64ArrayProxy:
@@ -857,7 +1007,8 @@ class RegControlBatch(DSSBatch, CircuitElementBatchMixin):
     """
     Bandwidth for operating in the reverse direction.
 
-    DSS property name: `RevBand`, DSS property index: 13.
+    Name: `RevBand`
+    Default: 3.0
     """
 
     def _get_RevR(self) -> BatchFloat64ArrayProxy:
@@ -870,7 +1021,8 @@ class RegControlBatch(DSSBatch, CircuitElementBatchMixin):
     """
     R line drop compensator setting for reverse direction.
 
-    DSS property name: `RevR`, DSS property index: 14.
+    Name: `RevR`
+    Default: 0.0
     """
 
     def _get_RevX(self) -> BatchFloat64ArrayProxy:
@@ -883,7 +1035,8 @@ class RegControlBatch(DSSBatch, CircuitElementBatchMixin):
     """
     X line drop compensator setting for reverse direction.
 
-    DSS property name: `RevX`, DSS property index: 15.
+    Name: `RevX`
+    Default: 0.0
     """
 
     def _get_TapDelay(self) -> BatchFloat64ArrayProxy:
@@ -894,9 +1047,11 @@ class RegControlBatch(DSSBatch, CircuitElementBatchMixin):
 
     TapDelay = property(_get_TapDelay, _set_TapDelay) # type: BatchFloat64ArrayProxy
     """
-    Delay in sec between tap changes. Default is 2. This is how long it takes between changes after the first change.
+    Delay between tap changes. This is how long it takes between changes after the first change.
 
-    DSS property name: `TapDelay`, DSS property index: 16.
+    Name: `TapDelay`
+    Units: s
+    Default: 2.0
     """
 
     def _get_DebugTrace(self) -> List[bool]:
@@ -904,14 +1059,15 @@ class RegControlBatch(DSSBatch, CircuitElementBatchMixin):
             self._get_batch_int32_prop(17)
         ]
 
-    def _set_DebugTrace(self, value: bool, flags: enums.SetterFlags = 0):
+    def _set_DebugTrace(self, value: Union[bool, List[bool]], flags: enums.SetterFlags = 0):
         self._set_batch_int32_array(17, value, flags)
 
     DebugTrace = property(_get_DebugTrace, _set_DebugTrace) # type: List[bool]
     """
-    {Yes | No* }  Default is no.  Turn this on to capture the progress of the regulator model for each control iteration.  Creates a separate file for each RegControl named "REG_name.csv".
+    Turn this on to capture the progress of the regulator model for each control iteration.  Creates a separate file for each RegControl named "REG_name.csv".
 
-    DSS property name: `DebugTrace`, DSS property index: 17.
+    Name: `DebugTrace`
+    Default: False
     """
 
     def _get_MaxTapChange(self) -> BatchInt32ArrayProxy:
@@ -922,13 +1078,14 @@ class RegControlBatch(DSSBatch, CircuitElementBatchMixin):
 
     MaxTapChange = property(_get_MaxTapChange, _set_MaxTapChange) # type: BatchInt32ArrayProxy
     """
-    Maximum allowable tap change per control iteration in STATIC control mode.  Default is 16. 
+    Maximum allowable tap change per control iteration in STATIC control mode.
 
     Set this to 1 to better approximate actual control action. 
 
     Set this to 0 to fix the tap in the current position.
 
-    DSS property name: `MaxTapChange`, DSS property index: 18.
+    Name: `MaxTapChange`
+    Default: 16
     """
 
     def _get_InverseTime(self) -> List[bool]:
@@ -936,14 +1093,15 @@ class RegControlBatch(DSSBatch, CircuitElementBatchMixin):
             self._get_batch_int32_prop(19)
         ]
 
-    def _set_InverseTime(self, value: bool, flags: enums.SetterFlags = 0):
+    def _set_InverseTime(self, value: Union[bool, List[bool]], flags: enums.SetterFlags = 0):
         self._set_batch_int32_array(19, value, flags)
 
     InverseTime = property(_get_InverseTime, _set_InverseTime) # type: List[bool]
     """
-    {Yes | No* } Default is no.  The time delay is adjusted inversely proportional to the amount the voltage is outside the band down to 10%.
+    The time delay is adjusted inversely proportional to the amount the voltage is outside the band down to 10%.
 
-    DSS property name: `InverseTime`, DSS property index: 19.
+    Name: `InverseTime`
+    Default: False
     """
 
     def _get_TapWinding(self) -> BatchInt32ArrayProxy:
@@ -956,7 +1114,7 @@ class RegControlBatch(DSSBatch, CircuitElementBatchMixin):
     """
     Winding containing the actual taps, if different than the WINDING property. Defaults to the same winding as specified by the WINDING property.
 
-    DSS property name: `TapWinding`, DSS property index: 20.
+    Name: `TapWinding`
     """
 
     def _get_VLimit(self) -> BatchFloat64ArrayProxy:
@@ -967,9 +1125,11 @@ class RegControlBatch(DSSBatch, CircuitElementBatchMixin):
 
     VLimit = property(_get_VLimit, _set_VLimit) # type: BatchFloat64ArrayProxy
     """
-    Voltage Limit for bus to which regulated winding is connected (e.g. first customer). Default is 0.0. Set to a value greater then zero to activate this function.
+    Voltage Limit for bus to which regulated winding is connected (e.g. first customer). Set to a value greater then zero to activate this function.
 
-    DSS property name: `VLimit`, DSS property index: 21.
+    Name: `VLimit`
+    Units: V
+    Default: 0.0
     """
 
     def _get_PTPhase(self) -> BatchInt32ArrayProxy:
@@ -984,9 +1144,10 @@ class RegControlBatch(DSSBatch, CircuitElementBatchMixin):
 
     PTPhase = property(_get_PTPhase, _set_PTPhase) # type: BatchInt32ArrayProxy
     """
-    For multi-phase transformers, the number of the phase being monitored or one of { MAX | MIN} for all phases. Default=1. Must be less than or equal to the number of phases. Ignored for regulated bus.
+    For multi-phase transformers, the number of the phase being monitored or one of { MAX | MIN} for all phases. Must be less than or equal to the number of phases. Ignored for regulated bus.
 
-    DSS property name: `PTPhase`, DSS property index: 22.
+    Name: `PTPhase`
+    Default: 1
     """
 
     def _get_PTPhase_str(self) -> List[str]:
@@ -997,9 +1158,10 @@ class RegControlBatch(DSSBatch, CircuitElementBatchMixin):
 
     PTPhase_str = property(_get_PTPhase_str, _set_PTPhase_str) # type: List[str]
     """
-    For multi-phase transformers, the number of the phase being monitored or one of { MAX | MIN} for all phases. Default=1. Must be less than or equal to the number of phases. Ignored for regulated bus.
+    For multi-phase transformers, the number of the phase being monitored or one of { MAX | MIN} for all phases. Must be less than or equal to the number of phases. Ignored for regulated bus.
 
-    DSS property name: `PTPhase`, DSS property index: 22.
+    Name: `PTPhase`
+    Default: 1
     """
 
     def _get_RevThreshold(self) -> BatchFloat64ArrayProxy:
@@ -1010,9 +1172,15 @@ class RegControlBatch(DSSBatch, CircuitElementBatchMixin):
 
     RevThreshold = property(_get_RevThreshold, _set_RevThreshold) # type: BatchFloat64ArrayProxy
     """
-    kW reverse power threshold for reversing the direction of the regulator. Default is 100.0 kw.
+    kW reverse power threshold for reversing the direction of the regulator.
 
-    DSS property name: `RevThreshold`, DSS property index: 23.
+    Defines a no-load band between `-RevThreshold` and `+RevThreshold`.
+
+    **Important**: If an uneven band is desired, set `RevThreshold` to the desired lower bound (negative values allowed) and reset the upper bound using `FwdThreshold` right after.
+
+    Name: `RevThreshold`
+    Units: kW
+    Default: -100.0
     """
 
     def _get_RevDelay(self) -> BatchFloat64ArrayProxy:
@@ -1023,9 +1191,11 @@ class RegControlBatch(DSSBatch, CircuitElementBatchMixin):
 
     RevDelay = property(_get_RevDelay, _set_RevDelay) # type: BatchFloat64ArrayProxy
     """
-    Time Delay in seconds (s) for executing the reversing action once the threshold for reversing has been exceeded. Default is 60 s.
+    Time Delay for executing the reversing action once the threshold for reversing has been exceeded.
 
-    DSS property name: `RevDelay`, DSS property index: 24.
+    Name: `RevDelay`
+    Units: s
+    Default: 60.0
     """
 
     def _get_RevNeutral(self) -> List[bool]:
@@ -1033,14 +1203,15 @@ class RegControlBatch(DSSBatch, CircuitElementBatchMixin):
             self._get_batch_int32_prop(25)
         ]
 
-    def _set_RevNeutral(self, value: bool, flags: enums.SetterFlags = 0):
+    def _set_RevNeutral(self, value: Union[bool, List[bool]], flags: enums.SetterFlags = 0):
         self._set_batch_int32_array(25, value, flags)
 
     RevNeutral = property(_get_RevNeutral, _set_RevNeutral) # type: List[bool]
     """
-    {Yes | No*} Default is no. Set this to Yes if you want the regulator to go to neutral in the reverse direction or in cogen operation.
+    Set this to Yes if you want the regulator to go to neutral in the reverse direction or in cogen operation.
 
-    DSS property name: `RevNeutral`, DSS property index: 25.
+    Name: `RevNeutral`
+    Default: False
     """
 
     def _get_EventLog(self) -> List[bool]:
@@ -1048,14 +1219,15 @@ class RegControlBatch(DSSBatch, CircuitElementBatchMixin):
             self._get_batch_int32_prop(26)
         ]
 
-    def _set_EventLog(self, value: bool, flags: enums.SetterFlags = 0):
+    def _set_EventLog(self, value: Union[bool, List[bool]], flags: enums.SetterFlags = 0):
         self._set_batch_int32_array(26, value, flags)
 
     EventLog = property(_get_EventLog, _set_EventLog) # type: List[bool]
     """
-    {Yes/True | No/False*} Default is NO for regulator control. Log control actions to Eventlog.
+    Log control actions to Eventlog.
 
-    DSS property name: `EventLog`, DSS property index: 26.
+    Name: `EventLog`
+    Default: False
     """
 
     def _get_RemotePTRatio(self) -> BatchFloat64ArrayProxy:
@@ -1068,7 +1240,7 @@ class RegControlBatch(DSSBatch, CircuitElementBatchMixin):
     """
     When regulating a bus (the Bus= property is set), the PT ratio required to convert actual voltage at the remote bus to control voltage. Is initialized to PTratio property. Set this property after setting PTratio.
 
-    DSS property name: `RemotePTRatio`, DSS property index: 27.
+    Name: `RemotePTRatio`
     """
 
     def _get_TapNum(self) -> BatchInt32ArrayProxy:
@@ -1081,14 +1253,16 @@ class RegControlBatch(DSSBatch, CircuitElementBatchMixin):
     """
     An integer number indicating the tap position that the controlled transformer winding tap position is currently at, or is being set to.  If being set, and the value is outside the range of the transformer min or max tap, then set to the min or max tap position as appropriate. Default is 0
 
-    DSS property name: `TapNum`, DSS property index: 28.
+    Name: `TapNum`
+    Default: 0
     """
 
     def Reset(self, value: Union[bool, List[bool]] = True, flags: enums.SetterFlags = 0):
         """
-        {Yes | No} If Yes, forces Reset of this RegControl.
+        If Yes, forces Reset of this RegControl.
 
-        DSS property name: `Reset`, DSS property index: 29.
+        Name: `Reset`
+        Default: False
         """
         self._set_batch_int32_array(29, value, flags)
 
@@ -1102,7 +1276,8 @@ class RegControlBatch(DSSBatch, CircuitElementBatchMixin):
     """
     Z value for Beckwith LDC_Z control option. Volts adjustment at rated control current.
 
-    DSS property name: `LDC_Z`, DSS property index: 30.
+    Name: `LDC_Z`
+    Default: 0.0
     """
 
     def _get_Rev_Z(self) -> BatchFloat64ArrayProxy:
@@ -1115,7 +1290,8 @@ class RegControlBatch(DSSBatch, CircuitElementBatchMixin):
     """
     Reverse Z value for Beckwith LDC_Z control option.
 
-    DSS property name: `Rev_Z`, DSS property index: 31.
+    Name: `Rev_Z`
+    Default: 0.0
     """
 
     def _get_Cogen(self) -> List[bool]:
@@ -1123,42 +1299,114 @@ class RegControlBatch(DSSBatch, CircuitElementBatchMixin):
             self._get_batch_int32_prop(32)
         ]
 
-    def _set_Cogen(self, value: bool, flags: enums.SetterFlags = 0):
+    def _set_Cogen(self, value: Union[bool, List[bool]], flags: enums.SetterFlags = 0):
         self._set_batch_int32_array(32, value, flags)
 
     Cogen = property(_get_Cogen, _set_Cogen) # type: List[bool]
     """
-    {Yes|No*} Default is No. The Cogen feature is activated. Continues looking forward if power reverses, but switches to reverse-mode LDC, vreg and band values.
+    Cogen feature. When enabled, continues looking forward if power reverses, but switches to reverse-mode LDC, vreg and band values.
+    Optionally, use the `Idle` property to specify if the regulator should idle in the "no-load region" (functionality typically described in the controller datasheet).
 
-    DSS property name: `Cogen`, DSS property index: 32.
+    Name: `Cogen`
+    Default: False
+    """
+
+    def _get_Idle(self) -> List[bool]:
+        return [v != 0 for v in
+            self._get_batch_int32_prop(33)
+        ]
+
+    def _set_Idle(self, value: Union[bool, List[bool]], flags: enums.SetterFlags = 0):
+        self._set_batch_int32_array(33, value, flags)
+
+    Idle = property(_get_Idle, _set_Idle) # type: List[bool]
+    """
+    Enabling this property only has an effect when reversible or cogen properties are set to `yes`/`true`. For the "no-load region" where active power flow lies between `-revThreshold` and `+revThreshold`, the regulator will lock taps in the position it had before entering that region. Voltage override (`VLimit`) takes priority.
+
+    Name: `Idle`
+    Default: False
+    """
+
+    def _get_IdleReverse(self) -> List[bool]:
+        return [v != 0 for v in
+            self._get_batch_int32_prop(34)
+        ]
+
+    def _set_IdleReverse(self, value: Union[bool, List[bool]], flags: enums.SetterFlags = 0):
+        self._set_batch_int32_array(34, value, flags)
+
+    IdleReverse = property(_get_IdleReverse, _set_IdleReverse) # type: List[bool]
+    """
+    Similar to the `Idle` property but applicable only when `Reversible=Yes` (not for cogen mode) AND `RevNeutral=No`. When enabled, the regulator will lock taps in the position it had before entering the reverse flow zone.
+    Voltage override (Vlimit) takes priority.
+
+    Name: `IdleReverse`
+    Default: False
+    """
+
+    def _get_IdleForward(self) -> List[bool]:
+        return [v != 0 for v in
+            self._get_batch_int32_prop(35)
+        ]
+
+    def _set_IdleForward(self, value: Union[bool, List[bool]], flags: enums.SetterFlags = 0):
+        self._set_batch_int32_array(35, value, flags)
+
+    IdleForward = property(_get_IdleForward, _set_IdleForward) # type: List[bool]
+    """
+    Similar to the `Idle` property but applicable only when `Reversible=Yes` (not for cogen mode). When enabled, the regulator will lock taps in the position it had before entering the forward flow zone.
+    Voltage override (`VLimit`) takes priority.
+
+    Name: `IdleForward`
+    Default: False
+    """
+
+    def _get_FwdThreshold(self) -> BatchFloat64ArrayProxy:
+        return BatchFloat64ArrayProxy(self, 36)
+
+    def _set_FwdThreshold(self, value: Union[float, Float64Array], flags: enums.SetterFlags = 0):
+        self._set_batch_float64_array(36, value, flags)
+
+    FwdThreshold = property(_get_FwdThreshold, _set_FwdThreshold) # type: BatchFloat64ArrayProxy
+    """
+    kW forward power threshold to use in tandem with `RevTheshold`.
+    If `RevThreshold` is defined, the value of `FwdThreshold` is also updated for an even no-load band.
+
+    If you require an uneven no-load zone band, set `FwdThreshold` after setting `RevThreshold`, or in the same DSS command (edit context).
+
+    Name: `FwdThreshold`
+    Units: kW
+    Default: 100.0
     """
 
     def _get_BaseFreq(self) -> BatchFloat64ArrayProxy:
-        return BatchFloat64ArrayProxy(self, 33)
+        return BatchFloat64ArrayProxy(self, 37)
 
     def _set_BaseFreq(self, value: Union[float, Float64Array], flags: enums.SetterFlags = 0):
-        self._set_batch_float64_array(33, value, flags)
+        self._set_batch_float64_array(37, value, flags)
 
     BaseFreq = property(_get_BaseFreq, _set_BaseFreq) # type: BatchFloat64ArrayProxy
     """
     Base Frequency for ratings.
 
-    DSS property name: `BaseFreq`, DSS property index: 33.
+    Name: `BaseFreq`
+    Units: Hz
     """
 
     def _get_Enabled(self) -> List[bool]:
         return [v != 0 for v in
-            self._get_batch_int32_prop(34)
+            self._get_batch_int32_prop(38)
         ]
 
-    def _set_Enabled(self, value: bool, flags: enums.SetterFlags = 0):
-        self._set_batch_int32_array(34, value, flags)
+    def _set_Enabled(self, value: Union[bool, List[bool]], flags: enums.SetterFlags = 0):
+        self._set_batch_int32_array(38, value, flags)
 
     Enabled = property(_get_Enabled, _set_Enabled) # type: List[bool]
     """
-    {Yes|No or True|False} Indicates whether this element is enabled.
+    Indicates whether this element is enabled.
 
-    DSS property name: `Enabled`, DSS property index: 34.
+    Name: `Enabled`
+    Default: True
     """
 
     def Like(self, value: AnyStr, flags: enums.SetterFlags = 0):
@@ -1167,9 +1415,11 @@ class RegControlBatch(DSSBatch, CircuitElementBatchMixin):
 
         New Capacitor.C2 like=c1  ...
 
-        DSS property name: `Like`, DSS property index: 35.
+        **Deprecated:** `Like` has been deprecated since at least 2021, see https://sourceforge.net/p/electricdss/discussion/861977/thread/8b59d21eb6/#b57c/f668
+
+        Name: `Like`
         """
-        self._set_batch_string(35, value, flags)
+        self._set_batch_string(39, value, flags)
 
 class RegControlBatchProperties(TypedDict):
     Transformer: Union[AnyStr, TransformerObj, AutoTrans, List[AnyStr], List[Union[TransformerObj, AutoTrans]]]
@@ -1204,6 +1454,10 @@ class RegControlBatchProperties(TypedDict):
     LDC_Z: Union[float, Float64Array]
     Rev_Z: Union[float, Float64Array]
     Cogen: bool
+    Idle: bool
+    IdleReverse: bool
+    IdleForward: bool
+    FwdThreshold: Union[float, Float64Array]
     BaseFreq: Union[float, Float64Array]
     Enabled: bool
     Like: AnyStr

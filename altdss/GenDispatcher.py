@@ -13,7 +13,7 @@ from .CircuitElement import CircuitElementBatchMixin, CircuitElementMixin
 class GenDispatcher(DSSObj, CircuitElementMixin):
     __slots__ = DSSObj._extra_slots + CircuitElementMixin._extra_slots
     _cls_name = 'GenDispatcher'
-    _cls_idx = 28
+    _cls_idx = 29
     _cls_int_idx = {
         2,
         9,
@@ -68,7 +68,7 @@ class GenDispatcher(DSSObj, CircuitElementMixin):
     """
     Full object name of the circuit element, typically a line or transformer, which the control is monitoring. There is no default; must be specified.
 
-    DSS property name: `Element`, DSS property index: 1.
+    Name: `Element`
     """
 
     def _get_Element(self) -> DSSObj:
@@ -85,7 +85,7 @@ class GenDispatcher(DSSObj, CircuitElementMixin):
     """
     Full object name of the circuit element, typically a line or transformer, which the control is monitoring. There is no default; must be specified.
 
-    DSS property name: `Element`, DSS property index: 1.
+    Name: `Element`
     """
 
     def _get_Terminal(self) -> int:
@@ -96,9 +96,10 @@ class GenDispatcher(DSSObj, CircuitElementMixin):
 
     Terminal = property(_get_Terminal, _set_Terminal) # type: int
     """
-    Number of the terminal of the circuit element to which the GenDispatcher control is connected. 1 or 2, typically.  Default is 1. Make sure you have the direction on the power matching the sign of kWLimit.
+    Number of the terminal of the circuit element to which the GenDispatcher control is connected. 1 or 2, typically. Make sure you have the direction on the power matching the sign of kWLimit.
 
-    DSS property name: `Terminal`, DSS property index: 2.
+    Name: `Terminal`
+    Default: 1
     """
 
     def _get_kWLimit(self) -> float:
@@ -111,7 +112,8 @@ class GenDispatcher(DSSObj, CircuitElementMixin):
     """
     kW Limit for the monitored element. The generators are dispatched to hold the power in band.
 
-    DSS property name: `kWLimit`, DSS property index: 3.
+    Name: `kWLimit`
+    Default: 8000.0
     """
 
     def _get_kWBand(self) -> float:
@@ -124,7 +126,8 @@ class GenDispatcher(DSSObj, CircuitElementMixin):
     """
     Bandwidth (kW) of the dead band around the target limit.No dispatch changes are attempted if the power in the monitored terminal stays within this band.
 
-    DSS property name: `kWBand`, DSS property index: 4.
+    Name: `kWBand`
+    Default: 100.0
     """
 
     def _get_kvarLimit(self) -> float:
@@ -137,7 +140,8 @@ class GenDispatcher(DSSObj, CircuitElementMixin):
     """
     Max kvar to be delivered through the element.  Uses same dead band as kW.
 
-    DSS property name: `kvarLimit`, DSS property index: 5.
+    Name: `kvarLimit`
+    Default: 4000.0
     """
 
     def _get_GenList(self) -> List[str]:
@@ -152,7 +156,7 @@ class GenDispatcher(DSSObj, CircuitElementMixin):
     """
     Array list of generators to be dispatched.  If not specified, all generators in the circuit are assumed dispatchable.
 
-    DSS property name: `GenList`, DSS property index: 6.
+    Name: `GenList`
     """
 
     def _get_Weights(self) -> Float64Array:
@@ -163,9 +167,9 @@ class GenDispatcher(DSSObj, CircuitElementMixin):
 
     Weights = property(_get_Weights, _set_Weights) # type: Float64Array
     """
-    Array of proportional weights corresponding to each generator in the GenList. The needed kW to get back to center band is dispatched to each generator according to these weights. Default is to set all weights to 1.0.
+    Array of proportional weights corresponding to each generator in the GenList. The needed kW to get back to center band is dispatched to each generator according to these weights.
 
-    DSS property name: `Weights`, DSS property index: 7.
+    Name: `Weights`
     """
 
     def _get_BaseFreq(self) -> float:
@@ -178,7 +182,8 @@ class GenDispatcher(DSSObj, CircuitElementMixin):
     """
     Base Frequency for ratings.
 
-    DSS property name: `BaseFreq`, DSS property index: 8.
+    Name: `BaseFreq`
+    Units: Hz
     """
 
     def _get_Enabled(self) -> bool:
@@ -189,9 +194,10 @@ class GenDispatcher(DSSObj, CircuitElementMixin):
 
     Enabled = property(_get_Enabled, _set_Enabled) # type: bool
     """
-    {Yes|No or True|False} Indicates whether this element is enabled.
+    Indicates whether this element is enabled.
 
-    DSS property name: `Enabled`, DSS property index: 9.
+    Name: `Enabled`
+    Default: True
     """
 
     def Like(self, value: AnyStr):
@@ -200,7 +206,9 @@ class GenDispatcher(DSSObj, CircuitElementMixin):
 
         New Capacitor.C2 like=c1  ...
 
-        DSS property name: `Like`, DSS property index: 10.
+        **Deprecated:** `Like` has been deprecated since at least 2021, see https://sourceforge.net/p/electricdss/discussion/861977/thread/8b59d21eb6/#b57c/f668
+
+        Name: `Like`
         """
         self._set_string_o(10, value)
 
@@ -220,7 +228,7 @@ class GenDispatcherProperties(TypedDict):
 class GenDispatcherBatch(DSSBatch, CircuitElementBatchMixin):
     _cls_name = 'GenDispatcher'
     _obj_cls = GenDispatcher
-    _cls_idx = 28
+    _cls_idx = 29
     __slots__ = []
 
     def __init__(self, api_util, **kwargs):
@@ -258,7 +266,7 @@ class GenDispatcherBatch(DSSBatch, CircuitElementBatchMixin):
     """
     Full object name of the circuit element, typically a line or transformer, which the control is monitoring. There is no default; must be specified.
 
-    DSS property name: `Element`, DSS property index: 1.
+    Name: `Element`
     """
 
     def _get_Element(self) -> List[DSSObj]:
@@ -271,7 +279,7 @@ class GenDispatcherBatch(DSSBatch, CircuitElementBatchMixin):
     """
     Full object name of the circuit element, typically a line or transformer, which the control is monitoring. There is no default; must be specified.
 
-    DSS property name: `Element`, DSS property index: 1.
+    Name: `Element`
     """
 
     def _get_Terminal(self) -> BatchInt32ArrayProxy:
@@ -282,9 +290,10 @@ class GenDispatcherBatch(DSSBatch, CircuitElementBatchMixin):
 
     Terminal = property(_get_Terminal, _set_Terminal) # type: BatchInt32ArrayProxy
     """
-    Number of the terminal of the circuit element to which the GenDispatcher control is connected. 1 or 2, typically.  Default is 1. Make sure you have the direction on the power matching the sign of kWLimit.
+    Number of the terminal of the circuit element to which the GenDispatcher control is connected. 1 or 2, typically. Make sure you have the direction on the power matching the sign of kWLimit.
 
-    DSS property name: `Terminal`, DSS property index: 2.
+    Name: `Terminal`
+    Default: 1
     """
 
     def _get_kWLimit(self) -> BatchFloat64ArrayProxy:
@@ -297,7 +306,8 @@ class GenDispatcherBatch(DSSBatch, CircuitElementBatchMixin):
     """
     kW Limit for the monitored element. The generators are dispatched to hold the power in band.
 
-    DSS property name: `kWLimit`, DSS property index: 3.
+    Name: `kWLimit`
+    Default: 8000.0
     """
 
     def _get_kWBand(self) -> BatchFloat64ArrayProxy:
@@ -310,7 +320,8 @@ class GenDispatcherBatch(DSSBatch, CircuitElementBatchMixin):
     """
     Bandwidth (kW) of the dead band around the target limit.No dispatch changes are attempted if the power in the monitored terminal stays within this band.
 
-    DSS property name: `kWBand`, DSS property index: 4.
+    Name: `kWBand`
+    Default: 100.0
     """
 
     def _get_kvarLimit(self) -> BatchFloat64ArrayProxy:
@@ -323,7 +334,8 @@ class GenDispatcherBatch(DSSBatch, CircuitElementBatchMixin):
     """
     Max kvar to be delivered through the element.  Uses same dead band as kW.
 
-    DSS property name: `kvarLimit`, DSS property index: 5.
+    Name: `kvarLimit`
+    Default: 4000.0
     """
 
     def _get_GenList(self) -> List[List[str]]:
@@ -340,7 +352,7 @@ class GenDispatcherBatch(DSSBatch, CircuitElementBatchMixin):
     """
     Array list of generators to be dispatched.  If not specified, all generators in the circuit are assumed dispatchable.
 
-    DSS property name: `GenList`, DSS property index: 6.
+    Name: `GenList`
     """
 
     def _get_Weights(self) -> List[Float64Array]:
@@ -354,9 +366,9 @@ class GenDispatcherBatch(DSSBatch, CircuitElementBatchMixin):
 
     Weights = property(_get_Weights, _set_Weights) # type: List[Float64Array]
     """
-    Array of proportional weights corresponding to each generator in the GenList. The needed kW to get back to center band is dispatched to each generator according to these weights. Default is to set all weights to 1.0.
+    Array of proportional weights corresponding to each generator in the GenList. The needed kW to get back to center band is dispatched to each generator according to these weights.
 
-    DSS property name: `Weights`, DSS property index: 7.
+    Name: `Weights`
     """
 
     def _get_BaseFreq(self) -> BatchFloat64ArrayProxy:
@@ -369,7 +381,8 @@ class GenDispatcherBatch(DSSBatch, CircuitElementBatchMixin):
     """
     Base Frequency for ratings.
 
-    DSS property name: `BaseFreq`, DSS property index: 8.
+    Name: `BaseFreq`
+    Units: Hz
     """
 
     def _get_Enabled(self) -> List[bool]:
@@ -377,14 +390,15 @@ class GenDispatcherBatch(DSSBatch, CircuitElementBatchMixin):
             self._get_batch_int32_prop(9)
         ]
 
-    def _set_Enabled(self, value: bool, flags: enums.SetterFlags = 0):
+    def _set_Enabled(self, value: Union[bool, List[bool]], flags: enums.SetterFlags = 0):
         self._set_batch_int32_array(9, value, flags)
 
     Enabled = property(_get_Enabled, _set_Enabled) # type: List[bool]
     """
-    {Yes|No or True|False} Indicates whether this element is enabled.
+    Indicates whether this element is enabled.
 
-    DSS property name: `Enabled`, DSS property index: 9.
+    Name: `Enabled`
+    Default: True
     """
 
     def Like(self, value: AnyStr, flags: enums.SetterFlags = 0):
@@ -393,7 +407,9 @@ class GenDispatcherBatch(DSSBatch, CircuitElementBatchMixin):
 
         New Capacitor.C2 like=c1  ...
 
-        DSS property name: `Like`, DSS property index: 10.
+        **Deprecated:** `Like` has been deprecated since at least 2021, see https://sourceforge.net/p/electricdss/discussion/861977/thread/8b59d21eb6/#b57c/f668
+
+        Name: `Like`
         """
         self._set_batch_string(10, value, flags)
 

@@ -59,7 +59,8 @@ class DynamicExp(DSSObj):
     """
     (Int) Number of state variables to be considered in the differential equation.
 
-    DSS property name: `NVariables`, DSS property index: 1.
+    Name: `NVariables`
+    Default: 0
     """
 
     def _get_VarNames(self) -> List[str]:
@@ -74,7 +75,7 @@ class DynamicExp(DSSObj):
     """
     ([String]) Array of strings with the names of the state variables.
 
-    DSS property name: `VarNames`, DSS property index: 2.
+    Name: `VarNames`
     """
 
     def _get_Var(self) -> str:
@@ -87,7 +88,7 @@ class DynamicExp(DSSObj):
     """
     (String) Activates the state variable using the given name.
 
-    DSS property name: `Var`, DSS property index: 3.
+    Name: `Var`
     """
 
     def _get_VarIdx(self) -> int:
@@ -100,7 +101,9 @@ class DynamicExp(DSSObj):
     """
     (Int) read-only, returns the index of the active state variable.
 
-    DSS property name: `VarIdx`, DSS property index: 4.
+    **Read-only**
+
+    Name: `VarIdx`
     """
 
     def _get_Expression(self) -> str:
@@ -115,7 +118,7 @@ class DynamicExp(DSSObj):
 
     expression="[w dt = 1 M / (P_m D*w - P_e -) *]"
 
-    DSS property name: `Expression`, DSS property index: 5.
+    Name: `Expression`
     """
 
     def _get_Domain(self) -> enums.DynamicExpDomain:
@@ -131,7 +134,8 @@ class DynamicExp(DSSObj):
     """
     It is the domain for which the equation is defined, it can be one of [time*, dq]. By deafult, dynamic epxressions are defined in the time domain.
 
-    DSS property name: `Domain`, DSS property index: 6.
+    Name: `Domain`
+    Default: Time
     """
 
     def _get_Domain_str(self) -> str:
@@ -144,14 +148,19 @@ class DynamicExp(DSSObj):
     """
     It is the domain for which the equation is defined, it can be one of [time*, dq]. By deafult, dynamic epxressions are defined in the time domain.
 
-    DSS property name: `Domain`, DSS property index: 6.
+    Name: `Domain`
+    Default: Time
     """
 
     def Like(self, value: AnyStr):
         """
-        DynamicExp.like
+        Make like another object, e.g.:
 
-        DSS property name: `Like`, DSS property index: 7.
+        New Capacitor.C2 like=c1  ...
+
+        **Deprecated:** `Like` has been deprecated since at least 2021, see https://sourceforge.net/p/electricdss/discussion/861977/thread/8b59d21eb6/#b57c/f668
+
+        Name: `Like`
         """
         self._set_string_o(7, value)
 
@@ -203,7 +212,8 @@ class DynamicExpBatch(DSSBatch):
     """
     (Int) Number of state variables to be considered in the differential equation.
 
-    DSS property name: `NVariables`, DSS property index: 1.
+    Name: `NVariables`
+    Default: 0
     """
 
     def _get_VarNames(self) -> List[List[str]]:
@@ -220,7 +230,7 @@ class DynamicExpBatch(DSSBatch):
     """
     ([String]) Array of strings with the names of the state variables.
 
-    DSS property name: `VarNames`, DSS property index: 2.
+    Name: `VarNames`
     """
 
     def _get_Var(self) -> List[str]:
@@ -233,7 +243,7 @@ class DynamicExpBatch(DSSBatch):
     """
     (String) Activates the state variable using the given name.
 
-    DSS property name: `Var`, DSS property index: 3.
+    Name: `Var`
     """
 
     def _get_VarIdx(self) -> BatchInt32ArrayProxy:
@@ -246,7 +256,9 @@ class DynamicExpBatch(DSSBatch):
     """
     (Int) read-only, returns the index of the active state variable.
 
-    DSS property name: `VarIdx`, DSS property index: 4.
+    **Read-only**
+
+    Name: `VarIdx`
     """
 
     def _get_Expression(self) -> List[str]:
@@ -261,7 +273,7 @@ class DynamicExpBatch(DSSBatch):
 
     expression="[w dt = 1 M / (P_m D*w - P_e -) *]"
 
-    DSS property name: `Expression`, DSS property index: 5.
+    Name: `Expression`
     """
 
     def _get_Domain(self) -> BatchInt32ArrayProxy:
@@ -278,7 +290,8 @@ class DynamicExpBatch(DSSBatch):
     """
     It is the domain for which the equation is defined, it can be one of [time*, dq]. By deafult, dynamic epxressions are defined in the time domain.
 
-    DSS property name: `Domain`, DSS property index: 6.
+    Name: `Domain`
+    Default: Time
     """
 
     def _get_Domain_str(self) -> List[str]:
@@ -291,14 +304,19 @@ class DynamicExpBatch(DSSBatch):
     """
     It is the domain for which the equation is defined, it can be one of [time*, dq]. By deafult, dynamic epxressions are defined in the time domain.
 
-    DSS property name: `Domain`, DSS property index: 6.
+    Name: `Domain`
+    Default: Time
     """
 
     def Like(self, value: AnyStr, flags: enums.SetterFlags = 0):
         """
-        DynamicExp.like
+        Make like another object, e.g.:
 
-        DSS property name: `Like`, DSS property index: 7.
+        New Capacitor.C2 like=c1  ...
+
+        **Deprecated:** `Like` has been deprecated since at least 2021, see https://sourceforge.net/p/electricdss/discussion/861977/thread/8b59d21eb6/#b57c/f668
+
+        Name: `Like`
         """
         self._set_batch_string(7, value, flags)
 

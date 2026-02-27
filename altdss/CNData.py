@@ -1,5 +1,5 @@
-# Copyright (c) 2021-2024 Paulo Meira
-# Copyright (c) 2021-2024 DSS-Extensions contributors
+# Copyright (c) 2021-2026 Paulo Meira
+# Copyright (c) 2021-2026 DSS-Extensions contributors
 from __future__ import annotations
 from typing import Union, List, AnyStr, Optional, Iterator, TYPE_CHECKING
 from typing_extensions import TypedDict, Unpack
@@ -16,51 +16,53 @@ class CNData(DSSObj):
     _cls_idx = 10
     _cls_int_idx = {
         1,
-        11,
-        13,
-        15,
-        19,
+        5,
+        12,
+        14,
+        16,
+        20,
     }
     _cls_float_idx = {
         2,
         3,
         4,
-        5,
         6,
         7,
         8,
         9,
         10,
-        12,
-        14,
-        16,
+        11,
+        13,
+        15,
         17,
         18,
-        21,
+        19,
+        22,
     }
     _cls_prop_idx = {
         'k': 1,
         'diastrand': 2,
         'gmrstrand': 3,
         'rstrand': 4,
-        'epsr': 5,
-        'inslayer': 6,
-        'diains': 7,
-        'diacable': 8,
-        'rdc': 9,
-        'rac': 10,
-        'runits': 11,
-        'gmrac': 12,
-        'gmrunits': 13,
-        'radius': 14,
-        'radunits': 15,
-        'normamps': 16,
-        'emergamps': 17,
-        'diam': 18,
-        'seasons': 19,
-        'ratings': 20,
-        'capradius': 21,
-        'like': 22,
+        'semiconlayer': 5,
+        'epsr': 6,
+        'inslayer': 7,
+        'diains': 8,
+        'diacable': 9,
+        'rdc': 10,
+        'rac': 11,
+        'runits': 12,
+        'gmrac': 13,
+        'gmrunits': 14,
+        'radius': 15,
+        'radunits': 16,
+        'normamps': 17,
+        'emergamps': 18,
+        'diam': 19,
+        'seasons': 20,
+        'ratings': 21,
+        'capradius': 22,
+        'like': 23,
     }
 
 
@@ -89,9 +91,10 @@ class CNData(DSSObj):
 
     k = property(_get_k, _set_k) # type: int
     """
-    Number of concentric neutral strands; default is 2
+    Number of concentric neutral strands
 
-    DSS property name: `k`, DSS property index: 1.
+    Name: `k`
+    Default: 2
     """
 
     def _get_DiaStrand(self) -> float:
@@ -102,9 +105,9 @@ class CNData(DSSObj):
 
     DiaStrand = property(_get_DiaStrand, _set_DiaStrand) # type: float
     """
-    Diameter of a concentric neutral strand; same units as core conductor radius; no default.
+    Diameter of a concentric neutral strand; same units as core conductor radius.
 
-    DSS property name: `DiaStrand`, DSS property index: 2.
+    Name: `DiaStrand`
     """
 
     def _get_GMRStrand(self) -> float:
@@ -115,9 +118,9 @@ class CNData(DSSObj):
 
     GMRStrand = property(_get_GMRStrand, _set_GMRStrand) # type: float
     """
-    Geometric mean radius of a concentric neutral strand; same units as core conductor GMR; defaults to 0.7788 * CN strand radius.
+    Geometric mean radius of a concentric neutral strand; same units as core conductor GMR; defaults to $0.7788 × DiaStrand$.
 
-    DSS property name: `GMRStrand`, DSS property index: 3.
+    Name: `GMRStrand`
     """
 
     def _get_RStrand(self) -> float:
@@ -128,107 +131,125 @@ class CNData(DSSObj):
 
     RStrand = property(_get_RStrand, _set_RStrand) # type: float
     """
-    AC resistance of a concentric neutral strand; same units as core conductor resistance; no default.
+    AC resistance of a concentric neutral strand; same units as core conductor resistance.
 
-    DSS property name: `RStrand`, DSS property index: 4.
+    Name: `RStrand`
+    Units: Ω/[length_unit]
+    """
+
+    def _get_SemiconLayer(self) -> bool:
+        return self._lib.Obj_GetInt32(self._ptr, 5) != 0
+
+    def _set_SemiconLayer(self, value: bool, flags: enums.SetterFlags = 0):
+        self._lib.Obj_SetInt32(self._ptr, 5, value, flags)
+
+    SemiconLayer = property(_get_SemiconLayer, _set_SemiconLayer) # type: bool
+    """
+    Existence of a semicon layer between the insulation layer and the concentric neutral strands. Affects calculation of shunt self admittances.
+
+    Name: `SemiconLayer`
+    Default: True
     """
 
     def _get_EpsR(self) -> float:
-        return self._lib.Obj_GetFloat64(self._ptr, 5)
+        return self._lib.Obj_GetFloat64(self._ptr, 6)
 
     def _set_EpsR(self, value: float, flags: enums.SetterFlags = 0):
-        self._lib.Obj_SetFloat64(self._ptr, 5, value, flags)
+        self._lib.Obj_SetFloat64(self._ptr, 6, value, flags)
 
     EpsR = property(_get_EpsR, _set_EpsR) # type: float
     """
-    Insulation layer relative permittivity; default is 2.3.
+    Insulation layer relative permittivity.
 
-    DSS property name: `EpsR`, DSS property index: 5.
+    Name: `EpsR`
+    Default: 2.3
     """
 
     def _get_InsLayer(self) -> float:
-        return self._lib.Obj_GetFloat64(self._ptr, 6)
+        return self._lib.Obj_GetFloat64(self._ptr, 7)
 
     def _set_InsLayer(self, value: float, flags: enums.SetterFlags = 0):
-        self._lib.Obj_SetFloat64(self._ptr, 6, value, flags)
+        self._lib.Obj_SetFloat64(self._ptr, 7, value, flags)
 
     InsLayer = property(_get_InsLayer, _set_InsLayer) # type: float
     """
-    Insulation layer thickness; same units as radius; no default. With DiaIns, establishes inner radius for capacitance calculation.
+    Insulation layer thickness; same units as radius. With DiaIns, establishes inner radius for capacitance calculation.
 
-    DSS property name: `InsLayer`, DSS property index: 6.
+    Name: `InsLayer`
     """
 
     def _get_DiaIns(self) -> float:
-        return self._lib.Obj_GetFloat64(self._ptr, 7)
+        return self._lib.Obj_GetFloat64(self._ptr, 8)
 
     def _set_DiaIns(self, value: float, flags: enums.SetterFlags = 0):
-        self._lib.Obj_SetFloat64(self._ptr, 7, value, flags)
+        self._lib.Obj_SetFloat64(self._ptr, 8, value, flags)
 
     DiaIns = property(_get_DiaIns, _set_DiaIns) # type: float
     """
-    Diameter over insulation layer; same units as radius; no default. Establishes outer radius for capacitance calculation.
+    Diameter over insulation layer; same units as radius. Establishes outer radius for capacitance calculation.
 
-    DSS property name: `DiaIns`, DSS property index: 7.
+    Name: `DiaIns`
     """
 
     def _get_DiaCable(self) -> float:
-        return self._lib.Obj_GetFloat64(self._ptr, 8)
+        return self._lib.Obj_GetFloat64(self._ptr, 9)
 
     def _set_DiaCable(self, value: float, flags: enums.SetterFlags = 0):
-        self._lib.Obj_SetFloat64(self._ptr, 8, value, flags)
+        self._lib.Obj_SetFloat64(self._ptr, 9, value, flags)
 
     DiaCable = property(_get_DiaCable, _set_DiaCable) # type: float
     """
-    Diameter over cable; same units as radius; no default.
+    Diameter over cable; same units as radius.
 
-    DSS property name: `DiaCable`, DSS property index: 8.
+    Name: `DiaCable`
     """
 
     def _get_RDC(self) -> float:
-        return self._lib.Obj_GetFloat64(self._ptr, 9)
+        return self._lib.Obj_GetFloat64(self._ptr, 10)
 
     def _set_RDC(self, value: float, flags: enums.SetterFlags = 0):
-        self._lib.Obj_SetFloat64(self._ptr, 9, value, flags)
+        self._lib.Obj_SetFloat64(self._ptr, 10, value, flags)
 
     RDC = property(_get_RDC, _set_RDC) # type: float
     """
-    dc Resistance, ohms per unit length (see Runits). Defaults to Rac/1.02 if not specified.
+    DC resistance, ohms per unit length (see `Runits`). Defaults to $Rac/1.02$ if not specified.
 
-    DSS property name: `RDC`, DSS property index: 9.
+    Name: `RDC`
+    Units: Ω/[length_unit]
     """
 
     def _get_RAC(self) -> float:
-        return self._lib.Obj_GetFloat64(self._ptr, 10)
+        return self._lib.Obj_GetFloat64(self._ptr, 11)
 
     def _set_RAC(self, value: float, flags: enums.SetterFlags = 0):
-        self._lib.Obj_SetFloat64(self._ptr, 10, value, flags)
+        self._lib.Obj_SetFloat64(self._ptr, 11, value, flags)
 
     RAC = property(_get_RAC, _set_RAC) # type: float
     """
-    Resistance at 60 Hz per unit length. Defaults to 1.02*Rdc if not specified.
+    Resistance at 60 Hz per unit length. Defaults to $1.02 × Rdc$ if not specified.
 
-    DSS property name: `RAC`, DSS property index: 10.
+    Name: `RAC`
     """
 
     def _get_RUnits(self) -> enums.LengthUnit:
-        return enums.LengthUnit(self._lib.Obj_GetInt32(self._ptr, 11))
+        return enums.LengthUnit(self._lib.Obj_GetInt32(self._ptr, 12))
 
     def _set_RUnits(self, value: Union[AnyStr, int, enums.LengthUnit], flags: enums.SetterFlags = 0):
         if not isinstance(value, int):
-            self._set_string_o(11, value, flags)
+            self._set_string_o(12, value, flags)
             return
-        self._lib.Obj_SetInt32(self._ptr, 11, value, flags)
+        self._lib.Obj_SetInt32(self._ptr, 12, value, flags)
 
     RUnits = property(_get_RUnits, _set_RUnits) # type: enums.LengthUnit
     """
     Length units for resistance: ohms per {mi|kft|km|m|Ft|in|cm|mm} Default=none.
 
-    DSS property name: `RUnits`, DSS property index: 11.
+    Name: `RUnits`
+    Default: none
     """
 
     def _get_RUnits_str(self) -> str:
-        return self._get_prop_string(11)
+        return self._get_prop_string(12)
 
     def _set_RUnits_str(self, value: AnyStr, flags: enums.SetterFlags = 0):
         self._set_RUnits(value, flags)
@@ -237,170 +258,176 @@ class CNData(DSSObj):
     """
     Length units for resistance: ohms per {mi|kft|km|m|Ft|in|cm|mm} Default=none.
 
-    DSS property name: `RUnits`, DSS property index: 11.
+    Name: `RUnits`
+    Default: none
     """
 
     def _get_GMRAC(self) -> float:
-        return self._lib.Obj_GetFloat64(self._ptr, 12)
+        return self._lib.Obj_GetFloat64(self._ptr, 13)
 
     def _set_GMRAC(self, value: float, flags: enums.SetterFlags = 0):
-        self._lib.Obj_SetFloat64(self._ptr, 12, value, flags)
+        self._lib.Obj_SetFloat64(self._ptr, 13, value, flags)
 
     GMRAC = property(_get_GMRAC, _set_GMRAC) # type: float
     """
-    GMR at 60 Hz. Defaults to .7788*radius if not specified.
+    GMR at 60 Hz. Defaults to $0.7788 × radius$ if not specified.
 
-    DSS property name: `GMRAC`, DSS property index: 12.
+    Name: `GMRAC`
     """
 
     def _get_GMRUnits(self) -> enums.LengthUnit:
-        return enums.LengthUnit(self._lib.Obj_GetInt32(self._ptr, 13))
+        return enums.LengthUnit(self._lib.Obj_GetInt32(self._ptr, 14))
 
     def _set_GMRUnits(self, value: Union[AnyStr, int, enums.LengthUnit], flags: enums.SetterFlags = 0):
         if not isinstance(value, int):
-            self._set_string_o(13, value, flags)
+            self._set_string_o(14, value, flags)
             return
-        self._lib.Obj_SetInt32(self._ptr, 13, value, flags)
+        self._lib.Obj_SetInt32(self._ptr, 14, value, flags)
 
     GMRUnits = property(_get_GMRUnits, _set_GMRUnits) # type: enums.LengthUnit
     """
-    Units for GMR: {mi|kft|km|m|Ft|in|cm|mm} Default=none.
+    Units for GMR.
 
-    DSS property name: `GMRUnits`, DSS property index: 13.
+    Name: `GMRUnits`
+    Default: none
     """
 
     def _get_GMRUnits_str(self) -> str:
-        return self._get_prop_string(13)
+        return self._get_prop_string(14)
 
     def _set_GMRUnits_str(self, value: AnyStr, flags: enums.SetterFlags = 0):
         self._set_GMRUnits(value, flags)
 
     GMRUnits_str = property(_get_GMRUnits_str, _set_GMRUnits_str) # type: str
     """
-    Units for GMR: {mi|kft|km|m|Ft|in|cm|mm} Default=none.
+    Units for GMR.
 
-    DSS property name: `GMRUnits`, DSS property index: 13.
+    Name: `GMRUnits`
+    Default: none
     """
 
     def _get_Radius(self) -> float:
-        return self._lib.Obj_GetFloat64(self._ptr, 14)
+        return self._lib.Obj_GetFloat64(self._ptr, 15)
 
     def _set_Radius(self, value: float, flags: enums.SetterFlags = 0):
-        self._lib.Obj_SetFloat64(self._ptr, 14, value, flags)
+        self._lib.Obj_SetFloat64(self._ptr, 15, value, flags)
 
     Radius = property(_get_Radius, _set_Radius) # type: float
     """
     Outside radius of conductor. Defaults to GMR/0.7788 if not specified.
 
-    DSS property name: `Radius`, DSS property index: 14.
+    Name: `Radius`
     """
 
     def _get_RadUnits(self) -> enums.LengthUnit:
-        return enums.LengthUnit(self._lib.Obj_GetInt32(self._ptr, 15))
+        return enums.LengthUnit(self._lib.Obj_GetInt32(self._ptr, 16))
 
     def _set_RadUnits(self, value: Union[AnyStr, int, enums.LengthUnit], flags: enums.SetterFlags = 0):
         if not isinstance(value, int):
-            self._set_string_o(15, value, flags)
+            self._set_string_o(16, value, flags)
             return
-        self._lib.Obj_SetInt32(self._ptr, 15, value, flags)
+        self._lib.Obj_SetInt32(self._ptr, 16, value, flags)
 
     RadUnits = property(_get_RadUnits, _set_RadUnits) # type: enums.LengthUnit
     """
-    Units for outside radius: {mi|kft|km|m|Ft|in|cm|mm} Default=none.
+    Units for outside radius.
 
-    DSS property name: `RadUnits`, DSS property index: 15.
+    Name: `RadUnits`
+    Default: none
     """
 
     def _get_RadUnits_str(self) -> str:
-        return self._get_prop_string(15)
+        return self._get_prop_string(16)
 
     def _set_RadUnits_str(self, value: AnyStr, flags: enums.SetterFlags = 0):
         self._set_RadUnits(value, flags)
 
     RadUnits_str = property(_get_RadUnits_str, _set_RadUnits_str) # type: str
     """
-    Units for outside radius: {mi|kft|km|m|Ft|in|cm|mm} Default=none.
+    Units for outside radius.
 
-    DSS property name: `RadUnits`, DSS property index: 15.
+    Name: `RadUnits`
+    Default: none
     """
 
     def _get_NormAmps(self) -> float:
-        return self._lib.Obj_GetFloat64(self._ptr, 16)
+        return self._lib.Obj_GetFloat64(self._ptr, 17)
 
     def _set_NormAmps(self, value: float, flags: enums.SetterFlags = 0):
-        self._lib.Obj_SetFloat64(self._ptr, 16, value, flags)
+        self._lib.Obj_SetFloat64(self._ptr, 17, value, flags)
 
     NormAmps = property(_get_NormAmps, _set_NormAmps) # type: float
     """
-    Normal ampacity, amperes. Defaults to Emergency amps/1.5 if not specified.
+    Normal ampacity, amperes. Defaults to $EmergAmps / 1.5$ if not specified.
 
-    DSS property name: `NormAmps`, DSS property index: 16.
+    Name: `NormAmps`
     """
 
     def _get_EmergAmps(self) -> float:
-        return self._lib.Obj_GetFloat64(self._ptr, 17)
+        return self._lib.Obj_GetFloat64(self._ptr, 18)
 
     def _set_EmergAmps(self, value: float, flags: enums.SetterFlags = 0):
-        self._lib.Obj_SetFloat64(self._ptr, 17, value, flags)
+        self._lib.Obj_SetFloat64(self._ptr, 18, value, flags)
 
     EmergAmps = property(_get_EmergAmps, _set_EmergAmps) # type: float
     """
-    Emergency ampacity, amperes. Defaults to 1.5 * Normal Amps if not specified.
+    Emergency ampacity, amperes. Defaults to $1.5 × NormAmps$ if not specified.
 
-    DSS property name: `EmergAmps`, DSS property index: 17.
+    Name: `EmergAmps`
     """
 
     def _get_Diam(self) -> float:
-        return self._lib.Obj_GetFloat64(self._ptr, 18)
+        return self._lib.Obj_GetFloat64(self._ptr, 19)
 
     def _set_Diam(self, value: float, flags: enums.SetterFlags = 0):
-        self._lib.Obj_SetFloat64(self._ptr, 18, value, flags)
+        self._lib.Obj_SetFloat64(self._ptr, 19, value, flags)
 
     Diam = property(_get_Diam, _set_Diam) # type: float
     """
     Diameter; Alternative method for entering radius.
 
-    DSS property name: `Diam`, DSS property index: 18.
+    Name: `Diam`
     """
 
     def _get_Seasons(self) -> int:
-        return self._lib.Obj_GetInt32(self._ptr, 19)
+        return self._lib.Obj_GetInt32(self._ptr, 20)
 
     def _set_Seasons(self, value: int, flags: enums.SetterFlags = 0):
-        self._lib.Obj_SetInt32(self._ptr, 19, value, flags)
+        self._lib.Obj_SetInt32(self._ptr, 20, value, flags)
 
     Seasons = property(_get_Seasons, _set_Seasons) # type: int
     """
     Defines the number of ratings to be defined for the wire, to be used only when defining seasonal ratings using the "Ratings" property.
 
-    DSS property name: `Seasons`, DSS property index: 19.
+    Name: `Seasons`
     """
 
     def _get_Ratings(self) -> Float64Array:
-        return self._get_float64_array(self._lib.Obj_GetFloat64Array, self._ptr, 20)
+        return self._get_float64_array(self._lib.Obj_GetFloat64Array, self._ptr, 21)
 
     def _set_Ratings(self, value: Float64Array, flags: enums.SetterFlags = 0):
-        self._set_float64_array_o(20, value, flags)
+        self._set_float64_array_o(21, value, flags)
 
     Ratings = property(_get_Ratings, _set_Ratings) # type: Float64Array
     """
     An array of ratings to be used when the seasonal ratings flag is True. It can be used to insert
     multiple ratings to change during a QSTS simulation to evaluate different ratings in lines.
 
-    DSS property name: `Ratings`, DSS property index: 20.
+    Name: `Ratings`
+    Default: [-1.0]
     """
 
     def _get_CapRadius(self) -> float:
-        return self._lib.Obj_GetFloat64(self._ptr, 21)
+        return self._lib.Obj_GetFloat64(self._ptr, 22)
 
     def _set_CapRadius(self, value: float, flags: enums.SetterFlags = 0):
-        self._lib.Obj_SetFloat64(self._ptr, 21, value, flags)
+        self._lib.Obj_SetFloat64(self._ptr, 22, value, flags)
 
     CapRadius = property(_get_CapRadius, _set_CapRadius) # type: float
     """
     Equivalent conductor radius for capacitance calcs. Specify this for bundled conductors. Defaults to same value as radius. Define Diam or Radius property first.
 
-    DSS property name: `CapRadius`, DSS property index: 21.
+    Name: `CapRadius`
     """
 
     def Like(self, value: AnyStr):
@@ -409,9 +436,11 @@ class CNData(DSSObj):
 
         New Capacitor.C2 like=c1  ...
 
-        DSS property name: `Like`, DSS property index: 22.
+        **Deprecated:** `Like` has been deprecated since at least 2021, see https://sourceforge.net/p/electricdss/discussion/861977/thread/8b59d21eb6/#b57c/f668
+
+        Name: `Like`
         """
-        self._set_string_o(22, value)
+        self._set_string_o(23, value)
 
 
 class CNDataProperties(TypedDict):
@@ -419,6 +448,7 @@ class CNDataProperties(TypedDict):
     DiaStrand: float
     GMRStrand: float
     RStrand: float
+    SemiconLayer: bool
     EpsR: float
     InsLayer: float
     DiaIns: float
@@ -474,9 +504,10 @@ class CNDataBatch(DSSBatch):
 
     k = property(_get_k, _set_k) # type: BatchInt32ArrayProxy
     """
-    Number of concentric neutral strands; default is 2
+    Number of concentric neutral strands
 
-    DSS property name: `k`, DSS property index: 1.
+    Name: `k`
+    Default: 2
     """
 
     def _get_DiaStrand(self) -> BatchFloat64ArrayProxy:
@@ -487,9 +518,9 @@ class CNDataBatch(DSSBatch):
 
     DiaStrand = property(_get_DiaStrand, _set_DiaStrand) # type: BatchFloat64ArrayProxy
     """
-    Diameter of a concentric neutral strand; same units as core conductor radius; no default.
+    Diameter of a concentric neutral strand; same units as core conductor radius.
 
-    DSS property name: `DiaStrand`, DSS property index: 2.
+    Name: `DiaStrand`
     """
 
     def _get_GMRStrand(self) -> BatchFloat64ArrayProxy:
@@ -500,9 +531,9 @@ class CNDataBatch(DSSBatch):
 
     GMRStrand = property(_get_GMRStrand, _set_GMRStrand) # type: BatchFloat64ArrayProxy
     """
-    Geometric mean radius of a concentric neutral strand; same units as core conductor GMR; defaults to 0.7788 * CN strand radius.
+    Geometric mean radius of a concentric neutral strand; same units as core conductor GMR; defaults to $0.7788 × DiaStrand$.
 
-    DSS property name: `GMRStrand`, DSS property index: 3.
+    Name: `GMRStrand`
     """
 
     def _get_RStrand(self) -> BatchFloat64ArrayProxy:
@@ -513,108 +544,128 @@ class CNDataBatch(DSSBatch):
 
     RStrand = property(_get_RStrand, _set_RStrand) # type: BatchFloat64ArrayProxy
     """
-    AC resistance of a concentric neutral strand; same units as core conductor resistance; no default.
+    AC resistance of a concentric neutral strand; same units as core conductor resistance.
 
-    DSS property name: `RStrand`, DSS property index: 4.
+    Name: `RStrand`
+    Units: Ω/[length_unit]
+    """
+
+    def _get_SemiconLayer(self) -> List[bool]:
+        return [v != 0 for v in
+            self._get_batch_int32_prop(5)
+        ]
+
+    def _set_SemiconLayer(self, value: Union[bool, List[bool]], flags: enums.SetterFlags = 0):
+        self._set_batch_int32_array(5, value, flags)
+
+    SemiconLayer = property(_get_SemiconLayer, _set_SemiconLayer) # type: List[bool]
+    """
+    Existence of a semicon layer between the insulation layer and the concentric neutral strands. Affects calculation of shunt self admittances.
+
+    Name: `SemiconLayer`
+    Default: True
     """
 
     def _get_EpsR(self) -> BatchFloat64ArrayProxy:
-        return BatchFloat64ArrayProxy(self, 5)
+        return BatchFloat64ArrayProxy(self, 6)
 
     def _set_EpsR(self, value: Union[float, Float64Array], flags: enums.SetterFlags = 0):
-        self._set_batch_float64_array(5, value, flags)
+        self._set_batch_float64_array(6, value, flags)
 
     EpsR = property(_get_EpsR, _set_EpsR) # type: BatchFloat64ArrayProxy
     """
-    Insulation layer relative permittivity; default is 2.3.
+    Insulation layer relative permittivity.
 
-    DSS property name: `EpsR`, DSS property index: 5.
+    Name: `EpsR`
+    Default: 2.3
     """
 
     def _get_InsLayer(self) -> BatchFloat64ArrayProxy:
-        return BatchFloat64ArrayProxy(self, 6)
+        return BatchFloat64ArrayProxy(self, 7)
 
     def _set_InsLayer(self, value: Union[float, Float64Array], flags: enums.SetterFlags = 0):
-        self._set_batch_float64_array(6, value, flags)
+        self._set_batch_float64_array(7, value, flags)
 
     InsLayer = property(_get_InsLayer, _set_InsLayer) # type: BatchFloat64ArrayProxy
     """
-    Insulation layer thickness; same units as radius; no default. With DiaIns, establishes inner radius for capacitance calculation.
+    Insulation layer thickness; same units as radius. With DiaIns, establishes inner radius for capacitance calculation.
 
-    DSS property name: `InsLayer`, DSS property index: 6.
+    Name: `InsLayer`
     """
 
     def _get_DiaIns(self) -> BatchFloat64ArrayProxy:
-        return BatchFloat64ArrayProxy(self, 7)
+        return BatchFloat64ArrayProxy(self, 8)
 
     def _set_DiaIns(self, value: Union[float, Float64Array], flags: enums.SetterFlags = 0):
-        self._set_batch_float64_array(7, value, flags)
+        self._set_batch_float64_array(8, value, flags)
 
     DiaIns = property(_get_DiaIns, _set_DiaIns) # type: BatchFloat64ArrayProxy
     """
-    Diameter over insulation layer; same units as radius; no default. Establishes outer radius for capacitance calculation.
+    Diameter over insulation layer; same units as radius. Establishes outer radius for capacitance calculation.
 
-    DSS property name: `DiaIns`, DSS property index: 7.
+    Name: `DiaIns`
     """
 
     def _get_DiaCable(self) -> BatchFloat64ArrayProxy:
-        return BatchFloat64ArrayProxy(self, 8)
+        return BatchFloat64ArrayProxy(self, 9)
 
     def _set_DiaCable(self, value: Union[float, Float64Array], flags: enums.SetterFlags = 0):
-        self._set_batch_float64_array(8, value, flags)
+        self._set_batch_float64_array(9, value, flags)
 
     DiaCable = property(_get_DiaCable, _set_DiaCable) # type: BatchFloat64ArrayProxy
     """
-    Diameter over cable; same units as radius; no default.
+    Diameter over cable; same units as radius.
 
-    DSS property name: `DiaCable`, DSS property index: 8.
+    Name: `DiaCable`
     """
 
     def _get_RDC(self) -> BatchFloat64ArrayProxy:
-        return BatchFloat64ArrayProxy(self, 9)
+        return BatchFloat64ArrayProxy(self, 10)
 
     def _set_RDC(self, value: Union[float, Float64Array], flags: enums.SetterFlags = 0):
-        self._set_batch_float64_array(9, value, flags)
+        self._set_batch_float64_array(10, value, flags)
 
     RDC = property(_get_RDC, _set_RDC) # type: BatchFloat64ArrayProxy
     """
-    dc Resistance, ohms per unit length (see Runits). Defaults to Rac/1.02 if not specified.
+    DC resistance, ohms per unit length (see `Runits`). Defaults to $Rac/1.02$ if not specified.
 
-    DSS property name: `RDC`, DSS property index: 9.
+    Name: `RDC`
+    Units: Ω/[length_unit]
     """
 
     def _get_RAC(self) -> BatchFloat64ArrayProxy:
-        return BatchFloat64ArrayProxy(self, 10)
+        return BatchFloat64ArrayProxy(self, 11)
 
     def _set_RAC(self, value: Union[float, Float64Array], flags: enums.SetterFlags = 0):
-        self._set_batch_float64_array(10, value, flags)
+        self._set_batch_float64_array(11, value, flags)
 
     RAC = property(_get_RAC, _set_RAC) # type: BatchFloat64ArrayProxy
     """
-    Resistance at 60 Hz per unit length. Defaults to 1.02*Rdc if not specified.
+    Resistance at 60 Hz per unit length. Defaults to $1.02 × Rdc$ if not specified.
 
-    DSS property name: `RAC`, DSS property index: 10.
+    Name: `RAC`
     """
 
     def _get_RUnits(self) -> BatchInt32ArrayProxy:
-        return BatchInt32ArrayProxy(self, 11)
+        return BatchInt32ArrayProxy(self, 12)
 
     def _set_RUnits(self, value: Union[AnyStr, int, enums.LengthUnit, List[AnyStr], List[int], List[enums.LengthUnit], Int32Array], flags: enums.SetterFlags = 0):
         if isinstance(value, (str, bytes)) or (isinstance(value, LIST_LIKE) and isinstance(value[0], (str, bytes))):
-            self._set_batch_string(11, value, flags)
+            self._set_batch_string(12, value, flags)
             return
 
-        self._set_batch_int32_array(11, value, flags)
+        self._set_batch_int32_array(12, value, flags)
 
     RUnits = property(_get_RUnits, _set_RUnits) # type: BatchInt32ArrayProxy
     """
     Length units for resistance: ohms per {mi|kft|km|m|Ft|in|cm|mm} Default=none.
 
-    DSS property name: `RUnits`, DSS property index: 11.
+    Name: `RUnits`
+    Default: none
     """
 
     def _get_RUnits_str(self) -> List[str]:
-        return self._get_batch_str_prop(11)
+        return self._get_batch_str_prop(12)
 
     def _set_RUnits_str(self, value: AnyStr, flags: enums.SetterFlags = 0):
         self._set_RUnits(value, flags)
@@ -623,175 +674,181 @@ class CNDataBatch(DSSBatch):
     """
     Length units for resistance: ohms per {mi|kft|km|m|Ft|in|cm|mm} Default=none.
 
-    DSS property name: `RUnits`, DSS property index: 11.
+    Name: `RUnits`
+    Default: none
     """
 
     def _get_GMRAC(self) -> BatchFloat64ArrayProxy:
-        return BatchFloat64ArrayProxy(self, 12)
+        return BatchFloat64ArrayProxy(self, 13)
 
     def _set_GMRAC(self, value: Union[float, Float64Array], flags: enums.SetterFlags = 0):
-        self._set_batch_float64_array(12, value, flags)
+        self._set_batch_float64_array(13, value, flags)
 
     GMRAC = property(_get_GMRAC, _set_GMRAC) # type: BatchFloat64ArrayProxy
     """
-    GMR at 60 Hz. Defaults to .7788*radius if not specified.
+    GMR at 60 Hz. Defaults to $0.7788 × radius$ if not specified.
 
-    DSS property name: `GMRAC`, DSS property index: 12.
+    Name: `GMRAC`
     """
 
     def _get_GMRUnits(self) -> BatchInt32ArrayProxy:
-        return BatchInt32ArrayProxy(self, 13)
+        return BatchInt32ArrayProxy(self, 14)
 
     def _set_GMRUnits(self, value: Union[AnyStr, int, enums.LengthUnit, List[AnyStr], List[int], List[enums.LengthUnit], Int32Array], flags: enums.SetterFlags = 0):
         if isinstance(value, (str, bytes)) or (isinstance(value, LIST_LIKE) and isinstance(value[0], (str, bytes))):
-            self._set_batch_string(13, value, flags)
+            self._set_batch_string(14, value, flags)
             return
 
-        self._set_batch_int32_array(13, value, flags)
+        self._set_batch_int32_array(14, value, flags)
 
     GMRUnits = property(_get_GMRUnits, _set_GMRUnits) # type: BatchInt32ArrayProxy
     """
-    Units for GMR: {mi|kft|km|m|Ft|in|cm|mm} Default=none.
+    Units for GMR.
 
-    DSS property name: `GMRUnits`, DSS property index: 13.
+    Name: `GMRUnits`
+    Default: none
     """
 
     def _get_GMRUnits_str(self) -> List[str]:
-        return self._get_batch_str_prop(13)
+        return self._get_batch_str_prop(14)
 
     def _set_GMRUnits_str(self, value: AnyStr, flags: enums.SetterFlags = 0):
         self._set_GMRUnits(value, flags)
 
     GMRUnits_str = property(_get_GMRUnits_str, _set_GMRUnits_str) # type: List[str]
     """
-    Units for GMR: {mi|kft|km|m|Ft|in|cm|mm} Default=none.
+    Units for GMR.
 
-    DSS property name: `GMRUnits`, DSS property index: 13.
+    Name: `GMRUnits`
+    Default: none
     """
 
     def _get_Radius(self) -> BatchFloat64ArrayProxy:
-        return BatchFloat64ArrayProxy(self, 14)
+        return BatchFloat64ArrayProxy(self, 15)
 
     def _set_Radius(self, value: Union[float, Float64Array], flags: enums.SetterFlags = 0):
-        self._set_batch_float64_array(14, value, flags)
+        self._set_batch_float64_array(15, value, flags)
 
     Radius = property(_get_Radius, _set_Radius) # type: BatchFloat64ArrayProxy
     """
     Outside radius of conductor. Defaults to GMR/0.7788 if not specified.
 
-    DSS property name: `Radius`, DSS property index: 14.
+    Name: `Radius`
     """
 
     def _get_RadUnits(self) -> BatchInt32ArrayProxy:
-        return BatchInt32ArrayProxy(self, 15)
+        return BatchInt32ArrayProxy(self, 16)
 
     def _set_RadUnits(self, value: Union[AnyStr, int, enums.LengthUnit, List[AnyStr], List[int], List[enums.LengthUnit], Int32Array], flags: enums.SetterFlags = 0):
         if isinstance(value, (str, bytes)) or (isinstance(value, LIST_LIKE) and isinstance(value[0], (str, bytes))):
-            self._set_batch_string(15, value, flags)
+            self._set_batch_string(16, value, flags)
             return
 
-        self._set_batch_int32_array(15, value, flags)
+        self._set_batch_int32_array(16, value, flags)
 
     RadUnits = property(_get_RadUnits, _set_RadUnits) # type: BatchInt32ArrayProxy
     """
-    Units for outside radius: {mi|kft|km|m|Ft|in|cm|mm} Default=none.
+    Units for outside radius.
 
-    DSS property name: `RadUnits`, DSS property index: 15.
+    Name: `RadUnits`
+    Default: none
     """
 
     def _get_RadUnits_str(self) -> List[str]:
-        return self._get_batch_str_prop(15)
+        return self._get_batch_str_prop(16)
 
     def _set_RadUnits_str(self, value: AnyStr, flags: enums.SetterFlags = 0):
         self._set_RadUnits(value, flags)
 
     RadUnits_str = property(_get_RadUnits_str, _set_RadUnits_str) # type: List[str]
     """
-    Units for outside radius: {mi|kft|km|m|Ft|in|cm|mm} Default=none.
+    Units for outside radius.
 
-    DSS property name: `RadUnits`, DSS property index: 15.
+    Name: `RadUnits`
+    Default: none
     """
 
     def _get_NormAmps(self) -> BatchFloat64ArrayProxy:
-        return BatchFloat64ArrayProxy(self, 16)
+        return BatchFloat64ArrayProxy(self, 17)
 
     def _set_NormAmps(self, value: Union[float, Float64Array], flags: enums.SetterFlags = 0):
-        self._set_batch_float64_array(16, value, flags)
+        self._set_batch_float64_array(17, value, flags)
 
     NormAmps = property(_get_NormAmps, _set_NormAmps) # type: BatchFloat64ArrayProxy
     """
-    Normal ampacity, amperes. Defaults to Emergency amps/1.5 if not specified.
+    Normal ampacity, amperes. Defaults to $EmergAmps / 1.5$ if not specified.
 
-    DSS property name: `NormAmps`, DSS property index: 16.
+    Name: `NormAmps`
     """
 
     def _get_EmergAmps(self) -> BatchFloat64ArrayProxy:
-        return BatchFloat64ArrayProxy(self, 17)
+        return BatchFloat64ArrayProxy(self, 18)
 
     def _set_EmergAmps(self, value: Union[float, Float64Array], flags: enums.SetterFlags = 0):
-        self._set_batch_float64_array(17, value, flags)
+        self._set_batch_float64_array(18, value, flags)
 
     EmergAmps = property(_get_EmergAmps, _set_EmergAmps) # type: BatchFloat64ArrayProxy
     """
-    Emergency ampacity, amperes. Defaults to 1.5 * Normal Amps if not specified.
+    Emergency ampacity, amperes. Defaults to $1.5 × NormAmps$ if not specified.
 
-    DSS property name: `EmergAmps`, DSS property index: 17.
+    Name: `EmergAmps`
     """
 
     def _get_Diam(self) -> BatchFloat64ArrayProxy:
-        return BatchFloat64ArrayProxy(self, 18)
+        return BatchFloat64ArrayProxy(self, 19)
 
     def _set_Diam(self, value: Union[float, Float64Array], flags: enums.SetterFlags = 0):
-        self._set_batch_float64_array(18, value, flags)
+        self._set_batch_float64_array(19, value, flags)
 
     Diam = property(_get_Diam, _set_Diam) # type: BatchFloat64ArrayProxy
     """
     Diameter; Alternative method for entering radius.
 
-    DSS property name: `Diam`, DSS property index: 18.
+    Name: `Diam`
     """
 
     def _get_Seasons(self) -> BatchInt32ArrayProxy:
-        return BatchInt32ArrayProxy(self, 19)
+        return BatchInt32ArrayProxy(self, 20)
 
     def _set_Seasons(self, value: Union[int, Int32Array], flags: enums.SetterFlags = 0):
-        self._set_batch_int32_array(19, value, flags)
+        self._set_batch_int32_array(20, value, flags)
 
     Seasons = property(_get_Seasons, _set_Seasons) # type: BatchInt32ArrayProxy
     """
     Defines the number of ratings to be defined for the wire, to be used only when defining seasonal ratings using the "Ratings" property.
 
-    DSS property name: `Seasons`, DSS property index: 19.
+    Name: `Seasons`
     """
 
     def _get_Ratings(self) -> List[Float64Array]:
         return [
-            self._get_float64_array(self._lib.Obj_GetFloat64Array, x, 20)
+            self._get_float64_array(self._lib.Obj_GetFloat64Array, x, 21)
             for x in self._unpack()
         ]
 
     def _set_Ratings(self, value: Union[Float64Array, List[Float64Array]], flags: enums.SetterFlags = 0):
-        self._set_batch_float64_array_prop(20, value, flags)
+        self._set_batch_float64_array_prop(21, value, flags)
 
     Ratings = property(_get_Ratings, _set_Ratings) # type: List[Float64Array]
     """
     An array of ratings to be used when the seasonal ratings flag is True. It can be used to insert
     multiple ratings to change during a QSTS simulation to evaluate different ratings in lines.
 
-    DSS property name: `Ratings`, DSS property index: 20.
+    Name: `Ratings`
+    Default: [-1.0]
     """
 
     def _get_CapRadius(self) -> BatchFloat64ArrayProxy:
-        return BatchFloat64ArrayProxy(self, 21)
+        return BatchFloat64ArrayProxy(self, 22)
 
     def _set_CapRadius(self, value: Union[float, Float64Array], flags: enums.SetterFlags = 0):
-        self._set_batch_float64_array(21, value, flags)
+        self._set_batch_float64_array(22, value, flags)
 
     CapRadius = property(_get_CapRadius, _set_CapRadius) # type: BatchFloat64ArrayProxy
     """
     Equivalent conductor radius for capacitance calcs. Specify this for bundled conductors. Defaults to same value as radius. Define Diam or Radius property first.
 
-    DSS property name: `CapRadius`, DSS property index: 21.
+    Name: `CapRadius`
     """
 
     def Like(self, value: AnyStr, flags: enums.SetterFlags = 0):
@@ -800,15 +857,18 @@ class CNDataBatch(DSSBatch):
 
         New Capacitor.C2 like=c1  ...
 
-        DSS property name: `Like`, DSS property index: 22.
+        **Deprecated:** `Like` has been deprecated since at least 2021, see https://sourceforge.net/p/electricdss/discussion/861977/thread/8b59d21eb6/#b57c/f668
+
+        Name: `Like`
         """
-        self._set_batch_string(22, value, flags)
+        self._set_batch_string(23, value, flags)
 
 class CNDataBatchProperties(TypedDict):
     k: Union[int, Int32Array]
     DiaStrand: Union[float, Float64Array]
     GMRStrand: Union[float, Float64Array]
     RStrand: Union[float, Float64Array]
+    SemiconLayer: bool
     EpsR: Union[float, Float64Array]
     InsLayer: Union[float, Float64Array]
     DiaIns: Union[float, Float64Array]

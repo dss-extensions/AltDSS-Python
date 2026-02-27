@@ -212,18 +212,17 @@ class IEnergyMeterMixin:
         Users are required to close the DI files at the end of a run,
         either using this function or the `CloseDI` DSS command.
         '''
-        self._check_for_error(self._lib.Meters_CloseAllDIFiles())
+        self._lib.Meters_CloseAllDIFiles()
 
     def OpenDIFiles(self):
         '''Open Demand Interval (DI) files'''
-        self._check_for_error(self._lib.Meters_OpenAllDIFiles())
+        self._lib.Meters_OpenAllDIFiles()
 
     def DIFilesAreOpen(self) -> bool:
         '''Indicates if Demand Interval (DI) files have been properly opened.'''
-        return self._check_for_error(self._lib.Meters_Get_DIFilesAreOpen()) != 0
+        return self._lib.Meters_Get_DIFilesAreOpen()
 
     def Totals(self) -> Float64Array:
         '''Returns the totals of all registers of all meters'''
-        self._check_for_error(self._lib.Meters_Get_Totals_GR())
-        return self._get_float64_gr_array()
+        return self._lib.Meters_Get_Totals_GR()
     

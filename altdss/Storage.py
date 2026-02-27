@@ -1,5 +1,5 @@
-# Copyright (c) 2021-2024 Paulo Meira
-# Copyright (c) 2021-2024 DSS-Extensions contributors
+# Copyright (c) 2021-2026 Paulo Meira
+# Copyright (c) 2021-2026 DSS-Extensions contributors
 from __future__ import annotations
 from typing import Union, List, AnyStr, Optional, Iterator, TYPE_CHECKING
 from typing_extensions import TypedDict, Unpack
@@ -19,7 +19,7 @@ from .XYcurve import XYcurve
 class Storage(DSSObj, CircuitElementMixin, PCElementMixin, ElementHasRegistersMixin):
     __slots__ = DSSObj._extra_slots + CircuitElementMixin._extra_slots + PCElementMixin._extra_slots + ElementHasRegistersMixin._extra_slots
     _cls_name = 'Storage'
-    _cls_idx = 29
+    _cls_idx = 30
     _cls_int_idx = {
         1,
         4,
@@ -192,7 +192,8 @@ class Storage(DSSObj, CircuitElementMixin, PCElementMixin, ElementHasRegistersMi
     """
     Number of Phases, this Storage element.  Power is evenly divided among phases.
 
-    DSS property name: `Phases`, DSS property index: 1.
+    Name: `Phases`
+    Default: 3
     """
 
     def _get_Bus1(self) -> str:
@@ -205,7 +206,7 @@ class Storage(DSSObj, CircuitElementMixin, PCElementMixin, ElementHasRegistersMi
     """
     Bus to which the Storage element is connected.  May include specific node specification.
 
-    DSS property name: `Bus1`, DSS property index: 2.
+    Name: `Bus1`
     """
 
     def _get_kV(self) -> float:
@@ -222,7 +223,9 @@ class Storage(DSSObj, CircuitElementMixin, PCElementMixin, ElementHasRegistersMi
 
     If delta or phase-phase connected, specify phase-phase kV.
 
-    DSS property name: `kV`, DSS property index: 3.
+    Name: `kV`
+    Units: kV
+    Default: 12.47
     """
 
     def _get_Conn(self) -> enums.Connection:
@@ -238,7 +241,8 @@ class Storage(DSSObj, CircuitElementMixin, PCElementMixin, ElementHasRegistersMi
     """
     ={wye|LN|delta|LL}.  Default is wye.
 
-    DSS property name: `Conn`, DSS property index: 4.
+    Name: `Conn`
+    Default: Wye
     """
 
     def _get_Conn_str(self) -> str:
@@ -251,7 +255,8 @@ class Storage(DSSObj, CircuitElementMixin, PCElementMixin, ElementHasRegistersMi
     """
     ={wye|LN|delta|LL}.  Default is wye.
 
-    DSS property name: `Conn`, DSS property index: 4.
+    Name: `Conn`
+    Default: Wye
     """
 
     def _get_kW(self) -> float:
@@ -264,7 +269,9 @@ class Storage(DSSObj, CircuitElementMixin, PCElementMixin, ElementHasRegistersMi
     """
     Get/set the requested kW value. Final kW is subjected to the inverter ratings. A positive value denotes power coming OUT of the element, which is the opposite of a Load element. A negative value indicates the Storage element is in Charging state. This value is modified internally depending on the dispatch mode.
 
-    DSS property name: `kW`, DSS property index: 5.
+    Name: `kW`
+    Units: kW
+    Default: -0.25
     """
 
     def _get_kvar(self) -> float:
@@ -275,9 +282,15 @@ class Storage(DSSObj, CircuitElementMixin, PCElementMixin, ElementHasRegistersMi
 
     kvar = property(_get_kvar, _set_kvar) # type: float
     """
-    Get/set the requested kvar value. Final kvar is subjected to the inverter ratings. Sets inverter to operate in constant kvar mode.
+    **Set:** write the **requested** kvar value.
+    **Get:** read the **adjusted** kvar value, subject to limits and modes.
 
-    DSS property name: `kvar`, DSS property index: 6.
+    The final kvar is subjected to the inverter ratings.
+    Setting a new value updates the inverter to operate in constant kvar mode.
+
+    Name: `kvar`
+    Units: kvar
+    Default: 0.0
     """
 
     def _get_PF(self) -> float:
@@ -294,7 +307,8 @@ class Storage(DSSObj, CircuitElementMixin, PCElementMixin, ElementHasRegistersMi
 
     A positive power factor signifies kw and kvar at the same direction.
 
-    DSS property name: `PF`, DSS property index: 7.
+    Name: `PF`
+    Default: 1.0
     """
 
     def _get_kVA(self) -> float:
@@ -307,7 +321,9 @@ class Storage(DSSObj, CircuitElementMixin, PCElementMixin, ElementHasRegistersMi
     """
     Indicates the inverter nameplate capability (in kVA). Used as the base for Dynamics mode and Harmonics mode values.
 
-    DSS property name: `kVA`, DSS property index: 8.
+    Name: `kVA`
+    Units: kVA
+    Default: 25.0
     """
 
     def _get_pctCutIn(self) -> float:
@@ -320,7 +336,8 @@ class Storage(DSSObj, CircuitElementMixin, PCElementMixin, ElementHasRegistersMi
     """
     Cut-in power as a percentage of inverter kVA rating. It is the minimum DC power necessary to turn the inverter ON when it is OFF. Must be greater than or equal to %CutOut. Defaults to 2 for PVSystems and 0 for Storage elements which means that the inverter state will be always ON for this element.
 
-    DSS property name: `%CutIn`, DSS property index: 9.
+    Name: `%CutIn`
+    Default: 0.0
     """
 
     def _get_pctCutOut(self) -> float:
@@ -333,7 +350,8 @@ class Storage(DSSObj, CircuitElementMixin, PCElementMixin, ElementHasRegistersMi
     """
     Cut-out power as a percentage of inverter kVA rating. It is the minimum DC power necessary to keep the inverter ON. Must be less than or equal to %CutIn. Defaults to 0, which means that, once ON, the inverter state will be always ON for this element.
 
-    DSS property name: `%CutOut`, DSS property index: 10.
+    Name: `%CutOut`
+    Default: 0.0
     """
 
     def _get_EffCurve_str(self) -> str:
@@ -346,7 +364,7 @@ class Storage(DSSObj, CircuitElementMixin, PCElementMixin, ElementHasRegistersMi
     """
     An XYCurve object, previously defined, that describes the PER UNIT efficiency vs PER UNIT of rated kVA for the inverter. Power at the AC side of the inverter is discounted by the multiplier obtained from this curve.
 
-    DSS property name: `EffCurve`, DSS property index: 11.
+    Name: `EffCurve`
     """
 
     def _get_EffCurve(self) -> XYcurve:
@@ -363,7 +381,7 @@ class Storage(DSSObj, CircuitElementMixin, PCElementMixin, ElementHasRegistersMi
     """
     An XYCurve object, previously defined, that describes the PER UNIT efficiency vs PER UNIT of rated kVA for the inverter. Power at the AC side of the inverter is discounted by the multiplier obtained from this curve.
 
-    DSS property name: `EffCurve`, DSS property index: 11.
+    Name: `EffCurve`
     """
 
     def _get_VarFollowInverter(self) -> bool:
@@ -374,9 +392,10 @@ class Storage(DSSObj, CircuitElementMixin, PCElementMixin, ElementHasRegistersMi
 
     VarFollowInverter = property(_get_VarFollowInverter, _set_VarFollowInverter) # type: bool
     """
-    Boolean variable (Yes|No) or (True|False). Defaults to False, which indicates that the reactive power generation/absorption does not respect the inverter status.When set to True, the reactive power generation/absorption will cease when the inverter status is off, due to DC kW dropping below %CutOut.  The reactive power generation/absorption will begin again when the DC kW is above %CutIn.  When set to False, the Storage will generate/absorb reactive power regardless of the status of the inverter.
+    A false value indicates that the reactive power generation/absorption does not respect the inverter status. When set to True, the reactive power generation/absorption will cease when the inverter status is off, due to DC kW dropping below %CutOut.  The reactive power generation/absorption will begin again when the DC kW is above %CutIn.  When set to False, the Storage will generate/absorb reactive power regardless of the status of the inverter.
 
-    DSS property name: `VarFollowInverter`, DSS property index: 12.
+    Name: `VarFollowInverter`
+    Default: False
     """
 
     def _get_kvarMax(self) -> float:
@@ -389,7 +408,8 @@ class Storage(DSSObj, CircuitElementMixin, PCElementMixin, ElementHasRegistersMi
     """
     Indicates the maximum reactive power GENERATION (un-signed numerical variable in kvar) for the inverter. Defaults to kVA rating of the inverter.
 
-    DSS property name: `kvarMax`, DSS property index: 13.
+    Name: `kvarMax`
+    Units: kvar
     """
 
     def _get_kvarMaxAbs(self) -> float:
@@ -402,7 +422,8 @@ class Storage(DSSObj, CircuitElementMixin, PCElementMixin, ElementHasRegistersMi
     """
     Indicates the maximum reactive power ABSORPTION (un-signed numerical variable in kvar) for the inverter. Defaults to kvarMax.
 
-    DSS property name: `kvarMaxAbs`, DSS property index: 14.
+    Name: `kvarMaxAbs`
+    Units: kvar
     """
 
     def _get_WattPriority(self) -> bool:
@@ -413,9 +434,10 @@ class Storage(DSSObj, CircuitElementMixin, PCElementMixin, ElementHasRegistersMi
 
     WattPriority = property(_get_WattPriority, _set_WattPriority) # type: bool
     """
-    {Yes/No*/True/False} Set inverter to watt priority instead of the default var priority.
+    Set inverter to watt priority instead of the default var priority.
 
-    DSS property name: `WattPriority`, DSS property index: 15.
+    Name: `WattPriority`
+    Default: False
     """
 
     def _get_PFPriority(self) -> bool:
@@ -428,7 +450,8 @@ class Storage(DSSObj, CircuitElementMixin, PCElementMixin, ElementHasRegistersMi
     """
     If set to true, priority is given to power factor and WattPriority is neglected. It works only if operating in either constant PF or constant kvar modes. Defaults to False.
 
-    DSS property name: `PFPriority`, DSS property index: 16.
+    Name: `PFPriority`
+    Default: False
     """
 
     def _get_pctPMinNoVars(self) -> float:
@@ -441,7 +464,8 @@ class Storage(DSSObj, CircuitElementMixin, PCElementMixin, ElementHasRegistersMi
     """
     Minimum active power as percentage of kWrated under which there is no vars production/absorption. Defaults to 0 (disabled).
 
-    DSS property name: `%PMinNoVars`, DSS property index: 17.
+    Name: `%PMinNoVars`
+    Default: 0.0
     """
 
     def _get_pctPMinkvarMax(self) -> float:
@@ -454,7 +478,8 @@ class Storage(DSSObj, CircuitElementMixin, PCElementMixin, ElementHasRegistersMi
     """
     Minimum active power as percentage of kWrated that allows the inverter to produce/absorb reactive power up to its maximum reactive power, which can be either kvarMax or kvarMaxAbs, depending on the current operation quadrant. Defaults to 0 (disabled).
 
-    DSS property name: `%PMinkvarMax`, DSS property index: 18.
+    Name: `%PMinkvarMax`
+    Default: 0.0
     """
 
     def _get_kWRated(self) -> float:
@@ -467,7 +492,9 @@ class Storage(DSSObj, CircuitElementMixin, PCElementMixin, ElementHasRegistersMi
     """
     kW rating of power output. Base for Loadshapes when DispMode=Follow. Sets kVA property if it has not been specified yet. Defaults to 25.
 
-    DSS property name: `kWRated`, DSS property index: 19.
+    Name: `kWRated`
+    Units: kW
+    Default: 25.0
     """
 
     def _get_pctkWRated(self) -> float:
@@ -480,7 +507,8 @@ class Storage(DSSObj, CircuitElementMixin, PCElementMixin, ElementHasRegistersMi
     """
     Upper limit on active power as a percentage of kWrated. Defaults to 100 (disabled).
 
-    DSS property name: `%kWRated`, DSS property index: 20.
+    Name: `%kWRated`
+    Default: 100.0
     """
 
     def _get_kWhRated(self) -> float:
@@ -491,9 +519,11 @@ class Storage(DSSObj, CircuitElementMixin, PCElementMixin, ElementHasRegistersMi
 
     kWhRated = property(_get_kWhRated, _set_kWhRated) # type: float
     """
-    Rated Storage capacity in kWh. Default is 50.
+    Rated Storage capacity in kWh.
 
-    DSS property name: `kWhRated`, DSS property index: 21.
+    Name: `kWhRated`
+    Units: kWh
+    Default: 50.0
     """
 
     def _get_kWhStored(self) -> float:
@@ -506,7 +536,8 @@ class Storage(DSSObj, CircuitElementMixin, PCElementMixin, ElementHasRegistersMi
     """
     Present amount of energy stored, kWh. Default is same as kWhrated.
 
-    DSS property name: `kWhStored`, DSS property index: 22.
+    Name: `kWhStored`
+    Units: kWh
     """
 
     def _get_pctStored(self) -> float:
@@ -517,9 +548,10 @@ class Storage(DSSObj, CircuitElementMixin, PCElementMixin, ElementHasRegistersMi
 
     pctStored = property(_get_pctStored, _set_pctStored) # type: float
     """
-    Present amount of energy stored, % of rated kWh. Default is 100.
+    Present amount of energy stored, % of rated kWh.
 
-    DSS property name: `%Stored`, DSS property index: 23.
+    Name: `%Stored`
+    Default: 100.0
     """
 
     def _get_pctReserve(self) -> float:
@@ -530,10 +562,11 @@ class Storage(DSSObj, CircuitElementMixin, PCElementMixin, ElementHasRegistersMi
 
     pctReserve = property(_get_pctReserve, _set_pctReserve) # type: float
     """
-    Percentage of rated kWh Storage capacity to be held in reserve for normal operation. Default = 20. 
+    Percentage of rated kWh Storage capacity to be held in reserve for normal operation.
     This is treated as the minimum energy discharge level unless there is an emergency. For emergency operation set this property lower. Cannot be less than zero.
 
-    DSS property name: `%Reserve`, DSS property index: 24.
+    Name: `%Reserve`
+    Default: 20.0
     """
 
     def _get_State(self) -> enums.StorageState:
@@ -549,7 +582,8 @@ class Storage(DSSObj, CircuitElementMixin, PCElementMixin, ElementHasRegistersMi
     """
     {IDLING | CHARGING | DISCHARGING}  Get/Set present operational state. In DISCHARGING mode, the Storage element acts as a generator and the kW property is positive. The element continues discharging at the scheduled output power level until the Storage reaches the reserve value. Then the state reverts to IDLING. In the CHARGING state, the Storage element behaves like a Load and the kW property is negative. The element continues to charge until the max Storage kWh is reached and then switches to IDLING state. In IDLING state, the element draws the idling losses plus the associated inverter losses.
 
-    DSS property name: `State`, DSS property index: 25.
+    Name: `State`
+    Default: Idling
     """
 
     def _get_State_str(self) -> str:
@@ -562,7 +596,8 @@ class Storage(DSSObj, CircuitElementMixin, PCElementMixin, ElementHasRegistersMi
     """
     {IDLING | CHARGING | DISCHARGING}  Get/Set present operational state. In DISCHARGING mode, the Storage element acts as a generator and the kW property is positive. The element continues discharging at the scheduled output power level until the Storage reaches the reserve value. Then the state reverts to IDLING. In the CHARGING state, the Storage element behaves like a Load and the kW property is negative. The element continues to charge until the max Storage kWh is reached and then switches to IDLING state. In IDLING state, the element draws the idling losses plus the associated inverter losses.
 
-    DSS property name: `State`, DSS property index: 25.
+    Name: `State`
+    Default: Idling
     """
 
     def _get_pctDischarge(self) -> float:
@@ -573,9 +608,10 @@ class Storage(DSSObj, CircuitElementMixin, PCElementMixin, ElementHasRegistersMi
 
     pctDischarge = property(_get_pctDischarge, _set_pctDischarge) # type: float
     """
-    Discharge rate (output power) in percentage of rated kW. Default = 100.
+    Discharge rate (output power) in percentage of rated kW.
 
-    DSS property name: `%Discharge`, DSS property index: 26.
+    Name: `%Discharge`
+    Default: 100.0
     """
 
     def _get_pctCharge(self) -> float:
@@ -586,9 +622,10 @@ class Storage(DSSObj, CircuitElementMixin, PCElementMixin, ElementHasRegistersMi
 
     pctCharge = property(_get_pctCharge, _set_pctCharge) # type: float
     """
-    Charging rate (input power) in percentage of rated kW. Default = 100.
+    Charging rate (input power) in percentage of rated kW.
 
-    DSS property name: `%Charge`, DSS property index: 27.
+    Name: `%Charge`
+    Default: 100.0
     """
 
     def _get_pctEffCharge(self) -> float:
@@ -599,9 +636,10 @@ class Storage(DSSObj, CircuitElementMixin, PCElementMixin, ElementHasRegistersMi
 
     pctEffCharge = property(_get_pctEffCharge, _set_pctEffCharge) # type: float
     """
-    Percentage efficiency for CHARGING the Storage element. Default = 90.
+    Percentage efficiency for CHARGING the Storage element.
 
-    DSS property name: `%EffCharge`, DSS property index: 28.
+    Name: `%EffCharge`
+    Default: 90.0
     """
 
     def _get_pctEffDischarge(self) -> float:
@@ -612,9 +650,10 @@ class Storage(DSSObj, CircuitElementMixin, PCElementMixin, ElementHasRegistersMi
 
     pctEffDischarge = property(_get_pctEffDischarge, _set_pctEffDischarge) # type: float
     """
-    Percentage efficiency for DISCHARGING the Storage element. Default = 90.
+    Percentage efficiency for DISCHARGING the Storage element.
 
-    DSS property name: `%EffDischarge`, DSS property index: 29.
+    Name: `%EffDischarge`
+    Default: 90.0
     """
 
     def _get_pctIdlingkW(self) -> float:
@@ -625,9 +664,10 @@ class Storage(DSSObj, CircuitElementMixin, PCElementMixin, ElementHasRegistersMi
 
     pctIdlingkW = property(_get_pctIdlingkW, _set_pctIdlingkW) # type: float
     """
-    Percentage of rated kW consumed by idling losses. Default = 1.
+    Percentage of rated kW consumed by idling losses.
 
-    DSS property name: `%IdlingkW`, DSS property index: 30.
+    Name: `%IdlingkW`
+    Default: 1.0
     """
 
     def _get_pctR(self) -> float:
@@ -638,9 +678,10 @@ class Storage(DSSObj, CircuitElementMixin, PCElementMixin, ElementHasRegistersMi
 
     pctR = property(_get_pctR, _set_pctR) # type: float
     """
-    Equivalent percentage internal resistance, ohms. Default is 0. Placed in series with internal voltage source for harmonics and dynamics modes. Use a combination of %IdlingkW, %EffCharge and %EffDischarge to account for losses in power flow modes.
+    Equivalent percentage internal resistance, ohms. Placed in series with internal voltage source for harmonics and dynamics modes. Use a combination of %IdlingkW, %EffCharge and %EffDischarge to account for losses in power flow modes.
 
-    DSS property name: `%R`, DSS property index: 32.
+    Name: `%R`
+    Default: 0.0
     """
 
     def _get_pctX(self) -> float:
@@ -651,9 +692,10 @@ class Storage(DSSObj, CircuitElementMixin, PCElementMixin, ElementHasRegistersMi
 
     pctX = property(_get_pctX, _set_pctX) # type: float
     """
-    Equivalent percentage internal reactance, ohms. Default is 50%. Placed in series with internal voltage source for harmonics and dynamics modes. (Limits fault current to 2 pu.
+    Equivalent percentage internal reactance, ohms. Placed in series with internal voltage source for harmonics and dynamics modes. (Limits fault current to 2 pu.
 
-    DSS property name: `%X`, DSS property index: 33.
+    Name: `%X`
+    Default: 50.0
     """
 
     def _get_Model(self) -> int:
@@ -670,7 +712,8 @@ class Storage(DSSObj, CircuitElementMixin, PCElementMixin, ElementHasRegistersMi
     2:Storage element is modeled as a CONSTANT IMPEDANCE.
     3:Compute load injection from User-written Model.
 
-    DSS property name: `Model`, DSS property index: 34.
+    Name: `Model`
+    Default: 1
     """
 
     def _get_VMinpu(self) -> float:
@@ -683,7 +726,8 @@ class Storage(DSSObj, CircuitElementMixin, PCElementMixin, ElementHasRegistersMi
     """
     Default = 0.90.  Minimum per unit voltage for which the Model is assumed to apply. Below this value, the load model reverts to a constant impedance model.
 
-    DSS property name: `VMinpu`, DSS property index: 35.
+    Name: `VMinpu`
+    Default: 0.9
     """
 
     def _get_VMaxpu(self) -> float:
@@ -696,7 +740,8 @@ class Storage(DSSObj, CircuitElementMixin, PCElementMixin, ElementHasRegistersMi
     """
     Default = 1.10.  Maximum per unit voltage for which the Model is assumed to apply. Above this value, the load model reverts to a constant impedance model.
 
-    DSS property name: `VMaxpu`, DSS property index: 36.
+    Name: `VMaxpu`
+    Default: 1.1
     """
 
     def _get_Balanced(self) -> bool:
@@ -707,9 +752,10 @@ class Storage(DSSObj, CircuitElementMixin, PCElementMixin, ElementHasRegistersMi
 
     Balanced = property(_get_Balanced, _set_Balanced) # type: bool
     """
-    {Yes | No*} Default is No. Force balanced current only for 3-phase Storage. Forces zero- and negative-sequence to zero. 
+    Force balanced current only for 3-phase Storage. Forces zero- and negative-sequence to zero. 
 
-    DSS property name: `Balanced`, DSS property index: 37.
+    Name: `Balanced`
+    Default: False
     """
 
     def _get_LimitCurrent(self) -> bool:
@@ -722,7 +768,8 @@ class Storage(DSSObj, CircuitElementMixin, PCElementMixin, ElementHasRegistersMi
     """
     Limits current magnitude to Vminpu value for both 1-phase and 3-phase Storage similar to Generator Model 7. For 3-phase, limits the positive-sequence current but not the negative-sequence.
 
-    DSS property name: `LimitCurrent`, DSS property index: 38.
+    Name: `LimitCurrent`
+    Default: False
     """
 
     def _get_Yearly_str(self) -> str:
@@ -735,7 +782,7 @@ class Storage(DSSObj, CircuitElementMixin, PCElementMixin, ElementHasRegistersMi
     """
     Dispatch shape to use for yearly simulations.  Must be previously defined as a Loadshape object. If this is not specified, the Daily dispatch shape, if any, is repeated during Yearly solution modes. In the default dispatch mode, the Storage element uses this loadshape to trigger State changes.
 
-    DSS property name: `Yearly`, DSS property index: 39.
+    Name: `Yearly`
     """
 
     def _get_Yearly(self) -> LoadShape:
@@ -752,7 +799,7 @@ class Storage(DSSObj, CircuitElementMixin, PCElementMixin, ElementHasRegistersMi
     """
     Dispatch shape to use for yearly simulations.  Must be previously defined as a Loadshape object. If this is not specified, the Daily dispatch shape, if any, is repeated during Yearly solution modes. In the default dispatch mode, the Storage element uses this loadshape to trigger State changes.
 
-    DSS property name: `Yearly`, DSS property index: 39.
+    Name: `Yearly`
     """
 
     def _get_Daily_str(self) -> str:
@@ -765,7 +812,7 @@ class Storage(DSSObj, CircuitElementMixin, PCElementMixin, ElementHasRegistersMi
     """
     Dispatch shape to use for daily simulations.  Must be previously defined as a Loadshape object of 24 hrs, typically.  In the default dispatch mode, the Storage element uses this loadshape to trigger State changes.
 
-    DSS property name: `Daily`, DSS property index: 40.
+    Name: `Daily`
     """
 
     def _get_Daily(self) -> LoadShape:
@@ -782,7 +829,7 @@ class Storage(DSSObj, CircuitElementMixin, PCElementMixin, ElementHasRegistersMi
     """
     Dispatch shape to use for daily simulations.  Must be previously defined as a Loadshape object of 24 hrs, typically.  In the default dispatch mode, the Storage element uses this loadshape to trigger State changes.
 
-    DSS property name: `Daily`, DSS property index: 40.
+    Name: `Daily`
     """
 
     def _get_Duty_str(self) -> str:
@@ -799,7 +846,7 @@ class Storage(DSSObj, CircuitElementMixin, PCElementMixin, ElementHasRegistersMi
 
     Designate the number of points to solve using the Set Number=xxxx command. If there are fewer points in the actual shape, the shape is assumed to repeat.
 
-    DSS property name: `Duty`, DSS property index: 41.
+    Name: `Duty`
     """
 
     def _get_Duty(self) -> LoadShape:
@@ -820,7 +867,7 @@ class Storage(DSSObj, CircuitElementMixin, PCElementMixin, ElementHasRegistersMi
 
     Designate the number of points to solve using the Set Number=xxxx command. If there are fewer points in the actual shape, the shape is assumed to repeat.
 
-    DSS property name: `Duty`, DSS property index: 41.
+    Name: `Duty`
     """
 
     def _get_DispMode(self) -> enums.StorageDispatchMode:
@@ -844,7 +891,8 @@ class Storage(DSSObj, CircuitElementMixin, PCElementMixin, ElementHasRegistersMi
 
     For the other two dispatch modes, the Storage element state is controlled by either the global default Loadlevel value or the price level. 
 
-    DSS property name: `DispMode`, DSS property index: 42.
+    Name: `DispMode`
+    Default: Default
     """
 
     def _get_DispMode_str(self) -> str:
@@ -865,7 +913,8 @@ class Storage(DSSObj, CircuitElementMixin, PCElementMixin, ElementHasRegistersMi
 
     For the other two dispatch modes, the Storage element state is controlled by either the global default Loadlevel value or the price level. 
 
-    DSS property name: `DispMode`, DSS property index: 42.
+    Name: `DispMode`
+    Default: Default
     """
 
     def _get_DischargeTrigger(self) -> float:
@@ -877,10 +926,11 @@ class Storage(DSSObj, CircuitElementMixin, PCElementMixin, ElementHasRegistersMi
     DischargeTrigger = property(_get_DischargeTrigger, _set_DischargeTrigger) # type: float
     """
     Dispatch trigger value for discharging the Storage. 
-    If = 0.0 the Storage element state is changed by the State command or by a StorageController object. 
-    If <> 0  the Storage element state is set to DISCHARGING when this trigger level is EXCEEDED by either the specified Loadshape curve value or the price signal or global Loadlevel value, depending on dispatch mode. See State property.
+    If = 0 the Storage element state is changed by the State command or by a StorageController object. 
+    If ≠ 0  the Storage element state is set to DISCHARGING when this trigger level is EXCEEDED by either the specified Loadshape curve value or the price signal or global Loadlevel value, depending on dispatch mode. See State property.
 
-    DSS property name: `DischargeTrigger`, DSS property index: 43.
+    Name: `DischargeTrigger`
+    Default: 0.0
     """
 
     def _get_ChargeTrigger(self) -> float:
@@ -893,11 +943,12 @@ class Storage(DSSObj, CircuitElementMixin, PCElementMixin, ElementHasRegistersMi
     """
     Dispatch trigger value for charging the Storage. 
 
-    If = 0.0 the Storage element state is changed by the State command or StorageController object.  
+    If = 0 the Storage element state is changed by the State command or StorageController object.  
 
-    If <> 0  the Storage element state is set to CHARGING when this trigger level is GREATER than either the specified Loadshape curve value or the price signal or global Loadlevel value, depending on dispatch mode. See State property.
+    If ≠ 0  the Storage element state is set to CHARGING when this trigger level is GREATER than either the specified Loadshape curve value or the price signal or global Loadlevel value, depending on dispatch mode. See State property.
 
-    DSS property name: `ChargeTrigger`, DSS property index: 44.
+    Name: `ChargeTrigger`
+    Default: 0.0
     """
 
     def _get_TimeChargeTrig(self) -> float:
@@ -908,9 +959,11 @@ class Storage(DSSObj, CircuitElementMixin, PCElementMixin, ElementHasRegistersMi
 
     TimeChargeTrig = property(_get_TimeChargeTrig, _set_TimeChargeTrig) # type: float
     """
-    Time of day in fractional hours (0230 = 2.5) at which Storage element will automatically go into charge state. Default is 2.0.  Enter a negative time value to disable this feature.
+    Time of day in fractional hours (0230 = 2.5) at which Storage element will automatically go into charge state. Enter a negative time value to disable this feature.
 
-    DSS property name: `TimeChargeTrig`, DSS property index: 45.
+    Name: `TimeChargeTrig`
+    Units: hour (0-24)
+    Default: 2.0
     """
 
     def _get_Class(self) -> int:
@@ -923,7 +976,8 @@ class Storage(DSSObj, CircuitElementMixin, PCElementMixin, ElementHasRegistersMi
     """
     An arbitrary integer number representing the class of Storage element so that Storage values may be segregated by class.
 
-    DSS property name: `Class`, DSS property index: 46.
+    Name: `Class`
+    Default: 1
     """
 
     def _get_DynaDLL(self) -> str:
@@ -936,7 +990,7 @@ class Storage(DSSObj, CircuitElementMixin, PCElementMixin, ElementHasRegistersMi
     """
     Name of DLL containing user-written dynamics model, which computes the terminal currents for Dynamics-mode simulations, overriding the default model.  Set to "none" to negate previous setting. This DLL has a simpler interface than the UserModel DLL and is only used for Dynamics mode.
 
-    DSS property name: `DynaDLL`, DSS property index: 47.
+    Name: `DynaDLL`
     """
 
     def _get_DynaData(self) -> str:
@@ -949,7 +1003,7 @@ class Storage(DSSObj, CircuitElementMixin, PCElementMixin, ElementHasRegistersMi
     """
     String (in quotes or parentheses if necessary) that gets passed to the user-written dynamics model Edit function for defining the data required for that model.
 
-    DSS property name: `DynaData`, DSS property index: 48.
+    Name: `DynaData`
     """
 
     def _get_UserModel(self) -> str:
@@ -962,7 +1016,7 @@ class Storage(DSSObj, CircuitElementMixin, PCElementMixin, ElementHasRegistersMi
     """
     Name of DLL containing user-written model, which computes the terminal currents for both power flow and dynamics, overriding the default model.  Set to "none" to negate previous setting.
 
-    DSS property name: `UserModel`, DSS property index: 49.
+    Name: `UserModel`
     """
 
     def _get_UserData(self) -> str:
@@ -975,7 +1029,7 @@ class Storage(DSSObj, CircuitElementMixin, PCElementMixin, ElementHasRegistersMi
     """
     String (in quotes or parentheses) that gets passed to user-written model for defining the data required for that model.
 
-    DSS property name: `UserData`, DSS property index: 50.
+    Name: `UserData`
     """
 
     def _get_DebugTrace(self) -> bool:
@@ -986,9 +1040,10 @@ class Storage(DSSObj, CircuitElementMixin, PCElementMixin, ElementHasRegistersMi
 
     DebugTrace = property(_get_DebugTrace, _set_DebugTrace) # type: bool
     """
-    {Yes | No }  Default is no.  Turn this on to capture the progress of the Storage model for each iteration.  Creates a separate file for each Storage element named "Storage_name.csv".
+    Turn this on to capture the progress of the Storage model for each iteration.  Creates a separate file for each Storage element named "Storage_name.csv".
 
-    DSS property name: `DebugTrace`, DSS property index: 51.
+    Name: `DebugTrace`
+    Default: False
     """
 
     def _get_kVDC(self) -> float:
@@ -1001,7 +1056,9 @@ class Storage(DSSObj, CircuitElementMixin, PCElementMixin, ElementHasRegistersMi
     """
     Indicates the rated voltage (kV) at the input of the inverter while the storage is discharging. The value is normally greater or equal to the kV base of the Storage device. It is used for dynamics simulation ONLY.
 
-    DSS property name: `kVDC`, DSS property index: 52.
+    Name: `kVDC`
+    Units: kV
+    Default: 8.0
     """
 
     def _get_Kp(self) -> float:
@@ -1014,7 +1071,8 @@ class Storage(DSSObj, CircuitElementMixin, PCElementMixin, ElementHasRegistersMi
     """
     It is the proportional gain for the PI controller within the inverter. Use it to modify the controller response in dynamics simulation mode.
 
-    DSS property name: `Kp`, DSS property index: 53.
+    Name: `Kp`
+    Default: 0.01
     """
 
     def _get_PITol(self) -> float:
@@ -1027,7 +1085,8 @@ class Storage(DSSObj, CircuitElementMixin, PCElementMixin, ElementHasRegistersMi
     """
     It is the tolerance (%) for the closed loop controller of the inverter. For dynamics simulation mode.
 
-    DSS property name: `PITol`, DSS property index: 54.
+    Name: `PITol`
+    Default: 0.0
     """
 
     def _get_SafeVoltage(self) -> float:
@@ -1040,7 +1099,8 @@ class Storage(DSSObj, CircuitElementMixin, PCElementMixin, ElementHasRegistersMi
     """
     Indicates the voltage level (%) respect to the base voltage level for which the Inverter will operate. If this threshold is violated, the Inverter will enter safe mode (OFF). For dynamic simulation. By default is 80%.
 
-    DSS property name: `SafeVoltage`, DSS property index: 55.
+    Name: `SafeVoltage`
+    Default: 80.0
     """
 
     def _get_SafeMode(self) -> bool:
@@ -1053,7 +1113,9 @@ class Storage(DSSObj, CircuitElementMixin, PCElementMixin, ElementHasRegistersMi
     """
     (Read only) Indicates whether the inverter entered (Yes) or not (No) into Safe Mode.
 
-    DSS property name: `SafeMode`, DSS property index: 56.
+    **Read-only**
+
+    Name: `SafeMode`
     """
 
     def _get_DynamicEq_str(self) -> str:
@@ -1066,7 +1128,7 @@ class Storage(DSSObj, CircuitElementMixin, PCElementMixin, ElementHasRegistersMi
     """
     The name of the dynamic equation (DynamicExp) that will be used for defining the dynamic behavior of the generator. If not defined, the generator dynamics will follow the built-in dynamic equation.
 
-    DSS property name: `DynamicEq`, DSS property index: 57.
+    Name: `DynamicEq`
     """
 
     def _get_DynamicEq(self) -> DynamicExp:
@@ -1083,7 +1145,7 @@ class Storage(DSSObj, CircuitElementMixin, PCElementMixin, ElementHasRegistersMi
     """
     The name of the dynamic equation (DynamicExp) that will be used for defining the dynamic behavior of the generator. If not defined, the generator dynamics will follow the built-in dynamic equation.
 
-    DSS property name: `DynamicEq`, DSS property index: 57.
+    Name: `DynamicEq`
     """
 
     def _get_DynOut(self) -> List[str]:
@@ -1102,7 +1164,7 @@ class Storage(DSSObj, CircuitElementMixin, PCElementMixin, ElementHasRegistersMi
 
     The output variables need to be defined in the same order.
 
-    DSS property name: `DynOut`, DSS property index: 58.
+    Name: `DynOut`
     """
 
     def _get_ControlMode(self) -> enums.InverterControlMode:
@@ -1116,11 +1178,12 @@ class Storage(DSSObj, CircuitElementMixin, PCElementMixin, ElementHasRegistersMi
 
     ControlMode = property(_get_ControlMode, _set_ControlMode) # type: enums.InverterControlMode
     """
-    Defines the control mode for the inverter. It can be one of {GFM | GFL*}. By default it is GFL (Grid Following Inverter). Use GFM (Grid Forming Inverter) for energizing islanded microgrids, but, if the device is connected to the grid, it is highly recommended to use GFL.
+    Defines the control mode for the inverter. By default it is GFL (Grid Following Inverter). Use GFM (Grid Forming Inverter) for energizing islanded microgrids, but, if the device is connected to the grid, it is highly recommended to use GFL.
 
     GFM control mode disables any control action set by the InvControl device.
 
-    DSS property name: `ControlMode`, DSS property index: 59.
+    Name: `ControlMode`
+    Default: GFL
     """
 
     def _get_ControlMode_str(self) -> str:
@@ -1131,11 +1194,12 @@ class Storage(DSSObj, CircuitElementMixin, PCElementMixin, ElementHasRegistersMi
 
     ControlMode_str = property(_get_ControlMode_str, _set_ControlMode_str) # type: str
     """
-    Defines the control mode for the inverter. It can be one of {GFM | GFL*}. By default it is GFL (Grid Following Inverter). Use GFM (Grid Forming Inverter) for energizing islanded microgrids, but, if the device is connected to the grid, it is highly recommended to use GFL.
+    Defines the control mode for the inverter. By default it is GFL (Grid Following Inverter). Use GFM (Grid Forming Inverter) for energizing islanded microgrids, but, if the device is connected to the grid, it is highly recommended to use GFL.
 
     GFM control mode disables any control action set by the InvControl device.
 
-    DSS property name: `ControlMode`, DSS property index: 59.
+    Name: `ControlMode`
+    Default: GFL
     """
 
     def _get_AmpLimit(self) -> float:
@@ -1149,7 +1213,8 @@ class Storage(DSSObj, CircuitElementMixin, PCElementMixin, ElementHasRegistersMi
     The current limiter per phase for the IBR when operating in GFM mode. This limit is imposed to prevent the IBR to enter into Safe Mode when reaching the IBR power ratings.
     Once the IBR reaches this value, it remains there without moving into Safe Mode. This value needs to be set lower than the IBR Amps rating.
 
-    DSS property name: `AmpLimit`, DSS property index: 60.
+    Name: `AmpLimit`
+    Units: A
     """
 
     def _get_AmpLimitGain(self) -> float:
@@ -1162,7 +1227,8 @@ class Storage(DSSObj, CircuitElementMixin, PCElementMixin, ElementHasRegistersMi
     """
     Use it for fine tunning the current limiter when active, by default is 0.8, it has to be a value between 0.1 and 1. This value allows users to fine tune the IBRs current limiter to match with the user requirements.
 
-    DSS property name: `AmpLimitGain`, DSS property index: 61.
+    Name: `AmpLimitGain`
+    Default: 0.8
     """
 
     def _get_Spectrum_str(self) -> str:
@@ -1173,9 +1239,9 @@ class Storage(DSSObj, CircuitElementMixin, PCElementMixin, ElementHasRegistersMi
 
     Spectrum_str = property(_get_Spectrum_str, _set_Spectrum_str) # type: str
     """
-    Name of harmonic voltage or current spectrum for this Storage element. Current injection is assumed for inverter. Default value is "default", which is defined when the DSS starts.
+    Name of harmonic voltage or current spectrum for this Storage element. Current injection is assumed for inverter.
 
-    DSS property name: `Spectrum`, DSS property index: 62.
+    Name: `Spectrum`
     """
 
     def _get_Spectrum(self) -> SpectrumObj:
@@ -1190,9 +1256,9 @@ class Storage(DSSObj, CircuitElementMixin, PCElementMixin, ElementHasRegistersMi
 
     Spectrum = property(_get_Spectrum, _set_Spectrum) # type: SpectrumObj
     """
-    Name of harmonic voltage or current spectrum for this Storage element. Current injection is assumed for inverter. Default value is "default", which is defined when the DSS starts.
+    Name of harmonic voltage or current spectrum for this Storage element. Current injection is assumed for inverter.
 
-    DSS property name: `Spectrum`, DSS property index: 62.
+    Name: `Spectrum`
     """
 
     def _get_BaseFreq(self) -> float:
@@ -1205,7 +1271,8 @@ class Storage(DSSObj, CircuitElementMixin, PCElementMixin, ElementHasRegistersMi
     """
     Base Frequency for ratings.
 
-    DSS property name: `BaseFreq`, DSS property index: 63.
+    Name: `BaseFreq`
+    Units: Hz
     """
 
     def _get_Enabled(self) -> bool:
@@ -1216,9 +1283,10 @@ class Storage(DSSObj, CircuitElementMixin, PCElementMixin, ElementHasRegistersMi
 
     Enabled = property(_get_Enabled, _set_Enabled) # type: bool
     """
-    {Yes|No or True|False} Indicates whether this element is enabled.
+    Indicates whether this element is enabled.
 
-    DSS property name: `Enabled`, DSS property index: 64.
+    Name: `Enabled`
+    Default: True
     """
 
     def Like(self, value: AnyStr):
@@ -1227,7 +1295,9 @@ class Storage(DSSObj, CircuitElementMixin, PCElementMixin, ElementHasRegistersMi
 
         New Capacitor.C2 like=c1  ...
 
-        DSS property name: `Like`, DSS property index: 65.
+        **Deprecated:** `Like` has been deprecated since at least 2021, see https://sourceforge.net/p/electricdss/discussion/861977/thread/8b59d21eb6/#b57c/f668
+
+        Name: `Like`
         """
         self._set_string_o(65, value)
 
@@ -1301,7 +1371,7 @@ class StorageProperties(TypedDict):
 class StorageBatch(DSSBatch, CircuitElementBatchMixin, PCElementBatchMixin):
     _cls_name = 'Storage'
     _obj_cls = Storage
-    _cls_idx = 29
+    _cls_idx = 30
     __slots__ = []
 
     def __init__(self, api_util, **kwargs):
@@ -1340,7 +1410,8 @@ class StorageBatch(DSSBatch, CircuitElementBatchMixin, PCElementBatchMixin):
     """
     Number of Phases, this Storage element.  Power is evenly divided among phases.
 
-    DSS property name: `Phases`, DSS property index: 1.
+    Name: `Phases`
+    Default: 3
     """
 
     def _get_Bus1(self) -> List[str]:
@@ -1353,7 +1424,7 @@ class StorageBatch(DSSBatch, CircuitElementBatchMixin, PCElementBatchMixin):
     """
     Bus to which the Storage element is connected.  May include specific node specification.
 
-    DSS property name: `Bus1`, DSS property index: 2.
+    Name: `Bus1`
     """
 
     def _get_kV(self) -> BatchFloat64ArrayProxy:
@@ -1370,7 +1441,9 @@ class StorageBatch(DSSBatch, CircuitElementBatchMixin, PCElementBatchMixin):
 
     If delta or phase-phase connected, specify phase-phase kV.
 
-    DSS property name: `kV`, DSS property index: 3.
+    Name: `kV`
+    Units: kV
+    Default: 12.47
     """
 
     def _get_Conn(self) -> BatchInt32ArrayProxy:
@@ -1387,7 +1460,8 @@ class StorageBatch(DSSBatch, CircuitElementBatchMixin, PCElementBatchMixin):
     """
     ={wye|LN|delta|LL}.  Default is wye.
 
-    DSS property name: `Conn`, DSS property index: 4.
+    Name: `Conn`
+    Default: Wye
     """
 
     def _get_Conn_str(self) -> List[str]:
@@ -1400,7 +1474,8 @@ class StorageBatch(DSSBatch, CircuitElementBatchMixin, PCElementBatchMixin):
     """
     ={wye|LN|delta|LL}.  Default is wye.
 
-    DSS property name: `Conn`, DSS property index: 4.
+    Name: `Conn`
+    Default: Wye
     """
 
     def _get_kW(self) -> BatchFloat64ArrayProxy:
@@ -1413,7 +1488,9 @@ class StorageBatch(DSSBatch, CircuitElementBatchMixin, PCElementBatchMixin):
     """
     Get/set the requested kW value. Final kW is subjected to the inverter ratings. A positive value denotes power coming OUT of the element, which is the opposite of a Load element. A negative value indicates the Storage element is in Charging state. This value is modified internally depending on the dispatch mode.
 
-    DSS property name: `kW`, DSS property index: 5.
+    Name: `kW`
+    Units: kW
+    Default: -0.25
     """
 
     def _get_kvar(self) -> BatchFloat64ArrayProxy:
@@ -1424,9 +1501,15 @@ class StorageBatch(DSSBatch, CircuitElementBatchMixin, PCElementBatchMixin):
 
     kvar = property(_get_kvar, _set_kvar) # type: BatchFloat64ArrayProxy
     """
-    Get/set the requested kvar value. Final kvar is subjected to the inverter ratings. Sets inverter to operate in constant kvar mode.
+    **Set:** write the **requested** kvar value.
+    **Get:** read the **adjusted** kvar value, subject to limits and modes.
 
-    DSS property name: `kvar`, DSS property index: 6.
+    The final kvar is subjected to the inverter ratings.
+    Setting a new value updates the inverter to operate in constant kvar mode.
+
+    Name: `kvar`
+    Units: kvar
+    Default: 0.0
     """
 
     def _get_PF(self) -> BatchFloat64ArrayProxy:
@@ -1443,7 +1526,8 @@ class StorageBatch(DSSBatch, CircuitElementBatchMixin, PCElementBatchMixin):
 
     A positive power factor signifies kw and kvar at the same direction.
 
-    DSS property name: `PF`, DSS property index: 7.
+    Name: `PF`
+    Default: 1.0
     """
 
     def _get_kVA(self) -> BatchFloat64ArrayProxy:
@@ -1456,7 +1540,9 @@ class StorageBatch(DSSBatch, CircuitElementBatchMixin, PCElementBatchMixin):
     """
     Indicates the inverter nameplate capability (in kVA). Used as the base for Dynamics mode and Harmonics mode values.
 
-    DSS property name: `kVA`, DSS property index: 8.
+    Name: `kVA`
+    Units: kVA
+    Default: 25.0
     """
 
     def _get_pctCutIn(self) -> BatchFloat64ArrayProxy:
@@ -1469,7 +1555,8 @@ class StorageBatch(DSSBatch, CircuitElementBatchMixin, PCElementBatchMixin):
     """
     Cut-in power as a percentage of inverter kVA rating. It is the minimum DC power necessary to turn the inverter ON when it is OFF. Must be greater than or equal to %CutOut. Defaults to 2 for PVSystems and 0 for Storage elements which means that the inverter state will be always ON for this element.
 
-    DSS property name: `%CutIn`, DSS property index: 9.
+    Name: `%CutIn`
+    Default: 0.0
     """
 
     def _get_pctCutOut(self) -> BatchFloat64ArrayProxy:
@@ -1482,7 +1569,8 @@ class StorageBatch(DSSBatch, CircuitElementBatchMixin, PCElementBatchMixin):
     """
     Cut-out power as a percentage of inverter kVA rating. It is the minimum DC power necessary to keep the inverter ON. Must be less than or equal to %CutIn. Defaults to 0, which means that, once ON, the inverter state will be always ON for this element.
 
-    DSS property name: `%CutOut`, DSS property index: 10.
+    Name: `%CutOut`
+    Default: 0.0
     """
 
     def _get_EffCurve_str(self) -> List[str]:
@@ -1495,7 +1583,7 @@ class StorageBatch(DSSBatch, CircuitElementBatchMixin, PCElementBatchMixin):
     """
     An XYCurve object, previously defined, that describes the PER UNIT efficiency vs PER UNIT of rated kVA for the inverter. Power at the AC side of the inverter is discounted by the multiplier obtained from this curve.
 
-    DSS property name: `EffCurve`, DSS property index: 11.
+    Name: `EffCurve`
     """
 
     def _get_EffCurve(self) -> List[XYcurve]:
@@ -1508,7 +1596,7 @@ class StorageBatch(DSSBatch, CircuitElementBatchMixin, PCElementBatchMixin):
     """
     An XYCurve object, previously defined, that describes the PER UNIT efficiency vs PER UNIT of rated kVA for the inverter. Power at the AC side of the inverter is discounted by the multiplier obtained from this curve.
 
-    DSS property name: `EffCurve`, DSS property index: 11.
+    Name: `EffCurve`
     """
 
     def _get_VarFollowInverter(self) -> List[bool]:
@@ -1516,14 +1604,15 @@ class StorageBatch(DSSBatch, CircuitElementBatchMixin, PCElementBatchMixin):
             self._get_batch_int32_prop(12)
         ]
 
-    def _set_VarFollowInverter(self, value: bool, flags: enums.SetterFlags = 0):
+    def _set_VarFollowInverter(self, value: Union[bool, List[bool]], flags: enums.SetterFlags = 0):
         self._set_batch_int32_array(12, value, flags)
 
     VarFollowInverter = property(_get_VarFollowInverter, _set_VarFollowInverter) # type: List[bool]
     """
-    Boolean variable (Yes|No) or (True|False). Defaults to False, which indicates that the reactive power generation/absorption does not respect the inverter status.When set to True, the reactive power generation/absorption will cease when the inverter status is off, due to DC kW dropping below %CutOut.  The reactive power generation/absorption will begin again when the DC kW is above %CutIn.  When set to False, the Storage will generate/absorb reactive power regardless of the status of the inverter.
+    A false value indicates that the reactive power generation/absorption does not respect the inverter status. When set to True, the reactive power generation/absorption will cease when the inverter status is off, due to DC kW dropping below %CutOut.  The reactive power generation/absorption will begin again when the DC kW is above %CutIn.  When set to False, the Storage will generate/absorb reactive power regardless of the status of the inverter.
 
-    DSS property name: `VarFollowInverter`, DSS property index: 12.
+    Name: `VarFollowInverter`
+    Default: False
     """
 
     def _get_kvarMax(self) -> BatchFloat64ArrayProxy:
@@ -1536,7 +1625,8 @@ class StorageBatch(DSSBatch, CircuitElementBatchMixin, PCElementBatchMixin):
     """
     Indicates the maximum reactive power GENERATION (un-signed numerical variable in kvar) for the inverter. Defaults to kVA rating of the inverter.
 
-    DSS property name: `kvarMax`, DSS property index: 13.
+    Name: `kvarMax`
+    Units: kvar
     """
 
     def _get_kvarMaxAbs(self) -> BatchFloat64ArrayProxy:
@@ -1549,7 +1639,8 @@ class StorageBatch(DSSBatch, CircuitElementBatchMixin, PCElementBatchMixin):
     """
     Indicates the maximum reactive power ABSORPTION (un-signed numerical variable in kvar) for the inverter. Defaults to kvarMax.
 
-    DSS property name: `kvarMaxAbs`, DSS property index: 14.
+    Name: `kvarMaxAbs`
+    Units: kvar
     """
 
     def _get_WattPriority(self) -> List[bool]:
@@ -1557,14 +1648,15 @@ class StorageBatch(DSSBatch, CircuitElementBatchMixin, PCElementBatchMixin):
             self._get_batch_int32_prop(15)
         ]
 
-    def _set_WattPriority(self, value: bool, flags: enums.SetterFlags = 0):
+    def _set_WattPriority(self, value: Union[bool, List[bool]], flags: enums.SetterFlags = 0):
         self._set_batch_int32_array(15, value, flags)
 
     WattPriority = property(_get_WattPriority, _set_WattPriority) # type: List[bool]
     """
-    {Yes/No*/True/False} Set inverter to watt priority instead of the default var priority.
+    Set inverter to watt priority instead of the default var priority.
 
-    DSS property name: `WattPriority`, DSS property index: 15.
+    Name: `WattPriority`
+    Default: False
     """
 
     def _get_PFPriority(self) -> List[bool]:
@@ -1572,14 +1664,15 @@ class StorageBatch(DSSBatch, CircuitElementBatchMixin, PCElementBatchMixin):
             self._get_batch_int32_prop(16)
         ]
 
-    def _set_PFPriority(self, value: bool, flags: enums.SetterFlags = 0):
+    def _set_PFPriority(self, value: Union[bool, List[bool]], flags: enums.SetterFlags = 0):
         self._set_batch_int32_array(16, value, flags)
 
     PFPriority = property(_get_PFPriority, _set_PFPriority) # type: List[bool]
     """
     If set to true, priority is given to power factor and WattPriority is neglected. It works only if operating in either constant PF or constant kvar modes. Defaults to False.
 
-    DSS property name: `PFPriority`, DSS property index: 16.
+    Name: `PFPriority`
+    Default: False
     """
 
     def _get_pctPMinNoVars(self) -> BatchFloat64ArrayProxy:
@@ -1592,7 +1685,8 @@ class StorageBatch(DSSBatch, CircuitElementBatchMixin, PCElementBatchMixin):
     """
     Minimum active power as percentage of kWrated under which there is no vars production/absorption. Defaults to 0 (disabled).
 
-    DSS property name: `%PMinNoVars`, DSS property index: 17.
+    Name: `%PMinNoVars`
+    Default: 0.0
     """
 
     def _get_pctPMinkvarMax(self) -> BatchFloat64ArrayProxy:
@@ -1605,7 +1699,8 @@ class StorageBatch(DSSBatch, CircuitElementBatchMixin, PCElementBatchMixin):
     """
     Minimum active power as percentage of kWrated that allows the inverter to produce/absorb reactive power up to its maximum reactive power, which can be either kvarMax or kvarMaxAbs, depending on the current operation quadrant. Defaults to 0 (disabled).
 
-    DSS property name: `%PMinkvarMax`, DSS property index: 18.
+    Name: `%PMinkvarMax`
+    Default: 0.0
     """
 
     def _get_kWRated(self) -> BatchFloat64ArrayProxy:
@@ -1618,7 +1713,9 @@ class StorageBatch(DSSBatch, CircuitElementBatchMixin, PCElementBatchMixin):
     """
     kW rating of power output. Base for Loadshapes when DispMode=Follow. Sets kVA property if it has not been specified yet. Defaults to 25.
 
-    DSS property name: `kWRated`, DSS property index: 19.
+    Name: `kWRated`
+    Units: kW
+    Default: 25.0
     """
 
     def _get_pctkWRated(self) -> BatchFloat64ArrayProxy:
@@ -1631,7 +1728,8 @@ class StorageBatch(DSSBatch, CircuitElementBatchMixin, PCElementBatchMixin):
     """
     Upper limit on active power as a percentage of kWrated. Defaults to 100 (disabled).
 
-    DSS property name: `%kWRated`, DSS property index: 20.
+    Name: `%kWRated`
+    Default: 100.0
     """
 
     def _get_kWhRated(self) -> BatchFloat64ArrayProxy:
@@ -1642,9 +1740,11 @@ class StorageBatch(DSSBatch, CircuitElementBatchMixin, PCElementBatchMixin):
 
     kWhRated = property(_get_kWhRated, _set_kWhRated) # type: BatchFloat64ArrayProxy
     """
-    Rated Storage capacity in kWh. Default is 50.
+    Rated Storage capacity in kWh.
 
-    DSS property name: `kWhRated`, DSS property index: 21.
+    Name: `kWhRated`
+    Units: kWh
+    Default: 50.0
     """
 
     def _get_kWhStored(self) -> BatchFloat64ArrayProxy:
@@ -1657,7 +1757,8 @@ class StorageBatch(DSSBatch, CircuitElementBatchMixin, PCElementBatchMixin):
     """
     Present amount of energy stored, kWh. Default is same as kWhrated.
 
-    DSS property name: `kWhStored`, DSS property index: 22.
+    Name: `kWhStored`
+    Units: kWh
     """
 
     def _get_pctStored(self) -> BatchFloat64ArrayProxy:
@@ -1668,9 +1769,10 @@ class StorageBatch(DSSBatch, CircuitElementBatchMixin, PCElementBatchMixin):
 
     pctStored = property(_get_pctStored, _set_pctStored) # type: BatchFloat64ArrayProxy
     """
-    Present amount of energy stored, % of rated kWh. Default is 100.
+    Present amount of energy stored, % of rated kWh.
 
-    DSS property name: `%Stored`, DSS property index: 23.
+    Name: `%Stored`
+    Default: 100.0
     """
 
     def _get_pctReserve(self) -> BatchFloat64ArrayProxy:
@@ -1681,10 +1783,11 @@ class StorageBatch(DSSBatch, CircuitElementBatchMixin, PCElementBatchMixin):
 
     pctReserve = property(_get_pctReserve, _set_pctReserve) # type: BatchFloat64ArrayProxy
     """
-    Percentage of rated kWh Storage capacity to be held in reserve for normal operation. Default = 20. 
+    Percentage of rated kWh Storage capacity to be held in reserve for normal operation.
     This is treated as the minimum energy discharge level unless there is an emergency. For emergency operation set this property lower. Cannot be less than zero.
 
-    DSS property name: `%Reserve`, DSS property index: 24.
+    Name: `%Reserve`
+    Default: 20.0
     """
 
     def _get_State(self) -> BatchInt32ArrayProxy:
@@ -1701,7 +1804,8 @@ class StorageBatch(DSSBatch, CircuitElementBatchMixin, PCElementBatchMixin):
     """
     {IDLING | CHARGING | DISCHARGING}  Get/Set present operational state. In DISCHARGING mode, the Storage element acts as a generator and the kW property is positive. The element continues discharging at the scheduled output power level until the Storage reaches the reserve value. Then the state reverts to IDLING. In the CHARGING state, the Storage element behaves like a Load and the kW property is negative. The element continues to charge until the max Storage kWh is reached and then switches to IDLING state. In IDLING state, the element draws the idling losses plus the associated inverter losses.
 
-    DSS property name: `State`, DSS property index: 25.
+    Name: `State`
+    Default: Idling
     """
 
     def _get_State_str(self) -> List[str]:
@@ -1714,7 +1818,8 @@ class StorageBatch(DSSBatch, CircuitElementBatchMixin, PCElementBatchMixin):
     """
     {IDLING | CHARGING | DISCHARGING}  Get/Set present operational state. In DISCHARGING mode, the Storage element acts as a generator and the kW property is positive. The element continues discharging at the scheduled output power level until the Storage reaches the reserve value. Then the state reverts to IDLING. In the CHARGING state, the Storage element behaves like a Load and the kW property is negative. The element continues to charge until the max Storage kWh is reached and then switches to IDLING state. In IDLING state, the element draws the idling losses plus the associated inverter losses.
 
-    DSS property name: `State`, DSS property index: 25.
+    Name: `State`
+    Default: Idling
     """
 
     def _get_pctDischarge(self) -> BatchFloat64ArrayProxy:
@@ -1725,9 +1830,10 @@ class StorageBatch(DSSBatch, CircuitElementBatchMixin, PCElementBatchMixin):
 
     pctDischarge = property(_get_pctDischarge, _set_pctDischarge) # type: BatchFloat64ArrayProxy
     """
-    Discharge rate (output power) in percentage of rated kW. Default = 100.
+    Discharge rate (output power) in percentage of rated kW.
 
-    DSS property name: `%Discharge`, DSS property index: 26.
+    Name: `%Discharge`
+    Default: 100.0
     """
 
     def _get_pctCharge(self) -> BatchFloat64ArrayProxy:
@@ -1738,9 +1844,10 @@ class StorageBatch(DSSBatch, CircuitElementBatchMixin, PCElementBatchMixin):
 
     pctCharge = property(_get_pctCharge, _set_pctCharge) # type: BatchFloat64ArrayProxy
     """
-    Charging rate (input power) in percentage of rated kW. Default = 100.
+    Charging rate (input power) in percentage of rated kW.
 
-    DSS property name: `%Charge`, DSS property index: 27.
+    Name: `%Charge`
+    Default: 100.0
     """
 
     def _get_pctEffCharge(self) -> BatchFloat64ArrayProxy:
@@ -1751,9 +1858,10 @@ class StorageBatch(DSSBatch, CircuitElementBatchMixin, PCElementBatchMixin):
 
     pctEffCharge = property(_get_pctEffCharge, _set_pctEffCharge) # type: BatchFloat64ArrayProxy
     """
-    Percentage efficiency for CHARGING the Storage element. Default = 90.
+    Percentage efficiency for CHARGING the Storage element.
 
-    DSS property name: `%EffCharge`, DSS property index: 28.
+    Name: `%EffCharge`
+    Default: 90.0
     """
 
     def _get_pctEffDischarge(self) -> BatchFloat64ArrayProxy:
@@ -1764,9 +1872,10 @@ class StorageBatch(DSSBatch, CircuitElementBatchMixin, PCElementBatchMixin):
 
     pctEffDischarge = property(_get_pctEffDischarge, _set_pctEffDischarge) # type: BatchFloat64ArrayProxy
     """
-    Percentage efficiency for DISCHARGING the Storage element. Default = 90.
+    Percentage efficiency for DISCHARGING the Storage element.
 
-    DSS property name: `%EffDischarge`, DSS property index: 29.
+    Name: `%EffDischarge`
+    Default: 90.0
     """
 
     def _get_pctIdlingkW(self) -> BatchFloat64ArrayProxy:
@@ -1777,9 +1886,10 @@ class StorageBatch(DSSBatch, CircuitElementBatchMixin, PCElementBatchMixin):
 
     pctIdlingkW = property(_get_pctIdlingkW, _set_pctIdlingkW) # type: BatchFloat64ArrayProxy
     """
-    Percentage of rated kW consumed by idling losses. Default = 1.
+    Percentage of rated kW consumed by idling losses.
 
-    DSS property name: `%IdlingkW`, DSS property index: 30.
+    Name: `%IdlingkW`
+    Default: 1.0
     """
 
     def _get_pctR(self) -> BatchFloat64ArrayProxy:
@@ -1790,9 +1900,10 @@ class StorageBatch(DSSBatch, CircuitElementBatchMixin, PCElementBatchMixin):
 
     pctR = property(_get_pctR, _set_pctR) # type: BatchFloat64ArrayProxy
     """
-    Equivalent percentage internal resistance, ohms. Default is 0. Placed in series with internal voltage source for harmonics and dynamics modes. Use a combination of %IdlingkW, %EffCharge and %EffDischarge to account for losses in power flow modes.
+    Equivalent percentage internal resistance, ohms. Placed in series with internal voltage source for harmonics and dynamics modes. Use a combination of %IdlingkW, %EffCharge and %EffDischarge to account for losses in power flow modes.
 
-    DSS property name: `%R`, DSS property index: 32.
+    Name: `%R`
+    Default: 0.0
     """
 
     def _get_pctX(self) -> BatchFloat64ArrayProxy:
@@ -1803,9 +1914,10 @@ class StorageBatch(DSSBatch, CircuitElementBatchMixin, PCElementBatchMixin):
 
     pctX = property(_get_pctX, _set_pctX) # type: BatchFloat64ArrayProxy
     """
-    Equivalent percentage internal reactance, ohms. Default is 50%. Placed in series with internal voltage source for harmonics and dynamics modes. (Limits fault current to 2 pu.
+    Equivalent percentage internal reactance, ohms. Placed in series with internal voltage source for harmonics and dynamics modes. (Limits fault current to 2 pu.
 
-    DSS property name: `%X`, DSS property index: 33.
+    Name: `%X`
+    Default: 50.0
     """
 
     def _get_Model(self) -> BatchInt32ArrayProxy:
@@ -1822,7 +1934,8 @@ class StorageBatch(DSSBatch, CircuitElementBatchMixin, PCElementBatchMixin):
     2:Storage element is modeled as a CONSTANT IMPEDANCE.
     3:Compute load injection from User-written Model.
 
-    DSS property name: `Model`, DSS property index: 34.
+    Name: `Model`
+    Default: 1
     """
 
     def _get_VMinpu(self) -> BatchFloat64ArrayProxy:
@@ -1835,7 +1948,8 @@ class StorageBatch(DSSBatch, CircuitElementBatchMixin, PCElementBatchMixin):
     """
     Default = 0.90.  Minimum per unit voltage for which the Model is assumed to apply. Below this value, the load model reverts to a constant impedance model.
 
-    DSS property name: `VMinpu`, DSS property index: 35.
+    Name: `VMinpu`
+    Default: 0.9
     """
 
     def _get_VMaxpu(self) -> BatchFloat64ArrayProxy:
@@ -1848,7 +1962,8 @@ class StorageBatch(DSSBatch, CircuitElementBatchMixin, PCElementBatchMixin):
     """
     Default = 1.10.  Maximum per unit voltage for which the Model is assumed to apply. Above this value, the load model reverts to a constant impedance model.
 
-    DSS property name: `VMaxpu`, DSS property index: 36.
+    Name: `VMaxpu`
+    Default: 1.1
     """
 
     def _get_Balanced(self) -> List[bool]:
@@ -1856,14 +1971,15 @@ class StorageBatch(DSSBatch, CircuitElementBatchMixin, PCElementBatchMixin):
             self._get_batch_int32_prop(37)
         ]
 
-    def _set_Balanced(self, value: bool, flags: enums.SetterFlags = 0):
+    def _set_Balanced(self, value: Union[bool, List[bool]], flags: enums.SetterFlags = 0):
         self._set_batch_int32_array(37, value, flags)
 
     Balanced = property(_get_Balanced, _set_Balanced) # type: List[bool]
     """
-    {Yes | No*} Default is No. Force balanced current only for 3-phase Storage. Forces zero- and negative-sequence to zero. 
+    Force balanced current only for 3-phase Storage. Forces zero- and negative-sequence to zero. 
 
-    DSS property name: `Balanced`, DSS property index: 37.
+    Name: `Balanced`
+    Default: False
     """
 
     def _get_LimitCurrent(self) -> List[bool]:
@@ -1871,14 +1987,15 @@ class StorageBatch(DSSBatch, CircuitElementBatchMixin, PCElementBatchMixin):
             self._get_batch_int32_prop(38)
         ]
 
-    def _set_LimitCurrent(self, value: bool, flags: enums.SetterFlags = 0):
+    def _set_LimitCurrent(self, value: Union[bool, List[bool]], flags: enums.SetterFlags = 0):
         self._set_batch_int32_array(38, value, flags)
 
     LimitCurrent = property(_get_LimitCurrent, _set_LimitCurrent) # type: List[bool]
     """
     Limits current magnitude to Vminpu value for both 1-phase and 3-phase Storage similar to Generator Model 7. For 3-phase, limits the positive-sequence current but not the negative-sequence.
 
-    DSS property name: `LimitCurrent`, DSS property index: 38.
+    Name: `LimitCurrent`
+    Default: False
     """
 
     def _get_Yearly_str(self) -> List[str]:
@@ -1891,7 +2008,7 @@ class StorageBatch(DSSBatch, CircuitElementBatchMixin, PCElementBatchMixin):
     """
     Dispatch shape to use for yearly simulations.  Must be previously defined as a Loadshape object. If this is not specified, the Daily dispatch shape, if any, is repeated during Yearly solution modes. In the default dispatch mode, the Storage element uses this loadshape to trigger State changes.
 
-    DSS property name: `Yearly`, DSS property index: 39.
+    Name: `Yearly`
     """
 
     def _get_Yearly(self) -> List[LoadShape]:
@@ -1904,7 +2021,7 @@ class StorageBatch(DSSBatch, CircuitElementBatchMixin, PCElementBatchMixin):
     """
     Dispatch shape to use for yearly simulations.  Must be previously defined as a Loadshape object. If this is not specified, the Daily dispatch shape, if any, is repeated during Yearly solution modes. In the default dispatch mode, the Storage element uses this loadshape to trigger State changes.
 
-    DSS property name: `Yearly`, DSS property index: 39.
+    Name: `Yearly`
     """
 
     def _get_Daily_str(self) -> List[str]:
@@ -1917,7 +2034,7 @@ class StorageBatch(DSSBatch, CircuitElementBatchMixin, PCElementBatchMixin):
     """
     Dispatch shape to use for daily simulations.  Must be previously defined as a Loadshape object of 24 hrs, typically.  In the default dispatch mode, the Storage element uses this loadshape to trigger State changes.
 
-    DSS property name: `Daily`, DSS property index: 40.
+    Name: `Daily`
     """
 
     def _get_Daily(self) -> List[LoadShape]:
@@ -1930,7 +2047,7 @@ class StorageBatch(DSSBatch, CircuitElementBatchMixin, PCElementBatchMixin):
     """
     Dispatch shape to use for daily simulations.  Must be previously defined as a Loadshape object of 24 hrs, typically.  In the default dispatch mode, the Storage element uses this loadshape to trigger State changes.
 
-    DSS property name: `Daily`, DSS property index: 40.
+    Name: `Daily`
     """
 
     def _get_Duty_str(self) -> List[str]:
@@ -1947,7 +2064,7 @@ class StorageBatch(DSSBatch, CircuitElementBatchMixin, PCElementBatchMixin):
 
     Designate the number of points to solve using the Set Number=xxxx command. If there are fewer points in the actual shape, the shape is assumed to repeat.
 
-    DSS property name: `Duty`, DSS property index: 41.
+    Name: `Duty`
     """
 
     def _get_Duty(self) -> List[LoadShape]:
@@ -1964,7 +2081,7 @@ class StorageBatch(DSSBatch, CircuitElementBatchMixin, PCElementBatchMixin):
 
     Designate the number of points to solve using the Set Number=xxxx command. If there are fewer points in the actual shape, the shape is assumed to repeat.
 
-    DSS property name: `Duty`, DSS property index: 41.
+    Name: `Duty`
     """
 
     def _get_DispMode(self) -> BatchInt32ArrayProxy:
@@ -1989,7 +2106,8 @@ class StorageBatch(DSSBatch, CircuitElementBatchMixin, PCElementBatchMixin):
 
     For the other two dispatch modes, the Storage element state is controlled by either the global default Loadlevel value or the price level. 
 
-    DSS property name: `DispMode`, DSS property index: 42.
+    Name: `DispMode`
+    Default: Default
     """
 
     def _get_DispMode_str(self) -> List[str]:
@@ -2010,7 +2128,8 @@ class StorageBatch(DSSBatch, CircuitElementBatchMixin, PCElementBatchMixin):
 
     For the other two dispatch modes, the Storage element state is controlled by either the global default Loadlevel value or the price level. 
 
-    DSS property name: `DispMode`, DSS property index: 42.
+    Name: `DispMode`
+    Default: Default
     """
 
     def _get_DischargeTrigger(self) -> BatchFloat64ArrayProxy:
@@ -2022,10 +2141,11 @@ class StorageBatch(DSSBatch, CircuitElementBatchMixin, PCElementBatchMixin):
     DischargeTrigger = property(_get_DischargeTrigger, _set_DischargeTrigger) # type: BatchFloat64ArrayProxy
     """
     Dispatch trigger value for discharging the Storage. 
-    If = 0.0 the Storage element state is changed by the State command or by a StorageController object. 
-    If <> 0  the Storage element state is set to DISCHARGING when this trigger level is EXCEEDED by either the specified Loadshape curve value or the price signal or global Loadlevel value, depending on dispatch mode. See State property.
+    If = 0 the Storage element state is changed by the State command or by a StorageController object. 
+    If ≠ 0  the Storage element state is set to DISCHARGING when this trigger level is EXCEEDED by either the specified Loadshape curve value or the price signal or global Loadlevel value, depending on dispatch mode. See State property.
 
-    DSS property name: `DischargeTrigger`, DSS property index: 43.
+    Name: `DischargeTrigger`
+    Default: 0.0
     """
 
     def _get_ChargeTrigger(self) -> BatchFloat64ArrayProxy:
@@ -2038,11 +2158,12 @@ class StorageBatch(DSSBatch, CircuitElementBatchMixin, PCElementBatchMixin):
     """
     Dispatch trigger value for charging the Storage. 
 
-    If = 0.0 the Storage element state is changed by the State command or StorageController object.  
+    If = 0 the Storage element state is changed by the State command or StorageController object.  
 
-    If <> 0  the Storage element state is set to CHARGING when this trigger level is GREATER than either the specified Loadshape curve value or the price signal or global Loadlevel value, depending on dispatch mode. See State property.
+    If ≠ 0  the Storage element state is set to CHARGING when this trigger level is GREATER than either the specified Loadshape curve value or the price signal or global Loadlevel value, depending on dispatch mode. See State property.
 
-    DSS property name: `ChargeTrigger`, DSS property index: 44.
+    Name: `ChargeTrigger`
+    Default: 0.0
     """
 
     def _get_TimeChargeTrig(self) -> BatchFloat64ArrayProxy:
@@ -2053,9 +2174,11 @@ class StorageBatch(DSSBatch, CircuitElementBatchMixin, PCElementBatchMixin):
 
     TimeChargeTrig = property(_get_TimeChargeTrig, _set_TimeChargeTrig) # type: BatchFloat64ArrayProxy
     """
-    Time of day in fractional hours (0230 = 2.5) at which Storage element will automatically go into charge state. Default is 2.0.  Enter a negative time value to disable this feature.
+    Time of day in fractional hours (0230 = 2.5) at which Storage element will automatically go into charge state. Enter a negative time value to disable this feature.
 
-    DSS property name: `TimeChargeTrig`, DSS property index: 45.
+    Name: `TimeChargeTrig`
+    Units: hour (0-24)
+    Default: 2.0
     """
 
     def _get_Class(self) -> BatchInt32ArrayProxy:
@@ -2068,7 +2191,8 @@ class StorageBatch(DSSBatch, CircuitElementBatchMixin, PCElementBatchMixin):
     """
     An arbitrary integer number representing the class of Storage element so that Storage values may be segregated by class.
 
-    DSS property name: `Class`, DSS property index: 46.
+    Name: `Class`
+    Default: 1
     """
 
     def _get_DynaDLL(self) -> List[str]:
@@ -2081,7 +2205,7 @@ class StorageBatch(DSSBatch, CircuitElementBatchMixin, PCElementBatchMixin):
     """
     Name of DLL containing user-written dynamics model, which computes the terminal currents for Dynamics-mode simulations, overriding the default model.  Set to "none" to negate previous setting. This DLL has a simpler interface than the UserModel DLL and is only used for Dynamics mode.
 
-    DSS property name: `DynaDLL`, DSS property index: 47.
+    Name: `DynaDLL`
     """
 
     def _get_DynaData(self) -> List[str]:
@@ -2094,7 +2218,7 @@ class StorageBatch(DSSBatch, CircuitElementBatchMixin, PCElementBatchMixin):
     """
     String (in quotes or parentheses if necessary) that gets passed to the user-written dynamics model Edit function for defining the data required for that model.
 
-    DSS property name: `DynaData`, DSS property index: 48.
+    Name: `DynaData`
     """
 
     def _get_UserModel(self) -> List[str]:
@@ -2107,7 +2231,7 @@ class StorageBatch(DSSBatch, CircuitElementBatchMixin, PCElementBatchMixin):
     """
     Name of DLL containing user-written model, which computes the terminal currents for both power flow and dynamics, overriding the default model.  Set to "none" to negate previous setting.
 
-    DSS property name: `UserModel`, DSS property index: 49.
+    Name: `UserModel`
     """
 
     def _get_UserData(self) -> List[str]:
@@ -2120,7 +2244,7 @@ class StorageBatch(DSSBatch, CircuitElementBatchMixin, PCElementBatchMixin):
     """
     String (in quotes or parentheses) that gets passed to user-written model for defining the data required for that model.
 
-    DSS property name: `UserData`, DSS property index: 50.
+    Name: `UserData`
     """
 
     def _get_DebugTrace(self) -> List[bool]:
@@ -2128,14 +2252,15 @@ class StorageBatch(DSSBatch, CircuitElementBatchMixin, PCElementBatchMixin):
             self._get_batch_int32_prop(51)
         ]
 
-    def _set_DebugTrace(self, value: bool, flags: enums.SetterFlags = 0):
+    def _set_DebugTrace(self, value: Union[bool, List[bool]], flags: enums.SetterFlags = 0):
         self._set_batch_int32_array(51, value, flags)
 
     DebugTrace = property(_get_DebugTrace, _set_DebugTrace) # type: List[bool]
     """
-    {Yes | No }  Default is no.  Turn this on to capture the progress of the Storage model for each iteration.  Creates a separate file for each Storage element named "Storage_name.csv".
+    Turn this on to capture the progress of the Storage model for each iteration.  Creates a separate file for each Storage element named "Storage_name.csv".
 
-    DSS property name: `DebugTrace`, DSS property index: 51.
+    Name: `DebugTrace`
+    Default: False
     """
 
     def _get_kVDC(self) -> BatchFloat64ArrayProxy:
@@ -2148,7 +2273,9 @@ class StorageBatch(DSSBatch, CircuitElementBatchMixin, PCElementBatchMixin):
     """
     Indicates the rated voltage (kV) at the input of the inverter while the storage is discharging. The value is normally greater or equal to the kV base of the Storage device. It is used for dynamics simulation ONLY.
 
-    DSS property name: `kVDC`, DSS property index: 52.
+    Name: `kVDC`
+    Units: kV
+    Default: 8.0
     """
 
     def _get_Kp(self) -> BatchFloat64ArrayProxy:
@@ -2161,7 +2288,8 @@ class StorageBatch(DSSBatch, CircuitElementBatchMixin, PCElementBatchMixin):
     """
     It is the proportional gain for the PI controller within the inverter. Use it to modify the controller response in dynamics simulation mode.
 
-    DSS property name: `Kp`, DSS property index: 53.
+    Name: `Kp`
+    Default: 0.01
     """
 
     def _get_PITol(self) -> BatchFloat64ArrayProxy:
@@ -2174,7 +2302,8 @@ class StorageBatch(DSSBatch, CircuitElementBatchMixin, PCElementBatchMixin):
     """
     It is the tolerance (%) for the closed loop controller of the inverter. For dynamics simulation mode.
 
-    DSS property name: `PITol`, DSS property index: 54.
+    Name: `PITol`
+    Default: 0.0
     """
 
     def _get_SafeVoltage(self) -> BatchFloat64ArrayProxy:
@@ -2187,7 +2316,8 @@ class StorageBatch(DSSBatch, CircuitElementBatchMixin, PCElementBatchMixin):
     """
     Indicates the voltage level (%) respect to the base voltage level for which the Inverter will operate. If this threshold is violated, the Inverter will enter safe mode (OFF). For dynamic simulation. By default is 80%.
 
-    DSS property name: `SafeVoltage`, DSS property index: 55.
+    Name: `SafeVoltage`
+    Default: 80.0
     """
 
     def _get_SafeMode(self) -> List[bool]:
@@ -2195,14 +2325,16 @@ class StorageBatch(DSSBatch, CircuitElementBatchMixin, PCElementBatchMixin):
             self._get_batch_int32_prop(56)
         ]
 
-    def _set_SafeMode(self, value: bool, flags: enums.SetterFlags = 0):
+    def _set_SafeMode(self, value: Union[bool, List[bool]], flags: enums.SetterFlags = 0):
         self._set_batch_int32_array(56, value, flags)
 
     SafeMode = property(_get_SafeMode, _set_SafeMode) # type: List[bool]
     """
     (Read only) Indicates whether the inverter entered (Yes) or not (No) into Safe Mode.
 
-    DSS property name: `SafeMode`, DSS property index: 56.
+    **Read-only**
+
+    Name: `SafeMode`
     """
 
     def _get_DynamicEq_str(self) -> List[str]:
@@ -2215,7 +2347,7 @@ class StorageBatch(DSSBatch, CircuitElementBatchMixin, PCElementBatchMixin):
     """
     The name of the dynamic equation (DynamicExp) that will be used for defining the dynamic behavior of the generator. If not defined, the generator dynamics will follow the built-in dynamic equation.
 
-    DSS property name: `DynamicEq`, DSS property index: 57.
+    Name: `DynamicEq`
     """
 
     def _get_DynamicEq(self) -> List[DynamicExp]:
@@ -2228,7 +2360,7 @@ class StorageBatch(DSSBatch, CircuitElementBatchMixin, PCElementBatchMixin):
     """
     The name of the dynamic equation (DynamicExp) that will be used for defining the dynamic behavior of the generator. If not defined, the generator dynamics will follow the built-in dynamic equation.
 
-    DSS property name: `DynamicEq`, DSS property index: 57.
+    Name: `DynamicEq`
     """
 
     def _get_DynOut(self) -> List[List[str]]:
@@ -2249,7 +2381,7 @@ class StorageBatch(DSSBatch, CircuitElementBatchMixin, PCElementBatchMixin):
 
     The output variables need to be defined in the same order.
 
-    DSS property name: `DynOut`, DSS property index: 58.
+    Name: `DynOut`
     """
 
     def _get_ControlMode(self) -> BatchInt32ArrayProxy:
@@ -2264,11 +2396,12 @@ class StorageBatch(DSSBatch, CircuitElementBatchMixin, PCElementBatchMixin):
 
     ControlMode = property(_get_ControlMode, _set_ControlMode) # type: BatchInt32ArrayProxy
     """
-    Defines the control mode for the inverter. It can be one of {GFM | GFL*}. By default it is GFL (Grid Following Inverter). Use GFM (Grid Forming Inverter) for energizing islanded microgrids, but, if the device is connected to the grid, it is highly recommended to use GFL.
+    Defines the control mode for the inverter. By default it is GFL (Grid Following Inverter). Use GFM (Grid Forming Inverter) for energizing islanded microgrids, but, if the device is connected to the grid, it is highly recommended to use GFL.
 
     GFM control mode disables any control action set by the InvControl device.
 
-    DSS property name: `ControlMode`, DSS property index: 59.
+    Name: `ControlMode`
+    Default: GFL
     """
 
     def _get_ControlMode_str(self) -> List[str]:
@@ -2279,11 +2412,12 @@ class StorageBatch(DSSBatch, CircuitElementBatchMixin, PCElementBatchMixin):
 
     ControlMode_str = property(_get_ControlMode_str, _set_ControlMode_str) # type: List[str]
     """
-    Defines the control mode for the inverter. It can be one of {GFM | GFL*}. By default it is GFL (Grid Following Inverter). Use GFM (Grid Forming Inverter) for energizing islanded microgrids, but, if the device is connected to the grid, it is highly recommended to use GFL.
+    Defines the control mode for the inverter. By default it is GFL (Grid Following Inverter). Use GFM (Grid Forming Inverter) for energizing islanded microgrids, but, if the device is connected to the grid, it is highly recommended to use GFL.
 
     GFM control mode disables any control action set by the InvControl device.
 
-    DSS property name: `ControlMode`, DSS property index: 59.
+    Name: `ControlMode`
+    Default: GFL
     """
 
     def _get_AmpLimit(self) -> BatchFloat64ArrayProxy:
@@ -2297,7 +2431,8 @@ class StorageBatch(DSSBatch, CircuitElementBatchMixin, PCElementBatchMixin):
     The current limiter per phase for the IBR when operating in GFM mode. This limit is imposed to prevent the IBR to enter into Safe Mode when reaching the IBR power ratings.
     Once the IBR reaches this value, it remains there without moving into Safe Mode. This value needs to be set lower than the IBR Amps rating.
 
-    DSS property name: `AmpLimit`, DSS property index: 60.
+    Name: `AmpLimit`
+    Units: A
     """
 
     def _get_AmpLimitGain(self) -> BatchFloat64ArrayProxy:
@@ -2310,7 +2445,8 @@ class StorageBatch(DSSBatch, CircuitElementBatchMixin, PCElementBatchMixin):
     """
     Use it for fine tunning the current limiter when active, by default is 0.8, it has to be a value between 0.1 and 1. This value allows users to fine tune the IBRs current limiter to match with the user requirements.
 
-    DSS property name: `AmpLimitGain`, DSS property index: 61.
+    Name: `AmpLimitGain`
+    Default: 0.8
     """
 
     def _get_Spectrum_str(self) -> List[str]:
@@ -2321,9 +2457,9 @@ class StorageBatch(DSSBatch, CircuitElementBatchMixin, PCElementBatchMixin):
 
     Spectrum_str = property(_get_Spectrum_str, _set_Spectrum_str) # type: List[str]
     """
-    Name of harmonic voltage or current spectrum for this Storage element. Current injection is assumed for inverter. Default value is "default", which is defined when the DSS starts.
+    Name of harmonic voltage or current spectrum for this Storage element. Current injection is assumed for inverter.
 
-    DSS property name: `Spectrum`, DSS property index: 62.
+    Name: `Spectrum`
     """
 
     def _get_Spectrum(self) -> List[SpectrumObj]:
@@ -2334,9 +2470,9 @@ class StorageBatch(DSSBatch, CircuitElementBatchMixin, PCElementBatchMixin):
 
     Spectrum = property(_get_Spectrum, _set_Spectrum) # type: List[SpectrumObj]
     """
-    Name of harmonic voltage or current spectrum for this Storage element. Current injection is assumed for inverter. Default value is "default", which is defined when the DSS starts.
+    Name of harmonic voltage or current spectrum for this Storage element. Current injection is assumed for inverter.
 
-    DSS property name: `Spectrum`, DSS property index: 62.
+    Name: `Spectrum`
     """
 
     def _get_BaseFreq(self) -> BatchFloat64ArrayProxy:
@@ -2349,7 +2485,8 @@ class StorageBatch(DSSBatch, CircuitElementBatchMixin, PCElementBatchMixin):
     """
     Base Frequency for ratings.
 
-    DSS property name: `BaseFreq`, DSS property index: 63.
+    Name: `BaseFreq`
+    Units: Hz
     """
 
     def _get_Enabled(self) -> List[bool]:
@@ -2357,14 +2494,15 @@ class StorageBatch(DSSBatch, CircuitElementBatchMixin, PCElementBatchMixin):
             self._get_batch_int32_prop(64)
         ]
 
-    def _set_Enabled(self, value: bool, flags: enums.SetterFlags = 0):
+    def _set_Enabled(self, value: Union[bool, List[bool]], flags: enums.SetterFlags = 0):
         self._set_batch_int32_array(64, value, flags)
 
     Enabled = property(_get_Enabled, _set_Enabled) # type: List[bool]
     """
-    {Yes|No or True|False} Indicates whether this element is enabled.
+    Indicates whether this element is enabled.
 
-    DSS property name: `Enabled`, DSS property index: 64.
+    Name: `Enabled`
+    Default: True
     """
 
     def Like(self, value: AnyStr, flags: enums.SetterFlags = 0):
@@ -2373,7 +2511,9 @@ class StorageBatch(DSSBatch, CircuitElementBatchMixin, PCElementBatchMixin):
 
         New Capacitor.C2 like=c1  ...
 
-        DSS property name: `Like`, DSS property index: 65.
+        **Deprecated:** `Like` has been deprecated since at least 2021, see https://sourceforge.net/p/electricdss/discussion/861977/thread/8b59d21eb6/#b57c/f668
+
+        Name: `Like`
         """
         self._set_batch_string(65, value, flags)
 

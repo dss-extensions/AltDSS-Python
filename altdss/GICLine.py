@@ -15,7 +15,7 @@ from .Spectrum import Spectrum as SpectrumObj
 class GICLine(DSSObj, CircuitElementMixin, PCElementMixin):
     __slots__ = DSSObj._extra_slots + CircuitElementMixin._extra_slots + PCElementMixin._extra_slots
     _cls_name = 'GICLine'
-    _cls_idx = 44
+    _cls_idx = 45
     _cls_int_idx = {
         6,
         18,
@@ -91,7 +91,7 @@ class GICLine(DSSObj, CircuitElementMixin, PCElementMixin):
     bus1=busname
     bus1=busname.1.2.3
 
-    DSS property name: `Bus1`, DSS property index: 1.
+    Name: `Bus1`
     """
 
     def _get_Bus2(self) -> str:
@@ -108,7 +108,7 @@ class GICLine(DSSObj, CircuitElementMixin, PCElementMixin):
 
     No Default; must be specified.
 
-    DSS property name: `Bus2`, DSS property index: 2.
+    Name: `Bus2`
     """
 
     def _get_Volts(self) -> float:
@@ -129,7 +129,8 @@ class GICLine(DSSObj, CircuitElementMixin, PCElementMixin):
 
     Not both!!  Last one entered will take precedence. Assumed identical in each phase of the Line object.
 
-    DSS property name: `Volts`, DSS property index: 3.
+    Name: `Volts`
+    Units: V
     """
 
     def _get_Angle(self) -> float:
@@ -140,9 +141,10 @@ class GICLine(DSSObj, CircuitElementMixin, PCElementMixin):
 
     Angle = property(_get_Angle, _set_Angle) # type: float
     """
-    Phase angle in degrees of first phase. Default=0.0.  See Voltage property
+    Phase angle in degrees of first phase. See Voltage property
 
-    DSS property name: `Angle`, DSS property index: 4.
+    Name: `Angle`
+    Default: 0.0
     """
 
     def _get_Frequency(self) -> float:
@@ -153,9 +155,11 @@ class GICLine(DSSObj, CircuitElementMixin, PCElementMixin):
 
     Frequency = property(_get_Frequency, _set_Frequency) # type: float
     """
-    Source frequency.  Defaults to 0.1 Hz.
+    Source frequency.
 
-    DSS property name: `Frequency`, DSS property index: 5.
+    Name: `Frequency`
+    Units: Hz
+    Default: 0.1
     """
 
     def _get_Phases(self) -> int:
@@ -166,9 +170,10 @@ class GICLine(DSSObj, CircuitElementMixin, PCElementMixin):
 
     Phases = property(_get_Phases, _set_Phases) # type: int
     """
-    Number of phases.  Defaults to 3.
+    Number of phases.
 
-    DSS property name: `Phases`, DSS property index: 6.
+    Name: `Phases`
+    Default: 3
     """
 
     def _get_R(self) -> float:
@@ -179,9 +184,10 @@ class GICLine(DSSObj, CircuitElementMixin, PCElementMixin):
 
     R = property(_get_R, _set_R) # type: float
     """
-    Resistance of line, ohms of impedance in series with GIC voltage source. 
+    Resistance of line, impedance in series with GIC voltage source. 
 
-    DSS property name: `R`, DSS property index: 7.
+    Name: `R`
+    Units: Ω
     """
 
     def _get_X(self) -> float:
@@ -192,9 +198,11 @@ class GICLine(DSSObj, CircuitElementMixin, PCElementMixin):
 
     X = property(_get_X, _set_X) # type: float
     """
-    Reactance at base frequency, ohms. Default = 0.0. This value is generally not important for GIC studies but may be used if desired.
+    Reactance at base frequency. This value is generally not important for GIC studies but may be used if desired.
 
-    DSS property name: `X`, DSS property index: 8.
+    Name: `X`
+    Units: Ω
+    Default: 0.0
     """
 
     def _get_C(self) -> float:
@@ -205,9 +213,11 @@ class GICLine(DSSObj, CircuitElementMixin, PCElementMixin):
 
     C = property(_get_C, _set_C) # type: float
     """
-    Value of line blocking capacitance in microfarads. Default = 0.0, implying that there is no line blocking capacitor.
+    Value of line blocking capacitance. A zero value implies that there is no line blocking capacitor.
 
-    DSS property name: `C`, DSS property index: 9.
+    Name: `C`
+    Units: μF
+    Default: 0.0
     """
 
     def _get_EN(self) -> float:
@@ -218,9 +228,10 @@ class GICLine(DSSObj, CircuitElementMixin, PCElementMixin):
 
     EN = property(_get_EN, _set_EN) # type: float
     """
-    Northward Electric field (V/km). If specified, Voltage and Angle are computed from EN, EE, lat and lon values.
+    Northward Electric field. If specified, Voltage and Angle are computed from EN, EE, lat and lon values.
 
-    DSS property name: `EN`, DSS property index: 10.
+    Name: `EN`
+    Units: V/km
     """
 
     def _get_EE(self) -> float:
@@ -231,9 +242,10 @@ class GICLine(DSSObj, CircuitElementMixin, PCElementMixin):
 
     EE = property(_get_EE, _set_EE) # type: float
     """
-    Eastward Electric field (V/km).  If specified, Voltage and Angle are computed from EN, EE, lat and lon values.
+    Eastward Electric field. If specified, Voltage and Angle are computed from EN, EE, lat and lon values.
 
-    DSS property name: `EE`, DSS property index: 11.
+    Name: `EE`
+    Units: V/km
     """
 
     def _get_Lat1(self) -> float:
@@ -244,9 +256,10 @@ class GICLine(DSSObj, CircuitElementMixin, PCElementMixin):
 
     Lat1 = property(_get_Lat1, _set_Lat1) # type: float
     """
-    Latitude of Bus1 (degrees)
+    Latitude of Bus1
 
-    DSS property name: `Lat1`, DSS property index: 12.
+    Name: `Lat1`
+    Units: °
     """
 
     def _get_Lon1(self) -> float:
@@ -257,9 +270,10 @@ class GICLine(DSSObj, CircuitElementMixin, PCElementMixin):
 
     Lon1 = property(_get_Lon1, _set_Lon1) # type: float
     """
-    Longitude of Bus1 (degrees)
+    Longitude of Bus1
 
-    DSS property name: `Lon1`, DSS property index: 13.
+    Name: `Lon1`
+    Units: °
     """
 
     def _get_Lat2(self) -> float:
@@ -270,9 +284,10 @@ class GICLine(DSSObj, CircuitElementMixin, PCElementMixin):
 
     Lat2 = property(_get_Lat2, _set_Lat2) # type: float
     """
-    Latitude of Bus2 (degrees)
+    Latitude of Bus2
 
-    DSS property name: `Lat2`, DSS property index: 14.
+    Name: `Lat2`
+    Units: °
     """
 
     def _get_Lon2(self) -> float:
@@ -283,9 +298,10 @@ class GICLine(DSSObj, CircuitElementMixin, PCElementMixin):
 
     Lon2 = property(_get_Lon2, _set_Lon2) # type: float
     """
-    Longitude of Bus2 (degrees)
+    Longitude of Bus2
 
-    DSS property name: `Lon2`, DSS property index: 15.
+    Name: `Lon2`
+    Units: °
     """
 
     def _get_Spectrum_str(self) -> str:
@@ -296,9 +312,9 @@ class GICLine(DSSObj, CircuitElementMixin, PCElementMixin):
 
     Spectrum_str = property(_get_Spectrum_str, _set_Spectrum_str) # type: str
     """
-    Inherited Property for all PCElements. Name of harmonic spectrum for this source.  Default is "defaultvsource", which is defined when the DSS starts.
+    Inherited Property for all PCElements. Name of harmonic spectrum for this source.
 
-    DSS property name: `Spectrum`, DSS property index: 16.
+    Name: `Spectrum`
     """
 
     def _get_Spectrum(self) -> SpectrumObj:
@@ -313,9 +329,9 @@ class GICLine(DSSObj, CircuitElementMixin, PCElementMixin):
 
     Spectrum = property(_get_Spectrum, _set_Spectrum) # type: SpectrumObj
     """
-    Inherited Property for all PCElements. Name of harmonic spectrum for this source.  Default is "defaultvsource", which is defined when the DSS starts.
+    Inherited Property for all PCElements. Name of harmonic spectrum for this source.
 
-    DSS property name: `Spectrum`, DSS property index: 16.
+    Name: `Spectrum`
     """
 
     def _get_BaseFreq(self) -> float:
@@ -328,7 +344,7 @@ class GICLine(DSSObj, CircuitElementMixin, PCElementMixin):
     """
     Inherited Property for all PCElements. Base frequency for specification of reactance value.
 
-    DSS property name: `BaseFreq`, DSS property index: 17.
+    Name: `BaseFreq`
     """
 
     def _get_Enabled(self) -> bool:
@@ -339,9 +355,10 @@ class GICLine(DSSObj, CircuitElementMixin, PCElementMixin):
 
     Enabled = property(_get_Enabled, _set_Enabled) # type: bool
     """
-    {Yes|No or True|False} Indicates whether this element is enabled.
+    Indicates whether this element is enabled.
 
-    DSS property name: `Enabled`, DSS property index: 18.
+    Name: `Enabled`
+    Default: True
     """
 
     def Like(self, value: AnyStr):
@@ -350,7 +367,9 @@ class GICLine(DSSObj, CircuitElementMixin, PCElementMixin):
 
         New Capacitor.C2 like=c1  ...
 
-        DSS property name: `Like`, DSS property index: 19.
+        **Deprecated:** `Like` has been deprecated since at least 2021, see https://sourceforge.net/p/electricdss/discussion/861977/thread/8b59d21eb6/#b57c/f668
+
+        Name: `Like`
         """
         self._set_string_o(19, value)
 
@@ -379,7 +398,7 @@ class GICLineProperties(TypedDict):
 class GICLineBatch(DSSBatch, CircuitElementBatchMixin, PCElementBatchMixin):
     _cls_name = 'GICLine'
     _obj_cls = GICLine
-    _cls_idx = 44
+    _cls_idx = 45
     __slots__ = []
 
     def __init__(self, api_util, **kwargs):
@@ -420,7 +439,7 @@ class GICLineBatch(DSSBatch, CircuitElementBatchMixin, PCElementBatchMixin):
     bus1=busname
     bus1=busname.1.2.3
 
-    DSS property name: `Bus1`, DSS property index: 1.
+    Name: `Bus1`
     """
 
     def _get_Bus2(self) -> List[str]:
@@ -437,7 +456,7 @@ class GICLineBatch(DSSBatch, CircuitElementBatchMixin, PCElementBatchMixin):
 
     No Default; must be specified.
 
-    DSS property name: `Bus2`, DSS property index: 2.
+    Name: `Bus2`
     """
 
     def _get_Volts(self) -> BatchFloat64ArrayProxy:
@@ -458,7 +477,8 @@ class GICLineBatch(DSSBatch, CircuitElementBatchMixin, PCElementBatchMixin):
 
     Not both!!  Last one entered will take precedence. Assumed identical in each phase of the Line object.
 
-    DSS property name: `Volts`, DSS property index: 3.
+    Name: `Volts`
+    Units: V
     """
 
     def _get_Angle(self) -> BatchFloat64ArrayProxy:
@@ -469,9 +489,10 @@ class GICLineBatch(DSSBatch, CircuitElementBatchMixin, PCElementBatchMixin):
 
     Angle = property(_get_Angle, _set_Angle) # type: BatchFloat64ArrayProxy
     """
-    Phase angle in degrees of first phase. Default=0.0.  See Voltage property
+    Phase angle in degrees of first phase. See Voltage property
 
-    DSS property name: `Angle`, DSS property index: 4.
+    Name: `Angle`
+    Default: 0.0
     """
 
     def _get_Frequency(self) -> BatchFloat64ArrayProxy:
@@ -482,9 +503,11 @@ class GICLineBatch(DSSBatch, CircuitElementBatchMixin, PCElementBatchMixin):
 
     Frequency = property(_get_Frequency, _set_Frequency) # type: BatchFloat64ArrayProxy
     """
-    Source frequency.  Defaults to 0.1 Hz.
+    Source frequency.
 
-    DSS property name: `Frequency`, DSS property index: 5.
+    Name: `Frequency`
+    Units: Hz
+    Default: 0.1
     """
 
     def _get_Phases(self) -> BatchInt32ArrayProxy:
@@ -495,9 +518,10 @@ class GICLineBatch(DSSBatch, CircuitElementBatchMixin, PCElementBatchMixin):
 
     Phases = property(_get_Phases, _set_Phases) # type: BatchInt32ArrayProxy
     """
-    Number of phases.  Defaults to 3.
+    Number of phases.
 
-    DSS property name: `Phases`, DSS property index: 6.
+    Name: `Phases`
+    Default: 3
     """
 
     def _get_R(self) -> BatchFloat64ArrayProxy:
@@ -508,9 +532,10 @@ class GICLineBatch(DSSBatch, CircuitElementBatchMixin, PCElementBatchMixin):
 
     R = property(_get_R, _set_R) # type: BatchFloat64ArrayProxy
     """
-    Resistance of line, ohms of impedance in series with GIC voltage source. 
+    Resistance of line, impedance in series with GIC voltage source. 
 
-    DSS property name: `R`, DSS property index: 7.
+    Name: `R`
+    Units: Ω
     """
 
     def _get_X(self) -> BatchFloat64ArrayProxy:
@@ -521,9 +546,11 @@ class GICLineBatch(DSSBatch, CircuitElementBatchMixin, PCElementBatchMixin):
 
     X = property(_get_X, _set_X) # type: BatchFloat64ArrayProxy
     """
-    Reactance at base frequency, ohms. Default = 0.0. This value is generally not important for GIC studies but may be used if desired.
+    Reactance at base frequency. This value is generally not important for GIC studies but may be used if desired.
 
-    DSS property name: `X`, DSS property index: 8.
+    Name: `X`
+    Units: Ω
+    Default: 0.0
     """
 
     def _get_C(self) -> BatchFloat64ArrayProxy:
@@ -534,9 +561,11 @@ class GICLineBatch(DSSBatch, CircuitElementBatchMixin, PCElementBatchMixin):
 
     C = property(_get_C, _set_C) # type: BatchFloat64ArrayProxy
     """
-    Value of line blocking capacitance in microfarads. Default = 0.0, implying that there is no line blocking capacitor.
+    Value of line blocking capacitance. A zero value implies that there is no line blocking capacitor.
 
-    DSS property name: `C`, DSS property index: 9.
+    Name: `C`
+    Units: μF
+    Default: 0.0
     """
 
     def _get_EN(self) -> BatchFloat64ArrayProxy:
@@ -547,9 +576,10 @@ class GICLineBatch(DSSBatch, CircuitElementBatchMixin, PCElementBatchMixin):
 
     EN = property(_get_EN, _set_EN) # type: BatchFloat64ArrayProxy
     """
-    Northward Electric field (V/km). If specified, Voltage and Angle are computed from EN, EE, lat and lon values.
+    Northward Electric field. If specified, Voltage and Angle are computed from EN, EE, lat and lon values.
 
-    DSS property name: `EN`, DSS property index: 10.
+    Name: `EN`
+    Units: V/km
     """
 
     def _get_EE(self) -> BatchFloat64ArrayProxy:
@@ -560,9 +590,10 @@ class GICLineBatch(DSSBatch, CircuitElementBatchMixin, PCElementBatchMixin):
 
     EE = property(_get_EE, _set_EE) # type: BatchFloat64ArrayProxy
     """
-    Eastward Electric field (V/km).  If specified, Voltage and Angle are computed from EN, EE, lat and lon values.
+    Eastward Electric field. If specified, Voltage and Angle are computed from EN, EE, lat and lon values.
 
-    DSS property name: `EE`, DSS property index: 11.
+    Name: `EE`
+    Units: V/km
     """
 
     def _get_Lat1(self) -> BatchFloat64ArrayProxy:
@@ -573,9 +604,10 @@ class GICLineBatch(DSSBatch, CircuitElementBatchMixin, PCElementBatchMixin):
 
     Lat1 = property(_get_Lat1, _set_Lat1) # type: BatchFloat64ArrayProxy
     """
-    Latitude of Bus1 (degrees)
+    Latitude of Bus1
 
-    DSS property name: `Lat1`, DSS property index: 12.
+    Name: `Lat1`
+    Units: °
     """
 
     def _get_Lon1(self) -> BatchFloat64ArrayProxy:
@@ -586,9 +618,10 @@ class GICLineBatch(DSSBatch, CircuitElementBatchMixin, PCElementBatchMixin):
 
     Lon1 = property(_get_Lon1, _set_Lon1) # type: BatchFloat64ArrayProxy
     """
-    Longitude of Bus1 (degrees)
+    Longitude of Bus1
 
-    DSS property name: `Lon1`, DSS property index: 13.
+    Name: `Lon1`
+    Units: °
     """
 
     def _get_Lat2(self) -> BatchFloat64ArrayProxy:
@@ -599,9 +632,10 @@ class GICLineBatch(DSSBatch, CircuitElementBatchMixin, PCElementBatchMixin):
 
     Lat2 = property(_get_Lat2, _set_Lat2) # type: BatchFloat64ArrayProxy
     """
-    Latitude of Bus2 (degrees)
+    Latitude of Bus2
 
-    DSS property name: `Lat2`, DSS property index: 14.
+    Name: `Lat2`
+    Units: °
     """
 
     def _get_Lon2(self) -> BatchFloat64ArrayProxy:
@@ -612,9 +646,10 @@ class GICLineBatch(DSSBatch, CircuitElementBatchMixin, PCElementBatchMixin):
 
     Lon2 = property(_get_Lon2, _set_Lon2) # type: BatchFloat64ArrayProxy
     """
-    Longitude of Bus2 (degrees)
+    Longitude of Bus2
 
-    DSS property name: `Lon2`, DSS property index: 15.
+    Name: `Lon2`
+    Units: °
     """
 
     def _get_Spectrum_str(self) -> List[str]:
@@ -625,9 +660,9 @@ class GICLineBatch(DSSBatch, CircuitElementBatchMixin, PCElementBatchMixin):
 
     Spectrum_str = property(_get_Spectrum_str, _set_Spectrum_str) # type: List[str]
     """
-    Inherited Property for all PCElements. Name of harmonic spectrum for this source.  Default is "defaultvsource", which is defined when the DSS starts.
+    Inherited Property for all PCElements. Name of harmonic spectrum for this source.
 
-    DSS property name: `Spectrum`, DSS property index: 16.
+    Name: `Spectrum`
     """
 
     def _get_Spectrum(self) -> List[SpectrumObj]:
@@ -638,9 +673,9 @@ class GICLineBatch(DSSBatch, CircuitElementBatchMixin, PCElementBatchMixin):
 
     Spectrum = property(_get_Spectrum, _set_Spectrum) # type: List[SpectrumObj]
     """
-    Inherited Property for all PCElements. Name of harmonic spectrum for this source.  Default is "defaultvsource", which is defined when the DSS starts.
+    Inherited Property for all PCElements. Name of harmonic spectrum for this source.
 
-    DSS property name: `Spectrum`, DSS property index: 16.
+    Name: `Spectrum`
     """
 
     def _get_BaseFreq(self) -> BatchFloat64ArrayProxy:
@@ -653,7 +688,7 @@ class GICLineBatch(DSSBatch, CircuitElementBatchMixin, PCElementBatchMixin):
     """
     Inherited Property for all PCElements. Base frequency for specification of reactance value.
 
-    DSS property name: `BaseFreq`, DSS property index: 17.
+    Name: `BaseFreq`
     """
 
     def _get_Enabled(self) -> List[bool]:
@@ -661,14 +696,15 @@ class GICLineBatch(DSSBatch, CircuitElementBatchMixin, PCElementBatchMixin):
             self._get_batch_int32_prop(18)
         ]
 
-    def _set_Enabled(self, value: bool, flags: enums.SetterFlags = 0):
+    def _set_Enabled(self, value: Union[bool, List[bool]], flags: enums.SetterFlags = 0):
         self._set_batch_int32_array(18, value, flags)
 
     Enabled = property(_get_Enabled, _set_Enabled) # type: List[bool]
     """
-    {Yes|No or True|False} Indicates whether this element is enabled.
+    Indicates whether this element is enabled.
 
-    DSS property name: `Enabled`, DSS property index: 18.
+    Name: `Enabled`
+    Default: True
     """
 
     def Like(self, value: AnyStr, flags: enums.SetterFlags = 0):
@@ -677,7 +713,9 @@ class GICLineBatch(DSSBatch, CircuitElementBatchMixin, PCElementBatchMixin):
 
         New Capacitor.C2 like=c1  ...
 
-        DSS property name: `Like`, DSS property index: 19.
+        **Deprecated:** `Like` has been deprecated since at least 2021, see https://sourceforge.net/p/electricdss/discussion/861977/thread/8b59d21eb6/#b57c/f668
+
+        Name: `Like`
         """
         self._set_batch_string(19, value, flags)
 

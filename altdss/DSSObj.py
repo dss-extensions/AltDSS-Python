@@ -1,8 +1,8 @@
 from __future__ import annotations
 import numpy as np
 from dss.enums import DSSJSONFlags
-from .enums import SetterFlags
-from .common import Base, LIST_LIKE, InvalidatedObject
+from .enums import SetterFlags, DSSObjectFlags
+from .common import Base, LIST_LIKE, InvalidatedObject, InvalidatedObjectIterator
 from .types import Float64Array, Int32Array
 from typing import Union, List, AnyStr, Optional
 import pandas as pd
@@ -19,6 +19,7 @@ class DSSObj(Base):
         '_ffi',
         '_get_int32_list',
         '__weakref__',
+        '_is_iterator',
     ]
     _extra_slots = []
 
@@ -26,8 +27,10 @@ class DSSObj(Base):
         Base.__init__(self, api_util)
         self._ptr = ptr
         self._ffi = api_util.ffi
-        self._get_int32_list = api_util.get_int32_array2
-        api_util.track_obj(self)
+        self._get_int32_list = self._lib.get_int32_array2
+        self._is_iterator = False
+        if ptr is not InvalidatedObjectIterator:
+            api_util.track_obj(self)
 
     def _invalidate_ptr(self):
         self._ptr = InvalidatedObject
@@ -99,7 +102,10 @@ class DSSObj(Base):
         #     if propseq:
         #         vals.append(f'{self._properties_by_idx[propidx][0]}={self[propidx]}')
 
-        return f'<{self._cls_name}.{self.Name}>'# {" ".join(vals)}'
+        if not self._is_iterator:
+            return f'<{self._cls_name}.{self.Name}>'# {" ".join(vals)}'
+        
+        return f'<(Iterator) {self._cls_name}.{self.Name}>'# {" ".join(vals)}'
 
     @property
     def Name(self) -> str:
@@ -284,7 +290,7 @@ class DSSObj(Base):
         self._check_for_error()
 
     def _edit(self, props):
-        if not (self._lib.Obj_GetFlags(self._ptr) and self._lib.DSSObjectFlags_Editing):
+        if not (self._lib.Obj_GetFlags(self._ptr) and DSSObjectFlags.Editing):
             self._lib.Obj_BeginEdit(self._ptr)
 
         self._check_for_error()        
@@ -391,7 +397,7 @@ class IDSSObj(Base):
         return IDSSObj.batch_new(self, names, count, begin_edit)
 
 
-    def new(self, name: str, begin_edit=True, activate=False): #TODO: rename/remove to avoid confusion
+    def _create_new(self, name: str, begin_edit=True, activate=False):
         _name = name
         if not isinstance(name, bytes):
             name = name.encode(self._api_util.codec)
@@ -408,7 +414,11 @@ class IDSSObj(Base):
             self._check_for_error()
             raise ValueError('Could not create object "{}".'.format(_name))
 
-        return self._obj_cls(self._api_util, ptr)
+        mapper = self._api_util._map_objs
+        if mapper is True:
+            return self._obj_cls(self._api_util, ptr)
+        elif mapper:
+            return mapper._map_obj(self._obj_cls, ptr)
 
 
     def _new(self, name: AnyStr, begin_edit=None, activate=False, props=None):
@@ -416,7 +426,7 @@ class IDSSObj(Base):
         Internal/aux. function used by the descendant classes (which provide typing info) to create the objects.
         '''
         if props:
-            obj = IDSSObj.new(self, name, True, activate)
+            obj = IDSSObj._create_new(self, name, True, activate)
             try:
                 for k, v in props.items():
                     setattr(obj, k, v)
@@ -429,7 +439,7 @@ class IDSSObj(Base):
         if begin_edit is None:
             begin_edit = True # Assumes the user wants to edit the properties outside.
 
-        return IDSSObj.new(self, name, begin_edit, activate)
+        return IDSSObj._create_new(self, name, begin_edit, activate)
         
 
     def find(self, name_or_idx: Union[AnyStr, int]) -> DSSObj:
@@ -440,17 +450,18 @@ class IDSSObj(Base):
 
         if isinstance(name_or_idx, int):
             ptr = lib.Obj_GetHandleByIdx(self._api_util.ctx, self.cls_idx, name_or_idx + 1)
-            if ptr == self._api_util.ffi.NULL:
+            if not ptr:
                 raise ValueError('Could not find object by index "{}".'.format(name_or_idx))
         else:
             if not isinstance(name_or_idx, bytes):
                 name_or_idx = name_or_idx.encode(self._api_util.codec)
 
             ptr = lib.Obj_GetHandleByName(self._api_util.ctx, self.cls_idx, name_or_idx)
-            if ptr == self._api_util.ffi.NULL:
+            if not ptr:
                 raise ValueError('Could not find object by name "{}".'.format(name_or_idx))
 
         return self._obj_cls(self._api_util, ptr)
+
 
     def __len__(self) -> int:
         return self._lib.Obj_GetCount(self._api_util.ctx, self.cls_idx)

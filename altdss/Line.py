@@ -1,5 +1,5 @@
-# Copyright (c) 2021-2024 Paulo Meira
-# Copyright (c) 2021-2024 DSS-Extensions contributors
+# Copyright (c) 2021-2026 Paulo Meira
+# Copyright (c) 2021-2026 DSS-Extensions contributors
 from __future__ import annotations
 from typing import Union, List, AnyStr, Optional, Iterator, TYPE_CHECKING
 from typing_extensions import TypedDict, Unpack
@@ -18,6 +18,8 @@ from .LineSpacing import LineSpacing
 from .TSData import TSData
 from .WireData import WireData
 
+Conductor = Union[WireData, CNData, TSData]
+
 class Line(DSSObj, CircuitElementMixin, PDElementMixin):
     __slots__ = DSSObj._extra_slots + CircuitElementMixin._extra_slots + PDElementMixin._extra_slots
     _cls_name = 'Line'
@@ -29,7 +31,8 @@ class Line(DSSObj, CircuitElementMixin, PDElementMixin):
         23,
         28,
         30,
-        37,
+        33,
+        41,
     }
     _cls_float_idx = {
         4,
@@ -46,10 +49,12 @@ class Line(DSSObj, CircuitElementMixin, PDElementMixin):
         27,
         31,
         32,
-        33,
-        34,
         35,
         36,
+        37,
+        38,
+        39,
+        40,
     }
     _cls_prop_idx = {
         'bus1': 1,
@@ -74,7 +79,6 @@ class Line(DSSObj, CircuitElementMixin, PDElementMixin):
         'units': 20,
         'spacing': 21,
         'wires': 22,
-        'conductors': 22,
         'earthmodel': 23,
         'cncables': 24,
         'tscables': 25,
@@ -83,14 +87,18 @@ class Line(DSSObj, CircuitElementMixin, PDElementMixin):
         'seasons': 28,
         'ratings': 29,
         'linetype': 30,
-        'normamps': 31,
-        'emergamps': 32,
-        'faultrate': 33,
-        'pctperm': 34,
-        'repair': 35,
-        'basefreq': 36,
-        'enabled': 37,
-        'like': 38,
+        'epsrmedium': 31,
+        'heightoffset': 32,
+        'heightunit': 33,
+        'conductors': 34,
+        'normamps': 35,
+        'emergamps': 36,
+        'faultrate': 37,
+        'pctperm': 38,
+        'repair': 39,
+        'basefreq': 40,
+        'enabled': 41,
+        'like': 42,
     }
 
     def __init__(self, api_util, ptr):
@@ -128,7 +136,7 @@ class Line(DSSObj, CircuitElementMixin, PDElementMixin):
     bus1=busname   (assumes all terminals connected in normal phase order)
     bus1=busname.3.1.2.0 (specify terminal to node connections explicitly)
 
-    DSS property name: `Bus1`, DSS property index: 1.
+    Name: `Bus1`
     """
 
     def _get_Bus2(self) -> str:
@@ -141,7 +149,7 @@ class Line(DSSObj, CircuitElementMixin, PDElementMixin):
     """
     Name of bus to which 2nd terminal is connected.
 
-    DSS property name: `Bus2`, DSS property index: 2.
+    Name: `Bus2`
     """
 
     def _get_LineCode_str(self) -> str:
@@ -155,7 +163,7 @@ class Line(DSSObj, CircuitElementMixin, PDElementMixin):
     Name of linecode object describing line impedances.
     If you use a line code, you do not need to specify the impedances here. The line code must have been PREVIOUSLY defined. The values specified last will prevail over those specified earlier (left-to-right sequence of properties).  You can subsequently change the number of phases if symmetrical component quantities are specified.If no line code or impedance data are specified, the line object defaults to 336 MCM ACSR on 4 ft spacing.
 
-    DSS property name: `LineCode`, DSS property index: 3.
+    Name: `LineCode`
     """
 
     def _get_LineCode(self) -> LineCodeObj:
@@ -173,7 +181,7 @@ class Line(DSSObj, CircuitElementMixin, PDElementMixin):
     Name of linecode object describing line impedances.
     If you use a line code, you do not need to specify the impedances here. The line code must have been PREVIOUSLY defined. The values specified last will prevail over those specified earlier (left-to-right sequence of properties).  You can subsequently change the number of phases if symmetrical component quantities are specified.If no line code or impedance data are specified, the line object defaults to 336 MCM ACSR on 4 ft spacing.
 
-    DSS property name: `LineCode`, DSS property index: 3.
+    Name: `LineCode`
     """
 
     def _get_Length(self) -> float:
@@ -184,9 +192,10 @@ class Line(DSSObj, CircuitElementMixin, PDElementMixin):
 
     Length = property(_get_Length, _set_Length) # type: float
     """
-    Length of line. Default is 1.0. If units do not match the impedance data, specify "units" property. 
+    Length of line. If units do not match the impedance data, specify "units" property. 
 
-    DSS property name: `Length`, DSS property index: 4.
+    Name: `Length`
+    Default: 1.0
     """
 
     def _get_Phases(self) -> int:
@@ -199,7 +208,8 @@ class Line(DSSObj, CircuitElementMixin, PDElementMixin):
     """
     Number of phases, this line.
 
-    DSS property name: `Phases`, DSS property index: 5.
+    Name: `Phases`
+    Default: 3
     """
 
     def _get_R1(self) -> float:
@@ -210,9 +220,11 @@ class Line(DSSObj, CircuitElementMixin, PDElementMixin):
 
     R1 = property(_get_R1, _set_R1) # type: float
     """
-    Positive-sequence Resistance, ohms per unit length. Setting any of R1, R0, X1, X0, C1, C0 forces the program to use the symmetrical component line definition. See also Rmatrix.
+    Positive-sequence Resistance. Setting any of R1, R0, X1, X0, C1, C0 forces the program to use the symmetrical component line definition. See also Rmatrix.
 
-    DSS property name: `R1`, DSS property index: 6.
+    Name: `R1`
+    Units: Ω/[length_unit]
+    Default: 0.058
     """
 
     def _get_X1(self) -> float:
@@ -223,9 +235,11 @@ class Line(DSSObj, CircuitElementMixin, PDElementMixin):
 
     X1 = property(_get_X1, _set_X1) # type: float
     """
-    Positive-sequence Reactance, ohms per unit length. Setting any of R1, R0, X1, X0, C1, C0 forces the program to use the symmetrical component line definition.  See also Xmatrix
+    Positive-sequence Reactance. Setting any of R1, R0, X1, X0, C1, C0 forces the program to use the symmetrical component line definition.  See also Xmatrix
 
-    DSS property name: `X1`, DSS property index: 7.
+    Name: `X1`
+    Units: Ω/[length_unit]
+    Default: 0.1206
     """
 
     def _get_R0(self) -> float:
@@ -236,9 +250,11 @@ class Line(DSSObj, CircuitElementMixin, PDElementMixin):
 
     R0 = property(_get_R0, _set_R0) # type: float
     """
-    Zero-sequence Resistance, ohms per unit length. Setting any of R1, R0, X1, X0, C1, C0 forces the program to use the symmetrical component line definition.
+    Zero-sequence Resistance. Setting any of R1, R0, X1, X0, C1, C0 forces the program to use the symmetrical component line definition.
 
-    DSS property name: `R0`, DSS property index: 8.
+    Name: `R0`
+    Units: Ω/[length_unit]
+    Default: 0.1784
     """
 
     def _get_X0(self) -> float:
@@ -249,9 +265,11 @@ class Line(DSSObj, CircuitElementMixin, PDElementMixin):
 
     X0 = property(_get_X0, _set_X0) # type: float
     """
-    Zero-sequence Reactance, ohms per unit length. Setting any of R1, R0, X1, X0, C1, C0 forces the program to use the symmetrical component line definition.
+    Zero-sequence Reactance. Setting any of R1, R0, X1, X0, C1, C0 forces the program to use the symmetrical component line definition.
 
-    DSS property name: `X0`, DSS property index: 9.
+    Name: `X0`
+    Units: Ω/[length_unit]
+    Default: 0.4047
     """
 
     def _get_C1(self) -> float:
@@ -262,9 +280,11 @@ class Line(DSSObj, CircuitElementMixin, PDElementMixin):
 
     C1 = property(_get_C1, _set_C1) # type: float
     """
-    Positive-sequence capacitance, nf per unit length.  Setting any of R1, R0, X1, X0, C1, C0 forces the program to use the symmetrical component line definition. See also Cmatrix and B1.
+    Positive-sequence capacitance. Setting any of R1, R0, X1, X0, C1, C0 forces the program to use the symmetrical component line definition. See also Cmatrix and B1.
 
-    DSS property name: `C1`, DSS property index: 10.
+    Name: `C1`
+    Units: nF/[length_unit]
+    Default: 3.3999999999999995
     """
 
     def _get_C0(self) -> float:
@@ -275,9 +295,11 @@ class Line(DSSObj, CircuitElementMixin, PDElementMixin):
 
     C0 = property(_get_C0, _set_C0) # type: float
     """
-    Zero-sequence capacitance, nf per unit length. Setting any of R1, R0, X1, X0, C1, C0 forces the program to use the symmetrical component line definition.See also B0.
+    Zero-sequence capacitance. Setting any of R1, R0, X1, X0, C1, C0 forces the program to use the symmetrical component line definition.See also B0.
 
-    DSS property name: `C0`, DSS property index: 11.
+    Name: `C0`
+    Units: nF/[length_unit]
+    Default: 1.5999999999999999
     """
 
     def _get_RMatrix(self) -> Float64Array:
@@ -288,9 +310,10 @@ class Line(DSSObj, CircuitElementMixin, PDElementMixin):
 
     RMatrix = property(_get_RMatrix, _set_RMatrix) # type: Float64Array
     """
-    Resistance matrix, lower triangle, ohms per unit length. Order of the matrix is the number of phases. May be used to specify the impedance of any line configuration. Using any of Rmatrix, Xmatrix, Cmatrix forces program to use the matrix values for line impedance definition. For balanced line models, you may use the standard symmetrical component data definition instead.
+    Resistance matrix, lower triangle. Order of the matrix is the number of phases. May be used to specify the impedance of any line configuration. Using any of Rmatrix, Xmatrix, Cmatrix forces program to use the matrix values for line impedance definition. For balanced line models, you may use the standard symmetrical component data definition instead.
 
-    DSS property name: `RMatrix`, DSS property index: 12.
+    Name: `RMatrix`
+    Units: Ω/[length_unit]
     """
 
     def _get_XMatrix(self) -> Float64Array:
@@ -301,9 +324,10 @@ class Line(DSSObj, CircuitElementMixin, PDElementMixin):
 
     XMatrix = property(_get_XMatrix, _set_XMatrix) # type: Float64Array
     """
-    Reactance matrix, lower triangle, ohms per unit length. Order of the matrix is the number of phases. May be used to specify the impedance of any line configuration. Using any of Rmatrix, Xmatrix, Cmatrix forces program to use the matrix values for line impedance definition.  For balanced line models, you may use the standard symmetrical component data definition instead.
+    Reactance matrix, lower triangle. Order of the matrix is the number of phases. May be used to specify the impedance of any line configuration. Using any of Rmatrix, Xmatrix, Cmatrix forces program to use the matrix values for line impedance definition.  For balanced line models, you may use the standard symmetrical component data definition instead.
 
-    DSS property name: `XMatrix`, DSS property index: 13.
+    Name: `XMatrix`
+    Units: Ω/[length_unit]
     """
 
     def _get_CMatrix(self) -> Float64Array:
@@ -314,9 +338,11 @@ class Line(DSSObj, CircuitElementMixin, PDElementMixin):
 
     CMatrix = property(_get_CMatrix, _set_CMatrix) # type: Float64Array
     """
-    Nodal Capacitance matrix, lower triangle, nf per unit length.Order of the matrix is the number of phases. May be used to specify the shunt capacitance of any line configuration. Using any of Rmatrix, Xmatrix, Cmatrix forces program to use the matrix values for line impedance definition.  For balanced line models, you may use the standard symmetrical component data definition instead.
+    Nodal Capacitance matrix, lower triangle. Order of the matrix is the number of phases. May be used to specify the shunt capacitance of any line configuration. Using any of Rmatrix, Xmatrix, Cmatrix forces program to use the matrix values for line impedance definition.  For balanced line models, you may use the standard symmetrical component data definition instead.
 
-    DSS property name: `CMatrix`, DSS property index: 14.
+    Name: `CMatrix`
+    Units: nF/[length_unit]
+    Default: [[2.8, -0.5999999999999999, -0.5999999999999999], [-0.5999999999999999, 2.8, -0.5999999999999999], [-0.5999999999999999, -0.5999999999999999, 2.8]]
     """
 
     def _get_Switch(self) -> bool:
@@ -327,10 +353,11 @@ class Line(DSSObj, CircuitElementMixin, PDElementMixin):
 
     Switch = property(_get_Switch, _set_Switch) # type: bool
     """
-    {y/n | T/F}  Default= no/false.  Designates this line as a switch for graphics and algorithmic purposes. 
+    Designates this line as a switch for graphics and algorithmic purposes. 
     SIDE EFFECT: Sets r1 = 1.0; x1 = 1.0; r0 = 1.0; x0 = 1.0; c1 = 1.1 ; c0 = 1.0;  length = 0.001; You must reset if you want something different.
 
-    DSS property name: `Switch`, DSS property index: 15.
+    Name: `Switch`
+    Default: False
     """
 
     def _get_Rg(self) -> float:
@@ -343,7 +370,9 @@ class Line(DSSObj, CircuitElementMixin, PDElementMixin):
     """
     Carson earth return resistance per unit length used to compute impedance values at base frequency. Default is 0.01805 = 60 Hz value in ohms per kft (matches default line impedances). This value is required for harmonic solutions if you wish to adjust the earth return impedances for frequency. If not, set both Rg and Xg = 0.
 
-    DSS property name: `Rg`, DSS property index: 16.
+    Name: `Rg`
+    Units: Ω/[length_unit]
+    Default: 0.01805
     """
 
     def _get_Xg(self) -> float:
@@ -356,7 +385,9 @@ class Line(DSSObj, CircuitElementMixin, PDElementMixin):
     """
     Carson earth return reactance per unit length used to compute impedance values at base frequency.  For making better frequency adjustments. Default is 0.155081 = 60 Hz value in ohms per kft (matches default line impedances). This value is required for harmonic solutions if you wish to adjust the earth return impedances for frequency. If not, set both Rg and Xg = 0.
 
-    DSS property name: `Xg`, DSS property index: 17.
+    Name: `Xg`
+    Units: Ω/[length_unit]
+    Default: 0.155081
     """
 
     def _get_rho(self) -> float:
@@ -367,9 +398,11 @@ class Line(DSSObj, CircuitElementMixin, PDElementMixin):
 
     rho = property(_get_rho, _set_rho) # type: float
     """
-    Default=100 meter ohms.  Earth resistivity used to compute earth correction factor. Overrides Line geometry definition if specified.
+    Earth resistivity used to compute earth correction factor. Overrides Line geometry definition if specified.
 
-    DSS property name: `rho`, DSS property index: 18.
+    Name: `rho`
+    Units: Ωm
+    Default: 100.0
     """
 
     def _get_Geometry_str(self) -> str:
@@ -382,7 +415,7 @@ class Line(DSSObj, CircuitElementMixin, PDElementMixin):
     """
     Geometry code for LineGeometry Object. Supersedes any previous definition of line impedance. Line constants are computed for each frequency change or rho change. CAUTION: may alter number of phases. You cannot subsequently change the number of phases unless you change how the line impedance is defined.
 
-    DSS property name: `Geometry`, DSS property index: 19.
+    Name: `Geometry`
     """
 
     def _get_Geometry(self) -> LineGeometry:
@@ -399,7 +432,7 @@ class Line(DSSObj, CircuitElementMixin, PDElementMixin):
     """
     Geometry code for LineGeometry Object. Supersedes any previous definition of line impedance. Line constants are computed for each frequency change or rho change. CAUTION: may alter number of phases. You cannot subsequently change the number of phases unless you change how the line impedance is defined.
 
-    DSS property name: `Geometry`, DSS property index: 19.
+    Name: `Geometry`
     """
 
     def _get_Units(self) -> enums.LengthUnit:
@@ -413,9 +446,11 @@ class Line(DSSObj, CircuitElementMixin, PDElementMixin):
 
     Units = property(_get_Units, _set_Units) # type: enums.LengthUnit
     """
-    Length Units = {none | mi|kft|km|m|Ft|in|cm } Default is None - assumes length units match impedance units.
+    Length Units. Default is None - assumes length units match impedance units.
+    This property is reset to its default value when impedances are specified or edited. Make sure to specify desired value after specifying or editing any impedance property.
 
-    DSS property name: `Units`, DSS property index: 20.
+    Name: `Units`
+    Default: none
     """
 
     def _get_Units_str(self) -> str:
@@ -426,9 +461,11 @@ class Line(DSSObj, CircuitElementMixin, PDElementMixin):
 
     Units_str = property(_get_Units_str, _set_Units_str) # type: str
     """
-    Length Units = {none | mi|kft|km|m|Ft|in|cm } Default is None - assumes length units match impedance units.
+    Length Units. Default is None - assumes length units match impedance units.
+    This property is reset to its default value when impedances are specified or edited. Make sure to specify desired value after specifying or editing any impedance property.
 
-    DSS property name: `Units`, DSS property index: 20.
+    Name: `Units`
+    Default: none
     """
 
     def _get_Spacing_str(self) -> str:
@@ -443,7 +480,7 @@ class Line(DSSObj, CircuitElementMixin, PDElementMixin):
     Must be used in conjunction with the Wires property.
     Specify this before the wires property.
 
-    DSS property name: `Spacing`, DSS property index: 21.
+    Name: `Spacing`
     """
 
     def _get_Spacing(self) -> LineSpacing:
@@ -462,43 +499,7 @@ class Line(DSSObj, CircuitElementMixin, PDElementMixin):
     Must be used in conjunction with the Wires property.
     Specify this before the wires property.
 
-    DSS property name: `Spacing`, DSS property index: 21.
-    """
-
-    def _get_Conductors_str(self) -> List[str]:
-        return self._get_string_array(self._lib.Obj_GetStringArray, self._ptr, 22)
-
-    def _set_Conductors_str(self, value: List[AnyStr], flags: enums.SetterFlags = 0):
-        self._set_string_array_o(22, value, flags | enums.SetterFlags.AllowAllConductors)
-
-    Conductors_str = property(_get_Conductors_str, _set_Conductors_str) # type: List[str]
-    """
-    Array of WireData names for use in an overhead line constants calculation.
-    Must be used in conjunction with the Spacing property.
-    Specify the Spacing first, and "ncond" wires.
-    May also be used to specify bare neutrals with cables, using "ncond-nphase" wires.
-
-    DSS property name: `Wires`, DSS property index: 22.
-    """
-
-    def _get_Conductors(self) -> List[Union[WireData, CNData, TSData]]:
-        return self._get_obj_array(22, None)
-
-    def _set_Conductors(self, value: List[Union[AnyStr, Union[WireData, CNData, TSData]]], flags: enums.SetterFlags = 0):
-        if value is None or len(value) == 0 or not isinstance(value[0], DSSObj):
-            self._set_string_array_o(22, value, flags | enums.SetterFlags.AllowAllConductors)
-            return
-
-        self._set_obj_array(22, value, flags | enums.SetterFlags.AllowAllConductors)
-
-    Conductors = property(_get_Conductors, _set_Conductors) # type: List[Union[WireData, CNData, TSData]]
-    """
-    Array of WireData names for use in an overhead line constants calculation.
-    Must be used in conjunction with the Spacing property.
-    Specify the Spacing first, and "ncond" wires.
-    May also be used to specify bare neutrals with cables, using "ncond-nphase" wires.
-
-    DSS property name: `Wires`, DSS property index: 22.
+    Name: `Spacing`
     """
 
     def _get_EarthModel(self) -> enums.EarthModel:
@@ -514,7 +515,8 @@ class Line(DSSObj, CircuitElementMixin, PDElementMixin):
     """
     One of {Carson | FullCarson | Deri}. Default is the global value established with the Set EarthModel command. See the Options Help on EarthModel option. This is used to override the global value for this line. This option applies only when the "geometry" property is used.
 
-    DSS property name: `EarthModel`, DSS property index: 23.
+    Name: `EarthModel`
+    Default: Deri
     """
 
     def _get_EarthModel_str(self) -> str:
@@ -527,7 +529,8 @@ class Line(DSSObj, CircuitElementMixin, PDElementMixin):
     """
     One of {Carson | FullCarson | Deri}. Default is the global value established with the Set EarthModel command. See the Options Help on EarthModel option. This is used to override the global value for this line. This option applies only when the "geometry" property is used.
 
-    DSS property name: `EarthModel`, DSS property index: 23.
+    Name: `EarthModel`
+    Default: Deri
     """
 
     def _get_B1(self) -> float:
@@ -540,7 +543,8 @@ class Line(DSSObj, CircuitElementMixin, PDElementMixin):
     """
     Alternate way to specify C1. MicroS per unit length
 
-    DSS property name: `B1`, DSS property index: 26.
+    Name: `B1`
+    Units: μS/[length_unit]
     """
 
     def _get_B0(self) -> float:
@@ -553,7 +557,8 @@ class Line(DSSObj, CircuitElementMixin, PDElementMixin):
     """
     Alternate way to specify C0. MicroS per unit length
 
-    DSS property name: `B0`, DSS property index: 27.
+    Name: `B0`
+    Units: μS/[length_unit]
     """
 
     def _get_Seasons(self) -> int:
@@ -566,7 +571,7 @@ class Line(DSSObj, CircuitElementMixin, PDElementMixin):
     """
     Defines the number of ratings to be defined for the wire, to be used only when defining seasonal ratings using the "Ratings" property.
 
-    DSS property name: `Seasons`, DSS property index: 28.
+    Name: `Seasons`
     """
 
     def _get_Ratings(self) -> Float64Array:
@@ -580,7 +585,8 @@ class Line(DSSObj, CircuitElementMixin, PDElementMixin):
     An array of ratings to be used when the seasonal ratings flag is True. It can be used to insert
     multiple ratings to change during a QSTS simulation to evaluate different ratings in lines.
 
-    DSS property name: `Ratings`, DSS property index: 29.
+    Name: `Ratings`
+    Default: [400.0]
     """
 
     def _get_LineType(self) -> enums.LineType:
@@ -594,12 +600,11 @@ class Line(DSSObj, CircuitElementMixin, PDElementMixin):
 
     LineType = property(_get_LineType, _set_LineType) # type: enums.LineType
     """
-    Code designating the type of line. 
-    One of: OH, UG, UG_TS, UG_CN, SWT_LDBRK, SWT_FUSE, SWT_SECT, SWT_REC, SWT_DISC, SWT_BRK, SWT_ELBOW, BUSBAR
+    Code designating the type of line.
+    OpenDSS currently does not use this internally. For whatever purpose the user defines.
 
-    OpenDSS currently does not use this internally. For whatever purpose the user defines. Default is OH.
-
-    DSS property name: `LineType`, DSS property index: 30.
+    Name: `LineType`
+    Default: oh
     """
 
     def _get_LineType_str(self) -> str:
@@ -610,103 +615,208 @@ class Line(DSSObj, CircuitElementMixin, PDElementMixin):
 
     LineType_str = property(_get_LineType_str, _set_LineType_str) # type: str
     """
-    Code designating the type of line. 
-    One of: OH, UG, UG_TS, UG_CN, SWT_LDBRK, SWT_FUSE, SWT_SECT, SWT_REC, SWT_DISC, SWT_BRK, SWT_ELBOW, BUSBAR
+    Code designating the type of line.
+    OpenDSS currently does not use this internally. For whatever purpose the user defines.
 
-    OpenDSS currently does not use this internally. For whatever purpose the user defines. Default is OH.
+    Name: `LineType`
+    Default: oh
+    """
 
-    DSS property name: `LineType`, DSS property index: 30.
+    def _get_EpsRMedium(self) -> float:
+        return self._lib.Obj_GetFloat64(self._ptr, 31)
+
+    def _set_EpsRMedium(self, value: float, flags: enums.SetterFlags = 0):
+        self._lib.Obj_SetFloat64(self._ptr, 31, value, flags)
+
+    EpsRMedium = property(_get_EpsRMedium, _set_EpsRMedium) # type: float
+    """
+    Relative permittivity of the medium. Used by lines with a geometry definition.
+    Defaults to 1.0 for air.
+
+    Name: `EpsRMedium`
+    Default: 1.0
+    """
+
+    def _get_HeightOffset(self) -> float:
+        return self._lib.Obj_GetFloat64(self._ptr, 32)
+
+    def _set_HeightOffset(self, value: float, flags: enums.SetterFlags = 0):
+        self._lib.Obj_SetFloat64(self._ptr, 32, value, flags)
+
+    HeightOffset = property(_get_HeightOffset, _set_HeightOffset) # type: float
+    """
+    Average Height (or depth) offset to be applied on top of coordinates of geometry or spacing.
+    Use negative value for depth in underground lines.
+
+    Name: `HeightOffset`
+    Default: 0.0
+    """
+
+    def _get_HeightUnit(self) -> enums.LengthUnit:
+        return enums.LengthUnit(self._lib.Obj_GetInt32(self._ptr, 33))
+
+    def _set_HeightUnit(self, value: Union[AnyStr, int, enums.LengthUnit], flags: enums.SetterFlags = 0):
+        if not isinstance(value, int):
+            self._set_string_o(33, value, flags)
+            return
+        self._lib.Obj_SetInt32(self._ptr, 33, value, flags)
+
+    HeightUnit = property(_get_HeightUnit, _set_HeightUnit) # type: enums.LengthUnit
+    """
+    Height offset units. If none is detected, meters is assumed.
+
+    Name: `HeightUnit`
+    Default: m
+    """
+
+    def _get_HeightUnit_str(self) -> str:
+        return self._get_prop_string(33)
+
+    def _set_HeightUnit_str(self, value: AnyStr, flags: enums.SetterFlags = 0):
+        self._set_HeightUnit(value, flags)
+
+    HeightUnit_str = property(_get_HeightUnit_str, _set_HeightUnit_str) # type: str
+    """
+    Height offset units. If none is detected, meters is assumed.
+
+    Name: `HeightUnit`
+    Default: m
+    """
+
+    def _get_Conductors_str(self) -> List[str]:
+        return self._get_string_array(self._lib.Obj_GetStringArray, self._ptr, 34)
+
+    def _set_Conductors_str(self, value: List[AnyStr], flags: enums.SetterFlags = 0):
+        self._set_string_array_o(34, value, flags)
+
+    Conductors_str = property(_get_Conductors_str, _set_Conductors_str) # type: List[str]
+    """
+    Array of conductor names for use in line constants calculation.
+    Must be used in conjunction with the "Spacing" property.
+    Specify the Spacing first, and "NCond" wires.
+    Specify the conductor type followed by the conductor name. e.g., "conductors=[CNData.cncablename, TSData.tscablename, WireData.wirename]"
+    If a given position in the spacing is not to be used in the line, use "none" in the entry of the conductors array.
+
+    Name: `Conductors`
+    """
+
+    def _get_Conductors(self) -> List[Conductor]:
+        return self._get_obj_array(34, None)
+
+    def _set_Conductors(self, value: Union[List[AnyStr], List[Conductor]], flags: enums.SetterFlags = 0):
+        if value is None or len(value) == 0 or not isinstance(value[0], DSSObj):
+            self._set_string_array_o(34, value, flags)
+            return
+
+        self._set_obj_array(34, value, flags)
+
+    Conductors = property(_get_Conductors, _set_Conductors) # type: List[Conductor]
+    """
+    Array of conductor names for use in line constants calculation.
+    Must be used in conjunction with the "Spacing" property.
+    Specify the Spacing first, and "NCond" wires.
+    Specify the conductor type followed by the conductor name. e.g., "conductors=[CNData.cncablename, TSData.tscablename, WireData.wirename]"
+    If a given position in the spacing is not to be used in the line, use "none" in the entry of the conductors array.
+
+    Name: `Conductors`
     """
 
     def _get_NormAmps(self) -> float:
-        return self._lib.Obj_GetFloat64(self._ptr, 31)
+        return self._lib.Obj_GetFloat64(self._ptr, 35)
 
     def _set_NormAmps(self, value: float, flags: enums.SetterFlags = 0):
-        self._lib.Obj_SetFloat64(self._ptr, 31, value, flags)
+        self._lib.Obj_SetFloat64(self._ptr, 35, value, flags)
 
     NormAmps = property(_get_NormAmps, _set_NormAmps) # type: float
     """
     Normal rated current.
 
-    DSS property name: `NormAmps`, DSS property index: 31.
+    Name: `NormAmps`
+    Default: 400.0
     """
 
     def _get_EmergAmps(self) -> float:
-        return self._lib.Obj_GetFloat64(self._ptr, 32)
+        return self._lib.Obj_GetFloat64(self._ptr, 36)
 
     def _set_EmergAmps(self, value: float, flags: enums.SetterFlags = 0):
-        self._lib.Obj_SetFloat64(self._ptr, 32, value, flags)
+        self._lib.Obj_SetFloat64(self._ptr, 36, value, flags)
 
     EmergAmps = property(_get_EmergAmps, _set_EmergAmps) # type: float
     """
-    Maximum or emerg current.
+    Maximum or emergency current rating.
 
-    DSS property name: `EmergAmps`, DSS property index: 32.
+    Name: `EmergAmps`
+    Default: 600.0
     """
 
     def _get_FaultRate(self) -> float:
-        return self._lib.Obj_GetFloat64(self._ptr, 33)
+        return self._lib.Obj_GetFloat64(self._ptr, 37)
 
     def _set_FaultRate(self, value: float, flags: enums.SetterFlags = 0):
-        self._lib.Obj_SetFloat64(self._ptr, 33, value, flags)
+        self._lib.Obj_SetFloat64(self._ptr, 37, value, flags)
 
     FaultRate = property(_get_FaultRate, _set_FaultRate) # type: float
     """
     Failure rate PER UNIT LENGTH per year. Length must be same units as LENGTH property. Default is 0.1 fault per unit length per year.
 
-    DSS property name: `FaultRate`, DSS property index: 33.
+    Name: `FaultRate`
+    Default: 0.1
     """
 
     def _get_pctPerm(self) -> float:
-        return self._lib.Obj_GetFloat64(self._ptr, 34)
+        return self._lib.Obj_GetFloat64(self._ptr, 38)
 
     def _set_pctPerm(self, value: float, flags: enums.SetterFlags = 0):
-        self._lib.Obj_SetFloat64(self._ptr, 34, value, flags)
+        self._lib.Obj_SetFloat64(self._ptr, 38, value, flags)
 
     pctPerm = property(_get_pctPerm, _set_pctPerm) # type: float
     """
-    Percent of failures that become permanent. Default is 20.
+    Percent of failures that become permanent.
 
-    DSS property name: `pctPerm`, DSS property index: 34.
+    Name: `pctPerm`
+    Default: 20.0
     """
 
     def _get_Repair(self) -> float:
-        return self._lib.Obj_GetFloat64(self._ptr, 35)
+        return self._lib.Obj_GetFloat64(self._ptr, 39)
 
     def _set_Repair(self, value: float, flags: enums.SetterFlags = 0):
-        self._lib.Obj_SetFloat64(self._ptr, 35, value, flags)
+        self._lib.Obj_SetFloat64(self._ptr, 39, value, flags)
 
     Repair = property(_get_Repair, _set_Repair) # type: float
     """
-    Hours to repair. Default is 3 hr.
+    Hours to repair.
 
-    DSS property name: `Repair`, DSS property index: 35.
+    Name: `Repair`
+    Default: 3.0
     """
 
     def _get_BaseFreq(self) -> float:
-        return self._lib.Obj_GetFloat64(self._ptr, 36)
+        return self._lib.Obj_GetFloat64(self._ptr, 40)
 
     def _set_BaseFreq(self, value: float, flags: enums.SetterFlags = 0):
-        self._lib.Obj_SetFloat64(self._ptr, 36, value, flags)
+        self._lib.Obj_SetFloat64(self._ptr, 40, value, flags)
 
     BaseFreq = property(_get_BaseFreq, _set_BaseFreq) # type: float
     """
     Base Frequency for ratings.
 
-    DSS property name: `BaseFreq`, DSS property index: 36.
+    Name: `BaseFreq`
+    Units: Hz
     """
 
     def _get_Enabled(self) -> bool:
-        return self._lib.Obj_GetInt32(self._ptr, 37) != 0
+        return self._lib.Obj_GetInt32(self._ptr, 41) != 0
 
     def _set_Enabled(self, value: bool, flags: enums.SetterFlags = 0):
-        self._lib.Obj_SetInt32(self._ptr, 37, value, flags)
+        self._lib.Obj_SetInt32(self._ptr, 41, value, flags)
 
     Enabled = property(_get_Enabled, _set_Enabled) # type: bool
     """
-    {Yes|No or True|False} Indicates whether this element is enabled.
+    Indicates whether this element is enabled.
 
-    DSS property name: `Enabled`, DSS property index: 37.
+    Name: `Enabled`
+    Default: True
     """
 
     def Like(self, value: AnyStr):
@@ -715,9 +825,11 @@ class Line(DSSObj, CircuitElementMixin, PDElementMixin):
 
         New Capacitor.C2 like=c1  ...
 
-        DSS property name: `Like`, DSS property index: 38.
+        **Deprecated:** `Like` has been deprecated since at least 2021, see https://sourceforge.net/p/electricdss/discussion/861977/thread/8b59d21eb6/#b57c/f668
+
+        Name: `Like`
         """
-        self._set_string_o(38, value)
+        self._set_string_o(42, value)
 
 
 class LineProperties(TypedDict):
@@ -742,13 +854,16 @@ class LineProperties(TypedDict):
     Geometry: Union[AnyStr, LineGeometry]
     Units: Union[AnyStr, int, enums.LengthUnit]
     Spacing: Union[AnyStr, LineSpacing]
-    Conductors: List[Union[AnyStr, Union[WireData, CNData, TSData]]]
     EarthModel: Union[AnyStr, int, enums.EarthModel]
     B1: float
     B0: float
     Seasons: int
     Ratings: Float64Array
     LineType: Union[AnyStr, int, enums.LineType]
+    EpsRMedium: float
+    HeightOffset: float
+    HeightUnit: Union[AnyStr, int, enums.LengthUnit]
+    Conductors: Union[List[AnyStr], List[Conductor]]
     NormAmps: float
     EmergAmps: float
     FaultRate: float
@@ -803,7 +918,7 @@ class LineBatch(DSSBatch, CircuitElementBatchMixin, PDElementBatchMixin):
     bus1=busname   (assumes all terminals connected in normal phase order)
     bus1=busname.3.1.2.0 (specify terminal to node connections explicitly)
 
-    DSS property name: `Bus1`, DSS property index: 1.
+    Name: `Bus1`
     """
 
     def _get_Bus2(self) -> List[str]:
@@ -816,7 +931,7 @@ class LineBatch(DSSBatch, CircuitElementBatchMixin, PDElementBatchMixin):
     """
     Name of bus to which 2nd terminal is connected.
 
-    DSS property name: `Bus2`, DSS property index: 2.
+    Name: `Bus2`
     """
 
     def _get_LineCode_str(self) -> List[str]:
@@ -830,7 +945,7 @@ class LineBatch(DSSBatch, CircuitElementBatchMixin, PDElementBatchMixin):
     Name of linecode object describing line impedances.
     If you use a line code, you do not need to specify the impedances here. The line code must have been PREVIOUSLY defined. The values specified last will prevail over those specified earlier (left-to-right sequence of properties).  You can subsequently change the number of phases if symmetrical component quantities are specified.If no line code or impedance data are specified, the line object defaults to 336 MCM ACSR on 4 ft spacing.
 
-    DSS property name: `LineCode`, DSS property index: 3.
+    Name: `LineCode`
     """
 
     def _get_LineCode(self) -> List[LineCodeObj]:
@@ -844,7 +959,7 @@ class LineBatch(DSSBatch, CircuitElementBatchMixin, PDElementBatchMixin):
     Name of linecode object describing line impedances.
     If you use a line code, you do not need to specify the impedances here. The line code must have been PREVIOUSLY defined. The values specified last will prevail over those specified earlier (left-to-right sequence of properties).  You can subsequently change the number of phases if symmetrical component quantities are specified.If no line code or impedance data are specified, the line object defaults to 336 MCM ACSR on 4 ft spacing.
 
-    DSS property name: `LineCode`, DSS property index: 3.
+    Name: `LineCode`
     """
 
     def _get_Length(self) -> BatchFloat64ArrayProxy:
@@ -855,9 +970,10 @@ class LineBatch(DSSBatch, CircuitElementBatchMixin, PDElementBatchMixin):
 
     Length = property(_get_Length, _set_Length) # type: BatchFloat64ArrayProxy
     """
-    Length of line. Default is 1.0. If units do not match the impedance data, specify "units" property. 
+    Length of line. If units do not match the impedance data, specify "units" property. 
 
-    DSS property name: `Length`, DSS property index: 4.
+    Name: `Length`
+    Default: 1.0
     """
 
     def _get_Phases(self) -> BatchInt32ArrayProxy:
@@ -870,7 +986,8 @@ class LineBatch(DSSBatch, CircuitElementBatchMixin, PDElementBatchMixin):
     """
     Number of phases, this line.
 
-    DSS property name: `Phases`, DSS property index: 5.
+    Name: `Phases`
+    Default: 3
     """
 
     def _get_R1(self) -> BatchFloat64ArrayProxy:
@@ -881,9 +998,11 @@ class LineBatch(DSSBatch, CircuitElementBatchMixin, PDElementBatchMixin):
 
     R1 = property(_get_R1, _set_R1) # type: BatchFloat64ArrayProxy
     """
-    Positive-sequence Resistance, ohms per unit length. Setting any of R1, R0, X1, X0, C1, C0 forces the program to use the symmetrical component line definition. See also Rmatrix.
+    Positive-sequence Resistance. Setting any of R1, R0, X1, X0, C1, C0 forces the program to use the symmetrical component line definition. See also Rmatrix.
 
-    DSS property name: `R1`, DSS property index: 6.
+    Name: `R1`
+    Units: Ω/[length_unit]
+    Default: 0.058
     """
 
     def _get_X1(self) -> BatchFloat64ArrayProxy:
@@ -894,9 +1013,11 @@ class LineBatch(DSSBatch, CircuitElementBatchMixin, PDElementBatchMixin):
 
     X1 = property(_get_X1, _set_X1) # type: BatchFloat64ArrayProxy
     """
-    Positive-sequence Reactance, ohms per unit length. Setting any of R1, R0, X1, X0, C1, C0 forces the program to use the symmetrical component line definition.  See also Xmatrix
+    Positive-sequence Reactance. Setting any of R1, R0, X1, X0, C1, C0 forces the program to use the symmetrical component line definition.  See also Xmatrix
 
-    DSS property name: `X1`, DSS property index: 7.
+    Name: `X1`
+    Units: Ω/[length_unit]
+    Default: 0.1206
     """
 
     def _get_R0(self) -> BatchFloat64ArrayProxy:
@@ -907,9 +1028,11 @@ class LineBatch(DSSBatch, CircuitElementBatchMixin, PDElementBatchMixin):
 
     R0 = property(_get_R0, _set_R0) # type: BatchFloat64ArrayProxy
     """
-    Zero-sequence Resistance, ohms per unit length. Setting any of R1, R0, X1, X0, C1, C0 forces the program to use the symmetrical component line definition.
+    Zero-sequence Resistance. Setting any of R1, R0, X1, X0, C1, C0 forces the program to use the symmetrical component line definition.
 
-    DSS property name: `R0`, DSS property index: 8.
+    Name: `R0`
+    Units: Ω/[length_unit]
+    Default: 0.1784
     """
 
     def _get_X0(self) -> BatchFloat64ArrayProxy:
@@ -920,9 +1043,11 @@ class LineBatch(DSSBatch, CircuitElementBatchMixin, PDElementBatchMixin):
 
     X0 = property(_get_X0, _set_X0) # type: BatchFloat64ArrayProxy
     """
-    Zero-sequence Reactance, ohms per unit length. Setting any of R1, R0, X1, X0, C1, C0 forces the program to use the symmetrical component line definition.
+    Zero-sequence Reactance. Setting any of R1, R0, X1, X0, C1, C0 forces the program to use the symmetrical component line definition.
 
-    DSS property name: `X0`, DSS property index: 9.
+    Name: `X0`
+    Units: Ω/[length_unit]
+    Default: 0.4047
     """
 
     def _get_C1(self) -> BatchFloat64ArrayProxy:
@@ -933,9 +1058,11 @@ class LineBatch(DSSBatch, CircuitElementBatchMixin, PDElementBatchMixin):
 
     C1 = property(_get_C1, _set_C1) # type: BatchFloat64ArrayProxy
     """
-    Positive-sequence capacitance, nf per unit length.  Setting any of R1, R0, X1, X0, C1, C0 forces the program to use the symmetrical component line definition. See also Cmatrix and B1.
+    Positive-sequence capacitance. Setting any of R1, R0, X1, X0, C1, C0 forces the program to use the symmetrical component line definition. See also Cmatrix and B1.
 
-    DSS property name: `C1`, DSS property index: 10.
+    Name: `C1`
+    Units: nF/[length_unit]
+    Default: 3.3999999999999995
     """
 
     def _get_C0(self) -> BatchFloat64ArrayProxy:
@@ -946,9 +1073,11 @@ class LineBatch(DSSBatch, CircuitElementBatchMixin, PDElementBatchMixin):
 
     C0 = property(_get_C0, _set_C0) # type: BatchFloat64ArrayProxy
     """
-    Zero-sequence capacitance, nf per unit length. Setting any of R1, R0, X1, X0, C1, C0 forces the program to use the symmetrical component line definition.See also B0.
+    Zero-sequence capacitance. Setting any of R1, R0, X1, X0, C1, C0 forces the program to use the symmetrical component line definition.See also B0.
 
-    DSS property name: `C0`, DSS property index: 11.
+    Name: `C0`
+    Units: nF/[length_unit]
+    Default: 1.5999999999999999
     """
 
     def _get_RMatrix(self) -> List[Float64Array]:
@@ -962,9 +1091,10 @@ class LineBatch(DSSBatch, CircuitElementBatchMixin, PDElementBatchMixin):
 
     RMatrix = property(_get_RMatrix, _set_RMatrix) # type: List[Float64Array]
     """
-    Resistance matrix, lower triangle, ohms per unit length. Order of the matrix is the number of phases. May be used to specify the impedance of any line configuration. Using any of Rmatrix, Xmatrix, Cmatrix forces program to use the matrix values for line impedance definition. For balanced line models, you may use the standard symmetrical component data definition instead.
+    Resistance matrix, lower triangle. Order of the matrix is the number of phases. May be used to specify the impedance of any line configuration. Using any of Rmatrix, Xmatrix, Cmatrix forces program to use the matrix values for line impedance definition. For balanced line models, you may use the standard symmetrical component data definition instead.
 
-    DSS property name: `RMatrix`, DSS property index: 12.
+    Name: `RMatrix`
+    Units: Ω/[length_unit]
     """
 
     def _get_XMatrix(self) -> List[Float64Array]:
@@ -978,9 +1108,10 @@ class LineBatch(DSSBatch, CircuitElementBatchMixin, PDElementBatchMixin):
 
     XMatrix = property(_get_XMatrix, _set_XMatrix) # type: List[Float64Array]
     """
-    Reactance matrix, lower triangle, ohms per unit length. Order of the matrix is the number of phases. May be used to specify the impedance of any line configuration. Using any of Rmatrix, Xmatrix, Cmatrix forces program to use the matrix values for line impedance definition.  For balanced line models, you may use the standard symmetrical component data definition instead.
+    Reactance matrix, lower triangle. Order of the matrix is the number of phases. May be used to specify the impedance of any line configuration. Using any of Rmatrix, Xmatrix, Cmatrix forces program to use the matrix values for line impedance definition.  For balanced line models, you may use the standard symmetrical component data definition instead.
 
-    DSS property name: `XMatrix`, DSS property index: 13.
+    Name: `XMatrix`
+    Units: Ω/[length_unit]
     """
 
     def _get_CMatrix(self) -> List[Float64Array]:
@@ -994,9 +1125,11 @@ class LineBatch(DSSBatch, CircuitElementBatchMixin, PDElementBatchMixin):
 
     CMatrix = property(_get_CMatrix, _set_CMatrix) # type: List[Float64Array]
     """
-    Nodal Capacitance matrix, lower triangle, nf per unit length.Order of the matrix is the number of phases. May be used to specify the shunt capacitance of any line configuration. Using any of Rmatrix, Xmatrix, Cmatrix forces program to use the matrix values for line impedance definition.  For balanced line models, you may use the standard symmetrical component data definition instead.
+    Nodal Capacitance matrix, lower triangle. Order of the matrix is the number of phases. May be used to specify the shunt capacitance of any line configuration. Using any of Rmatrix, Xmatrix, Cmatrix forces program to use the matrix values for line impedance definition.  For balanced line models, you may use the standard symmetrical component data definition instead.
 
-    DSS property name: `CMatrix`, DSS property index: 14.
+    Name: `CMatrix`
+    Units: nF/[length_unit]
+    Default: [[2.8, -0.5999999999999999, -0.5999999999999999], [-0.5999999999999999, 2.8, -0.5999999999999999], [-0.5999999999999999, -0.5999999999999999, 2.8]]
     """
 
     def _get_Switch(self) -> List[bool]:
@@ -1004,15 +1137,16 @@ class LineBatch(DSSBatch, CircuitElementBatchMixin, PDElementBatchMixin):
             self._get_batch_int32_prop(15)
         ]
 
-    def _set_Switch(self, value: bool, flags: enums.SetterFlags = 0):
+    def _set_Switch(self, value: Union[bool, List[bool]], flags: enums.SetterFlags = 0):
         self._set_batch_int32_array(15, value, flags)
 
     Switch = property(_get_Switch, _set_Switch) # type: List[bool]
     """
-    {y/n | T/F}  Default= no/false.  Designates this line as a switch for graphics and algorithmic purposes. 
+    Designates this line as a switch for graphics and algorithmic purposes. 
     SIDE EFFECT: Sets r1 = 1.0; x1 = 1.0; r0 = 1.0; x0 = 1.0; c1 = 1.1 ; c0 = 1.0;  length = 0.001; You must reset if you want something different.
 
-    DSS property name: `Switch`, DSS property index: 15.
+    Name: `Switch`
+    Default: False
     """
 
     def _get_Rg(self) -> BatchFloat64ArrayProxy:
@@ -1025,7 +1159,9 @@ class LineBatch(DSSBatch, CircuitElementBatchMixin, PDElementBatchMixin):
     """
     Carson earth return resistance per unit length used to compute impedance values at base frequency. Default is 0.01805 = 60 Hz value in ohms per kft (matches default line impedances). This value is required for harmonic solutions if you wish to adjust the earth return impedances for frequency. If not, set both Rg and Xg = 0.
 
-    DSS property name: `Rg`, DSS property index: 16.
+    Name: `Rg`
+    Units: Ω/[length_unit]
+    Default: 0.01805
     """
 
     def _get_Xg(self) -> BatchFloat64ArrayProxy:
@@ -1038,7 +1174,9 @@ class LineBatch(DSSBatch, CircuitElementBatchMixin, PDElementBatchMixin):
     """
     Carson earth return reactance per unit length used to compute impedance values at base frequency.  For making better frequency adjustments. Default is 0.155081 = 60 Hz value in ohms per kft (matches default line impedances). This value is required for harmonic solutions if you wish to adjust the earth return impedances for frequency. If not, set both Rg and Xg = 0.
 
-    DSS property name: `Xg`, DSS property index: 17.
+    Name: `Xg`
+    Units: Ω/[length_unit]
+    Default: 0.155081
     """
 
     def _get_rho(self) -> BatchFloat64ArrayProxy:
@@ -1049,9 +1187,11 @@ class LineBatch(DSSBatch, CircuitElementBatchMixin, PDElementBatchMixin):
 
     rho = property(_get_rho, _set_rho) # type: BatchFloat64ArrayProxy
     """
-    Default=100 meter ohms.  Earth resistivity used to compute earth correction factor. Overrides Line geometry definition if specified.
+    Earth resistivity used to compute earth correction factor. Overrides Line geometry definition if specified.
 
-    DSS property name: `rho`, DSS property index: 18.
+    Name: `rho`
+    Units: Ωm
+    Default: 100.0
     """
 
     def _get_Geometry_str(self) -> List[str]:
@@ -1064,7 +1204,7 @@ class LineBatch(DSSBatch, CircuitElementBatchMixin, PDElementBatchMixin):
     """
     Geometry code for LineGeometry Object. Supersedes any previous definition of line impedance. Line constants are computed for each frequency change or rho change. CAUTION: may alter number of phases. You cannot subsequently change the number of phases unless you change how the line impedance is defined.
 
-    DSS property name: `Geometry`, DSS property index: 19.
+    Name: `Geometry`
     """
 
     def _get_Geometry(self) -> List[LineGeometry]:
@@ -1077,7 +1217,7 @@ class LineBatch(DSSBatch, CircuitElementBatchMixin, PDElementBatchMixin):
     """
     Geometry code for LineGeometry Object. Supersedes any previous definition of line impedance. Line constants are computed for each frequency change or rho change. CAUTION: may alter number of phases. You cannot subsequently change the number of phases unless you change how the line impedance is defined.
 
-    DSS property name: `Geometry`, DSS property index: 19.
+    Name: `Geometry`
     """
 
     def _get_Units(self) -> BatchInt32ArrayProxy:
@@ -1092,9 +1232,11 @@ class LineBatch(DSSBatch, CircuitElementBatchMixin, PDElementBatchMixin):
 
     Units = property(_get_Units, _set_Units) # type: BatchInt32ArrayProxy
     """
-    Length Units = {none | mi|kft|km|m|Ft|in|cm } Default is None - assumes length units match impedance units.
+    Length Units. Default is None - assumes length units match impedance units.
+    This property is reset to its default value when impedances are specified or edited. Make sure to specify desired value after specifying or editing any impedance property.
 
-    DSS property name: `Units`, DSS property index: 20.
+    Name: `Units`
+    Default: none
     """
 
     def _get_Units_str(self) -> List[str]:
@@ -1105,9 +1247,11 @@ class LineBatch(DSSBatch, CircuitElementBatchMixin, PDElementBatchMixin):
 
     Units_str = property(_get_Units_str, _set_Units_str) # type: List[str]
     """
-    Length Units = {none | mi|kft|km|m|Ft|in|cm } Default is None - assumes length units match impedance units.
+    Length Units. Default is None - assumes length units match impedance units.
+    This property is reset to its default value when impedances are specified or edited. Make sure to specify desired value after specifying or editing any impedance property.
 
-    DSS property name: `Units`, DSS property index: 20.
+    Name: `Units`
+    Default: none
     """
 
     def _get_Spacing_str(self) -> List[str]:
@@ -1122,7 +1266,7 @@ class LineBatch(DSSBatch, CircuitElementBatchMixin, PDElementBatchMixin):
     Must be used in conjunction with the Wires property.
     Specify this before the wires property.
 
-    DSS property name: `Spacing`, DSS property index: 21.
+    Name: `Spacing`
     """
 
     def _get_Spacing(self) -> List[LineSpacing]:
@@ -1137,43 +1281,7 @@ class LineBatch(DSSBatch, CircuitElementBatchMixin, PDElementBatchMixin):
     Must be used in conjunction with the Wires property.
     Specify this before the wires property.
 
-    DSS property name: `Spacing`, DSS property index: 21.
-    """
-
-    def _get_Conductors_str(self) -> List[List[str]]:
-        return self._get_string_ll(22)
-
-    def _set_Conductors_str(self, value: List[AnyStr], flags: enums.SetterFlags = 0):
-        self._set_batch_stringlist_prop(22, value, flags | enums.SetterFlags.AllowAllConductors)
-
-    Conductors_str = property(_get_Conductors_str, _set_Conductors_str) # type: List[List[str]]
-    """
-    Array of WireData names for use in an overhead line constants calculation.
-    Must be used in conjunction with the Spacing property.
-    Specify the Spacing first, and "ncond" wires.
-    May also be used to specify bare neutrals with cables, using "ncond-nphase" wires.
-
-    DSS property name: `Wires`, DSS property index: 22.
-    """
-
-    def _get_Conductors(self) -> List[List[Union[WireData, CNData, TSData]]]:
-        return self._get_obj_ll(22, None)
-
-    def _set_Conductors(self, value: Union[List[AnyStr], List[Union[WireData, CNData, TSData]]], flags: enums.SetterFlags = 0):
-        if (not len(value)) or isinstance(value[0], (bytes, str)) or (len(value[0]) and isinstance(value[0][0], (bytes, str))):
-            self._set_batch_stringlist_prop(22, value, flags | enums.SetterFlags.AllowAllConductors)
-            return
-
-        self._set_batch_objlist_prop(22, value, flags | enums.SetterFlags.AllowAllConductors)
-
-    Conductors = property(_get_Conductors, _set_Conductors) # type: List[List[Union[WireData, CNData, TSData]]]
-    """
-    Array of WireData names for use in an overhead line constants calculation.
-    Must be used in conjunction with the Spacing property.
-    Specify the Spacing first, and "ncond" wires.
-    May also be used to specify bare neutrals with cables, using "ncond-nphase" wires.
-
-    DSS property name: `Wires`, DSS property index: 22.
+    Name: `Spacing`
     """
 
     def _get_EarthModel(self) -> BatchInt32ArrayProxy:
@@ -1190,7 +1298,8 @@ class LineBatch(DSSBatch, CircuitElementBatchMixin, PDElementBatchMixin):
     """
     One of {Carson | FullCarson | Deri}. Default is the global value established with the Set EarthModel command. See the Options Help on EarthModel option. This is used to override the global value for this line. This option applies only when the "geometry" property is used.
 
-    DSS property name: `EarthModel`, DSS property index: 23.
+    Name: `EarthModel`
+    Default: Deri
     """
 
     def _get_EarthModel_str(self) -> List[str]:
@@ -1203,7 +1312,8 @@ class LineBatch(DSSBatch, CircuitElementBatchMixin, PDElementBatchMixin):
     """
     One of {Carson | FullCarson | Deri}. Default is the global value established with the Set EarthModel command. See the Options Help on EarthModel option. This is used to override the global value for this line. This option applies only when the "geometry" property is used.
 
-    DSS property name: `EarthModel`, DSS property index: 23.
+    Name: `EarthModel`
+    Default: Deri
     """
 
     def _get_B1(self) -> BatchFloat64ArrayProxy:
@@ -1216,7 +1326,8 @@ class LineBatch(DSSBatch, CircuitElementBatchMixin, PDElementBatchMixin):
     """
     Alternate way to specify C1. MicroS per unit length
 
-    DSS property name: `B1`, DSS property index: 26.
+    Name: `B1`
+    Units: μS/[length_unit]
     """
 
     def _get_B0(self) -> BatchFloat64ArrayProxy:
@@ -1229,7 +1340,8 @@ class LineBatch(DSSBatch, CircuitElementBatchMixin, PDElementBatchMixin):
     """
     Alternate way to specify C0. MicroS per unit length
 
-    DSS property name: `B0`, DSS property index: 27.
+    Name: `B0`
+    Units: μS/[length_unit]
     """
 
     def _get_Seasons(self) -> BatchInt32ArrayProxy:
@@ -1242,7 +1354,7 @@ class LineBatch(DSSBatch, CircuitElementBatchMixin, PDElementBatchMixin):
     """
     Defines the number of ratings to be defined for the wire, to be used only when defining seasonal ratings using the "Ratings" property.
 
-    DSS property name: `Seasons`, DSS property index: 28.
+    Name: `Seasons`
     """
 
     def _get_Ratings(self) -> List[Float64Array]:
@@ -1259,7 +1371,8 @@ class LineBatch(DSSBatch, CircuitElementBatchMixin, PDElementBatchMixin):
     An array of ratings to be used when the seasonal ratings flag is True. It can be used to insert
     multiple ratings to change during a QSTS simulation to evaluate different ratings in lines.
 
-    DSS property name: `Ratings`, DSS property index: 29.
+    Name: `Ratings`
+    Default: [400.0]
     """
 
     def _get_LineType(self) -> BatchInt32ArrayProxy:
@@ -1274,12 +1387,11 @@ class LineBatch(DSSBatch, CircuitElementBatchMixin, PDElementBatchMixin):
 
     LineType = property(_get_LineType, _set_LineType) # type: BatchInt32ArrayProxy
     """
-    Code designating the type of line. 
-    One of: OH, UG, UG_TS, UG_CN, SWT_LDBRK, SWT_FUSE, SWT_SECT, SWT_REC, SWT_DISC, SWT_BRK, SWT_ELBOW, BUSBAR
+    Code designating the type of line.
+    OpenDSS currently does not use this internally. For whatever purpose the user defines.
 
-    OpenDSS currently does not use this internally. For whatever purpose the user defines. Default is OH.
-
-    DSS property name: `LineType`, DSS property index: 30.
+    Name: `LineType`
+    Default: oh
     """
 
     def _get_LineType_str(self) -> List[str]:
@@ -1290,105 +1402,211 @@ class LineBatch(DSSBatch, CircuitElementBatchMixin, PDElementBatchMixin):
 
     LineType_str = property(_get_LineType_str, _set_LineType_str) # type: List[str]
     """
-    Code designating the type of line. 
-    One of: OH, UG, UG_TS, UG_CN, SWT_LDBRK, SWT_FUSE, SWT_SECT, SWT_REC, SWT_DISC, SWT_BRK, SWT_ELBOW, BUSBAR
+    Code designating the type of line.
+    OpenDSS currently does not use this internally. For whatever purpose the user defines.
 
-    OpenDSS currently does not use this internally. For whatever purpose the user defines. Default is OH.
+    Name: `LineType`
+    Default: oh
+    """
 
-    DSS property name: `LineType`, DSS property index: 30.
+    def _get_EpsRMedium(self) -> BatchFloat64ArrayProxy:
+        return BatchFloat64ArrayProxy(self, 31)
+
+    def _set_EpsRMedium(self, value: Union[float, Float64Array], flags: enums.SetterFlags = 0):
+        self._set_batch_float64_array(31, value, flags)
+
+    EpsRMedium = property(_get_EpsRMedium, _set_EpsRMedium) # type: BatchFloat64ArrayProxy
+    """
+    Relative permittivity of the medium. Used by lines with a geometry definition.
+    Defaults to 1.0 for air.
+
+    Name: `EpsRMedium`
+    Default: 1.0
+    """
+
+    def _get_HeightOffset(self) -> BatchFloat64ArrayProxy:
+        return BatchFloat64ArrayProxy(self, 32)
+
+    def _set_HeightOffset(self, value: Union[float, Float64Array], flags: enums.SetterFlags = 0):
+        self._set_batch_float64_array(32, value, flags)
+
+    HeightOffset = property(_get_HeightOffset, _set_HeightOffset) # type: BatchFloat64ArrayProxy
+    """
+    Average Height (or depth) offset to be applied on top of coordinates of geometry or spacing.
+    Use negative value for depth in underground lines.
+
+    Name: `HeightOffset`
+    Default: 0.0
+    """
+
+    def _get_HeightUnit(self) -> BatchInt32ArrayProxy:
+        return BatchInt32ArrayProxy(self, 33)
+
+    def _set_HeightUnit(self, value: Union[AnyStr, int, enums.LengthUnit, List[AnyStr], List[int], List[enums.LengthUnit], Int32Array], flags: enums.SetterFlags = 0):
+        if isinstance(value, (str, bytes)) or (isinstance(value, LIST_LIKE) and isinstance(value[0], (str, bytes))):
+            self._set_batch_string(33, value, flags)
+            return
+
+        self._set_batch_int32_array(33, value, flags)
+
+    HeightUnit = property(_get_HeightUnit, _set_HeightUnit) # type: BatchInt32ArrayProxy
+    """
+    Height offset units. If none is detected, meters is assumed.
+
+    Name: `HeightUnit`
+    Default: m
+    """
+
+    def _get_HeightUnit_str(self) -> List[str]:
+        return self._get_batch_str_prop(33)
+
+    def _set_HeightUnit_str(self, value: AnyStr, flags: enums.SetterFlags = 0):
+        self._set_HeightUnit(value, flags)
+
+    HeightUnit_str = property(_get_HeightUnit_str, _set_HeightUnit_str) # type: List[str]
+    """
+    Height offset units. If none is detected, meters is assumed.
+
+    Name: `HeightUnit`
+    Default: m
+    """
+
+    def _get_Conductors_str(self) -> List[List[str]]:
+        return self._get_string_ll(34)
+
+    def _set_Conductors_str(self, value: List[AnyStr], flags: enums.SetterFlags = 0):
+        self._set_batch_stringlist_prop(34, value, flags)
+
+    Conductors_str = property(_get_Conductors_str, _set_Conductors_str) # type: List[List[str]]
+    """
+    Array of conductor names for use in line constants calculation.
+    Must be used in conjunction with the "Spacing" property.
+    Specify the Spacing first, and "NCond" wires.
+    Specify the conductor type followed by the conductor name. e.g., "conductors=[CNData.cncablename, TSData.tscablename, WireData.wirename]"
+    If a given position in the spacing is not to be used in the line, use "none" in the entry of the conductors array.
+
+    Name: `Conductors`
+    """
+
+    def _get_Conductors(self) -> List[List[Conductor]]:
+        return self._get_obj_ll(34, None)
+
+    def _set_Conductors(self, value: Union[List[AnyStr], List[Conductor]], flags: enums.SetterFlags = 0):
+        if (not len(value)) or isinstance(value[0], (bytes, str)) or (len(value[0]) and isinstance(value[0][0], (bytes, str))):
+            self._set_batch_stringlist_prop(34, value, flags)
+            return
+
+        self._set_batch_objlist_prop(34, value, flags)
+
+    Conductors = property(_get_Conductors, _set_Conductors) # type: List[List[Conductor]]
+    """
+    Array of conductor names for use in line constants calculation.
+    Must be used in conjunction with the "Spacing" property.
+    Specify the Spacing first, and "NCond" wires.
+    Specify the conductor type followed by the conductor name. e.g., "conductors=[CNData.cncablename, TSData.tscablename, WireData.wirename]"
+    If a given position in the spacing is not to be used in the line, use "none" in the entry of the conductors array.
+
+    Name: `Conductors`
     """
 
     def _get_NormAmps(self) -> BatchFloat64ArrayProxy:
-        return BatchFloat64ArrayProxy(self, 31)
+        return BatchFloat64ArrayProxy(self, 35)
 
     def _set_NormAmps(self, value: Union[float, Float64Array], flags: enums.SetterFlags = 0):
-        self._set_batch_float64_array(31, value, flags)
+        self._set_batch_float64_array(35, value, flags)
 
     NormAmps = property(_get_NormAmps, _set_NormAmps) # type: BatchFloat64ArrayProxy
     """
     Normal rated current.
 
-    DSS property name: `NormAmps`, DSS property index: 31.
+    Name: `NormAmps`
+    Default: 400.0
     """
 
     def _get_EmergAmps(self) -> BatchFloat64ArrayProxy:
-        return BatchFloat64ArrayProxy(self, 32)
+        return BatchFloat64ArrayProxy(self, 36)
 
     def _set_EmergAmps(self, value: Union[float, Float64Array], flags: enums.SetterFlags = 0):
-        self._set_batch_float64_array(32, value, flags)
+        self._set_batch_float64_array(36, value, flags)
 
     EmergAmps = property(_get_EmergAmps, _set_EmergAmps) # type: BatchFloat64ArrayProxy
     """
-    Maximum or emerg current.
+    Maximum or emergency current rating.
 
-    DSS property name: `EmergAmps`, DSS property index: 32.
+    Name: `EmergAmps`
+    Default: 600.0
     """
 
     def _get_FaultRate(self) -> BatchFloat64ArrayProxy:
-        return BatchFloat64ArrayProxy(self, 33)
+        return BatchFloat64ArrayProxy(self, 37)
 
     def _set_FaultRate(self, value: Union[float, Float64Array], flags: enums.SetterFlags = 0):
-        self._set_batch_float64_array(33, value, flags)
+        self._set_batch_float64_array(37, value, flags)
 
     FaultRate = property(_get_FaultRate, _set_FaultRate) # type: BatchFloat64ArrayProxy
     """
     Failure rate PER UNIT LENGTH per year. Length must be same units as LENGTH property. Default is 0.1 fault per unit length per year.
 
-    DSS property name: `FaultRate`, DSS property index: 33.
+    Name: `FaultRate`
+    Default: 0.1
     """
 
     def _get_pctPerm(self) -> BatchFloat64ArrayProxy:
-        return BatchFloat64ArrayProxy(self, 34)
+        return BatchFloat64ArrayProxy(self, 38)
 
     def _set_pctPerm(self, value: Union[float, Float64Array], flags: enums.SetterFlags = 0):
-        self._set_batch_float64_array(34, value, flags)
+        self._set_batch_float64_array(38, value, flags)
 
     pctPerm = property(_get_pctPerm, _set_pctPerm) # type: BatchFloat64ArrayProxy
     """
-    Percent of failures that become permanent. Default is 20.
+    Percent of failures that become permanent.
 
-    DSS property name: `pctPerm`, DSS property index: 34.
+    Name: `pctPerm`
+    Default: 20.0
     """
 
     def _get_Repair(self) -> BatchFloat64ArrayProxy:
-        return BatchFloat64ArrayProxy(self, 35)
+        return BatchFloat64ArrayProxy(self, 39)
 
     def _set_Repair(self, value: Union[float, Float64Array], flags: enums.SetterFlags = 0):
-        self._set_batch_float64_array(35, value, flags)
+        self._set_batch_float64_array(39, value, flags)
 
     Repair = property(_get_Repair, _set_Repair) # type: BatchFloat64ArrayProxy
     """
-    Hours to repair. Default is 3 hr.
+    Hours to repair.
 
-    DSS property name: `Repair`, DSS property index: 35.
+    Name: `Repair`
+    Default: 3.0
     """
 
     def _get_BaseFreq(self) -> BatchFloat64ArrayProxy:
-        return BatchFloat64ArrayProxy(self, 36)
+        return BatchFloat64ArrayProxy(self, 40)
 
     def _set_BaseFreq(self, value: Union[float, Float64Array], flags: enums.SetterFlags = 0):
-        self._set_batch_float64_array(36, value, flags)
+        self._set_batch_float64_array(40, value, flags)
 
     BaseFreq = property(_get_BaseFreq, _set_BaseFreq) # type: BatchFloat64ArrayProxy
     """
     Base Frequency for ratings.
 
-    DSS property name: `BaseFreq`, DSS property index: 36.
+    Name: `BaseFreq`
+    Units: Hz
     """
 
     def _get_Enabled(self) -> List[bool]:
         return [v != 0 for v in
-            self._get_batch_int32_prop(37)
+            self._get_batch_int32_prop(41)
         ]
 
-    def _set_Enabled(self, value: bool, flags: enums.SetterFlags = 0):
-        self._set_batch_int32_array(37, value, flags)
+    def _set_Enabled(self, value: Union[bool, List[bool]], flags: enums.SetterFlags = 0):
+        self._set_batch_int32_array(41, value, flags)
 
     Enabled = property(_get_Enabled, _set_Enabled) # type: List[bool]
     """
-    {Yes|No or True|False} Indicates whether this element is enabled.
+    Indicates whether this element is enabled.
 
-    DSS property name: `Enabled`, DSS property index: 37.
+    Name: `Enabled`
+    Default: True
     """
 
     def Like(self, value: AnyStr, flags: enums.SetterFlags = 0):
@@ -1397,9 +1615,11 @@ class LineBatch(DSSBatch, CircuitElementBatchMixin, PDElementBatchMixin):
 
         New Capacitor.C2 like=c1  ...
 
-        DSS property name: `Like`, DSS property index: 38.
+        **Deprecated:** `Like` has been deprecated since at least 2021, see https://sourceforge.net/p/electricdss/discussion/861977/thread/8b59d21eb6/#b57c/f668
+
+        Name: `Like`
         """
-        self._set_batch_string(38, value, flags)
+        self._set_batch_string(42, value, flags)
 
 class LineBatchProperties(TypedDict):
     Bus1: Union[AnyStr, List[AnyStr]]
@@ -1423,13 +1643,16 @@ class LineBatchProperties(TypedDict):
     Geometry: Union[AnyStr, LineGeometry, List[AnyStr], List[LineGeometry]]
     Units: Union[AnyStr, int, enums.LengthUnit, List[AnyStr], List[int], List[enums.LengthUnit], Int32Array]
     Spacing: Union[AnyStr, LineSpacing, List[AnyStr], List[LineSpacing]]
-    Conductors: Union[List[AnyStr], List[Union[WireData, CNData, TSData]]]
     EarthModel: Union[AnyStr, int, enums.EarthModel, List[AnyStr], List[int], List[enums.EarthModel], Int32Array]
     B1: Union[float, Float64Array]
     B0: Union[float, Float64Array]
     Seasons: Union[int, Int32Array]
     Ratings: Float64Array
     LineType: Union[AnyStr, int, enums.LineType, List[AnyStr], List[int], List[enums.LineType], Int32Array]
+    EpsRMedium: Union[float, Float64Array]
+    HeightOffset: Union[float, Float64Array]
+    HeightUnit: Union[AnyStr, int, enums.LengthUnit, List[AnyStr], List[int], List[enums.LengthUnit], Int32Array]
+    Conductors: Union[List[AnyStr], List[Conductor]]
     NormAmps: Union[float, Float64Array]
     EmergAmps: Union[float, Float64Array]
     FaultRate: Union[float, Float64Array]

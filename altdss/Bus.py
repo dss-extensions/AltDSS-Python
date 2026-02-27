@@ -1,9 +1,10 @@
-# Copyright (c) 2023-2024 Paulo Meira
-# Copyright (c) 2023-2024 DSS-Extensions contributors
+# Copyright (c) 2023-2026 Paulo Meira
+# Copyright (c) 2023-2026 DSS-Extensions contributors
 from typing import Union, Iterator, List
 from dss.enums import DSSJSONFlags
 from .types import Float64Array, Int32Array, ComplexArray
-from .common import Base, InvalidatedBus
+from .common import Base, InvalidatedBus, InvalidatedBusIterator
+from .CircuitElement import CircuitElementBatch
 from .PCElement import PCElementBatch
 from .PDElement import PDElementBatch
 from .Load import LoadBatch
@@ -20,24 +21,33 @@ class Bus:
         '_get_string',
         '_api_util',
         '__weakref__',
+        '_is_iterator',
     )
     
     def _invalidate_ptr(self):
         self._ptr = InvalidatedBus
 
     def __init__(self, api_util, ptr):
-        self._get_float64_array = api_util.get_float64_array
-        self._get_fcomplex128_array = api_util.get_fcomplex128_array
-        self._get_fcomplex128_simple = api_util.get_fcomplex128_simple
-        self._get_int32_array = api_util.get_int32_array
-        self._get_string = api_util.get_string
-        self._lib = api_util.lib
+        lib = self._lib = api_util.lib
         self._ptr = ptr
         self._api_util = api_util
-        api_util.track_bus(self)
+
+        self._get_float64_array = lib.get_float64_array
+        self._get_fcomplex128_array = lib.get_fcomplex128_array
+        self._get_fcomplex128_simple = lib.get_fcomplex128_simple
+        self._get_int32_array = lib.get_int32_array
+        self._get_string = api_util.get_string
+        self._is_iterator = False
+        if ptr is not InvalidatedBusIterator:
+            api_util.track_bus(self)
+
 
     def __repr__(self):
-        return f'<Bus.{self.Name}>'
+        if not self._is_iterator:
+            return f'<Bus.{self.Name}>'
+        
+        return f'<(Iterator) Bus.{self.Name}>'
+
 
     def GetUniqueNodeNumber(self, startNumber: int) -> int:
         '''
@@ -397,12 +407,24 @@ class Bus:
         '''Batch of line objects connected to this bus.'''
         return LineBatch(self._api_util, from_func=(self._lib.Alt_Bus_Get_Lines, self._ptr))
 
-    def PCElements(self) -> PCElementBatch:
-        '''Batch of all PC elements connected to this bus.'''
-        return PCElementBatch(self._lib.Alt_Bus_Get_PCElements, self, copy_safe=True)
+    def PCElements(self) -> CircuitElementBatch:
+        '''
+        Batch of all power conversion (PC) elements connected to this bus.
+
+        This also includes shunt Capacitors/Reactors.
+
+        Original COM help: https://opendss.epri.com/AllPCEatBus.html
+        '''
+        return CircuitElementBatch(self._lib.Alt_Bus_Get_PCElements, self, copy_safe=True)
 
     def PDElements(self) -> PDElementBatch:
-        '''Batch of all PD elements connected to this bus.'''
+        '''
+        Batch of all power delivery (PD) elements connected to this bus.
+
+        This excludes shunt Capacitors/Reactors.
+
+        Original COM help: https://opendss.epri.com/AllPDEatBus1.html
+        '''
         return PDElementBatch(self._lib.Alt_Bus_Get_PDElements, self, copy_safe=True)
 
     def to_json(self, options: Union[int, DSSJSONFlags] = 0):
@@ -444,14 +466,14 @@ class BusBatch(Base):
         return self._get_float64_array(
             self._lib.Alt_BusBatch_GetFloat64FromFunc, 
             *self._get_ptr_cnt(),
-            self._api_util.ffi.addressof(self._api_util.lib_unpatched, fname)
+            getattr(self._api_util.lib_unpatched, fname)
         )
 
     def _busbatch_int32(self, fname: str):
         return self._get_int32_array(
             self._lib.Alt_BusBatch_GetInt32FromFunc, 
             *self._get_ptr_cnt(),
-            self._api_util.ffi.addressof(self._api_util.lib_unpatched, fname)
+            getattr(self._api_util.lib_unpatched, fname)
         )
 
     def X(self) -> Float64Array:
@@ -526,9 +548,21 @@ class BusBatch(Base):
         '''Total number of buses in this batch.'''
         return self._cnt
     
+    def __repr__(self):
+        return f'<{self.__class__.__name__}: {len(self)} items>'
+
     def __iter__(self) -> Iterator[Bus]:
         for ptr in self._unpack():
             yield Bus(self._api_util, ptr)
+
+    def iterate(self) -> Iterator[Bus]:
+        it_obj = Bus(self._api_util, InvalidatedBusIterator)
+        it_obj._is_iterator = True
+        for ptr in self._unpack():
+            it_obj._ptr = ptr
+            yield it_obj
+
+        it_obj._ptr = InvalidatedBusIterator
 
     def to_json(self, options: Union[int, DSSJSONFlags] = 0):
         '''
@@ -586,4 +620,4 @@ class IBuses(BusBatch):
         '''
         Array of strings containing names of all buses in circuit.
         '''
-        return self._check_for_error(self._get_string_array(self._lib.Circuit_Get_AllBusNames))
+        return self._lib.Circuit_Get_AllBusNames()

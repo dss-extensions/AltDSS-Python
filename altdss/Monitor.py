@@ -15,7 +15,7 @@ from .MonitorExtras import MonitorObjMixin
 class Monitor(DSSObj, CircuitElementMixin, MonitorObjMixin):
     __slots__ = DSSObj._extra_slots + CircuitElementMixin._extra_slots + MonitorObjMixin._extra_slots
     _cls_name = 'Monitor'
-    _cls_idx = 47
+    _cls_idx = 48
     _cls_int_idx = {
         2,
         3,
@@ -72,7 +72,8 @@ class Monitor(DSSObj, CircuitElementMixin, MonitorObjMixin):
     """
     Name (Full Object name) of element to which the monitor is connected.
 
-    DSS property name: `Element`, DSS property index: 1.
+    Name: `Element`
+    Default: Vsource.source
     """
 
     def _get_Element(self) -> DSSObj:
@@ -89,7 +90,8 @@ class Monitor(DSSObj, CircuitElementMixin, MonitorObjMixin):
     """
     Name (Full Object name) of element to which the monitor is connected.
 
-    DSS property name: `Element`, DSS property index: 1.
+    Name: `Element`
+    Default: Vsource.source
     """
 
     def _get_Terminal(self) -> int:
@@ -102,7 +104,8 @@ class Monitor(DSSObj, CircuitElementMixin, MonitorObjMixin):
     """
     Number of the terminal of the circuit element to which the monitor is connected. 1 or 2, typically. For monitoring states, attach monitor to terminal 1.
 
-    DSS property name: `Terminal`, DSS property index: 2.
+    Name: `Terminal`
+    Default: 1
     """
 
     def _get_Mode(self) -> int:
@@ -114,32 +117,37 @@ class Monitor(DSSObj, CircuitElementMixin, MonitorObjMixin):
     Mode = property(_get_Mode, _set_Mode) # type: int
     """
     Bitmask integer designating the values the monitor is to capture: 
-    0 = Voltages and currents at designated terminal
-    1 = Powers at designated terminal
-    2 = Tap Position (Transformer Device only)
-    3 = State Variables (PCElements only)
-    4 = Flicker level and severity index (Pst) for voltages. No adders apply.
-        Flicker level at simulation time step, Pst at 10-minute time step.
-    5 = Solution variables (Iterations, etc).
-    Normally, these would be actual phasor quantities from solution.
-    6 = Capacitor Switching (Capacitors only)
-    7 = Storage state vars (Storage device only)
-    8 = All winding currents (Transformer device only)
-    9 = Losses, watts and var (of monitored device)
-    10 = All Winding voltages (Transformer device only)
-    Normally, these would be actual phasor quantities from solution.
-    11 = All terminal node voltages and line currents of monitored device
-    12 = All terminal node voltages LL and line currents of monitored device
-    Combine mode with adders below to achieve other results for terminal quantities:
-    +16 = Sequence quantities
-    +32 = Magnitude only
-    +64 = Positive sequence only or avg of all phases
 
-    Mix adder to obtain desired results. For example:
-    Mode=112 will save positive sequence voltage and current magnitudes only
-    Mode=48 will save all sequence voltages and currents, but magnitude only.
+    - 0: Voltages and currents at designated terminal
+    - 1: Powers at designated terminal
+    - 2: Tap Position (Transformer Device only)
+    - 3: State Variables (PCElements only)
+    - 4: Flicker level and severity index (Pst) for voltages. No adders apply. Flicker level at simulation time step, Pst at 10-minute time step.
+    - 5: Solution variables (Iterations, etc).
+    - 6: Capacitor Switching (Capacitors only)
+    - 7: Storage state vars (Storage device only)
+    - 8: All winding currents (Transformer device only)
+    - 9: Losses, watts and var (of monitored device)
+    - 10: All Winding voltages (Transformer device only)
+    - 11: All terminal node voltages and line currents of monitored device
+    - 12: All terminal node voltages LL and line currents of monitored device
 
-    DSS property name: `Mode`, DSS property index: 3.
+    Normally, these would be actual phasor quantities from solution.  
+    Combine with adders below to achieve other results for terminal quantities:
+
+    - +16: Sequence quantities
+    - +32: Magnitude only
+    - +64: Positive sequence only or average of all phases
+
+    Mix adders to obtain desired results. For example:
+
+    - `Mode=112` will save positive sequence voltage and current magnitudes only (`112=(64 + 32 + 16 + 0)`)
+    - `Mode=48`  will save all sequence voltages and currents, but magnitude only (`48=(32 + 16 + 0)`).
+
+    See also the monitor properties `VIPolar` and `PPolar` for options to control if complex values are reported in polar or rectangular forms.
+
+    Name: `Mode`
+    Default: 0
     """
 
     def Action(self, value: Union[AnyStr, int, enums.MonitorAction], flags: enums.SetterFlags = 0):
@@ -151,7 +159,7 @@ class Monitor(DSSObj, CircuitElementMixin, MonitorObjMixin):
 
         Note that monitors are automatically reset (cleared) when the Set Mode= command is issued. Otherwise, the user must explicitly reset all monitors (reset monitors command) or individual monitors with the Clear action.
 
-        DSS property name: `Action`, DSS property index: 4.
+        Name: `Action`
         """
         if isinstance(value, int):
             self._lib.Obj_SetInt32(self._ptr, 4, value, flags)
@@ -187,9 +195,10 @@ class Monitor(DSSObj, CircuitElementMixin, MonitorObjMixin):
 
     Residual = property(_get_Residual, _set_Residual) # type: bool
     """
-    {Yes/True | No/False} Default = No.  Include Residual cbannel (sum of all phases) for voltage and current. Does not apply to sequence quantity modes or power modes.
+    Include Residual cbannel (sum of all phases) for voltage and current. Does not apply to sequence quantity modes or power modes.
 
-    DSS property name: `Residual`, DSS property index: 5.
+    Name: `Residual`
+    Default: False
     """
 
     def _get_VIPolar(self) -> bool:
@@ -200,9 +209,10 @@ class Monitor(DSSObj, CircuitElementMixin, MonitorObjMixin):
 
     VIPolar = property(_get_VIPolar, _set_VIPolar) # type: bool
     """
-    {Yes/True | No/False} Default = YES. Report voltage and current in polar form (Mag/Angle). (default)  Otherwise, it will be real and imaginary.
+    Report voltage and current in polar form (Mag/Angle). (default)  Otherwise, it will be real and imaginary.
 
-    DSS property name: `VIPolar`, DSS property index: 6.
+    Name: `VIPolar`
+    Default: True
     """
 
     def _get_PPolar(self) -> bool:
@@ -213,9 +223,10 @@ class Monitor(DSSObj, CircuitElementMixin, MonitorObjMixin):
 
     PPolar = property(_get_PPolar, _set_PPolar) # type: bool
     """
-    {Yes/True | No/False} Default = YES. Report power in Apparent power, S, in polar form (Mag/Angle).(default)  Otherwise, is P and Q
+    Report power in Apparent power, S, in polar form (Mag/Angle).(default)  Otherwise, is P and Q
 
-    DSS property name: `PPolar`, DSS property index: 7.
+    Name: `PPolar`
+    Default: True
     """
 
     def _get_BaseFreq(self) -> float:
@@ -228,7 +239,8 @@ class Monitor(DSSObj, CircuitElementMixin, MonitorObjMixin):
     """
     Base Frequency for ratings.
 
-    DSS property name: `BaseFreq`, DSS property index: 8.
+    Name: `BaseFreq`
+    Units: Hz
     """
 
     def _get_Enabled(self) -> bool:
@@ -239,9 +251,10 @@ class Monitor(DSSObj, CircuitElementMixin, MonitorObjMixin):
 
     Enabled = property(_get_Enabled, _set_Enabled) # type: bool
     """
-    {Yes|No or True|False} Indicates whether this element is enabled.
+    Indicates whether this element is enabled.
 
-    DSS property name: `Enabled`, DSS property index: 9.
+    Name: `Enabled`
+    Default: True
     """
 
     def Like(self, value: AnyStr):
@@ -250,7 +263,9 @@ class Monitor(DSSObj, CircuitElementMixin, MonitorObjMixin):
 
         New Capacitor.C2 like=c1  ...
 
-        DSS property name: `Like`, DSS property index: 10.
+        **Deprecated:** `Like` has been deprecated since at least 2021, see https://sourceforge.net/p/electricdss/discussion/861977/thread/8b59d21eb6/#b57c/f668
+
+        Name: `Like`
         """
         self._set_string_o(10, value)
 
@@ -270,7 +285,7 @@ class MonitorProperties(TypedDict):
 class MonitorBatch(DSSBatch, CircuitElementBatchMixin):
     _cls_name = 'Monitor'
     _obj_cls = Monitor
-    _cls_idx = 47
+    _cls_idx = 48
     __slots__ = []
 
     def __init__(self, api_util, **kwargs):
@@ -308,7 +323,8 @@ class MonitorBatch(DSSBatch, CircuitElementBatchMixin):
     """
     Name (Full Object name) of element to which the monitor is connected.
 
-    DSS property name: `Element`, DSS property index: 1.
+    Name: `Element`
+    Default: Vsource.source
     """
 
     def _get_Element(self) -> List[DSSObj]:
@@ -321,7 +337,8 @@ class MonitorBatch(DSSBatch, CircuitElementBatchMixin):
     """
     Name (Full Object name) of element to which the monitor is connected.
 
-    DSS property name: `Element`, DSS property index: 1.
+    Name: `Element`
+    Default: Vsource.source
     """
 
     def _get_Terminal(self) -> BatchInt32ArrayProxy:
@@ -334,7 +351,8 @@ class MonitorBatch(DSSBatch, CircuitElementBatchMixin):
     """
     Number of the terminal of the circuit element to which the monitor is connected. 1 or 2, typically. For monitoring states, attach monitor to terminal 1.
 
-    DSS property name: `Terminal`, DSS property index: 2.
+    Name: `Terminal`
+    Default: 1
     """
 
     def _get_Mode(self) -> BatchInt32ArrayProxy:
@@ -346,32 +364,37 @@ class MonitorBatch(DSSBatch, CircuitElementBatchMixin):
     Mode = property(_get_Mode, _set_Mode) # type: BatchInt32ArrayProxy
     """
     Bitmask integer designating the values the monitor is to capture: 
-    0 = Voltages and currents at designated terminal
-    1 = Powers at designated terminal
-    2 = Tap Position (Transformer Device only)
-    3 = State Variables (PCElements only)
-    4 = Flicker level and severity index (Pst) for voltages. No adders apply.
-        Flicker level at simulation time step, Pst at 10-minute time step.
-    5 = Solution variables (Iterations, etc).
-    Normally, these would be actual phasor quantities from solution.
-    6 = Capacitor Switching (Capacitors only)
-    7 = Storage state vars (Storage device only)
-    8 = All winding currents (Transformer device only)
-    9 = Losses, watts and var (of monitored device)
-    10 = All Winding voltages (Transformer device only)
-    Normally, these would be actual phasor quantities from solution.
-    11 = All terminal node voltages and line currents of monitored device
-    12 = All terminal node voltages LL and line currents of monitored device
-    Combine mode with adders below to achieve other results for terminal quantities:
-    +16 = Sequence quantities
-    +32 = Magnitude only
-    +64 = Positive sequence only or avg of all phases
 
-    Mix adder to obtain desired results. For example:
-    Mode=112 will save positive sequence voltage and current magnitudes only
-    Mode=48 will save all sequence voltages and currents, but magnitude only.
+    - 0: Voltages and currents at designated terminal
+    - 1: Powers at designated terminal
+    - 2: Tap Position (Transformer Device only)
+    - 3: State Variables (PCElements only)
+    - 4: Flicker level and severity index (Pst) for voltages. No adders apply. Flicker level at simulation time step, Pst at 10-minute time step.
+    - 5: Solution variables (Iterations, etc).
+    - 6: Capacitor Switching (Capacitors only)
+    - 7: Storage state vars (Storage device only)
+    - 8: All winding currents (Transformer device only)
+    - 9: Losses, watts and var (of monitored device)
+    - 10: All Winding voltages (Transformer device only)
+    - 11: All terminal node voltages and line currents of monitored device
+    - 12: All terminal node voltages LL and line currents of monitored device
 
-    DSS property name: `Mode`, DSS property index: 3.
+    Normally, these would be actual phasor quantities from solution.  
+    Combine with adders below to achieve other results for terminal quantities:
+
+    - +16: Sequence quantities
+    - +32: Magnitude only
+    - +64: Positive sequence only or average of all phases
+
+    Mix adders to obtain desired results. For example:
+
+    - `Mode=112` will save positive sequence voltage and current magnitudes only (`112=(64 + 32 + 16 + 0)`)
+    - `Mode=48`  will save all sequence voltages and currents, but magnitude only (`48=(32 + 16 + 0)`).
+
+    See also the monitor properties `VIPolar` and `PPolar` for options to control if complex values are reported in polar or rectangular forms.
+
+    Name: `Mode`
+    Default: 0
     """
 
     def Action(self, value: Union[AnyStr, int, enums.MonitorAction], flags: enums.SetterFlags = 0):
@@ -383,7 +406,7 @@ class MonitorBatch(DSSBatch, CircuitElementBatchMixin):
 
         Note that monitors are automatically reset (cleared) when the Set Mode= command is issued. Otherwise, the user must explicitly reset all monitors (reset monitors command) or individual monitors with the Clear action.
 
-        DSS property name: `Action`, DSS property index: 4.
+        Name: `Action`
         """
         if isinstance(value, (bytes, str)) or (isinstance(value, LIST_LIKE) and len(value) > 0 and isinstance(value[0], (bytes, str))):
             self._set_batch_string(4, value, flags)
@@ -415,14 +438,15 @@ class MonitorBatch(DSSBatch, CircuitElementBatchMixin):
             self._get_batch_int32_prop(5)
         ]
 
-    def _set_Residual(self, value: bool, flags: enums.SetterFlags = 0):
+    def _set_Residual(self, value: Union[bool, List[bool]], flags: enums.SetterFlags = 0):
         self._set_batch_int32_array(5, value, flags)
 
     Residual = property(_get_Residual, _set_Residual) # type: List[bool]
     """
-    {Yes/True | No/False} Default = No.  Include Residual cbannel (sum of all phases) for voltage and current. Does not apply to sequence quantity modes or power modes.
+    Include Residual cbannel (sum of all phases) for voltage and current. Does not apply to sequence quantity modes or power modes.
 
-    DSS property name: `Residual`, DSS property index: 5.
+    Name: `Residual`
+    Default: False
     """
 
     def _get_VIPolar(self) -> List[bool]:
@@ -430,14 +454,15 @@ class MonitorBatch(DSSBatch, CircuitElementBatchMixin):
             self._get_batch_int32_prop(6)
         ]
 
-    def _set_VIPolar(self, value: bool, flags: enums.SetterFlags = 0):
+    def _set_VIPolar(self, value: Union[bool, List[bool]], flags: enums.SetterFlags = 0):
         self._set_batch_int32_array(6, value, flags)
 
     VIPolar = property(_get_VIPolar, _set_VIPolar) # type: List[bool]
     """
-    {Yes/True | No/False} Default = YES. Report voltage and current in polar form (Mag/Angle). (default)  Otherwise, it will be real and imaginary.
+    Report voltage and current in polar form (Mag/Angle). (default)  Otherwise, it will be real and imaginary.
 
-    DSS property name: `VIPolar`, DSS property index: 6.
+    Name: `VIPolar`
+    Default: True
     """
 
     def _get_PPolar(self) -> List[bool]:
@@ -445,14 +470,15 @@ class MonitorBatch(DSSBatch, CircuitElementBatchMixin):
             self._get_batch_int32_prop(7)
         ]
 
-    def _set_PPolar(self, value: bool, flags: enums.SetterFlags = 0):
+    def _set_PPolar(self, value: Union[bool, List[bool]], flags: enums.SetterFlags = 0):
         self._set_batch_int32_array(7, value, flags)
 
     PPolar = property(_get_PPolar, _set_PPolar) # type: List[bool]
     """
-    {Yes/True | No/False} Default = YES. Report power in Apparent power, S, in polar form (Mag/Angle).(default)  Otherwise, is P and Q
+    Report power in Apparent power, S, in polar form (Mag/Angle).(default)  Otherwise, is P and Q
 
-    DSS property name: `PPolar`, DSS property index: 7.
+    Name: `PPolar`
+    Default: True
     """
 
     def _get_BaseFreq(self) -> BatchFloat64ArrayProxy:
@@ -465,7 +491,8 @@ class MonitorBatch(DSSBatch, CircuitElementBatchMixin):
     """
     Base Frequency for ratings.
 
-    DSS property name: `BaseFreq`, DSS property index: 8.
+    Name: `BaseFreq`
+    Units: Hz
     """
 
     def _get_Enabled(self) -> List[bool]:
@@ -473,14 +500,15 @@ class MonitorBatch(DSSBatch, CircuitElementBatchMixin):
             self._get_batch_int32_prop(9)
         ]
 
-    def _set_Enabled(self, value: bool, flags: enums.SetterFlags = 0):
+    def _set_Enabled(self, value: Union[bool, List[bool]], flags: enums.SetterFlags = 0):
         self._set_batch_int32_array(9, value, flags)
 
     Enabled = property(_get_Enabled, _set_Enabled) # type: List[bool]
     """
-    {Yes|No or True|False} Indicates whether this element is enabled.
+    Indicates whether this element is enabled.
 
-    DSS property name: `Enabled`, DSS property index: 9.
+    Name: `Enabled`
+    Default: True
     """
 
     def Like(self, value: AnyStr, flags: enums.SetterFlags = 0):
@@ -489,7 +517,9 @@ class MonitorBatch(DSSBatch, CircuitElementBatchMixin):
 
         New Capacitor.C2 like=c1  ...
 
-        DSS property name: `Like`, DSS property index: 10.
+        **Deprecated:** `Like` has been deprecated since at least 2021, see https://sourceforge.net/p/electricdss/discussion/861977/thread/8b59d21eb6/#b57c/f668
+
+        Name: `Like`
         """
         self._set_batch_string(10, value, flags)
 

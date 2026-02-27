@@ -1,5 +1,5 @@
-# Copyright (c) 2021-2024 Paulo Meira
-# Copyright (c) 2021-2024 DSS-Extensions contributors
+# Copyright (c) 2021-2026 Paulo Meira
+# Copyright (c) 2021-2026 DSS-Extensions contributors
 from __future__ import annotations
 from typing import Union, List, AnyStr, Optional, Iterator, TYPE_CHECKING
 from typing_extensions import TypedDict, Unpack
@@ -7,7 +7,7 @@ from .types import Float64Array, Int32Array
 from . import enums
 from .DSSObj import IDSSObj, DSSObj
 from .Batch import DSSBatch
-from .ArrayProxy import BatchInt32ArrayProxy
+from .ArrayProxy import BatchFloat64ArrayProxy, BatchInt32ArrayProxy
 from .common import LIST_LIKE
 
 class LineSpacing(DSSObj):
@@ -18,8 +18,13 @@ class LineSpacing(DSSObj):
         1,
         2,
         5,
+        6,
     }
     _cls_float_idx = {
+        7,
+        8,
+        9,
+        10,
     }
     _cls_prop_idx = {
         'nconds': 1,
@@ -27,7 +32,12 @@ class LineSpacing(DSSObj):
         'x': 3,
         'h': 4,
         'units': 5,
-        'like': 6,
+        'detailed': 6,
+        'eqdistphph': 7,
+        'eqdistphn': 8,
+        'avgphaseheight': 9,
+        'avgneutralheight': 10,
+        'like': 11,
     }
 
 
@@ -56,9 +66,9 @@ class LineSpacing(DSSObj):
 
     NConds = property(_get_NConds, _set_NConds) # type: int
     """
-    Number of wires in this geometry. Default is 3. Triggers memory allocations. Define first!
+    Number of wires in this geometry. Triggers memory allocations. Define first!
 
-    DSS property name: `NConds`, DSS property index: 1.
+    Name: `NConds`
     """
 
     def _get_NPhases(self) -> int:
@@ -71,7 +81,8 @@ class LineSpacing(DSSObj):
     """
     Number of retained phase conductors. If less than the number of wires, list the retained phase coordinates first.
 
-    DSS property name: `NPhases`, DSS property index: 2.
+    Name: `NPhases`
+    Default: 3
     """
 
     def _get_X(self) -> Float64Array:
@@ -84,7 +95,8 @@ class LineSpacing(DSSObj):
     """
     Array of wire X coordinates.
 
-    DSS property name: `X`, DSS property index: 3.
+    Name: `X`
+    Default: [0.0, 0.0, 0.0]
     """
 
     def _get_H(self) -> Float64Array:
@@ -97,7 +109,8 @@ class LineSpacing(DSSObj):
     """
     Array of wire Heights.
 
-    DSS property name: `H`, DSS property index: 4.
+    Name: `H`
+    Default: [0.0, 0.0, 0.0]
     """
 
     def _get_Units(self) -> enums.LengthUnit:
@@ -111,9 +124,10 @@ class LineSpacing(DSSObj):
 
     Units = property(_get_Units, _set_Units) # type: enums.LengthUnit
     """
-    Units for x and h: {mi|kft|km|m|Ft|in|cm } Initial default is "ft", but defaults to last unit defined
+    Units for x and h. Initial default is "ft", but defaults to last unit defined
 
-    DSS property name: `Units`, DSS property index: 5.
+    Name: `Units`
+    Default: ft
     """
 
     def _get_Units_str(self) -> str:
@@ -124,9 +138,80 @@ class LineSpacing(DSSObj):
 
     Units_str = property(_get_Units_str, _set_Units_str) # type: str
     """
-    Units for x and h: {mi|kft|km|m|Ft|in|cm } Initial default is "ft", but defaults to last unit defined
+    Units for x and h. Initial default is "ft", but defaults to last unit defined
 
-    DSS property name: `Units`, DSS property index: 5.
+    Name: `Units`
+    Default: ft
+    """
+
+    def _get_Detailed(self) -> bool:
+        return self._lib.Obj_GetInt32(self._ptr, 6) != 0
+
+    def _set_Detailed(self, value: bool, flags: enums.SetterFlags = 0):
+        self._lib.Obj_SetInt32(self._ptr, 6, value, flags)
+
+    Detailed = property(_get_Detailed, _set_Detailed) # type: bool
+    """
+    Determines whether the spacing uses a detailed cross-section coordinates with x and h arrays (Yes/True), or uses equivalent spacing fields (No/False). The equivalent spacing fields are `EqDistPhPh`, `EqDistPhN`, `AvgPhaseHeight` and `AvgNeutralHeight`.
+
+    Name: `Detailed`
+    Default: True
+    """
+
+    def _get_EqDistPhPh(self) -> float:
+        return self._lib.Obj_GetFloat64(self._ptr, 7)
+
+    def _set_EqDistPhPh(self, value: float, flags: enums.SetterFlags = 0):
+        self._lib.Obj_SetFloat64(self._ptr, 7, value, flags)
+
+    EqDistPhPh = property(_get_EqDistPhPh, _set_EqDistPhPh) # type: float
+    """
+    Equivalent distance between phase conductors. Used for equivalent distance modeling (`Detailed=yes`) as opposed to detailed cross-section coordinates.
+
+    Name: `EqDistPhPh`
+    Default: 0.0
+    """
+
+    def _get_EqDistPhN(self) -> float:
+        return self._lib.Obj_GetFloat64(self._ptr, 8)
+
+    def _set_EqDistPhN(self, value: float, flags: enums.SetterFlags = 0):
+        self._lib.Obj_SetFloat64(self._ptr, 8, value, flags)
+
+    EqDistPhN = property(_get_EqDistPhN, _set_EqDistPhN) # type: float
+    """
+    Equivalent distance between phase and neutral conductors. Used for equivalent distance modeling (`Detailed=yes`) as opposed to detailed cross-section coordinates.
+
+    Name: `EqDistPhN`
+    Default: 0.0
+    """
+
+    def _get_AvgPhaseHeight(self) -> float:
+        return self._lib.Obj_GetFloat64(self._ptr, 9)
+
+    def _set_AvgPhaseHeight(self, value: float, flags: enums.SetterFlags = 0):
+        self._lib.Obj_SetFloat64(self._ptr, 9, value, flags)
+
+    AvgPhaseHeight = property(_get_AvgPhaseHeight, _set_AvgPhaseHeight) # type: float
+    """
+    Average height of phase conductors. Used for equivalent distance modeling (`Detailed=yes`) as opposed to detailed cross-section coordinates.
+
+    Name: `AvgPhaseHeight`
+    Default: 0.0
+    """
+
+    def _get_AvgNeutralHeight(self) -> float:
+        return self._lib.Obj_GetFloat64(self._ptr, 10)
+
+    def _set_AvgNeutralHeight(self, value: float, flags: enums.SetterFlags = 0):
+        self._lib.Obj_SetFloat64(self._ptr, 10, value, flags)
+
+    AvgNeutralHeight = property(_get_AvgNeutralHeight, _set_AvgNeutralHeight) # type: float
+    """
+    Average height of neutral conductors. Used for equivalent distance modeling (`Detailed=yes`) as opposed to detailed cross-section coordinates.
+
+    Name: `AvgNeutralHeight`
+    Default: 0.0
     """
 
     def Like(self, value: AnyStr):
@@ -135,9 +220,11 @@ class LineSpacing(DSSObj):
 
         New Capacitor.C2 like=c1  ...
 
-        DSS property name: `Like`, DSS property index: 6.
+        **Deprecated:** `Like` has been deprecated since at least 2021, see https://sourceforge.net/p/electricdss/discussion/861977/thread/8b59d21eb6/#b57c/f668
+
+        Name: `Like`
         """
-        self._set_string_o(6, value)
+        self._set_string_o(11, value)
 
 
 class LineSpacingProperties(TypedDict):
@@ -146,6 +233,11 @@ class LineSpacingProperties(TypedDict):
     X: Float64Array
     H: Float64Array
     Units: Union[AnyStr, int, enums.LengthUnit]
+    Detailed: bool
+    EqDistPhPh: float
+    EqDistPhN: float
+    AvgPhaseHeight: float
+    AvgNeutralHeight: float
     Like: AnyStr
 
 class LineSpacingBatch(DSSBatch):
@@ -184,9 +276,9 @@ class LineSpacingBatch(DSSBatch):
 
     NConds = property(_get_NConds, _set_NConds) # type: BatchInt32ArrayProxy
     """
-    Number of wires in this geometry. Default is 3. Triggers memory allocations. Define first!
+    Number of wires in this geometry. Triggers memory allocations. Define first!
 
-    DSS property name: `NConds`, DSS property index: 1.
+    Name: `NConds`
     """
 
     def _get_NPhases(self) -> BatchInt32ArrayProxy:
@@ -199,7 +291,8 @@ class LineSpacingBatch(DSSBatch):
     """
     Number of retained phase conductors. If less than the number of wires, list the retained phase coordinates first.
 
-    DSS property name: `NPhases`, DSS property index: 2.
+    Name: `NPhases`
+    Default: 3
     """
 
     def _get_X(self) -> List[Float64Array]:
@@ -215,7 +308,8 @@ class LineSpacingBatch(DSSBatch):
     """
     Array of wire X coordinates.
 
-    DSS property name: `X`, DSS property index: 3.
+    Name: `X`
+    Default: [0.0, 0.0, 0.0]
     """
 
     def _get_H(self) -> List[Float64Array]:
@@ -231,7 +325,8 @@ class LineSpacingBatch(DSSBatch):
     """
     Array of wire Heights.
 
-    DSS property name: `H`, DSS property index: 4.
+    Name: `H`
+    Default: [0.0, 0.0, 0.0]
     """
 
     def _get_Units(self) -> BatchInt32ArrayProxy:
@@ -246,9 +341,10 @@ class LineSpacingBatch(DSSBatch):
 
     Units = property(_get_Units, _set_Units) # type: BatchInt32ArrayProxy
     """
-    Units for x and h: {mi|kft|km|m|Ft|in|cm } Initial default is "ft", but defaults to last unit defined
+    Units for x and h. Initial default is "ft", but defaults to last unit defined
 
-    DSS property name: `Units`, DSS property index: 5.
+    Name: `Units`
+    Default: ft
     """
 
     def _get_Units_str(self) -> List[str]:
@@ -259,9 +355,82 @@ class LineSpacingBatch(DSSBatch):
 
     Units_str = property(_get_Units_str, _set_Units_str) # type: List[str]
     """
-    Units for x and h: {mi|kft|km|m|Ft|in|cm } Initial default is "ft", but defaults to last unit defined
+    Units for x and h. Initial default is "ft", but defaults to last unit defined
 
-    DSS property name: `Units`, DSS property index: 5.
+    Name: `Units`
+    Default: ft
+    """
+
+    def _get_Detailed(self) -> List[bool]:
+        return [v != 0 for v in
+            self._get_batch_int32_prop(6)
+        ]
+
+    def _set_Detailed(self, value: Union[bool, List[bool]], flags: enums.SetterFlags = 0):
+        self._set_batch_int32_array(6, value, flags)
+
+    Detailed = property(_get_Detailed, _set_Detailed) # type: List[bool]
+    """
+    Determines whether the spacing uses a detailed cross-section coordinates with x and h arrays (Yes/True), or uses equivalent spacing fields (No/False). The equivalent spacing fields are `EqDistPhPh`, `EqDistPhN`, `AvgPhaseHeight` and `AvgNeutralHeight`.
+
+    Name: `Detailed`
+    Default: True
+    """
+
+    def _get_EqDistPhPh(self) -> BatchFloat64ArrayProxy:
+        return BatchFloat64ArrayProxy(self, 7)
+
+    def _set_EqDistPhPh(self, value: Union[float, Float64Array], flags: enums.SetterFlags = 0):
+        self._set_batch_float64_array(7, value, flags)
+
+    EqDistPhPh = property(_get_EqDistPhPh, _set_EqDistPhPh) # type: BatchFloat64ArrayProxy
+    """
+    Equivalent distance between phase conductors. Used for equivalent distance modeling (`Detailed=yes`) as opposed to detailed cross-section coordinates.
+
+    Name: `EqDistPhPh`
+    Default: 0.0
+    """
+
+    def _get_EqDistPhN(self) -> BatchFloat64ArrayProxy:
+        return BatchFloat64ArrayProxy(self, 8)
+
+    def _set_EqDistPhN(self, value: Union[float, Float64Array], flags: enums.SetterFlags = 0):
+        self._set_batch_float64_array(8, value, flags)
+
+    EqDistPhN = property(_get_EqDistPhN, _set_EqDistPhN) # type: BatchFloat64ArrayProxy
+    """
+    Equivalent distance between phase and neutral conductors. Used for equivalent distance modeling (`Detailed=yes`) as opposed to detailed cross-section coordinates.
+
+    Name: `EqDistPhN`
+    Default: 0.0
+    """
+
+    def _get_AvgPhaseHeight(self) -> BatchFloat64ArrayProxy:
+        return BatchFloat64ArrayProxy(self, 9)
+
+    def _set_AvgPhaseHeight(self, value: Union[float, Float64Array], flags: enums.SetterFlags = 0):
+        self._set_batch_float64_array(9, value, flags)
+
+    AvgPhaseHeight = property(_get_AvgPhaseHeight, _set_AvgPhaseHeight) # type: BatchFloat64ArrayProxy
+    """
+    Average height of phase conductors. Used for equivalent distance modeling (`Detailed=yes`) as opposed to detailed cross-section coordinates.
+
+    Name: `AvgPhaseHeight`
+    Default: 0.0
+    """
+
+    def _get_AvgNeutralHeight(self) -> BatchFloat64ArrayProxy:
+        return BatchFloat64ArrayProxy(self, 10)
+
+    def _set_AvgNeutralHeight(self, value: Union[float, Float64Array], flags: enums.SetterFlags = 0):
+        self._set_batch_float64_array(10, value, flags)
+
+    AvgNeutralHeight = property(_get_AvgNeutralHeight, _set_AvgNeutralHeight) # type: BatchFloat64ArrayProxy
+    """
+    Average height of neutral conductors. Used for equivalent distance modeling (`Detailed=yes`) as opposed to detailed cross-section coordinates.
+
+    Name: `AvgNeutralHeight`
+    Default: 0.0
     """
 
     def Like(self, value: AnyStr, flags: enums.SetterFlags = 0):
@@ -270,9 +439,11 @@ class LineSpacingBatch(DSSBatch):
 
         New Capacitor.C2 like=c1  ...
 
-        DSS property name: `Like`, DSS property index: 6.
+        **Deprecated:** `Like` has been deprecated since at least 2021, see https://sourceforge.net/p/electricdss/discussion/861977/thread/8b59d21eb6/#b57c/f668
+
+        Name: `Like`
         """
-        self._set_batch_string(6, value, flags)
+        self._set_batch_string(11, value, flags)
 
 class LineSpacingBatchProperties(TypedDict):
     NConds: Union[int, Int32Array]
@@ -280,6 +451,11 @@ class LineSpacingBatchProperties(TypedDict):
     X: Float64Array
     H: Float64Array
     Units: Union[AnyStr, int, enums.LengthUnit, List[AnyStr], List[int], List[enums.LengthUnit], Int32Array]
+    Detailed: bool
+    EqDistPhPh: Union[float, Float64Array]
+    EqDistPhN: Union[float, Float64Array]
+    AvgPhaseHeight: Union[float, Float64Array]
+    AvgNeutralHeight: Union[float, Float64Array]
     Like: AnyStr
 
 class ILineSpacing(IDSSObj, LineSpacingBatch):

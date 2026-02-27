@@ -1,5 +1,5 @@
-# Copyright (c) 2021-2024 Paulo Meira
-# Copyright (c) 2021-2024 DSS-Extensions contributors
+# Copyright (c) 2021-2026 Paulo Meira
+# Copyright (c) 2021-2026 DSS-Extensions contributors
 from __future__ import annotations
 from typing import Union, List, AnyStr, Optional, Iterator, TYPE_CHECKING
 from typing_extensions import TypedDict, Unpack
@@ -15,7 +15,7 @@ from .TCC_Curve import TCC_Curve
 class Recloser(DSSObj, CircuitElementMixin):
     __slots__ = DSSObj._extra_slots + CircuitElementMixin._extra_slots
     _cls_name = 'Recloser'
-    _cls_idx = 32
+    _cls_idx = 33
     _cls_int_idx = {
         2,
         4,
@@ -100,7 +100,7 @@ class Recloser(DSSObj, CircuitElementMixin):
     """
     Full object name of the circuit element, typically a line, transformer, load, or generator, to which the Recloser's PT and/or CT are connected. This is the "monitored" element. There is no default; must be specified.
 
-    DSS property name: `MonitoredObj`, DSS property index: 1.
+    Name: `MonitoredObj`
     """
 
     def _get_MonitoredObj(self) -> DSSObj:
@@ -117,7 +117,7 @@ class Recloser(DSSObj, CircuitElementMixin):
     """
     Full object name of the circuit element, typically a line, transformer, load, or generator, to which the Recloser's PT and/or CT are connected. This is the "monitored" element. There is no default; must be specified.
 
-    DSS property name: `MonitoredObj`, DSS property index: 1.
+    Name: `MonitoredObj`
     """
 
     def _get_MonitoredTerm(self) -> int:
@@ -128,9 +128,10 @@ class Recloser(DSSObj, CircuitElementMixin):
 
     MonitoredTerm = property(_get_MonitoredTerm, _set_MonitoredTerm) # type: int
     """
-    Number of the terminal of the circuit element to which the Recloser is connected. 1 or 2, typically.  Default is 1.
+    Number of the terminal of the circuit element to which the Recloser is connected. 1 or 2, typically.
 
-    DSS property name: `MonitoredTerm`, DSS property index: 2.
+    Name: `MonitoredTerm`
+    Default: 1
     """
 
     def _get_SwitchedObj_str(self) -> str:
@@ -141,9 +142,9 @@ class Recloser(DSSObj, CircuitElementMixin):
 
     SwitchedObj_str = property(_get_SwitchedObj_str, _set_SwitchedObj_str) # type: str
     """
-    Name of circuit element switch that the Recloser controls. Specify the full object name.Defaults to the same as the Monitored element. This is the "controlled" element.
+    Name of circuit element switch that the Recloser controls. Specify the full object name. Defaults to the same as the Monitored element. This is the "controlled" element.
 
-    DSS property name: `SwitchedObj`, DSS property index: 3.
+    Name: `SwitchedObj`
     """
 
     def _get_SwitchedObj(self) -> DSSObj:
@@ -158,9 +159,9 @@ class Recloser(DSSObj, CircuitElementMixin):
 
     SwitchedObj = property(_get_SwitchedObj, _set_SwitchedObj) # type: DSSObj
     """
-    Name of circuit element switch that the Recloser controls. Specify the full object name.Defaults to the same as the Monitored element. This is the "controlled" element.
+    Name of circuit element switch that the Recloser controls. Specify the full object name. Defaults to the same as the Monitored element. This is the "controlled" element.
 
-    DSS property name: `SwitchedObj`, DSS property index: 3.
+    Name: `SwitchedObj`
     """
 
     def _get_SwitchedTerm(self) -> int:
@@ -173,7 +174,8 @@ class Recloser(DSSObj, CircuitElementMixin):
     """
     Number of the terminal of the controlled element in which the switch is controlled by the Recloser. 1 or 2, typically.  Default is 1.
 
-    DSS property name: `SwitchedTerm`, DSS property index: 4.
+    Name: `SwitchedTerm`
+    Default: 1
     """
 
     def _get_NumFast(self) -> int:
@@ -184,9 +186,10 @@ class Recloser(DSSObj, CircuitElementMixin):
 
     NumFast = property(_get_NumFast, _set_NumFast) # type: int
     """
-    Number of Fast (fuse saving) operations.  Default is 1. (See "Shots")
+    Number of Fast (fuse saving) operations. (See "Shots")
 
-    DSS property name: `NumFast`, DSS property index: 5.
+    Name: `NumFast`
+    Default: 1
     """
 
     def _get_PhaseFast_str(self) -> str:
@@ -199,7 +202,8 @@ class Recloser(DSSObj, CircuitElementMixin):
     """
     Name of the TCC Curve object that determines the Phase Fast trip.  Must have been previously defined as a TCC_Curve object. Default is "A". Multiplying the current values in the curve by the "phasetrip" value gives the actual current.
 
-    DSS property name: `PhaseFast`, DSS property index: 6.
+    Name: `PhaseFast`
+    Default: a
     """
 
     def _get_PhaseFast(self) -> TCC_Curve:
@@ -216,7 +220,8 @@ class Recloser(DSSObj, CircuitElementMixin):
     """
     Name of the TCC Curve object that determines the Phase Fast trip.  Must have been previously defined as a TCC_Curve object. Default is "A". Multiplying the current values in the curve by the "phasetrip" value gives the actual current.
 
-    DSS property name: `PhaseFast`, DSS property index: 6.
+    Name: `PhaseFast`
+    Default: a
     """
 
     def _get_PhaseDelayed_str(self) -> str:
@@ -229,7 +234,8 @@ class Recloser(DSSObj, CircuitElementMixin):
     """
     Name of the TCC Curve object that determines the Phase Delayed trip.  Must have been previously defined as a TCC_Curve object. Default is "D".Multiplying the current values in the curve by the "phasetrip" value gives the actual current.
 
-    DSS property name: `PhaseDelayed`, DSS property index: 7.
+    Name: `PhaseDelayed`
+    Default: d
     """
 
     def _get_PhaseDelayed(self) -> TCC_Curve:
@@ -246,7 +252,8 @@ class Recloser(DSSObj, CircuitElementMixin):
     """
     Name of the TCC Curve object that determines the Phase Delayed trip.  Must have been previously defined as a TCC_Curve object. Default is "D".Multiplying the current values in the curve by the "phasetrip" value gives the actual current.
 
-    DSS property name: `PhaseDelayed`, DSS property index: 7.
+    Name: `PhaseDelayed`
+    Default: d
     """
 
     def _get_GroundFast_str(self) -> str:
@@ -259,7 +266,7 @@ class Recloser(DSSObj, CircuitElementMixin):
     """
     Name of the TCC Curve object that determines the Ground Fast trip.  Must have been previously defined as a TCC_Curve object. Default is none (ignored). Multiplying the current values in the curve by the "groundtrip" value gives the actual current.
 
-    DSS property name: `GroundFast`, DSS property index: 8.
+    Name: `GroundFast`
     """
 
     def _get_GroundFast(self) -> TCC_Curve:
@@ -276,7 +283,7 @@ class Recloser(DSSObj, CircuitElementMixin):
     """
     Name of the TCC Curve object that determines the Ground Fast trip.  Must have been previously defined as a TCC_Curve object. Default is none (ignored). Multiplying the current values in the curve by the "groundtrip" value gives the actual current.
 
-    DSS property name: `GroundFast`, DSS property index: 8.
+    Name: `GroundFast`
     """
 
     def _get_GroundDelayed_str(self) -> str:
@@ -289,7 +296,7 @@ class Recloser(DSSObj, CircuitElementMixin):
     """
     Name of the TCC Curve object that determines the Ground Delayed trip.  Must have been previously defined as a TCC_Curve object. Default is none (ignored).Multiplying the current values in the curve by the "groundtrip" value gives the actual current.
 
-    DSS property name: `GroundDelayed`, DSS property index: 9.
+    Name: `GroundDelayed`
     """
 
     def _get_GroundDelayed(self) -> TCC_Curve:
@@ -306,7 +313,7 @@ class Recloser(DSSObj, CircuitElementMixin):
     """
     Name of the TCC Curve object that determines the Ground Delayed trip.  Must have been previously defined as a TCC_Curve object. Default is none (ignored).Multiplying the current values in the curve by the "groundtrip" value gives the actual current.
 
-    DSS property name: `GroundDelayed`, DSS property index: 9.
+    Name: `GroundDelayed`
     """
 
     def _get_PhaseTrip(self) -> float:
@@ -317,9 +324,10 @@ class Recloser(DSSObj, CircuitElementMixin):
 
     PhaseTrip = property(_get_PhaseTrip, _set_PhaseTrip) # type: float
     """
-    Multiplier or actual phase amps for the phase TCC curve.  Defaults to 1.0.
+    Multiplier or actual phase amps for the phase TCC curve.
 
-    DSS property name: `PhaseTrip`, DSS property index: 10.
+    Name: `PhaseTrip`
+    Default: 1.0
     """
 
     def _get_GroundTrip(self) -> float:
@@ -330,9 +338,10 @@ class Recloser(DSSObj, CircuitElementMixin):
 
     GroundTrip = property(_get_GroundTrip, _set_GroundTrip) # type: float
     """
-    Multiplier or actual ground amps (3I0) for the ground TCC curve.  Defaults to 1.0.
+    Multiplier or actual ground amps (3I0) for the ground TCC curve.
 
-    DSS property name: `GroundTrip`, DSS property index: 11.
+    Name: `GroundTrip`
+    Default: 1.0
     """
 
     def _get_PhaseInst(self) -> float:
@@ -345,7 +354,8 @@ class Recloser(DSSObj, CircuitElementMixin):
     """
     Actual amps for instantaneous phase trip which is assumed to happen in 0.01 sec + Delay Time. Default is 0.0, which signifies no inst trip. 
 
-    DSS property name: `PhaseInst`, DSS property index: 12.
+    Name: `PhaseInst`
+    Default: 0.0
     """
 
     def _get_GroundInst(self) -> float:
@@ -356,9 +366,10 @@ class Recloser(DSSObj, CircuitElementMixin):
 
     GroundInst = property(_get_GroundInst, _set_GroundInst) # type: float
     """
-    Actual amps for instantaneous ground trip which is assumed to happen in 0.01 sec + Delay Time.Default is 0.0, which signifies no inst trip.
+    Actual amps for instantaneous ground trip which is assumed to happen in 0.01 sec + Delay Time. Default is 0.0, which signifies no inst trip.
 
-    DSS property name: `GroundInst`, DSS property index: 13.
+    Name: `GroundInst`
+    Default: 0.0
     """
 
     def _get_Reset(self) -> float:
@@ -369,9 +380,11 @@ class Recloser(DSSObj, CircuitElementMixin):
 
     Reset = property(_get_Reset, _set_Reset) # type: float
     """
-    Reset time in sec for Recloser.  Default is 15. 
+    Reset time for Recloser.
 
-    DSS property name: `Reset`, DSS property index: 14.
+    Name: `Reset`
+    Units: s
+    Default: 15.0
     """
 
     def _get_Shots(self) -> int:
@@ -384,7 +397,8 @@ class Recloser(DSSObj, CircuitElementMixin):
     """
     Total Number of fast and delayed shots to lockout.  Default is 4. This is one more than the number of reclose intervals.
 
-    DSS property name: `Shots`, DSS property index: 15.
+    Name: `Shots`
+    Default: 4
     """
 
     def _get_RecloseIntervals(self) -> Float64Array:
@@ -397,7 +411,8 @@ class Recloser(DSSObj, CircuitElementMixin):
     """
     Array of reclose intervals.  Default for Recloser is (0.5, 2.0, 2.0) seconds. A locked out Recloser must be closed manually (action=close).
 
-    DSS property name: `RecloseIntervals`, DSS property index: 16.
+    Name: `RecloseIntervals`
+    Default: [0.5, 2.0, 2.0]
     """
 
     def _get_Delay(self) -> float:
@@ -408,9 +423,11 @@ class Recloser(DSSObj, CircuitElementMixin):
 
     Delay = property(_get_Delay, _set_Delay) # type: float
     """
-    Fixed delay time (sec) added to Recloser trip time. Default is 0.0. Used to represent breaker time or any other delay.
+    Fixed delay time added to Recloser trip time. Used to represent breaker time or any other delay.
 
-    DSS property name: `Delay`, DSS property index: 17.
+    Name: `Delay`
+    Units: s
+    Default: 0.0
     """
 
     def _get_TDPhFast(self) -> float:
@@ -421,9 +438,10 @@ class Recloser(DSSObj, CircuitElementMixin):
 
     TDPhFast = property(_get_TDPhFast, _set_TDPhFast) # type: float
     """
-    Time dial for Phase Fast trip curve. Multiplier on time axis of specified curve. Default=1.0.
+    Time dial for Phase Fast trip curve. Multiplier on time axis of specified curve.
 
-    DSS property name: `TDPhFast`, DSS property index: 19.
+    Name: `TDPhFast`
+    Default: 1.0
     """
 
     def _get_TDGrFast(self) -> float:
@@ -434,9 +452,10 @@ class Recloser(DSSObj, CircuitElementMixin):
 
     TDGrFast = property(_get_TDGrFast, _set_TDGrFast) # type: float
     """
-    Time dial for Ground Fast trip curve. Multiplier on time axis of specified curve. Default=1.0.
+    Time dial for Ground Fast trip curve. Multiplier on time axis of specified curve.
 
-    DSS property name: `TDGrFast`, DSS property index: 20.
+    Name: `TDGrFast`
+    Default: 1.0
     """
 
     def _get_TDPhDelayed(self) -> float:
@@ -447,9 +466,10 @@ class Recloser(DSSObj, CircuitElementMixin):
 
     TDPhDelayed = property(_get_TDPhDelayed, _set_TDPhDelayed) # type: float
     """
-    Time dial for Phase Delayed trip curve. Multiplier on time axis of specified curve. Default=1.0.
+    Time dial for Phase Delayed trip curve. Multiplier on time axis of specified curve.
 
-    DSS property name: `TDPhDelayed`, DSS property index: 21.
+    Name: `TDPhDelayed`
+    Default: 1.0
     """
 
     def _get_TDGrDelayed(self) -> float:
@@ -460,9 +480,10 @@ class Recloser(DSSObj, CircuitElementMixin):
 
     TDGrDelayed = property(_get_TDGrDelayed, _set_TDGrDelayed) # type: float
     """
-    Time dial for Ground Delayed trip curve. Multiplier on time axis of specified curve. Default=1.0.
+    Time dial for Ground Delayed trip curve. Multiplier on time axis of specified curve.
 
-    DSS property name: `TDGrDelayed`, DSS property index: 22.
+    Name: `TDGrDelayed`
+    Default: 1.0
     """
 
     def _get_Normal(self) -> enums.RecloserState:
@@ -476,9 +497,10 @@ class Recloser(DSSObj, CircuitElementMixin):
 
     Normal = property(_get_Normal, _set_Normal) # type: enums.RecloserState
     """
-    {Open | Closed} Normal state of the recloser. The recloser reverts to this state for reset, change of mode, etc. Defaults to "State" if not specifically declared.
+    Normal state of the recloser. The recloser reverts to this state for reset, change of mode, etc. Defaults to "State" if not specifically declared.
 
-    DSS property name: `Normal`, DSS property index: 23.
+    Name: `Normal`
+    Default: Closed
     """
 
     def _get_Normal_str(self) -> str:
@@ -489,9 +511,10 @@ class Recloser(DSSObj, CircuitElementMixin):
 
     Normal_str = property(_get_Normal_str, _set_Normal_str) # type: str
     """
-    {Open | Closed} Normal state of the recloser. The recloser reverts to this state for reset, change of mode, etc. Defaults to "State" if not specifically declared.
+    Normal state of the recloser. The recloser reverts to this state for reset, change of mode, etc. Defaults to "State" if not specifically declared.
 
-    DSS property name: `Normal`, DSS property index: 23.
+    Name: `Normal`
+    Default: Closed
     """
 
     def _get_State(self) -> enums.RecloserState:
@@ -505,9 +528,10 @@ class Recloser(DSSObj, CircuitElementMixin):
 
     State = property(_get_State, _set_State) # type: enums.RecloserState
     """
-    {Open | Closed} Actual state of the recloser. Upon setting, immediately forces state of the recloser, overriding the Recloser control. Simulates manual control on recloser. Defaults to Closed. "Open" causes the controlled element to open and lock out. "Closed" causes the controlled element to close and the recloser to reset to its first operation.
+    Actual state of the recloser. Upon setting, immediately forces state of the recloser, overriding the Recloser control. Simulates manual control on recloser. Defaults to Closed. "Open" causes the controlled element to open and lock out. "Closed" causes the controlled element to close and the recloser to reset to its first operation.
 
-    DSS property name: `State`, DSS property index: 24.
+    Name: `State`
+    Default: Closed
     """
 
     def _get_State_str(self) -> str:
@@ -518,9 +542,10 @@ class Recloser(DSSObj, CircuitElementMixin):
 
     State_str = property(_get_State_str, _set_State_str) # type: str
     """
-    {Open | Closed} Actual state of the recloser. Upon setting, immediately forces state of the recloser, overriding the Recloser control. Simulates manual control on recloser. Defaults to Closed. "Open" causes the controlled element to open and lock out. "Closed" causes the controlled element to close and the recloser to reset to its first operation.
+    Actual state of the recloser. Upon setting, immediately forces state of the recloser, overriding the Recloser control. Simulates manual control on recloser. Defaults to Closed. "Open" causes the controlled element to open and lock out. "Closed" causes the controlled element to close and the recloser to reset to its first operation.
 
-    DSS property name: `State`, DSS property index: 24.
+    Name: `State`
+    Default: Closed
     """
 
     def _get_BaseFreq(self) -> float:
@@ -533,7 +558,8 @@ class Recloser(DSSObj, CircuitElementMixin):
     """
     Base Frequency for ratings.
 
-    DSS property name: `BaseFreq`, DSS property index: 25.
+    Name: `BaseFreq`
+    Units: Hz
     """
 
     def _get_Enabled(self) -> bool:
@@ -544,9 +570,10 @@ class Recloser(DSSObj, CircuitElementMixin):
 
     Enabled = property(_get_Enabled, _set_Enabled) # type: bool
     """
-    {Yes|No or True|False} Indicates whether this element is enabled.
+    Indicates whether this element is enabled.
 
-    DSS property name: `Enabled`, DSS property index: 26.
+    Name: `Enabled`
+    Default: True
     """
 
     def Like(self, value: AnyStr):
@@ -555,7 +582,9 @@ class Recloser(DSSObj, CircuitElementMixin):
 
         New Capacitor.C2 like=c1  ...
 
-        DSS property name: `Like`, DSS property index: 27.
+        **Deprecated:** `Like` has been deprecated since at least 2021, see https://sourceforge.net/p/electricdss/discussion/861977/thread/8b59d21eb6/#b57c/f668
+
+        Name: `Like`
         """
         self._set_string_o(27, value)
 
@@ -591,7 +620,7 @@ class RecloserProperties(TypedDict):
 class RecloserBatch(DSSBatch, CircuitElementBatchMixin):
     _cls_name = 'Recloser'
     _obj_cls = Recloser
-    _cls_idx = 32
+    _cls_idx = 33
     __slots__ = []
 
     def __init__(self, api_util, **kwargs):
@@ -629,7 +658,7 @@ class RecloserBatch(DSSBatch, CircuitElementBatchMixin):
     """
     Full object name of the circuit element, typically a line, transformer, load, or generator, to which the Recloser's PT and/or CT are connected. This is the "monitored" element. There is no default; must be specified.
 
-    DSS property name: `MonitoredObj`, DSS property index: 1.
+    Name: `MonitoredObj`
     """
 
     def _get_MonitoredObj(self) -> List[DSSObj]:
@@ -642,7 +671,7 @@ class RecloserBatch(DSSBatch, CircuitElementBatchMixin):
     """
     Full object name of the circuit element, typically a line, transformer, load, or generator, to which the Recloser's PT and/or CT are connected. This is the "monitored" element. There is no default; must be specified.
 
-    DSS property name: `MonitoredObj`, DSS property index: 1.
+    Name: `MonitoredObj`
     """
 
     def _get_MonitoredTerm(self) -> BatchInt32ArrayProxy:
@@ -653,9 +682,10 @@ class RecloserBatch(DSSBatch, CircuitElementBatchMixin):
 
     MonitoredTerm = property(_get_MonitoredTerm, _set_MonitoredTerm) # type: BatchInt32ArrayProxy
     """
-    Number of the terminal of the circuit element to which the Recloser is connected. 1 or 2, typically.  Default is 1.
+    Number of the terminal of the circuit element to which the Recloser is connected. 1 or 2, typically.
 
-    DSS property name: `MonitoredTerm`, DSS property index: 2.
+    Name: `MonitoredTerm`
+    Default: 1
     """
 
     def _get_SwitchedObj_str(self) -> List[str]:
@@ -666,9 +696,9 @@ class RecloserBatch(DSSBatch, CircuitElementBatchMixin):
 
     SwitchedObj_str = property(_get_SwitchedObj_str, _set_SwitchedObj_str) # type: List[str]
     """
-    Name of circuit element switch that the Recloser controls. Specify the full object name.Defaults to the same as the Monitored element. This is the "controlled" element.
+    Name of circuit element switch that the Recloser controls. Specify the full object name. Defaults to the same as the Monitored element. This is the "controlled" element.
 
-    DSS property name: `SwitchedObj`, DSS property index: 3.
+    Name: `SwitchedObj`
     """
 
     def _get_SwitchedObj(self) -> List[DSSObj]:
@@ -679,9 +709,9 @@ class RecloserBatch(DSSBatch, CircuitElementBatchMixin):
 
     SwitchedObj = property(_get_SwitchedObj, _set_SwitchedObj) # type: List[DSSObj]
     """
-    Name of circuit element switch that the Recloser controls. Specify the full object name.Defaults to the same as the Monitored element. This is the "controlled" element.
+    Name of circuit element switch that the Recloser controls. Specify the full object name. Defaults to the same as the Monitored element. This is the "controlled" element.
 
-    DSS property name: `SwitchedObj`, DSS property index: 3.
+    Name: `SwitchedObj`
     """
 
     def _get_SwitchedTerm(self) -> BatchInt32ArrayProxy:
@@ -694,7 +724,8 @@ class RecloserBatch(DSSBatch, CircuitElementBatchMixin):
     """
     Number of the terminal of the controlled element in which the switch is controlled by the Recloser. 1 or 2, typically.  Default is 1.
 
-    DSS property name: `SwitchedTerm`, DSS property index: 4.
+    Name: `SwitchedTerm`
+    Default: 1
     """
 
     def _get_NumFast(self) -> BatchInt32ArrayProxy:
@@ -705,9 +736,10 @@ class RecloserBatch(DSSBatch, CircuitElementBatchMixin):
 
     NumFast = property(_get_NumFast, _set_NumFast) # type: BatchInt32ArrayProxy
     """
-    Number of Fast (fuse saving) operations.  Default is 1. (See "Shots")
+    Number of Fast (fuse saving) operations. (See "Shots")
 
-    DSS property name: `NumFast`, DSS property index: 5.
+    Name: `NumFast`
+    Default: 1
     """
 
     def _get_PhaseFast_str(self) -> List[str]:
@@ -720,7 +752,8 @@ class RecloserBatch(DSSBatch, CircuitElementBatchMixin):
     """
     Name of the TCC Curve object that determines the Phase Fast trip.  Must have been previously defined as a TCC_Curve object. Default is "A". Multiplying the current values in the curve by the "phasetrip" value gives the actual current.
 
-    DSS property name: `PhaseFast`, DSS property index: 6.
+    Name: `PhaseFast`
+    Default: a
     """
 
     def _get_PhaseFast(self) -> List[TCC_Curve]:
@@ -733,7 +766,8 @@ class RecloserBatch(DSSBatch, CircuitElementBatchMixin):
     """
     Name of the TCC Curve object that determines the Phase Fast trip.  Must have been previously defined as a TCC_Curve object. Default is "A". Multiplying the current values in the curve by the "phasetrip" value gives the actual current.
 
-    DSS property name: `PhaseFast`, DSS property index: 6.
+    Name: `PhaseFast`
+    Default: a
     """
 
     def _get_PhaseDelayed_str(self) -> List[str]:
@@ -746,7 +780,8 @@ class RecloserBatch(DSSBatch, CircuitElementBatchMixin):
     """
     Name of the TCC Curve object that determines the Phase Delayed trip.  Must have been previously defined as a TCC_Curve object. Default is "D".Multiplying the current values in the curve by the "phasetrip" value gives the actual current.
 
-    DSS property name: `PhaseDelayed`, DSS property index: 7.
+    Name: `PhaseDelayed`
+    Default: d
     """
 
     def _get_PhaseDelayed(self) -> List[TCC_Curve]:
@@ -759,7 +794,8 @@ class RecloserBatch(DSSBatch, CircuitElementBatchMixin):
     """
     Name of the TCC Curve object that determines the Phase Delayed trip.  Must have been previously defined as a TCC_Curve object. Default is "D".Multiplying the current values in the curve by the "phasetrip" value gives the actual current.
 
-    DSS property name: `PhaseDelayed`, DSS property index: 7.
+    Name: `PhaseDelayed`
+    Default: d
     """
 
     def _get_GroundFast_str(self) -> List[str]:
@@ -772,7 +808,7 @@ class RecloserBatch(DSSBatch, CircuitElementBatchMixin):
     """
     Name of the TCC Curve object that determines the Ground Fast trip.  Must have been previously defined as a TCC_Curve object. Default is none (ignored). Multiplying the current values in the curve by the "groundtrip" value gives the actual current.
 
-    DSS property name: `GroundFast`, DSS property index: 8.
+    Name: `GroundFast`
     """
 
     def _get_GroundFast(self) -> List[TCC_Curve]:
@@ -785,7 +821,7 @@ class RecloserBatch(DSSBatch, CircuitElementBatchMixin):
     """
     Name of the TCC Curve object that determines the Ground Fast trip.  Must have been previously defined as a TCC_Curve object. Default is none (ignored). Multiplying the current values in the curve by the "groundtrip" value gives the actual current.
 
-    DSS property name: `GroundFast`, DSS property index: 8.
+    Name: `GroundFast`
     """
 
     def _get_GroundDelayed_str(self) -> List[str]:
@@ -798,7 +834,7 @@ class RecloserBatch(DSSBatch, CircuitElementBatchMixin):
     """
     Name of the TCC Curve object that determines the Ground Delayed trip.  Must have been previously defined as a TCC_Curve object. Default is none (ignored).Multiplying the current values in the curve by the "groundtrip" value gives the actual current.
 
-    DSS property name: `GroundDelayed`, DSS property index: 9.
+    Name: `GroundDelayed`
     """
 
     def _get_GroundDelayed(self) -> List[TCC_Curve]:
@@ -811,7 +847,7 @@ class RecloserBatch(DSSBatch, CircuitElementBatchMixin):
     """
     Name of the TCC Curve object that determines the Ground Delayed trip.  Must have been previously defined as a TCC_Curve object. Default is none (ignored).Multiplying the current values in the curve by the "groundtrip" value gives the actual current.
 
-    DSS property name: `GroundDelayed`, DSS property index: 9.
+    Name: `GroundDelayed`
     """
 
     def _get_PhaseTrip(self) -> BatchFloat64ArrayProxy:
@@ -822,9 +858,10 @@ class RecloserBatch(DSSBatch, CircuitElementBatchMixin):
 
     PhaseTrip = property(_get_PhaseTrip, _set_PhaseTrip) # type: BatchFloat64ArrayProxy
     """
-    Multiplier or actual phase amps for the phase TCC curve.  Defaults to 1.0.
+    Multiplier or actual phase amps for the phase TCC curve.
 
-    DSS property name: `PhaseTrip`, DSS property index: 10.
+    Name: `PhaseTrip`
+    Default: 1.0
     """
 
     def _get_GroundTrip(self) -> BatchFloat64ArrayProxy:
@@ -835,9 +872,10 @@ class RecloserBatch(DSSBatch, CircuitElementBatchMixin):
 
     GroundTrip = property(_get_GroundTrip, _set_GroundTrip) # type: BatchFloat64ArrayProxy
     """
-    Multiplier or actual ground amps (3I0) for the ground TCC curve.  Defaults to 1.0.
+    Multiplier or actual ground amps (3I0) for the ground TCC curve.
 
-    DSS property name: `GroundTrip`, DSS property index: 11.
+    Name: `GroundTrip`
+    Default: 1.0
     """
 
     def _get_PhaseInst(self) -> BatchFloat64ArrayProxy:
@@ -850,7 +888,8 @@ class RecloserBatch(DSSBatch, CircuitElementBatchMixin):
     """
     Actual amps for instantaneous phase trip which is assumed to happen in 0.01 sec + Delay Time. Default is 0.0, which signifies no inst trip. 
 
-    DSS property name: `PhaseInst`, DSS property index: 12.
+    Name: `PhaseInst`
+    Default: 0.0
     """
 
     def _get_GroundInst(self) -> BatchFloat64ArrayProxy:
@@ -861,9 +900,10 @@ class RecloserBatch(DSSBatch, CircuitElementBatchMixin):
 
     GroundInst = property(_get_GroundInst, _set_GroundInst) # type: BatchFloat64ArrayProxy
     """
-    Actual amps for instantaneous ground trip which is assumed to happen in 0.01 sec + Delay Time.Default is 0.0, which signifies no inst trip.
+    Actual amps for instantaneous ground trip which is assumed to happen in 0.01 sec + Delay Time. Default is 0.0, which signifies no inst trip.
 
-    DSS property name: `GroundInst`, DSS property index: 13.
+    Name: `GroundInst`
+    Default: 0.0
     """
 
     def _get_Reset(self) -> BatchFloat64ArrayProxy:
@@ -874,9 +914,11 @@ class RecloserBatch(DSSBatch, CircuitElementBatchMixin):
 
     Reset = property(_get_Reset, _set_Reset) # type: BatchFloat64ArrayProxy
     """
-    Reset time in sec for Recloser.  Default is 15. 
+    Reset time for Recloser.
 
-    DSS property name: `Reset`, DSS property index: 14.
+    Name: `Reset`
+    Units: s
+    Default: 15.0
     """
 
     def _get_Shots(self) -> BatchInt32ArrayProxy:
@@ -889,7 +931,8 @@ class RecloserBatch(DSSBatch, CircuitElementBatchMixin):
     """
     Total Number of fast and delayed shots to lockout.  Default is 4. This is one more than the number of reclose intervals.
 
-    DSS property name: `Shots`, DSS property index: 15.
+    Name: `Shots`
+    Default: 4
     """
 
     def _get_RecloseIntervals(self) -> List[Float64Array]:
@@ -905,7 +948,8 @@ class RecloserBatch(DSSBatch, CircuitElementBatchMixin):
     """
     Array of reclose intervals.  Default for Recloser is (0.5, 2.0, 2.0) seconds. A locked out Recloser must be closed manually (action=close).
 
-    DSS property name: `RecloseIntervals`, DSS property index: 16.
+    Name: `RecloseIntervals`
+    Default: [0.5, 2.0, 2.0]
     """
 
     def _get_Delay(self) -> BatchFloat64ArrayProxy:
@@ -916,9 +960,11 @@ class RecloserBatch(DSSBatch, CircuitElementBatchMixin):
 
     Delay = property(_get_Delay, _set_Delay) # type: BatchFloat64ArrayProxy
     """
-    Fixed delay time (sec) added to Recloser trip time. Default is 0.0. Used to represent breaker time or any other delay.
+    Fixed delay time added to Recloser trip time. Used to represent breaker time or any other delay.
 
-    DSS property name: `Delay`, DSS property index: 17.
+    Name: `Delay`
+    Units: s
+    Default: 0.0
     """
 
     def _get_TDPhFast(self) -> BatchFloat64ArrayProxy:
@@ -929,9 +975,10 @@ class RecloserBatch(DSSBatch, CircuitElementBatchMixin):
 
     TDPhFast = property(_get_TDPhFast, _set_TDPhFast) # type: BatchFloat64ArrayProxy
     """
-    Time dial for Phase Fast trip curve. Multiplier on time axis of specified curve. Default=1.0.
+    Time dial for Phase Fast trip curve. Multiplier on time axis of specified curve.
 
-    DSS property name: `TDPhFast`, DSS property index: 19.
+    Name: `TDPhFast`
+    Default: 1.0
     """
 
     def _get_TDGrFast(self) -> BatchFloat64ArrayProxy:
@@ -942,9 +989,10 @@ class RecloserBatch(DSSBatch, CircuitElementBatchMixin):
 
     TDGrFast = property(_get_TDGrFast, _set_TDGrFast) # type: BatchFloat64ArrayProxy
     """
-    Time dial for Ground Fast trip curve. Multiplier on time axis of specified curve. Default=1.0.
+    Time dial for Ground Fast trip curve. Multiplier on time axis of specified curve.
 
-    DSS property name: `TDGrFast`, DSS property index: 20.
+    Name: `TDGrFast`
+    Default: 1.0
     """
 
     def _get_TDPhDelayed(self) -> BatchFloat64ArrayProxy:
@@ -955,9 +1003,10 @@ class RecloserBatch(DSSBatch, CircuitElementBatchMixin):
 
     TDPhDelayed = property(_get_TDPhDelayed, _set_TDPhDelayed) # type: BatchFloat64ArrayProxy
     """
-    Time dial for Phase Delayed trip curve. Multiplier on time axis of specified curve. Default=1.0.
+    Time dial for Phase Delayed trip curve. Multiplier on time axis of specified curve.
 
-    DSS property name: `TDPhDelayed`, DSS property index: 21.
+    Name: `TDPhDelayed`
+    Default: 1.0
     """
 
     def _get_TDGrDelayed(self) -> BatchFloat64ArrayProxy:
@@ -968,9 +1017,10 @@ class RecloserBatch(DSSBatch, CircuitElementBatchMixin):
 
     TDGrDelayed = property(_get_TDGrDelayed, _set_TDGrDelayed) # type: BatchFloat64ArrayProxy
     """
-    Time dial for Ground Delayed trip curve. Multiplier on time axis of specified curve. Default=1.0.
+    Time dial for Ground Delayed trip curve. Multiplier on time axis of specified curve.
 
-    DSS property name: `TDGrDelayed`, DSS property index: 22.
+    Name: `TDGrDelayed`
+    Default: 1.0
     """
 
     def _get_Normal(self) -> BatchInt32ArrayProxy:
@@ -985,9 +1035,10 @@ class RecloserBatch(DSSBatch, CircuitElementBatchMixin):
 
     Normal = property(_get_Normal, _set_Normal) # type: BatchInt32ArrayProxy
     """
-    {Open | Closed} Normal state of the recloser. The recloser reverts to this state for reset, change of mode, etc. Defaults to "State" if not specifically declared.
+    Normal state of the recloser. The recloser reverts to this state for reset, change of mode, etc. Defaults to "State" if not specifically declared.
 
-    DSS property name: `Normal`, DSS property index: 23.
+    Name: `Normal`
+    Default: Closed
     """
 
     def _get_Normal_str(self) -> List[str]:
@@ -998,9 +1049,10 @@ class RecloserBatch(DSSBatch, CircuitElementBatchMixin):
 
     Normal_str = property(_get_Normal_str, _set_Normal_str) # type: List[str]
     """
-    {Open | Closed} Normal state of the recloser. The recloser reverts to this state for reset, change of mode, etc. Defaults to "State" if not specifically declared.
+    Normal state of the recloser. The recloser reverts to this state for reset, change of mode, etc. Defaults to "State" if not specifically declared.
 
-    DSS property name: `Normal`, DSS property index: 23.
+    Name: `Normal`
+    Default: Closed
     """
 
     def _get_State(self) -> BatchInt32ArrayProxy:
@@ -1015,9 +1067,10 @@ class RecloserBatch(DSSBatch, CircuitElementBatchMixin):
 
     State = property(_get_State, _set_State) # type: BatchInt32ArrayProxy
     """
-    {Open | Closed} Actual state of the recloser. Upon setting, immediately forces state of the recloser, overriding the Recloser control. Simulates manual control on recloser. Defaults to Closed. "Open" causes the controlled element to open and lock out. "Closed" causes the controlled element to close and the recloser to reset to its first operation.
+    Actual state of the recloser. Upon setting, immediately forces state of the recloser, overriding the Recloser control. Simulates manual control on recloser. Defaults to Closed. "Open" causes the controlled element to open and lock out. "Closed" causes the controlled element to close and the recloser to reset to its first operation.
 
-    DSS property name: `State`, DSS property index: 24.
+    Name: `State`
+    Default: Closed
     """
 
     def _get_State_str(self) -> List[str]:
@@ -1028,9 +1081,10 @@ class RecloserBatch(DSSBatch, CircuitElementBatchMixin):
 
     State_str = property(_get_State_str, _set_State_str) # type: List[str]
     """
-    {Open | Closed} Actual state of the recloser. Upon setting, immediately forces state of the recloser, overriding the Recloser control. Simulates manual control on recloser. Defaults to Closed. "Open" causes the controlled element to open and lock out. "Closed" causes the controlled element to close and the recloser to reset to its first operation.
+    Actual state of the recloser. Upon setting, immediately forces state of the recloser, overriding the Recloser control. Simulates manual control on recloser. Defaults to Closed. "Open" causes the controlled element to open and lock out. "Closed" causes the controlled element to close and the recloser to reset to its first operation.
 
-    DSS property name: `State`, DSS property index: 24.
+    Name: `State`
+    Default: Closed
     """
 
     def _get_BaseFreq(self) -> BatchFloat64ArrayProxy:
@@ -1043,7 +1097,8 @@ class RecloserBatch(DSSBatch, CircuitElementBatchMixin):
     """
     Base Frequency for ratings.
 
-    DSS property name: `BaseFreq`, DSS property index: 25.
+    Name: `BaseFreq`
+    Units: Hz
     """
 
     def _get_Enabled(self) -> List[bool]:
@@ -1051,14 +1106,15 @@ class RecloserBatch(DSSBatch, CircuitElementBatchMixin):
             self._get_batch_int32_prop(26)
         ]
 
-    def _set_Enabled(self, value: bool, flags: enums.SetterFlags = 0):
+    def _set_Enabled(self, value: Union[bool, List[bool]], flags: enums.SetterFlags = 0):
         self._set_batch_int32_array(26, value, flags)
 
     Enabled = property(_get_Enabled, _set_Enabled) # type: List[bool]
     """
-    {Yes|No or True|False} Indicates whether this element is enabled.
+    Indicates whether this element is enabled.
 
-    DSS property name: `Enabled`, DSS property index: 26.
+    Name: `Enabled`
+    Default: True
     """
 
     def Like(self, value: AnyStr, flags: enums.SetterFlags = 0):
@@ -1067,7 +1123,9 @@ class RecloserBatch(DSSBatch, CircuitElementBatchMixin):
 
         New Capacitor.C2 like=c1  ...
 
-        DSS property name: `Like`, DSS property index: 27.
+        **Deprecated:** `Like` has been deprecated since at least 2021, see https://sourceforge.net/p/electricdss/discussion/861977/thread/8b59d21eb6/#b57c/f668
+
+        Name: `Like`
         """
         self._set_batch_string(27, value, flags)
 

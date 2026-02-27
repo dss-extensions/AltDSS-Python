@@ -1,5 +1,5 @@
-# Copyright (c) 2021-2024 Paulo Meira
-# Copyright (c) 2021-2024 DSS-Extensions contributors
+# Copyright (c) 2021-2026 Paulo Meira
+# Copyright (c) 2021-2026 DSS-Extensions contributors
 from __future__ import annotations
 from typing import Union, List, AnyStr, Optional, Iterator, TYPE_CHECKING
 from typing_extensions import TypedDict, Unpack
@@ -13,6 +13,8 @@ from .CNData import CNData
 from .LineSpacing import LineSpacing
 from .TSData import TSData
 from .WireData import WireData
+
+Conductor = Union[WireData, CNData, TSData]
 
 class LineGeometry(DSSObj):
     __slots__ = DSSObj._extra_slots
@@ -46,7 +48,6 @@ class LineGeometry(DSSObj):
         'reduce': 10,
         'spacing': 11,
         'wires': 12,
-        'conductors': 12,
         'cncable': 13,
         'tscable': 14,
         'cncables': 15,
@@ -54,7 +55,8 @@ class LineGeometry(DSSObj):
         'seasons': 17,
         'ratings': 18,
         'linetype': 19,
-        'like': 20,
+        'conductors': 20,
+        'like': 21,
     }
 
 
@@ -83,9 +85,10 @@ class LineGeometry(DSSObj):
 
     NConds = property(_get_NConds, _set_NConds) # type: int
     """
-    Number of conductors in this geometry. Default is 3. Triggers memory allocations. Define first!
+    Number of conductors in this geometry. Triggers memory allocations. Define first!
 
-    DSS property name: `NConds`, DSS property index: 1.
+    Name: `NConds`
+    Default: 0
     """
 
     def _get_NPhases(self) -> int:
@@ -96,43 +99,10 @@ class LineGeometry(DSSObj):
 
     NPhases = property(_get_NPhases, _set_NPhases) # type: int
     """
-    Number of phases. Default =3; All other conductors are considered neutrals and might be reduced out.
+    Number of phases. All other conductors are considered neutrals and might be reduced out.
 
-    DSS property name: `NPhases`, DSS property index: 2.
-    """
-
-    def _get_Conductors_str(self) -> List[str]:
-        return self._get_string_array(self._lib.Obj_GetStringArray, self._ptr, 12)
-
-    def _set_Conductors_str(self, value: List[AnyStr], flags: enums.SetterFlags = 0):
-        self._set_string_array_o(12, value, flags | enums.SetterFlags.AllowAllConductors)
-
-    Conductors_str = property(_get_Conductors_str, _set_Conductors_str) # type: List[str]
-    """
-    Code from WireData. MUST BE PREVIOUSLY DEFINED. no default.
-    Specifies use of Overhead Line parameter calculation,
-    Unless Tape Shield cable previously assigned to phases, and this wire is a neutral.
-
-    DSS property name: `Wire`, DSS property index: 4.
-    """
-
-    def _get_Conductors(self) -> List[Union[WireData, CNData, TSData]]:
-        return self._get_obj_array(12, None)
-
-    def _set_Conductors(self, value: List[Union[AnyStr, Union[WireData, CNData, TSData]]], flags: enums.SetterFlags = 0):
-        if value is None or len(value) == 0 or not isinstance(value[0], DSSObj):
-            self._set_string_array_o(12, value, flags | enums.SetterFlags.AllowAllConductors)
-            return
-
-        self._set_obj_array(12, value, flags | enums.SetterFlags.AllowAllConductors)
-
-    Conductors = property(_get_Conductors, _set_Conductors) # type: List[Union[WireData, CNData, TSData]]
-    """
-    Code from WireData. MUST BE PREVIOUSLY DEFINED. no default.
-    Specifies use of Overhead Line parameter calculation,
-    Unless Tape Shield cable previously assigned to phases, and this wire is a neutral.
-
-    DSS property name: `Wire`, DSS property index: 4.
+    Name: `NPhases`
+    Default: 0
     """
 
     def _get_X(self) -> Float64Array:
@@ -145,7 +115,7 @@ class LineGeometry(DSSObj):
     """
     x coordinate.
 
-    DSS property name: `X`, DSS property index: 5.
+    Name: `X`
     """
 
     def _get_H(self) -> Float64Array:
@@ -158,36 +128,45 @@ class LineGeometry(DSSObj):
     """
     Height of conductor.
 
-    DSS property name: `H`, DSS property index: 6.
+    Name: `H`
     """
 
-    def _get_Units(self) -> enums.LengthUnit:
-        return enums.LengthUnit(self._lib.Obj_GetInt32(self._ptr, 7))
+    def _get_Units(self) -> List[enums.LengthUnit]:
+        return [enums.LengthUnit(val) for val in self._get_int32_list(self._lib.Obj_GetInt32Array, self._ptr, 7)]
 
-    def _set_Units(self, value: Union[AnyStr, int, enums.LengthUnit], flags: enums.SetterFlags = 0):
-        if not isinstance(value, int):
+    def _set_Units(self, value: Union[List[Union[int, enums.LengthUnit]], List[AnyStr], int, enums.LengthUnit, AnyStr], flags: enums.SetterFlags = 0):
+        flags |= enums.SetterFlags.Broadcast
+        if isinstance(value, (str, bytes)):
             self._set_string_o(7, value, flags)
             return
-        self._lib.Obj_SetInt32(self._ptr, 7, value, flags)
+
+        if isinstance(value, int):
+            self._lib.Obj_SetInt32(self._ptr, 7, value, flags)
+            return
+
+        if len(value) and not isinstance(value[0], int):
+            self._set_string_array_o(7, value, flags)
+            return
+        self._set_int32_array_o(7, value, flags)
 
     Units = property(_get_Units, _set_Units) # type: enums.LengthUnit
     """
-    Units for x and h: {mi|kft|km|m|Ft|in|cm } Initial default is "ft", but defaults to last unit defined
+    Units for x and h. Initial default is "ft", but defaults to last unit defined
 
-    DSS property name: `Units`, DSS property index: 7.
+    Name: `Units`
     """
 
-    def _get_Units_str(self) -> str:
-        return self._get_prop_string(7)
+    def _get_Units_str(self) -> List[str]:
+        return self._get_string_array(self._lib.Obj_GetStringArray, self._ptr, 7)
 
-    def _set_Units_str(self, value: AnyStr, flags: enums.SetterFlags = 0):
+    def _set_Units_str(self, value: Union[List[AnyStr], AnyStr], flags: enums.SetterFlags = 0):
         self._set_Units(value, flags)
 
-    Units_str = property(_get_Units_str, _set_Units_str) # type: str
+    Units_str = property(_get_Units_str, _set_Units_str) # type: List[str]
     """
-    Units for x and h: {mi|kft|km|m|Ft|in|cm } Initial default is "ft", but defaults to last unit defined
+    Units for x and h. Initial default is "ft", but defaults to last unit defined
 
-    DSS property name: `Units`, DSS property index: 7.
+    Name: `Units`
     """
 
     def _get_NormAmps(self) -> float:
@@ -200,7 +179,8 @@ class LineGeometry(DSSObj):
     """
     Normal ampacity, amperes for the line. Defaults to first conductor if not specified.
 
-    DSS property name: `NormAmps`, DSS property index: 8.
+    Name: `NormAmps`
+    Default: 0.0
     """
 
     def _get_EmergAmps(self) -> float:
@@ -213,7 +193,8 @@ class LineGeometry(DSSObj):
     """
     Emergency ampacity, amperes. Defaults to first conductor if not specified.
 
-    DSS property name: `EmergAmps`, DSS property index: 9.
+    Name: `EmergAmps`
+    Default: 0.0
     """
 
     def _get_Reduce(self) -> bool:
@@ -224,9 +205,10 @@ class LineGeometry(DSSObj):
 
     Reduce = property(_get_Reduce, _set_Reduce) # type: bool
     """
-    {Yes | No} Default = no. Reduce to Nphases (Kron Reduction). Reduce out neutrals.
+    Reduce to Nphases (Kron Reduction). Reduce out neutrals.
 
-    DSS property name: `Reduce`, DSS property index: 10.
+    Name: `Reduce`
+    Default: False
     """
 
     def _get_Spacing_str(self) -> str:
@@ -242,7 +224,7 @@ class LineGeometry(DSSObj):
     Must match "nconds" as previously defined for this geometry.
     Must be used in conjunction with the Wires property.
 
-    DSS property name: `Spacing`, DSS property index: 11.
+    Name: `Spacing`
     """
 
     def _get_Spacing(self) -> LineSpacing:
@@ -262,7 +244,7 @@ class LineGeometry(DSSObj):
     Must match "nconds" as previously defined for this geometry.
     Must be used in conjunction with the Wires property.
 
-    DSS property name: `Spacing`, DSS property index: 11.
+    Name: `Spacing`
     """
 
     def _get_Seasons(self) -> int:
@@ -275,7 +257,7 @@ class LineGeometry(DSSObj):
     """
     Defines the number of ratings to be defined for the wire, to be used only when defining seasonal ratings using the "Ratings" property. Defaults to first conductor if not specified.
 
-    DSS property name: `Seasons`, DSS property index: 17.
+    Name: `Seasons`
     """
 
     def _get_Ratings(self) -> Float64Array:
@@ -287,9 +269,10 @@ class LineGeometry(DSSObj):
     Ratings = property(_get_Ratings, _set_Ratings) # type: Float64Array
     """
     An array of ratings to be used when the seasonal ratings flag is True. It can be used to insert
-    multiple ratings to change during a QSTS simulation to evaluate different ratings in lines.Defaults to first conductor if not specified.
+    multiple ratings to change during a QSTS simulation to evaluate different ratings in lines. Defaults to first conductor if not specified.
 
-    DSS property name: `Ratings`, DSS property index: 18.
+    Name: `Ratings`
+    Default: [0.0]
     """
 
     def _get_LineType(self) -> enums.LineType:
@@ -303,12 +286,11 @@ class LineGeometry(DSSObj):
 
     LineType = property(_get_LineType, _set_LineType) # type: enums.LineType
     """
-    Code designating the type of line. 
-    One of: OH, UG, UG_TS, UG_CN, SWT_LDBRK, SWT_FUSE, SWT_SECT, SWT_REC, SWT_DISC, SWT_BRK, SWT_ELBOW, BUSBAR
+    Code designating the type of line.
+    OpenDSS currently does not use this internally. For whatever purpose the user defines.
 
-    OpenDSS currently does not use this internally. For whatever purpose the user defines. Default is OH.
-
-    DSS property name: `LineType`, DSS property index: 19.
+    Name: `LineType`
+    Default: oh
     """
 
     def _get_LineType_str(self) -> str:
@@ -319,12 +301,49 @@ class LineGeometry(DSSObj):
 
     LineType_str = property(_get_LineType_str, _set_LineType_str) # type: str
     """
-    Code designating the type of line. 
-    One of: OH, UG, UG_TS, UG_CN, SWT_LDBRK, SWT_FUSE, SWT_SECT, SWT_REC, SWT_DISC, SWT_BRK, SWT_ELBOW, BUSBAR
+    Code designating the type of line.
+    OpenDSS currently does not use this internally. For whatever purpose the user defines.
 
-    OpenDSS currently does not use this internally. For whatever purpose the user defines. Default is OH.
+    Name: `LineType`
+    Default: oh
+    """
 
-    DSS property name: `LineType`, DSS property index: 19.
+    def _get_Conductors_str(self) -> List[str]:
+        return self._get_string_array(self._lib.Obj_GetStringArray, self._ptr, 20)
+
+    def _set_Conductors_str(self, value: List[AnyStr], flags: enums.SetterFlags = 0):
+        self._set_string_array_o(20, value, flags)
+
+    Conductors_str = property(_get_Conductors_str, _set_Conductors_str) # type: List[str]
+    """
+    Array of conductor names for use in line constants calculation.
+    Must be used in conjunction with the Spacing property.
+    Specify the Spacing first, and `ncond` wires.
+    Specify the conductor type followed by the conductor name. e.g., "conductors=[cndata.cncablename, tsdata.tscablename, wiredata.wirename]"
+    If a given position in the spacing is not to be used in the line, use "none" in the entry of the conductors array.
+
+    Name: `Conductors`
+    """
+
+    def _get_Conductors(self) -> List[Conductor]:
+        return self._get_obj_array(20, None)
+
+    def _set_Conductors(self, value: Union[List[AnyStr], List[Conductor]], flags: enums.SetterFlags = 0):
+        if value is None or len(value) == 0 or not isinstance(value[0], DSSObj):
+            self._set_string_array_o(20, value, flags)
+            return
+
+        self._set_obj_array(20, value, flags)
+
+    Conductors = property(_get_Conductors, _set_Conductors) # type: List[Conductor]
+    """
+    Array of conductor names for use in line constants calculation.
+    Must be used in conjunction with the Spacing property.
+    Specify the Spacing first, and `ncond` wires.
+    Specify the conductor type followed by the conductor name. e.g., "conductors=[cndata.cncablename, tsdata.tscablename, wiredata.wirename]"
+    If a given position in the spacing is not to be used in the line, use "none" in the entry of the conductors array.
+
+    Name: `Conductors`
     """
 
     def Like(self, value: AnyStr):
@@ -333,18 +352,19 @@ class LineGeometry(DSSObj):
 
         New Capacitor.C2 like=c1  ...
 
-        DSS property name: `Like`, DSS property index: 20.
+        **Deprecated:** `Like` has been deprecated since at least 2021, see https://sourceforge.net/p/electricdss/discussion/861977/thread/8b59d21eb6/#b57c/f668
+
+        Name: `Like`
         """
-        self._set_string_o(20, value)
+        self._set_string_o(21, value)
 
 
 class LineGeometryProperties(TypedDict):
     NConds: int
     NPhases: int
-    Conductors: List[Union[AnyStr, Union[WireData, CNData, TSData]]]
     X: Float64Array
     H: Float64Array
-    Units: Union[AnyStr, int, enums.LengthUnit]
+    Units: Union[List[Union[int, enums.LengthUnit]], List[AnyStr]]
     NormAmps: float
     EmergAmps: float
     Reduce: bool
@@ -352,6 +372,7 @@ class LineGeometryProperties(TypedDict):
     Seasons: int
     Ratings: Float64Array
     LineType: Union[AnyStr, int, enums.LineType]
+    Conductors: Union[List[AnyStr], List[Conductor]]
     Like: AnyStr
 
 class LineGeometryBatch(DSSBatch):
@@ -390,9 +411,10 @@ class LineGeometryBatch(DSSBatch):
 
     NConds = property(_get_NConds, _set_NConds) # type: BatchInt32ArrayProxy
     """
-    Number of conductors in this geometry. Default is 3. Triggers memory allocations. Define first!
+    Number of conductors in this geometry. Triggers memory allocations. Define first!
 
-    DSS property name: `NConds`, DSS property index: 1.
+    Name: `NConds`
+    Default: 0
     """
 
     def _get_NPhases(self) -> BatchInt32ArrayProxy:
@@ -403,43 +425,10 @@ class LineGeometryBatch(DSSBatch):
 
     NPhases = property(_get_NPhases, _set_NPhases) # type: BatchInt32ArrayProxy
     """
-    Number of phases. Default =3; All other conductors are considered neutrals and might be reduced out.
+    Number of phases. All other conductors are considered neutrals and might be reduced out.
 
-    DSS property name: `NPhases`, DSS property index: 2.
-    """
-
-    def _get_Conductors_str(self) -> List[List[str]]:
-        return self._get_string_ll(12)
-
-    def _set_Conductors_str(self, value: List[AnyStr], flags: enums.SetterFlags = 0):
-        self._set_batch_stringlist_prop(12, value, flags | enums.SetterFlags.AllowAllConductors)
-
-    Conductors_str = property(_get_Conductors_str, _set_Conductors_str) # type: List[List[str]]
-    """
-    Code from WireData. MUST BE PREVIOUSLY DEFINED. no default.
-    Specifies use of Overhead Line parameter calculation,
-    Unless Tape Shield cable previously assigned to phases, and this wire is a neutral.
-
-    DSS property name: `Wire`, DSS property index: 4.
-    """
-
-    def _get_Conductors(self) -> List[List[Union[WireData, CNData, TSData]]]:
-        return self._get_obj_ll(12, None)
-
-    def _set_Conductors(self, value: Union[List[AnyStr], List[Union[WireData, CNData, TSData]]], flags: enums.SetterFlags = 0):
-        if (not len(value)) or isinstance(value[0], (bytes, str)) or (len(value[0]) and isinstance(value[0][0], (bytes, str))):
-            self._set_batch_stringlist_prop(12, value, flags | enums.SetterFlags.AllowAllConductors)
-            return
-
-        self._set_batch_objlist_prop(12, value, flags | enums.SetterFlags.AllowAllConductors)
-
-    Conductors = property(_get_Conductors, _set_Conductors) # type: List[List[Union[WireData, CNData, TSData]]]
-    """
-    Code from WireData. MUST BE PREVIOUSLY DEFINED. no default.
-    Specifies use of Overhead Line parameter calculation,
-    Unless Tape Shield cable previously assigned to phases, and this wire is a neutral.
-
-    DSS property name: `Wire`, DSS property index: 4.
+    Name: `NPhases`
+    Default: 0
     """
 
     def _get_X(self) -> List[Float64Array]:
@@ -455,7 +444,7 @@ class LineGeometryBatch(DSSBatch):
     """
     x coordinate.
 
-    DSS property name: `X`, DSS property index: 5.
+    Name: `X`
     """
 
     def _get_H(self) -> List[Float64Array]:
@@ -471,37 +460,49 @@ class LineGeometryBatch(DSSBatch):
     """
     Height of conductor.
 
-    DSS property name: `H`, DSS property index: 6.
+    Name: `H`
     """
 
-    def _get_Units(self) -> BatchInt32ArrayProxy:
-        return BatchInt32ArrayProxy(self, 7)
+    def _get_Units(self) -> List[Int32Array]:
+        return [
+            self._get_int32_array(self._lib.Obj_GetInt32Array, x, 7)
+            for x in self._unpack()
+        ]
 
-    def _set_Units(self, value: Union[AnyStr, int, enums.LengthUnit, List[AnyStr], List[int], List[enums.LengthUnit], Int32Array], flags: enums.SetterFlags = 0):
-        if isinstance(value, (str, bytes)) or (isinstance(value, LIST_LIKE) and isinstance(value[0], (str, bytes))):
+    def _set_Units(self, value: Union[List[Union[int, enums.LengthUnit]], List[AnyStr], int, enums.LengthUnit, AnyStr], flags: enums.SetterFlags = 0): #TODO: list of lists
+        flags |= enums.SetterFlags.Broadcast
+        if isinstance(value, (str, bytes)):
             self._set_batch_string(7, value, flags)
+            return
+
+        if len(value) and not isinstance(value[0], int):
+            value, value_ptr, value_count = self._prepare_string_array(value)
+            for x in self._unpack():
+                self._lib.Obj_SetStringArray(x, 7, value_ptr, value_count, flags)
+
+            self._check_for_error()
             return
 
         self._set_batch_int32_array(7, value, flags)
 
-    Units = property(_get_Units, _set_Units) # type: BatchInt32ArrayProxy
+    Units = property(_get_Units, _set_Units) # type: List[Int32Array]
     """
-    Units for x and h: {mi|kft|km|m|Ft|in|cm } Initial default is "ft", but defaults to last unit defined
+    Units for x and h. Initial default is "ft", but defaults to last unit defined
 
-    DSS property name: `Units`, DSS property index: 7.
+    Name: `Units`
     """
 
-    def _get_Units_str(self) -> List[str]:
-        return self._get_batch_str_prop(7)
+    def _get_Units_str(self) -> List[List[str]]:
+        return self._get_string_ll(7)
 
     def _set_Units_str(self, value: AnyStr, flags: enums.SetterFlags = 0):
         self._set_Units(value, flags)
 
-    Units_str = property(_get_Units_str, _set_Units_str) # type: List[str]
+    Units_str = property(_get_Units_str, _set_Units_str) # type: List[List[str]]
     """
-    Units for x and h: {mi|kft|km|m|Ft|in|cm } Initial default is "ft", but defaults to last unit defined
+    Units for x and h. Initial default is "ft", but defaults to last unit defined
 
-    DSS property name: `Units`, DSS property index: 7.
+    Name: `Units`
     """
 
     def _get_NormAmps(self) -> BatchFloat64ArrayProxy:
@@ -514,7 +515,8 @@ class LineGeometryBatch(DSSBatch):
     """
     Normal ampacity, amperes for the line. Defaults to first conductor if not specified.
 
-    DSS property name: `NormAmps`, DSS property index: 8.
+    Name: `NormAmps`
+    Default: 0.0
     """
 
     def _get_EmergAmps(self) -> BatchFloat64ArrayProxy:
@@ -527,7 +529,8 @@ class LineGeometryBatch(DSSBatch):
     """
     Emergency ampacity, amperes. Defaults to first conductor if not specified.
 
-    DSS property name: `EmergAmps`, DSS property index: 9.
+    Name: `EmergAmps`
+    Default: 0.0
     """
 
     def _get_Reduce(self) -> List[bool]:
@@ -535,14 +538,15 @@ class LineGeometryBatch(DSSBatch):
             self._get_batch_int32_prop(10)
         ]
 
-    def _set_Reduce(self, value: bool, flags: enums.SetterFlags = 0):
+    def _set_Reduce(self, value: Union[bool, List[bool]], flags: enums.SetterFlags = 0):
         self._set_batch_int32_array(10, value, flags)
 
     Reduce = property(_get_Reduce, _set_Reduce) # type: List[bool]
     """
-    {Yes | No} Default = no. Reduce to Nphases (Kron Reduction). Reduce out neutrals.
+    Reduce to Nphases (Kron Reduction). Reduce out neutrals.
 
-    DSS property name: `Reduce`, DSS property index: 10.
+    Name: `Reduce`
+    Default: False
     """
 
     def _get_Spacing_str(self) -> List[str]:
@@ -558,7 +562,7 @@ class LineGeometryBatch(DSSBatch):
     Must match "nconds" as previously defined for this geometry.
     Must be used in conjunction with the Wires property.
 
-    DSS property name: `Spacing`, DSS property index: 11.
+    Name: `Spacing`
     """
 
     def _get_Spacing(self) -> List[LineSpacing]:
@@ -574,7 +578,7 @@ class LineGeometryBatch(DSSBatch):
     Must match "nconds" as previously defined for this geometry.
     Must be used in conjunction with the Wires property.
 
-    DSS property name: `Spacing`, DSS property index: 11.
+    Name: `Spacing`
     """
 
     def _get_Seasons(self) -> BatchInt32ArrayProxy:
@@ -587,7 +591,7 @@ class LineGeometryBatch(DSSBatch):
     """
     Defines the number of ratings to be defined for the wire, to be used only when defining seasonal ratings using the "Ratings" property. Defaults to first conductor if not specified.
 
-    DSS property name: `Seasons`, DSS property index: 17.
+    Name: `Seasons`
     """
 
     def _get_Ratings(self) -> List[Float64Array]:
@@ -602,9 +606,10 @@ class LineGeometryBatch(DSSBatch):
     Ratings = property(_get_Ratings, _set_Ratings) # type: List[Float64Array]
     """
     An array of ratings to be used when the seasonal ratings flag is True. It can be used to insert
-    multiple ratings to change during a QSTS simulation to evaluate different ratings in lines.Defaults to first conductor if not specified.
+    multiple ratings to change during a QSTS simulation to evaluate different ratings in lines. Defaults to first conductor if not specified.
 
-    DSS property name: `Ratings`, DSS property index: 18.
+    Name: `Ratings`
+    Default: [0.0]
     """
 
     def _get_LineType(self) -> BatchInt32ArrayProxy:
@@ -619,12 +624,11 @@ class LineGeometryBatch(DSSBatch):
 
     LineType = property(_get_LineType, _set_LineType) # type: BatchInt32ArrayProxy
     """
-    Code designating the type of line. 
-    One of: OH, UG, UG_TS, UG_CN, SWT_LDBRK, SWT_FUSE, SWT_SECT, SWT_REC, SWT_DISC, SWT_BRK, SWT_ELBOW, BUSBAR
+    Code designating the type of line.
+    OpenDSS currently does not use this internally. For whatever purpose the user defines.
 
-    OpenDSS currently does not use this internally. For whatever purpose the user defines. Default is OH.
-
-    DSS property name: `LineType`, DSS property index: 19.
+    Name: `LineType`
+    Default: oh
     """
 
     def _get_LineType_str(self) -> List[str]:
@@ -635,12 +639,49 @@ class LineGeometryBatch(DSSBatch):
 
     LineType_str = property(_get_LineType_str, _set_LineType_str) # type: List[str]
     """
-    Code designating the type of line. 
-    One of: OH, UG, UG_TS, UG_CN, SWT_LDBRK, SWT_FUSE, SWT_SECT, SWT_REC, SWT_DISC, SWT_BRK, SWT_ELBOW, BUSBAR
+    Code designating the type of line.
+    OpenDSS currently does not use this internally. For whatever purpose the user defines.
 
-    OpenDSS currently does not use this internally. For whatever purpose the user defines. Default is OH.
+    Name: `LineType`
+    Default: oh
+    """
 
-    DSS property name: `LineType`, DSS property index: 19.
+    def _get_Conductors_str(self) -> List[List[str]]:
+        return self._get_string_ll(20)
+
+    def _set_Conductors_str(self, value: List[AnyStr], flags: enums.SetterFlags = 0):
+        self._set_batch_stringlist_prop(20, value, flags)
+
+    Conductors_str = property(_get_Conductors_str, _set_Conductors_str) # type: List[List[str]]
+    """
+    Array of conductor names for use in line constants calculation.
+    Must be used in conjunction with the Spacing property.
+    Specify the Spacing first, and `ncond` wires.
+    Specify the conductor type followed by the conductor name. e.g., "conductors=[cndata.cncablename, tsdata.tscablename, wiredata.wirename]"
+    If a given position in the spacing is not to be used in the line, use "none" in the entry of the conductors array.
+
+    Name: `Conductors`
+    """
+
+    def _get_Conductors(self) -> List[List[Conductor]]:
+        return self._get_obj_ll(20, None)
+
+    def _set_Conductors(self, value: Union[List[AnyStr], List[Conductor]], flags: enums.SetterFlags = 0):
+        if (not len(value)) or isinstance(value[0], (bytes, str)) or (len(value[0]) and isinstance(value[0][0], (bytes, str))):
+            self._set_batch_stringlist_prop(20, value, flags)
+            return
+
+        self._set_batch_objlist_prop(20, value, flags)
+
+    Conductors = property(_get_Conductors, _set_Conductors) # type: List[List[Conductor]]
+    """
+    Array of conductor names for use in line constants calculation.
+    Must be used in conjunction with the Spacing property.
+    Specify the Spacing first, and `ncond` wires.
+    Specify the conductor type followed by the conductor name. e.g., "conductors=[cndata.cncablename, tsdata.tscablename, wiredata.wirename]"
+    If a given position in the spacing is not to be used in the line, use "none" in the entry of the conductors array.
+
+    Name: `Conductors`
     """
 
     def Like(self, value: AnyStr, flags: enums.SetterFlags = 0):
@@ -649,17 +690,18 @@ class LineGeometryBatch(DSSBatch):
 
         New Capacitor.C2 like=c1  ...
 
-        DSS property name: `Like`, DSS property index: 20.
+        **Deprecated:** `Like` has been deprecated since at least 2021, see https://sourceforge.net/p/electricdss/discussion/861977/thread/8b59d21eb6/#b57c/f668
+
+        Name: `Like`
         """
-        self._set_batch_string(20, value, flags)
+        self._set_batch_string(21, value, flags)
 
 class LineGeometryBatchProperties(TypedDict):
     NConds: Union[int, Int32Array]
     NPhases: Union[int, Int32Array]
-    Conductors: Union[List[AnyStr], List[Union[WireData, CNData, TSData]]]
     X: Float64Array
     H: Float64Array
-    Units: Union[AnyStr, int, enums.LengthUnit, List[AnyStr], List[int], List[enums.LengthUnit], Int32Array]
+    Units: Union[List[Union[int, enums.LengthUnit]], List[AnyStr], int, enums.LengthUnit, AnyStr]
     NormAmps: Union[float, Float64Array]
     EmergAmps: Union[float, Float64Array]
     Reduce: bool
@@ -667,6 +709,7 @@ class LineGeometryBatchProperties(TypedDict):
     Seasons: Union[int, Int32Array]
     Ratings: Float64Array
     LineType: Union[AnyStr, int, enums.LineType, List[AnyStr], List[int], List[enums.LineType], Int32Array]
+    Conductors: Union[List[AnyStr], List[Conductor]]
     Like: AnyStr
 
 class ILineGeometry(IDSSObj, LineGeometryBatch):

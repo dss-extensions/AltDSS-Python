@@ -1,4 +1,5 @@
 import numpy as np
+from .enums import BatchOperation
 
 class BatchFloat64ArrayProxy:
     def __init__(self, batch, idx):
@@ -51,7 +52,7 @@ class BatchFloat64ArrayProxy:
             self._lib.Batch_Float64(
                 *ptr_cnt,
                 self._idx,
-                self._lib.BatchOperation_Increment,
+                BatchOperation.Increment,
                 other,
                 flags
             )
@@ -64,7 +65,7 @@ class BatchFloat64ArrayProxy:
         batch._lib.Batch_Float64Array(
             *ptr_cnt,
             self._idx,
-            self._lib.BatchOperation_Increment,
+            BatchOperation.Increment,
             data_ptr,
             flags
         )
@@ -91,7 +92,7 @@ class BatchFloat64ArrayProxy:
             self._lib.Batch_Float64(
                 *ptr_cnt,
                 self._idx,
-                self._lib.BatchOperation_Multiply,
+                BatchOperation.Multiply,
                 other,
                 flags
             )
@@ -104,7 +105,7 @@ class BatchFloat64ArrayProxy:
         batch._lib.Batch_Float64Array(
             *ptr_cnt,
             self._idx,
-            self._lib.BatchOperation_Multiply,
+            BatchOperation.Multiply,
             data_ptr,
             flags
         )
@@ -123,7 +124,7 @@ class BatchFloat64ArrayProxy:
             self._lib.Batch_Float64(
                 *ptr_cnt,
                 self._idx,
-                self._lib.BatchOperation_Divide,
+                BatchOperation.Divide,
                 other,
                 flags
             )
@@ -136,7 +137,7 @@ class BatchFloat64ArrayProxy:
         batch._lib.Batch_Float64Array(
             *ptr_cnt,
             self._idx,
-            self._lib.BatchOperation_Divide,
+            BatchOperation.Divide,
             data_ptr,
             flags
         )
@@ -202,7 +203,7 @@ class BatchInt32ArrayProxy:
             self._lib.Batch_Int32(
                 *ptr_cnt,
                 self._idx,
-                self._lib.BatchOperation_Increment,
+                BatchOperation.Increment,
                 other,
                 flags
             )
@@ -215,7 +216,7 @@ class BatchInt32ArrayProxy:
         batch._lib.Batch_Int32Array(
             *ptr_cnt,
             self._idx,
-            self._lib.BatchOperation_Increment,
+            BatchOperation.Increment,
             data_ptr,
             flags
         )
@@ -242,7 +243,7 @@ class BatchInt32ArrayProxy:
             self._lib.Batch_Int32(
                 *ptr_cnt,
                 self._idx,
-                self._lib.BatchOperation_Multiply,
+                BatchOperation.Multiply,
                 other,
                 flags
             )
@@ -255,7 +256,7 @@ class BatchInt32ArrayProxy:
         batch._lib.Batch_Int32Array(
             *ptr_cnt,
             self._idx,
-            self._lib.BatchOperation_Multiply,
+            BatchOperation.Multiply,
             data_ptr,
             flags
         )
@@ -274,7 +275,7 @@ class BatchInt32ArrayProxy:
             self._lib.Batch_Int32(
                 *ptr_cnt,
                 self._idx,
-                self._lib.BatchOperation_Divide,
+                BatchOperation.Divide,
                 other,
                 flags
             )
@@ -287,7 +288,7 @@ class BatchInt32ArrayProxy:
         self._lib.Batch_Int32Array(
             *ptr_cnt,
             self._idx,
-            self._lib.BatchOperation_Divide,
+            BatchOperation.Divide,
             data_ptr,
             flags
         )

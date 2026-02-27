@@ -103,7 +103,7 @@ class Reactor(DSSObj, CircuitElementMixin, PDElementMixin):
 
     Bus2 property will default to this bus, node 0, unless previously specified. Only Bus1 need be specified for a Yg shunt reactor.
 
-    DSS property name: `Bus1`, DSS property index: 1.
+    Name: `Bus1`
     """
 
     def _get_Bus2(self) -> str:
@@ -118,7 +118,7 @@ class Reactor(DSSObj, CircuitElementMixin, PDElementMixin):
 
     Not necessary to specify for delta (LL) connection
 
-    DSS property name: `Bus2`, DSS property index: 2.
+    Name: `Bus2`
     """
 
     def _get_Phases(self) -> int:
@@ -131,7 +131,8 @@ class Reactor(DSSObj, CircuitElementMixin, PDElementMixin):
     """
     Number of phases.
 
-    DSS property name: `Phases`, DSS property index: 3.
+    Name: `Phases`
+    Default: 3
     """
 
     def _get_kvar(self) -> float:
@@ -144,7 +145,9 @@ class Reactor(DSSObj, CircuitElementMixin, PDElementMixin):
     """
     Total kvar, all phases.  Evenly divided among phases. Only determines X. Specify R separately
 
-    DSS property name: `kvar`, DSS property index: 4.
+    Name: `kvar`
+    Units: kvar
+    Default: 100.0
     """
 
     def _get_kV(self) -> float:
@@ -157,7 +160,9 @@ class Reactor(DSSObj, CircuitElementMixin, PDElementMixin):
     """
     For 2, 3-phase, kV phase-phase. Otherwise specify actual coil rating.
 
-    DSS property name: `kV`, DSS property index: 5.
+    Name: `kV`
+    Units: kV
+    Default: 12.47
     """
 
     def _get_Conn(self) -> enums.Connection:
@@ -173,7 +178,8 @@ class Reactor(DSSObj, CircuitElementMixin, PDElementMixin):
     """
     ={wye | delta |LN |LL}  Default is wye, which is equivalent to LN. If Delta, then only one terminal.
 
-    DSS property name: `Conn`, DSS property index: 6.
+    Name: `Conn`
+    Default: Wye
     """
 
     def _get_Conn_str(self) -> str:
@@ -186,7 +192,8 @@ class Reactor(DSSObj, CircuitElementMixin, PDElementMixin):
     """
     ={wye | delta |LN |LL}  Default is wye, which is equivalent to LN. If Delta, then only one terminal.
 
-    DSS property name: `Conn`, DSS property index: 6.
+    Name: `Conn`
+    Default: Wye
     """
 
     def _get_RMatrix(self) -> Float64Array:
@@ -199,7 +206,7 @@ class Reactor(DSSObj, CircuitElementMixin, PDElementMixin):
     """
     Resistance matrix, lower triangle, ohms at base frequency. Order of the matrix is the number of phases. Mutually exclusive to specifying parameters by kvar or X.
 
-    DSS property name: `RMatrix`, DSS property index: 7.
+    Name: `RMatrix`
     """
 
     def _get_XMatrix(self) -> Float64Array:
@@ -212,7 +219,7 @@ class Reactor(DSSObj, CircuitElementMixin, PDElementMixin):
     """
     Reactance matrix, lower triangle, ohms at base frequency. Order of the matrix is the number of phases. Mutually exclusive to specifying parameters by kvar or X.
 
-    DSS property name: `XMatrix`, DSS property index: 8.
+    Name: `XMatrix`
     """
 
     def _get_Parallel(self) -> bool:
@@ -223,9 +230,10 @@ class Reactor(DSSObj, CircuitElementMixin, PDElementMixin):
 
     Parallel = property(_get_Parallel, _set_Parallel) # type: bool
     """
-    {Yes | No}  Default=No. Indicates whether Rmatrix and Xmatrix are to be considered in parallel. Default is series. For other models, specify R and Rp.
+    Indicates whether Rmatrix and Xmatrix are to be considered in parallel. Default is series. For other models, specify R and Rp.
 
-    DSS property name: `Parallel`, DSS property index: 9.
+    Name: `Parallel`
+    Default: False
     """
 
     def _get_R(self) -> float:
@@ -238,7 +246,8 @@ class Reactor(DSSObj, CircuitElementMixin, PDElementMixin):
     """
     Resistance (in series with reactance), each phase, ohms. This property applies to REACTOR specified by either kvar or X. See also help on Z.
 
-    DSS property name: `R`, DSS property index: 10.
+    Name: `R`
+    Units: Ω
     """
 
     def _get_X(self) -> float:
@@ -251,7 +260,8 @@ class Reactor(DSSObj, CircuitElementMixin, PDElementMixin):
     """
     Reactance, each phase, ohms at base frequency. See also help on Z and LmH properties.
 
-    DSS property name: `X`, DSS property index: 11.
+    Name: `X`
+    Units: Ω
     """
 
     def _get_Rp(self) -> float:
@@ -264,7 +274,8 @@ class Reactor(DSSObj, CircuitElementMixin, PDElementMixin):
     """
     Resistance in parallel with R and X (the entire branch). Assumed infinite if not specified.
 
-    DSS property name: `Rp`, DSS property index: 12.
+    Name: `Rp`
+    Units: Ω
     """
 
     def _get_Z1(self) -> complex:
@@ -283,7 +294,9 @@ class Reactor(DSSObj, CircuitElementMixin, PDElementMixin):
 
     Side Effect: Sets Z2 and Z0 to same values unless they were previously defined.
 
-    DSS property name: `Z1`, DSS property index: 13.
+    Name: `Z1`
+    Units: Ω
+    Default: [0.0, 0.0]
     """
 
     def _get_Z2(self) -> complex:
@@ -302,7 +315,9 @@ class Reactor(DSSObj, CircuitElementMixin, PDElementMixin):
 
     Note: Z2 defaults to Z1 if it is not specifically defined. If Z2 is not equal to Z1, the impedance matrix is asymmetrical.
 
-    DSS property name: `Z2`, DSS property index: 14.
+    Name: `Z2`
+    Units: Ω
+    Default: [0.0, 0.0]
     """
 
     def _get_Z0(self) -> complex:
@@ -321,7 +336,9 @@ class Reactor(DSSObj, CircuitElementMixin, PDElementMixin):
 
     Note: Z0 defaults to Z1 if it is not specifically defined. 
 
-    DSS property name: `Z0`, DSS property index: 15.
+    Name: `Z0`
+    Units: Ω
+    Default: [0.0, 0.0]
     """
 
     def _get_RCurve_str(self) -> str:
@@ -334,7 +351,7 @@ class Reactor(DSSObj, CircuitElementMixin, PDElementMixin):
     """
     Name of XYCurve object, previously defined, describing per-unit variation of phase resistance, R, vs. frequency. Applies to resistance specified by R or Z property. If actual values are not known, R often increases by approximately the square root of frequency.
 
-    DSS property name: `RCurve`, DSS property index: 17.
+    Name: `RCurve`
     """
 
     def _get_RCurve(self) -> XYcurve:
@@ -351,7 +368,7 @@ class Reactor(DSSObj, CircuitElementMixin, PDElementMixin):
     """
     Name of XYCurve object, previously defined, describing per-unit variation of phase resistance, R, vs. frequency. Applies to resistance specified by R or Z property. If actual values are not known, R often increases by approximately the square root of frequency.
 
-    DSS property name: `RCurve`, DSS property index: 17.
+    Name: `RCurve`
     """
 
     def _get_LCurve_str(self) -> str:
@@ -364,7 +381,7 @@ class Reactor(DSSObj, CircuitElementMixin, PDElementMixin):
     """
     Name of XYCurve object, previously defined, describing per-unit variation of phase inductance, L=X/w, vs. frequency. Applies to reactance specified by X, LmH, Z, or kvar property.L generally decreases somewhat with frequency above the base frequency, approaching a limit at a few kHz.
 
-    DSS property name: `LCurve`, DSS property index: 18.
+    Name: `LCurve`
     """
 
     def _get_LCurve(self) -> XYcurve:
@@ -381,7 +398,7 @@ class Reactor(DSSObj, CircuitElementMixin, PDElementMixin):
     """
     Name of XYCurve object, previously defined, describing per-unit variation of phase inductance, L=X/w, vs. frequency. Applies to reactance specified by X, LmH, Z, or kvar property.L generally decreases somewhat with frequency above the base frequency, approaching a limit at a few kHz.
 
-    DSS property name: `LCurve`, DSS property index: 18.
+    Name: `LCurve`
     """
 
     def _get_LmH(self) -> float:
@@ -394,7 +411,8 @@ class Reactor(DSSObj, CircuitElementMixin, PDElementMixin):
     """
     Inductance, mH. Alternate way to define the reactance, X, property.
 
-    DSS property name: `LmH`, DSS property index: 19.
+    Name: `LmH`
+    Units: mH
     """
 
     def _get_NormAmps(self) -> float:
@@ -407,7 +425,8 @@ class Reactor(DSSObj, CircuitElementMixin, PDElementMixin):
     """
     Normal rated current. Defaults to per-phase rated current when reactor is specified with rated power and voltage.
 
-    DSS property name: `NormAmps`, DSS property index: 20.
+    Name: `NormAmps`
+    Units: A
     """
 
     def _get_EmergAmps(self) -> float:
@@ -420,7 +439,8 @@ class Reactor(DSSObj, CircuitElementMixin, PDElementMixin):
     """
     Maximum or emerg current. Defaults to 135% of per-phase rated current when reactor is specified with rated power and voltage.
 
-    DSS property name: `EmergAmps`, DSS property index: 21.
+    Name: `EmergAmps`
+    Units: A
     """
 
     def _get_FaultRate(self) -> float:
@@ -433,7 +453,8 @@ class Reactor(DSSObj, CircuitElementMixin, PDElementMixin):
     """
     Failure rate per year.
 
-    DSS property name: `FaultRate`, DSS property index: 22.
+    Name: `FaultRate`
+    Default: 0.0005
     """
 
     def _get_pctPerm(self) -> float:
@@ -446,7 +467,8 @@ class Reactor(DSSObj, CircuitElementMixin, PDElementMixin):
     """
     Percent of failures that become permanent.
 
-    DSS property name: `pctPerm`, DSS property index: 23.
+    Name: `pctPerm`
+    Default: 100.0
     """
 
     def _get_Repair(self) -> float:
@@ -459,7 +481,8 @@ class Reactor(DSSObj, CircuitElementMixin, PDElementMixin):
     """
     Hours to repair.
 
-    DSS property name: `Repair`, DSS property index: 24.
+    Name: `Repair`
+    Default: 3.0
     """
 
     def _get_BaseFreq(self) -> float:
@@ -472,7 +495,8 @@ class Reactor(DSSObj, CircuitElementMixin, PDElementMixin):
     """
     Base Frequency for ratings.
 
-    DSS property name: `BaseFreq`, DSS property index: 25.
+    Name: `BaseFreq`
+    Units: Hz
     """
 
     def _get_Enabled(self) -> bool:
@@ -483,9 +507,10 @@ class Reactor(DSSObj, CircuitElementMixin, PDElementMixin):
 
     Enabled = property(_get_Enabled, _set_Enabled) # type: bool
     """
-    {Yes|No or True|False} Indicates whether this element is enabled.
+    Indicates whether this element is enabled.
 
-    DSS property name: `Enabled`, DSS property index: 26.
+    Name: `Enabled`
+    Default: True
     """
 
     def Like(self, value: AnyStr):
@@ -494,7 +519,9 @@ class Reactor(DSSObj, CircuitElementMixin, PDElementMixin):
 
         New Capacitor.C2 like=c1  ...
 
-        DSS property name: `Like`, DSS property index: 27.
+        **Deprecated:** `Like` has been deprecated since at least 2021, see https://sourceforge.net/p/electricdss/discussion/861977/thread/8b59d21eb6/#b57c/f668
+
+        Name: `Like`
         """
         self._set_string_o(27, value)
 
@@ -573,7 +600,7 @@ class ReactorBatch(DSSBatch, CircuitElementBatchMixin, PDElementBatchMixin):
 
     Bus2 property will default to this bus, node 0, unless previously specified. Only Bus1 need be specified for a Yg shunt reactor.
 
-    DSS property name: `Bus1`, DSS property index: 1.
+    Name: `Bus1`
     """
 
     def _get_Bus2(self) -> List[str]:
@@ -588,7 +615,7 @@ class ReactorBatch(DSSBatch, CircuitElementBatchMixin, PDElementBatchMixin):
 
     Not necessary to specify for delta (LL) connection
 
-    DSS property name: `Bus2`, DSS property index: 2.
+    Name: `Bus2`
     """
 
     def _get_Phases(self) -> BatchInt32ArrayProxy:
@@ -601,7 +628,8 @@ class ReactorBatch(DSSBatch, CircuitElementBatchMixin, PDElementBatchMixin):
     """
     Number of phases.
 
-    DSS property name: `Phases`, DSS property index: 3.
+    Name: `Phases`
+    Default: 3
     """
 
     def _get_kvar(self) -> BatchFloat64ArrayProxy:
@@ -614,7 +642,9 @@ class ReactorBatch(DSSBatch, CircuitElementBatchMixin, PDElementBatchMixin):
     """
     Total kvar, all phases.  Evenly divided among phases. Only determines X. Specify R separately
 
-    DSS property name: `kvar`, DSS property index: 4.
+    Name: `kvar`
+    Units: kvar
+    Default: 100.0
     """
 
     def _get_kV(self) -> BatchFloat64ArrayProxy:
@@ -627,7 +657,9 @@ class ReactorBatch(DSSBatch, CircuitElementBatchMixin, PDElementBatchMixin):
     """
     For 2, 3-phase, kV phase-phase. Otherwise specify actual coil rating.
 
-    DSS property name: `kV`, DSS property index: 5.
+    Name: `kV`
+    Units: kV
+    Default: 12.47
     """
 
     def _get_Conn(self) -> BatchInt32ArrayProxy:
@@ -644,7 +676,8 @@ class ReactorBatch(DSSBatch, CircuitElementBatchMixin, PDElementBatchMixin):
     """
     ={wye | delta |LN |LL}  Default is wye, which is equivalent to LN. If Delta, then only one terminal.
 
-    DSS property name: `Conn`, DSS property index: 6.
+    Name: `Conn`
+    Default: Wye
     """
 
     def _get_Conn_str(self) -> List[str]:
@@ -657,7 +690,8 @@ class ReactorBatch(DSSBatch, CircuitElementBatchMixin, PDElementBatchMixin):
     """
     ={wye | delta |LN |LL}  Default is wye, which is equivalent to LN. If Delta, then only one terminal.
 
-    DSS property name: `Conn`, DSS property index: 6.
+    Name: `Conn`
+    Default: Wye
     """
 
     def _get_RMatrix(self) -> List[Float64Array]:
@@ -673,7 +707,7 @@ class ReactorBatch(DSSBatch, CircuitElementBatchMixin, PDElementBatchMixin):
     """
     Resistance matrix, lower triangle, ohms at base frequency. Order of the matrix is the number of phases. Mutually exclusive to specifying parameters by kvar or X.
 
-    DSS property name: `RMatrix`, DSS property index: 7.
+    Name: `RMatrix`
     """
 
     def _get_XMatrix(self) -> List[Float64Array]:
@@ -689,7 +723,7 @@ class ReactorBatch(DSSBatch, CircuitElementBatchMixin, PDElementBatchMixin):
     """
     Reactance matrix, lower triangle, ohms at base frequency. Order of the matrix is the number of phases. Mutually exclusive to specifying parameters by kvar or X.
 
-    DSS property name: `XMatrix`, DSS property index: 8.
+    Name: `XMatrix`
     """
 
     def _get_Parallel(self) -> List[bool]:
@@ -697,14 +731,15 @@ class ReactorBatch(DSSBatch, CircuitElementBatchMixin, PDElementBatchMixin):
             self._get_batch_int32_prop(9)
         ]
 
-    def _set_Parallel(self, value: bool, flags: enums.SetterFlags = 0):
+    def _set_Parallel(self, value: Union[bool, List[bool]], flags: enums.SetterFlags = 0):
         self._set_batch_int32_array(9, value, flags)
 
     Parallel = property(_get_Parallel, _set_Parallel) # type: List[bool]
     """
-    {Yes | No}  Default=No. Indicates whether Rmatrix and Xmatrix are to be considered in parallel. Default is series. For other models, specify R and Rp.
+    Indicates whether Rmatrix and Xmatrix are to be considered in parallel. Default is series. For other models, specify R and Rp.
 
-    DSS property name: `Parallel`, DSS property index: 9.
+    Name: `Parallel`
+    Default: False
     """
 
     def _get_R(self) -> BatchFloat64ArrayProxy:
@@ -717,7 +752,8 @@ class ReactorBatch(DSSBatch, CircuitElementBatchMixin, PDElementBatchMixin):
     """
     Resistance (in series with reactance), each phase, ohms. This property applies to REACTOR specified by either kvar or X. See also help on Z.
 
-    DSS property name: `R`, DSS property index: 10.
+    Name: `R`
+    Units: Ω
     """
 
     def _get_X(self) -> BatchFloat64ArrayProxy:
@@ -730,7 +766,8 @@ class ReactorBatch(DSSBatch, CircuitElementBatchMixin, PDElementBatchMixin):
     """
     Reactance, each phase, ohms at base frequency. See also help on Z and LmH properties.
 
-    DSS property name: `X`, DSS property index: 11.
+    Name: `X`
+    Units: Ω
     """
 
     def _get_Rp(self) -> BatchFloat64ArrayProxy:
@@ -743,7 +780,8 @@ class ReactorBatch(DSSBatch, CircuitElementBatchMixin, PDElementBatchMixin):
     """
     Resistance in parallel with R and X (the entire branch). Assumed infinite if not specified.
 
-    DSS property name: `Rp`, DSS property index: 12.
+    Name: `Rp`
+    Units: Ω
     """
 
     def _get_Z1(self) -> List[complex]:
@@ -783,7 +821,9 @@ class ReactorBatch(DSSBatch, CircuitElementBatchMixin, PDElementBatchMixin):
 
     Side Effect: Sets Z2 and Z0 to same values unless they were previously defined.
 
-    DSS property name: `Z1`, DSS property index: 13.
+    Name: `Z1`
+    Units: Ω
+    Default: [0.0, 0.0]
     """
 
     def _get_Z2(self) -> List[complex]:
@@ -823,7 +863,9 @@ class ReactorBatch(DSSBatch, CircuitElementBatchMixin, PDElementBatchMixin):
 
     Note: Z2 defaults to Z1 if it is not specifically defined. If Z2 is not equal to Z1, the impedance matrix is asymmetrical.
 
-    DSS property name: `Z2`, DSS property index: 14.
+    Name: `Z2`
+    Units: Ω
+    Default: [0.0, 0.0]
     """
 
     def _get_Z0(self) -> List[complex]:
@@ -863,7 +905,9 @@ class ReactorBatch(DSSBatch, CircuitElementBatchMixin, PDElementBatchMixin):
 
     Note: Z0 defaults to Z1 if it is not specifically defined. 
 
-    DSS property name: `Z0`, DSS property index: 15.
+    Name: `Z0`
+    Units: Ω
+    Default: [0.0, 0.0]
     """
 
     def _get_RCurve_str(self) -> List[str]:
@@ -876,7 +920,7 @@ class ReactorBatch(DSSBatch, CircuitElementBatchMixin, PDElementBatchMixin):
     """
     Name of XYCurve object, previously defined, describing per-unit variation of phase resistance, R, vs. frequency. Applies to resistance specified by R or Z property. If actual values are not known, R often increases by approximately the square root of frequency.
 
-    DSS property name: `RCurve`, DSS property index: 17.
+    Name: `RCurve`
     """
 
     def _get_RCurve(self) -> List[XYcurve]:
@@ -889,7 +933,7 @@ class ReactorBatch(DSSBatch, CircuitElementBatchMixin, PDElementBatchMixin):
     """
     Name of XYCurve object, previously defined, describing per-unit variation of phase resistance, R, vs. frequency. Applies to resistance specified by R or Z property. If actual values are not known, R often increases by approximately the square root of frequency.
 
-    DSS property name: `RCurve`, DSS property index: 17.
+    Name: `RCurve`
     """
 
     def _get_LCurve_str(self) -> List[str]:
@@ -902,7 +946,7 @@ class ReactorBatch(DSSBatch, CircuitElementBatchMixin, PDElementBatchMixin):
     """
     Name of XYCurve object, previously defined, describing per-unit variation of phase inductance, L=X/w, vs. frequency. Applies to reactance specified by X, LmH, Z, or kvar property.L generally decreases somewhat with frequency above the base frequency, approaching a limit at a few kHz.
 
-    DSS property name: `LCurve`, DSS property index: 18.
+    Name: `LCurve`
     """
 
     def _get_LCurve(self) -> List[XYcurve]:
@@ -915,7 +959,7 @@ class ReactorBatch(DSSBatch, CircuitElementBatchMixin, PDElementBatchMixin):
     """
     Name of XYCurve object, previously defined, describing per-unit variation of phase inductance, L=X/w, vs. frequency. Applies to reactance specified by X, LmH, Z, or kvar property.L generally decreases somewhat with frequency above the base frequency, approaching a limit at a few kHz.
 
-    DSS property name: `LCurve`, DSS property index: 18.
+    Name: `LCurve`
     """
 
     def _get_LmH(self) -> BatchFloat64ArrayProxy:
@@ -928,7 +972,8 @@ class ReactorBatch(DSSBatch, CircuitElementBatchMixin, PDElementBatchMixin):
     """
     Inductance, mH. Alternate way to define the reactance, X, property.
 
-    DSS property name: `LmH`, DSS property index: 19.
+    Name: `LmH`
+    Units: mH
     """
 
     def _get_NormAmps(self) -> BatchFloat64ArrayProxy:
@@ -941,7 +986,8 @@ class ReactorBatch(DSSBatch, CircuitElementBatchMixin, PDElementBatchMixin):
     """
     Normal rated current. Defaults to per-phase rated current when reactor is specified with rated power and voltage.
 
-    DSS property name: `NormAmps`, DSS property index: 20.
+    Name: `NormAmps`
+    Units: A
     """
 
     def _get_EmergAmps(self) -> BatchFloat64ArrayProxy:
@@ -954,7 +1000,8 @@ class ReactorBatch(DSSBatch, CircuitElementBatchMixin, PDElementBatchMixin):
     """
     Maximum or emerg current. Defaults to 135% of per-phase rated current when reactor is specified with rated power and voltage.
 
-    DSS property name: `EmergAmps`, DSS property index: 21.
+    Name: `EmergAmps`
+    Units: A
     """
 
     def _get_FaultRate(self) -> BatchFloat64ArrayProxy:
@@ -967,7 +1014,8 @@ class ReactorBatch(DSSBatch, CircuitElementBatchMixin, PDElementBatchMixin):
     """
     Failure rate per year.
 
-    DSS property name: `FaultRate`, DSS property index: 22.
+    Name: `FaultRate`
+    Default: 0.0005
     """
 
     def _get_pctPerm(self) -> BatchFloat64ArrayProxy:
@@ -980,7 +1028,8 @@ class ReactorBatch(DSSBatch, CircuitElementBatchMixin, PDElementBatchMixin):
     """
     Percent of failures that become permanent.
 
-    DSS property name: `pctPerm`, DSS property index: 23.
+    Name: `pctPerm`
+    Default: 100.0
     """
 
     def _get_Repair(self) -> BatchFloat64ArrayProxy:
@@ -993,7 +1042,8 @@ class ReactorBatch(DSSBatch, CircuitElementBatchMixin, PDElementBatchMixin):
     """
     Hours to repair.
 
-    DSS property name: `Repair`, DSS property index: 24.
+    Name: `Repair`
+    Default: 3.0
     """
 
     def _get_BaseFreq(self) -> BatchFloat64ArrayProxy:
@@ -1006,7 +1056,8 @@ class ReactorBatch(DSSBatch, CircuitElementBatchMixin, PDElementBatchMixin):
     """
     Base Frequency for ratings.
 
-    DSS property name: `BaseFreq`, DSS property index: 25.
+    Name: `BaseFreq`
+    Units: Hz
     """
 
     def _get_Enabled(self) -> List[bool]:
@@ -1014,14 +1065,15 @@ class ReactorBatch(DSSBatch, CircuitElementBatchMixin, PDElementBatchMixin):
             self._get_batch_int32_prop(26)
         ]
 
-    def _set_Enabled(self, value: bool, flags: enums.SetterFlags = 0):
+    def _set_Enabled(self, value: Union[bool, List[bool]], flags: enums.SetterFlags = 0):
         self._set_batch_int32_array(26, value, flags)
 
     Enabled = property(_get_Enabled, _set_Enabled) # type: List[bool]
     """
-    {Yes|No or True|False} Indicates whether this element is enabled.
+    Indicates whether this element is enabled.
 
-    DSS property name: `Enabled`, DSS property index: 26.
+    Name: `Enabled`
+    Default: True
     """
 
     def Like(self, value: AnyStr, flags: enums.SetterFlags = 0):
@@ -1030,7 +1082,9 @@ class ReactorBatch(DSSBatch, CircuitElementBatchMixin, PDElementBatchMixin):
 
         New Capacitor.C2 like=c1  ...
 
-        DSS property name: `Like`, DSS property index: 27.
+        **Deprecated:** `Like` has been deprecated since at least 2021, see https://sourceforge.net/p/electricdss/discussion/861977/thread/8b59d21eb6/#b57c/f668
+
+        Name: `Like`
         """
         self._set_batch_string(27, value, flags)
 

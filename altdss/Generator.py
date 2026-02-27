@@ -1,5 +1,5 @@
-# Copyright (c) 2021-2024 Paulo Meira
-# Copyright (c) 2021-2024 DSS-Extensions contributors
+# Copyright (c) 2021-2026 Paulo Meira
+# Copyright (c) 2021-2026 DSS-Extensions contributors
 from __future__ import annotations
 from typing import Union, List, AnyStr, Optional, Iterator, TYPE_CHECKING
 from typing_extensions import TypedDict, Unpack
@@ -145,7 +145,8 @@ class Generator(DSSObj, CircuitElementMixin, PCElementMixin, ElementHasRegisters
     """
     Number of Phases, this Generator.  Power is evenly divided among phases.
 
-    DSS property name: `Phases`, DSS property index: 1.
+    Name: `Phases`
+    Default: 3
     """
 
     def _get_Bus1(self) -> str:
@@ -158,7 +159,7 @@ class Generator(DSSObj, CircuitElementMixin, PCElementMixin, ElementHasRegisters
     """
     Bus to which the Generator is connected.  May include specific node specification.
 
-    DSS property name: `Bus1`, DSS property index: 2.
+    Name: `Bus1`
     """
 
     def _get_kV(self) -> float:
@@ -171,7 +172,9 @@ class Generator(DSSObj, CircuitElementMixin, PCElementMixin, ElementHasRegisters
     """
     Nominal rated (1.0 per unit) voltage, kV, for Generator. For 2- and 3-phase Generators, specify phase-phase kV. Otherwise, for phases=1 or phases>3, specify actual kV across each branch of the Generator. If wye (star), specify phase-neutral kV. If delta or phase-phase connected, specify phase-phase kV.
 
-    DSS property name: `kV`, DSS property index: 3.
+    Name: `kV`
+    Units: kV
+    Default: 12.47
     """
 
     def _get_kW(self) -> float:
@@ -185,7 +188,9 @@ class Generator(DSSObj, CircuitElementMixin, PCElementMixin, ElementHasRegisters
     Total base kW for the Generator.  A positive value denotes power coming OUT of the element, 
     which is the opposite of a load. This value is modified depending on the dispatch mode. Unaffected by the global load multiplier and growth curves. If you want there to be more generation, you must add more generators or change this value.
 
-    DSS property name: `kW`, DSS property index: 4.
+    Name: `kW`
+    Units: kW
+    Default: 1000.0
     """
 
     def _get_PF(self) -> float:
@@ -196,12 +201,13 @@ class Generator(DSSObj, CircuitElementMixin, PCElementMixin, ElementHasRegisters
 
     PF = property(_get_PF, _set_PF) # type: float
     """
-    Generator power factor. Default is 0.80. Enter negative for leading powerfactor (when kW and kvar have opposite signs.)
+    Generator power factor. Enter negative for leading powerfactor (when kW and kvar have opposite signs.)
     A positive power factor for a generator signifies that the generator produces vars 
     as is typical for a synchronous generator.  Induction machines would be 
     specified with a negative power factor.
 
-    DSS property name: `PF`, DSS property index: 5.
+    Name: `PF`
+    Default: 0.88
     """
 
     def _get_kvar(self) -> float:
@@ -214,7 +220,8 @@ class Generator(DSSObj, CircuitElementMixin, PCElementMixin, ElementHasRegisters
     """
     Specify the base kvar.  Alternative to specifying the power factor.  Side effect:  the power factor value is altered to agree based on present value of kW.
 
-    DSS property name: `kvar`, DSS property index: 6.
+    Name: `kvar`
+    Units: kvar
     """
 
     def _get_Model(self) -> enums.GeneratorModel:
@@ -227,15 +234,16 @@ class Generator(DSSObj, CircuitElementMixin, PCElementMixin, ElementHasRegisters
     """
     Integer code for the model to use for generation variation with voltage. Valid values are:
 
-    1:Generator injects a constant kW at specified power factor.
-    2:Generator is modeled as a constant admittance.
-    3:Const kW, constant kV.  Somewhat like a conventional transmission power flow P-V generator.
-    4:Const kW, Fixed Q (Q never varies)
-    5:Const kW, Fixed Q(as a constant reactance)
-    6:Compute load injection from User-written Model.(see usage of Xd, Xdp)
-    7:Constant kW, kvar, but current-limited below Vminpu. Approximates a simple inverter. See also Balanced.
+    - 1: Generator injects a constant kW at specified power factor.
+    - 2: Generator is modeled as a constant admittance.
+    - 3: Const kW, constant kV.  Somewhat like a conventional transmission power flow P-V generator.
+    - 4: Const kW, Fixed Q (Q never varies)
+    - 5: Const kW, Fixed Q(as a constant reactance)
+    - 6: Compute load injection from User-written Model.(see usage of Xd, Xdp)
+    - 7: Constant kW, kvar, but current-limited below Vminpu. Approximates a simple inverter. See also Balanced.
 
-    DSS property name: `Model`, DSS property index: 7.
+    Name: `Model`
+    Default: 1
     """
 
     def _get_VMinpu(self) -> float:
@@ -246,9 +254,10 @@ class Generator(DSSObj, CircuitElementMixin, PCElementMixin, ElementHasRegisters
 
     VMinpu = property(_get_VMinpu, _set_VMinpu) # type: float
     """
-    Default = 0.90.  Minimum per unit voltage for which the Model is assumed to apply. Below this value, the load model reverts to a constant impedance model. For model 7, the current is limited to the value computed for constant power at Vminpu.
+    Minimum per unit voltage for which the Model is assumed to apply. Below this value, the load model reverts to a constant impedance model. For model 7, the current is limited to the value computed for constant power at Vminpu.
 
-    DSS property name: `VMinpu`, DSS property index: 8.
+    Name: `VMinpu`
+    Default: 0.9
     """
 
     def _get_VMaxpu(self) -> float:
@@ -259,9 +268,10 @@ class Generator(DSSObj, CircuitElementMixin, PCElementMixin, ElementHasRegisters
 
     VMaxpu = property(_get_VMaxpu, _set_VMaxpu) # type: float
     """
-    Default = 1.10.  Maximum per unit voltage for which the Model is assumed to apply. Above this value, the load model reverts to a constant impedance model.
+    Maximum per unit voltage for which the Model is assumed to apply. Above this value, the load model reverts to a constant impedance model.
 
-    DSS property name: `VMaxpu`, DSS property index: 9.
+    Name: `VMaxpu`
+    Default: 1.1
     """
 
     def _get_Yearly_str(self) -> str:
@@ -274,7 +284,7 @@ class Generator(DSSObj, CircuitElementMixin, PCElementMixin, ElementHasRegisters
     """
     Dispatch shape to use for yearly simulations.  Must be previously defined as a Loadshape object. If this is not specified, a constant value is assumed (no variation). If the generator is assumed to be ON continuously, specify Status=FIXED, or designate a curve that is 1.0 per unit at all times. Set to NONE to reset to no loadshape. Nominally for 8760 simulations.  If there are fewer points in the designated shape than the number of points in the solution, the curve is repeated.
 
-    DSS property name: `Yearly`, DSS property index: 10.
+    Name: `Yearly`
     """
 
     def _get_Yearly(self) -> LoadShape:
@@ -291,7 +301,7 @@ class Generator(DSSObj, CircuitElementMixin, PCElementMixin, ElementHasRegisters
     """
     Dispatch shape to use for yearly simulations.  Must be previously defined as a Loadshape object. If this is not specified, a constant value is assumed (no variation). If the generator is assumed to be ON continuously, specify Status=FIXED, or designate a curve that is 1.0 per unit at all times. Set to NONE to reset to no loadshape. Nominally for 8760 simulations.  If there are fewer points in the designated shape than the number of points in the solution, the curve is repeated.
 
-    DSS property name: `Yearly`, DSS property index: 10.
+    Name: `Yearly`
     """
 
     def _get_Daily_str(self) -> str:
@@ -304,7 +314,7 @@ class Generator(DSSObj, CircuitElementMixin, PCElementMixin, ElementHasRegisters
     """
     Dispatch shape to use for daily simulations.  Must be previously defined as a Loadshape object of 24 hrs, typically.  If generator is assumed to be ON continuously, specify Status=FIXED, or designate a Loadshape object that is 1.0 per unit for all hours. Set to NONE to reset to no loadshape. 
 
-    DSS property name: `Daily`, DSS property index: 11.
+    Name: `Daily`
     """
 
     def _get_Daily(self) -> LoadShape:
@@ -321,7 +331,7 @@ class Generator(DSSObj, CircuitElementMixin, PCElementMixin, ElementHasRegisters
     """
     Dispatch shape to use for daily simulations.  Must be previously defined as a Loadshape object of 24 hrs, typically.  If generator is assumed to be ON continuously, specify Status=FIXED, or designate a Loadshape object that is 1.0 per unit for all hours. Set to NONE to reset to no loadshape. 
 
-    DSS property name: `Daily`, DSS property index: 11.
+    Name: `Daily`
     """
 
     def _get_Duty_str(self) -> str:
@@ -334,7 +344,7 @@ class Generator(DSSObj, CircuitElementMixin, PCElementMixin, ElementHasRegisters
     """
     Load shape to use for duty cycle dispatch simulations such as for wind generation. Must be previously defined as a Loadshape object. Typically would have time intervals less than 1 hr -- perhaps, in seconds. Set Status=Fixed to ignore Loadshape designation. Set to NONE to reset to no loadshape. Designate the number of points to solve using the Set Number=xxxx command. If there are fewer points in the actual shape, the shape is assumed to repeat.
 
-    DSS property name: `Duty`, DSS property index: 12.
+    Name: `Duty`
     """
 
     def _get_Duty(self) -> LoadShape:
@@ -351,7 +361,7 @@ class Generator(DSSObj, CircuitElementMixin, PCElementMixin, ElementHasRegisters
     """
     Load shape to use for duty cycle dispatch simulations such as for wind generation. Must be previously defined as a Loadshape object. Typically would have time intervals less than 1 hr -- perhaps, in seconds. Set Status=Fixed to ignore Loadshape designation. Set to NONE to reset to no loadshape. Designate the number of points to solve using the Set Number=xxxx command. If there are fewer points in the actual shape, the shape is assumed to repeat.
 
-    DSS property name: `Duty`, DSS property index: 12.
+    Name: `Duty`
     """
 
     def _get_DispMode(self) -> enums.GeneratorDispatchMode:
@@ -365,9 +375,10 @@ class Generator(DSSObj, CircuitElementMixin, PCElementMixin, ElementHasRegisters
 
     DispMode = property(_get_DispMode, _set_DispMode) # type: enums.GeneratorDispatchMode
     """
-    {Default* | Loadlevel | Price } Default = Default. Dispatch mode. In default mode, gen is either always on or follows dispatch curve as specified. Otherwise, the gen comes on when either the global default load level (Loadshape "default") or the price level exceeds the dispatch value.
+    Dispatch mode. In default mode, the generator is either always on or follows dispatch curve as specified. Otherwise, the gen comes on when either the global default load level (Loadshape "default") or the price level exceeds the dispatch value.
 
-    DSS property name: `DispMode`, DSS property index: 13.
+    Name: `DispMode`
+    Default: Default
     """
 
     def _get_DispMode_str(self) -> str:
@@ -378,9 +389,10 @@ class Generator(DSSObj, CircuitElementMixin, PCElementMixin, ElementHasRegisters
 
     DispMode_str = property(_get_DispMode_str, _set_DispMode_str) # type: str
     """
-    {Default* | Loadlevel | Price } Default = Default. Dispatch mode. In default mode, gen is either always on or follows dispatch curve as specified. Otherwise, the gen comes on when either the global default load level (Loadshape "default") or the price level exceeds the dispatch value.
+    Dispatch mode. In default mode, the generator is either always on or follows dispatch curve as specified. Otherwise, the gen comes on when either the global default load level (Loadshape "default") or the price level exceeds the dispatch value.
 
-    DSS property name: `DispMode`, DSS property index: 13.
+    Name: `DispMode`
+    Default: Default
     """
 
     def _get_DispValue(self) -> float:
@@ -392,10 +404,11 @@ class Generator(DSSObj, CircuitElementMixin, PCElementMixin, ElementHasRegisters
     DispValue = property(_get_DispValue, _set_DispValue) # type: float
     """
     Dispatch value. 
-    If = 0.0 (default) then Generator follow dispatch curves, if any. 
-    If > 0  then Generator is ON only when either the price signal (in Price dispatch mode) exceeds this value or the active circuit load multiplier * "default" loadshape value * the default yearly growth factor exceeds this value.  Then the generator follows dispatch curves (duty, daily, or yearly), if any (see also Status).
+    If = 0 (default) then Generator follow dispatch curves, if any. 
+    If > 0  then Generator is ON only when either the price signal (in Price dispatch mode) exceeds this value or the active circuit load multiplier × "default" loadshape value * the default yearly growth factor exceeds this value.  Then the generator follows dispatch curves (duty, daily, or yearly), if any (see also Status).
 
-    DSS property name: `DispValue`, DSS property index: 14.
+    Name: `DispValue`
+    Default: 0.0
     """
 
     def _get_Conn(self) -> enums.Connection:
@@ -409,9 +422,10 @@ class Generator(DSSObj, CircuitElementMixin, PCElementMixin, ElementHasRegisters
 
     Conn = property(_get_Conn, _set_Conn) # type: enums.Connection
     """
-    ={wye|LN|delta|LL}.  Default is wye.
+    Generator connection. Default is wye.
 
-    DSS property name: `Conn`, DSS property index: 15.
+    Name: `Conn`
+    Default: Wye
     """
 
     def _get_Conn_str(self) -> str:
@@ -422,9 +436,10 @@ class Generator(DSSObj, CircuitElementMixin, PCElementMixin, ElementHasRegisters
 
     Conn_str = property(_get_Conn_str, _set_Conn_str) # type: str
     """
-    ={wye|LN|delta|LL}.  Default is wye.
+    Generator connection. Default is wye.
 
-    DSS property name: `Conn`, DSS property index: 15.
+    Name: `Conn`
+    Default: Wye
     """
 
     def _get_Status(self) -> enums.GeneratorStatus:
@@ -438,9 +453,10 @@ class Generator(DSSObj, CircuitElementMixin, PCElementMixin, ElementHasRegisters
 
     Status = property(_get_Status, _set_Status) # type: enums.GeneratorStatus
     """
-    ={Fixed | Variable*}.  If Fixed, then dispatch multipliers do not apply. The generator is alway at full power when it is ON.  Default is Variable  (follows curves).
+    If Fixed, then dispatch multipliers do not apply. The generator is alway at full power when it is ON.  Default is Variable  (follows curves).
 
-    DSS property name: `Status`, DSS property index: 16.
+    Name: `Status`
+    Default: Variable
     """
 
     def _get_Status_str(self) -> str:
@@ -451,9 +467,10 @@ class Generator(DSSObj, CircuitElementMixin, PCElementMixin, ElementHasRegisters
 
     Status_str = property(_get_Status_str, _set_Status_str) # type: str
     """
-    ={Fixed | Variable*}.  If Fixed, then dispatch multipliers do not apply. The generator is alway at full power when it is ON.  Default is Variable  (follows curves).
+    If Fixed, then dispatch multipliers do not apply. The generator is alway at full power when it is ON.  Default is Variable  (follows curves).
 
-    DSS property name: `Status`, DSS property index: 16.
+    Name: `Status`
+    Default: Variable
     """
 
     def _get_Class(self) -> int:
@@ -466,7 +483,8 @@ class Generator(DSSObj, CircuitElementMixin, PCElementMixin, ElementHasRegisters
     """
     An arbitrary integer number representing the class of Generator so that Generator values may be segregated by class.
 
-    DSS property name: `Class`, DSS property index: 17.
+    Name: `Class`
+    Default: 1
     """
 
     def _get_Vpu(self) -> float:
@@ -477,9 +495,10 @@ class Generator(DSSObj, CircuitElementMixin, PCElementMixin, ElementHasRegisters
 
     Vpu = property(_get_Vpu, _set_Vpu) # type: float
     """
-    Per Unit voltage set point for Model = 3  (typical power flow model).  Default is 1.0. 
+    Per Unit voltage set point for Model = 3  (typical power flow model).
 
-    DSS property name: `Vpu`, DSS property index: 18.
+    Name: `Vpu`
+    Default: 1.0
     """
 
     def _get_Maxkvar(self) -> float:
@@ -492,7 +511,7 @@ class Generator(DSSObj, CircuitElementMixin, PCElementMixin, ElementHasRegisters
     """
     Maximum kvar limit for Model = 3.  Defaults to twice the specified load kvar.  Always reset this if you change PF or kvar properties.
 
-    DSS property name: `Maxkvar`, DSS property index: 19.
+    Name: `Maxkvar`
     """
 
     def _get_Minkvar(self) -> float:
@@ -505,7 +524,7 @@ class Generator(DSSObj, CircuitElementMixin, PCElementMixin, ElementHasRegisters
     """
     Minimum kvar limit for Model = 3. Enter a negative number if generator can absorb vars. Defaults to negative of Maxkvar.  Always reset this if you change PF or kvar properties.
 
-    DSS property name: `Minkvar`, DSS property index: 20.
+    Name: `Minkvar`
     """
 
     def _get_PVFactor(self) -> float:
@@ -518,7 +537,8 @@ class Generator(DSSObj, CircuitElementMixin, PCElementMixin, ElementHasRegisters
     """
     Deceleration factor for P-V generator model (Model=3).  Default is 0.1. If the circuit converges easily, you may want to use a higher number such as 1.0. Use a lower number if solution diverges. Use Debugtrace=yes to create a file that will trace the convergence of a generator model.
 
-    DSS property name: `PVFactor`, DSS property index: 21.
+    Name: `PVFactor`
+    Default: 0.1
     """
 
     def _get_ForceOn(self) -> bool:
@@ -529,9 +549,10 @@ class Generator(DSSObj, CircuitElementMixin, PCElementMixin, ElementHasRegisters
 
     ForceOn = property(_get_ForceOn, _set_ForceOn) # type: bool
     """
-    {Yes | No}  Forces generator ON despite requirements of other dispatch modes. Stays ON until this property is set to NO, or an internal algorithm cancels the forced ON state.
+    Forces generator ON despite requirements of other dispatch modes. Stays ON until this property is set to NO, or an internal algorithm cancels the forced ON state.
 
-    DSS property name: `ForceOn`, DSS property index: 22.
+    Name: `ForceOn`
+    Default: False
     """
 
     def _get_kVA(self) -> float:
@@ -542,9 +563,10 @@ class Generator(DSSObj, CircuitElementMixin, PCElementMixin, ElementHasRegisters
 
     kVA = property(_get_kVA, _set_kVA) # type: float
     """
-    kVA rating of electrical machine. Defaults to 1.2* kW if not specified. Applied to machine or inverter definition for Dynamics mode solutions. 
+    kVA rating of electrical machine. Defaults to 1.2 × kW if not specified. Applied to machine or inverter definition for Dynamics mode solutions. 
 
-    DSS property name: `kVA`, DSS property index: 23.
+    Name: `kVA`
+    Units: kVA
     """
 
     def _get_Xd(self) -> float:
@@ -555,9 +577,10 @@ class Generator(DSSObj, CircuitElementMixin, PCElementMixin, ElementHasRegisters
 
     Xd = property(_get_Xd, _set_Xd) # type: float
     """
-    Per unit synchronous reactance of machine. Presently used only for Thevenin impedance for power flow calcs of user models (model=6). Typically use a value 0.4 to 1.0. Default is 1.0
+    Per unit synchronous reactance of machine. Presently used only for Thévenin impedance for power flow calcs of user models (model=6). Typically use a value 0.4 to 1.0. Default is 1.0
 
-    DSS property name: `Xd`, DSS property index: 25.
+    Name: `Xd`
+    Default: 1.0
     """
 
     def _get_Xdp(self) -> float:
@@ -568,9 +591,10 @@ class Generator(DSSObj, CircuitElementMixin, PCElementMixin, ElementHasRegisters
 
     Xdp = property(_get_Xdp, _set_Xdp) # type: float
     """
-    Per unit transient reactance of the machine.  Used for Dynamics mode and Fault studies.  Default is 0.27.For user models, this value is used for the Thevenin/Norton impedance for Dynamics Mode.
+    Per unit transient reactance of the machine.  Used for Dynamics mode and Fault studies.  Default is 0.27.For user models, this value is used for the Thévenin/Norton impedance for Dynamics Mode.
 
-    DSS property name: `Xdp`, DSS property index: 26.
+    Name: `Xdp`
+    Default: 0.28
     """
 
     def _get_Xdpp(self) -> float:
@@ -583,7 +607,8 @@ class Generator(DSSObj, CircuitElementMixin, PCElementMixin, ElementHasRegisters
     """
     Per unit subtransient reactance of the machine.  Used for Harmonics. Default is 0.20.
 
-    DSS property name: `Xdpp`, DSS property index: 27.
+    Name: `Xdpp`
+    Default: 0.2
     """
 
     def _get_H(self) -> float:
@@ -596,7 +621,8 @@ class Generator(DSSObj, CircuitElementMixin, PCElementMixin, ElementHasRegisters
     """
     Per unit mass constant of the machine.  MW-sec/MVA.  Default is 1.0.
 
-    DSS property name: `H`, DSS property index: 28.
+    Name: `H`
+    Default: 1.0
     """
 
     def _get_D(self) -> float:
@@ -609,7 +635,8 @@ class Generator(DSSObj, CircuitElementMixin, PCElementMixin, ElementHasRegisters
     """
     Damping constant.  Usual range is 0 to 4. Default is 1.0.  Adjust to get damping
 
-    DSS property name: `D`, DSS property index: 29.
+    Name: `D`
+    Default: 1.0
     """
 
     def _get_UserModel(self) -> str:
@@ -622,7 +649,7 @@ class Generator(DSSObj, CircuitElementMixin, PCElementMixin, ElementHasRegisters
     """
     Name of DLL containing user-written model, which computes the terminal currents for Dynamics studies, overriding the default model.  Set to "none" to negate previous setting.
 
-    DSS property name: `UserModel`, DSS property index: 30.
+    Name: `UserModel`
     """
 
     def _get_UserData(self) -> str:
@@ -635,7 +662,7 @@ class Generator(DSSObj, CircuitElementMixin, PCElementMixin, ElementHasRegisters
     """
     String (in quotes or parentheses) that gets passed to user-written model for defining the data required for that model.
 
-    DSS property name: `UserData`, DSS property index: 31.
+    Name: `UserData`
     """
 
     def _get_ShaftModel(self) -> str:
@@ -648,7 +675,7 @@ class Generator(DSSObj, CircuitElementMixin, PCElementMixin, ElementHasRegisters
     """
     Name of user-written DLL containing a Shaft model, which models the prime mover and determines the power on the shaft for Dynamics studies. Models additional mass elements other than the single-mass model in the DSS default model. Set to "none" to negate previous setting.
 
-    DSS property name: `ShaftModel`, DSS property index: 32.
+    Name: `ShaftModel`
     """
 
     def _get_ShaftData(self) -> str:
@@ -661,7 +688,7 @@ class Generator(DSSObj, CircuitElementMixin, PCElementMixin, ElementHasRegisters
     """
     String (in quotes or parentheses) that gets passed to user-written shaft dynamic model for defining the data for that model.
 
-    DSS property name: `ShaftData`, DSS property index: 33.
+    Name: `ShaftData`
     """
 
     def _get_DutyStart(self) -> float:
@@ -674,7 +701,9 @@ class Generator(DSSObj, CircuitElementMixin, PCElementMixin, ElementHasRegisters
     """
     Starting time offset [hours] into the duty cycle shape for this generator, defaults to 0
 
-    DSS property name: `DutyStart`, DSS property index: 34.
+    Name: `DutyStart`
+    Units: hour
+    Default: 0.0
     """
 
     def _get_DebugTrace(self) -> bool:
@@ -685,9 +714,10 @@ class Generator(DSSObj, CircuitElementMixin, PCElementMixin, ElementHasRegisters
 
     DebugTrace = property(_get_DebugTrace, _set_DebugTrace) # type: bool
     """
-    {Yes | No }  Default is no.  Turn this on to capture the progress of the generator model for each iteration.  Creates a separate file for each generator named "GEN_name.csv".
+    Turn this on to capture the progress of the generator model for each iteration.  Creates a separate file for each generator named "GEN_name.csv".
 
-    DSS property name: `DebugTrace`, DSS property index: 35.
+    Name: `DebugTrace`
+    Default: False
     """
 
     def _get_Balanced(self) -> bool:
@@ -698,9 +728,10 @@ class Generator(DSSObj, CircuitElementMixin, PCElementMixin, ElementHasRegisters
 
     Balanced = property(_get_Balanced, _set_Balanced) # type: bool
     """
-    {Yes | No*} Default is No.  For Model=7, force balanced current only for 3-phase generators. Force zero- and negative-sequence to zero.
+    For Model=7, force balanced current only for 3-phase generators. Force zero- and negative-sequence to zero.
 
-    DSS property name: `Balanced`, DSS property index: 36.
+    Name: `Balanced`
+    Default: False
     """
 
     def _get_XRdp(self) -> float:
@@ -711,9 +742,10 @@ class Generator(DSSObj, CircuitElementMixin, PCElementMixin, ElementHasRegisters
 
     XRdp = property(_get_XRdp, _set_XRdp) # type: float
     """
-    Default is 20. X/R ratio for Xdp property for FaultStudy and Dynamic modes.
+    X/R ratio for Xdp property for FaultStudy and Dynamic modes.
 
-    DSS property name: `XRdp`, DSS property index: 37.
+    Name: `XRdp`
+    Default: 20.0
     """
 
     def _get_UseFuel(self) -> bool:
@@ -724,9 +756,10 @@ class Generator(DSSObj, CircuitElementMixin, PCElementMixin, ElementHasRegisters
 
     UseFuel = property(_get_UseFuel, _set_UseFuel) # type: bool
     """
-    {Yes | *No}. Activates the use of fuel for the operation of the generator. When the fuel level reaches the reserve level, the generator stops until it gets refueled. By default, the generator is connected to a continuous fuel supply, Use this mode to mimic dependency on fuel level for different generation technologies.
+    Activates the use of fuel for the operation of the generator. When the fuel level reaches the reserve level, the generator stops until it gets refueled. By default, the generator is connected to a continuous fuel supply, Use this mode to mimic dependency on fuel level for different generation technologies.
 
-    DSS property name: `UseFuel`, DSS property index: 38.
+    Name: `UseFuel`
+    Default: False
     """
 
     def _get_FuelkWh(self) -> float:
@@ -737,9 +770,10 @@ class Generator(DSSObj, CircuitElementMixin, PCElementMixin, ElementHasRegisters
 
     FuelkWh = property(_get_FuelkWh, _set_FuelkWh) # type: float
     """
-    {*0}Is the nominal level of fuel for the generator (kWh). It only applies if UseFuel = Yes/True
+    The nominal level of fuel for the generator (kWh). It only applies if UseFuel = True
 
-    DSS property name: `FuelkWh`, DSS property index: 39.
+    Name: `FuelkWh`
+    Default: 0.0
     """
 
     def _get_pctFuel(self) -> float:
@@ -750,9 +784,10 @@ class Generator(DSSObj, CircuitElementMixin, PCElementMixin, ElementHasRegisters
 
     pctFuel = property(_get_pctFuel, _set_pctFuel) # type: float
     """
-    It is a number between 0 and 100 representing the current amount of fuel available in percentage of FuelkWh. It only applies if UseFuel = Yes/True
+    It is a number between 0 and 100 representing the current amount of fuel available in percentage of FuelkWh. It only applies if UseFuel = True
 
-    DSS property name: `%Fuel`, DSS property index: 40.
+    Name: `%Fuel`
+    Default: 100.0
     """
 
     def _get_pctReserve(self) -> float:
@@ -763,16 +798,18 @@ class Generator(DSSObj, CircuitElementMixin, PCElementMixin, ElementHasRegisters
 
     pctReserve = property(_get_pctReserve, _set_pctReserve) # type: float
     """
-    It is a number between 0 and 100 representing the reserve level in percentage of FuelkWh. It only applies if UseFuel = Yes/True
+    It is a number between 0 and 100 representing the reserve level in percentage of FuelkWh. It only applies if UseFuel = True
 
-    DSS property name: `%Reserve`, DSS property index: 41.
+    Name: `%Reserve`
+    Default: 20.0
     """
 
     def Refuel(self, value: bool = True, flags: enums.SetterFlags = 0):
         """
-        It is a boolean value (Yes/True, No/False) that can be used to manually refuel the generator when needed. It only applies if UseFuel = Yes/True
+        Setting a true value manually refuels the generator when needed. It only applies if UseFuel = True
 
-        DSS property name: `Refuel`, DSS property index: 42.
+        Name: `Refuel`
+        Default: False
         """
         self._lib.Obj_SetInt32(self._ptr, 42, value, flags)
 
@@ -786,7 +823,7 @@ class Generator(DSSObj, CircuitElementMixin, PCElementMixin, ElementHasRegisters
     """
     The name of the dynamic equation (DynamicExp) that will be used for defining the dynamic behavior of the generator. if not defined, the generator dynamics will follow the built-in dynamic equation.
 
-    DSS property name: `DynamicEq`, DSS property index: 43.
+    Name: `DynamicEq`
     """
 
     def _get_DynamicEq(self) -> DynamicExp:
@@ -803,7 +840,7 @@ class Generator(DSSObj, CircuitElementMixin, PCElementMixin, ElementHasRegisters
     """
     The name of the dynamic equation (DynamicExp) that will be used for defining the dynamic behavior of the generator. if not defined, the generator dynamics will follow the built-in dynamic equation.
 
-    DSS property name: `DynamicEq`, DSS property index: 43.
+    Name: `DynamicEq`
     """
 
     def _get_DynOut(self) -> List[str]:
@@ -823,7 +860,7 @@ class Generator(DSSObj, CircuitElementMixin, PCElementMixin, ElementHasRegisters
 
     The output variables need to be defined in tha strict order.
 
-    DSS property name: `DynOut`, DSS property index: 44.
+    Name: `DynOut`
     """
 
     def _get_Spectrum_str(self) -> str:
@@ -834,9 +871,10 @@ class Generator(DSSObj, CircuitElementMixin, PCElementMixin, ElementHasRegisters
 
     Spectrum_str = property(_get_Spectrum_str, _set_Spectrum_str) # type: str
     """
-    Name of harmonic voltage or current spectrum for this generator. Voltage behind Xd" for machine - default. Current injection for inverter. Default value is "default", which is defined when the DSS starts.
+    Name of harmonic voltage or current spectrum for this generator. Voltage behind Xd" for machine - default. Current injection for inverter.
 
-    DSS property name: `Spectrum`, DSS property index: 45.
+    Name: `Spectrum`
+    Default: defaultgen
     """
 
     def _get_Spectrum(self) -> SpectrumObj:
@@ -851,9 +889,10 @@ class Generator(DSSObj, CircuitElementMixin, PCElementMixin, ElementHasRegisters
 
     Spectrum = property(_get_Spectrum, _set_Spectrum) # type: SpectrumObj
     """
-    Name of harmonic voltage or current spectrum for this generator. Voltage behind Xd" for machine - default. Current injection for inverter. Default value is "default", which is defined when the DSS starts.
+    Name of harmonic voltage or current spectrum for this generator. Voltage behind Xd" for machine - default. Current injection for inverter.
 
-    DSS property name: `Spectrum`, DSS property index: 45.
+    Name: `Spectrum`
+    Default: defaultgen
     """
 
     def _get_BaseFreq(self) -> float:
@@ -866,7 +905,8 @@ class Generator(DSSObj, CircuitElementMixin, PCElementMixin, ElementHasRegisters
     """
     Base Frequency for ratings.
 
-    DSS property name: `BaseFreq`, DSS property index: 46.
+    Name: `BaseFreq`
+    Units: Hz
     """
 
     def _get_Enabled(self) -> bool:
@@ -877,9 +917,10 @@ class Generator(DSSObj, CircuitElementMixin, PCElementMixin, ElementHasRegisters
 
     Enabled = property(_get_Enabled, _set_Enabled) # type: bool
     """
-    {Yes|No or True|False} Indicates whether this element is enabled.
+    Indicates whether this element is enabled.
 
-    DSS property name: `Enabled`, DSS property index: 47.
+    Name: `Enabled`
+    Default: True
     """
 
     def Like(self, value: AnyStr):
@@ -888,7 +929,9 @@ class Generator(DSSObj, CircuitElementMixin, PCElementMixin, ElementHasRegisters
 
         New Capacitor.C2 like=c1  ...
 
-        DSS property name: `Like`, DSS property index: 48.
+        **Deprecated:** `Like` has been deprecated since at least 2021, see https://sourceforge.net/p/electricdss/discussion/861977/thread/8b59d21eb6/#b57c/f668
+
+        Name: `Like`
         """
         self._set_string_o(48, value)
 
@@ -984,7 +1027,8 @@ class GeneratorBatch(DSSBatch, CircuitElementBatchMixin, PCElementBatchMixin):
     """
     Number of Phases, this Generator.  Power is evenly divided among phases.
 
-    DSS property name: `Phases`, DSS property index: 1.
+    Name: `Phases`
+    Default: 3
     """
 
     def _get_Bus1(self) -> List[str]:
@@ -997,7 +1041,7 @@ class GeneratorBatch(DSSBatch, CircuitElementBatchMixin, PCElementBatchMixin):
     """
     Bus to which the Generator is connected.  May include specific node specification.
 
-    DSS property name: `Bus1`, DSS property index: 2.
+    Name: `Bus1`
     """
 
     def _get_kV(self) -> BatchFloat64ArrayProxy:
@@ -1010,7 +1054,9 @@ class GeneratorBatch(DSSBatch, CircuitElementBatchMixin, PCElementBatchMixin):
     """
     Nominal rated (1.0 per unit) voltage, kV, for Generator. For 2- and 3-phase Generators, specify phase-phase kV. Otherwise, for phases=1 or phases>3, specify actual kV across each branch of the Generator. If wye (star), specify phase-neutral kV. If delta or phase-phase connected, specify phase-phase kV.
 
-    DSS property name: `kV`, DSS property index: 3.
+    Name: `kV`
+    Units: kV
+    Default: 12.47
     """
 
     def _get_kW(self) -> BatchFloat64ArrayProxy:
@@ -1024,7 +1070,9 @@ class GeneratorBatch(DSSBatch, CircuitElementBatchMixin, PCElementBatchMixin):
     Total base kW for the Generator.  A positive value denotes power coming OUT of the element, 
     which is the opposite of a load. This value is modified depending on the dispatch mode. Unaffected by the global load multiplier and growth curves. If you want there to be more generation, you must add more generators or change this value.
 
-    DSS property name: `kW`, DSS property index: 4.
+    Name: `kW`
+    Units: kW
+    Default: 1000.0
     """
 
     def _get_PF(self) -> BatchFloat64ArrayProxy:
@@ -1035,12 +1083,13 @@ class GeneratorBatch(DSSBatch, CircuitElementBatchMixin, PCElementBatchMixin):
 
     PF = property(_get_PF, _set_PF) # type: BatchFloat64ArrayProxy
     """
-    Generator power factor. Default is 0.80. Enter negative for leading powerfactor (when kW and kvar have opposite signs.)
+    Generator power factor. Enter negative for leading powerfactor (when kW and kvar have opposite signs.)
     A positive power factor for a generator signifies that the generator produces vars 
     as is typical for a synchronous generator.  Induction machines would be 
     specified with a negative power factor.
 
-    DSS property name: `PF`, DSS property index: 5.
+    Name: `PF`
+    Default: 0.88
     """
 
     def _get_kvar(self) -> BatchFloat64ArrayProxy:
@@ -1053,7 +1102,8 @@ class GeneratorBatch(DSSBatch, CircuitElementBatchMixin, PCElementBatchMixin):
     """
     Specify the base kvar.  Alternative to specifying the power factor.  Side effect:  the power factor value is altered to agree based on present value of kW.
 
-    DSS property name: `kvar`, DSS property index: 6.
+    Name: `kvar`
+    Units: kvar
     """
 
     def _get_Model(self) -> BatchInt32ArrayProxy:
@@ -1066,15 +1116,16 @@ class GeneratorBatch(DSSBatch, CircuitElementBatchMixin, PCElementBatchMixin):
     """
     Integer code for the model to use for generation variation with voltage. Valid values are:
 
-    1:Generator injects a constant kW at specified power factor.
-    2:Generator is modeled as a constant admittance.
-    3:Const kW, constant kV.  Somewhat like a conventional transmission power flow P-V generator.
-    4:Const kW, Fixed Q (Q never varies)
-    5:Const kW, Fixed Q(as a constant reactance)
-    6:Compute load injection from User-written Model.(see usage of Xd, Xdp)
-    7:Constant kW, kvar, but current-limited below Vminpu. Approximates a simple inverter. See also Balanced.
+    - 1: Generator injects a constant kW at specified power factor.
+    - 2: Generator is modeled as a constant admittance.
+    - 3: Const kW, constant kV.  Somewhat like a conventional transmission power flow P-V generator.
+    - 4: Const kW, Fixed Q (Q never varies)
+    - 5: Const kW, Fixed Q(as a constant reactance)
+    - 6: Compute load injection from User-written Model.(see usage of Xd, Xdp)
+    - 7: Constant kW, kvar, but current-limited below Vminpu. Approximates a simple inverter. See also Balanced.
 
-    DSS property name: `Model`, DSS property index: 7.
+    Name: `Model`
+    Default: 1
     """
 
     def _get_VMinpu(self) -> BatchFloat64ArrayProxy:
@@ -1085,9 +1136,10 @@ class GeneratorBatch(DSSBatch, CircuitElementBatchMixin, PCElementBatchMixin):
 
     VMinpu = property(_get_VMinpu, _set_VMinpu) # type: BatchFloat64ArrayProxy
     """
-    Default = 0.90.  Minimum per unit voltage for which the Model is assumed to apply. Below this value, the load model reverts to a constant impedance model. For model 7, the current is limited to the value computed for constant power at Vminpu.
+    Minimum per unit voltage for which the Model is assumed to apply. Below this value, the load model reverts to a constant impedance model. For model 7, the current is limited to the value computed for constant power at Vminpu.
 
-    DSS property name: `VMinpu`, DSS property index: 8.
+    Name: `VMinpu`
+    Default: 0.9
     """
 
     def _get_VMaxpu(self) -> BatchFloat64ArrayProxy:
@@ -1098,9 +1150,10 @@ class GeneratorBatch(DSSBatch, CircuitElementBatchMixin, PCElementBatchMixin):
 
     VMaxpu = property(_get_VMaxpu, _set_VMaxpu) # type: BatchFloat64ArrayProxy
     """
-    Default = 1.10.  Maximum per unit voltage for which the Model is assumed to apply. Above this value, the load model reverts to a constant impedance model.
+    Maximum per unit voltage for which the Model is assumed to apply. Above this value, the load model reverts to a constant impedance model.
 
-    DSS property name: `VMaxpu`, DSS property index: 9.
+    Name: `VMaxpu`
+    Default: 1.1
     """
 
     def _get_Yearly_str(self) -> List[str]:
@@ -1113,7 +1166,7 @@ class GeneratorBatch(DSSBatch, CircuitElementBatchMixin, PCElementBatchMixin):
     """
     Dispatch shape to use for yearly simulations.  Must be previously defined as a Loadshape object. If this is not specified, a constant value is assumed (no variation). If the generator is assumed to be ON continuously, specify Status=FIXED, or designate a curve that is 1.0 per unit at all times. Set to NONE to reset to no loadshape. Nominally for 8760 simulations.  If there are fewer points in the designated shape than the number of points in the solution, the curve is repeated.
 
-    DSS property name: `Yearly`, DSS property index: 10.
+    Name: `Yearly`
     """
 
     def _get_Yearly(self) -> List[LoadShape]:
@@ -1126,7 +1179,7 @@ class GeneratorBatch(DSSBatch, CircuitElementBatchMixin, PCElementBatchMixin):
     """
     Dispatch shape to use for yearly simulations.  Must be previously defined as a Loadshape object. If this is not specified, a constant value is assumed (no variation). If the generator is assumed to be ON continuously, specify Status=FIXED, or designate a curve that is 1.0 per unit at all times. Set to NONE to reset to no loadshape. Nominally for 8760 simulations.  If there are fewer points in the designated shape than the number of points in the solution, the curve is repeated.
 
-    DSS property name: `Yearly`, DSS property index: 10.
+    Name: `Yearly`
     """
 
     def _get_Daily_str(self) -> List[str]:
@@ -1139,7 +1192,7 @@ class GeneratorBatch(DSSBatch, CircuitElementBatchMixin, PCElementBatchMixin):
     """
     Dispatch shape to use for daily simulations.  Must be previously defined as a Loadshape object of 24 hrs, typically.  If generator is assumed to be ON continuously, specify Status=FIXED, or designate a Loadshape object that is 1.0 per unit for all hours. Set to NONE to reset to no loadshape. 
 
-    DSS property name: `Daily`, DSS property index: 11.
+    Name: `Daily`
     """
 
     def _get_Daily(self) -> List[LoadShape]:
@@ -1152,7 +1205,7 @@ class GeneratorBatch(DSSBatch, CircuitElementBatchMixin, PCElementBatchMixin):
     """
     Dispatch shape to use for daily simulations.  Must be previously defined as a Loadshape object of 24 hrs, typically.  If generator is assumed to be ON continuously, specify Status=FIXED, or designate a Loadshape object that is 1.0 per unit for all hours. Set to NONE to reset to no loadshape. 
 
-    DSS property name: `Daily`, DSS property index: 11.
+    Name: `Daily`
     """
 
     def _get_Duty_str(self) -> List[str]:
@@ -1165,7 +1218,7 @@ class GeneratorBatch(DSSBatch, CircuitElementBatchMixin, PCElementBatchMixin):
     """
     Load shape to use for duty cycle dispatch simulations such as for wind generation. Must be previously defined as a Loadshape object. Typically would have time intervals less than 1 hr -- perhaps, in seconds. Set Status=Fixed to ignore Loadshape designation. Set to NONE to reset to no loadshape. Designate the number of points to solve using the Set Number=xxxx command. If there are fewer points in the actual shape, the shape is assumed to repeat.
 
-    DSS property name: `Duty`, DSS property index: 12.
+    Name: `Duty`
     """
 
     def _get_Duty(self) -> List[LoadShape]:
@@ -1178,7 +1231,7 @@ class GeneratorBatch(DSSBatch, CircuitElementBatchMixin, PCElementBatchMixin):
     """
     Load shape to use for duty cycle dispatch simulations such as for wind generation. Must be previously defined as a Loadshape object. Typically would have time intervals less than 1 hr -- perhaps, in seconds. Set Status=Fixed to ignore Loadshape designation. Set to NONE to reset to no loadshape. Designate the number of points to solve using the Set Number=xxxx command. If there are fewer points in the actual shape, the shape is assumed to repeat.
 
-    DSS property name: `Duty`, DSS property index: 12.
+    Name: `Duty`
     """
 
     def _get_DispMode(self) -> BatchInt32ArrayProxy:
@@ -1193,9 +1246,10 @@ class GeneratorBatch(DSSBatch, CircuitElementBatchMixin, PCElementBatchMixin):
 
     DispMode = property(_get_DispMode, _set_DispMode) # type: BatchInt32ArrayProxy
     """
-    {Default* | Loadlevel | Price } Default = Default. Dispatch mode. In default mode, gen is either always on or follows dispatch curve as specified. Otherwise, the gen comes on when either the global default load level (Loadshape "default") or the price level exceeds the dispatch value.
+    Dispatch mode. In default mode, the generator is either always on or follows dispatch curve as specified. Otherwise, the gen comes on when either the global default load level (Loadshape "default") or the price level exceeds the dispatch value.
 
-    DSS property name: `DispMode`, DSS property index: 13.
+    Name: `DispMode`
+    Default: Default
     """
 
     def _get_DispMode_str(self) -> List[str]:
@@ -1206,9 +1260,10 @@ class GeneratorBatch(DSSBatch, CircuitElementBatchMixin, PCElementBatchMixin):
 
     DispMode_str = property(_get_DispMode_str, _set_DispMode_str) # type: List[str]
     """
-    {Default* | Loadlevel | Price } Default = Default. Dispatch mode. In default mode, gen is either always on or follows dispatch curve as specified. Otherwise, the gen comes on when either the global default load level (Loadshape "default") or the price level exceeds the dispatch value.
+    Dispatch mode. In default mode, the generator is either always on or follows dispatch curve as specified. Otherwise, the gen comes on when either the global default load level (Loadshape "default") or the price level exceeds the dispatch value.
 
-    DSS property name: `DispMode`, DSS property index: 13.
+    Name: `DispMode`
+    Default: Default
     """
 
     def _get_DispValue(self) -> BatchFloat64ArrayProxy:
@@ -1220,10 +1275,11 @@ class GeneratorBatch(DSSBatch, CircuitElementBatchMixin, PCElementBatchMixin):
     DispValue = property(_get_DispValue, _set_DispValue) # type: BatchFloat64ArrayProxy
     """
     Dispatch value. 
-    If = 0.0 (default) then Generator follow dispatch curves, if any. 
-    If > 0  then Generator is ON only when either the price signal (in Price dispatch mode) exceeds this value or the active circuit load multiplier * "default" loadshape value * the default yearly growth factor exceeds this value.  Then the generator follows dispatch curves (duty, daily, or yearly), if any (see also Status).
+    If = 0 (default) then Generator follow dispatch curves, if any. 
+    If > 0  then Generator is ON only when either the price signal (in Price dispatch mode) exceeds this value or the active circuit load multiplier × "default" loadshape value * the default yearly growth factor exceeds this value.  Then the generator follows dispatch curves (duty, daily, or yearly), if any (see also Status).
 
-    DSS property name: `DispValue`, DSS property index: 14.
+    Name: `DispValue`
+    Default: 0.0
     """
 
     def _get_Conn(self) -> BatchInt32ArrayProxy:
@@ -1238,9 +1294,10 @@ class GeneratorBatch(DSSBatch, CircuitElementBatchMixin, PCElementBatchMixin):
 
     Conn = property(_get_Conn, _set_Conn) # type: BatchInt32ArrayProxy
     """
-    ={wye|LN|delta|LL}.  Default is wye.
+    Generator connection. Default is wye.
 
-    DSS property name: `Conn`, DSS property index: 15.
+    Name: `Conn`
+    Default: Wye
     """
 
     def _get_Conn_str(self) -> List[str]:
@@ -1251,9 +1308,10 @@ class GeneratorBatch(DSSBatch, CircuitElementBatchMixin, PCElementBatchMixin):
 
     Conn_str = property(_get_Conn_str, _set_Conn_str) # type: List[str]
     """
-    ={wye|LN|delta|LL}.  Default is wye.
+    Generator connection. Default is wye.
 
-    DSS property name: `Conn`, DSS property index: 15.
+    Name: `Conn`
+    Default: Wye
     """
 
     def _get_Status(self) -> BatchInt32ArrayProxy:
@@ -1268,9 +1326,10 @@ class GeneratorBatch(DSSBatch, CircuitElementBatchMixin, PCElementBatchMixin):
 
     Status = property(_get_Status, _set_Status) # type: BatchInt32ArrayProxy
     """
-    ={Fixed | Variable*}.  If Fixed, then dispatch multipliers do not apply. The generator is alway at full power when it is ON.  Default is Variable  (follows curves).
+    If Fixed, then dispatch multipliers do not apply. The generator is alway at full power when it is ON.  Default is Variable  (follows curves).
 
-    DSS property name: `Status`, DSS property index: 16.
+    Name: `Status`
+    Default: Variable
     """
 
     def _get_Status_str(self) -> List[str]:
@@ -1281,9 +1340,10 @@ class GeneratorBatch(DSSBatch, CircuitElementBatchMixin, PCElementBatchMixin):
 
     Status_str = property(_get_Status_str, _set_Status_str) # type: List[str]
     """
-    ={Fixed | Variable*}.  If Fixed, then dispatch multipliers do not apply. The generator is alway at full power when it is ON.  Default is Variable  (follows curves).
+    If Fixed, then dispatch multipliers do not apply. The generator is alway at full power when it is ON.  Default is Variable  (follows curves).
 
-    DSS property name: `Status`, DSS property index: 16.
+    Name: `Status`
+    Default: Variable
     """
 
     def _get_Class(self) -> BatchInt32ArrayProxy:
@@ -1296,7 +1356,8 @@ class GeneratorBatch(DSSBatch, CircuitElementBatchMixin, PCElementBatchMixin):
     """
     An arbitrary integer number representing the class of Generator so that Generator values may be segregated by class.
 
-    DSS property name: `Class`, DSS property index: 17.
+    Name: `Class`
+    Default: 1
     """
 
     def _get_Vpu(self) -> BatchFloat64ArrayProxy:
@@ -1307,9 +1368,10 @@ class GeneratorBatch(DSSBatch, CircuitElementBatchMixin, PCElementBatchMixin):
 
     Vpu = property(_get_Vpu, _set_Vpu) # type: BatchFloat64ArrayProxy
     """
-    Per Unit voltage set point for Model = 3  (typical power flow model).  Default is 1.0. 
+    Per Unit voltage set point for Model = 3  (typical power flow model).
 
-    DSS property name: `Vpu`, DSS property index: 18.
+    Name: `Vpu`
+    Default: 1.0
     """
 
     def _get_Maxkvar(self) -> BatchFloat64ArrayProxy:
@@ -1322,7 +1384,7 @@ class GeneratorBatch(DSSBatch, CircuitElementBatchMixin, PCElementBatchMixin):
     """
     Maximum kvar limit for Model = 3.  Defaults to twice the specified load kvar.  Always reset this if you change PF or kvar properties.
 
-    DSS property name: `Maxkvar`, DSS property index: 19.
+    Name: `Maxkvar`
     """
 
     def _get_Minkvar(self) -> BatchFloat64ArrayProxy:
@@ -1335,7 +1397,7 @@ class GeneratorBatch(DSSBatch, CircuitElementBatchMixin, PCElementBatchMixin):
     """
     Minimum kvar limit for Model = 3. Enter a negative number if generator can absorb vars. Defaults to negative of Maxkvar.  Always reset this if you change PF or kvar properties.
 
-    DSS property name: `Minkvar`, DSS property index: 20.
+    Name: `Minkvar`
     """
 
     def _get_PVFactor(self) -> BatchFloat64ArrayProxy:
@@ -1348,7 +1410,8 @@ class GeneratorBatch(DSSBatch, CircuitElementBatchMixin, PCElementBatchMixin):
     """
     Deceleration factor for P-V generator model (Model=3).  Default is 0.1. If the circuit converges easily, you may want to use a higher number such as 1.0. Use a lower number if solution diverges. Use Debugtrace=yes to create a file that will trace the convergence of a generator model.
 
-    DSS property name: `PVFactor`, DSS property index: 21.
+    Name: `PVFactor`
+    Default: 0.1
     """
 
     def _get_ForceOn(self) -> List[bool]:
@@ -1356,14 +1419,15 @@ class GeneratorBatch(DSSBatch, CircuitElementBatchMixin, PCElementBatchMixin):
             self._get_batch_int32_prop(22)
         ]
 
-    def _set_ForceOn(self, value: bool, flags: enums.SetterFlags = 0):
+    def _set_ForceOn(self, value: Union[bool, List[bool]], flags: enums.SetterFlags = 0):
         self._set_batch_int32_array(22, value, flags)
 
     ForceOn = property(_get_ForceOn, _set_ForceOn) # type: List[bool]
     """
-    {Yes | No}  Forces generator ON despite requirements of other dispatch modes. Stays ON until this property is set to NO, or an internal algorithm cancels the forced ON state.
+    Forces generator ON despite requirements of other dispatch modes. Stays ON until this property is set to NO, or an internal algorithm cancels the forced ON state.
 
-    DSS property name: `ForceOn`, DSS property index: 22.
+    Name: `ForceOn`
+    Default: False
     """
 
     def _get_kVA(self) -> BatchFloat64ArrayProxy:
@@ -1374,9 +1438,10 @@ class GeneratorBatch(DSSBatch, CircuitElementBatchMixin, PCElementBatchMixin):
 
     kVA = property(_get_kVA, _set_kVA) # type: BatchFloat64ArrayProxy
     """
-    kVA rating of electrical machine. Defaults to 1.2* kW if not specified. Applied to machine or inverter definition for Dynamics mode solutions. 
+    kVA rating of electrical machine. Defaults to 1.2 × kW if not specified. Applied to machine or inverter definition for Dynamics mode solutions. 
 
-    DSS property name: `kVA`, DSS property index: 23.
+    Name: `kVA`
+    Units: kVA
     """
 
     def _get_Xd(self) -> BatchFloat64ArrayProxy:
@@ -1387,9 +1452,10 @@ class GeneratorBatch(DSSBatch, CircuitElementBatchMixin, PCElementBatchMixin):
 
     Xd = property(_get_Xd, _set_Xd) # type: BatchFloat64ArrayProxy
     """
-    Per unit synchronous reactance of machine. Presently used only for Thevenin impedance for power flow calcs of user models (model=6). Typically use a value 0.4 to 1.0. Default is 1.0
+    Per unit synchronous reactance of machine. Presently used only for Thévenin impedance for power flow calcs of user models (model=6). Typically use a value 0.4 to 1.0. Default is 1.0
 
-    DSS property name: `Xd`, DSS property index: 25.
+    Name: `Xd`
+    Default: 1.0
     """
 
     def _get_Xdp(self) -> BatchFloat64ArrayProxy:
@@ -1400,9 +1466,10 @@ class GeneratorBatch(DSSBatch, CircuitElementBatchMixin, PCElementBatchMixin):
 
     Xdp = property(_get_Xdp, _set_Xdp) # type: BatchFloat64ArrayProxy
     """
-    Per unit transient reactance of the machine.  Used for Dynamics mode and Fault studies.  Default is 0.27.For user models, this value is used for the Thevenin/Norton impedance for Dynamics Mode.
+    Per unit transient reactance of the machine.  Used for Dynamics mode and Fault studies.  Default is 0.27.For user models, this value is used for the Thévenin/Norton impedance for Dynamics Mode.
 
-    DSS property name: `Xdp`, DSS property index: 26.
+    Name: `Xdp`
+    Default: 0.28
     """
 
     def _get_Xdpp(self) -> BatchFloat64ArrayProxy:
@@ -1415,7 +1482,8 @@ class GeneratorBatch(DSSBatch, CircuitElementBatchMixin, PCElementBatchMixin):
     """
     Per unit subtransient reactance of the machine.  Used for Harmonics. Default is 0.20.
 
-    DSS property name: `Xdpp`, DSS property index: 27.
+    Name: `Xdpp`
+    Default: 0.2
     """
 
     def _get_H(self) -> BatchFloat64ArrayProxy:
@@ -1428,7 +1496,8 @@ class GeneratorBatch(DSSBatch, CircuitElementBatchMixin, PCElementBatchMixin):
     """
     Per unit mass constant of the machine.  MW-sec/MVA.  Default is 1.0.
 
-    DSS property name: `H`, DSS property index: 28.
+    Name: `H`
+    Default: 1.0
     """
 
     def _get_D(self) -> BatchFloat64ArrayProxy:
@@ -1441,7 +1510,8 @@ class GeneratorBatch(DSSBatch, CircuitElementBatchMixin, PCElementBatchMixin):
     """
     Damping constant.  Usual range is 0 to 4. Default is 1.0.  Adjust to get damping
 
-    DSS property name: `D`, DSS property index: 29.
+    Name: `D`
+    Default: 1.0
     """
 
     def _get_UserModel(self) -> List[str]:
@@ -1454,7 +1524,7 @@ class GeneratorBatch(DSSBatch, CircuitElementBatchMixin, PCElementBatchMixin):
     """
     Name of DLL containing user-written model, which computes the terminal currents for Dynamics studies, overriding the default model.  Set to "none" to negate previous setting.
 
-    DSS property name: `UserModel`, DSS property index: 30.
+    Name: `UserModel`
     """
 
     def _get_UserData(self) -> List[str]:
@@ -1467,7 +1537,7 @@ class GeneratorBatch(DSSBatch, CircuitElementBatchMixin, PCElementBatchMixin):
     """
     String (in quotes or parentheses) that gets passed to user-written model for defining the data required for that model.
 
-    DSS property name: `UserData`, DSS property index: 31.
+    Name: `UserData`
     """
 
     def _get_ShaftModel(self) -> List[str]:
@@ -1480,7 +1550,7 @@ class GeneratorBatch(DSSBatch, CircuitElementBatchMixin, PCElementBatchMixin):
     """
     Name of user-written DLL containing a Shaft model, which models the prime mover and determines the power on the shaft for Dynamics studies. Models additional mass elements other than the single-mass model in the DSS default model. Set to "none" to negate previous setting.
 
-    DSS property name: `ShaftModel`, DSS property index: 32.
+    Name: `ShaftModel`
     """
 
     def _get_ShaftData(self) -> List[str]:
@@ -1493,7 +1563,7 @@ class GeneratorBatch(DSSBatch, CircuitElementBatchMixin, PCElementBatchMixin):
     """
     String (in quotes or parentheses) that gets passed to user-written shaft dynamic model for defining the data for that model.
 
-    DSS property name: `ShaftData`, DSS property index: 33.
+    Name: `ShaftData`
     """
 
     def _get_DutyStart(self) -> BatchFloat64ArrayProxy:
@@ -1506,7 +1576,9 @@ class GeneratorBatch(DSSBatch, CircuitElementBatchMixin, PCElementBatchMixin):
     """
     Starting time offset [hours] into the duty cycle shape for this generator, defaults to 0
 
-    DSS property name: `DutyStart`, DSS property index: 34.
+    Name: `DutyStart`
+    Units: hour
+    Default: 0.0
     """
 
     def _get_DebugTrace(self) -> List[bool]:
@@ -1514,14 +1586,15 @@ class GeneratorBatch(DSSBatch, CircuitElementBatchMixin, PCElementBatchMixin):
             self._get_batch_int32_prop(35)
         ]
 
-    def _set_DebugTrace(self, value: bool, flags: enums.SetterFlags = 0):
+    def _set_DebugTrace(self, value: Union[bool, List[bool]], flags: enums.SetterFlags = 0):
         self._set_batch_int32_array(35, value, flags)
 
     DebugTrace = property(_get_DebugTrace, _set_DebugTrace) # type: List[bool]
     """
-    {Yes | No }  Default is no.  Turn this on to capture the progress of the generator model for each iteration.  Creates a separate file for each generator named "GEN_name.csv".
+    Turn this on to capture the progress of the generator model for each iteration.  Creates a separate file for each generator named "GEN_name.csv".
 
-    DSS property name: `DebugTrace`, DSS property index: 35.
+    Name: `DebugTrace`
+    Default: False
     """
 
     def _get_Balanced(self) -> List[bool]:
@@ -1529,14 +1602,15 @@ class GeneratorBatch(DSSBatch, CircuitElementBatchMixin, PCElementBatchMixin):
             self._get_batch_int32_prop(36)
         ]
 
-    def _set_Balanced(self, value: bool, flags: enums.SetterFlags = 0):
+    def _set_Balanced(self, value: Union[bool, List[bool]], flags: enums.SetterFlags = 0):
         self._set_batch_int32_array(36, value, flags)
 
     Balanced = property(_get_Balanced, _set_Balanced) # type: List[bool]
     """
-    {Yes | No*} Default is No.  For Model=7, force balanced current only for 3-phase generators. Force zero- and negative-sequence to zero.
+    For Model=7, force balanced current only for 3-phase generators. Force zero- and negative-sequence to zero.
 
-    DSS property name: `Balanced`, DSS property index: 36.
+    Name: `Balanced`
+    Default: False
     """
 
     def _get_XRdp(self) -> BatchFloat64ArrayProxy:
@@ -1547,9 +1621,10 @@ class GeneratorBatch(DSSBatch, CircuitElementBatchMixin, PCElementBatchMixin):
 
     XRdp = property(_get_XRdp, _set_XRdp) # type: BatchFloat64ArrayProxy
     """
-    Default is 20. X/R ratio for Xdp property for FaultStudy and Dynamic modes.
+    X/R ratio for Xdp property for FaultStudy and Dynamic modes.
 
-    DSS property name: `XRdp`, DSS property index: 37.
+    Name: `XRdp`
+    Default: 20.0
     """
 
     def _get_UseFuel(self) -> List[bool]:
@@ -1557,14 +1632,15 @@ class GeneratorBatch(DSSBatch, CircuitElementBatchMixin, PCElementBatchMixin):
             self._get_batch_int32_prop(38)
         ]
 
-    def _set_UseFuel(self, value: bool, flags: enums.SetterFlags = 0):
+    def _set_UseFuel(self, value: Union[bool, List[bool]], flags: enums.SetterFlags = 0):
         self._set_batch_int32_array(38, value, flags)
 
     UseFuel = property(_get_UseFuel, _set_UseFuel) # type: List[bool]
     """
-    {Yes | *No}. Activates the use of fuel for the operation of the generator. When the fuel level reaches the reserve level, the generator stops until it gets refueled. By default, the generator is connected to a continuous fuel supply, Use this mode to mimic dependency on fuel level for different generation technologies.
+    Activates the use of fuel for the operation of the generator. When the fuel level reaches the reserve level, the generator stops until it gets refueled. By default, the generator is connected to a continuous fuel supply, Use this mode to mimic dependency on fuel level for different generation technologies.
 
-    DSS property name: `UseFuel`, DSS property index: 38.
+    Name: `UseFuel`
+    Default: False
     """
 
     def _get_FuelkWh(self) -> BatchFloat64ArrayProxy:
@@ -1575,9 +1651,10 @@ class GeneratorBatch(DSSBatch, CircuitElementBatchMixin, PCElementBatchMixin):
 
     FuelkWh = property(_get_FuelkWh, _set_FuelkWh) # type: BatchFloat64ArrayProxy
     """
-    {*0}Is the nominal level of fuel for the generator (kWh). It only applies if UseFuel = Yes/True
+    The nominal level of fuel for the generator (kWh). It only applies if UseFuel = True
 
-    DSS property name: `FuelkWh`, DSS property index: 39.
+    Name: `FuelkWh`
+    Default: 0.0
     """
 
     def _get_pctFuel(self) -> BatchFloat64ArrayProxy:
@@ -1588,9 +1665,10 @@ class GeneratorBatch(DSSBatch, CircuitElementBatchMixin, PCElementBatchMixin):
 
     pctFuel = property(_get_pctFuel, _set_pctFuel) # type: BatchFloat64ArrayProxy
     """
-    It is a number between 0 and 100 representing the current amount of fuel available in percentage of FuelkWh. It only applies if UseFuel = Yes/True
+    It is a number between 0 and 100 representing the current amount of fuel available in percentage of FuelkWh. It only applies if UseFuel = True
 
-    DSS property name: `%Fuel`, DSS property index: 40.
+    Name: `%Fuel`
+    Default: 100.0
     """
 
     def _get_pctReserve(self) -> BatchFloat64ArrayProxy:
@@ -1601,16 +1679,18 @@ class GeneratorBatch(DSSBatch, CircuitElementBatchMixin, PCElementBatchMixin):
 
     pctReserve = property(_get_pctReserve, _set_pctReserve) # type: BatchFloat64ArrayProxy
     """
-    It is a number between 0 and 100 representing the reserve level in percentage of FuelkWh. It only applies if UseFuel = Yes/True
+    It is a number between 0 and 100 representing the reserve level in percentage of FuelkWh. It only applies if UseFuel = True
 
-    DSS property name: `%Reserve`, DSS property index: 41.
+    Name: `%Reserve`
+    Default: 20.0
     """
 
     def Refuel(self, value: Union[bool, List[bool]] = True, flags: enums.SetterFlags = 0):
         """
-        It is a boolean value (Yes/True, No/False) that can be used to manually refuel the generator when needed. It only applies if UseFuel = Yes/True
+        Setting a true value manually refuels the generator when needed. It only applies if UseFuel = True
 
-        DSS property name: `Refuel`, DSS property index: 42.
+        Name: `Refuel`
+        Default: False
         """
         self._set_batch_int32_array(42, value, flags)
 
@@ -1624,7 +1704,7 @@ class GeneratorBatch(DSSBatch, CircuitElementBatchMixin, PCElementBatchMixin):
     """
     The name of the dynamic equation (DynamicExp) that will be used for defining the dynamic behavior of the generator. if not defined, the generator dynamics will follow the built-in dynamic equation.
 
-    DSS property name: `DynamicEq`, DSS property index: 43.
+    Name: `DynamicEq`
     """
 
     def _get_DynamicEq(self) -> List[DynamicExp]:
@@ -1637,7 +1717,7 @@ class GeneratorBatch(DSSBatch, CircuitElementBatchMixin, PCElementBatchMixin):
     """
     The name of the dynamic equation (DynamicExp) that will be used for defining the dynamic behavior of the generator. if not defined, the generator dynamics will follow the built-in dynamic equation.
 
-    DSS property name: `DynamicEq`, DSS property index: 43.
+    Name: `DynamicEq`
     """
 
     def _get_DynOut(self) -> List[List[str]]:
@@ -1659,7 +1739,7 @@ class GeneratorBatch(DSSBatch, CircuitElementBatchMixin, PCElementBatchMixin):
 
     The output variables need to be defined in tha strict order.
 
-    DSS property name: `DynOut`, DSS property index: 44.
+    Name: `DynOut`
     """
 
     def _get_Spectrum_str(self) -> List[str]:
@@ -1670,9 +1750,10 @@ class GeneratorBatch(DSSBatch, CircuitElementBatchMixin, PCElementBatchMixin):
 
     Spectrum_str = property(_get_Spectrum_str, _set_Spectrum_str) # type: List[str]
     """
-    Name of harmonic voltage or current spectrum for this generator. Voltage behind Xd" for machine - default. Current injection for inverter. Default value is "default", which is defined when the DSS starts.
+    Name of harmonic voltage or current spectrum for this generator. Voltage behind Xd" for machine - default. Current injection for inverter.
 
-    DSS property name: `Spectrum`, DSS property index: 45.
+    Name: `Spectrum`
+    Default: defaultgen
     """
 
     def _get_Spectrum(self) -> List[SpectrumObj]:
@@ -1683,9 +1764,10 @@ class GeneratorBatch(DSSBatch, CircuitElementBatchMixin, PCElementBatchMixin):
 
     Spectrum = property(_get_Spectrum, _set_Spectrum) # type: List[SpectrumObj]
     """
-    Name of harmonic voltage or current spectrum for this generator. Voltage behind Xd" for machine - default. Current injection for inverter. Default value is "default", which is defined when the DSS starts.
+    Name of harmonic voltage or current spectrum for this generator. Voltage behind Xd" for machine - default. Current injection for inverter.
 
-    DSS property name: `Spectrum`, DSS property index: 45.
+    Name: `Spectrum`
+    Default: defaultgen
     """
 
     def _get_BaseFreq(self) -> BatchFloat64ArrayProxy:
@@ -1698,7 +1780,8 @@ class GeneratorBatch(DSSBatch, CircuitElementBatchMixin, PCElementBatchMixin):
     """
     Base Frequency for ratings.
 
-    DSS property name: `BaseFreq`, DSS property index: 46.
+    Name: `BaseFreq`
+    Units: Hz
     """
 
     def _get_Enabled(self) -> List[bool]:
@@ -1706,14 +1789,15 @@ class GeneratorBatch(DSSBatch, CircuitElementBatchMixin, PCElementBatchMixin):
             self._get_batch_int32_prop(47)
         ]
 
-    def _set_Enabled(self, value: bool, flags: enums.SetterFlags = 0):
+    def _set_Enabled(self, value: Union[bool, List[bool]], flags: enums.SetterFlags = 0):
         self._set_batch_int32_array(47, value, flags)
 
     Enabled = property(_get_Enabled, _set_Enabled) # type: List[bool]
     """
-    {Yes|No or True|False} Indicates whether this element is enabled.
+    Indicates whether this element is enabled.
 
-    DSS property name: `Enabled`, DSS property index: 47.
+    Name: `Enabled`
+    Default: True
     """
 
     def Like(self, value: AnyStr, flags: enums.SetterFlags = 0):
@@ -1722,7 +1806,9 @@ class GeneratorBatch(DSSBatch, CircuitElementBatchMixin, PCElementBatchMixin):
 
         New Capacitor.C2 like=c1  ...
 
-        DSS property name: `Like`, DSS property index: 48.
+        **Deprecated:** `Like` has been deprecated since at least 2021, see https://sourceforge.net/p/electricdss/discussion/861977/thread/8b59d21eb6/#b57c/f668
+
+        Name: `Like`
         """
         self._set_batch_string(48, value, flags)
 

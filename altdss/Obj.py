@@ -1,5 +1,5 @@
-# Copyright (c) 2021-2024 Paulo Meira
-# Copyright (c) 2021-2024 DSS-Extensions contributors
+# Copyright (c) 2021-2026 Paulo Meira
+# Copyright (c) 2021-2026 DSS-Extensions contributors
 from __future__ import annotations
 from .DSSObj import DSSObj
 from .common import Base
@@ -31,6 +31,7 @@ from .CapControl import ICapControl, CapControl
 from .Fault import IFault, Fault
 from .DynamicExp import IDynamicExp, DynamicExp
 from .Generator import IGenerator, Generator
+from .WindGen import IWindGen, WindGen
 from .GenDispatcher import IGenDispatcher, GenDispatcher
 from .Storage import IStorage, Storage
 from .StorageController import IStorageController, StorageController
@@ -54,6 +55,8 @@ from .VSConverter import IVSConverter, VSConverter
 from .Monitor import IMonitor, Monitor
 from .EnergyMeter import IEnergyMeter, EnergyMeter
 from .Sensor import ISensor, Sensor
+from .FMonitor import IFMonitor, FMonitor
+from .Generic5 import IGeneric5, Generic5
 
 _idx_to_cls = {}
 
@@ -86,6 +89,7 @@ class IObj(Base):
         'Fault',
         'DynamicExp',
         'Generator',
+        'WindGen',
         'GenDispatcher',
         'Storage',
         'StorageController',
@@ -109,6 +113,8 @@ class IObj(Base):
         'Monitor',
         'EnergyMeter',
         'Sensor',
+        'FMonitor',
+        'Generic5',
     ]
 
     LineCode: ILineCode
@@ -137,6 +143,7 @@ class IObj(Base):
     Fault: IFault
     DynamicExp: IDynamicExp
     Generator: IGenerator
+    WindGen: IWindGen
     GenDispatcher: IGenDispatcher
     Storage: IStorage
     StorageController: IStorageController
@@ -160,6 +167,8 @@ class IObj(Base):
     Monitor: IMonitor
     EnergyMeter: IEnergyMeter
     Sensor: ISensor
+    FMonitor: IFMonitor
+    Generic5: IGeneric5
 
     def __init__(self, api_util):
         Base.__init__(self, api_util)
@@ -193,6 +202,7 @@ class IObj(Base):
         self.Fault = IFault(self)
         self.DynamicExp = IDynamicExp(self)
         self.Generator = IGenerator(self)
+        self.WindGen = IWindGen(self)
         self.GenDispatcher = IGenDispatcher(self)
         self.Storage = IStorage(self)
         self.StorageController = IStorageController(self)
@@ -216,6 +226,8 @@ class IObj(Base):
         self.Monitor = IMonitor(self)
         self.EnergyMeter = IEnergyMeter(self)
         self.Sensor = ISensor(self)
+        self.FMonitor = IFMonitor(self)
+        self.Generic5 = IGeneric5(self)
 
 __all__ = [
     "IObj",
@@ -240,6 +252,7 @@ __all__ = [
     "LoadShapeClass",
     "MonitoredPhase",
     "PlotProfilePhases",
+    "AltDSSCompatFlags",
     "LoadShapeAction",
     "LoadShapeInterpolation",
     "TShapeAction",
@@ -252,6 +265,8 @@ __all__ = [
     "GeneratorModel",
     "GeneratorDispatchMode",
     "GeneratorStatus",
+    "WindGenModel",
+    "WindGenQMode",
     "StorageState",
     "StorageDispatchMode",
     "StorageControllerDischargeMode",
@@ -282,6 +297,7 @@ __all__ = [
     "VSConverterControlMode",
     "MonitorAction",
     "EnergyMeterAction",
+    "FMonitorAction",
     "LineCode",
     "LoadShape",
     "TShape",
@@ -308,6 +324,7 @@ __all__ = [
     "Fault",
     "DynamicExp",
     "Generator",
+    "WindGen",
     "GenDispatcher",
     "Storage",
     "StorageController",
@@ -331,5 +348,7 @@ __all__ = [
     "Monitor",
     "EnergyMeter",
     "Sensor",
+    "FMonitor",
+    "Generic5",
 ]
 

@@ -99,7 +99,7 @@ class CapControl(DSSObj, CircuitElementMixin):
     """
     Full object name of the circuit element, typically a line or transformer, to which the capacitor control's PT and/or CT are connected.There is no default; must be specified.
 
-    DSS property name: `Element`, DSS property index: 1.
+    Name: `Element`
     """
 
     def _get_Element(self) -> DSSObj:
@@ -116,7 +116,7 @@ class CapControl(DSSObj, CircuitElementMixin):
     """
     Full object name of the circuit element, typically a line or transformer, to which the capacitor control's PT and/or CT are connected.There is no default; must be specified.
 
-    DSS property name: `Element`, DSS property index: 1.
+    Name: `Element`
     """
 
     def _get_Terminal(self) -> int:
@@ -127,9 +127,10 @@ class CapControl(DSSObj, CircuitElementMixin):
 
     Terminal = property(_get_Terminal, _set_Terminal) # type: int
     """
-    Number of the terminal of the circuit element to which the CapControl is connected. 1 or 2, typically.  Default is 1.
+    Number of the terminal of the circuit element to which the CapControl is connected. 1 or 2, typically.
 
-    DSS property name: `Terminal`, DSS property index: 2.
+    Name: `Terminal`
+    Default: 1
     """
 
     def _get_Capacitor_str(self) -> str:
@@ -144,7 +145,7 @@ class CapControl(DSSObj, CircuitElementMixin):
 
     Capacitor=cap1
 
-    DSS property name: `Capacitor`, DSS property index: 3.
+    Name: `Capacitor`
     """
 
     def _get_Capacitor(self) -> CapacitorObj:
@@ -163,7 +164,7 @@ class CapControl(DSSObj, CircuitElementMixin):
 
     Capacitor=cap1
 
-    DSS property name: `Capacitor`, DSS property index: 3.
+    Name: `Capacitor`
     """
 
     def _get_Type(self) -> enums.CapControlType:
@@ -177,9 +178,10 @@ class CapControl(DSSObj, CircuitElementMixin):
 
     Type = property(_get_Type, _set_Type) # type: enums.CapControlType
     """
-    {Current | Voltage | kvar | PF | Time | Follow} Control type.  Specify the ONsetting and OFFsetting appropriately with the type of control. (See help for ONsetting)
+    Control type.  Specify the ONsetting and OFFsetting appropriately with the type of control. (See help for ONsetting)
 
-    DSS property name: `Type`, DSS property index: 4.
+    Name: `Type`
+    Default: Current
     """
 
     def _get_Type_str(self) -> str:
@@ -190,9 +192,10 @@ class CapControl(DSSObj, CircuitElementMixin):
 
     Type_str = property(_get_Type_str, _set_Type_str) # type: str
     """
-    {Current | Voltage | kvar | PF | Time | Follow} Control type.  Specify the ONsetting and OFFsetting appropriately with the type of control. (See help for ONsetting)
+    Control type.  Specify the ONsetting and OFFsetting appropriately with the type of control. (See help for ONsetting)
 
-    DSS property name: `Type`, DSS property index: 4.
+    Name: `Type`
+    Default: Current
     """
 
     def _get_PTRatio(self) -> float:
@@ -203,9 +206,10 @@ class CapControl(DSSObj, CircuitElementMixin):
 
     PTRatio = property(_get_PTRatio, _set_PTRatio) # type: float
     """
-    Ratio of the PT that converts the monitored voltage to the control voltage. Default is 60.  If the capacitor is Wye, the 1st phase line-to-neutral voltage is monitored.  Else, the line-to-line voltage (1st - 2nd phase) is monitored.
+    Ratio of the PT that converts the monitored voltage to the control voltage. If the capacitor is Wye, the 1st phase line-to-neutral voltage is monitored.  Else, the line-to-line voltage (1st - 2nd phase) is monitored.
 
-    DSS property name: `PTRatio`, DSS property index: 5.
+    Name: `PTRatio`
+    Default: 60.0
     """
 
     def _get_CTRatio(self) -> float:
@@ -218,7 +222,8 @@ class CapControl(DSSObj, CircuitElementMixin):
     """
     Ratio of the CT from line amps to control ampere setting for current and kvar control types. 
 
-    DSS property name: `CTRatio`, DSS property index: 6.
+    Name: `CTRatio`
+    Default: 60.0
     """
 
     def _get_OnSetting(self) -> float:
@@ -240,7 +245,8 @@ class CapControl(DSSObj, CircuitElementMixin):
     Time:    Hrs from Midnight as a floating point number (decimal). 7:30am would be entered as 7.5.
     Follow:  Follows a loadshape (ControlSignal) to determine when to turn ON/OFF the capacitor. If the value is different than 0 the capacitor will connect to the grid, otherwise, it will be disconnected.
 
-    DSS property name: `OnSetting`, DSS property index: 7.
+    Name: `OnSetting`
+    Default: 300.0
     """
 
     def _get_OffSetting(self) -> float:
@@ -253,7 +259,8 @@ class CapControl(DSSObj, CircuitElementMixin):
     """
     Value at which the control arms to switch the capacitor OFF. (See help for ONsetting)For Time control, is OK to have Off time the next day ( < On time)
 
-    DSS property name: `OffSetting`, DSS property index: 8.
+    Name: `OffSetting`
+    Default: 200.0
     """
 
     def _get_Delay(self) -> float:
@@ -266,7 +273,9 @@ class CapControl(DSSObj, CircuitElementMixin):
     """
     Time delay, in seconds, from when the control is armed before it sends out the switching command to turn ON.  The control may reset before the action actually occurs. This is used to determine which capacity control will act first. Default is 15.  You may specify any floating point number to achieve a model of whatever condition is necessary.
 
-    DSS property name: `Delay`, DSS property index: 9.
+    Name: `Delay`
+    Units: s
+    Default: 15.0
     """
 
     def _get_VoltOverride(self) -> bool:
@@ -277,9 +286,10 @@ class CapControl(DSSObj, CircuitElementMixin):
 
     VoltOverride = property(_get_VoltOverride, _set_VoltOverride) # type: bool
     """
-    {Yes | No}  Default is No.  Switch to indicate whether VOLTAGE OVERRIDE is to be considered. Vmax and Vmin must be set to reasonable values if this property is Yes.
+    Switch to indicate whether VOLTAGE OVERRIDE is to be considered. Vmax and Vmin must be set to reasonable values if this property is Yes.
 
-    DSS property name: `VoltOverride`, DSS property index: 10.
+    Name: `VoltOverride`
+    Default: False
     """
 
     def _get_VMax(self) -> float:
@@ -290,9 +300,11 @@ class CapControl(DSSObj, CircuitElementMixin):
 
     VMax = property(_get_VMax, _set_VMax) # type: float
     """
-    Maximum voltage, in volts.  If the voltage across the capacitor divided by the PTRATIO is greater than this voltage, the capacitor will switch OFF regardless of other control settings. Default is 126 (goes with a PT ratio of 60 for 12.47 kV system).
+    Maximum voltage. If the voltage across the capacitor divided by the PTRATIO is greater than this voltage, the capacitor will switch OFF regardless of other control settings. Default is 126 (goes with a PT ratio of 60 for 12.47 kV system).
 
-    DSS property name: `VMax`, DSS property index: 11.
+    Name: `VMax`
+    Units: V
+    Default: 126.0
     """
 
     def _get_VMin(self) -> float:
@@ -303,9 +315,11 @@ class CapControl(DSSObj, CircuitElementMixin):
 
     VMin = property(_get_VMin, _set_VMin) # type: float
     """
-    Minimum voltage, in volts.  If the voltage across the capacitor divided by the PTRATIO is less than this voltage, the capacitor will switch ON regardless of other control settings. Default is 115 (goes with a PT ratio of 60 for 12.47 kV system).
+    Minimum voltage. If the voltage across the capacitor divided by the PTRATIO is less than this voltage, the capacitor will switch ON regardless of other control settings. Default is 115 (goes with a PT ratio of 60 for 12.47 kV system).
 
-    DSS property name: `VMin`, DSS property index: 12.
+    Name: `VMin`
+    Units: V
+    Default: 115.0
     """
 
     def _get_DelayOff(self) -> float:
@@ -316,9 +330,11 @@ class CapControl(DSSObj, CircuitElementMixin):
 
     DelayOff = property(_get_DelayOff, _set_DelayOff) # type: float
     """
-    Time delay, in seconds, for control to turn OFF when present state is ON. Default is 15.
+    Time delay for control to turn OFF when present state is ON.
 
-    DSS property name: `DelayOff`, DSS property index: 13.
+    Name: `DelayOff`
+    Units: s
+    Default: 15.0
     """
 
     def _get_DeadTime(self) -> float:
@@ -329,9 +345,11 @@ class CapControl(DSSObj, CircuitElementMixin):
 
     DeadTime = property(_get_DeadTime, _set_DeadTime) # type: float
     """
-    Dead time after capacitor is turned OFF before it can be turned back ON. Default is 300 sec.
+    Dead time after capacitor is turned OFF before it can be turned back ON.
 
-    DSS property name: `DeadTime`, DSS property index: 14.
+    Name: `DeadTime`
+    Units: s
+    Default: 300.0
     """
 
     def _get_CTPhase(self) -> Union[enums.MonitoredPhase, int]:
@@ -349,9 +367,10 @@ class CapControl(DSSObj, CircuitElementMixin):
 
     CTPhase = property(_get_CTPhase, _set_CTPhase) # type: enums.MonitoredPhase
     """
-    Number of the phase being monitored for CURRENT control or one of {AVG | MAX | MIN} for all phases. Default=1. If delta or L-L connection, enter the first or the two phases being monitored [1-2, 2-3, 3-1]. Must be less than the number of phases. Does not apply to kvar control which uses all phases by default.
+    Number of the phase being monitored for CURRENT control or one of {AVG | MAX | MIN} for all phases. If delta or L-L connection, enter the first or the two phases being monitored [1-2, 2-3, 3-1]. Must be less than the number of phases. Does not apply to kvar control which uses all phases by default.
 
-    DSS property name: `CTPhase`, DSS property index: 15.
+    Name: `CTPhase`
+    Default: 1
     """
 
     def _get_CTPhase_str(self) -> str:
@@ -362,9 +381,10 @@ class CapControl(DSSObj, CircuitElementMixin):
 
     CTPhase_str = property(_get_CTPhase_str, _set_CTPhase_str) # type: str
     """
-    Number of the phase being monitored for CURRENT control or one of {AVG | MAX | MIN} for all phases. Default=1. If delta or L-L connection, enter the first or the two phases being monitored [1-2, 2-3, 3-1]. Must be less than the number of phases. Does not apply to kvar control which uses all phases by default.
+    Number of the phase being monitored for CURRENT control or one of {AVG | MAX | MIN} for all phases. If delta or L-L connection, enter the first or the two phases being monitored [1-2, 2-3, 3-1]. Must be less than the number of phases. Does not apply to kvar control which uses all phases by default.
 
-    DSS property name: `CTPhase`, DSS property index: 15.
+    Name: `CTPhase`
+    Default: 1
     """
 
     def _get_PTPhase(self) -> Union[enums.MonitoredPhase, int]:
@@ -382,9 +402,10 @@ class CapControl(DSSObj, CircuitElementMixin):
 
     PTPhase = property(_get_PTPhase, _set_PTPhase) # type: enums.MonitoredPhase
     """
-    Number of the phase being monitored for VOLTAGE control or one of {AVG | MAX | MIN} for all phases. Default=1. If delta or L-L connection, enter the first or the two phases being monitored [1-2, 2-3, 3-1]. Must be less than the number of phases. Does not apply to kvar control which uses all phases by default.
+    Number of the phase being monitored for VOLTAGE control or one of {AVG | MAX | MIN} for all phases. If delta or L-L connection, enter the first or the two phases being monitored [1-2, 2-3, 3-1]. Must be less than the number of phases. Does not apply to kvar control which uses all phases by default.
 
-    DSS property name: `PTPhase`, DSS property index: 16.
+    Name: `PTPhase`
+    Default: 1
     """
 
     def _get_PTPhase_str(self) -> str:
@@ -395,9 +416,10 @@ class CapControl(DSSObj, CircuitElementMixin):
 
     PTPhase_str = property(_get_PTPhase_str, _set_PTPhase_str) # type: str
     """
-    Number of the phase being monitored for VOLTAGE control or one of {AVG | MAX | MIN} for all phases. Default=1. If delta or L-L connection, enter the first or the two phases being monitored [1-2, 2-3, 3-1]. Must be less than the number of phases. Does not apply to kvar control which uses all phases by default.
+    Number of the phase being monitored for VOLTAGE control or one of {AVG | MAX | MIN} for all phases. If delta or L-L connection, enter the first or the two phases being monitored [1-2, 2-3, 3-1]. Must be less than the number of phases. Does not apply to kvar control which uses all phases by default.
 
-    DSS property name: `PTPhase`, DSS property index: 16.
+    Name: `PTPhase`
+    Default: 1
     """
 
     def _get_VBus(self) -> str:
@@ -410,7 +432,7 @@ class CapControl(DSSObj, CircuitElementMixin):
     """
     Name of bus to use for voltage override function. Default is bus at monitored terminal. Sometimes it is useful to monitor a bus in another location to emulate various DMS control algorithms.
 
-    DSS property name: `VBus`, DSS property index: 17.
+    Name: `VBus`
     """
 
     def _get_EventLog(self) -> bool:
@@ -421,9 +443,10 @@ class CapControl(DSSObj, CircuitElementMixin):
 
     EventLog = property(_get_EventLog, _set_EventLog) # type: bool
     """
-    {Yes/True | No/False*} Default is NO for CapControl. Log control actions to Eventlog.
+    Log control actions to Eventlog.
 
-    DSS property name: `EventLog`, DSS property index: 18.
+    Name: `EventLog`
+    Default: False
     """
 
     def _get_UserModel(self) -> str:
@@ -436,7 +459,7 @@ class CapControl(DSSObj, CircuitElementMixin):
     """
     Name of DLL containing user-written CapControl model, overriding the default model.  Set to "none" to negate previous setting. 
 
-    DSS property name: `UserModel`, DSS property index: 19.
+    Name: `UserModel`
     """
 
     def _get_UserData(self) -> str:
@@ -449,7 +472,7 @@ class CapControl(DSSObj, CircuitElementMixin):
     """
     String (in quotes or parentheses if necessary) that gets passed to the user-written CapControl model Edit function for defining the data required for that model. 
 
-    DSS property name: `UserData`, DSS property index: 20.
+    Name: `UserData`
     """
 
     def _get_pctMinkvar(self) -> float:
@@ -460,16 +483,18 @@ class CapControl(DSSObj, CircuitElementMixin):
 
     pctMinkvar = property(_get_pctMinkvar, _set_pctMinkvar) # type: float
     """
-    For PF control option, min percent of total bank kvar at which control will close capacitor switch. Default = 50.
+    For PF control option, min percent of total bank kvar at which control will close capacitor switch.
 
-    DSS property name: `pctMinkvar`, DSS property index: 21.
+    Name: `pctMinkvar`
+    Default: 50.0
     """
 
     def Reset(self, value: bool = True, flags: enums.SetterFlags = 0):
         """
-        {Yes | No} If Yes, forces Reset of this CapControl.
+        If Yes, forces Reset of this CapControl.
 
-        DSS property name: `Reset`, DSS property index: 22.
+        Name: `Reset`
+        Default: False
         """
         self._lib.Obj_SetInt32(self._ptr, 22, value, flags)
 
@@ -483,7 +508,7 @@ class CapControl(DSSObj, CircuitElementMixin):
     """
     Load shape used for controlling the connection/disconnection of the capacitor to the grid, when the load shape is DIFFERENT than ZERO (0) the capacitor will be ON and connected to the grid. Otherwise, if the load shape value is EQUAL to ZERO (0) the capacitor bank will be OFF and disconnected from the grid.
 
-    DSS property name: `ControlSignal`, DSS property index: 23.
+    Name: `ControlSignal`
     """
 
     def _get_ControlSignal(self) -> LoadShape:
@@ -500,7 +525,7 @@ class CapControl(DSSObj, CircuitElementMixin):
     """
     Load shape used for controlling the connection/disconnection of the capacitor to the grid, when the load shape is DIFFERENT than ZERO (0) the capacitor will be ON and connected to the grid. Otherwise, if the load shape value is EQUAL to ZERO (0) the capacitor bank will be OFF and disconnected from the grid.
 
-    DSS property name: `ControlSignal`, DSS property index: 23.
+    Name: `ControlSignal`
     """
 
     def _get_BaseFreq(self) -> float:
@@ -513,7 +538,8 @@ class CapControl(DSSObj, CircuitElementMixin):
     """
     Base Frequency for ratings.
 
-    DSS property name: `BaseFreq`, DSS property index: 24.
+    Name: `BaseFreq`
+    Units: Hz
     """
 
     def _get_Enabled(self) -> bool:
@@ -524,9 +550,10 @@ class CapControl(DSSObj, CircuitElementMixin):
 
     Enabled = property(_get_Enabled, _set_Enabled) # type: bool
     """
-    {Yes|No or True|False} Indicates whether this element is enabled.
+    Indicates whether this element is enabled.
 
-    DSS property name: `Enabled`, DSS property index: 25.
+    Name: `Enabled`
+    Default: True
     """
 
     def Like(self, value: AnyStr):
@@ -535,7 +562,9 @@ class CapControl(DSSObj, CircuitElementMixin):
 
         New Capacitor.C2 like=c1  ...
 
-        DSS property name: `Like`, DSS property index: 26.
+        **Deprecated:** `Like` has been deprecated since at least 2021, see https://sourceforge.net/p/electricdss/discussion/861977/thread/8b59d21eb6/#b57c/f668
+
+        Name: `Like`
         """
         self._set_string_o(26, value)
 
@@ -609,7 +638,7 @@ class CapControlBatch(DSSBatch, CircuitElementBatchMixin):
     """
     Full object name of the circuit element, typically a line or transformer, to which the capacitor control's PT and/or CT are connected.There is no default; must be specified.
 
-    DSS property name: `Element`, DSS property index: 1.
+    Name: `Element`
     """
 
     def _get_Element(self) -> List[DSSObj]:
@@ -622,7 +651,7 @@ class CapControlBatch(DSSBatch, CircuitElementBatchMixin):
     """
     Full object name of the circuit element, typically a line or transformer, to which the capacitor control's PT and/or CT are connected.There is no default; must be specified.
 
-    DSS property name: `Element`, DSS property index: 1.
+    Name: `Element`
     """
 
     def _get_Terminal(self) -> BatchInt32ArrayProxy:
@@ -633,9 +662,10 @@ class CapControlBatch(DSSBatch, CircuitElementBatchMixin):
 
     Terminal = property(_get_Terminal, _set_Terminal) # type: BatchInt32ArrayProxy
     """
-    Number of the terminal of the circuit element to which the CapControl is connected. 1 or 2, typically.  Default is 1.
+    Number of the terminal of the circuit element to which the CapControl is connected. 1 or 2, typically.
 
-    DSS property name: `Terminal`, DSS property index: 2.
+    Name: `Terminal`
+    Default: 1
     """
 
     def _get_Capacitor_str(self) -> List[str]:
@@ -650,7 +680,7 @@ class CapControlBatch(DSSBatch, CircuitElementBatchMixin):
 
     Capacitor=cap1
 
-    DSS property name: `Capacitor`, DSS property index: 3.
+    Name: `Capacitor`
     """
 
     def _get_Capacitor(self) -> List[CapacitorObj]:
@@ -665,7 +695,7 @@ class CapControlBatch(DSSBatch, CircuitElementBatchMixin):
 
     Capacitor=cap1
 
-    DSS property name: `Capacitor`, DSS property index: 3.
+    Name: `Capacitor`
     """
 
     def _get_Type(self) -> BatchInt32ArrayProxy:
@@ -680,9 +710,10 @@ class CapControlBatch(DSSBatch, CircuitElementBatchMixin):
 
     Type = property(_get_Type, _set_Type) # type: BatchInt32ArrayProxy
     """
-    {Current | Voltage | kvar | PF | Time | Follow} Control type.  Specify the ONsetting and OFFsetting appropriately with the type of control. (See help for ONsetting)
+    Control type.  Specify the ONsetting and OFFsetting appropriately with the type of control. (See help for ONsetting)
 
-    DSS property name: `Type`, DSS property index: 4.
+    Name: `Type`
+    Default: Current
     """
 
     def _get_Type_str(self) -> List[str]:
@@ -693,9 +724,10 @@ class CapControlBatch(DSSBatch, CircuitElementBatchMixin):
 
     Type_str = property(_get_Type_str, _set_Type_str) # type: List[str]
     """
-    {Current | Voltage | kvar | PF | Time | Follow} Control type.  Specify the ONsetting and OFFsetting appropriately with the type of control. (See help for ONsetting)
+    Control type.  Specify the ONsetting and OFFsetting appropriately with the type of control. (See help for ONsetting)
 
-    DSS property name: `Type`, DSS property index: 4.
+    Name: `Type`
+    Default: Current
     """
 
     def _get_PTRatio(self) -> BatchFloat64ArrayProxy:
@@ -706,9 +738,10 @@ class CapControlBatch(DSSBatch, CircuitElementBatchMixin):
 
     PTRatio = property(_get_PTRatio, _set_PTRatio) # type: BatchFloat64ArrayProxy
     """
-    Ratio of the PT that converts the monitored voltage to the control voltage. Default is 60.  If the capacitor is Wye, the 1st phase line-to-neutral voltage is monitored.  Else, the line-to-line voltage (1st - 2nd phase) is monitored.
+    Ratio of the PT that converts the monitored voltage to the control voltage. If the capacitor is Wye, the 1st phase line-to-neutral voltage is monitored.  Else, the line-to-line voltage (1st - 2nd phase) is monitored.
 
-    DSS property name: `PTRatio`, DSS property index: 5.
+    Name: `PTRatio`
+    Default: 60.0
     """
 
     def _get_CTRatio(self) -> BatchFloat64ArrayProxy:
@@ -721,7 +754,8 @@ class CapControlBatch(DSSBatch, CircuitElementBatchMixin):
     """
     Ratio of the CT from line amps to control ampere setting for current and kvar control types. 
 
-    DSS property name: `CTRatio`, DSS property index: 6.
+    Name: `CTRatio`
+    Default: 60.0
     """
 
     def _get_OnSetting(self) -> BatchFloat64ArrayProxy:
@@ -743,7 +777,8 @@ class CapControlBatch(DSSBatch, CircuitElementBatchMixin):
     Time:    Hrs from Midnight as a floating point number (decimal). 7:30am would be entered as 7.5.
     Follow:  Follows a loadshape (ControlSignal) to determine when to turn ON/OFF the capacitor. If the value is different than 0 the capacitor will connect to the grid, otherwise, it will be disconnected.
 
-    DSS property name: `OnSetting`, DSS property index: 7.
+    Name: `OnSetting`
+    Default: 300.0
     """
 
     def _get_OffSetting(self) -> BatchFloat64ArrayProxy:
@@ -756,7 +791,8 @@ class CapControlBatch(DSSBatch, CircuitElementBatchMixin):
     """
     Value at which the control arms to switch the capacitor OFF. (See help for ONsetting)For Time control, is OK to have Off time the next day ( < On time)
 
-    DSS property name: `OffSetting`, DSS property index: 8.
+    Name: `OffSetting`
+    Default: 200.0
     """
 
     def _get_Delay(self) -> BatchFloat64ArrayProxy:
@@ -769,7 +805,9 @@ class CapControlBatch(DSSBatch, CircuitElementBatchMixin):
     """
     Time delay, in seconds, from when the control is armed before it sends out the switching command to turn ON.  The control may reset before the action actually occurs. This is used to determine which capacity control will act first. Default is 15.  You may specify any floating point number to achieve a model of whatever condition is necessary.
 
-    DSS property name: `Delay`, DSS property index: 9.
+    Name: `Delay`
+    Units: s
+    Default: 15.0
     """
 
     def _get_VoltOverride(self) -> List[bool]:
@@ -777,14 +815,15 @@ class CapControlBatch(DSSBatch, CircuitElementBatchMixin):
             self._get_batch_int32_prop(10)
         ]
 
-    def _set_VoltOverride(self, value: bool, flags: enums.SetterFlags = 0):
+    def _set_VoltOverride(self, value: Union[bool, List[bool]], flags: enums.SetterFlags = 0):
         self._set_batch_int32_array(10, value, flags)
 
     VoltOverride = property(_get_VoltOverride, _set_VoltOverride) # type: List[bool]
     """
-    {Yes | No}  Default is No.  Switch to indicate whether VOLTAGE OVERRIDE is to be considered. Vmax and Vmin must be set to reasonable values if this property is Yes.
+    Switch to indicate whether VOLTAGE OVERRIDE is to be considered. Vmax and Vmin must be set to reasonable values if this property is Yes.
 
-    DSS property name: `VoltOverride`, DSS property index: 10.
+    Name: `VoltOverride`
+    Default: False
     """
 
     def _get_VMax(self) -> BatchFloat64ArrayProxy:
@@ -795,9 +834,11 @@ class CapControlBatch(DSSBatch, CircuitElementBatchMixin):
 
     VMax = property(_get_VMax, _set_VMax) # type: BatchFloat64ArrayProxy
     """
-    Maximum voltage, in volts.  If the voltage across the capacitor divided by the PTRATIO is greater than this voltage, the capacitor will switch OFF regardless of other control settings. Default is 126 (goes with a PT ratio of 60 for 12.47 kV system).
+    Maximum voltage. If the voltage across the capacitor divided by the PTRATIO is greater than this voltage, the capacitor will switch OFF regardless of other control settings. Default is 126 (goes with a PT ratio of 60 for 12.47 kV system).
 
-    DSS property name: `VMax`, DSS property index: 11.
+    Name: `VMax`
+    Units: V
+    Default: 126.0
     """
 
     def _get_VMin(self) -> BatchFloat64ArrayProxy:
@@ -808,9 +849,11 @@ class CapControlBatch(DSSBatch, CircuitElementBatchMixin):
 
     VMin = property(_get_VMin, _set_VMin) # type: BatchFloat64ArrayProxy
     """
-    Minimum voltage, in volts.  If the voltage across the capacitor divided by the PTRATIO is less than this voltage, the capacitor will switch ON regardless of other control settings. Default is 115 (goes with a PT ratio of 60 for 12.47 kV system).
+    Minimum voltage. If the voltage across the capacitor divided by the PTRATIO is less than this voltage, the capacitor will switch ON regardless of other control settings. Default is 115 (goes with a PT ratio of 60 for 12.47 kV system).
 
-    DSS property name: `VMin`, DSS property index: 12.
+    Name: `VMin`
+    Units: V
+    Default: 115.0
     """
 
     def _get_DelayOff(self) -> BatchFloat64ArrayProxy:
@@ -821,9 +864,11 @@ class CapControlBatch(DSSBatch, CircuitElementBatchMixin):
 
     DelayOff = property(_get_DelayOff, _set_DelayOff) # type: BatchFloat64ArrayProxy
     """
-    Time delay, in seconds, for control to turn OFF when present state is ON. Default is 15.
+    Time delay for control to turn OFF when present state is ON.
 
-    DSS property name: `DelayOff`, DSS property index: 13.
+    Name: `DelayOff`
+    Units: s
+    Default: 15.0
     """
 
     def _get_DeadTime(self) -> BatchFloat64ArrayProxy:
@@ -834,9 +879,11 @@ class CapControlBatch(DSSBatch, CircuitElementBatchMixin):
 
     DeadTime = property(_get_DeadTime, _set_DeadTime) # type: BatchFloat64ArrayProxy
     """
-    Dead time after capacitor is turned OFF before it can be turned back ON. Default is 300 sec.
+    Dead time after capacitor is turned OFF before it can be turned back ON.
 
-    DSS property name: `DeadTime`, DSS property index: 14.
+    Name: `DeadTime`
+    Units: s
+    Default: 300.0
     """
 
     def _get_CTPhase(self) -> BatchInt32ArrayProxy:
@@ -851,9 +898,10 @@ class CapControlBatch(DSSBatch, CircuitElementBatchMixin):
 
     CTPhase = property(_get_CTPhase, _set_CTPhase) # type: BatchInt32ArrayProxy
     """
-    Number of the phase being monitored for CURRENT control or one of {AVG | MAX | MIN} for all phases. Default=1. If delta or L-L connection, enter the first or the two phases being monitored [1-2, 2-3, 3-1]. Must be less than the number of phases. Does not apply to kvar control which uses all phases by default.
+    Number of the phase being monitored for CURRENT control or one of {AVG | MAX | MIN} for all phases. If delta or L-L connection, enter the first or the two phases being monitored [1-2, 2-3, 3-1]. Must be less than the number of phases. Does not apply to kvar control which uses all phases by default.
 
-    DSS property name: `CTPhase`, DSS property index: 15.
+    Name: `CTPhase`
+    Default: 1
     """
 
     def _get_CTPhase_str(self) -> List[str]:
@@ -864,9 +912,10 @@ class CapControlBatch(DSSBatch, CircuitElementBatchMixin):
 
     CTPhase_str = property(_get_CTPhase_str, _set_CTPhase_str) # type: List[str]
     """
-    Number of the phase being monitored for CURRENT control or one of {AVG | MAX | MIN} for all phases. Default=1. If delta or L-L connection, enter the first or the two phases being monitored [1-2, 2-3, 3-1]. Must be less than the number of phases. Does not apply to kvar control which uses all phases by default.
+    Number of the phase being monitored for CURRENT control or one of {AVG | MAX | MIN} for all phases. If delta or L-L connection, enter the first or the two phases being monitored [1-2, 2-3, 3-1]. Must be less than the number of phases. Does not apply to kvar control which uses all phases by default.
 
-    DSS property name: `CTPhase`, DSS property index: 15.
+    Name: `CTPhase`
+    Default: 1
     """
 
     def _get_PTPhase(self) -> BatchInt32ArrayProxy:
@@ -881,9 +930,10 @@ class CapControlBatch(DSSBatch, CircuitElementBatchMixin):
 
     PTPhase = property(_get_PTPhase, _set_PTPhase) # type: BatchInt32ArrayProxy
     """
-    Number of the phase being monitored for VOLTAGE control or one of {AVG | MAX | MIN} for all phases. Default=1. If delta or L-L connection, enter the first or the two phases being monitored [1-2, 2-3, 3-1]. Must be less than the number of phases. Does not apply to kvar control which uses all phases by default.
+    Number of the phase being monitored for VOLTAGE control or one of {AVG | MAX | MIN} for all phases. If delta or L-L connection, enter the first or the two phases being monitored [1-2, 2-3, 3-1]. Must be less than the number of phases. Does not apply to kvar control which uses all phases by default.
 
-    DSS property name: `PTPhase`, DSS property index: 16.
+    Name: `PTPhase`
+    Default: 1
     """
 
     def _get_PTPhase_str(self) -> List[str]:
@@ -894,9 +944,10 @@ class CapControlBatch(DSSBatch, CircuitElementBatchMixin):
 
     PTPhase_str = property(_get_PTPhase_str, _set_PTPhase_str) # type: List[str]
     """
-    Number of the phase being monitored for VOLTAGE control or one of {AVG | MAX | MIN} for all phases. Default=1. If delta or L-L connection, enter the first or the two phases being monitored [1-2, 2-3, 3-1]. Must be less than the number of phases. Does not apply to kvar control which uses all phases by default.
+    Number of the phase being monitored for VOLTAGE control or one of {AVG | MAX | MIN} for all phases. If delta or L-L connection, enter the first or the two phases being monitored [1-2, 2-3, 3-1]. Must be less than the number of phases. Does not apply to kvar control which uses all phases by default.
 
-    DSS property name: `PTPhase`, DSS property index: 16.
+    Name: `PTPhase`
+    Default: 1
     """
 
     def _get_VBus(self) -> List[str]:
@@ -909,7 +960,7 @@ class CapControlBatch(DSSBatch, CircuitElementBatchMixin):
     """
     Name of bus to use for voltage override function. Default is bus at monitored terminal. Sometimes it is useful to monitor a bus in another location to emulate various DMS control algorithms.
 
-    DSS property name: `VBus`, DSS property index: 17.
+    Name: `VBus`
     """
 
     def _get_EventLog(self) -> List[bool]:
@@ -917,14 +968,15 @@ class CapControlBatch(DSSBatch, CircuitElementBatchMixin):
             self._get_batch_int32_prop(18)
         ]
 
-    def _set_EventLog(self, value: bool, flags: enums.SetterFlags = 0):
+    def _set_EventLog(self, value: Union[bool, List[bool]], flags: enums.SetterFlags = 0):
         self._set_batch_int32_array(18, value, flags)
 
     EventLog = property(_get_EventLog, _set_EventLog) # type: List[bool]
     """
-    {Yes/True | No/False*} Default is NO for CapControl. Log control actions to Eventlog.
+    Log control actions to Eventlog.
 
-    DSS property name: `EventLog`, DSS property index: 18.
+    Name: `EventLog`
+    Default: False
     """
 
     def _get_UserModel(self) -> List[str]:
@@ -937,7 +989,7 @@ class CapControlBatch(DSSBatch, CircuitElementBatchMixin):
     """
     Name of DLL containing user-written CapControl model, overriding the default model.  Set to "none" to negate previous setting. 
 
-    DSS property name: `UserModel`, DSS property index: 19.
+    Name: `UserModel`
     """
 
     def _get_UserData(self) -> List[str]:
@@ -950,7 +1002,7 @@ class CapControlBatch(DSSBatch, CircuitElementBatchMixin):
     """
     String (in quotes or parentheses if necessary) that gets passed to the user-written CapControl model Edit function for defining the data required for that model. 
 
-    DSS property name: `UserData`, DSS property index: 20.
+    Name: `UserData`
     """
 
     def _get_pctMinkvar(self) -> BatchFloat64ArrayProxy:
@@ -961,16 +1013,18 @@ class CapControlBatch(DSSBatch, CircuitElementBatchMixin):
 
     pctMinkvar = property(_get_pctMinkvar, _set_pctMinkvar) # type: BatchFloat64ArrayProxy
     """
-    For PF control option, min percent of total bank kvar at which control will close capacitor switch. Default = 50.
+    For PF control option, min percent of total bank kvar at which control will close capacitor switch.
 
-    DSS property name: `pctMinkvar`, DSS property index: 21.
+    Name: `pctMinkvar`
+    Default: 50.0
     """
 
     def Reset(self, value: Union[bool, List[bool]] = True, flags: enums.SetterFlags = 0):
         """
-        {Yes | No} If Yes, forces Reset of this CapControl.
+        If Yes, forces Reset of this CapControl.
 
-        DSS property name: `Reset`, DSS property index: 22.
+        Name: `Reset`
+        Default: False
         """
         self._set_batch_int32_array(22, value, flags)
 
@@ -984,7 +1038,7 @@ class CapControlBatch(DSSBatch, CircuitElementBatchMixin):
     """
     Load shape used for controlling the connection/disconnection of the capacitor to the grid, when the load shape is DIFFERENT than ZERO (0) the capacitor will be ON and connected to the grid. Otherwise, if the load shape value is EQUAL to ZERO (0) the capacitor bank will be OFF and disconnected from the grid.
 
-    DSS property name: `ControlSignal`, DSS property index: 23.
+    Name: `ControlSignal`
     """
 
     def _get_ControlSignal(self) -> List[LoadShape]:
@@ -997,7 +1051,7 @@ class CapControlBatch(DSSBatch, CircuitElementBatchMixin):
     """
     Load shape used for controlling the connection/disconnection of the capacitor to the grid, when the load shape is DIFFERENT than ZERO (0) the capacitor will be ON and connected to the grid. Otherwise, if the load shape value is EQUAL to ZERO (0) the capacitor bank will be OFF and disconnected from the grid.
 
-    DSS property name: `ControlSignal`, DSS property index: 23.
+    Name: `ControlSignal`
     """
 
     def _get_BaseFreq(self) -> BatchFloat64ArrayProxy:
@@ -1010,7 +1064,8 @@ class CapControlBatch(DSSBatch, CircuitElementBatchMixin):
     """
     Base Frequency for ratings.
 
-    DSS property name: `BaseFreq`, DSS property index: 24.
+    Name: `BaseFreq`
+    Units: Hz
     """
 
     def _get_Enabled(self) -> List[bool]:
@@ -1018,14 +1073,15 @@ class CapControlBatch(DSSBatch, CircuitElementBatchMixin):
             self._get_batch_int32_prop(25)
         ]
 
-    def _set_Enabled(self, value: bool, flags: enums.SetterFlags = 0):
+    def _set_Enabled(self, value: Union[bool, List[bool]], flags: enums.SetterFlags = 0):
         self._set_batch_int32_array(25, value, flags)
 
     Enabled = property(_get_Enabled, _set_Enabled) # type: List[bool]
     """
-    {Yes|No or True|False} Indicates whether this element is enabled.
+    Indicates whether this element is enabled.
 
-    DSS property name: `Enabled`, DSS property index: 25.
+    Name: `Enabled`
+    Default: True
     """
 
     def Like(self, value: AnyStr, flags: enums.SetterFlags = 0):
@@ -1034,7 +1090,9 @@ class CapControlBatch(DSSBatch, CircuitElementBatchMixin):
 
         New Capacitor.C2 like=c1  ...
 
-        DSS property name: `Like`, DSS property index: 26.
+        **Deprecated:** `Like` has been deprecated since at least 2021, see https://sourceforge.net/p/electricdss/discussion/861977/thread/8b59d21eb6/#b57c/f668
+
+        Name: `Like`
         """
         self._set_batch_string(26, value, flags)
 

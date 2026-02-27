@@ -89,7 +89,7 @@ class LoadShape(DSSObj, LoadShapeObjMixin):
     """
     Max number of points to expect in load shape vectors. This gets reset to the number of multiplier values found (in files only) if less than specified.
 
-    DSS property name: `NPts`, DSS property index: 1.
+    Name: `NPts`
     """
 
     def _get_Interval(self) -> float:
@@ -100,11 +100,13 @@ class LoadShape(DSSObj, LoadShapeObjMixin):
 
     Interval = property(_get_Interval, _set_Interval) # type: float
     """
-    Time interval for fixed interval data, hrs. Default = 1. If Interval = 0 then time data (in hours) may be at either regular or  irregular intervals and time value must be specified using either the Hour property or input files. Then values are interpolated when Interval=0, but not for fixed interval data.  
+    Time interval for fixed interval data, hrs. If Interval is set to 0, then time data (in hours) may be at either regular or  irregular intervals and time value must be specified using either the Hour property or input files. Then values are interpolated when Interval=0, but not for fixed interval data.  
 
     See also "sinterval" and "minterval".
 
-    DSS property name: `Interval`, DSS property index: 2.
+    Name: `Interval`
+    Units: hour
+    Default: 1.0
     """
 
     def _get_Hour(self) -> Float64Array:
@@ -120,7 +122,7 @@ class LoadShape(DSSObj, LoadShapeObjMixin):
     hour = (dblfile=filename)  !for packed file of doubles
     hour = (sngfile=filename)  !for packed file of singles 
 
-    DSS property name: `Hour`, DSS property index: 4.
+    Name: `Hour`
     """
 
     def _get_Mean(self) -> float:
@@ -133,7 +135,7 @@ class LoadShape(DSSObj, LoadShapeObjMixin):
     """
     Mean of the active power multipliers.  This is computed on demand the first time a value is needed.  However, you may set it to another value independently. Used for Monte Carlo load simulations.
 
-    DSS property name: `Mean`, DSS property index: 5.
+    Name: `Mean`
     """
 
     def _get_StdDev(self) -> float:
@@ -148,7 +150,7 @@ class LoadShape(DSSObj, LoadShapeObjMixin):
 
     Used for Monte Carlo load simulations.
 
-    DSS property name: `StdDev`, DSS property index: 6.
+    Name: `StdDev`
     """
 
     def _get_CSVFile(self) -> str:
@@ -161,7 +163,7 @@ class LoadShape(DSSObj, LoadShapeObjMixin):
     """
     Switch input of active power load curve data to a CSV text file containing (hour, mult) points, or simply (mult) values for fixed time interval data, one per line. NOTE: This action may reset the number of points to a lower value.
 
-    DSS property name: `CSVFile`, DSS property index: 7.
+    Name: `CSVFile`
     """
 
     def _get_SngFile(self) -> str:
@@ -174,7 +176,7 @@ class LoadShape(DSSObj, LoadShapeObjMixin):
     """
     Switch input of active power load curve data to a binary file of singles containing (hour, mult) points, or simply (mult) values for fixed time interval data, packed one after another. NOTE: This action may reset the number of points to a lower value.
 
-    DSS property name: `SngFile`, DSS property index: 8.
+    Name: `SngFile`
     """
 
     def _get_DblFile(self) -> str:
@@ -187,7 +189,7 @@ class LoadShape(DSSObj, LoadShapeObjMixin):
     """
     Switch input of active power load curve data to a binary file of doubles containing (hour, mult) points, or simply (mult) values for fixed time interval data, packed one after another. NOTE: This action may reset the number of points to a lower value.
 
-    DSS property name: `DblFile`, DSS property index: 9.
+    Name: `DblFile`
     """
 
     def Action(self, value: Union[AnyStr, int, enums.LoadShapeAction], flags: enums.SetterFlags = 0):
@@ -196,7 +198,7 @@ class LoadShape(DSSObj, LoadShapeObjMixin):
 
         Setting action=DblSave or SngSave will cause the present mult and qmult values to be written to either a packed file of double or single. The filename is the loadshape name. The mult array will have a "_P" appended on the file name and the qmult array, if it exists, will have "_Q" appended.
 
-        DSS property name: `Action`, DSS property index: 10.
+        Name: `Action`
         """
         if isinstance(value, int):
             self._lib.Obj_SetInt32(self._ptr, 10, value, flags)
@@ -230,7 +232,7 @@ class LoadShape(DSSObj, LoadShapeObjMixin):
     qmult = (sngfile=filename)  !for packed file of singles 
     qmult = (file=MyCSVFile.csv, col=4, header=yes)  !for multicolumn CSV files 
 
-    DSS property name: `QMult`, DSS property index: 11.
+    Name: `QMult`
     """
 
     def _get_UseActual(self) -> bool:
@@ -241,9 +243,10 @@ class LoadShape(DSSObj, LoadShapeObjMixin):
 
     UseActual = property(_get_UseActual, _set_UseActual) # type: bool
     """
-    {Yes | No* | True | False*} If true, signifies to Load, Generator, Vsource, or other objects to use the return value as the actual kW, kvar, kV, or other value rather than a multiplier. Nominally for AMI Load data but may be used for other functions.
+    If true, signifies to Load, Generator, Vsource, or other objects to use the return value as the actual kW, kvar, kV, or other value rather than a multiplier. Nominally for AMI Load data but may be used for other functions.
 
-    DSS property name: `UseActual`, DSS property index: 12.
+    Name: `UseActual`
+    Default: False
     """
 
     def _get_PMax(self) -> float:
@@ -256,7 +259,9 @@ class LoadShape(DSSObj, LoadShapeObjMixin):
     """
     kW value at the time of max power. Is automatically set upon reading in a loadshape. Use this property to override the value automatically computed or to retrieve the value computed.
 
-    DSS property name: `PMax`, DSS property index: 13.
+    Name: `PMax`
+    Units: kW
+    Default: 1.0
     """
 
     def _get_QMax(self) -> float:
@@ -269,7 +274,9 @@ class LoadShape(DSSObj, LoadShapeObjMixin):
     """
     kvar value at the time of max kW power. Is automatically set upon reading in a loadshape. Use this property to override the value automatically computed or to retrieve the value computed.
 
-    DSS property name: `QMax`, DSS property index: 14.
+    Name: `QMax`
+    Units: kvar
+    Default: 0.0
     """
 
     def _get_SInterval(self) -> float:
@@ -282,7 +289,8 @@ class LoadShape(DSSObj, LoadShapeObjMixin):
     """
     Specify fixed interval in SECONDS. Alternate way to specify Interval property.
 
-    DSS property name: `SInterval`, DSS property index: 15.
+    Name: `SInterval`
+    Units: s
     """
 
     def _get_MInterval(self) -> float:
@@ -295,7 +303,8 @@ class LoadShape(DSSObj, LoadShapeObjMixin):
     """
     Specify fixed interval in MINUTES. Alternate way to specify Interval property.
 
-    DSS property name: `MInterval`, DSS property index: 16.
+    Name: `MInterval`
+    Units: minute
     """
 
     def _get_PBase(self) -> float:
@@ -308,7 +317,9 @@ class LoadShape(DSSObj, LoadShapeObjMixin):
     """
     Base P value for normalization. Default is zero, meaning the peak will be used.
 
-    DSS property name: `PBase`, DSS property index: 17.
+    Name: `PBase`
+    Units: kW
+    Default: 0.0
     """
 
     def _get_QBase(self) -> float:
@@ -321,7 +332,9 @@ class LoadShape(DSSObj, LoadShapeObjMixin):
     """
     Base Q value for normalization. Default is zero, meaning the peak will be used.
 
-    DSS property name: `QBase`, DSS property index: 18.
+    Name: `QBase`
+    Units: kvar
+    Default: 0.0
     """
 
     def _get_PMult(self) -> Float64Array:
@@ -334,7 +347,7 @@ class LoadShape(DSSObj, LoadShapeObjMixin):
     """
     Synonym for "mult".
 
-    DSS property name: `PMult`, DSS property index: 19.
+    Name: `PMult`
     """
 
     def _get_PQCSVFile(self) -> str:
@@ -348,7 +361,7 @@ class LoadShape(DSSObj, LoadShapeObjMixin):
     Switch input to a CSV text file containing (active, reactive) power (P, Q) multiplier pairs, one per row. 
     If the interval=0, there should be 3 items on each line: (hour, Pmult, Qmult)
 
-    DSS property name: `PQCSVFile`, DSS property index: 20.
+    Name: `PQCSVFile`
     """
 
     def _get_MemoryMapping(self) -> bool:
@@ -359,10 +372,11 @@ class LoadShape(DSSObj, LoadShapeObjMixin):
 
     MemoryMapping = property(_get_MemoryMapping, _set_MemoryMapping) # type: bool
     """
-    {Yes | No* | True | False*} Enables the memory mapping functionality for dealing with large amounts of load shapes. 
+    Enables the memory mapping functionality for dealing with large amounts of load shapes. 
     By default is False. Use it to accelerate the model loading when the containing a large number of load shapes.
 
-    DSS property name: `MemoryMapping`, DSS property index: 21.
+    Name: `MemoryMapping`
+    Default: False
     """
 
     def _get_Interpolation(self) -> enums.LoadShapeInterpolation:
@@ -376,12 +390,13 @@ class LoadShape(DSSObj, LoadShapeObjMixin):
 
     Interpolation = property(_get_Interpolation, _set_Interpolation) # type: enums.LoadShapeInterpolation
     """
-    {AVG* | EDGE} Defines the interpolation method used for connecting distant dots within the load shape.
+    Defines the interpolation method used for connecting distant dots within the load shape.
 
     By default is AVG (average), which will return a multiplier for missing intervals based on the closest multiplier in time.
     EDGE interpolation keeps the last known value for missing intervals until the next defined multiplier arrives.
 
-    DSS property name: `Interpolation`, DSS property index: 22.
+    Name: `Interpolation`
+    Default: Avg
     """
 
     def _get_Interpolation_str(self) -> str:
@@ -392,12 +407,13 @@ class LoadShape(DSSObj, LoadShapeObjMixin):
 
     Interpolation_str = property(_get_Interpolation_str, _set_Interpolation_str) # type: str
     """
-    {AVG* | EDGE} Defines the interpolation method used for connecting distant dots within the load shape.
+    Defines the interpolation method used for connecting distant dots within the load shape.
 
     By default is AVG (average), which will return a multiplier for missing intervals based on the closest multiplier in time.
     EDGE interpolation keeps the last known value for missing intervals until the next defined multiplier arrives.
 
-    DSS property name: `Interpolation`, DSS property index: 22.
+    Name: `Interpolation`
+    Default: Avg
     """
 
     def Like(self, value: AnyStr):
@@ -406,7 +422,9 @@ class LoadShape(DSSObj, LoadShapeObjMixin):
 
         New Capacitor.C2 like=c1  ...
 
-        DSS property name: `Like`, DSS property index: 23.
+        **Deprecated:** `Like` has been deprecated since at least 2021, see https://sourceforge.net/p/electricdss/discussion/861977/thread/8b59d21eb6/#b57c/f668
+
+        Name: `Like`
         """
         self._set_string_o(23, value)
 
@@ -476,7 +494,7 @@ class LoadShapeBatch(DSSBatch, LoadShapeBatchMixin):
     """
     Max number of points to expect in load shape vectors. This gets reset to the number of multiplier values found (in files only) if less than specified.
 
-    DSS property name: `NPts`, DSS property index: 1.
+    Name: `NPts`
     """
 
     def _get_Interval(self) -> BatchFloat64ArrayProxy:
@@ -487,11 +505,13 @@ class LoadShapeBatch(DSSBatch, LoadShapeBatchMixin):
 
     Interval = property(_get_Interval, _set_Interval) # type: BatchFloat64ArrayProxy
     """
-    Time interval for fixed interval data, hrs. Default = 1. If Interval = 0 then time data (in hours) may be at either regular or  irregular intervals and time value must be specified using either the Hour property or input files. Then values are interpolated when Interval=0, but not for fixed interval data.  
+    Time interval for fixed interval data, hrs. If Interval is set to 0, then time data (in hours) may be at either regular or  irregular intervals and time value must be specified using either the Hour property or input files. Then values are interpolated when Interval=0, but not for fixed interval data.  
 
     See also "sinterval" and "minterval".
 
-    DSS property name: `Interval`, DSS property index: 2.
+    Name: `Interval`
+    Units: hour
+    Default: 1.0
     """
 
     def _get_Hour(self) -> List[Float64Array]:
@@ -510,7 +530,7 @@ class LoadShapeBatch(DSSBatch, LoadShapeBatchMixin):
     hour = (dblfile=filename)  !for packed file of doubles
     hour = (sngfile=filename)  !for packed file of singles 
 
-    DSS property name: `Hour`, DSS property index: 4.
+    Name: `Hour`
     """
 
     def _get_Mean(self) -> BatchFloat64ArrayProxy:
@@ -523,7 +543,7 @@ class LoadShapeBatch(DSSBatch, LoadShapeBatchMixin):
     """
     Mean of the active power multipliers.  This is computed on demand the first time a value is needed.  However, you may set it to another value independently. Used for Monte Carlo load simulations.
 
-    DSS property name: `Mean`, DSS property index: 5.
+    Name: `Mean`
     """
 
     def _get_StdDev(self) -> BatchFloat64ArrayProxy:
@@ -538,7 +558,7 @@ class LoadShapeBatch(DSSBatch, LoadShapeBatchMixin):
 
     Used for Monte Carlo load simulations.
 
-    DSS property name: `StdDev`, DSS property index: 6.
+    Name: `StdDev`
     """
 
     def _get_CSVFile(self) -> List[str]:
@@ -551,7 +571,7 @@ class LoadShapeBatch(DSSBatch, LoadShapeBatchMixin):
     """
     Switch input of active power load curve data to a CSV text file containing (hour, mult) points, or simply (mult) values for fixed time interval data, one per line. NOTE: This action may reset the number of points to a lower value.
 
-    DSS property name: `CSVFile`, DSS property index: 7.
+    Name: `CSVFile`
     """
 
     def _get_SngFile(self) -> List[str]:
@@ -564,7 +584,7 @@ class LoadShapeBatch(DSSBatch, LoadShapeBatchMixin):
     """
     Switch input of active power load curve data to a binary file of singles containing (hour, mult) points, or simply (mult) values for fixed time interval data, packed one after another. NOTE: This action may reset the number of points to a lower value.
 
-    DSS property name: `SngFile`, DSS property index: 8.
+    Name: `SngFile`
     """
 
     def _get_DblFile(self) -> List[str]:
@@ -577,7 +597,7 @@ class LoadShapeBatch(DSSBatch, LoadShapeBatchMixin):
     """
     Switch input of active power load curve data to a binary file of doubles containing (hour, mult) points, or simply (mult) values for fixed time interval data, packed one after another. NOTE: This action may reset the number of points to a lower value.
 
-    DSS property name: `DblFile`, DSS property index: 9.
+    Name: `DblFile`
     """
 
     def Action(self, value: Union[AnyStr, int, enums.LoadShapeAction], flags: enums.SetterFlags = 0):
@@ -586,7 +606,7 @@ class LoadShapeBatch(DSSBatch, LoadShapeBatchMixin):
 
         Setting action=DblSave or SngSave will cause the present mult and qmult values to be written to either a packed file of double or single. The filename is the loadshape name. The mult array will have a "_P" appended on the file name and the qmult array, if it exists, will have "_Q" appended.
 
-        DSS property name: `Action`, DSS property index: 10.
+        Name: `Action`
         """
         if isinstance(value, (bytes, str)) or (isinstance(value, LIST_LIKE) and len(value) > 0 and isinstance(value[0], (bytes, str))):
             self._set_batch_string(10, value, flags)
@@ -622,7 +642,7 @@ class LoadShapeBatch(DSSBatch, LoadShapeBatchMixin):
     qmult = (sngfile=filename)  !for packed file of singles 
     qmult = (file=MyCSVFile.csv, col=4, header=yes)  !for multicolumn CSV files 
 
-    DSS property name: `QMult`, DSS property index: 11.
+    Name: `QMult`
     """
 
     def _get_UseActual(self) -> List[bool]:
@@ -630,14 +650,15 @@ class LoadShapeBatch(DSSBatch, LoadShapeBatchMixin):
             self._get_batch_int32_prop(12)
         ]
 
-    def _set_UseActual(self, value: bool, flags: enums.SetterFlags = 0):
+    def _set_UseActual(self, value: Union[bool, List[bool]], flags: enums.SetterFlags = 0):
         self._set_batch_int32_array(12, value, flags)
 
     UseActual = property(_get_UseActual, _set_UseActual) # type: List[bool]
     """
-    {Yes | No* | True | False*} If true, signifies to Load, Generator, Vsource, or other objects to use the return value as the actual kW, kvar, kV, or other value rather than a multiplier. Nominally for AMI Load data but may be used for other functions.
+    If true, signifies to Load, Generator, Vsource, or other objects to use the return value as the actual kW, kvar, kV, or other value rather than a multiplier. Nominally for AMI Load data but may be used for other functions.
 
-    DSS property name: `UseActual`, DSS property index: 12.
+    Name: `UseActual`
+    Default: False
     """
 
     def _get_PMax(self) -> BatchFloat64ArrayProxy:
@@ -650,7 +671,9 @@ class LoadShapeBatch(DSSBatch, LoadShapeBatchMixin):
     """
     kW value at the time of max power. Is automatically set upon reading in a loadshape. Use this property to override the value automatically computed or to retrieve the value computed.
 
-    DSS property name: `PMax`, DSS property index: 13.
+    Name: `PMax`
+    Units: kW
+    Default: 1.0
     """
 
     def _get_QMax(self) -> BatchFloat64ArrayProxy:
@@ -663,7 +686,9 @@ class LoadShapeBatch(DSSBatch, LoadShapeBatchMixin):
     """
     kvar value at the time of max kW power. Is automatically set upon reading in a loadshape. Use this property to override the value automatically computed or to retrieve the value computed.
 
-    DSS property name: `QMax`, DSS property index: 14.
+    Name: `QMax`
+    Units: kvar
+    Default: 0.0
     """
 
     def _get_SInterval(self) -> BatchFloat64ArrayProxy:
@@ -676,7 +701,8 @@ class LoadShapeBatch(DSSBatch, LoadShapeBatchMixin):
     """
     Specify fixed interval in SECONDS. Alternate way to specify Interval property.
 
-    DSS property name: `SInterval`, DSS property index: 15.
+    Name: `SInterval`
+    Units: s
     """
 
     def _get_MInterval(self) -> BatchFloat64ArrayProxy:
@@ -689,7 +715,8 @@ class LoadShapeBatch(DSSBatch, LoadShapeBatchMixin):
     """
     Specify fixed interval in MINUTES. Alternate way to specify Interval property.
 
-    DSS property name: `MInterval`, DSS property index: 16.
+    Name: `MInterval`
+    Units: minute
     """
 
     def _get_PBase(self) -> BatchFloat64ArrayProxy:
@@ -702,7 +729,9 @@ class LoadShapeBatch(DSSBatch, LoadShapeBatchMixin):
     """
     Base P value for normalization. Default is zero, meaning the peak will be used.
 
-    DSS property name: `PBase`, DSS property index: 17.
+    Name: `PBase`
+    Units: kW
+    Default: 0.0
     """
 
     def _get_QBase(self) -> BatchFloat64ArrayProxy:
@@ -715,7 +744,9 @@ class LoadShapeBatch(DSSBatch, LoadShapeBatchMixin):
     """
     Base Q value for normalization. Default is zero, meaning the peak will be used.
 
-    DSS property name: `QBase`, DSS property index: 18.
+    Name: `QBase`
+    Units: kvar
+    Default: 0.0
     """
 
     def _get_PMult(self) -> List[Float64Array]:
@@ -731,7 +762,7 @@ class LoadShapeBatch(DSSBatch, LoadShapeBatchMixin):
     """
     Synonym for "mult".
 
-    DSS property name: `PMult`, DSS property index: 19.
+    Name: `PMult`
     """
 
     def _get_PQCSVFile(self) -> List[str]:
@@ -745,7 +776,7 @@ class LoadShapeBatch(DSSBatch, LoadShapeBatchMixin):
     Switch input to a CSV text file containing (active, reactive) power (P, Q) multiplier pairs, one per row. 
     If the interval=0, there should be 3 items on each line: (hour, Pmult, Qmult)
 
-    DSS property name: `PQCSVFile`, DSS property index: 20.
+    Name: `PQCSVFile`
     """
 
     def _get_MemoryMapping(self) -> List[bool]:
@@ -753,15 +784,16 @@ class LoadShapeBatch(DSSBatch, LoadShapeBatchMixin):
             self._get_batch_int32_prop(21)
         ]
 
-    def _set_MemoryMapping(self, value: bool, flags: enums.SetterFlags = 0):
+    def _set_MemoryMapping(self, value: Union[bool, List[bool]], flags: enums.SetterFlags = 0):
         self._set_batch_int32_array(21, value, flags)
 
     MemoryMapping = property(_get_MemoryMapping, _set_MemoryMapping) # type: List[bool]
     """
-    {Yes | No* | True | False*} Enables the memory mapping functionality for dealing with large amounts of load shapes. 
+    Enables the memory mapping functionality for dealing with large amounts of load shapes. 
     By default is False. Use it to accelerate the model loading when the containing a large number of load shapes.
 
-    DSS property name: `MemoryMapping`, DSS property index: 21.
+    Name: `MemoryMapping`
+    Default: False
     """
 
     def _get_Interpolation(self) -> BatchInt32ArrayProxy:
@@ -776,12 +808,13 @@ class LoadShapeBatch(DSSBatch, LoadShapeBatchMixin):
 
     Interpolation = property(_get_Interpolation, _set_Interpolation) # type: BatchInt32ArrayProxy
     """
-    {AVG* | EDGE} Defines the interpolation method used for connecting distant dots within the load shape.
+    Defines the interpolation method used for connecting distant dots within the load shape.
 
     By default is AVG (average), which will return a multiplier for missing intervals based on the closest multiplier in time.
     EDGE interpolation keeps the last known value for missing intervals until the next defined multiplier arrives.
 
-    DSS property name: `Interpolation`, DSS property index: 22.
+    Name: `Interpolation`
+    Default: Avg
     """
 
     def _get_Interpolation_str(self) -> List[str]:
@@ -792,12 +825,13 @@ class LoadShapeBatch(DSSBatch, LoadShapeBatchMixin):
 
     Interpolation_str = property(_get_Interpolation_str, _set_Interpolation_str) # type: List[str]
     """
-    {AVG* | EDGE} Defines the interpolation method used for connecting distant dots within the load shape.
+    Defines the interpolation method used for connecting distant dots within the load shape.
 
     By default is AVG (average), which will return a multiplier for missing intervals based on the closest multiplier in time.
     EDGE interpolation keeps the last known value for missing intervals until the next defined multiplier arrives.
 
-    DSS property name: `Interpolation`, DSS property index: 22.
+    Name: `Interpolation`
+    Default: Avg
     """
 
     def Like(self, value: AnyStr, flags: enums.SetterFlags = 0):
@@ -806,7 +840,9 @@ class LoadShapeBatch(DSSBatch, LoadShapeBatchMixin):
 
         New Capacitor.C2 like=c1  ...
 
-        DSS property name: `Like`, DSS property index: 23.
+        **Deprecated:** `Like` has been deprecated since at least 2021, see https://sourceforge.net/p/electricdss/discussion/861977/thread/8b59d21eb6/#b57c/f668
+
+        Name: `Like`
         """
         self._set_batch_string(23, value, flags)
 

@@ -91,7 +91,7 @@ class Capacitor(DSSObj, CircuitElementMixin, PDElementMixin):
 
     If only one bus specified, Bus2 will default to this bus, Node 0, and the capacitor will be a Yg shunt bank.
 
-    DSS property name: `Bus1`, DSS property index: 1.
+    Name: `Bus1`
     """
 
     def _get_Bus2(self) -> str:
@@ -106,7 +106,7 @@ class Capacitor(DSSObj, CircuitElementMixin, PDElementMixin):
 
     Not necessary to specify for delta (LL) connection.
 
-    DSS property name: `Bus2`, DSS property index: 2.
+    Name: `Bus2`
     """
 
     def _get_Phases(self) -> int:
@@ -119,7 +119,8 @@ class Capacitor(DSSObj, CircuitElementMixin, PDElementMixin):
     """
     Number of phases.
 
-    DSS property name: `Phases`, DSS property index: 3.
+    Name: `Phases`
+    Default: 3
     """
 
     def _get_kvar(self) -> Float64Array:
@@ -132,7 +133,9 @@ class Capacitor(DSSObj, CircuitElementMixin, PDElementMixin):
     """
     Total kvar, if one step, or ARRAY of kvar ratings for each step.  Evenly divided among phases. See rules for NUMSTEPS.
 
-    DSS property name: `kvar`, DSS property index: 4.
+    Name: `kvar`
+    Units: kvar
+    Default: [1200.0]
     """
 
     def _get_kV(self) -> float:
@@ -145,7 +148,9 @@ class Capacitor(DSSObj, CircuitElementMixin, PDElementMixin):
     """
     For 2, 3-phase, kV phase-phase. Otherwise specify actual can rating.
 
-    DSS property name: `kV`, DSS property index: 5.
+    Name: `kV`
+    Units: kV
+    Default: 12.47
     """
 
     def _get_Conn(self) -> enums.Connection:
@@ -161,7 +166,8 @@ class Capacitor(DSSObj, CircuitElementMixin, PDElementMixin):
     """
     ={wye | delta |LN |LL}  Default is wye, which is equivalent to LN
 
-    DSS property name: `Conn`, DSS property index: 6.
+    Name: `Conn`
+    Default: Wye
     """
 
     def _get_Conn_str(self) -> str:
@@ -174,7 +180,8 @@ class Capacitor(DSSObj, CircuitElementMixin, PDElementMixin):
     """
     ={wye | delta |LN |LL}  Default is wye, which is equivalent to LN
 
-    DSS property name: `Conn`, DSS property index: 6.
+    Name: `Conn`
+    Default: Wye
     """
 
     def _get_CMatrix(self) -> Float64Array:
@@ -185,13 +192,14 @@ class Capacitor(DSSObj, CircuitElementMixin, PDElementMixin):
 
     CMatrix = property(_get_CMatrix, _set_CMatrix) # type: Float64Array
     """
-    Nodal cap. matrix, lower triangle, microfarads, of the following form:
+    Nodal cap. matrix, lower triangle, of the following form:
 
     cmatrix="c11 | -c21 c22 | -c31 -c32 c33"
 
     All steps are assumed the same if this property is used.
 
-    DSS property name: `CMatrix`, DSS property index: 7.
+    Name: `CMatrix`
+    Units: μF
     """
 
     def _get_Cuf(self) -> Float64Array:
@@ -202,10 +210,11 @@ class Capacitor(DSSObj, CircuitElementMixin, PDElementMixin):
 
     Cuf = property(_get_Cuf, _set_Cuf) # type: Float64Array
     """
-    ARRAY of Capacitance, each phase, for each step, microfarads.
+    ARRAY of Capacitance, each phase, for each step.
     See Rules for NumSteps.
 
-    DSS property name: `Cuf`, DSS property index: 8.
+    Name: `Cuf`
+    Units: μF
     """
 
     def _get_R(self) -> Float64Array:
@@ -216,9 +225,10 @@ class Capacitor(DSSObj, CircuitElementMixin, PDElementMixin):
 
     R = property(_get_R, _set_R) # type: Float64Array
     """
-    ARRAY of series resistance in each phase (line), ohms. Default is 0.0
+    ARRAY of series resistance in each phase (line), ohms.
 
-    DSS property name: `R`, DSS property index: 9.
+    Name: `R`
+    Default: [0.0]
     """
 
     def _get_XL(self) -> Float64Array:
@@ -229,9 +239,10 @@ class Capacitor(DSSObj, CircuitElementMixin, PDElementMixin):
 
     XL = property(_get_XL, _set_XL) # type: Float64Array
     """
-    ARRAY of series inductive reactance(s) in each phase (line) for filter, ohms at base frequency. Use this OR "h" property to define filter. Default is 0.0.
+    ARRAY of series inductive reactance(s) in each phase (line) for filter, ohms at base frequency. Use this OR "h" property to define filter.
 
-    DSS property name: `XL`, DSS property index: 10.
+    Name: `XL`
+    Default: [0.0]
     """
 
     def _get_Harm(self) -> Float64Array:
@@ -244,7 +255,8 @@ class Capacitor(DSSObj, CircuitElementMixin, PDElementMixin):
     """
     ARRAY of harmonics to which each step is tuned. Zero is interpreted as meaning zero reactance (no filter). Default is zero.
 
-    DSS property name: `Harm`, DSS property index: 11.
+    Name: `Harm`
+    Default: [0.0]
     """
 
     def _get_NumSteps(self) -> int:
@@ -255,9 +267,9 @@ class Capacitor(DSSObj, CircuitElementMixin, PDElementMixin):
 
     NumSteps = property(_get_NumSteps, _set_NumSteps) # type: int
     """
-    Number of steps in this capacitor bank. Default = 1. Forces reallocation of the capacitance, reactor, and states array.  Rules: If this property was previously =1, the value in the kvar property is divided equally among the steps. The kvar property does not need to be reset if that is accurate.  If the Cuf or Cmatrix property was used previously, all steps are set to the value of the first step. The states property is set to all steps on. All filter steps are set to the same harmonic. If this property was previously >1, the arrays are reallocated, but no values are altered. You must SUBSEQUENTLY assign all array properties.
+    Number of steps in this capacitor bank. Forces reallocation of the capacitance, reactor, and states array.  Rules: If this property was previously =1, the value in the kvar property is divided equally among the steps. The kvar property does not need to be reset if that is accurate.  If the Cuf or Cmatrix property was used previously, all steps are set to the value of the first step. The states property is set to all steps on. All filter steps are set to the same harmonic. If this property was previously >1, the arrays are reallocated, but no values are altered. You must SUBSEQUENTLY assign all array properties.
 
-    DSS property name: `NumSteps`, DSS property index: 12.
+    Name: `NumSteps`
     """
 
     def _get_States(self) -> Int32Array:
@@ -270,7 +282,8 @@ class Capacitor(DSSObj, CircuitElementMixin, PDElementMixin):
     """
     ARRAY of integers {1|0} states representing the state of each step (on|off). Defaults to 1 when reallocated (on). Capcontrol will modify this array as it turns steps on or off.
 
-    DSS property name: `States`, DSS property index: 13.
+    Name: `States`
+    Default: [1]
     """
 
     def _get_NormAmps(self) -> float:
@@ -283,7 +296,8 @@ class Capacitor(DSSObj, CircuitElementMixin, PDElementMixin):
     """
     Normal rated current. Defaults to 180% of per-phase rated current.
 
-    DSS property name: `NormAmps`, DSS property index: 14.
+    Name: `NormAmps`
+    Default: 75.00460594123444
     """
 
     def _get_EmergAmps(self) -> float:
@@ -296,7 +310,8 @@ class Capacitor(DSSObj, CircuitElementMixin, PDElementMixin):
     """
     Maximum or emerg current. Defaults to 180% of per-phase rated current.
 
-    DSS property name: `EmergAmps`, DSS property index: 15.
+    Name: `EmergAmps`
+    Default: 100.00614125497927
     """
 
     def _get_FaultRate(self) -> float:
@@ -309,7 +324,8 @@ class Capacitor(DSSObj, CircuitElementMixin, PDElementMixin):
     """
     Failure rate per year.
 
-    DSS property name: `FaultRate`, DSS property index: 16.
+    Name: `FaultRate`
+    Default: 0.0005
     """
 
     def _get_pctPerm(self) -> float:
@@ -322,7 +338,8 @@ class Capacitor(DSSObj, CircuitElementMixin, PDElementMixin):
     """
     Percent of failures that become permanent.
 
-    DSS property name: `pctPerm`, DSS property index: 17.
+    Name: `pctPerm`
+    Default: 100.0
     """
 
     def _get_Repair(self) -> float:
@@ -335,7 +352,8 @@ class Capacitor(DSSObj, CircuitElementMixin, PDElementMixin):
     """
     Hours to repair.
 
-    DSS property name: `Repair`, DSS property index: 18.
+    Name: `Repair`
+    Default: 3.0
     """
 
     def _get_BaseFreq(self) -> float:
@@ -348,7 +366,8 @@ class Capacitor(DSSObj, CircuitElementMixin, PDElementMixin):
     """
     Base Frequency for ratings.
 
-    DSS property name: `BaseFreq`, DSS property index: 19.
+    Name: `BaseFreq`
+    Units: Hz
     """
 
     def _get_Enabled(self) -> bool:
@@ -359,9 +378,10 @@ class Capacitor(DSSObj, CircuitElementMixin, PDElementMixin):
 
     Enabled = property(_get_Enabled, _set_Enabled) # type: bool
     """
-    {Yes|No or True|False} Indicates whether this element is enabled.
+    Indicates whether this element is enabled.
 
-    DSS property name: `Enabled`, DSS property index: 20.
+    Name: `Enabled`
+    Default: True
     """
 
     def Like(self, value: AnyStr):
@@ -370,7 +390,9 @@ class Capacitor(DSSObj, CircuitElementMixin, PDElementMixin):
 
         New Capacitor.C2 like=c1  ...
 
-        DSS property name: `Like`, DSS property index: 21.
+        **Deprecated:** `Like` has been deprecated since at least 2021, see https://sourceforge.net/p/electricdss/discussion/861977/thread/8b59d21eb6/#b57c/f668
+
+        Name: `Like`
         """
         self._set_string_o(21, value)
 
@@ -444,7 +466,7 @@ class CapacitorBatch(DSSBatch, CircuitElementBatchMixin, PDElementBatchMixin):
 
     If only one bus specified, Bus2 will default to this bus, Node 0, and the capacitor will be a Yg shunt bank.
 
-    DSS property name: `Bus1`, DSS property index: 1.
+    Name: `Bus1`
     """
 
     def _get_Bus2(self) -> List[str]:
@@ -459,7 +481,7 @@ class CapacitorBatch(DSSBatch, CircuitElementBatchMixin, PDElementBatchMixin):
 
     Not necessary to specify for delta (LL) connection.
 
-    DSS property name: `Bus2`, DSS property index: 2.
+    Name: `Bus2`
     """
 
     def _get_Phases(self) -> BatchInt32ArrayProxy:
@@ -472,7 +494,8 @@ class CapacitorBatch(DSSBatch, CircuitElementBatchMixin, PDElementBatchMixin):
     """
     Number of phases.
 
-    DSS property name: `Phases`, DSS property index: 3.
+    Name: `Phases`
+    Default: 3
     """
 
     def _get_kvar(self) -> List[Float64Array]:
@@ -488,7 +511,9 @@ class CapacitorBatch(DSSBatch, CircuitElementBatchMixin, PDElementBatchMixin):
     """
     Total kvar, if one step, or ARRAY of kvar ratings for each step.  Evenly divided among phases. See rules for NUMSTEPS.
 
-    DSS property name: `kvar`, DSS property index: 4.
+    Name: `kvar`
+    Units: kvar
+    Default: [1200.0]
     """
 
     def _get_kV(self) -> BatchFloat64ArrayProxy:
@@ -501,7 +526,9 @@ class CapacitorBatch(DSSBatch, CircuitElementBatchMixin, PDElementBatchMixin):
     """
     For 2, 3-phase, kV phase-phase. Otherwise specify actual can rating.
 
-    DSS property name: `kV`, DSS property index: 5.
+    Name: `kV`
+    Units: kV
+    Default: 12.47
     """
 
     def _get_Conn(self) -> BatchInt32ArrayProxy:
@@ -518,7 +545,8 @@ class CapacitorBatch(DSSBatch, CircuitElementBatchMixin, PDElementBatchMixin):
     """
     ={wye | delta |LN |LL}  Default is wye, which is equivalent to LN
 
-    DSS property name: `Conn`, DSS property index: 6.
+    Name: `Conn`
+    Default: Wye
     """
 
     def _get_Conn_str(self) -> List[str]:
@@ -531,7 +559,8 @@ class CapacitorBatch(DSSBatch, CircuitElementBatchMixin, PDElementBatchMixin):
     """
     ={wye | delta |LN |LL}  Default is wye, which is equivalent to LN
 
-    DSS property name: `Conn`, DSS property index: 6.
+    Name: `Conn`
+    Default: Wye
     """
 
     def _get_CMatrix(self) -> List[Float64Array]:
@@ -545,13 +574,14 @@ class CapacitorBatch(DSSBatch, CircuitElementBatchMixin, PDElementBatchMixin):
 
     CMatrix = property(_get_CMatrix, _set_CMatrix) # type: List[Float64Array]
     """
-    Nodal cap. matrix, lower triangle, microfarads, of the following form:
+    Nodal cap. matrix, lower triangle, of the following form:
 
     cmatrix="c11 | -c21 c22 | -c31 -c32 c33"
 
     All steps are assumed the same if this property is used.
 
-    DSS property name: `CMatrix`, DSS property index: 7.
+    Name: `CMatrix`
+    Units: μF
     """
 
     def _get_Cuf(self) -> List[Float64Array]:
@@ -565,10 +595,11 @@ class CapacitorBatch(DSSBatch, CircuitElementBatchMixin, PDElementBatchMixin):
 
     Cuf = property(_get_Cuf, _set_Cuf) # type: List[Float64Array]
     """
-    ARRAY of Capacitance, each phase, for each step, microfarads.
+    ARRAY of Capacitance, each phase, for each step.
     See Rules for NumSteps.
 
-    DSS property name: `Cuf`, DSS property index: 8.
+    Name: `Cuf`
+    Units: μF
     """
 
     def _get_R(self) -> List[Float64Array]:
@@ -582,9 +613,10 @@ class CapacitorBatch(DSSBatch, CircuitElementBatchMixin, PDElementBatchMixin):
 
     R = property(_get_R, _set_R) # type: List[Float64Array]
     """
-    ARRAY of series resistance in each phase (line), ohms. Default is 0.0
+    ARRAY of series resistance in each phase (line), ohms.
 
-    DSS property name: `R`, DSS property index: 9.
+    Name: `R`
+    Default: [0.0]
     """
 
     def _get_XL(self) -> List[Float64Array]:
@@ -598,9 +630,10 @@ class CapacitorBatch(DSSBatch, CircuitElementBatchMixin, PDElementBatchMixin):
 
     XL = property(_get_XL, _set_XL) # type: List[Float64Array]
     """
-    ARRAY of series inductive reactance(s) in each phase (line) for filter, ohms at base frequency. Use this OR "h" property to define filter. Default is 0.0.
+    ARRAY of series inductive reactance(s) in each phase (line) for filter, ohms at base frequency. Use this OR "h" property to define filter.
 
-    DSS property name: `XL`, DSS property index: 10.
+    Name: `XL`
+    Default: [0.0]
     """
 
     def _get_Harm(self) -> List[Float64Array]:
@@ -616,7 +649,8 @@ class CapacitorBatch(DSSBatch, CircuitElementBatchMixin, PDElementBatchMixin):
     """
     ARRAY of harmonics to which each step is tuned. Zero is interpreted as meaning zero reactance (no filter). Default is zero.
 
-    DSS property name: `Harm`, DSS property index: 11.
+    Name: `Harm`
+    Default: [0.0]
     """
 
     def _get_NumSteps(self) -> BatchInt32ArrayProxy:
@@ -627,9 +661,9 @@ class CapacitorBatch(DSSBatch, CircuitElementBatchMixin, PDElementBatchMixin):
 
     NumSteps = property(_get_NumSteps, _set_NumSteps) # type: BatchInt32ArrayProxy
     """
-    Number of steps in this capacitor bank. Default = 1. Forces reallocation of the capacitance, reactor, and states array.  Rules: If this property was previously =1, the value in the kvar property is divided equally among the steps. The kvar property does not need to be reset if that is accurate.  If the Cuf or Cmatrix property was used previously, all steps are set to the value of the first step. The states property is set to all steps on. All filter steps are set to the same harmonic. If this property was previously >1, the arrays are reallocated, but no values are altered. You must SUBSEQUENTLY assign all array properties.
+    Number of steps in this capacitor bank. Forces reallocation of the capacitance, reactor, and states array.  Rules: If this property was previously =1, the value in the kvar property is divided equally among the steps. The kvar property does not need to be reset if that is accurate.  If the Cuf or Cmatrix property was used previously, all steps are set to the value of the first step. The states property is set to all steps on. All filter steps are set to the same harmonic. If this property was previously >1, the arrays are reallocated, but no values are altered. You must SUBSEQUENTLY assign all array properties.
 
-    DSS property name: `NumSteps`, DSS property index: 12.
+    Name: `NumSteps`
     """
 
     def _get_States(self) -> List[Int32Array]:
@@ -645,7 +679,8 @@ class CapacitorBatch(DSSBatch, CircuitElementBatchMixin, PDElementBatchMixin):
     """
     ARRAY of integers {1|0} states representing the state of each step (on|off). Defaults to 1 when reallocated (on). Capcontrol will modify this array as it turns steps on or off.
 
-    DSS property name: `States`, DSS property index: 13.
+    Name: `States`
+    Default: [1]
     """
 
     def _get_NormAmps(self) -> BatchFloat64ArrayProxy:
@@ -658,7 +693,8 @@ class CapacitorBatch(DSSBatch, CircuitElementBatchMixin, PDElementBatchMixin):
     """
     Normal rated current. Defaults to 180% of per-phase rated current.
 
-    DSS property name: `NormAmps`, DSS property index: 14.
+    Name: `NormAmps`
+    Default: 75.00460594123444
     """
 
     def _get_EmergAmps(self) -> BatchFloat64ArrayProxy:
@@ -671,7 +707,8 @@ class CapacitorBatch(DSSBatch, CircuitElementBatchMixin, PDElementBatchMixin):
     """
     Maximum or emerg current. Defaults to 180% of per-phase rated current.
 
-    DSS property name: `EmergAmps`, DSS property index: 15.
+    Name: `EmergAmps`
+    Default: 100.00614125497927
     """
 
     def _get_FaultRate(self) -> BatchFloat64ArrayProxy:
@@ -684,7 +721,8 @@ class CapacitorBatch(DSSBatch, CircuitElementBatchMixin, PDElementBatchMixin):
     """
     Failure rate per year.
 
-    DSS property name: `FaultRate`, DSS property index: 16.
+    Name: `FaultRate`
+    Default: 0.0005
     """
 
     def _get_pctPerm(self) -> BatchFloat64ArrayProxy:
@@ -697,7 +735,8 @@ class CapacitorBatch(DSSBatch, CircuitElementBatchMixin, PDElementBatchMixin):
     """
     Percent of failures that become permanent.
 
-    DSS property name: `pctPerm`, DSS property index: 17.
+    Name: `pctPerm`
+    Default: 100.0
     """
 
     def _get_Repair(self) -> BatchFloat64ArrayProxy:
@@ -710,7 +749,8 @@ class CapacitorBatch(DSSBatch, CircuitElementBatchMixin, PDElementBatchMixin):
     """
     Hours to repair.
 
-    DSS property name: `Repair`, DSS property index: 18.
+    Name: `Repair`
+    Default: 3.0
     """
 
     def _get_BaseFreq(self) -> BatchFloat64ArrayProxy:
@@ -723,7 +763,8 @@ class CapacitorBatch(DSSBatch, CircuitElementBatchMixin, PDElementBatchMixin):
     """
     Base Frequency for ratings.
 
-    DSS property name: `BaseFreq`, DSS property index: 19.
+    Name: `BaseFreq`
+    Units: Hz
     """
 
     def _get_Enabled(self) -> List[bool]:
@@ -731,14 +772,15 @@ class CapacitorBatch(DSSBatch, CircuitElementBatchMixin, PDElementBatchMixin):
             self._get_batch_int32_prop(20)
         ]
 
-    def _set_Enabled(self, value: bool, flags: enums.SetterFlags = 0):
+    def _set_Enabled(self, value: Union[bool, List[bool]], flags: enums.SetterFlags = 0):
         self._set_batch_int32_array(20, value, flags)
 
     Enabled = property(_get_Enabled, _set_Enabled) # type: List[bool]
     """
-    {Yes|No or True|False} Indicates whether this element is enabled.
+    Indicates whether this element is enabled.
 
-    DSS property name: `Enabled`, DSS property index: 20.
+    Name: `Enabled`
+    Default: True
     """
 
     def Like(self, value: AnyStr, flags: enums.SetterFlags = 0):
@@ -747,7 +789,9 @@ class CapacitorBatch(DSSBatch, CircuitElementBatchMixin, PDElementBatchMixin):
 
         New Capacitor.C2 like=c1  ...
 
-        DSS property name: `Like`, DSS property index: 21.
+        **Deprecated:** `Like` has been deprecated since at least 2021, see https://sourceforge.net/p/electricdss/discussion/861977/thread/8b59d21eb6/#b57c/f668
+
+        Name: `Like`
         """
         self._set_batch_string(21, value, flags)
 

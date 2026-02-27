@@ -14,7 +14,7 @@ from .CircuitElement import CircuitElementBatchMixin, CircuitElementMixin
 class ESPVLControl(DSSObj, CircuitElementMixin):
     __slots__ = DSSObj._extra_slots + CircuitElementMixin._extra_slots
     _cls_name = 'ESPVLControl'
-    _cls_idx = 38
+    _cls_idx = 39
     _cls_int_idx = {
         2,
         3,
@@ -71,9 +71,9 @@ class ESPVLControl(DSSObj, CircuitElementMixin):
 
     Element_str = property(_get_Element_str, _set_Element_str) # type: str
     """
-    Full object name of the circuit element, typically a line or transformer, which the control is monitoring. There is no default; must be specified.
+    Full object name of the circuit element, typically a line or transformer, which the control is monitoring.
 
-    DSS property name: `Element`, DSS property index: 1.
+    Name: `Element`
     """
 
     def _get_Element(self) -> DSSObj:
@@ -88,9 +88,9 @@ class ESPVLControl(DSSObj, CircuitElementMixin):
 
     Element = property(_get_Element, _set_Element) # type: DSSObj
     """
-    Full object name of the circuit element, typically a line or transformer, which the control is monitoring. There is no default; must be specified.
+    Full object name of the circuit element, typically a line or transformer, which the control is monitoring.
 
-    DSS property name: `Element`, DSS property index: 1.
+    Name: `Element`
     """
 
     def _get_Terminal(self) -> int:
@@ -101,9 +101,10 @@ class ESPVLControl(DSSObj, CircuitElementMixin):
 
     Terminal = property(_get_Terminal, _set_Terminal) # type: int
     """
-    Number of the terminal of the circuit element to which the ESPVLControl control is connected. 1 or 2, typically.  Default is 1. Make sure you have the direction on the power matching the sign of kWLimit.
+    Number of the terminal of the circuit element to which the ESPVLControl control is connected. 1 or 2, typically. Make sure you have the direction on the power matching the sign of kWLimit.
 
-    DSS property name: `Terminal`, DSS property index: 2.
+    Name: `Terminal`
+    Default: 1
     """
 
     def _get_Type(self) -> enums.ESPVLControlType:
@@ -119,7 +120,8 @@ class ESPVLControl(DSSObj, CircuitElementMixin):
     """
     Type of controller.  1= System Controller; 2= Local controller. 
 
-    DSS property name: `Type`, DSS property index: 3.
+    Name: `Type`
+    Default: None
     """
 
     def _get_Type_str(self) -> str:
@@ -132,7 +134,8 @@ class ESPVLControl(DSSObj, CircuitElementMixin):
     """
     Type of controller.  1= System Controller; 2= Local controller. 
 
-    DSS property name: `Type`, DSS property index: 3.
+    Name: `Type`
+    Default: None
     """
 
     def _get_kWBand(self) -> float:
@@ -145,7 +148,8 @@ class ESPVLControl(DSSObj, CircuitElementMixin):
     """
     Bandwidth (kW) of the dead band around the target limit.No dispatch changes are attempted if the power in the monitored terminal stays within this band.
 
-    DSS property name: `kWBand`, DSS property index: 4.
+    Name: `kWBand`
+    Default: 100.0
     """
 
     def _get_kvarLimit(self) -> float:
@@ -158,7 +162,8 @@ class ESPVLControl(DSSObj, CircuitElementMixin):
     """
     Max kvar to be delivered through the element.  Uses same dead band as kW.
 
-    DSS property name: `kvarLimit`, DSS property index: 5.
+    Name: `kvarLimit`
+    Default: 4000.0
     """
 
     def _get_LocalControlList(self) -> List[str]:
@@ -173,7 +178,7 @@ class ESPVLControl(DSSObj, CircuitElementMixin):
     """
     Array list of ESPVLControl local controller objects to be dispatched by System Controller. If not specified, all ESPVLControl devices with type=local in the circuit not attached to another controller are assumed to be part of this controller's fleet.
 
-    DSS property name: `LocalControlList`, DSS property index: 6.
+    Name: `LocalControlList`
     """
 
     def _get_LocalControlWeights(self) -> Float64Array:
@@ -186,7 +191,7 @@ class ESPVLControl(DSSObj, CircuitElementMixin):
     """
     Array of proportional weights corresponding to each ESPVLControl local controller in the LocalControlList.
 
-    DSS property name: `LocalControlWeights`, DSS property index: 7.
+    Name: `LocalControlWeights`
     """
 
     def _get_PVSystemList(self) -> List[str]:
@@ -201,7 +206,7 @@ class ESPVLControl(DSSObj, CircuitElementMixin):
     """
     Array list of PVSystem objects to be dispatched by a Local Controller. 
 
-    DSS property name: `PVSystemList`, DSS property index: 8.
+    Name: `PVSystemList`
     """
 
     def _get_PVSystemWeights(self) -> Float64Array:
@@ -214,7 +219,7 @@ class ESPVLControl(DSSObj, CircuitElementMixin):
     """
     Array of proportional weights corresponding to each PVSystem in the PVSystemList.
 
-    DSS property name: `PVSystemWeights`, DSS property index: 9.
+    Name: `PVSystemWeights`
     """
 
     def _get_StorageList(self) -> List[str]:
@@ -229,7 +234,7 @@ class ESPVLControl(DSSObj, CircuitElementMixin):
     """
     Array list of Storage objects to be dispatched by Local Controller. 
 
-    DSS property name: `StorageList`, DSS property index: 10.
+    Name: `StorageList`
     """
 
     def _get_StorageWeights(self) -> Float64Array:
@@ -242,7 +247,7 @@ class ESPVLControl(DSSObj, CircuitElementMixin):
     """
     Array of proportional weights corresponding to each Storage object in the StorageControlList.
 
-    DSS property name: `StorageWeights`, DSS property index: 11.
+    Name: `StorageWeights`
     """
 
     def _get_BaseFreq(self) -> float:
@@ -255,7 +260,8 @@ class ESPVLControl(DSSObj, CircuitElementMixin):
     """
     Base Frequency for ratings.
 
-    DSS property name: `BaseFreq`, DSS property index: 12.
+    Name: `BaseFreq`
+    Units: Hz
     """
 
     def _get_Enabled(self) -> bool:
@@ -266,9 +272,10 @@ class ESPVLControl(DSSObj, CircuitElementMixin):
 
     Enabled = property(_get_Enabled, _set_Enabled) # type: bool
     """
-    {Yes|No or True|False} Indicates whether this element is enabled.
+    Indicates whether this element is enabled.
 
-    DSS property name: `Enabled`, DSS property index: 13.
+    Name: `Enabled`
+    Default: True
     """
 
     def Like(self, value: AnyStr):
@@ -277,7 +284,9 @@ class ESPVLControl(DSSObj, CircuitElementMixin):
 
         New Capacitor.C2 like=c1  ...
 
-        DSS property name: `Like`, DSS property index: 14.
+        **Deprecated:** `Like` has been deprecated since at least 2021, see https://sourceforge.net/p/electricdss/discussion/861977/thread/8b59d21eb6/#b57c/f668
+
+        Name: `Like`
         """
         self._set_string_o(14, value)
 
@@ -301,7 +310,7 @@ class ESPVLControlProperties(TypedDict):
 class ESPVLControlBatch(DSSBatch, CircuitElementBatchMixin):
     _cls_name = 'ESPVLControl'
     _obj_cls = ESPVLControl
-    _cls_idx = 38
+    _cls_idx = 39
     __slots__ = []
 
     def __init__(self, api_util, **kwargs):
@@ -337,9 +346,9 @@ class ESPVLControlBatch(DSSBatch, CircuitElementBatchMixin):
 
     Element_str = property(_get_Element_str, _set_Element_str) # type: List[str]
     """
-    Full object name of the circuit element, typically a line or transformer, which the control is monitoring. There is no default; must be specified.
+    Full object name of the circuit element, typically a line or transformer, which the control is monitoring.
 
-    DSS property name: `Element`, DSS property index: 1.
+    Name: `Element`
     """
 
     def _get_Element(self) -> List[DSSObj]:
@@ -350,9 +359,9 @@ class ESPVLControlBatch(DSSBatch, CircuitElementBatchMixin):
 
     Element = property(_get_Element, _set_Element) # type: List[DSSObj]
     """
-    Full object name of the circuit element, typically a line or transformer, which the control is monitoring. There is no default; must be specified.
+    Full object name of the circuit element, typically a line or transformer, which the control is monitoring.
 
-    DSS property name: `Element`, DSS property index: 1.
+    Name: `Element`
     """
 
     def _get_Terminal(self) -> BatchInt32ArrayProxy:
@@ -363,9 +372,10 @@ class ESPVLControlBatch(DSSBatch, CircuitElementBatchMixin):
 
     Terminal = property(_get_Terminal, _set_Terminal) # type: BatchInt32ArrayProxy
     """
-    Number of the terminal of the circuit element to which the ESPVLControl control is connected. 1 or 2, typically.  Default is 1. Make sure you have the direction on the power matching the sign of kWLimit.
+    Number of the terminal of the circuit element to which the ESPVLControl control is connected. 1 or 2, typically. Make sure you have the direction on the power matching the sign of kWLimit.
 
-    DSS property name: `Terminal`, DSS property index: 2.
+    Name: `Terminal`
+    Default: 1
     """
 
     def _get_Type(self) -> BatchInt32ArrayProxy:
@@ -382,7 +392,8 @@ class ESPVLControlBatch(DSSBatch, CircuitElementBatchMixin):
     """
     Type of controller.  1= System Controller; 2= Local controller. 
 
-    DSS property name: `Type`, DSS property index: 3.
+    Name: `Type`
+    Default: None
     """
 
     def _get_Type_str(self) -> List[str]:
@@ -395,7 +406,8 @@ class ESPVLControlBatch(DSSBatch, CircuitElementBatchMixin):
     """
     Type of controller.  1= System Controller; 2= Local controller. 
 
-    DSS property name: `Type`, DSS property index: 3.
+    Name: `Type`
+    Default: None
     """
 
     def _get_kWBand(self) -> BatchFloat64ArrayProxy:
@@ -408,7 +420,8 @@ class ESPVLControlBatch(DSSBatch, CircuitElementBatchMixin):
     """
     Bandwidth (kW) of the dead band around the target limit.No dispatch changes are attempted if the power in the monitored terminal stays within this band.
 
-    DSS property name: `kWBand`, DSS property index: 4.
+    Name: `kWBand`
+    Default: 100.0
     """
 
     def _get_kvarLimit(self) -> BatchFloat64ArrayProxy:
@@ -421,7 +434,8 @@ class ESPVLControlBatch(DSSBatch, CircuitElementBatchMixin):
     """
     Max kvar to be delivered through the element.  Uses same dead band as kW.
 
-    DSS property name: `kvarLimit`, DSS property index: 5.
+    Name: `kvarLimit`
+    Default: 4000.0
     """
 
     def _get_LocalControlList(self) -> List[List[str]]:
@@ -438,7 +452,7 @@ class ESPVLControlBatch(DSSBatch, CircuitElementBatchMixin):
     """
     Array list of ESPVLControl local controller objects to be dispatched by System Controller. If not specified, all ESPVLControl devices with type=local in the circuit not attached to another controller are assumed to be part of this controller's fleet.
 
-    DSS property name: `LocalControlList`, DSS property index: 6.
+    Name: `LocalControlList`
     """
 
     def _get_LocalControlWeights(self) -> List[Float64Array]:
@@ -454,7 +468,7 @@ class ESPVLControlBatch(DSSBatch, CircuitElementBatchMixin):
     """
     Array of proportional weights corresponding to each ESPVLControl local controller in the LocalControlList.
 
-    DSS property name: `LocalControlWeights`, DSS property index: 7.
+    Name: `LocalControlWeights`
     """
 
     def _get_PVSystemList(self) -> List[List[str]]:
@@ -471,7 +485,7 @@ class ESPVLControlBatch(DSSBatch, CircuitElementBatchMixin):
     """
     Array list of PVSystem objects to be dispatched by a Local Controller. 
 
-    DSS property name: `PVSystemList`, DSS property index: 8.
+    Name: `PVSystemList`
     """
 
     def _get_PVSystemWeights(self) -> List[Float64Array]:
@@ -487,7 +501,7 @@ class ESPVLControlBatch(DSSBatch, CircuitElementBatchMixin):
     """
     Array of proportional weights corresponding to each PVSystem in the PVSystemList.
 
-    DSS property name: `PVSystemWeights`, DSS property index: 9.
+    Name: `PVSystemWeights`
     """
 
     def _get_StorageList(self) -> List[List[str]]:
@@ -504,7 +518,7 @@ class ESPVLControlBatch(DSSBatch, CircuitElementBatchMixin):
     """
     Array list of Storage objects to be dispatched by Local Controller. 
 
-    DSS property name: `StorageList`, DSS property index: 10.
+    Name: `StorageList`
     """
 
     def _get_StorageWeights(self) -> List[Float64Array]:
@@ -520,7 +534,7 @@ class ESPVLControlBatch(DSSBatch, CircuitElementBatchMixin):
     """
     Array of proportional weights corresponding to each Storage object in the StorageControlList.
 
-    DSS property name: `StorageWeights`, DSS property index: 11.
+    Name: `StorageWeights`
     """
 
     def _get_BaseFreq(self) -> BatchFloat64ArrayProxy:
@@ -533,7 +547,8 @@ class ESPVLControlBatch(DSSBatch, CircuitElementBatchMixin):
     """
     Base Frequency for ratings.
 
-    DSS property name: `BaseFreq`, DSS property index: 12.
+    Name: `BaseFreq`
+    Units: Hz
     """
 
     def _get_Enabled(self) -> List[bool]:
@@ -541,14 +556,15 @@ class ESPVLControlBatch(DSSBatch, CircuitElementBatchMixin):
             self._get_batch_int32_prop(13)
         ]
 
-    def _set_Enabled(self, value: bool, flags: enums.SetterFlags = 0):
+    def _set_Enabled(self, value: Union[bool, List[bool]], flags: enums.SetterFlags = 0):
         self._set_batch_int32_array(13, value, flags)
 
     Enabled = property(_get_Enabled, _set_Enabled) # type: List[bool]
     """
-    {Yes|No or True|False} Indicates whether this element is enabled.
+    Indicates whether this element is enabled.
 
-    DSS property name: `Enabled`, DSS property index: 13.
+    Name: `Enabled`
+    Default: True
     """
 
     def Like(self, value: AnyStr, flags: enums.SetterFlags = 0):
@@ -557,7 +573,9 @@ class ESPVLControlBatch(DSSBatch, CircuitElementBatchMixin):
 
         New Capacitor.C2 like=c1  ...
 
-        DSS property name: `Like`, DSS property index: 14.
+        **Deprecated:** `Like` has been deprecated since at least 2021, see https://sourceforge.net/p/electricdss/discussion/861977/thread/8b59d21eb6/#b57c/f668
+
+        Name: `Like`
         """
         self._set_batch_string(14, value, flags)
 

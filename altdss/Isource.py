@@ -82,7 +82,7 @@ class Isource(DSSObj, CircuitElementMixin, PCElementMixin):
     bus1=busname
     bus1=busname.1.2.3
 
-    DSS property name: `Bus1`, DSS property index: 1.
+    Name: `Bus1`
     """
 
     def _get_Amps(self) -> float:
@@ -95,7 +95,8 @@ class Isource(DSSObj, CircuitElementMixin, PCElementMixin):
     """
     Magnitude of current source, each phase, in Amps.
 
-    DSS property name: `Amps`, DSS property index: 2.
+    Name: `Amps`
+    Units: A
     """
 
     def _get_Angle(self) -> float:
@@ -106,10 +107,12 @@ class Isource(DSSObj, CircuitElementMixin, PCElementMixin):
 
     Angle = property(_get_Angle, _set_Angle) # type: float
     """
-    Phase angle in degrees of first phase: e.g.,Angle=10.3.
-    Phase shift between phases is assumed 120 degrees when number of phases <= 3
+    Phase angle of first phase: e.g., Angle=10.3.
+    Phase shift between phases is assumed 120 degrees when number of phases less than 3.
 
-    DSS property name: `Angle`, DSS property index: 3.
+    Name: `Angle`
+    Units: °
+    Default: 0.0
     """
 
     def _get_Frequency(self) -> float:
@@ -122,7 +125,8 @@ class Isource(DSSObj, CircuitElementMixin, PCElementMixin):
     """
     Source frequency.  Defaults to  circuit fundamental frequency.
 
-    DSS property name: `Frequency`, DSS property index: 4.
+    Name: `Frequency`
+    Units: Hz
     """
 
     def _get_Phases(self) -> int:
@@ -133,9 +137,10 @@ class Isource(DSSObj, CircuitElementMixin, PCElementMixin):
 
     Phases = property(_get_Phases, _set_Phases) # type: int
     """
-    Number of phases.  Defaults to 3. For 3 or less, phase shift is 120 degrees.
+    Number of phases. For 3 or less, phase shift is 120 degrees.
 
-    DSS property name: `Phases`, DSS property index: 5.
+    Name: `Phases`
+    Default: 3
     """
 
     def _get_ScanType(self) -> enums.ScanType:
@@ -149,9 +154,10 @@ class Isource(DSSObj, CircuitElementMixin, PCElementMixin):
 
     ScanType = property(_get_ScanType, _set_ScanType) # type: enums.ScanType
     """
-    {pos*| zero | none} Maintain specified sequence for harmonic solution. Default is positive sequence. Otherwise, angle between phases rotates with harmonic.
+    Maintain specified sequence for harmonic solution. Default is positive sequence. Otherwise, angle between phases rotates with harmonic.
 
-    DSS property name: `ScanType`, DSS property index: 6.
+    Name: `ScanType`
+    Default: Positive
     """
 
     def _get_ScanType_str(self) -> str:
@@ -162,9 +168,10 @@ class Isource(DSSObj, CircuitElementMixin, PCElementMixin):
 
     ScanType_str = property(_get_ScanType_str, _set_ScanType_str) # type: str
     """
-    {pos*| zero | none} Maintain specified sequence for harmonic solution. Default is positive sequence. Otherwise, angle between phases rotates with harmonic.
+    Maintain specified sequence for harmonic solution. Default is positive sequence. Otherwise, angle between phases rotates with harmonic.
 
-    DSS property name: `ScanType`, DSS property index: 6.
+    Name: `ScanType`
+    Default: Positive
     """
 
     def _get_Sequence(self) -> enums.SequenceType:
@@ -178,9 +185,10 @@ class Isource(DSSObj, CircuitElementMixin, PCElementMixin):
 
     Sequence = property(_get_Sequence, _set_Sequence) # type: enums.SequenceType
     """
-    {pos*| neg | zero} Set the phase angles for the specified symmetrical component sequence for non-harmonic solution modes. Default is positive sequence. 
+    Set the phase angles for the specified symmetrical component sequence for non-harmonic solution modes.
 
-    DSS property name: `Sequence`, DSS property index: 7.
+    Name: `Sequence`
+    Default: Positive
     """
 
     def _get_Sequence_str(self) -> str:
@@ -191,9 +199,10 @@ class Isource(DSSObj, CircuitElementMixin, PCElementMixin):
 
     Sequence_str = property(_get_Sequence_str, _set_Sequence_str) # type: str
     """
-    {pos*| neg | zero} Set the phase angles for the specified symmetrical component sequence for non-harmonic solution modes. Default is positive sequence. 
+    Set the phase angles for the specified symmetrical component sequence for non-harmonic solution modes.
 
-    DSS property name: `Sequence`, DSS property index: 7.
+    Name: `Sequence`
+    Default: Positive
     """
 
     def _get_Yearly_str(self) -> str:
@@ -210,7 +219,7 @@ class Isource(DSSObj, CircuitElementMixin, PCElementMixin):
 
     Is set to the Daily load shape when Daily is defined.  The daily load shape is repeated in this case. Set to NONE to reset to no loadshape for Yearly mode. The default is no variation.
 
-    DSS property name: `Yearly`, DSS property index: 8.
+    Name: `Yearly`
     """
 
     def _get_Yearly(self) -> LoadShape:
@@ -231,7 +240,7 @@ class Isource(DSSObj, CircuitElementMixin, PCElementMixin):
 
     Is set to the Daily load shape when Daily is defined.  The daily load shape is repeated in this case. Set to NONE to reset to no loadshape for Yearly mode. The default is no variation.
 
-    DSS property name: `Yearly`, DSS property index: 8.
+    Name: `Yearly`
     """
 
     def _get_Daily_str(self) -> str:
@@ -248,7 +257,7 @@ class Isource(DSSObj, CircuitElementMixin, PCElementMixin):
 
     Sets Yearly curve if it is not already defined.   Set to NONE to reset to no loadshape for Yearly mode. The default is no variation.
 
-    DSS property name: `Daily`, DSS property index: 9.
+    Name: `Daily`
     """
 
     def _get_Daily(self) -> LoadShape:
@@ -269,7 +278,7 @@ class Isource(DSSObj, CircuitElementMixin, PCElementMixin):
 
     Sets Yearly curve if it is not already defined.   Set to NONE to reset to no loadshape for Yearly mode. The default is no variation.
 
-    DSS property name: `Daily`, DSS property index: 9.
+    Name: `Daily`
     """
 
     def _get_Duty_str(self) -> str:
@@ -286,7 +295,7 @@ class Isource(DSSObj, CircuitElementMixin, PCElementMixin):
 
     Defaults to Daily load shape when Daily is defined.   Set to NONE to reset to no loadshape for Yearly mode. The default is no variation.
 
-    DSS property name: `Duty`, DSS property index: 10.
+    Name: `Duty`
     """
 
     def _get_Duty(self) -> LoadShape:
@@ -307,7 +316,7 @@ class Isource(DSSObj, CircuitElementMixin, PCElementMixin):
 
     Defaults to Daily load shape when Daily is defined.   Set to NONE to reset to no loadshape for Yearly mode. The default is no variation.
 
-    DSS property name: `Duty`, DSS property index: 10.
+    Name: `Duty`
     """
 
     def _get_Bus2(self) -> str:
@@ -324,7 +333,7 @@ class Isource(DSSObj, CircuitElementMixin, PCElementMixin):
 
     Default is Bus1.0.0.0 (grounded-wye connection)
 
-    DSS property name: `Bus2`, DSS property index: 11.
+    Name: `Bus2`
     """
 
     def _get_Spectrum_str(self) -> str:
@@ -335,9 +344,10 @@ class Isource(DSSObj, CircuitElementMixin, PCElementMixin):
 
     Spectrum_str = property(_get_Spectrum_str, _set_Spectrum_str) # type: str
     """
-    Harmonic spectrum assumed for this source.  Default is "default".
+    Harmonic spectrum assumed for this source.
 
-    DSS property name: `Spectrum`, DSS property index: 12.
+    Name: `Spectrum`
+    Default: default
     """
 
     def _get_Spectrum(self) -> SpectrumObj:
@@ -352,9 +362,10 @@ class Isource(DSSObj, CircuitElementMixin, PCElementMixin):
 
     Spectrum = property(_get_Spectrum, _set_Spectrum) # type: SpectrumObj
     """
-    Harmonic spectrum assumed for this source.  Default is "default".
+    Harmonic spectrum assumed for this source.
 
-    DSS property name: `Spectrum`, DSS property index: 12.
+    Name: `Spectrum`
+    Default: default
     """
 
     def _get_BaseFreq(self) -> float:
@@ -367,7 +378,8 @@ class Isource(DSSObj, CircuitElementMixin, PCElementMixin):
     """
     Base Frequency for ratings.
 
-    DSS property name: `BaseFreq`, DSS property index: 13.
+    Name: `BaseFreq`
+    Units: Hz
     """
 
     def _get_Enabled(self) -> bool:
@@ -378,9 +390,10 @@ class Isource(DSSObj, CircuitElementMixin, PCElementMixin):
 
     Enabled = property(_get_Enabled, _set_Enabled) # type: bool
     """
-    {Yes|No or True|False} Indicates whether this element is enabled.
+    Indicates whether this element is enabled.
 
-    DSS property name: `Enabled`, DSS property index: 14.
+    Name: `Enabled`
+    Default: True
     """
 
     def Like(self, value: AnyStr):
@@ -389,7 +402,9 @@ class Isource(DSSObj, CircuitElementMixin, PCElementMixin):
 
         New Capacitor.C2 like=c1  ...
 
-        DSS property name: `Like`, DSS property index: 15.
+        **Deprecated:** `Like` has been deprecated since at least 2021, see https://sourceforge.net/p/electricdss/discussion/861977/thread/8b59d21eb6/#b57c/f668
+
+        Name: `Like`
         """
         self._set_string_o(15, value)
 
@@ -455,7 +470,7 @@ class IsourceBatch(DSSBatch, CircuitElementBatchMixin, PCElementBatchMixin):
     bus1=busname
     bus1=busname.1.2.3
 
-    DSS property name: `Bus1`, DSS property index: 1.
+    Name: `Bus1`
     """
 
     def _get_Amps(self) -> BatchFloat64ArrayProxy:
@@ -468,7 +483,8 @@ class IsourceBatch(DSSBatch, CircuitElementBatchMixin, PCElementBatchMixin):
     """
     Magnitude of current source, each phase, in Amps.
 
-    DSS property name: `Amps`, DSS property index: 2.
+    Name: `Amps`
+    Units: A
     """
 
     def _get_Angle(self) -> BatchFloat64ArrayProxy:
@@ -479,10 +495,12 @@ class IsourceBatch(DSSBatch, CircuitElementBatchMixin, PCElementBatchMixin):
 
     Angle = property(_get_Angle, _set_Angle) # type: BatchFloat64ArrayProxy
     """
-    Phase angle in degrees of first phase: e.g.,Angle=10.3.
-    Phase shift between phases is assumed 120 degrees when number of phases <= 3
+    Phase angle of first phase: e.g., Angle=10.3.
+    Phase shift between phases is assumed 120 degrees when number of phases less than 3.
 
-    DSS property name: `Angle`, DSS property index: 3.
+    Name: `Angle`
+    Units: °
+    Default: 0.0
     """
 
     def _get_Frequency(self) -> BatchFloat64ArrayProxy:
@@ -495,7 +513,8 @@ class IsourceBatch(DSSBatch, CircuitElementBatchMixin, PCElementBatchMixin):
     """
     Source frequency.  Defaults to  circuit fundamental frequency.
 
-    DSS property name: `Frequency`, DSS property index: 4.
+    Name: `Frequency`
+    Units: Hz
     """
 
     def _get_Phases(self) -> BatchInt32ArrayProxy:
@@ -506,9 +525,10 @@ class IsourceBatch(DSSBatch, CircuitElementBatchMixin, PCElementBatchMixin):
 
     Phases = property(_get_Phases, _set_Phases) # type: BatchInt32ArrayProxy
     """
-    Number of phases.  Defaults to 3. For 3 or less, phase shift is 120 degrees.
+    Number of phases. For 3 or less, phase shift is 120 degrees.
 
-    DSS property name: `Phases`, DSS property index: 5.
+    Name: `Phases`
+    Default: 3
     """
 
     def _get_ScanType(self) -> BatchInt32ArrayProxy:
@@ -523,9 +543,10 @@ class IsourceBatch(DSSBatch, CircuitElementBatchMixin, PCElementBatchMixin):
 
     ScanType = property(_get_ScanType, _set_ScanType) # type: BatchInt32ArrayProxy
     """
-    {pos*| zero | none} Maintain specified sequence for harmonic solution. Default is positive sequence. Otherwise, angle between phases rotates with harmonic.
+    Maintain specified sequence for harmonic solution. Default is positive sequence. Otherwise, angle between phases rotates with harmonic.
 
-    DSS property name: `ScanType`, DSS property index: 6.
+    Name: `ScanType`
+    Default: Positive
     """
 
     def _get_ScanType_str(self) -> List[str]:
@@ -536,9 +557,10 @@ class IsourceBatch(DSSBatch, CircuitElementBatchMixin, PCElementBatchMixin):
 
     ScanType_str = property(_get_ScanType_str, _set_ScanType_str) # type: List[str]
     """
-    {pos*| zero | none} Maintain specified sequence for harmonic solution. Default is positive sequence. Otherwise, angle between phases rotates with harmonic.
+    Maintain specified sequence for harmonic solution. Default is positive sequence. Otherwise, angle between phases rotates with harmonic.
 
-    DSS property name: `ScanType`, DSS property index: 6.
+    Name: `ScanType`
+    Default: Positive
     """
 
     def _get_Sequence(self) -> BatchInt32ArrayProxy:
@@ -553,9 +575,10 @@ class IsourceBatch(DSSBatch, CircuitElementBatchMixin, PCElementBatchMixin):
 
     Sequence = property(_get_Sequence, _set_Sequence) # type: BatchInt32ArrayProxy
     """
-    {pos*| neg | zero} Set the phase angles for the specified symmetrical component sequence for non-harmonic solution modes. Default is positive sequence. 
+    Set the phase angles for the specified symmetrical component sequence for non-harmonic solution modes.
 
-    DSS property name: `Sequence`, DSS property index: 7.
+    Name: `Sequence`
+    Default: Positive
     """
 
     def _get_Sequence_str(self) -> List[str]:
@@ -566,9 +589,10 @@ class IsourceBatch(DSSBatch, CircuitElementBatchMixin, PCElementBatchMixin):
 
     Sequence_str = property(_get_Sequence_str, _set_Sequence_str) # type: List[str]
     """
-    {pos*| neg | zero} Set the phase angles for the specified symmetrical component sequence for non-harmonic solution modes. Default is positive sequence. 
+    Set the phase angles for the specified symmetrical component sequence for non-harmonic solution modes.
 
-    DSS property name: `Sequence`, DSS property index: 7.
+    Name: `Sequence`
+    Default: Positive
     """
 
     def _get_Yearly_str(self) -> List[str]:
@@ -585,7 +609,7 @@ class IsourceBatch(DSSBatch, CircuitElementBatchMixin, PCElementBatchMixin):
 
     Is set to the Daily load shape when Daily is defined.  The daily load shape is repeated in this case. Set to NONE to reset to no loadshape for Yearly mode. The default is no variation.
 
-    DSS property name: `Yearly`, DSS property index: 8.
+    Name: `Yearly`
     """
 
     def _get_Yearly(self) -> List[LoadShape]:
@@ -602,7 +626,7 @@ class IsourceBatch(DSSBatch, CircuitElementBatchMixin, PCElementBatchMixin):
 
     Is set to the Daily load shape when Daily is defined.  The daily load shape is repeated in this case. Set to NONE to reset to no loadshape for Yearly mode. The default is no variation.
 
-    DSS property name: `Yearly`, DSS property index: 8.
+    Name: `Yearly`
     """
 
     def _get_Daily_str(self) -> List[str]:
@@ -619,7 +643,7 @@ class IsourceBatch(DSSBatch, CircuitElementBatchMixin, PCElementBatchMixin):
 
     Sets Yearly curve if it is not already defined.   Set to NONE to reset to no loadshape for Yearly mode. The default is no variation.
 
-    DSS property name: `Daily`, DSS property index: 9.
+    Name: `Daily`
     """
 
     def _get_Daily(self) -> List[LoadShape]:
@@ -636,7 +660,7 @@ class IsourceBatch(DSSBatch, CircuitElementBatchMixin, PCElementBatchMixin):
 
     Sets Yearly curve if it is not already defined.   Set to NONE to reset to no loadshape for Yearly mode. The default is no variation.
 
-    DSS property name: `Daily`, DSS property index: 9.
+    Name: `Daily`
     """
 
     def _get_Duty_str(self) -> List[str]:
@@ -653,7 +677,7 @@ class IsourceBatch(DSSBatch, CircuitElementBatchMixin, PCElementBatchMixin):
 
     Defaults to Daily load shape when Daily is defined.   Set to NONE to reset to no loadshape for Yearly mode. The default is no variation.
 
-    DSS property name: `Duty`, DSS property index: 10.
+    Name: `Duty`
     """
 
     def _get_Duty(self) -> List[LoadShape]:
@@ -670,7 +694,7 @@ class IsourceBatch(DSSBatch, CircuitElementBatchMixin, PCElementBatchMixin):
 
     Defaults to Daily load shape when Daily is defined.   Set to NONE to reset to no loadshape for Yearly mode. The default is no variation.
 
-    DSS property name: `Duty`, DSS property index: 10.
+    Name: `Duty`
     """
 
     def _get_Bus2(self) -> List[str]:
@@ -687,7 +711,7 @@ class IsourceBatch(DSSBatch, CircuitElementBatchMixin, PCElementBatchMixin):
 
     Default is Bus1.0.0.0 (grounded-wye connection)
 
-    DSS property name: `Bus2`, DSS property index: 11.
+    Name: `Bus2`
     """
 
     def _get_Spectrum_str(self) -> List[str]:
@@ -698,9 +722,10 @@ class IsourceBatch(DSSBatch, CircuitElementBatchMixin, PCElementBatchMixin):
 
     Spectrum_str = property(_get_Spectrum_str, _set_Spectrum_str) # type: List[str]
     """
-    Harmonic spectrum assumed for this source.  Default is "default".
+    Harmonic spectrum assumed for this source.
 
-    DSS property name: `Spectrum`, DSS property index: 12.
+    Name: `Spectrum`
+    Default: default
     """
 
     def _get_Spectrum(self) -> List[SpectrumObj]:
@@ -711,9 +736,10 @@ class IsourceBatch(DSSBatch, CircuitElementBatchMixin, PCElementBatchMixin):
 
     Spectrum = property(_get_Spectrum, _set_Spectrum) # type: List[SpectrumObj]
     """
-    Harmonic spectrum assumed for this source.  Default is "default".
+    Harmonic spectrum assumed for this source.
 
-    DSS property name: `Spectrum`, DSS property index: 12.
+    Name: `Spectrum`
+    Default: default
     """
 
     def _get_BaseFreq(self) -> BatchFloat64ArrayProxy:
@@ -726,7 +752,8 @@ class IsourceBatch(DSSBatch, CircuitElementBatchMixin, PCElementBatchMixin):
     """
     Base Frequency for ratings.
 
-    DSS property name: `BaseFreq`, DSS property index: 13.
+    Name: `BaseFreq`
+    Units: Hz
     """
 
     def _get_Enabled(self) -> List[bool]:
@@ -734,14 +761,15 @@ class IsourceBatch(DSSBatch, CircuitElementBatchMixin, PCElementBatchMixin):
             self._get_batch_int32_prop(14)
         ]
 
-    def _set_Enabled(self, value: bool, flags: enums.SetterFlags = 0):
+    def _set_Enabled(self, value: Union[bool, List[bool]], flags: enums.SetterFlags = 0):
         self._set_batch_int32_array(14, value, flags)
 
     Enabled = property(_get_Enabled, _set_Enabled) # type: List[bool]
     """
-    {Yes|No or True|False} Indicates whether this element is enabled.
+    Indicates whether this element is enabled.
 
-    DSS property name: `Enabled`, DSS property index: 14.
+    Name: `Enabled`
+    Default: True
     """
 
     def Like(self, value: AnyStr, flags: enums.SetterFlags = 0):
@@ -750,7 +778,9 @@ class IsourceBatch(DSSBatch, CircuitElementBatchMixin, PCElementBatchMixin):
 
         New Capacitor.C2 like=c1  ...
 
-        DSS property name: `Like`, DSS property index: 15.
+        **Deprecated:** `Like` has been deprecated since at least 2021, see https://sourceforge.net/p/electricdss/discussion/861977/thread/8b59d21eb6/#b57c/f668
+
+        Name: `Like`
         """
         self._set_batch_string(15, value, flags)
 

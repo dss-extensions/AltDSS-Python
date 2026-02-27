@@ -142,7 +142,7 @@ class CircuitElementMixin:
         '''
         return self._lib.Alt_CE_Get_HasVoltControl(self._ptr) != 0
 
-    def IsOpen(self, terminal: int, phase: int) -> bool:
+    def IsOpen(self, terminal: int, phase: int = 0) -> bool:
         '''
         Returns true if the specified terminal and phase are open.
 
@@ -150,14 +150,14 @@ class CircuitElementMixin:
         '''
         return self._lib.Alt_CE_IsOpen(self._ptr, terminal, phase) != 0
 
-    def MaxCurrent(self, terminal: int) -> float:
+    def MaxCurrent(self, terminal: int = -1) -> float:
         '''
         Returns the maximum current (magnitude) at the specified terminal. 
         Use -1 as terminal to get the value across all terminals.
         '''
         return self._lib.Alt_CE_MaxCurrent(self._ptr, terminal)
 
-    def Open(self, terminal: int, phase: int) -> None:
+    def Open(self, terminal: int, phase: int = 0) -> None:
         '''
         Open the specified terminal and phase, if non-zero, or all conductors at the terminal.
 
@@ -165,7 +165,7 @@ class CircuitElementMixin:
         '''
         self._lib.Alt_CE_Open(self._ptr, terminal, phase)
 
-    def Close(self, terminal: int, phase: int) -> None:
+    def Close(self, terminal: int, phase: int = 0) -> None:
         '''
         Close the specified terminal and phase, if non-zero, or all conductors at the terminal.
 
@@ -191,7 +191,9 @@ class CircuitElementMixin:
 
     def ComplexSeqVoltages(self) -> ComplexArray:
         '''
-        Complex double array of Sequence Voltage for all terminals of active circuit element.
+        Complex array of sequence voltages for all terminals of this circuit element.
+
+        Each column represents a terminal.
 
         Original COM help: https://opendss.epri.com/CplxSeqVoltages1.html
         '''
@@ -199,7 +201,9 @@ class CircuitElementMixin:
 
     def ComplexSeqCurrents(self) -> ComplexArray:
         '''
-        Complex double array of Sequence Currents for all conductors of all terminals of active circuit element.
+        Complex array of sequence currents for all terminals of this circuit element.
+
+        Each column represents a terminal.
 
         Original COM help: https://opendss.epri.com/CplxSeqCurrents.html
         '''
@@ -212,6 +216,14 @@ class CircuitElementMixin:
         Original COM help: https://opendss.epri.com/Currents1.html
         '''
         return self._get_fcomplex128_array(self._lib.Alt_CE_Get_Currents, self._ptr)
+
+    def CurrentsMagAng(self) -> Float64Array:
+        '''
+        Currents in magnitude, angle (degrees) format as a array of doubles.
+
+        Original COM help: https://opendss.epri.com/CurrentsMagAng.html
+        '''
+        return self._get_float64_array(self._lib.Alt_CE_Get_CurrentsMagAng, self._ptr)
 
     def Voltages(self) -> ComplexArray:
         '''
@@ -257,13 +269,17 @@ class CircuitElementMixin:
         '''
         Complex array of sequence powers (kW, kvar) into each 3-phase terminal
 
+        Each column represents a terminal.
+
         Original COM help: https://opendss.epri.com/SeqPowers.html
         '''
         return self._get_fcomplex128_array(self._lib.Alt_CE_Get_SeqPowers, self._ptr)
 
     def SeqVoltages(self) -> Float64Array:
         '''
-        Double array of symmetrical component voltages (magnitudes only) at each 3-phase terminal
+        Array of symmetrical component voltages (magnitudes only) at each 3-phase terminal
+
+        Each column represents a terminal.
 
         Original COM help: https://opendss.epri.com/SeqVoltages1.html
         '''
@@ -295,7 +311,7 @@ class CircuitElementMixin:
 
     def TotalPowers(self) -> ComplexArray:
         '''
-        Returns an array with the total powers (complex, kVA) at ALL terminals of the active circuit element.
+        Returns an array with the total powers (complex, kVA) at ALL terminals of this circuit element.
 
         Original COM help: https://opendss.epri.com/TotalPowers.html
         '''
@@ -377,7 +393,7 @@ class CircuitElementBatchMixin:
             OCPDevType(val) for val in self._get_batch_int32_func("Alt_CE_Get_OCPDeviceType")
         ]
 
-    def MaxCurrent(self, terminal: int) -> Float64Array:
+    def MaxCurrent(self, terminal: int = -1) -> Float64Array:
         '''
         Returns the maximum current (magnitude) at the specified terminal for each element in this batch. 
         Use -1 as terminal to get the value across all terminals.
@@ -453,6 +469,8 @@ class CircuitElementBatchMixin:
         '''
         Complex array of sequence powers (kW, kvar) into each 3-phase terminal of each element
 
+        Each column represents a terminal.
+
         Original COM help: https://opendss.epri.com/SeqPowers.html
         '''
         return self._get_fcomplex128_array(self._lib.Alt_CEBatch_Get_SeqPowers, *self._get_ptr_cnt())
@@ -461,17 +479,21 @@ class CircuitElementBatchMixin:
         '''
         Array of symmetrical component currents (magnitudes only) into each 3-phase terminal of each element
 
+        Each column represents a terminal.
+
         Original COM help: https://opendss.epri.com/SeqCurrents.html
         '''
         return self._get_float64_array(self._lib.Alt_CEBatch_Get_SeqCurrents, *self._get_ptr_cnt())
         
     def ComplexSeqCurrents(self) -> ComplexArray:
         '''
-        Complex double array of Sequence Currents for all conductors of all terminals of active circuit element.
+        Complex array of sequence currents for all terminals of the elements in the batch.
+
+        Each column represents a terminal.
 
         Original COM help: https://opendss.epri.com/CplxSeqCurrents.html
         '''
-        return self._get_float64_array(self._lib.Alt_CEBatch_Get_ComplexSeqCurrents, *self._get_ptr_cnt())
+        return self._get_fcomplex128_array(self._lib.Alt_CEBatch_Get_ComplexSeqCurrents, *self._get_ptr_cnt())
 
     def Currents(self) -> ComplexArray:
         '''
@@ -499,7 +521,9 @@ class CircuitElementBatchMixin:
 
     def SeqVoltages(self) -> Float64Array:
         '''
-        Double array of symmetrical component voltages (magnitudes only) at each 3-phase terminal
+        Array of symmetrical component voltages (magnitudes only) at each 3-phase terminal
+
+        Each column represents a terminal.
 
         Original COM help: https://opendss.epri.com/SeqVoltages1.html
         '''
@@ -515,7 +539,9 @@ class CircuitElementBatchMixin:
 
     def ComplexSeqVoltages(self) -> ComplexArray:
         '''
-        Complex double array of Sequence Voltage for all terminals of active circuit element.
+        Complex array of sequence voltages for all terminals of the circuit elements in the batch.
+
+        Each column represents a terminal.
 
         Original COM help: https://opendss.epri.com/CplxSeqVoltages1.html
         '''

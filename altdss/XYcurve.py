@@ -69,7 +69,7 @@ class XYcurve(DSSObj):
     """
     Max number of points to expect in curve. This could get reset to the actual number of points defined if less than specified.
 
-    DSS property name: `NPts`, DSS property index: 1.
+    Name: `NPts`
     """
 
     def _get_YArray(self) -> Float64Array:
@@ -87,7 +87,7 @@ class XYcurve(DSSObj):
 
     Note: this property will reset Npts to a smaller value if the  number of values in the files are fewer.
 
-    DSS property name: `YArray`, DSS property index: 3.
+    Name: `YArray`
     """
 
     def _get_XArray(self) -> Float64Array:
@@ -105,7 +105,7 @@ class XYcurve(DSSObj):
 
     Note: this property will reset Npts to a smaller value if the  number of values in the files are fewer.
 
-    DSS property name: `XArray`, DSS property index: 4.
+    Name: `XArray`
     """
 
     def _get_CSVFile(self) -> str:
@@ -116,9 +116,9 @@ class XYcurve(DSSObj):
 
     CSVFile = property(_get_CSVFile, _set_CSVFile) # type: str
     """
-    Switch input of  X-Y curve data to a CSV file containing X, Y points one per line. NOTE: This action may reset the number of points to a lower value.
+    Switch input of X-Y curve data to a CSV file containing X, Y points one per line. NOTE: This action may reset the number of points to a lower value.
 
-    DSS property name: `CSVFile`, DSS property index: 5.
+    Name: `CSVFile`
     """
 
     def _get_SngFile(self) -> str:
@@ -129,9 +129,9 @@ class XYcurve(DSSObj):
 
     SngFile = property(_get_SngFile, _set_SngFile) # type: str
     """
-    Switch input of  X-Y curve data to a binary file of SINGLES containing X, Y points packed one after another. NOTE: This action may reset the number of points to a lower value.
+    Switch input of X-Y curve data to a binary file of SINGLES containing X, Y points packed one after another. NOTE: This action may reset the number of points to a lower value.
 
-    DSS property name: `SngFile`, DSS property index: 6.
+    Name: `SngFile`
     """
 
     def _get_DblFile(self) -> str:
@@ -142,9 +142,9 @@ class XYcurve(DSSObj):
 
     DblFile = property(_get_DblFile, _set_DblFile) # type: str
     """
-    Switch input of  X-Y  curve data to a binary file of DOUBLES containing X, Y points packed one after another. NOTE: This action may reset the number of points to a lower value.
+    Switch input of X-Y  curve data to a binary file of DOUBLES containing X, Y points packed one after another. NOTE: This action may reset the number of points to a lower value.
 
-    DSS property name: `DblFile`, DSS property index: 7.
+    Name: `DblFile`
     """
 
     def _get_X(self) -> float:
@@ -157,7 +157,7 @@ class XYcurve(DSSObj):
     """
     Enter a value and then retrieve the interpolated Y value from the Y property. On input shifted then scaled to original curve. Scaled then shifted on output.
 
-    DSS property name: `X`, DSS property index: 8.
+    Name: `X`
     """
 
     def _get_Y(self) -> float:
@@ -170,7 +170,7 @@ class XYcurve(DSSObj):
     """
     Enter a value and then retrieve the interpolated X value from the X property. On input shifted then scaled to original curve. Scaled then shifted on output.
 
-    DSS property name: `Y`, DSS property index: 9.
+    Name: `Y`
     """
 
     def _get_XShift(self) -> float:
@@ -181,9 +181,10 @@ class XYcurve(DSSObj):
 
     XShift = property(_get_XShift, _set_XShift) # type: float
     """
-    Shift X property values (in/out) by this amount of offset. Default = 0. Does not change original definition of arrays.
+    Shift X property values (in/out) by this amount of offset. Does not change original definition of arrays.
 
-    DSS property name: `XShift`, DSS property index: 10.
+    Name: `XShift`
+    Default: 0.0
     """
 
     def _get_YShift(self) -> float:
@@ -194,9 +195,10 @@ class XYcurve(DSSObj):
 
     YShift = property(_get_YShift, _set_YShift) # type: float
     """
-    Shift Y property values (in/out) by this amount of offset. Default = 0. Does not change original definition of arrays.
+    Shift Y property values (in/out) by this amount of offset. Does not change original definition of arrays.
 
-    DSS property name: `YShift`, DSS property index: 11.
+    Name: `YShift`
+    Default: 0.0
     """
 
     def _get_XScale(self) -> float:
@@ -207,9 +209,10 @@ class XYcurve(DSSObj):
 
     XScale = property(_get_XScale, _set_XScale) # type: float
     """
-    Scale X property values (in/out) by this factor. Default = 1.0. Does not change original definition of arrays.
+    Scale X property values (in/out) by this factor. Does not change original definition of arrays.
 
-    DSS property name: `XScale`, DSS property index: 12.
+    Name: `XScale`
+    Default: 1.0
     """
 
     def _get_YScale(self) -> float:
@@ -220,9 +223,10 @@ class XYcurve(DSSObj):
 
     YScale = property(_get_YScale, _set_YScale) # type: float
     """
-    Scale Y property values (in/out) by this factor. Default = 1.0. Does not change original definition of arrays.
+    Scale Y property values (in/out) by this factor. Does not change original definition of arrays.
 
-    DSS property name: `YScale`, DSS property index: 13.
+    Name: `YScale`
+    Default: 1.0
     """
 
     def Like(self, value: AnyStr):
@@ -231,7 +235,9 @@ class XYcurve(DSSObj):
 
         New Capacitor.C2 like=c1  ...
 
-        DSS property name: `Like`, DSS property index: 14.
+        **Deprecated:** `Like` has been deprecated since at least 2021, see https://sourceforge.net/p/electricdss/discussion/861977/thread/8b59d21eb6/#b57c/f668
+
+        Name: `Like`
         """
         self._set_string_o(14, value)
 
@@ -289,7 +295,7 @@ class XYcurveBatch(DSSBatch):
     """
     Max number of points to expect in curve. This could get reset to the actual number of points defined if less than specified.
 
-    DSS property name: `NPts`, DSS property index: 1.
+    Name: `NPts`
     """
 
     def _get_YArray(self) -> List[Float64Array]:
@@ -310,7 +316,7 @@ class XYcurveBatch(DSSBatch):
 
     Note: this property will reset Npts to a smaller value if the  number of values in the files are fewer.
 
-    DSS property name: `YArray`, DSS property index: 3.
+    Name: `YArray`
     """
 
     def _get_XArray(self) -> List[Float64Array]:
@@ -331,7 +337,7 @@ class XYcurveBatch(DSSBatch):
 
     Note: this property will reset Npts to a smaller value if the  number of values in the files are fewer.
 
-    DSS property name: `XArray`, DSS property index: 4.
+    Name: `XArray`
     """
 
     def _get_CSVFile(self) -> List[str]:
@@ -342,9 +348,9 @@ class XYcurveBatch(DSSBatch):
 
     CSVFile = property(_get_CSVFile, _set_CSVFile) # type: List[str]
     """
-    Switch input of  X-Y curve data to a CSV file containing X, Y points one per line. NOTE: This action may reset the number of points to a lower value.
+    Switch input of X-Y curve data to a CSV file containing X, Y points one per line. NOTE: This action may reset the number of points to a lower value.
 
-    DSS property name: `CSVFile`, DSS property index: 5.
+    Name: `CSVFile`
     """
 
     def _get_SngFile(self) -> List[str]:
@@ -355,9 +361,9 @@ class XYcurveBatch(DSSBatch):
 
     SngFile = property(_get_SngFile, _set_SngFile) # type: List[str]
     """
-    Switch input of  X-Y curve data to a binary file of SINGLES containing X, Y points packed one after another. NOTE: This action may reset the number of points to a lower value.
+    Switch input of X-Y curve data to a binary file of SINGLES containing X, Y points packed one after another. NOTE: This action may reset the number of points to a lower value.
 
-    DSS property name: `SngFile`, DSS property index: 6.
+    Name: `SngFile`
     """
 
     def _get_DblFile(self) -> List[str]:
@@ -368,9 +374,9 @@ class XYcurveBatch(DSSBatch):
 
     DblFile = property(_get_DblFile, _set_DblFile) # type: List[str]
     """
-    Switch input of  X-Y  curve data to a binary file of DOUBLES containing X, Y points packed one after another. NOTE: This action may reset the number of points to a lower value.
+    Switch input of X-Y  curve data to a binary file of DOUBLES containing X, Y points packed one after another. NOTE: This action may reset the number of points to a lower value.
 
-    DSS property name: `DblFile`, DSS property index: 7.
+    Name: `DblFile`
     """
 
     def _get_X(self) -> BatchFloat64ArrayProxy:
@@ -383,7 +389,7 @@ class XYcurveBatch(DSSBatch):
     """
     Enter a value and then retrieve the interpolated Y value from the Y property. On input shifted then scaled to original curve. Scaled then shifted on output.
 
-    DSS property name: `X`, DSS property index: 8.
+    Name: `X`
     """
 
     def _get_Y(self) -> BatchFloat64ArrayProxy:
@@ -396,7 +402,7 @@ class XYcurveBatch(DSSBatch):
     """
     Enter a value and then retrieve the interpolated X value from the X property. On input shifted then scaled to original curve. Scaled then shifted on output.
 
-    DSS property name: `Y`, DSS property index: 9.
+    Name: `Y`
     """
 
     def _get_XShift(self) -> BatchFloat64ArrayProxy:
@@ -407,9 +413,10 @@ class XYcurveBatch(DSSBatch):
 
     XShift = property(_get_XShift, _set_XShift) # type: BatchFloat64ArrayProxy
     """
-    Shift X property values (in/out) by this amount of offset. Default = 0. Does not change original definition of arrays.
+    Shift X property values (in/out) by this amount of offset. Does not change original definition of arrays.
 
-    DSS property name: `XShift`, DSS property index: 10.
+    Name: `XShift`
+    Default: 0.0
     """
 
     def _get_YShift(self) -> BatchFloat64ArrayProxy:
@@ -420,9 +427,10 @@ class XYcurveBatch(DSSBatch):
 
     YShift = property(_get_YShift, _set_YShift) # type: BatchFloat64ArrayProxy
     """
-    Shift Y property values (in/out) by this amount of offset. Default = 0. Does not change original definition of arrays.
+    Shift Y property values (in/out) by this amount of offset. Does not change original definition of arrays.
 
-    DSS property name: `YShift`, DSS property index: 11.
+    Name: `YShift`
+    Default: 0.0
     """
 
     def _get_XScale(self) -> BatchFloat64ArrayProxy:
@@ -433,9 +441,10 @@ class XYcurveBatch(DSSBatch):
 
     XScale = property(_get_XScale, _set_XScale) # type: BatchFloat64ArrayProxy
     """
-    Scale X property values (in/out) by this factor. Default = 1.0. Does not change original definition of arrays.
+    Scale X property values (in/out) by this factor. Does not change original definition of arrays.
 
-    DSS property name: `XScale`, DSS property index: 12.
+    Name: `XScale`
+    Default: 1.0
     """
 
     def _get_YScale(self) -> BatchFloat64ArrayProxy:
@@ -446,9 +455,10 @@ class XYcurveBatch(DSSBatch):
 
     YScale = property(_get_YScale, _set_YScale) # type: BatchFloat64ArrayProxy
     """
-    Scale Y property values (in/out) by this factor. Default = 1.0. Does not change original definition of arrays.
+    Scale Y property values (in/out) by this factor. Does not change original definition of arrays.
 
-    DSS property name: `YScale`, DSS property index: 13.
+    Name: `YScale`
+    Default: 1.0
     """
 
     def Like(self, value: AnyStr, flags: enums.SetterFlags = 0):
@@ -457,7 +467,9 @@ class XYcurveBatch(DSSBatch):
 
         New Capacitor.C2 like=c1  ...
 
-        DSS property name: `Like`, DSS property index: 14.
+        **Deprecated:** `Like` has been deprecated since at least 2021, see https://sourceforge.net/p/electricdss/discussion/861977/thread/8b59d21eb6/#b57c/f668
+
+        Name: `Like`
         """
         self._set_batch_string(14, value, flags)
 
