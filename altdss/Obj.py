@@ -252,7 +252,7 @@ __all__ = [
     "LoadShapeClass",
     "MonitoredPhase",
     "PlotProfilePhases",
-    "AltDSSComplatFlags",
+    "AltDSSCompatFlags",
     "LoadShapeAction",
     "LoadShapeInterpolation",
     "TShapeAction",

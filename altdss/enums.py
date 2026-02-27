@@ -217,8 +217,8 @@ class PlotProfilePhases(IntEnum):
     LLPrimary = -6 # LLPrimary
 
 
-class AltDSSComplatFlags(IntEnum):
-    """AltDSSComplatFlags (DSS enumeration)"""
+class AltDSSCompatFlags(IntEnum):
+    """AltDSSCompatFlags (DSS enumeration)"""
     NoSolverFloatChecks = 1 # NoSolverFloatChecks
     BadPrecision = 2 # BadPrecision
     InvControl9611 = 4 # InvControl9611
